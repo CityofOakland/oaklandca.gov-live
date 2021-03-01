@@ -1,0 +1,29 @@
+{% if entry.facebook | length or entry.twitter | length or entry.instagram | length or entry.medium | length %}
+  <h3 class="mb-4 text-2xl">Social Media</h3>
+  <div class="mb-8">
+    {% if entry.facebook ?? "" %}
+      {% include '_partials/_elements/_social-media-button.twig' with {
+        network: "facebook",
+        url: entry.facebook
+      } %}
+    {% endif %}
+    {% if entry.twitter ?? "" %}
+      {% include '_partials/_elements/_social-media-button.twig' with {
+        network: "twitter",
+        url: entry.twitter
+      } %}
+    {% endif %}
+    {% if entry.instagram ?? "" %}
+      {% include '_partials/_elements/_social-media-button.twig' with {
+        network: "instagram",
+        url: entry.instagram
+      } %}
+    {% endif %}
+    {% if entry.medium ?? "" %}
+      {% include '_partials/_elements/_social-media-button.twig' with {
+        network: "medium",
+        url: entry.medium
+      } %}
+    {% endif %}
+  </div>
+{% endif %}

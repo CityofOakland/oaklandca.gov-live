@@ -1,0 +1,22 @@
+contentColumnType: string
+fieldGroup: 4ed914c6-b7ea-44be-a061-4430ad33baf2
+handle: newsTags
+instructions: ''
+name: 'News Tags'
+searchable: false
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  limit: null
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: 'taggroup:56057193-b9d8-4ac0-9f31-d4a755c91447'
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Tags

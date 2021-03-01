@@ -1,0 +1,27 @@
+{% if pageInfo.totalPages > 1 %}
+  {% spaceless %}
+    <div class="flex space-x-2 text-base pagination">
+      <a href="{{ pageInfo.firstUrl }}">«</a>
+      {% if pageInfo.prevUrl %}
+        <a href="{{ pageInfo.prevUrl }}">‹</a>
+      {% endif %}
+
+      <span class="space-x-2 oak-hidden sm:inline">
+        {% for page, url in pageInfo.getPrevUrls(5) %}
+          <a href="{{ url }}">{{ page }}</a>
+        {% endfor %}
+
+        <span class="current">{{ pageInfo.currentPage }}</span>
+
+        {% for page, url in pageInfo.getNextUrls(5) %}
+          <a href="{{ url }}">{{ page }}</a>
+        {% endfor %}
+      </span>
+
+      {% if pageInfo.nextUrl %}
+        <a href="{{ pageInfo.nextUrl }}">›</a>
+      {% endif %}
+      <a href="{{ pageInfo.lastUrl }}">»</a>
+    </div>
+  {% endspaceless %}
+{% endif %}

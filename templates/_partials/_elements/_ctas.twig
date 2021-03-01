@@ -1,0 +1,43 @@
+{% macro buttonTemplate(descriptorText, url, buttonText) %}
+  <div class="mb-4 lg:mx-3">
+    <a aria-label="{{ buttonText }} {{ descriptorText }}" href="{{ url }}" class="w-full text-center btn btn-sm">{{ buttonText | raw }}</a>
+    {% if descriptorText | length %}<div class="mt-2 text-sm tracking-wide uppercase">{{ descriptorText }}</div>{% endif %}
+  </div>
+{% endmacro %}
+{% import _self as macro %}
+
+{% if entry.callToAction | length %}
+  <div class="flex flex-col mb-8 lg:flex-row lg:-mx-3">
+    {% for cta in entry.callToAction %}
+      {% switch cta.type %}
+        {% case "onlineLink" %}
+          {{ macro.buttonTemplate(cta.onlineTitle, cta.linkUrl, cta.linkText) }}
+        {% case "phoneNumber" %}
+          {{ macro.buttonTemplate(cta.phoneNumberTitle, 'tel:' ~ cta.number | replace('/[^0-9]/', ''), cta.number) }}
+        {% case "documentLink" %}
+          {% set doc = cta.documentLink[0] %}
+          {% set isDoc = (doc.typeId == 41) ? true : false %}
+          {% set docUrl = isDoc ? doc.documentFile[0].url : doc.url %}
+          {{ macro.buttonTemplate(cta.documentLabel ?? doc.title, docUrl ?? '', cta.buttonLabel) }}
+        {% case "emailAddress" %}
+          {{ macro.buttonTemplate(cta.emailTitle, 'mailto:' ~ cta.emailAddress, cta.linkText) }}
+        {% case "physicalAddress" %}
+          <div class="mb-4">
+            {% set location = cta.streetAddress %}
+            <p class="text-sm tracking-wide uppercase">{{ cta.addressTitle }}</p>
+            <p>
+              {{ location.street1 }}<br>
+              {% if location.street2 | length %}
+                {{ location.street2 }}<br>
+              {% endif %}
+              {{ location.city }},
+              {{ location.state }}
+              {{ location.zip }}
+            </p>
+            {{ cta.additionalAddressInfo }}
+          </div>
+        {% default %}
+      {% endswitch %}
+    {% endfor %}
+  </div>
+{% endif %}

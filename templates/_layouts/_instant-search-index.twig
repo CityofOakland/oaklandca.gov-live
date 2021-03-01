@@ -1,0 +1,55 @@
+{% extends '_layout.twig' %}
+
+{% do view.registerJsFile("https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find") %}
+{% do view.registerCssFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css") %}
+{% do view.registerCssFile ("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css") %}
+{% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4") %}
+
+{% css %}
+{% include "_css/algoliafilter.css" %}
+{% endcss %}
+
+{% do view.registerJsFile(craft.twigpack.getModuleUri("/js/algoliafilter.js")) %}
+
+{% if section is defined %}
+  {% set relation = craft.entries.section(section).slug(slug).one() %}
+  {% set bannerTitleSuffix = " for " ~ relation.title %}
+{% endif %}
+
+{% block content %}
+  {% block pageBanner %}
+    {% include '_partials/_page-banners.twig' with {
+      bannerTitle: entry.title | replace(' Index', '') ~ bannerTitleSuffix ?? '',
+    } %}
+  {% endblock %}
+  <div class="bg-gray-100" id="search-bar-container">
+    <div class="container text-right">
+      <div class="flex flex-col sm:flex-row">
+        <label class="hidden-visually" for="search-input">{{ searchInputText ?? 'Search this Index' }}</label>
+        <input class="w-full p-2 rounded-none appearance-none md:py-4 md:px-8" id="search-input" name="keywords" required type="search" value="">
+      </div>
+      {% if facets is defined %}
+        <a class="inline-block mt-4 text-right text-gray-800 hover:text-gray-900" href="#" id="filter-reveal">Show Filters</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="relative invisible h-0 overflow-hidden opacity-0 bg-gray-300 text-gray-700 z-neg-10 trans trans-all" id="algolia-filters">
+    <div class="container flex-col -my-4" id="facet-holder">
+      {% if facets is defined %}
+        {% for facet in facets %}
+          <div id="{{ facet.container }}"></div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+  <section class="relative z-0 bg-white">
+    <div class="container">
+      <div class="w-full">
+        <div id="hits"></div>
+        <div class="flex items-center text-2xl">
+          <div class="inline-block" id="bottom-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

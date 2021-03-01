@@ -1,0 +1,40 @@
+field: 555efa28-a6b9-471d-8548-735eae07cb3c
+fieldLayouts:
+  197a0374-f84c-44c5-8ef9-a178db8899cd:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: d05048db-b41e-4294-a51e-508edfd8f988
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  d05048db-b41e-4294-a51e-508edfd8f988:
+    contentColumnType: text
+    fieldGroup: null
+    handle: number
+    instructions: ''
+    name: __blank__
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: phone
+name: Phone
+sortOrder: 1

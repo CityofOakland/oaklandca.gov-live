@@ -1,0 +1,40 @@
+field: 555efa28-a6b9-471d-8548-735eae07cb3c
+fieldLayouts:
+  235e82e4-67b9-49c2-a910-cc2825c6a79e:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 843d53f7-253d-4ed1-b7da-309cd0e4df69
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  843d53f7-253d-4ed1-b7da-309cd0e4df69:
+    contentColumnType: text
+    fieldGroup: null
+    handle: number
+    instructions: ''
+    name: __blank__
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: fax
+name: Fax
+sortOrder: 2

@@ -1,0 +1,12 @@
+<div class="flex {% if day.isBlank %} text-gray-500 {% endif %}">
+  <dt class="font-bold w-32">{{ day.name }}</dt>
+</dd>
+<dd class="flex-1">
+  {% if day.isBlank %}
+    Closed
+  {% else %}
+    {{ day.open | time('short') }}
+    -
+    {{ day.close | time('short') }}
+  {% endif %}
+</dd></div>

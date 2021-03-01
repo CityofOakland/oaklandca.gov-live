@@ -1,0 +1,449 @@
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+fieldLayouts:
+  00d2d434-9858-470b-9311-b6b27dc6fd06:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: bde3bd63-a118-435a-b947-3f2667918e1b
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: bcbcc37a-a53b-42f8-9a80-e9abf9ffe063
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d0cf7d52-44a5-44a7-9efa-ba27c7541ff9
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e58f615b-174a-4196-a96c-e824862acfa9
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 323dd893-cdef-4562-9cfc-566d7afd7909
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 566d26c2-9af4-45bb-b994-a552cc3fc03b
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c8061611-d9e5-4ee6-b698-dc19feb2e2a5
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  323dd893-cdef-4562-9cfc-566d7afd7909:
+    contentColumnType: text
+    fieldGroup: null
+    handle: textBlock
+    instructions: 'Enter your text content here. Remember that the image will appear to the top of the text regardless of its position on desktop, so avoid referring to the image’s position in the text.'
+    name: 'Text Block'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: 'Basic with Links.json'
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  566d26c2-9af4-45bb-b994-a552cc3fc03b:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: displayAltTextAsCaption
+    instructions: 'If enabled, this will display your image''s alt text as a small figure caption below the image.'
+    name: 'Display Alt Text as Caption?'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  bcbcc37a-a53b-42f8-9a80-e9abf9ffe063:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: 'Choose an image to display to the side of the text.'
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: 'Add an image'
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      singleUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: true
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  bde3bd63-a118-435a-b947-3f2667918e1b:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c8061611-d9e5-4ee6-b698-dc19feb2e2a5:
+    contentColumnType: text
+    fieldGroup: null
+    handle: callToAction
+    instructions: 'Adds a button link at the bottom of your text that can link out to other content'
+    name: 'Call to Action'
+    searchable: false
+    settings:
+      allowCustomText: '1'
+      allowTarget: '1'
+      defaultText: ''
+      selectLinkText: ''
+      types:
+        __assoc__:
+          -
+            - fruitstudios\linkit\models\Email
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - dotgovsupport@oaklandca.gov
+          -
+            - fruitstudios\linkit\models\Phone
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Url
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - 'https://www.oaklandca.gov'
+                -
+                  - allowAlias
+                  - ''
+                -
+                  - allowMailto
+                  - ''
+                -
+                  - allowHash
+                  - ''
+                -
+                  - allowPaths
+                  - ''
+          -
+            - fruitstudios\linkit\models\Twitter
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Facebook
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Instagram
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\LinkedIn
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Entry
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  -
+                    - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
+                    - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
+                    - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
+                    - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+                    - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+                    - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+                    - 'section:be8acece-2031-4965-a62f-31911d00e24c'
+                    - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
+                    - 'section:24fa116b-8516-4626-84f3-86b685e71071'
+                    - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
+                    - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - fruitstudios\linkit\models\Category
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - fruitstudios\linkit\models\Asset
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  -
+                    - 'folder:baf733c3-48be-42a7-8b4f-7a6bf9763542'
+                -
+                  - customSelectionLabel
+                  - 'Select Document'
+          -
+            - fruitstudios\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: fruitstudios\linkit\fields\LinkitField
+  d0cf7d52-44a5-44a7-9efa-ba27c7541ff9:
+    contentColumnType: string
+    fieldGroup: null
+    handle: imageColumnPosition
+    instructions: 'Choose which side the image appears on desktop layouts. On mobile layouts it will appear above the text, so make sure you don’t refer to the image’s position in your text block.'
+    name: 'Image Column Position'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  e58f615b-174a-4196-a96c-e824862acfa9:
+    contentColumnType: string
+    fieldGroup: null
+    handle: imageColumnWidth
+    instructions: 'Choose a width for the image column on tablet and desktop browsers. On mobile layouts it will be 100% of the browser width.'
+    name: 'Image Column Width'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 25%
+            -
+              - value
+              - 1/4
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 33%
+            -
+              - value
+              - 1/3
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 50%
+            -
+              - value
+              - 1/2
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: textImageBlock
+name: 'Text & Image Block'
+sortOrder: 4

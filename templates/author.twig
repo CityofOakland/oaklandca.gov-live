@@ -1,0 +1,85 @@
+{% if currentUser %}
+  {% if craft.app.request.getSegment(2) %}
+    {% set person = craft.users().username(user).one() %}
+    {% if person %}
+    {% else %}
+      {% redirect "/author" %}
+    {% endif %}
+  {% else %}
+    {% set person = currentUser %}
+  {% endif %}
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>All entries owned by {{ person.username }}</title>
+    {{ craft.twigpack.includeCssModule("/css/app.css") }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  </head>
+  <body>
+    {% set sections = craft.app.sections.allSections() %}
+    <style>
+      .pagination li {
+        margin: 0 10px;
+      }
+    </style>
+    <div class="container">
+      <h1 class="my-4 text-3xl font-bold uppercase">All entries owned by {{ person }}</h1>
+      <div id="entries">
+        <input type="text" class="inline-block p-4 border search border-green-1000" placeholder="Search Titles" />
+        <ul class="flex pagination pagination-top"></ul>
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-white cursor-pointer bg-green-1000">
+              <th class="sort" data-sort="title">Entry Title</th>
+              <th class="w-32 sort" data-sort="section">Section</th>
+              <th class="w-32 sort" data-sort="status">Status</th>
+              <th class="w-32">View on Site</th>
+            </tr>
+          </thead>
+          <tbody class="list">
+            {% for entry in craft.entries.authorId(person.id).orderBy('title asc').limit(null).status(null).all %}
+              <tr>
+                <td class="title"><a href="{{ entry.cpEditUrl }}" target="_blank">{{ entry.title }}</a></td>
+                <td class="section">{{ entry.section.name }}</td>
+                <td class="status">{{ entry.status }}</td>
+                <td>
+                  {% if entry.url | length %}
+                    <a href="{{ entry.url }}">Link</a>
+                  {% else %}
+                    N/A
+                  {% endif %}
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <ul class="flex pagination pagination-bottom"></ul>
+      </div>
+    </div>
+    <script>
+      var options = {
+        valueNames: ['id', 'title', 'section', 'status'],
+        page: 50,
+        pagination: [
+          {
+            name: "pagination-top",
+            paginationClass: "pagination-top",
+            outerWindow: 2
+          }, {
+            paginationClass: "pagination-bottom",
+            innerWindow: 3,
+            left: 2,
+            right: 4
+          }
+        ]
+      }
+      var entriesList = new List('entries', options);
+
+    </script>
+  </body>
+  </html>
+{% endif %}

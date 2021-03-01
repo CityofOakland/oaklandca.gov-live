@@ -1,0 +1,69 @@
+{% extends '_layout.twig' %}
+
+{% do craft.app.elements.eagerLoadElements(
+  className(entry),
+  [entry],
+  ['banner']
+) %}
+
+{% block content %}
+  {% include '_partials/_page-banners.twig' with {
+    bannerTitle: entry.title | replace(' Index', ''),
+    breadCrumbLinks: [
+      {
+        title: 'Teams',
+        link: '/teams'
+      }
+    ],
+    bannerImage: entry.banner | length ? {
+      position: entry.banner[0].getFocalPoint('asCss'),
+      src: entry.banner[0].url,
+      alt: entry.banner[0].title ?? entry.banner[0].filename
+    } : false
+  } %}
+  <section class="relative z-0 bg-white">
+    <div class="container">
+      {% for team in entry.teamMembers.all() %}
+        {% if team.staffHeading | length %}
+          <h2 class="mb-0">{{ team.staffHeading }}</h2>
+        {% else %}
+          <h2 class="mb-0">Team</h2>
+        {% endif %}
+        <div class="mt-12 card-grid grid-equal-height profile-cards">
+          {% for entry in team.staff.all() %}
+            {% set organization = entry.staffImportOrganization ?? '' %}
+            {% set department = entry.departments.one.title ?? organization ?? entry.staffImportDepartment ?? '' %}
+            {% set email = entry.emailAddress ??? entry.staffImportEmail %}
+            {% set phone = entry.phoneNumber ??? entry.staffImportPhoneNumber %}
+            {%- set extraContent -%}
+              {% if department | length %}
+                {{ department }}
+              {% endif %}
+              {% if email | length %}
+                {% set e = email | replace({'@oaklandnet.com': '@oaklandca.gov'}) %}
+                <br><a aria-label="Email {{ entry.title }}" href="mailto:{{ e }}">Email</a>
+              {% endif %}
+              {% if phone | length %}
+                <br><a href="tel:{{ phone }}">{{ phone }}</a>
+              {% endif %}
+              {% if entry.termStart | length and entry.termEnd | length %}
+                <br>{{ entry.termStart | date() }}
+                –
+                {{ entry.termEnd | date() }}
+              {% endif %}
+            {%- endset -%}
+
+            {% include '_partials/_elements/_profile-cards.twig' with {
+              photo: entry.portrait.one,
+              name: entry.title,
+              jobTitle: entry.jobTitle ?? entry.staffImportJobTitle ?? '',
+              url: entry.redirectUrl ?? entry.url ?? '',
+              extraContent: extraContent,
+              icon: 'user'
+            } %}
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

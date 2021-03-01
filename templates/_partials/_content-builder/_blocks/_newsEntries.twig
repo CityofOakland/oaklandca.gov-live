@@ -1,0 +1,47 @@
+{% set idsToExclude = ['not'] %}
+{% set entryIds = block.entries.ids() %}
+{% for entry in entryIds ?? '' %}
+  {% set idsToExclude = idsToExclude|merge([entry]) %}
+{% endfor %}
+
+{% set idsToExcludeString = idsToExclude | join(', ') %}
+{% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
+{% set excludedNews = craft.entries.section('news').relatedTo(entry).id(idsToExcludeString) %}
+{% set defaultButtonUrl = "" %}
+{% if excludedNews | length %}
+  {% set defaultButtonUrl = "/news/related-to/"  ~ entry.section.handle ~ "/" ~ entry.slug %}
+{% endif %}
+
+{% if block.allowAutofill %}
+  {% set options = {
+    section: "news",
+    limit: 3 - entryIds | length,
+    id: idsToExclude
+  } %}
+
+  {% set relatedNews = craft.entries(options).relatedTo(entry).ids() %}
+  {% set entryIds = entryIds | merge(relatedNews) %}
+{% endif %}
+
+<div class="{% if not loop.last %}mb-12{% endif %}">
+  {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" %}
+  <div class="card-grid vertical-cards">
+    {% for entryId in entryIds %}
+      {% set entry = craft.entries.id(entryId).one() %}
+      {% include '_partials/_elements/_vertical-cards.twig' with {
+        title: entry.title,
+        url: entry.url,
+        icon: 'newspaper',
+        photo: entry.newsImage.one,
+        byline: entry.postDate.format("M d, Y"),
+        body: entry.summary,
+        photoHide: block.hideThumbnails,
+        summaryHide: block.hideSummary
+      } %}
+    {% endfor %}
+  </div>
+  {% include "_partials/_elements/_module-readmore.twig" with {
+    linkText: pageNewsLinkText ?? "Related News",
+    linkUrl: pageNewsLinkUrl ?? defaultButtonUrl
+  } %}
+</div>

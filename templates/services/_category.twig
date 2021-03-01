@@ -1,0 +1,28 @@
+{% extends '_layouts/_banner-with-nav.twig' %}
+
+{% block content %}
+  {% include '_partials/_page-banners.twig' with {
+    breadCrumbLinks: [
+      {
+        title: 'Services',
+        link: '/services'
+      }
+    ],
+  } %}
+  <section>
+    <div class="container pt-0 mx-auto">
+      <h2 class="my-0 text-xl md:text-2xl">Services</h2>
+      <ul class="items-stretch card-grid card-grid-tight">
+        {% set entries = craft.entries.section("services").limit(null).orderBy("title asc").relatedTo(category).all() %}
+        {% nav entry in entries %}
+          <li>
+            <a class="block h-full p-5 transition-all duration-75 rounded shadow bg-cool-gray-100 text-cool-gray-800 hover:bg-cool-gray-200 hover:text-cool-gray-900" href="{{ entry.redirectUrl ?? entry.url ?? '' }}">
+              <h3 class="mt-0 mb-4 text-lg text-gray-800 md:text-xl lg:text-2xl">{{ entry.title }}</h3>
+              {{ category.summary | retcon('attr', 'p', { class: 'mt-4 mb-0 text-gray-800 text-sm md:text-base' }) }}
+            </a>
+          </li>
+        {% endnav %}
+      </ul>
+    </div>
+  </section>
+{% endblock %}

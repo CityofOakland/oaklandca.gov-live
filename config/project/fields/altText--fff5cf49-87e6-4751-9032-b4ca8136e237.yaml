@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: baa859d6-a861-4617-bb79-73d0982ee25c
+handle: altText
+instructions: 'Enter the text that describes the image or file, for accessibility concerns.'
+name: 'Alt Text'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
