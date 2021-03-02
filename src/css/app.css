@@ -1,0 +1,549 @@
+@tailwind base;
+@tailwind components;
+
+/* Use this utility to hide text only meant for screen readers */
+.hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/*  Formstack unfortunately includes a .hidden class that overrides our Tailwind default class,
+    so we need to @apply it's class to another one to avoid namespace collision  */
+@responsive {
+  .oak-hidden {
+    @apply hidden;
+  }
+}
+
+[x-cloak] {
+  @apply hidden;
+}
+
+@responsive {
+  .touch-action-auto {
+    touch-action: auto;
+  }
+  .touch-action-none {
+    touch-action: none;
+  }
+  .touch-action-pan-x {
+    touch-action: pan-x;
+  }
+  .touch-action-pan-left {
+    touch-action: pan-left;
+  }
+  .touch-action-pan-right {
+    touch-action: pan-right;
+  }
+  .touch-action-pan-y {
+    touch-action: pan-y;
+  }
+  .touch-action-pan-up {
+    touch-action: pan-up;
+  }
+  .touch-action-pan-down {
+    touch-action: pan-down;
+  }
+  .touch-action-pinch-zoom {
+    touch-action: pinch-zoom;
+  }
+  .touch-action-manipulation {
+    touch-action: manipulation;
+  }
+  .touch-action-inherit {
+    touch-action: inherit;
+  }
+  .touch-action-initial {
+    touch-action: initial;
+  }
+  .touch-action-unset {
+    touch-action: unset;
+  }
+}
+
+.o-override > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+body {
+  @apply text-lg leading-normal text-gray-900;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply leading-tight;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-bold;
+}
+
+h2 {
+  @apply text-4xl;
+}
+
+h3 {
+  @apply font-semibold text-3xl;
+}
+
+h4 {
+  @apply text-2xl;
+}
+
+ol,
+ul,
+dl,
+p {
+  @apply my-4;
+}
+
+a {
+  @apply text-green-700 no-underline;
+}
+
+a:hover {
+  @apply text-green-900;
+}
+
+.body-text a {
+  @apply underline break-words;
+}
+
+.anchor-link {
+  @apply relative invisible block;
+}
+
+@media (min-width: theme("screens.md")) {
+  .anchor-link {
+    top: -10rem;
+  }
+}
+
+.container {
+  @apply p-6;
+}
+
+@media (min-width: theme("screens.sm")) {
+  .container {
+    @apply px-8 py-12;
+  }
+}
+
+.logo {
+  fill: #ffffff;
+}
+
+#google_translate_element,
+#google_translate_element_2 {
+  & img {
+    @apply inline;
+  }
+}
+
+.goog-te-gadget-simple {
+  @apply rounded-sm border-none shadow !important;
+}
+
+/* Button Styles */
+.btn {
+  @apply inline-block px-8 py-4 text-base font-bold tracking-wide text-white no-underline bg-green-800 rounded-sm shadow trans trans-fast;
+}
+
+.btn:hover {
+  @apply text-white underline bg-green-900 shadow-none;
+}
+
+.btn-sm {
+  @apply px-2 py-2;
+}
+
+.btn-md {
+  @apply px-4 py-4;
+}
+
+.section-box {
+  @apply block p-5 font-semibold text-green-800 bg-white border-l-4 border-green-700 rounded-sm shadow-btn;
+}
+
+.section-box:hover {
+  @apply text-white bg-green-1000;
+}
+
+main,
+footer {
+  position: relative;
+}
+
+main {
+  padding-top: 3.75rem;
+}
+
+@media (min-width: theme("screens.md")) {
+  main {
+    padding-top: 4rem;
+  }
+}
+
+@media (min-width: theme("screens.lg")) {
+  main {
+    padding-top: 5rem;
+  }
+}
+
+/* Banner Styles */
+.banner {
+  @apply relative text-xl leading-loose text-white bg-white;
+}
+
+@media (min-width: theme("screens.md")) {
+  .home-banner {
+    padding-top: calc(6 / 16 * 100%);
+  }
+}
+
+/* Background Section Color Rotations */
+main .bg-rotate:nth-of-type(odd) {
+  @apply bg-gray-100;
+}
+
+main .bg-rotate:nth-of-type(even) {
+  @apply bg-white;
+}
+
+.iframe-holder iframe {
+  max-width: 100% !important;
+}
+
+.card-grid {
+  @apply flex flex-row flex-wrap -mx-4;
+  & > * {
+    @apply w-full m-4;
+  }
+}
+
+.card-grid-tight {
+  @apply mx-0;
+  & > * {
+    @apply mx-0 my-2;
+  }
+}
+
+@media (min-width: theme("screens.sm")) {
+  .card-grid > * {
+    @apply self-stretch;
+    width: calc(theme("width.1/3") - theme(margin.8));
+  }
+  .card-grid-2up > * {
+    width: calc(theme("width.1/2") - theme(margin.8));
+  }
+  .card-grid-tight {
+    @apply -mx-2;
+    & > * {
+      @apply m-2;
+      width: calc(theme("width.1/2") - theme(margin.4));
+    }
+  }
+  .profile-cards > * {
+    width: calc(theme("width.1/2") - theme(margin.4));
+  }
+}
+
+@media (min-width: theme("screens.md")) {
+  .profile-cards > * {
+    width: calc(theme("width.1/2") - theme(margin.8));
+  }
+}
+
+@media (min-width: theme("screens.lg")) {
+  .card-grid-tight > * {
+    width: calc(theme("width.1/3") - theme(margin.4));
+  }
+  .profile-cards > * {
+    width: calc(theme("width.1/3") - theme(margin.8));
+  }
+}
+
+.horizontal-card {
+  @apply flex flex-col;
+}
+
+@media (min-width: 1024px) {
+  .horizontal-card {
+    @apply flex-row justify-between;
+    & > figure {
+      width: calc(theme("width.1/2") - theme(margin.6));
+    }
+
+    & > div {
+      width: calc(theme("width.1/2") - theme(margin.6));
+    }
+  }
+}
+
+.step-grid {
+  display: grid;
+  grid-gap: theme("spacing.4");
+  grid-template-columns: 150px 1fr;
+}
+
+.body-text {
+  & ul {
+    @apply list-disc list-outside;
+    & li {
+      @apply pl-2 ml-5;
+    }
+  }
+
+  & ol {
+    @apply list-decimal list-outside;
+    & li {
+      @apply pl-2 ml-5;
+    }
+  }
+
+  & > *:first-child {
+    margin-top: 0;
+  }
+}
+
+a,
+input,
+textarea,
+button {
+  &:focus {
+    outline-style: dotted;
+    outline-color: invert;
+    outline-width: 1px;
+  }
+}
+
+.search-box {
+  background-image: url("/assets/img/icon-spyglass.svg");
+  background-repeat: no-repeat;
+  background-position: .5rem center;
+}
+
+/* PUSH MENU */
+#menu {
+  @apply fixed top-0;
+  right: -300px;
+  width: 300px;
+  transition: right 0.5s ease-out;
+}
+
+body.open #menu {
+  @apply right-0;
+}
+
+.page-holder {
+  @apply relative right-0 trans-slow trans-ease-out;
+  transition: right 0.5s ease-out;
+}
+
+.how-it-works-block {
+  @apply relative px-24 mb-4 bg-bottom bg-no-repeat;
+  background-image: url("/assets/img/icon-down-arrow.svg");
+}
+
+@media (min-width: 768px) {
+  .how-it-works-block {
+    @apply w-1/4 px-8 mb-0;
+    background-image: none;
+    &:after {
+      @apply absolute bg-no-repeat;
+      background-image: url("/assets/img/icon-right-arrow.svg");
+      content: "";
+      top: 10px;
+      right: -30px;
+      width: 59px;
+      height: 16px;
+    }
+
+    &:last-of-type {
+      &:after {
+        background-image: none;
+      }
+    }
+  }
+}
+
+body.open .page-holder {
+  @apply overflow-hidden;
+  right: 300px;
+}
+
+.timeline-grid dt {
+  @apply pl-12 bg-left-top bg-no-repeat text-2xl;
+  background-image: url("/assets/img/icon-timeline-point.svg");
+  background-size: theme(spacing.9);
+}
+
+.timeline-grid dd {
+  @apply pb-5 pl-12 text-base;
+}
+
+.search-filter-button {
+  @apply inline-block p-2 pb-1 text-white uppercase;
+}
+
+.search-filter-button:hover {
+  @apply text-gray-1000 bg-white rounded shadow;
+}
+
+.search-filter-button.active {
+  @apply font-bold border-b-2 border-white;
+}
+
+[data-toggle="off"] {
+  @apply hidden;
+}
+
+@responsive {
+  .hidden-visually {
+    @apply absolute w-px h-px p-0 -mx-px overflow-hidden border-none;
+    clip: rect(0 0 0 0);
+  }
+}
+
+.heading-0-margin {
+  & h2,
+  & h3 {
+    margin-bottom: 0;
+    & + .body-text > *:first-child {
+      margin-top: .5rem;
+    }
+  }
+}
+
+@tailwind utilities;
+
+@responsive {
+  .aspect-ratio-1\/4 {
+    padding-top: 25%;
+  }
+
+  .aspect-ratio-27\/9 {
+    padding-top: 33.3333333%
+  }
+
+  .aspect-ratio-21\/9 {
+    padding-top: 42.8571429%
+  }
+
+  .aspect-ratio-16\/9 {
+    padding-top: 56.25%;
+  }
+
+  .aspect-ratio-4\/3 {
+    padding-top: 75%;
+  }
+
+  .aspect-ratio-square {
+    padding-top: 100%;
+  }
+}
+
+.bg-transparent-oakland-roots {
+  @apply bg-cover;
+  background-image: url(/assets/img/oaklandroots-transparent-green.png);
+}
+
+.bg-transparent-oakland-roots-black {
+  @apply bg-cover;
+  background-image: url(/assets/img/oaklandroots-black.svg);
+}
+
+/* Aspect Ratio Box */
+.aspect-ratio {
+  @apply absolute inset-0 w-full h-full;
+}
+
+.aspect-ratio-box {
+  @apply relative h-0 overflow-hidden;
+}
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Transition Helpers */
+/* Default */
+.trans {
+  transition-duration: 0.25s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+}
+
+/* Delays */
+.trans-delay-slow {
+  transition-delay: 1s;
+}
+.trans-delay {
+  transition-delay: 0.5s;
+}
+.trans-delay-fast {
+  transition-delay: 0.25s;
+}
+
+/* Duration */
+.trans-slower {
+  transition-duration: 0.75s;
+}
+.trans-slow {
+  transition-duration: 0.5s;
+}
+.trans-regular {
+}
+.trans-fast {
+  transition-duration: 0.15s;
+}
+.trans-faster {
+  transition-duration: 0.075s;
+}
+
+/* Properties */
+.trans-none {
+  transition-property: none;
+}
+.trans-bg {
+  transition-property: background;
+}
+.trans-opacity {
+  transition-property: opacity;
+}
+.trans-color {
+  transition-property: color;
+}
+.trans-shadow {
+  transition-property: box-shadow;
+}
+.trans-height {
+  transition-property: height;
+}
+
+/* Timing Function */
+.trans-linear {
+  transition-timing-function: linear;
+}
+.trans-ease {
+  transition-timing-function: ease;
+}
+.trans-ease-in {
+  transition-timing-function: ease-in;
+}
+.trans-ease-out {
+  transition-timing-function: ease-out;
+}
