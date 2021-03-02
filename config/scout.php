@@ -1,152 +1,9 @@
 <?php
 
-use craft\elements\Entry;
-use craft\helpers\UrlHelper;
-use Solspace\Calendar\Elements\Event;
-use fruitstudios\linkit\Linkit;
-use League\Fractal\TransformerAbstract;
-use nystudio107\imageoptimize\imagetransforms\ImageTransform;
-use Solspace\Calendar\Elements\Db\EventQuery;
+use modules\AllTransform;
+use modules\EventTransform;
+use modules\ScoutModule;
 
-function enumEntries($section, $element)
-{
-  $sectionArray = [];
-  if (!empty($element->$section)) {
-    foreach ($element->$section as $value) {
-      $sectionArray[] = $value->title;
-    }
-  }
-  return $sectionArray;
-}
-
-function entryUrl($entry)
-{
-  return empty($entry->redirectUrl) ? $entry->url : $entry->redirectUrl;
-}
-
-function entryDate($entry)
-{
-  return $entry->postDate->getTimestamp() * 1000;
-}
-
-function entryPrettyDate($entry)
-{
-  return $entry->postDate->format('F j, Y');
-}
-
-function ctaButtonText($element)
-{
-  return !empty($element->ctaButton->text) ? $element->ctaButton->text : null;
-}
-
-function banner($element)
-{
-  if (!empty($element->banner)) {
-    if (!empty($element->banner->one())) {
-      return $element->banner->one()->url;
-    }
-  }
-  return null;
-}
-
-function portrait($element)
-{
-  if (!empty($element->banner)) {
-    if (!empty($element->banner->one())) {
-      return $element->banner->one()->url;
-    }
-  }
-  return null;
-}
-
-function contentBuilder($element)
-{
-  $body = [];
-  if (!empty($element)) {
-    foreach ($element->all() as $block) {
-      switch ($block->type) {
-        case 'heading':
-        case 'subheading':
-        case 'text':
-          $body[] = strip_tags($block->text);
-          break;
-        case 'textImageBlock':
-          $body[] = strip_tags($block->textBlock);
-          break;
-        case 'linksWithDescriptions':
-          $body[] = strip_tags($block->linkDescription);
-          break;
-        case 'largeEntryLinks':
-        case 'smallEntryLinks':
-          $body[] = strip_tags($block->entriesDescription);
-          break;
-        default:
-      }
-    }
-  }
-  return $body;
-}
-
-function richTextSplit($field)
-{
-  if (!empty($field)) {
-    $array = [];
-    $str = strip_tags($field);
-    $ps = preg_split('~((?:\S*?\s){100})~', $str, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
-    foreach ($ps as $node) {
-      $array[] = $node;
-    }
-    return $array;
-  }
-}
-
-class eventsTransform extends TransformerAbstract
-{
-  public function transform(Solspace\Calendar\Elements\Event $event)
-  {
-    return [
-      'title' => $event->title,
-      'url' => $event->uri,
-      'calendar' => $event->calendar->handle,
-      'date' => $event->startDate->timestamp * 1000,
-      'displayDate' => $event->startDate->format('F j, Y'),
-      'body' => richTextSplit($event->body),
-      'contact' => $event->eventContact,
-      'eventImage' => $event->eventImage->one()->url ?? null,
-      'boardsCommissions' => enumEntries("boardsCommissions", $event),
-      'departments' => enumEntries("departments", $event),
-      'officials' => enumEntries("officials", $event),
-      'projects' => enumEntries("projects", $event),
-      'topics' => enumEntries("topics", $event),
-    ];
-  }
-}
-
-class allTransform extends TransformerAbstract
-{
-  public function transform(Entry $entry)
-  {
-    return [
-      'title' => $entry->title,
-      'url' => entryUrl($entry),
-      'section' => $entry->section->name,
-      'type' => $entry->type->handle,
-      'date' => entryDate($entry),
-      'displayDate' => entryPrettyDate($entry),
-      'summary' => richTextSplit($entry->summary),
-      'leadIn' => $entry->leadIn,
-      'about' => richTextSplit($entry->about),
-      'bio' => strip_tags($entry->bio),
-      'body' => !empty($entry->contentBuilder) ? contentBuilder($entry->contentBuilder) : richTextSplit($entry->body),
-      'ctaButtonText' => ctaButtonText($entry),
-      'groupHeadBio' => strip_tags($entry->groupHeadBio),
-      'groupHeadName' => $entry->groupHeadName,
-      'groupHeadTitle' => $entry->groupHeadTitle,
-      'mediaContact' => $entry->mediaContact,
-      'viewCount' => $entry->viewCount,
-    ];
-  }
-}
 
 return [
   "sync" => true,
@@ -215,18 +72,18 @@ return [
       ->transformer(function (craft\elements\Entry $entry) {
         return [
           'title' => $entry->title,
-          'url' => entryUrl($entry),
-          'date' => entryDate($entry),
-          'displayDate' => entryPrettyDate($entry),
+          'url' => ScoutModule::entryUrl($entry),
+          'date' => ScoutModule::entryDate($entry),
+          'displayDate' => ScoutModule::entryPrettyDate($entry),
           'newsImage' => $entry->newsImage->one()->url ?? null,
-          'summary' => richTextSplit($entry->summary),
-          'body' => richTextSplit($entry->body),
+          'summary' => ScoutModule::richTextSplit($entry->summary),
+          'body' => ScoutModule::richTextSplit($entry->body),
           'mediaContact' => $entry->mediaContact,
-          'boardsCommissions' => enumEntries("boardsCommissions", $entry),
-          'departments' => enumEntries("departments", $entry),
-          'projects' => enumEntries("projects", $entry),
-          'officials' => enumEntries("officials", $entry),
-          'topics' => enumEntries("topics", $entry),
+          'boardsCommissions' => ScoutModule::enumEntries("boardsCommissions", $entry),
+          'departments' => ScoutModule::enumEntries("departments", $entry),
+          'projects' => ScoutModule::enumEntries("projects", $entry),
+          'officials' => ScoutModule::enumEntries("officials", $entry),
+          'topics' => ScoutModule::enumEntries("topics", $entry),
         ];
       }),
 
@@ -239,7 +96,7 @@ return [
       })
       ->splitElementsOn(['summary', 'body'])
       ->transformer(function (craft\elements\Entry $entry) {
-        $summary = richTextSplit($entry->summary);
+        $summary = ScoutModule::richTextSplit($entry->summary);
         $types = [];
         if (!empty($entry->documentType)) {
           foreach ($entry->documentType as $value) {
@@ -250,20 +107,20 @@ return [
           'title' => $entry->title,
           'section' => $entry->section->name,
           'type' => $entry->type->handle,
-          'url' => entryUrl($entry),
-          'date' => entryDate($entry),
-          'displayDate' => entryPrettyDate($entry),
+          'url' => ScoutModule::entryUrl($entry),
+          'date' => ScoutModule::entryDate($entry),
+          'displayDate' => ScoutModule::entryPrettyDate($entry),
           'leadIn' => $entry->leadIn,
           'summary' => $summary,
           'categories' => $types,
-          'boardsCommissions' => enumEntries("boardsCommissions", $entry),
-          'departments' => enumEntries("departments", $entry),
-          'officials' => enumEntries("officials", $entry),
-          'projects' => enumEntries("projects", $entry),
-          'resources' => enumEntries("resources", $entry),
-          'services' => enumEntries("services", $entry),
-          'documents' => enumEntries("documents", $entry),
-          'topics' => enumEntries("topics", $entry),
+          'boardsCommissions' => ScoutModule::enumEntries("boardsCommissions", $entry),
+          'departments' => ScoutModule::enumEntries("departments", $entry),
+          'officials' => ScoutModule::enumEntries("officials", $entry),
+          'projects' => ScoutModule::enumEntries("projects", $entry),
+          'resources' => ScoutModule::enumEntries("resources", $entry),
+          'services' => ScoutModule::enumEntries("services", $entry),
+          'documents' => ScoutModule::enumEntries("documents", $entry),
+          'topics' => ScoutModule::enumEntries("topics", $entry),
           'viewCount' => $entry->viewCount,
         ];
       }),
@@ -278,10 +135,10 @@ return [
       ->transformer(function (craft\elements\Entry $entry) {
         return [
           'title' => $entry->title,
-          'url' => entryUrl($entry),
-          'date' => entryDate($entry),
-          'displayDate' => entryPrettyDate($entry),
-          'portrait' => portrait($entry),
+          'url' => ScoutModule::entryUrl($entry),
+          'date' => ScoutModule::entryDate($entry),
+          'displayDate' => ScoutModule::entryPrettyDate($entry),
+          'portrait' => ScoutModule::portrait($entry),
           'jobTitle' => !empty($entry->jobTitle) ? $entry->jobTitle : $entry->staffImportJobTitle,
           'bio' => strip_tags($entry->bio),
           'phone' => !empty($entry->phoneNumber) ? $entry->phoneNumber : $entry->staffImportPhoneNumber,
@@ -302,10 +159,10 @@ return [
       ->transformer(function (craft\elements\Entry $entry) {
         return [
           'title' => $entry->title,
-          'url' => entryUrl($entry),
-          'date' => entryDate($entry),
-          'displayDate' => entryPrettyDate($entry),
-          'portrait' => portrait($entry),
+          'url' => ScoutModule::entryUrl($entry),
+          'date' => ScoutModule::entryDate($entry),
+          'displayDate' => ScoutModule::entryPrettyDate($entry),
+          'portrait' => ScoutModule::portrait($entry),
           'jobTitle' => !empty($entry->jobTitle) ? $entry->jobTitle : null,
           'bio' => $entry->bio,
           'email' => !empty($entry->emailAddress) ? $entry->emailAddress : null,
@@ -328,9 +185,9 @@ return [
             $teamMembers[] = $teamMember->title;
         return [
           'title' => $entry->title,
-          'url' => entryUrl($entry),
-          'date' => entryDate($entry),
-          'displayDate' => entryPrettyDate($entry),
+          'url' => ScoutModule::entryUrl($entry),
+          'date' => ScoutModule::entryDate($entry),
+          'displayDate' => ScoutModule::entryPrettyDate($entry),
           'teamMembers' => $teamMembers,
           'viewCount' => $entry->viewCount,
         ];
@@ -344,7 +201,7 @@ return [
           ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'topics']);
       })
       ->splitElementsOn(['summary', 'body'])
-      ->transformer(new eventsTransform()),
+      ->transformer(new EventTransform()),
 
     // BEGIN EVENTS INDEX
     \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_events')
@@ -355,7 +212,7 @@ return [
           ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'topics']);
       })
       ->splitElementsOn(['summary', 'body'])
-      ->transformer(new eventsTransform()),
+      ->transformer(new EventTransform()),
 
     // BEGIN MEETINGS INDEX
     \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_meetings')
@@ -366,7 +223,7 @@ return [
           ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'topics']);
       })
       ->splitElementsOn(['summary', 'body'])
-      ->transformer(new eventsTransform()),
+      ->transformer(new EventTransform()),
 
     // BEGIN ALL INDEX
     \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_all')
@@ -376,6 +233,6 @@ return [
           ->section(['boardsCommissions', 'departments', 'news',  'officials', 'processes', 'projects', 'resources', 'services', 'staff', 'teams', 'topics', 'volunteers', 'documents']);
       })
       ->splitElementsOn(['summary', 'body', 'about'])
-      ->transformer(new allTransform())
+      ->transformer(new AllTransform())
   ]
 ];
