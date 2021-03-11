@@ -18,6 +18,11 @@ class AllTransform extends TransformerAbstract
 {
     public function transform(Entry $entry)
     {
+
+        if($entry->isDraft){
+            return [];
+        }
+
         return [
             'about'             => ScoutModule::richTextSplit($entry->about),
             'bio'               => strip_tags($entry->bio),
