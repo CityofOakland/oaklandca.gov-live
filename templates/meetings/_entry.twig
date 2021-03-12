@@ -2,14 +2,6 @@
 {% set entry = event %}
 {% import '_macros/_macros.twig' as macros %}
 
-{% do craft.app.elements.eagerLoadElements(
-  className(event),
-  [event],
-  [
-    'banner',
-  ]
-) %}
-
 {% block content %}
   {% block banner %}
     {% include '_partials/_page-banners.twig' with {
@@ -50,45 +42,41 @@
             {{ entry.body }}
           </div>
         {% endif %}
-        {% set minuteCat = craft.categories.group('documentTypes').id(12).one %}
-        {% set agendaCat = craft.categories.group('documentTypes').id(13).one %}
 
-        {% set minuteIds = craft.entries.relatedTo(minuteCat).ids() %}
-        {% set agendaIds = craft.entries.relatedTo(agendaCat).ids() %}
 
-        {% set otherDocs = 'and, not ' ~ agendaIds | join(', not ') ~ ', not ' ~ minuteIds | join(', not ')  %}
+        {% set minuteCat = craft.categories.group('documentTypes').id(12).one() %}
+        {% set agendaCat = craft.categories.group('documentTypes').id(13).one() %}
 
-        {% set minutes = entry.documents.id(minuteIds).all() %}
-        {% set agendas = entry.documents.id(agendaIds).all() %}
-        {% set documents = entry.documents.id(otherDocs).all() %}
+        {% set minutes = clone(event.documents).relatedTo(minuteCat) %}
+        {% set agendas = clone(event.documents).relatedTo(agendaCat) %}
 
-        {% if minutes | length %}
-          {% include "_partials/_elements/_module-header.twig" with {
-            headerText: "Minutes"
-          } %}
+        {% if minutes.all() | length %}
+          {% include "_partials/_elements/_module-header.twig" with { headerText: "Minutes" } %}
           <ul>
-            {% for entry in minutes %}
-              {% set file = entry.documentFile.one %}
-              <li class="mb-4">
-                {% include '_partials/_elements/_document-text.twig' %}
-              </li>
+            {% for entry in minutes.all() %}
+              {% set file = entry.documentFile.one() %}
+              <li class="mb-4">{% include '_partials/_elements/_document-text.twig' %}</li>
             {% endfor %}
           </ul>
         {% endif %}
 
-        {% if agendas | length %}
-          {% include "_partials/_elements/_module-header.twig" with {
-            headerText: "Agendas"
-          } %}
+        {% if agendas.all() | length %}
+          {% include "_partials/_elements/_module-header.twig" with { headerText: "Agendas"} %}
           <ul>
-            {% for entry in agendas %}
+            {% for entry in agendas.all() %}
               {% set file = entry.documentFile.one %}
-              <li class="mb-4">
-                {% include '_partials/_elements/_document-text.twig' %}
-              </li>
+              <li class="mb-4">{% include '_partials/_elements/_document-text.twig' %}</li>
             {% endfor %}
           </ul>
         {% endif %}
+
+        {% set documents = [] %}
+
+        {% for element in event.documents.all() %}
+          {% if element.id not in minutes.ids() and element.id not in agendas.ids() %}
+            {% set documents = documents|merge([element]) %}
+          {% endif %}
+        {% endfor %}
 
         {% if documents | length %}
           {% include "_partials/_elements/_module-header.twig" with {
