@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
 handle: embeddedContent
 instructions: 'Select from the list of **approved** embeddable content that your page can display.'
 name: 'Embedded Content'
@@ -12,7 +12,7 @@ settings:
   showSiteMenu: true
   source: null
   sources:
-    - 'section:74ecde2f-b254-4f3e-b889-1affac6f5999'
+    - 'section:74ecde2f-b254-4f3e-b889-1affac6f5999' # Embeddable Content
   targetSiteId: null
   validateRelatedElements: false
   viewMode: null

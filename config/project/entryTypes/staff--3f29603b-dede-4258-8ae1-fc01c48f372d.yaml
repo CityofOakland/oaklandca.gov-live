@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 6c28ddf9-1938-489c-ad36-75d555e50269
+            fieldUid: 6c28ddf9-1938-489c-ad36-75d555e50269 # First Name
             instructions: null
             label: null
             required: false
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 01d73fd7-5170-4523-8658-02c344e3ff55
+            fieldUid: 01d73fd7-5170-4523-8658-02c344e3ff55 # Middle Initial
             instructions: null
             label: null
             required: false
@@ -45,7 +45,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 4d6dd644-455e-4186-8d05-a00079622246
+            fieldUid: 4d6dd644-455e-4186-8d05-a00079622246 # Last Name
             instructions: null
             label: null
             required: false
@@ -54,7 +54,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: e3a53ca0-960e-4ce6-933b-b3613bd64d7a
+            fieldUid: e3a53ca0-960e-4ce6-933b-b3613bd64d7a # Job Title
             instructions: null
             label: null
             required: false
@@ -63,7 +63,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 1b7fc839-7de9-4717-b41d-d74bfa40b5c8
+            fieldUid: 1b7fc839-7de9-4717-b41d-d74bfa40b5c8 # Portrait
             instructions: null
             label: null
             required: false
@@ -72,7 +72,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 736bfdbe-8ec1-4b3d-bd17-6dc825c56855
+            fieldUid: 736bfdbe-8ec1-4b3d-bd17-6dc825c56855 # Bio
             instructions: null
             label: null
             required: false
@@ -81,7 +81,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 5e5aad16-6bdc-4d3e-adfd-75147a323b78
+            fieldUid: 5e5aad16-6bdc-4d3e-adfd-75147a323b78 # Phone Number
             instructions: null
             label: null
             required: false
@@ -90,7 +90,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a
+            fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a # Email Address
             instructions: null
             label: null
             required: false
@@ -99,7 +99,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b34a0436-278d-4bb7-a7e8-729da1db7c4e
+            fieldUid: b34a0436-278d-4bb7-a7e8-729da1db7c4e # Department/Official/Board/Commission
             instructions: null
             label: null
             required: false
@@ -108,7 +108,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 9fcc72cc-184c-467a-a45f-a154ba8a01d2
+            fieldUid: 9fcc72cc-184c-467a-a45f-a154ba8a01d2 # Employment Type
             instructions: null
             label: null
             required: false
@@ -125,7 +125,7 @@ fieldLayouts:
             tip: "**DO NOT CHANGE ANYTHING BELOW THIS LINE**\r\n\r\nAll content here is imported from our payroll system and as such will be overwritten each time we update the information.\r\n\r\nPlease use the previous fields on the People tab to modify staff information."
             type: craft\fieldlayoutelements\Tip
           -
-            fieldUid: 8a89416e-010d-4a83-a254-dafb9b29ce26
+            fieldUid: 8a89416e-010d-4a83-a254-dafb9b29ce26 # Staff Import Given Name
             instructions: null
             label: null
             required: true
@@ -134,7 +134,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 770f79c9-6a08-4685-94fa-2dfd804f3758
+            fieldUid: 770f79c9-6a08-4685-94fa-2dfd804f3758 # Staff Import Middle Initial
             instructions: null
             label: null
             required: false
@@ -143,7 +143,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 54b48d39-e6a7-4d50-9cf7-91ce11c798ee
+            fieldUid: 54b48d39-e6a7-4d50-9cf7-91ce11c798ee # Staff Import Surname
             instructions: null
             label: null
             required: true
@@ -152,7 +152,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: a8f10940-f4f7-4c31-9bc7-b3798289f357
+            fieldUid: a8f10940-f4f7-4c31-9bc7-b3798289f357 # Staff Import Job Title
             instructions: null
             label: null
             required: false
@@ -161,7 +161,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f9ec1965-4721-44e2-b551-069ae06c54f3
+            fieldUid: f9ec1965-4721-44e2-b551-069ae06c54f3 # Staff Import Email
             instructions: null
             label: null
             required: false
@@ -170,7 +170,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: a7cd6f1e-a5c0-47fc-9080-1bc5ace85242
+            fieldUid: a7cd6f1e-a5c0-47fc-9080-1bc5ace85242 # Staff Import Phone Number
             instructions: null
             label: null
             required: false
@@ -179,7 +179,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 341595b4-52a8-432f-b327-5fbc3a4289a8
+            fieldUid: 341595b4-52a8-432f-b327-5fbc3a4289a8 # Staff Import Department
             instructions: null
             label: null
             required: false
@@ -188,7 +188,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b34b92b7-9d4a-40f5-9e55-a2ccc8f764ad
+            fieldUid: b34b92b7-9d4a-40f5-9e55-a2ccc8f764ad # Staff Import Organization
             instructions: null
             label: null
             required: false
@@ -197,7 +197,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 28e53a14-23f2-492a-be43-e6e83bca9aa1
+            fieldUid: 28e53a14-23f2-492a-be43-e6e83bca9aa1 # Staff Import Section
             instructions: null
             label: null
             required: false
@@ -206,7 +206,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 19443cdb-77c5-4c3c-ac94-a8530dc39587
+            fieldUid: 19443cdb-77c5-4c3c-ac94-a8530dc39587 # Staff Import ID
             instructions: null
             label: null
             required: true
@@ -215,7 +215,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133
+            fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133 # Departments
             instructions: null
             label: null
             required: false
@@ -228,7 +228,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d
+            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d # Metadata
             instructions: null
             label: null
             required: false
@@ -237,7 +237,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7
+            fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7 # View Count
             instructions: null
             label: null
             required: false
@@ -250,7 +250,7 @@ fieldLayouts:
 handle: staff
 hasTitleField: false
 name: Staff
-section: 07faad04-9ec4-4f68-9fe8-0ca20f189f8a
+section: 07faad04-9ec4-4f68-9fe8-0ca20f189f8a # Staff
 sortOrder: 1
 titleFormat: '{{ object.firstName ??? object.staffImportGivenName }} {{ object.lastName ??? object.staffImportSurname }}'
 titleTranslationKeyFormat: null

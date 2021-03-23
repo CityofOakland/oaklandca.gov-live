@@ -1,11 +1,11 @@
-field: 90d724d7-7c32-4d04-8b9a-3900d6ecdb84
+field: 90d724d7-7c32-4d04-8b9a-3900d6ecdb84 # Address(es)
 fieldLayouts:
   7c2d9899-6e1c-4c56-a1da-093fd2fdb084:
     tabs:
       -
         elements:
           -
-            fieldUid: 314d167b-d1f4-47dd-92e5-4d0f75339e09
+            fieldUid: 314d167b-d1f4-47dd-92e5-4d0f75339e09 # Location Name
             instructions: null
             label: null
             required: true
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 06394615-97e5-4f64-8d80-da62f9f1582c
+            fieldUid: 06394615-97e5-4f64-8d80-da62f9f1582c # Location Description
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b199c827-5414-4bf9-bcf7-cf6f4e144bda
+            fieldUid: b199c827-5414-4bf9-bcf7-cf6f4e144bda # Web Address
             instructions: null
             label: null
             required: true
@@ -34,7 +34,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  06394615-97e5-4f64-8d80-da62f9f1582c:
+  06394615-97e5-4f64-8d80-da62f9f1582c: # Location Description
     contentColumnType: text
     fieldGroup: null
     handle: locationDescription
@@ -62,7 +62,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  314d167b-d1f4-47dd-92e5-4d0f75339e09:
+  314d167b-d1f4-47dd-92e5-4d0f75339e09: # Location Name
     contentColumnType: text
     fieldGroup: null
     handle: locationName
@@ -76,12 +76,12 @@ fields:
       columnType: null
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  b199c827-5414-4bf9-bcf7-cf6f4e144bda:
+  b199c827-5414-4bf9-bcf7-cf6f4e144bda: # Web Address
     contentColumnType: string(255)
     fieldGroup: null
     handle: webAddress
@@ -91,6 +91,8 @@ fields:
     settings:
       maxLength: '255'
       placeholder: ''
+      types:
+        - url
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Url

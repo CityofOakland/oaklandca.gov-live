@@ -1,5 +1,5 @@
 contentColumnType: string(255)
-fieldGroup: ed709c7c-0c3a-4457-ae2d-38a3ccb797e4
+fieldGroup: ed709c7c-0c3a-4457-ae2d-38a3ccb797e4 # 311
 handle: appStoreDownloadLink
 instructions: 'Enter the URL the user can go to to download this app on the Apple App Store.'
 name: 'App Store Download Link'
@@ -7,6 +7,8 @@ searchable: false
 settings:
   maxLength: '255'
   placeholder: ''
+  types:
+    - url
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Url

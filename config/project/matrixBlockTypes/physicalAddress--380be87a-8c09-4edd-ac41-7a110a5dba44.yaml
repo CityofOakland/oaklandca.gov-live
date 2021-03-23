@@ -1,11 +1,11 @@
-field: 4047207e-c317-47cc-825b-7e751cc4ad38
+field: 4047207e-c317-47cc-825b-7e751cc4ad38 # Call to Action
 fieldLayouts:
   0d76805e-d070-44cd-bd4c-7de3b8e1bf33:
     tabs:
       -
         elements:
           -
-            fieldUid: 2297d996-75c6-4163-9ce7-1ca5c609e89a
+            fieldUid: 2297d996-75c6-4163-9ce7-1ca5c609e89a # Address Title
             instructions: null
             label: null
             required: true
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b4b3c606-9215-46dd-926d-ecc0cdd900e7
+            fieldUid: b4b3c606-9215-46dd-926d-ecc0cdd900e7 # Street Address
             instructions: null
             label: null
             required: true
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 55afc13e-16e3-4080-9c67-ae7a4c46e3e2
+            fieldUid: 55afc13e-16e3-4080-9c67-ae7a4c46e3e2 # Additional Address Info
             instructions: null
             label: null
             required: false
@@ -34,7 +34,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  2297d996-75c6-4163-9ce7-1ca5c609e89a:
+  2297d996-75c6-4163-9ce7-1ca5c609e89a: # Address Title
     contentColumnType: text
     fieldGroup: null
     handle: addressTitle
@@ -48,12 +48,12 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  55afc13e-16e3-4080-9c67-ae7a4c46e3e2:
+  55afc13e-16e3-4080-9c67-ae7a4c46e3e2: # Additional Address Info
     contentColumnType: text
     fieldGroup: null
     handle: additionalAddressInfo
@@ -81,7 +81,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  b4b3c606-9215-46dd-926d-ecc0cdd900e7:
+  b4b3c606-9215-46dd-926d-ecc0cdd900e7: # Street Address
     contentColumnType: string
     fieldGroup: null
     handle: streetAddress

@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 9c0b44a4-b6de-498e-bc9d-4f7a4f9fe5f2
+            fieldUid: 9c0b44a4-b6de-498e-bc9d-4f7a4f9fe5f2 # Alert Type
             instructions: null
             label: null
             required: false
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: bf9907da-64c0-4cb6-bc21-493b39110166
+            fieldUid: bf9907da-64c0-4cb6-bc21-493b39110166 # Alert Heading
             instructions: null
             label: null
             required: true
@@ -45,7 +45,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 1090a1a7-e23c-45c0-a7b3-aeeae640337e
+            fieldUid: 1090a1a7-e23c-45c0-a7b3-aeeae640337e # Alert Description
             instructions: null
             label: null
             required: false
@@ -54,7 +54,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 6730cced-6743-4ada-abb8-1f4c0f2e8878
+            fieldUid: 6730cced-6743-4ada-abb8-1f4c0f2e8878 # Alert Link
             instructions: null
             label: null
             required: false
@@ -63,7 +63,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 11892a6b-a44e-4406-af4e-49f3803e7931
+            fieldUid: 11892a6b-a44e-4406-af4e-49f3803e7931 # Alert Pages
             instructions: null
             label: null
             required: false
@@ -76,7 +76,7 @@ fieldLayouts:
 handle: pageAlerts
 hasTitleField: false
 name: 'Page Alerts'
-section: be8acece-2031-4965-a62f-31911d00e24c
+section: be8acece-2031-4965-a62f-31911d00e24c # Page Alerts
 sortOrder: 1
 titleFormat: '{{ object.alertHeading }}: {{ object.alertDescription | striptags | chop(limit=5, unit=''w'', append=''…'') }}'
 titleTranslationKeyFormat: null

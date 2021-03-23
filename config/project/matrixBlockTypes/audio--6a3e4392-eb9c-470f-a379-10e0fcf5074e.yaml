@@ -1,11 +1,11 @@
-field: fe5b4078-9713-41ab-a60c-66622aed9991
+field: fe5b4078-9713-41ab-a60c-66622aed9991 # Recordings
 fieldLayouts:
   34b93d9f-b694-4d91-8bdc-1d0fe9edcc55:
     tabs:
       -
         elements:
           -
-            fieldUid: 9a33b1ce-5545-4a3e-b6d9-1dea16f8869c
+            fieldUid: 9a33b1ce-5545-4a3e-b6d9-1dea16f8869c # Audio Title
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 2149a8bc-3dd5-41f2-a28a-c714bcf5f5c7
+            fieldUid: 2149a8bc-3dd5-41f2-a28a-c714bcf5f5c7 # Audio Link
             instructions: null
             label: null
             required: true
@@ -25,7 +25,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  2149a8bc-3dd5-41f2-a28a-c714bcf5f5c7:
+  2149a8bc-3dd5-41f2-a28a-c714bcf5f5c7: # Audio Link
     contentColumnType: text
     fieldGroup: null
     handle: audioLink
@@ -39,12 +39,12 @@ fields:
       columnType: null
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  9a33b1ce-5545-4a3e-b6d9-1dea16f8869c:
+  9a33b1ce-5545-4a3e-b6d9-1dea16f8869c: # Audio Title
     contentColumnType: text
     fieldGroup: null
     handle: audioTitle
@@ -58,7 +58,7 @@ fields:
       columnType: null
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none

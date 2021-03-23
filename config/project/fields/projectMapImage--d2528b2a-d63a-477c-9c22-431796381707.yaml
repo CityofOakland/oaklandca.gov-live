@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
+fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884 # Projects
 handle: projectMapImage
 instructions: 'Add an image of the project map with any key points in a legend.'
 name: 'Project Map Image'
@@ -9,7 +9,7 @@ settings:
   allowUploads: true
   allowedKinds:
     - image
-  defaultUploadLocationSource: 'volume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
+  defaultUploadLocationSource: 'volume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
   defaultUploadLocationSubpath: ''
   limit: '1'
   localizeRelations: false
@@ -19,7 +19,7 @@ settings:
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: true
-  singleUploadLocationSource: 'volume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
+  singleUploadLocationSource: 'volume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
   singleUploadLocationSubpath: ''
   source: null
   sources: '*'

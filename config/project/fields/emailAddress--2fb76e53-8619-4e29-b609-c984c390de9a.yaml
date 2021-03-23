@@ -1,5 +1,5 @@
 contentColumnType: text
-fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
 handle: emailAddress
 instructions: ''
 name: 'Email Address'
@@ -11,7 +11,7 @@ settings:
   columnType: text
   initialRows: '4'
   multiline: ''
-  placeholder: ''
+  placeholder: null
   uiMode: normal
 translationKeyFormat: null
 translationMethod: none

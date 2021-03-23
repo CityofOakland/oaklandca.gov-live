@@ -1,5 +1,5 @@
 contentColumnType: string(200)
-fieldGroup: 211c24f8-a046-4d59-a3ac-d8c51494ec3d
+fieldGroup: 211c24f8-a046-4d59-a3ac-d8c51494ec3d # Page Alerts
 handle: alertHeading
 instructions: ''
 name: 'Alert Heading'
@@ -11,7 +11,7 @@ settings:
   columnType: null
   initialRows: '4'
   multiline: ''
-  placeholder: ''
+  placeholder: null
   uiMode: normal
 translationKeyFormat: null
 translationMethod: none

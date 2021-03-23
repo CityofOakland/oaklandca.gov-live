@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087
+fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087 # Globals
 handle: alertShowHide
 instructions: 'Show or hide the sitewide alert'
 name: 'Alert Show/Hide'

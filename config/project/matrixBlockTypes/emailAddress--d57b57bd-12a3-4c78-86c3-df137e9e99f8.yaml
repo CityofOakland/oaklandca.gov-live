@@ -1,11 +1,11 @@
-field: 4047207e-c317-47cc-825b-7e751cc4ad38
+field: 4047207e-c317-47cc-825b-7e751cc4ad38 # Call to Action
 fieldLayouts:
   3f1a1379-bdb2-48aa-9a5b-fb6cf6d0b97d:
     tabs:
       -
         elements:
           -
-            fieldUid: 243725a4-eeda-4e57-8cf4-d545bd6edf9c
+            fieldUid: 243725a4-eeda-4e57-8cf4-d545bd6edf9c # Email Title
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b50fa2f6-4a94-44ce-ae39-82951e06a717
+            fieldUid: b50fa2f6-4a94-44ce-ae39-82951e06a717 # Link Text
             instructions: null
             label: null
             required: true
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 1f60a4d5-d5d9-46f2-8f90-d58d47a2bb34
+            fieldUid: 1f60a4d5-d5d9-46f2-8f90-d58d47a2bb34 # Email Address
             instructions: null
             label: null
             required: true
@@ -34,7 +34,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  1f60a4d5-d5d9-46f2-8f90-d58d47a2bb34:
+  1f60a4d5-d5d9-46f2-8f90-d58d47a2bb34: # Email Address
     contentColumnType: string
     fieldGroup: null
     handle: emailAddress
@@ -46,7 +46,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Email
-  243725a4-eeda-4e57-8cf4-d545bd6edf9c:
+  243725a4-eeda-4e57-8cf4-d545bd6edf9c: # Email Title
     contentColumnType: text
     fieldGroup: null
     handle: emailTitle
@@ -60,12 +60,12 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  b50fa2f6-4a94-44ce-ae39-82951e06a717:
+  b50fa2f6-4a94-44ce-ae39-82951e06a717: # Link Text
     contentColumnType: text
     fieldGroup: null
     handle: linkText
@@ -79,7 +79,7 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none

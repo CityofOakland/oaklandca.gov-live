@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
+fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855 # Relationships
 handle: processes
 instructions: 'Choose the processes that relate to this page. Relationships help content surface in search. Relationships also help documents surface on index pages. '
 name: Processes
@@ -12,7 +12,7 @@ settings:
   showSiteMenu: true
   source: null
   sources:
-    - 'section:92f0f749-ed5b-4acc-aa15-6340f6e25791'
+    - 'section:92f0f749-ed5b-4acc-aa15-6340f6e25791' # Processes
   targetSiteId: null
   validateRelatedElements: false
   viewMode: null

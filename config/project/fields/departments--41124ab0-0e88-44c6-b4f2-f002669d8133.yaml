@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
+fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855 # Relationships
 handle: departments
 instructions: "Choose the department pages to relate to this entry. Relationships help content surface in search. Relationships also help documents surface on index pages. \r\n"
 name: Departments
@@ -12,7 +12,7 @@ settings:
   showSiteMenu: true
   source: null
   sources:
-    - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
+    - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
   targetSiteId: null
   validateRelatedElements: false
   viewMode: null

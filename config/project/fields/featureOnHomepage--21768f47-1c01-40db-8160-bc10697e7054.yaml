@@ -1,5 +1,5 @@
 contentColumnType: boolean
-fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
 handle: featureOnHomepage
 instructions: 'Toggle this switch if you wish for the article to be prioritized for display on the homepage. _(Note: some content may supersede this entry, depending on curation by management)_'
 name: 'Feature on Homepage'

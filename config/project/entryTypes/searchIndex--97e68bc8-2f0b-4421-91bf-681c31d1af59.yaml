@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210
+            fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210 # Lead In
             instructions: null
             label: null
             required: false
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: bef74be8-b22d-4dd0-9217-9707bb43d888
+            fieldUid: bef74be8-b22d-4dd0-9217-9707bb43d888 # CTA Button
             instructions: null
             label: null
             required: false
@@ -49,7 +49,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d
+            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d # Metadata
             instructions: null
             label: null
             required: false
@@ -62,7 +62,7 @@ fieldLayouts:
 handle: searchIndex
 hasTitleField: true
 name: 'Search Index'
-section: e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8
+section: e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8 # Search Index
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

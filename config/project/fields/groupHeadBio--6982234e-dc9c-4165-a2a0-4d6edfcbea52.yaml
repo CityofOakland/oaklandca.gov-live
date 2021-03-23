@@ -1,5 +1,5 @@
 contentColumnType: text
-fieldGroup: b1b0e0eb-fd37-4708-96c7-4f5f11d8fdb0
+fieldGroup: b1b0e0eb-fd37-4708-96c7-4f5f11d8fdb0 # Departments
 handle: groupHeadBio
 instructions: 'Write the bio for the lead. Try to keep the bio under 400 words.'
 name: 'Group Head Bio'
