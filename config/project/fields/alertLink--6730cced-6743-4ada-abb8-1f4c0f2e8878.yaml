@@ -1,5 +1,5 @@
 contentColumnType: text
-fieldGroup: 211c24f8-a046-4d59-a3ac-d8c51494ec3d
+fieldGroup: 211c24f8-a046-4d59-a3ac-d8c51494ec3d # Page Alerts
 handle: alertLink
 instructions: ''
 name: 'Alert Link'
@@ -36,6 +36,25 @@ settings:
               - ''
             -
               - customPlaceholder
+              - ''
+      -
+        - fruitstudios\linkit\models\User
+        -
+          __assoc__:
+            -
+              - enabled
+              - ''
+            -
+              - customLabel
+              - ''
+            -
+              - sources
+              - '*'
+            -
+              - customSelectionLabel
+              - ''
+            -
+              - userPath
               - ''
       -
         - fruitstudios\linkit\models\Url
@@ -175,25 +194,6 @@ settings:
                 - 'folder:baf733c3-48be-42a7-8b4f-7a6bf9763542'
             -
               - customSelectionLabel
-              - ''
-      -
-        - fruitstudios\linkit\models\User
-        -
-          __assoc__:
-            -
-              - enabled
-              - ''
-            -
-              - customLabel
-              - ''
-            -
-              - sources
-              - '*'
-            -
-              - customSelectionLabel
-              - ''
-            -
-              - userPath
               - ''
 translationKeyFormat: null
 translationMethod: none

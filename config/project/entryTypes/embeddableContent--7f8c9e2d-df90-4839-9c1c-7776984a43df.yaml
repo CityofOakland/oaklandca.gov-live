@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 1160308b-03c0-43ad-9f4b-35e26c016c89
+            fieldUid: 1160308b-03c0-43ad-9f4b-35e26c016c89 # Code Insertion
             instructions: null
             label: null
             required: false

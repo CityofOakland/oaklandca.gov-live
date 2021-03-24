@@ -1,5 +1,5 @@
 contentColumnType: string(255)
-fieldGroup: 7a44f3bc-fbe1-424a-a4ea-6bb6f3528d75
+fieldGroup: 7a44f3bc-fbe1-424a-a4ea-6bb6f3528d75 # Events
 handle: registrationLink
 instructions: 'Enter the URL for an online registration page (Eg., Eventbrite) for your visitors to sign up for this event.'
 name: 'Registration Link'

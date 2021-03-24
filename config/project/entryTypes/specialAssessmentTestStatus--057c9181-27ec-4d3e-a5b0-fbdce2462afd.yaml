@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 8ff1f216-9327-4d13-952e-f47f08febbfd
+            fieldUid: 8ff1f216-9327-4d13-952e-f47f08febbfd # Status
             instructions: null
             label: null
             required: false
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 31d30a51-422e-471c-be55-3441a4219dd8
+            fieldUid: 31d30a51-422e-471c-be55-3441a4219dd8 # Date
             instructions: null
             label: null
             required: false

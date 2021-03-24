@@ -1,11 +1,11 @@
-field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581 # Content Builder
 fieldLayouts:
   394b80da-75cf-4742-9f34-c098759900bc:
     tabs:
       -
         elements:
           -
-            fieldUid: 734ed009-6dc6-4803-93b5-593791135810
+            fieldUid: 734ed009-6dc6-4803-93b5-593791135810 # Column 1 Heading
             instructions: null
             label: null
             required: true
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: bdacb1a0-9bde-46d5-87a1-ac5a7171fa9e
+            fieldUid: bdacb1a0-9bde-46d5-87a1-ac5a7171fa9e # Column 2 Heading
             instructions: null
             label: null
             required: true
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: e287f156-7373-4131-bd1f-e746e20d2e99
+            fieldUid: e287f156-7373-4131-bd1f-e746e20d2e99 # Column 1 Width
             instructions: null
             label: null
             required: false
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: d99bfa25-1c4b-44f3-9355-2816615f5264
+            fieldUid: d99bfa25-1c4b-44f3-9355-2816615f5264 # Column 2 Width
             instructions: null
             label: null
             required: false
@@ -41,7 +41,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: 42276684-be78-4449-b3e9-8eeb42ad49ba
+            fieldUid: 42276684-be78-4449-b3e9-8eeb42ad49ba # Table
             instructions: null
             label: null
             required: true
@@ -52,7 +52,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  42276684-be78-4449-b3e9-8eeb42ad49ba:
+  42276684-be78-4449-b3e9-8eeb42ad49ba: # Table
     contentColumnType: string
     fieldGroup: null
     handle: table
@@ -87,7 +87,7 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
-  734ed009-6dc6-4803-93b5-593791135810:
+  734ed009-6dc6-4803-93b5-593791135810: # Column 1 Heading
     contentColumnType: text
     fieldGroup: null
     handle: column1Heading
@@ -106,7 +106,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  bdacb1a0-9bde-46d5-87a1-ac5a7171fa9e:
+  bdacb1a0-9bde-46d5-87a1-ac5a7171fa9e: # Column 2 Heading
     contentColumnType: text
     fieldGroup: null
     handle: column2Heading
@@ -125,7 +125,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  d99bfa25-1c4b-44f3-9355-2816615f5264:
+  d99bfa25-1c4b-44f3-9355-2816615f5264: # Column 2 Width
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column2Width
@@ -145,7 +145,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number
-  e287f156-7373-4131-bd1f-e746e20d2e99:
+  e287f156-7373-4131-bd1f-e746e20d2e99: # Column 1 Width
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column1Width

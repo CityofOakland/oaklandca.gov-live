@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
+fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0 # Images
 handle: banner
 instructions: 'Choose images that will rotate in the background of the hero banner. Be sure to double click the image after uploading it and assigning the ALT TEXT, as this is an ADA requirement.'
 name: Banner

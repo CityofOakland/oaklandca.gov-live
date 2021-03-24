@@ -1,11 +1,11 @@
-field: f93e423e-051d-4b4c-bb85-2a5b168296b4
+field: f93e423e-051d-4b4c-bb85-2a5b168296b4 # Timeline
 fieldLayouts:
   4c254873-4567-44b6-a087-a6d4cb70b1ea:
     tabs:
       -
         elements:
           -
-            fieldUid: c0129db2-783d-4927-b125-203bd8cbdebc
+            fieldUid: c0129db2-783d-4927-b125-203bd8cbdebc # Milestone Date
             instructions: null
             label: null
             required: true
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f602bcbb-5ca9-4e04-8f5c-f031ceb1c2d6
+            fieldUid: f602bcbb-5ca9-4e04-8f5c-f031ceb1c2d6 # Milestone Name
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 5b066077-3ce6-4583-af94-4fa87136ab3a
+            fieldUid: 5b066077-3ce6-4583-af94-4fa87136ab3a # Milestone Link
             instructions: null
             label: null
             required: false
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 912c64e2-6d85-46bb-b826-955df643a5ef
+            fieldUid: 912c64e2-6d85-46bb-b826-955df643a5ef # Milestone Description
             instructions: null
             label: null
             required: true
@@ -41,7 +41,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 4b278e2a-dc49-4f60-a4bd-18575fb15098
+            fieldUid: 4b278e2a-dc49-4f60-a4bd-18575fb15098 # Milestone Started?
             instructions: null
             label: null
             required: false
@@ -52,7 +52,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  4b278e2a-dc49-4f60-a4bd-18575fb15098:
+  4b278e2a-dc49-4f60-a4bd-18575fb15098: # Milestone Started?
     contentColumnType: string
     fieldGroup: null
     handle: milestoneStarted
@@ -76,7 +76,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Checkboxes
-  5b066077-3ce6-4583-af94-4fa87136ab3a:
+  5b066077-3ce6-4583-af94-4fa87136ab3a: # Milestone Link
     contentColumnType: text
     fieldGroup: null
     handle: milestoneLink
@@ -115,6 +115,25 @@ fields:
                   - ''
                 -
                   - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
                   - ''
           -
             - fruitstudios\linkit\models\Url
@@ -252,29 +271,10 @@ fields:
                 -
                   - customSelectionLabel
                   - ''
-          -
-            - fruitstudios\linkit\models\User
-            -
-              __assoc__:
-                -
-                  - enabled
-                  - ''
-                -
-                  - customLabel
-                  - ''
-                -
-                  - sources
-                  - '*'
-                -
-                  - customSelectionLabel
-                  - ''
-                -
-                  - userPath
-                  - ''
     translationKeyFormat: null
     translationMethod: none
     type: fruitstudios\linkit\fields\LinkitField
-  912c64e2-6d85-46bb-b826-955df643a5ef:
+  912c64e2-6d85-46bb-b826-955df643a5ef: # Milestone Description
     contentColumnType: text
     fieldGroup: null
     handle: milestoneDescription
@@ -302,7 +302,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  c0129db2-783d-4927-b125-203bd8cbdebc:
+  c0129db2-783d-4927-b125-203bd8cbdebc: # Milestone Date
     contentColumnType: text
     fieldGroup: null
     handle: milestoneDate
@@ -321,7 +321,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  f602bcbb-5ca9-4e04-8f5c-f031ceb1c2d6:
+  f602bcbb-5ca9-4e04-8f5c-f031ceb1c2d6: # Milestone Name
     contentColumnType: text
     fieldGroup: null
     handle: milestoneName

@@ -1,11 +1,11 @@
-field: 9c457cb3-7498-4b3d-8b1e-84454f649934
+field: 9c457cb3-7498-4b3d-8b1e-84454f649934 # Link Set
 fieldLayouts:
   1c4a1685-7d75-43a9-a9e7-79599be5d410:
     tabs:
       -
         elements:
           -
-            fieldUid: 530b68fe-6b94-432c-8399-4f944cb2b9a1
+            fieldUid: 530b68fe-6b94-432c-8399-4f944cb2b9a1 # Link Location
             instructions: null
             label: null
             required: true
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: cbfce010-f6e1-46eb-a360-1152a3a07447
+            fieldUid: cbfce010-f6e1-46eb-a360-1152a3a07447 # Link Image
             instructions: null
             label: null
             required: true
@@ -25,7 +25,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  530b68fe-6b94-432c-8399-4f944cb2b9a1:
+  530b68fe-6b94-432c-8399-4f944cb2b9a1: # Link Location
     contentColumnType: text
     fieldGroup: null
     handle: linkLocation
@@ -64,6 +64,25 @@ fields:
                   - ''
                 -
                   - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
                   - ''
           -
             - fruitstudios\linkit\models\Url
@@ -204,29 +223,10 @@ fields:
                 -
                   - customSelectionLabel
                   - 'Select Document'
-          -
-            - fruitstudios\linkit\models\User
-            -
-              __assoc__:
-                -
-                  - enabled
-                  - ''
-                -
-                  - customLabel
-                  - ''
-                -
-                  - sources
-                  - '*'
-                -
-                  - customSelectionLabel
-                  - ''
-                -
-                  - userPath
-                  - ''
     translationKeyFormat: null
     translationMethod: none
     type: fruitstudios\linkit\fields\LinkitField
-  cbfce010-f6e1-46eb-a360-1152a3a07447:
+  cbfce010-f6e1-46eb-a360-1152a3a07447: # Link Image
     contentColumnType: string
     fieldGroup: null
     handle: linkImage

@@ -1,11 +1,11 @@
-field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581 # Content Builder
 fieldLayouts:
   c771c456-8b8b-455b-8cb5-c552cd04e4bd:
     tabs:
       -
         elements:
           -
-            fieldUid: 236e175c-1794-4eca-8655-15d196ec0e23
+            fieldUid: 236e175c-1794-4eca-8655-15d196ec0e23 # Images
             instructions: null
             label: null
             required: true
@@ -16,7 +16,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  236e175c-1794-4eca-8655-15d196ec0e23:
+  236e175c-1794-4eca-8655-15d196ec0e23: # Images
     contentColumnType: string
     fieldGroup: null
     handle: images

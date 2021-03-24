@@ -1,11 +1,11 @@
-field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581 # Content Builder
 fieldLayouts:
   3a07acb2-2b7c-4bbf-8a61-9d46ee581b30:
     tabs:
       -
         elements:
           -
-            fieldUid: e0441456-2c87-45db-aacd-22ac957f8fc1
+            fieldUid: e0441456-2c87-45db-aacd-22ac957f8fc1 # Heading
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: fd5628cc-7472-48c6-8263-14745dbb90c9
+            fieldUid: fd5628cc-7472-48c6-8263-14745dbb90c9 # Link Set Description
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 07e65c29-fba5-4a88-ade2-bd8abfb4cc69
+            fieldUid: 07e65c29-fba5-4a88-ade2-bd8abfb4cc69 # Link Set
             instructions: null
             label: null
             required: true
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 6d6039ca-322a-4f7f-91e2-371a9f5d637c
+            fieldUid: 6d6039ca-322a-4f7f-91e2-371a9f5d637c # Read More Link
             instructions: null
             label: null
             required: false
@@ -43,7 +43,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  07e65c29-fba5-4a88-ade2-bd8abfb4cc69:
+  07e65c29-fba5-4a88-ade2-bd8abfb4cc69: # Link Set
     contentColumnType: string
     fieldGroup: null
     handle: linkSet
@@ -54,14 +54,14 @@ fields:
       columns:
         __assoc__:
           -
-            - 61bef9fa-6716-4df3-a88d-46f256cdee73
+            - 61bef9fa-6716-4df3-a88d-46f256cdee73 # Link Location
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - eb7e7c8e-f03b-44c8-8b3f-f7086707f07a
+            - eb7e7c8e-f03b-44c8-8b3f-f7086707f07a # Link Icon
             -
               __assoc__:
                 -
@@ -78,7 +78,7 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
-  6d6039ca-322a-4f7f-91e2-371a9f5d637c:
+  6d6039ca-322a-4f7f-91e2-371a9f5d637c: # Read More Link
     contentColumnType: text
     fieldGroup: null
     handle: readMoreLink
@@ -117,6 +117,25 @@ fields:
                   - ''
                 -
                   - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
                   - ''
           -
             - fruitstudios\linkit\models\Url
@@ -257,29 +276,10 @@ fields:
                 -
                   - customSelectionLabel
                   - ''
-          -
-            - fruitstudios\linkit\models\User
-            -
-              __assoc__:
-                -
-                  - enabled
-                  - ''
-                -
-                  - customLabel
-                  - ''
-                -
-                  - sources
-                  - '*'
-                -
-                  - customSelectionLabel
-                  - ''
-                -
-                  - userPath
-                  - ''
     translationKeyFormat: null
     translationMethod: none
     type: fruitstudios\linkit\fields\LinkitField
-  e0441456-2c87-45db-aacd-22ac957f8fc1:
+  e0441456-2c87-45db-aacd-22ac957f8fc1: # Heading
     contentColumnType: text
     fieldGroup: null
     handle: heading
@@ -298,7 +298,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  fd5628cc-7472-48c6-8263-14745dbb90c9:
+  fd5628cc-7472-48c6-8263-14745dbb90c9: # Link Set Description
     contentColumnType: text
     fieldGroup: null
     handle: linkSetDescription

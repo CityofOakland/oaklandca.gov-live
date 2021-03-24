@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
+fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0 # Images
 handle: resourceImage
 instructions: 'Choose the image that you would like to upload. Be sure to double click the image after uploading it and assigning the ALT TEXT, as this is an ADA requirement.'
 name: 'Resource Image'

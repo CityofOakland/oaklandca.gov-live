@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: c8e06b4a-2f85-41db-94e3-101a5c02dd6d
+fieldGroup: c8e06b4a-2f85-41db-94e3-101a5c02dd6d # Documents
 handle: documentFile
 instructions: 'Select the file that you need to add.'
 name: 'Document File'

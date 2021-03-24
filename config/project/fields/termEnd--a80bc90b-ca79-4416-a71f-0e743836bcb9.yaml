@@ -1,5 +1,5 @@
 contentColumnType: datetime
-fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
+fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db # People
 handle: termEnd
 instructions: 'Choose the day this person’s term will end.'
 name: 'Term End'

@@ -1,11 +1,11 @@
-field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581 # Content Builder
 fieldLayouts:
   1ecef578-5469-4582-9db8-30d8099ecb26:
     tabs:
       -
         elements:
           -
-            fieldUid: 7664938a-7aa3-400c-ab55-335b7ef374bd
+            fieldUid: 7664938a-7aa3-400c-ab55-335b7ef374bd # Column 1 Heading
             instructions: null
             label: null
             required: true
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: facc7196-7444-4e77-873f-68c1b09d1298
+            fieldUid: facc7196-7444-4e77-873f-68c1b09d1298 # Column 2 Heading
             instructions: null
             label: null
             required: true
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 5ca3c157-200f-49a4-9390-48c84349b0be
+            fieldUid: 5ca3c157-200f-49a4-9390-48c84349b0be # Column 3 Heading
             instructions: null
             label: null
             required: true
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: c3cd0c7f-e997-4960-9b97-046778155766
+            fieldUid: c3cd0c7f-e997-4960-9b97-046778155766 # Column 1 Width
             instructions: null
             label: null
             required: false
@@ -41,7 +41,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: a9027f1f-7200-4053-9b64-7be69dc993e5
+            fieldUid: a9027f1f-7200-4053-9b64-7be69dc993e5 # Column 2 Width
             instructions: null
             label: null
             required: false
@@ -50,7 +50,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: e9c00016-6698-4bae-ae61-26a8ced249d7
+            fieldUid: e9c00016-6698-4bae-ae61-26a8ced249d7 # Column 3 Width
             instructions: null
             label: null
             required: false
@@ -59,7 +59,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: ff148937-9066-4578-8eb1-56090c97b181
+            fieldUid: ff148937-9066-4578-8eb1-56090c97b181 # Table
             instructions: null
             label: null
             required: true
@@ -70,7 +70,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  5ca3c157-200f-49a4-9390-48c84349b0be:
+  5ca3c157-200f-49a4-9390-48c84349b0be: # Column 3 Heading
     contentColumnType: text
     fieldGroup: null
     handle: column3Heading
@@ -89,7 +89,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  7664938a-7aa3-400c-ab55-335b7ef374bd:
+  7664938a-7aa3-400c-ab55-335b7ef374bd: # Column 1 Heading
     contentColumnType: text
     fieldGroup: null
     handle: column1Heading
@@ -108,7 +108,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  a9027f1f-7200-4053-9b64-7be69dc993e5:
+  a9027f1f-7200-4053-9b64-7be69dc993e5: # Column 2 Width
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column2Width
@@ -128,7 +128,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number
-  c3cd0c7f-e997-4960-9b97-046778155766:
+  c3cd0c7f-e997-4960-9b97-046778155766: # Column 1 Width
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column1Width
@@ -148,7 +148,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number
-  e9c00016-6698-4bae-ae61-26a8ced249d7:
+  e9c00016-6698-4bae-ae61-26a8ced249d7: # Column 3 Width
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column3Width
@@ -168,7 +168,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number
-  facc7196-7444-4e77-873f-68c1b09d1298:
+  facc7196-7444-4e77-873f-68c1b09d1298: # Column 2 Heading
     contentColumnType: text
     fieldGroup: null
     handle: column2Heading
@@ -187,7 +187,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  ff148937-9066-4578-8eb1-56090c97b181:
+  ff148937-9066-4578-8eb1-56090c97b181: # Table
     contentColumnType: string
     fieldGroup: null
     handle: table

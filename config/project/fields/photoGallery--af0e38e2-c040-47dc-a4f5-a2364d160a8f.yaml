@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
+fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0 # Images
 handle: photoGallery
 instructions: 'When adding your photos, be sure they have their "alt" attribute filled out. To do this, double click on each image and fill out the required "Alt Text" field. This is a requirement for adding images to our website in order to keep the content accessible and meet WCAG 2.0 standards. The Alt Text field will also provide captions for the image gallery.'
 name: 'Photo Gallery'

@@ -1,11 +1,11 @@
-field: fe5b4078-9713-41ab-a60c-66622aed9991
+field: fe5b4078-9713-41ab-a60c-66622aed9991 # Recordings
 fieldLayouts:
   ffec0563-08e9-4114-ac44-fd739f52a948:
     tabs:
       -
         elements:
           -
-            fieldUid: ff296662-c84b-4d15-8bcf-d4d851573f51
+            fieldUid: ff296662-c84b-4d15-8bcf-d4d851573f51 # Embed Title
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b703d11b-3d2f-4305-b0bf-3abf4ebeeec7
+            fieldUid: b703d11b-3d2f-4305-b0bf-3abf4ebeeec7 # Embed Code
             instructions: null
             label: null
             required: true
@@ -25,7 +25,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  b703d11b-3d2f-4305-b0bf-3abf4ebeeec7:
+  b703d11b-3d2f-4305-b0bf-3abf4ebeeec7: # Embed Code
     contentColumnType: text
     fieldGroup: null
     handle: embedCode
@@ -44,7 +44,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  ff296662-c84b-4d15-8bcf-d4d851573f51:
+  ff296662-c84b-4d15-8bcf-d4d851573f51: # Embed Title
     contentColumnType: text
     fieldGroup: null
     handle: embedTitle

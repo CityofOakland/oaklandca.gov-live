@@ -1,11 +1,11 @@
-field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581 # Content Builder
 fieldLayouts:
   491528bc-a1a3-4ff2-a64d-42cf081790fd:
     tabs:
       -
         elements:
           -
-            fieldUid: 03c4672b-b061-4dbb-a8f5-2e5dfb76467a
+            fieldUid: 03c4672b-b061-4dbb-a8f5-2e5dfb76467a # Heading
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 6be0fbe6-9b30-487c-abaf-b73127a553bd
+            fieldUid: 6be0fbe6-9b30-487c-abaf-b73127a553bd # Link Set Description
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 9c457cb3-7498-4b3d-8b1e-84454f649934
+            fieldUid: 9c457cb3-7498-4b3d-8b1e-84454f649934 # Link Set
             instructions: null
             label: null
             required: true
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 823b335f-ee31-4526-b6f4-952682ef1061
+            fieldUid: 823b335f-ee31-4526-b6f4-952682ef1061 # Read More Link
             instructions: null
             label: null
             required: false
@@ -43,7 +43,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  03c4672b-b061-4dbb-a8f5-2e5dfb76467a:
+  03c4672b-b061-4dbb-a8f5-2e5dfb76467a: # Heading
     contentColumnType: text
     fieldGroup: null
     handle: heading
@@ -62,7 +62,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  6be0fbe6-9b30-487c-abaf-b73127a553bd:
+  6be0fbe6-9b30-487c-abaf-b73127a553bd: # Link Set Description
     contentColumnType: text
     fieldGroup: null
     handle: linkSetDescription
@@ -90,7 +90,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  823b335f-ee31-4526-b6f4-952682ef1061:
+  823b335f-ee31-4526-b6f4-952682ef1061: # Read More Link
     contentColumnType: text
     fieldGroup: null
     handle: readMoreLink
@@ -129,6 +129,25 @@ fields:
                   - ''
                 -
                   - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
                   - ''
           -
             - fruitstudios\linkit\models\Url
@@ -269,29 +288,10 @@ fields:
                 -
                   - customSelectionLabel
                   - ''
-          -
-            - fruitstudios\linkit\models\User
-            -
-              __assoc__:
-                -
-                  - enabled
-                  - ''
-                -
-                  - customLabel
-                  - ''
-                -
-                  - sources
-                  - '*'
-                -
-                  - customSelectionLabel
-                  - ''
-                -
-                  - userPath
-                  - ''
     translationKeyFormat: null
     translationMethod: none
     type: fruitstudios\linkit\fields\LinkitField
-  9c457cb3-7498-4b3d-8b1e-84454f649934:
+  9c457cb3-7498-4b3d-8b1e-84454f649934: # Link Set
     contentColumnType: string
     fieldGroup: null
     handle: linkSet
@@ -302,14 +302,14 @@ fields:
       columns:
         __assoc__:
           -
-            - 530b68fe-6b94-432c-8399-4f944cb2b9a1
+            - 530b68fe-6b94-432c-8399-4f944cb2b9a1 # Link Location
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - cbfce010-f6e1-46eb-a360-1152a3a07447
+            - cbfce010-f6e1-46eb-a360-1152a3a07447 # Link Image
             -
               __assoc__:
                 -

@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
+fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855 # Relationships
 handle: topics
 instructions: 'Choose the topic landing pages to relate to this entry.'
 name: Topics

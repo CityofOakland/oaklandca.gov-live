@@ -1,11 +1,11 @@
-field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581 # Content Builder
 fieldLayouts:
   be600bf9-8d6e-4a13-9a5a-2f58593ee956:
     tabs:
       -
         elements:
           -
-            fieldUid: 37b9cad8-04be-41c4-938a-c869de41bfc6
+            fieldUid: 37b9cad8-04be-41c4-938a-c869de41bfc6 # Template Select
             instructions: null
             label: null
             required: true
@@ -16,7 +16,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  37b9cad8-04be-41c4-938a-c869de41bfc6:
+  37b9cad8-04be-41c4-938a-c869de41bfc6: # Template Select
     contentColumnType: string
     fieldGroup: null
     handle: templateSelect

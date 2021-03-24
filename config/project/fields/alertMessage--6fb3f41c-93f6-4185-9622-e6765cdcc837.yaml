@@ -1,5 +1,5 @@
 contentColumnType: text
-fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087
+fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087 # Globals
 handle: alertMessage
 instructions: 'Write the message of your alert here. Try to keep it short and use the link to guide viewers to more detailed information.'
 name: 'Alert Message'

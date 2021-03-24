@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 82a071f5-19ec-49b0-aca7-f390757c0892
+            fieldUid: 82a071f5-19ec-49b0-aca7-f390757c0892 # CSV Upload
             instructions: null
             label: null
             required: true

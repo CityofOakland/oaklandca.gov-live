@@ -1,5 +1,5 @@
 contentColumnType: text
-fieldGroup: baa859d6-a861-4617-bb79-73d0982ee25c
+fieldGroup: baa859d6-a861-4617-bb79-73d0982ee25c # Assets
 handle: altText
 instructions: 'Enter the text that describes the image or file, for accessibility concerns.'
 name: 'Alt Text'

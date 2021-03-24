@@ -1,11 +1,11 @@
-field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581 # Content Builder
 fieldLayouts:
   fa862fc0-fd2e-4d31-8d77-3dbd4cf08c00:
     tabs:
       -
         elements:
           -
-            fieldUid: 146e43c8-9154-487d-ab15-799e0f67185a
+            fieldUid: 146e43c8-9154-487d-ab15-799e0f67185a # Image File
             instructions: null
             label: null
             required: true
@@ -16,7 +16,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  146e43c8-9154-487d-ab15-799e0f67185a:
+  146e43c8-9154-487d-ab15-799e0f67185a: # Image File
     contentColumnType: string
     fieldGroup: null
     handle: imageFile

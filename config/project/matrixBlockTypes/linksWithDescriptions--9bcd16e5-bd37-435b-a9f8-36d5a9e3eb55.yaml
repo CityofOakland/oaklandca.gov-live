@@ -1,11 +1,11 @@
-field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581 # Content Builder
 fieldLayouts:
   25ddc7d5-b636-4886-a112-15195c636ae7:
     tabs:
       -
         elements:
           -
-            fieldUid: ad4e3d36-752c-48da-bfbd-bd61e083119b
+            fieldUid: ad4e3d36-752c-48da-bfbd-bd61e083119b # Heading
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 5dc172d1-4954-444f-b558-6f9f388d0ac3
+            fieldUid: 5dc172d1-4954-444f-b558-6f9f388d0ac3 # Link Set Description
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 7897bf8b-9bea-4c58-8f04-aea29c95d7bf
+            fieldUid: 7897bf8b-9bea-4c58-8f04-aea29c95d7bf # Link Set
             instructions: null
             label: null
             required: true
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 1b8f26ab-01a9-4570-9e96-1d18389f8226
+            fieldUid: 1b8f26ab-01a9-4570-9e96-1d18389f8226 # Read More Link
             instructions: null
             label: null
             required: false
@@ -43,7 +43,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  1b8f26ab-01a9-4570-9e96-1d18389f8226:
+  1b8f26ab-01a9-4570-9e96-1d18389f8226: # Read More Link
     contentColumnType: text
     fieldGroup: null
     handle: readMoreLink
@@ -82,6 +82,25 @@ fields:
                   - ''
                 -
                   - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
                   - ''
           -
             - fruitstudios\linkit\models\Url
@@ -222,29 +241,10 @@ fields:
                 -
                   - customSelectionLabel
                   - ''
-          -
-            - fruitstudios\linkit\models\User
-            -
-              __assoc__:
-                -
-                  - enabled
-                  - ''
-                -
-                  - customLabel
-                  - ''
-                -
-                  - sources
-                  - '*'
-                -
-                  - customSelectionLabel
-                  - ''
-                -
-                  - userPath
-                  - ''
     translationKeyFormat: null
     translationMethod: none
     type: fruitstudios\linkit\fields\LinkitField
-  5dc172d1-4954-444f-b558-6f9f388d0ac3:
+  5dc172d1-4954-444f-b558-6f9f388d0ac3: # Link Set Description
     contentColumnType: text
     fieldGroup: null
     handle: linkSetDescription
@@ -272,7 +272,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  7897bf8b-9bea-4c58-8f04-aea29c95d7bf:
+  7897bf8b-9bea-4c58-8f04-aea29c95d7bf: # Link Set
     contentColumnType: string
     fieldGroup: null
     handle: linkSet
@@ -283,14 +283,14 @@ fields:
       columns:
         __assoc__:
           -
-            - ac30e2e0-2f26-4b6c-a404-07b749af00dc
+            - ac30e2e0-2f26-4b6c-a404-07b749af00dc # Link Location
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - 109ddbd1-80ea-471e-a6f9-ef77d84a0800
+            - 109ddbd1-80ea-471e-a6f9-ef77d84a0800 # Link Description
             -
               __assoc__:
                 -
@@ -307,7 +307,7 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
-  ad4e3d36-752c-48da-bfbd-bd61e083119b:
+  ad4e3d36-752c-48da-bfbd-bd61e083119b: # Heading
     contentColumnType: text
     fieldGroup: null
     handle: heading

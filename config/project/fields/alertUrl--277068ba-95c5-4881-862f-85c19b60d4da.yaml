@@ -1,5 +1,5 @@
 contentColumnType: text
-fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087
+fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087 # Globals
 handle: alertUrl
 instructions: 'Link to a more detailed page if necessary.'
 name: 'Alert URL'
@@ -36,6 +36,25 @@ settings:
               - ''
             -
               - customPlaceholder
+              - ''
+      -
+        - fruitstudios\linkit\models\User
+        -
+          __assoc__:
+            -
+              - enabled
+              - ''
+            -
+              - customLabel
+              - ''
+            -
+              - sources
+              - '*'
+            -
+              - customSelectionLabel
+              - ''
+            -
+              - userPath
               - ''
       -
         - fruitstudios\linkit\models\Url
@@ -174,25 +193,6 @@ settings:
                 - 'folder:baf733c3-48be-42a7-8b4f-7a6bf9763542'
             -
               - customSelectionLabel
-              - ''
-      -
-        - fruitstudios\linkit\models\User
-        -
-          __assoc__:
-            -
-              - enabled
-              - ''
-            -
-              - customLabel
-              - ''
-            -
-              - sources
-              - '*'
-            -
-              - customSelectionLabel
-              - ''
-            -
-              - userPath
               - ''
 translationKeyFormat: null
 translationMethod: none

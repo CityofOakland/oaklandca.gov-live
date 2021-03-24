@@ -1,11 +1,11 @@
-field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581 # Content Builder
 fieldLayouts:
   99ea9eff-a425-4d1a-a22d-11cc60957966:
     tabs:
       -
         elements:
           -
-            fieldUid: 321943ce-06f4-4125-b82a-baf2e174a37f
+            fieldUid: 321943ce-06f4-4125-b82a-baf2e174a37f # Allow Autofill?
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 0e81d688-16ec-4519-9f60-7d2e2d72526d
+            fieldUid: 0e81d688-16ec-4519-9f60-7d2e2d72526d # Heading
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 853a4c55-fd81-4715-8804-22a057720485
+            fieldUid: 853a4c55-fd81-4715-8804-22a057720485 # Entries
             instructions: null
             label: null
             required: false
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: e4562472-8b84-4213-97bc-476f6f092cad
+            fieldUid: e4562472-8b84-4213-97bc-476f6f092cad # Hide Thumbnails?
             instructions: null
             label: null
             required: false
@@ -41,7 +41,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 6444dc50-fd8a-41d1-94c1-7af9ba982cc1
+            fieldUid: 6444dc50-fd8a-41d1-94c1-7af9ba982cc1 # Hide Summary?
             instructions: null
             label: null
             required: false
@@ -50,7 +50,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 11e84e2c-1c7f-451b-8631-999dc2c33f1f
+            fieldUid: 11e84e2c-1c7f-451b-8631-999dc2c33f1f # Hide Read More Link?
             instructions: null
             label: null
             required: false
@@ -61,7 +61,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  0e81d688-16ec-4519-9f60-7d2e2d72526d:
+  0e81d688-16ec-4519-9f60-7d2e2d72526d: # Heading
     contentColumnType: text
     fieldGroup: null
     handle: heading
@@ -80,7 +80,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  11e84e2c-1c7f-451b-8631-999dc2c33f1f:
+  11e84e2c-1c7f-451b-8631-999dc2c33f1f: # Hide Read More Link?
     contentColumnType: boolean
     fieldGroup: null
     handle: hideReadMoreLink
@@ -94,7 +94,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
-  321943ce-06f4-4125-b82a-baf2e174a37f:
+  321943ce-06f4-4125-b82a-baf2e174a37f: # Allow Autofill?
     contentColumnType: boolean
     fieldGroup: null
     handle: allowAutofill
@@ -108,7 +108,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
-  6444dc50-fd8a-41d1-94c1-7af9ba982cc1:
+  6444dc50-fd8a-41d1-94c1-7af9ba982cc1: # Hide Summary?
     contentColumnType: boolean
     fieldGroup: null
     handle: hideSummary
@@ -122,7 +122,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
-  853a4c55-fd81-4715-8804-22a057720485:
+  853a4c55-fd81-4715-8804-22a057720485: # Entries
     contentColumnType: string
     fieldGroup: null
     handle: entries
@@ -144,7 +144,7 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: Solspace\Calendar\FieldTypes\EventFieldType
-  e4562472-8b84-4213-97bc-476f6f092cad:
+  e4562472-8b84-4213-97bc-476f6f092cad: # Hide Thumbnails?
     contentColumnType: boolean
     fieldGroup: null
     handle: hideThumbnails

@@ -1,11 +1,11 @@
-field: 9b53be12-6536-4cb0-8860-9b5e6e94fadd
+field: 9b53be12-6536-4cb0-8860-9b5e6e94fadd # Process Steps
 fieldLayouts:
   07a77220-9b59-422c-b6e7-779fe933bce2:
     tabs:
       -
         elements:
           -
-            fieldUid: 6d5d4d77-fe05-434f-92d4-748af5630b9a
+            fieldUid: 6d5d4d77-fe05-434f-92d4-748af5630b9a # Step Number
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: e9feaa97-a672-4708-8e22-90e5a5116d24
+            fieldUid: e9feaa97-a672-4708-8e22-90e5a5116d24 # Step Required?
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 0ccdd608-28e4-473d-8fa8-f824e4591a7c
+            fieldUid: 0ccdd608-28e4-473d-8fa8-f824e4591a7c # Step Action
             instructions: null
             label: null
             required: true
@@ -34,7 +34,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  0ccdd608-28e4-473d-8fa8-f824e4591a7c:
+  0ccdd608-28e4-473d-8fa8-f824e4591a7c: # Step Action
     contentColumnType: string
     fieldGroup: null
     handle: stepAction
@@ -59,7 +59,7 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Entries
-  6d5d4d77-fe05-434f-92d4-748af5630b9a:
+  6d5d4d77-fe05-434f-92d4-748af5630b9a: # Step Number
     contentColumnType: text
     fieldGroup: null
     handle: stepNumber
@@ -78,7 +78,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  e9feaa97-a672-4708-8e22-90e5a5116d24:
+  e9feaa97-a672-4708-8e22-90e5a5116d24: # Step Required?
     contentColumnType: boolean
     fieldGroup: null
     handle: stepRequired

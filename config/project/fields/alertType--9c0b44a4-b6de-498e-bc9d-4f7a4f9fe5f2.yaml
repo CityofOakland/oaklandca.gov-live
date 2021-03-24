@@ -1,5 +1,5 @@
 contentColumnType: text
-fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087
+fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087 # Globals
 handle: alertType
 instructions: 'Choose the color of the alert based on the purpose.'
 name: 'Alert Type'
