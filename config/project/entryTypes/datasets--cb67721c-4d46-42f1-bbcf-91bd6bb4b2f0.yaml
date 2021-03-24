@@ -40,7 +40,7 @@ fieldLayouts:
 handle: datasets
 hasTitleField: true
 name: Datasets
-section: 1ab8269c-e225-472e-b5e1-1504af7a1622
+section: 1ab8269c-e225-472e-b5e1-1504af7a1622 # Datasets
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

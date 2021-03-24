@@ -13,7 +13,7 @@ settings:
   localizeRelations: false
   selectionLabel: 'Add a type'
   showSiteMenu: true
-  source: 'group:827f6570-faf8-42da-98e5-fffcb15e7cf6'
+  source: 'group:827f6570-faf8-42da-98e5-fffcb15e7cf6' # Document Types
   sources: '*'
   targetSiteId: null
   validateRelatedElements: false

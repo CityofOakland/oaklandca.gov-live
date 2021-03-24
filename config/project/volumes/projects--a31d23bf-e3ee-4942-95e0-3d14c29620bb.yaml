@@ -55,5 +55,7 @@ settings:
   storageClass: ''
   subfolder: projects
 sortOrder: 4
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
 type: craft\awss3\Volume
 url: 'https://cao-94612.s3.us-west-2.amazonaws.com'

@@ -62,7 +62,7 @@ fieldLayouts:
 handle: boardsCommissionsIndex
 hasTitleField: true
 name: 'Boards & Commissions Index'
-section: fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c
+section: fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c # Boards & Commissions Index
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

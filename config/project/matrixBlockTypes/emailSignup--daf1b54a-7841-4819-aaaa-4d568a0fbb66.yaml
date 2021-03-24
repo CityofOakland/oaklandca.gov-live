@@ -74,11 +74,11 @@ fields:
       defaultValue: null
       max: null
       min: '0'
-      prefix: ''
+      prefix: null
       previewCurrency: ''
       previewFormat: decimal
       size: null
-      suffix: ''
+      suffix: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number
@@ -96,7 +96,7 @@ fields:
       columnType: null
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none

@@ -99,28 +99,28 @@ fields:
       columns:
         __assoc__:
           -
-            - c51bb818-8e54-4a71-b8e6-e623907d4cae
+            - c51bb818-8e54-4a71-b8e6-e623907d4cae # Column 1 Cell
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - c48fd91b-ae6d-42f1-9c3b-62258d7e681f
+            - c48fd91b-ae6d-42f1-9c3b-62258d7e681f # Column 2 Cell
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - 2200fe2a-bcb7-435e-96f9-7f00262131e5
+            - 2200fe2a-bcb7-435e-96f9-7f00262131e5 # Column 3 Cell
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - 7769a82a-1135-4a99-aa7c-d121376328d6
+            - 7769a82a-1135-4a99-aa7c-d121376328d6 # Column 4 Cell
             -
               __assoc__:
                 -
@@ -149,11 +149,11 @@ fields:
       defaultValue: '25'
       max: '99'
       min: '1'
-      prefix: ''
+      prefix: null
       previewCurrency: ''
       previewFormat: decimal
       size: null
-      suffix: ''
+      suffix: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number
@@ -169,11 +169,11 @@ fields:
       defaultValue: '25'
       max: '99'
       min: '1'
-      prefix: ''
+      prefix: null
       previewCurrency: ''
       previewFormat: decimal
       size: null
-      suffix: ''
+      suffix: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number
@@ -189,11 +189,11 @@ fields:
       defaultValue: '25'
       max: '99'
       min: '1'
-      prefix: ''
+      prefix: null
       previewCurrency: ''
       previewFormat: decimal
       size: null
-      suffix: ''
+      suffix: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number
@@ -209,11 +209,11 @@ fields:
       defaultValue: '25'
       max: '99'
       min: '1'
-      prefix: ''
+      prefix: null
       previewCurrency: ''
       previewFormat: decimal
       size: null
-      suffix: ''
+      suffix: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number
@@ -231,7 +231,7 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
@@ -250,7 +250,7 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
@@ -269,7 +269,7 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
@@ -288,7 +288,7 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none

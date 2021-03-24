@@ -55,5 +55,7 @@ settings:
   storageClass: ''
   subfolder: resources
 sortOrder: 3
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
 type: craft\awss3\Volume
 url: $S3_URL

@@ -62,7 +62,7 @@ fieldLayouts:
 handle: searchIndex
 hasTitleField: true
 name: 'Search Index'
-section: e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8
+section: e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8 # Search Index
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

@@ -62,7 +62,7 @@ fieldLayouts:
 handle: eventsIndex
 hasTitleField: true
 name: 'Events Index'
-section: 9a9e5725-12f9-4f36-81cc-7762a4912de0
+section: 9a9e5725-12f9-4f36-81cc-7762a4912de0 # Events Index
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

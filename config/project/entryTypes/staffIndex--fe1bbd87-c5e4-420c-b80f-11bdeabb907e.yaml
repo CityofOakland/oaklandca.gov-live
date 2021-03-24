@@ -62,7 +62,7 @@ fieldLayouts:
 handle: staffIndex
 hasTitleField: true
 name: 'Staff Index'
-section: 98c4abc4-7360-4759-a926-a7673c124809
+section: 98c4abc4-7360-4759-a926-a7673c124809 # Staff Index
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

@@ -62,7 +62,7 @@ fieldLayouts:
 handle: documentsIndex
 hasTitleField: true
 name: 'Documents Index'
-section: ae05e014-38d0-4bcf-904d-e0ef291e71db
+section: ae05e014-38d0-4bcf-904d-e0ef291e71db # Documents Index
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

@@ -49,10 +49,10 @@ fields:
       showSiteMenu: true
       source: null
       sources:
-        - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
-        - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
-        - 'section:24fa116b-8516-4626-84f3-86b685e71071'
-        - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
+        - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+        - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+        - 'section:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+        - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
       targetSiteId: null
       validateRelatedElements: false
       viewMode: null
@@ -73,7 +73,7 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none

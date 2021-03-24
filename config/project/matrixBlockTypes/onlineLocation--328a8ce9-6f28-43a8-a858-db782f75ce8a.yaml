@@ -76,7 +76,7 @@ fields:
       columnType: null
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
@@ -91,6 +91,8 @@ fields:
     settings:
       maxLength: '255'
       placeholder: ''
+      types:
+        - url
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Url

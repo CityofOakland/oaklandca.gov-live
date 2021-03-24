@@ -15,7 +15,7 @@ settings:
     - pdf
     - powerpoint
     - word
-  defaultUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
+  defaultUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
   defaultUploadLocationSubpath: ''
   limit: '1'
   localizeRelations: false
@@ -25,11 +25,11 @@ settings:
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: true
-  singleUploadLocationSource: 'volume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
+  singleUploadLocationSource: 'volume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
   singleUploadLocationSubpath: ''
   source: null
   sources:
-    - 'volume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
+    - 'volume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
   targetSiteId: null
   useSingleFolder: true
   validateRelatedElements: false

@@ -152,7 +152,7 @@ fieldLayouts:
 handle: volunteers
 hasTitleField: false
 name: Volunteers
-section: 17d5d48d-2d75-4742-8820-cdce13764482
+section: 17d5d48d-2d75-4742-8820-cdce13764482 # Volunteers
 sortOrder: 1
 titleFormat: '{firstName} {lastName}'
 titleTranslationKeyFormat: null

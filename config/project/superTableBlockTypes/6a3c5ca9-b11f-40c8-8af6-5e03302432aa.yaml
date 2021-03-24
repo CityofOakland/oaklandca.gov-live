@@ -5,7 +5,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 23389191-2978-49d8-a70e-6da12c8aeab0
+            fieldUid: 23389191-2978-49d8-a70e-6da12c8aeab0 # Column 1 Cell
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: fb2b9f42-74a0-45c4-be6e-d3d69c87557e
+            fieldUid: fb2b9f42-74a0-45c4-be6e-d3d69c87557e # Column 2 Cell
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: d513ffa1-20e6-405d-845e-b4a8fd041461
+            fieldUid: d513ffa1-20e6-405d-845e-b4a8fd041461 # Column 3 Cell
             instructions: null
             label: null
             required: false
@@ -34,7 +34,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  23389191-2978-49d8-a70e-6da12c8aeab0:
+  23389191-2978-49d8-a70e-6da12c8aeab0: # Column 1 Cell
     contentColumnType: text
     fieldGroup: null
     handle: column1Cell
@@ -62,7 +62,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  d513ffa1-20e6-405d-845e-b4a8fd041461:
+  d513ffa1-20e6-405d-845e-b4a8fd041461: # Column 3 Cell
     contentColumnType: text
     fieldGroup: null
     handle: column3Cell
@@ -90,7 +90,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  fb2b9f42-74a0-45c4-be6e-d3d69c87557e:
+  fb2b9f42-74a0-45c4-be6e-d3d69c87557e: # Column 2 Cell
     contentColumnType: text
     fieldGroup: null
     handle: column2Cell

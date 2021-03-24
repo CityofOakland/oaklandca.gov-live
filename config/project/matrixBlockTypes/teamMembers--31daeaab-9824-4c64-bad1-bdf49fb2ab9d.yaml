@@ -39,7 +39,7 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
@@ -59,8 +59,8 @@ fields:
       showSiteMenu: true
       source: null
       sources:
-        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
-        - 'section:17d5d48d-2d75-4742-8820-cdce13764482'
+        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+        - 'section:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
       targetSiteId: null
       validateRelatedElements: false
       viewMode: null

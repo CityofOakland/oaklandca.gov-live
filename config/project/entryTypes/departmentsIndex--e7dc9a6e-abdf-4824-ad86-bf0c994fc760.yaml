@@ -62,7 +62,7 @@ fieldLayouts:
 handle: departmentsIndex
 hasTitleField: true
 name: 'Departments Index'
-section: 5e4e2c33-9bc3-4620-a00b-7ca3fb5d8688
+section: 5e4e2c33-9bc3-4620-a00b-7ca3fb5d8688 # Departments Index
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

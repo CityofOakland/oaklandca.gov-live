@@ -63,14 +63,14 @@ fields:
       columns:
         __assoc__:
           -
-            - 1df2afd1-1725-4190-ae6d-b40882c360af
+            - 1df2afd1-1725-4190-ae6d-b40882c360af # Column 1 Cell
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - 7b65742c-194e-4096-8efb-75f75936b03d
+            - 7b65742c-194e-4096-8efb-75f75936b03d # Column 2 Cell
             -
               __assoc__:
                 -
@@ -101,7 +101,7 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
@@ -120,7 +120,7 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
@@ -137,11 +137,11 @@ fields:
       defaultValue: '50'
       max: '99'
       min: '1'
-      prefix: ''
+      prefix: null
       previewCurrency: ''
       previewFormat: decimal
       size: null
-      suffix: ''
+      suffix: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number
@@ -157,11 +157,11 @@ fields:
       defaultValue: '50'
       max: '99'
       min: '1'
-      prefix: ''
+      prefix: null
       previewCurrency: ''
       previewFormat: decimal
       size: null
-      suffix: ''
+      suffix: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number

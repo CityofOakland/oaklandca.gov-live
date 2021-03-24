@@ -12,9 +12,9 @@ settings:
   showSiteMenu: true
   source: null
   sources:
-    - 'section:24fa116b-8516-4626-84f3-86b685e71071'
-    - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
-    - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
+    - 'section:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+    - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+    - 'section:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
   targetSiteId: null
   validateRelatedElements: false
   viewMode: null

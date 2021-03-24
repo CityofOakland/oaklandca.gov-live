@@ -62,7 +62,7 @@ fieldLayouts:
 handle: meetingsIndex
 hasTitleField: true
 name: 'Meetings Index'
-section: 20567858-8423-4c20-9004-d0b02150fa2a
+section: 20567858-8423-4c20-9004-d0b02150fa2a # Meetings Index
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

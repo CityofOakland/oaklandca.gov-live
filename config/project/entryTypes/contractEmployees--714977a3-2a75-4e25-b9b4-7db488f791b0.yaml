@@ -134,7 +134,7 @@ fieldLayouts:
 handle: contractEmployees
 hasTitleField: false
 name: 'Contract Employees'
-section: 07faad04-9ec4-4f68-9fe8-0ca20f189f8a
+section: 07faad04-9ec4-4f68-9fe8-0ca20f189f8a # Staff
 sortOrder: 2
 titleFormat: '{{ object.firstName }} {{ object.lastName }}'
 titleTranslationKeyFormat: null

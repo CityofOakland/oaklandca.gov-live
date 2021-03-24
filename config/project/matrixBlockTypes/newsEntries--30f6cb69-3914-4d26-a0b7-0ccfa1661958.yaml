@@ -66,7 +66,7 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
@@ -86,7 +86,7 @@ fields:
       showSiteMenu: true
       source: null
       sources:
-        - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+        - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
       targetSiteId: null
       validateRelatedElements: true
       viewMode: null

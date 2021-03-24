@@ -250,7 +250,7 @@ fieldLayouts:
 handle: staff
 hasTitleField: false
 name: Staff
-section: 07faad04-9ec4-4f68-9fe8-0ca20f189f8a
+section: 07faad04-9ec4-4f68-9fe8-0ca20f189f8a # Staff
 sortOrder: 1
 titleFormat: '{{ object.firstName ??? object.staffImportGivenName }} {{ object.lastName ??? object.staffImportSurname }}'
 titleTranslationKeyFormat: null

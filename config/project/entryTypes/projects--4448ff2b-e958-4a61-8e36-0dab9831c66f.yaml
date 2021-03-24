@@ -322,7 +322,7 @@ fieldLayouts:
 handle: projects
 hasTitleField: true
 name: Projects
-section: 98d541ae-56ee-4c98-ba9c-37438dc485a0
+section: 98d541ae-56ee-4c98-ba9c-37438dc485a0 # Projects
 sortOrder: 2
 titleFormat: null
 titleTranslationKeyFormat: null

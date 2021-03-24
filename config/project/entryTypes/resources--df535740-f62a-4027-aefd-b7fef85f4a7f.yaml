@@ -165,7 +165,7 @@ fieldLayouts:
 handle: resources
 hasTitleField: true
 name: Resources
-section: 24fa116b-8516-4626-84f3-86b685e71071
+section: 24fa116b-8516-4626-84f3-86b685e71071 # Resources
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

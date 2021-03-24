@@ -40,7 +40,7 @@ fieldLayouts:
 handle: embeddableContent
 hasTitleField: true
 name: 'Embeddable Content'
-section: 74ecde2f-b254-4f3e-b889-1affac6f5999
+section: 74ecde2f-b254-4f3e-b889-1affac6f5999 # Embeddable Content
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

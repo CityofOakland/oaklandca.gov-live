@@ -62,7 +62,7 @@ fieldLayouts:
 handle: processesIndex
 hasTitleField: true
 name: 'Processes Index'
-section: ea100822-9881-41cb-b2ed-e147268773d2
+section: ea100822-9881-41cb-b2ed-e147268773d2 # Processes Index
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

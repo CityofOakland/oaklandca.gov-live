@@ -62,7 +62,7 @@ fieldLayouts:
 handle: officialsIndex
 hasTitleField: true
 name: 'Officials Index'
-section: a209b7c0-0c31-4671-a56c-f77990a377f3
+section: a209b7c0-0c31-4671-a56c-f77990a377f3 # Officials Index
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

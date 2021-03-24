@@ -13,7 +13,7 @@ settings:
   localizeRelations: false
   selectionLabel: 'Add a type'
   showSiteMenu: true
-  source: 'group:8bcf4697-1dd2-47b2-91e2-8ad9b4b86741'
+  source: 'group:8bcf4697-1dd2-47b2-91e2-8ad9b4b86741' # Service Types
   sources: '*'
   targetSiteId: null
   validateRelatedElements: false

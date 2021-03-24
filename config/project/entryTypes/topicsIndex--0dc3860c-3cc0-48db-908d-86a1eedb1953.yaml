@@ -62,7 +62,7 @@ fieldLayouts:
 handle: topicsIndex
 hasTitleField: true
 name: 'Topics Index'
-section: 210f35e9-172e-4116-9382-05774c79d1ff
+section: 210f35e9-172e-4116-9382-05774c79d1ff # Topics Index
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

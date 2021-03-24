@@ -36,21 +36,21 @@ fields:
       columns:
         __assoc__:
           -
-            - af570273-47b3-4f58-a281-2d71a35d131c
+            - af570273-47b3-4f58-a281-2d71a35d131c # Icon
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - e5003330-f1d5-467d-843b-ce12bc26a5bb
+            - e5003330-f1d5-467d-843b-ce12bc26a5bb # Heading
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - c516a5f3-3955-47d3-96a8-73a2658e3fe7
+            - c516a5f3-3955-47d3-96a8-73a2658e3fe7 # Description
             -
               __assoc__:
                 -
@@ -81,7 +81,7 @@ fields:
       columnType: null
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none

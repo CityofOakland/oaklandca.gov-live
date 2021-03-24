@@ -62,7 +62,7 @@ fieldLayouts:
 handle: volunteerIndex
 hasTitleField: true
 name: 'Volunteer Index'
-section: 1300d573-d7c2-4d30-b840-2b94165d5d4f
+section: 1300d573-d7c2-4d30-b840-2b94165d5d4f # Volunteer Index
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

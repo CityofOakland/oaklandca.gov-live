@@ -62,7 +62,7 @@ fieldLayouts:
 handle: teamsIndex
 hasTitleField: true
 name: 'Teams Index'
-section: e0be1e19-d6d8-4d1d-849e-14d179664811
+section: e0be1e19-d6d8-4d1d-849e-14d179664811 # Teams Index
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

@@ -76,7 +76,7 @@ fieldLayouts:
 handle: pageAlerts
 hasTitleField: false
 name: 'Page Alerts'
-section: be8acece-2031-4965-a62f-31911d00e24c
+section: be8acece-2031-4965-a62f-31911d00e24c # Page Alerts
 sortOrder: 1
 titleFormat: '{{ object.alertHeading }}: {{ object.alertDescription | striptags | chop(limit=5, unit=''w'', append=''…'') }}'
 titleTranslationKeyFormat: null

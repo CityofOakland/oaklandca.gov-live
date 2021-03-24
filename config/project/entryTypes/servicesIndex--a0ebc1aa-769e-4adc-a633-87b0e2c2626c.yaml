@@ -62,7 +62,7 @@ fieldLayouts:
 handle: servicesIndex
 hasTitleField: true
 name: 'Services Index'
-section: 89cda626-6500-4ace-b9f4-0f8a54a9ad02
+section: 89cda626-6500-4ace-b9f4-0f8a54a9ad02 # Services Index
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

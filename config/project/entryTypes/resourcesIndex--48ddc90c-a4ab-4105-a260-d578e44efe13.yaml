@@ -62,7 +62,7 @@ fieldLayouts:
 handle: resourcesIndex
 hasTitleField: true
 name: 'Resources Index'
-section: c1969337-e50a-48d2-8823-fbb68bd3776b
+section: c1969337-e50a-48d2-8823-fbb68bd3776b # Resources Index
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

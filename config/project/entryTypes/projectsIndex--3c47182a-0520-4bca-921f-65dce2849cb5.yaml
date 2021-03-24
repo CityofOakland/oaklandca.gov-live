@@ -62,7 +62,7 @@ fieldLayouts:
 handle: projectsIndex
 hasTitleField: true
 name: 'Projects Index'
-section: d9164a86-877a-49bd-bc75-148e28d51df2
+section: d9164a86-877a-49bd-bc75-148e28d51df2 # Projects Index
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

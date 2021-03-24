@@ -12,7 +12,7 @@ settings:
   showSiteMenu: true
   source: null
   sources:
-    - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
+    - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   targetSiteId: null
   validateRelatedElements: false
   viewMode: null

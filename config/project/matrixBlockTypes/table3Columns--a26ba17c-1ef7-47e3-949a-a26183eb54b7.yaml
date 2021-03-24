@@ -84,7 +84,7 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
@@ -103,7 +103,7 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
@@ -120,11 +120,11 @@ fields:
       defaultValue: '33'
       max: '99'
       min: '1'
-      prefix: ''
+      prefix: null
       previewCurrency: ''
       previewFormat: decimal
       size: null
-      suffix: ''
+      suffix: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number
@@ -140,11 +140,11 @@ fields:
       defaultValue: '33'
       max: '99'
       min: '1'
-      prefix: ''
+      prefix: null
       previewCurrency: ''
       previewFormat: decimal
       size: null
-      suffix: ''
+      suffix: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number
@@ -160,11 +160,11 @@ fields:
       defaultValue: '34'
       max: '99'
       min: '1'
-      prefix: ''
+      prefix: null
       previewCurrency: ''
       previewFormat: decimal
       size: null
-      suffix: ''
+      suffix: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number
@@ -182,7 +182,7 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
@@ -198,21 +198,21 @@ fields:
       columns:
         __assoc__:
           -
-            - 23389191-2978-49d8-a70e-6da12c8aeab0
+            - 23389191-2978-49d8-a70e-6da12c8aeab0 # Column 1 Cell
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - fb2b9f42-74a0-45c4-be6e-d3d69c87557e
+            - fb2b9f42-74a0-45c4-be6e-d3d69c87557e # Column 2 Cell
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - d513ffa1-20e6-405d-845e-b4a8fd041461
+            - d513ffa1-20e6-405d-845e-b4a8fd041461 # Column 3 Cell
             -
               __assoc__:
                 -

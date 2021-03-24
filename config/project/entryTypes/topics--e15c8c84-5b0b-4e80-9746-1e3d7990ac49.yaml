@@ -295,7 +295,7 @@ fieldLayouts:
 handle: topics
 hasTitleField: true
 name: Topics
-section: 70778563-6dac-453d-a4b0-5121f3a614b7
+section: 70778563-6dac-453d-a4b0-5121f3a614b7 # Topics
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

@@ -62,7 +62,7 @@ fieldLayouts:
 handle: newsIndex
 hasTitleField: true
 name: 'News Index'
-section: ce969731-41e7-42b9-aad7-a6bff2089c57
+section: ce969731-41e7-42b9-aad7-a6bff2089c57 # News Index
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

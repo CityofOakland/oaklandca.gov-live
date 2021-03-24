@@ -55,5 +55,7 @@ settings:
   storageClass: ''
   subfolder: galleries
 sortOrder: 2
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
 type: craft\awss3\Volume
 url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'

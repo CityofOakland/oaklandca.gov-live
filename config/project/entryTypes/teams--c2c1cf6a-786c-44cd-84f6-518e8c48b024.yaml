@@ -120,7 +120,7 @@ fieldLayouts:
 handle: teams
 hasTitleField: true
 name: Teams
-section: fbf8b9b0-8875-4e08-819a-d62603676dc4
+section: fbf8b9b0-8875-4e08-819a-d62603676dc4 # Teams
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

@@ -183,7 +183,7 @@ fieldLayouts:
 handle: documentPackets
 hasTitleField: true
 name: 'Document Packets'
-section: 9da43fd8-c505-4d19-9486-e0cb669c568a
+section: 9da43fd8-c505-4d19-9486-e0cb669c568a # Document Packets
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

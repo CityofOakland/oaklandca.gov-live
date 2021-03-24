@@ -183,7 +183,7 @@ fieldLayouts:
 handle: documents
 hasTitleField: true
 name: Documents
-section: 8b7c4e26-9aab-4c5d-874e-aee151107de3
+section: 8b7c4e26-9aab-4c5d-874e-aee151107de3 # Documents
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null
