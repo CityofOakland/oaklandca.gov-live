@@ -1,0 +1,10 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textareaField({
+    label: "Content"|t('app'),
+    id: 'mainContent',
+    name: 'mainContent',
+    value: widget.mainContent,
+    rows: 8,
+    errors: widget.getErrors('mainContent')
+}) }}

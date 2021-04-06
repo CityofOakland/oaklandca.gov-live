@@ -38,6 +38,11 @@ class Documentation extends Widget
     }
 
     /**
+     * @var int|null The string content that we want this widget to display.
+     */
+    public $mainContent = '';
+
+    /**
      * @inheritdoc
      */
     public function init()
@@ -51,6 +56,8 @@ class Documentation extends Widget
     protected function defineRules(): array
     {
         $rules = parent::defineRules();
+        $rules[] = [['mainContent'], 'required'];
+        $rules[] = [['mainContent'], 'string'];
         return $rules;
     }
 
@@ -71,7 +78,19 @@ class Documentation extends Widget
 
         return $view->renderTemplate(
             '_components/widgets/Documentation/body',
-            [],
+            ['widget' => $this],
+            View::TEMPLATE_MODE_SITE);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getSettingsHtml()
+    {
+        return Craft::$app->getView()->renderTemplate('_components/widgets/Documentation/settings',
+            [
+                'widget' => $this,
+            ],
             View::TEMPLATE_MODE_SITE);
     }
 }
