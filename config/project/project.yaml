@@ -1,4 +1,4 @@
-dateModified: 1617732508
+dateModified: 1617733323
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -155,6 +155,16 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.0.0
+  default-dashboard:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      excludeAdmin: ''
+      logErrors: false
+      logInfo: false
+      override: '1'
+      userDashboard: '620486'
   element-api:
     enabled: '1'
     licenseKey: null
