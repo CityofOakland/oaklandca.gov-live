@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32552811bb67f63efe21cd2b21ce98e8",
+    "content-hash": "076c4b7095423f5ae90ff6a0f704cb5c",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -133,16 +133,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.175.1",
+            "version": "3.176.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "fce65d31f033c39cd3615fd2d3e503e212d81a3e"
+                "reference": "17dc67514b148979994758fbfb54088a8a3393bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/fce65d31f033c39cd3615fd2d3e503e212d81a3e",
-                "reference": "fce65d31f033c39cd3615fd2d3e503e212d81a3e",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/17dc67514b148979994758fbfb54088a8a3393bf",
+                "reference": "17dc67514b148979994758fbfb54088a8a3393bf",
                 "shasum": ""
             },
             "require": {
@@ -214,7 +214,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2021-03-22T18:13:37+00:00"
+            "time": "2021-04-06T18:13:47+00:00"
         },
         {
             "name": "born05/craft-assetusage",
@@ -1579,6 +1579,61 @@
             "time": "2020-12-18T19:32:30+00:00"
         },
         {
+            "name": "doublesecretagency/craft-googlemaps",
+            "version": "4.0.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doublesecretagency/craft-googlemaps/zipball/d1ac8d8f592ec3073eedd70aa3cb8614b537d5d2",
+                "reference": "d1ac8d8f592ec3073eedd70aa3cb8614b537d5d2",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.6.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Google Maps",
+                "handle": "google-maps",
+                "class": "doublesecretagency\\googlemaps\\GoogleMapsPlugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "doublesecretagency\\googlemaps\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Double Secret Agency",
+                    "homepage": "https://plugins.doublesecretagency.com"
+                }
+            ],
+            "description": "Maps in minutes. Powered by the Google Maps API.",
+            "keywords": [
+                "address",
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "geocoding",
+                "geolocation",
+                "google-maps",
+                "google-maps-api",
+                "locations",
+                "map",
+                "proximity-search",
+                "smart-map",
+                "smartmap"
+            ],
+            "support": {
+                "docs": "https://plugins.doublesecretagency.com/google-maps",
+                "issues": "https://github.com/doublesecretagency/craft-googlemaps/issues"
+            },
+            "time": "2021-03-27T23:03:54+00:00"
+        },
+        {
             "name": "doublesecretagency/craft-inventory",
             "version": "2.1.1",
             "source": {
@@ -1810,16 +1865,16 @@
         },
         {
             "name": "embed/embed",
-            "version": "v3.4.13",
+            "version": "v3.4.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/oscarotero/Embed.git",
-                "reference": "99f6d95aebd94251573e4f4febf14bc6aba28697"
+                "reference": "5028323230da075d6f515448fe62dfb179b9bde8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/oscarotero/Embed/zipball/99f6d95aebd94251573e4f4febf14bc6aba28697",
-                "reference": "99f6d95aebd94251573e4f4febf14bc6aba28697",
+                "url": "https://api.github.com/repos/oscarotero/Embed/zipball/5028323230da075d6f515448fe62dfb179b9bde8",
+                "reference": "5028323230da075d6f515448fe62dfb179b9bde8",
                 "shasum": ""
             },
             "require": {
@@ -1860,7 +1915,7 @@
                 "opengraph",
                 "twitter cards"
             ],
-            "time": "2020-12-24T09:42:20+00:00"
+            "time": "2021-04-02T10:59:24+00:00"
         },
         {
             "name": "enshrined/svg-sanitize",
@@ -2188,16 +2243,16 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.12.20",
+            "version": "8.12.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php.git",
-                "reference": "743585979ef96f2be123518c0a58083cf678bd47"
+                "reference": "272b8123ba7f1b7975620c6389e7206281b4a3ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/743585979ef96f2be123518c0a58083cf678bd47",
-                "reference": "743585979ef96f2be123518c0a58083cf678bd47",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/272b8123ba7f1b7975620c6389e7206281b4a3ce",
+                "reference": "272b8123ba7f1b7975620c6389e7206281b4a3ce",
                 "shasum": ""
             },
             "require": {
@@ -2252,7 +2307,7 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2021-03-17T11:05:55+00:00"
+            "time": "2021-04-06T08:37:32+00:00"
         },
         {
             "name": "giggsey/locale",
@@ -7912,16 +7967,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v5.2.5",
+            "version": "v5.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "0947ab1e3aabd22a6bef393874b2555d2bb976da"
+                "reference": "2cc7f45d96db9adfcf89adf4401d9dfed509f4e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/0947ab1e3aabd22a6bef393874b2555d2bb976da",
-                "reference": "0947ab1e3aabd22a6bef393874b2555d2bb976da",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/2cc7f45d96db9adfcf89adf4401d9dfed509f4e1",
+                "reference": "2cc7f45d96db9adfcf89adf4401d9dfed509f4e1",
                 "shasum": ""
             },
             "require": {
@@ -7984,7 +8039,7 @@
             ],
             "description": "Provides tools to internationalize your application",
             "homepage": "https://symfony.com",
-            "time": "2021-03-06T07:59:01+00:00"
+            "time": "2021-03-23T19:33:48+00:00"
         },
         {
             "name": "symfony/translation-contracts",
@@ -8049,16 +8104,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v5.2.5",
+            "version": "v5.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "002ab5a36702adf0c9a11e6d8836623253e9045e"
+                "reference": "89412a68ea2e675b4e44f260a5666729f77f668e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/002ab5a36702adf0c9a11e6d8836623253e9045e",
-                "reference": "002ab5a36702adf0c9a11e6d8836623253e9045e",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/89412a68ea2e675b4e44f260a5666729f77f668e",
+                "reference": "89412a68ea2e675b4e44f260a5666729f77f668e",
                 "shasum": ""
             },
             "require": {
@@ -8116,7 +8171,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2021-03-06T07:59:01+00:00"
+            "time": "2021-03-28T09:42:18+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -8474,6 +8529,11 @@
         {
             "name": "verbb/base",
             "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verbb/verbb-base.git",
+                "reference": "006cc4979e2b7669234a90bb7347129fe0185eb8"
+            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/verbb/verbb-base/zipball/006cc4979e2b7669234a90bb7347129fe0185eb8",
@@ -8489,6 +8549,7 @@
                     "verbb\\base\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -8504,6 +8565,11 @@
         {
             "name": "verbb/default-dashboard",
             "version": "1.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verbb/default-dashboard.git",
+                "reference": "7d76c4791039f746ae51c2544ee8a4f30667615d"
+            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/verbb/default-dashboard/zipball/7d76c4791039f746ae51c2544ee8a4f30667615d",
@@ -8526,6 +8592,7 @@
                     "verbb\\defaultdashboard\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -8537,18 +8604,11 @@
             ],
             "description": "A Craft CMS plugin to set default dashboard widgets for users.",
             "keywords": [
+                "Craft",
                 "cms",
-                "craft",
                 "craft-plugin",
                 "craftcms"
             ],
-            "support": {
-                "email": "support@verbb.io",
-                "issues": "https://github.com/verbb/default-dashboard/issues?state=open",
-                "source": "https://github.com/verbb/default-dashboard",
-                "docs": "https://github.com/verbb/default-dashboard",
-                "rss": "https://github.com/verbb/default-dashboard/commits/v2.atom"
-            },
             "time": "2020-04-16T01:08:23+00:00"
         },
         {
