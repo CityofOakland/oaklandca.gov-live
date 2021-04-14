@@ -1,6 +1,13 @@
 <?php
 namespace modules;
 
+use craft\events\RegisterComponentTypesEvent;
+use craft\services\Dashboard;
+use yii\base\Event;
+
+use modules\Documentation;
+use modules\WebsiteUpdates;
+
 use Craft;
 
 /**
@@ -39,6 +46,13 @@ class Module extends \yii\base\Module
 
         parent::init();
 
-        // Custom initialization code goes here...
+        Event::on(
+            Dashboard::class,
+            Dashboard::EVENT_REGISTER_WIDGET_TYPES,
+            function(RegisterComponentTypesEvent $event) {
+                $event->types[] = Documentation::class;
+                $event->types[] = WebsiteUpdates::class;
+            }
+        );
     }
 }

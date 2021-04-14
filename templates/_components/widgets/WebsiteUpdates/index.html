@@ -1,0 +1,63 @@
+{% requireLogin %}
+
+{% extends '_layout.twig' %}
+
+{% block content %}
+  {% block pageBanner %}
+    {% include '_partials/_page-banners.twig' with {
+      bannerTitle: 'Website Updates',
+    } %}
+  {% endblock %}
+  <section class="relative z-0 bg-white">
+    <div class="container pt-0">
+      <div class="w-full">
+        <div id="hits">
+          {% set updates = craft.entries.section('updates').limit(6) %}
+          {% paginate updates as updateInfo, updateEntries %}
+          {% for update in updateEntries %}
+            <article class="pb-8 mb-8 horizontal-card border-gray-300 border-b-2">
+                {% if update.image|length %}
+                  <figure class="w-full h-48 sm:h-64 p-4 bg-gray-300 relative z-0 flex items-center justify-center mb-4 lg:mb-0">
+                    <img src="{{ update.image.one().url }}" class="object-cover absolute h-full w-full inset-0" alt="{{ update.image.one().title }}">
+                  </figure>
+                {% else %}
+                  <figure class="w-full h-48 sm:h-64 p-4 bg-gray-300 relative z-0 flex items-center justify-center mb-4 lg:mb-0">
+                      <div class="text-gray-500 opacity-75 fill-current h-full p-12">
+                        <img src="/assets/img/icon-newspaper.svg" class="h-full" alt="">
+                      </div>
+                  </figure>
+                {% endif %}
+                <div>
+                  <h2 class="text-2xl mt-4 sm:mt-0"><a href="{{ update.url }}">{{ update.title }}</a></h2>
+                  <p class="small my-2 text-gray-700" style="font-size:85%;">{{ update.postDate|date("F j, Y") }}</p>
+                  <div class="text-gray-1000 mb-4">
+                    {% if update.mainContent %}
+                      {{ truncate(update.mainContent, 240) }}
+                    {% else %}
+                      ...
+                    {% endif %}
+                  </div>
+                  <div>
+                    <a aria-label="Continue reading {{ update.title }}" href="{{ update.url }}">Read More &rarr;</a>
+                  </div>
+                </div>
+              </article>
+          {% endfor %}
+        </div>
+        <div class="flex items-center mt-4 text-2xl justify-center">
+          {% if updates.total() > 6 %}
+            {% if updateInfo.prevUrl %}<a class="mx-2 text-dark" href="{{ updateInfo.prevUrl }}"><</a>{% endif %}
+            {% for page, url in updateInfo.getPrevUrls(5) %}
+                <a class="mx-2 text-dark" href="{{ url }}">{{ page }}</a>
+            {% endfor %}
+            <span class="current mx-2 text-dark">{{ updateInfo.currentPage }}</span>
+            {% for page, url in updateInfo.getNextUrls(5) %}
+                <a class="mx-2 text-dark" href="{{ url }}">{{ page }}</a>
+            {% endfor %}
+            {% if updateInfo.nextUrl %}<a class="mx-2 text-dark" href="{{ updateInfo.nextUrl }}">></a>{% endif %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

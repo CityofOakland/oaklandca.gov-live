@@ -15,8 +15,8 @@ permissions:
   - 'editentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
   - 'createentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
   - 'editentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-  - 'createentries:92f0f749-ed5b-4acc-aa15-6340f6e25791' # Processes
-  - 'editentries:92f0f749-ed5b-4acc-aa15-6340f6e25791' # Processes
+  - 'createentries:92f0f749-ed5b-4acc-aa15-6340f6e25791'
+  - 'editentries:92f0f749-ed5b-4acc-aa15-6340f6e25791'
   - 'createentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   - 'editentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   - 'createentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources

@@ -1,6 +1,6 @@
 enableVersioning: true
-handle: processes
-name: Processes
+handle: updates
+name: 'Website Updates'
 previewTargets:
   -
     __assoc__:
@@ -8,16 +8,16 @@ previewTargets:
         - label
         - 'Primary entry page'
       -
-        - refresh
-        - '1'
-      -
         - urlFormat
         - '{url}'
+      -
+        - refresh
+        - '1'
 propagationMethod: all
 siteSettings:
   c35d3a93-d7f4-4c37-ae3e-1b4d403311bb: # City of Oakland
     enabledByDefault: true
     hasUrls: true
-    template: processes/_entry
-    uriFormat: 'processes/{slug}'
+    template: _components/widgets/WebsiteUpdates/entry
+    uriFormat: 'updates/{slug}'
 type: channel

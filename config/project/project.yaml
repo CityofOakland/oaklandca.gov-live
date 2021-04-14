@@ -1,4 +1,4 @@
-dateModified: 1616594574
+dateModified: 1617808750
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -160,6 +160,16 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.0.0
+  default-dashboard:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      excludeAdmin: ''
+      logErrors: false
+      logInfo: false
+      override: '1'
+      userDashboard: '620486'
   element-api:
     enabled: '1'
     licenseKey: null
@@ -175,6 +185,20 @@ plugins:
     licenseKey: null
     schemaVersion: 4.3.0
     settings: null
+  google-maps:
+    enabled: true
+    licenseKey: 0H5E3MIS198GEIOF53TW84AQ
+    schemaVersion: 4.0.0
+    settings:
+      browserKey: AIzaSyCe-8KH-BppEiy7fvwFxiRVrhFy0DGbJ2o
+      enableJsLogging: true
+      fieldControlSize: 27
+      geolocationService: none
+      ipstackApiAccessKey: null
+      maxmindLicenseKey: ''
+      maxmindService: ''
+      maxmindUserId: ''
+      serverKey: AIzaSyCIaOEBLWXXPFvTdGJ98Y81RNMM_upfFPI
   imager-x:
     edition: pro
     enabled: true
@@ -278,18 +302,6 @@ plugins:
     licenseKey: WE9YYSPHWC5CNFB2RL64YDJ6
     schemaVersion: 3.0.9
     settings: null
-  smart-map:
-    enabled: '1'
-    licenseKey: 8KND7ZM72H5RQY65UFT7QUH1
-    schemaVersion: 3.2.3
-    settings:
-      debugRoute: map/debug
-      geolocation: none
-      googleBrowserKey: AIzaSyCe-8KH-BppEiy7fvwFxiRVrhFy0DGbJ2o
-      googleServerKey: AIzaSyCIaOEBLWXXPFvTdGJ98Y81RNMM_upfFPI
-      maxmindLicenseKey: ''
-      maxmindService: ''
-      maxmindUserId: ''
   smith:
     edition: standard
     enabled: true
