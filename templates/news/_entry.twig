@@ -57,6 +57,7 @@
               <p>
                 <span>{{ contact.title }}</span>
                 {% if contact.staffImportJobTitle %}<br><span>{{ contact.staffImportJobTitle }}</span>{% endif %}
+                {% if contact.staffImportOrganization %}<br><span>{{ contact.staffImportOrganization }}</span>{% endif %}
                 {% if contact.staffImportEmail %}<br><a href="mailto:{{ contact.staffImportEmail }}">{{ contact.staffImportEmail }}</a>{% endif %}
                 {% if contact.staffImportPhoneNumber %}<br><a href="tel:{{ contact.staffImportPhoneNumber }}">{{ contact.staffImportPhoneNumber }}</a>{% endif %}
               </p>
