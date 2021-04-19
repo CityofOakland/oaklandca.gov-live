@@ -24,9 +24,9 @@ permissions:
   - 'createentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
   - 'publishentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
   - 'editentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-  - 'createentries:92f0f749-ed5b-4acc-aa15-6340f6e25791' # Processes
-  - 'publishentries:92f0f749-ed5b-4acc-aa15-6340f6e25791' # Processes
-  - 'editentries:92f0f749-ed5b-4acc-aa15-6340f6e25791' # Processes
+  - 'createentries:92f0f749-ed5b-4acc-aa15-6340f6e25791'
+  - 'publishentries:92f0f749-ed5b-4acc-aa15-6340f6e25791'
+  - 'editentries:92f0f749-ed5b-4acc-aa15-6340f6e25791'
   - 'createentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   - 'publishentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   - 'editentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
