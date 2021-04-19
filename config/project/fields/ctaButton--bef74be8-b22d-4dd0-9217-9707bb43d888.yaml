@@ -38,6 +38,25 @@ settings:
               - customPlaceholder
               - ''
       -
+        - fruitstudios\linkit\models\User
+        -
+          __assoc__:
+            -
+              - enabled
+              - ''
+            -
+              - customLabel
+              - ''
+            -
+              - sources
+              - '*'
+            -
+              - customSelectionLabel
+              - ''
+            -
+              - userPath
+              - ''
+      -
         - fruitstudios\linkit\models\Url
         -
           __assoc__:
@@ -161,25 +180,6 @@ settings:
               - '*'
             -
               - customSelectionLabel
-              - ''
-      -
-        - fruitstudios\linkit\models\User
-        -
-          __assoc__:
-            -
-              - enabled
-              - ''
-            -
-              - customLabel
-              - ''
-            -
-              - sources
-              - '*'
-            -
-              - customSelectionLabel
-              - ''
-            -
-              - userPath
               - ''
 translationKeyFormat: null
 translationMethod: none
