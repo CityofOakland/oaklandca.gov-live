@@ -57,25 +57,6 @@ fields:
                   - customPlaceholder
                   - ''
           -
-            - fruitstudios\linkit\models\User
-            -
-              __assoc__:
-                -
-                  - enabled
-                  - ''
-                -
-                  - customLabel
-                  - ''
-                -
-                  - sources
-                  - '*'
-                -
-                  - customSelectionLabel
-                  - ''
-                -
-                  - userPath
-                  - ''
-          -
             - fruitstudios\linkit\models\Url
             -
               __assoc__:
@@ -212,6 +193,25 @@ fields:
                   - '*'
                 -
                   - customSelectionLabel
+                  - ''
+          -
+            - fruitstudios\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
                   - ''
     translationKeyFormat: null
     translationMethod: none

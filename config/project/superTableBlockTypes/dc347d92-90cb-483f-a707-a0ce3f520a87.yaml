@@ -117,25 +117,6 @@ fields:
                   - customPlaceholder
                   - ''
           -
-            - fruitstudios\linkit\models\User
-            -
-              __assoc__:
-                -
-                  - enabled
-                  - ''
-                -
-                  - customLabel
-                  - ''
-                -
-                  - sources
-                  - '*'
-                -
-                  - customSelectionLabel
-                  - ''
-                -
-                  - userPath
-                  - ''
-          -
             - fruitstudios\linkit\models\Url
             -
               __assoc__:
@@ -270,6 +251,25 @@ fields:
                     - 'folder:baf733c3-48be-42a7-8b4f-7a6bf9763542'
                 -
                   - customSelectionLabel
+                  - ''
+          -
+            - fruitstudios\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
                   - ''
     translationKeyFormat: null
     translationMethod: none
