@@ -54,7 +54,12 @@
             <h3>Media Contact</h3>
             {% if entry.contact|length %}
               {% set contact = entry.contact.one() %}
-              <p>{{ contact.staffImportGivenName }} {{ contact.staffImportSurname }}<br>{{ contact.staffImportDepartment }}<br><a href="mailto:{{ contact.staffImportEmail }}">{{ contact.staffImportEmail }}</a></p>
+              <p>
+                <span>{{ contact.title }}</span>
+                {% if contact.staffImportJobTitle %}<br><span>{{ contact.staffImportJobTitle }}</span>{% endif %}
+                {% if contact.staffImportEmail %}<br><a href="mailto:{{ contact.staffImportEmail }}">{{ contact.staffImportEmail }}</a>{% endif %}
+                {% if contact.staffImportPhoneNumber %}<br><a href="tel:{{ contact.staffImportPhoneNumber }}">{{ contact.staffImportPhoneNumber }}</a>{% endif %}
+              </p>
             {% else %}
               {{ entry.mediaContact }}
             {% endif %}
