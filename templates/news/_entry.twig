@@ -50,9 +50,14 @@
           {% endif %}
         </div>
         <div class="md:flex-1">
-          {% if entry.mediaContact | length %}
+          {% if entry.mediaContact or entry.contact|length %}
             <h3>Media Contact</h3>
-            {{ entry.mediaContact }}
+            {% if entry.contact|length %}
+              {% set contact = entry.contact.one() %}
+              <p>{{ contact.staffImportGivenName }} {{ contact.staffImportSurname }}<br>{{ contact.staffImportDepartment }}<br><a href="mailto:{{ contact.staffImportEmail }}">{{ contact.staffImportEmail }}</a></p>
+            {% else %}
+              {{ entry.mediaContact }}
+            {% endif %}
           {% endif %}
           {% if pressRelease.exists() %}
             <a href="{{ pressRelease.one.url }}" class="w-full btn">Download Press Release</a>
