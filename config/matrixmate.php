@@ -1,7 +1,7 @@
 <?php
 
 $textBlock = [
-  'label' => 'Default',
+  'label' => 'Text',
   'types' => ['heading', 'subheading', 'text', 'textImageBlock', 'noticeBlock'],
 ];
 $adminTextBlock = $textBlock;
