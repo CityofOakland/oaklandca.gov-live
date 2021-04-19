@@ -17,6 +17,7 @@ use goat\dashboardconfiguration\widgets\Documentation as DocumentationWidget;
 use Craft;
 use craft\base\Plugin;
 use craft\services\Plugins;
+use craft\events\ConfigEvent;
 use craft\events\PluginEvent;
 use craft\services\Dashboard;
 use craft\services\ProjectConfig;
@@ -118,6 +119,10 @@ class DashboardConfiguration extends Plugin
                 if($event->action->actionMethod == 'actionIndex' && $event->action->controller instanceof \craft\controllers\DashboardController){
                     $service = new \goat\dashboardconfiguration\services\Service();
                     $service->visitDashboard();
+
+                    if(Craft::$app->projectConfig->get('plugins.dashboard-configuration.settings.documentation')){
+                        Craft::$app->projectConfig->remove('plugins.dashboard-configuration.settings.documentation');
+                    }
                 }
             }
         );

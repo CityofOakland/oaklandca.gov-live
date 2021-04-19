@@ -1,4 +1,4 @@
-dateModified: 1618847234
+dateModified: 1618857881
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -159,8 +159,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-    settings:
-      documentation: '<p>This is some text.</p>'
   element-api:
     enabled: '1'
     licenseKey: null
