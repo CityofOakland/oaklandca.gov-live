@@ -19,6 +19,8 @@ use craft\base\Plugin;
 use craft\services\Plugins;
 use craft\events\PluginEvent;
 use craft\services\Dashboard;
+use craft\services\ProjectConfig;
+use craft\events\RebuildConfigEvent;
 use craft\events\RegisterComponentTypesEvent;
 
 use yii\base\Event;
@@ -128,6 +130,15 @@ class DashboardConfiguration extends Plugin
                 if ($event->plugin === $this) {
                     // We were just installed
                 }
+            }
+        );
+
+        Event::on(
+            ProjectConfig::class,
+            ProjectConfig::EVENT_REBUILD,
+            function(RebuildConfigEvent $e) {
+                // Remove settings from being tracked.
+                unset($e->config['plugins']['dashboard-configuration']['settings']['documentation']);
             }
         );
 

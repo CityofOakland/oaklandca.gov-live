@@ -31,7 +31,7 @@ fieldLayouts:
 handle: people
 name: People
 siteSettings:
-  c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+  c35d3a93-d7f4-4c37-ae3e-1b4d403311bb: # City of Oakland
     hasUrls: true
     template: null
     uriFormat: 'people/{slug}'
