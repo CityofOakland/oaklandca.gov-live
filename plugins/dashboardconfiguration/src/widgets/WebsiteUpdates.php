@@ -5,13 +5,16 @@
  * @license https://craftcms.github.io/license/
  */
 
-namespace modules;
+namespace goat\dashboardconfiguration\widgets;
 
 use Craft;
 use craft\base\Widget;
 use craft\elements\Entry;
 use craft\models\Section;
 use craft\web\View;
+
+use goat\dashboardconfiguration\DashboardConfiguration;
+use goat\dashboardconfiguration\assetbundles\dashboardconfigurationwidgetwidget\DashboardConfigurationWidgetWidgetAsset;
 
 /**
  * RecentEntries represents a Recent Entries dashboard widget.
@@ -93,14 +96,14 @@ class WebsiteUpdates extends Widget
             $params['sectionId'] = (int)$this->section;
         }
 
-        $view = Craft::$app->getView();
-
         $entries = $this->_getEntries();
 
-        return $view->renderTemplate(
-            '_components/widgets/WebsiteUpdates/body',
-            ['entries' => $entries,],
-            View::TEMPLATE_MODE_SITE);
+        return Craft::$app->getView()->renderTemplate(
+            'dashboard-configuration/_components/widgets/WebsiteUpdates_body',
+            [
+                'entries' => $entries,
+            ]
+        );
     }
 
     /**
