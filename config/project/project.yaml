@@ -71,7 +71,7 @@ plugins:
             - concurrency
             - '10'
       cacheWarmerType: putyourlightson\blitz\drivers\warmers\GuzzleWarmer
-      cachingEnabled: ''
+      cachingEnabled: '1'
       clearCacheAutomatically: '1'
       customSiteUris: ''
       debug: false
@@ -86,6 +86,11 @@ plugins:
             -
               - uriPattern
               - /author
+        -
+          __assoc__:
+            -
+              - uriPattern
+              - '/datasets/*'
       includedUriPatterns:
         -
           __assoc__:
