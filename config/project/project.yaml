@@ -1,4 +1,4 @@
-dateModified: 1618861085
+dateModified: 1619550077
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -71,7 +71,7 @@ plugins:
             - concurrency
             - '10'
       cacheWarmerType: putyourlightson\blitz\drivers\warmers\GuzzleWarmer
-      cachingEnabled: '1'
+      cachingEnabled: ''
       clearCacheAutomatically: '1'
       customSiteUris: ''
       debug: false
@@ -86,11 +86,6 @@ plugins:
             -
               - uriPattern
               - /author
-        -
-          __assoc__:
-            -
-              - uriPattern
-              - '/datasets/*'
       includedUriPatterns:
         -
           __assoc__:
