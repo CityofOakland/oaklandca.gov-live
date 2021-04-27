@@ -1,11 +1,11 @@
-field: b924108b-fb70-4757-ad7f-3e713f23a6d6
+field: b924108b-fb70-4757-ad7f-3e713f23a6d6 # Team Members
 fieldLayouts:
   859a10a3-3b80-47a8-8ae8-30e2bd89736c:
     tabs:
       -
         elements:
           -
-            fieldUid: 0cf5f750-4518-4e2c-9766-9b21e108e9be
+            fieldUid: 0cf5f750-4518-4e2c-9766-9b21e108e9be # Staff Heading
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: a9d9aefa-be2d-4db6-af99-ff6d90c0e200
+            fieldUid: a9d9aefa-be2d-4db6-af99-ff6d90c0e200 # Staff
             instructions: null
             label: null
             required: true
@@ -25,7 +25,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  0cf5f750-4518-4e2c-9766-9b21e108e9be:
+  0cf5f750-4518-4e2c-9766-9b21e108e9be: # Staff Heading
     contentColumnType: text
     fieldGroup: null
     handle: staffHeading
@@ -39,12 +39,12 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  a9d9aefa-be2d-4db6-af99-ff6d90c0e200:
+  a9d9aefa-be2d-4db6-af99-ff6d90c0e200: # Staff
     contentColumnType: string
     fieldGroup: null
     handle: staff
@@ -59,8 +59,8 @@ fields:
       showSiteMenu: true
       source: null
       sources:
-        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
-        - 'section:17d5d48d-2d75-4742-8820-cdce13764482'
+        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+        - 'section:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
       targetSiteId: null
       validateRelatedElements: false
       viewMode: null

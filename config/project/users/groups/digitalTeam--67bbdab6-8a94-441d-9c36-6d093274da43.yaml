@@ -7,54 +7,54 @@ permissions:
   - accesscp
   - registerusers
   - moderateusers
-  - 'assignusergroup:cd008cb1-3f5b-4444-a259-bf905f9c6f96'
+  - 'assignusergroup:cd008cb1-3f5b-4444-a259-bf905f9c6f96' # Contributors
   - assignusergroups
   - editusers
-  - 'publishentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
-  - 'publishpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
-  - 'editpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
-  - 'publishpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
-  - 'editpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
-  - 'editentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
-  - 'publishentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
-  - 'publishpeerentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
-  - 'editpeerentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
-  - 'publishpeerentrydrafts:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
-  - 'editpeerentrydrafts:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
-  - 'editentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
-  - 'createentries:9da43fd8-c505-4d19-9486-e0cb669c568a'
-  - 'publishentries:9da43fd8-c505-4d19-9486-e0cb669c568a'
-  - 'publishpeerentries:9da43fd8-c505-4d19-9486-e0cb669c568a'
-  - 'editpeerentries:9da43fd8-c505-4d19-9486-e0cb669c568a'
-  - 'publishpeerentrydrafts:9da43fd8-c505-4d19-9486-e0cb669c568a'
-  - 'editpeerentrydrafts:9da43fd8-c505-4d19-9486-e0cb669c568a'
-  - 'editentries:9da43fd8-c505-4d19-9486-e0cb669c568a'
-  - 'createentries:8b7c4e26-9aab-4c5d-874e-aee151107de3'
-  - 'publishentries:8b7c4e26-9aab-4c5d-874e-aee151107de3'
-  - 'publishpeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3'
-  - 'deletepeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3'
-  - 'editpeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3'
-  - 'publishpeerentrydrafts:8b7c4e26-9aab-4c5d-874e-aee151107de3'
-  - 'editpeerentrydrafts:8b7c4e26-9aab-4c5d-874e-aee151107de3'
-  - 'editentries:8b7c4e26-9aab-4c5d-874e-aee151107de3'
-  - 'publishentries:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5'
-  - 'publishpeerentrydrafts:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5'
-  - 'editpeerentrydrafts:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5'
-  - 'editentries:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5'
-  - 'createentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
-  - 'publishentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
-  - 'publishpeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
-  - 'editpeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
-  - 'publishpeerentrydrafts:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
-  - 'editpeerentrydrafts:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
-  - 'editentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
-  - 'createentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
-  - 'publishentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
-  - 'publishpeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
-  - 'editpeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
-  - 'publishpeerentrydrafts:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
-  - 'editpeerentrydrafts:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
-  - 'editentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+  - 'publishentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'publishpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'editpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'publishpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'editpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'editentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'publishentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'publishpeerentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'editpeerentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'publishpeerentrydrafts:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'editpeerentrydrafts:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'editentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'createentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'publishentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'publishpeerentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'editpeerentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'publishpeerentrydrafts:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'editpeerentrydrafts:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'editentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'createentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'publishentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'publishpeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'deletepeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'editpeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'publishpeerentrydrafts:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'editpeerentrydrafts:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'editentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'publishentries:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
+  - 'publishpeerentrydrafts:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
+  - 'editpeerentrydrafts:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
+  - 'editentries:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
+  - 'createentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'publishentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'publishpeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'editpeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'publishpeerentrydrafts:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'editpeerentrydrafts:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'editentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'createentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'publishentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'publishpeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'editpeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'publishpeerentrydrafts:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'editpeerentrydrafts:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'editentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
   - 'createentries:92f0f749-ed5b-4acc-aa15-6340f6e25791'
   - 'publishentries:92f0f749-ed5b-4acc-aa15-6340f6e25791'
   - 'publishpeerentries:92f0f749-ed5b-4acc-aa15-6340f6e25791'
@@ -62,168 +62,168 @@ permissions:
   - 'publishpeerentrydrafts:92f0f749-ed5b-4acc-aa15-6340f6e25791'
   - 'editpeerentrydrafts:92f0f749-ed5b-4acc-aa15-6340f6e25791'
   - 'editentries:92f0f749-ed5b-4acc-aa15-6340f6e25791'
-  - 'createentries:98d541ae-56ee-4c98-ba9c-37438dc485a0'
-  - 'publishentries:98d541ae-56ee-4c98-ba9c-37438dc485a0'
-  - 'deleteentries:98d541ae-56ee-4c98-ba9c-37438dc485a0'
-  - 'publishpeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0'
-  - 'deletepeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0'
-  - 'editpeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0'
-  - 'publishpeerentrydrafts:98d541ae-56ee-4c98-ba9c-37438dc485a0'
-  - 'editpeerentrydrafts:98d541ae-56ee-4c98-ba9c-37438dc485a0'
-  - 'editentries:98d541ae-56ee-4c98-ba9c-37438dc485a0'
-  - 'createentries:24fa116b-8516-4626-84f3-86b685e71071'
-  - 'publishentries:24fa116b-8516-4626-84f3-86b685e71071'
-  - 'publishpeerentries:24fa116b-8516-4626-84f3-86b685e71071'
-  - 'editpeerentries:24fa116b-8516-4626-84f3-86b685e71071'
-  - 'publishpeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071'
-  - 'editpeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071'
-  - 'editentries:24fa116b-8516-4626-84f3-86b685e71071'
-  - 'createentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
-  - 'publishentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
-  - 'publishpeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
-  - 'editpeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
-  - 'publishpeerentrydrafts:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
-  - 'editpeerentrydrafts:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
-  - 'editentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
-  - 'publishentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
-  - 'publishpeerentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
-  - 'editpeerentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
-  - 'publishpeerentrydrafts:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
-  - 'editpeerentrydrafts:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
-  - 'editentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
-  - 'createentries:fbf8b9b0-8875-4e08-819a-d62603676dc4'
-  - 'publishentries:fbf8b9b0-8875-4e08-819a-d62603676dc4'
-  - 'publishpeerentries:fbf8b9b0-8875-4e08-819a-d62603676dc4'
-  - 'editpeerentries:fbf8b9b0-8875-4e08-819a-d62603676dc4'
-  - 'publishpeerentrydrafts:fbf8b9b0-8875-4e08-819a-d62603676dc4'
-  - 'editpeerentrydrafts:fbf8b9b0-8875-4e08-819a-d62603676dc4'
-  - 'editentries:fbf8b9b0-8875-4e08-819a-d62603676dc4'
-  - 'createentries:70778563-6dac-453d-a4b0-5121f3a614b7'
-  - 'publishentries:70778563-6dac-453d-a4b0-5121f3a614b7'
-  - 'publishpeerentries:70778563-6dac-453d-a4b0-5121f3a614b7'
-  - 'editpeerentries:70778563-6dac-453d-a4b0-5121f3a614b7'
-  - 'publishpeerentrydrafts:70778563-6dac-453d-a4b0-5121f3a614b7'
-  - 'editpeerentrydrafts:70778563-6dac-453d-a4b0-5121f3a614b7'
-  - 'editentries:70778563-6dac-453d-a4b0-5121f3a614b7'
-  - 'createentries:17d5d48d-2d75-4742-8820-cdce13764482'
-  - 'publishentries:17d5d48d-2d75-4742-8820-cdce13764482'
-  - 'deleteentries:17d5d48d-2d75-4742-8820-cdce13764482'
-  - 'publishpeerentries:17d5d48d-2d75-4742-8820-cdce13764482'
-  - 'deletepeerentries:17d5d48d-2d75-4742-8820-cdce13764482'
-  - 'editpeerentries:17d5d48d-2d75-4742-8820-cdce13764482'
-  - 'publishpeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482'
-  - 'deletepeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482'
-  - 'editpeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482'
-  - 'editentries:17d5d48d-2d75-4742-8820-cdce13764482'
+  - 'createentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'publishentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'deleteentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'publishpeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'deletepeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'editpeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'publishpeerentrydrafts:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'editpeerentrydrafts:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'editentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'createentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'publishentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'publishpeerentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'editpeerentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'publishpeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'editpeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'editentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'createentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'publishentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'publishpeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'editpeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'publishpeerentrydrafts:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'editpeerentrydrafts:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'editentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'publishentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'publishpeerentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'editpeerentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'publishpeerentrydrafts:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'editpeerentrydrafts:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'editentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'createentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'publishentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'publishpeerentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'editpeerentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'publishpeerentrydrafts:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'editpeerentrydrafts:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'editentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'createentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'publishentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'publishpeerentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'editpeerentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'publishpeerentrydrafts:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'editpeerentrydrafts:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'editentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'createentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'publishentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'deleteentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'publishpeerentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'deletepeerentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'editpeerentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'publishpeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'deletepeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'editpeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'editentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
   - 'editglobalset:0f8677bf-fac9-4b09-8504-bf02b20c6ec5'
-  - 'saveassetinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
-  - 'deletefilesandfoldersinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
-  - 'editimagesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
-  - 'viewvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
-  - 'saveassetinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
-  - 'deletefilesandfoldersinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
-  - 'editimagesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
-  - 'viewvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
-  - 'saveassetinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
-  - 'deletefilesandfoldersinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
-  - 'editimagesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
-  - 'viewvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
-  - 'saveassetinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
-  - 'deletefilesandfoldersinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
-  - 'editimagesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
-  - 'viewvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
-  - 'saveassetinvolume:7a12e399-b320-4d23-8abb-a79b5f303015'
-  - 'createfoldersinvolume:7a12e399-b320-4d23-8abb-a79b5f303015'
-  - 'editimagesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015'
-  - 'viewvolume:7a12e399-b320-4d23-8abb-a79b5f303015'
-  - 'saveassetinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
-  - 'deletefilesandfoldersinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
-  - 'editimagesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
-  - 'viewvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
-  - 'saveassetinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d'
-  - 'deletefilesandfoldersinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d'
-  - 'editimagesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d'
-  - 'viewvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d'
-  - 'saveassetinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6'
-  - 'deletefilesandfoldersinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6'
-  - 'editimagesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6'
-  - 'viewvolume:58c3bf22-aa23-441f-bd65-acf677638ae6'
-  - 'saveassetinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
-  - 'deletefilesandfoldersinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
-  - 'editimagesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
-  - 'viewvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
-  - 'saveassetinvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
-  - 'deletefilesandfoldersinvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
-  - 'editimagesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
-  - 'viewvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
-  - 'saveassetinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d'
-  - 'deletefilesandfoldersinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d'
-  - 'editimagesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d'
-  - 'viewvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d'
+  - 'saveassetinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'deletefilesandfoldersinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'editimagesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'viewvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'saveassetinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'deletefilesandfoldersinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'editimagesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'viewvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'saveassetinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'deletefilesandfoldersinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'editimagesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'viewvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'saveassetinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'deletefilesandfoldersinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'editimagesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'viewvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'saveassetinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'createfoldersinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'editimagesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'viewvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'saveassetinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'deletefilesandfoldersinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'editimagesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'viewvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'saveassetinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'deletefilesandfoldersinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'editimagesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'viewvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'saveassetinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'deletefilesandfoldersinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'editimagesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'viewvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'saveassetinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'deletefilesandfoldersinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'editimagesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'viewvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'saveassetinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'deletefilesandfoldersinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'editimagesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'viewvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'saveassetinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'deletefilesandfoldersinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'editimagesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'viewvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
   - 'calendar-manageeventsfor:all'
   - 'calendar-manageeventsfor:2'
   - 'calendar-manageeventsfor:3'
   - calendar-manageevents
-  - 'viewpeerfilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
-  - 'editpeerfilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
-  - 'deletepeerfilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
-  - 'replacepeerfilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
-  - 'editpeerimagesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
-  - 'viewpeerfilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
-  - 'editpeerfilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
-  - 'deletepeerfilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
-  - 'replacepeerfilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
-  - 'editpeerimagesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
-  - 'viewpeerfilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
-  - 'editpeerfilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
-  - 'deletepeerfilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
-  - 'replacepeerfilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
-  - 'editpeerimagesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
-  - 'viewpeerfilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
-  - 'editpeerfilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
-  - 'deletepeerfilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
-  - 'replacepeerfilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
-  - 'editpeerimagesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
-  - 'viewpeerfilesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015'
-  - 'editpeerfilesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015'
-  - 'editpeerimagesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015'
-  - 'viewpeerfilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
-  - 'editpeerfilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
-  - 'deletepeerfilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
-  - 'replacepeerfilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
-  - 'editpeerimagesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
-  - 'viewpeerfilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d'
-  - 'editpeerfilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d'
-  - 'deletepeerfilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d'
-  - 'replacepeerfilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d'
-  - 'editpeerimagesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d'
-  - 'viewpeerfilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6'
-  - 'editpeerfilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6'
-  - 'deletepeerfilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6'
-  - 'replacepeerfilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6'
-  - 'editpeerimagesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6'
-  - 'viewpeerfilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
-  - 'editpeerfilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
-  - 'deletepeerfilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
-  - 'replacepeerfilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
-  - 'editpeerimagesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
-  - 'viewpeerfilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
-  - 'editpeerfilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
-  - 'deletepeerfilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
-  - 'replacepeerfilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
-  - 'editpeerimagesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
-  - 'viewpeerfilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d'
-  - 'editpeerfilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d'
-  - 'deletepeerfilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d'
-  - 'replacepeerfilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d'
-  - 'editpeerimagesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d'
-  - 'replacefilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
-  - 'replacefilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
-  - 'replacefilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
-  - 'replacefilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
-  - 'replacefilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
-  - 'replacefilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d'
-  - 'replacefilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6'
-  - 'replacefilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
-  - 'replacefilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
-  - 'replacefilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d'
+  - 'viewpeerfilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'editpeerfilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'deletepeerfilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'replacepeerfilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'editpeerimagesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'viewpeerfilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'editpeerfilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'deletepeerfilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'replacepeerfilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'editpeerimagesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'viewpeerfilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'editpeerfilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'deletepeerfilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'replacepeerfilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'editpeerimagesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'viewpeerfilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'editpeerfilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'deletepeerfilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'replacepeerfilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'editpeerimagesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'viewpeerfilesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'editpeerfilesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'editpeerimagesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'viewpeerfilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'editpeerfilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'deletepeerfilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'replacepeerfilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'editpeerimagesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'viewpeerfilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'editpeerfilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'deletepeerfilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'replacepeerfilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'editpeerimagesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'viewpeerfilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'editpeerfilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'deletepeerfilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'replacepeerfilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'editpeerimagesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'viewpeerfilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'editpeerfilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'deletepeerfilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'replacepeerfilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'editpeerimagesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'viewpeerfilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'editpeerfilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'deletepeerfilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'replacepeerfilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'editpeerimagesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'viewpeerfilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'editpeerfilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'deletepeerfilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'replacepeerfilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'editpeerimagesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'replacefilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'replacefilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'replacefilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'replacefilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'replacefilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'replacefilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'replacefilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'replacefilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'replacefilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'replacefilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos

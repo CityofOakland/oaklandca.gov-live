@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: d8042d7b-1c67-4b28-bb84-2002e74ed94b
+            fieldUid: d8042d7b-1c67-4b28-bb84-2002e74ed94b # Primary Unit
             instructions: ''
             label: ''
             required: '1'
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210
+            fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210 # Lead In
             instructions: null
             label: null
             required: false
@@ -45,7 +45,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f62c85ae-2203-4d1a-8702-da515126a398
+            fieldUid: f62c85ae-2203-4d1a-8702-da515126a398 # Banner
             instructions: null
             label: null
             required: false
@@ -54,7 +54,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: bef74be8-b22d-4dd0-9217-9707bb43d888
+            fieldUid: bef74be8-b22d-4dd0-9217-9707bb43d888 # CTA Button
             instructions: null
             label: null
             required: false
@@ -63,7 +63,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 78894bca-c6ce-4518-bb6f-fa94d7e7050e
+            fieldUid: 78894bca-c6ce-4518-bb6f-fa94d7e7050e # Timeline
             instructions: null
             label: null
             required: false
@@ -72,7 +72,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: d2528b2a-d63a-477c-9c22-431796381707
+            fieldUid: d2528b2a-d63a-477c-9c22-431796381707 # Project Map Image
             instructions: null
             label: null
             required: false
@@ -81,7 +81,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 97dc40f6-b307-4035-bc39-a8985cc4649a
+            fieldUid: 97dc40f6-b307-4035-bc39-a8985cc4649a # Project Before Photo
             instructions: null
             label: null
             required: false
@@ -90,7 +90,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: c18e25ad-bdd5-4629-a5d4-daf8579db08f
+            fieldUid: c18e25ad-bdd5-4629-a5d4-daf8579db08f # Project After Photo
             instructions: null
             label: null
             required: false
@@ -99,7 +99,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ffa38afc-e53d-4cb8-8c63-5422d8f647cd
+            fieldUid: ffa38afc-e53d-4cb8-8c63-5422d8f647cd # External Photo Gallery
             instructions: null
             label: null
             required: false
@@ -108,7 +108,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: e3f23e85-4290-41f4-bff9-7d12b6e1b52c
+            fieldUid: e3f23e85-4290-41f4-bff9-7d12b6e1b52c # Project Updates
             instructions: null
             label: null
             required: false
@@ -117,7 +117,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: caf0bc06-3f8b-4152-ab45-8e9289767860
+            fieldUid: caf0bc06-3f8b-4152-ab45-8e9289767860 # About
             instructions: null
             label: null
             required: false
@@ -126,7 +126,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: e1abe78e-92f3-4d83-890e-7f67fd2db4e0
+            fieldUid: e1abe78e-92f3-4d83-890e-7f67fd2db4e0 # Related Project Entries
             instructions: null
             label: null
             required: false
@@ -135,7 +135,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 899b11d8-2bd0-43d6-b39b-31e362b7534f
+            fieldUid: 899b11d8-2bd0-43d6-b39b-31e362b7534f # Project Documents
             instructions: null
             label: null
             required: false
@@ -144,7 +144,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 5cde5e79-0560-492c-b592-dd86cbde33c3
+            fieldUid: 5cde5e79-0560-492c-b592-dd86cbde33c3 # Funding Logos
             instructions: null
             label: null
             required: false
@@ -157,7 +157,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc
+            fieldUid: a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc # Boards & Commissions
             instructions: null
             label: null
             required: false
@@ -166,7 +166,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133
+            fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133 # Departments
             instructions: null
             label: null
             required: false
@@ -175,7 +175,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 73b7b0c7-bff1-4c55-97aa-fc62042f0347
+            fieldUid: 73b7b0c7-bff1-4c55-97aa-fc62042f0347 # Officials
             instructions: null
             label: null
             required: false
@@ -184,16 +184,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: d624c5c7-9cce-4088-92ba-02e1f2024c6a
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 44b00870-0842-4c4e-838f-dcd688fb5b05
+            fieldUid: 44b00870-0842-4c4e-838f-dcd688fb5b05 # Topics
             instructions: null
             label: null
             required: false
@@ -206,7 +197,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 90d724d7-7c32-4d04-8b9a-3900d6ecdb84
+            fieldUid: 90d724d7-7c32-4d04-8b9a-3900d6ecdb84 # Address(es)
             instructions: null
             label: null
             required: false
@@ -215,7 +206,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: c9d86e3f-9738-4d97-a271-5331264c10b8
+            fieldUid: c9d86e3f-9738-4d97-a271-5331264c10b8 # Address Extended
             instructions: null
             label: null
             required: false
@@ -224,7 +215,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 555efa28-a6b9-471d-8548-735eae07cb3c
+            fieldUid: 555efa28-a6b9-471d-8548-735eae07cb3c # Phone Numbers
             instructions: null
             label: null
             required: false
@@ -233,7 +224,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a
+            fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a # Email Address
             instructions: null
             label: null
             required: false
@@ -242,7 +233,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 6ac11602-f5a4-4e2e-bc97-fdfea3e3d005
+            fieldUid: 6ac11602-f5a4-4e2e-bc97-fdfea3e3d005 # Open Hours
             instructions: null
             label: null
             required: false
@@ -251,7 +242,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 80554222-e44d-4971-b6db-30843c2f3a7d
+            fieldUid: 80554222-e44d-4971-b6db-30843c2f3a7d # Facebook
             instructions: null
             label: null
             required: false
@@ -260,7 +251,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: d9a54ffb-26e9-4883-83bb-8e41650c8927
+            fieldUid: d9a54ffb-26e9-4883-83bb-8e41650c8927 # Twitter
             instructions: null
             label: null
             required: false
@@ -269,7 +260,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: d71c1375-6cf3-4873-9c42-fde00a9b766b
+            fieldUid: d71c1375-6cf3-4873-9c42-fde00a9b766b # Instagram
             instructions: null
             label: null
             required: false
@@ -278,7 +269,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 85af3974-efa6-4a79-a433-1fa8e5b4d404
+            fieldUid: 85af3974-efa6-4a79-a433-1fa8e5b4d404 # Medium
             instructions: null
             label: null
             required: false
@@ -291,7 +282,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d
+            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d # Metadata
             instructions: null
             label: null
             required: false
@@ -300,7 +291,16 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7
+            fieldUid: 14729c96-6aaf-4ad9-9371-c1763cd1ea7a # Priority
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7 # View Count
             instructions: null
             label: null
             required: false
@@ -313,7 +313,7 @@ fieldLayouts:
 handle: projects
 hasTitleField: true
 name: Projects
-section: 98d541ae-56ee-4c98-ba9c-37438dc485a0
+section: 98d541ae-56ee-4c98-ba9c-37438dc485a0 # Projects
 sortOrder: 2
 titleFormat: null
 titleTranslationKeyFormat: null

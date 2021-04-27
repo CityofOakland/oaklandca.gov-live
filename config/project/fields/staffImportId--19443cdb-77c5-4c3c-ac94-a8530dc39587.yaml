@@ -1,5 +1,5 @@
 contentColumnType: text
-fieldGroup: 71fb693f-011b-4669-ba10-f1b379557bb9
+fieldGroup: 71fb693f-011b-4669-ba10-f1b379557bb9 # Staff Fields
 handle: staffImportId
 instructions: ''
 name: 'Staff Import ID'
@@ -11,7 +11,7 @@ settings:
   columnType: text
   initialRows: '4'
   multiline: ''
-  placeholder: ''
+  placeholder: null
   uiMode: normal
 translationKeyFormat: null
 translationMethod: none

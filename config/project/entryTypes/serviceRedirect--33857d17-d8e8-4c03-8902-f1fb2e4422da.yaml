@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: d8042d7b-1c67-4b28-bb84-2002e74ed94b
+            fieldUid: d8042d7b-1c67-4b28-bb84-2002e74ed94b # Primary Unit
             instructions: ''
             label: ''
             required: '1'
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210
+            fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210 # Lead In
             instructions: null
             label: null
             required: false
@@ -45,7 +45,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 93eaa329-904e-4a23-9047-4decf3d47cac
+            fieldUid: 93eaa329-904e-4a23-9047-4decf3d47cac # Redirect URL
             instructions: null
             label: null
             required: false
@@ -58,7 +58,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 7594e9ae-f194-47c8-9a6b-076789f1087b
+            fieldUid: 7594e9ae-f194-47c8-9a6b-076789f1087b # Service Types
             instructions: null
             label: null
             required: false
@@ -67,7 +67,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc
+            fieldUid: a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc # Boards & Commissions
             instructions: null
             label: null
             required: false
@@ -76,7 +76,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133
+            fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133 # Departments
             instructions: null
             label: null
             required: false
@@ -85,7 +85,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 73b7b0c7-bff1-4c55-97aa-fc62042f0347
+            fieldUid: 73b7b0c7-bff1-4c55-97aa-fc62042f0347 # Officials
             instructions: null
             label: null
             required: false
@@ -94,7 +94,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: d624c5c7-9cce-4088-92ba-02e1f2024c6a
+            fieldUid: e67ec759-ea3a-4568-bfa6-a314ff3d1036 # Projects
             instructions: null
             label: null
             required: false
@@ -103,16 +103,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: e67ec759-ea3a-4568-bfa6-a314ff3d1036
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 44b00870-0842-4c4e-838f-dcd688fb5b05
+            fieldUid: 44b00870-0842-4c4e-838f-dcd688fb5b05 # Topics
             instructions: null
             label: null
             required: false
@@ -125,7 +116,7 @@ fieldLayouts:
 handle: serviceRedirect
 hasTitleField: true
 name: 'Service Redirect'
-section: b7e437e1-239f-4c5c-8c62-5f0323f9d22c
+section: b7e437e1-239f-4c5c-8c62-5f0323f9d22c # Services
 sortOrder: 3
 titleFormat: null
 titleTranslationKeyFormat: null

@@ -30,7 +30,7 @@ return [
   /*
      * The batch size Scout uses when importing a large amount of elements
      */
-  'batch_size' => 1000,
+  'batch_size' => 100,
 
   /*
      * The Algolia Application ID, this id can be found in your Algolia Account

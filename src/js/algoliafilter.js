@@ -150,6 +150,31 @@ search.addWidget(
     templates: {
       empty: "No results",
       item: window.indexTemplate || defaultTemplate,
+    },
+    transformItems: function(items){
+      for(var i = 0; i < items.length; i++) {
+        var item    = items[i];
+        var date    = new Date(item.date);
+        var months  = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+        var nth = function(d) {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1:  return "st";
+            case 2:  return "nd";
+            case 3:  return "rd";
+            default: return "th";
+          }
+        }
+
+        var year  = date.getFullYear();
+        var month = months[date.getMonth()];
+        var day   = date.getDate();
+
+        item.formattedDate = month + " " + day + nth(day) + ", " + year;
+        items[i] = item;
+      }
+      return items;
     }
   })
 );

@@ -3,7 +3,7 @@ import { publicDecrypt } from "crypto";
 const allSearch = instantsearch({
   appId: "6V5VJO8ZG2",
   apiKey: "9bded46d3070b2089499c70b2389708b",
-  indexName: "production_all",
+  indexName: document.querySelector('#all-hits') ? (document.querySelector('#all-hits').dataset.index ? document.querySelector('#all-hits').dataset.index : 'production_all' ) : 'production_all',
   searchParameters: {
     highlightPreTag: '<b class="font-bold"><em>',
     highlightPostTag: '</em></b>',
@@ -60,28 +60,15 @@ allSearch.addWidget(
       empty: "No results",
       item: `
       <div class="mb-4">
-        <h3 class="text-lg my-0">
-          <a class="hover:bg-green-300 hover:text-white" href="{{ url }}">{{{_highlightResult.title.value}}}</a>
-        </h3>
-
-        <p class="text-sm my-0">
-          {{{ _snippetResult.leadIn.value }}}
-        </p>
-
+        <h3 class="text-lg my-0"><a class="hover:bg-green-300 hover:text-white" href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
+        <p class="text-sm my-0">{{{ _snippetResult.leadIn.value }}}</p>
         {{{ #summary }}}
-          <p class="text-sm my-0">
-            {{{ _snippetResult.summary.value }}}
-          </p>
+          <p class="text-sm my-0">{{{ _snippetResult.summary.value }}}</p>
         {{{ /summary }}}
         {{ ^summary }}
-          <p class="text-sm my-0">
-            {{{ _snippetResult.body.value }}}
-          </p>
+          <p class="text-sm my-0">{{{ _snippetResult.body.value }}}</p>
         {{{ /summary }}}
-
-        <p class="text-sm my-0">
-          {{{ _snippetResult.bio.value }}}
-        </p>
+        <p class="text-sm my-0">{{{ _snippetResult.bio.value }}}</p>
       </div>
       `
     },

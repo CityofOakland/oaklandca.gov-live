@@ -1,5 +1,5 @@
 fieldLayouts:
-  85db0472-8080-4a60-9f8c-3619bc34682b:
+  b5ca47f3-26b6-4bd3-b153-60c3bd886e48:
     tabs:
       -
         elements:
@@ -11,7 +11,7 @@ fieldLayouts:
             disabled: false
             id: null
             instructions: null
-            label: Title
+            label: null
             max: null
             min: null
             name: null
@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210
+            fieldUid: f645ecd3-5b0e-4625-8986-da4a7726b1db # Image
             instructions: null
             label: null
             required: false
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: bef74be8-b22d-4dd0-9217-9707bb43d888
+            fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
             instructions: null
             label: null
             required: false
@@ -46,24 +46,11 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-      -
-        elements:
-          -
-            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-        name: SEO
-        sortOrder: 2
-handle: processesIndex
+handle: updates
 hasTitleField: true
-name: 'Processes Index'
-section: ea100822-9881-41cb-b2ed-e147268773d2
+name: 'Website Updates'
+section: ab06f460-5f10-4ce6-9623-9a5ff14a8685 # Website Updates
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null
-titleTranslationMethod: ''
+titleTranslationMethod: site

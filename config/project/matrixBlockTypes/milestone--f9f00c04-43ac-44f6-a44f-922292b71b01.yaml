@@ -1,11 +1,11 @@
-field: 78894bca-c6ce-4518-bb6f-fa94d7e7050e
+field: 78894bca-c6ce-4518-bb6f-fa94d7e7050e # Timeline
 fieldLayouts:
   8f37ffd8-930c-4774-a80c-34e639885697:
     tabs:
       -
         elements:
           -
-            fieldUid: d2258f6a-704e-413b-8079-a7611a4139c4
+            fieldUid: d2258f6a-704e-413b-8079-a7611a4139c4 # Milestone Name
             instructions: null
             label: null
             required: true
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 66c28d05-1cce-4903-af5e-5667d0a1cb53
+            fieldUid: 66c28d05-1cce-4903-af5e-5667d0a1cb53 # Milestone Date(s)
             instructions: null
             label: null
             required: false
@@ -25,7 +25,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  66c28d05-1cce-4903-af5e-5667d0a1cb53:
+  66c28d05-1cce-4903-af5e-5667d0a1cb53: # Milestone Date(s)
     contentColumnType: text
     fieldGroup: null
     handle: milestoneDates
@@ -39,12 +39,12 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  d2258f6a-704e-413b-8079-a7611a4139c4:
+  d2258f6a-704e-413b-8079-a7611a4139c4: # Milestone Name
     contentColumnType: text
     fieldGroup: null
     handle: milestoneName
@@ -58,7 +58,7 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none

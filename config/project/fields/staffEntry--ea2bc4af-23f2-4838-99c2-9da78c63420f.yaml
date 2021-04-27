@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
+fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db # People
 handle: staffEntry
 instructions: ''
 name: 'Staff Entry'
@@ -12,7 +12,7 @@ settings:
   showSiteMenu: true
   source: null
   sources:
-    - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
+    - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
   targetSiteId: null
   validateRelatedElements: true
   viewMode: null

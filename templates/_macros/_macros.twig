@@ -9,6 +9,7 @@
     {% return relCount %}
   {% endfor %}
 {% endmacro %}
+
 {% macro relatedEntry(entry, relSection) %}
   {% set relSectionHandle = relSection[0] %}
   {% set relType = relSection[1] %}
@@ -20,5 +21,26 @@
     {% set urlBase = relSectionHandle | kebab %}
     {% set relUrl = "/" ~ urlBase ~ "/related-to/" ~ section.handle ~ "/" ~ entry.slug %}
     {% include "_partials/_elements/_title-cards" with { title: relSection.name, url: relUrl} %}
+  {% endif %}
+{% endmacro %}
+
+{% macro videoEmbed(videoUrl, videoTitle) %}
+  {% set splitVideoUrl = videoUrl | split('://')[1] | split('&')[0] %}
+  {% if splitVideoUrl starts with 'oakland.granicus.com' %}
+    {% set embed = "https://" ~ splitVideoUrl ~ "&starttime=undefined&stoptime=undefined&autostart=0&embed=1" %}
+  {% else %}
+    {% set embed = craft.videoEmbedder.getEmbedUrl(videoUrl) %}
+  {% endif %}
+  {% if embed | length %}
+    {% if videoTitle %}
+      <p class="mt-4 mb-2 font-bold">{{ videoTitle }}</p>
+    {% endif %}
+    <div class='mb-12 embed-container'>
+      <iframe src='{{ embed }}' frameborder='0' allowfullscreen="allowfullscreen"></iframe>
+    </div>
+  {% else %}
+    <p>
+      <a href="{{ videoUrl }}" target="_blank">{{ videoTitle }}: ({{ videoUrl }})</a>
+    </p>
   {% endif %}
 {% endmacro %}

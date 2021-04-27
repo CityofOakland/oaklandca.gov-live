@@ -1,11 +1,11 @@
-field: 90d724d7-7c32-4d04-8b9a-3900d6ecdb84
+field: 90d724d7-7c32-4d04-8b9a-3900d6ecdb84 # Address(es)
 fieldLayouts:
   aeb25edb-5e97-4d36-887b-104930328dcf:
     tabs:
       -
         elements:
           -
-            fieldUid: 6a0b2a6f-4bff-474e-a3b2-d0b19a556875
+            fieldUid: 6a0b2a6f-4bff-474e-a3b2-d0b19a556875 # Location Name
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 80185635-48b7-48d7-847a-53d941fdda68
+            fieldUid: 80185635-48b7-48d7-847a-53d941fdda68 # Address
             instructions: null
             label: null
             required: true
@@ -25,7 +25,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  6a0b2a6f-4bff-474e-a3b2-d0b19a556875:
+  6a0b2a6f-4bff-474e-a3b2-d0b19a556875: # Location Name
     contentColumnType: text
     fieldGroup: null
     handle: locationName
@@ -39,34 +39,48 @@ fields:
       columnType: text
       initialRows: '4'
       multiline: ''
-      placeholder: ''
+      placeholder: null
       uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  80185635-48b7-48d7-847a-53d941fdda68:
+  80185635-48b7-48d7-847a-53d941fdda68: # Address
     contentColumnType: string
-    fieldGroup: null
+    fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
     handle: address
     instructions: 'To ensure your map is generated correctly on your page, make sure to pick an address the popup provides. If you haven''t received a popup, click **"Search Addresses"** and then choose from that list. If you have successfully chosen an address, you will see the **Latitude** and **Longitude** fields below filled out automatically.'
     name: Address
     searchable: false
     settings:
-      dragPinDefault: '1'
-      dragPinLatitude: '37.80524898225416'
-      dragPinLongitude: '-122.27233886718744'
-      dragPinZoom: '15'
-      layout:
+      coordinatesDefault:
+        __assoc__:
+          -
+            - lat
+            - 37.805248982254
+          -
+            - lng
+            - -122.27233886719
+          -
+            - zoom
+            - 15
+      coordinatesMode: readOnly
+      mapOnSearch: open
+      mapOnStart: close
+      showMap: null
+      subfieldConfig:
         __assoc__:
           -
             - street1
             -
               __assoc__:
                 -
+                  - label
+                  - 'Street Address'
+                -
                   - width
                   - 100
                 -
-                  - enable
+                  - enabled
                   - 1
                 -
                   - position
@@ -76,10 +90,13 @@ fields:
             -
               __assoc__:
                 -
+                  - label
+                  - 'Apartment or Suite'
+                -
                   - width
                   - 100
                 -
-                  - enable
+                  - enabled
                   - 1
                 -
                   - position
@@ -89,10 +106,13 @@ fields:
             -
               __assoc__:
                 -
+                  - label
+                  - City
+                -
                   - width
                   - 50
                 -
-                  - enable
+                  - enabled
                   - 1
                 -
                   - position
@@ -102,10 +122,13 @@ fields:
             -
               __assoc__:
                 -
+                  - label
+                  - State
+                -
                   - width
                   - 15
                 -
-                  - enable
+                  - enabled
                   - 1
                 -
                   - position
@@ -115,10 +138,13 @@ fields:
             -
               __assoc__:
                 -
+                  - label
+                  - 'Zip Code'
+                -
                   - width
                   - 35
                 -
-                  - enable
+                  - enabled
                   - 1
                 -
                   - position
@@ -128,43 +154,21 @@ fields:
             -
               __assoc__:
                 -
+                  - label
+                  - Country
+                -
                   - width
                   - 100
                 -
-                  - enable
+                  - enabled
                   - 0
                 -
                   - position
                   - 6
-          -
-            - lat
-            -
-              __assoc__:
-                -
-                  - width
-                  - 50
-                -
-                  - enable
-                  - 1
-                -
-                  - position
-                  - 7
-          -
-            - lng
-            -
-              __assoc__:
-                -
-                  - width
-                  - 50
-                -
-                  - enable
-                  - 1
-                -
-                  - position
-                  - 8
+      visibilityToggle: both
     translationKeyFormat: null
     translationMethod: none
-    type: doublesecretagency\smartmap\fields\Address
+    type: doublesecretagency\googlemaps\fields\AddressField
 handle: location
 name: Location
 sortOrder: 1

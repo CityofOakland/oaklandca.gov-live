@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: 5bc46e53-a87c-4584-89aa-808cacedf461
+fieldGroup: 5bc46e53-a87c-4584-89aa-808cacedf461 # Categories
 handle: eventTypes
 instructions: ''
 name: 'Event Types'
@@ -13,7 +13,7 @@ settings:
   localizeRelations: false
   selectionLabel: ''
   showSiteMenu: true
-  source: 'group:947de11d-3d94-45c2-8565-04542ce0e737'
+  source: 'group:947de11d-3d94-45c2-8565-04542ce0e737' # Event Types
   sources: '*'
   targetSiteId: null
   validateRelatedElements: false

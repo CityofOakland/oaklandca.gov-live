@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 21
+template: _components/widgets/WebsiteUpdates/index.html
+uriParts:
+  - updates
+uriPattern: updates

@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f62c85ae-2203-4d1a-8702-da515126a398
+            fieldUid: f62c85ae-2203-4d1a-8702-da515126a398 # Banner
             instructions: null
             label: null
             required: false
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 1011d286-bca1-40e1-abcb-1d61f6f7ebb2
+            fieldUid: 1011d286-bca1-40e1-abcb-1d61f6f7ebb2 # City Services and Resources Updates Description
             instructions: null
             label: null
             required: false
@@ -45,7 +45,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 19567722-f3ec-4502-977f-61661602f624
+            fieldUid: 19567722-f3ec-4502-977f-61661602f624 # City Services and Resources Updates
             instructions: null
             label: null
             required: false
@@ -54,7 +54,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 18fa95ee-449e-4c22-9d88-b0fb8918a38b
+            fieldUid: 18fa95ee-449e-4c22-9d88-b0fb8918a38b # Highlighted Services
             instructions: null
             label: null
             required: false
@@ -63,7 +63,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: de273878-3929-4764-b4ab-a670a2987d39
+            fieldUid: de273878-3929-4764-b4ab-a670a2987d39 # Highlighted News
             instructions: null
             label: null
             required: false
@@ -72,7 +72,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f528b37c-8b15-43b8-8da0-d1b161fbf629
+            fieldUid: f528b37c-8b15-43b8-8da0-d1b161fbf629 # Learn More About
             instructions: null
             label: null
             required: false
@@ -85,7 +85,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d
+            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d # Metadata
             instructions: null
             label: null
             required: false
@@ -98,7 +98,7 @@ fieldLayouts:
 handle: homepage
 hasTitleField: false
 name: Homepage
-section: e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5
+section: e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5 # Homepage
 sortOrder: 1
 titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null

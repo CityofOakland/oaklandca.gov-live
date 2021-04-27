@@ -1,5 +1,6 @@
 {% extends '_layouts/_banner-with-nav.twig' %}
 {% set entry = event %}
+{% import '_macros/_macros.twig' as macros %}
 
 {% block content %}
   {% block banner %}
@@ -55,32 +56,9 @@
             {% endfor %}
           </div>
         {% endif %}
-        {% if entry.videoLink | length %}
-          <h3>Video</h3>
-          {% set embed = craft.videoEmbedder.getEmbedUrl(entry.videoLink) %}
-          {% if embed | length %}
-            <style>
-              .embed-container {
-                position: relative;
-                padding-bottom: 56.25%;
-                height: 0;
-                overflow: hidden;
-                max-width: 100%;
-              }
-              .embed-container embed,
-              .embed-container iframe,
-              .embed-container object {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-              }
-            </style>
-            <div class='embed-container'>
-              <iframe src='{{ embed }}' frameborder='0' allowfullscreen="allowfullscreen"></iframe>
-            </div>
-          {% endif %}
+        {% if entry.videoLink %}
+          <h3 class="mb-3 mt-4">Video</h3>
+          {{ macros.videoEmbed(entry.videoLink) }}
         {% endif %}
         {% if entry.registrationLink | length %}
           <p>
@@ -90,9 +68,6 @@
         {% if entry.eventContact | length %}
           <h3>Contact</h3>
           {{ entry.eventContact }}
-        {% endif %}
-        {% if entry.embeddedContent.exists() %}
-          {{ entry.embeddedContent.one.codeInsertion | raw }}
         {% endif %}
       </div>
       <div class="sm:flex-1">

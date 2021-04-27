@@ -1,5 +1,5 @@
 contentColumnType: text
-fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
 handle: ctaButton
 instructions: 'Choose an item you want to link to with this CTA Button'
 name: 'CTA Button'
@@ -36,6 +36,25 @@ settings:
               - ''
             -
               - customPlaceholder
+              - ''
+      -
+        - fruitstudios\linkit\models\User
+        -
+          __assoc__:
+            -
+              - enabled
+              - ''
+            -
+              - customLabel
+              - ''
+            -
+              - sources
+              - '*'
+            -
+              - customSelectionLabel
+              - ''
+            -
+              - userPath
               - ''
       -
         - fruitstudios\linkit\models\Url
@@ -161,25 +180,6 @@ settings:
               - '*'
             -
               - customSelectionLabel
-              - ''
-      -
-        - fruitstudios\linkit\models\User
-        -
-          __assoc__:
-            -
-              - enabled
-              - ''
-            -
-              - customLabel
-              - ''
-            -
-              - sources
-              - '*'
-            -
-              - customSelectionLabel
-              - ''
-            -
-              - userPath
               - ''
 translationKeyFormat: null
 translationMethod: none

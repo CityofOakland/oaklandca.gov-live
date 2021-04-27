@@ -1,5 +1,5 @@
 contentColumnType: text
-fieldGroup: 1fe293ad-52d9-4002-984e-b7a256d4b158
+fieldGroup: 1fe293ad-52d9-4002-984e-b7a256d4b158 # Social Media
 handle: youtube
 instructions: 'Add the URL for the YouTube account for this entry.'
 name: YouTube
@@ -11,7 +11,7 @@ settings:
   columnType: text
   initialRows: '4'
   multiline: ''
-  placeholder: ''
+  placeholder: null
   uiMode: normal
 translationKeyFormat: null
 translationMethod: none

@@ -7,7 +7,7 @@ $textBlock = [
 $adminTextBlock = $textBlock;
 $linksBlock = [
   'label' => 'Links',
-  'types' => ['linksWithDescriptions', 'largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries', 'callToAction'],
+  'types' => ['linksWithDescriptions', 'largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries', 'callToAction']
 ];
 $adminLinksBlock = [
   'label' => 'Links',
@@ -44,7 +44,8 @@ if ($isUserAdmin) {
   $servicesBlock = $defaultBlock;
 } else {
   $defaultBlock = [
-    $textBlock
+    $textBlock,
+    $linksBlock,
   ];
   $departmentsBlock = [
     $textBlock,
@@ -58,11 +59,13 @@ if ($isUserAdmin) {
   ];
   $newsPressBlock = [
     $textBlock,
+    $linksBlock,
     $imagesBlock,
     $tablesBlock,
   ];
   $resourcesBlock = [
     $textBlock,
+    $linksBlock,
     $imagesBlock,
     $tablesBlock,
   ];

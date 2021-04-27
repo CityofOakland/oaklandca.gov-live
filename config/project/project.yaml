@@ -1,4 +1,4 @@
-dateModified: 1613490929
+dateModified: 1619551607
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -117,7 +117,7 @@ plugins:
     edition: pro
     enabled: '1'
     licenseKey: PRJ91600ENZBQ5S7HS7UE93Z
-    schemaVersion: 3.1.0
+    schemaVersion: 3.2.0
     settings:
       allDay: false
       authoredEventEditOnly: ''
@@ -155,6 +155,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.0.0
+  dashboard-configuration:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   element-api:
     enabled: '1'
     licenseKey: null
@@ -170,6 +174,20 @@ plugins:
     licenseKey: null
     schemaVersion: 4.3.0
     settings: null
+  google-maps:
+    enabled: true
+    licenseKey: 0H5E3MIS198GEIOF53TW84AQ
+    schemaVersion: 4.0.0
+    settings:
+      browserKey: AIzaSyCe-8KH-BppEiy7fvwFxiRVrhFy0DGbJ2o
+      enableJsLogging: true
+      fieldControlSize: 27
+      geolocationService: none
+      ipstackApiAccessKey: null
+      maxmindLicenseKey: ''
+      maxmindService: ''
+      maxmindUserId: ''
+      serverKey: AIzaSyCIaOEBLWXXPFvTdGJ98Y81RNMM_upfFPI
   imager-x:
     edition: pro
     enabled: true
@@ -273,18 +291,6 @@ plugins:
     licenseKey: WE9YYSPHWC5CNFB2RL64YDJ6
     schemaVersion: 3.0.9
     settings: null
-  smart-map:
-    enabled: '1'
-    licenseKey: 8KND7ZM72H5RQY65UFT7QUH1
-    schemaVersion: 3.2.3
-    settings:
-      debugRoute: map/debug
-      geolocation: none
-      googleBrowserKey: AIzaSyCe-8KH-BppEiy7fvwFxiRVrhFy0DGbJ2o
-      googleServerKey: AIzaSyCIaOEBLWXXPFvTdGJ98Y81RNMM_upfFPI
-      maxmindLicenseKey: ''
-      maxmindService: ''
-      maxmindUserId: ''
   smith:
     edition: standard
     enabled: true
@@ -353,5 +359,5 @@ system:
   live: true
   name: 'City of Oakland'
   retryDuration: null
-  schemaVersion: 3.6.4
+  schemaVersion: 3.6.6
   timeZone: America/Los_Angeles
