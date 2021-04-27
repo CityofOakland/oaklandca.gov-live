@@ -72,7 +72,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 02edcc9a-9985-4401-9a49-38455f47ff84 # Media Contact
+            fieldUid: 02edcc9a-9985-4401-9a49-38455f47ff84 # Contact Notes
             instructions: null
             label: null
             required: false
