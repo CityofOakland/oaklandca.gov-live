@@ -119,31 +119,7 @@ class DashboardConfiguration extends Plugin
                 if($event->action->actionMethod == 'actionIndex' && $event->action->controller instanceof \craft\controllers\DashboardController){
                     $service = new \goat\dashboardconfiguration\services\Service();
                     $service->visitDashboard();
-
-                    if(Craft::$app->projectConfig->get('plugins.dashboard-configuration.settings.documentation')){
-                        Craft::$app->projectConfig->remove('plugins.dashboard-configuration.settings.documentation');
-                    }
                 }
-            }
-        );
-
-        // Do something after we're installed
-        Event::on(
-            Plugins::class,
-            Plugins::EVENT_AFTER_INSTALL_PLUGIN,
-            function (PluginEvent $event) {
-                if ($event->plugin === $this) {
-                    // We were just installed
-                }
-            }
-        );
-
-        Event::on(
-            ProjectConfig::class,
-            ProjectConfig::EVENT_REBUILD,
-            function(RebuildConfigEvent $e) {
-                // Remove settings from being tracked.
-                unset($e->config['plugins']['dashboard-configuration']['settings']['documentation']);
             }
         );
 
