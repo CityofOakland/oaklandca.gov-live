@@ -1,8 +1,8 @@
 contentColumnType: text
 fieldGroup: 4ed914c6-b7ea-44be-a061-4430ad33baf2 # News
 handle: mediaContact
-instructions: 'If the "Contact" field is available, please use the above. This field is deprecated for future use.'
-name: 'Media Contact'
+instructions: ''
+name: 'Contact Notes'
 searchable: true
 settings:
   availableTransforms: '*'

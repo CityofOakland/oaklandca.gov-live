@@ -1,4 +1,4 @@
-dateModified: 1619550351
+dateModified: 1619677595
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -160,7 +160,7 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
     settings:
-      documentation: '<p>This is some text in the documentation.</p>'
+      documentation: '<p><a href="https://docs.google.com/document/d/1pOhZdKAyO_82BKspgiklE8pv962t3X2e3NA9hC4-jGg/edit">City of Oakland Writing for the Web Style Guide</a></p>'
   element-api:
     enabled: '1'
     licenseKey: null
