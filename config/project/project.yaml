@@ -1,4 +1,4 @@
-dateModified: 1619551607
+dateModified: 1619813069
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -179,15 +179,15 @@ plugins:
     licenseKey: 0H5E3MIS198GEIOF53TW84AQ
     schemaVersion: 4.0.0
     settings:
-      browserKey: AIzaSyCe-8KH-BppEiy7fvwFxiRVrhFy0DGbJ2o
+      browserKey: AIzaSyAjLOAKFea8xqgeL9Hf8TyXLNcLxXVgJzo
       enableJsLogging: true
       fieldControlSize: 27
-      geolocationService: none
-      ipstackApiAccessKey: null
+      geolocationService: ''
+      ipstackApiAccessKey: ''
       maxmindLicenseKey: ''
       maxmindService: ''
       maxmindUserId: ''
-      serverKey: AIzaSyCIaOEBLWXXPFvTdGJ98Y81RNMM_upfFPI
+      serverKey: AIzaSyBnPcsOXM0SarMt94kDEN60juB600UKvck
   imager-x:
     edition: pro
     enabled: true
