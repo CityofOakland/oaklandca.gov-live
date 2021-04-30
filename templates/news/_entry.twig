@@ -51,9 +51,8 @@
         </div>
         <div class="md:flex-1">
           {% if entry.contact|length %}
-            {% if entry.contact|length %}
-              <h3>Media Contact</h3>
-              {% set contact = entry.contact.one() %}
+            <h3>Media Contact</h3>
+            {% for contact in entry.contact.all() %}
               {% if contact.portrait|length %}
                 {% set photo = contact.portrait.one() %}
                 {% set transformedImage = craft.imager.transformImage(
@@ -72,13 +71,12 @@
               <p>
                 <b><a target="_blank" href="{{ contact.url }}"><span>{{ contact.title }}</span></a></b>
                 {% if contact.jobTitle or contact.staffImportJobTitle %}<br><span>{{ contact.jobTitle ? contact.jobTitle : contact.staffImportJobTitle }}</span>{% endif %}
-                {% if contact.staffImportOrganization %}<br><span>{{ contact.staffImportOrganization }}</span>{% endif %}
+                {% if contact.departmentOfficialBoardCommission|length or contact.staffImportOrganization %}<br><span>{{ contact.departmentOfficialBoardCommission.one() ? contact.departmentOfficialBoardCommission.one().title : contact.staffImportOrganization }}</span>{% endif %}
                 {% if contact.emailAddress or contact.staffImportEmail %}<br><a href="mailto:{{ contact.emailAddress ? contact.emailAddress : contact.staffImportEmail }}">{{ contact.emailAddress ? contact.emailAddress : contact.staffImportEmail }}</a>{% endif %}
                 {% if contact.phoneNumber or contact.staffImportPhoneNumber %}<br><a href="tel:{{ contact.phoneNumber ? contact.phoneNumber : contact.staffImportPhoneNumber }}">{{ contact.phoneNumber ? contact.phoneNumber : contact.staffImportPhoneNumber }}</a>{% endif %}
               </p>
-            {% endif %}
+            {% endfor %}
             {% if entry.mediaContact %}
-              <h3>Contact Notes</h3>
               {{ entry.mediaContact }}
             {% endif %}
           {% endif %}
