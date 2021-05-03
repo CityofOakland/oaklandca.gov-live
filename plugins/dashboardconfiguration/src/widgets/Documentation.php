@@ -5,13 +5,16 @@
  * @license https://craftcms.github.io/license/
  */
 
-namespace modules;
+namespace goat\dashboardconfiguration\widgets;
 
 use Craft;
 use craft\base\Widget;
 use craft\elements\Entry;
 use craft\models\Section;
 use craft\web\View;
+
+use goat\dashboardconfiguration\DashboardConfiguration;
+use goat\dashboardconfiguration\assetbundles\dashboardconfigurationwidgetwidget\DashboardConfigurationWidgetWidgetAsset;
 
 /**
  * RecentEntries represents a Recent Entries dashboard widget.
@@ -40,7 +43,7 @@ class Documentation extends Widget
     /**
      * @var int|null The string content that we want this widget to display.
      */
-    public $mainContent = '';
+    public $mainContent = 'Default';
 
     /**
      * @inheritdoc
@@ -74,23 +77,13 @@ class Documentation extends Widget
      */
     public function getBodyHtml()
     {
-        $view = Craft::$app->getView();
+        $html = \goat\dashboardconfiguration\DashboardConfiguration::getInstance()->settings->documentation;
 
-        return $view->renderTemplate(
-            '_components/widgets/Documentation/body',
-            ['widget' => $this],
-            View::TEMPLATE_MODE_SITE);
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getSettingsHtml()
-    {
-        return Craft::$app->getView()->renderTemplate('_components/widgets/Documentation/settings',
+        return Craft::$app->getView()->renderTemplate(
+            'dashboard-configuration/_components/widgets/Documentation_body',
             [
-                'widget' => $this,
-            ],
-            View::TEMPLATE_MODE_SITE);
+                'html'   => $html
+            ]
+        );
     }
 }

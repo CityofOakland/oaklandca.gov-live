@@ -83,92 +83,41 @@ fields:
     type: craft\redactor\Field
   b4b3c606-9215-46dd-926d-ecc0cdd900e7: # Street Address
     contentColumnType: string
-    fieldGroup: null
+    fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
     handle: streetAddress
     instructions: 'Use this field to enter your street address.'
     name: 'Street Address'
     searchable: false
     settings:
-      dragPinDefault: ''
-      dragPinLatitude: '37.81766663487279'
-      dragPinLongitude: '-122.27178725040258'
-      dragPinZoom: '4'
-      layout:
+      coordinatesDefault:
         __assoc__:
           -
-            - city
-            -
-              __assoc__:
-                -
-                  - width
-                  - 50
-                -
-                  - enable
-                  - 1
-                -
-                  - position
-                  - 1
-          -
-            - country
-            -
-              __assoc__:
-                -
-                  - width
-                  - 100
-                -
-                  - enable
-                  - 0
-                -
-                  - position
-                  - 2
-          -
             - lat
-            -
-              __assoc__:
-                -
-                  - width
-                  - 50
-                -
-                  - enable
-                  - 0
-                -
-                  - position
-                  - 3
+            - 37.817666634873
           -
             - lng
-            -
-              __assoc__:
-                -
-                  - width
-                  - 50
-                -
-                  - enable
-                  - 0
-                -
-                  - position
-                  - 4
+            - -122.2717872504
           -
-            - state
-            -
-              __assoc__:
-                -
-                  - width
-                  - 15
-                -
-                  - enable
-                  - 1
-                -
-                  - position
-                  - 5
+            - zoom
+            - 4
+      coordinatesMode: readOnly
+      mapOnSearch: open
+      mapOnStart: close
+      showMap: null
+      subfieldConfig:
+        __assoc__:
           -
             - street1
             -
               __assoc__:
                 -
+                  - label
+                  - 'Street Address'
+                -
                   - width
                   - 100
                 -
-                  - enable
+                  - enabled
                   - 1
                 -
                   - position
@@ -178,30 +127,85 @@ fields:
             -
               __assoc__:
                 -
+                  - label
+                  - 'Apartment or Suite'
+                -
                   - width
                   - 100
                 -
-                  - enable
+                  - enabled
                   - 1
                 -
                   - position
                   - 7
           -
+            - city
+            -
+              __assoc__:
+                -
+                  - label
+                  - City
+                -
+                  - width
+                  - 50
+                -
+                  - enabled
+                  - 1
+                -
+                  - position
+                  - 1
+          -
+            - state
+            -
+              __assoc__:
+                -
+                  - label
+                  - State
+                -
+                  - width
+                  - 15
+                -
+                  - enabled
+                  - 1
+                -
+                  - position
+                  - 5
+          -
             - zip
             -
               __assoc__:
                 -
+                  - label
+                  - 'Zip Code'
+                -
                   - width
                   - 35
                 -
-                  - enable
+                  - enabled
                   - 1
                 -
                   - position
                   - 8
+          -
+            - country
+            -
+              __assoc__:
+                -
+                  - label
+                  - Country
+                -
+                  - width
+                  - 100
+                -
+                  - enabled
+                  - 0
+                -
+                  - position
+                  - 2
+      visibilityToggle: both
     translationKeyFormat: null
     translationMethod: none
-    type: doublesecretagency\smartmap\fields\Address
+    type: doublesecretagency\googlemaps\fields\AddressField
 handle: physicalAddress
 name: 'Physical Address'
 sortOrder: 3

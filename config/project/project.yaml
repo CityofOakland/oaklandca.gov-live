@@ -1,4 +1,4 @@
-dateModified: 1619812618
+dateModified: 1620051413
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -71,7 +71,7 @@ plugins:
             - concurrency
             - '10'
       cacheWarmerType: putyourlightson\blitz\drivers\warmers\GuzzleWarmer
-      cachingEnabled: '1'
+      cachingEnabled: ''
       clearCacheAutomatically: '1'
       customSiteUris: ''
       debug: false
@@ -86,11 +86,6 @@ plugins:
             -
               - uriPattern
               - /author
-        -
-          __assoc__:
-            -
-              - uriPattern
-              - '/datasets/*'
       includedUriPatterns:
         -
           __assoc__:
@@ -160,16 +155,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.0.0
-  default-dashboard:
+  dashboard-configuration:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-    settings:
-      excludeAdmin: ''
-      logErrors: false
-      logInfo: false
-      override: '1'
-      userDashboard: '620486'
   element-api:
     enabled: '1'
     licenseKey: null

@@ -1,7 +1,7 @@
 {% requireLogin %}
 
 <div class="recententries-container">
-    {% if entries|length %}
+    {% if entries is defined and entries|length %}
         <table class="fullwidth">
             {% for entry in entries %}
                 <tr>

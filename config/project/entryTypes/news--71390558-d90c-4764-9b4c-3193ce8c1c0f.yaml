@@ -63,7 +63,16 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 02edcc9a-9985-4401-9a49-38455f47ff84 # Media Contact
+            fieldUid: e9d7be93-3feb-4c21-ae81-84429ed485df # Contact
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 02edcc9a-9985-4401-9a49-38455f47ff84 # Contact Notes
             instructions: null
             label: null
             required: false
@@ -122,15 +131,6 @@ fieldLayouts:
             width: 100
           -
             fieldUid: 73b7b0c7-bff1-4c55-97aa-fc62042f0347 # Officials
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: d624c5c7-9cce-4088-92ba-02e1f2024c6a
             instructions: null
             label: null
             required: false

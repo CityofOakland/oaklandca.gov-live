@@ -27,27 +27,41 @@ fieldLayouts:
 fields:
   4c0f9e7c-fe6a-47d0-b8c9-17e8a34a39f2: # Address
     contentColumnType: string
-    fieldGroup: null
+    fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
     handle: address
     instructions: ''
     name: Address
     searchable: false
     settings:
-      dragPinDefault: '1'
-      dragPinLatitude: '37.80527735793168'
-      dragPinLongitude: '-122.27239626522066'
-      dragPinZoom: '18'
-      layout:
+      coordinatesDefault:
+        __assoc__:
+          -
+            - lat
+            - 37.805277357932
+          -
+            - lng
+            - -122.27239626522
+          -
+            - zoom
+            - 18
+      coordinatesMode: readOnly
+      mapOnSearch: open
+      mapOnStart: close
+      showMap: null
+      subfieldConfig:
         __assoc__:
           -
             - street1
             -
               __assoc__:
                 -
+                  - label
+                  - 'Street Address'
+                -
                   - width
                   - 100
                 -
-                  - enable
+                  - enabled
                   - 1
                 -
                   - position
@@ -57,10 +71,13 @@ fields:
             -
               __assoc__:
                 -
+                  - label
+                  - 'Apartment or Suite'
+                -
                   - width
                   - 100
                 -
-                  - enable
+                  - enabled
                   - 1
                 -
                   - position
@@ -70,10 +87,13 @@ fields:
             -
               __assoc__:
                 -
+                  - label
+                  - City
+                -
                   - width
                   - 50
                 -
-                  - enable
+                  - enabled
                   - 1
                 -
                   - position
@@ -83,10 +103,13 @@ fields:
             -
               __assoc__:
                 -
+                  - label
+                  - State
+                -
                   - width
                   - 15
                 -
-                  - enable
+                  - enabled
                   - 1
                 -
                   - position
@@ -96,10 +119,13 @@ fields:
             -
               __assoc__:
                 -
+                  - label
+                  - 'Zip Code'
+                -
                   - width
                   - 35
                 -
-                  - enable
+                  - enabled
                   - 1
                 -
                   - position
@@ -109,43 +135,21 @@ fields:
             -
               __assoc__:
                 -
+                  - label
+                  - Country
+                -
                   - width
                   - 100
                 -
-                  - enable
+                  - enabled
                   - 1
                 -
                   - position
                   - 6
-          -
-            - lat
-            -
-              __assoc__:
-                -
-                  - width
-                  - 50
-                -
-                  - enable
-                  - 1
-                -
-                  - position
-                  - 7
-          -
-            - lng
-            -
-              __assoc__:
-                -
-                  - width
-                  - 50
-                -
-                  - enable
-                  - 1
-                -
-                  - position
-                  - 8
+      visibilityToggle: both
     translationKeyFormat: null
     translationMethod: none
-    type: doublesecretagency\smartmap\fields\Address
+    type: doublesecretagency\googlemaps\fields\AddressField
   7e17b706-c00f-4f94-84df-b0e91247051f: # Description
     contentColumnType: text
     fieldGroup: null
