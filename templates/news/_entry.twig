@@ -50,8 +50,10 @@
           {% endif %}
         </div>
         <div class="md:flex-1">
-          {% if entry.contact|length %}
+          {% if entry.contact|length or entry.mediaContact %}
             <h3>Media Contact</h3>
+          {% endif %}
+          {% if entry.contact|length %}
             {% for contact in entry.contact.all() %}
               {% if contact.portrait|length %}
                 {% set photo = contact.portrait.one() %}
