@@ -76,9 +76,9 @@
                 {% if contact.phoneNumber or contact.staffImportPhoneNumber %}<br><a href="tel:{{ contact.phoneNumber ? contact.phoneNumber : contact.staffImportPhoneNumber }}">{{ contact.phoneNumber ? contact.phoneNumber : contact.staffImportPhoneNumber }}</a>{% endif %}
               </p>
             {% endfor %}
-            {% if entry.mediaContact %}
-              {{ entry.mediaContact }}
-            {% endif %}
+          {% endif %}
+          {% if entry.mediaContact %}
+            {{ entry.mediaContact }}
           {% endif %}
           {% if pressRelease.exists() %}
             <a href="{{ pressRelease.one.url }}" class="w-full btn">Download Press Release</a>
