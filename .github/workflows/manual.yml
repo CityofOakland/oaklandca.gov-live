@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: Manual workflow
+name: Staging Push
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -25,4 +25,7 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         password: ${{ secrets.SSH_PASSWORD }}
         port: 22
-        script: whoami
+        script_stop: true
+        script: |
+          cd /storage/av06875/www/public_html
+          ls -al
