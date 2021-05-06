@@ -25,12 +25,12 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  2149a8bc-3dd5-41f2-a28a-c714bcf5f5c7: # Audio Link
+  9a33b1ce-5545-4a3e-b6d9-1dea16f8869c: # Audio Title
     contentColumnType: text
     fieldGroup: null
-    handle: audioLink
+    handle: audioTitle
     instructions: ''
-    name: 'Audio Link'
+    name: 'Audio Title'
     searchable: false
     settings:
       byteLimit: null
@@ -44,12 +44,12 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  9a33b1ce-5545-4a3e-b6d9-1dea16f8869c: # Audio Title
+  2149a8bc-3dd5-41f2-a28a-c714bcf5f5c7: # Audio Link
     contentColumnType: text
     fieldGroup: null
-    handle: audioTitle
+    handle: audioLink
     instructions: ''
-    name: 'Audio Title'
+    name: 'Audio Link'
     searchable: false
     settings:
       byteLimit: null

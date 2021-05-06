@@ -34,6 +34,25 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
+  314d167b-d1f4-47dd-92e5-4d0f75339e09: # Location Name
+    contentColumnType: text
+    fieldGroup: null
+    handle: locationName
+    instructions: ''
+    name: 'Location Name'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   06394615-97e5-4f64-8d80-da62f9f1582c: # Location Description
     contentColumnType: text
     fieldGroup: null
@@ -62,25 +81,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  314d167b-d1f4-47dd-92e5-4d0f75339e09: # Location Name
-    contentColumnType: text
-    fieldGroup: null
-    handle: locationName
-    instructions: ''
-    name: 'Location Name'
-    searchable: true
-    settings:
-      byteLimit: null
-      charLimit: null
-      code: ''
-      columnType: null
-      initialRows: '4'
-      multiline: ''
-      placeholder: null
-      uiMode: normal
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
   b199c827-5414-4bf9-bcf7-cf6f4e144bda: # Web Address
     contentColumnType: string(255)
     fieldGroup: null

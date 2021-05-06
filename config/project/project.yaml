@@ -1,4 +1,4 @@
-dateModified: 1619813069
+dateModified: 1620320391
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -359,5 +359,5 @@ system:
   live: true
   name: 'City of Oakland'
   retryDuration: null
-  schemaVersion: 3.6.6
+  schemaVersion: 3.6.8
   timeZone: America/Los_Angeles
