@@ -34,25 +34,6 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  2297d996-75c6-4163-9ce7-1ca5c609e89a: # Address Title
-    contentColumnType: text
-    fieldGroup: null
-    handle: addressTitle
-    instructions: 'e.g., "Mailing Address" or "Visit In Person".'
-    name: 'Address Title'
-    searchable: false
-    settings:
-      byteLimit: null
-      charLimit: null
-      code: ''
-      columnType: text
-      initialRows: '4'
-      multiline: ''
-      placeholder: null
-      uiMode: normal
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
   55afc13e-16e3-4080-9c67-ae7a4c46e3e2: # Additional Address Info
     contentColumnType: text
     fieldGroup: null
@@ -81,6 +62,25 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
+  2297d996-75c6-4163-9ce7-1ca5c609e89a: # Address Title
+    contentColumnType: text
+    fieldGroup: null
+    handle: addressTitle
+    instructions: 'e.g., "Mailing Address" or "Visit In Person".'
+    name: 'Address Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   b4b3c606-9215-46dd-926d-ecc0cdd900e7: # Street Address
     contentColumnType: string
     fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common

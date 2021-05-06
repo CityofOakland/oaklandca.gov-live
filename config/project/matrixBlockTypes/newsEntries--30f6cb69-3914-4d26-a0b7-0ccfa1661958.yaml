@@ -71,6 +71,20 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  5ee14b98-d8d9-46bd-88d8-0aa45871cfc9: # Hide Summary?
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: hideSummary
+    instructions: 'Check this box if you wish to hide the summary text that appears at the bottom of each entry’s block.'
+    name: 'Hide Summary?'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
   295df0c5-cc10-4392-9fbb-3452cc97b84a: # Entries
     contentColumnType: string
     fieldGroup: null
@@ -93,20 +107,6 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Entries
-  5ee14b98-d8d9-46bd-88d8-0aa45871cfc9: # Hide Summary?
-    contentColumnType: boolean
-    fieldGroup: null
-    handle: hideSummary
-    instructions: 'Check this box if you wish to hide the summary text that appears at the bottom of each entry’s block.'
-    name: 'Hide Summary?'
-    searchable: false
-    settings:
-      default: false
-      offLabel: null
-      onLabel: null
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Lightswitch
   8960f671-8e74-4a40-a507-6ba440cb6c8e: # Allow Autofill?
     contentColumnType: boolean
     fieldGroup: null

@@ -43,41 +43,6 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  07e65c29-fba5-4a88-ade2-bd8abfb4cc69: # Link Set
-    contentColumnType: string
-    fieldGroup: null
-    handle: linkSet
-    instructions: 'Add a link and an image up to three blocks. Choose a square icon, 300x300px in size. For best results, use a white outlined illustration/lineart.'
-    name: 'Link Set'
-    searchable: false
-    settings:
-      columns:
-        __assoc__:
-          -
-            - 61bef9fa-6716-4df3-a88d-46f256cdee73 # Link Location
-            -
-              __assoc__:
-                -
-                  - width
-                  - ''
-          -
-            - eb7e7c8e-f03b-44c8-8b3f-f7086707f07a # Link Icon
-            -
-              __assoc__:
-                -
-                  - width
-                  - ''
-      contentTable: '{{%stc_52_linkset}}'
-      fieldLayout: table
-      maxRows: '3'
-      minRows: ''
-      placeholderKey: null
-      propagationMethod: all
-      selectionLabel: ''
-      staticField: ''
-    translationKeyFormat: null
-    translationMethod: site
-    type: verbb\supertable\fields\SuperTableField
   6d6039ca-322a-4f7f-91e2-371a9f5d637c: # Read More Link
     contentColumnType: text
     fieldGroup: null
@@ -305,6 +270,41 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: fruitstudios\linkit\fields\LinkitField
+  07e65c29-fba5-4a88-ade2-bd8abfb4cc69: # Link Set
+    contentColumnType: string
+    fieldGroup: null
+    handle: linkSet
+    instructions: 'Add a link and an image up to three blocks. Choose a square icon, 300x300px in size. For best results, use a white outlined illustration/lineart.'
+    name: 'Link Set'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 61bef9fa-6716-4df3-a88d-46f256cdee73 # Link Location
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - eb7e7c8e-f03b-44c8-8b3f-f7086707f07a # Link Icon
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_52_linkset}}'
+      fieldLayout: table
+      maxRows: '3'
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
   e0441456-2c87-45db-aacd-22ac957f8fc1: # Heading
     contentColumnType: text
     fieldGroup: null

@@ -137,26 +137,6 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
-  28f1ddd3-72ce-439e-8d65-9b9a9e19f150: # Column 1 Width
-    contentColumnType: smallint(2)
-    fieldGroup: null
-    handle: column1Width
-    instructions: ''
-    name: 'Column 1 Width'
-    searchable: false
-    settings:
-      decimals: 0
-      defaultValue: '25'
-      max: '99'
-      min: '1'
-      prefix: null
-      previewCurrency: ''
-      previewFormat: decimal
-      size: null
-      suffix: null
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Number
   2c145c6e-d6b2-418c-aa28-3ea1eaa51944: # Column 3 Width
     contentColumnType: smallint(2)
     fieldGroup: null
@@ -217,12 +197,12 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number
-  40abab6e-fe75-4f91-b6bd-9016b2b01dbe: # Column 2 Heading
+  9c805dc0-3e7b-4361-ace3-62b856d8711e: # Column 3 Heading
     contentColumnType: text
     fieldGroup: null
-    handle: column2Heading
+    handle: column3Heading
     instructions: ''
-    name: 'Column 2 Heading'
+    name: 'Column 3 Heading'
     searchable: false
     settings:
       byteLimit: null
@@ -236,12 +216,32 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  9c805dc0-3e7b-4361-ace3-62b856d8711e: # Column 3 Heading
+  28f1ddd3-72ce-439e-8d65-9b9a9e19f150: # Column 1 Width
+    contentColumnType: smallint(2)
+    fieldGroup: null
+    handle: column1Width
+    instructions: ''
+    name: 'Column 1 Width'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: '25'
+      max: '99'
+      min: '1'
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  40abab6e-fe75-4f91-b6bd-9016b2b01dbe: # Column 2 Heading
     contentColumnType: text
     fieldGroup: null
-    handle: column3Heading
+    handle: column2Heading
     instructions: ''
-    name: 'Column 3 Heading'
+    name: 'Column 2 Heading'
     searchable: false
     settings:
       byteLimit: null

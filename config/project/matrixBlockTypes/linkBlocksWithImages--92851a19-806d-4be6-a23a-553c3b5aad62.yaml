@@ -90,6 +90,41 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
+  9c457cb3-7498-4b3d-8b1e-84454f649934: # Link Set
+    contentColumnType: string
+    fieldGroup: null
+    handle: linkSet
+    instructions: 'Add a link and an image up to three blocks. Choose an image that is cropped at ~ 800 x 333 pixels. It will have a ratio of 12:5 when presented on the website.'
+    name: 'Link Set'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 530b68fe-6b94-432c-8399-4f944cb2b9a1 # Link Location
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - cbfce010-f6e1-46eb-a360-1152a3a07447 # Link Image
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_51_linkset}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
   823b335f-ee31-4526-b6f4-952682ef1061: # Read More Link
     contentColumnType: text
     fieldGroup: null
@@ -317,41 +352,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: fruitstudios\linkit\fields\LinkitField
-  9c457cb3-7498-4b3d-8b1e-84454f649934: # Link Set
-    contentColumnType: string
-    fieldGroup: null
-    handle: linkSet
-    instructions: 'Add a link and an image up to three blocks. Choose an image that is cropped at ~ 800 x 333 pixels. It will have a ratio of 12:5 when presented on the website.'
-    name: 'Link Set'
-    searchable: false
-    settings:
-      columns:
-        __assoc__:
-          -
-            - 530b68fe-6b94-432c-8399-4f944cb2b9a1 # Link Location
-            -
-              __assoc__:
-                -
-                  - width
-                  - ''
-          -
-            - cbfce010-f6e1-46eb-a360-1152a3a07447 # Link Image
-            -
-              __assoc__:
-                -
-                  - width
-                  - ''
-      contentTable: '{{%stc_51_linkset}}'
-      fieldLayout: table
-      maxRows: ''
-      minRows: ''
-      placeholderKey: null
-      propagationMethod: all
-      selectionLabel: ''
-      staticField: ''
-    translationKeyFormat: null
-    translationMethod: site
-    type: verbb\supertable\fields\SuperTableField
 handle: linkBlocksWithImages
 name: 'Link Blocks with Images'
 sortOrder: 11

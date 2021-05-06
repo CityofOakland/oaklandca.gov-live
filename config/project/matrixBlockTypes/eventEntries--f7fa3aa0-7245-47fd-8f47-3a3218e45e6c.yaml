@@ -94,34 +94,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
-  321943ce-06f4-4125-b82a-baf2e174a37f: # Allow Autofill?
-    contentColumnType: boolean
-    fieldGroup: null
-    handle: allowAutofill
-    instructions: 'If enabled, your events will automatically fill with the latest events that have been related to this page, up to 3, minus however many manual selections you make below.'
-    name: 'Allow Autofill?'
-    searchable: false
-    settings:
-      default: false
-      offLabel: null
-      onLabel: null
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Lightswitch
-  6444dc50-fd8a-41d1-94c1-7af9ba982cc1: # Hide Summary?
-    contentColumnType: boolean
-    fieldGroup: null
-    handle: hideSummary
-    instructions: 'Check this box if you wish to hide the summary text that appears at the bottom of each entry’s block.'
-    name: 'Hide Summary?'
-    searchable: false
-    settings:
-      default: false
-      offLabel: null
-      onLabel: null
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Lightswitch
   853a4c55-fd81-4715-8804-22a057720485: # Entries
     contentColumnType: string
     fieldGroup: null
@@ -144,6 +116,34 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: Solspace\Calendar\FieldTypes\EventFieldType
+  6444dc50-fd8a-41d1-94c1-7af9ba982cc1: # Hide Summary?
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: hideSummary
+    instructions: 'Check this box if you wish to hide the summary text that appears at the bottom of each entry’s block.'
+    name: 'Hide Summary?'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  321943ce-06f4-4125-b82a-baf2e174a37f: # Allow Autofill?
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: allowAutofill
+    instructions: 'If enabled, your events will automatically fill with the latest events that have been related to this page, up to 3, minus however many manual selections you make below.'
+    name: 'Allow Autofill?'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
   e4562472-8b84-4213-97bc-476f6f092cad: # Hide Thumbnails?
     contentColumnType: boolean
     fieldGroup: null
