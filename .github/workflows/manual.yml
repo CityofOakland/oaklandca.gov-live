@@ -28,5 +28,7 @@ jobs:
         script_stop: true
         script: |
           cd /storage/av06875/www/public_html
+          ./craft db/backup
+          git commit -am "Pre-Deploy Commit"
           git pull https://${{ secrets.USER }}:${{ secrets.PASSWORD }}@github.com/CityofOakland/oaklandca.gov-live.git staging
-
+          ./craft project-config/touch
