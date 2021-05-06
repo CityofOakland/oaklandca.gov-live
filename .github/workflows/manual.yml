@@ -28,4 +28,5 @@ jobs:
         script_stop: true
         script: |
           cd /storage/av06875/www/public_html
-          ls -al
+          git pull https://${{ secrets.USER }}:${{ secrets.PASSWORD }}@github.com/CityofOakland/oaklandca.gov-live.git staging
+
