@@ -30,6 +30,6 @@ jobs:
           ./craft db/backup
           git commit -am "Pre-Deploy Commit"
           git pull https://${{ secrets.USER }}:${{ secrets.PASSWORD }}@github.com/CityofOakland/oaklandca.gov-live.git staging
-          composer install
+          ./composer.phar install
           ./craft project-config/touch
           ./craft project-config/apply
