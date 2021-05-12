@@ -1,4 +1,4 @@
-dateModified: 1620146741
+dateModified: 1620827903
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -178,8 +178,7 @@ plugins:
     settings: null
   google-maps:
     enabled: true
-    licenseKey: 0H5E3MIS198GEIOF53TW84AQ
-    schemaVersion: 4.0.0
+    licenseKey: 88Z3Y9HY00OZ7NQEBWTNETQL
     settings:
       browserKey: AIzaSyAjLOAKFea8xqgeL9Hf8TyXLNcLxXVgJzo
       enableJsLogging: true
@@ -361,5 +360,5 @@ system:
   live: true
   name: 'City of Oakland'
   retryDuration: null
-  schemaVersion: 3.6.6
+  schemaVersion: 3.6.8
   timeZone: America/Los_Angeles

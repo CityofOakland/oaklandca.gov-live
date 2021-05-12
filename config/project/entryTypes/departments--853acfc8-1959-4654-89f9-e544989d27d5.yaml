@@ -4,6 +4,10 @@ fieldLayouts:
       -
         elements:
           -
+            style: tip
+            tip: 'Check out our guide on how to structure and lay out a [Department Page](https://www.oaklandca.gov/).'
+            type: craft\fieldlayoutelements\Tip
+          -
             autocapitalize: true
             autocomplete: false
             autocorrect: true

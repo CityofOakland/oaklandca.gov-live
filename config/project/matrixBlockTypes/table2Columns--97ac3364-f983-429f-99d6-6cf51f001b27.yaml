@@ -52,6 +52,25 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
+  734ed009-6dc6-4803-93b5-593791135810: # Column 1 Heading
+    contentColumnType: text
+    fieldGroup: null
+    handle: column1Heading
+    instructions: ''
+    name: 'Column 1 Heading'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   42276684-be78-4449-b3e9-8eeb42ad49ba: # Table
     contentColumnType: string
     fieldGroup: null
@@ -87,25 +106,6 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
-  734ed009-6dc6-4803-93b5-593791135810: # Column 1 Heading
-    contentColumnType: text
-    fieldGroup: null
-    handle: column1Heading
-    instructions: ''
-    name: 'Column 1 Heading'
-    searchable: false
-    settings:
-      byteLimit: null
-      charLimit: null
-      code: ''
-      columnType: text
-      initialRows: '4'
-      multiline: ''
-      placeholder: null
-      uiMode: normal
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
   bdacb1a0-9bde-46d5-87a1-ac5a7171fa9e: # Column 2 Heading
     contentColumnType: text
     fieldGroup: null

@@ -34,25 +34,34 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  1020f3d1-0dcb-45c8-b054-15d7d2bfa99d: # Heading
+  7c42e182-2c0f-45c6-9b1a-229a0312589a: # Entries Description
     contentColumnType: text
     fieldGroup: null
-    handle: heading
-    instructions: ''
-    name: Heading
-    searchable: false
+    handle: entriesDescription
+    instructions: 'Use this optional field to provide context for the pages you link to in this section.'
+    name: 'Entries Description'
+    searchable: true
     settings:
-      byteLimit: null
-      charLimit: null
-      code: ''
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
       columnType: text
-      initialRows: '4'
-      multiline: ''
-      placeholder: null
-      uiMode: normal
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: 'Simple with Links.json'
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\PlainText
+    type: craft\redactor\Field
   260c86d2-a919-42ce-ba0f-64f1d25952d5: # Entries
     contentColumnType: string
     fieldGroup: null
@@ -88,34 +97,25 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Entries
-  7c42e182-2c0f-45c6-9b1a-229a0312589a: # Entries Description
+  1020f3d1-0dcb-45c8-b054-15d7d2bfa99d: # Heading
     contentColumnType: text
     fieldGroup: null
-    handle: entriesDescription
-    instructions: 'Use this optional field to provide context for the pages you link to in this section.'
-    name: 'Entries Description'
-    searchable: true
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
     settings:
-      availableTransforms: '*'
-      availableVolumes: '*'
-      cleanupHtml: true
+      byteLimit: null
+      charLimit: null
+      code: ''
       columnType: text
-      configSelectionMode: choose
-      defaultTransform: ''
-      manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
-      redactorConfig: 'Simple with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: '1'
-      showUnpermittedFiles: false
-      showUnpermittedVolumes: false
-      uiMode: enlarged
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
-    type: craft\redactor\Field
+    type: craft\fields\PlainText
 handle: largeEntryLinks
 name: 'Large Entry Links'
 sortOrder: 15
