@@ -213,13 +213,13 @@
                 {% set lon = loc.lng %}
                 {% set maps = maps ~ 'pin-l-marker+285A98(' ~ lon ~',' ~ lat ~ ')' ~ last | trim %}
               {% endfor %}
-              {% set src = "https://api.mapbox.com/v4/mapbox.emerald/" ~ maps ~ "/auto/600x400@2x.png?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" %}
+              {% set src = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/" ~ maps ~ "/auto/600x400@2x.png?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" %}
               {% set largePhoto = src | replace("600x400", "1280x854") %}
               {% set locationText = locations | map(l => "#{l.address}") |join(', ', ' and ') %}
             {% else %}
               {% set map = entry.projectLocations.one() %}
               {% set loc = map.address %}
-              {% set src = "https://api.mapbox.com/v4/mapbox.emerald/pin-l-marker+285A98(" ~ loc.lng ~ "," ~ loc.lat ~ ")/" ~ loc.lng ~ "," ~ loc.lat ~ ",16/600x400@2x.png?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" %}
+              {% set src = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-l(" ~ loc.lng ~ "," ~ loc.lat ~ ")/" ~ loc.lng ~ "," ~ loc.lat ~ ",16/600x400@2x?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" %}
               {% set largePhoto = src | replace("600x400", "1280x854") %}
               {% set locationText = loc.street1 ~ ", " ~ loc.city ~ ", " ~ loc.state ~ ", " ~ loc.zip %}
             {% endif %}
