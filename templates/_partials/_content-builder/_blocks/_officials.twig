@@ -2,9 +2,9 @@
   {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" %}
   {{ block.entriesDescription }}
   <div class="mt-4 card-grid grid-equal-height profile-cards">
-    {% for entry in block.officials %}
+    {% for entry in block.officials.all() %}
       {% include '_partials/_elements/_profile-cards.twig' with {
-        photo: entry.portrait.one,
+        photo: entry.portrait.one(),
         name: entry.groupHeadName,
         jobTitle: entry.title,
         url: entry.redirectUrl ?? entry.url ?? '',
