@@ -1,0 +1,25 @@
+childBlocks: ''
+field: e2442a2e-e191-4b02-b170-7ecad09c52e2 # Modules
+fieldLayouts:
+  523eac9c-d315-4724-ad29-d5f25311b79f:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 735b0b58-fe0c-4aa3-9b14-309efd9c9a4f # Embed
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Default
+        sortOrder: 1
+handle: embed
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: Embed
+sortOrder: 7
+topLevel: false

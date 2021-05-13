@@ -1,0 +1,7 @@
+<div class="flex flex-col space-y-4 lg:space-y-0 lg:space-x-4 lg:flex-row">
+  {% for child in block.children %}
+    <div class="lg:w-1/3">
+      {{ child.embed|raw }}
+    </div>
+  {% endfor %}
+</div>

@@ -349,7 +349,7 @@ body.open #menu {
 }
 
 .how-it-works-block {
-  @apply relative px-24 mb-4 bg-bottom bg-no-repeat;
+  @apply relative mb-4 bg-bottom bg-no-repeat;
   background-image: url("/assets/img/icon-down-arrow.svg");
 }
 
@@ -566,4 +566,43 @@ body.open .page-holder {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.content > h1 {
+  font-size: 1.875rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .content > h1 {
+    font-size: 2.25rem;
+  }
+}
+
+.content > h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .content > h2 {
+    font-size: 1.875rem;
+  }
+}
+
+.content > p {
+  font-size: 1.25rem;
+  max-width: 40rem;
+  margin-bottom: 2rem;
+}
+
+.content > ul {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 2;
+}
+
+.content > ul > li > ul {
+  margin-top: 0;
+  padding-left: 0.5rem;
 }

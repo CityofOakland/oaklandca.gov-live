@@ -1,4 +1,4 @@
-dateModified: 1620870048
+dateModified: 1620918469
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -226,6 +226,11 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  neo:
+    edition: standard
+    enabled: true
+    licenseKey: MHV0BQ72A7IVPYOA3JKMD3BQ
+    schemaVersion: 2.8.16
   patrol:
     edition: standard
     enabled: true
