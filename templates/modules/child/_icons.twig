@@ -1,0 +1,15 @@
+{% if block.icons|length %}
+  <ol class="flex-row text-center md:flex">
+    {% for icon in block.icons.all() %}
+      <li class="how-it-works-block md-px-24">
+        <figure class="flex items-center justify-center h-12 mb-2">
+          {% if icon.icon|length %}
+            <img src="{{ icon.icon.one().url }}" alt="{{ icon.icon.one().altText }}" class="w-12 h-auto">
+          {% endif %}
+        </figure>
+        <h3 class="mb-2 text-base font-semibold md:text-xl">{{ icon.heading }}</h3>
+        <p class="my-0 text-sm md:px-2 md:text-lg lg:px-8">{{ icon.subheading }}</p>
+      </li>
+    {% endfor %}
+  </ol>
+{% endif %}

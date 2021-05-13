@@ -1,0 +1,133 @@
+contentColumnType: string
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
+handle: backgroundColor
+instructions: ''
+name: 'Background Color'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - White
+        -
+          - value
+          - bg-white
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Gray 100'
+        -
+          - value
+          - bg-gray-100
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Gray 200'
+        -
+          - value
+          - bg-gray-200
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Gray 300'
+        -
+          - value
+          - bg-gray-300
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Gray 400'
+        -
+          - value
+          - bg-gray-400
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Gray 500'
+        -
+          - value
+          - bg-gray-500
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Gray 600'
+        -
+          - value
+          - bg-gray-600
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Gray 700'
+        -
+          - value
+          - bg-gray-700
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Gray 800'
+        -
+          - value
+          - bg-gray-800
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Gray 900'
+        -
+          - value
+          - bg-gray-900
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Gray 1000'
+        -
+          - value
+          - bg-gray-1000
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

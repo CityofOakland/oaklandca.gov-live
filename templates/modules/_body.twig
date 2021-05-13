@@ -1,0 +1,7 @@
+<section class="{{ block.backgroundColor }}">
+  <div class="container">
+    {% for child in block.children %}
+      {% include 'modules/child/_' ~ child.type with {block: child} %}
+    {% endfor %}
+  </div>
+</section>
