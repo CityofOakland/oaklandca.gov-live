@@ -202,8 +202,7 @@
             {% do view.registerJsFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js") %}
             {% do view.registerCssFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css") %}
             {% for location in entry.projectLocations.all() %}
-              {% set map = entry.projectLocations.one() %}
-              {% set loc = map.address %}
+              {% set loc = location.address %}
               {% set src = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-l(" ~ loc.lng ~ "," ~ loc.lat ~ ")/" ~ loc.lng ~ "," ~ loc.lat ~ ",16/600x400@2x?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" %}
               {% set largePhoto = src | replace("600x400", "1280x854") %}
               {% set locationText = loc.street1 ~ ", " ~ loc.city ~ ", " ~ loc.state ~ ", " ~ loc.zip %}
