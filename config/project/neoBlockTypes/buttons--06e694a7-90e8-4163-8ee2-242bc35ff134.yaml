@@ -1,0 +1,25 @@
+childBlocks: ''
+field: e2442a2e-e191-4b02-b170-7ecad09c52e2 # Modules
+fieldLayouts:
+  56c6cc3c-1879-40cf-ada3-9f5adb9518f7:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 32f0cef1-a5d9-41dd-b562-b609374d9607 # Buttons
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Default
+        sortOrder: 1
+handle: buttons
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: Buttons
+sortOrder: 3
+topLevel: false

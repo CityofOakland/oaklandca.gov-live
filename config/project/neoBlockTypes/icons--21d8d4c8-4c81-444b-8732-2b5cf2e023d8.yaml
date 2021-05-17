@@ -1,0 +1,25 @@
+childBlocks: ''
+field: e2442a2e-e191-4b02-b170-7ecad09c52e2 # Modules
+fieldLayouts:
+  1081d4b2-671f-4d9c-b82d-300ff54c3eea:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 101875bd-2293-4282-a4da-2b14265f40e3 # Icons
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Default
+        sortOrder: 1
+handle: icons
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: Icons
+sortOrder: 8
+topLevel: false

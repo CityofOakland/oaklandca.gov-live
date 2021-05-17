@@ -48,7 +48,8 @@
     "jalendport/craft-lockout": "1.0.1",
     "verbb/default-dashboard": "1.0.8",
     "doublesecretagency/craft-googlemaps": "4.0.7",
-    "goat/dashboard-configuration": "^1.0"
+    "goat/dashboard-configuration": "^1.0",
+    "spicyweb/craft-neo": "2.9.7"
   },
   "autoload": {
     "psr-4": {

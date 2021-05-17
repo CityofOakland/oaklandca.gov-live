@@ -1,0 +1,25 @@
+{% switch block.children|length %}
+  {% case 3 %}
+    {% set class = 'md:w-1/3 px-4' %}
+  {% case 2 %}
+    {% set class = 'md:w-1/2 px-4' %}
+  {% default %}
+{% endswitch %}
+
+<div class="md:flex flex-wrap -mx-4">
+  {% for column in block.getDescendants(1) %}
+    <div class="{{ class }}">
+      {% for item in column.children %}
+        {% switch item.type %}
+          {% case 'heading' %}
+            <h2 class="mt-0 mb-4 text-2xl sm:leading-none sm:flex-1 sm:text-3xl">{{ item.heading }}</h2>
+          {% case 'mainContent' %}
+            <div class="content">
+              {{ item.mainContent }}
+            </div>
+          {% default %}
+        {% endswitch %}
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>

@@ -18,13 +18,18 @@
 ) %}
 
 {% block content %}
+  {% set breadcrumbs = [] %}
+  {% if entry.primaryUnit|length %}
+    {% set breadcrumbs = [
+        {
+          title: entry.primaryUnit.one().title,
+          link: entry.primaryUnit.one().url
+        }
+    ] %}
+  {% endif %}
+
   {% include '_partials/_page-banners.twig' with {
-    breadCrumbLinks: [
-      {
-        title: 'Resources',
-        link: '/resources'
-      }
-    ],
+    breadCrumbLinks: breadcrumbs,
     bannerImage: entry.banner | length ? {
       position: entry.banner[0].getFocalPoint('asCss'),
       src: entry.banner[0].url,
