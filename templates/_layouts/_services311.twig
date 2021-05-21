@@ -13,12 +13,23 @@
       alt: entry.banner[0].title ?? entry.banner[0].filename
     } : false %}
 
-  {% set breadCrumbLinks = [
-    {
-      title: 'Services',
-      link: '/services'
-    }
-  ] %}
+  {% set breadcrumbs = [] %}
+  {% if entry.primaryUnit|length %}
+    {% set breadcrumbs = breadcrumbs|merge([
+      {
+        title: entry.primaryUnit.one().title,
+        link: entry.primaryUnit.one().url
+      },
+    ]) %}
+  {% endif %}
+  {% if entry.section %}
+    {% set breadcrumbs = breadcrumbs|merge([
+      {
+        title: entry.section.name,
+        link: siteUrl ~ entry.section.handle
+      },
+    ]) %}
+  {% endif %}
 
 {% if bannerImage | length %}
   <div class="leading-normal aspect-ratio-box aspect-ratio-1/4 banner">
@@ -37,7 +48,7 @@
             <a class="text-green-800 hover:text-green-800 hover:underline" href="{{ siteUrl }}">
               Oakland
             </a> →
-            {% for link in breadCrumbLinks ?? '' %}
+            {% for link in breadcrumbs ?? '' %}
               <a class="text-green-800 hover:text-green-800 hover:underline" href="{{ link.link }}">{{ link.title }}</a> →
             {% endfor %}
             <span class="font-bold">{{ entry.title }}</span>

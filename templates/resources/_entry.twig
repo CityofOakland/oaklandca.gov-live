@@ -20,13 +20,22 @@
 {% block content %}
   {% set breadcrumbs = [] %}
   {% if entry.primaryUnit|length %}
-    {% set breadcrumbs = [
-        {
-          title: entry.primaryUnit.one().title,
-          link: entry.primaryUnit.one().url
-        }
-    ] %}
+    {% set breadcrumbs = breadcrumbs|merge([
+      {
+        title: entry.primaryUnit.one().title,
+        link: entry.primaryUnit.one().url
+      },
+    ]) %}
   {% endif %}
+  {% if entry.section %}
+    {% set breadcrumbs = breadcrumbs|merge([
+      {
+        title: entry.section.name,
+        link: siteUrl ~ entry.section.handle
+      },
+    ]) %}
+  {% endif %}
+
 
   {% include '_partials/_page-banners.twig' with {
     breadCrumbLinks: breadcrumbs,

@@ -57,13 +57,27 @@
     {% endif %}
     </div>
   {%- endset -%}
-  {% include '_partials/_page-banners.twig' with {
-    breadCrumbLinks: [
+
+  {% set breadcrumbs = [] %}
+  {% if entry.primaryUnit|length %}
+    {% set breadcrumbs = breadcrumbs|merge([
       {
-        title: 'Projects',
-        link: '/projects'
-      }
-    ],
+        title: entry.primaryUnit.one().title,
+        link: entry.primaryUnit.one().url
+      },
+    ]) %}
+  {% endif %}
+  {% if entry.section %}
+    {% set breadcrumbs = breadcrumbs|merge([
+      {
+        title: entry.section.name,
+        link: siteUrl ~ entry.section.handle
+      },
+    ]) %}
+  {% endif %}
+
+  {% include '_partials/_page-banners.twig' with {
+    breadCrumbLinks: breadcrumbs,
     navMenu: {
       'about': aboutTrue,
       'gallery': photosTrue,
