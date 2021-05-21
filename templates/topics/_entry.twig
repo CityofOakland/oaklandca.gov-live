@@ -29,13 +29,25 @@
 {% set contact = contactState %}
 
 {% block content %}
-  {% include '_partials/_page-banners.twig' with {
-    breadCrumbLinks: [
+  {% set breadcrumbs = [] %}
+  {% if entry.primaryUnit|length %}
+    {% set breadcrumbs = breadcrumbs|merge([
       {
-        title: 'Topics',
-        link: '/topics'
-      }
-    ],
+        title: entry.primaryUnit.one().title,
+        link: entry.primaryUnit.one().url
+      },
+    ]) %}
+  {% endif %}
+  {% if entry.section %}
+    {% set breadcrumbs = breadcrumbs|merge([
+      {
+        title: entry.section.name,
+        link: siteUrl ~ entry.section.handle
+      },
+    ]) %}
+  {% endif %}
+  {% include '_partials/_page-banners.twig' with {
+    breadCrumbLinks: breadcrumbs,
     bannerImage: entry.banner | length ? {
       position: entry.banner[0].getFocalPoint('asCss'),
       src: entry.banner[0].url,
