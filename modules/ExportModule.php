@@ -93,6 +93,7 @@ class ExportModule extends ElementExporter
                 'Officials' => $officialsArray,
                 'Topics' => $topicsArray,
                 'URL' => $element->url,
+                'Author' => $element->author ? $element->author->fullName : '',
             ];
         }
 
