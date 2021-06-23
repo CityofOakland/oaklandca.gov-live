@@ -36,6 +36,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: 1011d286-bca1-40e1-abcb-1d61f6f7ebb2 # City Services and Resources Updates Description
             instructions: null
             label: null

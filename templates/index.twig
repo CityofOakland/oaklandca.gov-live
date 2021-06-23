@@ -25,10 +25,7 @@
               {% include "_partials/_elements/_banner-google-translate.twig" with { paddingTop: "pt-0" } %}
             </div>
             <div class="relative z-20 max-w-md p-6 bg-white rounded-md shadow">
-              <h1 class="mt-0 mb-4 text-2xl font-extrabold leading-tight lg:text-3xl"><span class="block mb-3 text-xl uppercase">Vaccines are free, safe, and readily available</span> Keep our community healthy.<br>Get vaccinated.</h1>
-              <p class="my-0 leading-tight">
-                <b><a class="text-green-600" href="/topics/covid-19" class="">COVID-19 information & resources »</a></b>
-              </p>
+              {{ entry.mainContent }}
             </div>
           </div>
         </div>
