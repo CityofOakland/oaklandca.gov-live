@@ -11,14 +11,6 @@ use craft\elements\db\ElementQuery;
 use craft\elements\db\ElementQueryInterface;
 use craft\helpers\ArrayHelper;
 
-// Title
-// Primary Unit
-// Service Type
-// Departments
-// Officials
-// Topics
-// URL
-
 class ExportModule extends ElementExporter
 {
     public static function displayName(): string
