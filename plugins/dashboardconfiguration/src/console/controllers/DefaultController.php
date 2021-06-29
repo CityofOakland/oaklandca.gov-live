@@ -5,6 +5,7 @@ use goat\dashboardconfiguration\Test;
 
 use Craft;
 
+use craft\helpers\Db;
 use craft\helpers\Queue;
 use craft\queue\jobs\FindAndReplace;
 
@@ -13,7 +14,9 @@ use yii\helpers\Console;
 
 
 class DefaultController extends Controller
-{
+{   
+    private $_textColumns;
+
     public function actionFindAndReplace()
     {
         $data = file(__dir__ . "/url_mapping.txt");
@@ -40,7 +43,5 @@ class DefaultController extends Controller
         }
 
         echo 'Total jobs queued: ' . $total_jobs;
-
-        // echo 'lasdfjdsa';
     }
 }
