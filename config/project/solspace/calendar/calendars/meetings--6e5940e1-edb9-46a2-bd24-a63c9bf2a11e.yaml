@@ -1,0 +1,164 @@
+allowRepeatingEvents: true
+color: '#5C4698'
+description: ''
+descriptionFieldHandle: body
+fieldLayout:
+  tabs:
+    -
+      elements:
+        -
+          fieldUid: 90d724d7-7c32-4d04-8b9a-3900d6ecdb84 # Address(es)
+          instructions: null
+          label: null
+          required: '0'
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          warning: null
+          width: 100
+        -
+          fieldUid: 7084b5f1-19ef-4812-97fc-927d55c98c93 # Event Image
+          instructions: null
+          label: null
+          required: '0'
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          warning: null
+          width: 100
+        -
+          fieldUid: 00ccf4ec-25d9-4bce-864a-4d06468adb36 # Body
+          instructions: null
+          label: null
+          required: '0'
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          warning: null
+          width: 100
+        -
+          fieldUid: 3ff802bf-48ac-4e96-8e64-c7988d029bc1 # Documents
+          instructions: null
+          label: null
+          required: '0'
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          warning: null
+          width: 100
+        -
+          fieldUid: f73a45bb-5e6b-4a27-8f19-edd0e6bbc507 # Video Link
+          instructions: null
+          label: null
+          required: '0'
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          warning: null
+          width: 100
+        -
+          fieldUid: 5f3a7701-690d-491c-9c18-9e92305a1aad # Event Contact
+          instructions: null
+          label: null
+          required: '0'
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          warning: null
+          width: 100
+      name: Content
+      sortOrder: 1
+    -
+      elements:
+        -
+          fieldUid: 6ee1dda3-767e-4fa8-9096-5fcf30f68aed # Event Status
+          instructions: null
+          label: null
+          required: '0'
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          warning: null
+          width: 100
+        -
+          fieldUid: 50023496-1a16-49f2-95f2-f3ce3ac4e20b # Rescheduled Meeting
+          instructions: null
+          label: null
+          required: '0'
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          warning: null
+          width: 100
+      name: 'Meeting Update'
+      sortOrder: 2
+    -
+      elements:
+        -
+          fieldUid: a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc # Boards & Commissions
+          instructions: null
+          label: null
+          required: '0'
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          warning: null
+          width: 100
+        -
+          fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133 # Departments
+          instructions: null
+          label: null
+          required: '0'
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          warning: null
+          width: 100
+        -
+          fieldUid: 73b7b0c7-bff1-4c55-97aa-fc62042f0347 # Officials
+          instructions: null
+          label: null
+          required: '0'
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          warning: null
+          width: 100
+        -
+          fieldUid: e67ec759-ea3a-4568-bfa6-a314ff3d1036 # Projects
+          instructions: null
+          label: null
+          required: '0'
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          warning: null
+          width: 100
+        -
+          fieldUid: 44b00870-0842-4c4e-838f-dcd688fb5b05 # Topics
+          instructions: null
+          label: null
+          required: '0'
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          warning: null
+          width: 100
+      name: Relationships
+      sortOrder: 3
+    -
+      elements:
+        -
+          fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d # Metadata
+          instructions: null
+          label: null
+          required: '0'
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          warning: null
+          width: 100
+      name: SEO
+      sortOrder: 4
+  uid: 508aeb43-55e9-40df-9a3d-68b93ae6d77e
+handle: meetings
+hasTitleField: true
+icsHash: 77de68daecd823babbb58edb1c8e14d7106e83bb5b969c3559a779.25108684
+icsTimezone: floating
+locationFieldHandle: address
+name: Meetings
+siteSettings:
+  933e51d9-a6a9-4173-8362-b065d269bb0e:
+    enabledByDefault: true
+    hasUrls: true
+    siteId: c35d3a93-d7f4-4c37-ae3e-1b4d403311bb # City of Oakland
+    template: meetings/_entry
+    uriFormat: 'meetings/{slug}'
+titleFormat: ''
+titleLabel: Title
