@@ -1,4 +1,4 @@
-dateModified: 1624976691
+dateModified: 1625583656
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -48,7 +48,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: V1MGTTWWOX2B8VX28A8VJ2ZQ
-    schemaVersion: 3.6.6
+    schemaVersion: 3.10.0
     settings:
       apiKey: ''
       cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
@@ -117,7 +117,7 @@ plugins:
     edition: pro
     enabled: '1'
     licenseKey: PRJ91600ENZBQ5S7HS7UE93Z
-    schemaVersion: 3.2.0
+    schemaVersion: 3.3.0
     settings:
       allDay: false
       authoredEventEditOnly: ''
@@ -230,7 +230,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: MHV0BQ72A7IVPYOA3JKMD3BQ
-    schemaVersion: 2.8.16
+    schemaVersion: 2.9.11
   patrol:
     edition: standard
     enabled: true
@@ -278,7 +278,7 @@ plugins:
   retour:
     enabled: '1'
     licenseKey: 5DC6J57ZUDZKVM1WI3TONGUK
-    schemaVersion: 3.0.9
+    schemaVersion: 3.0.10
     settings:
       alwaysStripQueryString: ''
       createUriChangeRedirects: '1'
@@ -295,7 +295,7 @@ plugins:
   seomatic:
     enabled: '1'
     licenseKey: WE9YYSPHWC5CNFB2RL64YDJ6
-    schemaVersion: 3.0.9
+    schemaVersion: 3.0.10
     settings: null
   smith:
     edition: standard
