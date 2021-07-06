@@ -145,24 +145,19 @@ fields:
     translationMethod: site
     type: Solspace\Calendar\FieldTypes\EventFieldType
   de14155f-e982-42aa-9b79-71ceeaf08a77: # Hide Summary?
-    contentColumnType: text
+    contentColumnType: boolean
     fieldGroup: null
     handle: hideSummary
     instructions: 'Check this box if you wish to hide the summary text that appears at the bottom of each entry’s block.'
     name: 'Hide Summary?'
     searchable: true
     settings:
-      byteLimit: null
-      charLimit: null
-      code: ''
-      columnType: null
-      initialRows: '4'
-      multiline: ''
-      placeholder: null
-      uiMode: normal
+      default: false
+      offLabel: null
+      onLabel: null
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\PlainText
+    type: craft\fields\Lightswitch
 handle: meetingEntries
 name: 'Meeting Entries'
 sortOrder: 20

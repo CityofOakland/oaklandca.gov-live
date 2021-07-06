@@ -3,6 +3,13 @@ namespace modules;
 
 use Craft;
 
+use craft\base\Element;
+use craft\elements\Entry;
+use craft\events\RegisterElementExportersEvent;
+use yii\base\Event;
+
+use modules\ExportModule;
+
 /**
  * Custom module class.
  *
@@ -36,6 +43,14 @@ class Module extends \yii\base\Module
         } else {
             $this->controllerNamespace = 'modules\\controllers';
         }
+
+        Event::on(
+            Entry::class,
+            Element::EVENT_REGISTER_EXPORTERS,
+            function(RegisterElementExportersEvent $event) {
+                $event->exporters[] = ExportModule::class;
+            }
+        );
 
         parent::init();
     }

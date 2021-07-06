@@ -1,0 +1,345 @@
+isPublic: false
+name: 'Test Schema'
+scope:
+  - 'elements.drafts:read'
+  - 'elements.revisions:read'
+  - 'elements.inactive:read'
+  - 'sections.fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f:read' # Boards & Commissions
+  - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:read' # Boards & Commissions
+  - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:read' # Boards & Commissions Redirect
+  - 'sections.fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c:read' # Boards & Commissions Index
+  - 'entrytypes.62b6620d-66f1-4499-abb2-35960313b3dd:read' # Boards & Commissions Index
+  - 'sections.ba27f849-b247-4db0-ae91-53a01f44bd0b:read' # Calendar Index
+  - 'entrytypes.edd782d7-6b1e-40f2-ba66-61b9b39ccd21:read' # Calendar Index
+  - 'sections.1ab8269c-e225-472e-b5e1-1504af7a1622:read' # Datasets
+  - 'entrytypes.cb67721c-4d46-42f1-bbcf-91bd6bb4b2f0:read' # Datasets
+  - 'sections.b3411cb1-e860-46ed-9cd6-58cf9b8daacb:read' # Departments
+  - 'entrytypes.853acfc8-1959-4654-89f9-e544989d27d5:read' # Departments
+  - 'entrytypes.62026d94-4213-4ab2-9a58-ff780a972c67:read' # Department Redirect
+  - 'entrytypes.e9822161-b2a8-4cd1-8ec3-c3a2e2d5b2b0:read' # City Council
+  - 'sections.5e4e2c33-9bc3-4620-a00b-7ca3fb5d8688:read' # Departments Index
+  - 'entrytypes.e7dc9a6e-abdf-4824-ad86-bf0c994fc760:read' # Departments Index
+  - 'sections.9da43fd8-c505-4d19-9486-e0cb669c568a:read' # Document Packets
+  - 'entrytypes.3c58f775-5156-4705-9405-472e014a359d:read' # Document Packets
+  - 'sections.8b7c4e26-9aab-4c5d-874e-aee151107de3:read' # Documents
+  - 'entrytypes.533b0b0b-75c9-448e-b616-7a084efd01d4:read' # Documents
+  - 'sections.ae05e014-38d0-4bcf-904d-e0ef291e71db:read' # Documents Index
+  - 'entrytypes.c193b5ef-2a3f-44d0-92cd-78e49c9a2fec:read' # Documents Index
+  - 'sections.74ecde2f-b254-4f3e-b889-1affac6f5999:read' # Embeddable Content
+  - 'entrytypes.7f8c9e2d-df90-4839-9c1c-7776984a43df:read' # Embeddable Content
+  - 'sections.9a9e5725-12f9-4f36-81cc-7762a4912de0:read' # Events Index
+  - 'entrytypes.238f1120-16b5-4780-b3e0-3c7e68c58b9c:read' # Events Index
+  - 'sections.e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5:read' # Homepage
+  - 'entrytypes.196f68cc-36a4-42b0-9605-feeef72fa330:read' # Homepage
+  - 'sections.9168f154-c0f9-4cf9-991d-60b287a85fc0:read' # Imported Content
+  - 'entrytypes.057c9181-27ec-4d3e-a5b0-fbdce2462afd:read' # Special Assessment Test Status
+  - 'sections.20567858-8423-4c20-9004-d0b02150fa2a:read' # Meetings Index
+  - 'entrytypes.88a32feb-2474-4af8-b9af-e6a409b21bae:read' # Meetings Index
+  - 'sections.983c9f6f-9251-4fd3-91e1-b598eccc6a1a:read' # News
+  - 'entrytypes.71390558-d90c-4764-9b4c-3193ce8c1c0f:read' # News
+  - 'sections.ce969731-41e7-42b9-aad7-a6bff2089c57:read' # News Index
+  - 'entrytypes.13e500aa-11c8-438b-bb77-28adfae9f1a5:read' # News Index
+  - 'sections.28881fc8-3e61-4fdb-a5ee-cce1bab725bf:read' # Officials
+  - 'entrytypes.98698930-f730-4a54-a9fa-491f477e8252:read' # Officials
+  - 'entrytypes.7783fdbb-2862-4451-b263-af32798f5e13:read' # Officials Redirect
+  - 'sections.a209b7c0-0c31-4671-a56c-f77990a377f3:read' # Officials Index
+  - 'entrytypes.7b84b01f-d365-4d29-8d43-64c42a1adc83:read' # Officials Index
+  - 'sections.be8acece-2031-4965-a62f-31911d00e24c:read' # Page Alerts
+  - 'entrytypes.f35490ea-a075-4077-ac18-6be871f68c65:read' # Page Alerts
+  - 'sections.98d541ae-56ee-4c98-ba9c-37438dc485a0:read' # Projects
+  - 'entrytypes.4448ff2b-e958-4a61-8e36-0dab9831c66f:read' # Projects
+  - 'entrytypes.35ad8ea4-2989-47d3-820b-d5cf1d398bc9:read' # Projects Beta
+  - 'sections.d9164a86-877a-49bd-bc75-148e28d51df2:read' # Projects Index
+  - 'entrytypes.3c47182a-0520-4bca-921f-65dce2849cb5:read' # Projects Index
+  - 'sections.24fa116b-8516-4626-84f3-86b685e71071:read' # Resources
+  - 'entrytypes.df535740-f62a-4027-aefd-b7fef85f4a7f:read' # Resources
+  - 'sections.c1969337-e50a-48d2-8823-fbb68bd3776b:read' # Resources Index
+  - 'entrytypes.48ddc90c-a4ab-4105-a260-d578e44efe13:read' # Resources Index
+  - 'sections.e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8:read' # Search Index
+  - 'entrytypes.97e68bc8-2f0b-4421-91bf-681c31d1af59:read' # Search Index
+  - 'sections.b7e437e1-239f-4c5c-8c62-5f0323f9d22c:read' # Services
+  - 'entrytypes.85f10314-7c48-4f3e-8edb-8fa58b270abc:read' # Services
+  - 'entrytypes.fa184118-b826-4c59-9362-39fe81b426c2:read' # Services (311)
+  - 'entrytypes.33857d17-d8e8-4c03-8902-f1fb2e4422da:read' # Service Redirect
+  - 'sections.89cda626-6500-4ace-b9f4-0f8a54a9ad02:read' # Services Index
+  - 'entrytypes.a0ebc1aa-769e-4adc-a633-87b0e2c2626c:read' # Services Index
+  - 'sections.07faad04-9ec4-4f68-9fe8-0ca20f189f8a:read' # Staff
+  - 'entrytypes.3f29603b-dede-4258-8ae1-fc01c48f372d:read' # Staff
+  - 'entrytypes.714977a3-2a75-4e25-b9b4-7db488f791b0:read' # Contract Employees
+  - 'sections.98c4abc4-7360-4759-a926-a7673c124809:read' # Staff Index
+  - 'entrytypes.fe1bbd87-c5e4-420c-b80f-11bdeabb907e:read' # Staff Index
+  - 'sections.fbf8b9b0-8875-4e08-819a-d62603676dc4:read' # Teams
+  - 'entrytypes.c2c1cf6a-786c-44cd-84f6-518e8c48b024:read' # Teams
+  - 'sections.e0be1e19-d6d8-4d1d-849e-14d179664811:read' # Teams Index
+  - 'entrytypes.8e550712-d313-4f60-a6dd-50a0f79aaef2:read' # Teams Index
+  - 'sections.70778563-6dac-453d-a4b0-5121f3a614b7:read' # Topics
+  - 'entrytypes.e15c8c84-5b0b-4e80-9746-1e3d7990ac49:read' # Topics
+  - 'sections.210f35e9-172e-4116-9382-05774c79d1ff:read' # Topics Index
+  - 'entrytypes.0dc3860c-3cc0-48db-908d-86a1eedb1953:read' # Topics Index
+  - 'sections.1300d573-d7c2-4d30-b840-2b94165d5d4f:read' # Volunteer Index
+  - 'entrytypes.42daf001-6cda-4eab-a3a2-3dd24077d76c:read' # Volunteer Index
+  - 'sections.17d5d48d-2d75-4742-8820-cdce13764482:read' # Volunteers
+  - 'entrytypes.1edc2029-9228-45ca-808d-a3ff860f31cc:read' # Volunteers
+  - 'sections.ab06f460-5f10-4ce6-9623-9a5ff14a8685:read' # Website Updates
+  - 'entrytypes.58263077-210c-44b9-9b7c-beecb708601f:read' # Website Updates
+  - 'volumes.8319fc25-f6c3-449d-a648-e891478b31a6:read' # Icons
+  - 'volumes.549d1a55-e94b-4c89-9cb9-b1fdac9d417d:read' # General Images
+  - 'volumes.56ad4140-da85-43ea-8292-3fac04cbefc1:read' # Galleries
+  - 'volumes.f5dead8c-3e4c-4f97-8bea-2a3af1e34f67:read' # Resources
+  - 'volumes.a31d23bf-e3ee-4942-95e0-3d14c29620bb:read' # Projects
+  - 'volumes.1e78d0ad-2af1-4556-ab43-7b6c110e75b8:read' # Headers
+  - 'volumes.7a12e399-b320-4d23-8abb-a79b5f303015:read' # Portraits
+  - 'volumes.7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0:read' # News
+  - 'volumes.c27974b4-89ad-4504-abb1-e76e44ff4b5d:read' # Events
+  - 'volumes.58c3bf22-aa23-441f-bd65-acf677638ae6:read' # Data
+  - 'volumes.c419ecb0-79c8-411d-b440-db5bdfa1f823:read' # Documents
+  - 'volumes.1a78695a-f041-4562-9ee4-5405711bd29c:read' # SEO
+  - 'volumes.4494beaa-9c1f-44ae-b040-36f60f3d055d:read' # Logos
+  - 'volumes.10fea577-3555-45aa-9169-8e3dee085cae:read' # Press Release Images
+  - 'volumes.5fab788c-0374-4ac2-945d-ba96ffd84669:read' # Press Release Files
+  - 'globalsets.7657014a-eefc-419e-921e-8896ed282ab3:read' # Sitewide Alert
+  - 'usergroups.everyone:read'
+  - 'usergroups.cd008cb1-3f5b-4444-a259-bf905f9c6f96:read' # Contributors
+  - 'usergroups.a407c106-4190-4ba9-b4c1-7886e5a462c8:read' # Datasets
+  - 'usergroups.6bdcf548-755d-41d3-bd1b-c8b12ff635d1:read' # Datasets Editor
+  - 'usergroups.28b0988c-b6ee-404e-922d-8278e9ab4daa:read' # Digital Leads
+  - 'usergroups.67bbdab6-8a94-441d-9c36-6d093274da43:read' # Editors
+  - 'usergroups.6227b65d-17fc-4360-8a69-3e70afc30899:read' # Elected Official Leads
+  - 'usergroups.850b24e6-fbe7-41e2-bd2b-6207a108a503:read' # Emergency Public Information Officers
+  - 'categorygroups.827f6570-faf8-42da-98e5-fffcb15e7cf6:read' # Document Types
+  - 'categorygroups.947de11d-3d94-45c2-8565-04542ce0e737:read' # Event Types
+  - 'categorygroups.ce43edd2-2eec-45cc-afa1-e3bd6b6e20ac:read' # People
+  - 'categorygroups.8bcf4697-1dd2-47b2-91e2-8ad9b4b86741:read' # Service Types
+  - 'taggroups.56057193-b9d8-4ac0-9f31-d4a755c91447:read' # News
+  - 'sections.fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f:edit' # Boards & Commissions
+  - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:edit' # Boards & Commissions
+  - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:create' # Boards & Commissions
+  - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:save' # Boards & Commissions
+  - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:delete' # Boards & Commissions
+  - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:edit' # Boards & Commissions Redirect
+  - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:create' # Boards & Commissions Redirect
+  - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:save' # Boards & Commissions Redirect
+  - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:delete' # Boards & Commissions Redirect
+  - 'sections.fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c:edit' # Boards & Commissions Index
+  - 'entrytypes.62b6620d-66f1-4499-abb2-35960313b3dd:save' # Boards & Commissions Index
+  - 'sections.ba27f849-b247-4db0-ae91-53a01f44bd0b:edit' # Calendar Index
+  - 'entrytypes.edd782d7-6b1e-40f2-ba66-61b9b39ccd21:save' # Calendar Index
+  - 'sections.1ab8269c-e225-472e-b5e1-1504af7a1622:edit' # Datasets
+  - 'entrytypes.cb67721c-4d46-42f1-bbcf-91bd6bb4b2f0:edit' # Datasets
+  - 'entrytypes.cb67721c-4d46-42f1-bbcf-91bd6bb4b2f0:create' # Datasets
+  - 'entrytypes.cb67721c-4d46-42f1-bbcf-91bd6bb4b2f0:save' # Datasets
+  - 'entrytypes.cb67721c-4d46-42f1-bbcf-91bd6bb4b2f0:delete' # Datasets
+  - 'sections.b3411cb1-e860-46ed-9cd6-58cf9b8daacb:edit' # Departments
+  - 'entrytypes.853acfc8-1959-4654-89f9-e544989d27d5:edit' # Departments
+  - 'entrytypes.853acfc8-1959-4654-89f9-e544989d27d5:create' # Departments
+  - 'entrytypes.853acfc8-1959-4654-89f9-e544989d27d5:save' # Departments
+  - 'entrytypes.853acfc8-1959-4654-89f9-e544989d27d5:delete' # Departments
+  - 'entrytypes.62026d94-4213-4ab2-9a58-ff780a972c67:edit' # Department Redirect
+  - 'entrytypes.62026d94-4213-4ab2-9a58-ff780a972c67:create' # Department Redirect
+  - 'entrytypes.62026d94-4213-4ab2-9a58-ff780a972c67:save' # Department Redirect
+  - 'entrytypes.62026d94-4213-4ab2-9a58-ff780a972c67:delete' # Department Redirect
+  - 'entrytypes.e9822161-b2a8-4cd1-8ec3-c3a2e2d5b2b0:edit' # City Council
+  - 'entrytypes.e9822161-b2a8-4cd1-8ec3-c3a2e2d5b2b0:create' # City Council
+  - 'entrytypes.e9822161-b2a8-4cd1-8ec3-c3a2e2d5b2b0:save' # City Council
+  - 'entrytypes.e9822161-b2a8-4cd1-8ec3-c3a2e2d5b2b0:delete' # City Council
+  - 'sections.5e4e2c33-9bc3-4620-a00b-7ca3fb5d8688:edit' # Departments Index
+  - 'entrytypes.e7dc9a6e-abdf-4824-ad86-bf0c994fc760:save' # Departments Index
+  - 'sections.9da43fd8-c505-4d19-9486-e0cb669c568a:edit' # Document Packets
+  - 'entrytypes.3c58f775-5156-4705-9405-472e014a359d:edit' # Document Packets
+  - 'entrytypes.3c58f775-5156-4705-9405-472e014a359d:create' # Document Packets
+  - 'entrytypes.3c58f775-5156-4705-9405-472e014a359d:save' # Document Packets
+  - 'entrytypes.3c58f775-5156-4705-9405-472e014a359d:delete' # Document Packets
+  - 'sections.8b7c4e26-9aab-4c5d-874e-aee151107de3:edit' # Documents
+  - 'entrytypes.533b0b0b-75c9-448e-b616-7a084efd01d4:edit' # Documents
+  - 'entrytypes.533b0b0b-75c9-448e-b616-7a084efd01d4:create' # Documents
+  - 'entrytypes.533b0b0b-75c9-448e-b616-7a084efd01d4:save' # Documents
+  - 'entrytypes.533b0b0b-75c9-448e-b616-7a084efd01d4:delete' # Documents
+  - 'sections.ae05e014-38d0-4bcf-904d-e0ef291e71db:edit' # Documents Index
+  - 'entrytypes.c193b5ef-2a3f-44d0-92cd-78e49c9a2fec:save' # Documents Index
+  - 'sections.74ecde2f-b254-4f3e-b889-1affac6f5999:edit' # Embeddable Content
+  - 'entrytypes.7f8c9e2d-df90-4839-9c1c-7776984a43df:edit' # Embeddable Content
+  - 'entrytypes.7f8c9e2d-df90-4839-9c1c-7776984a43df:create' # Embeddable Content
+  - 'entrytypes.7f8c9e2d-df90-4839-9c1c-7776984a43df:save' # Embeddable Content
+  - 'entrytypes.7f8c9e2d-df90-4839-9c1c-7776984a43df:delete' # Embeddable Content
+  - 'sections.9a9e5725-12f9-4f36-81cc-7762a4912de0:edit' # Events Index
+  - 'entrytypes.238f1120-16b5-4780-b3e0-3c7e68c58b9c:save' # Events Index
+  - 'sections.e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5:edit' # Homepage
+  - 'entrytypes.196f68cc-36a4-42b0-9605-feeef72fa330:save' # Homepage
+  - 'sections.9168f154-c0f9-4cf9-991d-60b287a85fc0:edit' # Imported Content
+  - 'entrytypes.057c9181-27ec-4d3e-a5b0-fbdce2462afd:edit' # Special Assessment Test Status
+  - 'entrytypes.057c9181-27ec-4d3e-a5b0-fbdce2462afd:create' # Special Assessment Test Status
+  - 'entrytypes.057c9181-27ec-4d3e-a5b0-fbdce2462afd:save' # Special Assessment Test Status
+  - 'entrytypes.057c9181-27ec-4d3e-a5b0-fbdce2462afd:delete' # Special Assessment Test Status
+  - 'sections.20567858-8423-4c20-9004-d0b02150fa2a:edit' # Meetings Index
+  - 'entrytypes.88a32feb-2474-4af8-b9af-e6a409b21bae:save' # Meetings Index
+  - 'sections.983c9f6f-9251-4fd3-91e1-b598eccc6a1a:edit' # News
+  - 'entrytypes.71390558-d90c-4764-9b4c-3193ce8c1c0f:edit' # News
+  - 'entrytypes.71390558-d90c-4764-9b4c-3193ce8c1c0f:create' # News
+  - 'entrytypes.71390558-d90c-4764-9b4c-3193ce8c1c0f:save' # News
+  - 'entrytypes.71390558-d90c-4764-9b4c-3193ce8c1c0f:delete' # News
+  - 'sections.ce969731-41e7-42b9-aad7-a6bff2089c57:edit' # News Index
+  - 'entrytypes.13e500aa-11c8-438b-bb77-28adfae9f1a5:save' # News Index
+  - 'sections.28881fc8-3e61-4fdb-a5ee-cce1bab725bf:edit' # Officials
+  - 'entrytypes.98698930-f730-4a54-a9fa-491f477e8252:edit' # Officials
+  - 'entrytypes.98698930-f730-4a54-a9fa-491f477e8252:create' # Officials
+  - 'entrytypes.98698930-f730-4a54-a9fa-491f477e8252:save' # Officials
+  - 'entrytypes.98698930-f730-4a54-a9fa-491f477e8252:delete' # Officials
+  - 'entrytypes.7783fdbb-2862-4451-b263-af32798f5e13:edit' # Officials Redirect
+  - 'entrytypes.7783fdbb-2862-4451-b263-af32798f5e13:create' # Officials Redirect
+  - 'entrytypes.7783fdbb-2862-4451-b263-af32798f5e13:save' # Officials Redirect
+  - 'entrytypes.7783fdbb-2862-4451-b263-af32798f5e13:delete' # Officials Redirect
+  - 'sections.a209b7c0-0c31-4671-a56c-f77990a377f3:edit' # Officials Index
+  - 'entrytypes.7b84b01f-d365-4d29-8d43-64c42a1adc83:save' # Officials Index
+  - 'sections.be8acece-2031-4965-a62f-31911d00e24c:edit' # Page Alerts
+  - 'entrytypes.f35490ea-a075-4077-ac18-6be871f68c65:edit' # Page Alerts
+  - 'entrytypes.f35490ea-a075-4077-ac18-6be871f68c65:create' # Page Alerts
+  - 'entrytypes.f35490ea-a075-4077-ac18-6be871f68c65:save' # Page Alerts
+  - 'entrytypes.f35490ea-a075-4077-ac18-6be871f68c65:delete' # Page Alerts
+  - 'sections.98d541ae-56ee-4c98-ba9c-37438dc485a0:edit' # Projects
+  - 'entrytypes.4448ff2b-e958-4a61-8e36-0dab9831c66f:edit' # Projects
+  - 'entrytypes.4448ff2b-e958-4a61-8e36-0dab9831c66f:create' # Projects
+  - 'entrytypes.4448ff2b-e958-4a61-8e36-0dab9831c66f:save' # Projects
+  - 'entrytypes.4448ff2b-e958-4a61-8e36-0dab9831c66f:delete' # Projects
+  - 'entrytypes.35ad8ea4-2989-47d3-820b-d5cf1d398bc9:edit' # Projects Beta
+  - 'entrytypes.35ad8ea4-2989-47d3-820b-d5cf1d398bc9:create' # Projects Beta
+  - 'entrytypes.35ad8ea4-2989-47d3-820b-d5cf1d398bc9:save' # Projects Beta
+  - 'entrytypes.35ad8ea4-2989-47d3-820b-d5cf1d398bc9:delete' # Projects Beta
+  - 'sections.d9164a86-877a-49bd-bc75-148e28d51df2:edit' # Projects Index
+  - 'entrytypes.3c47182a-0520-4bca-921f-65dce2849cb5:save' # Projects Index
+  - 'sections.24fa116b-8516-4626-84f3-86b685e71071:edit' # Resources
+  - 'entrytypes.df535740-f62a-4027-aefd-b7fef85f4a7f:edit' # Resources
+  - 'entrytypes.df535740-f62a-4027-aefd-b7fef85f4a7f:create' # Resources
+  - 'entrytypes.df535740-f62a-4027-aefd-b7fef85f4a7f:save' # Resources
+  - 'entrytypes.df535740-f62a-4027-aefd-b7fef85f4a7f:delete' # Resources
+  - 'sections.c1969337-e50a-48d2-8823-fbb68bd3776b:edit' # Resources Index
+  - 'entrytypes.48ddc90c-a4ab-4105-a260-d578e44efe13:save' # Resources Index
+  - 'sections.e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8:edit' # Search Index
+  - 'entrytypes.97e68bc8-2f0b-4421-91bf-681c31d1af59:save' # Search Index
+  - 'sections.b7e437e1-239f-4c5c-8c62-5f0323f9d22c:edit' # Services
+  - 'entrytypes.85f10314-7c48-4f3e-8edb-8fa58b270abc:edit' # Services
+  - 'entrytypes.85f10314-7c48-4f3e-8edb-8fa58b270abc:create' # Services
+  - 'entrytypes.85f10314-7c48-4f3e-8edb-8fa58b270abc:save' # Services
+  - 'entrytypes.85f10314-7c48-4f3e-8edb-8fa58b270abc:delete' # Services
+  - 'entrytypes.fa184118-b826-4c59-9362-39fe81b426c2:edit' # Services (311)
+  - 'entrytypes.fa184118-b826-4c59-9362-39fe81b426c2:create' # Services (311)
+  - 'entrytypes.fa184118-b826-4c59-9362-39fe81b426c2:save' # Services (311)
+  - 'entrytypes.fa184118-b826-4c59-9362-39fe81b426c2:delete' # Services (311)
+  - 'entrytypes.33857d17-d8e8-4c03-8902-f1fb2e4422da:edit' # Service Redirect
+  - 'entrytypes.33857d17-d8e8-4c03-8902-f1fb2e4422da:create' # Service Redirect
+  - 'entrytypes.33857d17-d8e8-4c03-8902-f1fb2e4422da:save' # Service Redirect
+  - 'entrytypes.33857d17-d8e8-4c03-8902-f1fb2e4422da:delete' # Service Redirect
+  - 'sections.89cda626-6500-4ace-b9f4-0f8a54a9ad02:edit' # Services Index
+  - 'entrytypes.a0ebc1aa-769e-4adc-a633-87b0e2c2626c:save' # Services Index
+  - 'sections.07faad04-9ec4-4f68-9fe8-0ca20f189f8a:edit' # Staff
+  - 'entrytypes.3f29603b-dede-4258-8ae1-fc01c48f372d:edit' # Staff
+  - 'entrytypes.3f29603b-dede-4258-8ae1-fc01c48f372d:create' # Staff
+  - 'entrytypes.3f29603b-dede-4258-8ae1-fc01c48f372d:save' # Staff
+  - 'entrytypes.3f29603b-dede-4258-8ae1-fc01c48f372d:delete' # Staff
+  - 'entrytypes.714977a3-2a75-4e25-b9b4-7db488f791b0:edit' # Contract Employees
+  - 'entrytypes.714977a3-2a75-4e25-b9b4-7db488f791b0:create' # Contract Employees
+  - 'entrytypes.714977a3-2a75-4e25-b9b4-7db488f791b0:save' # Contract Employees
+  - 'entrytypes.714977a3-2a75-4e25-b9b4-7db488f791b0:delete' # Contract Employees
+  - 'sections.98c4abc4-7360-4759-a926-a7673c124809:edit' # Staff Index
+  - 'entrytypes.fe1bbd87-c5e4-420c-b80f-11bdeabb907e:save' # Staff Index
+  - 'sections.fbf8b9b0-8875-4e08-819a-d62603676dc4:edit' # Teams
+  - 'entrytypes.c2c1cf6a-786c-44cd-84f6-518e8c48b024:edit' # Teams
+  - 'entrytypes.c2c1cf6a-786c-44cd-84f6-518e8c48b024:create' # Teams
+  - 'entrytypes.c2c1cf6a-786c-44cd-84f6-518e8c48b024:save' # Teams
+  - 'entrytypes.c2c1cf6a-786c-44cd-84f6-518e8c48b024:delete' # Teams
+  - 'sections.e0be1e19-d6d8-4d1d-849e-14d179664811:edit' # Teams Index
+  - 'entrytypes.8e550712-d313-4f60-a6dd-50a0f79aaef2:save' # Teams Index
+  - 'sections.70778563-6dac-453d-a4b0-5121f3a614b7:edit' # Topics
+  - 'entrytypes.e15c8c84-5b0b-4e80-9746-1e3d7990ac49:edit' # Topics
+  - 'entrytypes.e15c8c84-5b0b-4e80-9746-1e3d7990ac49:create' # Topics
+  - 'entrytypes.e15c8c84-5b0b-4e80-9746-1e3d7990ac49:save' # Topics
+  - 'entrytypes.e15c8c84-5b0b-4e80-9746-1e3d7990ac49:delete' # Topics
+  - 'sections.210f35e9-172e-4116-9382-05774c79d1ff:edit' # Topics Index
+  - 'entrytypes.0dc3860c-3cc0-48db-908d-86a1eedb1953:save' # Topics Index
+  - 'sections.1300d573-d7c2-4d30-b840-2b94165d5d4f:edit' # Volunteer Index
+  - 'entrytypes.42daf001-6cda-4eab-a3a2-3dd24077d76c:save' # Volunteer Index
+  - 'sections.17d5d48d-2d75-4742-8820-cdce13764482:edit' # Volunteers
+  - 'entrytypes.1edc2029-9228-45ca-808d-a3ff860f31cc:edit' # Volunteers
+  - 'entrytypes.1edc2029-9228-45ca-808d-a3ff860f31cc:create' # Volunteers
+  - 'entrytypes.1edc2029-9228-45ca-808d-a3ff860f31cc:save' # Volunteers
+  - 'entrytypes.1edc2029-9228-45ca-808d-a3ff860f31cc:delete' # Volunteers
+  - 'sections.ab06f460-5f10-4ce6-9623-9a5ff14a8685:edit' # Website Updates
+  - 'entrytypes.58263077-210c-44b9-9b7c-beecb708601f:edit' # Website Updates
+  - 'entrytypes.58263077-210c-44b9-9b7c-beecb708601f:create' # Website Updates
+  - 'entrytypes.58263077-210c-44b9-9b7c-beecb708601f:save' # Website Updates
+  - 'entrytypes.58263077-210c-44b9-9b7c-beecb708601f:delete' # Website Updates
+  - 'volumes.8319fc25-f6c3-449d-a648-e891478b31a6:edit' # Icons
+  - 'volumes.8319fc25-f6c3-449d-a648-e891478b31a6:create' # Icons
+  - 'volumes.8319fc25-f6c3-449d-a648-e891478b31a6:save' # Icons
+  - 'volumes.8319fc25-f6c3-449d-a648-e891478b31a6:delete' # Icons
+  - 'volumes.549d1a55-e94b-4c89-9cb9-b1fdac9d417d:edit' # General Images
+  - 'volumes.549d1a55-e94b-4c89-9cb9-b1fdac9d417d:create' # General Images
+  - 'volumes.549d1a55-e94b-4c89-9cb9-b1fdac9d417d:save' # General Images
+  - 'volumes.549d1a55-e94b-4c89-9cb9-b1fdac9d417d:delete' # General Images
+  - 'volumes.56ad4140-da85-43ea-8292-3fac04cbefc1:edit' # Galleries
+  - 'volumes.56ad4140-da85-43ea-8292-3fac04cbefc1:create' # Galleries
+  - 'volumes.56ad4140-da85-43ea-8292-3fac04cbefc1:save' # Galleries
+  - 'volumes.56ad4140-da85-43ea-8292-3fac04cbefc1:delete' # Galleries
+  - 'volumes.f5dead8c-3e4c-4f97-8bea-2a3af1e34f67:edit' # Resources
+  - 'volumes.f5dead8c-3e4c-4f97-8bea-2a3af1e34f67:create' # Resources
+  - 'volumes.f5dead8c-3e4c-4f97-8bea-2a3af1e34f67:save' # Resources
+  - 'volumes.f5dead8c-3e4c-4f97-8bea-2a3af1e34f67:delete' # Resources
+  - 'volumes.a31d23bf-e3ee-4942-95e0-3d14c29620bb:edit' # Projects
+  - 'volumes.a31d23bf-e3ee-4942-95e0-3d14c29620bb:create' # Projects
+  - 'volumes.a31d23bf-e3ee-4942-95e0-3d14c29620bb:save' # Projects
+  - 'volumes.a31d23bf-e3ee-4942-95e0-3d14c29620bb:delete' # Projects
+  - 'volumes.1e78d0ad-2af1-4556-ab43-7b6c110e75b8:edit' # Headers
+  - 'volumes.1e78d0ad-2af1-4556-ab43-7b6c110e75b8:create' # Headers
+  - 'volumes.1e78d0ad-2af1-4556-ab43-7b6c110e75b8:save' # Headers
+  - 'volumes.1e78d0ad-2af1-4556-ab43-7b6c110e75b8:delete' # Headers
+  - 'volumes.7a12e399-b320-4d23-8abb-a79b5f303015:edit' # Portraits
+  - 'volumes.7a12e399-b320-4d23-8abb-a79b5f303015:create' # Portraits
+  - 'volumes.7a12e399-b320-4d23-8abb-a79b5f303015:save' # Portraits
+  - 'volumes.7a12e399-b320-4d23-8abb-a79b5f303015:delete' # Portraits
+  - 'volumes.7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0:edit' # News
+  - 'volumes.7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0:create' # News
+  - 'volumes.7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0:save' # News
+  - 'volumes.7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0:delete' # News
+  - 'volumes.c27974b4-89ad-4504-abb1-e76e44ff4b5d:edit' # Events
+  - 'volumes.c27974b4-89ad-4504-abb1-e76e44ff4b5d:create' # Events
+  - 'volumes.c27974b4-89ad-4504-abb1-e76e44ff4b5d:save' # Events
+  - 'volumes.c27974b4-89ad-4504-abb1-e76e44ff4b5d:delete' # Events
+  - 'volumes.58c3bf22-aa23-441f-bd65-acf677638ae6:edit' # Data
+  - 'volumes.58c3bf22-aa23-441f-bd65-acf677638ae6:create' # Data
+  - 'volumes.58c3bf22-aa23-441f-bd65-acf677638ae6:save' # Data
+  - 'volumes.58c3bf22-aa23-441f-bd65-acf677638ae6:delete' # Data
+  - 'volumes.c419ecb0-79c8-411d-b440-db5bdfa1f823:edit' # Documents
+  - 'volumes.c419ecb0-79c8-411d-b440-db5bdfa1f823:create' # Documents
+  - 'volumes.c419ecb0-79c8-411d-b440-db5bdfa1f823:save' # Documents
+  - 'volumes.c419ecb0-79c8-411d-b440-db5bdfa1f823:delete' # Documents
+  - 'volumes.1a78695a-f041-4562-9ee4-5405711bd29c:edit' # SEO
+  - 'volumes.1a78695a-f041-4562-9ee4-5405711bd29c:create' # SEO
+  - 'volumes.1a78695a-f041-4562-9ee4-5405711bd29c:save' # SEO
+  - 'volumes.1a78695a-f041-4562-9ee4-5405711bd29c:delete' # SEO
+  - 'volumes.4494beaa-9c1f-44ae-b040-36f60f3d055d:edit' # Logos
+  - 'volumes.4494beaa-9c1f-44ae-b040-36f60f3d055d:create' # Logos
+  - 'volumes.4494beaa-9c1f-44ae-b040-36f60f3d055d:save' # Logos
+  - 'volumes.4494beaa-9c1f-44ae-b040-36f60f3d055d:delete' # Logos
+  - 'volumes.10fea577-3555-45aa-9169-8e3dee085cae:edit' # Press Release Images
+  - 'volumes.10fea577-3555-45aa-9169-8e3dee085cae:create' # Press Release Images
+  - 'volumes.10fea577-3555-45aa-9169-8e3dee085cae:save' # Press Release Images
+  - 'volumes.10fea577-3555-45aa-9169-8e3dee085cae:delete' # Press Release Images
+  - 'volumes.5fab788c-0374-4ac2-945d-ba96ffd84669:edit' # Press Release Files
+  - 'volumes.5fab788c-0374-4ac2-945d-ba96ffd84669:create' # Press Release Files
+  - 'volumes.5fab788c-0374-4ac2-945d-ba96ffd84669:save' # Press Release Files
+  - 'volumes.5fab788c-0374-4ac2-945d-ba96ffd84669:delete' # Press Release Files
+  - 'globalsets.7657014a-eefc-419e-921e-8896ed282ab3:edit' # Sitewide Alert
+  - 'categorygroups.827f6570-faf8-42da-98e5-fffcb15e7cf6:edit' # Document Types
+  - 'categorygroups.827f6570-faf8-42da-98e5-fffcb15e7cf6:save' # Document Types
+  - 'categorygroups.827f6570-faf8-42da-98e5-fffcb15e7cf6:delete' # Document Types
+  - 'categorygroups.947de11d-3d94-45c2-8565-04542ce0e737:edit' # Event Types
+  - 'categorygroups.947de11d-3d94-45c2-8565-04542ce0e737:save' # Event Types
+  - 'categorygroups.947de11d-3d94-45c2-8565-04542ce0e737:delete' # Event Types
+  - 'categorygroups.ce43edd2-2eec-45cc-afa1-e3bd6b6e20ac:edit' # People
+  - 'categorygroups.ce43edd2-2eec-45cc-afa1-e3bd6b6e20ac:save' # People
+  - 'categorygroups.ce43edd2-2eec-45cc-afa1-e3bd6b6e20ac:delete' # People
+  - 'categorygroups.8bcf4697-1dd2-47b2-91e2-8ad9b4b86741:edit' # Service Types
+  - 'categorygroups.8bcf4697-1dd2-47b2-91e2-8ad9b4b86741:save' # Service Types
+  - 'categorygroups.8bcf4697-1dd2-47b2-91e2-8ad9b4b86741:delete' # Service Types
+  - 'taggroups.56057193-b9d8-4ac0-9f31-d4a755c91447:edit' # News
+  - 'taggroups.56057193-b9d8-4ac0-9f31-d4a755c91447:save' # News
+  - 'taggroups.56057193-b9d8-4ac0-9f31-d4a755c91447:delete' # News
