@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f62c85ae-2203-4d1a-8702-da515126a398 # Banner
+            fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
             instructions: null
             label: null
             required: false
@@ -36,7 +36,34 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
+            fieldUid: 3bc9f075-4edc-4909-ba86-ea128c3ddb93 # Subheading
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d7c59790-6279-474b-ab32-27cca3cfc19b # Label
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 856e0565-3a66-4305-825e-757ac41b9ff4 # Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: f62c85ae-2203-4d1a-8702-da515126a398 # Banner
             instructions: null
             label: null
             required: false
