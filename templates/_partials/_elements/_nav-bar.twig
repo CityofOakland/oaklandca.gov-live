@@ -30,13 +30,14 @@
                 <div class="pr-2 lg:items-center oak-hidden lg:flex">
                     <a href="/officials/libby-schaaf" class="flex items-center text-xs text-gray-100 hover:text-gray-200" title="View the homepage of Libby Schaaf, The Mayor of the City of Oakland">
                         <div class="mx-2 leading-tight text-right oak-hidden xl:block">
-                            <span class="font-bold">Mayor</span><br>
-                            Libby Schaaf
+                            <div><span class="font-bold">Mayor</span></div>
+                            <div>Libby Schaaf</div>
                         </div>
                         <img src="https://city-of-oakland.imgix.net/portraits/oakland_mayor_libby_schaaf_city_of_oakland-1519844049-5198.jpg?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64" sizes="100vw" srcset="https://city-of-oakland.imgix.net/portraits/oakland_mayor_libby_schaaf_city_of_oakland-1519844049-5198.jpg?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=128&amp;q=80&amp;w=128 128w, https://city-of-oakland.imgix.net/portraits/oakland_mayor_libby_schaaf_city_of_oakland-1519844049-5198.jpg?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64 64w" alt="Portrait of Mayor, Libby Schaaf" class="block w-10 h-10 border-2 border-gray-800 rounded-full">
                     </a>
                     <a href="/services/oak311" class="flex ml-2" title="Report a problem online to OAK 311">
                         <img src="https://city-of-oakland.imgix.net/news/311-Logo.png?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64" sizes="100vw" srcset="https://city-of-oakland.imgix.net/news/311-Logo.png?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=128&amp;q=80&amp;w=128 128w, https://city-of-oakland.imgix.net/news/311-Logo.png?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64 64w" alt="OAK 311 Logo" class="block w-10 h-10 border-2 border-gray-800 rounded-full">
+                        <span style="display:none;">Oak 311</span>
                     </a>
                 </div>
             </nav>
@@ -71,7 +72,17 @@
             'event': 'site_search_clicked',
             'current_url': '{{ craft.app.request.absoluteUrl }}'
         });
+    });
 
-        console.log("dataLayer pushed");
+    $('#nav-wrapper a').on('click', function(){
+        var link_clicked    = $(this).attr('href').trim();
+        var link_label      = $(this).text().trim().replace(/(\r\n|\n|\r)/gm, "");
+
+        dl.push({
+            'event'         : 'topnav_clicked',
+            'current_url'   : '{{ craft.app.request.absoluteUrl }}',
+            'url'           : link_clicked,
+            'label'         : link_label,
+        });
     });
 {% endjs %}
