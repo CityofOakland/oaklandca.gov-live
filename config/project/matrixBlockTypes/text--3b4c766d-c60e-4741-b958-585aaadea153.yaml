@@ -17,7 +17,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   9dda7113-fc9a-4806-9315-3625689c332d: # __blank__
-    contentColumnType: text
+    contentColumnType: mediumtext
     fieldGroup: null
     handle: text
     instructions: ''
@@ -27,7 +27,7 @@ fields:
       availableTransforms: '*'
       availableVolumes: '*'
       cleanupHtml: true
-      columnType: text
+      columnType: mediumtext
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
