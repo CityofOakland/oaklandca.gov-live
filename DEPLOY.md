@@ -1,5 +1,11 @@
 ## Deployment Process
 
+Oakland is currently on Craft CMS, and has two environments: `staging` (https://staging.oaklandca.dev/) and `production` (https://www.oaklandca.gov/). 
+
+Deployment to `staging` is automated through GitHub Actions. If you deploy to the GitHub repository (https://github.com/CityofOakland/oaklandca.gov-live) on the staging branch, it will automatically run a few scripts to deploy the site live. You can see the script here: https://github.com/CityofOakland/oaklandca.gov-live/blob/staging/.github/workflows/manual.yml.
+
+For production deploys, run a git pull while SSH’d into the production site. You should have a 1Password invite to the Oakland Digital Services vault. All Craft files should live in the ~/www/public_html folder.
+
 ### Upgrading
 
 Performing Craft core updates can be done through the `./craft update craft` command. However, some issues may arise from database migrations due to some of the `config/general.php` variables.
