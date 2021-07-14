@@ -1,0 +1,40 @@
+fieldLayouts:
+  3138f419-bcbd-401e-af8e-771d0eef6d08:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: people
+name: People
+siteSettings:
+  c35d3a93-d7f4-4c37-ae3e-1b4d403311bb: # City of Oakland
+    hasUrls: true
+    template: null
+    uriFormat: 'people/{slug}'
+structure:
+  maxLevels: null
+  uid: d5985ead-d08c-4af7-9f56-da944e45ad5a

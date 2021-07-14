@@ -1,4 +1,4 @@
-dateModified: 1619551607
+dateModified: 1625683504
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -48,7 +48,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: V1MGTTWWOX2B8VX28A8VJ2ZQ
-    schemaVersion: 3.6.6
+    schemaVersion: 3.10.0
     settings:
       apiKey: ''
       cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
@@ -117,7 +117,7 @@ plugins:
     edition: pro
     enabled: '1'
     licenseKey: PRJ91600ENZBQ5S7HS7UE93Z
-    schemaVersion: 3.2.0
+    schemaVersion: 3.3.0
     settings:
       allDay: false
       authoredEventEditOnly: ''
@@ -159,6 +159,8 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+    settings:
+      documentation: '<p><a href="https://docs.google.com/document/d/1pOhZdKAyO_82BKspgiklE8pv962t3X2e3NA9hC4-jGg/edit" rel="noopener" target="_blank">City of Oakland Writing for the Web Style Guide</a></p>'
   element-api:
     enabled: '1'
     licenseKey: null
@@ -176,18 +178,17 @@ plugins:
     settings: null
   google-maps:
     enabled: true
-    licenseKey: 0H5E3MIS198GEIOF53TW84AQ
-    schemaVersion: 4.0.0
+    licenseKey: 88Z3Y9HY00OZ7NQEBWTNETQL
     settings:
-      browserKey: AIzaSyCe-8KH-BppEiy7fvwFxiRVrhFy0DGbJ2o
+      browserKey: AIzaSyAjLOAKFea8xqgeL9Hf8TyXLNcLxXVgJzo
       enableJsLogging: true
       fieldControlSize: 27
-      geolocationService: none
-      ipstackApiAccessKey: null
+      geolocationService: ''
+      ipstackApiAccessKey: ''
       maxmindLicenseKey: ''
       maxmindService: ''
       maxmindUserId: ''
-      serverKey: AIzaSyCIaOEBLWXXPFvTdGJ98Y81RNMM_upfFPI
+      serverKey: AIzaSyBnPcsOXM0SarMt94kDEN60juB600UKvck
   imager-x:
     edition: pro
     enabled: true
@@ -225,6 +226,11 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  neo:
+    edition: standard
+    enabled: true
+    licenseKey: MHV0BQ72A7IVPYOA3JKMD3BQ
+    schemaVersion: 2.9.11
   patrol:
     edition: standard
     enabled: true
@@ -272,7 +278,7 @@ plugins:
   retour:
     enabled: '1'
     licenseKey: 5DC6J57ZUDZKVM1WI3TONGUK
-    schemaVersion: 3.0.9
+    schemaVersion: 3.0.10
     settings:
       alwaysStripQueryString: ''
       createUriChangeRedirects: '1'
@@ -289,7 +295,7 @@ plugins:
   seomatic:
     enabled: '1'
     licenseKey: WE9YYSPHWC5CNFB2RL64YDJ6
-    schemaVersion: 3.0.9
+    schemaVersion: 3.0.10
     settings: null
   smith:
     edition: standard
@@ -359,5 +365,5 @@ system:
   live: true
   name: 'City of Oakland'
   retryDuration: null
-  schemaVersion: 3.6.6
+  schemaVersion: 3.6.8
   timeZone: America/Los_Angeles

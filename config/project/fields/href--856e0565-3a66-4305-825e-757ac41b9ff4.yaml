@@ -1,0 +1,14 @@
+contentColumnType: string(255)
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
+handle: href
+instructions: ''
+name: Link
+searchable: false
+settings:
+  maxLength: '255'
+  placeholder: null
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

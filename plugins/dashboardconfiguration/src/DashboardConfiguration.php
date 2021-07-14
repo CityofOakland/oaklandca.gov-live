@@ -115,11 +115,13 @@ class DashboardConfiguration extends Plugin
         Event::on(
             Controller::class,
             Controller::EVENT_BEFORE_ACTION,
-            function(ActionEvent $event){
-                if($event->action->actionMethod == 'actionIndex' && $event->action->controller instanceof \craft\controllers\DashboardController){
-                    $service = new \goat\dashboardconfiguration\services\Service();
-                    $service->visitDashboard();
-                }
+    	    function(ActionEvent $event){
+    		    if(Craft::$app->user->getIdentity()) {
+                    if($event->action->actionMethod == 'actionIndex' && $event->action->controller instanceof \craft\controllers\DashboardController){
+                        $service = new \goat\dashboardconfiguration\services\Service();
+                        $service->visitDashboard();
+                    }
+    		    }
             }
         );
 

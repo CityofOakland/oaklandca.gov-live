@@ -61,20 +61,6 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  6781472a-633d-4059-b528-3b826db0332f: # Hide Thumbnails?
-    contentColumnType: boolean
-    fieldGroup: null
-    handle: hideThumbnails
-    instructions: 'Check this box if you wish to hide the thumbnail images and/or default icons for this block.'
-    name: 'Hide Thumbnails?'
-    searchable: false
-    settings:
-      default: false
-      offLabel: null
-      onLabel: null
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Lightswitch
   84c6ab36-1b2e-49f1-93a1-aa41ce3d194a: # Heading
     contentColumnType: text
     fieldGroup: null
@@ -94,6 +80,20 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  6781472a-633d-4059-b528-3b826db0332f: # Hide Thumbnails?
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: hideThumbnails
+    instructions: 'Check this box if you wish to hide the thumbnail images and/or default icons for this block.'
+    name: 'Hide Thumbnails?'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
   ac349657-dbca-480e-8cb9-dc97ccae3b3a: # Allow Autofill?
     contentColumnType: boolean
     fieldGroup: null
@@ -145,24 +145,19 @@ fields:
     translationMethod: site
     type: Solspace\Calendar\FieldTypes\EventFieldType
   de14155f-e982-42aa-9b79-71ceeaf08a77: # Hide Summary?
-    contentColumnType: text
+    contentColumnType: boolean
     fieldGroup: null
     handle: hideSummary
     instructions: 'Check this box if you wish to hide the summary text that appears at the bottom of each entry’s block.'
     name: 'Hide Summary?'
     searchable: true
     settings:
-      byteLimit: null
-      charLimit: null
-      code: ''
-      columnType: null
-      initialRows: '4'
-      multiline: ''
-      placeholder: null
-      uiMode: normal
+      default: false
+      offLabel: null
+      onLabel: null
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\PlainText
+    type: craft\fields\Lightswitch
 handle: meetingEntries
 name: 'Meeting Entries'
 sortOrder: 20

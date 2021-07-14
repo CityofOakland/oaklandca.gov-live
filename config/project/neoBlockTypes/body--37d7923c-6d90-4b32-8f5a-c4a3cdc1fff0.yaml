@@ -1,0 +1,30 @@
+childBlocks:
+  - mainContent
+  - buttons
+  - columns
+  - embeds
+  - icons
+field: e2442a2e-e191-4b02-b170-7ecad09c52e2 # Modules
+fieldLayouts:
+  f79d8bd6-835c-4f50-89c2-e2b42ece2fd6:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: f8342274-0ae7-48f4-867d-2efd90ca3b93 # Background Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Configuration
+        sortOrder: 1
+handle: body
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: Body
+sortOrder: 1
+topLevel: true

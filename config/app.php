@@ -19,7 +19,8 @@
 
 return [
     'modules' => [
-        'my-module' => \modules\Module::class
+        'my-module' => \modules\Module::class,
+        'matrix-mate-module' => \modules\MatrixMateModule::class,
     ],
-    'bootstrap' => ['my-module'],
+    'bootstrap' => ['my-module', 'matrix-mate-module'],
 ];

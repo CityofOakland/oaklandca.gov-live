@@ -1,131 +1,93 @@
 <?php
 
-$textBlock = [
-  'label' => 'Text',
-  'types' => ['heading', 'subheading', 'text', 'textImageBlock', 'noticeBlock'],
-];
-$adminTextBlock = $textBlock;
-$linksBlock = [
-  'label' => 'Links',
-  'types' => ['linksWithDescriptions', 'largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries', 'callToAction']
-];
-$adminLinksBlock = [
-  'label' => 'Links',
-  'types' => ['linksWithDescriptions', 'linkBlocksWithImages', 'linkBlocksWithIcons', 'largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries', 'callToAction']
-];
-$adminPageElementsBlock = [
-  'label' => 'Page Elements',
-  'types' => ['statsBlockWithIcons', 'timeline', 'customTemplate', 'embeddedContent', 'emailSignup', 'meetingsTable', 'officials']
-];
-$imagesBlock = [
-  'label' => 'Images',
-  'types' => ['image', 'gallery']
-];
-$tablesBlock = [
-  'label' => 'Tables',
-  'types' => ['table2Columns', 'table3Columns', 'table4Columns']
-];
+$user         = Craft::$app->getUser();
 
-$user = Craft::$app->getUser();
-$isUserAdmin = $user->getIsAdmin();
+$textGroup = modules\MatrixMateModule::createConfigBlock('Text', [
+    'heading'           => ['adminOnly'=>false],
+    'subheading'        => ['adminOnly'=>false],
+    'text'              => ['adminOnly'=>false],
+    'textImageBlock'    => ['adminOnly'=>false],
+    'noticeBlock'       => ['adminOnly'=>false],
+]);
 
-if ($isUserAdmin) {
-  $defaultBlock = [
-    $adminTextBlock,
-    $adminLinksBlock,
-    $imagesBlock,
-    $tablesBlock,
-    $adminPageElementsBlock
-  ];
-  $departmentsBlock = $defaultBlock;
-  $topicsBlock = $defaultBlock;
-  $newsPressBlock = $defaultBlock;
-  $resourcesBlock = $defaultBlock;
-  $servicesBlock = $defaultBlock;
-} else {
-  $defaultBlock = [
-    $textBlock,
-    $linksBlock,
-  ];
-  $departmentsBlock = [
-    $textBlock,
-    $linksBlock
-  ];
-  $topicsBlock = [
-    $textBlock,
-    $linksBlock,
-    $imagesBlock,
-    $tablesBlock,
-  ];
-  $newsPressBlock = [
-    $textBlock,
-    $linksBlock,
-    $imagesBlock,
-    $tablesBlock,
-  ];
-  $resourcesBlock = [
-    $textBlock,
-    $linksBlock,
-    $imagesBlock,
-    $tablesBlock,
-  ];
-  $servicesBlock = [
-    $textBlock,
-    $linksBlock,
-  ];
-};
+$linksGroup = modules\MatrixMateModule::createConfigBlock('Links', [
+    'linksWithDescriptions' => ['adminOnly'=>false],
+    'linkBlocksWithImages'  => ['adminOnly'=>true],
+    'linkBlocksWithIcons'   => ['adminOnly'=>true],
+    'largeEntryLinks'       => ['adminOnly'=>false],
+    'smallEntryLinks'       => ['adminOnly'=>false],
+    'newsEntries'           => ['adminOnly'=>false],
+    'eventEntries'          => ['adminOnly'=>false],
+    'meetingEntries'        => ['adminOnly'=>false],
+    'callToAction'          => ['adminOnly'=>false],
+]);
+
+$pageElementsGroup = modules\MatrixMateModule::createConfigBlock('Page Elements', [
+    'customTemplate'        => ['adminOnly'=>true],
+    'embeddedContent'       => ['adminOnly'=>true],
+    'emailSignup'           => ['adminOnly'=>true],
+    'meetingsTable'         => ['adminOnly'=>true],
+    'officials'             => ['adminOnly'=>true],
+    'statsBlockWithIcons'   => ['adminOnly'=>true],
+    'timeline'              => ['adminOnly'=>true],
+]);
+
+$imagesGroup = modules\MatrixMateModule::createConfigBlock('Images', [
+    'image'     => ['adminOnly'=>false],
+    'gallery'   => ['adminOnly'=>false],
+]);
+
+$tablesGroup = modules\MatrixMateModule::createConfigBlock('Tables', [
+    'table2Columns' => ['adminOnly'=>false],
+    'table3Columns' => ['adminOnly'=>false],
+    'table4Columns' => ['adminOnly'=>false],
+]);
+
+$embedsGroup = modules\MatrixMateModule::createConfigBlock('Embeds', [
+    'embed'             => ['adminOnly'=>true, 'groups'=>['digitalLeads']],
+    'embedOpenForms'    => ['adminOnly'=>true, 'groups'=>['digitalLeads']],
+    'embedYouTube'      => ['adminOnly'=>true, 'groups'=>['digitalLeads']],
+]);
+
+$adminBlock = [
+    $textGroup,
+    $linksGroup,
+    $imagesGroup,
+    $tablesGroup,
+    $pageElementsGroup,
+    $embedsGroup,
+];
 
 return [
-  'fields' => [
-    'contentBuilder' => [
-      '*' => [
-        'groups' => $defaultBlock,
-        'types' => [
-          'meetingsTable' => [
-            'maxLimit' => 1
-          ],
+    'fields' => [
+        'contentBuilder' => [
+            '*' => modules\MatrixMateModule::createConfigPermissions(( $user->isAdmin ? $adminBlock : [
+                $textGroup,
+                $linksGroup,
+            ])),
+
+            'section:departments, section:boardsCommissions, section:officials' => modules\MatrixMateModule::createConfigPermissions(( $user->isAdmin ? $adminBlock : [
+                $textGroup,
+                $linksGroup
+            ])),
+
+            'section:topics' => modules\MatrixMateModule::createConfigPermissions(( $user->isAdmin ? $adminBlock : [
+                $textGroup,
+                $linksGroup,
+                $imagesGroup,
+                $tablesGroup,
+            ])),
+
+            'section:resources' => modules\MatrixMateModule::createConfigPermissions(( $user->isAdmin ? $adminBlock : [
+                $textGroup,
+                $linksGroup,
+                $imagesGroup,
+                $tablesGroup,
+                $embedsGroup,
+            ])),
         ],
-        'hideUngroupedTypes' => ($isUserAdmin ? false : true),
-      ],
-      'section:departments,section:boardsCommissions,section:officials' => [
-        'groups' => $departmentsBlock,
-        'types' => [
-          'meetingsTable' => [
-            'maxLimit' => 1
-          ],
+        'recordings' => [
+            'hiddenTypes' => ($isUserAdmin ? '' : ['embed']),
         ],
-        'hideUngroupedTypes' => ($isUserAdmin ? false : true),
-      ],
-      'section:topics' => [
-        'groups' => $topicsBlock,
-        'types' => [
-          'meetingsTable' => [
-            'maxLimit' => 1
-          ],
-        ],
-        'hideUngroupedTypes' => ($isUserAdmin ? false : true),
-      ],
-      'section:resources' => [
-        'groups' => $resourcesBlock,
-        'types' => [
-          'meetingsTable' => [
-            'maxLimit' => 1
-          ],
-        ],
-        'hideUngroupedTypes' => ($isUserAdmin ? false : true),
-      ],
-      'section:services' => [
-        'groups' => $servicesBlock,
-        'types' => [
-          'meetingsTable' => [
-            'maxLimit' => 1
-          ],
-        ],
-        'hideUngroupedTypes' => ($isUserAdmin ? false : true),
-      ],
     ],
-    'recordings' => [
-      'hiddenTypes' => ($isUserAdmin ? '' : ['embed']),
-    ],
-  ],
 ];

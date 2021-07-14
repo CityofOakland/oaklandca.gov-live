@@ -34,60 +34,6 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  1020f3d1-0dcb-45c8-b054-15d7d2bfa99d: # Heading
-    contentColumnType: text
-    fieldGroup: null
-    handle: heading
-    instructions: ''
-    name: Heading
-    searchable: false
-    settings:
-      byteLimit: null
-      charLimit: null
-      code: ''
-      columnType: text
-      initialRows: '4'
-      multiline: ''
-      placeholder: null
-      uiMode: normal
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
-  260c86d2-a919-42ce-ba0f-64f1d25952d5: # Entries
-    contentColumnType: string
-    fieldGroup: null
-    handle: entries
-    instructions: 'Select up to 12 entries to include as large button-shaped links on your page'
-    name: Entries
-    searchable: false
-    settings:
-      allowSelfRelations: false
-      limit: '9'
-      localizeRelations: false
-      selectionLabel: ''
-      showSiteMenu: true
-      source: null
-      sources:
-        - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-        - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
-        - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-        - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-        - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-        - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-        - 'section:92f0f749-ed5b-4acc-aa15-6340f6e25791'
-        - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-        - 'section:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-        - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
-        - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
-        - 'section:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-        - 'section:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-      targetSiteId: null
-      validateRelatedElements: false
-      viewMode: null
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Entries
   7c42e182-2c0f-45c6-9b1a-229a0312589a: # Entries Description
     contentColumnType: text
     fieldGroup: null
@@ -116,6 +62,59 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
+  260c86d2-a919-42ce-ba0f-64f1d25952d5: # Entries
+    contentColumnType: string
+    fieldGroup: null
+    handle: entries
+    instructions: 'Select up to 12 entries to include as large button-shaped links on your page'
+    name: Entries
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '9'
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: null
+      sources:
+        - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+        - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+        - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+        - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+        - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+        - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+        - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+        - 'section:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+        - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+        - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+        - 'section:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+        - 'section:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  1020f3d1-0dcb-45c8-b054-15d7d2bfa99d: # Heading
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
 handle: largeEntryLinks
 name: 'Large Entry Links'
 sortOrder: 15

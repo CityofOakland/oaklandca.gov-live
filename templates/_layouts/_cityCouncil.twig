@@ -15,7 +15,6 @@
     'contentBuilder.largeEntryLinks:entries.documentFile',
     'contentBuilder.smallEntryLinks:entries',
     'contentBuilder.smallEntryLinks:entries.documentFile',
-    'contentBuilder.officials:officials',
     'addresses'
   ]
 ) %}
@@ -31,7 +30,7 @@
   ['documents', 'entries']
 ] %}
 
-{% set contactState = entry.addresses | length or not entry.address.isEmpty or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
+{% set contactState = entry.addresses | length or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
 {% set contentBuilder = entry.contentBuilder | length %}
 {% set contact = contactState %}
 

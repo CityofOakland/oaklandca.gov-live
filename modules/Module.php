@@ -3,23 +3,13 @@ namespace modules;
 
 use Craft;
 
-/**
- * Custom module class.
- *
- * This class will be available throughout the system via:
- * `Craft::$app->getModule('my-module')`.
- *
- * You can change its module ID ("my-module") to something else from
- * config/app.php.
- *
- * If you want the module to get loaded on every request, uncomment this line
- * in config/app.php:
- *
- *     'bootstrap' => ['my-module']
- *
- * Learn more about Yii module development in Yii's documentation:
- * http://www.yiiframework.com/doc-2.0/guide-structure-modules.html
- */
+use craft\base\Element;
+use craft\elements\Entry;
+use craft\events\RegisterElementExportersEvent;
+use yii\base\Event;
+
+use modules\ExportModule;
+
 class Module extends \yii\base\Module
 {
     /**
@@ -36,6 +26,14 @@ class Module extends \yii\base\Module
         } else {
             $this->controllerNamespace = 'modules\\controllers';
         }
+
+        Event::on(
+            Entry::class,
+            Element::EVENT_REGISTER_EXPORTERS,
+            function(RegisterElementExportersEvent $event) {
+                $event->exporters[] = ExportModule::class;
+            }
+        );
 
         parent::init();
     }
