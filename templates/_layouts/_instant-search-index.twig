@@ -37,7 +37,7 @@
     <div class="container flex-col -my-4" id="facet-holder">
       {% if facets is defined %}
         {% for facet in facets %}
-          <div id="{{ facet.container }}"></div>
+          <div id="{{ facet.container }}" class="facet-container"></div>
         {% endfor %}
       {% endif %}
     </div>
@@ -60,19 +60,24 @@
     var search_term   = $('#search-input').val();
     var link_clicked  = $(this).attr('href').trim();
 
+    var filters = [];
+
+    $('.facet-container > div:visible').each(function(index, element){
+      var $this = $(element);
+      var item = {
+        label : $this.find('.ais-header').text(),
+        value : $this.find('select').val() ? $this.find('select').val() : 'N/A',
+      };
+
+      filters.push(item);
+    });
+
     dl.push({
       'event'         : 'search_result_clicked',
       'current_url'   : '{{ craft.app.request.absoluteUrl }}',
       'url'           : link_clicked,
       'search_term'   : search_term,
-    });
-  });
-
-  $('#algolia-filters').on('change', 'select', function(){
-    dl.push({
-      'event'         : 'search_filter_applied',
-      'current_url'   : '{{ craft.app.request.absoluteUrl }}',
-      'filter_name'   : $(this).val(),
+      'filters'       : filters,
     });
   });
 {% endjs %}

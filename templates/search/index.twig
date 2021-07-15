@@ -82,3 +82,17 @@
     </div>
   </section>
 {% endblock %}
+
+{% js on load %}
+    $('#all-hits').on('click', 'a', function(){
+      var search_term   = $('#search-input').val();
+      var link_clicked  = $(this).attr('href').trim();
+
+      dl.push({
+        'event'         : 'search_result_clicked',
+        'current_url'   : '{{ craft.app.request.absoluteUrl }}',
+        'url'           : link_clicked,
+        'search_term'   : search_term,
+      });
+    });
+{% endjs %}
