@@ -18,7 +18,7 @@
                     {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="w-40 h-10 oak-hidden sm:block" ') | raw }}
                     <span class="hidden-visually">Home</span>
                 </a>
-                <form class="relative z-0 flex justify-end flex-1 pl-4 pr-6 lg:pr-0" action="{{ url('search') }}" role="search">
+                <form id="site-search-form" class="relative z-0 flex justify-end flex-1 pl-4 pr-6 lg:pr-0" action="{{ url('search') }}" role="search">
                     <label for="site-search" class="hidden-visually">Search?</label>
                     <input type="search" id="site-search" class="z-10 w-full pl-10 pr-6 mb-0 text-sm leading-normal text-gray-100 placeholder-gray-200 bg-gray-900 border-2 border-gray-800 rounded appearance-none search-box h-9 md:h-10 md:text-base" aria-label="Site Search" name="query" placeholder="Search" value="">
                 </form>
@@ -67,10 +67,13 @@
 </div>
 
 {% js on load %}
-    $('#site-search').on('click', function(){
+    $('#site-search-form').on('submit', function(){
+        var search_term = $('#site-search').val();
+
         dl.push({
-            'event': 'site_search_clicked',
-            'current_url': '{{ craft.app.request.absoluteUrl }}'
+            'event'         : 'site_search_clicked',
+            'current_url'   : '{{ craft.app.request.absoluteUrl }}',
+            'search_term'   : search_term,
         });
     });
 
