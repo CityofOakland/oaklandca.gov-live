@@ -160,4 +160,4 @@ fields:
     type: craft\fields\Lightswitch
 handle: meetingEntries
 name: 'Meeting Entries'
-sortOrder: 20
+sortOrder: 21

@@ -37,4 +37,4 @@ fields:
     type: craft\fields\PlainText
 handle: embed
 name: Embed
-sortOrder: 27
+sortOrder: 28
