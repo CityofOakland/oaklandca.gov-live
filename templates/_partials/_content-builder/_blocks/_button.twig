@@ -1,4 +1,4 @@
-<a class="button {{ block.color }}" href="{{ block.href }}" {{ block.newTab ?? 'target="_blank"' }}>
+<a class="button {{ block.color }}" href="{{ block.entry|length ? block.entry.one().url : block.href }}" {{ block.newTab ? 'target="_blank"' : '' }}>
 	{% if block.icon == 'arrowLeft' %}<span class="arrow-left" role="img" aria-label="arrow left">&larr;</span>{% endif %}
 	{{ block.label }}
 	{% if block.icon == 'arrowRight' %}<span class="arrow-right" role="img" aria-label="arrow right">&rarr;</span>{% endif %}
