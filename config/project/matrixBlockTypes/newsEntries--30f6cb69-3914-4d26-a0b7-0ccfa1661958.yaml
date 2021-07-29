@@ -137,4 +137,4 @@ fields:
     type: craft\fields\Lightswitch
 handle: newsEntries
 name: 'News Entries'
-sortOrder: 18
+sortOrder: 19

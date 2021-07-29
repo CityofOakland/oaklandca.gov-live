@@ -1,0 +1,2 @@
+{% import '_macros/_macros' as macro %}
+<div class="{% if not loop.last %}mb-12{% endif %}">{{ macro.tableBuilder(block, 4)}}</div>

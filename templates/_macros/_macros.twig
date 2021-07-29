@@ -24,6 +24,30 @@
   {% endif %}
 {% endmacro %}
 
+{% macro tableBuilder(object, columns) %}
+  <table class="w-full text-sm border border-cool-gray-500">
+    <thead>
+      <tr>
+        {% for col in 1..columns %}
+          {% set colAttrib = 'column' ~ col ~ 'Heading' %}
+          {% set widthAttrib = 'column' ~ col ~ 'Width' %}
+          <th class="px-3 py-1 text-white border bg-cool-gray-500 border-cool-gray-500" style="width: {{ attribute(object, widthAttrib) ~ '%' ?? '' }}">{{ attribute(object, colAttrib) }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in object.table.all() %}
+        <tr class="odd:bg-white even:bg-cool-gray-100">
+          {% for col in 1..columns %}
+            {% set colAttrib = 'column' ~ col ~ 'Cell' %}
+            <td class="p-4 align-top border body-text border-cool-gray-500">{{ attribute(row, colAttrib) | retconAttr( '*', { 'class' : 'last:mb-0' }, false ) }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endmacro %}
+
 {% macro videoEmbed(videoUrl, videoTitle) %}
   {% set splitVideoUrl = videoUrl | split('://')[1] | split('&')[0] %}
   {% if splitVideoUrl starts with 'oakland.granicus.com' %}
