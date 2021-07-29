@@ -28,6 +28,7 @@
 <style>
   #contentBuilder .button {
     background: #207127;
+    border: 2px solid #207127;
     border-radius: 2px;
     color: white;
     display: inline-block;
@@ -36,15 +37,17 @@
     line-height: 1.38;
     outline-offset: 2px;
     margin: 0 15px 15px 0;
-    padding: 18px 32px;
+    padding: 16px 32px;
   }
 
   #contentBuilder .button:hover {
     background: #0D5713;
+    border-color: #0D5713;
   }
 
   #contentBuilder .button:active {
     background: #04400A;
+    border-color: #04400A;
   }
 
   #contentBuilder .button:focus {
@@ -53,63 +56,112 @@
 
   #contentBuilder .button[disabled] {
     background: #B1B1B1;
+    border-color: #B1B1B1;
     pointer-events: none;
   }
 
-  #contentBuilder .button.white {
+  #contentBuilder .button.secondary {
     background: white;
     border: 2px solid #207127;
-    padding: 16px 30px;
     color: #207127;
   }
 
-  #contentBuilder .button.white:hover {
+  #contentBuilder .button.secondary:hover {
     border-color: #0D5713;
     color: #0D5713;
   }
 
-  #contentBuilder .button.white:active {
+  #contentBuilder .button.secondary:active {
     border-color: #04400A;
     color: #04400A;
   }
 
-  #contentBuilder .button.white[disabled] {
+  #contentBuilder .button.secondary[disabled] {
     border-color: #B1B1B1;
     color: #B1B1B1;
     pointer-events: none;
   }
 
-  #contentBuilder .button.orange {
+  #contentBuilder .button.accent {
     background: #F7C948;
+    border: 2px solid #F7C948;
     color: #222222;
   }
 
-  #contentBuilder .button.orange:hover {
+  #contentBuilder .button.accent:hover {
     background: #F0B429;
+    border-color: #F0B429;
   }
 
-  #contentBuilder .button.orange:active {
+  #contentBuilder .button.accent:active {
     background: #CB6E17;
+    border-color: #CB6E17;
     color: white;
   }
 
-  #contentBuilder .button.orange[disabled] {
+  #contentBuilder .button.accent[disabled] {
     background: #B1B1B1;
+    border-color: #B1B1B1;
     color: white;
     pointer-events: none;
+  }
+
+  #contentBuilder .button.medium {
+    padding: 16px 16px;
+  }
+
+  #contentBuilder .button.small {
+    padding: 8px 8px;
   }
 
   #contentBuilder .button span {
     display: inline-block;
   }
 
+  #contentBuilder .button svg {
+    display: inline-block;
+    margin-right: 6px;
+    height: 16px;
+    width: 16px;
+  }
+
+  #contentBuilder .button svg path {
+    fill: white;
+  }
+
+  #contentBuilder .button.secondary svg path {
+    fill: #207127;
+  }
+
+  #contentBuilder .button.secondary:hover svg path {
+    fill: #0D5713;
+  }
+
+  #contentBuilder .button.secondary:active svg path {
+    fill: #04400A;
+  }
+
+  #contentBuilder .button.secondary[disabled] svg path {
+    fill: #B1B1B1;
+  }
+
+  #contentBuilder .button.accent svg path {
+    fill: #222222;
+  }
+
+  #contentBuilder .button.accent:active svg path {
+    fill: white;
+  }
+
+  #contentBuilder .button.accent[disabled] svg path {
+    fill: white;
+  }
+
   #contentBuilder .button .arrow-left {
-    margin-left: -6px;
     margin-right: 6px;
   }
 
   #contentBuilder .button .arrow-right {
-    margin-right: -6px;
     margin-left: 6px;
   }
 </style>

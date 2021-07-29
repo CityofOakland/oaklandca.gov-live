@@ -39,9 +39,18 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 50
+            width: 25
           -
-            fieldUid: 6722d0c2-c9b0-4b2c-adf2-97e13adaecb3 # Color
+            fieldUid: da23e18d-8c38-4fad-a38d-c07ba10ec985 # Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 6722d0c2-c9b0-4b2c-adf2-97e13adaecb3 # Style
             instructions: null
             label: null
             required: false
@@ -65,7 +74,7 @@ fields:
     contentColumnType: boolean
     fieldGroup: null
     handle: newTab
-    instructions: 'Turn on if the button should open a new tab.'
+    instructions: 'Switch on if the button opens a new tab.'
     name: 'Open in New Tab?'
     searchable: false
     settings:
@@ -98,7 +107,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: icon
-    instructions: 'Add an icon to the button by choosing one of the available options.'
+    instructions: 'Add an icon to the button.'
     name: Icon
     searchable: false
     settings:
@@ -137,15 +146,26 @@ fields:
             -
               - default
               - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Download
+            -
+              - value
+              - download
+            -
+              - default
+              - ''
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Dropdown
-  6722d0c2-c9b0-4b2c-adf2-97e13adaecb3: # Color
+  6722d0c2-c9b0-4b2c-adf2-97e13adaecb3: # Style
     contentColumnType: string
     fieldGroup: null
-    handle: color
+    handle: style
     instructions: 'Select the colour palette of this button.'
-    name: Color
+    name: Style
     searchable: false
     settings:
       optgroups: true
@@ -154,10 +174,10 @@ fields:
           __assoc__:
             -
               - label
-              - Green
+              - Primary
             -
               - value
-              - green
+              - primary
             -
               - default
               - ''
@@ -165,10 +185,10 @@ fields:
           __assoc__:
             -
               - label
-              - White
+              - Secondary
             -
               - value
-              - white
+              - secondary
             -
               - default
               - ''
@@ -176,10 +196,10 @@ fields:
           __assoc__:
             -
               - label
-              - Orange
+              - Accent
             -
               - value
-              - orange
+              - accent
             -
               - default
               - ''
@@ -203,6 +223,52 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Url
+  da23e18d-8c38-4fad-a38d-c07ba10ec985: # Size
+    contentColumnType: string
+    fieldGroup: null
+    handle: size
+    instructions: 'Adjust the size of the button.'
+    name: Size
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Large
+            -
+              - value
+              - large
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Medium
+            -
+              - value
+              - medium
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Small
+            -
+              - value
+              - small
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
   f8f83baf-d18b-46db-8bb2-5372736bf21a: # Entry
     contentColumnType: string
     fieldGroup: null
