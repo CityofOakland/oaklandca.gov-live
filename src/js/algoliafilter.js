@@ -179,17 +179,54 @@ search.addWidget(
   })
 );
 
-search.addWidget(
-  instantsearch.widgets.pagination({
-    container: "#bottom-pagination",
-    padding: 5,
-    // default is to scroll to 'body', here we disable this behavior
-    scrollTo: false,
-    cssClasses: {
-      root: "p-0 inline-block",
-      disabled: "w-0"
-    }
-  })
+// 1. Create a render function
+const renderPagination = (renderOptions, isFirstRender) => {
+
+  const container = document.querySelector('#bottom-pagination');
+
+  const { pages, currentRefinement, nbPages, refine } = renderOptions;
+
+  if(nbPages > 1) {
+
+    const previous  = `<li><a class="prev ${currentRefinement > 0 ? '' : 'disabled' }" href="#" data-value="${currentRefinement - 1}">Previous</a></li>`;
+    const next      = `<li><a class="next ${currentRefinement < nbPages - 1 ? '' : 'disabled'}" href="#" data-value="${currentRefinement + 1}">Next</a></li>`;
+
+    const first = pages.includes(0) ? '' : `<li><a class="page" href="#" data-value="0">1</a></li><li>...</li>`;
+    const last  = pages.includes(nbPages - 1) ? '' : `<li>...</li><li><a class="page" href="#" data-value="${nbPages - 1}">${nbPages}</a></li>`;
+
+    container.innerHTML = `
+      <ul class="pagination">
+        ${previous}
+        ${first}
+        ${pages
+          .map(page => `<li><a class="page ${currentRefinement === page ? 'page-active' : ''}" href="#" data-value="${page}">${page + 1}</a></li>`)
+          .join('')}
+        ${last}
+        ${next}
+      </ul>
+    `;
+
+    [...container.querySelectorAll('a')].forEach(element => {
+      element.addEventListener('click', event => {
+        event.preventDefault();
+        refine(event.currentTarget.dataset.value);
+      });
+    });
+  } else {
+    container.innerHTML = '';
+  }
+};
+
+// 2. Create the custom widget
+const customPagination = instantsearch.connectors.connectPagination(
+  renderPagination
 );
+
+// 3. Instantiate
+search.addWidgets([
+  customPagination({
+    padding: 2,
+  })
+]);
 
 search.start();
