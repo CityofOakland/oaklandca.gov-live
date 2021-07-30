@@ -36710,6 +36710,78 @@ body.open .page-holder {
   padding-left: 0.5rem;
 }
 
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 16px;
+  line-height: 1.45;
+  margin-left: -10px;
+}
+
+.pagination > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 4px;
+}
+
+.pagination .disabled {
+  opacity: 0.5;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  pointer-events: none;
+}
+
+.pagination .page {
+  border: 2px solid #E0E0E0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 28px;
+  width: 28px;
+}
+
+.pagination .page-active {
+  background: #0D5713;
+  border-color: #0D5713;
+  color: white;
+}
+
+.pagination .next,
+.pagination .prev {
+  font-size: 0;
+}
+
+.pagination .next::after,
+.pagination .prev::after {
+  background-image: url(../../assets/img/icon-arrow-green.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  content: "";
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+}
+
+.pagination .prev::after {
+  -webkit-transform: rotateZ(180deg);
+  transform: rotateZ(180deg);
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

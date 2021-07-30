@@ -1,27 +1,27 @@
 {% if pageInfo.totalPages > 1 %}
   {% spaceless %}
-    <div class="flex space-x-2 text-base pagination">
-      <a href="{{ pageInfo.firstUrl }}">«</a>
-      {% if pageInfo.prevUrl %}
-        <a href="{{ pageInfo.prevUrl }}">‹</a>
+    <ul class="pagination">
+      <li><a class="prev {{ pageInfo.currentPage == 1 ? 'disabled' : '' }}" href="{{ pageInfo.prevUrl }}">Previous</a></li>
+      {% if pageInfo.currentPage > 3 %}
+        <li><a class="page" href="{{ pageInfo.firstUrl }}">1</a></li>
+        <li>...</li>
       {% endif %}
 
-      <span class="space-x-2 oak-hidden sm:inline">
-        {% for page, url in pageInfo.getPrevUrls(5) %}
-          <a href="{{ url }}">{{ page }}</a>
-        {% endfor %}
+      {% for page, url in pageInfo.getPrevUrls(2) %}
+        <li><a class="page" href="{{ url }}">{{ page }}</a></li>
+      {% endfor %}
 
-        <span class="current">{{ pageInfo.currentPage }}</span>
+        <li><a class="page page-active" href="#">{{ pageInfo.currentPage }}</a></li>
 
-        {% for page, url in pageInfo.getNextUrls(5) %}
-          <a href="{{ url }}">{{ page }}</a>
-        {% endfor %}
-      </span>
+      {% for page, url in pageInfo.getNextUrls(2) %}
+        <li><a class="page" href="{{ url }}">{{ page }}</a></li>
+      {% endfor %}
 
-      {% if pageInfo.nextUrl %}
-        <a href="{{ pageInfo.nextUrl }}">›</a>
+      {% if pageInfo.currentPage < pageInfo.totalPages - 2 %}
+        <li>...</li>
+        <li><a class="page" href="{{ pageInfo.lastUrl }}">{{ pageInfo.totalPages }}</a></li>
       {% endif %}
-      <a href="{{ pageInfo.lastUrl }}">»</a>
-    </div>
+      <li><a class="next {{ pageInfo.currentPage == pageInfo.totalPages ? 'disabled' : '' }}" href="{{ pageInfo.nextUrl }}">Next</a></li>
+    </ul>
   {% endspaceless %}
 {% endif %}
