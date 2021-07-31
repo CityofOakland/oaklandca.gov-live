@@ -1,4 +1,5 @@
 {
   "buttons": ["bold", "italic", "lists", "link"],
+  "plugins": ["table"],
   "toolbarFixed": true
 }

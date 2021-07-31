@@ -24,144 +24,103 @@
   {% endfor %}
 </div>
 
-
 <style>
-  #contentBuilder .button {
-    background: #207127;
-    border: 2px solid #207127;
-    border-radius: 2px;
-    color: white;
-    display: inline-block;
-    font-weight: 700;
-    font-size:  16px;
-    line-height: 1.38;
-    outline-offset: 2px;
-    margin: 0 15px 15px 0;
-    padding: 16px 32px;
+  #contentBuilder .body-text table {
+    font-size:  15px;
+    line-height:  1.38;
+    width: 100%;
   }
 
-  #contentBuilder .button:hover {
-    background: #0D5713;
-    border-color: #0D5713;
+  @media(min-width: 768px) {
+    #contentBuilder .body-text table {
+      font-size: 16px;
+    }
   }
 
-  #contentBuilder .button:active {
-    background: #04400A;
-    border-color: #04400A;
+  #contentBuilder .body-text th {
+    background: #F5F5F5;
+    border-bottom:  1px solid black;
+    padding: 15px;
+    text-align: left;
   }
 
-  #contentBuilder .button:focus {
-    outline: 4px solid #0EA5E9;
+  #contentBuilder .body-text td {
+    padding: 15px;
   }
 
-  #contentBuilder .button[disabled] {
-    background: #B1B1B1;
-    border-color: #B1B1B1;
-    pointer-events: none;
+  /*#contentBuilder .body-text table {
+    display: none;
   }
 
-  #contentBuilder .button.secondary {
-    background: white;
-    border: 2px solid #207127;
-    color: #207127;
-  }
+  @media(min-width: 768px) {
+    #contentBuilder .body-text table {
+      display: table;
+    }
+  }*/
 
-  #contentBuilder .button.secondary:hover {
-    border-color: #0D5713;
-    color: #0D5713;
-  }
+  /* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media (max-width: 768px) {
 
-  #contentBuilder .button.secondary:active {
-    border-color: #04400A;
-    color: #04400A;
-  }
-
-  #contentBuilder .button.secondary[disabled] {
-    border-color: #B1B1B1;
-    color: #B1B1B1;
-    pointer-events: none;
-  }
-
-  #contentBuilder .button.accent {
-    background: #F7C948;
-    border: 2px solid #F7C948;
-    color: #222222;
-  }
-
-  #contentBuilder .button.accent:hover {
-    background: #F0B429;
-    border-color: #F0B429;
-  }
-
-  #contentBuilder .button.accent:active {
-    background: #CB6E17;
-    border-color: #CB6E17;
-    color: white;
-  }
-
-  #contentBuilder .button.accent[disabled] {
-    background: #B1B1B1;
-    border-color: #B1B1B1;
-    color: white;
-    pointer-events: none;
-  }
-
-  #contentBuilder .button.medium {
-    padding: 16px 16px;
-  }
-
-  #contentBuilder .button.small {
-    padding: 8px 8px;
-  }
-
-  #contentBuilder .button span {
-    display: inline-block;
-  }
-
-  #contentBuilder .button svg {
-    display: inline-block;
-    margin-right: 6px;
-    height: 16px;
-    width: 16px;
-  }
-
-  #contentBuilder .button svg path {
-    fill: white;
-  }
-
-  #contentBuilder .button.secondary svg path {
-    fill: #207127;
-  }
-
-  #contentBuilder .button.secondary:hover svg path {
-    fill: #0D5713;
-  }
-
-  #contentBuilder .button.secondary:active svg path {
-    fill: #04400A;
-  }
-
-  #contentBuilder .button.secondary[disabled] svg path {
-    fill: #B1B1B1;
-  }
-
-  #contentBuilder .button.accent svg path {
-    fill: #222222;
-  }
-
-  #contentBuilder .button.accent:active svg path {
-    fill: white;
-  }
-
-  #contentBuilder .button.accent[disabled] svg path {
-    fill: white;
-  }
-
-  #contentBuilder .button .arrow-left {
-    margin-right: 6px;
-  }
-
-  #contentBuilder .button .arrow-right {
-    margin-left: 6px;
+    /* Force table to not be like tables anymore */
+    #contentBuilder .body-text.js-initialized table,
+    #contentBuilder .body-text.js-initialized thead,
+    #contentBuilder .body-text.js-initialized tbody,
+    #contentBuilder .body-text.js-initialized th,
+    #contentBuilder .body-text.js-initialized td,
+    #contentBuilder .body-text.js-initialized tr { 
+      display: block; 
+    }
+    
+    /* Hide table headers (but not display: none;, for accessibility) */
+    #contentBuilder .body-text.js-initialized thead tr { 
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    
+    #contentBuilder .body-text.js-initialized tr { border: 1px solid #ccc; }
+    
+    #contentBuilder .body-text.js-initialized td { 
+      /* Behave  like a "row" */
+      border: none;
+      border-bottom: 1px solid #eee; 
+      position: relative;
+      padding-left: 50%; 
+    }
+    
+    #contentBuilder .body-text.js-initialized td:before { 
+      /* Now like a table header */
+      background: #F5F5F5;
+      padding: 15px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 45%; 
+      white-space: nowrap;
+    }
+    
+    /*
+    Label the data
+    */
+    td::before { content: attr(data-label) }
   }
 </style>
+
+{% js on ready %}
+  $('#contentBuilder table').each(function(index, element){
+    var $table   = $(element);
+    var $heads  = $table.find('th');
+
+    $heads.each(function(index, element){
+      var $heading      = $(element);
+
+      $table.find('td:nth-of-type(' + (index + 1) + ')').attr('data-label', $heading.text());
+    });
+  });
+
+  $('.body-text').addClass('js-initialized');
+{% endjs %}
