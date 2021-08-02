@@ -5,8 +5,8 @@ const allSearch = instantsearch({
   apiKey: "9bded46d3070b2089499c70b2389708b",
   indexName: document.querySelector('#all-hits') ? (document.querySelector('#all-hits').dataset.index ? document.querySelector('#all-hits').dataset.index : 'production_all' ) : 'production_all',
   searchParameters: {
-    highlightPreTag: '<b class="font-bold"><em>',
-    highlightPostTag: '</em></b>',
+    highlightPreTag: '<b class="font-bold">',
+    highlightPostTag: '</b>',
   },
   routing: true,
   searchFunction: function(helper) {
@@ -96,16 +96,12 @@ allSearch.addWidget(
     templates: {
       empty: "No results",
       item: `
-      <div class="mb-4">
-        <h3 class="text-lg my-0"><a class="hover:bg-green-300 hover:text-white" href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
-        <p class="text-sm my-0">{{{ _snippetResult.leadIn.value }}}</p>
-        {{{ #summary }}}
-          <p class="text-sm my-0">{{{ _snippetResult.summary.value }}}</p>
-        {{{ /summary }}}
-        {{ ^summary }}
-          <p class="text-sm my-0">{{{ _snippetResult.body.value }}}</p>
-        {{{ /summary }}}
-        <p class="text-sm my-0">{{{ _snippetResult.bio.value }}}</p>
+      <div class="algolia-result">
+        <h3><a href="{{ url }}">{{{_highlightResult.title.value}}}</a> <span>{{ section }}</span></h3>
+        <p>{{{ _snippetResult.leadIn.value }}}</p>
+        {{{ #summary }}}<p>{{{ _snippetResult.summary.value }}}</p>{{{ /summary }}}
+        {{ ^summary }}<p>{{{ _snippetResult.body.value }}}</p>{{{ /summary }}}
+        <p>{{{ _snippetResult.bio.value }}}</p>
       </div>
       `
     },

@@ -11,7 +11,7 @@
   {% do view.registerCssFile(craft.twigpack.getModuleUri("/css/lightgallery.css")) %}
 {% endif %}
 
-<div id="contentBuilder">
+<div id="contentBuilder" data-section="{{ entry is defined and entry.section ? entry.section.handle : '' }}">
   {% for block in entry.contentBuilder %}
     {% set blockId =  (block.text ?? block.heading ?? "block") | kebab %}
     {% switch loop.index0 %}
@@ -25,6 +25,10 @@
 </div>
 
 <style>
+  #contentBuilder[data-section="services"] .body-text{
+    max-width: 730px;
+  }
+
   #contentBuilder .body-text table {
     font-size:  15px;
     line-height:  1.38;
@@ -48,23 +52,82 @@
     padding: 15px;
   }
 
-  /*#contentBuilder .body-text table {
-    display: none;
+  #contentBuilder .body-text > h2:first-child,
+  #contentBuilder .body-text > h3:first-child,
+  #contentBuilder .body-text > h4:first-child,
+  #contentBuilder .body-text > p:first-child {
+    margin-top: 0;
   }
 
-  @media(min-width: 768px) {
-    #contentBuilder .body-text table {
-      display: table;
-    }
-  }*/
+  #contentBuilder .body-text h2 {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
 
-  /* 
-Max width before this PARTICULAR table gets nasty
-This query will take effect for any screen smaller than 760px
-and also iPads specifically.
-*/
-@media (max-width: 768px) {
+  #contentBuilder .body-text h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
 
+  #contentBuilder .body-text h4 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  #contentBuilder .body-text hr {
+    clear: both;
+    opacity: 0;
+  }
+
+  #contentBuilder .body-text p,
+  #contentBuilder .body-text ol,
+  #contentBuilder .body-text ul {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+
+  #contentBuilder .body-text figure {
+    margin-top: 1.5rem;
+  }
+
+  #contentBuilder .body-text figcaption {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 1rem;
+  }
+
+  #contentBuilder .body-text figure.image-left {
+    display: flex;
+  }
+
+  #contentBuilder .body-text figure.image-left img {
+    width: 60%;
+  }
+
+  #contentBuilder .body-text figure.image-left figcaption {
+    margin-top: 0;
+    margin-left: 2rem;
+    width: 40%;
+  }
+
+  #contentBuilder .body-text figure.image-right {
+    float: right;
+    margin-left: 1.5rem;
+    width: 50%;
+  }
+
+  @media (max-width: 768px) {
     /* Force table to not be like tables anymore */
     #contentBuilder .body-text.js-initialized table,
     #contentBuilder .body-text.js-initialized thead,
