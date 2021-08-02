@@ -620,7 +620,7 @@ body.open .page-holder {
 @media(min-width: 768px) {
   .algolia-result h3 {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     justify-content: space-between;
   }
 }
