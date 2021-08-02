@@ -1,5 +1,11 @@
 {
-  "buttons": ["bold", "italic", "lists", "link"],
+  "buttons": ["html", "format", "bold", "italic", "image", "lists", "link", "line"],
+  "formatting": ["h2", "h3", "h4", "p"],
+  "imagePosition" : {
+    "left": "image-left",
+    "right": "image-right",
+    "center": "image-center"
+  },
   "plugins": ["table"],
   "toolbarFixed": true
 }
