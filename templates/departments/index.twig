@@ -10,14 +10,28 @@
       <div class="grid md:grid-cols-2 gap-5">
         {% for entries in departmentsGrouped %}
             {% for entry in entries %}
-              <div class="p-6 rounded-sm shadow-btn">
-                <h3 class="mb-4 text-lg"><a href="{{ entry.redirectUrl ?? entry.url }}">{{ entry.title }}</a></h3>
+              <a class="card" href="{{ entry.redirectUrl ?? entry.url }}">
+                <h3 class="mb-4 text-lg" style="color:#2e8131">{{ entry.title }}</h3>
                 <p class="max-w-md my-0">{{ entry.leadIn | chop(limit=200, unit='c', append='…') }}</p>
-              </div>
+              </a>
             {% endfor %}
         {% endfor %}
       </div>
     </div>
   </section>
+
+  <style>
+    .card {
+      border-radius: 4px;
+      box-shadow: 0px 2px 3px 1px rgb(81 81 81 / 33%);
+      color: initial;
+      padding: 16px;
+    }
+
+    .card:hover h3 {
+      color: initial;
+      text-decoration: underline;
+    }
+  </style>
   {# End Departments #}
 {% endblock %}
