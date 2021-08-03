@@ -124,6 +124,7 @@ allSearch.addWidget(
         {{{ #summary }}}<p>{{{ _snippetResult.summary.value }}}</p>{{{ /summary }}}
         {{ ^summary }}<p>{{{ _snippetResult.body.value }}}</p>{{{ /summary }}}
         <p>{{{ _snippetResult.bio.value }}}</p>
+        <p class="updated">Updated: {{ dateUpdated }}</p>
       </div>
       `
     },
