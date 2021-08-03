@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f8f83baf-d18b-46db-8bb2-5372736bf21a # Entry
+            fieldUid: f8f83baf-d18b-46db-8bb2-5372736bf21a # Oaklandca.gov﻿ Link
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b575240f-71ba-444a-ac88-0c275e078c01 # Link
+            fieldUid: b575240f-71ba-444a-ac88-0c275e078c01 # External Link
             instructions: null
             label: null
             required: false
@@ -128,21 +128,10 @@ fields:
           __assoc__:
             -
               - label
-              - 'Arrow (Right)'
+              - Arrow
             -
               - value
               - arrowRight
-            -
-              - default
-              - ''
-        -
-          __assoc__:
-            -
-              - label
-              - 'Arrow (Left)'
-            -
-              - value
-              - arrowLeft
             -
               - default
               - ''
@@ -206,12 +195,12 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Dropdown
-  b575240f-71ba-444a-ac88-0c275e078c01: # Link
+  b575240f-71ba-444a-ac88-0c275e078c01: # External Link
     contentColumnType: string(255)
     fieldGroup: null
     handle: href
     instructions: 'Link this button manually by either adding a URL, email, or phone number here. Note: This will always override the entry url.'
-    name: Link
+    name: 'External Link'
     searchable: false
     settings:
       maxLength: '255'
@@ -269,12 +258,12 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Dropdown
-  f8f83baf-d18b-46db-8bb2-5372736bf21a: # Entry
+  f8f83baf-d18b-46db-8bb2-5372736bf21a: # Oaklandca.gov﻿ Link
     contentColumnType: string
     fieldGroup: null
     handle: entry
     instructions: 'Link this button to an entry by selecting the entry here.'
-    name: Entry
+    name: 'Oaklandca.gov﻿ Link'
     searchable: false
     settings:
       allowSelfRelations: false

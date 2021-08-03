@@ -751,7 +751,7 @@ body.open .page-holder {
 
 #contentBuilder .button svg {
   display: inline-block;
-  margin-right: 6px;
+  margin-left: 6px;
   height: 16px;
   width: 16px;
 }
