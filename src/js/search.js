@@ -38,8 +38,30 @@ const renderPagination = (renderOptions, isFirstRender) => {
 
   const { pages, currentRefinement, nbPages, refine } = renderOptions;
 
-  if(nbPages > 1) {
+  if(nbPages > 1 && nbPages <= 7) {
 
+    const previous  = `<li><a class="prev ${currentRefinement > 0 ? '' : 'disabled' }" href="#" data-value="${currentRefinement - 1}">Previous</a></li>`;
+    const next      = `<li><a class="next ${currentRefinement < nbPages - 1 ? '' : 'disabled'}" href="#" data-value="${currentRefinement + 1}">Next</a></li>`;
+
+    const pages = [...Array(nbPages).keys()];;
+
+    container.innerHTML = `
+      <ul class="pagination">
+        ${previous}
+        ${pages
+          .map(page => `<li><a class="page ${currentRefinement === page ? 'page-active' : ''}" href="#" data-value="${page}">${page + 1}</a></li>`)
+          .join('')}
+        ${next}
+      </ul>
+    `;
+
+    [...container.querySelectorAll('a')].forEach(element => {
+      element.addEventListener('click', event => {
+        event.preventDefault();
+        refine(event.currentTarget.dataset.value);
+      });
+    });
+  } else if(nbPages > 1 && nbPages > 7) {
     const previous  = `<li><a class="prev ${currentRefinement > 0 ? '' : 'disabled' }" href="#" data-value="${currentRefinement - 1}">Previous</a></li>`;
     const next      = `<li><a class="next ${currentRefinement < nbPages - 1 ? '' : 'disabled'}" href="#" data-value="${currentRefinement + 1}">Next</a></li>`;
 
