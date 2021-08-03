@@ -11,7 +11,7 @@
         {% for entries in departmentsGrouped %}
             {% for entry in entries %}
               <a class="card" href="{{ entry.redirectUrl ?? entry.url }}">
-                <h3 class="mb-4 text-lg" style="color:#2e8131">{{ entry.title }}</h3>
+                <h3 class="mb-4 text-lg">{{ entry.title }}</h3>
                 <p class="max-w-md my-0">{{ entry.leadIn | chop(limit=200, unit='c', append='…') }}</p>
               </a>
             {% endfor %}
@@ -28,11 +28,16 @@
       padding: 16px;
     }
 
+    .card h3 {
+      color: #2e8131
+    }
+
     .card:hover {
       color: initial;
     }
 
     .card:hover h3 {
+      color: #0D5713;
       text-decoration: underline;
     }
   </style>
