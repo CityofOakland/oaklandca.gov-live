@@ -1,6 +1,5 @@
-<a class="button {{ block.style }} {{ block.size }}" href="{{ block.entry|length ? block.entry.one().url : block.href }}" {{ block.newTab ? 'target="_blank"' : '' }}>
-	{% if block.icon == 'download' %}{{ svg( '@webroot/assets/img/icon-download.svg') }}{% endif %}
-	{% if block.icon == 'arrowLeft' %}<span class="arrow-left" role="img" aria-label="arrow left">&larr;</span>{% endif %}
+<a class="button {{ block.style }} {{ block.size }}" href="{{ block.entry|length ? block.entry.one().url : block.href }}" {{ block.newTab ? 'target="_blank"' : '' }} {{ block.entry|length or block.href ? '' : 'disabled' }}>
 	{{ block.label }}
 	{% if block.icon == 'arrowRight' %}<span class="arrow-right" role="img" aria-label="arrow right">&rarr;</span>{% endif %}
+	{% if block.icon == 'download' %}{{ svg( '@webroot/assets/img/icon-download.svg') }}{% endif %}
 </a>
