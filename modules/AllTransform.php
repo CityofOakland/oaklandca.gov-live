@@ -29,6 +29,7 @@ class AllTransform extends TransformerAbstract
             'body'              => !empty($entry->contentBuilder) ? ScoutModule::contentBuilder($entry->contentBuilder) : ScoutModule::richTextSplit($entry->body),
             'ctaButtonText'     => ScoutModule::ctaButtonText($entry),
             'date'              => ScoutModule::entryDate($entry),
+            'dateUpdated'       => $entry->dateUpdated->format('F j, Y'),
             'displayDate'       => ScoutModule::entryPrettyDate($entry),
             'groupHeadBio'      => strip_tags($entry->groupHeadBio),
             'groupHeadName'     => $entry->groupHeadName,
