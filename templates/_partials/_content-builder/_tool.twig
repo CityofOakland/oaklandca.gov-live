@@ -29,37 +29,38 @@
     max-width: 730px;
   }
 
-  #contentBuilder .body-text table {
+  #contentBuilder[data-section="services"] .body-text table {
     font-size:  15px;
     line-height:  1.38;
     width: 100%;
   }
 
   @media(min-width: 768px) {
-    #contentBuilder .body-text table {
+    #contentBuilder[data-section="services"] .body-text table {
       font-size: 16px;
     }
   }
 
-  #contentBuilder .body-text th {
+  #contentBuilder[data-section="services"] .body-text th {
     background: #F5F5F5;
     border-bottom:  1px solid black;
     padding: 15px;
     text-align: left;
   }
 
-  #contentBuilder .body-text td {
+  #contentBuilder[data-section="services"] .body-text td {
     padding: 15px;
+    word-break: break-word;
   }
 
-  #contentBuilder .body-text > h2:first-child,
-  #contentBuilder .body-text > h3:first-child,
-  #contentBuilder .body-text > h4:first-child,
-  #contentBuilder .body-text > p:first-child {
+  #contentBuilder[data-section="services"] .body-text > h2:first-child,
+  #contentBuilder[data-section="services"] .body-text > h3:first-child,
+  #contentBuilder[data-section="services"] .body-text > h4:first-child,
+  #contentBuilder[data-section="services"] .body-text > p:first-child {
     margin-top: 0;
   }
 
-  #contentBuilder .body-text h2 {
+  #contentBuilder[data-section="services"] .body-text h2 {
     font-size: 30px;
     font-weight: 700;
     line-height: 1.2;
@@ -67,7 +68,7 @@
     margin-bottom: 0;
   }
 
-  #contentBuilder .body-text h3 {
+  #contentBuilder[data-section="services"] .body-text h3 {
     font-size: 24px;
     font-weight: 700;
     line-height: 1.2;
@@ -75,7 +76,7 @@
     margin-bottom: 0;
   }
 
-  #contentBuilder .body-text h4 {
+  #contentBuilder[data-section="services"] .body-text h4 {
     font-size: 20px;
     font-weight: 600;
     line-height: 1.2;
@@ -83,45 +84,45 @@
     margin-bottom: 0;
   }
 
-  #contentBuilder .body-text hr {
+  #contentBuilder[data-section="services"] .body-text hr {
     clear: both;
     opacity: 0;
   }
 
-  #contentBuilder .body-text p,
-  #contentBuilder .body-text ol,
-  #contentBuilder .body-text ul {
+  #contentBuilder[data-section="services"] .body-text p,
+  #contentBuilder[data-section="services"] .body-text ol,
+  #contentBuilder[data-section="services"] .body-text ul {
     font-size: 18px;
     line-height: 1.5;
     margin-top: 1rem;
     margin-bottom: 0;
   }
 
-  #contentBuilder .body-text figure {
+  #contentBuilder[data-section="services"] .body-text figure {
     margin-top: 1.5rem;
   }
 
-  #contentBuilder .body-text figcaption {
+  #contentBuilder[data-section="services"] .body-text figcaption {
     font-size: 14px;
     line-height: 1.5;
     margin-top: 1rem;
   }
 
-  #contentBuilder .body-text figure.image-left {
+  #contentBuilder[data-section="services"] .body-text figure.image-left {
     display: flex;
   }
 
-  #contentBuilder .body-text figure.image-left img {
+  #contentBuilder[data-section="services"] .body-text figure.image-left img {
     width: 60%;
   }
 
-  #contentBuilder .body-text figure.image-left figcaption {
+  #contentBuilder[data-section="services"] .body-text figure.image-left figcaption {
     margin-top: 0;
     margin-left: 2rem;
     width: 40%;
   }
 
-  #contentBuilder .body-text figure.image-right {
+  #contentBuilder[data-section="services"] .body-text figure.image-right {
     float: right;
     margin-left: 1.5rem;
     width: 50%;
@@ -129,25 +130,25 @@
 
   @media (max-width: 768px) {
     /* Force table to not be like tables anymore */
-    #contentBuilder .body-text.js-initialized table,
-    #contentBuilder .body-text.js-initialized thead,
-    #contentBuilder .body-text.js-initialized tbody,
-    #contentBuilder .body-text.js-initialized th,
-    #contentBuilder .body-text.js-initialized td,
-    #contentBuilder .body-text.js-initialized tr { 
+    #contentBuilder[data-section="services"] .body-text.js-initialized table,
+    #contentBuilder[data-section="services"] .body-text.js-initialized thead,
+    #contentBuilder[data-section="services"] .body-text.js-initialized tbody,
+    #contentBuilder[data-section="services"] .body-text.js-initialized th,
+    #contentBuilder[data-section="services"] .body-text.js-initialized td,
+    #contentBuilder[data-section="services"] .body-text.js-initialized tr { 
       display: block; 
     }
     
     /* Hide table headers (but not display: none;, for accessibility) */
-    #contentBuilder .body-text.js-initialized thead tr { 
+    #contentBuilder[data-section="services"] .body-text.js-initialized thead tr { 
       position: absolute;
       top: -9999px;
       left: -9999px;
     }
     
-    #contentBuilder .body-text.js-initialized tr { border: 1px solid #ccc; }
+    #contentBuilder[data-section="services"] .body-text.js-initialized tr { border: 1px solid #ccc; }
     
-    #contentBuilder .body-text.js-initialized td { 
+    #contentBuilder[data-section="services"] .body-text.js-initialized td { 
       /* Behave  like a "row" */
       border: none;
       border-bottom: 1px solid #eee; 
@@ -155,7 +156,7 @@
       padding-left: 50%; 
     }
     
-    #contentBuilder .body-text.js-initialized td:before { 
+    #contentBuilder[data-section="services"] .body-text.js-initialized td:before { 
       /* Now like a table header */
       background: #F5F5F5;
       padding: 15px;
@@ -169,12 +170,12 @@
     /*
     Label the data
     */
-    td::before { content: attr(data-label) }
+    #contentBuilder[data-section="services"] td::before { content: attr(data-label) }
   }
 </style>
 
 {% js on ready %}
-  $('#contentBuilder table').each(function(index, element){
+  $('#contentBuilder[data-section="services"] table').each(function(index, element){
     var $table   = $(element);
     var $heads  = $table.find('th');
 
