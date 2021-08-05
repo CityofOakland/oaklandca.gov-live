@@ -114,7 +114,8 @@
           dl.push({
             'event' : 'page_translated',
             'translationLanguage' : mutation.target.lang || document.getElementsByTagName('html')[0].getAttribute('xml:lang'),
-            'translationService' : 'on-page google translate'
+            'translationService' : 'on-page google translate',
+            'debug_mode'          : true,
           });
         }
     })

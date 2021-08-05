@@ -71,9 +71,10 @@
         var search_term = $('#site-search').val();
 
         dl.push({
-            'event'         : 'site_search_clicked',
-            'current_url'   : '{{ craft.app.request.absoluteUrl }}',
-            'input_search_term'   : search_term,
+            'event'                 : 'site_search_clicked',
+            'current_url'           : '{{ craft.app.request.absoluteUrl }}',
+            'input_search_term'     : search_term,
+            'debug_mode'            : true,
         });
     });
 
@@ -86,6 +87,7 @@
             'current_url'   : '{{ craft.app.request.absoluteUrl }}',
             'url'           : link_clicked,
             'label'         : link_label,
+            'debug_mode'    : true,
         });
     });
 {% endjs %}
