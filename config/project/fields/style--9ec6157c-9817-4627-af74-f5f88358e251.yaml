@@ -5,12 +5,6 @@ instructions: 'Select the colour palette of this component.'
 name: Style
 searchable: false
 settings:
-  byteLimit: null
-  charLimit: null
-  code: ''
-  columnType: null
-  initialRows: '4'
-  multiline: ''
   optgroups: true
   options:
     -
@@ -46,8 +40,6 @@ settings:
         -
           - default
           - ''
-  placeholder: null
-  uiMode: normal
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Dropdown
