@@ -1,0 +1,70 @@
+childBlocks: ''
+field: 24c10446-2ff3-44c8-bb28-8d3647876fcb
+fieldLayouts:
+  53bb0ff6-ce5e-4e22-aecb-a0c53100f14b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: d7c59790-6279-474b-ab32-27cca3cfc19b # Label
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6615dd71-4083-4e2d-a89b-26de79047282
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2dc1fa8f-aa9c-488d-8c3e-ed572699c7a4
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 1bf6e3cb-26b9-405b-94ea-fbfc944c27b9
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 9ec6157c-9817-4627-af74-f5f88358e251 # Style
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 9a298e31-b79c-43c1-ae08-28970fb062b3
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+        name: Default
+        sortOrder: 1
+handle: button
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: 'Button (Entry)'
+sortOrder: 3
+topLevel: false

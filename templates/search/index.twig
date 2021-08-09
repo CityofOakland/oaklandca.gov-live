@@ -89,10 +89,11 @@
       var link_clicked  = $(this).attr('href').trim();
 
       dl.push({
-        'event'         : 'search_result_clicked',
-        'current_url'   : '{{ craft.app.request.absoluteUrl }}',
-        'url'           : link_clicked,
+        'event'               : 'search_result_clicked',
+        'current_url'         : '{{ craft.app.request.absoluteUrl }}',
+        'url'                 : link_clicked,
         'input_search_term'   : search_term,
+        'debug_mode'          : true,
       });
     });
 {% endjs %}

@@ -1,0 +1,3 @@
+{% for block in block.getDescendants(1) %}
+	{% include '_components/_' ~ block.type %}
+{% endfor %}

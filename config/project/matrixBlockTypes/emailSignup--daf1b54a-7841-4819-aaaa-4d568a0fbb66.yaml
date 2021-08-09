@@ -103,4 +103,4 @@ fields:
     type: craft\fields\PlainText
 handle: emailSignup
 name: 'Email Signup'
-sortOrder: 24
+sortOrder: 23

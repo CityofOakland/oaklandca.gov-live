@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a1833856be3a83f93d829aacb9854dfc",
+    "content-hash": "96791a7c898600e906452e1eeef1ad40",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -4888,11 +4888,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "3.1.55",
+            "version": "3.1.57",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/43f239968b8285c1149a04c56c83eee603458c54",
-                "reference": "43f239968b8285c1149a04c56c83eee603458c54",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/3884f18df0032263ffb67a9a8f402f26dcad7ea4",
+                "reference": "3884f18df0032263ffb67a9a8f402f26dcad7ea4",
                 "shasum": ""
             },
             "require": {
@@ -4935,7 +4935,7 @@
                 "docs": "https://nystudio107.com/plugins/retour/documentation",
                 "issues": "https://nystudio107.com/plugins/retour/support"
             },
-            "time": "2021-07-03T02:20:36+00:00"
+            "time": "2021-07-08T17:31:21+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
@@ -6310,11 +6310,11 @@
         },
         {
             "name": "solspace/craft3-calendar",
-            "version": "3.3.1",
+            "version": "3.3.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/51ea9429d74561666267ccc739ca4b3a68df97c5",
-                "reference": "51ea9429d74561666267ccc739ca4b3a68df97c5",
+                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/daaa3a33207d5e27d33da122572d6270ca4374b4",
+                "reference": "daaa3a33207d5e27d33da122572d6270ca4374b4",
                 "shasum": ""
             },
             "require": {
@@ -6366,7 +6366,7 @@
                 }
             ],
             "description": "The most reliable and powerful event management plugin for Craft.",
-            "time": "2021-06-16T19:41:45+00:00"
+            "time": "2021-07-06T20:58:43+00:00"
         },
         {
             "name": "solspace/craft3-commons",
@@ -6465,11 +6465,11 @@
         },
         {
             "name": "spicyweb/craft-neo",
-            "version": "2.10.6",
+            "version": "2.10.7",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/38c88e6d9fc214112fc804fd74fa58cef4496a8d",
-                "reference": "38c88e6d9fc214112fc804fd74fa58cef4496a8d",
+                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/2d6c37f8cfe741829404d0f3e502d0f0fd03ccdc",
+                "reference": "2d6c37f8cfe741829404d0f3e502d0f0fd03ccdc",
                 "shasum": ""
             },
             "require": {
@@ -6510,10 +6510,10 @@
             "support": {
                 "issues": "https://github.com/spicywebau/craft-neo/issues",
                 "source": "https://github.com/spicywebau/craft-neo",
-                "docs": "https://github.com/spicywebau/craft-neo/blob/2.10.6/README.md",
+                "docs": "https://github.com/spicywebau/craft-neo/blob/2.10.7/README.md",
                 "rss": "https://github.com/spicywebau/craft-neo/commits/master.atom"
             },
-            "time": "2021-07-06T06:31:43+00:00"
+            "time": "2021-07-08T07:21:09+00:00"
         },
         {
             "name": "ssnepenthe/color-utils",

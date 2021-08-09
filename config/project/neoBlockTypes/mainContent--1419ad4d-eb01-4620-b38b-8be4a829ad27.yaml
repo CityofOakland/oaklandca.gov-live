@@ -1,12 +1,12 @@
-childBlocks: null
-field: e2442a2e-e191-4b02-b170-7ecad09c52e2 # Modules
+childBlocks: ''
+field: 24c10446-2ff3-44c8-bb28-8d3647876fcb
 fieldLayouts:
-  56c6cc3c-1879-40cf-ada3-9f5adb9518f7:
+  98cfcdd0-9d8c-4939-8448-f9e2f048e4d1:
     tabs:
       -
         elements:
           -
-            fieldUid: 32f0cef1-a5d9-41dd-b562-b609374d9607 # Buttons
+            fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
             instructions: null
             label: null
             required: false
@@ -16,10 +16,10 @@ fieldLayouts:
             width: 100
         name: Default
         sortOrder: 1
-handle: buttons
+handle: mainContent
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
-name: Buttons
-sortOrder: 3
-topLevel: false
+name: Content
+sortOrder: 1
+topLevel: true

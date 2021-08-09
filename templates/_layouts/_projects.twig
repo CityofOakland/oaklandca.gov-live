@@ -167,8 +167,10 @@
       {% endif %}
     </div>
   </section>
-  {% include '_partials/_page-location.twig' %}
-  {% if entry.fundingLogos.exists() %}
+  <div class="container">
+    {% include '_partials/_page-location.twig' %}
+  </div>  
+{% if entry.fundingLogos.exists() %}
     <section>
       <a class="anchor-link" id="page-logos"></a>
       <div class="container">

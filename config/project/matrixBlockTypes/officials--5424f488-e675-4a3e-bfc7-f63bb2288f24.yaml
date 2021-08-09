@@ -105,4 +105,4 @@ fields:
     type: craft\fields\Entries
 handle: officials
 name: Officials
-sortOrder: 11
+sortOrder: 10

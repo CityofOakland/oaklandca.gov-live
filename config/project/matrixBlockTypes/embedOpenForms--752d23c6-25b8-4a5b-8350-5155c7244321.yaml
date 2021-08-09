@@ -37,4 +37,4 @@ fields:
     type: craft\fields\PlainText
 handle: embedOpenForms
 name: 'Embed - OpenForms'
-sortOrder: 29
+sortOrder: 28

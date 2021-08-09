@@ -1,0 +1,16 @@
+contentColumnType: string
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
+handle: components
+instructions: ''
+name: Components
+searchable: false
+settings:
+  maxBlocks: ''
+  maxLevels: ''
+  maxTopBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+  wasModified: true
+translationKeyFormat: null
+translationMethod: site
+type: benf\neo\Field

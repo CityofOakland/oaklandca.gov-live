@@ -328,4 +328,4 @@ fields:
     type: fruitstudios\linkit\fields\LinkitField
 handle: linkBlocksWithImages
 name: 'Link Blocks with Images'
-sortOrder: 12
+sortOrder: 11

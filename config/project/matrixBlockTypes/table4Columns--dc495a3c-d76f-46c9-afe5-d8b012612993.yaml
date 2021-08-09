@@ -295,4 +295,4 @@ fields:
     type: craft\fields\PlainText
 handle: table4Columns
 name: '4 Columns'
-sortOrder: 8
+sortOrder: 7
