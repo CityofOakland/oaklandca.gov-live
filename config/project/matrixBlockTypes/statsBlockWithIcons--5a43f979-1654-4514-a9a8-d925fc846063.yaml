@@ -88,4 +88,4 @@ fields:
     type: craft\fields\PlainText
 handle: statsBlockWithIcons
 name: 'Stats Block with Icons'
-sortOrder: 14
+sortOrder: 13

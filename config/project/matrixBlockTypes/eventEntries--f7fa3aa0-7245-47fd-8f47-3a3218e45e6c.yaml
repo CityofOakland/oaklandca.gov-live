@@ -160,4 +160,4 @@ fields:
     type: craft\fields\Lightswitch
 handle: eventEntries
 name: 'Event Entries'
-sortOrder: 20
+sortOrder: 19

@@ -1,0 +1,56 @@
+{% extends '_layout.twig' %}
+
+{% do craft.app.elements.eagerLoadElements(
+  className(entry),
+  [entry],
+  [
+    'banner',
+    'callToAction.documentLink:documentLink',
+    'callToAction.documentLink:documentLink.documentFile',
+    'contentBuilder',
+    'contentBuilder.largeEntryLinks:entries',
+    'contentBuilder.largeEntryLinks:entries.documentFile',
+    'contentBuilder.smallEntryLinks:entries',
+    'contentBuilder.smallEntryLinks:entries.documentFile',
+    'embeddedContent',
+  ]
+) %}
+
+{% block content %}
+    {% set breadcrumbs = [] %}
+    {% if entry.primaryUnit|length %}
+      {% set breadcrumbs = breadcrumbs|merge([
+        {
+          title: entry.primaryUnit.one().title,
+          link: entry.primaryUnit.one().url
+        },
+      ]) %}
+    {% endif %}
+    {% if entry.section %}
+      {% set breadcrumbs = breadcrumbs|merge([
+        {
+          title: entry.section.name,
+          link: siteUrl ~ entry.section.handle
+        },
+      ]) %}
+    {% endif %}
+
+  {% include '_partials/_page-banners.twig' with {
+    breadCrumbLinks: breadcrumbs,
+  } %}
+  <section class="relative z-0 bg-white">
+    <div class="container pt-0">
+      {% include '_partials/_elements/_ctas.twig' %}
+      <div class="flex">
+      {% include "_partials/_elements/_nav-sidebar.twig" %}
+      <div class="flex-1">
+        {% include '_components/_builder.twig' %}
+        {# {% include '_partials/_content-builder/_tool.twig' %} #}
+        {% if entry.embeddedContent %}
+          {{ entry.embeddedContent[0].codeInsertion | raw }}
+        {% endif %}
+      </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

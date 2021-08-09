@@ -446,4 +446,4 @@ fields:
     type: craft\fields\Dropdown
 handle: textImageBlock
 name: 'Text & Image Block'
-sortOrder: 5
+sortOrder: 4

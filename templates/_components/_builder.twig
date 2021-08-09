@@ -1,0 +1,198 @@
+<div id="components">
+  {% for block in entry.components.level(1) %}
+    {% include '_components/_' ~ block.type %}
+  {% endfor %}
+</div>
+
+<style>
+  #components .mainContent {
+    max-width: 730px;
+  }
+
+  #components .mainContent table {
+    font-size:  15px;
+    line-height:  1.38;
+    width: 100%;
+  }
+
+  @media(min-width: 768px) {
+    #components .mainContent table {
+      font-size: 16px;
+    }
+  }
+
+  #components .mainContent th {
+    background: #F5F5F5;
+    border-bottom:  1px solid black;
+    padding: 15px;
+    text-align: left;
+  }
+
+  #components .mainContent td {
+    padding: 15px;
+    word-break: break-word;
+  }
+
+  #components .mainContent:first-child > h2:first-child,
+  #components .mainContent:first-child > h3:first-child,
+  #components .mainContent:first-child > h4:first-child,
+  #components .mainContent:first-child > p:first-child {
+    margin-top: 0;
+  }
+
+  #components .mainContent h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 0;
+    padding-top: 1.5em;
+    margin-bottom: 0;
+  }
+
+  @media(min-width: 768px) {
+    #components .mainContent h2 {
+      font-size: 30px;
+    }
+  }
+
+  #components .mainContent h3 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 0;
+    padding-top: 1.5em;
+    margin-bottom: 0;
+  }
+
+  @media(min-width: 768px) {
+    #components .mainContent h3 {
+      font-size: 24px;
+    }
+  }
+
+  #components .mainContent h4 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-top: 0;
+    padding-top: 1.5em;
+    margin-bottom: 0;
+  }
+
+  #components .mainContent hr {
+    clear: both;
+    opacity: 0;
+  }
+
+  #components .mainContent p,
+  #components .mainContent ol,
+  #components .mainContent ul {
+    font-size: 18px;
+    line-height: 1.5;
+    padding-top: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #components .mainContent ol,
+  #components .mainContent ul {
+    padding-left: 1.25rem;
+    list-style-type: initial;
+  }
+
+  #components .mainContent ol {
+    list-style-type: auto;
+  }
+
+  #components .mainContent figure {
+    margin-top: 1.5rem;
+  }
+
+  #components .mainContent figcaption {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 1rem;
+  }
+
+  @media(min-width: 768px) {
+    #components .mainContent figure.image-left {
+      display: flex;
+    }
+
+    #components .mainContent figure.image-left img {
+      width: 60%;
+    }
+
+    #components .mainContent figure.image-left figcaption {
+      margin-top: 0;
+      margin-left: 2rem;
+      width: 40%;
+    }
+
+    #components .mainContent figure.image-right {
+      float: right;
+      margin-left: 1.5rem;
+      width: 50%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    /* Force table to not be like tables anymore */
+    #components .mainContent.js-initialized table,
+    #components .mainContent.js-initialized thead,
+    #components .mainContent.js-initialized tbody,
+    #components .mainContent.js-initialized th,
+    #components .mainContent.js-initialized td,
+    #components .mainContent.js-initialized tr { 
+      display: block; 
+    }
+    
+    /* Hide table headers (but not display: none;, for accessibility) */
+    #components .mainContent.js-initialized thead tr { 
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    
+    #components .mainContent.js-initialized tr { border: 1px solid #ccc; }
+    
+    #components .mainContent.js-initialized td { 
+      /* Behave  like a "row" */
+      border: none;
+      border-bottom: 1px solid #eee; 
+      position: relative;
+      padding-left: 50%; 
+    }
+    
+    #components .mainContent.js-initialized td:before { 
+      /* Now like a table header */
+      background: #F5F5F5;
+      padding: 15px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 45%; 
+      white-space: nowrap;
+    }
+    
+    /*
+    Label the data
+    */
+    #components td::before { content: attr(data-label) }
+  }
+</style>
+
+{% js on ready %}
+  $('#components table').each(function(index, element){
+    var $table   = $(element);
+    var $heads  = $table.find('th');
+
+    $heads.each(function(index, element){
+      var $heading      = $(element);
+
+      $table.find('td:nth-of-type(' + (index + 1) + ')').attr('data-label', $heading.text());
+    });
+  });
+
+  $('.mainContent').addClass('js-initialized');
+{% endjs %}

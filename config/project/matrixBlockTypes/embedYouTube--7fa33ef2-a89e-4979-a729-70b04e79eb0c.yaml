@@ -37,4 +37,4 @@ fields:
     type: craft\fields\PlainText
 handle: embedYouTube
 name: 'Embed - YouTube'
-sortOrder: 30
+sortOrder: 29

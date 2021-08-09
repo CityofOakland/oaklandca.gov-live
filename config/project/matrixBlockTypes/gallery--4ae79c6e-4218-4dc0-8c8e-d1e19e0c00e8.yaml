@@ -51,4 +51,4 @@ fields:
     type: craft\fields\Assets
 handle: gallery
 name: Gallery
-sortOrder: 10
+sortOrder: 9

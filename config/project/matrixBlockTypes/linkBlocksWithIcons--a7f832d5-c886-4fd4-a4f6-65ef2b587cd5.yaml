@@ -328,4 +328,4 @@ fields:
     type: craft\redactor\Field
 handle: linkBlocksWithIcons
 name: 'Link Blocks with Icons'
-sortOrder: 13
+sortOrder: 12
