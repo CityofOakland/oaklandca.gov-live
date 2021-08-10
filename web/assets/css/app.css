@@ -36745,6 +36745,8 @@ body.open .page-holder {
   display: inline-block;
   font-size: 12px;
   font-weight: 400;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   line-height: 1.333333;
   padding: 6px 12px;
   margin-top: 0.5rem;
