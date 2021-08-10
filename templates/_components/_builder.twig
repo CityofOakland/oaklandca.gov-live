@@ -136,7 +136,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     /* Force table to not be like tables anymore */
     #components .mainContent.js-initialized table,
     #components .mainContent.js-initialized thead,
@@ -146,6 +146,15 @@
     #components .mainContent.js-initialized tr { 
       display: block; 
     }
+
+    #components .mainContent.js-initialized tbody {
+      border-top: 2px solid black;
+      border-bottom: 2px solid black;
+    }
+
+    #components .mainContent.js-initialized tbody td {
+      border-bottom: 1px solid black;
+    }
     
     /* Hide table headers (but not display: none;, for accessibility) */
     #components .mainContent.js-initialized thead tr { 
@@ -154,25 +163,22 @@
       left: -9999px;
     }
     
-    #components .mainContent.js-initialized tr { border: 1px solid #ccc; }
+    #components .mainContent.js-initialized tr {
+      border: 1px solid black;
+      border-left: 0;
+      border-right: 0;
+    }
     
     #components .mainContent.js-initialized td { 
-      /* Behave  like a "row" */
       border: none;
       border-bottom: 1px solid #eee; 
       position: relative;
-      padding-left: 50%; 
     }
     
     #components .mainContent.js-initialized td:before { 
-      /* Now like a table header */
-      background: #F5F5F5;
-      padding: 15px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 45%; 
-      white-space: nowrap;
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
     }
     
     /*
