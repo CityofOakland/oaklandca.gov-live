@@ -1,5 +1,5 @@
 <a class="button {{ block.style }} {{ block.size }}" href="{{ block.internalLink|length ? block.internalLink.one().url }}" {{ block.newTab ? 'target="_blank"' : '' }} {{ block.internalLink|length ? '' : 'disabled' }}>
 	{{ block.label }}
 	{% if block.icon == 'arrowRight' %}<span class="arrow-right" role="img" aria-label="arrow right">&rarr;</span>{% endif %}
-	{% if block.icon == 'download' %}{{ svg( '@webroot/assets/img/icon-download.svg') }}{% endif %}
+	{% if block.icon == 'download' %}{{ svg( '@webroot/assets/img/icon-download-updated.svg') }}{% endif %}
 </a>

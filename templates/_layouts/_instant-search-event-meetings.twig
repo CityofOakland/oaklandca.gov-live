@@ -80,12 +80,12 @@
     });
 
     dl.push({
-      'event'         : 'search_result_clicked',
-      'current_url'   : '{{ craft.app.request.absoluteUrl }}',
-      'url'           : link_clicked,
+      'event'               : 'search_result_clicked',
+      'current_url'         : '{{ craft.app.request.absoluteUrl }}',
+      'url'                 : link_clicked,
       'input_search_term'   : search_term,
-      'filters'       : filters,
-      'debug_mode'    : true,
+      'filters'             : filters,
+      'debug_mode'          : true,
     });
   });
 {% endjs %}
