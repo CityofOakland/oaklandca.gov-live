@@ -30,8 +30,10 @@ const search = instantsearch({
   indexName: window.algoliaIndex,
   routing: true,
   searchParameters: {
-    snippetEllipsisText: "…",
     filters: filtered || undefined,
+    highlightPreTag: '<b class="font-bold">',
+    highlightPostTag: '</b>',
+    snippetEllipsisText: "…",
   },
 });
 
