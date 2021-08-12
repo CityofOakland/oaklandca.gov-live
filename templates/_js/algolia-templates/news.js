@@ -15,7 +15,7 @@ var indexTemplate =
 		</figure>
 		{{/newsImage}}
 		<div>
-			<h2 class="text-2xl mt-4 sm:mt-0"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h2>
+			<h2 class="text-2xl mt-4 sm:mt-0" style="font-weight:600"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h2>
 			<p class="small my-2 text-gray-700" style="font-size:85%;">{{ formattedDate }}</p>
 			<div class="text-gray-1000 mb-4">
 				{{#summary}}
