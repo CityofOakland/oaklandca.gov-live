@@ -1,4 +1,4 @@
-childBlocks: null
+childBlocks: ''
 field: 24c10446-2ff3-44c8-bb28-8d3647876fcb # Components
 fieldLayouts:
   53bb0ff6-ce5e-4e22-aecb-a0c53100f14b:
@@ -65,6 +65,6 @@ handle: button
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
-name: 'Button (Entry)'
-sortOrder: 3
+name: 'Internal Link'
+sortOrder: 4
 topLevel: false
