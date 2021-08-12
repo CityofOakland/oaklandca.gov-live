@@ -1,11 +1,11 @@
 childBlocks:
   - button
   - buttonManual
-field: 24c10446-2ff3-44c8-bb28-8d3647876fcb
+field: 24c10446-2ff3-44c8-bb28-8d3647876fcb # Components
 handle: buttons
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: Buttons
-sortOrder: 2
+sortOrder: 3
 topLevel: true

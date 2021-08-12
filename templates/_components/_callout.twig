@@ -1,0 +1,14 @@
+<blockquote class="callout {{ block.calloutType }}">
+	{% switch block.calloutType %}
+		{% case 'info' %}
+		{{ svg( '@webroot/assets/img/icon-info.svg') }}
+		{% case 'attention' %}
+		{{ svg( '@webroot/assets/img/icon-attention.svg') }}
+		{% default %}
+		{{ svg( '@webroot/assets/img/icon-info.svg') }}
+	{% endswitch %}
+	<div>
+		<p><b>{{ block.heading }}</b></p>
+		{{ block.mainContent }}
+	</div>
+</blockquote>
