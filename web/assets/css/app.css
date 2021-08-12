@@ -36777,6 +36777,196 @@ body.open .page-holder {
   line-height: 1.5;
 }
 
+#components {
+  max-width: 730px;
+}
+
+#components table {
+  font-size:  15px;
+  line-height:  1.38;
+  padding-top: 1.5em;
+  width: 100%;
+}
+
+@media(min-width: 768px) {
+  #components table {
+    font-size: 16px;
+  }
+}
+
+#components th {
+  background: #F5F5F5;
+  border-bottom:  1px solid black;
+  padding: 15px;
+  text-align: left;
+}
+
+#components td {
+  padding: 15px;
+  word-break: break-word;
+}
+
+#components:first-child > h2:first-child,
+#components:first-child > h3:first-child,
+#components:first-child > h4:first-child,
+#components:first-child > p:first-child {
+  margin-top: 0;
+}
+
+#components h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0;
+  padding-top: 1.5em;
+  margin-bottom: 0;
+}
+
+@media(min-width: 768px) {
+  #components h2 {
+    font-size: 30px;
+  }
+}
+
+#components h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0;
+  padding-top: 1.5em;
+  margin-bottom: 0;
+}
+
+@media(min-width: 768px) {
+  #components h3 {
+    font-size: 24px;
+  }
+}
+
+#components h4 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 0;
+  padding-top: 1.5em;
+  margin-bottom: 0;
+}
+
+#components hr {
+  clear: both;
+  opacity: 0;
+}
+
+#components p,
+#components ol,
+#components ul {
+  font-size: 18px;
+  line-height: 1.5;
+  padding-top: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#components ol,
+#components ul {
+  padding-left: 1.25rem;
+  list-style-type: disc;
+  list-style-type: initial;
+}
+
+#components ol {
+  list-style-type: auto;
+}
+
+#components figure {
+  margin-top: 1.5rem;
+}
+
+#components figcaption {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 1rem;
+}
+
+@media(min-width: 768px) {
+  #components figure.image-left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  #components figure.image-left img {
+    width: 60%;
+  }
+
+  #components figure.image-left figcaption {
+    margin-top: 0;
+    margin-left: 2rem;
+    width: 40%;
+  }
+
+  #components figure.image-right {
+    float: right;
+    margin-left: 1.5rem;
+    width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Force table to not be like tables anymore */
+
+  #components.js-initialized table,
+  #components.js-initialized thead,
+  #components.js-initialized tbody,
+  #components.js-initialized th,
+  #components.js-initialized td,
+  #components.js-initialized tr {
+    display: block;
+  }
+
+  #components.js-initialized tbody {
+    border-top: 2px solid black;
+    border-bottom: 1px solid black;
+  }
+
+  #components.js-initialized tbody td {
+    border-bottom: 1px solid black;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+
+  #components.js-initialized thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  #components.js-initialized tr {
+    border: 1px solid black;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  #components.js-initialized td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+  }
+
+  #components.js-initialized td:before {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  /*
+  Label the data
+  */
+
+  #components td::before { content: attr(data-label)
+  }
+}
+
 #components .button {
   background: #207127;
   border: 2px solid #207127;

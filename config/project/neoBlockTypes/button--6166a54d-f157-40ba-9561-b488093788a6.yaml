@@ -1,5 +1,5 @@
-childBlocks: ''
-field: 24c10446-2ff3-44c8-bb28-8d3647876fcb
+childBlocks: null
+field: 24c10446-2ff3-44c8-bb28-8d3647876fcb # Components
 fieldLayouts:
   53bb0ff6-ce5e-4e22-aecb-a0c53100f14b:
     tabs:
@@ -15,7 +15,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 6615dd71-4083-4e2d-a89b-26de79047282
+            fieldUid: 6615dd71-4083-4e2d-a89b-26de79047282 # Internal Link
             instructions: null
             label: null
             required: false
@@ -24,7 +24,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 2dc1fa8f-aa9c-488d-8c3e-ed572699c7a4
+            fieldUid: 2dc1fa8f-aa9c-488d-8c3e-ed572699c7a4 # Open in New Tab?
             instructions: null
             label: null
             required: false
@@ -33,7 +33,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 1bf6e3cb-26b9-405b-94ea-fbfc944c27b9
+            fieldUid: 1bf6e3cb-26b9-405b-94ea-fbfc944c27b9 # Size
             instructions: null
             label: null
             required: false
@@ -51,7 +51,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 9a298e31-b79c-43c1-ae08-28970fb062b3
+            fieldUid: 9a298e31-b79c-43c1-ae08-28970fb062b3 # Icon
             instructions: null
             label: null
             required: false
