@@ -1,0 +1,38 @@
+childBlocks: ''
+field: 7659598f-432e-4c28-a68d-606078c375a8 # Components - Sidebar
+fieldLayouts:
+  2ff5fe45-5ebb-43d9-a61f-eae63b69249a:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            style: tip
+            tip: 'If left blank, the heading will read "Related Services".'
+            type: craft\fieldlayoutelements\Tip
+          -
+            fieldUid: ef1b6cec-c4ea-45ca-ba65-e9dc7d0cc2ac # Services
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Default
+        sortOrder: 1
+handle: relatedServices
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: 'Related Services'
+sortOrder: 5
+topLevel: true

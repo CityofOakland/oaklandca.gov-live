@@ -41,14 +41,9 @@
   <section class="relative z-0 bg-white">
     <div class="container pt-0">
       {% include '_partials/_elements/_ctas.twig' %}
-      <div class="flex">
-      {% include "_partials/_elements/_nav-sidebar.twig" %}
-      <div class="flex-1">
-        {% include '_components/_builder.twig' %}
-        {% if entry.embeddedContent %}
-          {{ entry.embeddedContent[0].codeInsertion | raw }}
-        {% endif %}
-      </div>
+      <div class="components flex flex-wrap justify-between -mx-3">
+        <div class="lg:w-3/4 xl:w-3/5 px-3">{% include '_components/_builder.twig' %}</div>
+        <div class="lg:w-1/4 xl:w-1/4 px-3">{% include '_components/_builder-sidebar.twig' %}</div>
       </div>
     </div>
   </section>

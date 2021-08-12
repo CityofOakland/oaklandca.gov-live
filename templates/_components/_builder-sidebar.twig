@@ -1,0 +1,49 @@
+<div id="components-sidebar">
+  {% for block in entry.componentsSidebar.level(1) %}
+    {% include '_components/_' ~ block.type %}
+  {% endfor %}
+</div>
+
+<style>
+  #components-sidebar > hr:not(:first-child) {
+    margin-top: 1.25em;
+  }
+
+  #components-sidebar > h1,
+  #components-sidebar > h2,
+  #components-sidebar > h3,
+  #components-sidebar > h4 {
+    padding-top: 1em;
+  }
+
+  #components-sidebar > ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  #components-sidebar > ul > li {
+    margin-bottom: 15px;
+  }
+
+  #components-sidebar > ul > li,
+  #components-sidebar > ul > li > a {
+    display: flex;
+    align-items: start;
+  }
+
+  #components-sidebar > ul > li svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    margin-right: 5px;
+    width: 25px;
+  }
+
+  #components-sidebar .related a {
+    text-decoration: underline;
+  }
+
+  #components-sidebar .related a:hover,
+  #components-sidebar .related a:focus {
+    text-decoration: none;
+  }
+</style>

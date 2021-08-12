@@ -67,6 +67,19 @@ fieldLayouts:
       -
         elements:
           -
+            fieldUid: 7659598f-432e-4c28-a68d-606078c375a8 # Components - Sidebar
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Sidebar
+        sortOrder: 2
+      -
+        elements:
+          -
             fieldUid: 7594e9ae-f194-47c8-9a6b-076789f1087b # Service Types
             instructions: null
             label: null
@@ -121,7 +134,7 @@ fieldLayouts:
             warning: null
             width: 100
         name: Relationships
-        sortOrder: 2
+        sortOrder: 3
       -
         elements:
           -
@@ -143,7 +156,7 @@ fieldLayouts:
             warning: null
             width: 100
         name: SEO
-        sortOrder: 3
+        sortOrder: 4
 handle: servicesUpdated
 hasTitleField: true
 name: 'Services (Updated)'

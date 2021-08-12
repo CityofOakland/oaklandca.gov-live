@@ -1,0 +1,16 @@
+<hr style="border-top: 2px solid #212121;opacity:1;"/>
+<h4>{{ block.heading ? block.heading : 'Contact' }}</h4>
+{{ block.mainContent }}
+<ul>
+	{% for block in block.getDescendants(1) %}
+		{% switch block.type %}
+			{% case 'email' %}
+				<li><a href="mailto:{{ block.emailAddress }}">{{ svg( '@webroot/assets/img/icon-envelope-updated.svg') }} {{ block.emailAddress }}</a></li>
+			{% case 'phone' %}
+				<li><a href="tel:{{ block.phoneNumber }}">{{ svg( '@webroot/assets/img/icon-phone-updated.svg') }} {{ block.phoneNumber }}</a></li>
+			{% case 'location' %}
+				<li>{{ svg( '@webroot/assets/img/icon-marker-updated.svg') }}{{ block.location }}</li>
+			{% default %}
+		{% endswitch %}
+	{% endfor %}
+</ul>

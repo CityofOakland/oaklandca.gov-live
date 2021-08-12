@@ -667,11 +667,11 @@ body.open .page-holder {
   line-height: 1.5;
 }
 
-#components {
+/*#components {
   max-width: 730px;
-}
+}*/
 
-#components table {
+.components table {
   font-size:  15px;
   line-height:  1.38;
   margin-top: 1.5em;
@@ -679,31 +679,24 @@ body.open .page-holder {
 }
 
 @media(min-width: 768px) {
-  #components table {
+  .components table {
     font-size: 16px;
   }
 }
 
-#components th {
+.components th {
   background: #F5F5F5;
   border-bottom:  1px solid black;
   padding: 15px;
   text-align: left;
 }
 
-#components td {
+.components td {
   padding: 15px;
   word-break: break-word;
 }
 
-#components:first-child > h2:first-child,
-#components:first-child > h3:first-child,
-#components:first-child > h4:first-child,
-#components:first-child > p:first-child {
-  margin-top: 0;
-}
-
-#components h2 {
+.components h2 {
   font-size: 24px;
   font-weight: 700;
   line-height: 1.2;
@@ -713,12 +706,12 @@ body.open .page-holder {
 }
 
 @media(min-width: 768px) {
-  #components h2 {
+  .components h2 {
     font-size: 30px;
   }
 }
 
-#components h3 {
+.components h3 {
   font-size: 20px;
   font-weight: 700;
   line-height: 1.2;
@@ -728,12 +721,12 @@ body.open .page-holder {
 }
 
 @media(min-width: 768px) {
-  #components h3 {
+  .components h3 {
     font-size: 24px;
   }
 }
 
-#components h4 {
+.components h4 {
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
@@ -742,31 +735,31 @@ body.open .page-holder {
   margin-bottom: 0;
 }
 
-#components hr {
+.components hr {
   clear: both;
   opacity: 0;
 }
 
-#components .hr {
+.components .hr {
   border-top: 3px solid #E1E1E1;
   opacity: 1;
 }
 
-#components .hr.small {
+.components .hr.small {
   margin: 16px 0;
 }
 
-#components .hr.medium {
+.components .hr.medium {
   margin: 32px 0;
 }
 
-#components .hr.large {
+.components .hr.large {
   margin: 48px 0;
 }
 
-#components p,
-#components ol,
-#components ul {
+.components p,
+.components ol,
+.components ul {
   font-size: 18px;
   line-height: 1.5;
   padding-top: 1em;
@@ -774,42 +767,42 @@ body.open .page-holder {
   margin-bottom: 0;
 }
 
-#components ol,
-#components ul {
+.components ol,
+.components ul {
   padding-left: 1.25rem;
   list-style-type: initial;
 }
 
-#components ol {
+.components ol {
   list-style-type: auto;
 }
 
-#components figure {
+.components figure {
   margin-top: 1.5rem;
 }
 
-#components figcaption {
+.components figcaption {
   font-size: 14px;
   line-height: 1.5;
   margin-top: 1rem;
 }
 
 @media(min-width: 768px) {
-  #components figure.image-left {
+  .components figure.image-left {
     display: flex;
   }
 
-  #components figure.image-left img {
+  .components figure.image-left img {
     width: 60%;
   }
 
-  #components figure.image-left figcaption {
+  .components figure.image-left figcaption {
     margin-top: 0;
     margin-left: 2rem;
     width: 40%;
   }
 
-  #components figure.image-right {
+  .components figure.image-right {
     float: right;
     margin-left: 1.5rem;
     width: 50%;
@@ -865,6 +858,11 @@ body.open .page-holder {
   Label the data
   */
   #components td::before { content: attr(data-label) }
+}
+
+#components > *:first-child {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 #components .button {

@@ -1,0 +1,41 @@
+childBlocks:
+  - email
+  - phone
+  - location
+field: 7659598f-432e-4c28-a68d-606078c375a8 # Components - Sidebar
+fieldLayouts:
+  61ade306-b926-4470-926d-b499eb9cc109:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            style: tip
+            tip: 'If left blank, the heading will read "Contact".'
+            type: craft\fieldlayoutelements\Tip
+          -
+            fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Default
+        sortOrder: 1
+handle: contact
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: Contact
+sortOrder: 1
+topLevel: true

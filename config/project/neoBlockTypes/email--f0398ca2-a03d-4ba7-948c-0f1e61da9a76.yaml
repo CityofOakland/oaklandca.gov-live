@@ -1,0 +1,25 @@
+childBlocks: ''
+field: 7659598f-432e-4c28-a68d-606078c375a8 # Components - Sidebar
+fieldLayouts:
+  7b7c0cbd-4048-44d9-bb57-198c7050613c:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a # Email Address
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Default
+        sortOrder: 1
+handle: email
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: Email
+sortOrder: 2
+topLevel: false
