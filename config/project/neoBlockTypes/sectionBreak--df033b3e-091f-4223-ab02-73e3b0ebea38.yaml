@@ -1,0 +1,29 @@
+childBlocks: ''
+field: 24c10446-2ff3-44c8-bb28-8d3647876fcb # Components
+fieldLayouts:
+  28fe2bda-37f3-4025-b116-1af5ca28b704:
+    tabs:
+      -
+        elements:
+          -
+            style: tip
+            tip: 'Large applies 48px of spacing, medium applies 32px of spacing, and small applies 16px of spacing.'
+            type: craft\fieldlayoutelements\Tip
+          -
+            fieldUid: 1bf6e3cb-26b9-405b-94ea-fbfc944c27b9 # Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Default
+        sortOrder: 1
+handle: sectionBreak
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: 'Section Break'
+sortOrder: 6
+topLevel: true

@@ -36857,6 +36857,23 @@ body.open .page-holder {
   opacity: 0;
 }
 
+#components .hr {
+  border-top: 3px solid #E1E1E1;
+  opacity: 1;
+}
+
+#components .hr.small {
+  margin: 16px 0;
+}
+
+#components .hr.medium {
+  margin: 32px 0;
+}
+
+#components .hr.large {
+  margin: 48px 0;
+}
+
 #components p,
 #components ol,
 #components ul {
