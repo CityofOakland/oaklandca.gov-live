@@ -35,6 +35,20 @@ class Module extends \yii\base\Module
             }
         );
 
+        Craft::$app->view->hook('cp.entries.edit.details', function(&$context) {
+          $entry = $context['entry'];
+          if($entry->section->handle == 'services'){
+            $user = Craft::$app->getUser();
+            if(!$user->isAdmin) {
+                return "<style>
+                    #entryType > option[value='96'] {
+                        display: none;
+                    }
+                </style>";
+            }
+          }
+        });
+
         parent::init();
     }
 }
