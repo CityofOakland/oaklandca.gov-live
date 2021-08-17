@@ -1,11 +1,11 @@
-field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581 # Content Builder
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
 fieldLayouts:
   c45eac06-3dc5-4013-8563-49166324a2f7:
     tabs:
       -
         elements:
           -
-            fieldUid: 474e10df-7bcd-4737-8b49-8c14f7c11b79 # Embed
+            fieldUid: 474e10df-7bcd-4737-8b49-8c14f7c11b79
             instructions: null
             label: null
             required: false
@@ -16,7 +16,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  474e10df-7bcd-4737-8b49-8c14f7c11b79: # Embed
+  474e10df-7bcd-4737-8b49-8c14f7c11b79:
     contentColumnType: text
     fieldGroup: null
     handle: embed

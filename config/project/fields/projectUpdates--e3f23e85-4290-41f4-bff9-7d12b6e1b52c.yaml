@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884 # Projects
+fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
 handle: projectUpdates
 instructions: 'Include any news items you wish to display on this page.'
 name: 'Project Updates'
@@ -12,7 +12,7 @@ settings:
   showSiteMenu: true
   source: null
   sources:
-    - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+    - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
   targetSiteId: null
   validateRelatedElements: false
   viewMode: null

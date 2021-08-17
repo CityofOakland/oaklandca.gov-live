@@ -1,11 +1,11 @@
-field: 4047207e-c317-47cc-825b-7e751cc4ad38 # Call to Action
+field: 4047207e-c317-47cc-825b-7e751cc4ad38
 fieldLayouts:
   03ea29e2-c637-49cf-bd11-d404ab05cca5:
     tabs:
       -
         elements:
           -
-            fieldUid: 4c46efcc-d38f-4f25-8873-d8c0837babd9 # Document Label
+            fieldUid: 4c46efcc-d38f-4f25-8873-d8c0837babd9
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: afb94d9f-c334-44c9-a37a-e71360270610 # Button Label
+            fieldUid: afb94d9f-c334-44c9-a37a-e71360270610
             instructions: null
             label: null
             required: true
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: e51016cb-464b-4bd1-b32c-ace827d1b9dc # Document Link
+            fieldUid: e51016cb-464b-4bd1-b32c-ace827d1b9dc
             instructions: null
             label: null
             required: true
@@ -34,7 +34,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  4c46efcc-d38f-4f25-8873-d8c0837babd9: # Document Label
+  4c46efcc-d38f-4f25-8873-d8c0837babd9:
     contentColumnType: text
     fieldGroup: null
     handle: documentLabel
@@ -53,7 +53,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  afb94d9f-c334-44c9-a37a-e71360270610: # Button Label
+  afb94d9f-c334-44c9-a37a-e71360270610:
     contentColumnType: text
     fieldGroup: null
     handle: buttonLabel
@@ -72,7 +72,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  e51016cb-464b-4bd1-b32c-ace827d1b9dc: # Document Link
+  e51016cb-464b-4bd1-b32c-ace827d1b9dc:
     contentColumnType: string
     fieldGroup: null
     handle: documentLink
@@ -87,8 +87,8 @@ fields:
       showSiteMenu: true
       source: null
       sources:
-        - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-        - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+        - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
+        - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
       targetSiteId: null
       validateRelatedElements: false
       viewMode: null

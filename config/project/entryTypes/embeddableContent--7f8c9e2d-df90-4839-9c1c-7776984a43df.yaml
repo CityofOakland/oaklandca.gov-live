@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 1160308b-03c0-43ad-9f4b-35e26c016c89 # Code Insertion
+            fieldUid: 1160308b-03c0-43ad-9f4b-35e26c016c89
             instructions: null
             label: null
             required: false
@@ -40,7 +40,7 @@ fieldLayouts:
 handle: embeddableContent
 hasTitleField: true
 name: 'Embeddable Content'
-section: 74ecde2f-b254-4f3e-b889-1affac6f5999 # Embeddable Content
+section: 74ecde2f-b254-4f3e-b889-1affac6f5999
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

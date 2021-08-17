@@ -1,12 +1,12 @@
 childBlocks: null
-field: e2442a2e-e191-4b02-b170-7ecad09c52e2 # Modules
+field: e2442a2e-e191-4b02-b170-7ecad09c52e2
 fieldLayouts:
   56c6cc3c-1879-40cf-ada3-9f5adb9518f7:
     tabs:
       -
         elements:
           -
-            fieldUid: 32f0cef1-a5d9-41dd-b562-b609374d9607 # Buttons
+            fieldUid: 32f0cef1-a5d9-41dd-b562-b609374d9607
             instructions: null
             label: null
             required: false

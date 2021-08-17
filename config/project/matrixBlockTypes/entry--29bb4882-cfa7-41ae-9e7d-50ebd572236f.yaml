@@ -1,11 +1,11 @@
-field: 32f0cef1-a5d9-41dd-b562-b609374d9607 # Buttons
+field: 32f0cef1-a5d9-41dd-b562-b609374d9607
 fieldLayouts:
   0a868cbf-d172-4e5e-b939-ea6beabfebb0:
     tabs:
       -
         elements:
           -
-            fieldUid: 0b609d8d-ec6c-476d-9953-eef0377c30f7 # Entry
+            fieldUid: 0b609d8d-ec6c-476d-9953-eef0377c30f7
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 1c1e50b0-b20e-4596-90d8-be5bc63bee3b # Button Icon
+            fieldUid: 1c1e50b0-b20e-4596-90d8-be5bc63bee3b
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 281e840f-0b8f-4781-bdf6-071f668eb6ac # Button Color
+            fieldUid: 281e840f-0b8f-4781-bdf6-071f668eb6ac
             instructions: null
             label: null
             required: false
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 25
           -
-            fieldUid: 31d96da6-aa49-43b3-9243-60f81641c88f # Button Width
+            fieldUid: 31d96da6-aa49-43b3-9243-60f81641c88f
             instructions: null
             label: null
             required: false
@@ -43,7 +43,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  0b609d8d-ec6c-476d-9953-eef0377c30f7: # Entry
+  0b609d8d-ec6c-476d-9953-eef0377c30f7:
     contentColumnType: string
     fieldGroup: null
     handle: entry
@@ -64,7 +64,7 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Entries
-  1c1e50b0-b20e-4596-90d8-be5bc63bee3b: # Button Icon
+  1c1e50b0-b20e-4596-90d8-be5bc63bee3b:
     contentColumnType: string
     fieldGroup: null
     handle: buttonIcon
@@ -75,7 +75,7 @@ fields:
       allowSelfRelations: false
       allowUploads: true
       allowedKinds: null
-      defaultUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
+      defaultUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6'
       defaultUploadLocationSubpath: ''
       limit: '1'
       localizeRelations: false
@@ -85,11 +85,11 @@ fields:
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
+      singleUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6'
       singleUploadLocationSubpath: ''
       source: null
       sources:
-        - 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
+        - 'volume:8319fc25-f6c3-449d-a648-e891478b31a6'
       targetSiteId: null
       useSingleFolder: false
       validateRelatedElements: false
@@ -97,7 +97,7 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
-  31d96da6-aa49-43b3-9243-60f81641c88f: # Button Width
+  31d96da6-aa49-43b3-9243-60f81641c88f:
     contentColumnType: string
     fieldGroup: null
     handle: buttonWidth
@@ -132,7 +132,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Dropdown
-  281e840f-0b8f-4781-bdf6-071f668eb6ac: # Button Color
+  281e840f-0b8f-4781-bdf6-071f668eb6ac:
     contentColumnType: string
     fieldGroup: null
     handle: buttonColor

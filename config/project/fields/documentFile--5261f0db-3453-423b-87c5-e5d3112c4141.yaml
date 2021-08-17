@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: c8e06b4a-2f85-41db-94e3-101a5c02dd6d # Documents
+fieldGroup: c8e06b4a-2f85-41db-94e3-101a5c02dd6d
 handle: documentFile
 instructions: 'Select the file that you need to add.'
 name: 'Document File'
@@ -15,7 +15,7 @@ settings:
     - pdf
     - powerpoint
     - word
-  defaultUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  defaultUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
   defaultUploadLocationSubpath: ''
   limit: '1'
   localizeRelations: false
@@ -25,11 +25,11 @@ settings:
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: true
-  singleUploadLocationSource: 'volume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  singleUploadLocationSource: 'volume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
   singleUploadLocationSubpath: ''
   source: null
   sources:
-    - 'volume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+    - 'volume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
   targetSiteId: null
   useSingleFolder: true
   validateRelatedElements: false

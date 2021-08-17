@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 1b7fc839-7de9-4717-b41d-d74bfa40b5c8 # Portrait
+            fieldUid: 1b7fc839-7de9-4717-b41d-d74bfa40b5c8
             instructions: null
             label: null
             required: false
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 6c28ddf9-1938-489c-ad36-75d555e50269 # First Name
+            fieldUid: 6c28ddf9-1938-489c-ad36-75d555e50269
             instructions: null
             label: null
             required: true
@@ -45,7 +45,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 01d73fd7-5170-4523-8658-02c344e3ff55 # Middle Initial
+            fieldUid: 01d73fd7-5170-4523-8658-02c344e3ff55
             instructions: null
             label: null
             required: false
@@ -54,7 +54,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 4d6dd644-455e-4186-8d05-a00079622246 # Last Name
+            fieldUid: 4d6dd644-455e-4186-8d05-a00079622246
             instructions: null
             label: null
             required: true
@@ -63,7 +63,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: e3a53ca0-960e-4ce6-933b-b3613bd64d7a # Job Title
+            fieldUid: e3a53ca0-960e-4ce6-933b-b3613bd64d7a
             instructions: null
             label: null
             required: false
@@ -72,7 +72,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 736bfdbe-8ec1-4b3d-bd17-6dc825c56855 # Bio
+            fieldUid: 736bfdbe-8ec1-4b3d-bd17-6dc825c56855
             instructions: null
             label: null
             required: false
@@ -81,7 +81,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a # Email Address
+            fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a
             instructions: null
             label: null
             required: false
@@ -90,7 +90,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 5e5aad16-6bdc-4d3e-adfd-75147a323b78 # Phone Number
+            fieldUid: 5e5aad16-6bdc-4d3e-adfd-75147a323b78
             instructions: null
             label: null
             required: false
@@ -99,7 +99,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b34a0436-278d-4bb7-a7e8-729da1db7c4e # Department/Official/Board/Commission
+            fieldUid: b34a0436-278d-4bb7-a7e8-729da1db7c4e
             instructions: null
             label: null
             required: false
@@ -108,7 +108,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 069f8ed4-d4ee-4ed8-bf37-efafb4e633e8 # Term Start
+            fieldUid: 069f8ed4-d4ee-4ed8-bf37-efafb4e633e8
             instructions: null
             label: null
             required: false
@@ -117,7 +117,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: a80bc90b-ca79-4416-a71f-0e743836bcb9 # Term End
+            fieldUid: a80bc90b-ca79-4416-a71f-0e743836bcb9
             instructions: null
             label: null
             required: false
@@ -130,7 +130,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d # Metadata
+            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d
             instructions: null
             label: null
             required: false
@@ -139,7 +139,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7 # View Count
+            fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7
             instructions: null
             label: null
             required: false
@@ -152,7 +152,7 @@ fieldLayouts:
 handle: volunteers
 hasTitleField: false
 name: Volunteers
-section: 17d5d48d-2d75-4742-8820-cdce13764482 # Volunteers
+section: 17d5d48d-2d75-4742-8820-cdce13764482
 sortOrder: 1
 titleFormat: '{firstName} {lastName}'
 titleTranslationKeyFormat: null

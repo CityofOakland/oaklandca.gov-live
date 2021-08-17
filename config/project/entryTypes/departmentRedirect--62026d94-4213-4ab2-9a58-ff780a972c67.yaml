@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210 # Lead In
+            fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210
             instructions: null
             label: null
             required: '0'
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b0a28612-04bc-4669-a6d1-816c9c768a29 # Official Department
+            fieldUid: b0a28612-04bc-4669-a6d1-816c9c768a29
             instructions: null
             label: null
             required: '0'
@@ -45,7 +45,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: 93eaa329-904e-4a23-9047-4decf3d47cac # Redirect URL
+            fieldUid: 93eaa329-904e-4a23-9047-4decf3d47cac
             instructions: null
             label: null
             required: '0'
@@ -58,7 +58,7 @@ fieldLayouts:
 handle: departmentRedirect
 hasTitleField: true
 name: 'Department Redirect'
-section: b3411cb1-e860-46ed-9cd6-58cf9b8daacb # Departments
+section: b3411cb1-e860-46ed-9cd6-58cf9b8daacb
 sortOrder: 2
 titleFormat: null
 titleTranslationKeyFormat: null

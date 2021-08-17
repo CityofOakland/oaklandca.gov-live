@@ -1,11 +1,11 @@
-field: 25bae0ad-a048-4573-a10a-8b9f823ed9dc # Stats
+field: 25bae0ad-a048-4573-a10a-8b9f823ed9dc
 fieldLayouts:
   ef4fa31c-77cd-422a-9193-844caa828cbc:
     tabs:
       -
         elements:
           -
-            fieldUid: af570273-47b3-4f58-a281-2d71a35d131c # Icon
+            fieldUid: af570273-47b3-4f58-a281-2d71a35d131c
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: e5003330-f1d5-467d-843b-ce12bc26a5bb # Heading
+            fieldUid: e5003330-f1d5-467d-843b-ce12bc26a5bb
             instructions: null
             label: null
             required: true
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: c516a5f3-3955-47d3-96a8-73a2658e3fe7 # Description
+            fieldUid: c516a5f3-3955-47d3-96a8-73a2658e3fe7
             instructions: null
             label: null
             required: true
@@ -34,7 +34,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  af570273-47b3-4f58-a281-2d71a35d131c: # Icon
+  af570273-47b3-4f58-a281-2d71a35d131c:
     contentColumnType: string
     fieldGroup: null
     handle: icon
@@ -46,7 +46,7 @@ fields:
       allowUploads: true
       allowedKinds:
         - image
-      defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
+      defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
       defaultUploadLocationSubpath: ''
       limit: '1'
       localizeRelations: false
@@ -56,7 +56,7 @@ fields:
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
+      singleUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6'
       singleUploadLocationSubpath: ''
       source: null
       sources: '*'
@@ -67,7 +67,7 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
-  c516a5f3-3955-47d3-96a8-73a2658e3fe7: # Description
+  c516a5f3-3955-47d3-96a8-73a2658e3fe7:
     contentColumnType: string(260)
     fieldGroup: null
     handle: description
@@ -86,7 +86,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  e5003330-f1d5-467d-843b-ce12bc26a5bb: # Heading
+  e5003330-f1d5-467d-843b-ce12bc26a5bb:
     contentColumnType: string(100)
     fieldGroup: null
     handle: heading

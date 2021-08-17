@@ -6,7 +6,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 511047d5-652e-4af0-8f5e-8d30a3f6b0c4 # Callout Type
+            fieldUid: 511047d5-652e-4af0-8f5e-8d30a3f6b0c4
             instructions: null
             label: null
             required: false
@@ -15,7 +15,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
+            fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91
             instructions: null
             label: null
             required: false
@@ -24,7 +24,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
+            fieldUid: b66198c4-d82e-4078-8034-c728b677d613
             instructions: null
             label: null
             required: false

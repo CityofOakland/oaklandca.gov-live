@@ -1,11 +1,11 @@
-field: 555efa28-a6b9-471d-8548-735eae07cb3c # Phone Numbers
+field: 555efa28-a6b9-471d-8548-735eae07cb3c
 fieldLayouts:
   235e82e4-67b9-49c2-a910-cc2825c6a79e:
     tabs:
       -
         elements:
           -
-            fieldUid: 843d53f7-253d-4ed1-b7da-309cd0e4df69 # __blank__
+            fieldUid: 843d53f7-253d-4ed1-b7da-309cd0e4df69
             instructions: null
             label: null
             required: true
@@ -16,7 +16,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  843d53f7-253d-4ed1-b7da-309cd0e4df69: # __blank__
+  843d53f7-253d-4ed1-b7da-309cd0e4df69:
     contentColumnType: text
     fieldGroup: null
     handle: number

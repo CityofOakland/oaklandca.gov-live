@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: d8042d7b-1c67-4b28-bb84-2002e74ed94b # Primary Unit
+            fieldUid: d8042d7b-1c67-4b28-bb84-2002e74ed94b
             instructions: null
             label: null
             required: false
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210 # Lead In
+            fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210
             instructions: null
             label: null
             required: false
@@ -45,7 +45,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 4047207e-c317-47cc-825b-7e751cc4ad38 # Call to Action
+            fieldUid: 4047207e-c317-47cc-825b-7e751cc4ad38
             instructions: null
             label: null
             required: false
@@ -67,7 +67,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 7659598f-432e-4c28-a68d-606078c375a8 # Components - Sidebar
+            fieldUid: 7659598f-432e-4c28-a68d-606078c375a8
             instructions: null
             label: null
             required: false
@@ -80,7 +80,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 7594e9ae-f194-47c8-9a6b-076789f1087b # Service Types
+            fieldUid: 7594e9ae-f194-47c8-9a6b-076789f1087b
             instructions: null
             label: null
             required: false
@@ -89,7 +89,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc # Boards & Commissions
+            fieldUid: a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc
             instructions: null
             label: null
             required: false
@@ -98,7 +98,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133 # Departments
+            fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133
             instructions: null
             label: null
             required: false
@@ -107,7 +107,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 73b7b0c7-bff1-4c55-97aa-fc62042f0347 # Officials
+            fieldUid: 73b7b0c7-bff1-4c55-97aa-fc62042f0347
             instructions: null
             label: null
             required: false
@@ -116,7 +116,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: e67ec759-ea3a-4568-bfa6-a314ff3d1036 # Projects
+            fieldUid: e67ec759-ea3a-4568-bfa6-a314ff3d1036
             instructions: null
             label: null
             required: false
@@ -125,7 +125,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 44b00870-0842-4c4e-838f-dcd688fb5b05 # Topics
+            fieldUid: 44b00870-0842-4c4e-838f-dcd688fb5b05
             instructions: null
             label: null
             required: false
@@ -138,7 +138,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d # Metadata
+            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d
             instructions: null
             label: null
             required: false
@@ -147,7 +147,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7 # View Count
+            fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7
             instructions: null
             label: null
             required: false
@@ -160,7 +160,7 @@ fieldLayouts:
 handle: servicesUpdated
 hasTitleField: true
 name: 'Services (Updated)'
-section: b7e437e1-239f-4c5c-8c62-5f0323f9d22c # Services
+section: b7e437e1-239f-4c5c-8c62-5f0323f9d22c
 sortOrder: 4
 titleFormat: null
 titleTranslationKeyFormat: null

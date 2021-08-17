@@ -1,11 +1,11 @@
-field: 101875bd-2293-4282-a4da-2b14265f40e3 # Icons
+field: 101875bd-2293-4282-a4da-2b14265f40e3
 fieldLayouts:
   65e4836e-6bda-45d9-ba8e-c9ea48725ff5:
     tabs:
       -
         elements:
           -
-            fieldUid: d315d8d7-521c-49c9-93ff-3fe340ab0429 # Icon
+            fieldUid: d315d8d7-521c-49c9-93ff-3fe340ab0429
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 4a09ac0b-b25e-4160-92b9-ad5b1e8b97b9 # Heading
+            fieldUid: 4a09ac0b-b25e-4160-92b9-ad5b1e8b97b9
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 7bbb6a39-d6ff-42d1-8442-548114cdb6f7 # Subheading
+            fieldUid: 7bbb6a39-d6ff-42d1-8442-548114cdb6f7
             instructions: null
             label: null
             required: false
@@ -34,7 +34,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  4a09ac0b-b25e-4160-92b9-ad5b1e8b97b9: # Heading
+  4a09ac0b-b25e-4160-92b9-ad5b1e8b97b9:
     contentColumnType: text
     fieldGroup: null
     handle: heading
@@ -53,7 +53,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  7bbb6a39-d6ff-42d1-8442-548114cdb6f7: # Subheading
+  7bbb6a39-d6ff-42d1-8442-548114cdb6f7:
     contentColumnType: text
     fieldGroup: null
     handle: subheading
@@ -72,7 +72,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  d315d8d7-521c-49c9-93ff-3fe340ab0429: # Icon
+  d315d8d7-521c-49c9-93ff-3fe340ab0429:
     contentColumnType: string
     fieldGroup: null
     handle: icon
@@ -83,7 +83,7 @@ fields:
       allowSelfRelations: false
       allowUploads: true
       allowedKinds: null
-      defaultUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
+      defaultUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6'
       defaultUploadLocationSubpath: ''
       limit: '1'
       localizeRelations: false
@@ -93,11 +93,11 @@ fields:
       showSiteMenu: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
+      singleUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6'
       singleUploadLocationSubpath: ''
       source: null
       sources:
-        - 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
+        - 'volume:8319fc25-f6c3-449d-a648-e891478b31a6'
       targetSiteId: null
       useSingleFolder: false
       validateRelatedElements: false

@@ -1,11 +1,11 @@
-field: 4047207e-c317-47cc-825b-7e751cc4ad38 # Call to Action
+field: 4047207e-c317-47cc-825b-7e751cc4ad38
 fieldLayouts:
   3f1a1379-bdb2-48aa-9a5b-fb6cf6d0b97d:
     tabs:
       -
         elements:
           -
-            fieldUid: 243725a4-eeda-4e57-8cf4-d545bd6edf9c # Email Title
+            fieldUid: 243725a4-eeda-4e57-8cf4-d545bd6edf9c
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b50fa2f6-4a94-44ce-ae39-82951e06a717 # Link Text
+            fieldUid: b50fa2f6-4a94-44ce-ae39-82951e06a717
             instructions: null
             label: null
             required: true
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 1f60a4d5-d5d9-46f2-8f90-d58d47a2bb34 # Email Address
+            fieldUid: 1f60a4d5-d5d9-46f2-8f90-d58d47a2bb34
             instructions: null
             label: null
             required: true
@@ -34,7 +34,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  1f60a4d5-d5d9-46f2-8f90-d58d47a2bb34: # Email Address
+  1f60a4d5-d5d9-46f2-8f90-d58d47a2bb34:
     contentColumnType: string
     fieldGroup: null
     handle: emailAddress
@@ -46,7 +46,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Email
-  243725a4-eeda-4e57-8cf4-d545bd6edf9c: # Email Title
+  243725a4-eeda-4e57-8cf4-d545bd6edf9c:
     contentColumnType: text
     fieldGroup: null
     handle: emailTitle
@@ -65,7 +65,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  b50fa2f6-4a94-44ce-ae39-82951e06a717: # Link Text
+  b50fa2f6-4a94-44ce-ae39-82951e06a717:
     contentColumnType: text
     fieldGroup: null
     handle: linkText

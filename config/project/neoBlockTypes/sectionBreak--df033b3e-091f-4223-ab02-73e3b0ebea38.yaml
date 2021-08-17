@@ -10,7 +10,7 @@ fieldLayouts:
             tip: 'Large applies 48px of spacing, medium applies 32px of spacing, and small applies 16px of spacing.'
             type: craft\fieldlayoutelements\Tip
           -
-            fieldUid: 1bf6e3cb-26b9-405b-94ea-fbfc944c27b9 # Size
+            fieldUid: 1bf6e3cb-26b9-405b-94ea-fbfc944c27b9
             instructions: null
             label: null
             required: false

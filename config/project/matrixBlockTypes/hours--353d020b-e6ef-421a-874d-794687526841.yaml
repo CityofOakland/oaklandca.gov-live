@@ -1,11 +1,11 @@
-field: 6ac11602-f5a4-4e2e-bc97-fdfea3e3d005 # Open Hours
+field: 6ac11602-f5a4-4e2e-bc97-fdfea3e3d005
 fieldLayouts:
   7f11f9d7-2312-46de-b9f6-4361fac0a116:
     tabs:
       -
         elements:
           -
-            fieldUid: d349329b-ec60-41dd-8bfa-097958ff477c # Hours Title
+            fieldUid: d349329b-ec60-41dd-8bfa-097958ff477c
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 2894ae3a-7b9b-4435-8435-8df18709cf7b # Hours
+            fieldUid: 2894ae3a-7b9b-4435-8435-8df18709cf7b
             instructions: null
             label: null
             required: false
@@ -25,7 +25,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  2894ae3a-7b9b-4435-8435-8df18709cf7b: # Hours
+  2894ae3a-7b9b-4435-8435-8df18709cf7b:
     contentColumnType: text
     fieldGroup: null
     handle: hours
@@ -78,7 +78,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\storehours\Field
-  d349329b-ec60-41dd-8bfa-097958ff477c: # Hours Title
+  d349329b-ec60-41dd-8bfa-097958ff477c:
     contentColumnType: text
     fieldGroup: null
     handle: hoursTitle

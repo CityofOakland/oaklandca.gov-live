@@ -6,7 +6,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
+            fieldUid: b66198c4-d82e-4078-8034-c728b677d613
             instructions: null
             label: null
             required: false

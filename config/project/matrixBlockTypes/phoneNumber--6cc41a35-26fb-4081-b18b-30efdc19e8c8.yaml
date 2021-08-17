@@ -1,11 +1,11 @@
-field: 4047207e-c317-47cc-825b-7e751cc4ad38 # Call to Action
+field: 4047207e-c317-47cc-825b-7e751cc4ad38
 fieldLayouts:
   5e170125-2c9e-421f-93fa-4fb66353769b:
     tabs:
       -
         elements:
           -
-            fieldUid: ebf1c335-ab50-4879-9bfa-72e22c1ceb98 # Phone Number Title
+            fieldUid: ebf1c335-ab50-4879-9bfa-72e22c1ceb98
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 6ad6bb8d-7fc5-4c49-8695-d7ea3c27da98 # Number
+            fieldUid: 6ad6bb8d-7fc5-4c49-8695-d7ea3c27da98
             instructions: null
             label: null
             required: true
@@ -25,7 +25,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  6ad6bb8d-7fc5-4c49-8695-d7ea3c27da98: # Number
+  6ad6bb8d-7fc5-4c49-8695-d7ea3c27da98:
     contentColumnType: text
     fieldGroup: null
     handle: number
@@ -44,7 +44,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  ebf1c335-ab50-4879-9bfa-72e22c1ceb98: # Phone Number Title
+  ebf1c335-ab50-4879-9bfa-72e22c1ceb98:
     contentColumnType: text
     fieldGroup: null
     handle: phoneNumberTitle

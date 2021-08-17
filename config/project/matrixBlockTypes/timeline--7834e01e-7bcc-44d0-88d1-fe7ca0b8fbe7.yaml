@@ -1,11 +1,11 @@
-field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581 # Content Builder
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
 fieldLayouts:
   33d152ed-4f3b-4fbf-a91e-a098303278bb:
     tabs:
       -
         elements:
           -
-            fieldUid: e1c61482-cd09-4ea3-8940-a602c3fe4718 # Heading
+            fieldUid: e1c61482-cd09-4ea3-8940-a602c3fe4718
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f93e423e-051d-4b4c-bb85-2a5b168296b4 # Timeline
+            fieldUid: f93e423e-051d-4b4c-bb85-2a5b168296b4
             instructions: null
             label: null
             required: true
@@ -25,7 +25,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  e1c61482-cd09-4ea3-8940-a602c3fe4718: # Heading
+  e1c61482-cd09-4ea3-8940-a602c3fe4718:
     contentColumnType: text
     fieldGroup: null
     handle: heading
@@ -44,7 +44,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  f93e423e-051d-4b4c-bb85-2a5b168296b4: # Timeline
+  f93e423e-051d-4b4c-bb85-2a5b168296b4:
     contentColumnType: string
     fieldGroup: null
     handle: timeline
@@ -55,35 +55,35 @@ fields:
       columns:
         __assoc__:
           -
-            - c0129db2-783d-4927-b125-203bd8cbdebc # Milestone Date
+            - c0129db2-783d-4927-b125-203bd8cbdebc
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - f602bcbb-5ca9-4e04-8f5c-f031ceb1c2d6 # Milestone Name
+            - f602bcbb-5ca9-4e04-8f5c-f031ceb1c2d6
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - 5b066077-3ce6-4583-af94-4fa87136ab3a # Milestone Link
+            - 5b066077-3ce6-4583-af94-4fa87136ab3a
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - 912c64e2-6d85-46bb-b826-955df643a5ef # Milestone Description
+            - 912c64e2-6d85-46bb-b826-955df643a5ef
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - 4b278e2a-dc49-4f60-a4bd-18575fb15098 # Milestone Started?
+            - 4b278e2a-dc49-4f60-a4bd-18575fb15098
             -
               __assoc__:
                 -

@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0 # Images
+fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
 handle: banner
 instructions: 'Choose images that will rotate in the background of the hero banner. Be sure to double click the image after uploading it and assigning the ALT TEXT, as this is an ADA requirement.'
 name: Banner
@@ -9,7 +9,7 @@ settings:
   allowUploads: true
   allowedKinds:
     - image
-  defaultUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  defaultUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
   defaultUploadLocationSubpath: ''
   limit: '1'
   localizeRelations: false
@@ -19,7 +19,7 @@ settings:
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: true
-  singleUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  singleUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
   singleUploadLocationSubpath: ''
   source: null
   sources: '*'

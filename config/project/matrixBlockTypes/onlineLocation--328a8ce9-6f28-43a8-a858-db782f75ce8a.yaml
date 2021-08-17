@@ -1,11 +1,11 @@
-field: 90d724d7-7c32-4d04-8b9a-3900d6ecdb84 # Address(es)
+field: 90d724d7-7c32-4d04-8b9a-3900d6ecdb84
 fieldLayouts:
   7c2d9899-6e1c-4c56-a1da-093fd2fdb084:
     tabs:
       -
         elements:
           -
-            fieldUid: 314d167b-d1f4-47dd-92e5-4d0f75339e09 # Location Name
+            fieldUid: 314d167b-d1f4-47dd-92e5-4d0f75339e09
             instructions: null
             label: null
             required: true
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 06394615-97e5-4f64-8d80-da62f9f1582c # Location Description
+            fieldUid: 06394615-97e5-4f64-8d80-da62f9f1582c
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b199c827-5414-4bf9-bcf7-cf6f4e144bda # Web Address
+            fieldUid: b199c827-5414-4bf9-bcf7-cf6f4e144bda
             instructions: null
             label: null
             required: true
@@ -34,7 +34,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  314d167b-d1f4-47dd-92e5-4d0f75339e09: # Location Name
+  314d167b-d1f4-47dd-92e5-4d0f75339e09:
     contentColumnType: text
     fieldGroup: null
     handle: locationName
@@ -53,7 +53,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  06394615-97e5-4f64-8d80-da62f9f1582c: # Location Description
+  06394615-97e5-4f64-8d80-da62f9f1582c:
     contentColumnType: text
     fieldGroup: null
     handle: locationDescription
@@ -81,7 +81,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  b199c827-5414-4bf9-bcf7-cf6f4e144bda: # Web Address
+  b199c827-5414-4bf9-bcf7-cf6f4e144bda:
     contentColumnType: string(255)
     fieldGroup: null
     handle: webAddress

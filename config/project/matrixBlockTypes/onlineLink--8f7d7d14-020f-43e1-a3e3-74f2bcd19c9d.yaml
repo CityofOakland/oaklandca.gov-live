@@ -1,11 +1,11 @@
-field: 4047207e-c317-47cc-825b-7e751cc4ad38 # Call to Action
+field: 4047207e-c317-47cc-825b-7e751cc4ad38
 fieldLayouts:
   dbe5f13a-451e-4b09-94e1-530be31baf7b:
     tabs:
       -
         elements:
           -
-            fieldUid: 18c27d2b-612d-49e3-87d4-9a61c6c85408 # Online Title
+            fieldUid: 18c27d2b-612d-49e3-87d4-9a61c6c85408
             instructions: null
             label: null
             required: false
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 7332ba8f-a9ac-4e3b-b372-8b4724617ae4 # Link Text
+            fieldUid: 7332ba8f-a9ac-4e3b-b372-8b4724617ae4
             instructions: null
             label: null
             required: true
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: fbdba36a-ff35-4883-a29d-e5194516c7ae # Link URL
+            fieldUid: fbdba36a-ff35-4883-a29d-e5194516c7ae
             instructions: null
             label: null
             required: true
@@ -34,7 +34,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  18c27d2b-612d-49e3-87d4-9a61c6c85408: # Online Title
+  18c27d2b-612d-49e3-87d4-9a61c6c85408:
     contentColumnType: text
     fieldGroup: null
     handle: onlineTitle
@@ -53,7 +53,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  7332ba8f-a9ac-4e3b-b372-8b4724617ae4: # Link Text
+  7332ba8f-a9ac-4e3b-b372-8b4724617ae4:
     contentColumnType: text
     fieldGroup: null
     handle: linkText
@@ -72,7 +72,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  fbdba36a-ff35-4883-a29d-e5194516c7ae: # Link URL
+  fbdba36a-ff35-4883-a29d-e5194516c7ae:
     contentColumnType: text
     fieldGroup: null
     handle: linkUrl

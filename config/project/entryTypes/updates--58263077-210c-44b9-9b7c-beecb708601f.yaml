@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f645ecd3-5b0e-4625-8986-da4a7726b1db # Image
+            fieldUid: f645ecd3-5b0e-4625-8986-da4a7726b1db
             instructions: null
             label: null
             required: false
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
+            fieldUid: b66198c4-d82e-4078-8034-c728b677d613
             instructions: null
             label: null
             required: false
@@ -49,7 +49,7 @@ fieldLayouts:
 handle: updates
 hasTitleField: true
 name: 'Website Updates'
-section: ab06f460-5f10-4ce6-9623-9a5ff14a8685 # Website Updates
+section: ab06f460-5f10-4ce6-9623-9a5ff14a8685
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855 # Relationships
+fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
 handle: teams
 instructions: 'Pick the team(s) associated with this entry'
 name: Teams
@@ -12,7 +12,7 @@ settings:
   showSiteMenu: true
   source: null
   sources:
-    - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+    - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4'
   targetSiteId: null
   validateRelatedElements: false
   viewMode: null

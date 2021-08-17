@@ -1,5 +1,6 @@
+columnSuffix: null
 contentColumnType: string
-fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
 handle: components
 instructions: ''
 name: Components
@@ -10,7 +11,7 @@ settings:
   maxTopBlocks: ''
   minBlocks: ''
   propagationMethod: all
-  wasModified: false
+  wasModified: true
 translationKeyFormat: null
 translationMethod: site
 type: benf\neo\Field
