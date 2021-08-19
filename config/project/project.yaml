@@ -1,4 +1,4 @@
-dateModified: 1629156656
+dateModified: 1629386626
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -60,6 +60,7 @@ meta:
     4b278e2a-dc49-4f60-a4bd-18575fb15098: 'Milestone Started?' # Milestone Started?
     4c0f9e7c-fe6a-47d0-b8c9-17e8a34a39f2: Address # Address
     4c46efcc-d38f-4f25-8873-d8c0837babd9: 'Document Label' # Document Label
+    4cac2797-e23e-4714-b9fa-3afcd009044a: 'Related Departments' # Related Departments
     4d6dd644-455e-4186-8d05-a00079622246: 'Last Name' # Last Name
     4ed914c6-b7ea-44be-a061-4430ad33baf2: News # News
     4f58a8e7-8cf8-472a-b479-73a156087dfc: Fax # Fax
@@ -389,6 +390,7 @@ meta:
     b703d11b-3d2f-4305-b0bf-3abf4ebeeec7: 'Embed Code' # Embed Code
     b936e275-7cde-473a-8849-7342b65b94db: Embed # Embed
     b3411cb1-e860-46ed-9cd6-58cf9b8daacb: Departments # Departments
+    b3761a4e-9346-448a-ba6a-f441f75e61fc: 'Components - Footer' # Components - Footer
     b66198c4-d82e-4078-8034-c728b677d613: Content # Content
     b575240f-71ba-444a-ac88-0c275e078c01: 'External Link' # External Link
     b924108b-fb70-4757-ad7f-3e713f23a6d6: 'Team Members' # Team Members
