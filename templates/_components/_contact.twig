@@ -1,29 +1,29 @@
+{% set contact = null %}
+
 <hr style="border-top: 2px solid #212121;opacity:1;"/>
 <h4>{{ block.heading ? block.heading : 'Contact' }}</h4>
 {{ block.mainContent }}
 {% if block.contact|length %}
-	{% for contact in block.contact.all() %}
-  		{% if contact.portrait|length %}
-    		{% set photo = contact.portrait.one() %}
-    		{% set transformedImage = craft.imager.transformImage(photo, { width: 150 }, { ratio: 1/1, position: photo.getFocalPoint() },{ fillTransforms: true }) %}
-    		{% set transformedImages = craft.imager.transformImage(photo, [
-      			{ width: 500 },
-      			{ width: 300, jpegQuality: 65 },
-      			{ width: 150, jpegQuality: 65 }
-    		], { ratio: 1/1, position: photo.getFocalPoint()},{ fillTransforms: true}) %}
-      		<img src="{{ transformedImage.url }}" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ contact.jobTitle ? contact.jobTitle : contact.staffImportJobTitle }}, {{ contact.title }}" class="block w-full border-2 mt-3 rounded-full border-gray-200" style="max-width:95px;">
-  		{% endif %}
+	{% set contact = block.contact.one() %}
+	{% if contact.portrait|length %}
+		{% set photo = contact.portrait.one() %}
+		{% set transformedImage = craft.imager.transformImage(photo, { width: 150 }, { ratio: 1/1, position: photo.getFocalPoint() },{ fillTransforms: true }) %}
+		{% set transformedImages = craft.imager.transformImage(photo, [
+  			{ width: 500 },
+  			{ width: 300, jpegQuality: 65 },
+  			{ width: 150, jpegQuality: 65 }
+		], { ratio: 1/1, position: photo.getFocalPoint()},{ fillTransforms: true}) %}
+  		<img src="{{ transformedImage.url }}" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ contact.jobTitle ? contact.jobTitle : contact.staffImportJobTitle }}, {{ contact.title }}" class="block w-full border-2 mt-3 rounded-full border-gray-200" style="max-width:95px;">
+	{% endif %}
   	<p>
-    	<b><a target="_blank" href="{{ contact.url }}"><span>{{ contact.title }}</span></a></b>
+    	<b><span>{{ contact.title }}</span></b>
     	{% if contact.jobTitle or contact.staffImportJobTitle %}<br><span>{{ contact.jobTitle ? contact.jobTitle : contact.staffImportJobTitle }}</span>{% endif %}
     	{% if contact.departmentOfficialBoardCommission|length or contact.staffImportDepartment %}<br><span>{{ contact.departmentOfficialBoardCommission.one() ? contact.departmentOfficialBoardCommission.one().title : contact.staffImportDepartment }}</span>{% endif %}
-    	{% if contact.emailAddress or contact.staffImportEmail %}<br><a href="mailto:{{ contact.emailAddress ? contact.emailAddress : contact.staffImportEmail }}">{{ contact.emailAddress ? contact.emailAddress : contact.staffImportEmail }}</a>{% endif %}
-    	{% if contact.phoneNumber or contact.staffImportPhoneNumber %}<br><a href="tel:{{ contact.phoneNumber ? contact.phoneNumber : contact.staffImportPhoneNumber }}">{{ contact.phoneNumber ? contact.phoneNumber : contact.staffImportPhoneNumber }}</a>{% endif %}
   	</p>
-	{% endfor %}
 {% endif %}
-
 <ul>
+	{% if contact and contact.emailAddress or contact.staffImportEmail %}<li><a href="mailto:{{ contact.emailAddress ? contact.emailAddress : contact.staffImportEmail }}">{{ svg( '@webroot/assets/img/icon-envelope-updated.svg') }} {{ contact.emailAddress ? contact.emailAddress : contact.staffImportEmail }}</a></li>{% endif %}
+	{% if contact and contact.phoneNumber or contact.staffImportPhoneNumber %}<li><a href="tel:{{ contact.phoneNumber ? contact.phoneNumber : contact.staffImportPhoneNumber }}">{{ svg( '@webroot/assets/img/icon-phone-updated.svg') }} {{ contact.phoneNumber ? contact.phoneNumber : contact.staffImportPhoneNumber }}</a></li>{% endif %}
 	{% for block in block.getDescendants(1) %}
 		{% switch block.type %}
 			{% case 'email' %}
