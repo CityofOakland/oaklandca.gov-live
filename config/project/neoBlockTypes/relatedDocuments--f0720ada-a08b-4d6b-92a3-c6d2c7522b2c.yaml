@@ -1,23 +1,10 @@
-childBlocks: null
+childBlocks: ''
 field: 7659598f-432e-4c28-a68d-606078c375a8 # Components - Sidebar
 fieldLayouts:
   b4a8cf81-d243-49f8-ad4d-a0ae899ada21:
     tabs:
       -
         elements:
-          -
-            fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            style: tip
-            tip: 'If left blank, the heading will read "Related Documents".'
-            type: craft\fieldlayoutelements\Tip
           -
             fieldUid: 3ff802bf-48ac-4e96-8e64-c7988d029bc1 # Documents
             instructions: null
