@@ -41,6 +41,8 @@ class Module extends \yii\base\Module
             $user = Craft::$app->getUser();
             if(!$user->isAdmin) {
                 return "<style>
+                    #entryType > option[value='72'],
+                    #entryType > option[value='92'],
                     #entryType > option[value='96'] {
                         display: none;
                     }
