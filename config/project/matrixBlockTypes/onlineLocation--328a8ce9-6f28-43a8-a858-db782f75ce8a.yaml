@@ -35,6 +35,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   314d167b-d1f4-47dd-92e5-4d0f75339e09: # Location Name
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: locationName
@@ -54,6 +55,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   06394615-97e5-4f64-8d80-da62f9f1582c: # Location Description
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: locationDescription
@@ -82,6 +84,7 @@ fields:
     translationMethod: none
     type: craft\redactor\Field
   b199c827-5414-4bf9-bcf7-cf6f4e144bda: # Web Address
+    columnSuffix: null
     contentColumnType: string(255)
     fieldGroup: null
     handle: webAddress

@@ -26,6 +26,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   61bef9fa-6716-4df3-a88d-46f256cdee73: # Link Location
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: linkLocation
@@ -227,6 +228,7 @@ fields:
     translationMethod: none
     type: fruitstudios\linkit\fields\LinkitField
   eb7e7c8e-f03b-44c8-8b3f-f7086707f07a: # Link Icon
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: linkIcon

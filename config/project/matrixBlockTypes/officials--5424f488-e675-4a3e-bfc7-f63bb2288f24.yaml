@@ -35,6 +35,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   94aa2374-4435-452b-a007-320f14f53e8d: # Entries Description
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: entriesDescription
@@ -63,6 +64,7 @@ fields:
     translationMethod: none
     type: craft\redactor\Field
   ea240b78-53b7-49b7-9899-30cdda02cd3f: # Heading
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: heading
@@ -82,6 +84,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   f9ee611f-21b4-48f8-8fc6-267f5b3ee36b: # Officials
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: officials

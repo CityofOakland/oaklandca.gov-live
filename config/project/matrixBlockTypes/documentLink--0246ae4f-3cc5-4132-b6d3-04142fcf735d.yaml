@@ -35,6 +35,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   4c46efcc-d38f-4f25-8873-d8c0837babd9: # Document Label
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: documentLabel
@@ -54,6 +55,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   afb94d9f-c334-44c9-a37a-e71360270610: # Button Label
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: buttonLabel
@@ -73,6 +75,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   e51016cb-464b-4bd1-b32c-ace827d1b9dc: # Document Link
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: documentLink

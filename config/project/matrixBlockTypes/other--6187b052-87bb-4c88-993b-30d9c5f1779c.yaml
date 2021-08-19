@@ -26,6 +26,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   0accbbf3-3501-4536-b0f0-19facda9bb98: # Number Title
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: numberTitle
@@ -45,6 +46,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   107df6dd-7f1a-4575-811d-ae34d2258fd8: # Number
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: number

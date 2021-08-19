@@ -17,6 +17,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   2e52b334-4732-47a2-9c3b-7a8bf656425e: # Link
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: linkField

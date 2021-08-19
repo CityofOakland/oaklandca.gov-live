@@ -26,6 +26,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   4c0f9e7c-fe6a-47d0-b8c9-17e8a34a39f2: # Address
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
     handle: address
@@ -45,6 +46,11 @@ fields:
             - zoom
             - 18
       coordinatesMode: readOnly
+      dragPinDefault: null
+      dragPinLatitude: null
+      dragPinLongitude: null
+      dragPinZoom: null
+      layout: null
       mapOnSearch: open
       mapOnStart: close
       showMap: null
@@ -151,6 +157,7 @@ fields:
     translationMethod: none
     type: doublesecretagency\googlemaps\fields\AddressField
   7e17b706-c00f-4f94-84df-b0e91247051f: # Description
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: description

@@ -44,6 +44,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   6d6039ca-322a-4f7f-91e2-371a9f5d637c: # Read More Link
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: readMoreLink
@@ -245,6 +246,7 @@ fields:
     translationMethod: none
     type: fruitstudios\linkit\fields\LinkitField
   07e65c29-fba5-4a88-ade2-bd8abfb4cc69: # Link Set
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: linkSet
@@ -280,6 +282,7 @@ fields:
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
   e0441456-2c87-45db-aacd-22ac957f8fc1: # Heading
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: heading
@@ -299,6 +302,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   fd5628cc-7472-48c6-8263-14745dbb90c9: # Link Set Description
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: linkSetDescription

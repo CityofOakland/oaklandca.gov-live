@@ -35,6 +35,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   5eb32746-ba01-4a64-b84f-f6b988abfa97: # Heading
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: heading
@@ -54,6 +55,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   646188fb-7ed1-48ae-b539-736f4fd442d1: # Entries
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: entries
@@ -88,6 +90,7 @@ fields:
     translationMethod: site
     type: craft\fields\Entries
   a027ac28-65c7-472f-b9ea-d30253b0205f: # Entries Description
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: entriesDescription

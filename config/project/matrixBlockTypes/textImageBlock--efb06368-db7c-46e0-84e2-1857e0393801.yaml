@@ -71,6 +71,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   323dd893-cdef-4562-9cfc-566d7afd7909: # Text Block
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: textBlock
@@ -99,6 +100,7 @@ fields:
     translationMethod: none
     type: craft\redactor\Field
   566d26c2-9af4-45bb-b994-a552cc3fc03b: # Display Alt Text as Caption?
+    columnSuffix: null
     contentColumnType: boolean
     fieldGroup: null
     handle: displayAltTextAsCaption
@@ -113,6 +115,7 @@ fields:
     translationMethod: none
     type: craft\fields\Lightswitch
   bcbcc37a-a53b-42f8-9a80-e9abf9ffe063: # Image
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: image
@@ -146,6 +149,7 @@ fields:
     translationMethod: site
     type: craft\fields\Assets
   bde3bd63-a118-435a-b947-3f2667918e1b: # Heading
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: heading
@@ -165,6 +169,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   c8061611-d9e5-4ee6-b698-dc19feb2e2a5: # Call to Action
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: callToAction
@@ -364,6 +369,7 @@ fields:
     translationMethod: none
     type: fruitstudios\linkit\fields\LinkitField
   d0cf7d52-44a5-44a7-9efa-ba27c7541ff9: # Image Column Position
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: imageColumnPosition
@@ -399,6 +405,7 @@ fields:
     translationMethod: none
     type: craft\fields\Dropdown
   e58f615b-174a-4196-a96c-e824862acfa9: # Image Column Width
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: imageColumnWidth

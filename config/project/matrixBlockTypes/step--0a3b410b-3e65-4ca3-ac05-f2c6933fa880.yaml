@@ -35,6 +35,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   0ccdd608-28e4-473d-8fa8-f824e4591a7c: # Step Action
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: stepAction
@@ -60,6 +61,7 @@ fields:
     translationMethod: site
     type: craft\fields\Entries
   6d5d4d77-fe05-434f-92d4-748af5630b9a: # Step Number
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: stepNumber
@@ -79,6 +81,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   e9feaa97-a672-4708-8e22-90e5a5116d24: # Step Required?
+    columnSuffix: null
     contentColumnType: boolean
     fieldGroup: null
     handle: stepRequired

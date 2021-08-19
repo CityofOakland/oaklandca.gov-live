@@ -1,5 +1,6 @@
+columnSuffix: null
 contentColumnType: string
-fieldGroup: null
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
 handle: address
 instructions: ''
 name: Address
@@ -17,6 +18,11 @@ settings:
         - zoom
         - 18
   coordinatesMode: readOnly
+  dragPinDefault: null
+  dragPinLatitude: null
+  dragPinLongitude: null
+  dragPinZoom: null
+  layout: null
   mapOnSearch: open
   mapOnStart: close
   showMap: null

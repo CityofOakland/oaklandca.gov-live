@@ -44,6 +44,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   03c4672b-b061-4dbb-a8f5-2e5dfb76467a: # Heading
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: heading
@@ -63,6 +64,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   6be0fbe6-9b30-487c-abaf-b73127a553bd: # Link Set Description
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: linkSetDescription
@@ -91,6 +93,7 @@ fields:
     translationMethod: none
     type: craft\redactor\Field
   9c457cb3-7498-4b3d-8b1e-84454f649934: # Link Set
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: linkSet
@@ -126,6 +129,7 @@ fields:
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
   823b335f-ee31-4526-b6f4-952682ef1061: # Read More Link
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: readMoreLink

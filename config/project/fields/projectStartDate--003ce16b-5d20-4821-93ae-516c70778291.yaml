@@ -1,3 +1,4 @@
+columnSuffix: null
 contentColumnType: datetime
 fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884 # Projects
 handle: projectStartDate
@@ -10,6 +11,7 @@ settings:
   minuteIncrement: '30'
   showDate: true
   showTime: false
+  showTimeZone: false
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Date

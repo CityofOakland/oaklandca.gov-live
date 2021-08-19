@@ -26,6 +26,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   7b50bee2-cff1-4a78-9a08-0fd1a16256c7: # Video Link
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: videoLink
@@ -45,6 +46,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   7f1c68e9-03e1-4887-8395-3229363a4f46: # Video Title
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: videoTitle

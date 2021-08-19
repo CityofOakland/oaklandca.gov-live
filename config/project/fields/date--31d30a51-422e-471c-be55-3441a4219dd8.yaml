@@ -1,3 +1,4 @@
+columnSuffix: null
 contentColumnType: datetime
 fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
 handle: date
@@ -10,6 +11,7 @@ settings:
   minuteIncrement: '30'
   showDate: true
   showTime: false
+  showTimeZone: false
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Date

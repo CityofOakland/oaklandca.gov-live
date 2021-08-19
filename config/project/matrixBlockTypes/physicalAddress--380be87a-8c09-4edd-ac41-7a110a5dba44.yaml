@@ -35,6 +35,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   55afc13e-16e3-4080-9c67-ae7a4c46e3e2: # Additional Address Info
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: additionalAddressInfo
@@ -63,6 +64,7 @@ fields:
     translationMethod: none
     type: craft\redactor\Field
   2297d996-75c6-4163-9ce7-1ca5c609e89a: # Address Title
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: addressTitle
@@ -82,6 +84,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   b4b3c606-9215-46dd-926d-ecc0cdd900e7: # Street Address
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
     handle: streetAddress
@@ -93,51 +96,24 @@ fields:
         __assoc__:
           -
             - lat
-            - 37.817666634873
+            - '37.817666634873'
           -
             - lng
-            - -122.2717872504
+            - '-122.2717872504'
           -
             - zoom
-            - 4
+            - '4'
       coordinatesMode: readOnly
+      dragPinDefault: null
+      dragPinLatitude: null
+      dragPinLongitude: null
+      dragPinZoom: null
+      layout: null
       mapOnSearch: open
       mapOnStart: close
-      showMap: null
+      showMap: false
       subfieldConfig:
         __assoc__:
-          -
-            - street1
-            -
-              __assoc__:
-                -
-                  - label
-                  - 'Street Address'
-                -
-                  - width
-                  - 100
-                -
-                  - enabled
-                  - 1
-                -
-                  - position
-                  - 6
-          -
-            - street2
-            -
-              __assoc__:
-                -
-                  - label
-                  - 'Apartment or Suite'
-                -
-                  - width
-                  - 100
-                -
-                  - enabled
-                  - 1
-                -
-                  - position
-                  - 7
           -
             - city
             -
@@ -147,45 +123,13 @@ fields:
                   - City
                 -
                   - width
-                  - 50
+                  - '50'
                 -
                   - enabled
-                  - 1
+                  - '1'
                 -
                   - position
-                  - 1
-          -
-            - state
-            -
-              __assoc__:
-                -
-                  - label
-                  - State
-                -
-                  - width
-                  - 15
-                -
-                  - enabled
-                  - 1
-                -
-                  - position
-                  - 5
-          -
-            - zip
-            -
-              __assoc__:
-                -
-                  - label
-                  - 'Zip Code'
-                -
-                  - width
-                  - 35
-                -
-                  - enabled
-                  - 1
-                -
-                  - position
-                  - 8
+                  - '1'
           -
             - country
             -
@@ -195,13 +139,74 @@ fields:
                   - Country
                 -
                   - width
-                  - 100
-                -
-                  - enabled
-                  - 0
+                  - '100'
                 -
                   - position
-                  - 2
+                  - '2'
+          -
+            - state
+            -
+              __assoc__:
+                -
+                  - label
+                  - State
+                -
+                  - width
+                  - '15'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '5'
+          -
+            - street1
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'Street Address'
+                -
+                  - width
+                  - '100'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '6'
+          -
+            - street2
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'Apartment or Suite'
+                -
+                  - width
+                  - '100'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '7'
+          -
+            - zip
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'Zip Code'
+                -
+                  - width
+                  - '35'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '8'
       visibilityToggle: both
     translationKeyFormat: null
     translationMethod: none

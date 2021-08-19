@@ -35,6 +35,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   23389191-2978-49d8-a70e-6da12c8aeab0: # Column 1 Cell
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: column1Cell
@@ -63,6 +64,7 @@ fields:
     translationMethod: none
     type: craft\redactor\Field
   d513ffa1-20e6-405d-845e-b4a8fd041461: # Column 3 Cell
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: column3Cell
@@ -91,6 +93,7 @@ fields:
     translationMethod: none
     type: craft\redactor\Field
   fb2b9f42-74a0-45c4-be6e-d3d69c87557e: # Column 2 Cell
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: column2Cell

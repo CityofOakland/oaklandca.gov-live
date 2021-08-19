@@ -26,6 +26,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   66c28d05-1cce-4903-af5e-5667d0a1cb53: # Milestone Date(s)
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: milestoneDates
@@ -45,6 +46,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   d2258f6a-704e-413b-8079-a7611a4139c4: # Milestone Name
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: milestoneName
