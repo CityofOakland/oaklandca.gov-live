@@ -746,6 +746,10 @@ body.open .page-holder {
 }
 
 .components .hr.small {
+  margin: 0;
+}
+
+.components .hr.small {
   margin: 16px 0;
 }
 
