@@ -1,0 +1,26 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
+handle: relatedResources
+instructions: ''
+name: 'Related Resources'
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: ''
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: false
+  source: null
+  sources:
+    - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+    - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+    - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+    - 'section:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+    - 'section:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries
