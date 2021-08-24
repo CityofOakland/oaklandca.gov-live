@@ -1,7 +1,35 @@
 <div id="components-sidebar">
-  {% for block in entry.componentsSidebar.level(1) %}
+  {# {% for block in entry.componentsSidebar.level(1) %}
     {% include '_components/_' ~ block.type %}
-  {% endfor %}
+  {% endfor %} #}
+
+  <hr style="border-top: 2px solid #212121;opacity:1;"/>
+  <h4>{{ entry.heading ? entry.heading : 'Contact' }}</h4>
+
+  <p>
+    {% if entry.department|length %}
+      <b><a href="{{ entry.department.one().url }}">{{ entry.department.one().title }}</a></b>
+    {% endif %}
+    {% if entry.programSubdivision %}
+      <br>{{ entry.programSubdivision }}
+    {% endif %}
+  </p>
+
+  <ul>
+    {% for block in entry.contactInfo.all() %}
+      {% switch block.type %}
+        {% case 'email' %}
+          <li><a href="mailto:{{ block.email }}">{{ svg( '@webroot/assets/img/icon-envelope-updated.svg') }} {{ block.email }}</a></li>
+        {% case 'phone' %}
+          <li><a href="tel:{{ block.phone.format('e164') }}">{{ svg( '@webroot/assets/img/icon-phone-updated.svg') }} {{ block.phone }}</a></li>
+        {% case 'location' %}
+          <li>{{ svg( '@webroot/assets/img/icon-marker-updated.svg') }}{{ block.address }}</li>
+        {% default %}
+      {% endswitch %}
+    {% endfor %}
+  </ul>
+
+
 </div>
 
 <style>
