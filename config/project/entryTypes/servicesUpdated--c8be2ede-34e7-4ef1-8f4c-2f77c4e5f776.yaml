@@ -104,6 +104,35 @@ fieldLayouts:
             width: 100
           -
             type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: bf6d4af1-38c9-4159-8980-38c9f2e52568 # Related Services
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4b5cda22-38e1-4580-b113-b6ceee3c9c09 # Related Resources
+            instructions: 'Related Resources can include Document, Document Packets, Resources, Projects or Topics.'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Sidebar
         sortOrder: 2
       -
@@ -162,6 +191,10 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            style: tip
+            tip: 'Related Resources can include Document, Document Packets, Resources, Projects or Topics.'
+            type: craft\fieldlayoutelements\Tip
         name: Relationships
         sortOrder: 3
       -

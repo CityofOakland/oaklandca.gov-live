@@ -1,4 +1,4 @@
-dateModified: 1629813918
+dateModified: 1629814989
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -57,6 +57,7 @@ meta:
     3ff802bf-48ac-4e96-8e64-c7988d029bc1: Documents # Documents
     4a09ac0b-b25e-4160-92b9-ad5b1e8b97b9: Heading # Heading
     4ae79c6e-4218-4dc0-8c8e-d1e19e0c00e8: Gallery # Gallery
+    4b5cda22-38e1-4580-b113-b6ceee3c9c09: 'Related Resources' # Related Resources
     4b278e2a-dc49-4f60-a4bd-18575fb15098: 'Milestone Started?' # Milestone Started?
     4c0f9e7c-fe6a-47d0-b8c9-17e8a34a39f2: Address # Address
     4c46efcc-d38f-4f25-8873-d8c0837babd9: 'Document Label' # Document Label
@@ -409,6 +410,7 @@ meta:
     bde3bd63-a118-435a-b947-3f2667918e1b: Heading # Heading
     be8acece-2031-4965-a62f-31911d00e24c: 'Page Alerts' # Page Alerts
     bef74be8-b22d-4dd0-9217-9707bb43d888: 'CTA Button' # CTA Button
+    bf6d4af1-38c9-4159-8980-38c9f2e52568: 'Related Services' # Related Services
     bf9907da-64c0-4cb6-bc21-493b39110166: 'Alert Heading' # Alert Heading
     c01a4b08-11e1-42c3-97c4-e3de1bd7974e: YouTube # YouTube
     c0129db2-783d-4927-b125-203bd8cbdebc: 'Milestone Date' # Milestone Date
