@@ -2,28 +2,17 @@
 
 <hr style="border-top: 2px solid #212121;opacity:1;"/>
 <h4>{{ block.heading ? block.heading : 'Contact' }}</h4>
-{{ block.mainContent }}
-{% if block.contact|length %}
-	{% set contact = block.contact.one() %}
-	{% if contact.portrait|length %}
-		{% set photo = contact.portrait.one() %}
-		{% set transformedImage = craft.imager.transformImage(photo, { width: 150 }, { ratio: 1/1, position: photo.getFocalPoint() },{ fillTransforms: true }) %}
-		{% set transformedImages = craft.imager.transformImage(photo, [
-  			{ width: 500 },
-  			{ width: 300, jpegQuality: 65 },
-  			{ width: 150, jpegQuality: 65 }
-		], { ratio: 1/1, position: photo.getFocalPoint()},{ fillTransforms: true}) %}
-  		<img src="{{ transformedImage.url }}" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ contact.jobTitle ? contact.jobTitle : contact.staffImportJobTitle }}, {{ contact.title }}" class="block w-full border-2 mt-3 rounded-full border-gray-200" style="max-width:95px;">
+
+<p>
+	{% if block.department|length %}
+		<b><a href="{{ block.department.one().url }}">{{ block.department.one().title }}</a></b>
 	{% endif %}
-  	<p>
-    	<b><span>{{ contact.title }}</span></b>
-    	{% if contact.jobTitle or contact.staffImportJobTitle %}<br><span>{{ contact.jobTitle ? contact.jobTitle : contact.staffImportJobTitle }}</span>{% endif %}
-    	{% if contact.departmentOfficialBoardCommission|length or contact.staffImportDepartment %}<br><span>{{ contact.departmentOfficialBoardCommission.one() ? contact.departmentOfficialBoardCommission.one().title : contact.staffImportDepartment }}</span>{% endif %}
-  	</p>
-{% endif %}
+	{% if block.programSubdivision %}
+		<br>{{ block.programSubdivision }}
+	{% endif %}
+</p>
+
 <ul>
-	{% if contact and contact.emailAddress or contact.staffImportEmail %}<li><a href="mailto:{{ contact.emailAddress ? contact.emailAddress : contact.staffImportEmail }}">{{ svg( '@webroot/assets/img/icon-envelope-updated.svg') }} {{ contact.emailAddress ? contact.emailAddress : contact.staffImportEmail }}</a></li>{% endif %}
-	{% if contact and contact.phoneNumber or contact.staffImportPhoneNumber %}<li><a href="tel:{{ contact.phoneNumber ? contact.phoneNumber : contact.staffImportPhoneNumber }}">{{ svg( '@webroot/assets/img/icon-phone-updated.svg') }} {{ contact.phoneNumber ? contact.phoneNumber : contact.staffImportPhoneNumber }}</a></li>{% endif %}
 	{% for block in block.getDescendants(1) %}
 		{% switch block.type %}
 			{% case 'email' %}

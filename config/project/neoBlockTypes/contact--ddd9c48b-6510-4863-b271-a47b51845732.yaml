@@ -9,11 +9,7 @@ fieldLayouts:
       -
         elements:
           -
-            style: tip
-            tip: 'Select a contact or manually contact details in the fields below.'
-            type: craft\fieldlayoutelements\Tip
-          -
-            fieldUid: e9d7be93-3feb-4c21-ae81-84429ed485df # Contact
+            fieldUid: 286b7386-711a-4eae-abe1-b4e397656bcb # Department
             instructions: null
             label: null
             required: false
@@ -22,7 +18,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
+            fieldUid: de65ce28-2919-4a65-9aa2-c18e5518f2fe # Program/Subdivision
             instructions: null
             label: null
             required: false
