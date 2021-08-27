@@ -1,4 +1,4 @@
-dateModified: 1630075854
+dateModified: 1630075945
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -262,6 +262,7 @@ meta:
     912c64e2-6d85-46bb-b826-955df643a5ef: 'Milestone Description' # Milestone Description
     946b75ee-7882-4bdc-b28b-7009a8398e2e: 'Hide Related Pages?' # Hide Related Pages?
     947de11d-3d94-45c2-8565-04542ce0e737: 'Event Types' # Event Types
+    967ddfc1-ca26-4e8c-bbd6-b730dd869d4e: 'Related Resources' # Related Resources
     983c9f6f-9251-4fd3-91e1-b598eccc6a1a: News # News
     989ef9bf-21eb-427b-a37d-31f1ece0ce93: 'External Link' # External Link
     1011d286-bca1-40e1-abcb-1d61f6f7ebb2: 'City Services and Resources Updates Description' # City Services and Resources Updates Description
@@ -331,6 +332,7 @@ meta:
     511047d5-652e-4af0-8f5e-8d30a3f6b0c4: 'Callout Type' # Callout Type
     646188fb-7ed1-48ae-b539-736f4fd442d1: Entries # Entries
     714977a3-2a75-4e25-b9b4-7db488f791b0: 'Contract Employees' # Contract Employees
+    728068a4-6415-443f-9c5d-790163afce98: 'Related Services' # Related Services
     842891f1-23fb-4af0-93b5-d197738f08a0: Role # Role
     1160308b-03c0-43ad-9f4b-35e26c016c89: 'Code Insertion' # Code Insertion
     4047207e-c317-47cc-825b-7e751cc4ad38: 'Call to Action' # Call to Action
