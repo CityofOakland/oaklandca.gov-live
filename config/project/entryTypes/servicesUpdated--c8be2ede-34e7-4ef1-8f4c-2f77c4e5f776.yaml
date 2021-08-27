@@ -27,10 +27,10 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: d8042d7b-1c67-4b28-bb84-2002e74ed94b # Primary Unit
-            instructions: null
-            label: null
-            required: false
+            fieldUid: 7594e9ae-f194-47c8-9a6b-076789f1087b # Service Types
+            instructions: ''
+            label: 'Service Categories'
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -138,68 +138,6 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 7594e9ae-f194-47c8-9a6b-076789f1087b # Service Types
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc # Boards & Commissions
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133 # Departments
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 73b7b0c7-bff1-4c55-97aa-fc62042f0347 # Officials
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: e67ec759-ea3a-4568-bfa6-a314ff3d1036 # Projects
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 44b00870-0842-4c4e-838f-dcd688fb5b05 # Topics
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            style: tip
-            tip: 'Related Resources can include Document, Document Packets, Resources, Projects or Topics.'
-            type: craft\fieldlayoutelements\Tip
-        name: Relationships
-        sortOrder: 3
-      -
-        elements:
-          -
             fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d # Metadata
             instructions: null
             label: null
@@ -218,7 +156,7 @@ fieldLayouts:
             warning: null
             width: 100
         name: SEO
-        sortOrder: 4
+        sortOrder: 3
 handle: servicesUpdated
 hasTitleField: true
 name: 'Services (Updated)'
