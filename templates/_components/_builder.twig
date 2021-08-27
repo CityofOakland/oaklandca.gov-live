@@ -1,65 +1,8 @@
-<div id="components">
+<div class="components">
   {% for block in entry.components.level(1) %}
     {% include '_components/_' ~ block.type %}
   {% endfor %}
 </div>
-
-<style>
-  #components .callout {
-    display: flex;
-    padding: 16px;
-    margin-top: 1em;
-  }
-
-  #components .callout.info {
-    background: #F0F4F8;
-  }
-
-  #components .callout.attention {
-    background: #FFFBEA;
-  }
-
-  #components .callout a {
-    color: inherit;
-    text-decoration: underline;
-  }
-
-  #components .callout a:hover {
-    text-decoration: none;
-  }
-
-  #components .callout p {
-    padding-top: 0;
-  }
-
-  #components .callout p:first-child {
-    padding-top: 0;
-  }
-
-  #components .callout svg {
-    flex-shrink: 0;
-    margin-right: 1rem;
-    margin-top: 4px;
-  }
-
-  #related-departments a {
-    background: white;
-    border-radius: 4px;
-    color: inherit;
-    display: block;
-    padding: 2rem;
-  }
-
-  #related-departments a:hover,
-  #related-departments a:focus {
-    background: #207127;
-    color: white;
-  }
-
-  #related-departments a p {
-    padding: 0;
-  }
-</style>
 
 {% js on ready %}
   $('#components table').each(function(index, element){
