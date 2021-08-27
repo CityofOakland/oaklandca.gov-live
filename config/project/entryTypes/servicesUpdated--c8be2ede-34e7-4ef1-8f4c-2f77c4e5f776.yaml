@@ -4,6 +4,15 @@ fieldLayouts:
       -
         elements:
           -
+            fieldUid: 7594e9ae-f194-47c8-9a6b-076789f1087b # Service Types
+            instructions: ''
+            label: 'Service Categories'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             autocapitalize: true
             autocomplete: false
             autocorrect: true
@@ -24,15 +33,6 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\EntryTitleField
-            warning: null
-            width: 100
-          -
-            fieldUid: 7594e9ae-f194-47c8-9a6b-076789f1087b # Service Types
-            instructions: ''
-            label: 'Service Categories'
-            required: ''
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
           -
