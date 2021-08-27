@@ -17,7 +17,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   14c27df9-9ea0-458c-afe6-bc7fc29db1eb: # Phone
-    columnSuffix: snxlgxji
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: phone

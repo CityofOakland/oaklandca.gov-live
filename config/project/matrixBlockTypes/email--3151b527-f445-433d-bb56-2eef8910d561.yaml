@@ -17,7 +17,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   31e7de31-2c93-4523-a272-4ee9a2ca13be: # Email
-    columnSuffix: hixtvlip
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: email
