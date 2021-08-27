@@ -549,64 +549,6 @@ body.open .page-holder {
 }
 
 /* Custom */
-
-.embed-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-}
-
-.embed-container embed,
-.embed-container iframe,
-.embed-container object {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.content > h1 {
-  font-size: 1.875rem;
-  margin-bottom: 1rem;
-}
-
-@media (min-width: 768px) {
-  .content > h1 {
-    font-size: 2.25rem;
-  }
-}
-
-.content > h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-@media (min-width: 640px) {
-  .content > h2 {
-    font-size: 1.875rem;
-  }
-}
-
-.content > p {
-  font-size: 1.25rem;
-  max-width: 40rem;
-  margin-bottom: 2rem;
-}
-
-.content > ul {
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 2;
-}
-
-.content > ul > li > ul {
-  margin-top: 0;
-  padding-left: 0.5rem;
-}
-
 .algolia-result {
   border-bottom: 1px solid #CFCFCF;
   margin-bottom: 1.5rem;
@@ -667,9 +609,9 @@ body.open .page-holder {
   line-height: 1.5;
 }
 
-/*#components {
-  max-width: 730px;
-}*/
+.bg-image {
+  background-size: cover;
+}
 
 .components table {
   font-size:  15px;
@@ -696,12 +638,25 @@ body.open .page-holder {
   word-break: break-word;
 }
 
+.components h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media(min-width: 768px) {
+  .components h1 {
+    font-size: 30px;
+  }
+}
+
 .components h2 {
   font-size: 24px;
   font-weight: 700;
   line-height: 1.2;
   margin-top: 0;
-  padding-top: 1.5em;
   margin-bottom: 0;
 }
 
@@ -711,12 +666,15 @@ body.open .page-holder {
   }
 }
 
+#components h2 {
+  padding-top: 1.5em;
+}
+
 .components h3 {
   font-size: 20px;
   font-weight: 700;
   line-height: 1.2;
   margin-top: 0;
-  padding-top: 1.5em;
   margin-bottom: 0;
 }
 
@@ -725,19 +683,62 @@ body.open .page-holder {
     font-size: 24px;
   }
 }
+#components h3 {
+  padding-top: 1.5em;
+}
 
 .components h4 {
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
   margin-top: 0;
-  padding-top: 1.5em;
   margin-bottom: 0;
+}
+
+#components h4 {
+  padding-top: 1.5em;
 }
 
 .components hr {
   clear: both;
   opacity: 0;
+}
+
+.components .callout {
+  display: flex;
+  padding: 16px;
+  margin-top: 1em;
+}
+
+.components .callout.info {
+  background: #F0F4F8;
+}
+
+.components .callout.attention {
+  background: #FFFBEA;
+}
+
+.components .callout a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.components .callout a:hover {
+  text-decoration: none;
+}
+
+.components .callout p {
+  padding-top: 0;
+}
+
+.components .callout p:first-child {
+  padding-top: 0;
+}
+
+.components .callout svg {
+  flex-shrink: 0;
+  margin-right: 1rem;
+  margin-top: 4px;
 }
 
 .components .hr {
@@ -766,9 +767,14 @@ body.open .page-holder {
 .components ul {
   font-size: 18px;
   line-height: 1.5;
-  padding-top: 1em;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+#components p,
+#components ol,
+#components ul {
+  padding-top: 1em;
 }
 
 .components ol,
@@ -781,7 +787,7 @@ body.open .page-holder {
   list-style-type: auto;
 }
 
-.components figure {
+#components > figure {
   margin-top: 1.5rem;
 }
 
@@ -815,44 +821,44 @@ body.open .page-holder {
 
 @media (max-width: 767px) {
   /* Force table to not be like tables anymore */
-  #components.js-initialized table,
-  #components.js-initialized thead,
-  #components.js-initialized tbody,
-  #components.js-initialized th,
-  #components.js-initialized td,
-  #components.js-initialized tr { 
+  .components.js-initialized table,
+  .components.js-initialized thead,
+  .components.js-initialized tbody,
+  .components.js-initialized th,
+  .components.js-initialized td,
+  .components.js-initialized tr { 
     display: block; 
   }
 
-  #components.js-initialized tbody {
+  .components.js-initialized tbody {
     border-top: 2px solid black;
     border-bottom: 1px solid black;
   }
 
-  #components.js-initialized tbody td {
+  .components.js-initialized tbody td {
     border-bottom: 1px solid black;
   }
   
   /* Hide table headers (but not display: none;, for accessibility) */
-  #components.js-initialized thead tr { 
+  .components.js-initialized thead tr { 
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
   
-  #components.js-initialized tr {
+  .components.js-initialized tr {
     border: 1px solid black;
     border-left: 0;
     border-right: 0;
   }
   
-  #components.js-initialized td { 
+  .components.js-initialized td { 
     border: none;
     border-bottom: 1px solid #eee; 
     position: relative;
   }
   
-  #components.js-initialized td:before { 
+  .components.js-initialized td:before { 
     display: block;
     font-weight: bold;
     margin-bottom: 0.5rem;
@@ -861,15 +867,15 @@ body.open .page-holder {
   /*
   Label the data
   */
-  #components td::before { content: attr(data-label) }
+  .components td::before { content: attr(data-label) }
 }
 
-#components > *:first-child {
+.components > *:first-child {
   margin-top: 0;
   padding-top: 0;
 }
 
-#components .button {
+.components .button {
   background: #207127;
   border: 2px solid #207127;
   border-radius: 2px;
@@ -883,85 +889,85 @@ body.open .page-holder {
   padding: 16px 32px;
 }
 
-#components .button:hover {
+.components .button:hover {
   background: #0D5713;
   border-color: #0D5713;
 }
 
-#components .button:active {
+.components .button:active {
   background: #04400A;
   border-color: #04400A;
 }
 
-#components .button:focus {
+.components .button:focus {
   outline: 4px solid #0EA5E9;
 }
 
-#components .button[disabled] {
+.components .button[disabled] {
   background: #B1B1B1;
   border-color: #B1B1B1;
   pointer-events: none;
 }
 
-#components .button.secondary {
+.components .button.secondary {
   background: white;
   border: 2px solid #207127;
   color: #207127;
 }
 
-#components .button.secondary:hover {
+.components .button.secondary:hover {
   border-color: #0D5713;
   color: #0D5713;
 }
 
-#components .button.secondary:active {
+.components .button.secondary:active {
   border-color: #04400A;
   color: #04400A;
 }
 
-#components .button.secondary[disabled] {
+.components .button.secondary[disabled] {
   border-color: #B1B1B1;
   color: #B1B1B1;
   pointer-events: none;
 }
 
-#components .button.accent {
+.components .button.accent {
   background: #F7C948;
   border: 2px solid #F7C948;
   color: #222222;
 }
 
-#components .button.accent:hover {
+.components .button.accent:hover {
   background: #F0B429;
   border-color: #F0B429;
 }
 
-#components .button.accent:active {
+.components .button.accent:active {
   background: #CB6E17;
   border-color: #CB6E17;
   color: white;
 }
 
-#components .button.accent[disabled] {
+.components .button.accent[disabled] {
   background: #B1B1B1;
   border-color: #B1B1B1;
   color: white;
   pointer-events: none;
 }
 
-#components .button.medium {
+.components .button.medium {
   padding: 16px 16px;
 }
 
-#components .button.small {
+.components .button.small {
   padding: 8px 8px;
 }
 
-#components .button span {
+.components .button span {
   display: inline-block;
 }
 
-#components .button svg {
+.components .button svg {
   display: inline-block;
   margin-left: 6px;
   margin-bottom: 1px;
@@ -969,44 +975,101 @@ body.open .page-holder {
   width: 16px;
 }
 
-#components .button svg path {
+.components .button svg path {
   fill: white;
 }
 
-#components .button.secondary svg path {
+.components .button.secondary svg path {
   fill: #207127;
 }
 
-#components .button.secondary:hover svg path {
+.components .button.secondary:hover svg path {
   fill: #0D5713;
 }
 
-#components .button.secondary:active svg path {
+.components .button.secondary:active svg path {
   fill: #04400A;
 }
 
-#components .button.secondary[disabled] svg path {
+.components .button.secondary[disabled] svg path {
   fill: #B1B1B1;
 }
 
-#components .button.accent svg path {
+.components .button.accent svg path {
   fill: #222222;
 }
 
-#components .button.accent:active svg path {
+.components .button.accent:active svg path {
   fill: white;
 }
 
-#components .button.accent[disabled] svg path {
+.components .button.accent[disabled] svg path {
   fill: white;
 }
 
-#components .button .arrow-left {
+.components .button .arrow-left {
   margin-right: 6px;
 }
 
-#components .button .arrow-right {
+.components .button .arrow-right {
   margin-left: 6px;
+}
+
+.content > h1 {
+  font-size: 1.875rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .content > h1 {
+    font-size: 2.25rem;
+  }
+}
+
+.content > h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .content > h2 {
+    font-size: 1.875rem;
+  }
+}
+
+.content > p {
+  font-size: 1.25rem;
+  max-width: 40rem;
+  margin-bottom: 2rem;
+}
+
+.content > ul {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 2;
+}
+
+.content > ul > li > ul {
+  margin-top: 0;
+  padding-left: 0.5rem;
+}
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.embed-container embed,
+.embed-container iframe,
+.embed-container object {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .pagination {
@@ -1064,4 +1127,23 @@ body.open .page-holder {
 
 .pagination .prev::after {
   transform: rotateZ(180deg);
+}
+
+.cards a {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 2px 2px 6px #E1E1E1;
+  color: inherit;
+  display: block;
+  padding: 2rem;
+}
+
+.cards a:hover,
+.cards a:focus {
+  background: #207127;
+  color: white;
+}
+
+.cards a p {
+  padding: 0 !important;
 }
