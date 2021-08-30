@@ -1,8 +1,10 @@
-<div class="components">
-  {% for block in entry.components.level(1) %}
-    {% include '_components/_' ~ block.type %}
-  {% endfor %}
-</div>
+{% if entry.components %}
+  <div class="components components-format">
+    {% for block in entry.components.level(1).all() %}
+      {% include '_components/_' ~ block.type %}
+    {% endfor %}
+  </div>
+{% endif %}
 
 {% js on ready %}
   $('#components table').each(function(index, element){

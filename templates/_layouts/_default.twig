@@ -1,0 +1,51 @@
+{% extends '_layout.twig' %}
+{% block content %}
+  {% if category is defined %}
+    {% set entry = category %}
+  {% endif %}
+
+  <section>
+    <div class="bg-transparent-oakland-roots">
+      <div class="container" style="padding-top:1rem;padding-bottom:1rem;">
+        <div class="flex flex-wrap justify-between flex-col-reverse md:flex-row">
+          {% include "_components/partials/_breadcrumbs.twig" %}
+          {% include "_partials/_elements/_banner-google-translate.twig" with {paddingTop: "pt-0 mb-4 md:mb-0"} %}
+        </div>
+      </div>
+    </div>
+    <div class="container components py-16">
+      <div class="flex flex-col flex-1 lg:flex-row">
+        <div class="w-full lg:w-2/3">
+          <h1>{{ entry.title }}</h1>
+          {% if entry.leadIn or entry.summary %}
+            <p class="lead pt-4">{{ entry.leadIn ? entry.leadIn : entry.summary }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    #breadcrumbs {
+      padding: 0.25rem 0.5rem;
+    }
+
+    #breadcrumbs > a:not(:last-child)::after,
+    #breadcrumbs > span:not(:last-child)::after {
+      content: "→";
+      margin: 0 0.25rem;
+    }
+  </style>
+
+
+  <section>
+    <div class="container py-0">
+      {% include '_partials/_elements/_ctas.twig' %}
+      <div class="flex flex-wrap justify-between -mx-3">
+        <div class="lg:w-3/4 xl:w-3/5 px-3">{% include '_components/_builder.twig' %}</div>
+        <div class="lg:w-1/4 xl:w-1/4 px-3">{% if category is not defined %}{% include '_components/_builder-sidebar.twig' %}{% endif %}</div>
+      </div>
+    </div>
+    {% include '_components/_builder-footer.twig' %}
+  </section>
+{% endblock %}

@@ -3,7 +3,7 @@ contentColumnType: string
 fieldGroup: 5bc46e53-a87c-4584-89aa-808cacedf461 # Categories
 handle: serviceTypes
 instructions: ''
-name: 'Service Types'
+name: 'Service Categories'
 searchable: false
 settings:
   allowLimit: false
@@ -14,7 +14,7 @@ settings:
   localizeRelations: false
   selectionLabel: 'Add a type'
   showSiteMenu: true
-  source: 'group:8bcf4697-1dd2-47b2-91e2-8ad9b4b86741' # Service Types
+  source: 'group:8bcf4697-1dd2-47b2-91e2-8ad9b4b86741' # Service Categories
   sources: '*'
   targetSiteId: null
   validateRelatedElements: false

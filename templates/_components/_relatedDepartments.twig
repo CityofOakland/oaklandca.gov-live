@@ -1,12 +1,8 @@
 {% if block.relatedDepartments|length %}
-  <div class="components cards" style="background:#334E68">
-    <div class="container py-16">
-      <h2 class="text-white" style="padding-top:0;">{{ block.heading ? block.heading : "Related Departments"|t }}</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-        {% for entry in block.relatedDepartments.limit(3).all() %}
-          <a href="{{ entry.url }}"><p><b>{{ entry.title }}</b></p></a>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
+  {% include '_components/partials/_cards' with {
+    background: '#334E68',
+    class:      'text-white',
+    heading:    (block.heading ? block.heading : "Related Departments"|t),
+    entries:    block.relatedDepartments.all()
+  } %}
 {% endif %}
