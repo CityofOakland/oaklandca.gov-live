@@ -13,30 +13,17 @@
         </div>
       </div>
     </div>
-    <div class="container components py-16">
+    <div class="container components pt-16">
       <div class="flex flex-col flex-1 lg:flex-row">
         <div class="w-full lg:w-2/3">
           <h1>{{ entry.title }}</h1>
           {% if entry.leadIn or entry.summary %}
-            <p class="lead pt-4">{{ entry.leadIn ? entry.leadIn : entry.summary }}</p>
+            <div class="lead pt-4">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
           {% endif %}
         </div>
       </div>
     </div>
   </section>
-
-  <style>
-    #breadcrumbs {
-      padding: 0.25rem 0.5rem;
-    }
-
-    #breadcrumbs > a:not(:last-child)::after,
-    #breadcrumbs > span:not(:last-child)::after {
-      content: "→";
-      margin: 0 0.25rem;
-    }
-  </style>
-
 
   <section>
     <div class="container py-0">

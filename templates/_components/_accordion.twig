@@ -1,0 +1,73 @@
+{% if block.getDescendants(1)|length %}
+	<div class="accordion">
+	{% for item in block.getDescendants(1) %}
+		<div class="tab mb-5">
+           <input class="absolute opacity-0" id="tab-{{ block.id }}-{{ loop.index }}" type="checkbox" name="tabs">
+           <label for="tab-{{ block.id }}-{{ loop.index }}">{{ item.heading }} <span>{{ svg( '@webroot/assets/img/icon-plus.svg') }}{{ svg( '@webroot/assets/img/icon-minus.svg') }}</span></label>
+           <div class="tab-content">
+           		{% for block in item.getDescendants(1) %}
+           			{% include '_components/_' ~ block.type %}
+           		{% endfor %}
+           </div>
+        </div>
+	{% endfor %}
+	</div>
+{% endif %}
+
+<style>
+	.tab {
+		border: 2px solid #616E7C;
+	}
+
+	.tab > label {
+		color: #52606D;
+		display: flex;
+		align-items: center;
+		font-size: 16px;
+		font-weight: 700;
+		padding: 16px 24px;
+		justify-content: space-between;
+	}
+
+	.tab > label > span {
+		margin-bottom: 3px;
+	}
+
+	.tab > label svg:last-child {
+		display: none;
+	}
+
+	.tab > label svg:last-child path {
+		fill: white;
+	}
+
+	.tab > .tab-content {
+		display: none;
+		padding: 24px;
+	}
+
+	.tab > .tab-content > *:first-child {
+		padding-top: 0;
+	}
+
+	.tab > .tab-content > .button {
+		margin-bottom: 0;
+	}
+
+	.tab > input:checked + label + .tab-content {
+		display: block;
+	}
+
+	.tab > input:checked + label {
+		background: #616E7C;
+		color: white;
+	}
+
+	.tab > input:checked + label svg:first-child {
+		display: none;
+	}
+
+	.tab > input:checked + label svg:last-child {
+		display: block;
+	}
+</style>
