@@ -1,4 +1,4 @@
-dateModified: 1630342610
+dateModified: 1630344027
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -394,6 +394,7 @@ meta:
     b4b3c606-9215-46dd-926d-ecc0cdd900e7: 'Street Address' # Street Address
     b7e437e1-239f-4c5c-8c62-5f0323f9d22c: Services # Services
     b7ec3bdf-65b5-4385-8d12-cd2110b1c75c: 'Document Type' # Document Type
+    b19d7005-5408-4a14-9797-016c7798218b: 'Accordion Item' # Accordion Item
     b34a0436-278d-4bb7-a7e8-729da1db7c4e: Department/Official/Board/Commission # Department/Official/Board/Commission
     b34b92b7-9d4a-40f5-9e55-a2ccc8f764ad: 'Staff Import Organization' # Staff Import Organization
     b50fa2f6-4a94-44ce-ae39-82951e06a717: 'Link Text' # Link Text
@@ -411,6 +412,7 @@ meta:
     bb70071c-d8c0-4a11-91f6-d4ca02503a00: 'Funding Logos Alternate Title' # Funding Logos Alternate Title
     bca01eec-d702-410d-8417-9f70c9146820: Entry # Entry
     bcbcc37a-a53b-42f8-9a80-e9abf9ffe063: Image # Image
+    bce8ce3c-8656-40d1-a249-d37a75f9015a: Accordion # Accordion
     bdacb1a0-9bde-46d5-87a1-ac5a7171fa9e: 'Column 2 Heading' # Column 2 Heading
     bde3bd63-a118-435a-b947-3f2667918e1b: Heading # Heading
     be8acece-2031-4965-a62f-31911d00e24c: 'Page Alerts' # Page Alerts
