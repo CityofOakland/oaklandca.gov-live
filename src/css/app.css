@@ -626,6 +626,28 @@ body.open .page-holder {
   margin: 0 0.25rem;
 }
 
+.cards a {
+  background: white;
+  border-radius: 4px;
+  color: inherit;
+  display: block;
+  padding: 2rem;
+}
+
+.cards a:hover,
+.cards a:focus {
+  background: #207127;
+  color: white;
+}
+
+.cards a p {
+  padding: 0 !important;
+}
+
+.cards.cards-shadow a {
+  box-shadow: 2px 2px 6px #E1E1E1;
+}
+
 .components table {
   font-size:  15px;
   line-height:  1.38;
@@ -788,6 +810,15 @@ body.open .page-holder {
 .components-format ol,
 .components-format ul {
   padding-top: 1em;
+}
+
+.components-format a {
+  text-decoration: underline; 
+}
+
+.components-format a:hover,
+.components-format a:focus {
+  text-decoration: none; 
 }
 
 .components ol,
@@ -1151,24 +1182,58 @@ body.open .page-holder {
   transform: rotateZ(180deg);
 }
 
-.cards a {
-  background: white;
-  border-radius: 4px;
-  color: inherit;
-  display: block;
-  padding: 2rem;
+.tab {
+  border: 2px solid #616E7C;
 }
 
-.cards a:hover,
-.cards a:focus {
-  background: #207127;
+.tab > label {
+  color: #52606D;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 24px;
+  justify-content: space-between;
+}
+
+.tab > label > span {
+  margin-bottom: 3px;
+}
+
+.tab > label svg:last-child {
+  display: none;
+}
+
+.tab > label svg:last-child path {
+  fill: white;
+}
+
+.tab > .tab-content {
+  display: none;
+  padding: 24px;
+}
+
+.tab > .tab-content > *:first-child {
+  padding-top: 0;
+}
+
+.tab > .tab-content > .button {
+  margin-bottom: 0;
+}
+
+.tab > input:checked + label + .tab-content {
+  display: block;
+}
+
+.tab > input:checked + label {
+  background: #616E7C;
   color: white;
 }
 
-.cards a p {
-  padding: 0 !important;
+.tab > input:checked + label svg:first-child {
+  display: none;
 }
 
-.cards.cards-shadow a {
-  box-shadow: 2px 2px 6px #E1E1E1;
+.tab > input:checked + label svg:last-child {
+  display: block;
 }

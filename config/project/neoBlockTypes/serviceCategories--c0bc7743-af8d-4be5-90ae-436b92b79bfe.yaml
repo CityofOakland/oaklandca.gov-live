@@ -13,7 +13,7 @@ fieldLayouts:
         name: Default
         sortOrder: 1
 handle: serviceCategories
-maxBlocks: 0
+maxBlocks: 1
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: 'Service Categories'

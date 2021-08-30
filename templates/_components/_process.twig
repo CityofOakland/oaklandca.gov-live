@@ -1,0 +1,57 @@
+{% if block.getDescendants(1)|length %}
+	<ol class="process">
+		{% for item in block.getDescendants(1) %}
+		<li data-index="{{ loop.index }}">
+			<div>
+				<span class="font-semibold">{{ item.heading }}</span>
+				{{ item.mainContent }}
+			</div>
+		</li>
+		{% endfor %}
+	</ol>
+{% endif %}
+
+<style>
+	.process {
+		list-style: none !important;
+		padding-left: 0 !important;
+	}
+
+	.process > li {
+		display: flex;
+		align-items: flex-start;
+		margin-bottom: 30px;
+		position: relative;
+	}
+
+	.process > li::before {
+		border: 2px solid #cfcfcf;
+		border-radius: 50%;
+		content: attr(data-index);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		font-size: 15px;
+	    font-weight: 600;
+	    margin-top: -2.5px;
+	    margin-right: 10px;
+	    padding-top: 1px;
+	    height: 30px;
+	    width: 30px;
+	}
+
+	.process > li::after {
+		background: #cfcfcf;
+		content: "";
+		position: absolute;
+		top: 25px;
+		bottom: -28px;
+		width: 2px;
+		left: 14px;
+	}
+
+	.process li:last-of-type::after {
+		display: none;
+	}
+</style>
