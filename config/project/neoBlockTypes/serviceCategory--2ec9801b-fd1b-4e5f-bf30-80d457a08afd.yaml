@@ -1,4 +1,4 @@
-childBlocks: ''
+childBlocks: null
 field: b3761a4e-9346-448a-ba6a-f441f75e61fc # Components - Footer
 fieldLayouts:
   689a4025-4bf2-46b6-ba71-036f5359f05e:
@@ -18,7 +18,7 @@ fieldLayouts:
             fieldUid: ef1b6cec-c4ea-45ca-ba65-e9dc7d0cc2ac # Services
             instructions: 'If no services are selected, the services will auto-populate from the Service Category set above.'
             label: ''
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
