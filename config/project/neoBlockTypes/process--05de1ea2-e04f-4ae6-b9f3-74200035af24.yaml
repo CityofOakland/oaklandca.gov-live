@@ -1,0 +1,10 @@
+childBlocks:
+  - processItem
+field: 24c10446-2ff3-44c8-bb28-8d3647876fcb # Components
+handle: process
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: Process
+sortOrder: 8
+topLevel: true
