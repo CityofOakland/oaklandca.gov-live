@@ -9,7 +9,7 @@ fieldLayouts:
             fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
             instructions: 'The heading will default to ''Related Departments'' if no text is specified.'
             label: ''
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null

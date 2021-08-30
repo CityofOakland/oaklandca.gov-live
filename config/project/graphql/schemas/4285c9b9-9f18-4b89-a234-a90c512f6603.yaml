@@ -109,7 +109,7 @@ scope:
   - 'categorygroups.827f6570-faf8-42da-98e5-fffcb15e7cf6:read' # Document Types
   - 'categorygroups.947de11d-3d94-45c2-8565-04542ce0e737:read' # Event Types
   - 'categorygroups.ce43edd2-2eec-45cc-afa1-e3bd6b6e20ac:read' # People
-  - 'categorygroups.8bcf4697-1dd2-47b2-91e2-8ad9b4b86741:read' # Service Types
+  - 'categorygroups.8bcf4697-1dd2-47b2-91e2-8ad9b4b86741:read' # Service Categories
   - 'taggroups.56057193-b9d8-4ac0-9f31-d4a755c91447:read' # News
   - 'sections.fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f:edit' # Boards & Commissions
   - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:edit' # Boards & Commissions
@@ -337,9 +337,9 @@ scope:
   - 'categorygroups.ce43edd2-2eec-45cc-afa1-e3bd6b6e20ac:edit' # People
   - 'categorygroups.ce43edd2-2eec-45cc-afa1-e3bd6b6e20ac:save' # People
   - 'categorygroups.ce43edd2-2eec-45cc-afa1-e3bd6b6e20ac:delete' # People
-  - 'categorygroups.8bcf4697-1dd2-47b2-91e2-8ad9b4b86741:edit' # Service Types
-  - 'categorygroups.8bcf4697-1dd2-47b2-91e2-8ad9b4b86741:save' # Service Types
-  - 'categorygroups.8bcf4697-1dd2-47b2-91e2-8ad9b4b86741:delete' # Service Types
+  - 'categorygroups.8bcf4697-1dd2-47b2-91e2-8ad9b4b86741:edit' # Service Categories
+  - 'categorygroups.8bcf4697-1dd2-47b2-91e2-8ad9b4b86741:save' # Service Categories
+  - 'categorygroups.8bcf4697-1dd2-47b2-91e2-8ad9b4b86741:delete' # Service Categories
   - 'taggroups.56057193-b9d8-4ac0-9f31-d4a755c91447:edit' # News
   - 'taggroups.56057193-b9d8-4ac0-9f31-d4a755c91447:save' # News
   - 'taggroups.56057193-b9d8-4ac0-9f31-d4a755c91447:delete' # News

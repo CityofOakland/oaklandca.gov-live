@@ -1,0 +1,23 @@
+{% set breadcrumbs = [] %}
+{% if category is not defined %}
+  {% if entry.primaryUnit|length %}
+    {% set breadcrumbs = breadcrumbs|merge([{
+      title: entry.primaryUnit.one().title,
+      link: entry.primaryUnit.one().url
+    }]) %}
+  {% endif %}
+  {% if entry.section is defined %}
+    {% set breadcrumbs = breadcrumbs|merge([{
+      title: entry.section.name,
+      link: siteUrl ~ entry.section.handle
+    }]) %}
+  {% endif %}
+{% endif %}
+
+<div id="breadcrumbs" class="bg-white">
+  <a href="{{ siteUrl }}">Oakland</a>
+  {% for link in breadcrumbs ?? '' %}
+    <a href="{{ link.link }}">{{ link.title }}</a>
+  {% endfor %}
+  <span class="font-bold">{{ entry.title }}</span>
+</div>

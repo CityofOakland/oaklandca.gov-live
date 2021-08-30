@@ -1,7 +1,6 @@
-<div id="components-sidebar">
+<div id="components-sidebar" class="components components-format">
   <hr style="border-top: 2px solid #212121;opacity:1;"/>
   <h4>{{ 'Contact'|t }}</h4>
-
   <p>
     {% if entry.department|length %}
       <b><a href="{{ entry.department.one().url }}">{{ entry.department.one().title }}</a></b>
@@ -10,7 +9,6 @@
       <br>{{ entry.programSubdivision }}
     {% endif %}
   </p>
-
   <ul>
     {% for block in entry.contactInfo.all() %}
       {% switch block.type %}
@@ -24,8 +22,6 @@
       {% endswitch %}
     {% endfor %}
   </ul>
-
-
   {% if entry.relatedServices|length %}
     <hr style="border-top: 2px solid #212121;opacity:1;"/>
     <h4>{{ 'Related Services'|t }}</h4>
@@ -35,7 +31,6 @@
       {% endfor %}
     </ul>
   {% endif %}
-
   {% if entry.relatedResources|length  %}
     <hr style="border-top: 2px solid #212121;opacity:1;"/>
     <h4>{{ entry.heading ? entry.heading : 'Related Resources' }}</h4>

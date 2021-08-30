@@ -36,15 +36,24 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: b3761a4e-9346-448a-ba6a-f441f75e61fc # Components - Footer
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 handle: serviceTypes
-name: 'Service Types'
+name: 'Service Categories'
 siteSettings:
   c35d3a93-d7f4-4c37-ae3e-1b4d403311bb: # City of Oakland
     hasUrls: true
-    template: services/_category
+    template: _layouts/_default
     uriFormat: 'services/category/{slug}'
 structure:
-  maxLevels: 1
+  maxLevels: 2
   uid: 0c5ce80e-36f6-4ed7-b737-5ab9cca716dc

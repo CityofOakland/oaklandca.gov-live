@@ -453,12 +453,12 @@ body.open .page-holder {
 
 .bg-transparent-oakland-roots {
   @apply bg-cover;
-  background-image: url(/assets/img/oaklandroots-transparent-green.png);
+  background-image: url(../img/oaklandroots-transparent-green.png);
 }
 
 .bg-transparent-oakland-roots-black {
   @apply bg-cover;
-  background-image: url(/assets/img/oaklandroots-black.svg);
+  background-image: url(../img/oaklandroots-black.svg);
 }
 
 /* Aspect Ratio Box */
@@ -613,6 +613,19 @@ body.open .page-holder {
   background-size: cover;
 }
 
+#breadcrumbs {
+  box-shadow: 0 1px 2px 0 rgb(81 81 81 / 33%);
+  color: #207127;
+  font-size: 12px;
+  padding: 0.25rem 0.5rem;
+}
+
+#breadcrumbs > a:not(:last-child)::after,
+#breadcrumbs > span:not(:last-child)::after {
+  content: "→";
+  margin: 0 0.25rem;
+}
+
 .components table {
   font-size:  15px;
   line-height:  1.38;
@@ -666,7 +679,7 @@ body.open .page-holder {
   }
 }
 
-#components h2 {
+.components-format h2 {
   padding-top: 1.5em;
 }
 
@@ -683,7 +696,7 @@ body.open .page-holder {
     font-size: 24px;
   }
 }
-#components h3 {
+.components-format h3 {
   padding-top: 1.5em;
 }
 
@@ -695,7 +708,7 @@ body.open .page-holder {
   margin-bottom: 0;
 }
 
-#components h4 {
+.components-format h4 {
   padding-top: 1.5em;
 }
 
@@ -771,9 +784,9 @@ body.open .page-holder {
   margin-bottom: 0;
 }
 
-#components p,
-#components ol,
-#components ul {
+.components-format p,
+.components-format ol,
+.components-format ul {
   padding-top: 1em;
 }
 
@@ -787,7 +800,7 @@ body.open .page-holder {
   list-style-type: auto;
 }
 
-#components > figure {
+.components-format > figure {
   margin-top: 1.5rem;
 }
 
@@ -870,7 +883,16 @@ body.open .page-holder {
   .components td::before { content: attr(data-label) }
 }
 
-.components > *:first-child {
+.components-format > h1:first-child,
+.components-format > h2:first-child,
+.components-format > h3:first-child,
+.components-format > h4:first-child,
+.components-format > h5:first-child,
+.components-format > h6:first-child,
+.components-format > p:first-child,
+.components-format > ul:first-child,
+.components-format > ol:first-child,
+.components-format > table:first-child {
   margin-top: 0;
   padding-top: 0;
 }
@@ -1132,7 +1154,6 @@ body.open .page-holder {
 .cards a {
   background: white;
   border-radius: 4px;
-  box-shadow: 2px 2px 6px #E1E1E1;
   color: inherit;
   display: block;
   padding: 2rem;
@@ -1146,4 +1167,8 @@ body.open .page-holder {
 
 .cards a p {
   padding: 0 !important;
+}
+
+.cards.cards-shadow a {
+  box-shadow: 2px 2px 6px #E1E1E1;
 }

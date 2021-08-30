@@ -11,7 +11,7 @@
     ]
 ) %}
 {% set bannerImage = entry.banner[0] ?? "" %}
-{% set cityServices = entry.cityServicesAndResourcesUpdates %}
+{# {% set cityServices = entry.cityServicesAndResourcesUpdates %} #}
 {% set hlNews = entry.highlightedNews %}
 {% set learnMore = entry.learnMoreAbout %}
 
@@ -33,18 +33,16 @@
     </div>
   </section>
 
-  {% if cityServices | length %}
-  <section class="bg-gray-100">
-    <div class="container py-10">
-      <h2 class="pb-4">{{ "Top City Services and Resources"|t }}</h2>
-      {{ entry.cityServicesAndResourcesUpdatesDescription }}
-      <div class="cards grid md:grid-cols-2 lg:grid-cols-3 gap-6 pt-6">
-        {% for block in cityServices %}
-          <a href="{{ block.destination.url }}"><p><b>{{ block.destination.text }}</b></p></a>
-        {% endfor %}
-      </div>
-      <a href="{{ siteUrl }}/services" class="btn mt-8">{{ "See all services"|t }}</a>
-  </section>
+  {% if entry.cityServicesAndResourcesUpdates|length %}
+    {% include '_components/partials/_cards' with {
+      background:   '#f7f7f7',
+      button_label: 'See all services'|t,
+      button_url:   siteUrl ~ '/services',
+      content:      entry.cityServicesAndResourcesUpdatesDescription,
+      entries:      entry.cityServicesAndResourcesUpdates,
+      heading:      "Top City Services and Resources"|t,
+      shadow:       true,
+    } %}
   {% endif %}
 
   <section class="bg-white">

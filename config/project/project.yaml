@@ -1,4 +1,4 @@
-dateModified: 1630088387
+dateModified: 1630343032
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -43,6 +43,7 @@ meta:
     2ce783d0-daf9-44d1-a0b4-84a0163dcaad: 'Column 2 Width' # Column 2 Width
     2dc1fa8f-aa9c-488d-8c3e-ed572699c7a4: 'Open in New Tab?' # Open in New Tab?
     2e52b334-4732-47a2-9c3b-7a8bf656425e: Link # Link
+    2ec9801b-fd1b-4e5f-bf30-80d457a08afd: 'Service Category' # Service Category
     02edcc9a-9985-4401-9a49-38455f47ff84: 'Contact Notes' # Contact Notes
     2fb76e53-8619-4e29-b609-c984c390de9a: 'Email Address' # Email Address
     3b4c766d-c60e-4741-b958-585aaadea153: Text # Text
@@ -117,7 +118,7 @@ meta:
     8a89416e-010d-4a83-a254-dafb9b29ce26: 'Staff Import Given Name' # Staff Import Given Name
     8ac349fa-f382-4bc4-9f01-25e04abf073c: Homepage # Homepage
     8b7c4e26-9aab-4c5d-874e-aee151107de3: Documents # Documents
-    8bcf4697-1dd2-47b2-91e2-8ad9b4b86741: 'Service Types' # Service Types
+    8bcf4697-1dd2-47b2-91e2-8ad9b4b86741: 'Service Categories' # Service Categories
     8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884: Projects # Projects
     8e550712-d313-4f60-a6dd-50a0f79aaef2: 'Teams Index' # Teams Index
     8f7d7d14-020f-43e1-a3e3-74f2bcd19c9d: 'Online Link' # Online Link
@@ -221,6 +222,7 @@ meta:
     0246ae4f-3cc5-4132-b6d3-04142fcf735d: 'Document Link' # Document Link
     260c86d2-a919-42ce-ba0f-64f1d25952d5: Entries # Entries
     281e840f-0b8f-4781-bdf6-071f668eb6ac: 'Button Color' # Button Color
+    282bd016-6a8d-414c-bdb6-8bf952eef35a: 'Service Category' # Service Category
     286b7386-711a-4eae-abe1-b4e397656bcb: Department # Department
     295df0c5-cc10-4392-9fbb-3452cc97b84a: Entries # Entries
     307d4a59-6007-4c95-8879-5411247cc8d0: Icon # Icon
@@ -295,7 +297,7 @@ meta:
     7332ba8f-a9ac-4e3b-b372-8b4724617ae4: 'Link Text' # Link Text
     7387d152-ff9e-42b8-82ca-ea3525fb723d: 'Custom Template' # Custom Template
     7485ca3f-30b1-4ca6-a095-c2061d848559: 'Alert Show/Hide' # Alert Show/Hide
-    7594e9ae-f194-47c8-9a6b-076789f1087b: 'Service Types' # Service Types
+    7594e9ae-f194-47c8-9a6b-076789f1087b: 'Service Categories' # Service Categories
     7769a82a-1135-4a99-aa7c-d121376328d6: 'Column 4 Cell' # Column 4 Cell
     7783fdbb-2862-4451-b263-af32798f5e13: 'Officials Redirect' # Officials Redirect
     7834e01e-7bcc-44d0-88d1-fe7ca0b8fbe7: Timeline # Timeline
@@ -415,6 +417,7 @@ meta:
     bef74be8-b22d-4dd0-9217-9707bb43d888: 'CTA Button' # CTA Button
     bf6d4af1-38c9-4159-8980-38c9f2e52568: 'Related Services' # Related Services
     bf9907da-64c0-4cb6-bc21-493b39110166: 'Alert Heading' # Alert Heading
+    c0bc7743-af8d-4be5-90ae-436b92b79bfe: 'Service Categories' # Service Categories
     c01a4b08-11e1-42c3-97c4-e3de1bd7974e: YouTube # YouTube
     c0129db2-783d-4927-b125-203bd8cbdebc: 'Milestone Date' # Milestone Date
     c2ad07dc-05e7-4ef4-89b6-2e1eaccee210: 'Lead In' # Lead In
