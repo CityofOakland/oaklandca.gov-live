@@ -629,7 +629,7 @@ body.open .page-holder {
 .cards a {
   background: white;
   border-radius: 4px;
-  color: inherit;
+  color: #3b3b3b;
   display: block;
   padding: 2rem;
 }
