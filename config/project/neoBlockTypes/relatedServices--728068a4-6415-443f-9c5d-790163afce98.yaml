@@ -1,10 +1,7 @@
-childBlocks:
-  - email
-  - phone
-  - location
+childBlocks: null
 field: 7659598f-432e-4c28-a68d-606078c375a8 # Components - Sidebar
 fieldLayouts:
-  61ade306-b926-4470-926d-b499eb9cc109:
+  2ff5fe45-5ebb-43d9-a61f-eae63b69249a:
     tabs:
       -
         elements:
@@ -19,10 +16,10 @@ fieldLayouts:
             width: 100
           -
             style: tip
-            tip: 'If left blank, the heading will read "Contact".'
+            tip: 'If left blank, the heading will read "Related Services".'
             type: craft\fieldlayoutelements\Tip
           -
-            fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
+            fieldUid: ef1b6cec-c4ea-45ca-ba65-e9dc7d0cc2ac # Services
             instructions: null
             label: null
             required: false
@@ -32,10 +29,10 @@ fieldLayouts:
             width: 100
         name: Default
         sortOrder: 1
-handle: contact
+handle: relatedServices
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
-name: Contact
-sortOrder: 1
+name: 'Related Services'
+sortOrder: 5
 topLevel: true
