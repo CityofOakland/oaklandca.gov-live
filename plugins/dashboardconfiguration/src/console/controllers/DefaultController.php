@@ -85,6 +85,24 @@ class DefaultController extends Controller
 
         $all_matches = [];
 
+        $supertable_tables = array(
+            'stc_26_table',
+            'stc_27_table',
+            'stc_30_table'
+        );
+
+        $this->_textColumns[] = ['stc_26_table', 'field_column1Cell'];
+        $this->_textColumns[] = ['stc_26_table', 'field_column2Cell'];
+        $this->_textColumns[] = ['stc_26_table', 'field_column3Cell'];
+        $this->_textColumns[] = ['stc_26_table', 'field_column4Cell'];
+
+        $this->_textColumns[] = ['stc_27_table', 'field_column1Cell'];
+        $this->_textColumns[] = ['stc_27_table', 'field_column2Cell'];
+        $this->_textColumns[] = ['stc_27_table', 'field_column3Cell'];
+
+        $this->_textColumns[] = ['stc_30_table', 'field_column1Cell'];
+        $this->_textColumns[] = ['stc_30_table', 'field_column2Cell'];
+
         // Now loop through them and perform the find/replace
         $totalTextColumns = count($this->_textColumns);
         foreach ($this->_textColumns as $i => [$table, $column]) {
@@ -117,12 +135,6 @@ class DefaultController extends Controller
                     echo PHP_EOL;
 
                     $all_matches[$value] = $value;
-                    // echo $count . ": " . $value;
-                    // echo PHP_EOL;
-                    // file_put_contents($export_file_uri, $value, FILE_APPEND);
-                    // file_put_contents($export_file_uri, ", ", FILE_APPEND);
-                    // file_put_contents($export_file_uri, $url, FILE_APPEND);
-                    // file_put_contents($export_file_uri, "\n", FILE_APPEND);
                 }
             }
         }
