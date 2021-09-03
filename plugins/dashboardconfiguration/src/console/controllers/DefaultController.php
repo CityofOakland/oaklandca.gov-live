@@ -10,7 +10,7 @@ use craft\db\Table;
 use craft\fields\Matrix;
 use craft\helpers\Db;
 use craft\helpers\Queue;
-use craft\queue\jobs\FindAndReplace;
+use goat\dashboardconfiguration\queue\jobs\CustomFindAndReplace;
 
 use yii\console\Controller;
 use yii\helpers\Console;
@@ -41,7 +41,7 @@ class DefaultController extends Controller
 
     public function actionFindAndReplace()
     {
-        $data = file(__dir__ . "/url_mapping.txt");
+        $data = file(__dir__ . "/04_url_mapping_1630684940.txt");
         $total_jobs = 0;
 
         foreach ($data as $index => $row) {
@@ -55,7 +55,7 @@ class DefaultController extends Controller
             $code               = $row[3];
 
             if($replacement_type == 'Replacement (Redirect)' || $replacement_type == 'Replacement (Default)') {
-                Queue::push(new FindAndReplace([
+                Queue::push(new CustomFindAndReplace([
                     'find' => $url,
                     'replace' => $url_replacement,
                 ]));
@@ -131,17 +131,12 @@ class DefaultController extends Controller
                             break;
                         case 'SuperTable Block':
                             if($supertableblock = SuperTableBlockElement::find()->id($elementId)->one()){
-                                // echo $supertableblock->id;
-                                // $matrix = Craft::$app->elements->getElementById($supertableblock->ownerId);
                                 if($matrixblock = Craft::$app->elements->getElementById($supertableblock->ownerId)){
                                     $entry = Craft::$app->elements->getElementById($matrixblock->ownerId);
                                     if($entry){
                                         $edit_url   = $entry->getCurrentRevision() ? $entry->getCurrentRevision()->getCpEditUrl() : $entry->getCpEditUrl();
                                     }
                                 }
-                                // if($entry){
-                                //     $edit_url   = $entry->getCurrentRevision() ? $entry->getCurrentRevision()->getCpEditUrl() : $entry->getCpEditUrl();
-                                // }
                             }
                         default:
                             break;
@@ -152,7 +147,7 @@ class DefaultController extends Controller
                 echo $edit_url;
                 echo PHP_EOL;
 
-                $regex = "/(https?:\/\/data.oaklandnet\.com(\/[A-Za-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;\=]*)?)/";
+                $regex = "/(https?:\/\/www2.oaklandnet\.com(\/[A-Za-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;\=]*)?)/";
 
                 preg_match_all($regex, $content, $matches);
 
@@ -160,7 +155,7 @@ class DefaultController extends Controller
                     $count = $count + 1;
                     echo $count;
                     echo PHP_EOL;
-                    $all_matches[$value] = [$value, $element->displayName(), $edit_url];
+                    $all_matches[$value] = [$value, $elementId, $edit_url];
                 }
             }
         }
