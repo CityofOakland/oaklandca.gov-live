@@ -6,6 +6,8 @@
   { title: "City Council",  url: siteUrl ~ "departments/oakland-city-council" }
 ] %}
 
+{% import '_macros/_macros.twig' as macros %}
+
 <div id="nav-wrapper" class="fixed z-40 w-full" role="navigation">
     <div id="nav-bar" x-data="{ openNav: false }" class="relative z-50 block w-full trans trans-fast nav-bar">
         <div class="relative z-40 bg-gray-1000">
@@ -22,70 +24,60 @@
                     <label for="site-search" class="hidden-visually">Search?</label>
                     <input type="search" id="site-search" class="z-10 w-full pl-10 pr-6 mb-0 text-sm leading-normal text-gray-100 placeholder-gray-200 bg-gray-900 border-2 border-gray-800 rounded appearance-none search-box h-9 md:h-10 md:text-base" aria-label="Site Search" name="query" placeholder="Search" value="">
                 </form>
-                <ul class="pr-6 mr-6 text-xs tracking-wide border-r border-gray-700 lg:flex oak-hidden lg:my-0 lg:justify-end lg:items-center xl:text-sm">
+                <ul class="lg:ml-3 pr-6 mr-6 text-xs tracking-wide border-r border-gray-700 lg:flex oak-hidden lg:my-0 lg:justify-end lg:items-center xl:text-sm">
                     {% for nav in mainNav %}
                         {% if nav.title == "Services" %}
-                            <li class="lg:ml-4 dropdown dropdown-megamenu">
-                                <a href="{{ nav.url }}" class="p-2 pb-8 text-gray-100 hover:bg-white hover:text-black trans-fast uppercase font-bold" id="navbar-dropdown-{{ nav.title|kebab }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ nav.title }}<i class="fas fa-chevron-down w-4 h-4"></i></a>
-                                
+                            <li class="dropdown dropdown-megamenu">
+                                <a href="{{ nav.url }}" class="px-2 py-3 text-gray-100 hover:bg-white hover:text-black trans-fast uppercase font-bold" id="navbar-dropdown-{{ nav.title|kebab }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ nav.title }}<i class="fas fa-chevron-down w-4 h-4"></i></a>
                                 {% set navSubitems = craft.categories
                                     .group("serviceTypes")
                                     .limit(10)
+                                    .level(1)
                                     .orderBy("title asc")
                                     .all()
                                 %}
+                                {% macro card(entry, dark, arrow) %}
+                                    <li>
+                                        <a class="block py-5 px-4 h-full rounded hover:bg-gray-100 {{ dark ? 'bg-blue-100 shadow' : '' }}" href="{{ entry.url }}">
+                                            <h4 class="flex justify-between pb-3 {{ dark ? 'text-blue-1000' : 'text-green-700' }}">{{ entry.title }} {% if arrow %}<span>&rarr;</span>{% endif %}</h4>
+                                            <div class="clamp text-gray-800">{{ entry.summary }}</div>
+                                        </a>
+                                    </li>
+                                {% endmacro %}
                                 {% set reportProblem = craft.categories.group("serviceTypes").slug("report-a-problem").one() %}
                                 {% set applyPermit = craft.categories.group("serviceTypes").slug("apply-for-a-permit").one() %}
                                 <div class="dropdown-container bg-white overflow-y-scroll" aria-labelledby="navbar-dropdown-{{ nav.title|kebab }}">
-                                    <div class="container py-0">
-                                        <ul class="grid md:grid-cols-3 gap-5 mb-8">
+                                    <div class="container components py-0">
+                                        <ul class="grid md:grid-cols-3 gap-3" style="list-style: none;padding:0;">
                                             {% nav subitem in navSubitems %}
-                                                <li>
-                                                    <a class="block h-full p-3 transition-all duration-75 rounded hover:bg-gray-100" href="{{ subitem.url }}">
-                                                        <h3 class="mb-4 text-green-700 text-lg">{{ subitem.title }}</h3>
-                                                        <div class="text-gray-800 text-sm md:text-base">{{ subitem.summary }}</div>
-                                                    </a>
-                                                </li>
+                                                {{ macros.card(subitem, false) }}
                                             {% endnav %}
                                             {% if reportProblem %}
-                                            <li>
-                                                <a class="block h-full p-3 transition-all duration-75 bg-blue-100 rounded shadow hover:bg-blue-200" href="{{ reportProblem.url }}">
-                                                    <div class="flex justify-between">
-                                                        <h3 class="mb-4 text-blue-1000 text-lg">{{ reportProblem.title }}</h3>
-                                                        <span class="arrow-right text-blue-1000 text-lg" role="img" aria-label="arrow right">&rarr;</span>
-                                                    </div>
-                                                    <div class="text-gray-800 text-sm md:text-base">{{ reportProblem.summary }}</div>
-                                                </a>
-                                            </li>
+                                                {{ macros.card(reportProblem, true, true) }}
                                             {% endif %}
                                             {% if applyPermit %}
-                                            <li>
-                                                <a class="block h-full p-3 transition-all duration-75 bg-blue-100 rounded shadow hover:bg-blue-200" href="{{ applyPermit.url }}">
-                                                    <h3 class="mb-4 text-blue-1000 text-lg">{{ applyPermit.title }}</h3>
-                                                    <div class="text-gray-800 text-sm md:text-base">{{ applyPermit.summary }}</div>
-                                                </a>
-                                            </li>
+                                                {{ macros.card(applyPermit, true, true) }}
                                             {% endif %}
                                         </ul>
                                     </div>
                                 </div>
                             </li>
                         {% else %}
-                            <li class="lg:ml-4"><a href="{{ nav.url }}" class="p-2 pb-8 text-gray-100 hover:text-gray-200 hover:underline trans-fast uppercase font-bold">{{ nav.title }}</a></li>
+                            <li><a href="{{ nav.url }}" class="px-2 py-3 text-gray-100 hover:text-gray-200 hover:underline trans-fast uppercase font-bold">{{ nav.title }}</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
                 <div class="pr-2 lg:items-center oak-hidden lg:flex">
                     <a href="/officials/libby-schaaf" class="flex items-center text-xs text-gray-100 hover:text-gray-200" title="View the homepage of Libby Schaaf, The Mayor of the City of Oakland">
                         <div class="mx-2 leading-tight text-right oak-hidden xl:block">
-                            <div><span class="font-bold">Mayor</span></div>
-                            <div>Libby Schaaf</div>
+                            <div><span class="font-bold">{{"Mayor"|t}}</span></div>
+                            <div>{{"Libby Schaaf"|t}}</div>
                         </div>
                         <img src="https://city-of-oakland.imgix.net/portraits/oakland_mayor_libby_schaaf_city_of_oakland-1519844049-5198.jpg?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64" sizes="100vw" srcset="https://city-of-oakland.imgix.net/portraits/oakland_mayor_libby_schaaf_city_of_oakland-1519844049-5198.jpg?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=128&amp;q=80&amp;w=128 128w, https://city-of-oakland.imgix.net/portraits/oakland_mayor_libby_schaaf_city_of_oakland-1519844049-5198.jpg?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64 64w" alt="Portrait of Mayor, Libby Schaaf" class="block w-10 h-10 border-2 border-gray-800 rounded-full">
                     </a>
                     <a href="/services/oak311" class="flex ml-2" title="Report a problem online to OAK 311">
                         <img src="https://city-of-oakland.imgix.net/news/311-Logo.png?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64" sizes="100vw" srcset="https://city-of-oakland.imgix.net/news/311-Logo.png?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=128&amp;q=80&amp;w=128 128w, https://city-of-oakland.imgix.net/news/311-Logo.png?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64 64w" alt="OAK 311 Logo" class="block w-10 h-10 border-2 border-gray-800 rounded-full">
-                        <span style="display:none;">Oak 311</span>
+                        <span style="display:none;">{{"Oak 311"|t}}</span>
                     </a>
                 </div>
             </nav>
@@ -142,13 +134,37 @@
 </div>
 
 <style>
+    .clamp {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
+
     .dropdown.dropdown-megamenu .dropdown-container {
-    position: absolute;
-    left: 0;
-    top: 3rem;
-    width: 100%;
-    display: none;
-    margin-top: 2rem;
+        display: none;
+        padding: 1rem 0;
+        position: fixed;
+        top: 5rem;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    @media(min-width: 1024px) {
+        .dropdown.dropdown-megamenu .dropdown-container {
+            padding: 2rem 0;
+        }
+    }
+
+    .dropdown.dropdown-megamenu > a {
+        background: transparent;
+        display: block;
+        margin-top: -20px;
+        margin-bottom: -20px;
+        padding-top: 31px;
+        padding-bottom: 31px;
+        position: relative;
     }
 
     .dropdown.dropdown-megamenu:hover > a {
@@ -156,12 +172,12 @@
         color: black;
     }
 
-    .dropdown.dropdown-megamenu:hover .dropdown-container {
-    display: block;
+    .dropdown.dropdown-megamenu:hover > .dropdown-container {
+        display: block;
     }
 
-    .dropdown.dropdown-megamenu:hover .dropdown-container li > a:hover h3 {
-    text-decoration: underline;
+    .dropdown.dropdown-megamenu:hover > .dropdown-container li > a:hover h3 {
+        text-decoration: underline;
     }
 
     .subnav {
@@ -198,7 +214,7 @@
         });
     });
 
-    $('.subnav-toggler).on('click', function(){
-        $(this).parent().siblings('.subnav').toggle('state-active);
+    $('.subnav-toggler').on('click', function(){
+        $(this).parent().siblings('.subnav').toggle('state-active');
     });
 {% endjs %}
