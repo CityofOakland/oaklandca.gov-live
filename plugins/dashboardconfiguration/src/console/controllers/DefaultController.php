@@ -10,10 +10,12 @@ use craft\db\Table;
 use craft\fields\Matrix;
 use craft\helpers\Db;
 use craft\helpers\Queue;
-use craft\queue\jobs\FindAndReplace;
+use goat\dashboardconfiguration\queue\jobs\CustomFindAndReplace;
 
 use yii\console\Controller;
 use yii\helpers\Console;
+
+use verbb\supertable\elements\SuperTableBlockElement;
 
 
 class DefaultController extends Controller
@@ -39,7 +41,7 @@ class DefaultController extends Controller
 
     public function actionFindAndReplace()
     {
-        $data = file(__dir__ . "/url_mapping.txt");
+        $data = file(__dir__ . "/04_url_mapping_1630684940.txt");
         $total_jobs = 0;
 
         foreach ($data as $index => $row) {
@@ -53,7 +55,7 @@ class DefaultController extends Controller
             $code               = $row[3];
 
             if($replacement_type == 'Replacement (Redirect)' || $replacement_type == 'Replacement (Default)') {
-                Queue::push(new FindAndReplace([
+                Queue::push(new CustomFindAndReplace([
                     'find' => $url,
                     'replace' => $url_replacement,
                 ]));
@@ -66,7 +68,8 @@ class DefaultController extends Controller
 
     public function actionFind()
     {
-        $export_file_uri = __dir__ . "/exported_urls.txt";
+        $timestamp = time();
+        $export_file_uri = __dir__ . "/" . $timestamp . "_urls.txt";
         file_put_contents($export_file_uri, "");
 
         $this->_textColumns = [
@@ -85,50 +88,84 @@ class DefaultController extends Controller
 
         $all_matches = [];
 
-        // Now loop through them and perform the find/replace
-        $totalTextColumns = count($this->_textColumns);
+        $this->_textColumns[] = ['stc_26_table', 'field_column1Cell'];
+        $this->_textColumns[] = ['stc_26_table', 'field_column2Cell'];
+        $this->_textColumns[] = ['stc_26_table', 'field_column3Cell'];
+        $this->_textColumns[] = ['stc_26_table', 'field_column4Cell'];
+
+        $this->_textColumns[] = ['stc_27_table', 'field_column1Cell'];
+        $this->_textColumns[] = ['stc_27_table', 'field_column2Cell'];
+        $this->_textColumns[] = ['stc_27_table', 'field_column3Cell'];
+
+        $this->_textColumns[] = ['stc_30_table', 'field_column1Cell'];
+        $this->_textColumns[] = ['stc_30_table', 'field_column2Cell'];
+
         foreach ($this->_textColumns as $i => [$table, $column]) {
 
             $rows = (new \yii\db\Query())
-            ->select(['elementId',$column])
-            ->from($table)
-            ->where(['like', $column, 'oaklandnet.com'])
-            ->all();
+                ->select(['elementId',$column])
+                ->from($table)
+                ->where(['like', $column, 'oaklandnet.com'])
+                ->all();
 
             foreach($rows as $row) {
-                $elementId = $row['elementId'];
-                $content = $row[$column];
+                $elementId  = $row['elementId'];
+                $content    = $row[$column];
+                $edit_url   = '';
 
-                $entry = craft\elements\Entry::find()->id($elementId)->status(null)->one();
+                $element = Craft::$app->elements->getElementById($elementId);
 
-                if($entry) {
-                    $url = $entry->cpEditUrl;
-                } else {
-                    $url = $elementId;
+                // Figure out which entry this is coming from.
+                if($element){
+                    switch ($element->displayName()) {
+                        case 'Entry':
+                            $edit_url = $element->getCurrentRevision() ? $element->getCurrentRevision()->getCpEditUrl() : $element->getCpEditUrl();
+                            break;
+                        case 'Matrix Block':
+                            if($matrixblock = Craft::$app->matrix->getBlockById($elementId)){
+                                $entry = Craft::$app->elements->getElementById($matrixblock->ownerId);
+                                if($entry){
+                                    $edit_url   = $entry->getCurrentRevision() ? $entry->getCurrentRevision()->getCpEditUrl() : $entry->getCpEditUrl();
+                                }
+                            }
+                            break;
+                        case 'SuperTable Block':
+                            if($supertableblock = SuperTableBlockElement::find()->id($elementId)->one()){
+                                if($matrixblock = Craft::$app->elements->getElementById($supertableblock->ownerId)){
+                                    $entry = Craft::$app->elements->getElementById($matrixblock->ownerId);
+                                    if($entry){
+                                        $edit_url   = $entry->getCurrentRevision() ? $entry->getCurrentRevision()->getCpEditUrl() : $entry->getCpEditUrl();
+                                    }
+                                }
+                            }
+                        default:
+                            break;
+                    }
                 }
+
+                $edit_url = preg_replace('/\?.*/', '', $edit_url);
+                echo $edit_url;
+                echo PHP_EOL;
 
                 $regex = "/(https?:\/\/www2.oaklandnet\.com(\/[A-Za-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;\=]*)?)/";
 
-                preg_match_all($regex, $content, $matches) ;
+                preg_match_all($regex, $content, $matches);
 
                 foreach($matches[0] as $value) {
                     $count = $count + 1;
                     echo $count;
                     echo PHP_EOL;
-
-                    $all_matches[$value] = $value;
-                    // echo $count . ": " . $value;
-                    // echo PHP_EOL;
-                    // file_put_contents($export_file_uri, $value, FILE_APPEND);
-                    // file_put_contents($export_file_uri, ", ", FILE_APPEND);
-                    // file_put_contents($export_file_uri, $url, FILE_APPEND);
-                    // file_put_contents($export_file_uri, "\n", FILE_APPEND);
+                    $all_matches[$value] = [$value, $elementId, $edit_url];
                 }
             }
         }
 
-        foreach($all_matches as $value){
+        foreach($all_matches as [$value, $display_name, $edit_url]){
             file_put_contents($export_file_uri, $value, FILE_APPEND);
+            file_put_contents($export_file_uri, ", ", FILE_APPEND);
+            file_put_contents($export_file_uri, $display_name, FILE_APPEND);
+            file_put_contents($export_file_uri, ", ", FILE_APPEND);
+            file_put_contents($export_file_uri, $edit_url, FILE_APPEND);
             file_put_contents($export_file_uri, "\n", FILE_APPEND);
         }
     }
@@ -166,7 +203,12 @@ class DefaultController extends Controller
             'string',
             'char',
         ], true)) {
-            $this->_textColumns[] = [$table, $fieldColumnPrefix . $field->handle];
+
+            if($field->columnSuffix){
+                $this->_textColumns[] = [$table, $fieldColumnPrefix . $field->handle . '_' . $field->columnSuffix];
+            } else {
+                $this->_textColumns[] = [$table, $fieldColumnPrefix . $field->handle];
+            }
         }
     }
 
