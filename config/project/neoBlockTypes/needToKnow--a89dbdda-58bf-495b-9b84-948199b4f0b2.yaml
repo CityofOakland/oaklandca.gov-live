@@ -1,17 +1,16 @@
 childBlocks:
-  - buttons
-  - contact
   - mainContent
+  - sectionBreak
 field: 24c10446-2ff3-44c8-bb28-8d3647876fcb # Components
 fieldLayouts:
-  0210be03-3af3-46e2-93ad-49268384a2b7:
+  658dca71-a980-46ee-a449-f4516e5d9b2a:
     tabs:
       -
         elements:
           -
             fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
-            instructions: null
-            label: null
+            instructions: 'The heading will default to ''Need to Know'' if no text is specified.'
+            label: ''
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -19,10 +18,10 @@ fieldLayouts:
             width: 100
         name: Default
         sortOrder: 1
-handle: accordionItem
+handle: needToKnow
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
-name: 'Accordion Item'
-sortOrder: 2
-topLevel: false
+name: '3. Need to Know'
+sortOrder: 15
+topLevel: true

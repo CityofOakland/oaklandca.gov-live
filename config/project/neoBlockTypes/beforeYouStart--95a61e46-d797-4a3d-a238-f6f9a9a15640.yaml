@@ -1,17 +1,17 @@
 childBlocks:
   - buttons
-  - contact
   - mainContent
+  - callout
 field: 24c10446-2ff3-44c8-bb28-8d3647876fcb # Components
 fieldLayouts:
-  0210be03-3af3-46e2-93ad-49268384a2b7:
+  e76d9cf5-1070-4a05-949a-c01fbf93632f:
     tabs:
       -
         elements:
           -
             fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
-            instructions: null
-            label: null
+            instructions: 'The heading will default to ''Before You Start'' if no text is specified.'
+            label: ''
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -19,10 +19,10 @@ fieldLayouts:
             width: 100
         name: Default
         sortOrder: 1
-handle: accordionItem
+handle: beforeYouStart
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
-name: 'Accordion Item'
-sortOrder: 2
-topLevel: false
+name: '1. Before You Start'
+sortOrder: 13
+topLevel: true

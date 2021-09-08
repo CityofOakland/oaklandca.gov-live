@@ -1,4 +1,4 @@
-dateModified: 1631139121
+dateModified: 1631140320
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -48,6 +48,7 @@ meta:
     2fb76e53-8619-4e29-b609-c984c390de9a: 'Email Address' # Email Address
     3b4c766d-c60e-4741-b958-585aaadea153: Text # Text
     3b5ca699-b20a-41e5-a1fd-068dd6a6c081: 'Column 4 Width' # Column 4 Width
+    3bb0bdd7-9439-440a-8bc1-0bcd75471ab9: '2. What to Do' # 2. What to Do
     3bc9f075-4edc-4909-ba86-ea128c3ddb93: Subheading # Subheading
     3c58f775-5156-4705-9405-472e014a359d: 'Document Packets' # Document Packets
     03c4672b-b061-4dbb-a8f5-2e5dfb76467a: Heading # Heading
@@ -205,6 +206,7 @@ meta:
     91cc77d8-149b-4b48-9c59-736e2f7ff651: Link # Link
     93eaa329-904e-4a23-9047-4decf3d47cac: 'Redirect URL' # Redirect URL
     94aa2374-4435-452b-a007-320f14f53e8d: 'Entries Description' # Entries Description
+    95a61e46-d797-4a3d-a238-f6f9a9a15640: '1. Before You Start' # 1. Before You Start
     97ac3364-f983-429f-99d6-6cf51f001b27: '2 Columns' # 2 Columns
     97dc40f6-b307-4035-bc39-a8985cc4649a: 'Project Before Photo' # Project Before Photo
     97e68bc8-2f0b-4421-91bf-681c31d1af59: 'Search Index' # Search Index
@@ -346,6 +348,7 @@ meta:
     7657014a-eefc-419e-921e-8896ed282ab3: 'Sitewide Alert' # Sitewide Alert
     7659598f-432e-4c28-a68d-606078c375a8: 'Components - Sidebar' # Components - Sidebar
     7664938a-7aa3-400c-ab55-335b7ef374bd: 'Column 1 Heading' # Column 1 Heading
+    9182149d-4480-4e36-99fb-808e0b7a6686: Services # Services
     19567722-f3ec-4502-977f-61661602f624: 'City Services and Resources Updates' # City Services and Resources Updates
     20567858-8423-4c20-9004-d0b02150fa2a: 'Meetings Index' # Meetings Index
     23389191-2978-49d8-a70e-6da12c8aeab0: 'Column 1 Cell' # Column 1 Cell
@@ -374,6 +377,7 @@ meta:
     a26ba17c-1ef7-47e3-949a-a26183eb54b7: '3 Columns' # 3 Columns
     a31d23bf-e3ee-4942-95e0-3d14c29620bb: Projects # Projects
     a80bc90b-ca79-4416-a71f-0e743836bcb9: 'Term End' # Term End
+    a89dbdda-58bf-495b-9b84-948199b4f0b2: '3. Need to Know' # 3. Need to Know
     a209b7c0-0c31-4671-a56c-f77990a377f3: 'Officials Index' # Officials Index
     a407c106-4190-4ba9-b4c1-7886e5a462c8: Datasets # Datasets
     a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087: Globals # Globals

@@ -26,4 +26,4 @@ maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: 'Section Break'
 sortOrder: 11
-topLevel: true
+topLevel: false

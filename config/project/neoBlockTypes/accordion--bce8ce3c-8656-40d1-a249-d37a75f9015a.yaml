@@ -7,4 +7,4 @@ maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: Accordion
 sortOrder: 1
-topLevel: true
+topLevel: false
