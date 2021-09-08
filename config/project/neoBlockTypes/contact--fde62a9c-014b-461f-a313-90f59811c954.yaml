@@ -1,15 +1,12 @@
-childBlocks:
-  - contact
-  - mainContent
-  - buttons
+childBlocks: ''
 field: 24c10446-2ff3-44c8-bb28-8d3647876fcb # Components
 fieldLayouts:
-  0210be03-3af3-46e2-93ad-49268384a2b7:
+  3d4b0f61-d9d7-4472-a38f-63f374bb9442:
     tabs:
       -
         elements:
           -
-            fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
+            fieldUid: ca717470-3ae1-44a0-9ee8-886b6fe780cf # Contact Info
             instructions: null
             label: null
             required: false
@@ -19,10 +16,10 @@ fieldLayouts:
             width: 100
         name: Default
         sortOrder: 1
-handle: accordionItem
+handle: contact
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
-name: 'Accordion Item'
-sortOrder: 2
-topLevel: false
+name: Contact
+sortOrder: 3
+topLevel: true

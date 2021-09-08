@@ -1,4 +1,4 @@
-dateModified: 1630691332
+dateModified: 1631139121
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -555,6 +555,7 @@ meta:
     fccb3891-e320-45ec-b368-6bd4f47fdc91: Heading # Heading
     fd0c8e02-99b4-4ce5-ab89-b29cd0efc581: 'Content Builder' # Content Builder
     fd5628cc-7472-48c6-8263-14745dbb90c9: 'Link Set Description' # Link Set Description
+    fde62a9c-014b-461f-a313-90f59811c954: Contact # Contact
     fe1bbd87-c5e4-420c-b80f-11bdeabb907e: 'Staff Index' # Staff Index
     fe5b4078-9713-41ab-a60c-66622aed9991: Recordings # Recordings
     fe10cc7d-ee4f-490e-80cb-92e77e4e8b4a: 'Notice Block' # Notice Block
