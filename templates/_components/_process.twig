@@ -4,7 +4,9 @@
 		<li data-index="{{ loop.index }}">
 			<div>
 				<span class="font-semibold">{{ item.heading }}</span>
-				{{ item.mainContent }}
+				{% for block in item.getDescendants(1) %}
+           			{% include '_components/_' ~ block.type %}
+           		{% endfor %}
 			</div>
 		</li>
 		{% endfor %}

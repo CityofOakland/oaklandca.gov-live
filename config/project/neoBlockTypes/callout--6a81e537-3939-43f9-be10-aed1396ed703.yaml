@@ -1,4 +1,4 @@
-childBlocks: null
+childBlocks: ''
 field: 24c10446-2ff3-44c8-bb28-8d3647876fcb # Components
 fieldLayouts:
   578fa470-3c2e-4fb9-9b24-dd943f8141e3:
@@ -39,5 +39,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: Callout
-sortOrder: 4
+sortOrder: 5
 topLevel: true

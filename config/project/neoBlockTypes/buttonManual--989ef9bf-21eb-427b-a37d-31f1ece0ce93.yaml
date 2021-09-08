@@ -1,4 +1,4 @@
-childBlocks: null
+childBlocks: ''
 field: 24c10446-2ff3-44c8-bb28-8d3647876fcb # Components
 fieldLayouts:
   7d16e9b3-1e63-4cfd-b1db-a78b67cab9f2:
@@ -66,5 +66,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: 'External Link'
-sortOrder: 7
+sortOrder: 8
 topLevel: false
