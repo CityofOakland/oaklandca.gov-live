@@ -10,9 +10,9 @@ fieldLayouts:
         elements:
           -
             fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
-            instructions: 'The heading will default to ''Before You Start'' if no text is specified.'
+            instructions: 'If no heading is specified, this field will not display.'
             label: ''
-            required: false
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
