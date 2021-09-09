@@ -1,7 +1,7 @@
 {% macro card(entry, dark, arrow) %}
   <li>
-    <a class="block py-5 px-4 h-full rounded hover:bg-gray-100 {{ dark ? 'bg-blue-100 shadow' : '' }}" href="{{ entry.url }}">
-      <h4 class="flex justify-between pb-3 {{ dark ? 'text-gray-800' : 'text-green-700' }}">{{ entry.title }} {% if arrow %}<span>&rarr;</span>{% endif %}</h4>
+    <a class="card {{ dark ? 'dark' : '' }}" href="{{ entry.url }}">
+      <h4 class="flex justify-between pb-2 {{ dark ? 'text-gray-800' : 'text-green-700' }}"><span>{{ entry.title }}</span> {% if arrow %}<span>&rarr;</span>{% endif %}</h4>
       <div class="clamp text-gray-800">{{ entry.summary }}</div>
     </a>
   </li>
