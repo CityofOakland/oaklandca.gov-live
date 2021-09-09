@@ -549,6 +549,10 @@ body.open .page-holder {
 }
 
 /* Custom */
+.accordion {
+  padding-top: 1em;
+}
+
 .algolia-result {
   border-bottom: 1px solid #CFCFCF;
   margin-bottom: 1.5rem;
@@ -674,7 +678,7 @@ body.open .page-holder {
 }
 
 .components h1 {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 1.2;
   margin-top: 0;
@@ -683,7 +687,7 @@ body.open .page-holder {
 
 @media(min-width: 768px) {
   .components h1 {
-    font-size: 30px;
+    font-size: 36px;
   }
 }
 
@@ -737,6 +741,15 @@ body.open .page-holder {
 .components hr {
   clear: both;
   opacity: 0;
+}
+
+.components hr + h1,
+.components hr + h2,
+.components hr + h3,
+.components hr + h4,
+.components hr + h5,
+.components hr + h6 {
+  padding-top: 0;
 }
 
 .components .callout {
@@ -926,6 +939,10 @@ body.open .page-holder {
 .components-format > table:first-child {
   margin-top: 0;
   padding-top: 0;
+}
+
+.components-format > blockquote:first-child {
+  margin-top: 0;
 }
 
 .components .button {
@@ -1125,6 +1142,11 @@ body.open .page-holder {
   height: 100%;
 }
 
+.lead {
+  font-size: 24px;
+  line-height: 1.5;
+}
+
 .pagination {
   display: flex;
   align-items: center;
@@ -1184,6 +1206,10 @@ body.open .page-holder {
 
 .tab {
   border: 2px solid #616E7C;
+}
+
+.tab:last-child {
+  margin-bottom: 0;
 }
 
 .tab > label {

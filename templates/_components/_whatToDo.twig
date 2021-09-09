@@ -1,0 +1,4 @@
+<h2>{{ block.heading ? block.heading : 'What to Do' }}</h2>
+{% for block in block.getDescendants(1) %}
+	{% include '_components/_' ~ block.type %}
+{% endfor %}
