@@ -554,8 +554,8 @@ body.open .page-holder {
 }
 
 .accordion > ul {
-  list-style: none;
-  padding: 0;
+  list-style: none !important;
+  padding: 0 !important;
 }
 
 .accordion-item {
