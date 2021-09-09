@@ -553,6 +553,72 @@ body.open .page-holder {
   padding-top: 1em;
 }
 
+.accordion > ul {
+  list-style: none;
+  padding: 0;
+}
+
+.accordion-item {
+  border: 2px solid #616E7C;
+  margin-bottom: 16px;
+}
+
+.accordion-item:last-child {
+  margin-bottom: 0;
+}
+
+.accordion-item > button {
+  color: #52606d;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 24px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.accordion-item > button:focus {
+  outline: 4px solid #0EA5E9;
+}
+
+.accordion-item > button[aria-expanded="true"] {
+  background: #52606d;
+  color: white;
+}
+
+.accordion-item > button > span {
+  margin-bottom: 3px;
+}
+
+.accordion-item > button > span > svg:last-child {
+  display: none;
+}
+
+.accordion-item > button[aria-expanded="true"] > span > svg:first-child {
+  display: none;
+}
+
+.accordion-item > button[aria-expanded="true"] > span > svg:last-child {
+  display: block;
+}
+
+.accordion-item > button > span > svg:last-child path {
+  fill: white;
+}
+
+.accordion-item > div {
+  padding: 24px;
+}
+
+.accordion-item > div > *:first-child {
+  padding-top: 0;
+}
+
+.accordion-item > div > .button {
+  margin-bottom: 0;
+}
+
 .algolia-result {
   border-bottom: 1px solid #CFCFCF;
   margin-bottom: 1.5rem;
@@ -991,6 +1057,7 @@ body.open .page-holder {
   outline-offset: 2px;
   margin: 1em 15px 15px 0;
   padding: 16px 32px;
+  text-decoration: none;
 }
 
 .components .button:hover {
@@ -1236,64 +1303,4 @@ body.open .page-holder {
 
 .pagination .prev::after {
   transform: rotateZ(180deg);
-}
-
-.tab {
-  border: 2px solid #616E7C;
-}
-
-.tab:last-child {
-  margin-bottom: 0;
-}
-
-.tab > label {
-  color: #52606D;
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  font-weight: 700;
-  padding: 16px 24px;
-  justify-content: space-between;
-}
-
-.tab > label > span {
-  margin-bottom: 3px;
-}
-
-.tab > label svg:last-child {
-  display: none;
-}
-
-.tab > label svg:last-child path {
-  fill: white;
-}
-
-.tab > .tab-content {
-  display: none;
-  padding: 24px;
-}
-
-.tab > .tab-content > *:first-child {
-  padding-top: 0;
-}
-
-.tab > .tab-content > .button {
-  margin-bottom: 0;
-}
-
-.tab > input:checked + label + .tab-content {
-  display: block;
-}
-
-.tab > input:checked + label {
-  background: #616E7C;
-  color: white;
-}
-
-.tab > input:checked + label svg:first-child {
-  display: none;
-}
-
-.tab > input:checked + label svg:last-child {
-  display: block;
 }

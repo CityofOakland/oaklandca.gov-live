@@ -1,15 +1,16 @@
 {% if block.getDescendants(1)|length %}
-	<div class="accordion">
-	{% for item in block.getDescendants(1) %}
-		<div class="tab mb-5">
-           <input class="absolute opacity-0" id="tab-{{ block.id }}-{{ loop.index }}" type="checkbox" name="tabs">
-           <label for="tab-{{ block.id }}-{{ loop.index }}">{{ item.heading }} <span>{{ svg( '@webroot/assets/img/icon-plus.svg') }}{{ svg( '@webroot/assets/img/icon-minus.svg') }}</span></label>
-           <div class="tab-content">
-           		{% for block in item.getDescendants(1) %}
-           			{% include '_components/_' ~ block.type %}
-           		{% endfor %}
-           </div>
-        </div>
-	{% endfor %}
+	<div class="accordion" data-allow-toggle>
+	  <ul aria-label="Accordion Control Group Buttons" class="accordion-controls">
+	  	{% for item in block.getDescendants(1) %}
+	    <li class="accordion-item">
+	      <button class="accordion-header" aria-controls="content-{{ block.id }}-{{ loop.index }}" aria-expanded="false" id="accordion-control-{{ block.id }}-{{ loop.index }}">{{ item.heading }} <span>{{ svg( '@webroot/assets/img/icon-plus.svg') }}{{ svg( '@webroot/assets/img/icon-minus.svg') }}</span></button>
+	      <div class="accordion-panel" aria-hidden="true" id="content-{{ block.id }}-{{ loop.index }}" hidden>
+	        {% for block in item.getDescendants(1) %}
+       			{% include '_components/_' ~ block.type %}
+       		{% endfor %}
+	      </div>
+	    </li>
+	    {% endfor %}
+	  </ul>
 	</div>
 {% endif %}
