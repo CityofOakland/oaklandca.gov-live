@@ -630,6 +630,33 @@ body.open .page-holder {
   margin: 0 0.25rem;
 }
 
+.card {
+  border-radius: 4px;
+  display: block;
+  height: 100%;
+  padding: 16px;
+}
+
+.card:hover,
+.card:focus {
+  background: #f7f7f7;
+}
+
+.card:hover > h4 > span:first-child,
+.card:focus > h4 > span:first-child{
+  text-decoration: underline;
+}
+
+.card.dark {
+  background: #f5f7fa;
+  box-shadow: 0px 2px 1px 0px rgba(81, 81, 81, 0.25);
+}
+
+.card.dark:hover,
+.card.dark:focus {
+  background: #d9e2ec;
+}
+
 .cards a {
   background: white;
   border-radius: 4px;
@@ -650,6 +677,13 @@ body.open .page-holder {
 
 .cards.cards-shadow a {
   box-shadow: 2px 2px 6px #E1E1E1;
+}
+
+.clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }
 
 .components table {
