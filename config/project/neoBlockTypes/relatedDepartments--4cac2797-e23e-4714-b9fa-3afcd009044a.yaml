@@ -6,19 +6,10 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
-            instructions: 'The heading will default to ''Related Departments'' if no text is specified.'
-            label: ''
+            fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133 # Departments
+            instructions: null
+            label: null
             required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: a64389e9-e0f9-4d5b-ae78-16f6b5db6785 # Related Departments
-            instructions: 'Related Departments can include the Boards & Commissions, Departments, or the Officials section.'
-            label: ''
-            required: '1'
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -26,7 +17,7 @@ fieldLayouts:
         name: Default
         sortOrder: 1
 handle: relatedDepartments
-maxBlocks: 1
+maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: 'Related Departments'
