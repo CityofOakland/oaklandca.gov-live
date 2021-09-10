@@ -64,6 +64,8 @@ return [
   'staging' => [
     // Base site URL
     'siteUrl' => 'https://staging.oaklandca.dev',
+
+    'devMode' => true,
   ],
 
   // Production environment settings
