@@ -7,7 +7,7 @@ name: 'City Services and Resources Updates'
 searchable: false
 settings:
   contentTable: '{{%matrixcontent_cityservicesandresourcesupdates}}'
-  maxBlocks: ''
+  maxBlocks: '9'
   minBlocks: ''
   propagationKeyFormat: null
   propagationMethod: all
