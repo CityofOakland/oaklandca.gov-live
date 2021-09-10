@@ -41,7 +41,7 @@ class DefaultController extends Controller
 
     public function actionFindAndReplace()
     {
-        $data = file(__dir__ . "/04_url_mapping_1630684940.txt");
+        $data = file(__dir__ . "/1631301810_detailed_urls_mapped.txt");
         $total_jobs = 0;
 
         foreach ($data as $index => $row) {
@@ -49,18 +49,21 @@ class DefaultController extends Controller
             foreach($row as $index => $item){
                 $row[$index] = trim($item);
             }
-            $url                = $row[0];
-            $url_replacement    = $row[1];
-            $replacement_type   = $row[2];
-            $code               = $row[3];
+            $elementId  = $row[0];
+            $table      = $row[1];
+            $column     = $row[2];
+            $find       = $row[3];
+            $replace    = $row[4];
 
-            if($replacement_type == 'Replacement (Redirect)' || $replacement_type == 'Replacement (Default)') {
-                Queue::push(new CustomFindAndReplace([
-                    'find' => $url,
-                    'replace' => $url_replacement,
-                ]));
-                $total_jobs = $total_jobs + 1;
-            }
+            Queue::push(new CustomFindAndReplace([
+                'elementId' => $elementId,
+                'table'     => $table,
+                'column'    => $column,
+                'find'      => $find,
+                'replace'   => $replace,
+            ]));
+
+            $total_jobs = $total_jobs + 1;
         }
 
         echo 'Total jobs queued: ' . $total_jobs;
@@ -69,8 +72,10 @@ class DefaultController extends Controller
     public function actionFind()
     {
         $timestamp = time();
-        $export_file_uri = __dir__ . "/" . $timestamp . "_urls.txt";
-        file_put_contents($export_file_uri, "");
+        $export_urls_uri            = __dir__ . "/" . $timestamp . "_urls.txt";
+        $export_urls_detailed_uri   = __dir__ . "/" . $timestamp . "_detailed_urls.txt";
+        file_put_contents($export_urls_uri, "");
+        file_put_contents($export_urls_detailed_uri, "");
 
         $this->_textColumns = [
             [Table::CONTENT, 'title'],
@@ -151,23 +156,50 @@ class DefaultController extends Controller
 
                 preg_match_all($regex, $content, $matches);
 
+                $matched_urls = [
+                    'id'        => $elementId,
+                    'table'     => $table,
+                    'column'    => $column,
+                    'matches'   => [],
+                ];
+
                 foreach($matches[0] as $value) {
                     $count = $count + 1;
                     echo $count;
                     echo PHP_EOL;
-                    $all_matches[$value] = [$value, $elementId, $edit_url];
+
+                    $matched_urls['matches'][$value] = $value;
+                }
+
+                if(count($matches[0])){
+                    $all_matches[] = $matched_urls;
                 }
             }
         }
 
-        foreach($all_matches as [$value, $display_name, $edit_url]){
-            file_put_contents($export_file_uri, $value, FILE_APPEND);
-            file_put_contents($export_file_uri, ", ", FILE_APPEND);
-            file_put_contents($export_file_uri, $display_name, FILE_APPEND);
-            file_put_contents($export_file_uri, ", ", FILE_APPEND);
-            file_put_contents($export_file_uri, $edit_url, FILE_APPEND);
-            file_put_contents($export_file_uri, "\n", FILE_APPEND);
+        $unique_urls = [];
+
+        foreach($all_matches as $matched_urls){
+            foreach($matched_urls['matches'] as $match) {
+                file_put_contents($export_urls_detailed_uri, $matched_urls['id'], FILE_APPEND);
+                file_put_contents($export_urls_detailed_uri, ", ", FILE_APPEND);
+                file_put_contents($export_urls_detailed_uri, $matched_urls['table'], FILE_APPEND);
+                file_put_contents($export_urls_detailed_uri, ", ", FILE_APPEND);
+                file_put_contents($export_urls_detailed_uri, $matched_urls['column'], FILE_APPEND);
+                file_put_contents($export_urls_detailed_uri, ", ", FILE_APPEND);
+                file_put_contents($export_urls_detailed_uri, $match, FILE_APPEND);
+                file_put_contents($export_urls_detailed_uri, "\n", FILE_APPEND);
+
+                $unique_urls[$match] = $match;
+            }
         }
+
+        foreach($unique_urls as $unique_url) {
+            file_put_contents($export_urls_uri, $unique_url, FILE_APPEND);
+            file_put_contents($export_urls_uri, "\n", FILE_APPEND);
+        }
+
+        echo count($unique_urls);
     }
 
     /**
