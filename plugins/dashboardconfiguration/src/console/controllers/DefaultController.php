@@ -10,10 +10,12 @@ use craft\db\Table;
 use craft\fields\Matrix;
 use craft\helpers\Db;
 use craft\helpers\Queue;
-use craft\queue\jobs\FindAndReplace;
+use goat\dashboardconfiguration\queue\jobs\CustomFindAndReplace;
 
 use yii\console\Controller;
 use yii\helpers\Console;
+
+use verbb\supertable\elements\SuperTableBlockElement;
 
 
 class DefaultController extends Controller
@@ -39,7 +41,7 @@ class DefaultController extends Controller
 
     public function actionFindAndReplace()
     {
-        $data = file(__dir__ . "/url_mapping.txt");
+        $data = file(__dir__ . "/1631301810_detailed_urls_mapped.txt");
         $total_jobs = 0;
 
         foreach ($data as $index => $row) {
@@ -47,18 +49,21 @@ class DefaultController extends Controller
             foreach($row as $index => $item){
                 $row[$index] = trim($item);
             }
-            $url                = $row[0];
-            $url_replacement    = $row[1];
-            $replacement_type   = $row[2];
-            $code               = $row[3];
+            $elementId  = $row[0];
+            $table      = $row[1];
+            $column     = $row[2];
+            $find       = $row[3];
+            $replace    = $row[4];
 
-            if($replacement_type == 'Replacement (Redirect)' || $replacement_type == 'Replacement (Default)') {
-                Queue::push(new FindAndReplace([
-                    'find' => $url,
-                    'replace' => $url_replacement,
-                ]));
-                $total_jobs = $total_jobs + 1;
-            }
+            Queue::push(new CustomFindAndReplace([
+                'elementId' => $elementId,
+                'table'     => $table,
+                'column'    => $column,
+                'find'      => $find,
+                'replace'   => $replace,
+            ]));
+
+            $total_jobs = $total_jobs + 1;
         }
 
         echo 'Total jobs queued: ' . $total_jobs;
@@ -66,8 +71,11 @@ class DefaultController extends Controller
 
     public function actionFind()
     {
-        $export_file_uri = __dir__ . "/exported_urls.txt";
-        file_put_contents($export_file_uri, "");
+        $timestamp = time();
+        $export_urls_uri            = __dir__ . "/" . $timestamp . "_urls.txt";
+        $export_urls_detailed_uri   = __dir__ . "/" . $timestamp . "_detailed_urls.txt";
+        file_put_contents($export_urls_uri, "");
+        file_put_contents($export_urls_detailed_uri, "");
 
         $this->_textColumns = [
             [Table::CONTENT, 'title'],
@@ -85,52 +93,113 @@ class DefaultController extends Controller
 
         $all_matches = [];
 
-        // Now loop through them and perform the find/replace
-        $totalTextColumns = count($this->_textColumns);
+        $this->_textColumns[] = ['stc_26_table', 'field_column1Cell'];
+        $this->_textColumns[] = ['stc_26_table', 'field_column2Cell'];
+        $this->_textColumns[] = ['stc_26_table', 'field_column3Cell'];
+        $this->_textColumns[] = ['stc_26_table', 'field_column4Cell'];
+
+        $this->_textColumns[] = ['stc_27_table', 'field_column1Cell'];
+        $this->_textColumns[] = ['stc_27_table', 'field_column2Cell'];
+        $this->_textColumns[] = ['stc_27_table', 'field_column3Cell'];
+
+        $this->_textColumns[] = ['stc_30_table', 'field_column1Cell'];
+        $this->_textColumns[] = ['stc_30_table', 'field_column2Cell'];
+
         foreach ($this->_textColumns as $i => [$table, $column]) {
 
             $rows = (new \yii\db\Query())
-            ->select(['elementId',$column])
-            ->from($table)
-            ->where(['like', $column, 'oaklandnet.com'])
-            ->all();
+                ->select(['elementId',$column])
+                ->from($table)
+                ->where(['like', $column, 'oaklandnet.com'])
+                ->all();
 
             foreach($rows as $row) {
-                $elementId = $row['elementId'];
-                $content = $row[$column];
+                $elementId  = $row['elementId'];
+                $content    = $row[$column];
+                $edit_url   = '';
 
-                $entry = craft\elements\Entry::find()->id($elementId)->status(null)->one();
+                $element = Craft::$app->elements->getElementById($elementId);
 
-                if($entry) {
-                    $url = $entry->cpEditUrl;
-                } else {
-                    $url = $elementId;
+                // Figure out which entry this is coming from.
+                if($element){
+                    switch ($element->displayName()) {
+                        case 'Entry':
+                            $edit_url = $element->getCurrentRevision() ? $element->getCurrentRevision()->getCpEditUrl() : $element->getCpEditUrl();
+                            break;
+                        case 'Matrix Block':
+                            if($matrixblock = Craft::$app->matrix->getBlockById($elementId)){
+                                $entry = Craft::$app->elements->getElementById($matrixblock->ownerId);
+                                if($entry){
+                                    $edit_url   = $entry->getCurrentRevision() ? $entry->getCurrentRevision()->getCpEditUrl() : $entry->getCpEditUrl();
+                                }
+                            }
+                            break;
+                        case 'SuperTable Block':
+                            if($supertableblock = SuperTableBlockElement::find()->id($elementId)->one()){
+                                if($matrixblock = Craft::$app->elements->getElementById($supertableblock->ownerId)){
+                                    $entry = Craft::$app->elements->getElementById($matrixblock->ownerId);
+                                    if($entry){
+                                        $edit_url   = $entry->getCurrentRevision() ? $entry->getCurrentRevision()->getCpEditUrl() : $entry->getCpEditUrl();
+                                    }
+                                }
+                            }
+                        default:
+                            break;
+                    }
                 }
+
+                $edit_url = preg_replace('/\?.*/', '', $edit_url);
+                echo $edit_url;
+                echo PHP_EOL;
 
                 $regex = "/(https?:\/\/www2.oaklandnet\.com(\/[A-Za-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;\=]*)?)/";
 
-                preg_match_all($regex, $content, $matches) ;
+                preg_match_all($regex, $content, $matches);
+
+                $matched_urls = [
+                    'id'        => $elementId,
+                    'table'     => $table,
+                    'column'    => $column,
+                    'matches'   => [],
+                ];
 
                 foreach($matches[0] as $value) {
                     $count = $count + 1;
                     echo $count;
                     echo PHP_EOL;
 
-                    $all_matches[$value] = $value;
-                    // echo $count . ": " . $value;
-                    // echo PHP_EOL;
-                    // file_put_contents($export_file_uri, $value, FILE_APPEND);
-                    // file_put_contents($export_file_uri, ", ", FILE_APPEND);
-                    // file_put_contents($export_file_uri, $url, FILE_APPEND);
-                    // file_put_contents($export_file_uri, "\n", FILE_APPEND);
+                    $matched_urls['matches'][$value] = $value;
+                }
+
+                if(count($matches[0])){
+                    $all_matches[] = $matched_urls;
                 }
             }
         }
 
-        foreach($all_matches as $value){
-            file_put_contents($export_file_uri, $value, FILE_APPEND);
-            file_put_contents($export_file_uri, "\n", FILE_APPEND);
+        $unique_urls = [];
+
+        foreach($all_matches as $matched_urls){
+            foreach($matched_urls['matches'] as $match) {
+                file_put_contents($export_urls_detailed_uri, $matched_urls['id'], FILE_APPEND);
+                file_put_contents($export_urls_detailed_uri, ", ", FILE_APPEND);
+                file_put_contents($export_urls_detailed_uri, $matched_urls['table'], FILE_APPEND);
+                file_put_contents($export_urls_detailed_uri, ", ", FILE_APPEND);
+                file_put_contents($export_urls_detailed_uri, $matched_urls['column'], FILE_APPEND);
+                file_put_contents($export_urls_detailed_uri, ", ", FILE_APPEND);
+                file_put_contents($export_urls_detailed_uri, $match, FILE_APPEND);
+                file_put_contents($export_urls_detailed_uri, "\n", FILE_APPEND);
+
+                $unique_urls[$match] = $match;
+            }
         }
+
+        foreach($unique_urls as $unique_url) {
+            file_put_contents($export_urls_uri, $unique_url, FILE_APPEND);
+            file_put_contents($export_urls_uri, "\n", FILE_APPEND);
+        }
+
+        echo count($unique_urls);
     }
 
     /**
@@ -166,7 +235,12 @@ class DefaultController extends Controller
             'string',
             'char',
         ], true)) {
-            $this->_textColumns[] = [$table, $fieldColumnPrefix . $field->handle];
+
+            if($field->columnSuffix){
+                $this->_textColumns[] = [$table, $fieldColumnPrefix . $field->handle . '_' . $field->columnSuffix];
+            } else {
+                $this->_textColumns[] = [$table, $fieldColumnPrefix . $field->handle];
+            }
         }
     }
 
