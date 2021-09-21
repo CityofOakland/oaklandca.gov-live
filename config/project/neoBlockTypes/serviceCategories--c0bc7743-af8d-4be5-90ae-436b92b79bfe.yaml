@@ -1,17 +1,6 @@
 childBlocks:
   - serviceCategory
 field: b3761a4e-9346-448a-ba6a-f441f75e61fc # Components - Footer
-fieldLayouts:
-  fa71390c-21b8-499b-b09e-d2b06e3ed0ca:
-    tabs:
-      -
-        elements:
-          -
-            style: tip
-            tip: 'If no categories are input, this block will auto-generate all the related categories to this entry.'
-            type: craft\fieldlayoutelements\Tip
-        name: Default
-        sortOrder: 1
 handle: serviceCategories
 maxBlocks: 1
 maxChildBlocks: 0
