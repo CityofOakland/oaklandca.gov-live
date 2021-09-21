@@ -1,22 +1,11 @@
 <section style="background-color:#F7F7F7">
   <div class="container py-16">
     <h3>{{ "Services"|t }}</h3>
-    {% if block.getDescendants(1)|length %}
-      {% for block in block.getDescendants(1) %}
-        {% if block.serviceCategory|length %}<h4 class="pt-8">{{ block.serviceCategory.last().title }}</h4>{% endif %}
-        {% if block.services|length %}
-          {% include '_components/partials/_cards-grid' with { entries: block.services.all(), shadow: false } %}
-        {% else %}
-          {% set services = craft.entries.section('services').relatedTo(block.serviceCategory.last()) %}
-          {% include '_components/partials/_cards-grid' with { entries: services, shadow: false } %}
-        {% endif %}
-      {% endfor %}
-    {% elseif category is defined %}
-      {% for category in category.children %}
-        <h4 class="pt-8">{{ category.title }}</h4>
-        {% set services = craft.entries.section('services').relatedTo(category) %}
-        {% include '_components/partials/_cards-grid' with { entries: services, shadow: false } %}
-      {% endfor %}
-    {% endif %}
+    {% for block in block.getDescendants(1) %}
+      {% if block.heading %}<h4 class="pt-8">{{ block.heading }}</h4>{% endif %}
+      {% if block.cityServicesAndResourcesUpdates|length %}
+        {% include '_components/partials/_cards-grid' with { entries: block.cityServicesAndResourcesUpdates.all(), shadow: false } %}
+      {% endif %}
+    {% endfor %}
   </div>
 </section>

@@ -1,4 +1,4 @@
-childBlocks: null
+childBlocks: ''
 field: b3761a4e-9346-448a-ba6a-f441f75e61fc # Components - Footer
 fieldLayouts:
   44260a52-3419-41bb-b335-bd10cd4db48f:
@@ -17,7 +17,7 @@ fieldLayouts:
         name: Default
         sortOrder: 1
 handle: relatedDepartments
-maxBlocks: 0
+maxBlocks: 1
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: 'Related Departments'
