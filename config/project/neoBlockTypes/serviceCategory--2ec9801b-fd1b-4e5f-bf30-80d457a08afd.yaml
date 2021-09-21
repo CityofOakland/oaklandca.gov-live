@@ -9,7 +9,7 @@ fieldLayouts:
             fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
             instructions: ''
             label: 'Subcategory Heading'
-            required: false
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -18,7 +18,7 @@ fieldLayouts:
             fieldUid: 19567722-f3ec-4502-977f-61661602f624 # City Services and Resources Updates
             instructions: ''
             label: Services
-            required: false
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
