@@ -28,7 +28,7 @@
                     {% for nav in mainNav %}
                         {% if nav.title == "Services" %}
                             <li class="dropdown dropdown-megamenu">
-                                <a href="{{ nav.url }}" class="px-2 py-3 text-gray-100 hover:bg-white hover:text-black trans-fast uppercase font-bold" id="navbar-dropdown-{{ nav.title|kebab }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ nav.title }}<i class="fas fa-chevron-down w-4 h-4"></i></a>
+                                <a href="{{ nav.url }}" class="px-2 py-3 text-gray-100 hover:bg-white hover:text-black trans-fast uppercase font-bold" id="navbar-dropdown-{{ nav.title|kebab }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ nav.title }} {{ svg( '@webroot/assets/img/icon-arrow.svg') }}</a>
                                 {% set navSubitems = craft.categories
                                     .group("serviceTypes")
                                     .limit(10)
@@ -38,7 +38,7 @@
                                 %}
                                 {% set reportProblem = craft.categories.group("serviceTypes").slug("report-a-problem").one() %}
                                 {% set applyPermit = craft.categories.group("serviceTypes").slug("apply-for-a-permit").one() %}
-                                <div class="dropdown-container bg-white overflow-y-scroll" aria-labelledby="navbar-dropdown-{{ nav.title|kebab }}">
+                                <div class="dropdown-container bg-white" aria-labelledby="navbar-dropdown-{{ nav.title|kebab }}">
                                     <div class="container components py-0">
                                         <ul class="grid md:grid-cols-3 gap-3" style="list-style: none;padding:0;">
                                             {% nav subitem in navSubitems %}
@@ -130,9 +130,27 @@
         display: none;
         padding: 1rem 0;
         position: fixed;
-        top: 5rem;
-        /*bottom: 0;*/
+        top: 80px;
         left: 0;
+        width: 100%;
+    }
+
+    @media(min-width: 1280px) {
+        .dropdown.dropdown-megamenu .dropdown-container {
+            top: 83px;
+        }
+    }
+
+    .dropdown.dropdown-megamenu .dropdown-container::before {
+        background: black;
+        content: "";
+        opacity: 0.25;
+        pointer-events: none;
+        position: absolute;
+        top: 100%;
+        bottom: 0;
+        left: 0;
+        height: 100vh;
         width: 100%;
     }
 
@@ -144,12 +162,26 @@
 
     .dropdown.dropdown-megamenu > a {
         background: transparent;
-        display: block;
+        display: flex;
         margin-top: -20px;
         margin-bottom: -20px;
         padding-top: 31px;
         padding-bottom: 31px;
         position: relative;
+    }
+
+    .dropdown.dropdown-megamenu > a > svg {
+        margin-left: 5px;
+        transform: rotateZ(90deg);
+        width: 10px;
+    }
+
+    .dropdown.dropdown-megamenu > a > svg path {
+        fill: white;
+    }
+
+    .dropdown.dropdown-megamenu:hover > a > svg path {
+        fill: black;
     }
 
     .dropdown.dropdown-megamenu:hover > a {
