@@ -13,9 +13,9 @@ fieldLayouts:
         elements:
           -
             fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
-            instructions: 'The heading will default to ''What to Do'' if no text is specified.'
+            instructions: 'The heading will default to ''What to do'' if no text is specified.'
             label: ''
-            required: false
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -26,6 +26,6 @@ handle: whatToDo
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
-name: '2. What to Do'
+name: '2. What to do'
 sortOrder: 14
 topLevel: true
