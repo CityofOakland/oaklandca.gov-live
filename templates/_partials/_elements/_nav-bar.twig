@@ -33,7 +33,7 @@
                                     .group("serviceTypes")
                                     .limit(10)
                                     .level(1)
-                                    .orderBy("title asc")
+                                    .orderBy("lft ASC")
                                     .all()
                                 %}
                                 {% set reportProblem = craft.categories.group("serviceTypes").slug("report-a-problem").one() %}

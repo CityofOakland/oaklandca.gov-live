@@ -688,13 +688,14 @@ body.open .page-holder {
   color: #207127;
   font-size: 12px;
   padding: 0.25rem 0.5rem;
+  line-height: 1.5;
 }
 
-#breadcrumbs > a:not(:last-child)::after,
+/* #breadcrumbs > a:not(:last-child)::after,
 #breadcrumbs > span:not(:last-child)::after {
   content: "→";
   margin: 0 0.25rem;
-}
+} */
 
 .card {
   border-radius: 4px;
