@@ -22,28 +22,30 @@
   {% if category is defined and category.level == 1 %}
     {# parent service category #}
     <a href="{{ siteUrl }}services" class="font-bold text-green-800 hover:text-green-800 hover:underline">Services</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
-    <span >{{ entry.title }}</span>
+    <span class="text-gray-800">{{ entry.title }}</span>
   {% elseif entry.serviceTypes is defined and entry.serviceTypes|length == 1 %}
     {# entry has one category only #}
       <a href="{{ siteUrl }}services" class="font-bold text-green-800 hover:text-green-800 hover:underline">Services</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
       <a href="{{ entry.serviceTypes.one().url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ entry.serviceTypes.one().title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
-      <span >{{ entry.title }}</span>
+      <span class="text-gray-800">{{ entry.title }}</span>
   {% elseif entry.serviceTypes is defined and entry.serviceTypes|length > 1 %}
     {# entry has multiple categories #}
-    See more <a href="{{ siteUrl }}services" class="font-bold text-green-800 hover:text-green-800 hover:underline">Services</a>:
-    {% for category in entry.serviceTypes.all() %}
-      <a href="{{ category.url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline ml-1">{{ category.title }}</a>{{ not loop.last ? ', ' }} 
-    {% endfor %}
+    <span class="text-gray-600">
+      See more <a href="{{ siteUrl }}services" class="font-bold text-green-800 hover:text-green-800 hover:underline">Services</a>:
+      {% for category in entry.serviceTypes.all() %}
+        <a href="{{ category.url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline ml-1">{{ category.title }}</a>{{ not loop.last ? ', ' }} 
+      {% endfor %}
+    </span>
   {% elseif breadCrumbLinks is defined %}
     {# other custom breadCrumbLinks set up in templates #}
     {% for link in breadCrumbLinks ?? '' %}
       <a class="font-bold text-green-800 hover:text-green-800 hover:underline" href="{{ link.link }}">{{ link.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
     {% endfor %}
-    <span class="{{ breadCrumbLinks is empty ? 'font-bold' }}">{{ bannerTitle }}</span>
+    <span class="{{ breadCrumbLinks is empty ? 'font-bold' : 'text-gray-800' }}">{{ bannerTitle }}</span>
   {% else %}
     {% for link in breadcrumbs ?? '' %}
       <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
     {% endfor %}
-    <span class="{{ breadcrumbs is empty ? 'font-bold' }}">{{ entry.title }}</span>
+    <span class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">{{ entry.title }}</span>
   {% endif %}
 </div>
