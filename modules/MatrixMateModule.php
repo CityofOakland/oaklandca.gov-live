@@ -39,7 +39,7 @@ class MatrixMateModule extends \yii\base\Module
      * 
      * @return [] The resulting array to be passed into the config.
      */
-    function createConfigBlock($label, $fields) {
+    public static function createConfigBlock($label, $fields) {
         $user         = Craft::$app->getUser();
         $final_fields = [];
         foreach($fields as $field_handle => $field) {
@@ -77,7 +77,7 @@ class MatrixMateModule extends \yii\base\Module
      * 
      * @return [] The resulting array to be passed into the config.
      */
-    function createConfigPermissions($fieldGroups) {
+    public static function createConfigPermissions($fieldGroups) {
         return [
             'groups' => $fieldGroups,
             'types' => [
