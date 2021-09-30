@@ -63,7 +63,7 @@ return [
   // Staging environment settings
   'staging' => [
     // Base site URL
-    'siteUrl' => 'https://staging.oaklandca.dev',
+    'siteUrl' => 'https://staging.oaklandca.gov',
   ],
 
   // Production environment settings
