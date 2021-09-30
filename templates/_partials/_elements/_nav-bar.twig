@@ -106,7 +106,7 @@
                         </li>
                     {% else %}
                     <li class="{% if not loop.first %}border-t {% endif %}border-gray-600">
-                        <a class="flex items-center justify-between py-4 font-normal text-gray-100 fill-current" href="{{ nav.url }}"><div class="text">{{ nav.title }}</div></a>
+                        <a class="flex items-center justify-between py-4 font-normal text-gray-100 hover:text-gray-200 fill-current" href="{{ nav.url }}"><div class="text">{{ nav.title }}</div></a>
                     </li>
                     {% endif %}
                 {% endfor %}
