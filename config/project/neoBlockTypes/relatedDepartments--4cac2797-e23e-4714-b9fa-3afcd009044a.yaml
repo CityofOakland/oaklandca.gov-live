@@ -17,7 +17,7 @@ fieldLayouts:
         name: Default
         sortOrder: 1
 handle: relatedDepartments
-maxBlocks: 0
+maxBlocks: 1
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: 'Related Departments'
