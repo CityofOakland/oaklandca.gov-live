@@ -36,6 +36,15 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: b3761a4e-9346-448a-ba6a-f441f75e61fc # Components - Footer
+            instructions: ''
+            label: Components
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 handle: serviceTypes
