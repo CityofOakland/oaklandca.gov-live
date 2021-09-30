@@ -79,7 +79,7 @@
             class="relative z-30 py-0 bg-gray-1000" x-show="openNav" @click.away="openNav = false" x-cloak>
             <ul class="container justify-end overflow-y-scroll flex-1 w-full pt-0 pb-4 mx-auto my-0 text-lg" style="height: 100vh;">
                 {% for nav in mainNav %}
-                    {% if nav.title == "Services" %}
+                    {# {% if nav.title == "Services" %}
                         <li class="border-t border-gray-600">
                             <div class="flex items-center justify-between py-4">
                                 <a class="text font-normal text-gray-100 fill-current" href="{{ nav.url }}">{{ nav.title }}</a>
@@ -104,11 +104,11 @@
                                 </ul>
                             </div>
                         </li>
-                    {% else %}
+                    {% else %} #}
                     <li class="{% if not loop.first %}border-t {% endif %}border-gray-600">
                         <a class="flex items-center justify-between py-4 font-normal text-gray-100 fill-current" href="{{ nav.url }}"><div class="text">{{ nav.title }}</div></a>
                     </li>
-                    {% endif %}
+                    {# {% endif %} #}
                 {% endfor %}
                 <li class="border-t border-gray-600">
                     <a class="flex items-center justify-between py-4 font-normal text-gray-100 fill-current" href="/topics/oaklandlovelife"><div class="text">#OaklandLoveLife</div></a>
