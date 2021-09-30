@@ -26,7 +26,7 @@
                 </form>
                 <ul class="lg:ml-3 pr-6 mr-6 text-xs tracking-wide border-r border-gray-700 lg:flex oak-hidden lg:my-0 lg:justify-end lg:items-center xl:text-sm">
                     {% for nav in mainNav %}
-                        {% if nav.title == "Services" %}
+                        {# {% if nav.title == "Services" %}
                             <li class="dropdown dropdown-megamenu">
                                 <a href="{{ nav.url }}" class="px-2 py-3 text-gray-100 hover:bg-white hover:text-black trans-fast uppercase font-bold" id="navbar-dropdown-{{ nav.title|kebab }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ nav.title }} {{ svg( '@webroot/assets/img/icon-arrow.svg') }}</a>
                                 {% set navSubitems = craft.categories
@@ -54,9 +54,9 @@
                                     </div>
                                 </div>
                             </li>
-                        {% else %}
+                        {% else %} #}
                             <li><a href="{{ nav.url }}" class="px-2 py-3 text-gray-100 hover:text-gray-200 hover:underline trans-fast uppercase font-bold">{{ nav.title }}</a></li>
-                        {% endif %}
+                        {# {% endif %} #}
                     {% endfor %}
                 </ul>
                 <div class="pr-2 lg:items-center oak-hidden lg:flex">
