@@ -1,3 +1,12 @@
+{% macro card(entry, dark, arrow) %}
+  <li>
+    <a class="card {{ dark ? 'dark' : '' }}" href="{{ entry.url }}">
+      <h4 class="flex justify-between pb-4 {{ dark ? 'text-gray-800' : 'text-green-700' }}"><span>{{ entry.title }}</span> {% if arrow %}<span>&rarr;</span>{% endif %}</h4>
+      <div class="clamp text-gray-800">{{ entry.summary }}</div>
+    </a>
+  </li>
+{% endmacro %}
+
 {% macro relatedSectionCount(entry, relations) %}
   {% set relCount = false %}
   {% for relation in relations %}

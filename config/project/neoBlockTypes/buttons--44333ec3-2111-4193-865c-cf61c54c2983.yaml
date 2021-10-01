@@ -8,4 +8,4 @@ maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: Buttons
 sortOrder: 3
-topLevel: true
+topLevel: false

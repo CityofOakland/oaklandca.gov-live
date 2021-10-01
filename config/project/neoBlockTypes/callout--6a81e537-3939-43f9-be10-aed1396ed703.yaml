@@ -39,5 +39,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: Callout
-sortOrder: 2
-topLevel: true
+sortOrder: 6
+topLevel: false

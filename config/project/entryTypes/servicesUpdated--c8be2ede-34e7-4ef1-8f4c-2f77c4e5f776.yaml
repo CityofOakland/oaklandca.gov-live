@@ -4,6 +4,15 @@ fieldLayouts:
       -
         elements:
           -
+            fieldUid: 7594e9ae-f194-47c8-9a6b-076789f1087b # Service Categories
+            instructions: ''
+            label: 'Service Categories'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             autocapitalize: true
             autocomplete: false
             autocorrect: true
@@ -24,15 +33,6 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\EntryTitleField
-            warning: null
-            width: 100
-          -
-            fieldUid: d8042d7b-1c67-4b28-bb84-2002e74ed94b # Primary Unit
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
           -
@@ -108,7 +108,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\HorizontalRule
           -
             fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
-            instructions: 'If left blank, the heading will default to "Related Resources'
+            instructions: 'If left blank, the heading will default to "Related Resources"'
             label: 'Related Resources Heading'
             required: ''
             tip: null
@@ -126,68 +126,6 @@ fieldLayouts:
             width: 100
         name: Sidebar
         sortOrder: 2
-      -
-        elements:
-          -
-            fieldUid: 7594e9ae-f194-47c8-9a6b-076789f1087b # Service Types
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc # Boards & Commissions
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133 # Departments
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 73b7b0c7-bff1-4c55-97aa-fc62042f0347 # Officials
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: e67ec759-ea3a-4568-bfa6-a314ff3d1036 # Projects
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 44b00870-0842-4c4e-838f-dcd688fb5b05 # Topics
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            style: tip
-            tip: 'Related Resources can include Document, Document Packets, Resources, Projects or Topics.'
-            type: craft\fieldlayoutelements\Tip
-        name: Relationships
-        sortOrder: 3
       -
         elements:
           -
@@ -209,7 +147,7 @@ fieldLayouts:
             warning: null
             width: 100
         name: SEO
-        sortOrder: 4
+        sortOrder: 3
 handle: servicesUpdated
 hasTitleField: true
 name: 'Services (Updated)'

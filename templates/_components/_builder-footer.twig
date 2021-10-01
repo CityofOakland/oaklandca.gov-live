@@ -1,5 +1,7 @@
-<div id="components-footer">
-  {% for block in entry.componentsFooter.level(1) %}
-    {% include '_components/_' ~ block.type %}
-  {% endfor %}
-</div>
+{% if entry.componentsFooter %}
+  <div id="components-footer" class="components">
+    {% for block in entry.componentsFooter.level(1) %}
+      {% include '_components/_' ~ block.type %}
+    {% endfor %}
+  </div>
+{% endif %}

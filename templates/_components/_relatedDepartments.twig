@@ -1,24 +1,8 @@
-{% if block.departments|length or (entry.primaryUnit|length and entry.primaryUnit.one().section.handle == 'departments' ) %}
-  <div class="components" id="related-departments" style="background:#334E68">
-    <div class="container py-16">
-      <h2 class="text-white" style="padding-top:0;">{{"Related Departments"|t}}</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-        {% set primaryUnitDepartment = null %}
-        {% if entry.primaryUnit|length and entry.primaryUnit.one().section.handle == 'departments' %}
-          {% set primaryUnitDepartment = entry.primaryUnit.one() %}
-          <a href="{{ primaryUnitDepartment.url }}"><p><b>{{ primaryUnitDepartment.title }}</b></p></a>
-        {% endif %}
-
-        {% if primaryUnitDepartment %}
-          {% for entry in block.departments.limit(2).all() %}
-            <a href="{{ entry.url }}"><p><b>{{ entry.title }}</b></p></a>
-          {% endfor %}
-        {% else %}
-          {% for entry in block.departments.limit(3).all() %}
-            <a href="{{ entry.url }}"><p><b>{{ entry.title }}</b></p></a>
-          {% endfor %}
-        {% endif %}
-      </div>
-    </div>
-  </div>
+{% if block.departments|length %}
+  {% include '_components/partials/_cards' with {
+    background: '#334E68',
+    class:      'text-white',
+    heading:    (block.heading ? block.heading : "Related Departments"|t),
+    entries:    block.departments.all()
+  } %}
 {% endif %}

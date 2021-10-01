@@ -1,0 +1,34 @@
+childBlocks: null
+field: b3761a4e-9346-448a-ba6a-f441f75e61fc # Components - Footer
+fieldLayouts:
+  689a4025-4bf2-46b6-ba71-036f5359f05e:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
+            instructions: ''
+            label: 'Subcategory Heading'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 19567722-f3ec-4502-977f-61661602f624 # City Services and Resources Updates
+            instructions: ''
+            label: Services
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Default
+        sortOrder: 1
+handle: serviceCategory
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: 'Service Category'
+sortOrder: 3
+topLevel: false

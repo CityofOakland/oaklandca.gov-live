@@ -1,4 +1,4 @@
-dateModified: 1633107298
+dateModified: 1633118950
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -43,10 +43,12 @@ meta:
     2ce783d0-daf9-44d1-a0b4-84a0163dcaad: 'Column 2 Width' # Column 2 Width
     2dc1fa8f-aa9c-488d-8c3e-ed572699c7a4: 'Open in New Tab?' # Open in New Tab?
     2e52b334-4732-47a2-9c3b-7a8bf656425e: Link # Link
+    2ec9801b-fd1b-4e5f-bf30-80d457a08afd: 'Service Category' # Service Category
     02edcc9a-9985-4401-9a49-38455f47ff84: 'Contact Notes' # Contact Notes
     2fb76e53-8619-4e29-b609-c984c390de9a: 'Email Address' # Email Address
     3b4c766d-c60e-4741-b958-585aaadea153: Text # Text
     3b5ca699-b20a-41e5-a1fd-068dd6a6c081: 'Column 4 Width' # Column 4 Width
+    3bb0bdd7-9439-440a-8bc1-0bcd75471ab9: '2. What to do' # 2. What to do
     3bc9f075-4edc-4909-ba86-ea128c3ddb93: Subheading # Subheading
     3c58f775-5156-4705-9405-472e014a359d: 'Document Packets' # Document Packets
     03c4672b-b061-4dbb-a8f5-2e5dfb76467a: Heading # Heading
@@ -73,6 +75,7 @@ meta:
     5ca3c157-200f-49a4-9390-48c84349b0be: 'Column 3 Heading' # Column 3 Heading
     5cde5e79-0560-492c-b592-dd86cbde33c3: 'Funding Logos' # Funding Logos
     5dc172d1-4954-444f-b558-6f9f388d0ac3: 'Link Set Description' # Link Set Description
+    05de1ea2-e04f-4ae6-b9f3-74200035af24: Process # Process
     5e4e2c33-9bc3-4620-a00b-7ca3fb5d8688: 'Departments Index' # Departments Index
     5e5aad16-6bdc-4d3e-adfd-75147a323b78: 'Phone Number' # Phone Number
     5e71d376-d6c1-4588-89af-8a7c077b9005: New # New
@@ -117,7 +120,7 @@ meta:
     8a89416e-010d-4a83-a254-dafb9b29ce26: 'Staff Import Given Name' # Staff Import Given Name
     8ac349fa-f382-4bc4-9f01-25e04abf073c: Homepage # Homepage
     8b7c4e26-9aab-4c5d-874e-aee151107de3: Documents # Documents
-    8bcf4697-1dd2-47b2-91e2-8ad9b4b86741: 'Service Types' # Service Types
+    8bcf4697-1dd2-47b2-91e2-8ad9b4b86741: 'Service Categories' # Service Categories
     8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884: Projects # Projects
     8e550712-d313-4f60-a6dd-50a0f79aaef2: 'Teams Index' # Teams Index
     8f7d7d14-020f-43e1-a3e3-74f2bcd19c9d: 'Online Link' # Online Link
@@ -203,6 +206,7 @@ meta:
     91cc77d8-149b-4b48-9c59-736e2f7ff651: Link # Link
     93eaa329-904e-4a23-9047-4decf3d47cac: 'Redirect URL' # Redirect URL
     94aa2374-4435-452b-a007-320f14f53e8d: 'Entries Description' # Entries Description
+    95a61e46-d797-4a3d-a238-f6f9a9a15640: '1. Before you start' # 1. Before you start
     97ac3364-f983-429f-99d6-6cf51f001b27: '2 Columns' # 2 Columns
     97dc40f6-b307-4035-bc39-a8985cc4649a: 'Project Before Photo' # Project Before Photo
     97e68bc8-2f0b-4421-91bf-681c31d1af59: 'Search Index' # Search Index
@@ -221,6 +225,7 @@ meta:
     0246ae4f-3cc5-4132-b6d3-04142fcf735d: 'Document Link' # Document Link
     260c86d2-a919-42ce-ba0f-64f1d25952d5: Entries # Entries
     281e840f-0b8f-4781-bdf6-071f668eb6ac: 'Button Color' # Button Color
+    282bd016-6a8d-414c-bdb6-8bf952eef35a: 'Service Category' # Service Category
     286b7386-711a-4eae-abe1-b4e397656bcb: Department # Department
     295df0c5-cc10-4392-9fbb-3452cc97b84a: Entries # Entries
     307d4a59-6007-4c95-8879-5411247cc8d0: Icon # Icon
@@ -295,7 +300,7 @@ meta:
     7332ba8f-a9ac-4e3b-b372-8b4724617ae4: 'Link Text' # Link Text
     7387d152-ff9e-42b8-82ca-ea3525fb723d: 'Custom Template' # Custom Template
     7485ca3f-30b1-4ca6-a095-c2061d848559: 'Alert Show/Hide' # Alert Show/Hide
-    7594e9ae-f194-47c8-9a6b-076789f1087b: 'Service Types' # Service Types
+    7594e9ae-f194-47c8-9a6b-076789f1087b: 'Service Categories' # Service Categories
     7769a82a-1135-4a99-aa7c-d121376328d6: 'Column 4 Cell' # Column 4 Cell
     7783fdbb-2862-4451-b263-af32798f5e13: 'Officials Redirect' # Officials Redirect
     7834e01e-7bcc-44d0-88d1-fe7ca0b8fbe7: Timeline # Timeline
@@ -303,6 +308,7 @@ meta:
     8233f0e9-3e71-4804-a485-fec6b8560185: 'News Image' # News Image
     8271e244-cc0e-44cd-90b0-7cc43801ad59: __blank__ # __blank__
     8319fc25-f6c3-449d-a648-e891478b31a6: Icons # Icons
+    8329bae4-05a8-4e78-95c7-7b6c9369b7af: 'Process Item' # Process Item
     8960f671-8e74-4a40-a507-6ba440cb6c8e: 'Allow Autofill?' # Allow Autofill?
     09053ba3-5577-4175-ba56-263da6112729: 'Registration Link' # Registration Link
     9168f154-c0f9-4cf9-991d-60b287a85fc0: 'Imported Content' # Imported Content
@@ -342,6 +348,7 @@ meta:
     7657014a-eefc-419e-921e-8896ed282ab3: 'Sitewide Alert' # Sitewide Alert
     7659598f-432e-4c28-a68d-606078c375a8: 'Components - Sidebar' # Components - Sidebar
     7664938a-7aa3-400c-ab55-335b7ef374bd: 'Column 1 Heading' # Column 1 Heading
+    9182149d-4480-4e36-99fb-808e0b7a6686: Services # Services
     19567722-f3ec-4502-977f-61661602f624: 'City Services and Resources Updates' # City Services and Resources Updates
     20567858-8423-4c20-9004-d0b02150fa2a: 'Meetings Index' # Meetings Index
     23389191-2978-49d8-a70e-6da12c8aeab0: 'Column 1 Cell' # Column 1 Cell
@@ -370,10 +377,12 @@ meta:
     a26ba17c-1ef7-47e3-949a-a26183eb54b7: '3 Columns' # 3 Columns
     a31d23bf-e3ee-4942-95e0-3d14c29620bb: Projects # Projects
     a80bc90b-ca79-4416-a71f-0e743836bcb9: 'Term End' # Term End
+    a89dbdda-58bf-495b-9b84-948199b4f0b2: '3. Need to know' # 3. Need to know
     a209b7c0-0c31-4671-a56c-f77990a377f3: 'Officials Index' # Officials Index
     a407c106-4190-4ba9-b4c1-7886e5a462c8: Datasets # Datasets
     a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087: Globals # Globals
     a9027f1f-7200-4053-9b64-7be69dc993e5: 'Column 2 Width' # Column 2 Width
+    a64389e9-e0f9-4d5b-ae78-16f6b5db6785: 'Related Departments' # Related Departments
     a2623193-86a7-40d6-9f1c-1be72d77b6d0: Destination # Destination
     a2912177-914b-4d07-b46e-bacb7bb05359: 'Call to Action' # Call to Action
     ab06f460-5f10-4ce6-9623-9a5ff14a8685: 'Website Updates' # Website Updates
@@ -391,6 +400,7 @@ meta:
     b4b3c606-9215-46dd-926d-ecc0cdd900e7: 'Street Address' # Street Address
     b7e437e1-239f-4c5c-8c62-5f0323f9d22c: Services # Services
     b7ec3bdf-65b5-4385-8d12-cd2110b1c75c: 'Document Type' # Document Type
+    b19d7005-5408-4a14-9797-016c7798218b: 'Accordion Item' # Accordion Item
     b34a0436-278d-4bb7-a7e8-729da1db7c4e: Department/Official/Board/Commission # Department/Official/Board/Commission
     b34b92b7-9d4a-40f5-9e55-a2ccc8f764ad: 'Staff Import Organization' # Staff Import Organization
     b50fa2f6-4a94-44ce-ae39-82951e06a717: 'Link Text' # Link Text
@@ -408,12 +418,14 @@ meta:
     bb70071c-d8c0-4a11-91f6-d4ca02503a00: 'Funding Logos Alternate Title' # Funding Logos Alternate Title
     bca01eec-d702-410d-8417-9f70c9146820: Entry # Entry
     bcbcc37a-a53b-42f8-9a80-e9abf9ffe063: Image # Image
+    bce8ce3c-8656-40d1-a249-d37a75f9015a: Accordion # Accordion
     bdacb1a0-9bde-46d5-87a1-ac5a7171fa9e: 'Column 2 Heading' # Column 2 Heading
     bde3bd63-a118-435a-b947-3f2667918e1b: Heading # Heading
     be8acece-2031-4965-a62f-31911d00e24c: 'Page Alerts' # Page Alerts
     bef74be8-b22d-4dd0-9217-9707bb43d888: 'CTA Button' # CTA Button
     bf6d4af1-38c9-4159-8980-38c9f2e52568: 'Related Services' # Related Services
     bf9907da-64c0-4cb6-bc21-493b39110166: 'Alert Heading' # Alert Heading
+    c0bc7743-af8d-4be5-90ae-436b92b79bfe: 'Service Categories' # Service Categories
     c01a4b08-11e1-42c3-97c4-e3de1bd7974e: YouTube # YouTube
     c0129db2-783d-4927-b125-203bd8cbdebc: 'Milestone Date' # Milestone Date
     c2ad07dc-05e7-4ef4-89b6-2e1eaccee210: 'Lead In' # Lead In
@@ -547,6 +559,7 @@ meta:
     fccb3891-e320-45ec-b368-6bd4f47fdc91: Heading # Heading
     fd0c8e02-99b4-4ce5-ab89-b29cd0efc581: 'Content Builder' # Content Builder
     fd5628cc-7472-48c6-8263-14745dbb90c9: 'Link Set Description' # Link Set Description
+    fde62a9c-014b-461f-a313-90f59811c954: Contact # Contact
     fe1bbd87-c5e4-420c-b80f-11bdeabb907e: 'Staff Index' # Staff Index
     fe5b4078-9713-41ab-a60c-66622aed9991: Recordings # Recordings
     fe10cc7d-ee4f-490e-80cb-92e77e4e8b4a: 'Notice Block' # Notice Block
@@ -607,9 +620,6 @@ plugins:
           -
             - createGzipFiles
             - ''
-          -
-            - createBrotliFiles
-            - ''
       cacheStorageType: putyourlightson\blitz\drivers\storage\FileStorage
       cacheWarmerSettings:
         __assoc__:
@@ -617,7 +627,7 @@ plugins:
             - concurrency
             - '10'
       cacheWarmerType: putyourlightson\blitz\drivers\warmers\GuzzleWarmer
-      cachingEnabled: '1'
+      cachingEnabled: ''
       clearCacheAutomatically: '1'
       customSiteUris: ''
       debug: false
@@ -632,13 +642,6 @@ plugins:
             -
               - uriPattern
               - /author
-        -
-          __assoc__:
-            -
-              - uriPattern
-              - '/updates/*'
-      includedQueryStringParams:
-        - '.*'
       includedUriPatterns:
         -
           __assoc__:
@@ -649,18 +652,15 @@ plugins:
       integrations:
         - putyourlightson\blitz\drivers\integrations\FeedMeIntegration
         - putyourlightson\blitz\drivers\integrations\SeomaticIntegration
-      maxRetryAttempts: 10
       mutexTimeout: 1
       outputComments: true
       queryStringCaching: '0'
-      queueJobTtr: 300
       refreshCacheAutomaticallyForGlobals: true
       refreshCacheJobPriority: 10
       refreshCacheWhenElementSavedNotLive: false
       refreshCacheWhenElementSavedUnchanged: false
       sendPoweredByHeader: true
       warmCacheAutomatically: ''
-      warmPagesWithQueryStringParams: true
   blitz-recommendations:
     edition: standard
     enabled: true
@@ -796,13 +796,13 @@ plugins:
       maintenanceModeAuthorizedIps:
         - '::1'
         - 127.0.0.1
-      maintenanceModeEnabled: ''
+      maintenanceModeEnabled: '1'
       maintenanceModePageUrl: /offline
       maintenanceModeResponseStatusCode: 410
       primaryDomain: null
       redirectStatusCode: 302
       sslRoutingBaseUrl: 'https://www.oaklandca.gov'
-      sslRoutingEnabled: '1'
+      sslRoutingEnabled: ''
       sslRoutingRestrictedUrls:
         - /
   phone-number:

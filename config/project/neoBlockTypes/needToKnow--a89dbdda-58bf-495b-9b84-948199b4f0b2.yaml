@@ -1,0 +1,27 @@
+childBlocks:
+  - mainContent
+  - sectionBreak
+field: 24c10446-2ff3-44c8-bb28-8d3647876fcb # Components
+fieldLayouts:
+  658dca71-a980-46ee-a449-f4516e5d9b2a:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
+            instructions: 'The heading will default to ''Need to know'' if no text is specified.'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Default
+        sortOrder: 1
+handle: needToKnow
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: '3. Need to know'
+sortOrder: 15
+topLevel: true

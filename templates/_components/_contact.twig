@@ -1,0 +1,13 @@
+<ul class="ul-icons">
+  {% for block in block.contactInfo.all() %}
+    {% switch block.type %}
+      {% case 'email' %}
+        {% if block.email %}<li><a href="mailto:{{ block.email }}">{{ svg( '@webroot/assets/img/icon-envelope-updated.svg') }} {{ block.email }}</a></li>{% endif %}
+      {% case 'phone' %}
+        {% if block.phone %}<li><a href="tel:{{ block.phone.format('e164') }}">{{ svg( '@webroot/assets/img/icon-phone-updated.svg') }} {{ block.phone.format('national') }}</a></li>{% endif %}
+      {% case 'location' %}
+        {% if block.address %}<li>{{ svg( '@webroot/assets/img/icon-marker-updated.svg') }}{{ block.address|replace({',': "<br>"})|raw }}</li>{% endif %}
+      {% default %}
+    {% endswitch %}
+  {% endfor %}
+</ul>

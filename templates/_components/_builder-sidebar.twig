@@ -1,45 +1,30 @@
-<div id="components-sidebar">
+<div id="components-sidebar" class="components components-format">
   <hr style="border-top: 2px solid #212121;opacity:1;"/>
   <h4>{{ 'Contact'|t }}</h4>
-
-  <p>
-    {% if entry.department|length %}
-      <b><a href="{{ entry.department.one().url }}">{{ entry.department.one().title }}</a></b>
-    {% endif %}
-    {% if entry.programSubdivision %}
-      <br>{{ entry.programSubdivision }}
-    {% endif %}
-  </p>
-
-  <ul>
-    {% for block in entry.contactInfo.all() %}
-      {% switch block.type %}
-        {% case 'email' %}
-          <li><a href="mailto:{{ block.email }}">{{ svg( '@webroot/assets/img/icon-envelope-updated.svg') }} {{ block.email }}</a></li>
-        {% case 'phone' %}
-          <li><a href="tel:{{ block.phone.format('e164') }}">{{ svg( '@webroot/assets/img/icon-phone-updated.svg') }} {{ block.phone }}</a></li>
-        {% case 'location' %}
-          <li>{{ svg( '@webroot/assets/img/icon-marker-updated.svg') }}{{ block.address }}</li>
-        {% default %}
-      {% endswitch %}
-    {% endfor %}
-  </ul>
-
-
+  {% if entry.department|length or entry.programSubdivision %}
+    <p>
+      {% if entry.department|length %}
+        <b><a href="{{ entry.department.one().url }}">{{ entry.department.one().title }}</a></b>
+      {% endif %}
+      {% if entry.programSubdivision %}
+        <br>{{ entry.programSubdivision }}
+      {% endif %}
+    </p>
+  {% endif %}
+  {% include '_components/_contact.twig' with {block: entry} %}
   {% if entry.relatedServices|length %}
     <hr style="border-top: 2px solid #212121;opacity:1;"/>
     <h4>{{ 'Related Services'|t }}</h4>
-    <ul class="related">
+    <ul class="ul-icons related">
       {% for entry in entry.relatedServices.all() %}
         <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
       {% endfor %}
     </ul>
   {% endif %}
-
   {% if entry.relatedResources|length  %}
     <hr style="border-top: 2px solid #212121;opacity:1;"/>
     <h4>{{ entry.heading ? entry.heading : 'Related Resources' }}</h4>
-    <ul class="related">
+    <ul class="ul-icons related">
       {% for entry in entry.relatedResources.all() %}
         {% switch entry.type.section.handle %}
           {% case 'documents' %}
@@ -66,38 +51,47 @@
     padding-top: 1em;
   }
 
-  #components-sidebar > ul {
+  .ul-icons {
     list-style: none;
-    padding-left: 0;
+    padding-left: 0 !important;
   }
 
-  #components-sidebar > ul > li {
+  .ul-icons > li {
     margin-bottom: 15px;
   }
 
-  #components-sidebar > ul > li,
-  #components-sidebar > ul > li > a {
+  .ul-icons > li,
+  .ul-icons > li > a {
     display: flex;
     align-items: start;
   }
 
-  #components-sidebar > ul > li svg {
+  .ul-icons > li svg {
     flex-shrink: 0;
     margin-top: 2px;
     margin-right: 10px;
     width: 22.5px;
   }
 
-  #components-sidebar > ul.related > li svg path {
+  .related > li svg path {
     fill: #2e8131;
   }
 
-  #components-sidebar .related a {
+  .ul-icons a {
+    text-decoration: none;
+  }
+
+  .ul-icons a:hover,
+  .ul-icons a:focus {
     text-decoration: underline;
   }
 
-  #components-sidebar .related a:hover,
-  #components-sidebar .related a:focus {
+  .ul-icons.related a {
+    text-decoration: underline;
+  }
+
+  .ul-icons.related a:hover,
+  .ul-icons.related a:focus {
     text-decoration: none;
   }
 </style>
