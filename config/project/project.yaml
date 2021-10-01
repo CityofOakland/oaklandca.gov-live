@@ -1,4 +1,4 @@
-dateModified: 1632350329
+dateModified: 1633107298
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -852,7 +852,7 @@ plugins:
   seomatic:
     enabled: '1'
     licenseKey: WE9YYSPHWC5CNFB2RL64YDJ6
-    schemaVersion: 3.0.10
+    schemaVersion: 3.0.11
     settings: null
   smith:
     edition: standard
@@ -922,5 +922,5 @@ system:
   live: true
   name: 'City of Oakland'
   retryDuration: null
-  schemaVersion: 3.7.7
+  schemaVersion: 3.7.8
   timeZone: America/Los_Angeles
