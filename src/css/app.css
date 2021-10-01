@@ -926,6 +926,13 @@ body.open .page-holder {
   padding-top: 1em;
 }
 
+.components-format ol ul,
+.components-format ol ol,
+.components-format ul ul,
+.components-format ul ol {
+  padding-top: 0;
+}
+
 .components-format a {
   text-decoration: underline; 
 }
