@@ -1,8 +1,8 @@
-{% if block.relatedDepartments|length %}
+{% if block.departments|length %}
   {% include '_components/partials/_cards' with {
     background: '#334E68',
     class:      'text-white',
     heading:    (block.heading ? block.heading : "Related Departments"|t),
-    entries:    block.relatedDepartments.all()
+    entries:    block.departments.all()
   } %}
 {% endif %}
