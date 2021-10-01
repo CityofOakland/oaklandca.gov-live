@@ -26,13 +26,14 @@
   </section>
 
   <section>
-    <div class="container pt-0">
-      {% include '_partials/_elements/_ctas.twig' %}
-      <div class="flex flex-wrap justify-between -mx-3">
-        <div class="lg:w-3/4 xl:w-3/5 px-3">{% include '_components/_builder.twig' %}</div>
-        <div class="lg:w-1/4 xl:w-1/4 px-3">{% if category is not defined %}{% include '_components/_builder-sidebar.twig' %}{% endif %}</div>
+    {% if entry.components %}
+      <div class="container pt-0">
+        <div class="flex flex-wrap justify-between -mx-3">
+          <div class="lg:w-3/4 xl:w-3/5 px-3">{% include '_components/_builder.twig' %}</div>
+          <div class="lg:w-1/4 xl:w-1/4 px-3">{% if category is not defined %}{% include '_components/_builder-sidebar.twig' %}{% endif %}</div>
+        </div>
       </div>
-    </div>
+    {% endif %}
     {% include '_components/_builder-footer.twig' %}
   </section>
 {% endblock %}
