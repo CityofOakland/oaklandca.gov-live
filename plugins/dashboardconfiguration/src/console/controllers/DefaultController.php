@@ -41,7 +41,7 @@ class DefaultController extends Controller
 
     public function actionFindAndReplace()
     {
-        $data = file(__dir__ . "/1631650668_detailed_urls_mapped.txt");
+        $data = file(__dir__ . "/1632344265_detailed_urls_mapped.txt");
         $total_jobs = 0;
 
         foreach ($data as $index => $row) {
@@ -73,6 +73,7 @@ class DefaultController extends Controller
     {
         $timestamp = time();
         $export_urls_uri            = __dir__ . "/" . $timestamp . "_urls.txt";
+        $export_urls_context_uri    = __dir__ . "/" . $timestamp . "_urls_w_context.txt";
         $export_urls_detailed_uri   = __dir__ . "/" . $timestamp . "_detailed_urls.txt";
         file_put_contents($export_urls_uri, "");
         file_put_contents($export_urls_detailed_uri, "");
@@ -160,6 +161,7 @@ class DefaultController extends Controller
                     'id'        => $elementId,
                     'table'     => $table,
                     'column'    => $column,
+                    'edit_url'  => $edit_url,
                     'matches'   => [],
                 ];
 
@@ -190,13 +192,20 @@ class DefaultController extends Controller
                 file_put_contents($export_urls_detailed_uri, $match, FILE_APPEND);
                 file_put_contents($export_urls_detailed_uri, "\n", FILE_APPEND);
 
-                $unique_urls[$match] = $match;
+                $unique_urls[$match] = [$match, $matched_urls['edit_url']];
             }
         }
 
         foreach($unique_urls as $unique_url) {
-            file_put_contents($export_urls_uri, $unique_url, FILE_APPEND);
+            file_put_contents($export_urls_uri, $unique_url[0], FILE_APPEND);
             file_put_contents($export_urls_uri, "\n", FILE_APPEND);
+        }
+
+        foreach($unique_urls as $unique_url) {
+            file_put_contents($export_urls_context_uri, $unique_url[0], FILE_APPEND);
+            file_put_contents($export_urls_context_uri, ", ", FILE_APPEND);
+            file_put_contents($export_urls_context_uri, $unique_url[1], FILE_APPEND);
+            file_put_contents($export_urls_context_uri, "\n", FILE_APPEND);
         }
 
         echo count($unique_urls);
