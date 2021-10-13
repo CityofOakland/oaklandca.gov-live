@@ -49,7 +49,8 @@
     "doublesecretagency/craft-googlemaps": "4.0.11",
     "goat/dashboard-configuration": "^1.0",
     "spicyweb/craft-neo": "2.11.13",
-    "studioespresso/craft-scout": "2.4.2"
+    "studioespresso/craft-scout": "2.4.2",
+    "solspace/craft-freeform": "3.11.11.1"
   },
   "autoload": {
     "psr-4": {
