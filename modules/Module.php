@@ -51,6 +51,32 @@ class Module extends \yii\base\Module
           }
         });
 
+        Craft::$app->view->hook('cp.entries.edit.content', function(&$context) {
+          $entry = $context['entry'];
+          if($entry->section->handle == 'services'){
+            return "<style>
+              #fields-components > [data-neo='container.buttons'] > .ni_buttons > .btngroup > .btn {
+                border-right: 1px dashed rgba(81, 95, 108, 0.25)
+              }
+
+              #fields-components > [data-neo='container.buttons'] > .ni_buttons > .btngroup > .btn:not(:nth-child(1)) {
+                display: none;
+              }
+            </style>";
+          }
+        });
+
+        Craft::$app->view->hook('cp.entries.edit.content', function(&$context) {
+          $entry = $context['entry'];
+          if($entry->section->handle == 'meetings'){
+            return "<style>
+              #fields-components > [data-neo='container.buttons'] > .ni_buttons > .btngroup > .btn:not(:nth-child(2)) {
+                display: none;
+              }
+            </style>";
+          }
+        });
+
         parent::init();
     }
 }
