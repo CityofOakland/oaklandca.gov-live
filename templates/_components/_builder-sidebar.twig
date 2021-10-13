@@ -11,7 +11,9 @@
       {% endif %}
     </p>
   {% endif %}
-  {% include '_components/_contact.twig' with {block: entry} %}
+  {% if entry.contactInfo %}
+    {% include '_components/_contact.twig' with {block: entry} %}
+  {% endif %}
   {% if entry.relatedServices|length %}
     <hr style="border-top: 2px solid #212121;opacity:1;"/>
     <h4>{{ 'Related Services'|t }}</h4>
