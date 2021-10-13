@@ -1,1 +1,8 @@
+<h2>Agenda</h2>
+{% if entry.agendaDownloadableCopy|length %}
+	<ul class="ul-icons related" style="padding-top: 1rem;">
+		<li><a href="{{ entry.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.agendaDownloadableCopy.one().title }} - {{ entry.postDate|date("d/m/Y") }} Agenda</a></li>
+	</ul>
+{% endif %}
+<h3>Agenda Items</h3>
 {% include '_components/_process' %}

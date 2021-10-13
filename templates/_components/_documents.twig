@@ -2,7 +2,7 @@
 	<ul class="ul-icons related" style="padding-top: 1rem;">
 	  	{% for document in block.getDescendants(1).all() %}
 		  	{% if document.documentFile|length %}
-				<li><a href="{{ document.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ document.label ? document.label : ('lkjdlkj') }}</a></li>
+				<li><a href="{{ document.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ document.label ? document.label : document.documentFile.one().title }}</a></li>
 		  	{% endif %}
 	  	{% endfor %}
 	</ul>
