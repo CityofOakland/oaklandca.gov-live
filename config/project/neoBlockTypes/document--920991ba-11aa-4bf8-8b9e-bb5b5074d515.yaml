@@ -6,7 +6,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 5261f0db-3453-423b-87c5-e5d3112c4141 # Document File
+            fieldUid: d7c59790-6279-474b-ab32-27cca3cfc19b # Label
             instructions: null
             label: null
             required: false
@@ -15,7 +15,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: d7c59790-6279-474b-ab32-27cca3cfc19b # Label
+            fieldUid: 5261f0db-3453-423b-87c5-e5d3112c4141 # Document File
             instructions: null
             label: null
             required: false
