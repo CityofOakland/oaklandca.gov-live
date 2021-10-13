@@ -1,4 +1,5 @@
-childBlocks: null
+childBlocks:
+  - document
 field: 24c10446-2ff3-44c8-bb28-8d3647876fcb # Components
 handle: documents
 maxBlocks: 0
