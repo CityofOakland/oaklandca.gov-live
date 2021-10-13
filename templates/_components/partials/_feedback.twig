@@ -3,7 +3,15 @@
 		<div id="helpful" class="flex items-center justify-between text-white">
 			<div class="flex items-center">
 				<p class="mr-8">Was this page helpful?</p>
-				{{ craft.freeform.form("wasThisPageHelpful", {
+				<button class="button secondary small openHelpful" style="margin-top:0;margin-bottom:0;">Yes</button>
+				<button class="button secondary small openProblem" style="margin-top:0;margin-bottom:0;">No</button>
+			</div>
+			<p class="cursor-pointer openProblem"><u>Report a problem with this page</u></p>
+		</div>
+		<div class="flex flex-wrap justify-between -mx-3">
+          <div class="lg:w-3/4 xl:w-1/2 px-3">
+          	<div id="whyWasThisPageHelpful" class="hidden">
+	          	{{ craft.freeform.form("whyWasThisPageHelpful", {
 					labelClass: "form-label",
 					inputClass: "form-control",
 					overrideValues: {
@@ -11,8 +19,8 @@
 					}
 				}).render() }}
 			</div>
-			<p id="reportProblem" class="cursor-pointer"><u>Report a problem with this page</u></p>
-		</div>
+          </div>
+        </div>
 		<div class="flex flex-wrap justify-between -mx-3">
           <div class="lg:w-3/4 xl:w-1/2 px-3">
           	<div id="reportProblemForm" class="hidden">
@@ -30,37 +38,32 @@
 </section>
 
 {% js at endBody %}
-	var helpful_value = null;
-
-	jQuery('[data-handle="wasThisPageHelpful"] button').on('click', function(){
-		helpful_value = jQuery(this).text();
-	});
-
-	var form_helpfulness = document.querySelector('[data-handle="wasThisPageHelpful"]');
-	form_helpfulness.addEventListener('freeform-ajax-success', function (event) {
-		$('#helpful p').remove();
-		$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(form_helpfulness);
-		$(form_helpfulness).remove();
-	});
-
-  	form_helpfulness.addEventListener('freeform-on-submit', function(event) {
-  		form_helpfulness.querySelector('input[name="helpfulness"]').value = helpful_value;
-  	})
-
   	var form_report = document.querySelector('[data-handle="reportProblem"]');
 	form_report.addEventListener('freeform-ajax-success', function (event) {
 		$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(form_report);
   		$(form_report).remove();
   	});
 
-  	$('#reportProblem').on('click', function(){
+  	var form_helpful = document.querySelector('[data-handle="whyWasThisPageHelpful"]');
+	form_helpful.addEventListener('freeform-ajax-success', function (event) {
+		$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(form_helpful);
+  		$(form_helpful).remove();
+  	});
+
+  	$('.openHelpful').on('click', function(){
+  		$('#whyWasThisPageHelpful').removeClass('hidden');
+  		$('#helpful').addClass('hidden');
+  	});
+
+  	$('.openProblem').on('click', function(){
   		$('#reportProblemForm').removeClass('hidden');
   		$('#helpful').addClass('hidden');
   	});
 {% endjs %}
 
 <style>
-	form[data-handle="reportProblem"] {
+	form[data-handle="reportProblem"],
+	form[data-handle="whyWasThisPageHelpful"] {
 		color: white;
 	}
 
@@ -102,19 +105,5 @@
 	.components form textarea {
 		color: #222222;
 		padding: 0.5em;
-	}
-
-	.components .freeform-row .freeform-column {
-		padding: 5px 0;
-	}
-
-	.components form[data-handle="wasThisPageHelpful"] .freeform-column {
-		margin: 0;
-		padding: 0;
-	}
-
-	.components form[data-handle="wasThisPageHelpful"] button {
-		margin: 0 0.5rem !important;
-  		padding: 8px 8px;
 	}
 </style>
