@@ -60,10 +60,10 @@
   		$(form_report).remove();
   	});
 
-  	var form_helpful = document.querySelector('[data-handle="whatWasWrongWithThisPage"]');
-	form_helpful.addEventListener('freeform-ajax-success', function (event) {
-		$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(form_helpful);
-  		$(form_helpful).remove();
+  	var form_wrong = document.querySelector('[data-handle="whatWasWrongWithThisPage"]');
+	form_wrong.addEventListener('freeform-ajax-success', function (event) {
+		$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(form_wrong);
+  		$(form_wrong).remove();
   	});
 
   	var form_helpful = document.querySelector('[data-handle="whyWasThisPageHelpful"]');
@@ -78,7 +78,7 @@
   	});
 
   	$('.openWhatWasWrong').on('click', function(){
-  		$('#whyWasThisPageHelpful').removeClass('hidden');
+  		$('#whatWasWrongWithThisPage').removeClass('hidden');
   		$('#helpful').addClass('hidden');
   	});
 
