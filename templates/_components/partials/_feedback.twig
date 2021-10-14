@@ -4,7 +4,7 @@
 			<div class="flex items-center">
 				<p class="mr-8">Was this page helpful?</p>
 				<button class="button secondary small openHelpful" style="margin-top:0;margin-bottom:0;">Yes</button>
-				<button class="button secondary small openProblem" style="margin-top:0;margin-bottom:0;">No</button>
+				<button class="button secondary small openWhatWasWrong" style="margin-top:0;margin-bottom:0;">No</button>
 			</div>
 			<p class="cursor-pointer openProblem"><u>Report a problem with this page</u></p>
 		</div>
@@ -12,6 +12,20 @@
           <div class="lg:w-3/4 xl:w-1/2 px-3">
           	<div id="whyWasThisPageHelpful" class="hidden">
 	          	{{ craft.freeform.form("whyWasThisPageHelpful", {
+					labelClass: "form-label",
+					inputClass: "form-control",
+					overrideValues: {
+						entryUrl: entry.url,
+						pageAuthor: entry.author.fullName
+					}
+				}).render() }}
+			</div>
+          </div>
+        </div>
+        <div class="flex flex-wrap justify-between -mx-3">
+          <div class="lg:w-3/4 xl:w-1/2 px-3">
+          	<div id="whatWasWrongWithThisPage" class="hidden">
+	          	{{ craft.freeform.form("whatWasWrongWithThisPage", {
 					labelClass: "form-label",
 					inputClass: "form-control",
 					overrideValues: {
@@ -46,6 +60,12 @@
   		$(form_report).remove();
   	});
 
+  	var form_helpful = document.querySelector('[data-handle="whatWasWrongWithThisPage"]');
+	form_helpful.addEventListener('freeform-ajax-success', function (event) {
+		$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(form_helpful);
+  		$(form_helpful).remove();
+  	});
+
   	var form_helpful = document.querySelector('[data-handle="whyWasThisPageHelpful"]');
 	form_helpful.addEventListener('freeform-ajax-success', function (event) {
 		$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(form_helpful);
@@ -53,6 +73,11 @@
   	});
 
   	$('.openHelpful').on('click', function(){
+  		$('#whyWasThisPageHelpful').removeClass('hidden');
+  		$('#helpful').addClass('hidden');
+  	});
+
+  	$('.openWhatWasWrong').on('click', function(){
   		$('#whyWasThisPageHelpful').removeClass('hidden');
   		$('#helpful').addClass('hidden');
   	});
@@ -65,6 +90,7 @@
 
 <style>
 	form[data-handle="reportProblem"],
+	form[data-handle="whatWasWrongWithThisPage"],
 	form[data-handle="whyWasThisPageHelpful"] {
 		color: white;
 	}
