@@ -17,11 +17,11 @@ fieldLayouts:
         sortOrder: 1
 fields:
   9a5649e6-d002-4759-b5a5-39aee1286546: # Granicus URL
-    columnSuffix: wwcjmzhd
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: granicusUrl
-    instructions: ''
+    instructions: 'Copy in the URL of the Granicus video in browser. This component will auto-generate an embed based on the URL parameters.'
     name: 'Granicus URL'
     searchable: false
     settings:

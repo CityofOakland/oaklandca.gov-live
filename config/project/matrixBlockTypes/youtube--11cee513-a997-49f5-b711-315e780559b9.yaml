@@ -17,11 +17,11 @@ fieldLayouts:
         sortOrder: 1
 fields:
   ecae3e34-8efa-4f0c-934c-d5d125641043: # YouTube URL
-    columnSuffix: sbndzivh
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: youtubeUrl
-    instructions: ''
+    instructions: 'Copy in the URL of the YouTube video in browser. This component will auto-generate an embed based on the URL parameters.'
     name: 'YouTube URL'
     searchable: false
     settings:

@@ -17,11 +17,11 @@ fieldLayouts:
         sortOrder: 1
 fields:
   a2224dcd-7dbd-4096-bc29-a79aa6b7b2ba: # Vimeo URL
-    columnSuffix: vfajamam
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: vimeoUrl
-    instructions: ''
+    instructions: 'Copy in the URL of the Vimeo video in browser. This component will auto-generate an embed based on the URL parameters.'
     name: 'Vimeo URL'
     searchable: false
     settings:
