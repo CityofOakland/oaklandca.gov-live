@@ -82,7 +82,7 @@
                     {% if nav.title == "Services" %}
                         <li class="border-t border-gray-600">
                             <div class="flex items-center justify-between py-4">
-                                <a class="text font-normal text-gray-100 fill-current" href="{{ nav.url }}">{{ nav.title }}</a>
+                                <a class="text font-normal text-gray-100 hover:text-gray-200 fill-current" href="{{ nav.url }}">{{ nav.title }}</a>
                                 <div class="text font-normal text-gray-100 fill-current p-1 rounded bg-gray-800 subnav-toggler">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" style="transform: rotate(90deg);" ') | raw }}</div>
                             </div>
 
