@@ -1,0 +1,41 @@
+field: ce345611-039a-4fb5-9a1c-a9eef7d74514 # Embeds
+fieldLayouts:
+  dab54124-5a44-4505-9f2a-cda45ad3a671:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 47d702f0-cf61-4746-ab30-131fed922b61 # SoundCloud URL
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  47d702f0-cf61-4746-ab30-131fed922b61: # SoundCloud URL
+    columnSuffix: shdchghk
+    contentColumnType: text
+    fieldGroup: null
+    handle: soundcloudUrl
+    instructions: ''
+    name: 'SoundCloud URL'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: soundcloud
+name: SoundCloud
+sortOrder: 4
