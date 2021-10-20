@@ -9,8 +9,10 @@
         		"insert-row-below": "Insert row below",
         		"insert-column-left": "Insert column left",
         		"insert-column-right": "Insert column right",
+                "add-caption": "Add caption",
         		"add-head": "Add head",
         		"delete-head": "Delete head",
+                "delete-caption": "Delete caption",
         		"delete-column": "Delete column",
         		"delete-row": "Delete row",
         		"delete-table": "Delete table"
@@ -72,6 +74,11 @@
         			classname: 'redactor-table-item-observable',
                     api: 'plugin.table.addColumnRight'
     			},
+                'add-caption': {
+                    title: this.lang.get('add-caption'),
+                    classname: 'redactor-table-item-observable',
+                    api: 'plugin.table.addCaption'
+                },
     			'add-head': {
         			title: this.lang.get('add-head'),
         			classname: 'redactor-table-item-observable',
@@ -82,6 +89,11 @@
         			classname: 'redactor-table-item-observable',
                     api: 'plugin.table.deleteHead'
     			},
+                'delete-caption': {
+                    title: this.lang.get('delete-caption'),
+                    classname: 'redactor-table-item-observable',
+                    api: 'plugin.table.deleteCaption'
+                },
     			'delete-column': {
         			title: this.lang.get('delete-column'),
         			classname: 'redactor-table-item-observable',
@@ -176,6 +188,16 @@
                 this.selection.restore();
             }
         },
+        addCaption: function()
+        {
+            var $component = this._getComponent();
+            if ($component)
+            {
+                this.selection.save();
+                $component.addCaption();
+                this.selection.restore();
+            }
+        },
         deleteHead: function()
         {
             var $component = this._getComponent();
@@ -192,6 +214,26 @@
                 {
                     this.selection.save();
                     $component.removeHead();
+                    this.selection.restore();
+                }
+            }
+        },
+        deleteCaption: function()
+        {
+            var $component = this._getComponent();
+            if ($component)
+            {
+                var current = this.selection.getCurrent();
+                var $head = $R.dom(current).closest('caption');
+                if ($head.length !== 0)
+                {
+                    $component.removeCaption();
+                    this.caret.setStart($component);
+                }
+                else
+                {
+                    this.selection.save();
+                    $component.removeCaption();
                     this.selection.restore();
                 }
             }
@@ -316,6 +358,15 @@
             $head.append($row);
             this.$element.prepend($head);
         },
+        addCaption: function()
+        {
+            this.removeCaption();
+
+            var $caption = $R.dom('<caption>');
+            $caption.attr('contenteditable', true);
+            $caption.text('Table Caption');
+            this.$element.prepend($caption);
+        },
         addRow: function(columns)
         {
             var $row = this._buildRow(columns);
@@ -356,6 +407,11 @@
         {
 			var $head = this.$element.find('thead');
 			if ($head.length !== 0) $head.remove();
+        },
+        removeCaption: function()
+        {
+            var $caption = this.$element.find('caption');
+            if ($caption.length !== 0) $caption.remove();
         },
         removeRow: function(current)
         {
