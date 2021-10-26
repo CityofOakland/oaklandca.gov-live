@@ -82,8 +82,12 @@
               <hr class="hr medium"/>
               {# Accessibility Request #}
               {% set accessibilityText %}
-                <p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
-                <p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a courtesy to attendees with chemical sensitivities.</p>
+                {% if entry.accessibilityText %}
+                  <p>{{ entry.accessibilityText|raw }}</p>
+                {% else %}
+                  <p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
+                  <p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a courtesy to attendees with chemical sensitivities.</p>
+                {% endif %}
                 {% if entry.contactInfo.type('email')|length %}
                   {% set prefix = 'mailto:' %}
                   {% for item in entry.contactInfo.type('email').all() %}

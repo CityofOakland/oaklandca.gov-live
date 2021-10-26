@@ -1,4 +1,4 @@
-dateModified: 1634579894
+dateModified: 1635276107
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -329,6 +329,7 @@ meta:
     28881fc8-3e61-4fdb-a5ee-cce1bab725bf: Officials # Officials
     33857d17-d8e8-4c03-8902-f1fb2e4422da: 'Service Redirect' # Service Redirect
     37807b41-86f2-4f92-b56e-1f76739a03bb: Label # Label
+    40140c47-fe48-4679-8511-702fd17436a6: 'Accessibility Text' # Accessibility Text
     41124ab0-0e88-44c6-b4f2-f002669d8133: Departments # Departments
     44333ec3-2111-4193-865c-cf61c54c2983: Buttons # Buttons
     62026d94-4213-4ab2-9a58-ff780a972c67: 'Department Redirect' # Department Redirect
