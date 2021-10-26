@@ -3,7 +3,7 @@
 			<div class="lg:w-3/4 xl:w-1/2 px-3">
 				<div id="{{ id }}" class="hidden">
 					{% if craft.freeform.form(id) %}
-						{{ craft.freeform.form("whyWasThisPageHelpful", {
+						{{ craft.freeform.form(id, {
 							labelClass: "form-label",
 							inputClass: "form-control",
 							overrideValues: {
