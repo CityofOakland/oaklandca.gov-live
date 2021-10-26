@@ -1,4 +1,4 @@
-{% macro renderForm(id) %}
+{% macro renderForm(id, entry) %}
 		<div class="flex flex-wrap justify-between -mx-3">
 			<div class="lg:w-3/4 xl:w-1/2 px-3">
 				<div id="{{ id }}" class="hidden">
@@ -36,9 +36,9 @@
 			</div>
 			<p class="cursor-pointer" data-open="reportProblem" role="button"><u>Report a problem with this page</u></p>
 		</div>
-    {{ _self.renderForm('whyWasThisPageHelpful') }}
-    {{ _self.renderForm('whatWasWrongWithThisPage') }}
-    {{ _self.renderForm('reportProblem') }}
+    {{ _self.renderForm('whyWasThisPageHelpful', entry) }}
+    {{ _self.renderForm('whatWasWrongWithThisPage', entry) }}
+    {{ _self.renderForm('reportProblem', entry) }}
 	</div>
 </section>
 
