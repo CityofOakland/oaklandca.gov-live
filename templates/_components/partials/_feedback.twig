@@ -1,91 +1,52 @@
-<section style="background:#222222">
+{% macro renderForm(id) %}
+		<div class="flex flex-wrap justify-between -mx-3">
+			<div class="lg:w-3/4 xl:w-1/2 px-3">
+				<div id="{{ id }}" class="hidden">
+					{% if craft.freeform.form(id) %}
+						{{ craft.freeform.form("whyWasThisPageHelpful", {
+							labelClass: "form-label",
+							inputClass: "form-control",
+							overrideValues: {
+								entryUrl: entry.url,
+								pageAuthor: entry.author.fullName
+							}
+						}).render() }}
+						{% js at endBody %}
+							var form_report = document.querySelector('[data-handle="{{ id }}"]');
+							form_report.addEventListener('freeform-ajax-success', function (event) {
+							$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(form_report);
+					  		$(form_report).remove();
+					  	});
+						{% endjs %}
+					{% else %}
+						<p class="text-white"><b>There was an issue with loading this form.</b></p>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+{% endmacro %}
+
+<section class="bg-gray-900">
 	<div class="container components py-6">
 		<div id="helpful" class="flex items-center justify-between text-white">
 			<div class="flex items-center">
 				<p class="mr-8">Was this page helpful?</p>
-				<button class="button secondary small openHelpful" style="margin-top:0;margin-bottom:0;">Yes</button>
-				<button class="button secondary small openWhatWasWrong" style="margin-top:0;margin-bottom:0;">No</button>
+				<button class="button secondary small" data-open="whyWasThisPageHelpful" style="margin-top:0;margin-bottom:0;">Yes</button>
+				<button class="button secondary small" data-open="whatWasWrongWithThisPage" style="margin-top:0;margin-bottom:0;">No</button>
 			</div>
-			<p class="cursor-pointer openProblem"><u>Report a problem with this page</u></p>
+			<p class="cursor-pointer" data-open="reportProblem" role="button"><u>Report a problem with this page</u></p>
 		</div>
-		<div class="flex flex-wrap justify-between -mx-3">
-          <div class="lg:w-3/4 xl:w-1/2 px-3">
-          	<div id="whyWasThisPageHelpful" class="hidden">
-	          	{{ craft.freeform.form("whyWasThisPageHelpful", {
-					labelClass: "form-label",
-					inputClass: "form-control",
-					overrideValues: {
-						entryUrl: entry.url,
-						pageAuthor: entry.author.fullName
-					}
-				}).render() }}
-			</div>
-          </div>
-        </div>
-        <div class="flex flex-wrap justify-between -mx-3">
-          <div class="lg:w-3/4 xl:w-1/2 px-3">
-          	<div id="whatWasWrongWithThisPage" class="hidden">
-	          	{{ craft.freeform.form("whatWasWrongWithThisPage", {
-					labelClass: "form-label",
-					inputClass: "form-control",
-					overrideValues: {
-						entryUrl: entry.url,
-						pageAuthor: entry.author.fullName
-					}
-				}).render() }}
-			</div>
-          </div>
-        </div>
-		<div class="flex flex-wrap justify-between -mx-3">
-          <div class="lg:w-3/4 xl:w-1/2 px-3">
-          	<div id="reportProblemForm" class="hidden">
-	          	{{ craft.freeform.form("reportProblem", {
-					labelClass: "form-label",
-					inputClass: "form-control",
-					overrideValues: {
-						entryUrl: entry.url,
-						pageAuthor: entry.author.fullName
-					}
-				}).render() }}
-			</div>
-          </div>
-        </div>
+    {{ _self.renderForm('whyWasThisPageHelpful') }}
+    {{ _self.renderForm('whatWasWrongWithThisPage') }}
+    {{ _self.renderForm('reportProblem') }}
 	</div>
 </section>
 
 {% js at endBody %}
-  	var form_report = document.querySelector('[data-handle="reportProblem"]');
-	form_report.addEventListener('freeform-ajax-success', function (event) {
-		$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(form_report);
-  		$(form_report).remove();
-  	});
-
-  	var form_wrong = document.querySelector('[data-handle="whatWasWrongWithThisPage"]');
-	form_wrong.addEventListener('freeform-ajax-success', function (event) {
-		$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(form_wrong);
-  		$(form_wrong).remove();
-  	});
-
-  	var form_helpful = document.querySelector('[data-handle="whyWasThisPageHelpful"]');
-	form_helpful.addEventListener('freeform-ajax-success', function (event) {
-		$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(form_helpful);
-  		$(form_helpful).remove();
-  	});
-
-  	$('.openHelpful').on('click', function(){
-  		$('#whyWasThisPageHelpful').removeClass('hidden');
-  		$('#helpful').addClass('hidden');
-  	});
-
-  	$('.openWhatWasWrong').on('click', function(){
-  		$('#whatWasWrongWithThisPage').removeClass('hidden');
-  		$('#helpful').addClass('hidden');
-  	});
-
-  	$('.openProblem').on('click', function(){
-  		$('#reportProblemForm').removeClass('hidden');
-  		$('#helpful').addClass('hidden');
-  	});
+		$('[data-open]').on('click',function(){
+			$('#' + $(this).data('open')).removeClass('hidden');
+			$('#helpful').addClass('hidden');
+		});
 {% endjs %}
 
 <style>
