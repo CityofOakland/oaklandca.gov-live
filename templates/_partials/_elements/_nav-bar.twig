@@ -40,7 +40,7 @@
                                 {% set applyPermit = craft.categories.group("serviceTypes").slug("apply-for-a-permit").one() %}
                                 <div class="dropdown-container bg-white" aria-labelledby="navbar-dropdown-{{ nav.title|kebab }}">
                                     <div class="container components py-0">
-                                        <ul class="grid md:grid-cols-3 gap-3" style="list-style: none;padding:0;">
+                                        <ul id="megamenu" class="grid md:grid-cols-3 gap-3" style="list-style: none;padding:0;">
                                             {% nav subitem in navSubitems %}
                                                 {{ macros.card(subitem, false) }}
                                             {% endnav %}
@@ -205,6 +205,20 @@
 
     .dropdown.dropdown-megamenu:hover > .dropdown-container li > a:hover h3 {
         text-decoration: underline;
+    }
+
+    @media(max-height: 739px) {
+        #megamenu h4 {
+            padding-bottom: 0 !important;
+        }
+
+        #megamenu .card {
+            padding: 10px 20px;
+        }
+
+        #megamenu .clamp {
+            display: none;
+        }
     }
 
     .subnav {
