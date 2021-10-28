@@ -51,8 +51,6 @@ permissions:
   - 'publishentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
   - 'publishpeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
   - 'editpeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-  - 'publishpeerentrydrafts:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-  - 'editpeerentrydrafts:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
   - 'editentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
   - 'createentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   - 'publishentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
