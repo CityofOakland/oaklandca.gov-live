@@ -190,20 +190,24 @@
         fill: white;
     }
 
-    .dropdown.dropdown-megamenu:hover > a > svg path {
+    .dropdown.dropdown-megamenu:hover > a > svg path,
+    .dropdown.dropdown-megamenu.state-active > a > svg path {
         fill: black;
     }
 
-    .dropdown.dropdown-megamenu:hover > a {
+    .dropdown.dropdown-megamenu:hover > a,
+    .dropdown.dropdown-megamenu.state-active > a {
         background: white;
         color: black;
     }
 
-    .dropdown.dropdown-megamenu:hover > .dropdown-container {
+    .dropdown.dropdown-megamenu:hover > .dropdown-container,
+    .dropdown.dropdown-megamenu.state-active > .dropdown-container {
         display: block;
     }
 
-    .dropdown.dropdown-megamenu:hover > .dropdown-container li > a:hover h3 {
+    .dropdown.dropdown-megamenu:hover > .dropdown-container li > a:hover h3,
+    .dropdown.dropdown-megamenu.state-active > .dropdown-container li > a:hover h3 {
         text-decoration: underline;
     }
 
@@ -258,4 +262,14 @@
     $('.subnav-toggler').on('click', function(){
         $(this).parent().siblings('.subnav').toggle('state-active');
     });
+
+    $('.dropdown-megamenu').on('mouseenter', function(){
+        $(this).addClass('state-active');
+    })
+
+    $('.dropdown-megamenu').on('mouseleave', function(){
+        setTimeout(function(){
+            $('.dropdown-megamenu').removeClass('state-active');
+        }, 500);
+    })
 {% endjs %}
