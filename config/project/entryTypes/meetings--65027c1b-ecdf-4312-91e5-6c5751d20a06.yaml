@@ -132,9 +132,9 @@ fieldLayouts:
             width: 100
         name: Sidebar
         sortOrder: 2
-handle: default
+handle: meetings
 hasTitleField: true
-name: Default
+name: Meetings
 section: 86dfc275-b48e-44d4-8c8c-acda592d92b0 # Meetings
 sortOrder: 1
 titleFormat: null
