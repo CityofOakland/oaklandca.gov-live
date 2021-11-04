@@ -4,14 +4,12 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 7594e9ae-f194-47c8-9a6b-076789f1087b # Service Categories
-            instructions: ''
-            label: 'Service Categories'
-            required: ''
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
+            style: tip
+            tip: 'Service pages help guide people through the process of completing a transaction. See the [Service Documentation](https://oaklandca.gov).'
+            type: craft\fieldlayoutelements\Tip
+          -
+            heading: Header
+            type: craft\fieldlayoutelements\Heading
           -
             autocapitalize: true
             autocomplete: false
@@ -19,8 +17,8 @@ fieldLayouts:
             class: null
             disabled: false
             id: null
-            instructions: null
-            label: null
+            instructions: 'Start with a verb. Should clearly lay out the action you want people to take.'
+            label: 'Service Title'
             max: null
             min: null
             name: null
@@ -37,6 +35,15 @@ fieldLayouts:
             width: 100
           -
             fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210 # Lead In
+            instructions: 'Remember to keep it short and concise. Describe what you will do or get from this page.'
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 812c490f-c059-47ff-9ef2-25fbd40c77fe # Call Out
             instructions: null
             label: null
             required: false
@@ -45,7 +52,10 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 24c10446-2ff3-44c8-bb28-8d3647876fcb # Components
+            heading: 'Before You Start'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 8a7f1f75-cb2f-4707-8047-676959644f08 # Before You Start
             instructions: null
             label: null
             required: false
@@ -54,7 +64,19 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b3761a4e-9346-448a-ba6a-f441f75e61fc # Components - Footer
+            heading: 'What to Do'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
+            instructions: 'Will default to ''What to Do''. Customize if needed.'
+            label: Header
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4350b4ce-8cf4-44c9-9fee-4d81d5feec19 # Description
             instructions: null
             label: null
             required: false
@@ -62,7 +84,46 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
-        name: Content
+          -
+            fieldUid: db97d5d4-3cdf-46c8-85f3-fa7bef2c1d87 # Call to Action Buttons
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e57d997c-ca20-4022-8841-f9fd919933df # Accordion
+            instructions: 'Add additional ways to complete the service. These options will be embedded in accordions.'
+            label: 'Other Options'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f09dcf7b-4b1f-47a1-ac7b-4425e46473cd # Process
+            instructions: ''
+            label: 'Step-by-Step Process'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: 'Need to Know'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 45846dfd-0e86-40a2-81d2-b47bf69f16ae # Need to Know
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Main Body Content'
         sortOrder: 1
       -
         elements:
@@ -107,7 +168,7 @@ fieldLayouts:
           -
             type: craft\fieldlayoutelements\HorizontalRule
           -
-            fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
+            fieldUid: 3bc9f075-4edc-4909-ba86-ea128c3ddb93 # Subheading
             instructions: 'If left blank, the heading will default to "Related Resources"'
             label: 'Related Resources Heading'
             required: ''
@@ -124,7 +185,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
-        name: Sidebar
+        name: 'Sidebar Content'
         sortOrder: 2
       -
         elements:

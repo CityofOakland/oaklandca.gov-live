@@ -1,0 +1,34 @@
+childBlocks: null
+field: f09dcf7b-4b1f-47a1-ac7b-4425e46473cd # Process
+fieldLayouts:
+  6e4f2506-2d0d-440e-b6a4-7b67d968cb18:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
+            instructions: ''
+            label: Header
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c14fea44-3f71-477c-88d9-6f37c168d868 # Content
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Default
+        sortOrder: 1
+handle: step
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: Step
+sortOrder: 1
+topLevel: true

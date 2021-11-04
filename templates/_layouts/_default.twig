@@ -26,14 +26,96 @@
   </section>
 
   <section>
-    {% if entry.components %}
-      <div class="container pt-0">
-        <div class="flex flex-wrap justify-between -mx-3">
-          <div class="lg:w-3/4 xl:w-3/5 px-3">{% include '_components/_builder.twig' %}</div>
-          <div class="lg:w-1/4 xl:w-1/4 px-3">{% if category is not defined %}{% include '_components/_builder-sidebar.twig' %}{% endif %}</div>
+    <div class="container pt-0">
+      <div class="flex flex-wrap justify-between -mx-3">
+        <div class="lg:w-3/4 xl:w-3/5 px-3">
+          <div class="components components-format">
+
+            {% if entry.callOut|length %}
+              {% for block in entry.callOut.all() %}
+                {% include '_components/_callOut.twig' %}
+              {% endfor %}
+            {% endif %}
+
+            {% if entry.beforeYouStart|length %}
+              {% for block in entry.beforeYouStart.all() %}
+                {% include '_components/_section.twig' with {defaultHeader: 'Before you Start'} %}
+              {% endfor %}
+            {% endif %}
+
+            <h2>{{ entry.heading ? entry.heading : 'What to Do' }}</h2>
+            {% if entry.description %}<p>{{ entry.description }}</p>{% endif %}
+
+            {% if entry.callToActionButtons %}
+              {% for block in entry.callToActionButtons %}
+                {% include '_components/_button.twig' with {style: (loop.index0 ? 'secondary' : 'primary') } %}
+              {% endfor %}
+            {% endif %}
+
+            {% if entry.accordion|length %}
+              <h3>Other options to report</h3>
+              <div class="accordion" data-allow-toggle>
+                <ul aria-label="Accordion Control Group Buttons" class="accordion-controls">
+                  {% for item in entry.accordion.all() %}
+                  <li class="accordion-item">
+                    <button class="accordion-header" aria-controls="content-{{ item.id }}-{{ loop.index }}" aria-expanded="false" id="accordion-control-{{ item.id }}-{{ loop.index }}">{{ item.heading }} <span>{{ svg( '@webroot/assets/img/icon-plus.svg') }}{{ svg( '@webroot/assets/img/icon-minus.svg') }}</span></button>
+                    <div class="accordion-panel" id="content-{{ item.id }}-{{ loop.index }}" hidden>
+                      {% for block in item.innerContent.all() %}
+                        {% include '_components/_' ~ block.type %}
+                      {% endfor %}
+                    </div>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
+            {% if entry.process|length %}
+              <h3>How to Apply</h3>
+              <ol class="process">
+                {% for item in entry.process.all() %}
+                  <li data-index="{{ loop.index }}">
+                    <div>
+                      <span class="font-semibold">{{ item.heading }}</span>
+                      {% for block in item.innerContent.all() %}
+                        {% include '_components/_' ~ block.type %}
+                      {% endfor %}
+                    </div>
+                  </li>
+                {% endfor %}
+              </ol>
+            {% endif %}
+
+            {% if entry.needToKnow|length %}
+              {% for block in entry.needToKnow.all() %}
+                {% include '_components/_section.twig' with {defaultHeader: 'Need to Know'} %}
+              {% endfor %}
+            {% endif %}
+
+          </div>
+        </div>
+        <div class="lg:w-1/4 xl:w-1/4 px-3">
+          {% if category is not defined %}
+            {% include '_components/_sidebar.twig' %}
+          {% endif %}
         </div>
       </div>
-    {% endif %}
+    </div>
     {% include '_components/_builder-footer.twig' %}
   </section>
 {% endblock %}
+
+{% js on ready %}
+  $('#components table').each(function(index, element){
+    var $table   = $(element);
+    var $heads  = $table.find('th');
+
+    $heads.each(function(index, element){
+      var $heading      = $(element);
+
+      $table.find('td:nth-of-type(' + (index + 1) + ')').attr('data-label', $heading.text());
+    });
+  });
+
+  $('#components').addClass('js-initialized');
+{% endjs %}

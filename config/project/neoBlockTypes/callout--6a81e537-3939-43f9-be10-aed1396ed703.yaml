@@ -6,7 +6,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 511047d5-652e-4af0-8f5e-8d30a3f6b0c4 # Callout Type
+            fieldUid: 511047d5-652e-4af0-8f5e-8d30a3f6b0c4
             instructions: null
             label: null
             required: false

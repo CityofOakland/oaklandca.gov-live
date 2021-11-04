@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 515d69ea-6174-405e-ab09-653ef390e370 # Services
+handle: needToKnow
+instructions: 'Optional. Helpful tips or FAQ''s that the user should know when considering this service.'
+name: 'Need to Know'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_needtoknow}}'
+  maxBlocks: '1'
+  minBlocks: ''
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 515d69ea-6174-405e-ab09-653ef390e370 # Services
+handle: callToActionButtons
+instructions: 'Add up to two buttons. The first button will be primary, the second one secondary (optional).'
+name: 'Call to Action Buttons'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_calltoactionbuttons}}'
+  maxBlocks: '2'
+  minBlocks: ''
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

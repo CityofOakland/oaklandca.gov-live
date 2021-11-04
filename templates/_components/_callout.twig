@@ -1,5 +1,5 @@
-<blockquote class="callout {{ block.calloutType }}">
-	{% switch block.calloutType %}
+<blockquote class="callout {{ block.callOutType }}">
+	{% switch block.callOutType %}
 		{% case 'info' %}
 		{{ svg( '@webroot/assets/img/icon-info.svg') }}
 		{% case 'attention' %}
@@ -8,7 +8,7 @@
 		{{ svg( '@webroot/assets/img/icon-info.svg') }}
 	{% endswitch %}
 	<div>
-		<p><b>{{ block.heading }}</b></p>
-		{{ block.mainContent }}
+		<p><b>{{ block.header }}</b></p>
+		<p>{{ block.description }}</p>
 	</div>
 </blockquote>
