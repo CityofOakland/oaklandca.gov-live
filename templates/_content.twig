@@ -1,0 +1,167 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    {# Calls in the SEOmatic tags, all handled through the CMS settings #}
+    {% hook 'seomaticRender' %}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700&display=swap" rel="stylesheet">
+    {{ craft.twigpack.includeCssModule("/css/app.css") }}
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ siteUrl }}/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ siteUrl }}/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ siteUrl }}/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ siteUrl }}/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ siteUrl }}/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ siteUrl }}/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ siteUrl }}/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ siteUrl }}/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ siteUrl }}/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{ siteUrl }}/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ siteUrl }}/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ siteUrl }}/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ siteUrl }}/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="{{ siteUrl }}/assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{ siteUrl }}/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    {% if craft.app.env == "production" %}
+    <!-- Hotjar Tracking Code for www.oaklandca.gov -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:1282651,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    {% endif %}
+  </head>
+
+  {# Checks if the URI is empty and if not, adds the class of "home" to the page body. #}
+  {% if not craft.app.request.segments() %}
+    {% set pageClass = "home" %}
+  {% endif %}
+
+  {# We’re setting the class to overflow-x-hidden to prevent content from stretching page width on mobile views.#}
+  {# Sets the navigation to the nav section entry, "Main Nav" #}
+  {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
+  <body class="overflow-x-hidden font-body {{ pageClass ?? '' }}">
+    <div class="page-holder">
+      {% include '_partials/_elements/_nav-bar.twig' %}
+      <main>
+        {% include '_partials/_elements/_sitewide-alert.twig' %}
+
+        {% if category is defined %}
+          {% set entry = category %}
+        {% endif %}
+
+        <section>
+          <div class="bg-transparent-oakland-roots">
+            <div class="container" style="padding-top:1rem;padding-bottom:1rem;">
+              <div class="breadcrumbs relative flex flex-col items-start py-0 sm:justify-between sm:flex-row-reverse sm:items-center">
+                {% include "_partials/_elements/_banner-google-translate.twig" with {paddingTop: "pt-0 mb-4 md:mb-0"} %}
+                {% include "_components/partials/_breadcrumbs.twig" %}
+              </div>
+            </div>
+          </div>
+          <div class="container components pt-16">
+            <div class="flex flex-col flex-1 lg:flex-row">
+              <div class="w-full lg:w-2/3">
+                <h1>{{ entry.title }}</h1>
+                {% if entry.leadIn or entry.summary %}
+                  <div class="lead pt-4">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="container pt-0">
+            <div class="flex flex-wrap justify-between -mx-3">
+              <div class="lg:w-3/4 xl:w-3/5 px-3">
+                <div class="components components-format">
+                  {% block content %}{% endblock %}
+                </div>
+              </div>
+              <div class="lg:w-1/4 xl:w-1/4 px-3">
+                {% if category is not defined %}
+                  {% include '_components/_sidebar.twig' %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% include '_components/_builder-footer.twig' %}
+        </section>
+
+      </main>
+      {% include '_partials/_elements/_footer.twig' %}
+    </div>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+    {{ craft.twigpack.includeJsModule("/js/manifest.js") }}
+    {{ craft.twigpack.includeJsModule("/js/vendor.js") }}
+    {{ craft.twigpack.includeJsModule("/js/app.js") }}
+
+    {% if entry is defined %}
+      {% do craft.viewCount.increment(entry.id) %}
+    {% elseif event is defined %}
+      {% do craft.viewCount.increment(event.id) %}
+    {% elseif category is defined %}
+      {% do craft.viewCount.increment(category.id) %}
+    {% endif %}
+
+    {% set page = entry ?? null %}
+    {% if craft.app.env == "production" %}
+      {% for department in craft.entries.section("departments").type("departments").departmentCodeSnippet(":notempty:").all() %}
+        {% if page %}
+          {% if craft.entries.id(page.id).relatedTo(department) | length or page.id == department.id %}
+            <!-- Loading code snippet -->
+            {{ department.departmentCodeSnippet | raw }}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </body>
+</html>
+{% if section is defined and slug is defined %}
+  {% set facetItem = craft.entries.section(section).slug(slug).one().title %}
+  {% js at head %}
+  var section = "{{ section }}";
+      var entryTitle = "{{ facetItem }}";
+  {% endjs %}
+{% endif %}
+
+{% js %}
+(function() {
+  // Observe DOM mutations whether the <html> node was changed by Google Translate
+  if (window.MutationObserver) {
+    var mutationObserver = new MutationObserver(function(mutations) {
+      mutations.forEach(function (mutation) {
+        var oldElementClass = mutation.oldValue;
+        var currentElementClass = mutation.target.className;
+        if (oldElementClass.indexOf('translated-') === -1 && currentElementClass.indexOf('translated-') > -1) {
+          dl.push({
+            'event' : 'page_translated',
+            'translationLanguage' : mutation.target.lang || document.getElementsByTagName('html')[0].getAttribute('xml:lang'),
+            'debug_mode'          : true,
+          });
+        }
+    })
+  })
+
+    var htmlNode = document.querySelector('html');
+    mutationObserver.observe(htmlNode, {
+      attributes: true,
+      attributeOldValue: true,
+      attributeFilter: ['class']
+    })
+  }
+})();
+{% endjs %}

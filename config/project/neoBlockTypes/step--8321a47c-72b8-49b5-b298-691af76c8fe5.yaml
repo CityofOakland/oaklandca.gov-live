@@ -29,6 +29,6 @@ handle: step
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
-name: Step
+name: Item
 sortOrder: 1
 topLevel: true
