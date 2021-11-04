@@ -871,7 +871,7 @@ body.open .page-holder {
   background: #FFFBEA;
 }
 
-.components .callout a {
+.components .callout a:not(.button) {
   color: inherit;
   text-decoration: underline;
 }
@@ -892,6 +892,11 @@ body.open .page-holder {
   flex-shrink: 0;
   margin-right: 1rem;
   margin-top: 4px;
+}
+
+.components .embed-container {
+  margin-top: 1rem;
+  margin-bottom: 0;
 }
 
 .components .hr {
@@ -1198,6 +1203,17 @@ body.open .page-holder {
   margin-left: 6px;
 }
 
+#components-sidebar > hr:not(:first-child) {
+  margin-top: 1.25em;
+}
+
+#components-sidebar > h1,
+#components-sidebar > h2,
+#components-sidebar > h3,
+#components-sidebar > h4 {
+  padding-top: 1em;
+}
+
 .content > h1 {
   font-size: 1.875rem;
   margin-bottom: 1rem;
@@ -1364,4 +1380,48 @@ body.open .page-holder {
 
 .process li:last-of-type::after {
   display: none;
+}
+
+.ul-icons {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.ul-icons > li {
+  margin-bottom: 15px;
+}
+
+.ul-icons > li,
+.ul-icons > li > a {
+  display: flex;
+  align-items: flex-start;
+}
+
+.ul-icons > li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  margin-right: 10px;
+  width: 22.5px;
+}
+
+.related > li svg path {
+  fill: #2e8131;
+}
+
+.ul-icons a {
+  text-decoration: none;
+}
+
+.ul-icons a:hover,
+.ul-icons a:focus {
+  text-decoration: underline;
+}
+
+.ul-icons.related a {
+  text-decoration: underline;
+}
+
+.ul-icons.related a:hover,
+.ul-icons.related a:focus {
+  text-decoration: none;
 }

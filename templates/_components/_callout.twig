@@ -1,5 +1,9 @@
-<blockquote class="callout {{ block.callOutType }}">
-	{% switch block.callOutType %}
+{% set callOutType = callOutType is defined ? callOutType : block.callOutType %}
+{% set heading     = heading is defined ? heading : block.header %}
+{% set description = description is defined ? description : block.description %}
+
+<blockquote class="callout {{ callOutType }}">
+	{% switch callOutType %}
 		{% case 'info' %}
 		{{ svg( '@webroot/assets/img/icon-info.svg') }}
 		{% case 'attention' %}
@@ -8,7 +12,7 @@
 		{{ svg( '@webroot/assets/img/icon-info.svg') }}
 	{% endswitch %}
 	<div>
-		<p><b>{{ block.header }}</b></p>
-		<p>{{ block.description }}</p>
+		<p><b>{{ heading }}</b></p>
+		<p>{{ description }}</p>
 	</div>
 </blockquote>

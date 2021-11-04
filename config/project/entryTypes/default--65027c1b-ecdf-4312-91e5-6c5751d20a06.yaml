@@ -27,6 +27,48 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210 # Lead In
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
+            instructions: ''
+            label: Details
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: 5261f0db-3453-423b-87c5-e5d3112c4141 # Document File
+            instructions: ''
+            label: Minutes
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: ce345611-039a-4fb5-9a1c-a9eef7d74514 # Embeds
+            instructions: ''
+            label: Recordings
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             type: craft\fieldlayoutelements\HorizontalRule
           -
             fieldUid: d7c92fa2-9002-4f28-a03d-b99b37501dde # Agenda - Downloadable Copy
@@ -46,8 +88,50 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: 40140c47-fe48-4679-8511-702fd17436a6 # Accessibility Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 2260316d-d754-471f-a901-9d8ed19c13d3 # Full Name
+            instructions: ''
+            label: 'Contact Name'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e3a53ca0-960e-4ce6-933b-b3613bd64d7a # Job Title
+            instructions: ''
+            label: 'Contact Job Title'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ca717470-3ae1-44a0-9ee8-886b6fe780cf # Contact Info
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Sidebar
+        sortOrder: 2
 handle: default
 hasTitleField: true
 name: Default
