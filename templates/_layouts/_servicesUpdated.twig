@@ -47,18 +47,3 @@
     {% endfor %}
   {% endif %}
 {% endblock %}
-
-{% js on ready %}
-  $('#components table').each(function(index, element){
-    var $table   = $(element);
-    var $heads  = $table.find('th');
-
-    $heads.each(function(index, element){
-      var $heading      = $(element);
-
-      $table.find('td:nth-of-type(' + (index + 1) + ')').attr('data-label', $heading.text());
-    });
-  });
-
-  $('#components').addClass('js-initialized');
-{% endjs %}

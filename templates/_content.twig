@@ -85,12 +85,12 @@
         <section>
           <div class="container pt-0">
             <div class="flex flex-wrap justify-between -mx-3">
-              <div class="lg:w-3/4 xl:w-3/5 px-3">
+              <div class="w-full lg:w-3/4 xl:w-3/5 px-3">
                 <div class="components components-format">
                   {% block content %}{% endblock %}
                 </div>
               </div>
-              <div class="lg:w-1/4 xl:w-1/4 px-3">
+              <div class="w-full lg:w-1/4 xl:w-1/4 px-3">
                 {% if category is not defined %}
                   {% include '_components/_sidebar.twig' %}
                 {% endif %}
@@ -133,10 +133,25 @@
 {% if section is defined and slug is defined %}
   {% set facetItem = craft.entries.section(section).slug(slug).one().title %}
   {% js at head %}
-  var section = "{{ section }}";
+      var section = "{{ section }}";
       var entryTitle = "{{ facetItem }}";
   {% endjs %}
 {% endif %}
+
+{% js on ready %}
+  $('.components table').each(function(index, element){
+    var $table   = $(element);
+    var $heads  = $table.find('th');
+
+    $heads.each(function(index, element){
+      var $heading      = $(element);
+
+      $table.find('td:nth-of-type(' + (index + 1) + ')').attr('data-label', $heading.text());
+    });
+  });
+
+  $('.components').addClass('js-initialized');
+{% endjs %}
 
 {% js %}
 (function() {
@@ -165,3 +180,14 @@
   }
 })();
 {% endjs %}
+
+
+<style>
+  .components tbody {
+    border-top: 1px solid black;
+  }
+
+  .components tbody tr {
+    border-bottom: 1px solid black;
+  }
+</style>

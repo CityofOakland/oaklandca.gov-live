@@ -770,6 +770,11 @@ body.open .page-holder {
   }
 }
 
+.components table caption {
+  padding: 8px;
+  text-align: left;
+}
+
 .components th {
   background: #F5F5F5;
   border-bottom:  1px solid black;
@@ -993,7 +998,22 @@ body.open .page-holder {
   }
 }
 
+.components tbody {
+  border-top: 1px solid black;
+}
+
+.components tbody tr {
+  border-bottom: 1px solid black;
+}
+
 @media (max-width: 767px) {
+  .components tbody {
+    border-top: none;
+  }
+
+  .components tbody tr {
+    border-bottom: none;
+  }
   /* Force table to not be like tables anymore */
   .components.js-initialized table,
   .components.js-initialized thead,
@@ -1006,10 +1026,6 @@ body.open .page-holder {
 
   .components.js-initialized tbody {
     border-top: 2px solid black;
-    border-bottom: 1px solid black;
-  }
-
-  .components.js-initialized tbody td {
     border-bottom: 1px solid black;
   }
   
