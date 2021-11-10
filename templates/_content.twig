@@ -2,7 +2,6 @@
 {# @var entry \craft\elements\Entry #}
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -53,6 +52,7 @@
   {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
   <body class="overflow-x-hidden font-body {{ pageClass ?? '' }}">
     <div class="page-holder">
+      {% include '_partials/_elements/_skip-to-content.twig' %}
       {% include '_partials/_elements/_nav-bar.twig' %}
       <main>
         {% include '_partials/_elements/_sitewide-alert.twig' %}
@@ -82,7 +82,7 @@
           </div>
         </section>
 
-        <section>
+        <section id="content">
           <div class="container pt-0">
             <div class="flex flex-wrap justify-between -mx-3">
               <div class="w-full lg:w-3/4 xl:w-3/5 px-3">

@@ -1,0 +1,38 @@
+<a id="skipto" href="#content" class="block">Skip to content</a>
+
+<style>
+	#skipto {
+		background: white;
+		padding: 7.5px 22.5px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		text-decoration: underline;
+		transform: translateY(-100%);
+		transition: 0.5s;
+		z-index: 100000;
+	}
+
+	#skipto.state-active {
+		transform: translateY(0);
+	}
+</style>
+
+
+{% js at endBody %}
+	var $content 	= $('#content');
+	var $skipto 	= $('#skipto');
+
+	if($content.length && window.scrollY < $content.offset().top) {
+		$skipto.addClass('state-active');
+		$(window).on('scroll', disableSkipTo);
+	}
+
+	function disableSkipTo() {
+		console.log('trigger');
+		if(window.scrollY >= $content.offset().top) {
+			$skipto.removeClass('state-active');
+			$(window).off('scroll', disableSkipTo);
+		}
+	}
+{% endjs %}
