@@ -1,0 +1,19 @@
+columnSuffix: kqodnkzd
+contentColumnType: text
+fieldGroup: 515d69ea-6174-405e-ab09-653ef390e370 # Services
+handle: processHeader
+instructions: 'Process Header. Ex: ''How to apply'', ''How to pay'''
+name: 'Process Header'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
