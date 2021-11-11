@@ -103,6 +103,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: b90c5e54-1301-4711-845c-d3f5b4643487
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: f09dcf7b-4b1f-47a1-ac7b-4425e46473cd # Process
             instructions: ''
             label: 'Step-by-Step Process'

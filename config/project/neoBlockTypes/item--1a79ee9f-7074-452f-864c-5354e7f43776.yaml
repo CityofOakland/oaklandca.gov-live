@@ -29,6 +29,6 @@ handle: item
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
-name: Item
+name: 'Add an Option'
 sortOrder: 1
 topLevel: true

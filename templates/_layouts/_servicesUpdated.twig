@@ -39,7 +39,7 @@
     </div>
   {% endif %}
 
-  {% include '_components/_process.twig' with {heading: 'How to Apply'} %}
+  {% include '_components/_process.twig' with {heading: entry.processHeader} %}
 
   {% if entry.needToKnow|length %}
     {% for block in entry.needToKnow.all() %}
