@@ -97,7 +97,16 @@
               </div>
             </div>
           </div>
-          {% include '_components/_builder-footer.twig' %}
+          <div id="components-footer" class="components">
+            {% if entry.relatedDepartments|length %}
+              {% include '_components/partials/_cards' with {
+                background: '#334E68',
+                class:      'text-white',
+                heading:    "Related Departments",
+                entries:    entry.relatedDepartments.all()
+              } %}
+            {% endif %}
+          </div>
         </section>
 
       </main>

@@ -103,6 +103,9 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            heading: 'Process List'
+            type: craft\fieldlayoutelements\Heading
+          -
             fieldUid: b90c5e54-1301-4711-845c-d3f5b4643487 # Process Header
             instructions: null
             label: null
@@ -137,16 +140,46 @@ fieldLayouts:
       -
         elements:
           -
+            heading: 'Contact Information'
+            type: craft\fieldlayoutelements\Heading
+          -
             fieldUid: 286b7386-711a-4eae-abe1-b4e397656bcb # Department
-            instructions: null
-            label: null
-            required: false
+            instructions: 'Add who to contact about this service. This should be a single point of contact.'
+            label: 'Contact Department'
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
           -
             fieldUid: de65ce28-2919-4a65-9aa2-c18e5518f2fe # Program/Subdivision
+            instructions: 'If the contact is a specific division, office or bureau within your department, add that here.'
+            label: 'Contact Division'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a # Email Address
+            instructions: ''
+            label: 'Contact Email'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5e5aad16-6bdc-4d3e-adfd-75147a323b78 # Phone Number
+            instructions: ''
+            label: 'Contact Phone Number'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0e74b82a-254d-45d0-b9a1-d6b6774e6eef # Contact Address
             instructions: null
             label: null
             required: false
@@ -155,16 +188,8 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ca717470-3ae1-44a0-9ee8-886b6fe780cf # Contact Info
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            type: craft\fieldlayoutelements\HorizontalRule
+            heading: 'Related Content'
+            type: craft\fieldlayoutelements\Heading
           -
             fieldUid: bf6d4af1-38c9-4159-8980-38c9f2e52568 # Related Services
             instructions: null
@@ -175,21 +200,19 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            type: craft\fieldlayoutelements\HorizontalRule
-          -
-            fieldUid: 3bc9f075-4edc-4909-ba86-ea128c3ddb93 # Subheading
-            instructions: 'If left blank, the heading will default to "Related Resources"'
-            label: 'Related Resources Heading'
+            fieldUid: 4b5cda22-38e1-4580-b113-b6ceee3c9c09 # Related Resources
+            instructions: 'Related Resources can include Document, Document Packets, Resources, Projects or Topics.'
+            label: ''
             required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
           -
-            fieldUid: 4b5cda22-38e1-4580-b113-b6ceee3c9c09 # Related Resources
-            instructions: 'Related Resources can include Document, Document Packets, Resources, Projects or Topics.'
-            label: ''
-            required: ''
+            fieldUid: a64389e9-e0f9-4d5b-ae78-16f6b5db6785 # Related Departments
+            instructions: null
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
