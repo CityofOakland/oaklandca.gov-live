@@ -1,5 +1,4 @@
 <a id="skipto" href="#content" class="block">Skip to content</a>
-
 <style>
 	#skipto {
 		background: white;
@@ -13,26 +12,8 @@
 		z-index: 100000;
 	}
 
-	#skipto.state-active {
+	#skipto:active,
+	#skipto:focus {
 		transform: translateY(0);
 	}
 </style>
-
-
-{% js at endBody %}
-	var $content 	= $('#content');
-	var $skipto 	= $('#skipto');
-
-	if($content.length && window.scrollY < $content.offset().top) {
-		$skipto.addClass('state-active');
-		$(window).on('scroll', disableSkipTo);
-	}
-
-	function disableSkipTo() {
-		console.log('trigger');
-		if(window.scrollY >= $content.offset().top) {
-			$skipto.removeClass('state-active');
-			$(window).off('scroll', disableSkipTo);
-		}
-	}
-{% endjs %}
