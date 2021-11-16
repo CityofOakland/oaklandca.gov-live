@@ -190,7 +190,14 @@
         fill: white;
     }
 
+    .dropdown.dropdown-megamenu > a:focus + .dropdown-container,
+    .dropdown.dropdown-megamenu:focus-within .dropdown-container {
+        display: block !important;
+    }
+
     .dropdown.dropdown-megamenu:hover > a,
+    .dropdown.dropdown-megamenu:focus-within > a,
+    .dropdown.dropdown-megamenu > a:focus,
     .dropdown.dropdown-megamenu.state-active > a {
         background: #207127;
         color: white;
@@ -201,7 +208,8 @@
         display: block;
     }
 
-    #megamenu .card:hover {
+    #megamenu .card:hover,
+    #megamenu .card:focus {
         background: #0D5713;
     }
 
@@ -221,7 +229,8 @@
         background: #FFF3C4;
     }
 
-    #megamenu .card.dark:hover {
+    #megamenu .card.dark:hover,
+    #megamenu .card.dark:focus {
         background: #FFFBEA;
     }
 
@@ -240,6 +249,12 @@
 
         #megamenu .card {
             padding: 10px 20px;
+        }
+
+        #megamenu .card:not(.dark) {
+            border-bottom: 1px solid #3E9141;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
         }
 
         #megamenu .clamp {
