@@ -94,6 +94,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: 6aaa96ea-268b-4fb7-b27c-0a481c5b3c51 # Accordion Header
+            instructions: ''
+            label: 'Other Options Header'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: e57d997c-ca20-4022-8841-f9fd919933df # Accordion
             instructions: 'Add additional ways to complete the service. These options will be embedded in accordions.'
             label: 'Other Options'

@@ -1,4 +1,4 @@
-dateModified: 1636992447
+dateModified: 1637183814
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -88,6 +88,7 @@ meta:
     5fab788c-0374-4ac2-945d-ba96ffd84669: 'Press Release Files' # Press Release Files
     6a0b2a6f-4bff-474e-a3b2-d0b19a556875: 'Location Name' # Location Name
     6a3e4392-eb9c-470f-a379-10e0fcf5074e: Audio # Audio
+    6aaa96ea-268b-4fb7-b27c-0a481c5b3c51: 'Accordion Header' # Accordion Header
     6ac11602-f5a4-4e2e-bc97-fdfea3e3d005: 'Open Hours' # Open Hours
     6ad6bb8d-7fc5-4c49-8695-d7ea3c27da98: Number # Number
     6b0e6bd2-24c1-4341-acf8-97862725a74c: 'Event Types' # Event Types

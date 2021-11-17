@@ -1,13 +1,13 @@
-columnSuffix: ctezqvuz
-contentColumnType: string(1000)
+columnSuffix: jivawyfr
+contentColumnType: text
 fieldGroup: 515d69ea-6174-405e-ab09-653ef390e370 # Services
-handle: description
-instructions: 'Provide one sentence about anything that the user should know before clicking on the Call to Action button.'
-name: Description
+handle: accordionHeader
+instructions: ''
+name: 'Accordion Header'
 searchable: false
 settings:
   byteLimit: null
-  charLimit: 250
+  charLimit: null
   code: ''
   columnType: null
   initialRows: '4'

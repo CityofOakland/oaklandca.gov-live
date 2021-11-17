@@ -7,7 +7,7 @@ name: 'Lead In'
 searchable: true
 settings:
   byteLimit: null
-  charLimit: 140
+  charLimit: 250
   code: ''
   columnType: text
   initialRows: '2'

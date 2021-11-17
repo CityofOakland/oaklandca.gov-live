@@ -22,7 +22,7 @@
   {% endif %}
 
   {% if entry.accordion|length %}
-    <h3>Other options to report</h3>
+    <h3>{{ entry.accordionHeader }}</h3>
     <div class="accordion" data-allow-toggle>
       <ul aria-label="Accordion Control Group Buttons" class="accordion-controls">
         {% for item in entry.accordion.all() %}
