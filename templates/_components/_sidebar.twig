@@ -23,7 +23,7 @@
       {% endif %}
       {% if entry.relatedResources|length  %}
         <hr style="border-top: 2px solid #212121;opacity:1;"/>
-        <h4>{{ entry.heading ? entry.heading : 'Related Resources' }}</h4>
+        <h4>{{ 'Related Resources'|t }}</h4>
         <ul class="ul-icons related">
           {% for entry in entry.relatedResources.all() %}
             {% switch entry.type.section.handle %}
