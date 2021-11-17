@@ -213,7 +213,7 @@ fieldLayouts:
             width: 100
           -
             fieldUid: 4b5cda22-38e1-4580-b113-b6ceee3c9c09 # Related Resources
-            instructions: 'Related Resources can include Document, Document Packets, Resources, Projects or Topics.'
+            instructions: ''
             label: ''
             required: ''
             tip: null
