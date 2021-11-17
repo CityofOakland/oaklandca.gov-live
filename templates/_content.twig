@@ -107,6 +107,10 @@
                 entries:    entry.relatedDepartments.all()
               } %}
             {% endif %}
+
+            {% for block in entry.componentsFooter.level(1).all() %}
+              {% include '_components/_' ~ block.type %}
+            {% endfor %}
           </div>
         </section>
 
