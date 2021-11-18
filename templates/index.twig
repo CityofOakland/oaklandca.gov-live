@@ -16,7 +16,6 @@
 
 {% block content %}
 <div class="components">
-
   <section class="bg-image" style="background-image:url({{ bannerImage.url }});background-position:{{ bannerImage.getFocalPoint('asCss') }};">
     <div class="container xl:py-24">
       <div>
@@ -32,6 +31,8 @@
     </div>
   </section>
 
+  <div id="content" style="position:relative;top:-80px;"></div>
+  
   {% if entry.cityServicesAndResourcesUpdates|length %}
     {% include '_components/partials/_cards' with {
       background:   '#f7f7f7',

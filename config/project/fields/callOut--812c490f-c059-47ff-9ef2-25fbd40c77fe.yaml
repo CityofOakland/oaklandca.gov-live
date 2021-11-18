@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 515d69ea-6174-405e-ab09-653ef390e370 # Services
+handle: callOut
+instructions: 'Optional. Use a Call Out to highlight important and timely information.'
+name: 'Call Out'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_callout}}'
+  maxBlocks: '2'
+  minBlocks: ''
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

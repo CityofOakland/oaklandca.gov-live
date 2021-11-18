@@ -1,5 +1,0 @@
-<a class="button {{ block.style }} {{ block.size }}" href="{{ block.externalLink ? block.externalLink }}" {{ block.newTab ? 'target="_blank"' : '' }} {{ block.externalLink ? '' : 'disabled' }}>
-	{{ block.label }}
-	{% if block.icon == 'arrowRight' %}<span class="arrow-right" role="img" aria-label="arrow right">&rarr;</span>{% endif %}
-	{% if block.icon == 'download' %}{{ svg( '@webroot/assets/img/icon-download-updated.svg') }}{% endif %}
-</a>

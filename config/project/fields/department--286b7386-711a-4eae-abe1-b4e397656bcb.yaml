@@ -1,6 +1,6 @@
 columnSuffix: null
 contentColumnType: string
-fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
+fieldGroup: 515d69ea-6174-405e-ab09-653ef390e370 # Services
 handle: department
 instructions: ''
 name: Department
@@ -10,7 +10,7 @@ settings:
   limit: '1'
   localizeRelations: false
   selectionLabel: ''
-  showSiteMenu: false
+  showSiteMenu: true
   source: null
   sources:
     - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments

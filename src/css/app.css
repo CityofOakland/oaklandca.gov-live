@@ -319,9 +319,7 @@ input,
 textarea,
 button {
   &:focus {
-    outline-style: dotted;
-    outline-color: invert;
-    outline-width: 1px;
+    outline: 4px solid #0EA5E9;
   }
 }
 
@@ -558,6 +556,10 @@ body.open .page-holder {
   padding: 0 !important;
 }
 
+.accordion .ul-icons {
+  padding-top: 1rem;
+}
+
 .accordion-item {
   border: 2px solid #616E7C;
   margin-bottom: 16px;
@@ -611,8 +613,12 @@ body.open .page-holder {
   padding: 24px;
 }
 
-.accordion-item > div > *:first-child {
+.accordion-item > div > *:first-child:not(.button) {
   padding-top: 0;
+}
+
+.accordion-item > div > *:first-child.button {
+  margin-top: 0;
 }
 
 .accordion-item > div > .button {
@@ -697,6 +703,148 @@ body.open .page-holder {
   margin: 0 0.25rem;
 } */
 
+.button {
+  background: #207127;
+  border: 2px solid #207127;
+  border-radius: 2px;
+  color: white;
+  display: inline-block;
+  font-weight: 700;
+  font-size:  16px;
+  line-height: 1.38;
+  outline-offset: 2px;
+  margin: 1em 15px 15px 0;
+  padding: 16px 32px;
+  text-decoration: none !important;
+}
+
+.button:hover {
+  background: #0D5713;
+  border-color: #0D5713;
+  color: white;
+}
+
+.button:active {
+  background: #04400A;
+  border-color: #04400A;
+}
+
+.button:focus {
+  outline: 4px solid #0EA5E9;
+}
+
+.button[disabled] {
+  background: #B1B1B1;
+  border-color: #B1B1B1;
+  pointer-events: none;
+}
+
+.button.secondary {
+  background: white;
+  border: 2px solid #207127;
+  color: #207127;
+}
+
+.button.secondary:hover {
+  border-color: #0D5713;
+  color: #0D5713;
+}
+
+.button.secondary:active {
+  border-color: #04400A;
+  color: #04400A;
+}
+
+.button.secondary[disabled] {
+  border-color: #B1B1B1;
+  color: #B1B1B1;
+  pointer-events: none;
+}
+
+.button.accent {
+  background: #F7C948;
+  border: 2px solid #F7C948;
+  color: #222222;
+}
+
+.button.accent:hover {
+  background: #F0B429;
+  border-color: #F0B429;
+}
+
+.button.accent:active {
+  background: #CB6E17;
+  border-color: #CB6E17;
+  color: white;
+}
+
+.button.accent[disabled] {
+  background: #B1B1B1;
+  border-color: #B1B1B1;
+  color: white;
+  pointer-events: none;
+}
+
+.button.medium {
+  padding: 16px 16px;
+}
+
+.button.small {
+  padding: 8px 8px;
+}
+
+.button span {
+  display: inline-block;
+}
+
+.button svg {
+  display: inline-block;
+  margin-left: 6px;
+  margin-bottom: 1px;
+  height: 16px;
+  width: 16px;
+}
+
+.button svg path {
+  fill: white;
+}
+
+.button.secondary svg path {
+  fill: #207127;
+}
+
+.button.secondary:hover svg path {
+  fill: #0D5713;
+}
+
+.button.secondary:active svg path {
+  fill: #04400A;
+}
+
+.button.secondary[disabled] svg path {
+  fill: #B1B1B1;
+}
+
+.button.accent svg path {
+  fill: #222222;
+}
+
+.button.accent:active svg path {
+  fill: white;
+}
+
+.button.accent[disabled] svg path {
+  fill: white;
+}
+
+.button .arrow-left {
+  margin-right: 6px;
+}
+
+.button .arrow-right {
+  margin-left: 6px;
+}
+
 .card {
   border-radius: 4px;
   display: block;
@@ -764,6 +912,11 @@ body.open .page-holder {
   .components table {
     font-size: 16px;
   }
+}
+
+.components table caption {
+  padding: 8px;
+  text-align: left;
 }
 
 .components th {
@@ -867,7 +1020,7 @@ body.open .page-holder {
   background: #FFFBEA;
 }
 
-.components .callout a {
+.components .callout a:not(.button) {
   color: inherit;
   text-decoration: underline;
 }
@@ -877,7 +1030,7 @@ body.open .page-holder {
 }
 
 .components .callout p {
-  padding-top: 0;
+  padding-top: 0.5rem;
 }
 
 .components .callout p:first-child {
@@ -888,6 +1041,11 @@ body.open .page-holder {
   flex-shrink: 0;
   margin-right: 1rem;
   margin-top: 4px;
+}
+
+.components .embed-container {
+  margin-top: 1rem;
+  margin-bottom: 0;
 }
 
 .components .hr {
@@ -984,7 +1142,22 @@ body.open .page-holder {
   }
 }
 
+.components tbody {
+  border-top: 1px solid black;
+}
+
+.components tbody tr {
+  border-bottom: 1px solid black;
+}
+
 @media (max-width: 767px) {
+  .components tbody {
+    border-top: none;
+  }
+
+  .components tbody tr {
+    border-bottom: none;
+  }
   /* Force table to not be like tables anymore */
   .components.js-initialized table,
   .components.js-initialized thead,
@@ -997,10 +1170,6 @@ body.open .page-holder {
 
   .components.js-initialized tbody {
     border-top: 2px solid black;
-    border-bottom: 1px solid black;
-  }
-
-  .components.js-initialized tbody td {
     border-bottom: 1px solid black;
   }
   
@@ -1053,145 +1222,15 @@ body.open .page-holder {
   margin-top: 0;
 }
 
-.components .button {
-  background: #207127;
-  border: 2px solid #207127;
-  border-radius: 2px;
-  color: white;
-  display: inline-block;
-  font-weight: 700;
-  font-size:  16px;
-  line-height: 1.38;
-  outline-offset: 2px;
-  margin: 1em 15px 15px 0;
-  padding: 16px 32px;
-  text-decoration: none;
+#components-sidebar > hr:not(:first-child) {
+  margin-top: 1.25em;
 }
 
-.components .button:hover {
-  background: #0D5713;
-  border-color: #0D5713;
-}
-
-.components .button:active {
-  background: #04400A;
-  border-color: #04400A;
-}
-
-.components .button:focus {
-  outline: 4px solid #0EA5E9;
-}
-
-.components .button[disabled] {
-  background: #B1B1B1;
-  border-color: #B1B1B1;
-  pointer-events: none;
-}
-
-.components .button.secondary {
-  background: white;
-  border: 2px solid #207127;
-  color: #207127;
-}
-
-.components .button.secondary:hover {
-  border-color: #0D5713;
-  color: #0D5713;
-}
-
-.components .button.secondary:active {
-  border-color: #04400A;
-  color: #04400A;
-}
-
-.components .button.secondary[disabled] {
-  border-color: #B1B1B1;
-  color: #B1B1B1;
-  pointer-events: none;
-}
-
-.components .button.accent {
-  background: #F7C948;
-  border: 2px solid #F7C948;
-  color: #222222;
-}
-
-.components .button.accent:hover {
-  background: #F0B429;
-  border-color: #F0B429;
-}
-
-.components .button.accent:active {
-  background: #CB6E17;
-  border-color: #CB6E17;
-  color: white;
-}
-
-.components .button.accent[disabled] {
-  background: #B1B1B1;
-  border-color: #B1B1B1;
-  color: white;
-  pointer-events: none;
-}
-
-.components .button.medium {
-  padding: 16px 16px;
-}
-
-.components .button.small {
-  padding: 8px 8px;
-}
-
-.components .button span {
-  display: inline-block;
-}
-
-.components .button svg {
-  display: inline-block;
-  margin-left: 6px;
-  margin-bottom: 1px;
-  height: 16px;
-  width: 16px;
-}
-
-.components .button svg path {
-  fill: white;
-}
-
-.components .button.secondary svg path {
-  fill: #207127;
-}
-
-.components .button.secondary:hover svg path {
-  fill: #0D5713;
-}
-
-.components .button.secondary:active svg path {
-  fill: #04400A;
-}
-
-.components .button.secondary[disabled] svg path {
-  fill: #B1B1B1;
-}
-
-.components .button.accent svg path {
-  fill: #222222;
-}
-
-.components .button.accent:active svg path {
-  fill: white;
-}
-
-.components .button.accent[disabled] svg path {
-  fill: white;
-}
-
-.components .button .arrow-left {
-  margin-right: 6px;
-}
-
-.components .button .arrow-right {
-  margin-left: 6px;
+#components-sidebar > h1,
+#components-sidebar > h2,
+#components-sidebar > h3,
+#components-sidebar > h4 {
+  padding-top: 1em;
 }
 
 .content > h1 {
@@ -1311,4 +1350,101 @@ body.open .page-holder {
 
 .pagination .prev::after {
   transform: rotateZ(180deg);
+}
+
+.process {
+  list-style: none !important;
+  padding-left: 0 !important;
+  padding-top: 1.5em !important;
+}
+
+.process > li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.process > li:last-of-type {
+  margin-bottom: 0;
+}
+
+.process > li::before {
+  border: 3px solid #9e9e9e;
+  border-radius: 50%;
+  content: attr(data-index);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: -4.5px;
+  margin-right: 10px;
+  padding-top: 1px;
+  height: 36px;
+  width: 36px;
+}
+
+.process > li::after {
+  background: #e4e4e7;
+  content: "";
+  position: absolute;
+  top: 32px;
+  bottom: -28px;
+  width: 3px;
+  left: 16px;
+  z-index: -1;
+}
+
+.process li:last-of-type::after {
+  display: none;
+}
+
+.process .ul-icons {
+  padding-top: 1rem;
+}
+
+.ul-icons {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.ul-icons > li {
+  margin-bottom: 15px;
+}
+
+.ul-icons > li,
+.ul-icons > li > a {
+  display: flex;
+  align-items: flex-start;
+}
+
+.ul-icons > li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  margin-right: 10px;
+  width: 22.5px;
+}
+
+.related > li svg path {
+  fill: #2e8131;
+}
+
+.ul-icons a {
+  text-decoration: none;
+}
+
+.ul-icons a:hover,
+.ul-icons a:focus {
+  text-decoration: underline;
+}
+
+.ul-icons.related a {
+  text-decoration: underline;
+}
+
+.ul-icons.related a:hover,
+.ul-icons.related a:focus {
+  text-decoration: none;
 }
