@@ -1,4 +1,4 @@
-dateModified: 1637244195
+dateModified: 1637246649
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -763,6 +763,10 @@ plugins:
     licenseKey: null
     schemaVersion: 4.4.0
     settings: null
+  freeform:
+    edition: lite
+    enabled: true
+    schemaVersion: 3.3.2
   google-maps:
     enabled: true
     licenseKey: 88Z3Y9HY00OZ7NQEBWTNETQL
