@@ -180,17 +180,24 @@ fields:
     type: doublesecretagency\googlemaps\fields\AddressField
   eb56abb2-5b18-4c5f-8dac-3a9bf998f6ca: # Phone
     columnSuffix: null
-    contentColumnType: string
+    contentColumnType: text
     fieldGroup: null
     handle: phone
     instructions: ''
     name: Phone
     searchable: false
     settings:
-      defaultRegion: US
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
-    type: rynpsc\phonenumber\fields\PhoneNumberField
+    type: craft\fields\PlainText
 handle: contact
 name: Contact
 sortOrder: 4
