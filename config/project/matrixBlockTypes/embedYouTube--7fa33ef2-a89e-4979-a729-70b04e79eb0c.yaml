@@ -17,6 +17,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   474e10df-7bcd-4737-8b49-8c14f7c11b79: # Embed
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: embed

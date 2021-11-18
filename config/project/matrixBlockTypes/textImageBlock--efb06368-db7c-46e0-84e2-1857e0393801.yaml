@@ -71,6 +71,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   323dd893-cdef-4562-9cfc-566d7afd7909: # Text Block
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: textBlock
@@ -99,6 +100,7 @@ fields:
     translationMethod: none
     type: craft\redactor\Field
   566d26c2-9af4-45bb-b994-a552cc3fc03b: # Display Alt Text as Caption?
+    columnSuffix: null
     contentColumnType: boolean
     fieldGroup: null
     handle: displayAltTextAsCaption
@@ -113,6 +115,7 @@ fields:
     translationMethod: none
     type: craft\fields\Lightswitch
   bcbcc37a-a53b-42f8-9a80-e9abf9ffe063: # Image
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: image
@@ -146,6 +149,7 @@ fields:
     translationMethod: site
     type: craft\fields\Assets
   bde3bd63-a118-435a-b947-3f2667918e1b: # Heading
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: heading
@@ -165,6 +169,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   c8061611-d9e5-4ee6-b698-dc19feb2e2a5: # Call to Action
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: callToAction
@@ -280,7 +285,7 @@ fields:
                   - ''
                 -
                   - customPlaceholder
-                  - '["section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f","section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb","section:9da43fd8-c505-4d19-9486-e0cb669c568a","section:8b7c4e26-9aab-4c5d-874e-aee151107de3","section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a","section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf","section:be8acece-2031-4965-a62f-31911d00e24c","section:98d541ae-56ee-4c98-ba9c-37438dc485a0","section:24fa116b-8516-4626-84f3-86b685e71071","section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c","section:70778563-6dac-453d-a4b0-5121f3a614b7"]' # Resources # Officials # Topics # Documents # News # Projects # Document Packets # Departments # Services # Page Alerts # Boards & Commissions
+                  - '["section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f","section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb","section:9da43fd8-c505-4d19-9486-e0cb669c568a","section:8b7c4e26-9aab-4c5d-874e-aee151107de3","section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a","section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf","section:be8acece-2031-4965-a62f-31911d00e24c","section:98d541ae-56ee-4c98-ba9c-37438dc485a0","section:24fa116b-8516-4626-84f3-86b685e71071","section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c","section:70778563-6dac-453d-a4b0-5121f3a614b7"]' # Documents # Document Packets # Resources # Projects # News # Officials # Topics # Services # Departments # Page Alerts # Boards & Commissions
           -
             - fruitstudios\linkit\models\Entry
             -
@@ -364,6 +369,7 @@ fields:
     translationMethod: none
     type: fruitstudios\linkit\fields\LinkitField
   d0cf7d52-44a5-44a7-9efa-ba27c7541ff9: # Image Column Position
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: imageColumnPosition
@@ -399,6 +405,7 @@ fields:
     translationMethod: none
     type: craft\fields\Dropdown
   e58f615b-174a-4196-a96c-e824862acfa9: # Image Column Width
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: imageColumnWidth

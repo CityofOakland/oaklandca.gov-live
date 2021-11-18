@@ -44,7 +44,7 @@
       <div class="container flex-col -my-4" id="facet-holder">
         {% if facets is defined %}
           {% for facet in facets %}
-            <div id="{{ facet.container }}" class="max-w-sm"></div>
+            <div id="{{ facet.container }}" class="max-w-sm facet-container"></div>
           {% endfor %}
         {% endif %}
       </div>
@@ -64,22 +64,29 @@
 {% js on load %}
   $('#hits').on('click', 'a', function(){
 
-    var search_term   = $('#search-input').val();
+    var search_term   = $('#search-input').val() ? $('#search-input').val() : 'No search term';
     var link_clicked  = $(this).attr('href').trim();
 
-    dl.push({
-      'event'         : 'search_result_clicked',
-      'current_url'   : '{{ craft.app.request.absoluteUrl }}',
-      'url'           : link_clicked,
-      'search_term'   : search_term,
-    });
-  });
+    var filters = [];
 
-  $('#facet-holder').on('change', 'select', function(){
+    $('.facet-container > div:visible').each(function(index, element){
+      var $this = $(element);
+      var item = {
+        label : $this.find('.ais-header').text(),
+        value : $this.find('select').val() ? $this.find('select').val() : 'N/A',
+      };
+
+      filters.push(item);
+    });
+
     dl.push({
-      'event'         : 'search_filter_applied',
-      'current_url'   : '{{ craft.app.request.absoluteUrl }}',
-      'filter_name'   : $(this).val(),
+      'event'               : 'search_result_clicked',
+      'current_url'         : '{{ craft.app.request.absoluteUrl }}',
+      'url'                 : link_clicked,
+      'input_search_term'   : search_term,
+      'filters'             : filters,
+      'debug_mode'          : true,
+      'search_bar_id'       : 'instant-search-event-meetings'
     });
   });
 {% endjs %}

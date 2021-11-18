@@ -89,6 +89,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   1c974e73-c709-48c5-bc6e-fb8a9ae1ba8a: # Table
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: table
@@ -138,6 +139,7 @@ fields:
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
   2c145c6e-d6b2-418c-aa28-3ea1eaa51944: # Column 3 Width
+    columnSuffix: null
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column3Width
@@ -158,6 +160,7 @@ fields:
     translationMethod: none
     type: craft\fields\Number
   2ce783d0-daf9-44d1-a0b4-84a0163dcaad: # Column 2 Width
+    columnSuffix: null
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column2Width
@@ -178,6 +181,7 @@ fields:
     translationMethod: none
     type: craft\fields\Number
   3b5ca699-b20a-41e5-a1fd-068dd6a6c081: # Column 4 Width
+    columnSuffix: null
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column4Width
@@ -198,6 +202,7 @@ fields:
     translationMethod: none
     type: craft\fields\Number
   9c805dc0-3e7b-4361-ace3-62b856d8711e: # Column 3 Heading
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: column3Heading
@@ -217,6 +222,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   28f1ddd3-72ce-439e-8d65-9b9a9e19f150: # Column 1 Width
+    columnSuffix: null
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column1Width
@@ -237,6 +243,7 @@ fields:
     translationMethod: none
     type: craft\fields\Number
   40abab6e-fe75-4f91-b6bd-9016b2b01dbe: # Column 2 Heading
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: column2Heading
@@ -256,6 +263,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   d49a42e8-c33e-4689-a1df-83ba0b8d67be: # Column 4 Heading
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: column4Heading
@@ -275,6 +283,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   d535337e-0894-4ce9-80ee-a315e254df71: # Column 1 Heading
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: column1Heading

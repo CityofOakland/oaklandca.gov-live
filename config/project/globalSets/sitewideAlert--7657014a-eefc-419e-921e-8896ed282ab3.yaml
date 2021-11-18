@@ -61,3 +61,4 @@ fieldLayouts:
         sortOrder: 1
 handle: sitewideAlert
 name: 'Sitewide Alert'
+sortOrder: 1

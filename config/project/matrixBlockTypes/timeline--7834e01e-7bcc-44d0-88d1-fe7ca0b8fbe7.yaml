@@ -26,6 +26,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   e1c61482-cd09-4ea3-8940-a602c3fe4718: # Heading
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: heading
@@ -45,6 +46,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   f93e423e-051d-4b4c-bb85-2a5b168296b4: # Timeline
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: timeline

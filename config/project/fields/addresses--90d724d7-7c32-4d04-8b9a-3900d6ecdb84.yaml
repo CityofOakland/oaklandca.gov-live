@@ -1,3 +1,4 @@
+columnSuffix: null
 contentColumnType: string
 fieldGroup: 767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78 # Matrices
 handle: addresses
@@ -8,6 +9,7 @@ settings:
   contentTable: '{{%matrixcontent_addresses}}'
   maxBlocks: ''
   minBlocks: ''
+  propagationKeyFormat: null
   propagationMethod: all
 translationKeyFormat: null
 translationMethod: site

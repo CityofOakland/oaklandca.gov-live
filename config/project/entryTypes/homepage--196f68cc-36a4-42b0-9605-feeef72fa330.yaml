@@ -90,15 +90,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 18fa95ee-449e-4c22-9d88-b0fb8918a38b # Highlighted Services
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
             fieldUid: de273878-3929-4764-b4ab-a670a2987d39 # Highlighted News
             instructions: null
             label: null

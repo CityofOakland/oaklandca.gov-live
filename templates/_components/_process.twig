@@ -1,0 +1,15 @@
+{% if entry.process|length %}
+  {% if heading is defined %}<h3>{{ heading }}</h3>{% endif %}
+  <ol class="process">
+    {% for item in entry.process.all() %}
+      <li data-index="{{ loop.index }}">
+        <div>
+          <span class="font-semibold">{{ item.heading }}</span>
+          {% for block in item.innerContent.all() %}
+            {% include '_components/_' ~ block.type %}
+          {% endfor %}
+        </div>
+      </li>
+    {% endfor %}
+  </ol>
+{% endif %}

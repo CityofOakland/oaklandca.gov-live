@@ -26,6 +26,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   6a0b2a6f-4bff-474e-a3b2-d0b19a556875: # Location Name
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: locationName
@@ -45,6 +46,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   80185635-48b7-48d7-847a-53d941fdda68: # Address
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
     handle: address
@@ -64,6 +66,11 @@ fields:
             - zoom
             - 15
       coordinatesMode: readOnly
+      dragPinDefault: null
+      dragPinLatitude: null
+      dragPinLongitude: null
+      dragPinZoom: null
+      layout: null
       mapOnSearch: open
       mapOnStart: close
       showMap: null

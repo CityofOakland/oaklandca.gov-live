@@ -1,0 +1,46 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
+handle: style
+instructions: 'Select the colour palette of this component.'
+name: Style
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Primary
+        -
+          - value
+          - primary
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Secondary
+        -
+          - value
+          - secondary
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Accent
+        -
+          - value
+          - accent
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

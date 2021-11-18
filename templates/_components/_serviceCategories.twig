@@ -1,0 +1,11 @@
+<section style="background-color:#F7F7F7">
+  <div class="container py-16">
+    <h3>{{ "Services"|t }}</h3>
+    {% for block in block.getDescendants(1) %}
+      {% if block.heading %}<h4 class="pt-10">{{ block.heading }}</h4>{% endif %}
+      {% if block.cityServicesAndResourcesUpdates|length %}
+        {% include '_components/partials/_cards-grid' with { entries: block.cityServicesAndResourcesUpdates.all(), shadow: false } %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

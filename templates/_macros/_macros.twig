@@ -1,3 +1,12 @@
+{% macro card(entry, dark, arrow) %}
+  <li>
+    <a class="card {{ dark ? 'dark' : '' }}" href="{{ entry.url }}">
+      <h4 class="flex justify-between pb-4 {{ dark ? 'text-gray-800' : 'text-green-700' }}"><span>{{ entry.title }}</span> {% if arrow %}<span>&rarr;</span>{% endif %}</h4>
+      <div class="clamp text-gray-800">{{ entry.summary }}</div>
+    </a>
+  </li>
+{% endmacro %}
+
 {% macro relatedSectionCount(entry, relations) %}
   {% set relCount = false %}
   {% for relation in relations %}
@@ -22,6 +31,30 @@
     {% set relUrl = "/" ~ urlBase ~ "/related-to/" ~ section.handle ~ "/" ~ entry.slug %}
     {% include "_partials/_elements/_title-cards" with { title: relSection.name, url: relUrl} %}
   {% endif %}
+{% endmacro %}
+
+{% macro tableBuilder(object, columns) %}
+  <table class="w-full text-sm border border-cool-gray-500">
+    <thead>
+      <tr>
+        {% for col in 1..columns %}
+          {% set colAttrib = 'column' ~ col ~ 'Heading' %}
+          {% set widthAttrib = 'column' ~ col ~ 'Width' %}
+          <th class="px-3 py-1 text-white border bg-cool-gray-500 border-cool-gray-500" style="width: {{ attribute(object, widthAttrib) ~ '%' ?? '' }}">{{ attribute(object, colAttrib) }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in object.table.all() %}
+        <tr class="odd:bg-white even:bg-cool-gray-100">
+          {% for col in 1..columns %}
+            {% set colAttrib = 'column' ~ col ~ 'Cell' %}
+            <td class="p-4 align-top border body-text border-cool-gray-500">{{ attribute(row, colAttrib) | retconAttr( '*', { 'class' : 'last:mb-0' }, false ) }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 {% endmacro %}
 
 {% macro videoEmbed(videoUrl, videoTitle) %}

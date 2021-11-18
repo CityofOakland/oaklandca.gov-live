@@ -26,6 +26,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   1df2afd1-1725-4190-ae6d-b40882c360af: # Column 1 Cell
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: column1Cell
@@ -54,6 +55,7 @@ fields:
     translationMethod: none
     type: craft\redactor\Field
   7b65742c-194e-4096-8efb-75f75936b03d: # Column 2 Cell
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: column2Cell

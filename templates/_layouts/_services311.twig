@@ -43,22 +43,14 @@
       </figure>
       <div class="container py-0">
         <div class="relative flex flex-col items-start py-0 sm:justify-between sm:flex-row-reverse sm:items-center">
-          {% include "_partials/_elements/_banner-google-translate.twig" with { paddingTop: "pt-0" } %}
-          <div class="relative z-10 inline-block px-2 py-1 mt-4 text-xs text-green-800 bg-white rounded-sm shadow sm:mt-0 md:text-xs">
-            <a class="text-green-800 hover:text-green-800 hover:underline" href="{{ siteUrl }}">
-              Oakland
-            </a> →
-            {% for link in breadcrumbs ?? '' %}
-              <a class="text-green-800 hover:text-green-800 hover:underline" href="{{ link.link }}">{{ link.title }}</a> →
-            {% endfor %}
-            <span class="font-bold">{{ entry.title }}</span>
-          </div>
+          {% include "_partials/_elements/_banner-google-translate.twig" with {paddingTop: "pt-0 mb-4 md:mb-0"} %}
+          {% include "_components/partials/_breadcrumbs.twig" %}
         </div>
       </div>
     </div>
   </div>
 {% endif %}
-
+  <div id="content" style="position:relative;top:-80px;"></div>
   {% if entry.modules is defined and entry.modules|length %}
     {% for block in entry.modules.level(1).all() %}
         {% include 'modules/_' ~ block.type %}

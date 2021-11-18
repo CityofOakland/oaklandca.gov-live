@@ -58,7 +58,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 7594e9ae-f194-47c8-9a6b-076789f1087b # Service Types
+            fieldUid: 7594e9ae-f194-47c8-9a6b-076789f1087b # Service Categories
             instructions: null
             label: null
             required: false

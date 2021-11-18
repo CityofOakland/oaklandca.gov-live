@@ -26,6 +26,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   8fc249ab-8729-4542-912e-7a4303aa9598: # Alert Type
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: alertType
@@ -72,6 +73,7 @@ fields:
     translationMethod: none
     type: craft\fields\Dropdown
   c154dd8e-3e78-46c8-869f-374160496c10: # Text
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: text

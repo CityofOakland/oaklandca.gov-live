@@ -1,0 +1,49 @@
+{% extends '_content.twig' %}
+{% block content %}
+  {% if entry.callOut|length %}
+    {% for block in entry.callOut.all() %}
+      {% include '_components/_callOut.twig' %}
+    {% endfor %}
+  {% endif %}
+
+  {% if entry.beforeYouStart|length %}
+    {% for block in entry.beforeYouStart.all() %}
+      {% include '_components/_section.twig' with {defaultHeader: 'Before you Start'} %}
+    {% endfor %}
+  {% endif %}
+
+  <h2>{{ entry.heading ? entry.heading : 'What to Do' }}</h2>
+  {% if entry.description %}<p>{{ entry.description }}</p>{% endif %}
+
+  {% if entry.callToActionButtons %}
+    {% for block in entry.callToActionButtons %}
+      {% include '_components/_button.twig' with {style: (loop.index0 ? 'secondary' : 'primary') } %}
+    {% endfor %}
+  {% endif %}
+
+  {% if entry.accordion|length %}
+    <h3>{{ entry.accordionHeader }}</h3>
+    <div class="accordion" data-allow-toggle>
+      <ul aria-label="Accordion Control Group Buttons" class="accordion-controls">
+        {% for item in entry.accordion.all() %}
+        <li class="accordion-item">
+          <button class="accordion-header" aria-controls="content-{{ item.id }}-{{ loop.index }}" aria-expanded="false" id="accordion-control-{{ item.id }}-{{ loop.index }}">{{ item.heading }} <span>{{ svg( '@webroot/assets/img/icon-plus.svg') }}{{ svg( '@webroot/assets/img/icon-minus.svg') }}</span></button>
+          <div class="accordion-panel" id="content-{{ item.id }}-{{ loop.index }}" hidden>
+            {% for block in item.innerContent.all() %}
+              {% include '_components/_' ~ block.type %}
+            {% endfor %}
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  {% include '_components/_process.twig' with {heading: entry.processHeader} %}
+
+  {% if entry.needToKnow|length %}
+    {% for block in entry.needToKnow.all() %}
+      {% include '_components/_section.twig' with {defaultHeader: 'Need to Know'} %}
+    {% endfor %}
+  {% endif %}
+{% endblock %}

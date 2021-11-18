@@ -1,0 +1,22 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 515d69ea-6174-405e-ab09-653ef390e370 # Services
+handle: department
+instructions: ''
+name: Department
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: null
+  sources:
+    - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

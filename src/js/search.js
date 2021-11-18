@@ -5,8 +5,8 @@ const allSearch = instantsearch({
   apiKey: "9bded46d3070b2089499c70b2389708b",
   indexName: document.querySelector('#all-hits') ? (document.querySelector('#all-hits').dataset.index ? document.querySelector('#all-hits').dataset.index : 'production_all' ) : 'production_all',
   searchParameters: {
-    highlightPreTag: '<b class="font-bold"><em>',
-    highlightPostTag: '</em></b>',
+    highlightPreTag: '<b class="font-bold">',
+    highlightPostTag: '</b>',
   },
   routing: true,
   searchFunction: function(helper) {
@@ -31,18 +31,77 @@ allSearch.addWidget(
     }  })
 );
 
-allSearch.addWidget(
-  instantsearch.widgets.pagination({
-    container: "#bottom-pagination",
-    padding: 5,
-    // default is to scroll to 'body', here we disable this behavior
-    scrollTo: false,
-    cssClasses: {
-      root: "p-0 inline-block",
-      disabled: "w-0"
-    }
-  })
+// 1. Create a render function
+const renderPagination = (renderOptions, isFirstRender) => {
+
+  const container = document.querySelector('#bottom-pagination');
+
+  const { pages, currentRefinement, nbPages, refine } = renderOptions;
+
+  if(nbPages > 1 && nbPages <= 7) {
+
+    const previous  = `<li><a class="prev ${currentRefinement > 0 ? '' : 'disabled' }" href="#" data-value="${currentRefinement - 1}">Previous</a></li>`;
+    const next      = `<li><a class="next ${currentRefinement < nbPages - 1 ? '' : 'disabled'}" href="#" data-value="${currentRefinement + 1}">Next</a></li>`;
+
+    const pages = [...Array(nbPages).keys()];;
+
+    container.innerHTML = `
+      <ul class="pagination">
+        ${previous}
+        ${pages
+          .map(page => `<li><a class="page ${currentRefinement === page ? 'page-active' : ''}" href="#" data-value="${page}">${page + 1}</a></li>`)
+          .join('')}
+        ${next}
+      </ul>
+    `;
+
+    [...container.querySelectorAll('a')].forEach(element => {
+      element.addEventListener('click', event => {
+        event.preventDefault();
+        refine(event.currentTarget.dataset.value);
+      });
+    });
+  } else if(nbPages > 1 && nbPages > 7) {
+    const previous  = `<li><a class="prev ${currentRefinement > 0 ? '' : 'disabled' }" href="#" data-value="${currentRefinement - 1}">Previous</a></li>`;
+    const next      = `<li><a class="next ${currentRefinement < nbPages - 1 ? '' : 'disabled'}" href="#" data-value="${currentRefinement + 1}">Next</a></li>`;
+
+    const first = pages.includes(0) ? '' : `<li><a class="page" href="#" data-value="0">1</a></li><li>...</li>`;
+    const last  = pages.includes(nbPages - 1) ? '' : `<li>...</li><li><a class="page" href="#" data-value="${nbPages - 1}">${nbPages}</a></li>`;
+
+    container.innerHTML = `
+      <ul class="pagination">
+        ${previous}
+        ${first}
+        ${pages
+          .map(page => `<li><a class="page ${currentRefinement === page ? 'page-active' : ''}" href="#" data-value="${page}">${page + 1}</a></li>`)
+          .join('')}
+        ${last}
+        ${next}
+      </ul>
+    `;
+
+    [...container.querySelectorAll('a')].forEach(element => {
+      element.addEventListener('click', event => {
+        event.preventDefault();
+        refine(event.currentTarget.dataset.value);
+      });
+    });
+  } else {
+    container.innerHTML = '';
+  }
+};
+
+// 2. Create the custom widget
+const customPagination = instantsearch.connectors.connectPagination(
+  renderPagination
 );
+
+// 3. Instantiate
+allSearch.addWidgets([
+  customPagination({
+    padding: 2,
+  })
+]);
 
 allSearch.addWidget(
   instantsearch.widgets.menu({
@@ -59,16 +118,13 @@ allSearch.addWidget(
     templates: {
       empty: "No results",
       item: `
-      <div class="mb-4">
-        <h3 class="text-lg my-0"><a class="hover:bg-green-300 hover:text-white" href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
-        <p class="text-sm my-0">{{{ _snippetResult.leadIn.value }}}</p>
-        {{{ #summary }}}
-          <p class="text-sm my-0">{{{ _snippetResult.summary.value }}}</p>
-        {{{ /summary }}}
-        {{ ^summary }}
-          <p class="text-sm my-0">{{{ _snippetResult.body.value }}}</p>
-        {{{ /summary }}}
-        <p class="text-sm my-0">{{{ _snippetResult.bio.value }}}</p>
+      <div class="algolia-result">
+        <h3><a href="{{ url }}">{{{_highlightResult.title.value}}}</a> <span>{{ section }}</span></h3>
+        <p>{{{ _snippetResult.leadIn.value }}}</p>
+        {{{ #summary }}}<p>{{{ _snippetResult.summary.value }}}</p>{{{ /summary }}}
+        {{ ^summary }}<p>{{{ _snippetResult.body.value }}}</p>{{{ /summary }}}
+        <p>{{{ _snippetResult.bio.value }}}</p>
+        <p class="updated">Updated: {{ dateUpdated }}</p>
       </div>
       `
     },

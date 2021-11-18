@@ -26,6 +26,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   0cf5f750-4518-4e2c-9766-9b21e108e9be: # Staff Heading
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: staffHeading
@@ -45,6 +46,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   a9d9aefa-be2d-4db6-af99-ff6d90c0e200: # Staff
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: staff

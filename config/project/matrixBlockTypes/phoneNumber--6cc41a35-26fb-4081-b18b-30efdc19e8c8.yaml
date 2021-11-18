@@ -26,6 +26,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   6ad6bb8d-7fc5-4c49-8695-d7ea3c27da98: # Number
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: number
@@ -45,6 +46,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   ebf1c335-ab50-4879-9bfa-72e22c1ceb98: # Phone Number Title
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: phoneNumberTitle

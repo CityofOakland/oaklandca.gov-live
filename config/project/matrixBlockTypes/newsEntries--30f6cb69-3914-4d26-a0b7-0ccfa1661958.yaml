@@ -53,6 +53,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   1e960f43-f531-48ab-81a0-67d143aebac6: # Heading
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: heading
@@ -72,6 +73,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   5ee14b98-d8d9-46bd-88d8-0aa45871cfc9: # Hide Summary?
+    columnSuffix: null
     contentColumnType: boolean
     fieldGroup: null
     handle: hideSummary
@@ -86,6 +88,7 @@ fields:
     translationMethod: none
     type: craft\fields\Lightswitch
   295df0c5-cc10-4392-9fbb-3452cc97b84a: # Entries
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: entries
@@ -108,6 +111,7 @@ fields:
     translationMethod: site
     type: craft\fields\Entries
   8960f671-8e74-4a40-a507-6ba440cb6c8e: # Allow Autofill?
+    columnSuffix: null
     contentColumnType: boolean
     fieldGroup: null
     handle: allowAutofill
@@ -122,6 +126,7 @@ fields:
     translationMethod: none
     type: craft\fields\Lightswitch
   a2cf024d-962c-4e66-a16e-9b6faefbae19: # Hide Thumbnails?
+    columnSuffix: null
     contentColumnType: boolean
     fieldGroup: null
     handle: hideThumbnails

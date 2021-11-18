@@ -35,6 +35,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   18c27d2b-612d-49e3-87d4-9a61c6c85408: # Online Title
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: onlineTitle
@@ -54,6 +55,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   7332ba8f-a9ac-4e3b-b372-8b4724617ae4: # Link Text
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: linkText
@@ -73,6 +75,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   fbdba36a-ff35-4883-a29d-e5194516c7ae: # Link URL
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: linkUrl

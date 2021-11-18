@@ -26,6 +26,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   9a33b1ce-5545-4a3e-b6d9-1dea16f8869c: # Audio Title
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: audioTitle
@@ -45,6 +46,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   2149a8bc-3dd5-41f2-a28a-c714bcf5f5c7: # Audio Link
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: audioLink

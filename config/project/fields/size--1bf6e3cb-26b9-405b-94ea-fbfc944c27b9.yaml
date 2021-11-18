@@ -1,0 +1,46 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
+handle: size
+instructions: 'Adjust the size of this component.'
+name: Size
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Large
+        -
+          - value
+          - large
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Medium
+        -
+          - value
+          - medium
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Small
+        -
+          - value
+          - small
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

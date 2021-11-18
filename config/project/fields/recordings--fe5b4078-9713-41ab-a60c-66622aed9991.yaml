@@ -1,3 +1,4 @@
+columnSuffix: null
 contentColumnType: string
 fieldGroup: 7a44f3bc-fbe1-424a-a4ea-6bb6f3528d75 # Events
 handle: recordings
@@ -8,6 +9,7 @@ settings:
   contentTable: '{{%matrixcontent_recordings}}'
   maxBlocks: ''
   minBlocks: ''
+  propagationKeyFormat: null
   propagationMethod: all
 translationKeyFormat: null
 translationMethod: site

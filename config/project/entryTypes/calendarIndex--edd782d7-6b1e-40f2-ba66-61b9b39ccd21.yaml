@@ -60,7 +60,7 @@ fieldLayouts:
         name: SEO
         sortOrder: 2
 handle: calendarIndex
-hasTitleField: false
+hasTitleField: true
 name: 'Calendar Index'
 section: ba27f849-b247-4db0-ae91-53a01f44bd0b # Calendar Index
 sortOrder: 1

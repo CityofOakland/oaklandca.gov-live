@@ -17,6 +17,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   146e43c8-9154-487d-ab15-799e0f67185a: # Image File
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: imageFile

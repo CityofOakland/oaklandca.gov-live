@@ -21,12 +21,12 @@ permissions:
   - 'createentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
   - 'publishentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
   - 'editentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-  - 'createentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
   - 'publishentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'publishpeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'editpeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'publishpeerentrydrafts:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'editpeerentrydrafts:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
   - 'editentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-  - 'createentries:92f0f749-ed5b-4acc-aa15-6340f6e25791'
-  - 'publishentries:92f0f749-ed5b-4acc-aa15-6340f6e25791'
-  - 'editentries:92f0f749-ed5b-4acc-aa15-6340f6e25791'
   - 'createentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   - 'publishentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   - 'editentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects

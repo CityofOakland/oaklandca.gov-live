@@ -25,6 +25,11 @@
         link: entry.url
       }
     ],
+    bannerImage: entry.banner | length ? {
+      position: entry.banner.one().getFocalPoint('asCss'),
+      src: entry.banner.one().url,
+      alt: entry.banner.one().title ?? entry.banner.one().filename
+    } : false,
     ctaButton: false
   } %}
   <section class="bg-white">

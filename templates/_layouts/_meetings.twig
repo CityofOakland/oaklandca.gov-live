@@ -1,0 +1,83 @@
+{% extends '_content.twig' %}
+{% import '_macros/_macros' as macros %}
+
+{% block content %}
+  {# Callout #}
+  {% include '_components/_callOut' with {
+    callOutType   : 'attention',
+    heading       : 'this is a temporary callout placeholder',
+    description   : '' 
+  } %}
+  {# Details #}
+  {% if entry.mainContent %}<div>{{ entry.mainContent }}</div>{% endif %}
+
+  {# Minutes #}
+  {% if entry.documentFile|length %}
+    <h2>Minutes</h2>
+    <ul class="ul-icons related" style="padding-top: 1rem;">
+    {% for document in entry.documentFile.all() %}
+      <li><a href="{{ document.url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.title }} Minutes - {{ entry.postDate|date('m/d/Y') }}</a></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+  {# Recordings #}
+  {% if entry.embeds|length %}
+    <h2>Recordings</h2>
+    {% for item in entry.embeds %}
+      <figure>
+        {% switch item.type %}
+          {% case 'granicus' %}
+            {{ macros.videoEmbed(item.granicusUrl) }}
+          {% case 'youtube' %}
+            {% set id = item.youtubeUrl|split('?')[1]|split('&')[0]|split('=')[1] %}
+            <div class="embed-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/{{ id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          {% case 'soundcloud' %}
+            {{ item.soundcloudEmbed|raw }}
+          {% case 'vimeo' %}
+            {% set id = item.vimeoUrl|split('/')|last %}
+            <div class="embed-container"><iframe src="https://player.vimeo.com/video/{{ id }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+        {% endswitch %}
+        <p><i>Meeting recording of {{ entry.title }} on {{ entry.postDate|date('F j, Y') }}</i></p>
+      </figure>
+    {% endfor %}
+  {% endif %}
+
+  <h2>Agenda</h2>
+  {% if entry.agendaDownloadableCopy|length %}
+    <ul class="ul-icons related" style="padding-top: 1rem;">
+      <li><a href="{{ entry.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.agendaDownloadableCopy.one().title }} - {{ entry.postDate|date("m/d/Y") }} Agenda</a></li>
+    </ul>
+  {% endif %}
+  {% include '_components/_process.twig' with {heading: 'Agenda Items'} %}
+
+  <hr class="hr medium"/>
+  {# Accessibility Request #}
+  {% set accessibilityText %}
+    {% if entry.accessibilityText %}
+      <p>{{ entry.accessibilityText|raw }}</p>
+    {% else %}
+      <p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
+      <p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a courtesy to attendees with chemical sensitivities.</p>
+    {% endif %}
+    {% if entry.contactInfo.type('email')|length %}
+      {% set prefix = 'mailto:' %}
+      {% for item in entry.contactInfo.type('email').all() %}
+        {% if loop.index == 1 %}
+          {% set prefix = prefix ~ item.email ~ "?cc=" %}
+        {% elseif loop.index == 2 %}
+          {% set prefix = prefix ~ item.email %}
+        {% else %}
+          {% set prefix = prefix ~ ", " ~ item.email %}
+        {% endif %}
+      {% endfor %}
+      <a class="button secondary small" href="{{ prefix }}&subject=Accessibility Request: {{ entry.title }} at {{ entry.postDate|date('m/d/Y') }}">Make a Request</a>
+    {% endif %}
+
+  {% endset %}
+  {% include '_components/_callOut' with {
+    callOutType   : 'info',
+    heading       : 'Accessibility and interpretation requests',
+    description   : accessibilityText 
+  } %}
+{% endblock %}

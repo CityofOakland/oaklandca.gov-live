@@ -53,6 +53,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   4b278e2a-dc49-4f60-a4bd-18575fb15098: # Milestone Started?
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: milestoneStarted
@@ -77,6 +78,7 @@ fields:
     translationMethod: none
     type: craft\fields\Checkboxes
   5b066077-3ce6-4583-af94-4fa87136ab3a: # Milestone Link
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: milestoneLink
@@ -275,6 +277,7 @@ fields:
     translationMethod: none
     type: fruitstudios\linkit\fields\LinkitField
   912c64e2-6d85-46bb-b826-955df643a5ef: # Milestone Description
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: milestoneDescription
@@ -303,6 +306,7 @@ fields:
     translationMethod: none
     type: craft\redactor\Field
   c0129db2-783d-4927-b125-203bd8cbdebc: # Milestone Date
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: milestoneDate
@@ -322,6 +326,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   f602bcbb-5ca9-4e04-8f5c-f031ceb1c2d6: # Milestone Name
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: milestoneName

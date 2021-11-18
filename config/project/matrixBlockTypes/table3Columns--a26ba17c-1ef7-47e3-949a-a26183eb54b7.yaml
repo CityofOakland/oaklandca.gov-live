@@ -71,6 +71,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   5ca3c157-200f-49a4-9390-48c84349b0be: # Column 3 Heading
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: column3Heading
@@ -90,6 +91,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   7664938a-7aa3-400c-ab55-335b7ef374bd: # Column 1 Heading
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: column1Heading
@@ -109,6 +111,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   a9027f1f-7200-4053-9b64-7be69dc993e5: # Column 2 Width
+    columnSuffix: null
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column2Width
@@ -129,6 +132,7 @@ fields:
     translationMethod: none
     type: craft\fields\Number
   c3cd0c7f-e997-4960-9b97-046778155766: # Column 1 Width
+    columnSuffix: null
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column1Width
@@ -149,6 +153,7 @@ fields:
     translationMethod: none
     type: craft\fields\Number
   e9c00016-6698-4bae-ae61-26a8ced249d7: # Column 3 Width
+    columnSuffix: null
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column3Width
@@ -169,6 +174,7 @@ fields:
     translationMethod: none
     type: craft\fields\Number
   facc7196-7444-4e77-873f-68c1b09d1298: # Column 2 Heading
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: column2Heading
@@ -188,6 +194,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   ff148937-9066-4578-8eb1-56090c97b181: # Table
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: table

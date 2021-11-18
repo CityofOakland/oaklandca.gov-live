@@ -63,7 +63,9 @@ return [
   // Staging environment settings
   'staging' => [
     // Base site URL
-    'siteUrl' => 'https://staging.oaklandca.dev',
+    'siteUrl' => 'https://staging.oaklandca.gov',
+
+    'devMode' => true,
   ],
 
   // Production environment settings
@@ -72,5 +74,7 @@ return [
     'siteUrl' => 'https://www.oaklandca.gov',
     // Changes the default preview duration from 24 hours to 5 days
     'defaultTokenDuration' => 432000,
+
+    'allowAdminChanges' => false,
   ],
 ];

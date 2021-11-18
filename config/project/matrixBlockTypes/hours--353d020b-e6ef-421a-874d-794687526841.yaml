@@ -26,6 +26,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   2894ae3a-7b9b-4435-8435-8df18709cf7b: # Hours
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: hours
@@ -79,6 +80,7 @@ fields:
     translationMethod: none
     type: craft\storehours\Field
   d349329b-ec60-41dd-8bfa-097958ff477c: # Hours Title
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: hoursTitle

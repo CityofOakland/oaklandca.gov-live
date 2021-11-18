@@ -1,0 +1,41 @@
+field: ce345611-039a-4fb5-9a1c-a9eef7d74514 # Embeds
+fieldLayouts:
+  d76398a7-c8dd-49dd-8abc-f00bac088d0b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: a2224dcd-7dbd-4096-bc29-a79aa6b7b2ba # Vimeo URL
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  a2224dcd-7dbd-4096-bc29-a79aa6b7b2ba: # Vimeo URL
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: vimeoUrl
+    instructions: 'Copy in the URL of the Vimeo video in browser. This component will auto-generate an embed based on the URL parameters.'
+    name: 'Vimeo URL'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: vimeo
+name: Vimeo
+sortOrder: 3

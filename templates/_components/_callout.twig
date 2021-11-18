@@ -1,0 +1,18 @@
+{% set callOutType = callOutType is defined ? callOutType : block.callOutType %}
+{% set heading     = heading is defined ? heading : block.header %}
+{% set description = description is defined ? description : block.description %}
+
+<blockquote class="callout {{ callOutType }}">
+	{% switch callOutType %}
+		{% case 'info' %}
+		{{ svg( '@webroot/assets/img/icon-info.svg') }}
+		{% case 'attention' %}
+		{{ svg( '@webroot/assets/img/icon-attention.svg') }}
+		{% default %}
+		{{ svg( '@webroot/assets/img/icon-info.svg') }}
+	{% endswitch %}
+	<div>
+		<p><b>{{ heading }}</b></p>
+		{{ description|raw }}
+	</div>
+</blockquote>

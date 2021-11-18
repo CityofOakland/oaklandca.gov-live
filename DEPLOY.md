@@ -2,9 +2,9 @@
 
 Oakland is currently on Craft CMS, and has two environments: `staging` (https://staging.oaklandca.dev/) and `production` (https://www.oaklandca.gov/). 
 
-Deployment to `staging` is automated through GitHub Actions. If you deploy to the GitHub repository (https://github.com/CityofOakland/oaklandca.gov-live) on the staging branch, it will automatically run a few scripts to deploy the site live. You can see the script here: https://github.com/CityofOakland/oaklandca.gov-live/blob/staging/.github/workflows/manual.yml.
+For both `staging` and `production` deploys, run a git pull while SSH’d into the staging/production site. You should have a 1Password invite to the Oakland Digital Services vault. All Craft files should live in the ~/www/public_html folder.
 
-For production deploys, run a git pull while SSH’d into the production site. You should have a 1Password invite to the Oakland Digital Services vault. All Craft files should live in the ~/www/public_html folder.
+Someimtes you may need to run composer install before you can apply any project-config changes (`./craft project-config/apply`). In which case, please use `composer.phar` for any composer related installs/updates. You may check and validate the potential changes by first running `./composer.phar validate`. Once confirmed, run `./composer.phar install` to start the actual install. Besides backing up the database (`./craft db/backup`), it might be a good idea to backup `vendor/` in the codebase as well. 
 
 ### Upgrading
 

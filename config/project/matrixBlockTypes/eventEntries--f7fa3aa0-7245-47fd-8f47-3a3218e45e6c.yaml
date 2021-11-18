@@ -62,6 +62,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   0e81d688-16ec-4519-9f60-7d2e2d72526d: # Heading
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: heading
@@ -81,6 +82,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   11e84e2c-1c7f-451b-8631-999dc2c33f1f: # Hide Read More Link?
+    columnSuffix: null
     contentColumnType: boolean
     fieldGroup: null
     handle: hideReadMoreLink
@@ -95,6 +97,7 @@ fields:
     translationMethod: none
     type: craft\fields\Lightswitch
   853a4c55-fd81-4715-8804-22a057720485: # Entries
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: entries
@@ -117,6 +120,7 @@ fields:
     translationMethod: site
     type: Solspace\Calendar\FieldTypes\EventFieldType
   6444dc50-fd8a-41d1-94c1-7af9ba982cc1: # Hide Summary?
+    columnSuffix: null
     contentColumnType: boolean
     fieldGroup: null
     handle: hideSummary
@@ -131,6 +135,7 @@ fields:
     translationMethod: none
     type: craft\fields\Lightswitch
   321943ce-06f4-4125-b82a-baf2e174a37f: # Allow Autofill?
+    columnSuffix: null
     contentColumnType: boolean
     fieldGroup: null
     handle: allowAutofill
@@ -145,6 +150,7 @@ fields:
     translationMethod: none
     type: craft\fields\Lightswitch
   e4562472-8b84-4213-97bc-476f6f092cad: # Hide Thumbnails?
+    columnSuffix: null
     contentColumnType: boolean
     fieldGroup: null
     handle: hideThumbnails

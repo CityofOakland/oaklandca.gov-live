@@ -44,6 +44,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   0b609d8d-ec6c-476d-9953-eef0377c30f7: # Entry
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: entry
@@ -65,6 +66,7 @@ fields:
     translationMethod: site
     type: craft\fields\Entries
   1c1e50b0-b20e-4596-90d8-be5bc63bee3b: # Button Icon
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: buttonIcon
@@ -98,6 +100,7 @@ fields:
     translationMethod: site
     type: craft\fields\Assets
   31d96da6-aa49-43b3-9243-60f81641c88f: # Button Width
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: buttonWidth
@@ -133,6 +136,7 @@ fields:
     translationMethod: none
     type: craft\fields\Dropdown
   281e840f-0b8f-4781-bdf6-071f668eb6ac: # Button Color
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: buttonColor

@@ -1,0 +1,19 @@
+columnSuffix: ctezqvuz
+contentColumnType: string(1000)
+fieldGroup: 515d69ea-6174-405e-ab09-653ef390e370 # Services
+handle: description
+instructions: 'Provide one sentence about anything that the user should know before clicking on the Call to Action button.'
+name: Description
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 250
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

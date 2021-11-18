@@ -1,0 +1,130 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
+handle: location
+instructions: ''
+name: Location
+searchable: false
+settings:
+  coordinatesDefault:
+    __assoc__:
+      -
+        - lat
+        - '32.3113966'
+      -
+        - lng
+        - '-64.7527469'
+      -
+        - zoom
+        - '6'
+  coordinatesMode: readOnly
+  dragPinDefault: null
+  dragPinLatitude: null
+  dragPinLongitude: null
+  dragPinZoom: null
+  layout: null
+  mapOnSearch: open
+  mapOnStart: default
+  showMap: false
+  subfieldConfig:
+    __assoc__:
+      -
+        - street1
+        -
+          __assoc__:
+            -
+              - label
+              - 'Street Address'
+            -
+              - width
+              - '100'
+            -
+              - enabled
+              - '1'
+            -
+              - position
+              - '1'
+      -
+        - street2
+        -
+          __assoc__:
+            -
+              - label
+              - 'Apartment or Suite'
+            -
+              - width
+              - '100'
+            -
+              - enabled
+              - '1'
+            -
+              - position
+              - '2'
+      -
+        - city
+        -
+          __assoc__:
+            -
+              - label
+              - City
+            -
+              - width
+              - '50'
+            -
+              - enabled
+              - '1'
+            -
+              - position
+              - '3'
+      -
+        - state
+        -
+          __assoc__:
+            -
+              - label
+              - State
+            -
+              - width
+              - '15'
+            -
+              - enabled
+              - '1'
+            -
+              - position
+              - '4'
+      -
+        - zip
+        -
+          __assoc__:
+            -
+              - label
+              - 'Zip Code'
+            -
+              - width
+              - '35'
+            -
+              - enabled
+              - '1'
+            -
+              - position
+              - '5'
+      -
+        - country
+        -
+          __assoc__:
+            -
+              - label
+              - Country
+            -
+              - width
+              - '100'
+            -
+              - enabled
+              - '1'
+            -
+              - position
+              - '6'
+  visibilityToggle: both
+translationKeyFormat: null
+translationMethod: none
+type: doublesecretagency\googlemaps\fields\AddressField

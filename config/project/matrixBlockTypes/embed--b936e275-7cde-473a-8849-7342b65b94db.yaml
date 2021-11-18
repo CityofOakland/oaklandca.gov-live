@@ -26,6 +26,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   b703d11b-3d2f-4305-b0bf-3abf4ebeeec7: # Embed Code
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: embedCode
@@ -45,6 +46,7 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   ff296662-c84b-4d15-8bcf-d4d851573f51: # Embed Title
+    columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: embedTitle

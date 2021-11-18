@@ -17,6 +17,7 @@ fieldLayouts:
         sortOrder: 1
 fields:
   37b9cad8-04be-41c4-938a-c869de41bfc6: # Template Select
+    columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: templateSelect

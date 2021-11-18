@@ -1,0 +1,41 @@
+field: ce345611-039a-4fb5-9a1c-a9eef7d74514 # Embeds
+fieldLayouts:
+  116993fd-32bc-48e5-bcdd-0ac489a7f194:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: ecae3e34-8efa-4f0c-934c-d5d125641043 # YouTube URL
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  ecae3e34-8efa-4f0c-934c-d5d125641043: # YouTube URL
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: youtubeUrl
+    instructions: 'Copy in the URL of the YouTube video in browser. This component will auto-generate an embed based on the URL parameters.'
+    name: 'YouTube URL'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: youtube
+name: YouTube
+sortOrder: 2

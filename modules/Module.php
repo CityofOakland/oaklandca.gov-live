@@ -35,6 +35,59 @@ class Module extends \yii\base\Module
             }
         );
 
+        Craft::$app->view->hook('cp.entries.edit.details', function(&$context) {
+          $entry = $context['entry'];
+          if($entry->section->handle == 'services'){
+            $user = Craft::$app->getUser();
+            if(!$user->isAdmin) {
+                return "<style>
+                    #entryType > option[value='72'],
+                    #entryType > option[value='92'],
+                    #entryType > option[value='96'] {
+                        display: none;
+                    }
+                </style>";
+            }
+          }
+        });
+
+        Craft::$app->view->hook('cp.entries.edit.details', function(&$context) {
+          $entry = $context['entry'];
+          if($entry->section->handle == 'meetings'){
+            $user = Craft::$app->getUser();
+            if(!$user->isAdmin) {
+                return "<style>
+                    #fields-accessibilityText-field {
+                      display: none;
+                    }
+                </style>";
+            }
+          }
+        });
+
+        Craft::$app->view->hook('cp.entries.edit.content', function(&$context) {
+          $entry = $context['entry'];
+          if($entry->section->handle == 'meetings'){
+            return "<style>
+              #fields-process .matrix-field .btn:nth-child(2) {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+              }
+
+              #fields-process .matrix-field .btn:nth-child(3) {
+                border-right: 1px dashed rgba(81, 95, 108, 0.25);
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+              }
+
+              #fields-process .matrix-field .btn:nth-child(1),
+              #fields-process .matrix-field .btn:nth-child(4) {
+                display: none;
+              }
+            </style>";
+          }
+        });
+
         parent::init();
     }
 }
