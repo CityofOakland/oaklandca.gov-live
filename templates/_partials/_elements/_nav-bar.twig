@@ -26,9 +26,9 @@
                 </form>
                 <ul class="lg:ml-3 pr-6 mr-6 text-xs tracking-wide border-r border-gray-700 lg:flex oak-hidden lg:my-0 lg:justify-end lg:items-center xl:text-sm">
                     {% for nav in mainNav %}
-                        {# {% if nav.title == "Services" %}
+                        {% if nav.title == "Services" %}
                             <li class="dropdown dropdown-megamenu">
-                                <a href="{{ nav.url }}" class="px-2 py-3 text-gray-100 hover:bg-white hover:text-black trans-fast uppercase font-bold" id="navbar-dropdown-{{ nav.title|kebab }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ nav.title }} {{ svg( '@webroot/assets/img/icon-arrow.svg') }}</a>
+                                <a href="{{ nav.url }}" class="px-2 py-3 text-gray-100 hover:bg-white hover:text-black uppercase font-bold" id="navbar-dropdown-{{ nav.title|kebab }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ nav.title }} {{ svg( '@webroot/assets/img/icon-arrow.svg') }}</a>
                                 {% set navSubitems = craft.categories
                                     .group("serviceTypes")
                                     .limit(10)
@@ -38,9 +38,9 @@
                                 %}
                                 {% set reportProblem = craft.categories.group("serviceTypes").slug("report-a-problem").one() %}
                                 {% set applyPermit = craft.categories.group("serviceTypes").slug("apply-for-a-permit").one() %}
-                                <div class="dropdown-container bg-white" aria-labelledby="navbar-dropdown-{{ nav.title|kebab }}">
+                                <div class="dropdown-container bg-green-800" aria-labelledby="navbar-dropdown-{{ nav.title|kebab }}">
                                     <div class="container components py-0">
-                                        <ul class="grid md:grid-cols-3 gap-3" style="list-style: none;padding:0;">
+                                        <ul id="megamenu" class="grid md:grid-cols-3 gap-3" style="list-style: none;padding:0;">
                                             {% nav subitem in navSubitems %}
                                                 {{ macros.card(subitem, false) }}
                                             {% endnav %}
@@ -54,9 +54,9 @@
                                     </div>
                                 </div>
                             </li>
-                        {% else %} #}
+                        {% else %}
                             <li><a href="{{ nav.url }}" class="px-2 py-3 text-gray-100 hover:text-gray-200 hover:underline trans-fast uppercase font-bold">{{ nav.title }}</a></li>
-                        {# {% endif %} #}
+                        {% endif %}
                     {% endfor %}
                 </ul>
                 <div class="pr-2 lg:items-center oak-hidden lg:flex">
@@ -79,10 +79,10 @@
             class="relative z-30 py-0 bg-gray-1000" x-show="openNav" @click.away="openNav = false" x-cloak>
             <ul class="container justify-end overflow-y-scroll flex-1 w-full pt-0 pb-4 mx-auto my-0 text-lg" style="height: 100vh;">
                 {% for nav in mainNav %}
-                    {# {% if nav.title == "Services" %}
+                    {% if nav.title == "Services" %}
                         <li class="border-t border-gray-600">
                             <div class="flex items-center justify-between py-4">
-                                <a class="text font-normal text-gray-100 fill-current" href="{{ nav.url }}">{{ nav.title }}</a>
+                                <a class="text font-normal text-gray-100 hover:text-gray-200 fill-current" href="{{ nav.url }}">{{ nav.title }}</a>
                                 <div class="text font-normal text-gray-100 fill-current p-1 rounded bg-gray-800 subnav-toggler">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" style="transform: rotate(90deg);" ') | raw }}</div>
                             </div>
 
@@ -104,20 +104,20 @@
                                 </ul>
                             </div>
                         </li>
-                    {% else %} #}
+                    {% else %}
                     <li class="{% if not loop.first %}border-t {% endif %}border-gray-600">
                         <a class="flex items-center justify-between py-4 font-normal text-gray-100 hover:text-gray-200 fill-current" href="{{ nav.url }}"><div class="text">{{ nav.title }}</div></a>
                     </li>
-                    {# {% endif %} #}
+                    {% endif %}
                 {% endfor %}
                 <li class="border-t border-gray-600">
-                    <a class="flex items-center justify-between py-4 font-normal text-gray-100 fill-current" href="/topics/oaklandlovelife"><div class="text">#OaklandLoveLife</div></a>
+                    <a class="flex items-center justify-between py-4 font-normal text-gray-100 hover:text-gray-200 fill-current" href="/topics/oaklandlovelife"><div class="text">#OaklandLoveLife</div></a>
                 </li>
                 <li class="border-t border-gray-600">
-                    <a class="flex items-center justify-between py-4 font-normal text-gray-100 fill-current" href="/officials/libby-schaaf"><div class="text">Mayor Libby Schaaf</div></a>
+                    <a class="flex items-center justify-between py-4 font-normal text-gray-100 hover:text-gray-200 fill-current" href="/officials/libby-schaaf"><div class="text">Mayor Libby Schaaf</div></a>
                 </li>
                 <li class="border-t border-gray-600">
-                    <a class="flex items-center justify-between py-4 font-normal text-gray-100 fill-current" href="/services/oak311"><div class="text">Report a problem to OAK 311</div></a>
+                    <a class="flex items-center justify-between py-4 font-normal text-gray-100 hover:text-gray-200 fill-current" href="/services/oak311"><div class="text">Report a problem to OAK 311</div></a>
                 </li>
             </ul>
         </div>
@@ -190,21 +190,75 @@
         fill: white;
     }
 
-    .dropdown.dropdown-megamenu:hover > a > svg path {
-        fill: black;
+    .dropdown.dropdown-megamenu > a:focus + .dropdown-container,
+    .dropdown.dropdown-megamenu:focus-within .dropdown-container {
+        display: block !important;
     }
 
-    .dropdown.dropdown-megamenu:hover > a {
-        background: white;
-        color: black;
+    .dropdown.dropdown-megamenu:hover > a,
+    .dropdown.dropdown-megamenu:focus-within > a,
+    .dropdown.dropdown-megamenu > a:focus,
+    .dropdown.dropdown-megamenu.state-active > a {
+        background: #207127;
+        color: white;
     }
 
-    .dropdown.dropdown-megamenu:hover > .dropdown-container {
+    .dropdown.dropdown-megamenu:hover > .dropdown-container,
+    .dropdown.dropdown-megamenu.state-active > .dropdown-container {
         display: block;
     }
 
-    .dropdown.dropdown-megamenu:hover > .dropdown-container li > a:hover h3 {
-        text-decoration: underline;
+    #megamenu .card:hover,
+    #megamenu .card:focus {
+        background: #0D5713;
+    }
+
+    #megamenu .card h4 {
+        color: #FFF3C4;
+    }
+
+    #megamenu .card p {
+        color: white;
+    }
+
+    #megamenu .card span {
+        text-decoration: none;
+    }
+
+    #megamenu .card.dark {
+        background: #FFF3C4;
+    }
+
+    #megamenu .card.dark:hover,
+    #megamenu .card.dark:focus {
+        background: #FFFBEA;
+    }
+
+    #megamenu .card.dark h4 {
+        color: #207127;
+    }
+
+    #megamenu .card.dark p {
+        color: #000000;
+    }
+
+    @media(max-height: 739px) {
+        #megamenu h4 {
+            padding-bottom: 0 !important;
+        }
+
+        #megamenu .card {
+            padding: 10px 20px;
+        }
+
+        #megamenu .card:not(.dark) {
+            border-bottom: 1px solid #3E9141;
+            border-radius: 0;
+        }
+
+        #megamenu .clamp {
+            display: none;
+        }
     }
 
     .subnav {
@@ -244,4 +298,14 @@
     $('.subnav-toggler').on('click', function(){
         $(this).parent().siblings('.subnav').toggle('state-active');
     });
+
+    $('.dropdown-megamenu').on('mouseenter', function(){
+        $(this).addClass('state-active');
+    })
+
+    $('.dropdown-megamenu').on('mouseleave', function(){
+        setTimeout(function(){
+            $('.dropdown-megamenu').removeClass('state-active');
+        }, 500);
+    })
 {% endjs %}
