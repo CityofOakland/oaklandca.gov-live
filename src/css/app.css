@@ -556,6 +556,10 @@ body.open .page-holder {
   padding: 0 !important;
 }
 
+.accordion .ul-icons {
+  padding-top: 1rem;
+}
+
 .accordion-item {
   border: 2px solid #616E7C;
   margin-bottom: 16px;
@@ -1395,6 +1399,10 @@ body.open .page-holder {
 
 .process li:last-of-type::after {
   display: none;
+}
+
+.process .ul-icons {
+  padding-top: 1rem;
 }
 
 .ul-icons {
