@@ -70,6 +70,7 @@ return [
 
   // Production environment settings
   'production' => [
+
     // Base site URL
     'siteUrl' => 'https://www.oaklandca.gov',
     // Changes the default preview duration from 24 hours to 5 days
