@@ -51,7 +51,7 @@ fields:
       dragPinLongitude: null
       dragPinZoom: null
       layout: null
-      mapOnSearch: open
+      mapOnSearch: noChange
       mapOnStart: default
       showMap: false
       subfieldConfig:

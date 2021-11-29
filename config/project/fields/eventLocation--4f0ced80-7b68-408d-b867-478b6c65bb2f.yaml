@@ -7,7 +7,7 @@ name: 'Event Location'
 searchable: false
 settings:
   contentTable: '{{%matrixcontent_eventlocation}}'
-  maxBlocks: '1'
+  maxBlocks: '2'
   minBlocks: ''
   propagationKeyFormat: null
   propagationMethod: all
