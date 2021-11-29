@@ -8,7 +8,7 @@
 							inputClass: "form-control",
 							overrideValues: {
 								entryUrl: entry.url,
-								pageAuthor: entry.author is defined ? entry.author.fullName : "N/A"
+								pageAuthor: className(entry) == 'craft\\elements\\Entry' ? entry.author.fullName : "N/A"
 							}
 						}).render() }}
 						{% js at endBody %}
