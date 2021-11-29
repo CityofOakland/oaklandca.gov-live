@@ -157,7 +157,7 @@ handle: services
 hasTitleField: true
 name: 'Services (Deprecated)'
 section: b7e437e1-239f-4c5c-8c62-5f0323f9d22c # Services
-sortOrder: 2
+sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: ''
