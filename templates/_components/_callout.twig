@@ -12,7 +12,7 @@
 		{{ svg( '@webroot/assets/img/icon-info.svg') }}
 	{% endswitch %}
 	<div>
-		<p><b>{{ heading }}</b></p>
+		<p><b>{{ heading|raw }}</b></p>
 		{{ description|raw }}
 	</div>
 </blockquote>

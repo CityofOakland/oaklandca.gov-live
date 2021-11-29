@@ -105,6 +105,10 @@ p {
   @apply my-4;
 }
 
+p.small {
+  font-size: 16px !important;
+}
+
 a {
   @apply text-green-700 no-underline;
 }

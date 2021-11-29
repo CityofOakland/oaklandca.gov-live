@@ -75,8 +75,14 @@
             <div class="flex flex-col flex-1 lg:flex-row">
               <div class="w-full lg:w-2/3">
                 <h1>{{ entry.title }}</h1>
-                {% if entry.leadIn or entry.summary %}
-                  <div class="lead pt-4">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
+                {% if entry.section.handle == 'meetings' %}
+                  {% if entry.relatedBoardOrCommission|length and entry.date %}
+                    <div class="lead pt-4">The {{ entry.relatedBoardOrCommission.one().title }} will hold its next public meeting on {{ entry.date|date("F j, Y") }} at {{ entry.startTime ? "at " ~ entry.startTime|date("ga") : "" }}</div>
+                  {% endif %}
+                {% else %}
+                  {% if entry.leadIn or entry.summary %}
+                    <div class="lead pt-4">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
+                  {% endif %}
                 {% endif %}
               </div>
             </div>
