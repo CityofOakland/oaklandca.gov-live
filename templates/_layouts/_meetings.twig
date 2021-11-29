@@ -16,7 +16,7 @@
     {% endif %}
   {% elseif entry.meetingStatus == 'special' %}
     {% set calloutHeading = 'This is a special meeting that is happening outside of the regularly scheduled meeting time' %}
-  {% elseif entry.eventLocation.type('onlineLocation')|length %}
+  {% elseif entry.eventLocation.type('onlineLocation')|length and not entry.eventLocation.type('onlineLocation')|length  %}
     {% set calloutHeading = 'This meeting will be held virtually and not in person.' %}
   {% endif %}
 
