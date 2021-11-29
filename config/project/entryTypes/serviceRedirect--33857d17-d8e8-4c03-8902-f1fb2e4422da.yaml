@@ -117,7 +117,7 @@ handle: serviceRedirect
 hasTitleField: true
 name: 'Service Redirect'
 section: b7e437e1-239f-4c5c-8c62-5f0323f9d22c # Services
-sortOrder: 3
+sortOrder: 4
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: ''
