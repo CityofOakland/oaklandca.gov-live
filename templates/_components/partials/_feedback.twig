@@ -8,7 +8,7 @@
 							inputClass: "form-control",
 							overrideValues: {
 								entryUrl: entry.url,
-								pageAuthor: entry.author.fullName
+								pageAuthor: entry.author ? entry.author.fullName : "N/A"
 							}
 						}).render() }}
 						{% js at endBody %}
