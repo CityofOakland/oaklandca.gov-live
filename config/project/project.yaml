@@ -1,4 +1,4 @@
-dateModified: 1637273295
+dateModified: 1638219833
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -209,7 +209,7 @@ meta:
     83c14444-efcf-4d13-a20a-56275fd18855: Relationships # Relationships
     84c6ab36-1b2e-49f1-93a1-aa41ce3d194a: Heading # Heading
     85af3974-efa6-4a79-a433-1fa8e5b4d404: Medium # Medium
-    85f10314-7c48-4f3e-8edb-8fa58b270abc: Services # Services
+    85f10314-7c48-4f3e-8edb-8fa58b270abc: 'Services (Deprecated)' # Services (Deprecated)
     86a3f1a5-a708-49b5-bac4-ff225f556ae1: Teams # Teams
     86dfc275-b48e-44d4-8c8c-acda592d92b0: Meetings # Meetings
     88a32feb-2474-4af8-b9af-e6a409b21bae: 'Meetings Index' # Meetings Index
@@ -452,7 +452,7 @@ meta:
     c2c1cf6a-786c-44cd-84f6-518e8c48b024: Teams # Teams
     c3cd0c7f-e997-4960-9b97-046778155766: 'Column 1 Width' # Column 1 Width
     c7c1aa87-0003-4cdf-a925-11ae2f05ec24: 'Project Locations' # Project Locations
-    c8be2ede-34e7-4ef1-8f4c-2f77c4e5f776: 'Services (Updated)' # Services (Updated)
+    c8be2ede-34e7-4ef1-8f4c-2f77c4e5f776: Services # Services
     c8e06b4a-2f85-41db-94e3-101a5c02dd6d: Documents # Documents
     c9d86e3f-9738-4d97-a271-5331264c10b8: 'Address Extended' # Address Extended
     c14fea44-3f71-477c-88d9-6f37c168d868: Content # Content

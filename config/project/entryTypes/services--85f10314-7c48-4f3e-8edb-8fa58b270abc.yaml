@@ -155,9 +155,9 @@ fieldLayouts:
         sortOrder: 3
 handle: services
 hasTitleField: true
-name: Services
+name: 'Services (Deprecated)'
 section: b7e437e1-239f-4c5c-8c62-5f0323f9d22c # Services
-sortOrder: 1
+sortOrder: 2
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: ''
