@@ -75,9 +75,9 @@
             <div class="flex flex-col flex-1 lg:flex-row">
               <div class="w-full lg:w-2/3">
                 <h1>{{ entry.title }}</h1>
-                {% if entry.section.handle == 'meetings' %}
-                  {% if entry.relatedBoardOrCommission|length and entry.date %}
-                    <div class="lead pt-4">The {{ entry.relatedBoardOrCommission.one().title }} will hold its next public meeting on {{ entry.date|date("F j, Y") }} at {{ entry.startTime ? "at " ~ entry.startTime|date("ga") : "" }}</div>
+                {% if category is not defined and entry.section.handle == 'meetings' %}
+                  {% if entry.date %}
+                    <div class="lead pt-4">The {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} {{ now > entry.date ? 'held its last' : 'will hold its next' }} public meeting on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("ga") : "" }}</div>
                   {% endif %}
                 {% else %}
                   {% if entry.leadIn or entry.summary %}
