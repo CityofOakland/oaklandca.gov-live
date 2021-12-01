@@ -1,0 +1,193 @@
+{% include '_partials/_head' %}
+
+  {# We’re setting the class to overflow-x-hidden to prevent content from stretching page width on mobile views.#}
+  {# Sets the navigation to the nav section entry, "Main Nav" #}
+  {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
+  <body class="overflow-x-hidden font-body {{ pageClass ?? '' }}">
+    <div class="page-holder">
+      {% include '_partials/_elements/_skip-to-content.twig' %}
+      {% include '_partials/_elements/_nav-bar.twig' %}
+      <main>
+        {% include '_partials/_elements/_sitewide-alert.twig' %}
+
+        {% if slug is defined %}
+          {% set entry = craft.entries().section('boardsCommissions').slug(slug).one() %}
+        {% endif %}
+
+        <section>
+          {% if entry.banner|length %}
+            <div class="leading-normal aspect-ratio-box aspect-ratio-1/4 banner">
+              <div class="object-cover pt-2 pb-8 leading-none aspect-ratio md:pt-4 md:pb-6 min-h-2-1/2 md:min-h-4">
+                <figure class="absolute inset-0 z-0">
+                  <img
+                    class="absolute inset-0 z-0 object-cover w-full h-full"
+                    src="{{ entry.banner.one().url }}"
+                    alt="{{ entry.banner.one().altText }}">
+                </figure>
+                <div class="container py-0 relative">
+                  {% include "_components/partials/_breadcrumbs.twig" with {
+                    breadCrumbLinks: [
+                      {link: siteUrl ~ 'boards-commissions', title: entry.section.name},
+                      {link: entry.url, title: entry.title},
+                    ],
+                    bannerTitle: 'Meetings for ' ~ entry.title,
+                  } %}
+                </div>
+              </div>
+            </div>
+          {% else %}
+            <div class="bg-transparent-oakland-roots">
+              <div class="container" style="padding-top:1rem;padding-bottom:1rem;">
+                <div class="breadcrumbs relative flex flex-col items-start py-0 sm:justify-between sm:flex-row-reverse sm:items-center">
+                  {% include "_partials/_elements/_banner-google-translate.twig" with {paddingTop: "pt-0 mb-4 md:mb-0"} %}
+                  {% include "_components/partials/_breadcrumbs.twig" with {
+                    breadCrumbLinks: [
+                      {link: siteUrl ~ 'boards-commissions', title: entry.section.name},
+                      {link: entry.url, title: entry.title},
+                    ],
+                    bannerTitle: 'Meetings for ' ~ entry.title,
+                  } %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+
+
+          <div id="content" style="position:relative;top:-80px;"></div>
+          <div class="container components pt-16">
+            <div class="flex flex-col flex-1 lg:flex-row">
+              <div class="w-full lg:w-2/3">
+                <h1>Meetings for {{ entry.title }}</h1>
+                <div class="lead pt-4">The following is an exhaustive list of all meetings related to {{ entry.title }}</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="container pt-0">
+            <div class="flex flex-wrap justify-between -mx-3">
+              <div class="w-full lg:w-3/4 xl:w-3/5 px-3">
+                <div class="components components-format">
+                  <h4>Displaying All Meetings</h4>
+
+                  {% set meetings = craft.entries().section('meetings').relatedTo(entry).all() %}
+
+                  {% for meeting in meetings %}
+                    <div class="result pb-5">
+                      <h3>
+                        <a href="{{ meeting.url }}">{{ meeting.title }}</a>
+                        {% if meeting.eventLocation.type('onlineLocation')|length and meeting.eventLocation.type('physicalLocation')|length  %}
+                          <span>Online / Physical</span>
+                        {% elseif meeting.eventLocation.type('onlineLocation')|length %}
+                          <span>Online</span>
+                        {% elseif meeting.eventLocation.type('physicalLocation')|length %}
+                          <span>Physical</span>
+                        {% endif %}
+                      </h3>
+                      {% if meeting.date %}<p><b>{{ meeting.date|date("l, F j, Y") }}</b></p>{% endif %}
+                      {% if meeting.startTime %}<p>{{ svg( '@webroot/assets/img/icon-clock.svg') }} {{ meeting.startTime|date("g:ia") }}{{ meeting.endTime ? " to " ~ meeting.endTime|date("g:ia") : '' }}</p>{% endif %}
+                      <p class="updated">Updated: June 15, 2021</p>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="w-full lg:w-1/4 xl:w-1/4 px-3">
+
+              </div>
+            </div>
+          </div>
+          <div id="components-footer" class="components">
+            {% if entry.relatedDepartments|length %}
+              {% include '_components/partials/_cards' with {
+                background: '#334E68',
+                class:      'text-white',
+                heading:    "Related Departments",
+                entries:    entry.relatedDepartments.all()
+              } %}
+            {% endif %}
+          </div>
+        </section>
+
+        {% include '_components/partials/_feedback.twig' %}
+
+      </main>
+      {% include '_partials/_elements/_footer.twig' %}
+    </div>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+    {{ craft.twigpack.includeJsModule("/js/manifest.js") }}
+    {{ craft.twigpack.includeJsModule("/js/vendor.js") }}
+    {{ craft.twigpack.includeJsModule("/js/app.js") }}
+
+    {% if entry is defined %}
+      {% do craft.viewCount.increment(entry.id) %}
+    {% elseif event is defined %}
+      {% do craft.viewCount.increment(event.id) %}
+    {% elseif category is defined %}
+      {% do craft.viewCount.increment(category.id) %}
+    {% endif %}
+
+    {% set page = entry ?? null %}
+    {% if craft.app.env == "production" %}
+      {% for department in craft.entries.section("departments").type("departments").departmentCodeSnippet(":notempty:").all() %}
+        {% if page %}
+          {% if craft.entries.id(page.id).relatedTo(department) | length or page.id == department.id %}
+            <!-- Loading code snippet -->
+            {{ department.departmentCodeSnippet | raw }}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </body>
+</html>
+{% if section is defined and slug is defined %}
+  {% set facetItem = craft.entries.section(section).slug(slug).one().title %}
+  {% js at head %}
+      var section = "{{ section }}";
+      var entryTitle = "{{ facetItem }}";
+  {% endjs %}
+{% endif %}
+
+{% js on ready %}
+  $('.components table').each(function(index, element){
+    var $table   = $(element);
+    var $heads  = $table.find('th');
+
+    $heads.each(function(index, element){
+      var $heading      = $(element);
+
+      $table.find('td:nth-of-type(' + (index + 1) + ')').attr('data-label', $heading.text());
+    });
+  });
+
+  $('.components').addClass('js-initialized');
+{% endjs %}
+
+{% js %}
+(function() {
+  // Observe DOM mutations whether the <html> node was changed by Google Translate
+  if (window.MutationObserver) {
+    var mutationObserver = new MutationObserver(function(mutations) {
+      mutations.forEach(function (mutation) {
+        var oldElementClass = mutation.oldValue;
+        var currentElementClass = mutation.target.className;
+        if (oldElementClass.indexOf('translated-') === -1 && currentElementClass.indexOf('translated-') > -1) {
+          dl.push({
+            'event' : 'page_translated',
+            'translationLanguage' : mutation.target.lang || document.getElementsByTagName('html')[0].getAttribute('xml:lang'),
+            'debug_mode'          : true,
+          });
+        }
+    })
+  })
+
+    var htmlNode = document.querySelector('html');
+    mutationObserver.observe(htmlNode, {
+      attributes: true,
+      attributeOldValue: true,
+      attributeFilter: ['class']
+    })
+  }
+})();
+{% endjs %}

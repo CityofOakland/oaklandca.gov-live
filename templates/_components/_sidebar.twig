@@ -46,7 +46,7 @@
     {% if entry.date %}
       <hr style="border-top: 2px solid #212121;opacity:1;"/>
       <h4>{{ 'Date and Time'|t }}</h4>
-      <p>{{ entry.date|date('l, F j, Y') }}<br>{{ entry.startTime|date("ga") }}{{ entry.endTime ? " to " ~ entry.endTime|date("ga") : "" }}</p>
+      <p>{{ entry.date|date('l, F j, Y') }}<br>{{ entry.startTime|date("g:ia") }}{{ entry.endTime ? " to " ~ entry.endTime|date("g:ia") : "" }}</p>
       {% if entry.eventLocation.type("physicalLocation")|length %}
         {% set block = entry.eventLocation.one() %}
         <hr style="border-top: 1px solid #E1E1E1;opacity:1;"/>

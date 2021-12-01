@@ -629,66 +629,6 @@ body.open .page-holder {
   margin-bottom: 0;
 }
 
-.algolia-result {
-  border-bottom: 1px solid #CFCFCF;
-  margin-bottom: 1.5rem;
-}
-
-.algolia-result h3 {
-  font-size: 20px;
-  line-height: 1.4;
-}
-
-@media(min-width: 768px) {
-  .algolia-result h3 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-}
-
-.algolia-result h3 a {
-  display: block;
-  max-width: 730px;
-}
-
-.algolia-result h3 span {
-  background: #E0E0E0;
-  border-radius: 4px;
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 400;
-  flex-shrink: 0;
-  line-height: 1.333333;
-  padding: 6px 12px;
-  margin-top: 0.5rem;
-  width: auto;
-}
-
-@media(min-width: 768px) {
-  .algolia-result h3 span {
-    margin-left: 1.5rem;
-    margin-top: 0;
-  }
-}
-
-.algolia-result h3 .font-bold {
-  text-decoration: underline;
-}
-
-.algolia-result p {
-  font-size: 16px;
-  line-height: 1.65;
-  margin-top: 7.5px;
-  max-width: 730px;
-}
-
-.algolia-result .updated {
-  color: #626262;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
 .bg-image {
   background-size: cover;
 }
@@ -921,6 +861,14 @@ body.open .page-holder {
 .components table caption {
   padding: 8px;
   text-align: left;
+}
+
+.components tbody {
+  border-top: 1px solid black;
+}
+
+.components tbody tr {
+  border-bottom: 1px solid black;
 }
 
 .components th {
@@ -1407,6 +1355,67 @@ body.open .page-holder {
 
 .process .ul-icons {
   padding-top: 1rem;
+}
+
+.result {
+  border-bottom: 2px solid #CFCFCF;
+  margin-bottom: 1.5rem;
+}
+
+.result h3 {
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+@media(min-width: 768px) {
+  .result h3 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.result h3 a {
+  display: block;
+  max-width: 730px;
+}
+
+.result h3 span {
+  background: #E0E0E0;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 400;
+  flex-shrink: 0;
+  line-height: 1.333333;
+  padding: 6px 12px;
+  margin-top: 0.5rem;
+  width: auto;
+}
+
+@media(min-width: 768px) {
+  .result h3 span {
+    margin-left: 1.5rem;
+    margin-top: 0;
+  }
+}
+
+.result h3 .font-bold {
+  text-decoration: underline;
+}
+
+.result p {
+  font-size: 16px;
+  line-height: 1.65;
+  margin-top: 7.5px;
+  max-width: 730px;
+  padding-top: 0;
+}
+
+.result .updated {
+  color: #626262;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .ul-icons {
