@@ -5,7 +5,7 @@ fieldLayouts:
         elements:
           -
             style: tip
-            tip: 'Service pages help guide people through the process of completing a transaction.'
+            tip: 'Service pages help guide people through the process of completing a transaction. See the [Service Documentation](/admin/usermanual/user-guide/service-pages).'
             type: craft\fieldlayoutelements\Tip
           -
             heading: Header
