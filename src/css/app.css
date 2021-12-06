@@ -551,6 +551,12 @@ body.open .page-holder {
 }
 
 /* Custom */
+form[data-handle="reportProblem"],
+form[data-handle="whatWasWrongWithThisPage"],
+form[data-handle="whyWasThisPageHelpful"] {
+  color: white;
+}
+
 .accordion {
   padding-top: 1em;
 }
@@ -845,6 +851,50 @@ body.open .page-holder {
   overflow: hidden;
 }
 
+.components form {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.components form label {
+  font-size: 14px;
+  margin-bottom: 0.5em;
+}
+
+.components form button:not(.button) {
+  background: white;
+  border: 2px solid #207127;
+  border-radius: 2px;
+  color: #207127;
+  display: inline-block;
+  font-weight: 700;
+  font-size:  16px;
+  line-height: 1.38;
+  margin-top: 1em;
+  outline-offset: 2px;
+  padding: 16px 32px;
+  text-decoration: none;
+}
+
+.components form button:not(.button):hover {
+  border-color: #0D5713;
+  color: #0D5713;
+}
+
+.components form button:not(.button):active {
+  border-color: #04400A;
+  color: #04400A;
+}
+
+.components form textarea {
+  color: #222222;
+  padding: 0.5em;
+}
+
+/*.components input[type="text"] {
+  
+}*/
+
 .components table {
   font-size:  15px;
   line-height:  1.38;
@@ -941,6 +991,10 @@ body.open .page-holder {
 }
 
 .components-format h4 {
+  padding-top: 1.5em;
+}
+
+.components-format h5 {
   padding-top: 1.5em;
 }
 
@@ -1174,6 +1228,16 @@ body.open .page-holder {
   margin-top: 0;
 }
 
+#components-sidebar > hr {
+  border-top: 2px solid #212121;
+  margin-top: 2em;
+  opacity: 1;
+}
+
+#components-sidebar > hr.light {
+  border-top: 1px solid #E1E1E1;
+}
+
 #components-sidebar > hr:not(:first-child) {
   margin-top: 1.25em;
 }
@@ -1275,6 +1339,7 @@ body.open .page-holder {
   justify-content: center;
   height: 28px;
   width: 28px;
+  text-decoration: none;
 }
 
 .pagination .page-active {
@@ -1362,6 +1427,15 @@ body.open .page-holder {
   margin-bottom: 1.5rem;
 }
 
+.result a {
+  text-decoration: none;
+}
+
+.result a:hover,
+.result a:focus {
+  text-decoration: underline;
+}
+
 .result h3 {
   font-size: 20px;
   line-height: 1.4;
@@ -1405,9 +1479,7 @@ body.open .page-holder {
 }
 
 .result p {
-  font-size: 16px;
-  line-height: 1.65;
-  margin-top: 7.5px;
+  margin-top: 10px;
   max-width: 730px;
   padding-top: 0;
 }
@@ -1438,6 +1510,10 @@ body.open .page-holder {
   margin-top: 2px;
   margin-right: 10px;
   width: 22.5px;
+}
+
+.ul-icons .green path {
+  fill: #2e8131;
 }
 
 .related > li svg path {

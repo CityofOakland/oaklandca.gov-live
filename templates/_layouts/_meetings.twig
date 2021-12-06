@@ -45,7 +45,7 @@
       </ul>
     {% endif %}
     {% if entry.embeds|length %}
-      <h2>Recordings</h2>
+      <h2 id="recordings">Recordings</h2>
       {% for item in entry.embeds %}
         <figure>
           {% switch item.type %}

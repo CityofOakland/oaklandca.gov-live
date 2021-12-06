@@ -2,7 +2,7 @@
   {% set sidebarContent %}
     {% spaceless %}
       {% if entry.department|length or entry.programSubdivision %}
-        <hr style="border-top: 2px solid #212121;opacity:1;"/>
+        <hr/>
         <h4>{{ 'Contact'|t }}</h4>
         <p>
           {% if entry.department|length %}
@@ -15,7 +15,7 @@
       {% endif %}
       {% include '_components/_contact.twig' with {block: entry} %}
       {% if entry.relatedServices|length %}
-        <hr style="border-top: 2px solid #212121;opacity:1;"/>
+        <hr/>
         <h4>{{ 'Related Services'|t }}</h4>
         <ul class="ul-icons related">
           {% for entry in entry.relatedServices.all() %}
@@ -24,7 +24,7 @@
         </ul>
       {% endif %}
       {% if entry.relatedResources|length  %}
-        <hr style="border-top: 2px solid #212121;opacity:1;"/>
+        <hr/>
         <h4>{{ 'Related Resources'|t }}</h4>
         <ul class="ul-icons related">
           {% for entry in entry.relatedResources.all() %}
@@ -44,12 +44,12 @@
 
   {% if entry.section.handle == 'meetings' %}
     {% if entry.date %}
-      <hr style="border-top: 2px solid #212121;opacity:1;"/>
+      <hr/>
       <h4>{{ 'Date and Time'|t }}</h4>
       <p>{{ entry.date|date('l, F j, Y') }}<br>{{ entry.startTime|date("g:ia") }}{{ entry.endTime ? " to " ~ entry.endTime|date("g:ia") : "" }}</p>
       {% if entry.eventLocation.type("physicalLocation")|length %}
         {% set block = entry.eventLocation.one() %}
-        <hr style="border-top: 1px solid #E1E1E1;opacity:1;"/>
+        <hr class="light">
         <h4>{{ 'In Person Location'|t }}</h4>
         {% if block.locationName %}<p>{{ block.locationName }}</p>{% endif %}
         {% if block.locationAddress %}
@@ -60,7 +60,7 @@
       {% endif %}
       {% if entry.eventLocation.type("onlineLocation")|length %}
         {% set block = entry.eventLocation.one() %}
-        <hr style="border-top: 1px solid #E1E1E1;opacity:1;"/>
+        <hr class="light">
         <h4>{{ 'Online'|t }}</h4>
         {% if block.onlineMeetingLink %}<a href="{{ block.onlineMeetingLink }}" class="button">Join the meeting</a>{% endif %}
         {% if block.onlineMeetingPhoneNumber %}
@@ -73,7 +73,7 @@
     {% endif %}
 
     {% if entry.fullName %}
-      <hr style="border-top: 2px solid #212121;margin-top: 2em;opacity:1;"/>
+      <hr/>
       <h4>{{ 'Contact'|t }}</h4>
       <p>{{ entry.fullName }}</p>
       {% if entry.emailAddress %}
@@ -83,17 +83,17 @@
       {% endif %}
     {% endif %}
 
-    <hr style="border-top: 2px solid #212121;margin-top: 2em;opacity:1;"/>
+    <hr/>
     <h4>{{ 'Subscribe to get updates'|t }}</h4>
     <p>We'll let you know when the minutes are posted.</p>
     <a href="{{ siteUrl }}" class="button secondary">Subscribe</a>
-    <hr style="border-top: 1px solid #E1E1E1;opacity:1;"/>
+    <hr class="light">
     <p class="small">Posted: {{ entry.postDate|date("F j, Y g:ia") }}</p>
     <p class="small">Last Updated: {{ entry.dateUpdated|date("F j, Y g:ia") }}</p>
 
   {% else %}
     {% if sidebarContent|trim|length %}
-      <hr style="border-top: 2px solid #212121;margin-top: 2em;opacity:1;"/>
+      <hr/>
       <h4>{{ 'Contact'|t }}</h4>
       {{sidebarContent}}
     {% endif %}
