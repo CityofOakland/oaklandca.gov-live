@@ -4,6 +4,7 @@ name: Editors
 permissions:
   - accesssitewhensystemisoff
   - accessplugin-calendar
+  - accessplugin-usermanual
   - accesscp
   - registerusers
   - moderateusers

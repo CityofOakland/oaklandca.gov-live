@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+handle: userGuide
+name: 'User Guide'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  c35d3a93-d7f4-4c37-ae3e-1b4d403311bb: # City of Oakland
+    enabledByDefault: true
+    hasUrls: true
+    template: user-guide/_entry
+    uriFormat: 'user-guide/{slug}'
+structure:
+  maxLevels: null
+  uid: bd38dc0b-38c7-4b5d-963c-7fe5a163306a
+type: structure

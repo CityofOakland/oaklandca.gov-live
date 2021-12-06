@@ -1,4 +1,4 @@
-dateModified: 1638394529
+dateModified: 1638813325
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -515,6 +515,7 @@ meta:
     d14546db-2be3-4821-b471-2f2714b1f322: 'Form ID' # Form ID
     d349329b-ec60-41dd-8bfa-097958ff477c: 'Hours Title' # Hours Title
     d535337e-0894-4ce9-80ee-a315e254df71: 'Column 1 Heading' # Column 1 Heading
+    d542665e-875b-4b71-add5-d70d5317e3c6: 'User Guide' # User Guide
     da23e18d-8c38-4fad-a38d-c07ba10ec985: Size # Size
     daf1b54a-7841-4819-aaaa-4d568a0fbb66: 'Email Signup' # Email Signup
     db97d5d4-3cdf-46c8-85f3-fa7bef2c1d87: 'Call to Action Buttons' # Call to Action Buttons
@@ -591,6 +592,7 @@ meta:
     f9088787-d043-44c0-a831-924dd6a72489: 'Call Out Type' # Call Out Type
     fa7723cf-13c4-4edc-9b93-41c7eb30772b: Granicus # Granicus
     fa184118-b826-4c59-9362-39fe81b426c2: 'Services (311)' # Services (311)
+    faa3b344-fa92-4f07-972c-503d9fa9061a: Default # Default
     facc7196-7444-4e77-873f-68c1b09d1298: 'Column 2 Heading' # Column 2 Heading
     fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c: 'Boards & Commissions Index' # Boards & Commissions Index
     fb2b9f42-74a0-45c4-be6e-d3d69c87557e: 'Column 2 Cell' # Column 2 Cell
@@ -740,7 +742,8 @@ plugins:
     licenseKey: null
     schemaVersion: 2.0.0
     settings:
-      additionalCss: "#fields-primaryUnit-field {\r\n    padding: 1rem;\r\n\tbackground-color: #e4edf6;\r\n\tborder-radius: .25rem;\r\n\tborder: 1px solid rgba(96, 125, 159, 0.25);\r\n}"
+      additionalCss: "#fields-primaryUnit-field {\r\n    padding: 1rem;\r\n\tbackground-color: #e4edf6;\r\n\tborder-radius: .25rem;\r\n\tborder: 1px solid rgba(96, 125, 159, 0.25);\r\n}\r\n\r\n#content {\r\n    position: relative !important;\r\n}"
+      cacheBusting: true
       cssFile: ''
   cp-field-inspect:
     enabled: '0'
@@ -946,8 +949,8 @@ plugins:
     schemaVersion: 2.0.1
     settings:
       enabledSideBar: true
-      pluginNameOverride: ''
-      section: '31'
+      pluginNameOverride: 'User Guide'
+      section: '75'
       templateOverride: ''
   video-embedder:
     enabled: '1'

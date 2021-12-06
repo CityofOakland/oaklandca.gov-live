@@ -76,6 +76,6 @@ return [
     // Changes the default preview duration from 24 hours to 5 days
     'defaultTokenDuration' => 432000,
 
-    'allowAdminChanges' => false,
+    'allowAdminChanges' => true,
   ],
 ];
