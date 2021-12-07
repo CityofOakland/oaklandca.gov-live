@@ -1490,6 +1490,10 @@ form[data-handle="whyWasThisPageHelpful"] {
   line-height: 1.5;
 }
 
+.result .updated + p {
+  margin-top: 20px;
+}
+
 .ul-icons {
   list-style: none;
   padding-left: 0 !important;

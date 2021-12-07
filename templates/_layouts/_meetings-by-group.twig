@@ -1,5 +1,61 @@
 {% include '_partials/_head' %}
 
+  {% macro select(name, values) %}
+    <select name="{{ name }}">
+      {% for value, label in values %}
+        <option value="{{ value }}" {{ craft.app.request.getQueryParam(name) and craft.app.request.getQueryParam(name)  == value  ? 'selected' : ''  }}>{{ label }}</option>
+      {% endfor %}
+    </select>
+  {% endmacro %}
+
+  {% if slug is defined %}
+    {% set entry = craft.entries().section('boardsCommissions').slug(slug).one() %}
+  {% endif %}
+  {% set query          = craft.app.request.getQueryParam('q') %}
+  {% set meetings       = craft.entries().section('meetings').relatedTo(entry).search(query).limit(10).order('date asc') %}
+  {% set filter_enabled = false %}
+
+  {% set date_query = ['and'] %}
+
+  {% if craft.app.request.getQueryParam('start_year') %}
+    {% set filter_enabled = true %}
+    {% set year = craft.app.request.getQueryParam('start_year') %}
+    {% if craft.app.request.getQueryParam('start_month') %}
+      {% set month = craft.app.request.getQueryParam('start_month') %}
+      {% set date_query = date_query|merge(['>= ' ~ (year~'-'~month~'-01')]) %}
+    {% else %}
+      {% set date_query = date_query|merge(['>= ' ~ (year~'-01-01')]) %}
+    {% endif %}
+  {% endif %}
+
+  {% if craft.app.request.getQueryParam('end_year') %}
+    {% set filter_enabled = true %}
+    {% set year = craft.app.request.getQueryParam('end_year') %}
+    {% if craft.app.request.getQueryParam('end_month') %}
+      {% set month = craft.app.request.getQueryParam('end_month') %}
+      {% set date_query = date_query|merge(['<= ' ~ (year~'-'~month~'-31')]) %}
+    {% else %}
+      {% set date_query = date_query|merge(['<= ' ~ (year~'-12-31')]) %}
+    {% endif %}
+  {% endif %}
+
+  {% if craft.app.request.getQueryParam('type') %}
+    {% set filter_enabled = true %}
+    {% switch craft.app.request.getQueryParam('type') %}
+      {% case -1 %}
+        {% set date_query = date_query|merge(['< ' ~ now|date('Y-m-d')]) %}
+      {% case 1 %}
+        {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
+      {% default %}
+    {% endswitch %}
+  {% endif %}
+
+  {% if date_query|length > 1 %}
+    {% set meetings = meetings.date(date_query) %}
+  {% endif %}
+
+  {% paginate meetings as pageInfo, meetings %}
+
   {# We’re setting the class to overflow-x-hidden to prevent content from stretching page width on mobile views.#}
   {# Sets the navigation to the nav section entry, "Main Nav" #}
   {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
@@ -9,11 +65,6 @@
       {% include '_partials/_elements/_nav-bar.twig' %}
       <main>
         {% include '_partials/_elements/_sitewide-alert.twig' %}
-
-        {% if slug is defined %}
-          {% set entry = craft.entries().section('boardsCommissions').slug(slug).one() %}
-        {% endif %}
-
         <section>
           {% if entry.banner|length %}
             <div class="leading-normal aspect-ratio-box aspect-ratio-1/4 banner">
@@ -52,7 +103,6 @@
             </div>
           {% endif %}
 
-
           <div id="content" style="position:relative;top:-80px;"></div>
           <div class="container components pt-16">
             <div class="flex flex-col flex-1 lg:flex-row">
@@ -69,10 +119,12 @@
             <div class="flex flex-wrap justify-between -mx-3">
               <div class="w-full lg:w-3/4 xl:w-3/5 px-3">
                 <div class="components components-format">
-                  <h3>Displaying All Meetings</h3>
+                  {% if filter_enabled %}
+                    <h3>Displaying {{ meetings|length }} of {{ pageInfo.total }} Meetings</h3>
+                  {% else %}
+                    <h3>Displaying All Meetings</h3>
+                  {% endif %}
                   <div class="mt-8">
-                    {% set meetings = craft.entries().section('meetings').relatedTo(entry).limit(10) %}
-                    {% paginate meetings as pageInfo, meetings %}
                     {% for meeting in meetings %}
                       <div class="result pb-6" style="margin-bottom:1rem;">
                         <h3 style="padding-top: 0;">
@@ -94,7 +146,21 @@
                               {% if meeting.embeds|length %}<li class="ml-4"><a class="flex items-center" href="{{ meeting.url }}#recordings">{{ svg( '@webroot/assets/img/icon-recording.svg') }}<span class="ml-2">Recording</span></a></li>{% endif %}
                             </ul>
                           </div>
-                          <p class="updated">Updated: June 15, 2021</p>
+                          <p class="updated">Updated: {{ meeting.dateUpdated|date("F j, Y") }}</p>
+                          {% if query and meeting.agendaDownloadableCopy|length and query in meeting.agendaDownloadableCopy.one().filename|lower %}
+                            <p class="small">
+                              {% set filename     = meeting.agendaDownloadableCopy.one().filename|trim %}
+                              {% set query_index  = filename|lower|indexOf(query) %}
+                              <b>Agenda: </b>{{ filename|slice(0, query_index) }}<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
+                            </p>
+                          {% endif %}
+                          {% if query and meeting.documentFile|length and query in meeting.documentFile.one().title|lower %}
+                            <p class="small">
+                              {% set filename     = meeting.documentFile.one().filename|trim %}
+                              {% set query_index  = filename|lower|indexOf(query) %}
+                              <b>Minutes: </b>{{ filename|slice(0, query_index) }}<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
+                            </p>
+                          {% endif %}
                       </div>
                     {% endfor %}
                   </div>
@@ -109,67 +175,98 @@
                   <form>
                     <h5><b>{{ 'Search'|t }}</b></h5>
                     <label id="search">
-                      <input name="s" type="text" placeholder="Search agenda items and documents">
+                      <input name="q" type="text" placeholder="Search agenda items and documents" value="{{ craft.app.request.getQueryParam('q') ?? craft.app.request.getQueryParam('q') }}">
                     </label>
                     <h5><b>{{ 'Date Range'|t }}</b></h5>
 
                     <div class="flex flex-wrap justify-between -mx-3">
                       <div class="w-full px-3">
-                        <select>
-                          <option>Past and Upcoming Meetings</option>
-                        </select>
+                        {{ _self.select('type',{
+                          "0"  : "Past and Upcoming Meetings",
+                          "-1" : "Past Meetings",
+                          "1"  : "Upcoming Meetings",
+                        }) }}
                       </div>
+                      {% set months = {
+                        "1": "January",
+                        "2": "February",
+                        "3": "March",
+                        "4": "April",
+                        "5": "May",
+                        "6": "June",
+                        "7": "July",
+                        "8": "August",
+                        "9": "September",
+                        "10": "October",
+                        "11": "November",
+                        "12": "December",
+                      } %}
+                      <div class="w-full lg:w-1/2 px-3">{{ _self.select('start_month', months|reverse|merge({"0": "Start Month"})|reverse) }}</div>
+                      <div class="w-full lg:w-1/2 px-3">{{ _self.select('end_month', months|reverse|merge({"0": "End Month"})|reverse) }}</div>
                       <div class="w-full lg:w-1/2 px-3">
-                        <select>
-                          <option>Start Month</option>
-                          <option>January</option>
-                          <option>February</option>
-                          <option>March</option>
-                          <option>April</option>
-                          <option>June</option>
-                          <option>July</option>
-                          <option>August</option>
-                          <option>September</option>
-                          <option>October</option>
-                          <option>November</option>
-                          <option>December</option>
-                        </select>
-                      </div>
-                      <div class="w-full lg:w-1/2 px-3">
-                        <select>
-                          <option>End Month</option>
-                          <option>January</option>
-                          <option>February</option>
-                          <option>March</option>
-                          <option>April</option>
-                          <option>June</option>
-                          <option>July</option>
-                          <option>August</option>
-                          <option>September</option>
-                          <option>October</option>
-                          <option>November</option>
-                          <option>December</option>
-                        </select>
-                      </div>
-                      <div class="w-full lg:w-1/2 px-3">
-                        <select>
+                        <select name="start_year">
                           <option>Start Year</option>
                           {% for year in now|date('Y')..2000 %}
-                            <option>{{ year }}</option>
+                            <option value="{{ year }}" {{ craft.app.request.getQueryParam('start_year') and craft.app.request.getQueryParam('start_year') == year  ? 'selected' : ''  }}>{{ year }}</option>
                           {% endfor %}
                         </select>
                       </div>
                       <div class="w-full lg:w-1/2 px-3">
-                        <select>
+                        <select name="end_year">
                           <option>End Year</option>
                           {% for year in now|date('Y')..2000 %}
-                            <option>{{ year }}</option>
+                            <option value="{{ year }}" {{ craft.app.request.getQueryParam('end_year') and craft.app.request.getQueryParam('end_year') == year  ? 'selected' : ''  }}>{{ year }}</option>
                           {% endfor %}
                         </select>
                       </div>
                     </div>
                     <button class="button medium">Apply</button>
                   </form>
+
+                  {% js at endBody %}
+                    var $select_start_year = $('select[name="start_year"]');
+                    var $select_end_year   = $('select[name="end_year"]');
+
+                    $select_start_year.on('change', function(){
+                      var start_year = parseInt($(this).val());
+
+                      if($select_end_year.val() < $select_start_year.val()) {
+                        $select_end_year.prop('selectedIndex',0);
+                      }
+
+                      $select_end_year.find('option[value]').each(function(){
+                        var $this = $(this);
+
+                        if(parseInt($this.val()) < start_year ) {
+                          $this.css({'display': 'none'})
+                        } else {
+                          $this.css({'display': 'block'})
+                        }
+                      })
+                    });
+
+                    var $select_start_month = $('select[name="start_month"]');
+                    var $select_end_month   = $('select[name="end_month"]');
+
+                    $select_start_month.on('change', function(){
+                      var start_month = parseInt($(this).val());
+
+                      if($select_end_month.val() < $select_start_month.val()) {
+                        $select_end_month.prop('selectedIndex',0);
+                      }
+
+                      $select_end_month.find('option[value]').each(function(){
+                        var $this = $(this);
+
+                        if(parseInt($this.val()) < start_month ) {
+                          $this.css({'display': 'none'})
+                        } else {
+                          $this.css({'display': 'block'})
+                        }
+                      })
+                    });
+                  {% endjs %}
+
                   <hr class="light"/>
 
                   <style>
@@ -246,26 +343,6 @@
     {{ craft.twigpack.includeJsModule("/js/manifest.js") }}
     {{ craft.twigpack.includeJsModule("/js/vendor.js") }}
     {{ craft.twigpack.includeJsModule("/js/app.js") }}
-
-    {% if entry is defined %}
-      {% do craft.viewCount.increment(entry.id) %}
-    {% elseif event is defined %}
-      {% do craft.viewCount.increment(event.id) %}
-    {% elseif category is defined %}
-      {% do craft.viewCount.increment(category.id) %}
-    {% endif %}
-
-    {% set page = entry ?? null %}
-    {% if craft.app.env == "production" %}
-      {% for department in craft.entries.section("departments").type("departments").departmentCodeSnippet(":notempty:").all() %}
-        {% if page %}
-          {% if craft.entries.id(page.id).relatedTo(department) | length or page.id == department.id %}
-            <!-- Loading code snippet -->
-            {{ department.departmentCodeSnippet | raw }}
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-    {% endif %}
   </body>
 </html>
 {% if section is defined and slug is defined %}
