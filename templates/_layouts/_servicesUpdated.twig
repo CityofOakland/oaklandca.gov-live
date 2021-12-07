@@ -2,7 +2,7 @@
 {% block content %}
   {% if entry.callOut|length %}
     {% for block in entry.callOut.all() %}
-      {% include '_components/_callOut.twig' %}
+      {% include '_components/_callout.twig' %}
     {% endfor %}
   {% endif %}
 
