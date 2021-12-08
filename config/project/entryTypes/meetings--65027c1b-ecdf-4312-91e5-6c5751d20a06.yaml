@@ -179,6 +179,18 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            heading: Footer
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: a64389e9-e0f9-4d5b-ae78-16f6b5db6785 # Related Departments
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 handle: meetings
