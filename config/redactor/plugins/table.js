@@ -327,26 +327,29 @@
             }
 
             // Custom Rules for Table
-            var addHeadItem         = dropdown.getItem('add-head');
-            var addRowAboveItem     = dropdown.getItem('insert-row-above');
-            var selector            = this.selection.getBlock();
 
-            // Disable add row above option if current element is a <th> element.
-            if(selector.matches('[data-redactor-tag]')){
-                selector = selector.parentElement;
-            }
+            if(table) {
+                var addHeadItem         = dropdown.getItem('add-head');
+                var addRowAboveItem     = dropdown.getItem('insert-row-above');
+                var selector            = this.selection.getBlock();
 
-            if(selector.matches('th')) {
-                addRowAboveItem.disable();
-            } else {
-                addRowAboveItem.enable();
-            }
+                // Disable add row above option if current element is a <th> element.
+                if(selector.matches('[data-redactor-tag]')){
+                    selector = selector.parentElement;
+                }
 
-            // Disable add head option if current table has a <thead> element.
-            if (table.getElementsByTagName('thead').length > 0) {
-                addHeadItem.disable();
-            } else {
-                addHeadItem.enable();
+                if(selector.matches('th')) {
+                    addRowAboveItem.disable();
+                } else {
+                    addRowAboveItem.enable();
+                }
+
+                // Disable add head option if current table has a <thead> element.
+                if (table.getElementsByTagName('thead').length > 0) {
+                    addHeadItem.disable();
+                } else {
+                    addHeadItem.enable();
+                }
             }
         },
         _observeItems: function(items, type)
