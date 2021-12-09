@@ -1,4 +1,4 @@
-dateModified: 1639008378
+dateModified: 1639010458
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -50,7 +50,6 @@ meta:
     2fb76e53-8619-4e29-b609-c984c390de9a: 'Email Address' # Email Address
     3b4c766d-c60e-4741-b958-585aaadea153: Text # Text
     3b5ca699-b20a-41e5-a1fd-068dd6a6c081: 'Column 4 Width' # Column 4 Width
-    3b56e332-3514-4570-a43a-83e628e86ab2: 'Physical Location' # Physical Location
     3bc9f075-4edc-4909-ba86-ea128c3ddb93: Subheading # Subheading
     3c58f775-5156-4705-9405-472e014a359d: 'Document Packets' # Document Packets
     03c4672b-b061-4dbb-a8f5-2e5dfb76467a: Heading # Heading
@@ -70,7 +69,6 @@ meta:
     4d6dd644-455e-4186-8d05-a00079622246: 'Last Name' # Last Name
     4d57a64d-2312-4c14-b4af-6c8b4f823e55: 'Button Link' # Button Link
     4ed914c6-b7ea-44be-a061-4430ad33baf2: News # News
-    4f0ced80-7b68-408d-b867-478b6c65bb2f: 'Event Location' # Event Location
     4f58a8e7-8cf8-472a-b479-73a156087dfc: Fax # Fax
     5a5cab1b-f214-4ee8-b6a9-b68c7df6b7d7: 'Open in New Tab?' # Open in New Tab?
     5a43f979-1654-4514-a9a8-d925fc846063: 'Stats Block with Icons' # Stats Block with Icons
@@ -219,7 +217,6 @@ meta:
     85f10314-7c48-4f3e-8edb-8fa58b270abc: Services # Services
     86a3f1a5-a708-49b5-bac4-ff225f556ae1: Teams # Teams
     86dfc275-b48e-44d4-8c8c-acda592d92b0: Meetings # Meetings
-    87e4c241-4994-4d22-938d-b33270aea67d: 'Online Location' # Online Location
     88a32feb-2474-4af8-b9af-e6a409b21bae: 'Meetings Index' # Meetings Index
     89cda626-6500-4ace-b9f4-0f8a54a9ad02: 'Services Index' # Services Index
     89e7af89-0b4d-4305-9ffe-5098b3f73779: 'Related Meeting' # Related Meeting
@@ -293,6 +290,7 @@ meta:
     907bf933-4e47-49e9-a6dd-7f5bc2d3459e: Button # Button
     909c71fc-999c-4729-86d5-49cc9061f521: Common # Common
     912c64e2-6d85-46bb-b826-955df643a5ef: 'Milestone Description' # Milestone Description
+    929c9f65-22a0-4e45-8210-43f030986c84: 'Physical Location' # Physical Location
     946b75ee-7882-4bdc-b28b-7009a8398e2e: 'Hide Related Pages?' # Hide Related Pages?
     947de11d-3d94-45c2-8565-04542ce0e737: 'Event Types' # Event Types
     983c9f6f-9251-4fd3-91e1-b598eccc6a1a: News # News
@@ -564,6 +562,7 @@ meta:
     e51016cb-464b-4bd1-b32c-ace827d1b9dc: 'Document Link' # Document Link
     e4562472-8b84-4213-97bc-476f6f092cad: 'Hide Thumbnails?' # Hide Thumbnails?
     e5003330-f1d5-467d-843b-ce12bc26a5bb: Heading # Heading
+    e8230537-ae50-4e3d-a71f-d43da065f108: 'Online Location' # Online Location
     e9822161-b2a8-4cd1-8ec3-c3a2e2d5b2b0: 'City Council' # City Council
     ea2bc4af-23f2-4838-99c2-9da78c63420f: 'Staff Entry' # Staff Entry
     ea2e59d4-7906-4723-8dde-7bb4012c3361: 'Press Release File' # Press Release File
@@ -586,6 +585,7 @@ meta:
     f3d1bcbe-1f1a-4498-b4e5-1d57d3257690: 'Related Pages' # Related Pages
     f5c6d83d-3a64-4e6a-be6c-5304f6679801: Video # Video
     f5dead8c-3e4c-4f97-8bea-2a3af1e34f67: Resources # Resources
+    f6e8acb0-e8f3-40de-8500-b95e6ed06def: 'Event Location' # Event Location
     f7e4a055-457f-46eb-ab3d-3e816f80a81d: 'Related Board or Commission' # Related Board or Commission
     f7fa3aa0-7245-47fd-8f47-3a3218e45e6c: 'Event Entries' # Event Entries
     f8f83baf-d18b-46db-8bb2-5372736bf21a: 'Oaklandca.gov﻿ Link' # Oaklandca.gov﻿ Link

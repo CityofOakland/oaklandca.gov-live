@@ -39,7 +39,7 @@ fieldLayouts:
             fieldUid: 31d30a51-422e-471c-be55-3441a4219dd8 # Date
             instructions: 'Enter the date of the meeting.'
             label: 'Meeting Date'
-            required: ''
+            required: '1'
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -48,7 +48,7 @@ fieldLayouts:
             fieldUid: 9f3ae38f-aef6-476b-9fea-e9d1ef0c03c4 # Start Time
             instructions: 'Enter the start time of the meeting.'
             label: 'Meeting Start Time'
-            required: ''
+            required: '1'
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -63,8 +63,8 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 4f0ced80-7b68-408d-b867-478b6c65bb2f # Event Location
-            instructions: 'Add an online location for virtual meetings and/or a physical location for in-person meetings.'
+            fieldUid: f6e8acb0-e8f3-40de-8500-b95e6ed06def # Event Location
+            instructions: ''
             label: 'Meeting Location'
             required: ''
             tip: null
@@ -82,7 +82,7 @@ fieldLayouts:
             width: 100
           -
             fieldUid: 89e7af89-0b4d-4305-9ffe-5098b3f73779 # Related Meeting
-            instructions: 'Related a rescheduled meeting. If a special meeting is related to another meeting, add it here.'
+            instructions: 'Relate a rescheduled meeting. If a special meeting is related to another meeting, add it here.'
             label: ''
             required: ''
             tip: null

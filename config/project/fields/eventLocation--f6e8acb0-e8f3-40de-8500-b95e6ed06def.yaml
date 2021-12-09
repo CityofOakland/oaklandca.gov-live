@@ -6,11 +6,12 @@ instructions: ''
 name: 'Event Location'
 searchable: false
 settings:
-  contentTable: '{{%matrixcontent_eventlocation}}'
   maxBlocks: '2'
+  maxLevels: ''
+  maxTopBlocks: ''
   minBlocks: ''
-  propagationKeyFormat: null
   propagationMethod: all
+  wasModified: false
 translationKeyFormat: null
 translationMethod: site
-type: craft\fields\Matrix
+type: benf\neo\Field
