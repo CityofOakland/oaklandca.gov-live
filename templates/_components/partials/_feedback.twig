@@ -7,8 +7,8 @@
 							labelClass: "form-label",
 							inputClass: "form-control",
 							overrideValues: {
-								entryUrl: entry.url,
-								pageAuthor: className(entry) == 'craft\\elements\\Entry' ? entry.author.fullName : "N/A"
+								entryUrl: entry is defined ? entry.url : (category is defined ? category.url : 'N/A'),
+								pageAuthor: entry.author ? entry.author.fullName : 'N/A'
 							}
 						}).render() }}
 						{% js at endBody %}
