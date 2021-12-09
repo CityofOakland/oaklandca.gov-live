@@ -7,9 +7,9 @@
   {% elseif entry.meetingStatus == 'rescheduled' %}
     {% if entry.relatedMeeting|length %}
       {% if entry.relatedMeeting.one().date %}
-        {% set calloutHeading = 'This meeting was rescheduled for <a href="' ~ entry.relatedMeeting.one().url ~ '">' ~ entry.relatedMeeting.one().date|date('F j, Y') ~ '</a>.' %}
+        {% set calloutHeading = 'This meeting was rescheduled for <a style="font-weight:400;" href="' ~ entry.relatedMeeting.one().url ~ '">' ~ entry.relatedMeeting.one().date|date('F j, Y') ~ '</a>.' %}
       {% else %}
-        {% set calloutHeading = 'This meeting was <a href="' ~ entry.relatedMeeting.one().url ~ '">rescheduled</a>.' %}
+        {% set calloutHeading = 'This meeting was <a style="font-weight:400;" href="' ~ entry.relatedMeeting.one().url ~ '">rescheduled</a>.' %}
       {% endif %}
     {% else %}
       {% set calloutHeading = 'This meeting was rescheduled.' %}

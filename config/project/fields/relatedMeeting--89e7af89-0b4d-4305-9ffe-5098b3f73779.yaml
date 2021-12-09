@@ -9,8 +9,8 @@ settings:
   allowSelfRelations: false
   limit: '1'
   localizeRelations: false
-  selectionLabel: ''
-  showSiteMenu: false
+  selectionLabel: 'Select Meeting'
+  showSiteMenu: true
   source: null
   sources:
     - 'section:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
