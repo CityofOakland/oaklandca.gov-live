@@ -17,7 +17,7 @@
   {% elseif entry.meetingStatus == 'special' %}
     {% set calloutHeading = 'This is a special meeting that is happening outside of the regularly scheduled meeting time' %}
   {% elseif entry.eventLocation.type('onlineLocation')|length and not entry.eventLocation.type('physicalLocation')|length  %}
-    {% if now > entry.date %}
+    {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
       {% set calloutHeading = 'This meeting was held virtually and not in person.' %}
     {% else %}
       {% set calloutHeading = 'This meeting will be held virtually and not in person.' %}
@@ -35,7 +35,7 @@
   {# Details #}
   {# {% if entry.mainContent %}<div>{{ entry.mainContent }}</div>{% endif %} #}
 
-  {% if entry.date and now > entry.date %}
+  {% if entry.date and now|date('Y-m-d') > entry.date|date('Y-m-d') %}
     {% if entry.documentFile|length %}
       <h2>Minutes</h2>
       <ul class="ul-icons related" style="padding-top: 1rem;">

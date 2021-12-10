@@ -45,10 +45,10 @@
       <hr/>
       <h4>{{ 'Date and Time'|t }}</h4>
       <p>{{ entry.date|date('l, F j, Y') }}<br>{{ entry.startTime|date("g:ia") }}{{ entry.endTime ? " to " ~ entry.endTime|date("g:ia") : "" }}</p>
-      {% if now <= entry.date %}
+      {% if now|date('Y-m-d') <= entry.date|date('Y-m-d') %}
         {% if entry.eventLocation.type("physicalLocation")|length %}
           {% set block = entry.eventLocation.type("physicalLocation").one() %}
-          {% if block.contactAddress %}
+          {% if not block.contactAddress.isEmpty() %}
             <hr class="light">
             <h4>{{ 'In Person Location'|t }}</h4>
             {% if block.fullName %}<p>{{ block.fullName }}</p>{% endif %}
@@ -59,14 +59,16 @@
         {% endif %}
         {% if entry.eventLocation.type("onlineLocation")|length %}
           {% set block = entry.eventLocation.type("onlineLocation").one() %}
-          <hr class="light">
-          <h4>{{ 'Online'|t }}</h4>
-          {% if block.href %}<a href="{{ block.href }}" class="button">Join the meeting</a>{% endif %}
-          {% if block.phoneNumber %}
-            <p class="font-bold">Or join by phone</p>
-            <ul class="ul-icons">
-              <li><a href="tel:{{ block.phoneNumber|replace({'-': ''}) }}">{{ svg( '@webroot/assets/img/icon-phone-updated.svg') }} {{ block.phoneNumber }}</a></li>
-            </ul>
+          {% if block.href or block.phoneNumber %}
+            <hr class="light">
+            <h4>{{ 'Online'|t }}</h4>
+            {% if block.href %}<a href="{{ block.href }}" class="button">Join the meeting</a>{% endif %}
+            {% if block.phoneNumber %}
+              <p class="font-bold">Or join by phone</p>
+              <ul class="ul-icons">
+                <li><a href="tel:{{ block.phoneNumber|replace({'-': ''}) }}">{{ svg( '@webroot/assets/img/icon-phone-updated.svg') }} {{ block.phoneNumber }}</a></li>
+              </ul>
+            {% endif %}
           {% endif %}
         {% endif %}
       {% endif %}
