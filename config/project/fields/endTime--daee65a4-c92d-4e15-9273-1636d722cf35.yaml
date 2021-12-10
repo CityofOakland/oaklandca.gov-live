@@ -7,8 +7,8 @@ name: 'End Time'
 searchable: false
 settings:
   max: null
-  min: null
-  minuteIncrement: 5
+  min: '06:00'
+  minuteIncrement: 15
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Time
