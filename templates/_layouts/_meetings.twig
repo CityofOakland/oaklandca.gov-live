@@ -100,7 +100,7 @@
       <ul aria-label="Accordion Control Group Buttons" class="accordion-controls">
         {% for item in entry.howToParticipate.all() %}
         <li class="accordion-item">
-          <button class="accordion-header" aria-controls="content-{{ entry.id }}-{{ loop.index }}" aria-expanded="false" id="accordion-control-{{ entry.id }}-{{ loop.index }}">{{ item.header ? item.header : "How to Participate in this Public Meeting" }} <span>{{ svg( '@webroot/assets/img/icon-plus.svg') }}{{ svg( '@webroot/assets/img/icon-minus.svg') }}</span></button>
+          <button class="accordion-header" aria-controls="content-{{ entry.id }}-{{ loop.index }}" aria-expanded="false" id="accordion-control-{{ entry.id }}-{{ loop.index }}">{{ item.header ? item.header : "How to Participate in this Public Meeting" }} <span style="pointer-events: none;">{{ svg( '@webroot/assets/img/icon-plus.svg') }}{{ svg( '@webroot/assets/img/icon-minus.svg') }}</span></button>
           <div class="accordion-panel" id="content-{{ entry.id }}-{{ loop.index }}" hidden>
             {{ item.description }}
           </div>
