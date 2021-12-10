@@ -2,8 +2,8 @@
 {% import '_macros/_macros' as macros %}
 
 {% block content %}
-  {% if entry.meetingStatus == 'cancelled' %}
-    {% set calloutHeading = 'This meeting has been cancelled.' %}
+  {% if entry.meetingStatus == 'canceled' %}
+    {% set calloutHeading = 'This meeting has been canceled.' %}
   {% elseif entry.meetingStatus == 'rescheduled' %}
     {% if entry.relatedMeeting|length %}
       {% if entry.relatedMeeting.one().date %}

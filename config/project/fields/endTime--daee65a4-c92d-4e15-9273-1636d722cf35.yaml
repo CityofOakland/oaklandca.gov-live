@@ -6,7 +6,7 @@ instructions: ''
 name: 'End Time'
 searchable: false
 settings:
-  max: null
+  max: '23:59'
   min: '06:00'
   minuteIncrement: 15
 translationKeyFormat: null
