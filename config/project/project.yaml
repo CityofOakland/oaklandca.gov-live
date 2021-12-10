@@ -214,7 +214,7 @@ meta:
     83c14444-efcf-4d13-a20a-56275fd18855: Relationships # Relationships
     84c6ab36-1b2e-49f1-93a1-aa41ce3d194a: Heading # Heading
     85af3974-efa6-4a79-a433-1fa8e5b4d404: Medium # Medium
-    85f10314-7c48-4f3e-8edb-8fa58b270abc: Services # Services
+    85f10314-7c48-4f3e-8edb-8fa58b270abc: 'Services (Deprecated)' # Services (Deprecated)
     86a3f1a5-a708-49b5-bac4-ff225f556ae1: Teams # Teams
     86dfc275-b48e-44d4-8c8c-acda592d92b0: Meetings # Meetings
     88a32feb-2474-4af8-b9af-e6a409b21bae: 'Meetings Index' # Meetings Index
@@ -464,7 +464,7 @@ meta:
     c2c1cf6a-786c-44cd-84f6-518e8c48b024: Teams # Teams
     c3cd0c7f-e997-4960-9b97-046778155766: 'Column 1 Width' # Column 1 Width
     c7c1aa87-0003-4cdf-a925-11ae2f05ec24: 'Project Locations' # Project Locations
-    c8be2ede-34e7-4ef1-8f4c-2f77c4e5f776: 'Services (Updated)' # Services (Updated)
+    c8be2ede-34e7-4ef1-8f4c-2f77c4e5f776: Services # Services
     c8e06b4a-2f85-41db-94e3-101a5c02dd6d: Documents # Documents
     c9d86e3f-9738-4d97-a271-5331264c10b8: 'Address Extended' # Address Extended
     c14fea44-3f71-477c-88d9-6f37c168d868: Content # Content
@@ -520,6 +520,7 @@ meta:
     d14546db-2be3-4821-b471-2f2714b1f322: 'Form ID' # Form ID
     d349329b-ec60-41dd-8bfa-097958ff477c: 'Hours Title' # Hours Title
     d535337e-0894-4ce9-80ee-a315e254df71: 'Column 1 Heading' # Column 1 Heading
+    d542665e-875b-4b71-add5-d70d5317e3c6: 'User Guide' # User Guide
     da23e18d-8c38-4fad-a38d-c07ba10ec985: Size # Size
     daee65a4-c92d-4e15-9273-1636d722cf35: 'End Time' # End Time
     daf1b54a-7841-4819-aaaa-4d568a0fbb66: 'Email Signup' # Email Signup
@@ -605,6 +606,7 @@ meta:
     f9088787-d043-44c0-a831-924dd6a72489: 'Call Out Type' # Call Out Type
     fa7723cf-13c4-4edc-9b93-41c7eb30772b: Granicus # Granicus
     fa184118-b826-4c59-9362-39fe81b426c2: 'Services (311)' # Services (311)
+    faa3b344-fa92-4f07-972c-503d9fa9061a: Default # Default
     facc7196-7444-4e77-873f-68c1b09d1298: 'Column 2 Heading' # Column 2 Heading
     fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c: 'Boards & Commissions Index' # Boards & Commissions Index
     fb2b9f42-74a0-45c4-be6e-d3d69c87557e: 'Column 2 Cell' # Column 2 Cell
@@ -754,7 +756,8 @@ plugins:
     licenseKey: null
     schemaVersion: 2.0.0
     settings:
-      additionalCss: "#fields-primaryUnit-field {\r\n    padding: 1rem;\r\n\tbackground-color: #e4edf6;\r\n\tborder-radius: .25rem;\r\n\tborder: 1px solid rgba(96, 125, 159, 0.25);\r\n}"
+      additionalCss: "#fields-primaryUnit-field {\r\n    padding: 1rem;\r\n\tbackground-color: #e4edf6;\r\n\tborder-radius: .25rem;\r\n\tborder: 1px solid rgba(96, 125, 159, 0.25);\r\n}\r\n\r\n#content {\r\n    position: relative !important;\r\n}"
+      cacheBusting: true
       cssFile: ''
   cp-field-inspect:
     enabled: '0'
@@ -960,8 +963,8 @@ plugins:
     schemaVersion: 2.0.1
     settings:
       enabledSideBar: true
-      pluginNameOverride: ''
-      section: '31'
+      pluginNameOverride: 'User Guide'
+      section: '75'
       templateOverride: ''
   video-embedder:
     enabled: '1'

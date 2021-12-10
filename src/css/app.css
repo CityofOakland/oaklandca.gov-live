@@ -1306,7 +1306,8 @@ form[data-handle="whyWasThisPageHelpful"] {
   height: 100%;
 }
 
-.lead {
+.lead,
+.lead > p {
   font-size: 24px;
   line-height: 1.5;
 }

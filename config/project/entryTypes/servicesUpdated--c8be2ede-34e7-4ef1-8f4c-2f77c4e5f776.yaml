@@ -5,7 +5,7 @@ fieldLayouts:
         elements:
           -
             style: tip
-            tip: 'Service pages help guide people through the process of completing a transaction.'
+            tip: 'Service pages help guide people through the process of completing a transaction. See the [Service Documentation](https://www.oaklandca.gov/admin/usermanual).'
             type: craft\fieldlayoutelements\Tip
           -
             heading: Header
@@ -255,9 +255,9 @@ fieldLayouts:
         sortOrder: 3
 handle: servicesUpdated
 hasTitleField: true
-name: 'Services (Updated)'
+name: Services
 section: b7e437e1-239f-4c5c-8c62-5f0323f9d22c # Services
-sortOrder: 4
+sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

@@ -42,8 +42,7 @@ class Module extends \yii\base\Module
             if(!$user->isAdmin) {
                 return "<style>
                     #entryType > option[value='72'],
-                    #entryType > option[value='92'],
-                    #entryType > option[value='96'] {
+                    #entryType > option[value='92'] {
                         display: none;
                     }
                 </style>";

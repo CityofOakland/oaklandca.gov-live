@@ -58,7 +58,7 @@ scope:
   - 'sections.e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8:read' # Search Index
   - 'entrytypes.97e68bc8-2f0b-4421-91bf-681c31d1af59:read' # Search Index
   - 'sections.b7e437e1-239f-4c5c-8c62-5f0323f9d22c:read' # Services
-  - 'entrytypes.85f10314-7c48-4f3e-8edb-8fa58b270abc:read' # Services
+  - 'entrytypes.85f10314-7c48-4f3e-8edb-8fa58b270abc:read' # Services (Deprecated)
   - 'entrytypes.fa184118-b826-4c59-9362-39fe81b426c2:read' # Services (311)
   - 'entrytypes.33857d17-d8e8-4c03-8902-f1fb2e4422da:read' # Service Redirect
   - 'sections.89cda626-6500-4ace-b9f4-0f8a54a9ad02:read' # Services Index
@@ -216,10 +216,10 @@ scope:
   - 'sections.e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8:edit' # Search Index
   - 'entrytypes.97e68bc8-2f0b-4421-91bf-681c31d1af59:save' # Search Index
   - 'sections.b7e437e1-239f-4c5c-8c62-5f0323f9d22c:edit' # Services
-  - 'entrytypes.85f10314-7c48-4f3e-8edb-8fa58b270abc:edit' # Services
-  - 'entrytypes.85f10314-7c48-4f3e-8edb-8fa58b270abc:create' # Services
-  - 'entrytypes.85f10314-7c48-4f3e-8edb-8fa58b270abc:save' # Services
-  - 'entrytypes.85f10314-7c48-4f3e-8edb-8fa58b270abc:delete' # Services
+  - 'entrytypes.85f10314-7c48-4f3e-8edb-8fa58b270abc:edit' # Services (Deprecated)
+  - 'entrytypes.85f10314-7c48-4f3e-8edb-8fa58b270abc:create' # Services (Deprecated)
+  - 'entrytypes.85f10314-7c48-4f3e-8edb-8fa58b270abc:save' # Services (Deprecated)
+  - 'entrytypes.85f10314-7c48-4f3e-8edb-8fa58b270abc:delete' # Services (Deprecated)
   - 'entrytypes.fa184118-b826-4c59-9362-39fe81b426c2:edit' # Services (311)
   - 'entrytypes.fa184118-b826-4c59-9362-39fe81b426c2:create' # Services (311)
   - 'entrytypes.fa184118-b826-4c59-9362-39fe81b426c2:save' # Services (311)

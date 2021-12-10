@@ -77,5 +77,7 @@ return [
     'defaultTokenDuration' => 432000,
 
     'allowAdminChanges' => false,
+
+    'devMode' => false,
   ],
 ];

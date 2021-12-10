@@ -2,6 +2,7 @@ description: ''
 handle: emergencyPublicInformationOfficers
 name: 'Emergency Public Information Officers'
 permissions:
+  - accessplugin-usermanual
   - accesscp
   - 'createentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
   - 'publishentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
@@ -179,7 +180,6 @@ permissions:
   - 'deletepeerentrydrafts:e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8' # Search Index
   - 'editpeerentrydrafts:e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8' # Search Index
   - 'editentries:e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8' # Search Index
-  - 'createentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
   - 'publishentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
   - 'deleteentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
   - 'publishpeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services

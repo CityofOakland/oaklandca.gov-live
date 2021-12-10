@@ -67,7 +67,7 @@ fields:
           -
             - zoom
             - '6'
-      coordinatesMode: readOnly
+      coordinatesMode: hidden
       dragPinDefault: null
       dragPinLatitude: null
       dragPinLongitude: null

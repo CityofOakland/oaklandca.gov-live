@@ -4,6 +4,7 @@ name: Editors
 permissions:
   - accesssitewhensystemisoff
   - accessplugin-calendar
+  - accessplugin-usermanual
   - accesscp
   - registerusers
   - moderateusers
@@ -68,7 +69,6 @@ permissions:
   - 'publishpeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071' # Resources
   - 'editpeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071' # Resources
   - 'editentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-  - 'createentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
   - 'publishentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
   - 'publishpeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
   - 'editpeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
