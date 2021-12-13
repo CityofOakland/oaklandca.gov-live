@@ -13,7 +13,7 @@
       {% endif %}
       {% include '_components/_contact.twig' with {block: entry} %}
       {% if entry.relatedServices|length %}
-        <hr style="border-top: 2px solid #212121;opacity:1;"/>
+        <hr/>
         <h4>{{ 'Related Services'|t }}</h4>
         <ul class="ul-icons related">
           {% for entry in entry.relatedServices.all() %}
@@ -22,7 +22,7 @@
         </ul>
       {% endif %}
       {% if entry.relatedResources|length  %}
-        <hr style="border-top: 2px solid #212121;opacity:1;"/>
+        <hr/>
         <h4>{{ 'Related Resources'|t }}</h4>
         <ul class="ul-icons related">
           {% for entry in entry.relatedResources.all() %}
@@ -40,10 +40,65 @@
     {% endspaceless %}
   {% endset %}
 
-  {% if sidebarContent|trim|length %}
-    <hr style="border-top: 2px solid #212121;opacity:1;"/>
-    <h4>{{ 'Contact'|t }}</h4>
-    {{sidebarContent}}
+  {% if entry.section.handle == 'meetings' %}
+    {% if entry.date %}
+      <hr/>
+      <h4>{{ 'Date and Time'|t }}</h4>
+      <p>{{ entry.date|date('l, F j, Y') }}<br>{{ entry.startTime|date("g:ia") }}{{ entry.endTime ? " to " ~ entry.endTime|date("g:ia") : "" }}</p>
+      {% if now|date('Y-m-d') <= entry.date|date('Y-m-d') %}
+        {% if entry.eventLocation.type("physicalLocation")|length %}
+          {% set block = entry.eventLocation.type("physicalLocation").one() %}
+          {% if not block.contactAddress.isEmpty() %}
+            <hr class="light">
+            <h4>{{ 'In Person Location'|t }}</h4>
+            {% if block.fullName %}<p>{{ block.fullName }}</p>{% endif %}
+            <ul class="ul-icons">
+              <li>{{ svg( '@webroot/assets/img/icon-marker-updated.svg') }}{{ block.contactAddress|replace({',': "<br>"})|raw }}</li>
+            </ul>
+          {% endif %}
+        {% endif %}
+        {% if entry.eventLocation.type("onlineLocation")|length %}
+          {% set block = entry.eventLocation.type("onlineLocation").one() %}
+          {% if block.href or block.phoneNumber %}
+            <hr class="light">
+            <h4>{{ 'Online'|t }}</h4>
+            {% if block.href %}<a href="{{ block.href }}" class="button">Join the meeting</a>{% endif %}
+            {% if block.phoneNumber %}
+              <p class="font-bold">Or join by phone</p>
+              <ul class="ul-icons">
+                <li><a href="tel:{{ block.phoneNumber|replace({'-': ''}) }}">{{ svg( '@webroot/assets/img/icon-phone-updated.svg') }} {{ block.phoneNumber }}</a></li>
+              </ul>
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+
+    {% if entry.fullName %}
+      <hr/>
+      <h4>{{ 'Contact'|t }}</h4>
+      <p>{{ entry.fullName }}</p>
+      {% if entry.emailAddress %}
+        <ul class="ul-icons">
+          <li><a href="mailto:{{ entry.emailAddress }}">{{ svg( '@webroot/assets/img/icon-envelope-updated.svg') }} {{ entry.emailAddress }}</a></li>
+        </ul>
+      {% endif %}
+    {% endif %}
+
+    {# <hr/> #}
+    {# <h4>{{ 'Subscribe to get updates'|t }}</h4> #}
+    {# <p>We'll let you know when the minutes are posted.</p> #}
+    {# <a href="{{ siteUrl }}" class="button secondary">Subscribe</a> #}
+    <hr class="light">
+    <p class="small">Posted: {{ entry.postDate|date("F j, Y g:ia") }}</p>
+    <p class="small">Last Updated: {{ entry.dateUpdated|date("F j, Y g:ia") }}</p>
+
+  {% else %}
+    {% if sidebarContent|trim|length %}
+      <hr/>
+      <h4>{{ 'Contact'|t }}</h4>
+      {{sidebarContent}}
+    {% endif %}
   {% endif %}
 </div>
 

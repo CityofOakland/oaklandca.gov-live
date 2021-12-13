@@ -1,0 +1,397 @@
+{% include '_partials/_head' %}
+
+  {% macro select(name, values) %}
+    <select name="{{ name }}">
+      {% for value, label in values %}
+        <option value="{{ value }}" {{ craft.app.request.getQueryParam(name) and craft.app.request.getQueryParam(name)  == value  ? 'selected' : ''  }}>{{ label }}</option>
+      {% endfor %}
+    </select>
+  {% endmacro %}
+
+  {% if slug is defined %}
+    {% set entry = craft.entries().section('boardsCommissions').slug(slug).one() %}
+  {% endif %}
+  {% set query          = craft.app.request.getQueryParam('q') %}
+  {% set meetings       = craft.entries().section('meetings').relatedTo(entry).search(query).limit(10).order('date asc') %}
+  {% set filter_enabled = false %}
+
+  {% set date_query = ['and'] %}
+
+  {% if craft.app.request.getQueryParam('start_year') %}
+    {% set filter_enabled = true %}
+    {% set year = craft.app.request.getQueryParam('start_year') %}
+    {% if craft.app.request.getQueryParam('start_month') %}
+      {% set month = craft.app.request.getQueryParam('start_month') %}
+      {% set date_query = date_query|merge(['>= ' ~ (year~'-'~month~'-01')]) %}
+    {% else %}
+      {% set date_query = date_query|merge(['>= ' ~ (year~'-01-01')]) %}
+    {% endif %}
+  {% endif %}
+
+  {% if craft.app.request.getQueryParam('end_year') %}
+    {% set filter_enabled = true %}
+    {% set year = craft.app.request.getQueryParam('end_year') %}
+    {% if craft.app.request.getQueryParam('end_month') %}
+      {% set month = craft.app.request.getQueryParam('end_month') %}
+      {% set date_query = date_query|merge(['<= ' ~ (year~'-'~month~'-31')]) %}
+    {% else %}
+      {% set date_query = date_query|merge(['<= ' ~ (year~'-12-31')]) %}
+    {% endif %}
+  {% endif %}
+
+  {% if craft.app.request.getQueryParam('type') %}
+    {% set filter_enabled = true %}
+    {% switch craft.app.request.getQueryParam('type') %}
+      {% case -1 %}
+        {% set date_query = date_query|merge(['< ' ~ now|date('Y-m-d')]) %}
+      {% case 1 %}
+        {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
+      {% default %}
+    {% endswitch %}
+  {% endif %}
+
+  {% if date_query|length > 1 %}
+    {% set meetings = meetings.date(date_query) %}
+  {% endif %}
+
+  {% paginate meetings as pageInfo, meetings %}
+
+  {# We’re setting the class to overflow-x-hidden to prevent content from stretching page width on mobile views.#}
+  {# Sets the navigation to the nav section entry, "Main Nav" #}
+  {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
+  <body class="overflow-x-hidden font-body {{ pageClass ?? '' }}">
+    <div class="page-holder">
+      {% include '_partials/_elements/_skip-to-content.twig' %}
+      {% include '_partials/_elements/_nav-bar.twig' %}
+      <main>
+        {% include '_partials/_elements/_sitewide-alert.twig' %}
+        <section>
+          {% if entry.banner|length %}
+            <div class="leading-normal aspect-ratio-box aspect-ratio-1/4 banner">
+              <div class="object-cover pt-2 pb-8 leading-none aspect-ratio md:pt-4 md:pb-6 min-h-2-1/2 md:min-h-4">
+                <figure class="absolute inset-0 z-0">
+                  <img
+                    class="absolute inset-0 z-0 object-cover w-full h-full"
+                    src="{{ entry.banner.one().url }}"
+                    alt="{{ entry.banner.one().altText }}">
+                </figure>
+                <div class="container py-0 relative">
+                  {% include "_components/partials/_breadcrumbs.twig" with {
+                    breadCrumbLinks: [
+                      {link: siteUrl ~ 'boards-commissions', title: entry.section.name},
+                      {link: entry.url, title: entry.title},
+                    ],
+                    bannerTitle: 'Meetings for ' ~ entry.title,
+                  } %}
+                </div>
+              </div>
+            </div>
+          {% else %}
+            <div class="bg-transparent-oakland-roots">
+              <div class="container" style="padding-top:1rem;padding-bottom:1rem;">
+                <div class="breadcrumbs relative flex flex-col items-start py-0 sm:justify-between sm:flex-row-reverse sm:items-center">
+                  {% include "_partials/_elements/_banner-google-translate.twig" with {paddingTop: "pt-0 mb-4 md:mb-0"} %}
+                  {% include "_components/partials/_breadcrumbs.twig" with {
+                    breadCrumbLinks: [
+                      {link: siteUrl ~ 'boards-commissions', title: entry.section.name},
+                      {link: entry.url, title: entry.title},
+                    ],
+                    bannerTitle: 'Meetings for ' ~ entry.title,
+                  } %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+
+          <div id="content" style="position:relative;top:-80px;"></div>
+          <div class="container components pt-16">
+            <div class="flex flex-col flex-1 lg:flex-row">
+              <div class="w-full lg:w-2/3">
+                <h1>Meetings for {{ entry.title }}</h1>
+                <div class="lead pt-4">The following is an exhaustive list of all meetings related to {{ entry.title }}</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="container pt-0">
+            <div class="flex flex-wrap justify-between -mx-3">
+              <div class="w-full lg:w-3/4 xl:w-3/5 px-3">
+                <div class="components components-format">
+                  {% if filter_enabled %}
+                    <h3>Displaying {{ meetings|length }} of {{ pageInfo.total }} Meetings</h3>
+                  {% else %}
+                    <h3>Displaying All Meetings</h3>
+                  {% endif %}
+                  <div class="mt-8">
+                    {% for meeting in meetings %}
+                      <div class="result pb-6" style="margin-bottom:1rem;">
+                        <h3 style="padding-top: 0;">
+                          <a href="{{ meeting.url }}">{{ meeting.title }}</a>
+                          {% if meeting.eventLocation.type('onlineLocation')|length and meeting.eventLocation.type('physicalLocation')|length  %}
+                            <span>Online / Physical</span>
+                          {% elseif meeting.eventLocation.type('onlineLocation')|length %}
+                            <span>Online</span>
+                          {% elseif meeting.eventLocation.type('physicalLocation')|length %}
+                            <span>Physical</span>
+                          {% endif %}
+                        </h3>
+                        {% if meeting.date %}<p><b>{{ meeting.date|date("l, F j, Y") }}</b></p>{% endif %}
+                          <div class="flex items-center justify-between">
+                            {% if meeting.startTime %}<p class="flex items-center">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startTime|date("g:ia") }}{{ meeting.endTime ? " to " ~ meeting.endTime|date("g:ia") : '' }}</span></p>{% endif %}
+                            <ul class="flex items-center related" style="list-style:none;padding:0;">
+                              {% if meeting.agendaDownloadableCopy|length %}<li class="ml-4"><a class="flex items-center" href="{{ meeting.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/assets/img/icon-pdf-updated.svg') }}<span class="ml-2">Agenda</span></a></li>{% endif %}
+                              {% if meeting.documentFile|length %}<li class="ml-4"><a class="flex items-center" href="{{ meeting.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-pdf-updated.svg') }}<span class="ml-2">Minutes</span></a></li>{% endif %}
+                              {% if meeting.embeds|length %}<li class="ml-4"><a class="flex items-center" href="{{ meeting.url }}#recordings">{{ svg( '@webroot/assets/img/icon-recording.svg') }}<span class="ml-2">Recording</span></a></li>{% endif %}
+                            </ul>
+                          </div>
+                          <p class="updated">Updated: {{ meeting.dateUpdated|date("F j, Y") }}</p>
+                          {% if query and meeting.agendaDownloadableCopy|length and query in meeting.agendaDownloadableCopy.one().filename|lower %}
+                            <p class="small">
+                              {% set filename     = meeting.agendaDownloadableCopy.one().filename|trim %}
+                              {% set query_index  = filename|lower|indexOf(query) %}
+                              <b>Agenda: </b>{{ filename|slice(0, query_index) }}<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
+                            </p>
+                          {% endif %}
+                          {% if query and meeting.documentFile|length and query in meeting.documentFile.one().title|lower %}
+                            <p class="small">
+                              {% set filename     = meeting.documentFile.one().filename|trim %}
+                              {% set query_index  = filename|lower|indexOf(query) %}
+                              <b>Minutes: </b>{{ filename|slice(0, query_index) }}<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
+                            </p>
+                          {% endif %}
+                      </div>
+                    {% endfor %}
+                  </div>
+
+                  {% include '_partials/_elements/_pagination' %}
+                </div>
+              </div>
+              <div class="w-full lg:w-1/4 xl:w-1/3 px-3">
+                <div id="components-sidebar" class="components components-format">
+                  <hr/>
+                  <h4>{{ 'Search and Filter'|t }}</h4>
+                  <form>
+                    <h5><b>{{ 'Search'|t }}</b></h5>
+                    <label id="search">
+                      <input name="q" type="text" placeholder="Search agenda items and documents" value="{{ craft.app.request.getQueryParam('q') ?? craft.app.request.getQueryParam('q') }}">
+                    </label>
+                    <h5><b>{{ 'Date Range'|t }}</b></h5>
+
+                    <div class="flex flex-wrap justify-between -mx-3">
+                      <div class="w-full px-3">
+                        {{ _self.select('type',{
+                          "0"  : "Past and Upcoming Meetings",
+                          "-1" : "Past Meetings",
+                          "1"  : "Upcoming Meetings",
+                        }) }}
+                      </div>
+                      {% set months = {
+                        "1": "January",
+                        "2": "February",
+                        "3": "March",
+                        "4": "April",
+                        "5": "May",
+                        "6": "June",
+                        "7": "July",
+                        "8": "August",
+                        "9": "September",
+                        "10": "October",
+                        "11": "November",
+                        "12": "December",
+                      } %}
+                      <div class="w-full lg:w-1/2 px-3">{{ _self.select('start_month', months|reverse|merge({"0": "Start Month"})|reverse) }}</div>
+                      <div class="w-full lg:w-1/2 px-3">{{ _self.select('end_month', months|reverse|merge({"0": "End Month"})|reverse) }}</div>
+                      <div class="w-full lg:w-1/2 px-3">
+                        <select name="start_year">
+                          <option>Start Year</option>
+                          {% for year in now|date('Y')..2000 %}
+                            <option value="{{ year }}" {{ craft.app.request.getQueryParam('start_year') and craft.app.request.getQueryParam('start_year') == year  ? 'selected' : ''  }}>{{ year }}</option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                      <div class="w-full lg:w-1/2 px-3">
+                        <select name="end_year">
+                          <option>End Year</option>
+                          {% for year in now|date('Y')..2000 %}
+                            <option value="{{ year }}" {{ craft.app.request.getQueryParam('end_year') and craft.app.request.getQueryParam('end_year') == year  ? 'selected' : ''  }}>{{ year }}</option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                    </div>
+                    <button class="button medium">Apply</button>
+                  </form>
+
+                  {% js at endBody %}
+                    var $select_start_year = $('select[name="start_year"]');
+                    var $select_end_year   = $('select[name="end_year"]');
+
+                    $select_start_year.on('change', function(){
+                      var start_year = parseInt($(this).val());
+
+                      if($select_end_year.val() < $select_start_year.val()) {
+                        $select_end_year.prop('selectedIndex',0);
+                      }
+
+                      $select_end_year.find('option[value]').each(function(){
+                        var $this = $(this);
+
+                        if(parseInt($this.val()) < start_year ) {
+                          $this.css({'display': 'none'})
+                        } else {
+                          $this.css({'display': 'block'})
+                        }
+                      })
+                    });
+
+                    var $select_start_month = $('select[name="start_month"]');
+                    var $select_end_month   = $('select[name="end_month"]');
+
+                    $select_start_month.on('change', function(){
+                      var start_month = parseInt($(this).val());
+
+                      if($select_end_month.val() < $select_start_month.val()) {
+                        $select_end_month.prop('selectedIndex',0);
+                      }
+
+                      $select_end_month.find('option[value]').each(function(){
+                        var $this = $(this);
+
+                        if(parseInt($this.val()) < start_month ) {
+                          $this.css({'display': 'none'})
+                        } else {
+                          $this.css({'display': 'block'})
+                        }
+                      })
+                    });
+                  {% endjs %}
+
+                  <hr class="light"/>
+
+                  <style>
+                    .components input,
+                    .components select {
+                      color: #6B7280;
+                      margin-top: 1rem;
+                    }
+
+                    .components input[type="text"] {
+                      border: 1px solid #CFCFCF;
+                      border-radius: 4px;
+                      color: black;
+                      padding: 0.75rem 1rem;
+                      width: 100%;
+                    }
+
+                    .components input[type="text"]::placeholder {
+                      color: #6B7280;
+                    }
+
+                    .components select {
+                      border: 1px solid #CFCFCF;
+                      border-radius: 4px;
+                      padding: 0.75rem 1rem;
+                      width: 100%;
+                    }
+
+                    #search {
+                      position: relative;
+                    }
+
+                    #search::before {
+                      background-image: url('{{ siteUrl ~ 'assets/img/icon-search.svg' }}');
+                      background-repeat: no-repeat;
+                      background-position: center;
+                      content: "";
+                      display: block;
+                      height: 20px;
+                      width: 20px;
+                      position:  absolute;
+                      top: 50%;
+                      left: 1rem;
+                      transform: translateY(-50%);
+                    }
+
+                    #search > input {
+                      padding-left: 3rem;
+                    }
+                  </style>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="components-footer" class="components">
+            {% if entry.relatedDepartments|length %}
+              {% include '_components/partials/_cards' with {
+                background: '#334E68',
+                class:      'text-white',
+                heading:    "Related Departments",
+                entries:    entry.relatedDepartments.all()
+              } %}
+            {% endif %}
+          </div>
+        </section>
+
+        {% include '_components/partials/_feedback.twig' %}
+
+      </main>
+      {% include '_partials/_elements/_footer.twig' %}
+    </div>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+    {{ craft.twigpack.includeJsModule("/js/manifest.js") }}
+    {{ craft.twigpack.includeJsModule("/js/vendor.js") }}
+    {{ craft.twigpack.includeJsModule("/js/app.js") }}
+  </body>
+</html>
+{% if section is defined and slug is defined %}
+  {% set facetItem = craft.entries.section(section).slug(slug).one().title %}
+  {% js at head %}
+      var section = "{{ section }}";
+      var entryTitle = "{{ facetItem }}";
+  {% endjs %}
+{% endif %}
+
+{% js on ready %}
+  $('.components table').each(function(index, element){
+    var $table   = $(element);
+    var $heads  = $table.find('th');
+
+    $heads.each(function(index, element){
+      var $heading      = $(element);
+
+      $table.find('td:nth-of-type(' + (index + 1) + ')').attr('data-label', $heading.text());
+    });
+  });
+
+  $('.components').addClass('js-initialized');
+{% endjs %}
+
+{% js %}
+(function() {
+  // Observe DOM mutations whether the <html> node was changed by Google Translate
+  if (window.MutationObserver) {
+    var mutationObserver = new MutationObserver(function(mutations) {
+      mutations.forEach(function (mutation) {
+        var oldElementClass = mutation.oldValue;
+        var currentElementClass = mutation.target.className;
+        if (oldElementClass.indexOf('translated-') === -1 && currentElementClass.indexOf('translated-') > -1) {
+          dl.push({
+            'event' : 'page_translated',
+            'translationLanguage' : mutation.target.lang || document.getElementsByTagName('html')[0].getAttribute('xml:lang'),
+            'debug_mode'          : true,
+          });
+        }
+    })
+  })
+
+    var htmlNode = document.querySelector('html');
+    mutationObserver.observe(htmlNode, {
+      attributes: true,
+      attributeOldValue: true,
+      attributeFilter: ['class']
+    })
+  }
+})();
+{% endjs %}
