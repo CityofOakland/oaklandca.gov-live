@@ -15,7 +15,7 @@
       {% set calloutHeading = 'This meeting was rescheduled.' %}
     {% endif %}
   {% elseif entry.meetingStatus == 'special' %}
-    {% set calloutHeading = 'This is a special meeting that is happening outside of the regularly scheduled meeting time' %}
+    {% set calloutHeading = 'This is a special meeting of the ' ~ entry.relatedBoardOrCommission.one().title %}
   {% elseif entry.eventLocation.type('onlineLocation')|length and not entry.eventLocation.type('physicalLocation')|length  %}
     {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
       {% set calloutHeading = 'This meeting was held virtually and not in person.' %}
