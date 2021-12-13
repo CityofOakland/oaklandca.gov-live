@@ -2,80 +2,125 @@
 {% import '_macros/_macros' as macros %}
 
 {% block content %}
-  {# Callout #}
-  {% include '_components/_callOut' with {
-    callOutType   : 'attention',
-    heading       : 'this is a temporary callout placeholder',
-    description   : '' 
-  } %}
+  {% if entry.meetingStatus == 'canceled' %}
+    {% set calloutHeading = 'This meeting has been canceled.' %}
+  {% elseif entry.meetingStatus == 'rescheduled' %}
+    {% if entry.relatedMeeting|length %}
+      {% if entry.relatedMeeting.one().date %}
+        {% set calloutHeading = 'This meeting was rescheduled for <a style="font-weight:400;" href="' ~ entry.relatedMeeting.one().url ~ '">' ~ entry.relatedMeeting.one().date|date('F j, Y') ~ '</a>.' %}
+      {% else %}
+        {% set calloutHeading = 'This meeting was <a style="font-weight:400;" href="' ~ entry.relatedMeeting.one().url ~ '">rescheduled</a>.' %}
+      {% endif %}
+    {% else %}
+      {% set calloutHeading = 'This meeting was rescheduled.' %}
+    {% endif %}
+  {% elseif entry.meetingStatus == 'special' %}
+    {% set calloutHeading = 'This is a special meeting of the ' ~ entry.relatedBoardOrCommission.one().title %}
+  {% elseif entry.eventLocation.type('onlineLocation')|length and not entry.eventLocation.type('physicalLocation')|length  %}
+    {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
+      {% set calloutHeading = 'This meeting was held virtually and not in person.' %}
+    {% else %}
+      {% set calloutHeading = 'This meeting will be held virtually and not in person.' %}
+    {% endif %}
+  {% endif %}
+
+  {% if calloutHeading is defined %}
+    {% include '_components/_callout' with {
+      callOutType   : 'attention',
+      heading       : calloutHeading,
+      description   : '' 
+    } %}
+  {% endif %}
+
   {# Details #}
   {% if entry.mainContent %}<div>{{ entry.mainContent }}</div>{% endif %}
 
-  {# Minutes #}
-  {% if entry.documentFile|length %}
-    <h2>Minutes</h2>
-    <ul class="ul-icons related" style="padding-top: 1rem;">
-    {% for document in entry.documentFile.all() %}
-      <li><a href="{{ document.url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.title }} Minutes - {{ entry.postDate|date('m/d/Y') }}</a></li>
-    {% endfor %}
-    </ul>
-  {% endif %}
-
-  {# Recordings #}
-  {% if entry.embeds|length %}
-    <h2>Recordings</h2>
-    {% for item in entry.embeds %}
-      <figure>
-        {% switch item.type %}
-          {% case 'granicus' %}
-            {{ macros.videoEmbed(item.granicusUrl) }}
-          {% case 'youtube' %}
-            {% set id = item.youtubeUrl|split('?')[1]|split('&')[0]|split('=')[1] %}
-            <div class="embed-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/{{ id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-          {% case 'soundcloud' %}
-            {{ item.soundcloudEmbed|raw }}
-          {% case 'vimeo' %}
-            {% set id = item.vimeoUrl|split('/')|last %}
-            <div class="embed-container"><iframe src="https://player.vimeo.com/video/{{ id }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
-        {% endswitch %}
-        <p><i>Meeting recording of {{ entry.title }} on {{ entry.postDate|date('F j, Y') }}</i></p>
-      </figure>
-    {% endfor %}
-  {% endif %}
-
-  <h2>Agenda</h2>
-  {% if entry.agendaDownloadableCopy|length %}
-    <ul class="ul-icons related" style="padding-top: 1rem;">
-      <li><a href="{{ entry.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.agendaDownloadableCopy.one().title }} - {{ entry.postDate|date("m/d/Y") }} Agenda</a></li>
-    </ul>
-  {% endif %}
-  {% include '_components/_process.twig' with {heading: 'Agenda Items'} %}
-
-  <hr class="hr medium"/>
-  {# Accessibility Request #}
-  {% set accessibilityText %}
-    {% if entry.accessibilityText %}
-      <p>{{ entry.accessibilityText|raw }}</p>
-    {% else %}
-      <p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
-      <p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a courtesy to attendees with chemical sensitivities.</p>
-    {% endif %}
-    {% if entry.contactInfo.type('email')|length %}
-      {% set prefix = 'mailto:' %}
-      {% for item in entry.contactInfo.type('email').all() %}
-        {% if loop.index == 1 %}
-          {% set prefix = prefix ~ item.email ~ "?cc=" %}
-        {% elseif loop.index == 2 %}
-          {% set prefix = prefix ~ item.email %}
-        {% else %}
-          {% set prefix = prefix ~ ", " ~ item.email %}
-        {% endif %}
+  {% if entry.date and now|date('Y-m-d') > entry.date|date('Y-m-d') %}
+    {% if entry.documentFile|length %}
+      <h2>Minutes</h2>
+      <ul class="ul-icons related" style="padding-top: 1rem;">
+      {% for document in entry.documentFile.all() %}
+        <li><a href="{{ document.url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }}{{ entry.title }} Minutes{{ entry.date ?  ' - ' ~ entry.date|date('m/d/Y') : '' }}</a></li>
       {% endfor %}
-      <a class="button secondary small" href="{{ prefix }}&subject=Accessibility Request: {{ entry.title }} at {{ entry.postDate|date('m/d/Y') }}">Make a Request</a>
+      </ul>
+    {% endif %}
+    {% if entry.embeds|length %}
+      <h2 id="recordings">Recordings</h2>
+      {% for item in entry.embeds %}
+        <figure>
+          {% switch item.type %}
+            {% case 'granicus' %}
+              {{ macros.videoEmbed(item.granicusUrl) }}
+            {% case 'youtube' %}
+              {% set id = item.youtubeUrl|split('?')[1]|split('&')[0]|split('=')[1] %}
+              <div class="embed-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/{{ id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            {% case 'soundcloud' %}
+              {{ item.soundcloudEmbed|raw }}
+            {% case 'vimeo' %}
+              {% set id = item.vimeoUrl|split('/')|last %}
+              <div class="embed-container"><iframe src="https://player.vimeo.com/video/{{ id }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+          {% endswitch %}
+          <p><i>Meeting recording of {{ entry.title }} on {{ entry.date|date('F j, Y') }}</i></p>
+        </figure>
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+
+  {% if entry.agendaDownloadableCopy|length or entry.agendaTopics|length %}
+    <h2>Agenda</h2>
+    {% if entry.agendaDownloadableCopy|length %}
+      <ul class="ul-icons related" style="padding-top: 1rem;">
+        <li><a href="{{ entry.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.agendaDownloadableCopy.one().title }} - {{ entry.date|date("m/d/Y") }} Agenda</a></li>
+      </ul>
+    {% endif %}
+    {% if entry.agendaTopics|length %}
+      <h3>Topics</h3>
+      <ol class="process">
+        {% for item in entry.agendaTopics.all() %}
+          <li data-index="{{ loop.index }}">
+            <div>
+              <span class="font-bold">{{ item.topic }}</span>
+              {{ item.description }}
+              {% if item.relatedDocuments|length %}
+                <ul class="ul-icons related" style="padding-top: 1rem;">
+                    {% for document in item.relatedDocuments.all() %}
+                    <li><a href="{{ document.url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ document.title }}</a></li>
+                    {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ol>
+    {% endif %}
+  {% endif %}
+
+  {% if entry.howToParticipate|length %}
+    <div class="accordion" data-allow-toggle style="padding-top:2em;">
+      <ul aria-label="Accordion Control Group Buttons" class="accordion-controls">
+        {% for item in entry.howToParticipate.all() %}
+        <li class="accordion-item">
+          <button class="accordion-header" aria-controls="content-{{ entry.id }}-{{ loop.index }}" aria-expanded="false" id="accordion-control-{{ entry.id }}-{{ loop.index }}">{{ item.header ? item.header : "How to Participate in this Public Meeting" }} <span style="pointer-events: none;">{{ svg( '@webroot/assets/img/icon-plus.svg') }}{{ svg( '@webroot/assets/img/icon-minus.svg') }}</span></button>
+          <div class="accordion-panel" id="content-{{ entry.id }}-{{ loop.index }}" hidden>
+            {{ item.description }}
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  {# Accessibility Request #}
+  <hr class="hr medium"/>
+  {% set accessibilityText %}
+    <p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
+    <p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a courtesy to attendees with chemical sensitivities.</p>
+    {% if entry.emailAddress %}
+      <a class="button secondary small" href="mailto:{{ entry.emailAddress }}?subject=Accessibility Request: {{ entry.title }}{{ entry.date ? ' at ' ~ entry.date|date('m/d/Y') : '' }}">Make a Request</a>
     {% endif %}
 
   {% endset %}
-  {% include '_components/_callOut' with {
+  {% include '_components/_callout' with {
     callOutType   : 'info',
     heading       : 'Accessibility and interpretation requests',
     description   : accessibilityText 

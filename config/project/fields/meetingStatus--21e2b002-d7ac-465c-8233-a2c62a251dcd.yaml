@@ -1,0 +1,56 @@
+columnSuffix: oqfgyapm
+contentColumnType: string
+fieldGroup: ef7a2eb3-d6b3-44db-9db1-5500ac82498c # Meetings
+handle: meetingStatus
+instructions: 'Select Special Meeting if this is being held at a different time or location than normal.'
+name: 'Meeting Status'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Default
+        -
+          - value
+          - default
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Special Meeting'
+        -
+          - value
+          - special
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Canceled
+        -
+          - value
+          - canceled
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Rescheduled
+        -
+          - value
+          - rescheduled
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\RadioButtons
