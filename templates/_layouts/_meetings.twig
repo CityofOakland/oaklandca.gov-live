@@ -25,7 +25,7 @@
   {% endif %}
 
   {% if calloutHeading is defined %}
-    {% include '_components/_callOut' with {
+    {% include '_components/_callout' with {
       callOutType   : 'attention',
       heading       : calloutHeading,
       description   : '' 
@@ -120,7 +120,7 @@
     {% endif %}
 
   {% endset %}
-  {% include '_components/_callOut' with {
+  {% include '_components/_callout' with {
     callOutType   : 'info',
     heading       : 'Accessibility and interpretation requests',
     description   : accessibilityText 
