@@ -11,6 +11,17 @@ settings:
       __assoc__:
         -
           - label
+          - Default
+        -
+          - value
+          - default
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
           - 'Special Meeting'
         -
           - value

@@ -33,7 +33,7 @@
   {% endif %}
 
   {# Details #}
-  {# {% if entry.mainContent %}<div>{{ entry.mainContent }}</div>{% endif %} #}
+  {% if entry.mainContent %}<div>{{ entry.mainContent }}</div>{% endif %}
 
   {% if entry.date and now|date('Y-m-d') > entry.date|date('Y-m-d') %}
     {% if entry.documentFile|length %}

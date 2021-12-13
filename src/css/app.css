@@ -1242,6 +1242,10 @@ form[data-handle="whyWasThisPageHelpful"] {
   margin-top: 1.25em;
 }
 
+#components-sidebar > hr:first-child {
+  margin-top: 0;
+}
+
 #components-sidebar > h1,
 #components-sidebar > h2,
 #components-sidebar > h3,

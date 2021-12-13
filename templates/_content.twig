@@ -32,12 +32,13 @@
           <div class="container components pt-16">
             <div class="flex flex-col flex-1 lg:flex-row">
               <div class="w-full lg:w-2/3">
-                <h1>{{ entry.title }}</h1>
                 {% if category is not defined and entry.section.handle == 'meetings' %}
+                  <h1>{% if entry.meetingStatus.value and entry.meetingStatus.value !== 'default' %}{{ entry.meetingStatus.label }} - {% endif %}{{ entry.title }}</h1>
                   {% if entry.date %}
                     <div class="lead pt-4">The {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} {{ now > entry.date ? 'held its last' : 'will hold its next' }} public meeting on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
                   {% endif %}
                 {% else %}
+                  <h1>{{ entry.title }}</h1>
                   {% if entry.leadIn or entry.summary %}
                     <div class="lead pt-4">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
                   {% endif %}
