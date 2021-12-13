@@ -30,7 +30,7 @@ fieldLayouts:
             fieldUid: f7e4a055-457f-46eb-ab3d-3e816f80a81d # Related Board or Commission
             instructions: 'Select the Board or Commission this meeting is related to.'
             label: ''
-            required: ''
+            required: '1'
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -175,18 +175,6 @@ fieldLayouts:
             instructions: 'Select the type of recording. This field supports video URLs from Granicus, Youtube, and Vimeo.'
             label: Recording
             required: ''
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            heading: Footer
-            type: craft\fieldlayoutelements\Heading
-          -
-            fieldUid: a64389e9-e0f9-4d5b-ae78-16f6b5db6785 # Related Departments
-            instructions: null
-            label: null
-            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null

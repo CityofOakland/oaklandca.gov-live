@@ -64,12 +64,12 @@
             </div>
           </div>
           <div id="components-footer" class="components">
-            {% if entry.relatedDepartments|length %}
+            {% if entry.relatedBoardOrCommission|length %}
               {% include '_components/partials/_cards' with {
                 background: '#334E68',
                 class:      'text-white',
                 heading:    "Related Departments",
-                entries:    entry.relatedDepartments.all()
+                entries:    entry.relatedBoardOrCommission.all()
               } %}
             {% endif %}
 
