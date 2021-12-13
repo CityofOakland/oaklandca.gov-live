@@ -8,7 +8,7 @@
 							inputClass: "form-control",
 							overrideValues: {
 								entryUrl: entry is defined ? entry.url : (category is defined ? category.url : 'N/A'),
-								pageAuthor: category is defined ? 'N/A' : entry.author.fullName
+								pageAuthor: entry['author'] is defined ? entry.author.fullName : 'N/A'
 							}
 						}).render() }}
 						{% js at endBody %}
