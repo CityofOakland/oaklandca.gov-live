@@ -28,6 +28,13 @@ return [
       ['siteId' => 1, 'uriPattern' => '.*',],
     ],
 
+    // The URI patterns to include in caching. Set `siteId` to a blank string to indicate all sites.
+    'excludedUriPatterns' => [
+      ['siteId' => 1, 'uriPattern' => '/author'],
+      ['siteId' => 1, 'uriPattern' => '/services/*'],
+      ['siteId' => 1, 'uriPattern' => '/meetings/*'],
+    ],
+
     // Whether the cache should automatically be warmed after clearing.
     'warmCacheAutomatically' => false,
   ],

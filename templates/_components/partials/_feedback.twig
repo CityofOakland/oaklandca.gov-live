@@ -7,15 +7,14 @@
 							labelClass: "form-label",
 							inputClass: "form-control",
 							overrideValues: {
-								entryUrl: entry.url,
-								pageAuthor: entry.author.fullName
+								entryUrl: entry is defined ? entry.url : (category is defined ? category.url : 'N/A'),
+								pageAuthor: entry.author ? entry.author.fullName : 'N/A'
 							}
 						}).render() }}
 						{% js at endBody %}
-							var form_report = document.querySelector('[data-handle="{{ id }}"]');
-							form_report.addEventListener('freeform-ajax-success', function (event) {
-							$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(form_report);
-					  		$(form_report).remove();
+							document.querySelector('[data-handle="{{ id }}"]').addEventListener('freeform-ajax-success', function (event) {
+							$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(document.querySelector('[data-handle="{{ id }}"]'));
+					  		$(document.querySelector('[data-handle="{{ id }}"]')).remove();
 					  	});
 						{% endjs %}
 					{% else %}

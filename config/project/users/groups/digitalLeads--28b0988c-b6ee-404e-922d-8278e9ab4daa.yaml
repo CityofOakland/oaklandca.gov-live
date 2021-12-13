@@ -5,6 +5,7 @@ permissions:
   - accesssitewhensystemisoff
   - accesscpwhensystemisoff
   - accessplugin-calendar
+  - accessplugin-usermanual
   - accesscp
   - registerusers
   - moderateusers
