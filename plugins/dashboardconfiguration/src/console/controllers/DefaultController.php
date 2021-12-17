@@ -41,7 +41,14 @@ class DefaultController extends Controller
 
     public function actionFindAndReplace()
     {
-        $data = file(__dir__ . "/1639761861_detailed_urls.txt");
+        // 1639761861_detailed_urls_mapped
+        // 1639768623_detailed_urls_mapped
+
+        // 1639769985_detailed_urls_mapped
+        // 1639774029_detailed_urls_mapped
+        // manual_detailed_urls_mapped
+
+        $data = file(__dir__ . "/manual_detailed_urls_mapped.txt");
         $total_jobs = 0;
 
         foreach ($data as $index => $row) {
