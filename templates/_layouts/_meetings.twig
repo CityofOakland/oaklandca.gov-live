@@ -50,15 +50,21 @@
         <figure>
           {% switch item.type %}
             {% case 'granicus' %}
-              {{ macros.videoEmbed(item.granicusUrl) }}
+              {% if item.granicusUrl %}{{ macros.videoEmbed(item.granicusUrl) }}{% endif %}
             {% case 'youtube' %}
-              {% set id = item.youtubeUrl|split('?')[1]|split('&')[0]|split('=')[1] %}
-              <div class="embed-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/{{ id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+              {% if item.youtubeUrl %}
+                {% set id = item.youtubeUrl|split('?')[1]|split('&')[0]|split('=')[1] %}
+                <div class="embed-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/{{ id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+              {% endif %}
             {% case 'soundcloud' %}
-              {{ item.soundcloudEmbed|raw }}
+              {% if item.soundcloudEmbed %}
+                {{ item.soundcloudEmbed|raw }}
+              {% endif %}
             {% case 'vimeo' %}
-              {% set id = item.vimeoUrl|split('/')|last %}
-              <div class="embed-container"><iframe src="https://player.vimeo.com/video/{{ id }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+              {% if item.vimeoUrl %}
+                {% set id = item.vimeoUrl|split('/')|last %}
+                <div class="embed-container"><iframe src="https://player.vimeo.com/video/{{ id }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+              {% endif %}
           {% endswitch %}
           <p><i>Meeting recording of {{ entry.title }} on {{ entry.date|date('F j, Y') }}</i></p>
         </figure>
@@ -95,7 +101,7 @@
     {% endif %}
   {% endif %}
 
-  {% if entry.howToParticipate|length %}
+  {% if entry.howToParticipate|length and entry.howToParticipate.one().description %}
     <div class="accordion" data-allow-toggle style="padding-top:2em;">
       <ul aria-label="Accordion Control Group Buttons" class="accordion-controls">
         {% for item in entry.howToParticipate.all() %}

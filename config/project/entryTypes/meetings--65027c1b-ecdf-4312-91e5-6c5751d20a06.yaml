@@ -114,7 +114,7 @@ fieldLayouts:
             fieldUid: 2260316d-d754-471f-a901-9d8ed19c13d3 # Full Name
             instructions: 'Input the meeting contact name and title, or the team name.'
             label: 'Meeting Contact Name'
-            required: ''
+            required: '1'
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
