@@ -53,7 +53,8 @@
             <h4>{{ 'In Person Location'|t }}</h4>
             {% if block.fullName %}<p>{{ block.fullName }}</p>{% endif %}
             <ul class="ul-icons">
-              <li>{{ svg( '@webroot/assets/img/icon-marker-updated.svg') }}{{ block.contactAddress|replace({',': "<br>"})|raw }}</li>
+              <li>{{ svg( '@webroot/assets/img/icon-marker-updated.svg') }}{{ block.contactAddress.multiline() }}</li>
+              <li style="padding-left:32.5px;text-decoration:underline;"><a href="https://www.google.com/maps/search/{{ block.contactAddress|url_encode }}">Get Directions</a></li>
             </ul>
           {% endif %}
         {% endif %}
