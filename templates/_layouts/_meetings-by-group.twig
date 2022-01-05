@@ -108,7 +108,13 @@
             <div class="flex flex-col flex-1 lg:flex-row">
               <div class="w-full lg:w-2/3">
                 <h1>Meetings for {{ entry.title }}</h1>
-                <div class="lead pt-4">The following is an exhaustive list of all meetings related to {{ entry.title }}</div>
+                <div class="lead pt-4">
+                  {% if entry.leadIn %}
+                    {{ entry.leadIn }}
+                  {% else %}
+                    The following is an exhaustive list of all meetings related to {{ entry.title }}
+                  {% endif %}
+                </div>
               </div>
             </div>
           </div>
@@ -129,13 +135,15 @@
                       <div class="result pb-6" style="margin-bottom:1rem;">
                         <h3 style="padding-top: 0;">
                           <a href="{{ meeting.url }}">{{ meeting.title }}</a>
-                          {% if meeting.eventLocation.type('onlineLocation')|length and meeting.eventLocation.type('physicalLocation')|length  %}
-                            <span>Online / Physical</span>
-                          {% elseif meeting.eventLocation.type('onlineLocation')|length %}
-                            <span>Online</span>
-                          {% elseif meeting.eventLocation.type('physicalLocation')|length %}
-                            <span>Physical</span>
-                          {% endif %}
+                          {% switch meeting.meetingStatus %}
+                            {% case 'canceled' %}
+                              <span>Canceled</span>
+                            {% case 'rescheduled' %}
+                              <span>Rescheduled</span>
+                            {% case 'special' %}
+                              <span>Special</span>
+                            {% default %}
+                          {% endswitch %}
                         </h3>
                         {% if meeting.date %}<p><b>{{ meeting.date|date("l, F j, Y") }}</b></p>{% endif %}
                           <div class="flex items-center justify-between">
@@ -205,7 +213,7 @@
                       <div class="w-full lg:w-1/2 px-3">{{ _self.select('end_month', months|reverse|merge({"0": "End Month"})|reverse) }}</div>
                       <div class="w-full lg:w-1/2 px-3">
                         <select name="start_year">
-                          <option>Start Year</option>
+                          <option value="">Start Year</option>
                           {% for year in now|date('Y')..2000 %}
                             <option value="{{ year }}" {{ craft.app.request.getQueryParam('start_year') and craft.app.request.getQueryParam('start_year') == year  ? 'selected' : ''  }}>{{ year }}</option>
                           {% endfor %}
@@ -213,7 +221,7 @@
                       </div>
                       <div class="w-full lg:w-1/2 px-3">
                         <select name="end_year">
-                          <option>End Year</option>
+                          <option value="">End Year</option>
                           {% for year in now|date('Y')..2000 %}
                             <option value="{{ year }}" {{ craft.app.request.getQueryParam('end_year') and craft.app.request.getQueryParam('end_year') == year  ? 'selected' : ''  }}>{{ year }}</option>
                           {% endfor %}
