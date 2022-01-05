@@ -44,9 +44,14 @@
                   {% endif %}
                 </div>
               </div>
-
-              <div class="flex flex-wrap -mx-8 mt-12">
-                <div class="w-full lg:w-7/11 px-8">
+            </div>
+          </div>
+        </section>
+        <section>
+          {% if category is not defined %}
+            <div class="container pt-0">
+              <div class="flex flex-wrap justify-between -mx-3">
+                <div class="w-full lg:w-3/4 xl:w-3/5 px-3">
                   <div class="components components-format">
                     {% block content %}{% endblock %}
                   </div>
@@ -58,7 +63,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          {% endif %}
           <div id="components-footer" class="components">
             {% if entry.relatedBoardOrCommission|length %}
               {% include '_components/partials/_cards' with {
