@@ -50,23 +50,28 @@
         <figure>
           {% switch item.type %}
             {% case 'granicus' %}
-              {% if item.granicusUrl %}{{ macros.videoEmbed(item.granicusUrl) }}{% endif %}
+              {% if item.granicusUrl %}
+                {{ macros.videoEmbed(item.granicusUrl) }}
+                <p><i>Meeting recording of {{ entry.title }} on {{ entry.date|date('F j, Y') }}</i></p>
+              {% endif %}
             {% case 'youtube' %}
               {% if item.youtubeUrl %}
                 {% set id = item.youtubeUrl|split('?')[1]|split('&')[0]|split('=')[1] %}
                 <div class="embed-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/{{ id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <p><i>Meeting recording of {{ entry.title }} on {{ entry.date|date('F j, Y') }}</i></p>
               {% endif %}
             {% case 'soundcloud' %}
               {% if item.soundcloudEmbed %}
                 {{ item.soundcloudEmbed|raw }}
+                <p><i>Meeting recording of {{ entry.title }} on {{ entry.date|date('F j, Y') }}</i></p>
               {% endif %}
             {% case 'vimeo' %}
               {% if item.vimeoUrl %}
                 {% set id = item.vimeoUrl|split('/')|last %}
                 <div class="embed-container"><iframe src="https://player.vimeo.com/video/{{ id }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+                <p><i>Meeting recording of {{ entry.title }} on {{ entry.date|date('F j, Y') }}</i></p>
               {% endif %}
           {% endswitch %}
-          <p><i>Meeting recording of {{ entry.title }} on {{ entry.date|date('F j, Y') }}</i></p>
         </figure>
       {% endfor %}
     {% endif %}

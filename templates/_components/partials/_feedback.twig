@@ -7,8 +7,9 @@
 							labelClass: "form-label",
 							inputClass: "form-control",
 							overrideValues: {
-								entryUrl: entry is defined ? entry.url : (category is defined ? category.url : 'N/A'),
-								pageAuthor: entry['author'] is defined ? entry.author.fullName : 'N/A'
+								entryUrl: entry.url,
+								pageAuthor: entry['author'] is defined ? entry.author.fullName : 'N/A',
+								pageType: entry['type'] is defined ? entry.type : entry.group.name,
 							}
 						}).render() }}
 						{% js at endBody %}
