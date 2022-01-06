@@ -17,26 +17,16 @@
 
   {% set date_query = ['and'] %}
 
-  {% if craft.app.request.getQueryParam('start_year') %}
+  {% if craft.app.request.getQueryParam('start_date') %}
     {% set filter_enabled = true %}
-    {% set year = craft.app.request.getQueryParam('start_year') %}
-    {% if craft.app.request.getQueryParam('start_month') %}
-      {% set month = craft.app.request.getQueryParam('start_month') %}
-      {% set date_query = date_query|merge(['>= ' ~ (year~'-'~month~'-01')]) %}
-    {% else %}
-      {% set date_query = date_query|merge(['>= ' ~ (year~'-01-01')]) %}
-    {% endif %}
+    {% set ym = craft.app.request.getQueryParam('start_date') %}
+    {% set date_query = date_query|merge(['>= ' ~ (ym~'-01')]) %}
   {% endif %}
 
-  {% if craft.app.request.getQueryParam('end_year') %}
+  {% if craft.app.request.getQueryParam('end_date') %}
     {% set filter_enabled = true %}
-    {% set year = craft.app.request.getQueryParam('end_year') %}
-    {% if craft.app.request.getQueryParam('end_month') %}
-      {% set month = craft.app.request.getQueryParam('end_month') %}
-      {% set date_query = date_query|merge(['<= ' ~ (year~'-'~month~'-31')]) %}
-    {% else %}
-      {% set date_query = date_query|merge(['<= ' ~ (year~'-12-31')]) %}
-    {% endif %}
+    {% set ym = craft.app.request.getQueryParam('end_date') %}
+    {% set date_query = date_query|merge(['<= ' ~ (ym~'-31')]) %}
   {% endif %}
 
   {% if craft.app.request.getQueryParam('type') %}
@@ -187,7 +177,7 @@
                     </label>
                     <h5><b>{{ 'Date Range'|t }}</b></h5>
 
-                    <div class="flex flex-wrap justify-between -mx-3">
+                    <div class="flex flex-wrap justify-between items-center -mx-3">
                       <div class="w-full px-3">
                         {{ _self.select('type',{
                           "0"  : "Past and Upcoming Meetings",
@@ -195,84 +185,98 @@
                           "1"  : "Upcoming Meetings",
                         }) }}
                       </div>
-                      {% set months = {
-                        "1": "January",
-                        "2": "February",
-                        "3": "March",
-                        "4": "April",
-                        "5": "May",
-                        "6": "June",
-                        "7": "July",
-                        "8": "August",
-                        "9": "September",
-                        "10": "October",
-                        "11": "November",
-                        "12": "December",
-                      } %}
-                      <div class="w-full lg:w-1/2 px-3">{{ _self.select('start_month', months|reverse|merge({"0": "Start Month"})|reverse) }}</div>
-                      <div class="w-full lg:w-1/2 px-3">{{ _self.select('end_month', months|reverse|merge({"0": "End Month"})|reverse) }}</div>
-                      <div class="w-full lg:w-1/2 px-3">
-                        <select name="start_year">
-                          <option value="">Start Year</option>
-                          {% for year in now|date('Y')..2000 %}
-                            <option value="{{ year }}" {{ craft.app.request.getQueryParam('start_year') and craft.app.request.getQueryParam('start_year') == year  ? 'selected' : ''  }}>{{ year }}</option>
-                          {% endfor %}
-                        </select>
+                      <div class="w-full xl:w-1/4 px-3">
+                        <label class="flex items-center mt-4" for="start_date" style="margin-bottom:0;">From Date:</label>
                       </div>
-                      <div class="w-full lg:w-1/2 px-3">
-                        <select name="end_year">
-                          <option value="">End Year</option>
-                          {% for year in now|date('Y')..2000 %}
-                            <option value="{{ year }}" {{ craft.app.request.getQueryParam('end_year') and craft.app.request.getQueryParam('end_year') == year  ? 'selected' : ''  }}>{{ year }}</option>
-                          {% endfor %}
-                        </select>
+                      <div class="w-full xl:w-3/4 px-3">
+                        <input 
+                          id="start_date" 
+                          type="month" 
+                          name="start_date" 
+                          data-today="{{ now|date('Y-m') }}" 
+                          min="{{ craft.app.request.getQueryParam('type') == 1 ? now|date('Y-m') : '' }}"
+                          max="{{ craft.app.request.getQueryParam('end_date') ? craft.app.request.getQueryParam('end_date') : now|date_modify('+1 year')|date('Y-m') }}" 
+                          value="{{ craft.app.request.getQueryParam('start_date') ?? craft.app.request.getQueryParam('start_date') }}"/>
+                      </div>
+                      <div class="w-full xl:w-1/4 px-3">
+                        <label class="flex items-center mt-4" for="end_date" style="margin-bottom:0;">To Date:</label>
+                      </div>
+                      <div class="w-full xl:w-3/4 px-3">
+                        <input 
+                          id="end_date" 
+                          type="month" 
+                          name="end_date"
+                          data-today="{{ now|date('Y-m') }}"
+                          min="{{ craft.app.request.getQueryParam('start_date') ?? craft.app.request.getQueryParam('start_date') }}" 
+                          max="{{ now|date_modify('+1 year')|date('Y-m') }}" 
+                          value="{{ craft.app.request.getQueryParam('end_date') ?? craft.app.request.getQueryParam('end_date') }}"/>
                       </div>
                     </div>
                     <button class="button medium">Apply</button>
                   </form>
 
                   {% js at endBody %}
-                    var $select_start_year = $('select[name="start_year"]');
-                    var $select_end_year   = $('select[name="end_year"]');
+                    var $start_date   = $('input[name="start_date"]');
+                    var $end_date     = $('input[name="end_date"]');
+                    var $meeting_type = $('select[name="type"]');
 
-                    $select_start_year.on('change', function(){
-                      var start_year = parseInt($(this).val());
-
-                      if($select_end_year.val() < $select_start_year.val()) {
-                        $select_end_year.prop('selectedIndex',0);
+                    $start_date.on('change', function(){
+                      if($end_date.val() && $end_date.val() < $start_date.val()) {
+                        $end_date.val('');
                       }
 
-                      $select_end_year.find('option[value]').each(function(){
-                        var $this = $(this);
-
-                        if(parseInt($this.val()) < start_year ) {
-                          $this.css({'display': 'none'})
-                        } else {
-                          $this.css({'display': 'block'})
-                        }
-                      })
+                      $end_date.attr('min', $start_date.val());
                     });
 
-                    var $select_start_month = $('select[name="start_month"]');
-                    var $select_end_month   = $('select[name="end_month"]');
-
-                    $select_start_month.on('change', function(){
-                      var start_month = parseInt($(this).val());
-
-                      if($select_end_month.val() < $select_start_month.val()) {
-                        $select_end_month.prop('selectedIndex',0);
+                    $end_date.on('change', function(){
+                      if($start_date.val() && $start_date.val() > $end_date.val()) {
+                        $start_date.val('');
                       }
 
-                      $select_end_month.find('option[value]').each(function(){
-                        var $this = $(this);
-
-                        if(parseInt($this.val()) < start_month ) {
-                          $this.css({'display': 'none'})
-                        } else {
-                          $this.css({'display': 'block'})
-                        }
-                      })
+                      $start_date.attr('max', $end_date.val());
                     });
+
+                    $meeting_type.on('change', function(){
+                      $start_date.val('');
+                      $end_date.val('');
+                      switch(parseInt($meeting_type.val())){
+                        case -1:
+                          $start_date.attr('min', '');
+                          $end_date.attr('min', '');
+                          $start_date.attr('max', $start_date.data('today'));
+                          $end_date.attr('max', $end_date.data('today'));
+                          break;
+                        case 1:
+                          $start_date.attr('max', '');
+                          $end_date.attr('max', '');
+                          $start_date.attr('min', $start_date.data('today'));
+                          $end_date.attr('min', $end_date.data('today'));
+                          break;
+                        default:
+                      }
+                    });
+
+                    switch(parseInt($meeting_type.val())){
+                      case -1:
+                        if($start_date.attr('max') && $start_date.attr('max') > $start_date.data('today')){
+                          $start_date.attr('max', $start_date.data('today'));
+                        }
+                        if($end_date.attr('max') && $end_date.attr('max') > $end_date.data('today')){
+                          $end_date.attr('max', $end_date.data('today'));
+                        }
+                        break;
+                      case 1:
+                        if($start_date.attr('min') && $start_date.attr('min') < $start_date.data('today')){
+                          $start_date.attr('min', $start_date.data('today'));
+                        } else {
+
+                        }
+                        if($end_date.attr('min') && $end_date.attr('min') < $end_date.data('today')){
+                          $end_date.attr('min', $end_date.data('today'));
+                        }
+                        break;
+                      default:
+                    }
                   {% endjs %}
 
                   <hr class="light"/>
@@ -284,6 +288,7 @@
                       margin-top: 1rem;
                     }
 
+                    .components input[type="month"],
                     .components input[type="text"] {
                       border: 1px solid #CFCFCF;
                       border-radius: 4px;

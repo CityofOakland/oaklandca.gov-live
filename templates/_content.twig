@@ -30,7 +30,7 @@
           <div class="container components pt-16">
             <div style="max-width:1152px;">
               <div class="flex flex-col flex-1 lg:flex-row">
-                <div class="w-full lg:w-7/11">
+                <div class="w-full lg:w-8/11">
                   {% if category is not defined and entry.section.handle == 'meetings' %}
                     <h1>{% if entry.meetingStatus.value and entry.meetingStatus.value !== 'default' %}{{ entry.meetingStatus.label }} - {% endif %}{{ entry.title }}</h1>
                     {% if entry.date %}
@@ -50,13 +50,13 @@
         <section>
           {% if category is not defined %}
             <div class="container pt-0">
-              <div class="flex flex-wrap justify-between -mx-3">
-                <div class="w-full lg:w-3/4 xl:w-3/5 px-3">
+              <div class="flex flex-wrap justify-between -mx-16">
+                <div class="w-full lg:w-7/11 px-16">
                   <div class="components components-format">
                     {% block content %}{% endblock %}
                   </div>
                 </div>
-                <div class="w-full lg:w-4/11 px-8">
+                <div class="w-full lg:w-4/11 px-16">
                   {% if category is not defined %}
                     {% include '_components/_sidebar.twig' %}
                   {% endif %}
