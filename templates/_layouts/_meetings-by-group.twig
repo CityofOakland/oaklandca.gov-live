@@ -253,6 +253,10 @@
                           $end_date.attr('min', $end_date.data('today'));
                           break;
                         default:
+                          $start_date.attr('max', '');
+                          $end_date.attr('max', '');
+                          $start_date.attr('min', '');
+                          $end_date.attr('min', '');
                       }
                     });
 
