@@ -44,6 +44,10 @@
     {% set meetings = meetings.date(date_query) %}
   {% endif %}
 
+  {% if craft.app.request.getQueryParam('q') %}
+    {% set filter_enabled = true %}
+  {% endif %}
+
   {% paginate meetings as pageInfo, meetings %}
 
   {# We’re setting the class to overflow-x-hidden to prevent content from stretching page width on mobile views.#}
