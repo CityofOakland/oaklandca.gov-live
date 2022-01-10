@@ -1,3 +1,12 @@
+{% if slug is defined %}
+  {% set entry = craft.entries().section('boardsCommissions').slug(slug).one() %}
+  {% if not entry.indexToggle  %}
+    {% redirect 404 %}
+  {% endif %}
+{% else %}
+  {% redirect 404 %}
+{% endif %}
+
 {% include '_partials/_head' %}
 
   {% macro select(name, values) %}
@@ -8,9 +17,6 @@
     </select>
   {% endmacro %}
 
-  {% if slug is defined %}
-    {% set entry = craft.entries().section('boardsCommissions').slug(slug).one() %}
-  {% endif %}
   {% set query          = craft.app.request.getQueryParam('q') %}
   {% set meetings       = craft.entries().section('meetings').relatedTo(entry).search(query).limit(10).order('date asc') %}
   {% set filter_enabled = false %}
@@ -103,7 +109,9 @@
               <div class="w-full lg:w-8/11">
                 <h1>Meetings for {{ entry.title }}</h1>
                 <div class="lead pt-4">
-                  {% if entry.leadIn %}
+                  {% if entry.meetingsDescription %}
+                    {{ entry.meetingsDescription }}
+                  {% elseif entry.leadIn %}
                     {{ entry.leadIn }}
                   {% else %}
                     The following is an exhaustive list of all meetings related to {{ entry.title }}
