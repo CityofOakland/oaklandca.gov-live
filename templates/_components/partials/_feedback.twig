@@ -8,8 +8,8 @@
 							inputClass: "form-control",
 							overrideValues: {
 								entryUrl: entry.url,
-								pageAuthor: entry['author'] is defined ? entry.author.fullName : 'N/A',
-								pageType: entry['type'] is defined ? entry.type : entry.group.name,
+								pageAuthor: entry['author'] is defined and entry.author ? entry.author.fullName : 'N/A',
+								pageType: entry['type'] is defined and entry.type ? entry.type : entry.group.name,
 							}
 						}).render() }}
 						{% js at endBody %}
