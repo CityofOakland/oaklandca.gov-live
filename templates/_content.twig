@@ -50,13 +50,13 @@
         <section>
           {% if category is not defined %}
             <div class="container pt-0">
-              <div class="flex flex-wrap justify-between -mx-16">
-                <div class="w-full lg:w-7/11 px-16">
+              <div class="flex flex-wrap justify-between -mx-8">
+                <div class="w-full lg:w-7/11 px-8">
                   <div class="components components-format">
                     {% block content %}{% endblock %}
                   </div>
                 </div>
-                <div class="w-full lg:w-4/11 px-16">
+                <div class="w-full lg:w-4/11 px-8">
                   {% if category is not defined %}
                     {% include '_components/_sidebar.twig' %}
                   {% endif %}
