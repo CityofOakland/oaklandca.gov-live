@@ -163,6 +163,11 @@
                               <b>Minutes: </b>{{ filename|slice(0, query_index) }}<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
                             </p>
                           {% endif %}
+                          {% if meeting.meetingStatus and meeting.relatedMeeting|length %}
+                            <p class="small">
+                              <b>New Meeting: </b><a href="{{ meeting.relatedMeeting.one().url }}">{{ meeting.relatedMeeting.one().title }}</a>
+                            </p>
+                          {% endif %}
                       </div>
                     {% endfor %}
                   </div>
