@@ -47,19 +47,21 @@
             </div>
           </div>
         </section>
-        <section>
+        <section> 
           {% if category is not defined %}
             <div class="container pt-0">
-              <div class="flex flex-wrap justify-between -mx-8">
-                <div class="w-full lg:w-7/11 px-8">
-                  <div class="components components-format">
-                    {% block content %}{% endblock %}
+              <div style="max-width:1152px;">
+                <div class="flex flex-wrap justify-between -mx-8">
+                  <div class="w-full lg:w-7/11 px-8">
+                    <div class="components components-format">
+                      {% block content %}{% endblock %}
+                    </div>
                   </div>
-                </div>
-                <div class="w-full lg:w-4/11 px-8">
-                  {% if category is not defined %}
-                    {% include '_components/_sidebar.twig' %}
-                  {% endif %}
+                  <div class="w-full lg:w-4/11 px-8">
+                    {% if category is not defined %}
+                      {% include '_components/_sidebar.twig' %}
+                    {% endif %}
+                  </div>
                 </div>
               </div>
             </div>
