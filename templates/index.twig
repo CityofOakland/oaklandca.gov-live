@@ -97,17 +97,26 @@
     </div>
   </section>
 
-  {% if learnMore | length %}
+  {# {% if learnMore|length %}
     <section class="bg-gray-100">
       <div class="container py-10">
-        <h2 class="pb-4">{{ "Learn More About"|t }}</h2>
+        <h2 class="pb-4">{{ entry.sectionHeading ? entry.sectionHeading : "Learn More About"|t }}</h2>
         <div class="card-grid md:grid-cols-2">
-          {% for entry in learnMore %}
-            <a href="{{ entry.url }}" class="section-box">{{ entry.title | raw }}</a>
+          {% for link in learnMore %}
+            <a href="{{ link.destination.url }}" class="section-box">{{ link.destination.text | raw }}</a>
           {% endfor %}
         </div>
       </div>
     </section>
+  {% endif %} #}
+
+  {% if learnMore|length %}
+    {% include '_components/partials/_cards' with {
+      background:   '#f7f7f7',
+      entries:      learnMore,
+      heading:      entry.sectionHeading ? entry.sectionHeading : "Learn More About"|t,
+      shadow:       true,
+    } %}
   {% endif %}
 
   <section class="bg-white">
