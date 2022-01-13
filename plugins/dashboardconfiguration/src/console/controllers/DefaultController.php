@@ -41,7 +41,14 @@ class DefaultController extends Controller
 
     public function actionFindAndReplace()
     {
-        $data = file(__dir__ . "/1632344265_detailed_urls_mapped.txt");
+        // 1639761861_detailed_urls_mapped
+        // 1639768623_detailed_urls_mapped
+
+        // 1639769985_detailed_urls_mapped
+        // 1639774029_detailed_urls_mapped
+        // manual_detailed_urls_mapped
+
+        $data = file(__dir__ . "/manual_detailed_urls_mapped.txt");
         $total_jobs = 0;
 
         foreach ($data as $index => $row) {
@@ -62,6 +69,14 @@ class DefaultController extends Controller
                 'find'      => $find,
                 'replace'   => $replace,
             ]));
+
+            // Queue::push(new CustomFindAndReplace([
+            //     'elementId' => $elementId,
+            //     'table'     => $table,
+            //     'column'    => $column,
+            //     'find'      => trim($find, '"'),
+            //     'replace'   => trim($replace, '"'),
+            // ]));
 
             $total_jobs = $total_jobs + 1;
         }
