@@ -9,6 +9,7 @@
 							overrideValues: {
 								entryUrl: entry['url'] is defined ? entry.url : 'N/A',
 								pageAuthor: entry['author'] is defined ? entry.author.fullName : 'N/A',
+								pageType: entry['type'] is defined and entry.type ? entry.type : entry.group.name,
 							}
 						}).render() }}
 						{% js at endBody %}
@@ -23,6 +24,30 @@
 				</div>
 			</div>
 		</div>
+
+		{% js at endBody %}
+		  $(function () {
+		    // Find the corresponding Form
+		    var form = document.querySelector('#{{ id }} form');
+
+		    console.log('{{ siteUrl }}form?form={{ id }}');
+
+		    $.ajax({
+		      // Specify the form handle in the GET parameters
+		      url: '{{ siteUrl }}form?form={{ id }}',
+		      type: 'get',
+		      dataType: 'json',
+		      success: function (response) {
+		        // Update the Form Hash
+		        form.querySelector('input[name=formHash]').value = response.hash;
+
+		        // Locate and update the CSRF input
+		        var csrf = response.csrf;
+		        form.querySelector('input[name=' + csrf.name + ']').value = csrf.value;
+		      },
+		    });
+		  });
+		{% endjs %}
 {% endmacro %}
 
 <section class="bg-gray-900">
