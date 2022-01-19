@@ -4,7 +4,7 @@
     {% for item in entry.process.all() %}
       <li data-index="{{ loop.index }}">
         <div>
-          <span class="font-semibold">{{ item.heading }}</span>
+          <span class="block font-semibold">{{ item.heading }}</span>
           {% for block in item.innerContent.all() %}
             {% include '_components/_' ~ block.type %}
           {% endfor %}
