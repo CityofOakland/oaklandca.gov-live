@@ -311,9 +311,10 @@
         },
         _observeDropdown: function(dropdown)
         {
-            var table = this._getTable();
-            var items = dropdown.getItemsByClass('redactor-table-item-observable');
-            var tableItem = dropdown.getItem('insert-table');
+            var table       = this._getTable();
+            var items       = dropdown.getItemsByClass('redactor-table-item-observable');
+            var tableItem   = dropdown.getItem('insert-table');
+
             if (table)
             {
                 this._observeItems(items, 'enable');
@@ -323,6 +324,32 @@
             {
                 this._observeItems(items, 'disable');
                 tableItem.enable();
+            }
+
+            // Custom Rules for Table
+
+            if(table) {
+                var addHeadItem         = dropdown.getItem('add-head');
+                var addRowAboveItem     = dropdown.getItem('insert-row-above');
+                var selector            = this.selection.getBlock();
+
+                // Disable add row above option if current element is a <th> element.
+                if(selector.matches('[data-redactor-tag]')){
+                    selector = selector.parentElement;
+                }
+
+                if(selector.matches('th')) {
+                    addRowAboveItem.disable();
+                } else {
+                    addRowAboveItem.enable();
+                }
+
+                // Disable add head option if current table has a <thead> element.
+                if (table.getElementsByTagName('thead').length > 0) {
+                    addHeadItem.disable();
+                } else {
+                    addHeadItem.enable();
+                }
             }
         },
         _observeItems: function(items, type)
