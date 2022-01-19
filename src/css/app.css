@@ -1204,6 +1204,12 @@ body.open .page-holder {
   .components td::before { content: attr(data-label) }
 }
 
+@media(min-width: 768px){
+  .components #twitter-widget-0 {
+    height: 95% !important;
+  }
+}
+
 .components-format > h1:first-child,
 .components-format > h2:first-child,
 .components-format > h3:first-child,
@@ -1448,4 +1454,14 @@ body.open .page-holder {
 .ul-icons.related a:hover,
 .ul-icons.related a:focus {
   text-decoration: none;
+}
+
+.icon svg {
+  display: inline;
+  height: 1rem;
+  vertical-align: middle;
+}
+
+.icon svg path {
+  fill: #2e8131;
 }
