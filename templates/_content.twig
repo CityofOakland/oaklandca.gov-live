@@ -101,7 +101,7 @@
             </div>
           {% endif %}
           <div id="components-footer" class="components">
-            {% if entry.relatedBoardOrCommission|length %}
+            {% if entry['relatedBoardOrCommission'] is defined and entry.relatedBoardOrCommission|length %}
               {% include '_components/partials/_cards' with {
                 background: '#334E68',
                 class:      'text-white',
