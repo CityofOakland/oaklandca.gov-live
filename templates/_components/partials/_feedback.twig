@@ -14,9 +14,28 @@
 						}).render() }}
 						{% js at endBody %}
 							document.querySelector('[data-handle="{{ id }}"]').addEventListener('freeform-ajax-success', function (event) {
-							$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(document.querySelector('[data-handle="{{ id }}"]'));
-					  		$(document.querySelector('[data-handle="{{ id }}"]')).remove();
-					  	});
+								$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(document.querySelector('[data-handle="{{ id }}"]'));
+					  			$(document.querySelector('[data-handle="{{ id }}"]')).remove();
+						  	});
+
+						  	$(function () {
+							    // Find the corresponding Form
+							    var form = document.querySelector('#{{ id }} form');
+							    $.ajax({
+							      	// Specify the form handle in the GET parameters
+							      	url: '{{ siteUrl }}form?form={{ id }}',
+							      	type: 'get',
+							      	dataType: 'json',
+							      	success: function (response) {
+							        	// Update the Form Hash
+							        	form.querySelector('input[name=formHash]').value = response.hash;
+
+							        	// Locate and update the CSRF input
+							        	var csrf = response.csrf;
+							        	form.querySelector('input[name=' + csrf.name + ']').value = csrf.value;
+							      	},
+							    });
+							 });
 						{% endjs %}
 					{% else %}
 						<p class="text-white"><b>There was an issue with loading this form.</b></p>
@@ -24,30 +43,6 @@
 				</div>
 			</div>
 		</div>
-
-		{% js at endBody %}
-		  $(function () {
-		    // Find the corresponding Form
-		    var form = document.querySelector('#{{ id }} form');
-
-		    console.log('{{ siteUrl }}form?form={{ id }}');
-
-		    $.ajax({
-		      // Specify the form handle in the GET parameters
-		      url: '{{ siteUrl }}form?form={{ id }}',
-		      type: 'get',
-		      dataType: 'json',
-		      success: function (response) {
-		        // Update the Form Hash
-		        form.querySelector('input[name=formHash]').value = response.hash;
-
-		        // Locate and update the CSRF input
-		        var csrf = response.csrf;
-		        form.querySelector('input[name=' + csrf.name + ']').value = csrf.value;
-		      },
-		    });
-		  });
-		{% endjs %}
 {% endmacro %}
 
 <section class="bg-gray-900">
