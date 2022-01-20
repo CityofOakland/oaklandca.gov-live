@@ -8,17 +8,14 @@
         {% case 'phone' %}
           {% if block.phone %}<li><a href="tel:{{ block.phone|replace({'-': ''}) }}">{{ svg( '@webroot/assets/img/icon-phone-updated.svg') }} {{ block.phone }}</a></li>{% endif %}
         {% case 'location' %}
-          {% if block.address %}<li>{{ svg( '@webroot/assets/img/icon-marker-updated.svg') }}{{ block.address|replace({',': "<br>"})|raw }}</li>{% endif %}
+          {% if block.address %}<li>{{ svg( '@webroot/assets/img/icon-marker-updated.svg') }}{{ block.address.name }}<br>{{ block.address.multiline() }}</li>{% endif %}
         {% default %}
       {% endswitch %}
     {% endfor %}
   {% endif %}
   {% if block.email %}<li><a href="mailto:{{ block.email }}">{{ svg( '@webroot/assets/img/icon-envelope-updated.svg') }} {{ block.email }}</a></li>{% endif %}
-  {% if block.emailAddress %}<li><a href="mailto:{{ block.emailAddress }}">{{ svg( '@webroot/assets/img/icon-envelope-updated.svg') }} {{ block.emailAddress }}</a></li>{% endif %}
   {% if block.phone %}<li><a href="tel:{{ block.phone|replace({'-': ''}) }}">{{ svg( '@webroot/assets/img/icon-phone-updated.svg') }} {{ block.phone }}</a></li>{% endif %}
-  {% if block.address %}<li>{{ svg( '@webroot/assets/img/icon-marker-updated.svg') }}{{ block.address|replace({',': "<br>"})|raw }}</li>{% endif %}
-  {% if block.contactAddress %}<li>{{ svg( '@webroot/assets/img/icon-marker-updated.svg') }}{{ block.contactAddress|replace({',': "<br>"})|raw }}</li>{% endif %}
-  {% if block.location %}<li>{{ svg( '@webroot/assets/img/icon-marker-updated.svg') }}{{ block.location|replace({',': "<br>"})|raw }}</li>{% endif %}  
+  {% if not block.location.isEmpty() %}<li>{{ svg( '@webroot/assets/img/icon-marker-updated.svg') }}{{ block.location.name }}<br>{{ block.location.multiline() }}</li>{% endif %}  
 {% endspaceless %}
 {% endset %}
 {% if icons|trim|length %}
