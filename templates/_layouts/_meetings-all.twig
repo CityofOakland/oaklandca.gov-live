@@ -154,14 +154,16 @@
                             </ul>
                           </div>
                           <p class="updated">Updated: {{ meeting.dateUpdated|date("F j, Y") }}</p>
+                          {% set result = false %}
                           {% if query and meeting.agendaDownloadableCopy|length and query in meeting.agendaDownloadableCopy.one().filename|lower %}
+                            {% set result = true %}
                             <p class="small">
                               {% set filename     = meeting.agendaDownloadableCopy.one().filename|trim %}
                               {% set query_index  = filename|lower|indexOf(query) %}
                               <b>Agenda: </b>{{ filename|slice(0, query_index) }}<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
                             </p>
                           {% endif %}
-                          {% if query and meeting.documentFile|length and query in meeting.documentFile.one().title|lower %}
+                          {% if query and meeting.documentFile|length and query in meeting.documentFile.one().title|lower and result == false %}
                             <p class="small">
                               {% set filename     = meeting.documentFile.one().filename|trim %}
                               {% set query_index  = filename|lower|indexOf(query) %}
@@ -233,7 +235,12 @@
                           value="{{ craft.app.request.getQueryParam('end_date') ?? craft.app.request.getQueryParam('end_date') }}"/>
                       </div>
                     </div>
-                    <button class="button medium">Apply</button>
+                    <div class="flex items-center">
+                      <button class="button medium">Apply</button>
+                      {% if query or filter_enabled %}
+                        <a href="{{ siteUrl }}meetings">Clear filters</a>
+                      {% endif %}
+                    </div>
                   </form>
                   <hr/>
                   <h4>{{ 'Read More About Public Bodies'|t }}</h4>
