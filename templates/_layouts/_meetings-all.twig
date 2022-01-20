@@ -125,58 +125,69 @@
               <div class="w-full lg:w-7/11 px-8">
                 <div class="components components-format">
                   {% if filter_enabled %}
-                    <h3>Displaying {{ meetings|length }} of {{ pageInfo.total }} Meetings</h3>
+                    {% if meetings|length %}
+                      <h3>Displaying {{ meetings|length }} of {{ pageInfo.total }} Meetings</h3>
+                    {% else %}
+                      <h3>No results found</h3>
+                    {% endif %}
                   {% else %}
                     <h3>Displaying All Meetings</h3>
                   {% endif %}
                   <div class="mt-8">
-                    {% for meeting in meetings %}
-                      <div class="result pb-6" style="margin-bottom:1rem;">
-                        <h3 style="padding-top: 0;">
-                          <a href="{{ meeting.url }}">{{ meeting.title }}</a>
-                          {% switch meeting.meetingStatus %}
-                            {% case 'canceled' %}
-                              <span>Canceled</span>
-                            {% case 'rescheduled' %}
-                              <span>Rescheduled</span>
-                            {% case 'special' %}
-                              <span>Special</span>
-                            {% default %}
-                          {% endswitch %}
-                        </h3>
-                        {% if meeting.date %}<p><b>{{ meeting.date|date("l, F j, Y") }}</b></p>{% endif %}
-                          <div class="flex items-center justify-between">
-                            {% if meeting.startTime %}<p class="flex items-center">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startTime|date("g:ia") }}{{ meeting.endTime ? " to " ~ meeting.endTime|date("g:ia") : '' }}</span></p>{% endif %}
-                            <ul class="flex items-center related" style="list-style:none;padding:0;">
-                              {% if meeting.agendaDownloadableCopy|length %}<li class="ml-4"><a class="flex items-center" href="{{ meeting.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/assets/img/icon-pdf-updated.svg') }}<span class="ml-2">Agenda</span></a></li>{% endif %}
-                              {% if meeting.documentFile|length %}<li class="ml-4"><a class="flex items-center" href="{{ meeting.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-pdf-updated.svg') }}<span class="ml-2">Minutes</span></a></li>{% endif %}
-                              {% if meeting.embeds|length %}<li class="ml-4"><a class="flex items-center" href="{{ meeting.url }}#recordings">{{ svg( '@webroot/assets/img/icon-recording.svg') }}<span class="ml-2">Recording</span></a></li>{% endif %}
-                            </ul>
-                          </div>
-                          <p class="updated">Updated: {{ meeting.dateUpdated|date("F j, Y") }}</p>
-                          {% set result = false %}
-                          {% if query and meeting.agendaDownloadableCopy|length and query in meeting.agendaDownloadableCopy.one().filename|lower %}
-                            {% set result = true %}
-                            <p class="small">
-                              {% set filename     = meeting.agendaDownloadableCopy.one().filename|trim %}
-                              {% set query_index  = filename|lower|indexOf(query) %}
-                              <b>Agenda: </b>{{ filename|slice(0, query_index) }}<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
-                            </p>
-                          {% endif %}
-                          {% if query and meeting.documentFile|length and query in meeting.documentFile.one().title|lower and result == false %}
-                            <p class="small">
-                              {% set filename     = meeting.documentFile.one().filename|trim %}
-                              {% set query_index  = filename|lower|indexOf(query) %}
-                              <b>Minutes: </b>{{ filename|slice(0, query_index) }}<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
-                            </p>
-                          {% endif %}
-                          {% if meeting.meetingStatus and meeting.relatedMeeting|length %}
-                            <p class="small">
-                              <b>New Meeting: </b><a href="{{ meeting.relatedMeeting.one().url }}">{{ meeting.relatedMeeting.one().title }}</a>
-                            </p>
-                          {% endif %}
+                    {% if meetings|length %}
+                      {% for meeting in meetings %}
+                        <div class="result pb-6" style="margin-bottom:1rem;">
+                          <h3 style="padding-top: 0;">
+                            <a href="{{ meeting.url }}">{{ meeting.title }}</a>
+                            {% switch meeting.meetingStatus %}
+                              {% case 'canceled' %}
+                                <span>Canceled</span>
+                              {% case 'rescheduled' %}
+                                <span>Rescheduled</span>
+                              {% case 'special' %}
+                                <span>Special</span>
+                              {% default %}
+                            {% endswitch %}
+                          </h3>
+                          {% if meeting.date %}<p><b>{{ meeting.date|date("l, F j, Y") }}</b></p>{% endif %}
+                            <div class="flex items-center justify-between">
+                              {% if meeting.startTime %}<p class="flex items-center">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startTime|date("g:ia") }}{{ meeting.endTime ? " to " ~ meeting.endTime|date("g:ia") : '' }}</span></p>{% endif %}
+                              <ul class="flex items-center related" style="list-style:none;padding:0;">
+                                {% if meeting.agendaDownloadableCopy|length %}<li class="ml-4"><a class="flex items-center" href="{{ meeting.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/assets/img/icon-pdf-updated.svg') }}<span class="ml-2">Agenda</span></a></li>{% endif %}
+                                {% if meeting.documentFile|length %}<li class="ml-4"><a class="flex items-center" href="{{ meeting.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-pdf-updated.svg') }}<span class="ml-2">Minutes</span></a></li>{% endif %}
+                                {% if meeting.embeds|length %}<li class="ml-4"><a class="flex items-center" href="{{ meeting.url }}#recordings">{{ svg( '@webroot/assets/img/icon-recording.svg') }}<span class="ml-2">Recording</span></a></li>{% endif %}
+                              </ul>
+                            </div>
+                            <p class="updated">Updated: {{ meeting.dateUpdated|date("F j, Y") }}</p>
+                            {% set result = false %}
+                            {% if query and meeting.agendaDownloadableCopy|length and query in meeting.agendaDownloadableCopy.one().filename|lower %}
+                              {% set result = true %}
+                              <p class="small">
+                                {% set filename     = meeting.agendaDownloadableCopy.one().filename|trim %}
+                                {% set query_index  = filename|lower|indexOf(query) %}
+                                <b>Agenda: </b>{{ filename|slice(0, query_index) }}<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
+                              </p>
+                            {% endif %}
+                            {% if query and meeting.documentFile|length and query in meeting.documentFile.one().title|lower and result == false %}
+                              <p class="small">
+                                {% set filename     = meeting.documentFile.one().filename|trim %}
+                                {% set query_index  = filename|lower|indexOf(query) %}
+                                <b>Minutes: </b>{{ filename|slice(0, query_index) }}<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
+                              </p>
+                            {% endif %}
+                            {% if meeting.meetingStatus and meeting.relatedMeeting|length %}
+                              <p class="small">
+                                <b>New Meeting: </b><a href="{{ meeting.relatedMeeting.one().url }}">{{ meeting.relatedMeeting.one().title }}</a>
+                              </p>
+                            {% endif %}
+                        </div>
+                      {% endfor %}
+                    {% else %}
+                      <div class="px-8 pt-3 pb-5" style="background:#F7F7F7;">
+                        <p>Please try another search or updating your filters.</p>
+                        <p><a href="?">See All Meetings</a></p>
                       </div>
-                    {% endfor %}
+                    {% endif %}
                   </div>
 
                   {% include '_partials/_elements/_pagination' %}
