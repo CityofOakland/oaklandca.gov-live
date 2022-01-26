@@ -1,10 +1,25 @@
+{# {% if entry.type == 'meetingsImported' %}
+  {% include '_layouts/_meetings-imported.twig' %}
+{% else %}
+  {% include '_layouts/_meetings-new.twig' %}
+{% endif %} #}
+
 {% extends '_content.twig' %}
 {% import '_macros/_macros' as macros %}
 
 {% block content %}
-  {% if entry.meetingStatus == 'canceled' %}
+  {% set status = 'default' %}
+  {% if entry.meetingStatus %}
+    {% set status = entry.meetingStatus %}
+  {% elseif entry.eventStatus %}
+    {% set status = entry.eventStatus %}
+  {% endif %}
+
+
+
+  {% if status == 'canceled' %}
     {% set calloutHeading = 'This meeting has been canceled.' %}
-  {% elseif entry.meetingStatus == 'rescheduled' %}
+  {% elseif status == 'rescheduled' %}
     {% if entry.relatedMeeting|length %}
       {% if entry.relatedMeeting.one().date %}
         {% set calloutHeading = 'This meeting was rescheduled for <a style="font-weight:400;" href="' ~ entry.relatedMeeting.one().url ~ '">' ~ entry.relatedMeeting.one().date|date('F j, Y') ~ '</a>.' %}
@@ -14,9 +29,15 @@
     {% else %}
       {% set calloutHeading = 'This meeting was rescheduled.' %}
     {% endif %}
-  {% elseif entry.meetingStatus == 'special' %}
+  {% elseif status == 'special' %}
     {% set calloutHeading = 'This is a special meeting of the ' ~ entry.relatedBoardOrCommission.one().title %}
-  {% elseif entry.eventLocation.type('onlineLocation')|length and not entry.eventLocation.type('physicalLocation')|length  %}
+  {% elseif entry.addresses and entry.addresses.type('onlineLocation')|length and not entry.addresses.type('location')|length  %}
+    {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
+      {% set calloutHeading = 'This meeting was held virtually and not in person.' %}
+    {% else %}
+      {% set calloutHeading = 'This meeting will be held virtually and not in person.' %}
+    {% endif %}
+  {% elseif entry.eventLocation and entry.eventLocation.type('onlineLocation')|length and not entry.eventLocation.type('physicalLocation')|length  %}
     {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
       {% set calloutHeading = 'This meeting was held virtually and not in person.' %}
     {% else %}
@@ -35,6 +56,12 @@
   {# Details #}
   {% if entry.mainContent %}<div>{{ entry.mainContent }}</div>{% endif %}
 
+  {% set minuteCat = craft.categories.group('documentTypes').id(12).one() %}
+  {% set agendaCat = craft.categories.group('documentTypes').id(13).one() %}
+
+  {% set minutes = entry.documents ? clone(entry.documents).relatedTo(minuteCat) : null %}
+  {% set agendas = entry.documents ? clone(entry.documents).relatedTo(agendaCat) : null %}
+
   {% if entry.date and now|date('Y-m-d') > entry.date|date('Y-m-d') %}
     {% if entry.documentFile|length %}
       <h2>Minutes</h2>
@@ -44,6 +71,16 @@
       {% endfor %}
       </ul>
     {% endif %}
+
+    {% if minutes and minutes|length %}
+      <h2>Minutes</h2>
+      <ul class="ul-icons related" style="padding-top: 1rem;">
+      {% for document in minutes.all() %}
+        <li><a href="{{ document.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ document.title }}</a></li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+
     {% if entry.embeds|length %}
       <h2 id="recordings">Recordings</h2>
       {% for item in entry.embeds %}
@@ -77,6 +114,23 @@
     {% endif %}
   {% endif %}
 
+  {% if entry.videoLink %}
+    <h2 id="recordings">Recordings</h2>
+    <figure>
+      {{ macros.videoEmbed(entry.videoLink) }}
+      <p><i>Meeting recording of {{ entry.title }} on {{ entry.date|date('F j, Y') }}</i></p>
+    </figure>
+  {% endif %}
+
+  {% if agendas and agendas|length %}
+    <h2>Agenda</h2>
+    <ul class="ul-icons related" style="padding-top: 1rem;">
+    {% for agenda in agendas.all() %}
+      <li><a href="{{ agenda.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ agenda.title }}</a></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+
   {% if entry.agendaDownloadableCopy|length or entry.agendaTopics|length %}
     <h2>Agenda</h2>
     {% if entry.agendaDownloadableCopy|length %}
@@ -104,6 +158,24 @@
         {% endfor %}
       </ol>
     {% endif %}
+  {% endif %}
+
+  {% set documents = [] %}
+  {% if entry.documents %}
+    {% for document in entry.documents.all() %}
+      {% if document.id not in minutes.ids() and document.id not in agendas.ids() %}
+        {% set documents = documents|merge([document]) %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {% if documents|length %}
+    <h2>Additional Documents</h2>
+    <ul class="ul-icons related" style="padding-top: 1rem;">
+    {% for document in documents %}
+      <li><a href="{{ document.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ document.title }}</a></li>
+    {% endfor %}
+    </ul>
   {% endif %}
 
   {% if entry.howToParticipate|length and entry.howToParticipate.one().description %}

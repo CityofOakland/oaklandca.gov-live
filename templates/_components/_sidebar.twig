@@ -52,7 +52,13 @@
     {% if entry.date %}
       <hr/>
       <h4>{{ 'Date and Time'|t }}</h4>
-      <p>{{ entry.date|date('l, F j, Y') }}<br>{{ entry.startTime|date("g:ia") }}{{ entry.endTime ? " to " ~ entry.endTime|date("g:ia") : "" }}</p>
+      <p>{{ entry.date|date('l, F j, Y') }}
+        {% if entry.startDate %}
+          <br>{{ entry.startDate|date("g:ia") }}{{ entry.endDate ? " to " ~ entry.endDate|date("g:ia") : "" }}
+        {% elseif entry.startTime %}
+          <br>{{ entry.startTime|date("g:ia") }}{{ entry.endTime ? " to " ~ entry.endTime|date("g:ia") : "" }}
+        {% endif %}
+      </p>
       {% if now|date('Y-m-d') <= entry.date|date('Y-m-d') %}
         {% if entry.eventLocation.type("physicalLocation")|length %}
           {% set block = entry.eventLocation.type("physicalLocation").one() %}
@@ -92,6 +98,12 @@
           <li><a href="mailto:{{ entry.emailAddress }}">{{ svg( '@webroot/assets/img/icon-envelope-updated.svg') }} {{ entry.emailAddress }}</a></li>
         </ul>
       {% endif %}
+    {% endif %}
+
+    {% if entry.eventContact %}
+      <hr/>
+      <h4>{{ 'Contact'|t }}</h4>
+      {{ entry.eventContact|raw }}
     {% endif %}
 
     {# <hr/> #}
