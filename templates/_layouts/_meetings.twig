@@ -1,13 +1,16 @@
-{# {% if entry.type == 'meetingsImported' %}
-  {% include '_layouts/_meetings-imported.twig' %}
-{% else %}
-  {% include '_layouts/_meetings-new.twig' %}
-{% endif %} #}
+{% macro callout(calloutHeading) %}
+  {% include '_components/_callout' with {
+      callOutType   : 'attention',
+      heading       : calloutHeading,
+      description   : '' 
+    } %}
+{% endmacro %}
 
 {% extends '_content.twig' %}
 {% import '_macros/_macros' as macros %}
 
 {% block content %}
+
   {% set status = 'default' %}
   {% if entry.meetingStatus %}
     {% set status = entry.meetingStatus %}
@@ -15,42 +18,34 @@
     {% set status = entry.eventStatus %}
   {% endif %}
 
-
-
   {% if status == 'canceled' %}
-    {% set calloutHeading = 'This meeting has been canceled.' %}
+    {{ _self.callout('This meeting has been canceled.') }}
   {% elseif status == 'rescheduled' %}
     {% if entry.relatedMeeting|length %}
       {% if entry.relatedMeeting.one().date %}
-        {% set calloutHeading = 'This meeting was rescheduled for <a style="font-weight:400;" href="' ~ entry.relatedMeeting.one().url ~ '">' ~ entry.relatedMeeting.one().date|date('F j, Y') ~ '</a>.' %}
+        {{ _self.callout('This meeting was rescheduled for <a style="font-weight:400;" href="' ~ entry.relatedMeeting.one().url ~ '">' ~ entry.relatedMeeting.one().date|date('F j, Y') ~ '</a>.') }}
       {% else %}
-        {% set calloutHeading = 'This meeting was <a style="font-weight:400;" href="' ~ entry.relatedMeeting.one().url ~ '">rescheduled</a>.' %}
+        {{ _self.callout('This meeting was <a style="font-weight:400;" href="' ~ entry.relatedMeeting.one().url ~ '">rescheduled</a>.') }}
       {% endif %}
     {% else %}
-      {% set calloutHeading = 'This meeting was rescheduled.' %}
+      {{ _self.callout('This meeting was rescheduled.') }}
     {% endif %}
   {% elseif status == 'special' %}
-    {% set calloutHeading = 'This is a special meeting of the ' ~ entry.relatedBoardOrCommission.one().title %}
-  {% elseif entry.addresses and entry.addresses.type('onlineLocation')|length and not entry.addresses.type('location')|length  %}
+    {{ _self.callout('This is a special meeting of the ' ~ entry.relatedBoardOrCommission.one().title) }}
+  {% endif %}
+
+  {% if entry.addresses and entry.addresses.type('onlineLocation')|length and not entry.addresses.type('location')|length  %}
     {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
-      {% set calloutHeading = 'This meeting was held virtually and not in person.' %}
+      {{ _self.callout('This meeting was held virtually and not in person.') }}
     {% else %}
-      {% set calloutHeading = 'This meeting will be held virtually and not in person.' %}
+      {{ _self.callout('This meeting will be held virtually and not in person.') }}
     {% endif %}
   {% elseif entry.eventLocation and entry.eventLocation.type('onlineLocation')|length and not entry.eventLocation.type('physicalLocation')|length  %}
     {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
-      {% set calloutHeading = 'This meeting was held virtually and not in person.' %}
+      {{ _self.callout('This meeting was held virtually and not in person.') }}
     {% else %}
-      {% set calloutHeading = 'This meeting will be held virtually and not in person.' %}
+      {{ _self.callout('This meeting will be held virtually and not in person.') }}
     {% endif %}
-  {% endif %}
-
-  {% if calloutHeading is defined %}
-    {% include '_components/_callout' with {
-      callOutType   : 'attention',
-      heading       : calloutHeading,
-      description   : '' 
-    } %}
   {% endif %}
 
   {# Details #}

@@ -33,7 +33,9 @@
                 <div class="w-full lg:w-8/11">
                   {% if category is not defined and entry.section.handle == 'meetings' %}
                     <h1>{% if entry.meetingStatus and entry.meetingStatus.value and entry.meetingStatus.value !== 'default' %}{{ entry.meetingStatus.label }} - {% endif %}{{ entry.title }}</h1>
-                    {% if entry.date %}
+                    {% if entry.subtitle %}
+                      <div class="lead pt-4">{{ entry.subtitle }}</div>
+                    {% elseif entry.date %}
                         <div class="lead pt-4">The {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} {{ now|date('Y-m-d') > entry.date|date('Y-m-d') ? 'held its last' : 'will hold its next' }} public meeting on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
                       {% endif %}
                   {% else %}
