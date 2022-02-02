@@ -56,11 +56,9 @@
       {% include '_partials/_elements/_nav-bar.twig' %}
       <main>
         {% include '_partials/_elements/_sitewide-alert.twig' %}
-
         {% if category is defined %}
           {% set entry = category %}
         {% endif %}
-
         <section>
           <div class="bg-transparent-oakland-roots">
             <div class="container" style="padding-top:1rem;padding-bottom:1rem;">
@@ -72,39 +70,49 @@
           </div>
           <div id="content" style="position:relative;top:-80px;"></div>
           <div class="container components pt-16">
-            <div class="flex flex-col flex-1 lg:flex-row">
-              <div class="w-full lg:w-2/3">
-                <h1>{{ entry.title }}</h1>
-                {% if entry.leadIn or entry.summary %}
-                  <div class="lead pt-4">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
-                {% endif %}
+            <div style="max-width:1152px;">
+              <div class="flex flex-col flex-1 lg:flex-row">
+                <div class="w-full lg:w-8/11">
+                  {% if category is not defined and entry.section.handle == 'meetings' %}
+                    <h1>{% if entry.meetingStatus.value and entry.meetingStatus.value !== 'default' %}{{ entry.meetingStatus.label }} - {% endif %}{{ entry.title }}</h1>
+                    {% if entry.date %}
+                      <div class="lead pt-4">The {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} {{ now > entry.date ? 'held its last' : 'will hold its next' }} public meeting on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
+                    {% endif %}
+                  {% else %}
+                    <h1>{{ entry.title }}</h1>
+                    {% if entry.leadIn or entry.summary %}
+                      <div class="lead pt-4">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
+                    {% endif %}
+                  {% endif %}
+                </div>
               </div>
             </div>
           </div>
         </section>
-
         <section>
-          <div class="container pt-0">
-            <div class="flex flex-wrap justify-between -mx-3">
-              <div class="w-full lg:w-3/4 xl:w-3/5 px-3">
-                <div class="components components-format">
-                  {% block content %}{% endblock %}
+          {% if category is not defined %}
+            <div class="container pt-0">
+              <div class="flex flex-wrap justify-between -mx-8">
+                <div class="w-full lg:w-7/11 px-8">
+                  <div class="components components-format">
+                    {% block content %}{% endblock %}
+                  </div>
+                </div>
+                <div class="w-full lg:w-4/11 px-8">
+                  {% if category is not defined %}
+                    {% include '_components/_sidebar.twig' %}
+                  {% endif %}
                 </div>
               </div>
-              <div class="w-full lg:w-1/4 xl:w-1/4 px-3">
-                {% if category is not defined %}
-                  {% include '_components/_sidebar.twig' %}
-                {% endif %}
-              </div>
             </div>
-          </div>
+          {% endif %}
           <div id="components-footer" class="components">
-            {% if entry.relatedDepartments|length %}
+            {% if entry['relatedBoardOrCommission'] is defined and entry.relatedBoardOrCommission|length %}
               {% include '_components/partials/_cards' with {
                 background: '#334E68',
                 class:      'text-white',
                 heading:    "Related Departments",
-                entries:    entry.relatedDepartments.all()
+                entries:    entry.relatedBoardOrCommission.all()
               } %}
             {% endif %}
 
@@ -115,9 +123,7 @@
             {% endif %}
           </div>
         </section>
-
         {% include '_components/partials/_feedback.twig' %}
-
       </main>
       {% include '_partials/_elements/_footer.twig' %}
     </div>
