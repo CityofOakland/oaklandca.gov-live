@@ -1515,6 +1515,16 @@ form[data-handle="whyWasThisPageHelpful"] {
   line-height: 1.5;
 }
 
+#mobile-menu {
+  height: 60px;
+}
+
+@media(min-width: 640px) {
+  #mobile-menu {
+      height: 64px;
+  }
+}
+
 .pagination {
   display: flex;
   align-items: center;
