@@ -34,7 +34,7 @@ return [
     'securityKey' => getenv('SECURITY_KEY'),
 
     // Sets a maximum number of entry revisions
-    'maxRevisions' => 20,
+    'maxRevisions' => 10,
 
     'extraFileKinds' => [
       // Allows us to use CSV files when uploading to the Excel filetype

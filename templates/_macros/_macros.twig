@@ -33,6 +33,128 @@
   {% endif %}
 {% endmacro %}
 
+{% macro dates() %}
+  <div class="flex flex-wrap justify-between items-center -mx-3">
+    <div class="w-full xl:w-1/4 px-3">
+      <label class="flex items-center mt-3" for="start_date" style="padding: 0;margin-bottom:0;">From Date:</label>
+    </div>
+    <div class="w-full xl:w-3/4 px-3">
+      <input 
+        id="start_date" 
+        type="month" 
+        name="start_date" 
+        data-today="{{ now|date('Y-m') }}" 
+        min="{{ craft.app.request.getQueryParam('type') == 1 ? now|date('Y-m') : '' }}"
+        max="{{ craft.app.request.getQueryParam('end_date') ? craft.app.request.getQueryParam('end_date') : now|date_modify('+1 year')|date('Y-m') }}" 
+        value="{{ craft.app.request.getQueryParam('start_date') ?? craft.app.request.getQueryParam('start_date') }}"/>
+    </div>
+    <div class="w-full xl:w-1/4 px-3">
+      <label class="flex items-center mt-3" for="end_date" style="padding: 0;margin-bottom:0;">To Date:</label>
+    </div>
+    <div class="w-full xl:w-3/4 px-3">
+      <input 
+        id="end_date" 
+        type="month" 
+        name="end_date"
+        data-today="{{ now|date('Y-m') }}"
+        min="{{ craft.app.request.getQueryParam('start_date') ?? craft.app.request.getQueryParam('start_date') }}" 
+        max="{{ now|date_modify('+1 year')|date('Y-m') }}" 
+        value="{{ craft.app.request.getQueryParam('end_date') ?? craft.app.request.getQueryParam('end_date') }}"/>
+    </div>
+  </div>
+
+  {% js at endBody %}
+    var $start_date   = $('input[name="start_date"]');
+    var $end_date     = $('input[name="end_date"]');
+    var $meeting_type = $('select[name="type"]');
+
+    $start_date.on('change', function(){
+      if($end_date.val() && $end_date.val() < $start_date.val()) {
+        $end_date.val('');
+      }
+
+      $end_date.attr('min', $start_date.val());
+    });
+
+    $end_date.on('change', function(){
+      if($start_date.val() && $start_date.val() > $end_date.val()) {
+        $start_date.val('');
+      }
+
+      $start_date.attr('max', $end_date.val());
+    });
+
+    $meeting_type.on('change', function(){
+      $start_date.val('');
+      $end_date.val('');
+      switch(parseInt($meeting_type.val())){
+        case -1:
+          $start_date.attr('min', '');
+          $end_date.attr('min', '');
+          $start_date.attr('max', $start_date.data('today'));
+          $end_date.attr('max', $end_date.data('today'));
+          break;
+        case 1:
+          $start_date.attr('max', '');
+          $end_date.attr('max', '');
+          $start_date.attr('min', $start_date.data('today'));
+          $end_date.attr('min', $end_date.data('today'));
+          break;
+        default:
+          $start_date.attr('max', '');
+          $end_date.attr('max', '');
+          $start_date.attr('min', '');
+          $end_date.attr('min', '');
+      }
+    });
+
+    switch(parseInt($meeting_type.val())){
+      case -1:
+        if($start_date.attr('max') && $start_date.attr('max') > $start_date.data('today')){
+          $start_date.attr('max', $start_date.data('today'));
+        }
+        if($end_date.attr('max') && $end_date.attr('max') > $end_date.data('today')){
+          $end_date.attr('max', $end_date.data('today'));
+        }
+        break;
+      case 1:
+        if($start_date.attr('min') && $start_date.attr('min') < $start_date.data('today')){
+          $start_date.attr('min', $start_date.data('today'));
+        } else {
+
+        }
+        if($end_date.attr('min') && $end_date.attr('min') < $end_date.data('today')){
+          $end_date.attr('min', $end_date.data('today'));
+        }
+        break;
+      default:
+    }
+  {% endjs %}
+{% endmacro %}
+
+{% macro select(label, id, name, options, defaultOption) %}
+  <label for="{{ id }}">
+    {{ label }}
+    <select name="{{ name }}">
+      {% if defaultOption %}
+        <option>{{ defaultOption }}</option>
+      {% endif %}
+      {% for option in options %}
+        {% for value, key in option %}
+          <option value="{{ value }}" {{ craft.app.request.getQueryParam(name) and craft.app.request.getQueryParam(name)  == value  ? 'selected' : ''  }}>{{ key }}</option>
+        {% endfor %}
+      {% endfor %}
+    </select>
+  </label>
+{% endmacro %}
+
+{% macro textInput(label, id, name, placeholder) %}
+  <label for="{{ id }}">
+    {{ label }}
+    <input id="{{ id }}" name="{{ name }}" type="text" placeholder="{{ placeholder }}" value="{{ craft.app.request.getQueryParam(name) ?? craft.app.request.getQueryParam(name) }}">
+  </label>
+{% endmacro %}
+
 {% macro tableBuilder(object, columns) %}
   <table class="w-full text-sm border border-cool-gray-500">
     <thead>
