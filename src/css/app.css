@@ -1299,7 +1299,7 @@ body.open .page-holder {
 .has-submenu > ul {
   display: grid;
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 1475px;
   padding: 1rem 0;
   position: fixed;
   top: 80px;
