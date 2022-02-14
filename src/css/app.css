@@ -919,6 +919,14 @@ body.open .page-holder {
   text-align: left;
 }
 
+.components tbody {
+  border-top: 1px solid black;
+}
+
+.components tbody tr {
+  border-bottom: 1px solid black;
+}
+
 .components th {
   background: #F5F5F5;
   border-bottom:  1px solid black;
