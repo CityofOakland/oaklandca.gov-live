@@ -85,9 +85,22 @@
           </div>
         </section>
       </main>
-      <footer class="bg-gray-1000 py-3 fill-current text-gray-100 px-4">
-        <div class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden">{{ svg('@webroot/assets/img/logo-oakland-tree.svg') }}</div>
-        <div class="w-40 h-10 oak-hidden sm:block">{{ svg('@webroot/assets/img/logo-oakland.svg') }}</div>
+      <footer class="bg-gray-1000 py-3 fill-current text-gray-100 px-4 flex items-center justify-between">
+        <div>
+          <div class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden">{{ svg('@webroot/assets/img/logo-oakland-tree.svg') }}</div>
+          <div class="w-40 h-10 oak-hidden sm:block">{{ svg('@webroot/assets/img/logo-oakland.svg') }}</div>
+        </div>
+        <div class="flex items-center justify-center">
+          <a href="https://www.facebook.com/oakland/" class="flex items-center justify-center w-10 h-10 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000 p-2 ml-3">
+            {{ svg('@webroot/assets/img/logo-facebook.svg') }}
+          </a>
+          <a href="https://www.twitter.com/oakland" class="flex items-center justify-center w-10 h-10 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000 p-2 ml-3">
+            {{ svg('@webroot/assets/img/logo-twitter.svg') }}
+          </a>
+          <a href="https://www.instagram.com/oakland" class="flex items-center justify-center w-10 h-10 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000 p-2 ml-3">
+            {{ svg('@webroot/assets/img/logo-instagram.svg') }}
+          </a>
+        </div>
       </footer>
     </div>
   </body>
