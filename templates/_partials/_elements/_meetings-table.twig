@@ -68,7 +68,7 @@
             <a class="text-white sm:text-green-800" href="{{ event.url }}">{{ event.title }}</a>
           </td>
           <td class="px-3 border border-cool-gray-500">
-            {{ event.startDate | date('m/d/y') }}
+            {{ event.startDate.format('m/d/y') }}
           </td>
           <td class="px-3 border border-cool-gray-500">
             {% if documents.relatedTo(minutes) | length %}
