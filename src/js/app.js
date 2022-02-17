@@ -1,5 +1,5 @@
-import 'alpinejs'
-import 'picturefill'
+// import 'alpinejs'
+// import 'picturefill'
 
 function init() {
   const selectNavs = document.getElementsByClassName('js-select-nav');
@@ -149,53 +149,89 @@ Array.prototype.slice.call(document.querySelectorAll('.accordion')).forEach(func
 
 //Navigation
 
-var menuItems = document.querySelectorAll('li.has-submenu');
+var menuItems = document.querySelectorAll('.has-submenu, #mobile-navigation');
+var menuItemsHover = document.querySelectorAll('.has-submenu:not(.click)');
+var menuItemsClick = document.querySelectorAll('.has-submenu.click > a, #mobile-navigation > a');
+
+function closeOtherMenuItems(parent){
+  Array.prototype.forEach.call(menuItemsClick, function(el, i){
+    if(parent){
+      if(el !== document.querySelector(parent)){
+        el.parentElement.classList.remove('open');
+        el.setAttribute('aria-expanded', "false");
+      }
+    } else {
+      el.parentElement.classList.remove('open');
+      el.setAttribute('aria-expanded', "false");
+    }
+  })
+}
+
+// Click
+Array.prototype.forEach.call(menuItemsClick, function(el, i){
+    el.addEventListener("mousedown", function(event){
+      if(this.parentElement.classList.contains('open')){
+        this.parentElement.classList.remove('open');
+        el.setAttribute('aria-expanded', "false");
+        console.log(1);
+      } else {
+        closeOtherMenuItems(el.getAttribute('data-parent'));
+        this.parentElement.classList.add('open');
+        el.setAttribute('aria-expanded', "true");
+        console.log(2);
+      }
+    });
+});
 
 // Hover
-Array.prototype.forEach.call(menuItems, function(el, i){
+Array.prototype.forEach.call(menuItemsHover, function(el, i){
     el.addEventListener("mouseover", function(event){
         this.className = "has-submenu open";
-        clearTimeout(timer);
     });
     el.addEventListener("mouseout", function(event){
-        timer = setTimeout(function(event){
-            document.querySelector(".has-submenu.open").className = "has-submenu";
-        }, 500);
+        document.querySelector(".has-submenu.open").className = "has-submenu";
     });
 });
 
 // Keyboard
 Array.prototype.forEach.call(menuItems, function(el, i){
-    var trigger     = el.querySelector('a');
-    var triggers    = Array.prototype.slice.call(el.querySelectorAll('a.card'));
+    var trigger     = el.querySelector('a[aria-expanded]');
+    var triggers    = Array.prototype.slice.call(el.querySelectorAll('a.card, a.button, a.focusable, input, button'));
 
-    Array.prototype.forEach.call(triggers, function(card, i){
-        card.addEventListener('blur', function(event){
+    Array.prototype.forEach.call(triggers, function(innerTrigger, i){
+        innerTrigger.addEventListener('blur', function(event){
             if(triggers.indexOf(event.relatedTarget) == -1){
+                el.classList.remove('open');
                 trigger.setAttribute('aria-expanded', "false");
+                console.log(3);
             }
         });
     })
 
     el.addEventListener('keydown', function (event) {
-        var focused         = el.querySelector(':focus');
+        // var focused         = el.querySelector(':focus');
         var target          = event.target;
         var key             = event.which.toString();
         var ctrlModifier    = (event.ctrlKey && key.match(/33|34/));
 
         // Press Enter
         if(key == "13"){
-            if (trigger.getAttribute("aria-expanded") == "true") {
-                trigger.setAttribute('aria-expanded', "false");
-             } else {
-                trigger.setAttribute('aria-expanded', "true");
-                triggers[0].focus();
-             }
+          if(trigger.getAttribute("aria-expanded") == "true") {
+            el.classList.remove('open');
+            trigger.setAttribute('aria-expanded', "false");
+          } else {
+            trigger.setAttribute('aria-expanded', "true");
+            triggers[0].focus();
+
+            if(triggers[0].tagName == 'INPUT') {
+              event.preventDefault();
+            }
+          }
+          event.stopPropagation();
         }
 
         if (key.match(/38|40/) || ctrlModifier) {
-            var index = triggers.indexOf(target);
-
+            var index       = triggers.indexOf(target);
             var direction   = (key.match(/34|40/)) ? 1 : -1;
             var length      = triggers.length;
             var newIndex    = (index + length + direction) % length;
@@ -203,31 +239,36 @@ Array.prototype.forEach.call(menuItems, function(el, i){
             if(index == -1) {
                 triggers[0].focus();
             } else if(direction == 1 && newIndex == 0) {
+                el.classList.remove('open');
                 trigger.setAttribute('aria-expanded', "false");
+                console.log(5);
                 trigger.focus();
             } else if(direction == -1 && newIndex == (length - 1)) {
+                el.classList.remove('open');
                 trigger.setAttribute('aria-expanded', "false");
                 trigger.focus();
             } else {            
                 triggers[newIndex].focus();
             }
-
             event.preventDefault();
-
         } else if (key.match(/35|36/)) {
-            // 35 = End, 36 = Home keyboard operations
             switch (key) {
-              // Go to first accordion
               case '36':
                 triggers[0].focus();
                 break;
-                // Go to last accordion
               case '35':
                 triggers[triggers.length - 1].focus();
                 break;
             }
             event.preventDefault();
-
         }
+        // } else if( key === '9' && event.target.hasAttribute('aria-expanded')) {
+        //   var index = triggers.indexOf(target);
+        //   if(index == -1) {
+        //     console.log(target);
+        //     trigger.setAttribute('aria-expanded', "false");
+        //     console.log(6);
+        //   }
+        // }
     });
 })
