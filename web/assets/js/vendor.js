@@ -35,4 +35,4 @@ module.exports = __webpack_require__(/*! picturefill */"./node_modules/picturefi
 
 /***/ })
 
-},[[18,"/js/manifest"]]]);
+}]);

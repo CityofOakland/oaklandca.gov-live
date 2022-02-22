@@ -1,5 +1,5 @@
-// import 'alpinejs'
-// import 'picturefill'
+import 'alpinejs'
+import 'picturefill'
 
 function init() {
   const selectNavs = document.getElementsByClassName('js-select-nav');
@@ -173,12 +173,12 @@ Array.prototype.forEach.call(menuItemsClick, function(el, i){
       if(this.parentElement.classList.contains('open')){
         this.parentElement.classList.remove('open');
         el.setAttribute('aria-expanded', "false");
-        console.log(1);
+
       } else {
         closeOtherMenuItems(el.getAttribute('data-parent'));
         this.parentElement.classList.add('open');
         el.setAttribute('aria-expanded', "true");
-        console.log(2);
+
       }
     });
 });
@@ -203,7 +203,7 @@ Array.prototype.forEach.call(menuItems, function(el, i){
             if(triggers.indexOf(event.relatedTarget) == -1){
                 el.classList.remove('open');
                 trigger.setAttribute('aria-expanded', "false");
-                console.log(3);
+
             }
         });
     })
@@ -230,45 +230,94 @@ Array.prototype.forEach.call(menuItems, function(el, i){
           event.stopPropagation();
         }
 
-        if (key.match(/38|40/) || ctrlModifier) {
-            var index       = triggers.indexOf(target);
-            var direction   = (key.match(/34|40/)) ? 1 : -1;
-            var length      = triggers.length;
-            var newIndex    = (index + length + direction) % length;
+        if(trigger.getAttribute('aria-expanded') == "true"){
+          if (key.match(/38|40/) || ctrlModifier) {
+              var index       = triggers.indexOf(target);
+              var direction   = (key.match(/34|40/)) ? 1 : -1;
+              var length      = triggers.length;
+              var newIndex    = (index + length + direction) % length;
 
-            if(index == -1) {
-                triggers[0].focus();
-            } else if(direction == 1 && newIndex == 0) {
-                el.classList.remove('open');
-                trigger.setAttribute('aria-expanded', "false");
-                console.log(5);
-                trigger.focus();
-            } else if(direction == -1 && newIndex == (length - 1)) {
-                el.classList.remove('open');
-                trigger.setAttribute('aria-expanded', "false");
-                trigger.focus();
-            } else {            
-                triggers[newIndex].focus();
-            }
-            event.preventDefault();
-        } else if (key.match(/35|36/)) {
-            switch (key) {
-              case '36':
-                triggers[0].focus();
-                break;
-              case '35':
-                triggers[triggers.length - 1].focus();
-                break;
-            }
-            event.preventDefault();
+              if(index == -1) {
+                  triggers[0].focus();
+              } else if(direction == 1 && newIndex == 0) {
+                  el.classList.remove('open');
+                  trigger.setAttribute('aria-expanded', "false");
+                  trigger.focus();
+              } else if(direction == -1 && newIndex == (length - 1)) {
+                  el.classList.remove('open');
+                  trigger.setAttribute('aria-expanded', "false");
+                  trigger.focus();
+              } else {            
+                  if(isVisible(triggers[newIndex])){
+                    triggers[newIndex].focus();
+                    event.stopPropagation();
+                  } else {
+                    if(direction == 1) {
+                      for(var i = newIndex; i < triggers.length; i++){
+                        if(isVisible(triggers[i])){
+                          triggers[i].focus();
+                          break;
+                        }
+
+                        if(i == triggers.length - 1) {
+                          el.classList.remove('open');
+                          trigger.setAttribute('aria-expanded', "false");
+                          trigger.focus();
+                        }
+                      }
+                    } else {
+                      for(var i = newIndex; i >= 0; i--){
+                        if(isVisible(triggers[i])){
+                          triggers[i].focus();
+                          break;
+                        }
+
+                        if(i == 0) {
+                          el.classList.remove('open');
+                          trigger.setAttribute('aria-expanded', "false");
+                          trigger.focus();
+                        }
+                      }
+                    }
+                  }
+              }
+              event.preventDefault();
+          } else if (key.match(/35|36/)) {
+              switch (key) {
+                case '36':
+                  triggers[0].focus();
+                  break;
+                case '35':
+                  triggers[triggers.length - 1].focus();
+                  break;
+              }
+              event.preventDefault();
+          }
         }
-        // } else if( key === '9' && event.target.hasAttribute('aria-expanded')) {
-        //   var index = triggers.indexOf(target);
-        //   if(index == -1) {
-        //     console.log(target);
-        //     trigger.setAttribute('aria-expanded', "false");
-        //     console.log(6);
-        //   }
-        // }
     });
 })
+
+function isVisible(elem) {
+    if (!(elem instanceof Element)) throw Error('DomUtil: elem is not an element.');
+    const style = getComputedStyle(elem);
+    if (style.display === 'none') return false;
+    if (style.visibility !== 'visible') return false;
+    if (style.opacity < 0.1) return false;
+    if (elem.offsetWidth + elem.offsetHeight + elem.getBoundingClientRect().height +
+        elem.getBoundingClientRect().width === 0) {
+        return false;
+    }
+    const elemCenter   = {
+        x: elem.getBoundingClientRect().left + elem.offsetWidth / 2,
+        y: elem.getBoundingClientRect().top + elem.offsetHeight / 2
+    };
+    if (elemCenter.x < 0) return false;
+    if (elemCenter.x > (document.documentElement.clientWidth || window.innerWidth)) return false;
+    if (elemCenter.y < 0) return false;
+    if (elemCenter.y > (document.documentElement.clientHeight || window.innerHeight)) return false;
+    let pointContainer = document.elementFromPoint(elemCenter.x, elemCenter.y);
+    do {
+        if (pointContainer === elem) return true;
+    } while (pointContainer = pointContainer.parentNode);
+    return false;
+}
