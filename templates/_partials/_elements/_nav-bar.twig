@@ -3,7 +3,7 @@
 <div id="topbar">
     <div class="flex items-center justify-end lg:justify-between px-0 lg:px-6 bg-gray-900 text-white relative">
         <p class="hidden lg:block"><b>Official Website for the City of Oakland</b> | <a class="hover:text-green-800" href="{{ siteUrl }}officials/libby-schaaf">Mayor Libby Schaaf</a></p>
-        <nav class="flex items-center" id="top-navigation" name="Top Navigation" role="navigation">
+        <nav class="flex items-center" id="top-navigation" name="Top Navigation">
             <ul class="flex items-center">
                 {% for item in navigation.navigationTop.level(1).all() %}
                     <li class="hidden lg:block ml-4"><a href="{{ item.linkit.url }}">{{ item.linkit.text }}</a></li>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="relative">
-        <nav id="main-navigation" class="flex items-center justify-between px-2 lg:px-6 bg-gray-1000 text-white relative" name="Main Navigation" role="navigation">
+        <nav id="main-navigation" class="flex items-center justify-between px-2 lg:px-6 bg-gray-1000 text-white relative" name="Main Navigation">
             <a id="home-link" class="flex items-center justify-center py-2 lg:py-2" href="{{ siteUrl }}" name="Home">
                 {{ svg( '@webroot/assets/img/logo-oakland-tree.svg')|attr({ class: 'h-9 sm:h-10 w-14 md:h-10 lg:hidden fill-current text-gray-100 hover:text-gray-200' }) }}
                 {{ svg( '@webroot/assets/img/logo-oakland.svg')|attr({ class: 'w-40 h-10 hidden lg:block fill-current text-gray-100 hover:text-gray-200' }) }}
@@ -90,7 +90,7 @@
                 </li>
             </ul>
         </nav>
-        <nav id="mobile-navigation" class="bg-green-800 text-white lg:hidden" name="Mobile Navigation" role="navigation">
+        <nav id="mobile-navigation" class="bg-green-800 text-white lg:hidden" name="Mobile Navigation">
             <a tabindex="0" id="navbar-dropdown-mobile" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 {{ svg( '@webroot/assets/img/icon-menu.svg')|attr({ class: 'fill-current text-white' }) }}
                 {{ svg( '@webroot/assets/img/icon-x.svg')|attr({ class: 'fill-current text-white' }) }}
