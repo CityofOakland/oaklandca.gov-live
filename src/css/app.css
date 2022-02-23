@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
+@import './partials/forms.css';
 @import './partials/navigation.css';
+@import './partials/timeline.css';
 
 /* Use this utility to hide text only meant for screen readers */
 .hide-text {
@@ -301,11 +303,17 @@ main .bg-rotate:nth-of-type(even) {
 
 a,
 input,
+select,
 textarea,
 button {
   &:focus {
     outline: 4px solid #0EA5E9;
   }
+}
+
+input.ais-search-box--input:focus,
+select.ais-menu-select--select:focus {
+  outline: 4px solid #0EA5E9;
 }
 
 .search-box {

@@ -44,9 +44,6 @@
       alt: entry.banner[0].title ?? entry.banner[0].filename
     } : false
   } %}
-  {% css %}
-  {% include "_css/timeline.css" %}
-  {% endcss %}
   {% js %}
     {% include "_js/timeline.js" %}
     timeline(document.querySelectorAll('.timeline'));

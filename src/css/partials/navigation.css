@@ -145,19 +145,6 @@
   margin-bottom: 4px;
 }
 
-input[type="search"].form-control {
-  background: #F7F7F7;
-  color: #3b3b3b;
-  font-size: 16px;
-  margin: 0;
-  padding: 14px;
-  width: 100%;
-}
-
-input[type="search"].form-control::placeholder {
-  color: #6B7280;
-}
-
 #navbar-dropdown-search {
   background: #f7c948;
   border-radius: 50%;
