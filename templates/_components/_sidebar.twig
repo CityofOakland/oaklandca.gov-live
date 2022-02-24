@@ -40,7 +40,7 @@
               {% case 'documentPackets' %}
                 <li><a href="{{ entry.url }}">{{ svg( '@webroot/assets/img/icon-folder.svg') }} {{ entry.title }}</a></li>
               {% default %}
-                <li><a href="{{ entry.url }}">{{ svg( '@webroot/assets/img/icon-external.svg') }} {{ entry.title }}</a></li>
+                <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
             {% endswitch %}
           {% endfor %}
         </ul>
