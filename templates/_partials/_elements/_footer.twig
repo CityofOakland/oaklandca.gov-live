@@ -33,7 +33,113 @@
   [ seoMaticLinks.twitter.url, 'twitter.svg', 'Oakland Twitter Page' ],
   [ seoMaticLinks.instagram.url, 'instagram.svg', 'Oakland Instagram Page' ]
 ] %}
-<footer class="relative overflow-hidden text-sm leading-loose text-gray-300 lg:text-base bg-gray-1000 bg-transparent-oakland-roots-black">
+
+<style>
+    footer h5 {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+
+    footer a {
+        color: white;
+        font-size: 16px;
+        font-weight: 400;
+        text-decoration: underline;
+    }
+
+    footer a:hover,
+    footer a:focus {
+        color: white;
+        text-decoration: none;
+    }
+
+    footer li {
+        line-height: 1.7;
+    }
+
+    footer label {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+</style>
+
+<footer class="bg-gray-1000">
+    <div class="container">
+        <nav id="footer-navigation" class="md:flex text-white" name="Footer Navigation">
+            <div class="lg:w-1/2">
+                <h5>Your Government</h5>
+                <ul class="grid grid-cols-2 gap-x-4">
+                    <li><a href="">About the City of Oakland</a></li>
+                    <li><a href="">Departments</a></li>
+                    <li><a href="">City Officials</a></li>
+                    <li><a href="">City Council</a></li>
+                    <li><a href="">Boards & Commissions</a></li>
+                    <li><a href="">City Services</a></li>
+                    <li><a href="">Public Meetings</a></li>
+                    <li><a href="">Events</a></li>
+                    <li><a href="">News</a></li>
+                    <li><a href="">City Jobs</a></li>
+                </ul>
+            </div>
+            <div class="md:w-1/2 lg:w-1/4">
+                <h5>How can we help?</h5>
+                <ul>
+                    <li><a href="">Request Maintenance</a></li>
+                    <li><a href="">Report a Crime</a></li>
+                    <li><a href="">Staff Directory</a></li>
+                    <li><a href="">Call 311</a></li>
+                </ul>
+            </div>
+            <div class="md:w-1/2 lg:w-1/4">
+                <h5>Sign Up</h5>
+                {{ craft.freeform.form('signUp', {
+                    labelClass: "form-label",
+                    inputClass: "form-control",
+                }).render() }}
+            </div>
+            {# <ul>
+                <li><a href="">About the City of Oakland</a></li>
+                <li><a href="">Departments</a></li>
+                <li><a href="">City Officials</a></li>
+                <li><a href="">City Council</a></li>
+                <li><a href="">Boards & Commissions</a></li>
+            </ul> #}
+        </nav>
+    </div>
+
+    <div class="bg-gray-900">
+        <div class="container">
+            <nav class="flex items-center" id="bottom-navigation" name="Bottom Navigation">
+                <a id="home-link" class="flex items-center justify-center py-2 lg:py-2" href="{{ siteUrl }}" name="Home">
+                    {{ svg( '@webroot/assets/img/logo-oakland-tree.svg')|attr({ class: 'h-9 sm:h-10 w-14 md:h-10 lg:hidden fill-current text-gray-100 hover:text-gray-200' }) }}
+                    {{ svg( '@webroot/assets/img/logo-oakland.svg')|attr({ class: 'w-40 h-10 hidden lg:block fill-current text-gray-100 hover:text-gray-200' }) }}
+                    <span class="sr-only">Home</span>
+                </a>
+
+                <ul>
+                    <li>Sitemap</li>
+                    <li>Accessibility</li>
+                    <li>Privacy/Security</li>
+                    <li>Civil Rights Policy</li>
+                </ul>
+
+                <ul class="flex items-center">
+                    {% for socItem in socialMedia %}
+                        <li class="p-4">
+                            <a href="{{ socItem[0] }}" class="flex items-center justify-center w-12 h-12 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000">
+                                {{ craft.inlin.er('/assets/img/logo-' ~ socItem[1]) | replace('<svg ', '<svg class="h-6" ') | raw }}
+                                <span class="hidden-visually">{{ socItem[2] }}</span>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</footer>
+<footer>
     <div class="container relative z-20 py-4 sm:py-8">
         <div class="xl:flex xl:justify-between">
             <div class="flex-wrap sm:flex xl:flex-1">
