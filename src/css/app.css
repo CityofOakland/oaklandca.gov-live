@@ -1,5 +1,6 @@
 @tailwind base;
 @tailwind components;
+@import './partials/navigation.css';
 
 /* Use this utility to hide text only meant for screen readers */
 .hide-text {
@@ -180,22 +181,6 @@ a:hover {
 main,
 footer {
   position: relative;
-}
-
-main {
-  padding-top: 3.75rem;
-}
-
-@media (min-width: theme("screens.md")) {
-  main {
-    padding-top: 4rem;
-  }
-}
-
-@media (min-width: theme("screens.lg")) {
-  main {
-    padding-top: 5rem;
-  }
 }
 
 /* Banner Styles */
@@ -1302,6 +1287,16 @@ body.open .page-holder {
   line-height: 1.5;
 }
 
+#mobile-menu {
+  height: 60px;
+}
+
+@media(min-width: 640px) {
+  #mobile-menu {
+      height: 64px;
+  }
+}
+
 .pagination {
   display: flex;
   align-items: center;
@@ -1410,6 +1405,14 @@ body.open .page-holder {
 
 .process .ul-icons {
   padding-top: 1rem;
+}
+
+.subnav {
+  display: none;
+}
+
+.subnav.state-active {
+  display: block;
 }
 
 .ul-icons {

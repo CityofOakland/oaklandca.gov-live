@@ -4,8 +4,6 @@
 				<div id="{{ id }}" class="hidden">
 					{% if craft.freeform.form(id) %}
 						{{ craft.freeform.form(id, {
-							labelClass: "form-label",
-							inputClass: "form-control",
 							overrideValues: {
 								entryUrl: entry['url'] is defined ? entry.url : 'N/A',
 								pageAuthor: entry['author'] is defined ? entry.author.fullName : 'N/A',

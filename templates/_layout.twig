@@ -51,8 +51,8 @@
   {# We’re setting the class to overflow-x-hidden to prevent content from stretching page width on mobile views.#}
   {# Sets the navigation to the nav section entry, "Main Nav" #}
   {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
-  <body class="overflow-x-hidden font-body {{ pageClass ?? '' }}">
-    <div class="page-holder">
+  <body class="font-body {{ pageClass ?? '' }}">
+    <div class="page-holder overflow-x-hidden">
       {% include '_partials/_elements/_skip-to-content.twig' %}
       {% include '_partials/_elements/_nav-bar.twig' %}
       <main>

@@ -1,32 +1,3 @@
-{% set footerNav1 = [
-  ['/departments/media-center', 'News & Updates'],
-  ['/events', 'Events'],
-  ['/meetings', 'Meetings'],
-  ['/officials', 'City Officials'],
-  ['/boards-commissions', 'Boards & Commissions'],
-  ['/staff', 'Staff Directory'],
-  ['/departments', 'Departments'],
-  ['/services', 'Services'],
-] %}
-{% set footerNav2 = [
-  ['/resources', 'Resources'],
-  ['/documents', 'Documents'],
-  ['/topics', 'Topics'],
-  ['/projects', 'Projects'],
-  ['/services/apply-for-city-of-oakland-and-port-of-oakland-jobs', 'City Jobs'],
-  ['https://www.oaklandlibrary.org/', 'Oakland Library'],
-  ['https://www.visitoakland.com/', 'Visit Oakland'],
-  ['http://museumca.org/', 'Oakland Museum'],
-] %}
-{% set footerNav3 = [
-  ['https://apps.oaklandca.gov/oakapps/', 'OAK Apps'],
-  ['https://data.oaklandca.gov/', 'Open Data'],
-  ['/resources/city-of-oakland-americans-with-disabilities-act-ada-policies', 'ADA Policies in the City of Oakland'],
-  ['/topics/civil-rights-access', 'Civil Rights Policies & Procedures'],
-  ['/topics/civil-rights-access', 'Políticas de derechos civiles y Procedimientos'],
-  ['/topics/civil-rights-access', '民權政策與程序'],
-  ['https://www.oaklandauditor.com/whistleblower/', 'Whistleblower Program']
-] %}
 {% set seoMaticLinks = seomatic.site.sameAsLinks %}
 {% set socialMedia = [
   [ seoMaticLinks.facebook.url, 'facebook.svg', 'Oakland Facebook Page' ],
@@ -34,156 +5,74 @@
   [ seoMaticLinks.instagram.url, 'instagram.svg', 'Oakland Instagram Page' ]
 ] %}
 
-<style>
-    footer h5 {
-        font-size: 18px;
-        font-weight: 700;
-        line-height: 1.5;
-    }
-
-    footer a {
-        color: white;
-        font-size: 16px;
-        font-weight: 400;
-        text-decoration: underline;
-    }
-
-    footer a:hover,
-    footer a:focus {
-        color: white;
-        text-decoration: none;
-    }
-
-    footer li {
-        line-height: 1.7;
-    }
-
-    footer label {
-        font-size: 14px;
-        line-height: 1.5;
-    }
-</style>
-
-<footer class="bg-gray-1000">
-    <div class="container">
-        <nav id="footer-navigation" class="md:flex text-white" name="Footer Navigation">
-            <div class="lg:w-1/2">
-                <h5>Your Government</h5>
-                <ul class="grid grid-cols-2 gap-x-4">
-                    <li><a href="">About the City of Oakland</a></li>
-                    <li><a href="">Departments</a></li>
-                    <li><a href="">City Officials</a></li>
-                    <li><a href="">City Council</a></li>
-                    <li><a href="">Boards & Commissions</a></li>
-                    <li><a href="">City Services</a></li>
-                    <li><a href="">Public Meetings</a></li>
-                    <li><a href="">Events</a></li>
-                    <li><a href="">News</a></li>
-                    <li><a href="">City Jobs</a></li>
-                </ul>
-            </div>
-            <div class="md:w-1/2 lg:w-1/4">
-                <h5>How can we help?</h5>
-                <ul>
-                    <li><a href="">Request Maintenance</a></li>
-                    <li><a href="">Report a Crime</a></li>
-                    <li><a href="">Staff Directory</a></li>
-                    <li><a href="">Call 311</a></li>
-                </ul>
-            </div>
-            <div class="md:w-1/2 lg:w-1/4">
+<footer class="bg-gray-1000 bg-transparent-oakland-roots-black">
+    <div class="container py-8">
+        <nav id="footer-navigation" class="lg:flex flex-wrap text-white" name="Footer Navigation">
+            {% for item in navigationFooter.navigationFooter.level(1).all() %}
+            {% if loop.index == 1 %}
+                <div class="md:w-full lg:w-1/2">
+                    <h5>{{ item.heading }}</h5>
+                    <div class="grid grid-cols-2 gap-x-4">
+                        {% set navItems = item.children.all() %}
+                        <ul>
+                            {% for navItem in navItems|slice(0, navItems|length/2) %}
+                                <li><a href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
+                            {% endfor %}
+                        </ul>
+                        <ul>
+                            {% for navItem in navItems|slice(navItems|length/2, navItems|length) %}
+                                <li><a href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% else %}
+                <div class="md:w-1/2 lg:w-1/4 mt-8 lg:mt-0">
+                    <h5>{{ item.heading }}</h5>
+                    <ul>
+                        {% for navItem in item.children.all() %}
+                            <li><a href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+            {% endfor %}
+            <div class="md:w-1/2 lg:w-1/4 mt-8 lg:mt-0">
                 <h5>Sign Up</h5>
                 {{ craft.freeform.form('signUp', {
                     labelClass: "form-label",
                     inputClass: "form-control",
+                    submitClass: "button small",
                 }).render() }}
             </div>
-            {# <ul>
-                <li><a href="">About the City of Oakland</a></li>
-                <li><a href="">Departments</a></li>
-                <li><a href="">City Officials</a></li>
-                <li><a href="">City Council</a></li>
-                <li><a href="">Boards & Commissions</a></li>
-            </ul> #}
         </nav>
     </div>
 
-    <div class="bg-gray-900">
-        <div class="container">
-            <nav class="flex items-center" id="bottom-navigation" name="Bottom Navigation">
-                <a id="home-link" class="flex items-center justify-center py-2 lg:py-2" href="{{ siteUrl }}" name="Home">
-                    {{ svg( '@webroot/assets/img/logo-oakland-tree.svg')|attr({ class: 'h-9 sm:h-10 w-14 md:h-10 lg:hidden fill-current text-gray-100 hover:text-gray-200' }) }}
-                    {{ svg( '@webroot/assets/img/logo-oakland.svg')|attr({ class: 'w-40 h-10 hidden lg:block fill-current text-gray-100 hover:text-gray-200' }) }}
-                    <span class="sr-only">Home</span>
-                </a>
-
-                <ul>
-                    <li>Sitemap</li>
-                    <li>Accessibility</li>
-                    <li>Privacy/Security</li>
-                    <li>Civil Rights Policy</li>
-                </ul>
-
-                <ul class="flex items-center">
+    <div class="bg-black text-white">
+        <div class="container py-4">
+            <nav class="lg:flex items-center justify-between" id="bottom-navigation" name="Bottom Navigation">
+                <div class="lg:flex items-end">
+                    <a href="{{ siteUrl }}">
+                        {{ svg( '@webroot/assets/img/logo-oakland.svg')|attr({ class: 'w-40 h-10 fill-current text-gray-100 hover:text-gray-200' }) }}
+                        <span class="sr-only">Home</span>
+                    </a>
+                    <ul class="grid grid-cols-2 lg:flex items-center my-4 lg:my-0 lg:ml-6">
+                        {% for item in navigationFooter.linkits.all() %}
+                            <li class="lg:ml-6"><a href="{{ item.linkit.url }}">{{ item.linkit.text }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <ul class="flex items-center my-0">
                     {% for socItem in socialMedia %}
-                        <li class="p-4">
-                            <a href="{{ socItem[0] }}" class="flex items-center justify-center w-12 h-12 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000">
-                                {{ craft.inlin.er('/assets/img/logo-' ~ socItem[1]) | replace('<svg ', '<svg class="h-6" ') | raw }}
+                        <li class="mr-4 lg:mr-0 lg:ml-4">
+                            <a href="{{ socItem[0] }}" class="flex items-center justify-center w-10 h-10 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000">
+                                {{ svg('@webroot/assets/img/logo-' ~ socItem[1])|attr({class:'h-5'}) }}
                                 <span class="hidden-visually">{{ socItem[2] }}</span>
                             </a>
                         </li>
                     {% endfor %}
                 </ul>
             </nav>
-        </div>
-    </div>
-
-</footer>
-<footer>
-    <div class="container relative z-20 py-4 sm:py-8">
-        <div class="xl:flex xl:justify-between">
-            <div class="flex-wrap sm:flex xl:flex-1">
-                <div class="sm:flex sm:flex-1">
-                  <div class="flex justify-between flex-1">
-                    <ul class="w-1/2 pr-2 mt-0">
-                          {% for navItem in footerNav1 %}
-                            <li><a class="text-white hover:text-white hover:underline" href="{{ navItem[0] }}">{{ navItem[1] }}</a></li>
-                          {% endfor %}
-                    </ul>
-                    <ul class="w-1/2 pl-2 mt-0">
-                          {% for navItem in footerNav2 %}
-                            <li><a class="text-white hover:text-white hover:underline" href="{{ navItem[0] }}">{{ navItem[1] }}</a></li>
-                          {% endfor %}
-                        </ul>
-                </div>
-                <ul class="mt-0 sm:w-1/2 sm:pl-4">
-                    {% for navItem in footerNav3 %}
-                      <li><a class="text-white hover:text-white hover:underline" href="{{ navItem[0] }}">{{ navItem[1] }}</a></li>
-                    {% endfor %}
-                </ul>
-                </div>
-            </div>
-            <div class="mt-4 mb-8 space-y-4 leading-normal text-white sm:-mx-2 sm:flex xl:block sm:space-y-0 sm:space-x-8 xl:space-y-4 xl:space-x-0">
-                <div><b>For Maintenance Requests </b><br>311 or <a class="text-white hover:text-white hover:underline" href="tel:510-615-5566">510-615-5566</a> <br>Relay Service 711</div>
-                <div><b>Oakland City Hall</b> <br>1 Frank H. Ogawa Plaza <br>Oakland, CA 94612</div>
-                <div></div>
-            </div>
-        </div>
-        <div class="flex pt-2 mt-4 border-t border-gray-700 sm:flex">
-            <div class="flex items-center justify-start mt-4 text-xs sm:w-1/4 sm:mt-0 lg:text-base">
-                <a class="text-white hover:text-white hover:underline" href="/topics/oaklandlovelife">#OaklandLoveLife</a>
-            </div>
-            <div class="flex items-center justify-center p-10 sm:w-1/2">
-                {% for socItem in socialMedia %}
-                    <div class="p-4">
-                        <a href="{{ socItem[0] }}" class="flex items-center justify-center w-12 h-12 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000">
-                            {{ craft.inlin.er('/assets/img/logo-' ~ socItem[1]) | replace('<svg ', '<svg class="h-6" ') | raw }}
-                            <span class="hidden-visually">{{ socItem[2] }}</span>
-                        </a>
-                    </div>
-                {% endfor %}
-            </div>
-            <div class="flex items-center justify-end mt-4 text-xs sm:w-1/4 sm:mt-0 lg:text-base">&copy; {{ now | date('Y') }} City of Oakland</div>
         </div>
     </div>
 </footer>
