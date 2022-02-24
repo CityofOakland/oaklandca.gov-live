@@ -62,11 +62,6 @@
   }
 }
 
-.o-override > * {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 body {
   @apply text-lg leading-normal text-gray-900;
 }
