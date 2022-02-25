@@ -27,15 +27,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: d6004c0b-1eb3-4bf9-abb3-30870ac3a057 # Subtitle
-            instructions: ''
-            label: 'Meeting Subtitle'
-            required: ''
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
             fieldUid: f7e4a055-457f-46eb-ab3d-3e816f80a81d # Related Board or Commission
             instructions: 'Select the Board or Commission this meeting is related to.'
             label: ''
@@ -150,7 +141,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 43cb8609-820e-4df0-9b62-fa6cf21ba074 # Agenda Topics
+            fieldUid: 43cb8609-820e-4df0-9b62-fa6cf21ba074 # angedaAgenda Topics
             instructions: 'Highlight items that will be talked about at the meeting to make searchable. No need to include routine items.'
             label: ''
             required: ''

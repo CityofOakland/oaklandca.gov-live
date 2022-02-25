@@ -1,4 +1,4 @@
-field: 43cb8609-820e-4df0-9b62-fa6cf21ba074 # Agenda Topics
+field: 43cb8609-820e-4df0-9b62-fa6cf21ba074 # angedaAgenda Topics
 fieldLayouts:
   548c142f-6181-43fd-8696-b3d33a8181ad:
     tabs:
@@ -44,19 +44,29 @@ fields:
     searchable: false
     settings:
       allowSelfRelations: false
+      allowUploads: true
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
+      defaultUploadLocationSubpath: ''
       limit: ''
       localizeRelations: false
-      selectionLabel: 'Add a Document'
-      showSiteMenu: false
+      previewMode: full
+      restrictFiles: ''
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
+      singleUploadLocationSubpath: ''
       source: null
-      sources:
-        - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+      sources: '*'
       targetSiteId: null
+      useSingleFolder: false
       validateRelatedElements: false
-      viewMode: null
+      viewMode: list
     translationKeyFormat: null
     translationMethod: site
-    type: craft\fields\Entries
+    type: craft\fields\Assets
   ca37deb9-d79a-49b2-9ac4-771eb4d75e14: # Description
     columnSuffix: null
     contentColumnType: text
