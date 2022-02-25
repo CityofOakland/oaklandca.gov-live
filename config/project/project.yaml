@@ -1,4 +1,4 @@
-dateModified: 1645798324
+dateModified: 1645799995
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -123,6 +123,7 @@ meta:
     7f40da34-211c-4ece-a025-8611e9442ec7: Location # Location
     7fa33ef2-a89e-4979-a729-70b04e79eb0c: 'Embed - YouTube' # Embed - YouTube
     07faad04-9ec4-4f68-9fe8-0ca20f189f8a: Staff # Staff
+    7ff43a45-a85f-4be9-b97c-c1fff5d916b1: 'Section Heading' # Section Heading
     8a7f1f75-cb2f-4707-8047-676959644f08: 'Before You Start' # Before You Start
     8a89416e-010d-4a83-a254-dafb9b29ce26: 'Staff Import Given Name' # Staff Import Given Name
     8ac349fa-f382-4bc4-9f01-25e04abf073c: Homepage # Homepage
@@ -623,6 +624,7 @@ meta:
     fbf8b9b0-8875-4e08-819a-d62603676dc4: Teams # Teams
     fccb3891-e320-45ec-b368-6bd4f47fdc91: Heading # Heading
     fd0c8e02-99b4-4ce5-ab89-b29cd0efc581: 'Content Builder' # Content Builder
+    fd3d4593-b8d2-44f7-a03c-806e2e0e2ba1: Link # Link
     fd5628cc-7472-48c6-8263-14745dbb90c9: 'Link Set Description' # Link Set Description
     fe1bbd87-c5e4-420c-b80f-11bdeabb907e: 'Staff Index' # Staff Index
     fe5b4078-9713-41ab-a60c-66622aed9991: Recordings # Recordings

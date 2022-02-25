@@ -86,8 +86,26 @@
         </section>
       </main>
       <footer class="bg-gray-1000 py-3 fill-current text-gray-100 px-4">
-        <div class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden">{{ svg('@webroot/assets/img/logo-oakland-tree.svg') }}</div>
-        <div class="w-40 h-10 oak-hidden sm:block">{{ svg('@webroot/assets/img/logo-oakland.svg') }}</div>
+        <div>
+          <div class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden">{{ svg('@webroot/assets/img/logo-oakland-tree.svg') }}</div>
+          <div class="w-40 h-10 oak-hidden sm:block">{{ svg('@webroot/assets/img/logo-oakland.svg') }}</div>
+        </div>
+        <ul>
+          {% set seoMaticLinks = seomatic.site.sameAsLinks %}
+          {% set socialMedia = [
+            [ seoMaticLinks.facebook.url, 'facebook.svg', 'Oakland Facebook Page' ],
+            [ seoMaticLinks.twitter.url, 'twitter.svg', 'Oakland Twitter Page' ],
+            [ seoMaticLinks.instagram.url, 'instagram.svg', 'Oakland Instagram Page' ]
+          ] %}
+          {% for socItem in socialMedia %}
+            <div class="p-4">
+              <a href="{{ socItem[0] }}" class="flex items-center justify-center w-12 h-12 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000">
+                {{ svg('@webroot/assets/img/logo-' ~ socItem[1])|attr({class: 'h-6'}) }}
+                <span class="hidden-visually">{{ socItem[2] }}</span>
+              </a>
+            </div>
+          {% endfor %}
+        </ul>
       </footer>
     </div>
   </body>
