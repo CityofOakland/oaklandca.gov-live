@@ -129,6 +129,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: 5e5aad16-6bdc-4d3e-adfd-75147a323b78 # Phone Number
+            instructions: 'Input the phone contact for this meeting.'
+            label: 'Meeting Phone Number'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             heading: 'Before the Meeting'
             type: craft\fieldlayoutelements\Heading
           -
