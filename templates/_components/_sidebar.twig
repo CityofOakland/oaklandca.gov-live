@@ -92,9 +92,10 @@
     <hr/>
     <h4>{{ 'Contact'|t }}</h4>
     <p>{{ entry.fullName }}</p>
-    {% if entry.emailAddress %}
+    {% if entry.emailAddress or entry.phoneNumber %}
       <ul class="ul-icons">
-        <li><a href="mailto:{{ entry.emailAddress }}">{{ svg( '@webroot/assets/img/icon-envelope-updated.svg') }} {{ entry.emailAddress }}</a></li>
+        {% if entry.emailAddress %}<li><a href="mailto:{{ entry.emailAddress }}">{{ svg( '@webroot/assets/img/icon-envelope-updated.svg') }} {{ entry.emailAddress }}</a></li>{% endif %}
+        {% if entry.phoneNumber %}<li><a href="tel:{{ entry.phoneNumber|replace({'-': ''}) }}">{{ svg( '@webroot/assets/img/icon-phone-updated.svg') }} {{ entry.phoneNumber }}</a></li>{% endif %}
       </ul>
     {% endif %}
   {% endif %}
