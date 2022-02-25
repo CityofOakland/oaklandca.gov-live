@@ -10,8 +10,8 @@ fieldLayouts:
             class: null
             disabled: false
             id: null
-            instructions: null
-            label: null
+            instructions: 'Meeting should be titled "Official Name of the Board or Commission" + "Meeting".'
+            label: 'Meeting Title'
             max: null
             min: null
             name: null
@@ -27,7 +27,61 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210 # Lead In
+            fieldUid: d6004c0b-1eb3-4bf9-abb3-30870ac3a057 # Subtitle
+            instructions: ''
+            label: 'Meeting Subtitle'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f7e4a055-457f-46eb-ab3d-3e816f80a81d # Related Board or Commission
+            instructions: 'Select the Board or Commission this meeting is related to.'
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 31d30a51-422e-471c-be55-3441a4219dd8 # Date
+            instructions: 'Enter the date of the meeting.'
+            label: 'Meeting Date'
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9f3ae38f-aef6-476b-9fea-e9d1ef0c03c4 # Start Time
+            instructions: 'Enter the start time of the meeting.'
+            label: 'Meeting Start Time'
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: daee65a4-c92d-4e15-9273-1636d722cf35 # End Time
+            instructions: 'Optional. Include the end time of your meeting.'
+            label: 'Meeting End Time'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f6e8acb0-e8f3-40de-8500-b95e6ed06def # Event Location
+            instructions: ''
+            label: 'Meeting Location'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 21e2b002-d7ac-465c-8233-a2c62a251dcd # Meeting Status
             instructions: null
             label: null
             required: false
@@ -36,111 +90,106 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            type: craft\fieldlayoutelements\HorizontalRule
+            fieldUid: 89e7af89-0b4d-4305-9ffe-5098b3f73779 # Related Meeting
+            instructions: 'Relate a rescheduled meeting. If a special meeting is related to another meeting, add it here.'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
           -
             fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
-            instructions: ''
-            label: Details
+            instructions: 'Add any additional details that people should know about this meeting.'
+            label: 'Meeting Details'
             required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
           -
-            type: craft\fieldlayoutelements\HorizontalRule
-          -
-            fieldUid: 5261f0db-3453-423b-87c5-e5d3112c4141 # Document File
-            instructions: ''
-            label: Minutes
+            fieldUid: f3d1bcbe-1f1a-4498-b4e5-1d57d3257690 # Related Pages
+            instructions: 'Relate other pages to this meeting, including Departments, Officials and Topics.'
+            label: ''
             required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
           -
-            type: craft\fieldlayoutelements\HorizontalRule
+            heading: 'Meeting Contact'
+            type: craft\fieldlayoutelements\Heading
           -
-            fieldUid: ce345611-039a-4fb5-9a1c-a9eef7d74514 # Embeds
-            instructions: ''
-            label: Recordings
+            fieldUid: 2260316d-d754-471f-a901-9d8ed19c13d3 # Full Name
+            instructions: 'Input the meeting contact name and title, or the team name.'
+            label: 'Meeting Contact Name'
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a # Email Address
+            instructions: 'Input the email contact for this meeting.'
+            label: 'Meeting Email'
             required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
           -
-            type: craft\fieldlayoutelements\HorizontalRule
+            heading: 'Before the Meeting'
+            type: craft\fieldlayoutelements\Heading
           -
             fieldUid: d7c92fa2-9002-4f28-a03d-b99b37501dde # Agenda - Downloadable Copy
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: f09dcf7b-4b1f-47a1-ac7b-4425e46473cd # Process
-            instructions: ''
-            label: Agenda
+            instructions: 'Upload a PDF of your full agenda packet.'
+            label: 'Agenda Upload'
             required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
           -
-            type: craft\fieldlayoutelements\HorizontalRule
+            fieldUid: 43cb8609-820e-4df0-9b62-fa6cf21ba074 # Agenda Topics
+            instructions: 'Highlight items that will be talked about at the meeting to make searchable. No need to include routine items.'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
           -
-            fieldUid: 40140c47-fe48-4679-8511-702fd17436a6 # Accessibility Text
+            fieldUid: e2b6c2d9-b6fa-4713-b819-e4a9a1b35c2b # How to Participate
             instructions: null
             label: null
             required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: 'After the Meeting'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 5261f0db-3453-423b-87c5-e5d3112c4141 # Document File
+            instructions: 'After the meeting has ended, upload a PDF of the minutes.'
+            label: 'Minutes Upload'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ce345611-039a-4fb5-9a1c-a9eef7d74514 # Embeds
+            instructions: 'Select the type of recording. This field supports video URLs from Granicus, Youtube, and Vimeo.'
+            label: Recording
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
         name: Content
         sortOrder: 1
-      -
-        elements:
-          -
-            fieldUid: 2260316d-d754-471f-a901-9d8ed19c13d3 # Full Name
-            instructions: ''
-            label: 'Contact Name'
-            required: ''
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: e3a53ca0-960e-4ce6-933b-b3613bd64d7a # Job Title
-            instructions: ''
-            label: 'Contact Job Title'
-            required: ''
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: ca717470-3ae1-44a0-9ee8-886b6fe780cf # Contact Info
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: fff5cf49-87e6-4751-9032-b4ca8136e237 # Alt Text
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-        name: Sidebar
-        sortOrder: 2
 handle: meetings
 hasTitleField: true
 name: Meetings

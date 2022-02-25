@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6cb8967aaa172d6acbac47eecf7996a4",
+    "content-hash": "f7418d906a29909761f27f886940d807",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -367,7 +367,6 @@
                     "Cake\\Core\\": "."
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -423,7 +422,6 @@
                     "Cake\\Utility\\": "."
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1355,16 +1353,11 @@
         },
         {
             "name": "craftcms/feed-me",
-            "version": "4.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/craftcms/feed-me.git",
-                "reference": "43d6c9362b756b8aed9b09ee381cda14d61ead05"
-            },
+            "version": "4.4.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/43d6c9362b756b8aed9b09ee381cda14d61ead05",
-                "reference": "43d6c9362b756b8aed9b09ee381cda14d61ead05",
+                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/21ff44231d70de6c3d4475f8c5b5a3ecc0dab212",
+                "reference": "21ff44231d70de6c3d4475f8c5b5a3ecc0dab212",
                 "shasum": ""
             },
             "require": {
@@ -1374,10 +1367,6 @@
                 "league/csv": "^8.2 || ^9.0",
                 "nesbot/carbon": "^1.22 || ^2.10",
                 "seld/jsonlint": "^1.7"
-            },
-            "require-dev": {
-                "codeception/codeception": "^4.0.0",
-                "codeception/module-asserts": "^1.3"
             },
             "type": "craft-plugin",
             "extra": {
@@ -1390,7 +1379,6 @@
                     "craft\\feedme\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -1406,9 +1394,8 @@
             ],
             "description": "Import content from XML, RSS, CSV or JSON feeds into entries, categories, Craft Commerce products, and more.",
             "keywords": [
-                "Craft",
                 "cms",
-                "craft-plugin",
+                "craft",
                 "craftcms",
                 "feed me"
             ],
@@ -3925,11 +3912,6 @@
         {
             "name": "jakeasmith/http_build_url",
             "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jakeasmith/http_build_url.git",
-                "reference": "93c273e77cb1edead0cf8bcf8cd2003428e74e37"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/jakeasmith/http_build_url/zipball/93c273e77cb1edead0cf8bcf8cd2003428e74e37",
@@ -3942,7 +3924,6 @@
                     "src/http_build_url.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3953,10 +3934,6 @@
                 }
             ],
             "description": "Provides functionality for http_build_url() to environments without pecl_http.",
-            "support": {
-                "issues": "https://github.com/jakeasmith/http_build_url/issues",
-                "source": "https://github.com/jakeasmith/http_build_url"
-            },
             "time": "2017-05-01T15:36:40+00:00"
         },
         {

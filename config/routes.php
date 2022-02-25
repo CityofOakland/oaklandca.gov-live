@@ -20,7 +20,7 @@
 
 return [
   'boards-commissions/related-to/<section>/<slug>' => ['template' => 'boards-commissions'],
-  'boards-commissions/<slug>/meetings' => ['template' => 'boards-commissions/_meetings'],
+  'boards-commissions/<slug>/meetings' => ['template' => '_layouts/_meetings-by-group'],
   'documents/related-to/<section>/<slug>' => ['template' => 'documents'],
   'events/related-to/<section>/<slug>' => ['template' => 'events'],
   'meetings/related-to/<section>/<slug>' => ['template' => 'meetings'],

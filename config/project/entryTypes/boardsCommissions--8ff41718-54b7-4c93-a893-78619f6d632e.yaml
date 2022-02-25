@@ -188,10 +188,28 @@ fieldLayouts:
       -
         elements:
           -
+            fieldUid: a64a471a-5142-4112-a0ae-1d700f1e8e45 # Index Toggle
+            instructions: 'Toggle this lightswitch on to enable the meeting index page for this commission.'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: b3b7323b-b212-4d0a-a2f4-b205edf3f056 # Meetings Description
             instructions: null
             label: null
             required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a64389e9-e0f9-4d5b-ae78-16f6b5db6785 # Related Departments
+            instructions: null
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null

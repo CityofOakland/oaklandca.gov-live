@@ -18,7 +18,7 @@
 {% endif %}
 
 {# if no category is assigned to an entry, its primary unit will override as the root breadcrumb #}
-<div id="breadcrumbs" class="bg-white">
+<div id="breadcrumbs" class="bg-white inline-block">
   {% if category is defined and category.level == 1 %}
     {# parent service category #}
     <a href="{{ siteUrl }}services" class="font-bold text-green-800 hover:text-green-800 hover:underline">Services</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
