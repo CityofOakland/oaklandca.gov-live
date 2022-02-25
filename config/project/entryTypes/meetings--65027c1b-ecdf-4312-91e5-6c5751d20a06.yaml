@@ -150,7 +150,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 43cb8609-820e-4df0-9b62-fa6cf21ba074 # angedaAgenda Topics
+            fieldUid: 43cb8609-820e-4df0-9b62-fa6cf21ba074 # Agenda Topics
             instructions: 'Highlight items that will be talked about at the meeting to make searchable. No need to include routine items.'
             label: ''
             required: ''

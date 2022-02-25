@@ -1,4 +1,4 @@
-dateModified: 1645797884
+dateModified: 1645798324
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -184,7 +184,7 @@ meta:
     40abab6e-fe75-4f91-b6bd-9016b2b01dbe: 'Column 2 Heading' # Column 2 Heading
     42daf001-6cda-4eab-a3a2-3dd24077d76c: 'Volunteer Index' # Volunteer Index
     42e47b92-4d9f-4ba3-8a3f-886a122470b9: Label # Label
-    43cb8609-820e-4df0-9b62-fa6cf21ba074: 'angedaAgenda Topics' # angedaAgenda Topics
+    43cb8609-820e-4df0-9b62-fa6cf21ba074: 'Agenda Topics' # Agenda Topics
     44b00870-0842-4c4e-838f-dcd688fb5b05: Topics # Topics
     45b5d319-ac8e-491f-9c8a-47d1c6657bff: 'External Link' # External Link
     46bb2577-b14e-4f53-8a65-a7b9139b21e4: Heading # Heading
