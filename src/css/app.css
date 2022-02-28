@@ -1293,8 +1293,9 @@ body.open .page-holder {
 
 .lead,
 .lead > p {
-  font-size: 24px;
-  line-height: 1.5;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  max-width: 50.625rem;
 }
 
 .pagination {
