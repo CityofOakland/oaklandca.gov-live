@@ -64,6 +64,21 @@ class Module extends \yii\base\Module
           }
         });
 
+        Craft::$app->view->hook('cp.entries.edit.details', function(&$context) {
+          $entry = $context['entry'];
+          if($entry->section->handle == 'boardsCommissions'){
+            $user = Craft::$app->getUser();
+            if(!$user->isAdmin) {
+                return "<style>
+                    #fields-indexToggle-field {
+                        display: none !important;
+                    }
+                </style>";
+            }
+          }
+        });
+
+
         Craft::$app->view->hook('cp.entries.edit.content', function(&$context) {
           $entry = $context['entry'];
           if($entry->section->handle == 'meetings'){

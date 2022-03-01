@@ -1,0 +1,107 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{siteUrl}}assets/css/app.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ siteUrl }}assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ siteUrl }}assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ siteUrl }}assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ siteUrl }}assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ siteUrl }}assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ siteUrl }}assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ siteUrl }}assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ siteUrl }}assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ siteUrl }}assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{ siteUrl }}assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ siteUrl }}assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ siteUrl }}assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ siteUrl }}assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="{{ siteUrl }}assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{ siteUrl }}assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body class="overflow-x-hidden font-body {{ pageClass ?? '' }}">
+    <div class="page-holder">
+      {% include '_partials/_elements/_skip-to-content.twig' %}
+      <header class="bg-gray-1000 py-3 fill-current text-gray-100 px-4">
+        <div class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden">{{ svg('@webroot/assets/img/logo-oakland-tree.svg') }}</div>
+        <div class="w-40 h-10 oak-hidden sm:block">{{ svg('@webroot/assets/img/logo-oakland.svg') }}</div>
+      </header>
+      <main id="content" style="padding-top:0;">
+        <section>
+          <div class="bg-transparent-oakland-roots">
+            <div class="container" style="padding-top:1rem;padding-bottom:1rem;">
+              <div class="breadcrumbs relative flex flex-col items-start py-0 sm:justify-between sm:flex-row-reverse sm:items-center">
+                {% include "_partials/_elements/_banner-google-translate.twig" with {paddingTop: "pt-0 mb-4 md:mb-0"} %}
+              </div>
+            </div>
+          </div>
+          <div class="container components">
+            <div style="max-width:1152px;">
+              <div class="flex flex-col flex-1 lg:flex-row">
+                <div class="w-full lg:w-8/11">
+                  {% block pageheader %}
+                    <h1>Oaklandca.gov is currently experiencing technical difficulties</h1>
+                    <p class="lead pt-4">We are aware of the issue and working to resolve it.</p>
+                  {% endblock %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="bg-gray-100">
+          <div class="container">
+            <div style="max-width:1152px;">
+              <div class="flex flex-col flex-1 lg:flex-row">
+                <div class="w-full lg:w-8/11">
+                  <div class="components components-format">
+                    <h2>For Immediate Assistance</h2>
+                    {% include '_components/_callout' with {
+                      callOutType   : 'attention',
+                      heading       : 'If you need help right now, call 9-1-1',
+                      description   : 'Do not report a crime online if you need help right away.' 
+                    } %}
+                    <h3>To Report a Problem</h3>
+                    <p>To report non-crime related problems such as: illegal dumping, graffiti, potholes, encampments, building maintenance, and urgent infrastructure issues.</p>
+                    <ul>
+                      <li><a href="tel:311">Call 311</a></li>
+                      <li>If you are outside of Oakland, call <a href="tel:+15106155566">(510) 615-5566</a></li>
+                    </ul>
+                    <h3>To Report a Crime</h3>
+                    <p>To report a non-emergency crime or add supplemental information to an existing police report call <a href="tel:+5107773333">(510) 777-3333</a>.</p>
+                    <h3>To Access City Council Meetings and Agendas</h3>
+                    <p>Visit <a href="https://oakland.legistar.com/">oakland.legistar.com</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="bg-gray-1000 py-3 fill-current text-gray-100 px-4 flex items-center justify-between">
+        <div>
+          <div class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden">{{ svg('@webroot/assets/img/logo-oakland-tree.svg') }}</div>
+          <div class="w-40 h-10 oak-hidden sm:block">{{ svg('@webroot/assets/img/logo-oakland.svg') }}</div>
+        </div>
+        <div class="flex items-center justify-center">
+          <a href="https://www.facebook.com/oakland/" class="flex items-center justify-center w-10 h-10 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000 p-2 ml-4">
+            {{ svg('@webroot/assets/img/logo-facebook.svg') }}
+          </a>
+          <a href="https://www.twitter.com/oakland" class="flex items-center justify-center w-10 h-10 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000 p-2 ml-4">
+            {{ svg('@webroot/assets/img/logo-twitter.svg') }}
+          </a>
+          <a href="https://www.instagram.com/oakland" class="flex items-center justify-center w-10 h-10 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000 p-2 ml-4">
+            {{ svg('@webroot/assets/img/logo-instagram.svg') }}
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
