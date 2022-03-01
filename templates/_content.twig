@@ -62,26 +62,26 @@
         <section>
           <div class="bg-transparent-oakland-roots">
             <div class="container" style="padding-top:1rem;padding-bottom:1rem;">
-              <div class="breadcrumbs relative flex flex-col items-start py-0 sm:justify-between sm:flex-row-reverse sm:items-center">
+              <div class="relative flex flex-col items-start py-0 breadcrumbs sm:justify-between sm:flex-row-reverse sm:items-center">
                 {% include "_partials/_elements/_banner-google-translate.twig" with {paddingTop: "pt-0 mb-4 md:mb-0"} %}
                 {% include "_components/partials/_breadcrumbs.twig" %}
               </div>
             </div>
           </div>
           <div id="content" style="position:relative;top:-80px;"></div>
-          <div class="container components pt-16">
+          <div class="container pt-16 components">
             <div style="max-width:1152px;">
               <div class="flex flex-col flex-1 lg:flex-row">
                 <div class="w-full lg:w-8/11">
                   {% if category is not defined and entry.section.handle == 'meetings' %}
                     <h1>{% if entry.meetingStatus.value and entry.meetingStatus.value !== 'default' %}{{ entry.meetingStatus.label }} - {% endif %}{{ entry.title }}</h1>
                     {% if entry.date %}
-                      <div class="lead pt-4">The {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} {{ now > entry.date ? 'held its last' : 'will hold its next' }} public meeting on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
+                      <div class="pt-4 lead">The {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} {{ now > entry.date ? 'held its last' : 'will hold its next' }} public meeting on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
                     {% endif %}
                   {% else %}
                     <h1>{{ entry.title }}</h1>
                     {% if entry.leadIn or entry.summary %}
-                      <div class="lead pt-4">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
+                      <div class="pt-4 lead body-text">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
                     {% endif %}
                   {% endif %}
                 </div>
@@ -93,12 +93,12 @@
           {% if category is not defined %}
             <div class="container pt-0">
               <div class="flex flex-wrap justify-between -mx-8">
-                <div class="w-full lg:w-7/11 px-8">
+                <div class="w-full px-8 lg:w-7/11">
                   <div class="components components-format">
                     {% block content %}{% endblock %}
                   </div>
                 </div>
-                <div class="w-full lg:w-4/11 px-8">
+                <div class="w-full px-8 lg:w-4/11">
                   {% if category is not defined %}
                     {% include '_components/_sidebar.twig' %}
                   {% endif %}
