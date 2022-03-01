@@ -128,7 +128,9 @@
           {% include "_partials/_elements/_module-header.twig" with {
             headerText: "Contact"
           } %}
-          {{ entry.eventContact }}
+          <div class="body-text">
+            {{ entry.eventContact }}
+          </div>
         {% endif %}
       </div>
       <div class="sm:flex-1">
