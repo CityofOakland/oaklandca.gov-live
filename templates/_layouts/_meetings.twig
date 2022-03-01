@@ -62,7 +62,7 @@
       <h2>Minutes</h2>
       <ul class="ul-icons related" style="padding-top: 1rem;">
       {% for document in entry.documentFile.all() %}
-        <li><a href="{{ document.url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }}{{ entry.title }} Minutes{{ entry.date ?  ' - ' ~ entry.date|date('m/d/Y') : '' }}</a></li>
+        <li><a href="{{ document.url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.title }} Minutes - {{ entry.date|date("m/d/Y") }}</a></li>
       {% endfor %}
       </ul>
     {% endif %}
@@ -71,7 +71,7 @@
       <h2>Minutes</h2>
       <ul class="ul-icons related" style="padding-top: 1rem;">
       {% for document in minutes.all() %}
-        <li><a href="{{ document.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ document.title }}</a></li>
+        <li><a href="{{ document.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.title }} Minutes - {{ entry.date|date("m/d/Y") }}</a></li>
       {% endfor %}
       </ul>
     {% endif %}
@@ -121,7 +121,7 @@
     <h2>Agenda</h2>
     <ul class="ul-icons related" style="padding-top: 1rem;">
     {% for agenda in agendas.all() %}
-      <li><a href="{{ agenda.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ agenda.title }}</a></li>
+      <li><a href="{{ agenda.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.title }} Agenda - {{ entry.date|date("m/d/Y") }}</a></li>
     {% endfor %}
     </ul>
   {% endif %}
@@ -130,7 +130,7 @@
     <h2>Agenda</h2>
     {% if entry.agendaDownloadableCopy|length %}
       <ul class="ul-icons related" style="padding-top: 1rem;">
-        <li><a href="{{ entry.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.agendaDownloadableCopy.one().title }} - {{ entry.date|date("m/d/Y") }} Agenda</a></li>
+        <li><a href="{{ entry.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.title }} Agenda - {{ entry.date|date("m/d/Y") }}</a></li>
       </ul>
     {% endif %}
     {% if entry.agendaTopics|length %}

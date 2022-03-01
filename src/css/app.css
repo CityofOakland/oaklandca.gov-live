@@ -921,6 +921,7 @@ form[data-handle="whyWasThisPageHelpful"] {
 
 .components input,
 .components select {
+  background: white;
   color: #6B7280;
   font-size: 14px;
   margin-top: 0.75rem;
