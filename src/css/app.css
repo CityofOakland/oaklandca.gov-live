@@ -1366,7 +1366,7 @@ form[data-handle="whyWasThisPageHelpful"] {
 .ul-icons > li,
 .ul-icons > li > a {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .ul-icons > li svg {
