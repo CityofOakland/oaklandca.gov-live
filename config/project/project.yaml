@@ -1,4 +1,4 @@
-dateModified: 1645798386
+dateModified: 1646155721
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -876,15 +876,13 @@ plugins:
       maintenanceModeAuthorizedIps:
         - '::1'
         - 127.0.0.1
-      maintenanceModeEnabled: '1'
+      maintenanceModeEnabled: ''
       maintenanceModePageUrl: /offline
       maintenanceModeResponseStatusCode: 410
       primaryDomain: null
       redirectStatusCode: 302
       sslRoutingBaseUrl: 'https://www.oaklandca.gov'
-      sslRoutingEnabled: ''
-      sslRoutingRestrictedUrls:
-        - /
+      sslRoutingEnabled: '1'
   phone-number:
     enabled: '1'
     licenseKey: null
