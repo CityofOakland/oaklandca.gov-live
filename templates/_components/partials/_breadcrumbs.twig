@@ -12,7 +12,7 @@
   {% elseif entry.section is defined %}
     {% set breadcrumbs = breadcrumbs|merge([{
       title: entry.section.name,
-      link: siteUrl ~ entry.section.handle
+      link: siteUrl ~ (entry.section.handle == 'boardsCommissions' ? 'boards-commissions' : entry.section.handle)
     }]) %}
   {% endif %}
 {% endif %}
