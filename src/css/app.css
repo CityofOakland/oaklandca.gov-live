@@ -838,6 +838,18 @@ form[data-handle="whyWasThisPageHelpful"] {
   background: #d9e2ec;
 }
 
+.card.default:hover,
+.card.default:focus {
+  background: #207127;
+}
+
+.card.default:hover h4,
+.card.default:focus h4,
+.card.default:hover p,
+.card.default:focus p {
+  color: white;
+}
+
 .cards a {
   background: white;
   border-radius: 4px;
@@ -1295,14 +1307,18 @@ form[data-handle="whyWasThisPageHelpful"] {
 #components-sidebar > h2,
 #components-sidebar > h3,
 #components-sidebar > h4 {
-  padding-top: 1em;
+  padding-top: 16px;
 }
 
 #components-sidebar label {
   display: block;
   font-size: 16px;
   font-weight: 700;
-  padding-top: 1.5em;
+  padding-top: 24px;
+}
+
+#components-sidebar input {
+  margin-top: 8px;
 }
 
 #components-sidebar #search {
@@ -1325,6 +1341,61 @@ form[data-handle="whyWasThisPageHelpful"] {
 
 #components-sidebar #search > input {
   padding-left: 3rem;
+}
+
+#components-sidebar > hr:not(:first-child) {
+  margin-top: 2em;
+}
+
+#components-sidebar > h1,
+#components-sidebar > h2,
+#components-sidebar > h3,
+#components-sidebar > h4 {
+  padding-top: 1em;
+}
+
+.ul-icons {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.ul-icons > li {
+  margin-bottom: 15px;
+}
+
+.ul-icons > li,
+.ul-icons > li > a {
+  display: flex;
+  align-items: start;
+}
+
+.ul-icons > li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  margin-right: 10px;
+  width: 22.5px;
+}
+
+.related > li svg path {
+  fill: #2e8131;
+}
+
+.ul-icons a {
+  text-decoration: none;
+}
+
+.ul-icons a:hover,
+.ul-icons a:focus {
+  text-decoration: underline;
+}
+
+.ul-icons.related a {
+  text-decoration: underline;
+}
+
+.ul-icons.related a:hover,
+.ul-icons.related a:focus {
+  text-decoration: none;
 }
 
 .content > h1 {
