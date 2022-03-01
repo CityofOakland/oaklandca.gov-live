@@ -1,0 +1,104 @@
+field: 6ac11602-f5a4-4e2e-bc97-fdfea3e3d005 # Open Hours
+fieldLayouts:
+  7f11f9d7-2312-46de-b9f6-4361fac0a116:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: d349329b-ec60-41dd-8bfa-097958ff477c # Hours Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2894ae3a-7b9b-4435-8435-8df18709cf7b # Hours
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  2894ae3a-7b9b-4435-8435-8df18709cf7b: # Hours
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: hours
+    instructions: ''
+    name: Hours
+    searchable: false
+    settings:
+      slots:
+        __assoc__:
+          -
+            - open
+            -
+              __assoc__:
+                -
+                  - name
+                  - 'Opening Time'
+                -
+                  - handle
+                  - open
+          -
+            - close
+            -
+              __assoc__:
+                -
+                  - name
+                  - 'Closing Time'
+                -
+                  - handle
+                  - close
+          -
+            - slot0
+            -
+              __assoc__:
+                -
+                  - name
+                  - 'Second Opening Time'
+                -
+                  - handle
+                  - secondOpen
+          -
+            - slot1
+            -
+              __assoc__:
+                -
+                  - name
+                  - 'Second Closing Time'
+                -
+                  - handle
+                  - secondClosing
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\storehours\Field
+  d349329b-ec60-41dd-8bfa-097958ff477c: # Hours Title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: hoursTitle
+    instructions: 'If you have different groups or offices that have different office hours, enter the title here.'
+    name: 'Hours Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: hours
+name: Hours
+sortOrder: 1

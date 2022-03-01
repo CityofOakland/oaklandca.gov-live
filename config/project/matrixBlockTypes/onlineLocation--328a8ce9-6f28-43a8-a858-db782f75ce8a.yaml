@@ -1,0 +1,104 @@
+field: 90d724d7-7c32-4d04-8b9a-3900d6ecdb84 # Address(es)
+fieldLayouts:
+  7c2d9899-6e1c-4c56-a1da-093fd2fdb084:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 314d167b-d1f4-47dd-92e5-4d0f75339e09 # Location Name
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 06394615-97e5-4f64-8d80-da62f9f1582c # Location Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b199c827-5414-4bf9-bcf7-cf6f4e144bda # Web Address
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  314d167b-d1f4-47dd-92e5-4d0f75339e09: # Location Name
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: locationName
+    instructions: ''
+    name: 'Location Name'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  06394615-97e5-4f64-8d80-da62f9f1582c: # Location Description
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: locationDescription
+    instructions: ''
+    name: 'Location Description'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  b199c827-5414-4bf9-bcf7-cf6f4e144bda: # Web Address
+    columnSuffix: null
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: webAddress
+    instructions: ''
+    name: 'Web Address'
+    searchable: false
+    settings:
+      maxLength: '255'
+      placeholder: ''
+      types:
+        - url
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: onlineLocation
+name: 'Online Location'
+sortOrder: 2

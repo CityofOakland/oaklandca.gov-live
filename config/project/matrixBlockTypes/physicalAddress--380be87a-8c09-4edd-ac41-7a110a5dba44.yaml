@@ -1,0 +1,216 @@
+field: 4047207e-c317-47cc-825b-7e751cc4ad38 # Call to Action
+fieldLayouts:
+  0d76805e-d070-44cd-bd4c-7de3b8e1bf33:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 2297d996-75c6-4163-9ce7-1ca5c609e89a # Address Title
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b4b3c606-9215-46dd-926d-ecc0cdd900e7 # Street Address
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 55afc13e-16e3-4080-9c67-ae7a4c46e3e2 # Additional Address Info
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  55afc13e-16e3-4080-9c67-ae7a4c46e3e2: # Additional Address Info
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: additionalAddressInfo
+    instructions: 'Use this field to provide extra information about the address, like “First floor, Suite 7” that wouldn’t otherwise be included in a street address.'
+    name: 'Additional Address Info'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  2297d996-75c6-4163-9ce7-1ca5c609e89a: # Address Title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: addressTitle
+    instructions: 'e.g., "Mailing Address" or "Visit In Person".'
+    name: 'Address Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  b4b3c606-9215-46dd-926d-ecc0cdd900e7: # Street Address
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
+    handle: streetAddress
+    instructions: 'Use this field to enter your street address.'
+    name: 'Street Address'
+    searchable: false
+    settings:
+      coordinatesDefault:
+        __assoc__:
+          -
+            - lat
+            - '37.817666634873'
+          -
+            - lng
+            - '-122.2717872504'
+          -
+            - zoom
+            - '4'
+      coordinatesMode: readOnly
+      dragPinDefault: null
+      dragPinLatitude: null
+      dragPinLongitude: null
+      dragPinZoom: null
+      layout: null
+      mapOnSearch: open
+      mapOnStart: close
+      showMap: false
+      subfieldConfig:
+        __assoc__:
+          -
+            - city
+            -
+              __assoc__:
+                -
+                  - label
+                  - City
+                -
+                  - width
+                  - '50'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '1'
+          -
+            - country
+            -
+              __assoc__:
+                -
+                  - label
+                  - Country
+                -
+                  - width
+                  - '100'
+                -
+                  - position
+                  - '2'
+          -
+            - state
+            -
+              __assoc__:
+                -
+                  - label
+                  - State
+                -
+                  - width
+                  - '15'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '5'
+          -
+            - street1
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'Street Address'
+                -
+                  - width
+                  - '100'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '6'
+          -
+            - street2
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'Apartment or Suite'
+                -
+                  - width
+                  - '100'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '7'
+          -
+            - zip
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'Zip Code'
+                -
+                  - width
+                  - '35'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '8'
+      visibilityToggle: both
+    translationKeyFormat: null
+    translationMethod: none
+    type: doublesecretagency\googlemaps\fields\AddressField
+handle: physicalAddress
+name: 'Physical Address'
+sortOrder: 3

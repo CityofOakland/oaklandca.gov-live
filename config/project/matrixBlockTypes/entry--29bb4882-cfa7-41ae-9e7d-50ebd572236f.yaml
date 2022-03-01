@@ -1,0 +1,176 @@
+field: 32f0cef1-a5d9-41dd-b562-b609374d9607 # Buttons
+fieldLayouts:
+  0a868cbf-d172-4e5e-b939-ea6beabfebb0:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 0b609d8d-ec6c-476d-9953-eef0377c30f7 # Entry
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1c1e50b0-b20e-4596-90d8-be5bc63bee3b # Button Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 281e840f-0b8f-4781-bdf6-071f668eb6ac # Button Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 25
+          -
+            fieldUid: 31d96da6-aa49-43b3-9243-60f81641c88f # Button Width
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+        name: Content
+        sortOrder: 1
+fields:
+  0b609d8d-ec6c-476d-9953-eef0377c30f7: # Entry
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: entry
+    instructions: ''
+    name: Entry
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  1c1e50b0-b20e-4596-90d8-be5bc63bee3b: # Button Icon
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: buttonIcon
+    instructions: 'Prepend an icon in the label of this button.'
+    name: 'Button Icon'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: ''
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  31d96da6-aa49-43b3-9243-60f81641c88f: # Button Width
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: buttonWidth
+    instructions: 'Change the width of the button.'
+    name: 'Button Width'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 1/3
+            -
+              - value
+              - 1/3
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 1/2
+            -
+              - value
+              - 1/2
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  281e840f-0b8f-4781-bdf6-071f668eb6ac: # Button Color
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: buttonColor
+    instructions: 'Change the color of the button.'
+    name: 'Button Color'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Default
+            -
+              - value
+              - default
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Green
+            -
+              - value
+              - green
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: entry
+name: Entry
+sortOrder: 1

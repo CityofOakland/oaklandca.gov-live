@@ -1,0 +1,79 @@
+field: e2b6c2d9-b6fa-4713-b819-e4a9a1b35c2b # How to Participate
+fieldLayouts:
+  84f34edf-4ecd-4496-b494-9eed1214caec:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 1654d938-91c4-4160-a263-90ee5eaf9301 # Header
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 93bbc17f-8012-406e-8890-d5521739d778 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  93bbc17f-8012-406e-8890-d5521739d778: # Description
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: description
+    instructions: 'Describe how someone can participate.'
+    name: Description
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: 'Basic with Links.json'
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  1654d938-91c4-4160-a263-90ee5eaf9301: # Header
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: header
+    instructions: 'This will default to "How to Participate in this Public Meeting" unless overwritten here.'
+    name: Header
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: addAHowToParticipateBlock
+name: 'Add a How to Participate Block'
+sortOrder: 1

@@ -1,0 +1,152 @@
+field: ca717470-3ae1-44a0-9ee8-886b6fe780cf # Contact Info
+fieldLayouts:
+  52809ed3-d582-48d8-880f-72d4443fa22c:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 66aecd33-c8da-48d8-a6d9-163ed9010751 # Address
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  66aecd33-c8da-48d8-a6d9-163ed9010751: # Address
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: address
+    instructions: ''
+    name: Address
+    searchable: false
+    settings:
+      coordinatesDefault:
+        __assoc__:
+          -
+            - lat
+            - '32.3113966'
+          -
+            - lng
+            - '-64.7527469'
+          -
+            - zoom
+            - '6'
+      coordinatesMode: readOnly
+      dragPinDefault: null
+      dragPinLatitude: null
+      dragPinLongitude: null
+      dragPinZoom: null
+      layout: null
+      mapOnSearch: open
+      mapOnStart: default
+      showMap: false
+      subfieldConfig:
+        __assoc__:
+          -
+            - street1
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'Street Address'
+                -
+                  - width
+                  - '100'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '1'
+          -
+            - street2
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'Apartment or Suite'
+                -
+                  - width
+                  - '100'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '2'
+          -
+            - city
+            -
+              __assoc__:
+                -
+                  - label
+                  - City
+                -
+                  - width
+                  - '50'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '3'
+          -
+            - state
+            -
+              __assoc__:
+                -
+                  - label
+                  - State
+                -
+                  - width
+                  - '15'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '4'
+          -
+            - zip
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'Zip Code'
+                -
+                  - width
+                  - '35'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '5'
+          -
+            - country
+            -
+              __assoc__:
+                -
+                  - label
+                  - Country
+                -
+                  - width
+                  - '100'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '6'
+      visibilityToggle: both
+    translationKeyFormat: null
+    translationMethod: none
+    type: doublesecretagency\googlemaps\fields\AddressField
+handle: location
+name: Location
+sortOrder: 3
