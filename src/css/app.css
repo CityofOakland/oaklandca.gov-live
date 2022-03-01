@@ -808,8 +808,24 @@ form[data-handle="whyWasThisPageHelpful"] {
 }
 
 .card:hover > h4 > span:first-child,
-.card:focus > h4 > span:first-child{
+.card:focus > h4 > span:first-child {
   text-decoration: underline;
+}
+
+.card h4 {
+  color: #207127;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  padding-bottom: 0.5rem;
+}
+
+.card p {
+  color: #222222;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .card.dark {
@@ -1531,6 +1547,7 @@ form[data-handle="whyWasThisPageHelpful"] {
   font-size: 16px;
   line-height: 1.45;
   margin-left: -10px;
+  padding: 0 !important;
 }
 
 .pagination > li {

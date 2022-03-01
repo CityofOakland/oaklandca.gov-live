@@ -1,4 +1,4 @@
-dateModified: 1645799995
+dateModified: 1646150976
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -225,6 +225,7 @@ meta:
     89cda626-6500-4ace-b9f4-0f8a54a9ad02: 'Services Index' # Services Index
     89e7af89-0b4d-4305-9ffe-5098b3f73779: 'Related Meeting' # Related Meeting
     90d724d7-7c32-4d04-8b9a-3900d6ecdb84: Address(es) # Address(es)
+    91c23dce-ef50-451f-9d55-9f1facb6fa6f: Meetings # Meetings
     91cc77d8-149b-4b48-9c59-736e2f7ff651: Link # Link
     91d1c2cd-f6b8-4c71-a224-ba9ef8c284f4: Text # Text
     93b22059-684d-4ee6-acee-03132189083f: 'Button Link' # Button Link
@@ -538,7 +539,7 @@ meta:
     dc495a3c-d76f-46c9-afe5-d8b012612993: '4 Columns' # 4 Columns
     dce07b77-44ba-4b27-9a62-9330a8e5a1de: SoundCloud # SoundCloud
     ddb61f35-83f1-46d4-904b-da525acf9e7c: 'Group Head Name' # Group Head Name
-    ddd25f23-4975-475c-9bef-e8a0e0e43fc0: Entries # Entries
+    ddd25f23-4975-475c-9bef-e8a0e0e43fc0: 'Entries (Deprecated)' # Entries (Deprecated)
     de65ce28-2919-4a65-9aa2-c18e5518f2fe: Program/Subdivision # Program/Subdivision
     de588e4c-ab76-4b95-8150-afebc746259b: Documents # Documents
     de14155f-e982-42aa-9b79-71ceeaf08a77: 'Hide Summary?' # Hide Summary?

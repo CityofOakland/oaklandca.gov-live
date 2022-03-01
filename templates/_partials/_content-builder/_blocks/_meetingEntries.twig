@@ -1,1 +1,27 @@
-{% include templateBase ~ "calendarEntries.twig" with { calendarHandle: "meetings" } %}
+{% set meetings  = craft.entries.section('meetings').order('date desc').limit(3).relatedTo(entry) %}
+
+<div class="{% if not loop.last %}mb-12{% endif %}">
+  {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" %}
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {% for entry in meetings %}
+    <a class="card shadow" href="{{ entry.url }}">
+      <h4><span>{{ entry.title }}</span></h4>
+      {% if entry.type == 'meetingsImported' %}
+        <p>{{ entry.date.format("l, F d, Y") }}</p>
+        <p>{{ entry.startDate.format("g:ia") }} to {{ entry.endDate.format("g:ia") }}</p>
+      {% else %}
+        <p>{{ entry.date.format("l, F d, Y") }}</p>
+        <p></p>
+      {% endif %}
+    </a>
+    {% endfor %}
+  </div>
+  <div class="pt-3">
+    {% if entry.section.handle == 'boardsCommissions' %}
+      <a class="button small secondary mt-6" href="{{ entry.url ~ '/meetings' }}">View All Meetings, Minutes & Agendas »</a>
+    {% else %}
+      <a class="button small secondary mt-6" href="{{ siteUrl ~ 'meetings' }}">View All Meetings, Minutes & Agendas »</a>
+    {% endif %}
+  </div>
+</div>
+
