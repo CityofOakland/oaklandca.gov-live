@@ -84,12 +84,12 @@
             {% endswitch %}
           </h3>
           {% if meeting.date %}<p><b>{{ meeting.date|date("l, F j, Y") }}</b></p>{% endif %}
-            <div class="flex items-center justify-between">
+            <div class="md:flex items-center justify-between">
               {% if meeting.startTime %}<p class="flex items-center">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startTime|date("g:ia") }}{{ meeting.endTime ? " to " ~ meeting.endTime|date("g:ia") : '' }}</span></p>{% endif %}
-              <ul class="flex items-center related" style="list-style:none;padding:0;">
-                {% if meeting.agendaDownloadableCopy|length %}<li class="ml-4"><a class="flex items-center" href="{{ meeting.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/assets/img/icon-pdf-updated.svg') }}<span class="ml-2">Agenda</span></a></li>{% endif %}
-                {% if meeting.documentFile|length %}<li class="ml-4"><a class="flex items-center" href="{{ meeting.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-pdf-updated.svg') }}<span class="ml-2">Minutes</span></a></li>{% endif %}
-                {% if meeting.embeds|length %}<li class="ml-4"><a class="flex items-center" href="{{ meeting.url }}#recordings">{{ svg( '@webroot/assets/img/icon-recording.svg') }}<span class="ml-2">Recording</span></a></li>{% endif %}
+              <ul class="md:flex items-center related" style="list-style:none;padding:0;">
+                {% if meeting.agendaDownloadableCopy|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/assets/img/icon-pdf-updated.svg') }}<span class="ml-2">Agenda</span></a></li>{% endif %}
+                {% if meeting.documentFile|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-pdf-updated.svg') }}<span class="ml-2">Minutes</span></a></li>{% endif %}
+                {% if meeting.embeds|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.url }}#recordings">{{ svg( '@webroot/assets/img/icon-recording.svg') }}<span class="ml-2">Recording</span></a></li>{% endif %}
               </ul>
             </div>
             <p class="updated">Updated: {{ meeting.dateUpdated|date("F j, Y") }}</p>

@@ -1,5 +1,9 @@
 {# Use these variables to set the table status attributes  #}
 {% set tableColorPalette = {
+  'default': {
+    'statusTextColor': 'cool-gray-1000',
+    'statusBgColor': 'white',
+  },
   'active': {
     'statusTextColor': 'cool-gray-1000',
     'statusBgColor': 'white',
@@ -33,9 +37,9 @@
   }
 {% endcss %}
 
-{% set events = craft.entries.section('meetings').order('date desc').relatedTo(entry) %}
+{% set meetings = craft.entries.section('meetings').order('date desc').relatedTo(entry) %}
 
-{% if events | length %}
+{% if meetings | length %}
   <table class="w-full text-xs border border-cool-gray-500" id="meetings">
     <thead>
       <tr>
@@ -50,50 +54,71 @@
       </tr>
     </thead>
     <tbody>
-      {% for event in events.all() %}
-        {% set documents = event.documents %}
+      {% for meeting in meetings.all() %}
+        {% set documents = meeting.documents %}
         {% set minutes = craft.categories.group('documentTypes').id(12).one %}
         {% set agendas = craft.categories.group('documentTypes').id(13).one %}
         <tr>
           <td class="px-3 text-white border bg-cool-gray-500 border-cool-gray-500 sm:bg-white sm:text-cool-gray-1000">
-            <a class="text-white sm:text-green-800" href="{{ event.url }}">{{ event.title }}</a>
+            <a class="text-white sm:text-green-800" href="{{ meeting.url }}">{{ meeting.title }}</a>
           </td>
           <td class="px-3 border border-cool-gray-500">
-            {{ event.startDate.format('m/d/y') }}
+            {{ meeting.startDate|date('m/d/y') }}
           </td>
           <td class="px-3 border border-cool-gray-500">
-            {% if documents.relatedTo(minutes) | length %}
+            {% if documents is not null and documents.relatedTo(minutes) | length %}
               {% for document in documents.all() %}
                 {% set file = document.documentFile.one %}
                 <a href="{{ file.url }}">{{ file.title }}</a><br>
+              {% endfor %}
+            {% elseif meeting.documentFile|length %}
+              <a href="{{ meeting.documentFile.one().url }}">{{ meeting.documentFile.one().title }}</a><br>
+            {% else %}
+              N/A
+            {% endif %}
+          </td>
+          <td class="px-3 border border-cool-gray-500">
+            {% if meeting.videoLink | length %}
+              <a href="{{ meeting.videoLink }}" target="_blank">Link</a>
+            {% elseif meeting.embeds is defined and meeting.embeds|length %}
+              {% for item in meeting.embeds %}
+                {% switch item.type %}
+                  {% case 'granicus' %}
+                    {% if item.granicusUrl %}
+                      <a href="{{ item.granicusUrl }}" target="_blank">Link</a>
+                    {% endif %}
+                  {% case 'youtube' %}
+                    {% if item.youtubeUrl %}
+                      <a href="{{ item.youtubeUrl }}" target="_blank">Link</a>
+                    {% endif %}
+                  {% case 'vimeo' %}
+                    {% if item.vimeoUrl %}
+                      <a href="{{ item.vimeoUrl }}" target="_blank">Link</a>
+                    {% endif %}
+                {% endswitch %}
               {% endfor %}
             {% else %}
               N/A
             {% endif %}
           </td>
           <td class="px-3 border border-cool-gray-500">
-            {% if event.videoLink | length %}
-              <a href="{{ event.videoLink }}" target="_blank">Link</a>
-            {% else %}
-              N/A
-            {% endif %}
-          </td>
-          <td class="px-3 border border-cool-gray-500">
-            {% if documents.relatedTo(agendas) | length %}
+            {% if documents is not null and documents.relatedTo(agendas) | length %}
               {% for document in documents.all() %}
                 {% set file = document.documentFile.one %}
                 <a href="{{ file.url }}">{{ file.title }}</a><br>
               {% endfor %}
+            {% elseif meeting.agendaDownloadableCopy|length %}
+              <a href="{{ meeting.agendaDownloadableCopy.one().url }}">{{ meeting.agendaDownloadableCopy.one().title }}</a><br>
             {% else %}
               N/A
             {% endif %}
           </td>
           {% if not (hideUpdate ?? "") %}
-            {% set eventStatus = event.eventStatus.value ?? 'active' %}
-            {% set eventLabel = event.eventStatus.label ?? 'Active' %}
+            {% set eventStatus = meeting.meetingStatus ? meeting.meetingStatus.value : (meeting.eventStatus.value ?? 'active') %}
+            {% set eventLabel = meeting.meetingStatus ? meeting.meetingStatus.label : (meeting.eventStatus.label ?? 'Active') %}
             {% set tableColor = tableColorPalette[eventStatus] %}
             <td class="border border-cool-gray-500 px-3 bg-{{ tableColor.statusBgColor }} text-{{ tableColor.statusTextColor }}">
-              {{ eventLabel == 'Active' ? '' : eventLabel }}
+              {{ eventLabel == 'Active' or eventLabel == 'Regular Meeting'  ? '' : eventLabel }}
             </td>
           {% endif %}
         {% endfor %}
