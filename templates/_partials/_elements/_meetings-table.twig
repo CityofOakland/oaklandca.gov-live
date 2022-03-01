@@ -94,7 +94,6 @@
             {% set tableColor = tableColorPalette[eventStatus] %}
             <td class="border border-cool-gray-500 px-3 bg-{{ tableColor.statusBgColor }} text-{{ tableColor.statusTextColor }}">
               {{ eventLabel == 'Active' ? '' : eventLabel }}
-              {{ event.eventStatus }}
             </td>
           {% endif %}
         {% endfor %}
