@@ -39,7 +39,7 @@
             {% case 'documentPackets' %}
               <li><a href="{{ entry.url }}">{{ svg( '@webroot/assets/img/icon-folder.svg') }} {{ entry.title }}</a></li>
             {% default %}
-              <li><a href="{{ entry.url }}">{{ svg( '@webroot/assets/img/icon-external.svg') }} {{ entry.title }}</a></li>
+              <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
           {% endswitch %}
         {% endfor %}
       </ul>
@@ -58,7 +58,8 @@
         <br>{{ entry.startTime|date("g:ia") }}{{ entry.endTime ? " to " ~ entry.endTime|date("g:ia") : "" }}
       {% endif %}
     </p>
-    {% if now|date('Y-m-d') <= entry.date|date('Y-m-d') %}
+    {% set status = entry.meetingStatus ? entry.meetingStatus : entry.eventStatus %}
+    {% if now|date('Y-m-d') <= entry.date|date('Y-m-d') and (status.value !== 'canceled' and status.value !== 'rescheduled') %}
       {% if entry.eventLocation and entry.eventLocation.type("physicalLocation")|length %}
         {% set block = entry.eventLocation.type("physicalLocation").one() %}
         {% if not block.contactAddress.isEmpty() %}
@@ -106,10 +107,23 @@
     {{ entry.eventContact|raw }}
   {% endif %}
 
-  {# <hr/> #}
-  {# <h4>{{ 'Subscribe to get updates'|t }}</h4> #}
-  {# <p>We'll let you know when the minutes are posted.</p> #}
-  {# <a href="{{ siteUrl }}" class="button secondary">Subscribe</a> #}
+  {% if entry.relatedPages|length  %}
+    <hr/>
+    <h4>{{ 'Related Pages'|t }}</h4>
+    <ul class="ul-icons related">
+      {% for entry in entry.relatedPages.all() %}
+        {% switch entry.type.section.handle %}
+          {% case 'documents' %}
+            <li><a href="{{ entry.url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.title }}</a></li>
+          {% case 'documentPackets' %}
+            <li><a href="{{ entry.url }}">{{ svg( '@webroot/assets/img/icon-folder.svg') }} {{ entry.title }}</a></li>
+          {% default %}
+            <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+        {% endswitch %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+
   <hr class="light">
   <p class="small">Posted: {{ entry.postDate|date("F j, Y g:ia") }}</p>
   <p class="small">Last Updated: {{ entry.dateUpdated|date("F j, Y g:ia") }}</p>

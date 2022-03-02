@@ -34,17 +34,20 @@
     {{ _self.callout('This is a special meeting of the ' ~ entry.relatedBoardOrCommission.one().title) }}
   {% endif %}
 
-  {% if entry.addresses and entry.addresses.type('onlineLocation')|length and not entry.addresses.type('location')|length  %}
-    {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
-      {{ _self.callout('This meeting was held virtually and not in person.') }}
-    {% else %}
-      {{ _self.callout('This meeting will be held virtually and not in person.') }}
-    {% endif %}
-  {% elseif entry.eventLocation and entry.eventLocation.type('onlineLocation')|length and not entry.eventLocation.type('physicalLocation')|length  %}
-    {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
-      {{ _self.callout('This meeting was held virtually and not in person.') }}
-    {% else %}
-      {{ _self.callout('This meeting will be held virtually and not in person.') }}
+  {% set status = entry.meetingStatus ? entry.meetingStatus : entry.eventStatus %}
+  {% if status.value !== 'canceled' and status.value !== 'rescheduled' %}
+    {% if entry.addresses and entry.addresses.type('onlineLocation')|length and not entry.addresses.type('location')|length  %}
+      {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
+        {{ _self.callout('This meeting was held virtually and not in person.') }}
+      {% else %}
+        {{ _self.callout('This meeting will be held virtually and not in person.') }}
+      {% endif %}
+    {% elseif entry.eventLocation and entry.eventLocation.type('onlineLocation')|length and not entry.eventLocation.type('physicalLocation')|length  %}
+      {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
+        {{ _self.callout('This meeting was held virtually and not in person.') }}
+      {% else %}
+        {{ _self.callout('This meeting will be held virtually and not in person.') }}
+      {% endif %}
     {% endif %}
   {% endif %}
 

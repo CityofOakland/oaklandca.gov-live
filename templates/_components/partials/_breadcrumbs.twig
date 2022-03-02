@@ -10,10 +10,21 @@
   {% if entry.section is defined and entry.section.type == 'single' %}
     {% set breadcrumbs = null %}
   {% elseif entry.section is defined %}
-    {% set breadcrumbs = breadcrumbs|merge([{
-      title: entry.section.name,
-      link: siteUrl ~ (entry.section.handle == 'boardsCommissions' ? 'boards-commissions' : entry.section.handle)
-    }]) %}
+    {% if entry.section.handle == 'meetings' %}
+      {% set breadcrumbs = breadcrumbs|merge([{
+        title: entry.relatedBoardOrCommission.one().title,
+        link: entry.relatedBoardOrCommission.one().url
+      }]) %}
+      {% set breadcrumbs = breadcrumbs|merge([{
+        title: 'Meetings',
+        link: entry.relatedBoardOrCommission.one().url ~ '/meetings'
+      }]) %}
+    {% else %}
+      {% set breadcrumbs = breadcrumbs|merge([{
+        title: entry.section.name,
+        link: siteUrl ~ (entry.section.handle == 'boardsCommissions' ? 'boards-commissions' : entry.section.handle)
+      }]) %}
+    {% endif %}
   {% endif %}
 {% endif %}
 
