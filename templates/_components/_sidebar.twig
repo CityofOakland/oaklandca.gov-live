@@ -109,7 +109,7 @@
 
   <hr class="light">
   <p class="small">Posted: {{ entry.postDate|date("F j, Y g:ia") }}</p>
-  {% if entry.type == 'meetings' %}<p class="small">Last Updated: {{ entry.dateUpdated|date("F j, Y g:ia") }}</p>{% endif %}
+  {% if entry.type == 'meeting' %}<p class="small">Last Updated: {{ entry.dateUpdated|date("F j, Y g:ia") }}</p>{% endif %}
 
 {% else %}
   {% if sidebarContent|trim|length %}
