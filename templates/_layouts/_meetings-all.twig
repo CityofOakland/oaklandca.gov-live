@@ -114,7 +114,7 @@
                 {% if query_index == -1 and desc_query_index !== -1 %}<b>Agenda Description: </b>{{ description|slice(0, desc_query_index) }}<u>{{ description|slice(desc_query_index, query|length) }}</u>{{ description|slice(desc_query_index + query|length, description|length) }}{% endif %}
               </p>
             {% endif %}
-            {% if query and meeting.documents.search(query)|length and result == false %}
+            {% if query and meeting.documents and meeting.documents.search(query)|length and result == false %}
               <p class="small">
                 {% set filename     = meeting.documents.search(query).one().title|trim %}
                 {% set query_index  = filename|lower|indexOf(query|lower) %}
