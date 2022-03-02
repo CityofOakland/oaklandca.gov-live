@@ -1,5 +1,5 @@
 {% set query          = craft.app.request.getQueryParam('q') %}
-{% set meetings       = craft.entries().section('meetings').search(query).limit(10).order('date asc') %}
+{% set meetings       = craft.entries().section('meetings').search(query).limit(10).order('date desc') %}
 {% set filter_enabled = false %}
 
 {% if craft.app.request.getQueryParam('public_body') %}
@@ -48,6 +48,7 @@
 {% import '_macros/_macros' as macros %}
 
 {% block content %}
+  <h1>Body: {{ craft.app.request.getQueryParam('public_body') }}</h1>
   {% if filter_enabled %}
     {% if meetings|length %}
       <h3>Displaying {{ meetings|length }} of {{ pageInfo.total }} Meetings</h3>

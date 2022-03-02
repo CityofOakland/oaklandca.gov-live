@@ -137,7 +137,7 @@
     {{ label }}
     <select name="{{ name }}">
       {% if defaultOption %}
-        <option>{{ defaultOption }}</option>
+        <option value="">{{ defaultOption }}</option>
       {% endif %}
       {% for option in options %}
         {% for value, key in option %}

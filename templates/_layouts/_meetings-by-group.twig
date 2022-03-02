@@ -16,7 +16,7 @@
 {% endmacro %}
 
 {% set query          = craft.app.request.getQueryParam('q') %}
-{% set meetings       = craft.entries().section('meetings').relatedTo(entry).search(query).limit(10).order('date asc') %}
+{% set meetings       = craft.entries().section('meetings').relatedTo(entry).search(query).limit(10).order('date desc') %}
 {% set filter_enabled = false %}
 
 {% set date_query = ['and'] %}
