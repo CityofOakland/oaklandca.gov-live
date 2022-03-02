@@ -85,7 +85,7 @@
             </div>
             <p class="updated">Updated: {{ meeting.dateUpdated|date("F j, Y") }}</p>
             {% set result = false %}
-            {% if query and meeting.agendaDownloadableCopy|length and query in meeting.agendaDownloadableCopy.one().filename|lower %}
+            {% if query and meeting.agendaDownloadableCopy|length and query|lower in meeting.agendaDownloadableCopy.one().filename|lower %}
               {% set result = true %}
               <p class="small">
                 {% set filename     = meeting.agendaDownloadableCopy.one().filename|trim %}
@@ -93,7 +93,7 @@
                 <b>Agenda: </b>{{ filename|slice(0, query_index) }}<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
               </p>
             {% endif %}
-            {% if query and meeting.documentFile|length and query in meeting.documentFile.one().title|lower and result == false %}
+            {% if query and meeting.documentFile|length and query|lower in meeting.documentFile.one().title|lower and result == false %}
               <p class="small">
                 {% set filename     = meeting.documentFile.one().filename|trim %}
                 {% set query_index  = filename|lower|indexOf(query) %}
@@ -121,9 +121,8 @@
 
   <div class="lg:hidden">
     <hr class="hr dark"/>
-    <h4>{{ 'Read More About Public Bodies'|t }}</h4>
+    <h4>{{ 'Learn More About Public Bodies'|t }}</h4>
     <div class="pt-2">
-      <p><a href="{{siteUrl}}boards-commissions">Board and Commissions</a></p>
       <p><a href="{{siteUrl}}departments">Departments</a></p>
       <p><a href="{{siteUrl}}departments/oakland-city-council">City Council</a></p>
     </div>
@@ -134,7 +133,7 @@
   <hr class="hidden lg:block"/>
   <div class="mt-2 md:mt-0"></div>
   <h4>{{ 'Search and Filter'|t }}</h4>
-  <form>
+  <form action="{{ entry.url }}">
     {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
     {{ macros.select('Public Body', 'public_body', 'public_body', craft.entries().section('boardsCommissions').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a Council, Board or Commission') }}
     {{ macros.select('Date Range', 'type', 'type', [
@@ -147,15 +146,14 @@
     <div class="flex items-center">
       <button class="button medium">Apply</button>
       {% if query or filter_enabled %}
-        <a href="{{ siteUrl }}meetings">Clear filters</a>
+        <a href="{{ entry.url }}">Clear filters</a>
       {% endif %}
     </div>
   </form>
   <hr/>
   <div class="hidden lg:block">
-    <h4>{{ 'Read More About Public Bodies'|t }}</h4>
+    <h4>{{ 'Learn More About Public Bodies'|t }}</h4>
     <div class="pt-2">
-      <p><a href="{{siteUrl}}boards-commissions">Board and Commissions</a></p>
       <p><a href="{{siteUrl}}departments">Departments</a></p>
       <p><a href="{{siteUrl}}departments/oakland-city-council">City Council</a></p>
     </div>
