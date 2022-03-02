@@ -48,10 +48,10 @@
         max="{{ craft.app.request.getQueryParam('end_date') ? craft.app.request.getQueryParam('end_date') : now|date_modify('+1 year')|date('Y-m') }}" 
         value="{{ craft.app.request.getQueryParam('start_date') ?? craft.app.request.getQueryParam('start_date') }}"/>
     </div>
-    <div class="w-full xl:w-2/5 px-3 pt-2">
+    <div class="w-full xl:w-2/5 px-3">
       <label class="flex items-center mt-3" for="end_date" style="padding: 0;margin-bottom:0;">To Date:</label>
     </div>
-    <div class="w-full xl:w-3/5 px-3 pt-2">
+    <div class="w-full xl:w-3/5 px-3">
       <input 
         id="end_date" 
         type="month" 

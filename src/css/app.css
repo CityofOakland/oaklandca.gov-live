@@ -1111,6 +1111,12 @@ form[data-handle="whyWasThisPageHelpful"] {
   opacity: 1;
 }
 
+.components .hr.dark {
+  border-top: 2px solid #212121;
+  margin: 2rem 0;
+  opacity: 1;
+}
+
 .components .hr.small {
   margin: 0;
 }
@@ -1318,8 +1324,19 @@ form[data-handle="whyWasThisPageHelpful"] {
   padding-top: 24px;
 }
 
-#components-sidebar input {
+@media(min-width: 768px) {
+  #components-sidebar label {
+    padding-top: 18px;
+  }
+}
+
+#components-sidebar input,
+#components-sidebar select {
   margin-top: 8px;
+}
+
+#components-sidebar .button {
+  margin-bottom: 0;
 }
 
 #components-sidebar #search {
@@ -1595,6 +1612,10 @@ form[data-handle="whyWasThisPageHelpful"] {
   .has-submenu .clamp {
       display: none;
   }
+}
+
+#helpful p {
+  font-size: 14px;
 }
 
 .lead,

@@ -54,6 +54,7 @@
 
 {% paginate meetings as pageInfo, meetings %}
 
+{% set layout = 'reverse' %}
 {% extends '_content.twig' %}
 {% import '_macros/_macros' as macros %}
 
@@ -123,7 +124,9 @@
       </div>
     {% endif %}
   </div>
-  {% include '_partials/_elements/_pagination' %}
+  <div class="my-8">
+    {% include '_partials/_elements/_pagination' %}
+  </div>
 {% endblock %}
 
 {% block sidebar %}

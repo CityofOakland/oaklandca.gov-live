@@ -43,6 +43,7 @@
 
 {% paginate meetings as pageInfo, meetings %}
 
+{% set layout = 'reverse' %}
 {% extends '_content.twig' %}
 {% import '_macros/_macros' as macros %}
 
@@ -113,11 +114,24 @@
     {% endif %}
   </div>
 
-  {% include '_partials/_elements/_pagination' %}
+  <div class="my-8">
+    {% include '_partials/_elements/_pagination' %}
+  </div>
+
+  <div class="lg:hidden">
+    <hr class="hr dark"/>
+    <h4>{{ 'Read More About Public Bodies'|t }}</h4>
+    <div class="pt-2">
+      <p><a href="{{siteUrl}}boards-commissions">Board and Commissions</a></p>
+      <p><a href="{{siteUrl}}departments">Departments</a></p>
+      <p><a href="{{siteUrl}}departments/oakland-city-council">City Council</a></p>
+    </div>
+  </div>
 {% endblock %}
 
 {% block sidebar %}
-  <hr/>
+  <hr class="hidden lg:block"/>
+  <div class="mt-2 md:mt-0"></div>
   <h4>{{ 'Search and Filter'|t }}</h4>
   <form>
     {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
@@ -137,11 +151,13 @@
     </div>
   </form>
   <hr/>
-  <h4>{{ 'Read More About Public Bodies'|t }}</h4>
-  <div class="pt-2">
-    <p><a href="{{siteUrl}}boards-commissions">Board and Commissions</a></p>
-    <p><a href="{{siteUrl}}departments">Departments</a></p>
-    <p><a href="{{siteUrl}}departments/oakland-city-council">City Council</a></p>
+  <div class="hidden lg:block">
+    <h4>{{ 'Read More About Public Bodies'|t }}</h4>
+    <div class="pt-2">
+      <p><a href="{{siteUrl}}boards-commissions">Board and Commissions</a></p>
+      <p><a href="{{siteUrl}}departments">Departments</a></p>
+      <p><a href="{{siteUrl}}departments/oakland-city-council">City Council</a></p>
+    </div>
+    <hr class="light"/>
   </div>
-  <hr class="light"/>
 {% endblock %}
