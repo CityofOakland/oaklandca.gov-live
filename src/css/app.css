@@ -850,6 +850,17 @@ form[data-handle="whyWasThisPageHelpful"] {
   color: white;
 }
 
+.card.default:hover path:not([stroke]),
+.card.default:focus path:not([stroke]) {
+  fill: white;
+}
+
+.card.default:hover path[stroke],
+.card.default:focus path[stroke] {
+  fill: transparent;
+  stroke: white;
+}
+
 .cards a {
   background: white;
   border-radius: 4px;
