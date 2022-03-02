@@ -59,7 +59,7 @@
       {% endif %}
     </p>
     {% if now|date('Y-m-d') <= entry.date|date('Y-m-d') %}
-      {% if entry.eventLocation is defined and entry.eventLocation.type("physicalLocation")|length %}
+      {% if entry.eventLocation and entry.eventLocation.type("physicalLocation")|length %}
         {% set block = entry.eventLocation.type("physicalLocation").one() %}
         {% if not block.contactAddress.isEmpty() %}
           <hr class="light">
@@ -71,7 +71,7 @@
           </ul>
         {% endif %}
       {% endif %}
-      {% if entry.eventLocation is defined and entry.eventLocation.type("onlineLocation")|length %}
+      {% if entry.eventLocation and entry.eventLocation.type("onlineLocation")|length %}
         {% set block = entry.eventLocation.type("onlineLocation").one() %}
         {% if block.href or block.phoneNumber %}
           <hr class="light">
