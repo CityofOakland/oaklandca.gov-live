@@ -83,7 +83,7 @@
                 {% if meeting.embeds|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.url }}#recordings">{{ svg( '@webroot/assets/img/icon-recording.svg') }}<span class="ml-2">Recording</span></a></li>{% endif %}
               </ul>
             </div>
-            <p class="updated">Updated: {{ meeting.dateUpdated|date("F j, Y") }}</p>
+            {% if meeting.type == 'meetings' %}<p class="updated">Updated: {{ meeting.dateUpdated|date("F j, Y") }}</p>{% endif %}
             {% set result = false %}
             {% if query and meeting.agendaDownloadableCopy|length and query|lower in meeting.agendaDownloadableCopy.one().filename|lower %}
               {% set result = true %}

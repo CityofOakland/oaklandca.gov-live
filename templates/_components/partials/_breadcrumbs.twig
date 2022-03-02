@@ -10,14 +10,26 @@
   {% if entry.section is defined and entry.section.type == 'single' %}
     {% set breadcrumbs = null %}
   {% elseif entry.section is defined %}
+    {% if entry.section.handle == 'boardsCommissions' and craft.request.lastSegment == 'meetings' %}
+      {% set breadcrumbs = breadcrumbs|merge([{
+        title: 'Meetings',
+        link: siteUrl ~ 'meetings'
+      }]) %}
+    {% endif %}
+
+
     {% if entry.section.handle == 'meetings' %}
+      {% set breadcrumbs = breadcrumbs|merge([{
+        title: 'Meetings',
+        link: siteUrl ~ 'meetings'
+      }]) %}
+      {% set breadcrumbs = breadcrumbs|merge([{
+        title: 'Boards & Commissions',
+        link: siteUrl ~ 'boards-commissions'
+      }]) %}
       {% set breadcrumbs = breadcrumbs|merge([{
         title: entry.relatedBoardOrCommission.one().title,
         link: entry.relatedBoardOrCommission.one().url
-      }]) %}
-      {% set breadcrumbs = breadcrumbs|merge([{
-        title: 'Meetings',
-        link: entry.relatedBoardOrCommission.one().url ~ '/meetings'
       }]) %}
     {% else %}
       {% set breadcrumbs = breadcrumbs|merge([{

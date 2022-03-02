@@ -4,6 +4,10 @@ fieldLayouts:
       -
         elements:
           -
+            style: warning
+            tip: 'This meeting is using the legacy meeting template. If you would like to update this meeting, we recommend that you change the entry type to the standard meeting template.'
+            type: craft\fieldlayoutelements\Tip
+          -
             fieldUid: 1942a740-bba9-4cde-97c7-fe0c718e5065 # Meeting ID
             instructions: 'Used for mapping imported rescheduled meetings.'
             label: ''
