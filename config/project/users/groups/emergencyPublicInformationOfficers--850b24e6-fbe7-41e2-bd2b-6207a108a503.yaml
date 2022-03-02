@@ -19,11 +19,11 @@ permissions:
   - 'deletepeerentrydrafts:fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c' # Boards & Commissions Index
   - 'editpeerentrydrafts:fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c' # Boards & Commissions Index
   - 'editentries:fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c' # Boards & Commissions Index
-  - 'publishentries:ba27f849-b247-4db0-ae91-53a01f44bd0b' # Calendar Index
-  - 'publishpeerentrydrafts:ba27f849-b247-4db0-ae91-53a01f44bd0b' # Calendar Index
-  - 'deletepeerentrydrafts:ba27f849-b247-4db0-ae91-53a01f44bd0b' # Calendar Index
-  - 'editpeerentrydrafts:ba27f849-b247-4db0-ae91-53a01f44bd0b' # Calendar Index
-  - 'editentries:ba27f849-b247-4db0-ae91-53a01f44bd0b' # Calendar Index
+  - 'publishentries:ba27f849-b247-4db0-ae91-53a01f44bd0b'
+  - 'publishpeerentrydrafts:ba27f849-b247-4db0-ae91-53a01f44bd0b'
+  - 'deletepeerentrydrafts:ba27f849-b247-4db0-ae91-53a01f44bd0b'
+  - 'editpeerentrydrafts:ba27f849-b247-4db0-ae91-53a01f44bd0b'
+  - 'editentries:ba27f849-b247-4db0-ae91-53a01f44bd0b'
   - 'createentries:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
   - 'publishentries:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
   - 'deleteentries:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets

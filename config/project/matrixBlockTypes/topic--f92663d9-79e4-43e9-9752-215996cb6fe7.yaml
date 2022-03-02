@@ -74,7 +74,7 @@ fields:
     handle: description
     instructions: ''
     name: Description
-    searchable: false
+    searchable: true
     settings:
       availableTransforms: '*'
       availableVolumes: '*'
@@ -103,7 +103,7 @@ fields:
     handle: topic
     instructions: ''
     name: Topic
-    searchable: false
+    searchable: true
     settings:
       byteLimit: null
       charLimit: null

@@ -9,8 +9,8 @@ scope:
   - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:read' # Boards & Commissions Redirect
   - 'sections.fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c:read' # Boards & Commissions Index
   - 'entrytypes.62b6620d-66f1-4499-abb2-35960313b3dd:read' # Boards & Commissions Index
-  - 'sections.ba27f849-b247-4db0-ae91-53a01f44bd0b:read' # Calendar Index
-  - 'entrytypes.edd782d7-6b1e-40f2-ba66-61b9b39ccd21:read' # Calendar Index
+  - 'sections.ba27f849-b247-4db0-ae91-53a01f44bd0b:read'
+  - 'entrytypes.edd782d7-6b1e-40f2-ba66-61b9b39ccd21:read'
   - 'sections.1ab8269c-e225-472e-b5e1-1504af7a1622:read' # Datasets
   - 'entrytypes.cb67721c-4d46-42f1-bbcf-91bd6bb4b2f0:read' # Datasets
   - 'sections.b3411cb1-e860-46ed-9cd6-58cf9b8daacb:read' # Departments
@@ -122,8 +122,8 @@ scope:
   - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:delete' # Boards & Commissions Redirect
   - 'sections.fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c:edit' # Boards & Commissions Index
   - 'entrytypes.62b6620d-66f1-4499-abb2-35960313b3dd:save' # Boards & Commissions Index
-  - 'sections.ba27f849-b247-4db0-ae91-53a01f44bd0b:edit' # Calendar Index
-  - 'entrytypes.edd782d7-6b1e-40f2-ba66-61b9b39ccd21:save' # Calendar Index
+  - 'sections.ba27f849-b247-4db0-ae91-53a01f44bd0b:edit'
+  - 'entrytypes.edd782d7-6b1e-40f2-ba66-61b9b39ccd21:save'
   - 'sections.1ab8269c-e225-472e-b5e1-1504af7a1622:edit' # Datasets
   - 'entrytypes.cb67721c-4d46-42f1-bbcf-91bd6bb4b2f0:edit' # Datasets
   - 'entrytypes.cb67721c-4d46-42f1-bbcf-91bd6bb4b2f0:create' # Datasets

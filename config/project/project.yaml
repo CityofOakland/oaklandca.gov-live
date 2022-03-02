@@ -1,4 +1,4 @@
-dateModified: 1646258524
+dateModified: 1646260195
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -452,7 +452,6 @@ meta:
     b66198c4-d82e-4078-8034-c728b677d613: Content # Content
     b575240f-71ba-444a-ac88-0c275e078c01: 'External Link' # External Link
     b924108b-fb70-4757-ad7f-3e713f23a6d6: 'Team Members' # Team Members
-    ba27f849-b247-4db0-ae91-53a01f44bd0b: 'Calendar Index' # Calendar Index
     baa859d6-a861-4617-bb79-73d0982ee25c: Assets # Assets
     bb70071c-d8c0-4a11-91f6-d4ca02503a00: 'Funding Logos Alternate Title' # Funding Logos Alternate Title
     bc371660-39ff-45ed-add0-0ae25ff30f0a: 'Before You Start' # Before You Start
@@ -587,7 +586,6 @@ meta:
     ecae3e34-8efa-4f0c-934c-d5d125641043: 'YouTube URL' # YouTube URL
     ecc31df6-640f-4fa6-a2e6-caea757e379d: Metadata # Metadata
     ed709c7c-0c3a-4457-ae2d-38a3ccb797e4: '311' # 311
-    edd782d7-6b1e-40f2-ba66-61b9b39ccd21: 'Calendar Index' # Calendar Index
     ef1b6cec-c4ea-45ca-ba65-e9dc7d0cc2ac: Services # Services
     ef7a2eb3-d6b3-44db-9db1-5500ac82498c: Meetings # Meetings
     ef60fa1b-14d1-4deb-8034-d0daebcb216d: 'Add a How to Participate Block' # Add a How to Participate Block
