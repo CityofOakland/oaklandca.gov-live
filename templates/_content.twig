@@ -77,12 +77,12 @@
             </div>
           {% endif %}
           <div id="components-footer" class="components">
-            {% if entry['relatedPages'] is defined and entry.relatedPages|length %}
+            {% if entry['relatedDepartments'] is defined and entry.relatedDepartments|length %}
               {% include '_components/partials/_cards' with {
                 background: '#334E68',
                 class:      'text-white',
-                heading:    "Related Pages",
-                entries:    entry.relatedPages.all()
+                heading:    "Related Departments",
+                entries:    entry.relatedDepartments.all()
               } %}
             {% endif %}
             {% if entry.componentsFooter %}

@@ -48,7 +48,6 @@
 {% import '_macros/_macros' as macros %}
 
 {% block content %}
-  <h1>Body: {{ craft.app.request.getQueryParam('public_body') }}</h1>
   {% if filter_enabled %}
     {% if meetings|length %}
       <h3>Displaying {{ meetings|length }} of {{ pageInfo.total }} Meetings</h3>
@@ -77,6 +76,7 @@
           {% if meeting.date %}<p><b>{{ meeting.date|date("l, F j, Y") }}</b></p>{% endif %}
             <div class="md:flex items-center justify-between">
               {% if meeting.startTime %}<p class="flex items-center">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startTime|date("g:ia") }}{{ meeting.endTime ? " to " ~ meeting.endTime|date("g:ia") : '' }}</span></p>{% endif %}
+              {% if meeting.startDate %}<p class="flex items-center">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startDate|date("g:ia") }}{{ meeting.endDate ? " to " ~ meeting.endDate|date("g:ia") : '' }}</span></p>{% endif %}
               <ul class="md:flex items-center related" style="list-style:none;padding:0;">
                 {% if meeting.agendaDownloadableCopy|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/assets/img/icon-pdf-updated.svg') }}<span class="ml-2">Agenda</span></a></li>{% endif %}
                 {% if meeting.documentFile|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-pdf-updated.svg') }}<span class="ml-2">Minutes</span></a></li>{% endif %}
@@ -144,7 +144,7 @@
     <hr class="hr dark"/>
     <h4>{{ 'Learn More About Public Bodies'|t }}</h4>
     <div class="pt-2">
-      <p><a href="{{siteUrl}}departments">Departments</a></p>
+      <p><a href="{{siteUrl}}boards-commissions">Boards & Commissions</a></p>
       <p><a href="{{siteUrl}}departments/oakland-city-council">City Council</a></p>
     </div>
   </div>
@@ -175,7 +175,7 @@
   <div class="hidden lg:block">
     <h4>{{ 'Learn More About Public Bodies'|t }}</h4>
     <div class="pt-2">
-      <p><a href="{{siteUrl}}departments">Departments</a></p>
+      <p><a href="{{siteUrl}}boards-commissions">Boards & Commissions</a></p>
       <p><a href="{{siteUrl}}departments/oakland-city-council">City Council</a></p>
     </div>
     <hr class="light"/>

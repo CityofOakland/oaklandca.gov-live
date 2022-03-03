@@ -16,16 +16,10 @@
         link: siteUrl ~ 'meetings'
       }]) %}
     {% endif %}
-
-
     {% if entry.section.handle == 'meetings' %}
       {% set breadcrumbs = breadcrumbs|merge([{
         title: 'Meetings',
         link: siteUrl ~ 'meetings'
-      }]) %}
-      {% set breadcrumbs = breadcrumbs|merge([{
-        title: 'Boards & Commissions',
-        link: siteUrl ~ 'boards-commissions'
       }]) %}
       {% if entry.relatedBoardOrCommission|length %}
         {% set breadcrumbs = breadcrumbs|merge([{
@@ -33,6 +27,7 @@
           link: entry.relatedBoardOrCommission.one().url
         }]) %}
       {% endif %}
+    {% elseif entry.section.handle == 'boardsCommissions' and craft.request.lastSegment == 'meetings' %}
     {% else %}
       {% set breadcrumbs = breadcrumbs|merge([{
         title: entry.section.name,
