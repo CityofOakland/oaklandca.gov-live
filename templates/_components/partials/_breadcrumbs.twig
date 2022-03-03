@@ -27,7 +27,7 @@
         title: 'Boards & Commissions',
         link: siteUrl ~ 'boards-commissions'
       }]) %}
-      {% if entry.relatedBoardOrCommission %}
+      {% if entry.relatedBoardOrCommission|length %}
         {% set breadcrumbs = breadcrumbs|merge([{
           title: entry.relatedBoardOrCommission.one().title,
           link: entry.relatedBoardOrCommission.one().url
