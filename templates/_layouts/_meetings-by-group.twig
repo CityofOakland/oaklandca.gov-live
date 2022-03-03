@@ -46,6 +46,10 @@
 
 {% paginate meetings as pageInfo, meetings %}
 
+{% if pageInfo.currentPage > 1 %}
+  {% set filter_enabled = true %}
+{% endif %}
+
 {% set layout = 'reverse' %}
 {% extends '_content.twig' %}
 {% import '_macros/_macros' as macros %}
