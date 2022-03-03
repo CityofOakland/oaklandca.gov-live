@@ -27,10 +27,12 @@
         title: 'Boards & Commissions',
         link: siteUrl ~ 'boards-commissions'
       }]) %}
-      {% set breadcrumbs = breadcrumbs|merge([{
-        title: entry.relatedBoardOrCommission.one().title,
-        link: entry.relatedBoardOrCommission.one().url
-      }]) %}
+      {% if entry.relatedBoardOrCommission %}
+        {% set breadcrumbs = breadcrumbs|merge([{
+          title: entry.relatedBoardOrCommission.one().title,
+          link: entry.relatedBoardOrCommission.one().url
+        }]) %}
+      {% endif %}
     {% else %}
       {% set breadcrumbs = breadcrumbs|merge([{
         title: entry.section.name,
