@@ -89,10 +89,10 @@ if (typeof moment !== 'undefined') {
     (options, isFirstRendering) => {
       if (!isFirstRendering) return;
 
-      const { refine } = options;
+      const { refine }  = options;
 
-      const MONTHSTART = new Date(moment().startOf('month')).getTime();
-      const MONTHEND = new Date(moment().endOf('month')).getTime();
+      const MONTHSTART  = new Date(moment().startOf('month')).getTime();
+      const MONTHEND    = new Date(moment().add(11, 'month').endOf('month')).getTime();
 
       refine([MONTHSTART, MONTHEND]);
 
@@ -102,6 +102,10 @@ if (typeof moment !== 'undefined') {
         start_date: moment().startOf('month'),
         end_date: moment().add(11, 'month').endOf('month'),
         presets: [{
+          label: 'This year',
+          start: moment().startOf('month'),
+          end: moment().add(11, 'month').endOf('month')
+        },{
           label: 'This month',
           start: moment().startOf('month'),
           end: moment().endOf('month')
