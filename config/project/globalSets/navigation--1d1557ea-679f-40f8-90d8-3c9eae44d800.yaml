@@ -1,0 +1,45 @@
+fieldLayouts:
+  e05e421b-cb98-4763-9c98-5fc214909de7:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 839d534c-c552-405e-bc0e-0d7414bad9c3 # Navigation - Top
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Navigation - Top'
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: c7618ee8-2bc2-491b-99e6-c9deaea0809b # Navigation - Main
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Navigation - Main'
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: ca585b68-038a-438f-9636-8ec4b01f9091 # Linkits
+            instructions: ''
+            label: 'Popular Pages'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Popular Pages'
+        sortOrder: 3
+handle: navigation
+name: Navigation
+sortOrder: 2

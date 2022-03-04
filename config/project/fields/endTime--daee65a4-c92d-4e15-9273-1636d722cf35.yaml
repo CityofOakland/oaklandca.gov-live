@@ -1,0 +1,14 @@
+columnSuffix: hbrcyskv
+contentColumnType: time
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
+handle: endTime
+instructions: ''
+name: 'End Time'
+searchable: false
+settings:
+  max: '23:59'
+  min: '06:00'
+  minuteIncrement: 15
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Time

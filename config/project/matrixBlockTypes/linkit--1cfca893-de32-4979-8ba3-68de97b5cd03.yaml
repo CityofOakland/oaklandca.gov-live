@@ -1,0 +1,218 @@
+field: ca585b68-038a-438f-9636-8ec4b01f9091 # Linkits
+fieldLayouts:
+  12358a6f-ca74-41bb-bfe2-3c0c6e0cbcc6:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 3d8ee7f9-27a6-4d4e-a55f-b869d5afee11 # Linkit
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  3d8ee7f9-27a6-4d4e-a55f-b869d5afee11: # Linkit
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkit
+    instructions: ''
+    name: Linkit
+    searchable: false
+    settings:
+      allowCustomText: '1'
+      allowTarget: ''
+      defaultText: ''
+      selectLinkText: ''
+      types:
+        __assoc__:
+          -
+            - fruitstudios\linkit\models\Email
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Phone
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Url
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+                -
+                  - allowAlias
+                  - '1'
+                -
+                  - allowMailto
+                  - ''
+                -
+                  - allowHash
+                  - ''
+                -
+                  - allowPaths
+                  - '1'
+          -
+            - fruitstudios\linkit\models\Twitter
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Facebook
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Instagram
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\LinkedIn
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Entry
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  -
+                    - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+                    - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+                    - 'section:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+                    - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+                    - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+                    - 'section:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+                    - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+                    - 'section:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - fruitstudios\linkit\models\Category
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  -
+                    - 'group:8bcf4697-1dd2-47b2-91e2-8ad9b4b86741' # Service Categories
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - fruitstudios\linkit\models\Asset
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - fruitstudios\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: fruitstudios\linkit\fields\LinkitField
+handle: linkit
+name: Linkit
+sortOrder: 1
