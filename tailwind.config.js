@@ -302,6 +302,8 @@ module.exports = {
     zIndex: ["responsive"],
   },
   plugins: [
+    require("tailwindcss-multi-column")(), // no options to configure
+    require("tailwindcss-owl")(),
     require("@neojp/tailwindcss-line-clamp-utilities"),
   ]
 };
