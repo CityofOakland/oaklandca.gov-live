@@ -3,7 +3,7 @@ import 'picturefill'
 
 function init() {
   const selectNavs = document.getElementsByClassName('js-select-nav');
-    if (selectNavs) {
+  if (selectNavs) {
     Array.from(selectNavs).forEach(select => {
       select.addEventListener("change", selectNav);
     });
@@ -108,7 +108,7 @@ Array.prototype.slice.call(document.querySelectorAll('.accordion')).forEach(func
           case '36':
             triggers[0].focus();
             break;
-            // Go to last accordion
+          // Go to last accordion
           case '35':
             triggers[triggers.length - 1].focus();
             break;

@@ -36,6 +36,7 @@ mix.setPublicPath('./web/assets/')
     processCssUrls: false,
   })
   .js(pkg.paths.src.js + "app.js", "js")
+  .js(pkg.paths.src.js + "radiogroup.js", "js")
   .js(pkg.paths.src.js + "algoliafilter.js", "js")
   .js(pkg.paths.src.js + "search.js", "js")
   .js(pkg.paths.src.js + "lightgallery.js", "js")
