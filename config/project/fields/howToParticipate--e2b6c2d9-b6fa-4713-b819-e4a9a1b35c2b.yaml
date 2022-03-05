@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: ef7a2eb3-d6b3-44db-9db1-5500ac82498c # Meetings
+handle: howToParticipate
+instructions: 'Add text to let people know how they can participate in this meeting.'
+name: 'How to Participate'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_howtoparticipate}}'
+  maxBlocks: '1'
+  minBlocks: ''
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix
