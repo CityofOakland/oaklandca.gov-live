@@ -1,4 +1,4 @@
-dateModified: 1646495265
+dateModified: 1646496043
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -782,7 +782,7 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
     settings:
-      documentation: "<p><a href=\"https://docs.google.com/document/d/1pOhZdKAyO_82BKspgiklE8pv962t3X2e3NA9hC4-jGg/edit\" rel=\"noopener\" target=\"_blank\">City of Oakland Writing for the Web Style Guide</a></p>\r\n<p><a href=\"https://datastudio.google.com/u/1/reporting/3253d1d2-dfdb-400a-9cc6-eb26afe88cae/page/1M\">City of Oakland Website Analytics Dashboard</a></p>"
+      documentation: "<p><a href=\"https://staging.oaklandca.dev/admin/usermanual\">Oaklandca.gov User Guide</a></p>\r\n<ul><li>-&nbsp;<a href=\"https://staging.oaklandca.dev/admin/usermanual/user-guide/writing-for-oaklandca-gov\">Writing for the Web Style Guide</a></li><li>-&nbsp;<a href=\"https://staging.oaklandca.dev/admin/usermanual/user-guide/using-craft\">Using Craft</a></li><li>-&nbsp;<a href=\"https://staging.oaklandca.dev/admin/usermanual/user-guide/content-strategy\">Content Strategy</a></li></ul>\r\n<p><a href=\"https://datastudio.google.com/u/1/reporting/3253d1d2-dfdb-400a-9cc6-eb26afe88cae/page/1M\" rel=\"noopener\" target=\"_blank\">City of Oakland Website Analytics Dashboard</a></p>"
   element-api:
     enabled: '1'
     licenseKey: null

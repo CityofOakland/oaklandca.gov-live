@@ -18,6 +18,16 @@ permissions:
   - 'createentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
   - 'publishentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
   - 'editentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'createentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'publishentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'deleteentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'publishpeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'deletepeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'editpeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'publishpeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'deletepeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'editpeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'editentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
   - 'createentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
   - 'publishentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
   - 'editentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
