@@ -4,7 +4,7 @@ fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
 handle: agendaDownloadableCopy
 instructions: ''
 name: 'Agenda - Downloadable Copy'
-searchable: false
+searchable: true
 settings:
   allowSelfRelations: false
   allowUploads: true
@@ -16,7 +16,7 @@ settings:
   previewMode: full
   restrictFiles: ''
   selectionLabel: ''
-  showSiteMenu: false
+  showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
   singleUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons

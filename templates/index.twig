@@ -63,7 +63,7 @@
             {% endif %}
             {% set featuredImage = featuredNews.newsImage[0] ?? "" %}
             <article class="lg:flex lg:flex-row">
-              <div class="relative z-0 flex items-center justify-center h-48 p-4 mb-4 bg-gray-300 lg:w-2/5">
+              <div class="relative z-0 flex items-center justify-center h-48 p-4 mb-4 bg-gray-700 lg:w-2/5">
                 {% if featuredImage | length %}
                   <img class="absolute inset-0 object-cover w-full h-full" src="{{ featuredImage.url }}" alt="{{ featuredImage.title }}">
                 {% else %}
@@ -111,17 +111,13 @@
     });
   {% endjs %}
 
-  {% if learnMore | length %}
-    <section class="bg-gray-100">
-      <div class="container py-10 mx-auto">
-        <h2 class="pb-4">{{ "Learn More About"|t }}</h2>
-        <div class="card-grid md:grid-cols-2">
-          {% for entry in learnMore %}
-            <a href="{{ entry.url }}" class="section-box">{{ entry.title | raw }}</a>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
+  {% if learnMore|length %}
+    {% include '_components/partials/_cards' with {
+      background:   '#f7f7f7',
+      entries:      learnMore,
+      heading:      entry.sectionHeading ? entry.sectionHeading : "Learn More About"|t,
+      shadow:       true,
+    } %}
   {% endif %}
 
   <section class="bg-white">

@@ -1,0 +1,22 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
+handle: relatedMeeting
+instructions: ''
+name: 'Related Meeting'
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: 'Select Meeting'
+  showSiteMenu: true
+  source: null
+  sources:
+    - 'section:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

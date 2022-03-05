@@ -1,0 +1,37 @@
+{% extends '_layouts/_banner-with-nav.twig' %}
+{# Since this page doesn’t actually exist as an entry, we define our entry here #}
+{% set entry = craft.entries.section('boardsCommissions').slug(craft.app.request.getSegment(2)).one %}
+
+{# We set the metadata title and description here for our fake page data. #}
+{% do seomatic.meta.seoTitle("Meetings for " ~ entry.title) %}
+{% do seomatic.meta.seoDescription("An exhaustive list of all meetings found on the oaklandca.gov website related to " ~ entry.title) %}
+
+{% block content %}
+  {% set defaultIntro = 'The following is an exhaustive list of all meetings found on the <a class="font-bold hover:text-green-600" href="https://oaklandca.gov">oaklandca.gov</a> website related to ' ~ entry.title %}
+  {% include '_partials/_page-banners.twig' with {
+    bannerTitle: 'Meetings for ' ~ entry.title,
+    leadInParagraph: entry.meetingsDescription ? true : false,
+    leadIn: entry.meetingsDescription ?? defaultIntro,
+    breadCrumbLinks: [
+      {
+        title: 'Boards & Commissions',
+        link: '/boards-commissions'
+      },
+      {
+        title: entry.title,
+        link: entry.url
+      }
+    ],
+    bannerImage: entry.banner | length ? {
+      position: entry.banner.one().getFocalPoint('asCss'),
+      src: entry.banner.one().url,
+      alt: entry.banner.one().title ?? entry.banner.one().filename
+    } : false,
+    ctaButton: false
+  } %}
+  <section class="bg-white">
+    <div class="container py-16 mx-auto">
+      {% include "_partials/_elements/_meetings-table.twig" %}
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,187 @@
+fieldLayouts:
+  f2d22f0c-bed2-46f2-8472-8450d0d98710:
+    tabs:
+      -
+        elements:
+          -
+            style: warning
+            tip: 'This meeting is using the legacy meeting template. If you would like to update this meeting, we recommend that you change the entry type to the standard meeting template.'
+            type: craft\fieldlayoutelements\Tip
+          -
+            fieldUid: 1942a740-bba9-4cde-97c7-fe0c718e5065 # Meeting ID
+            instructions: 'Used for mapping imported rescheduled meetings.'
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: 'Meeting should be titled "Official Name of the Board or Commission" + "Meeting".'
+            label: 'Meeting Title'
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: f7e4a055-457f-46eb-ab3d-3e816f80a81d # Related Board or Commission
+            instructions: 'Select the Board or Commission this meeting is related to.'
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 31d30a51-422e-471c-be55-3441a4219dd8 # Date
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d6ad41f7-f233-4092-81dc-9fdf439eb146 # Start Date
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8db301bf-0d15-4511-98a8-8a4021bbef60 # End Date
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 90d724d7-7c32-4d04-8b9a-3900d6ecdb84 # Address(es)
+            instructions: ''
+            label: 'Meeting Location'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6ee1dda3-767e-4fa8-9096-5fcf30f68aed # Event Status
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 89e7af89-0b4d-4305-9ffe-5098b3f73779 # Related Meeting
+            instructions: 'Relate a rescheduled meeting. If a special meeting is related to another meeting, add it here.'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
+            instructions: 'Add any additional details that people should know about this meeting.'
+            label: 'Meeting Details'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f3d1bcbe-1f1a-4498-b4e5-1d57d3257690 # Related Pages
+            instructions: 'Relate other pages to this meeting, including Departments, Officials and Topics.'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: 'Meeting Contact'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 5f3a7701-690d-491c-9c18-9e92305a1aad # Event Contact
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: 'Meeting Assets'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 3ff802bf-48ac-4e96-8e64-c7988d029bc1 # Documents
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f73a45bb-5e6b-4a27-8f19-edd0e6bbc507 # Video Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: e67ec759-ea3a-4568-bfa6-a314ff3d1036 # Projects
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 44b00870-0842-4c4e-838f-dcd688fb5b05 # Topics
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Relationships
+        sortOrder: 2
+handle: meetingsImported
+hasTitleField: true
+name: 'Meetings - Imported'
+section: 86dfc275-b48e-44d4-8c8c-acda592d92b0 # Meetings
+sortOrder: 2
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

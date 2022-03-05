@@ -1,46 +1,4 @@
-{# @var craft \craft\web\twig\variables\CraftVariable #}
-{# @var entry \craft\elements\Entry #}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    {# Calls in the SEOmatic tags, all handled through the CMS settings #}
-    {% hook 'seomaticRender' %}
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700&display=swap" rel="stylesheet">
-    {{ craft.twigpack.includeCssModule("/css/app.css") }}
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ siteUrl }}/assets/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="{{ siteUrl }}/assets/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ siteUrl }}/assets/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ siteUrl }}/assets/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ siteUrl }}/assets/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ siteUrl }}/assets/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ siteUrl }}/assets/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ siteUrl }}/assets/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ siteUrl }}/assets/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="{{ siteUrl }}/assets/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ siteUrl }}/assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{ siteUrl }}/assets/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ siteUrl }}/assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="{{ siteUrl }}/assets/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="{{ siteUrl }}/assets/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    {% if craft.app.env == "production" %}
-    <!-- Hotjar Tracking Code for www.oaklandca.gov -->
-    <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:1282651,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
-    {% endif %}
-  </head>
+{% include '_partials/_head' %}
 
   {# Checks if the URI is empty and if not, adds the class of "home" to the page body. #}
   {% if not craft.app.request.segments() %}
@@ -54,7 +12,7 @@
     <div class="page-holder">
       {% include '_partials/_elements/_skip-to-content.twig' %}
       {% include '_partials/_elements/_nav-bar.twig' %}
-      <main>
+      <main class="overflow-x-hidden">
         {% include '_partials/_elements/_sitewide-alert.twig' %}
         {% if category is defined %}
           {% set entry = category %}
@@ -69,53 +27,64 @@
             </div>
           </div>
           <div id="content" style="position:relative;top:-80px;"></div>
-          <div class="container pt-16 mx-auto components">
-            <div style="max-width:1152px;">
-              <div class="flex flex-col flex-1 lg:flex-row">
-                <div class="w-full lg:w-8/11">
-                  {% if category is not defined and entry.section.handle == 'meetings' %}
-                    <h1>{% if entry.meetingStatus.value and entry.meetingStatus.value !== 'default' %}{{ entry.meetingStatus.label }} - {% endif %}{{ entry.title }}</h1>
-                    {% if entry.date %}
-                      <div class="pt-4 lead">The {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} {{ now > entry.date ? 'held its last' : 'will hold its next' }} public meeting on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
+          <div class="{{ entry.slug == 'meetings-index' ? 'bg-blue-900 text-white' : '' }}">
+            <div class="container components pt-8 md:pt-16 {{ entry.slug == 'meetings-index' ? 'md:mb-8' : '' }}">
+              <div style="max-width:1152px;">
+                <div class="flex flex-col flex-1 lg:flex-row">
+                  <div class="w-full lg:w-8/11">
+                    {% if category is not defined and entry.section.handle == 'meetings' %}
+                      <h1>{% if entry.meetingStatus and entry.meetingStatus.value and entry.meetingStatus.value !== 'default' %}{{ entry.meetingStatus.label }} - {% endif %}{{ entry.title }}</h1>
+                      {% if entry.date %}
+                        {% if now|date('Y-m-d') <= entry.date|date('Y-m-d') %}
+                          <div class="lead pt-4">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} will be held on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
+                        {% else %}
+                          <div class="lead pt-4">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} was held on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
+                        {% endif %}
+                      {% endif %}
+                    {% else %}
+                      <h1>{{ entry.title }}</h1>
+                      {% if entry.leadIn or entry.summary %}
+                        <div class="lead pt-4">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
+                      {% endif %}
                     {% endif %}
-                  {% else %}
-                    <h1>{{ entry.title }}</h1>
-                    {% if entry.leadIn or entry.summary %}
-                      <div class="pt-4 lead">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
-                    {% endif %}
-                  {% endif %}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section>
+        <section> 
           {% if category is not defined %}
             <div class="container pt-0 mx-auto">
-              <div class="flex flex-wrap justify-between -mx-8">
-                <div class="w-full px-8 lg:w-7/11">
-                  <div class="components components-format">
-                    {% block content %}{% endblock %}
+              <div style="max-width:1152px;">
+                <div class="flex flex-wrap justify-between -mx-8 {{ layout is defined and layout == 'reverse' ? 'flex-col-reverse lg:flex-row' : '' }}">
+                  <div class="w-full lg:w-7/11 px-8 {{ layout is defined and layout == 'reverse' ? 'mt-8 lg:mt-0' : '' }}">
+                    <div class="components components-format">
+                      {% block content %}{% endblock %}
+                    </div>
                   </div>
-                </div>
-                <div class="w-full px-8 lg:w-4/11">
-                  {% if category is not defined %}
-                    {% include '_components/_sidebar.twig' %}
-                  {% endif %}
+                  <div class="w-full lg:w-4/11 px-8 {{ layout is defined and layout == 'reverse' ? 'mt-0' : 'mt-8 lg:mt-0' }}">
+                    <div id="components-sidebar" class="components components-format">
+                      {% block sidebar %}
+                        {% if category is not defined %}
+                          {% include '_components/_sidebar.twig' %}
+                        {% endif %}
+                      {% endblock %}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           {% endif %}
           <div id="components-footer" class="components">
-            {% if entry['relatedBoardOrCommission'] is defined and entry.relatedBoardOrCommission|length %}
+            {% if entry['relatedDepartments'] is defined and entry.relatedDepartments|length %}
               {% include '_components/partials/_cards' with {
                 background: '#334E68',
                 class:      'text-white',
                 heading:    "Related Departments",
-                entries:    entry.relatedBoardOrCommission.all()
+                entries:    entry.relatedDepartments.all()
               } %}
             {% endif %}
-
             {% if entry.componentsFooter %}
               {% for block in entry.componentsFooter.level(1).all() %}
                 {% include '_components/_' ~ block.type %}
@@ -204,14 +173,3 @@
   }
 })();
 {% endjs %}
-
-
-<style>
-  .components tbody {
-    border-top: 1px solid black;
-  }
-
-  .components tbody tr {
-    border-bottom: 1px solid black;
-  }
-</style>
