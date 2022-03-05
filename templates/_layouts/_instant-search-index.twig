@@ -23,7 +23,7 @@
     } %}
   {% endblock %}
   <div class="bg-gray-100" id="search-bar-container">
-    <div class="container text-right">
+    <div class="container mx-auto text-right">
       <div class="flex flex-col sm:flex-row">
         <label class="hidden-visually" for="search-input">{{ searchInputText ?? 'Search this Index' }}</label>
         <input class="w-full p-2 rounded-none appearance-none md:py-4 md:px-8" id="search-input" name="keywords" required type="search" value="">
@@ -33,8 +33,8 @@
       {% endif %}
     </div>
   </div>
-  <div class="relative invisible h-0 overflow-hidden opacity-0 bg-gray-300 text-gray-700 z-neg-10 transition-all" id="algolia-filters">
-    <div class="container flex-col -my-4" id="facet-holder">
+  <div class="relative invisible h-0 overflow-hidden text-gray-700 transition-all bg-gray-300 opacity-0 -z-10" id="algolia-filters">
+    <div class="container flex-col mx-auto -my-4" id="facet-holder">
       {% if facets is defined %}
         {% for facet in facets %}
           <div id="{{ facet.container }}" class="facet-container"></div>
@@ -43,7 +43,7 @@
     </div>
   </div>
   <section class="relative z-0 bg-white">
-    <div class="container">
+    <div class="container mx-auto">
       <div class="w-full">
         <div id="hits"></div>
         <div class="flex items-center text-2xl">

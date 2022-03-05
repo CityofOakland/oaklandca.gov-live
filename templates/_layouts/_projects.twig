@@ -53,7 +53,7 @@
   {% endjs %}
   <section>
     <a class="anchor-link" id="page-timeline"></a>
-    <div class="container">
+    <div class="container mx-auto">
       <div class="md:flex md:flex-row">
         <div class="md:pr-4 md:w-1/2">
           {% if entry.timeline.exists() %}
@@ -92,7 +92,7 @@
   {% if entry.projectBeforePhoto.exists() and entry.projectAfterPhoto.exists() %}
     <section>
       <a class="anchor-link" id="page-gallery"></a>
-      <div class="container">
+      <div class="container mx-auto">
         <div class="md:flex md:flex-row">
           <div class="md:pr-4 md:w-1/2">
             <h3>Current</h3>
@@ -120,7 +120,7 @@
   {% endif %}
   <section>
     <a class="anchor-link" id="page-about"></a>
-    <div class="container md:flex md:flex-row">
+    <div class="container mx-auto md:flex md:flex-row">
       <div class="md:pr-4 md:w-2/3">
         <h3 class-"mb-4">About</h3>
         <div class="body-text">
@@ -142,7 +142,7 @@
   </section>
   <section>
     <a class="anchor-link" id="page-resources"></a>
-    <div class="container md:flex md:flex-row">
+    <div class="container mx-auto md:flex md:flex-row">
       {% set relProj = entry.relatedProjectEntries %}
       {% set projDocs = entry.projectDocuments %}
       {% if relProj | length %}
@@ -167,13 +167,13 @@
       {% endif %}
     </div>
   </section>
-  <div class="container">
+  <div class="container mx-auto">
     {% include '_partials/_page-location.twig' %}
   </div>  
 {% if entry.fundingLogos.exists() %}
     <section>
       <a class="anchor-link" id="page-logos"></a>
-      <div class="container">
+      <div class="container mx-auto">
         <h3 class="mb-4 text-center">Project Funding</h3>
         <div class="flex flex-wrap items-center justify-center -mx-4">
           {% for logo in entry.fundingLogos.all() %}

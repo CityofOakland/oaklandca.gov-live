@@ -161,7 +161,7 @@
                 <button @click="openNav = true" class="flex items-center justify-center w-16 -my-3 text-gray-900 bg-green-500 fill-current lg:-my-5 touch-action-none lg:oak-hidden hover:bg-green-700 hover:text-gray-1000">
                     {{ craft.inlin.er('/assets/img/icon-menu.svg') | replace('<svg ', '<svg class="h-9 md:h-10 xl:oak-hidden" ') | raw }}
                 </button>
-                <a id="home-link" class="flex items-center justify-center h-full px-2 text-gray-100 fill-current hover:text-gray-200 duration-75" href="{{ siteUrl }}" name="Home">
+                <a id="home-link" class="flex items-center justify-center h-full px-2 text-gray-100 duration-75 fill-current hover:text-gray-200" href="{{ siteUrl }}" name="Home">
                     {{ craft.inlin.er('/assets/img/logo-oakland-tree.svg') | replace('<svg ', '<svg class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden" ') | raw }}
                     {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="w-40 h-10 oak-hidden sm:block" ') | raw }}
                     <span class="hidden-visually">Home</span>
@@ -170,11 +170,11 @@
                     <label for="site-search" class="hidden-visually">Search?</label>
                     <input type="search" id="site-search" class="z-10 w-full pl-10 pr-6 mb-0 text-sm leading-normal text-gray-100 placeholder-gray-200 bg-gray-900 border-2 border-gray-800 rounded appearance-none search-box h-9 md:h-10 md:text-base" aria-label="Site Search" name="query" placeholder="Search" value="">
                 </form>
-                <ul class="lg:ml-3 pr-6 mr-6 text-xs tracking-wide border-r border-gray-700 lg:flex oak-hidden lg:my-0 lg:justify-end lg:items-center xl:text-sm">
+                <ul class="pr-6 mr-6 text-xs tracking-wide border-r border-gray-700 lg:ml-3 lg:flex oak-hidden lg:my-0 lg:justify-end lg:items-center xl:text-sm">
                     {% for nav in mainNav %}
                         {% if nav.title == "Services" %}
                             <li class="dropdown dropdown-megamenu">
-                                <a href="{{ nav.url }}" class="px-2 py-3 text-gray-100 hover:bg-white hover:text-black uppercase font-bold" id="navbar-dropdown-{{ nav.title|kebab }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ nav.title }} {{ svg( '@webroot/assets/img/icon-arrow.svg') }}</a>
+                                <a href="{{ nav.url }}" class="px-2 py-3 font-bold text-gray-100 uppercase hover:bg-white hover:text-black" id="navbar-dropdown-{{ nav.title|kebab }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ nav.title }} {{ svg( '@webroot/assets/img/icon-arrow.svg') }}</a>
                                 {% set navSubitems = craft.categories
                                     .group("serviceTypes")
                                     .limit(10)
@@ -184,9 +184,9 @@
                                 %}
                                 {% set reportProblem = craft.categories.group("serviceTypes").slug("report-a-problem").one() %}
                                 {% set applyPermit = craft.categories.group("serviceTypes").slug("apply-for-a-permit").one() %}
-                                <div class="dropdown-container bg-green-800" aria-labelledby="navbar-dropdown-{{ nav.title|kebab }}">
-                                    <div class="container components py-0">
-                                        <ul id="megamenu" class="grid md:grid-cols-3 gap-3" style="list-style: none;padding:0;">
+                                <div class="bg-green-800 dropdown-container" aria-labelledby="navbar-dropdown-{{ nav.title|kebab }}">
+                                    <div class="container py-0 mx-auto components">
+                                        <ul id="megamenu" class="grid gap-3 md:grid-cols-3" style="list-style: none;padding:0;">
                                             {% nav subitem in navSubitems %}
                                                 {{ macros.card(subitem, false) }}
                                             {% endnav %}
@@ -201,7 +201,7 @@
                                 </div>
                             </li>
                         {% else %}
-                            <li><a href="{{ nav.url }}" class="px-2 py-3 text-gray-100 hover:text-gray-200 hover:underline duration-75 uppercase font-bold">{{ nav.title }}</a></li>
+                            <li><a href="{{ nav.url }}" class="px-2 py-3 font-bold text-gray-100 uppercase duration-75 hover:text-gray-200 hover:underline">{{ nav.title }}</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
@@ -223,13 +223,13 @@
         {# BEGIN MOBILE NAV #}
         <div
             class="relative z-30 py-0 bg-gray-1000" x-show="openNav" @click.away="openNav = false" x-cloak>
-            <ul class="container justify-end overflow-y-scroll flex-1 w-full pt-0 pb-4 mx-auto my-0 text-lg" style="height: 100vh;">
+            <ul class="container justify-end flex-1 w-full pt-0 pb-4 mx-auto my-0 overflow-y-scroll text-lg" style="height: 100vh;">
                 {% for nav in mainNav %}
                     {% if nav.title == "Services" %}
                         <li class="border-t border-gray-600">
                             <div class="flex items-center justify-between py-4">
-                                <a class="text font-normal text-gray-100 hover:text-gray-200 fill-current" href="{{ nav.url }}">{{ nav.title }}</a>
-                                <div class="text font-normal text-gray-100 fill-current p-1 rounded bg-gray-800 subnav-toggler">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" style="transform: rotate(90deg);" ') | raw }}</div>
+                                <a class="font-normal text-gray-100 fill-current text hover:text-gray-200" href="{{ nav.url }}">{{ nav.title }}</a>
+                                <div class="p-1 font-normal text-gray-100 bg-gray-800 rounded fill-current text subnav-toggler">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" style="transform: rotate(90deg);" ') | raw }}</div>
                             </div>
 
                             {% set navSubitems = craft.categories
@@ -240,30 +240,30 @@
                             %}
                             {% set reportProblem = craft.categories.group("serviceTypes").slug("report-a-problem").one() %}
                             {% set applyPermit = craft.categories.group("serviceTypes").slug("apply-for-a-permit").one() %}
-                            <div class="subnav overflow-y-scroll">
-                                <ul class="my-0 bg-white font-bold">
+                            <div class="overflow-y-scroll subnav">
+                                <ul class="my-0 font-bold bg-white">
                                     {% nav subitem in navSubitems %}
                                         <li class="border-t border-gray-600"><a class="block h-full p-4" href="{{ subitem.url }}">{{ subitem.title }}</a></li>
                                     {% endnav %}
-                                    {% if reportProblem %}<li class="border-t border-gray-600"><a class="block h-full p-4 flex items-center justify-between bg-blue-100 text-blue-1000" href="{{ reportProblem.url }}">{{ reportProblem.title }}<span class="arrow-right text-blue-1000 text-lg" role="img" aria-label="arrow right">&rarr;</span></a></li>{% endif %}
-                                    {% if applyPermit %}<li class="border-t border-gray-600"><a class="block h-full p-4 flex items-center justify-between bg-blue-100 text-blue-1000" href="{{ applyPermit.url }}">{{ applyPermit.title }}<span class="arrow-right text-blue-1000 text-lg" role="img" aria-label="arrow right">&rarr;</span></a></li>{% endif %}
+                                    {% if reportProblem %}<li class="border-t border-gray-600"><a class="flex items-center justify-between block h-full p-4 bg-blue-100 text-blue-1000" href="{{ reportProblem.url }}">{{ reportProblem.title }}<span class="text-lg arrow-right text-blue-1000" role="img" aria-label="arrow right">&rarr;</span></a></li>{% endif %}
+                                    {% if applyPermit %}<li class="border-t border-gray-600"><a class="flex items-center justify-between block h-full p-4 bg-blue-100 text-blue-1000" href="{{ applyPermit.url }}">{{ applyPermit.title }}<span class="text-lg arrow-right text-blue-1000" role="img" aria-label="arrow right">&rarr;</span></a></li>{% endif %}
                                 </ul>
                             </div>
                         </li>
                     {% else %}
                     <li class="{% if not loop.first %}border-t {% endif %}border-gray-600">
-                        <a class="flex items-center justify-between py-4 font-normal text-gray-100 hover:text-gray-200 fill-current" href="{{ nav.url }}"><div class="text">{{ nav.title }}</div></a>
+                        <a class="flex items-center justify-between py-4 font-normal text-gray-100 fill-current hover:text-gray-200" href="{{ nav.url }}"><div class="text">{{ nav.title }}</div></a>
                     </li>
                     {% endif %}
                 {% endfor %}
                 <li class="border-t border-gray-600">
-                    <a class="flex items-center justify-between py-4 font-normal text-gray-100 hover:text-gray-200 fill-current" href="/topics/oaklandlovelife"><div class="text">#OaklandLoveLife</div></a>
+                    <a class="flex items-center justify-between py-4 font-normal text-gray-100 fill-current hover:text-gray-200" href="/topics/oaklandlovelife"><div class="text">#OaklandLoveLife</div></a>
                 </li>
                 <li class="border-t border-gray-600">
-                    <a class="flex items-center justify-between py-4 font-normal text-gray-100 hover:text-gray-200 fill-current" href="/officials/libby-schaaf"><div class="text">Mayor Libby Schaaf</div></a>
+                    <a class="flex items-center justify-between py-4 font-normal text-gray-100 fill-current hover:text-gray-200" href="/officials/libby-schaaf"><div class="text">Mayor Libby Schaaf</div></a>
                 </li>
                 <li class="border-t border-gray-600">
-                    <a class="flex items-center justify-between py-4 font-normal text-gray-100 hover:text-gray-200 fill-current" href="/services/oak311"><div class="text">Report a problem to OAK 311</div></a>
+                    <a class="flex items-center justify-between py-4 font-normal text-gray-100 fill-current hover:text-gray-200" href="/services/oak311"><div class="text">Report a problem to OAK 311</div></a>
                 </li>
             </ul>
         </div>
