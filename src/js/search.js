@@ -1,5 +1,3 @@
-import { publicDecrypt } from "crypto";
-
 const allSearch = instantsearch({
   appId: "6V5VJO8ZG2",
   apiKey: "9bded46d3070b2089499c70b2389708b",
