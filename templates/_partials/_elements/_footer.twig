@@ -71,7 +71,7 @@
                 {% for socItem in socialMedia %}
                     <div class="p-4">
                         <a href="{{ socItem[0] }}" class="flex items-center justify-center w-12 h-12 duration-75 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 hover:text-gray-1000">
-                            {{ craft.inlin.er('/assets/img/logo-' ~ socItem[1]) | replace('<svg ', '<svg class="h-6" ') | raw }}
+                            {{ craft.inlin.er('/dist/img/logo-' ~ socItem[1]) | replace('<svg ', '<svg class="h-6" ') | raw }}
                             <span class="hidden-visually">{{ socItem[2] }}</span>
                         </a>
                     </div>

@@ -5,11 +5,11 @@
 <blockquote class="callout {{ callOutType }}">
 	{% switch callOutType %}
 		{% case 'info' %}
-		{{ svg( '@webroot/assets/img/icon-info.svg') }}
+		{{ svg( '@webroot/dist/img/icon-info.svg') }}
 		{% case 'attention' %}
-		{{ svg( '@webroot/assets/img/icon-attention.svg') }}
+		{{ svg( '@webroot/dist/img/icon-attention.svg') }}
 		{% default %}
-		{{ svg( '@webroot/assets/img/icon-info.svg') }}
+		{{ svg( '@webroot/dist/img/icon-info.svg') }}
 	{% endswitch %}
 	<div>
 		<p><b>{{ heading }}</b></p>

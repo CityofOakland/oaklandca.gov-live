@@ -68,7 +68,7 @@
                   <img class="absolute inset-0 object-cover w-full h-full" src="{{ featuredImage.url }}" alt="{{ featuredImage.title }}">
                 {% else %}
                   <div class="w-full h-full px-12 py-6 text-gray-500 opacity-75 fill-current">
-                    {{ craft.inlin.er('/assets/img/icon-newspaper.svg') | replace('<svg ', '<svg class="w-32 h-32" ') | raw }}
+                    {{ craft.inlin.er('/dist/img/icon-newspaper.svg') | replace('<svg ', '<svg class="w-32 h-32" ') | raw }}
                   </div>
                 {% endif %}
               </div>
@@ -92,7 +92,7 @@
         <div class="mt-8 md:mt-0 md:border-gray-500 md:border-l md:pl-10 md:w-1/2 lg:w-1/3">
           <a class="twitter-timeline" data-height="400px" data-width="100%" href="https://twitter.com/Oakland/lists/official-agencies?ref_src=twsrc%5Etfw">A Twitter List by Oakland</a>
           <script id="twitterWidgets" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          <p class="pt-3 icon"><a href="https://twitter.com/Oakland" target="_blank" class="pt-3"><b class="underline">{{ "Read Oakland Updates on Twitter"|t }}</b> {{ svg( '@webroot/assets/img/icon-external.svg') }}</a></p>
+          <p class="pt-3 icon"><a href="https://twitter.com/Oakland" target="_blank" class="pt-3"><b class="underline">{{ "Read Oakland Updates on Twitter"|t }}</b> {{ svg( '@webroot/dist/img/icon-external.svg') }}</a></p>
         </div>
       </div>
     </div>

@@ -16,7 +16,7 @@
     <h2>Minutes</h2>
     <ul class="ul-icons related" style="padding-top: 1rem;">
     {% for document in entry.documentFile.all() %}
-      <li><a href="{{ document.url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.title }} Minutes - {{ entry.postDate|date('m/d/Y') }}</a></li>
+      <li><a href="{{ document.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Minutes - {{ entry.postDate|date('m/d/Y') }}</a></li>
     {% endfor %}
     </ul>
   {% endif %}
@@ -46,7 +46,7 @@
   <h2>Agenda</h2>
   {% if entry.agendaDownloadableCopy|length %}
     <ul class="ul-icons related" style="padding-top: 1rem;">
-      <li><a href="{{ entry.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.agendaDownloadableCopy.one().title }} - {{ entry.postDate|date("m/d/Y") }} Agenda</a></li>
+      <li><a href="{{ entry.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.agendaDownloadableCopy.one().title }} - {{ entry.postDate|date("m/d/Y") }} Agenda</a></li>
     </ul>
   {% endif %}
   {% include '_components/_process.twig' with {heading: 'Agenda Items'} %}
