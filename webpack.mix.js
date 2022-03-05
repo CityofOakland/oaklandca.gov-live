@@ -32,6 +32,7 @@ mix.setPublicPath('./web/dist/')
   .sourceMaps()
   .browserSync({
     proxy: process.env.MIX_LOCAL_SITE_URL,
+    files: ["templates/**/*.*"],
     notify: {
       styles: {
         top: 'auto',

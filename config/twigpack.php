@@ -13,17 +13,17 @@
     ],
     // Public server config
     'server' => [
-      'manifestPath' => '@webroot/assets/',
-      'publicPath' => '@web/assets/',
+      'manifestPath' => '@webroot/dist/',
+      'publicPath' => '@web/dist/',
     ],
     // webpack-dev-server config
     'devServer' => [
-      'manifestPath' => 'https://localhost:3000/assets/',
-      'publicPath' => 'https://localhost:3000/assets/',
+      'manifestPath' => 'https://localhost:3000/dist/',
+      'publicPath' => 'https://localhost:3000/dist/',
     ],
     // Local files config
     'localFiles' => [
-      'basePath' => '@webroot/assets/',
+      'basePath' => '@webroot/dist/',
       'criticalPrefix' => '',
       'criticalSuffix' => '_critical.min.css',
     ],
