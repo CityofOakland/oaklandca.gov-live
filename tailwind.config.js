@@ -21,8 +21,21 @@ module.exports = {
       boxShadow: {
         DEFAULT: '0 1px 2px 0 rgba(theme("colors.gray-800"),.325)',
         btn: '0 2px 6px 2px theme("colors.gray-200"), 0 3px 7px 1px theme("colors.green-100")',
+        card: '0px 0px 1px rgba(81, 81, 81, 0.35), 0px 4px 10px rgba(81, 81, 81, 0.16);'
       },
-  
+      fontSize: {
+        'xs': ['.75rem', '1rem'],
+        'sm': ['.875rem', '1.125rem'],
+        'base': ['1rem', '1.5rem'],
+        'lg': ['1.125rem', '1.75rem'],
+        'xl': ['1.25rem', '1.75rem'],
+        '2xl': ['1.5rem', '2rem'],
+        '3xl': ['1.875rem', '2.25rem'],
+        '4xl': ['2.25rem', '2.5rem'],
+        '5xl': ['3rem', '3rem'],
+        '6xl': ['3.75rem', '3.75rem'],
+        '7xl': ['4.5rem', '4.5rem'],
+      },
       spacing: {
         "30": "7.5rem",
         "1/2": "50%",
@@ -146,5 +159,7 @@ module.exports = {
     }),
   },
   plugins: [
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/line-clamp"),
   ]
 };
