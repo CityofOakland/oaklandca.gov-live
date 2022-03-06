@@ -1,5 +1,5 @@
 <section class="{{ class is defined ? class }}" style="background-color:{{ background is defined ? background }}">
-  <div class="container py-16 mx-auto">
+  <div class="container py-16">
     <h2>{{ heading is defined ? heading }}</h2>
     {% if content is defined %}<div class="mt-5">{{ content }}</div>{% endif %}
     {% include '_components/partials/_cards-grid' with { entries: entries, shadow: (shadow is defined and shadow) } %}

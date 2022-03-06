@@ -141,6 +141,9 @@ module.exports = {
     fontFamily: {
       body: ["Montserrat", "system-ui", "-apple-system", "sans-serif"],
     },
+    container: (theme) => ({
+      center: true,
+    }),
   },
   plugins: [
   ]

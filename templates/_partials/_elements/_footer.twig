@@ -28,7 +28,7 @@
   [ seoMaticLinks.instagram.url, 'instagram.svg', 'Oakland Instagram Page' ]
 ] %}
 <footer class="relative overflow-hidden text-sm leading-loose text-gray-300 lg:text-base bg-gray-1000 bg-transparent-oakland-roots-black">
-    <div class="container relative z-20 py-4 mx-auto sm:py-8">
+    <div class="container relative z-20 py-4 sm:py-8">
         <div class="xl:flex xl:justify-between">
             <div class="flex-wrap sm:flex xl:flex-1">
                 <div class="sm:flex sm:flex-1">
@@ -57,21 +57,21 @@
                 <div></div>
             </div>
         </div>
-        <div class="md:flex pt-2 md:pt-6 mt-4 border-t border-gray-700 sm:flex">
+        <div class="pt-2 mt-4 border-t border-gray-700 md:flex md:pt-6 sm:flex">
             <div class="flex items-center justify-start mt-4 text-xs sm:w-1/4 sm:mt-0 lg:text-base">
                 <a class="text-white hover:text-white hover:underline" href="/topics/oaklandlovelife">#OaklandLoveLife</a>
             </div>
-            <div class="flex items-center md:justify-center pt-2 md:pt-0 sm:w-1/2">
+            <div class="flex items-center pt-2 md:justify-center md:pt-0 sm:w-1/2">
                 {% for socItem in socialMedia %}
                     <div class="mr-4">
-                        <a href="{{ socItem[0] }}" class="flex items-center justify-center w-12 h-12 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 transition-all duration-75 hover:text-gray-1000">
+                        <a href="{{ socItem[0] }}" class="flex items-center justify-center w-12 h-12 transition-all duration-75 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 hover:text-gray-1000">
                             {{ craft.inlin.er('/dist/img/logo-' ~ socItem[1]) | replace('<svg ', '<svg class="h-6" ') | raw }}
                             <span class="hidden-visually">{{ socItem[2] }}</span>
                         </a>
                     </div>
                 {% endfor %}
             </div>
-            <div class="flex items-center md:justify-end mt-4 text-xs sm:w-1/4 sm:mt-0 lg:text-base">&copy; {{ now | date('Y') }} City of Oakland</div>
+            <div class="flex items-center mt-4 text-xs md:justify-end sm:w-1/4 sm:mt-0 lg:text-base">&copy; {{ now | date('Y') }} City of Oakland</div>
         </div>
     </div>
 </footer>

@@ -17,7 +17,7 @@
 {% block content %}
 <div class="components">
   <section class="bg-image" style="background-image:url({{ bannerImage.url }});background-position:{{ bannerImage.getFocalPoint('asCss') }};">
-    <div class="container mx-auto xl:py-24">
+    <div class="container xl:py-24">
       <div>
         <div class="mt-12 mb-4">
           {% include "_partials/_elements/_banner-google-translate.twig" with { paddingTop: "pt-0" } %}
@@ -46,7 +46,7 @@
   {% endif %}
 
   <section class="bg-white">
-    <div class="container py-10 mx-auto">
+    <div class="container py-10">
       <div class="md:flex">
         <div class="md:border-gray-500 md:border-r md:pr-10 md:w-1/2 lg:w-2/3">
           <h2 class="pb-4">{{ "News & Updates"|t }}</h2>
@@ -121,7 +121,7 @@
   {% endif %}
 
   <section class="bg-white">
-    <div class="container py-10 mx-auto">
+    <div class="container py-10">
       <h2 class="pb-4">{{ "City Officials"|t }}</h2>
       <div class="card-grid grid-equal-height profile-cards">
         {% for entry in craft.entries.section('officials').with(['portrait']).all() %}
