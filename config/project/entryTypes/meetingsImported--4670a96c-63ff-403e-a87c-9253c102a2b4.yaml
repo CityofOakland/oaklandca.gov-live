@@ -43,7 +43,7 @@ fieldLayouts:
             fieldUid: f7e4a055-457f-46eb-ab3d-3e816f80a81d # Related Board or Commission
             instructions: 'Select the Board or Commission this meeting is related to.'
             label: ''
-            required: '1'
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
