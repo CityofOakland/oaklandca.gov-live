@@ -158,6 +158,15 @@ fieldLayouts:
       -
         elements:
           -
+            fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133 # Departments
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: e67ec759-ea3a-4568-bfa6-a314ff3d1036 # Projects
             instructions: null
             label: null
