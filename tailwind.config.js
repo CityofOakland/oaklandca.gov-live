@@ -6,7 +6,7 @@ module.exports = {
       'md': '768px',
       'lg': '1024px',
       'xl': '1280px',
-      '2xl': '1536px',
+      '2xl': '1536px'
     },
     colors: {
       transparent: "transparent",
@@ -183,6 +183,7 @@ module.exports = {
       md: "40rem",
       lg: "50rem",
       xl: "60rem",
+      "2xl": "72rem",
       full: "100%",
     }),
     margin: (theme, { negative }) => ({

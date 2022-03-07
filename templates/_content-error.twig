@@ -30,7 +30,7 @@
   <body class="overflow-x-hidden font-body {{ pageClass ?? '' }}">
     <div class="page-holder">
       {% include '_partials/_elements/_skip-to-content.twig' %}
-      <header class="bg-gray-1000 py-3 fill-current text-gray-100 px-4">
+      <header class="px-4 py-3 text-gray-100 fill-current bg-gray-1000">
         <div class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden">{{ svg('@webroot/assets/img/logo-oakland-tree.svg') }}</div>
         <div class="w-40 h-10 oak-hidden sm:block">{{ svg('@webroot/assets/img/logo-oakland.svg') }}</div>
       </header>
@@ -38,18 +38,18 @@
         <section>
           <div class="bg-transparent-oakland-roots">
             <div class="container" style="padding-top:1rem;padding-bottom:1rem;">
-              <div class="breadcrumbs relative flex flex-col items-start py-0 sm:justify-between sm:flex-row-reverse sm:items-center">
+              <div class="relative flex flex-col items-start py-0 breadcrumbs sm:justify-between sm:flex-row-reverse sm:items-center">
                 {% include "_partials/_elements/_banner-google-translate.twig" with {paddingTop: "pt-0 mb-4 md:mb-0"} %}
               </div>
             </div>
           </div>
           <div class="container components">
-            <div style="max-width:1152px;">
+            <div class="max-w-2xl">
               <div class="flex flex-col flex-1 lg:flex-row">
                 <div class="w-full lg:w-8/11">
                   {% block pageheader %}
                     <h1>Oaklandca.gov is currently experiencing technical difficulties</h1>
-                    <p class="lead pt-4">We are aware of the issue and working to resolve it.</p>
+                    <p class="pt-4 lead">We are aware of the issue and working to resolve it.</p>
                   {% endblock %}
                 </div>
               </div>
@@ -58,7 +58,7 @@
         </section>
         <section class="bg-gray-100">
           <div class="container">
-            <div style="max-width:1152px;">
+            <div class="max-w-2xl">
               <div class="flex flex-col flex-1 lg:flex-row">
                 <div class="w-full lg:w-8/11">
                   <div class="components components-format">
@@ -81,7 +81,7 @@
           </div>
         </section>
       </main>
-      <footer class="bg-gray-1000 py-3 fill-current text-gray-100 px-4 flex items-center justify-between">
+      <footer class="flex items-center justify-between px-4 py-3 text-gray-100 fill-current bg-gray-1000">
         <div>
           <div class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden">{{ svg('@webroot/assets/img/logo-oakland-tree.svg') }}</div>
           <div class="w-40 h-10 oak-hidden sm:block">{{ svg('@webroot/assets/img/logo-oakland.svg') }}</div>
