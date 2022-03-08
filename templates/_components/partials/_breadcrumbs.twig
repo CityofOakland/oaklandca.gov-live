@@ -10,10 +10,30 @@
   {% if entry.section is defined and entry.section.type == 'single' %}
     {% set breadcrumbs = null %}
   {% elseif entry.section is defined %}
-    {% set breadcrumbs = breadcrumbs|merge([{
-      title: entry.section.name,
-      link: siteUrl ~ entry.section.handle
-    }]) %}
+    {% if entry.section.handle == 'boardsCommissions' and craft.request.lastSegment == 'meetings' %}
+      {% set breadcrumbs = breadcrumbs|merge([{
+        title: 'Meetings',
+        link: siteUrl ~ 'meetings'
+      }]) %}
+    {% endif %}
+    {% if entry.section.handle == 'meetings' %}
+      {% set breadcrumbs = breadcrumbs|merge([{
+        title: 'Meetings',
+        link: siteUrl ~ 'meetings'
+      }]) %}
+      {% if entry.relatedBoardOrCommission|length %}
+        {% set breadcrumbs = breadcrumbs|merge([{
+          title: entry.relatedBoardOrCommission.one().title,
+          link: entry.relatedBoardOrCommission.one().url
+        }]) %}
+      {% endif %}
+    {% elseif entry.section.handle == 'boardsCommissions' and craft.request.lastSegment == 'meetings' %}
+    {% else %}
+      {% set breadcrumbs = breadcrumbs|merge([{
+        title: entry.section.name,
+        link: siteUrl ~ (entry.section.handle == 'boardsCommissions' ? 'boards-commissions' : entry.section.handle)
+      }]) %}
+    {% endif %}
   {% endif %}
 {% endif %}
 
@@ -42,6 +62,12 @@
       <a class="font-bold text-green-800 hover:text-green-800 hover:underline" href="{{ link.link }}">{{ link.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
     {% endfor %}
     <span class="{{ breadCrumbLinks is empty ? 'font-bold' : 'text-gray-800' }}">{{ bannerTitle }}</span>
+  {% elseif entry.section.handle == 'boardsCommissions' and craft.request.lastSegment == 'meetings' %}
+    {% for link in breadcrumbs ?? '' %}
+      <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
+    {% endfor %}
+    <a href="{{ entry.url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ entry.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
+    <span class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">Meetings for {{ entry.title }}</span>
   {% else %}
     {% for link in breadcrumbs ?? '' %}
       <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>

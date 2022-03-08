@@ -99,6 +99,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: 7ff43a45-a85f-4be9-b97c-c1fff5d916b1 # Section Heading
+            instructions: ''
+            label: 'Learn More About Header'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: f528b37c-8b15-43b8-8da0-d1b161fbf629 # Learn More About
             instructions: null
             label: null

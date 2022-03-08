@@ -12,7 +12,7 @@
     <div class="page-holder">
       {% include '_partials/_elements/_skip-to-content.twig' %}
       {% include '_partials/_elements/_nav-bar.twig' %}
-      <main>
+      <main class="overflow-x-hidden">
         {% include '_partials/_elements/_sitewide-alert.twig' %}
         {% if category is defined %}
           {% set entry = category %}
@@ -27,23 +27,27 @@
             </div>
           </div>
           <div id="content" style="position:relative;top:-80px;"></div>
-          <div class="container components pt-16">
-            <div style="max-width:1152px;">
-              <div class="flex flex-col flex-1 lg:flex-row">
-                <div class="w-full lg:w-8/11">
-                  {% if category is not defined and entry.section.handle == 'meetings' %}
-                    <h1>{% if entry.meetingStatus and entry.meetingStatus.value and entry.meetingStatus.value !== 'default' %}{{ entry.meetingStatus.label }} - {% endif %}{{ entry.title }}</h1>
-                    {% if entry.subtitle %}
-                      <div class="lead pt-4">{{ entry.subtitle }}</div>
-                    {% elseif entry.date %}
-                        <div class="lead pt-4">The {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} {{ now|date('Y-m-d') > entry.date|date('Y-m-d') ? 'held its last' : 'will hold its next' }} public meeting on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
+          <div class="{{ entry.slug == 'meetings-index' ? 'bg-blue-900 text-white' : '' }}">
+            <div class="container components pt-8 md:pt-16 {{ entry.slug == 'meetings-index' ? 'md:mb-8' : '' }}">
+              <div style="max-width:1152px;">
+                <div class="flex flex-col flex-1 lg:flex-row">
+                  <div class="w-full lg:w-8/11">
+                    {% if category is not defined and entry.section.handle == 'meetings' %}
+                      <h1>{% if entry.meetingStatus and entry.meetingStatus.value and entry.meetingStatus.value !== 'default' %}{{ entry.meetingStatus.label }} - {% endif %}{{ entry.title }}</h1>
+                      {% if entry.date %}
+                        {% if now|date('Y-m-d') <= entry.date|date('Y-m-d') %}
+                          <div class="lead pt-4">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} will be held on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
+                        {% else %}
+                          <div class="lead pt-4">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} was held on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
+                        {% endif %}
                       {% endif %}
-                  {% else %}
-                    <h1>{{ entry.title }}</h1>
-                    {% if entry.leadIn or entry.summary %}
-                      <div class="lead pt-4">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
+                    {% else %}
+                      <h1>{{ entry.title }}</h1>
+                      {% if entry.leadIn or entry.summary %}
+                        <div class="lead pt-4">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
+                      {% endif %}
                     {% endif %}
-                  {% endif %}
+                  </div>
                 </div>
               </div>
             </div>
@@ -53,13 +57,13 @@
           {% if category is not defined %}
             <div class="container pt-0">
               <div style="max-width:1152px;">
-                <div class="flex flex-wrap justify-between -mx-8">
-                  <div class="w-full lg:w-7/11 px-8">
+                <div class="flex flex-wrap justify-between -mx-8 {{ layout is defined and layout == 'reverse' ? 'flex-col-reverse lg:flex-row' : '' }}">
+                  <div class="w-full lg:w-7/11 px-8 {{ layout is defined and layout == 'reverse' ? 'mt-8 lg:mt-0' : '' }}">
                     <div class="components components-format">
                       {% block content %}{% endblock %}
                     </div>
                   </div>
-                  <div class="w-full lg:w-4/11 px-8">
+                  <div class="w-full lg:w-4/11 px-8 {{ layout is defined and layout == 'reverse' ? 'mt-0' : 'mt-8 lg:mt-0' }}">
                     <div id="components-sidebar" class="components components-format">
                       {% block sidebar %}
                         {% if category is not defined %}
@@ -73,15 +77,14 @@
             </div>
           {% endif %}
           <div id="components-footer" class="components">
-            {% if entry['relatedBoardOrCommission'] is defined and entry.relatedBoardOrCommission|length %}
+            {% if entry['relatedDepartments'] is defined and entry.relatedDepartments|length %}
               {% include '_components/partials/_cards' with {
                 background: '#334E68',
                 class:      'text-white',
-                heading:    "Related Board or Commission",
-                entries:    entry.relatedBoardOrCommission.all()
+                heading:    "Related Departments",
+                entries:    entry.relatedDepartments.all()
               } %}
             {% endif %}
-
             {% if entry.componentsFooter %}
               {% for block in entry.componentsFooter.level(1).all() %}
                 {% include '_components/_' ~ block.type %}

@@ -19,11 +19,6 @@ permissions:
   - 'deletepeerentrydrafts:fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c' # Boards & Commissions Index
   - 'editpeerentrydrafts:fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c' # Boards & Commissions Index
   - 'editentries:fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c' # Boards & Commissions Index
-  - 'publishentries:ba27f849-b247-4db0-ae91-53a01f44bd0b' # Calendar Index
-  - 'publishpeerentrydrafts:ba27f849-b247-4db0-ae91-53a01f44bd0b' # Calendar Index
-  - 'deletepeerentrydrafts:ba27f849-b247-4db0-ae91-53a01f44bd0b' # Calendar Index
-  - 'editpeerentrydrafts:ba27f849-b247-4db0-ae91-53a01f44bd0b' # Calendar Index
-  - 'editentries:ba27f849-b247-4db0-ae91-53a01f44bd0b' # Calendar Index
   - 'createentries:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
   - 'publishentries:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
   - 'deleteentries:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
@@ -104,6 +99,16 @@ permissions:
   - 'deletepeerentrydrafts:9168f154-c0f9-4cf9-991d-60b287a85fc0' # Imported Content
   - 'editpeerentrydrafts:9168f154-c0f9-4cf9-991d-60b287a85fc0' # Imported Content
   - 'editentries:9168f154-c0f9-4cf9-991d-60b287a85fc0' # Imported Content
+  - 'createentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'publishentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'deleteentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'publishpeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'deletepeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'editpeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'publishpeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'deletepeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'editpeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'editentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
   - 'publishentries:20567858-8423-4c20-9004-d0b02150fa2a' # Meetings Index
   - 'publishpeerentrydrafts:20567858-8423-4c20-9004-d0b02150fa2a' # Meetings Index
   - 'deletepeerentrydrafts:20567858-8423-4c20-9004-d0b02150fa2a' # Meetings Index

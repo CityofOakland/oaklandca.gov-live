@@ -102,6 +102,7 @@ fields:
       maxRows: ''
       minRows: '1'
       placeholderKey: null
+      propagationKeyFormat: null
       propagationMethod: all
       selectionLabel: ''
       staticField: ''

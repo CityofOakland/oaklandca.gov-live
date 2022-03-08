@@ -803,8 +803,24 @@ form[data-handle="whyWasThisPageHelpful"] {
 }
 
 .card:hover > h4 > span:first-child,
-.card:focus > h4 > span:first-child{
+.card:focus > h4 > span:first-child {
   text-decoration: underline;
+}
+
+.card h4 {
+  color: #207127;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  padding-bottom: 0.5rem;
+}
+
+.card p {
+  color: #222222;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .card.dark {
@@ -815,6 +831,29 @@ form[data-handle="whyWasThisPageHelpful"] {
 .card.dark:hover,
 .card.dark:focus {
   background: #d9e2ec;
+}
+
+.card.default:hover,
+.card.default:focus {
+  background: #207127;
+}
+
+.card.default:hover h4,
+.card.default:focus h4,
+.card.default:hover p,
+.card.default:focus p {
+  color: white;
+}
+
+.card.default:hover path:not([stroke]),
+.card.default:focus path:not([stroke]) {
+  fill: white;
+}
+
+.card.default:hover path[stroke],
+.card.default:focus path[stroke] {
+  fill: transparent;
+  stroke: white;
 }
 
 .cards a {
@@ -888,6 +927,7 @@ form[data-handle="whyWasThisPageHelpful"] {
 
 .components input,
 .components select {
+  background: white;
   color: #6B7280;
   font-size: 14px;
   margin-top: 0.75rem;
@@ -1074,6 +1114,12 @@ form[data-handle="whyWasThisPageHelpful"] {
 
 .components .hr {
   border-top: 3px solid #E1E1E1;
+  opacity: 1;
+}
+
+.components .hr.dark {
+  border-top: 2px solid #212121;
+  margin: 2rem 0;
   opacity: 1;
 }
 
@@ -1274,14 +1320,29 @@ form[data-handle="whyWasThisPageHelpful"] {
 #components-sidebar > h2,
 #components-sidebar > h3,
 #components-sidebar > h4 {
-  padding-top: 1em;
+  padding-top: 16px;
 }
 
 #components-sidebar label {
   display: block;
   font-size: 16px;
   font-weight: 700;
-  padding-top: 1.5em;
+  padding-top: 24px;
+}
+
+@media(min-width: 768px) {
+  #components-sidebar label {
+    padding-top: 18px;
+  }
+}
+
+#components-sidebar input,
+#components-sidebar select {
+  margin-top: 8px;
+}
+
+#components-sidebar .button {
+  margin-bottom: 0;
 }
 
 #components-sidebar #search {
@@ -1304,6 +1365,61 @@ form[data-handle="whyWasThisPageHelpful"] {
 
 #components-sidebar #search > input {
   padding-left: 3rem;
+}
+
+#components-sidebar > hr:not(:first-child) {
+  margin-top: 2em;
+}
+
+#components-sidebar > h1,
+#components-sidebar > h2,
+#components-sidebar > h3,
+#components-sidebar > h4 {
+  padding-top: 1em;
+}
+
+.ul-icons {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.ul-icons > li {
+  margin-bottom: 15px;
+}
+
+.ul-icons > li,
+.ul-icons > li > a {
+  display: flex;
+  align-items: flex-start;
+}
+
+.ul-icons > li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  margin-right: 10px;
+  width: 22.5px;
+}
+
+.related > li svg path {
+  fill: #2e8131;
+}
+
+.ul-icons a {
+  text-decoration: none;
+}
+
+.ul-icons a:hover,
+.ul-icons a:focus {
+  text-decoration: underline;
+}
+
+.ul-icons.related a {
+  text-decoration: underline;
+}
+
+.ul-icons.related a:hover,
+.ul-icons.related a:focus {
+  text-decoration: none;
 }
 
 .content > h1 {
@@ -1343,6 +1459,150 @@ form[data-handle="whyWasThisPageHelpful"] {
 .content > ul > li > ul {
   margin-top: 0;
   padding-left: 0.5rem;
+}
+
+.dropdown.dropdown-megamenu .dropdown-container {
+  display: none;
+  padding: 1rem 0;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+}
+
+@media(min-width: 1280px) {
+  .dropdown.dropdown-megamenu .dropdown-container {
+    top: 83px;
+  }
+}
+
+.dropdown.dropdown-megamenu .dropdown-container::before {
+  background: black;
+  content: "";
+  opacity: 0.25;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+@media(min-width: 1024px) {
+  .dropdown.dropdown-megamenu .dropdown-container {
+    padding: 0.75rem 0;
+    max-height: calc(100vh - 80px);
+  }
+}
+
+.dropdown.dropdown-megamenu .dropdown-container .components h4 {
+  font-size: 16px;
+  padding-bottom: 0.5rem !important;
+}
+
+.dropdown.dropdown-megamenu .dropdown-container .components p {
+  font-size: 14px;
+}
+
+.dropdown.dropdown-megamenu > a {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  padding-top: 31px;
+  padding-bottom: 31px;
+  position: relative;
+}
+
+.dropdown.dropdown-megamenu > a > svg {
+  margin-left: 5px;
+  transform: rotateZ(90deg);
+  width: 10px;
+}
+
+.dropdown.dropdown-megamenu > a > svg path {
+  fill: white;
+}
+
+.dropdown.dropdown-megamenu > a:focus + .dropdown-container,
+.dropdown.dropdown-megamenu:focus-within .dropdown-container {
+  display: block !important;
+}
+
+.dropdown.dropdown-megamenu:hover > a,
+.dropdown.dropdown-megamenu:focus-within > a,
+.dropdown.dropdown-megamenu > a:focus,
+.dropdown.dropdown-megamenu.state-active > a {
+  background: #207127;
+  color: white;
+}
+
+.dropdown.dropdown-megamenu:hover > .dropdown-container,
+.dropdown.dropdown-megamenu.state-active > .dropdown-container {
+  display: block;
+}
+
+#megamenu .card:hover,
+#megamenu .card:focus {
+  background: #0D5713;
+}
+
+#megamenu .card h4 {
+  color: #FFF3C4;
+}
+
+#megamenu .card p {
+  color: white;
+}
+
+#megamenu .card span {
+  text-decoration: none;
+}
+
+#megamenu .card.dark {
+  background: #FFF3C4;
+}
+
+#megamenu .card.dark:hover,
+#megamenu .card.dark:focus {
+  background: #FFFBEA;
+}
+
+#megamenu .card.dark h4 {
+  color: #207127;
+}
+
+#megamenu .card.dark p {
+  color: #000000;
+}
+
+@media(max-height: 739px) {
+  #megamenu h4 {
+      padding-bottom: 0 !important;
+  }
+
+  #megamenu .card {
+      padding: 10px 20px;
+  }
+
+  #megamenu .card:not(.dark) {
+      border-bottom: 1px solid #3E9141;
+      border-radius: 0;
+  }
+
+  #megamenu .clamp {
+      display: none;
+  }
+}
+
+.subnav {
+  display: none;
+}
+
+.subnav.state-active {
+  display: block;
 }
 
 .embed-container {
@@ -1504,6 +1764,10 @@ form[data-handle="whyWasThisPageHelpful"] {
   }
 }
 
+#helpful p {
+  font-size: 14px;
+}
+
 .lead,
 .lead > p {
   font-size: 24px;
@@ -1526,6 +1790,7 @@ form[data-handle="whyWasThisPageHelpful"] {
   font-size: 16px;
   line-height: 1.45;
   margin-left: -10px;
+  padding: 0 !important;
 }
 
 .pagination > li {

@@ -1,59 +1,73 @@
-{% macro renderForm(id, entry) %}
-		<div class="flex flex-wrap justify-between -mx-3">
-			<div class="lg:w-3/4 xl:w-1/2 px-3">
-				<div id="{{ id }}" class="hidden">
-					{% if craft.freeform.form(id) %}
-						{{ craft.freeform.form(id, {
-							labelClass: "form-label",
-							inputClass: "form-control",
-							overrideValues: {
-								entryUrl: entry['url'] is defined ? entry.url : 'N/A',
-								pageAuthor: entry['author'] is defined and entry.author ? entry.author.fullName : 'N/A',
-								pageType: entry['type'] is defined and entry.type ? entry.type : entry.group.name,
-							}
-						}).render() }}
-						{% js at endBody %}
-							document.querySelector('[data-handle="{{ id }}"]').addEventListener('freeform-ajax-success', function (event) {
-								$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(document.querySelector('[data-handle="{{ id }}"]'));
-					  			$(document.querySelector('[data-handle="{{ id }}"]')).remove();
-						  	});
+{% macro renderForm(id, element) %}
+	{% set entryUrl     = craft.app.request.absoluteUrl %}
+	{% set pageAuthor 	= 'No Author' %}
+	{% set pageType 	= 'No Page Type' %}
 
-						  	$(function () {
-							    // Find the corresponding Form
-							    var form = document.querySelector('#{{ id }} form');
-							    $.ajax({
-							      	// Specify the form handle in the GET parameters
-							      	url: '{{ siteUrl }}form?form={{ id }}',
-							      	type: 'get',
-							      	dataType: 'json',
-							      	success: function (response) {
-							        	// Update the Form Hash
-							        	form.querySelector('input[name=formHash]').value = response.hash;
+	{% switch className(element) %}
+		{% case 'craft\\elements\\Entry' %}
+			{% set pageAuthor 	= element.author ? element.author.fullName : 'No Author' %}
+			{% set pageType 	= element.type ? element.type.handle : 'No Page Type' %}
+		{% case 'craft\\elements\\Category' %}
+			{% set pageType 	= element.group ? element.group.name : 'No Page Type' %}
+		{% default %}
+	{% endswitch %}
 
-							        	// Locate and update the CSRF input
-							        	var csrf = response.csrf;
-							        	form.querySelector('input[name=' + csrf.name + ']').value = csrf.value;
-							      	},
-							    });
-							 });
-						{% endjs %}
-					{% else %}
-						<p class="text-white"><b>There was an issue with loading this form.</b></p>
-					{% endif %}
-				</div>
+	<div class="flex flex-wrap justify-between -mx-3">
+		<div class="lg:w-3/4 xl:w-1/2 px-3">
+			<div id="{{ id }}" class="hidden form">
+				{% if craft.freeform.form(id) %}
+					{{ craft.freeform.form(id, {
+						labelClass: "form-label",
+						inputClass: "form-control",
+						overrideValues: {
+							entryUrl: craft.app.request.absoluteUrl,
+							pageAuthor: pageAuthor,
+							pageType: pageType,
+						}
+					}).render() }}
+					{% js at endBody %}
+						document.querySelector('[data-handle="{{ id }}"]').addEventListener('freeform-ajax-success', function (event) {
+							$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(document.querySelector('[data-handle="{{ id }}"]'));
+				  			$(document.querySelector('[data-handle="{{ id }}"]')).remove();
+				  			$('#helpful').remove();
+					  	});
+
+					  	$(function () {
+						    // Find the corresponding Form
+						    var form = document.querySelector('#{{ id }} form');
+						    $.ajax({
+						      	// Specify the form handle in the GET parameters
+						      	url: '{{ siteUrl }}form?form={{ id }}',
+						      	type: 'get',
+						      	dataType: 'json',
+						      	success: function (response) {
+						        	// Update the Form Hash
+						        	form.querySelector('input[name=formHash]').value = response.hash;
+
+						        	// Locate and update the CSRF input
+						        	var csrf = response.csrf;
+						        	form.querySelector('input[name=' + csrf.name + ']').value = csrf.value;
+						      	},
+						    });
+						 });
+					{% endjs %}
+				{% else %}
+					<p class="text-white"><b>There was an issue with loading this form.</b></p>
+				{% endif %}
 			</div>
 		</div>
+	</div>
 {% endmacro %}
 
 <section class="bg-gray-900">
 	<div class="container components py-6">
-		<div id="helpful" class="flex items-center justify-between text-white">
+		<div id="helpful" class="md:flex items-center justify-between text-white">
 			<div class="flex items-center">
-				<p class="mr-8">Was this page helpful?</p>
+				<p class="mr-8"><b>Was this page helpful?</b></p>
 				<button class="button secondary small" data-open="whyWasThisPageHelpful" style="margin-top:0;margin-bottom:0;">Yes</button>
-				<button class="button secondary small" data-open="whatWasWrongWithThisPage" style="margin-top:0;margin-bottom:0;">No</button>
+				<button class="button secondary small" data-open="whatWasWrongWithThisPage" style="margin-top:0;margin-bottom:0;margin-right:0;">No</button>
 			</div>
-			<p class="cursor-pointer" data-open="reportProblem" role="button"><u>Report a problem with this page</u></p>
+			<p class="cursor-pointer pt-6 md:pt-0" data-open="reportProblem" role="button"><u>Report a problem with this page</u></p>
 		</div>
     {{ _self.renderForm('whyWasThisPageHelpful', entry) }}
     {{ _self.renderForm('whatWasWrongWithThisPage', entry) }}
@@ -63,6 +77,7 @@
 
 {% js at endBody %}
 	$('[data-open]').on('click',function(){
+		$('.form').addClass('hidden');
 		$('#' + $(this).data('open')).removeClass('hidden');
 		$('#helpful').addClass('hidden');
 	});

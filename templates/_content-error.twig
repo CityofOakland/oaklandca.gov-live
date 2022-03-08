@@ -63,11 +63,6 @@
                 <div class="w-full lg:w-8/11">
                   <div class="components components-format">
                     <h2>For Immediate Assistance</h2>
-                    {% include '_components/_callout' with {
-                      callOutType   : 'attention',
-                      heading       : 'If you need help right now, call 9-1-1',
-                      description   : 'Do not report a crime online if you need help right away.' 
-                    } %}
                     <h3>To Report a Problem</h3>
                     <p>To report non-crime related problems such as: illegal dumping, graffiti, potholes, encampments, building maintenance, and urgent infrastructure issues.</p>
                     <ul>
@@ -76,6 +71,7 @@
                     </ul>
                     <h3>To Report a Crime</h3>
                     <p>To report a non-emergency crime or add supplemental information to an existing police report call <a href="tel:+5107773333">(510) 777-3333</a>.</p>
+                    <p><b>If this is an emergency please call 9-1-1.</b></p>
                     <h3>To Access City Council Meetings and Agendas</h3>
                     <p>Visit <a href="https://oakland.legistar.com/">oakland.legistar.com</a></p>
                   </div>
@@ -90,17 +86,26 @@
           <div class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden">{{ svg('@webroot/assets/img/logo-oakland-tree.svg') }}</div>
           <div class="w-40 h-10 oak-hidden sm:block">{{ svg('@webroot/assets/img/logo-oakland.svg') }}</div>
         </div>
-        <div class="flex items-center justify-center">
-          <a href="https://www.facebook.com/oakland/" class="flex items-center justify-center w-10 h-10 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000 p-2 ml-4">
-            {{ svg('@webroot/assets/img/logo-facebook.svg') }}
-          </a>
-          <a href="https://www.twitter.com/oakland" class="flex items-center justify-center w-10 h-10 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000 p-2 ml-4">
-            {{ svg('@webroot/assets/img/logo-twitter.svg') }}
-          </a>
-          <a href="https://www.instagram.com/oakland" class="flex items-center justify-center w-10 h-10 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000 p-2 ml-4">
-            {{ svg('@webroot/assets/img/logo-instagram.svg') }}
-          </a>
-        </div>
+        <ul class="flex items-center my-0">
+            <li class="ml-4">
+              <a href="https://www.facebook.com/oakland/" class="flex items-center justify-center w-10 h-10 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000">
+                {{ svg('@webroot/assets/img/logo-facebook.svg')|attr({class:'h-5'}) }}
+                <span class="sr-only">Oakland Facebook Page</span>
+              </a>
+            </li>
+            <li class="ml-4">
+              <a href="https://www.twitter.com/oakland" class="flex items-center justify-center w-10 h-10 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000">
+                {{ svg('@webroot/assets/img/logo-twitter.svg')|attr({class:'h-5'}) }}
+                <span class="sr-only">Oakland Twitter Page</span>
+              </a>
+            </li>
+            <li class="ml-4">
+              <a href="https://www.instagram.com/oakland" class="flex items-center justify-center w-10 h-10 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000">
+                {{ svg('@webroot/assets/img/logo-instagram.svg')|attr({class:'h-5'}) }}
+                <span class="sr-only">Oakland Instagram Page</span>
+              </a>
+            </li>
+        </ul>
       </footer>
     </div>
   </body>
