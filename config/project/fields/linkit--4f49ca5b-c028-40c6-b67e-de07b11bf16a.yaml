@@ -31,7 +31,7 @@ settings:
           __assoc__:
             -
               - enabled
-              - ''
+              - '1'
             -
               - customLabel
               - ''

@@ -1,3 +1,68 @@
+footer h5 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+footer a {
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+@media(min-width: 768px) {
+  footer a {
+      font-size: 16px;
+  }
+}
+
+footer a:hover,
+footer a:focus {
+  color: white;
+  text-decoration: none;
+}
+
+footer li {
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+footer button {
+  margin: 0 !important;
+}
+
+footer label {
+  margin-top: 0.75rem;
+}
+
+input[type="email"].form-control,
+input[type="search"].form-control,
+input[type="text"].form-control {
+  background: #F7F7F7;
+  color: #3b3b3b;
+  font-size: 16px;
+  margin: 0;
+  padding: 14px;
+  width: 100%;
+}
+
+input[type="email"].form-control {
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+input[type="email"].form-control::placeholder,
+input[type="search"].form-control::placeholder,
+input[type="text"].form-control::placeholder {
+  color: #6B7280;
+}
+
+.form-label {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 .has-submenu > ul {
   display: grid;
   margin: 0 auto;
@@ -143,19 +208,6 @@
 
 .has-submenu .card.dark {
   margin-bottom: 4px;
-}
-
-input[type="search"].form-control {
-  background: #F7F7F7;
-  color: #3b3b3b;
-  font-size: 16px;
-  margin: 0;
-  padding: 14px;
-  width: 100%;
-}
-
-input[type="search"].form-control::placeholder {
-  color: #6B7280;
 }
 
 #navbar-dropdown-search {
