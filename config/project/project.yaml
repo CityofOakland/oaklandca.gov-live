@@ -64,7 +64,6 @@ meta:
     4ae79c6e-4218-4dc0-8c8e-d1e19e0c00e8: Gallery # Gallery
     4b5cda22-38e1-4580-b113-b6ceee3c9c09: 'Related Resources' # Related Resources
     4b278e2a-dc49-4f60-a4bd-18575fb15098: 'Milestone Started?' # Milestone Started?
-    4c0f9e7c-fe6a-47d0-b8c9-17e8a34a39f2: Address # Address
     4c46efcc-d38f-4f25-8873-d8c0837babd9: 'Document Label' # Document Label
     4cac2797-e23e-4714-b9fa-3afcd009044a: 'Related Departments' # Related Departments
     4d6dd644-455e-4186-8d05-a00079622246: 'Last Name' # Last Name
@@ -380,7 +379,6 @@ meta:
     2260316d-d754-471f-a901-9d8ed19c13d3: 'Full Name' # Full Name
     4047207e-c317-47cc-825b-7e751cc4ad38: 'Call to Action' # Call to Action
     06394615-97e5-4f64-8d80-da62f9f1582c: 'Location Description' # Location Description
-    6781472a-633d-4059-b528-3b826db0332f: 'Hide Thumbnails?' # Hide Thumbnails?
     6982234e-dc9c-4165-a2a0-4d6edfcbea52: 'Group Head Bio' # Group Head Bio
     7657014a-eefc-419e-921e-8896ed282ab3: 'Sitewide Alert' # Sitewide Alert
     7664938a-7aa3-400c-ab55-335b7ef374bd: 'Column 1 Heading' # Column 1 Heading
@@ -394,7 +392,6 @@ meta:
     58263077-210c-44b9-9b7c-beecb708601f: 'Website Updates' # Website Updates
     70778563-6dac-453d-a4b0-5121f3a614b7: Topics # Topics
     71390558-d90c-4764-9b4c-3193ce8c1c0f: News # News
-    80185635-48b7-48d7-847a-53d941fdda68: Address # Address
     80554222-e44d-4971-b6db-30843c2f3a7d: Facebook # Facebook
     93529926-6c77-4675-9951-602d6d06458e: 'Public Schema' # Public Schema
     98698930-f730-4a54-a9fa-491f477e8252: Officials # Officials
@@ -426,7 +423,6 @@ meta:
     ab06f460-5f10-4ce6-9623-9a5ff14a8685: 'Website Updates' # Website Updates
     ab9a27a4-49e9-44fe-9ee2-2ca89f07bc4c: Contact # Contact
     ac30e2e0-2f26-4b6c-a404-07b749af00dc: 'Link Location' # Link Location
-    ac349657-dbca-480e-8cb9-dc97ccae3b3a: 'Allow Autofill?' # Allow Autofill?
     ad4e3d36-752c-48da-bfbd-bd61e083119b: Heading # Heading
     ae05e014-38d0-4bcf-904d-e0ef291e71db: 'Documents Index' # Documents Index
     af0e38e2-c040-47dc-a4f5-a2364d160a8f: 'Photo Gallery' # Photo Gallery
@@ -436,7 +432,6 @@ meta:
     b0a28612-04bc-4669-a6d1-816c9c768a29: 'Official Department' # Official Department
     b1b0e0eb-fd37-4708-96c7-4f5f11d8fdb0: Departments # Departments
     b3b7323b-b212-4d0a-a2f4-b205edf3f056: 'Meetings Description' # Meetings Description
-    b4b3c606-9215-46dd-926d-ecc0cdd900e7: 'Street Address' # Street Address
     b7e437e1-239f-4c5c-8c62-5f0323f9d22c: Services # Services
     b7ec3bdf-65b5-4385-8d12-cd2110b1c75c: 'Document Type' # Document Type
     b34a0436-278d-4bb7-a7e8-729da1db7c4e: Department/Official/Board/Commission # Department/Official/Board/Commission
@@ -541,7 +536,6 @@ meta:
     ddd25f23-4975-475c-9bef-e8a0e0e43fc0: 'Entries (Deprecated)' # Entries (Deprecated)
     de65ce28-2919-4a65-9aa2-c18e5518f2fe: Program/Subdivision # Program/Subdivision
     de588e4c-ab76-4b95-8150-afebc746259b: Documents # Documents
-    de14155f-e982-42aa-9b79-71ceeaf08a77: 'Hide Summary?' # Hide Summary?
     de273878-3929-4764-b4ab-a670a2987d39: 'Highlighted News' # Highlighted News
     df8685d8-8295-456f-b677-b60cced48d3d: Events # Events
     df535740-f62a-4027-aefd-b7fef85f4a7f: Resources # Resources

@@ -13,7 +13,7 @@
 	{% endswitch %}
 
 	<div class="flex flex-wrap justify-between -mx-3">
-		<div class="lg:w-3/4 xl:w-1/2 px-3">
+		<div class="px-3 lg:w-3/4 xl:w-1/2">
 			<div id="{{ id }}" class="hidden form">
 				{% if craft.freeform.form(id) %}
 					{{ craft.freeform.form(id, {
@@ -60,14 +60,14 @@
 {% endmacro %}
 
 <section class="bg-gray-900">
-	<div class="container components py-6">
-		<div id="helpful" class="md:flex items-center justify-between text-white">
+	<div class="container py-6 components">
+		<div id="helpful" class="items-center justify-between text-white md:flex">
 			<div class="flex items-center">
 				<p class="mr-8"><b>Was this page helpful?</b></p>
 				<button class="button secondary small" data-open="whyWasThisPageHelpful" style="margin-top:0;margin-bottom:0;">Yes</button>
 				<button class="button secondary small" data-open="whatWasWrongWithThisPage" style="margin-top:0;margin-bottom:0;margin-right:0;">No</button>
 			</div>
-			<p class="cursor-pointer pt-6 md:pt-0" data-open="reportProblem" role="button"><u>Report a problem with this page</u></p>
+			<p class="pt-6 cursor-pointer md:pt-0" data-open="reportProblem" role="button"><u>Report a problem with this page</u></p>
 		</div>
     {{ _self.renderForm('whyWasThisPageHelpful', entry) }}
     {{ _self.renderForm('whatWasWrongWithThisPage', entry) }}
