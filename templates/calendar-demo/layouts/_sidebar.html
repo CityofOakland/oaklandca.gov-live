@@ -30,7 +30,7 @@
             {% set style = "color: "~calendar.color~";" %}
         {% endif %}
 
-        <a href="{{ siteUrl }}calendar-demo/{{ urlPart }}/{{ calendar.handle }}"
+        <a href="{{ siteUrl('calendar-demo/{{ urlPart }}/{{ calendar.handle }}') }}"
            class="list-group-item list-group-item-action" style="{{ style }}">
             <span class="fas fa-calendar-alt" style="color: {{ calendar.color }};" aria-hidden="true"></span>&nbsp;
             {{ calendar.name }}

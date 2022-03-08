@@ -16,7 +16,7 @@
                 {{ craft.inlin.er('/dist/img/icon-menu.svg') | replace('<svg ', '<svg class="h-9 md:h-10 xl:oak-hidden" ') | raw }}
             </button>
             <nav id="main-navigation" class="flex items-stretch justify-between w-full py-3 lg:py-5" aria-label="Main">
-                <a id="home-link" class="flex items-center justify-center h-full px-2 text-gray-100 duration-75 fill-current hover:text-gray-200" href="{{ siteUrl }}" name="Home">
+                <a id="home-link" class="flex items-center justify-center h-full px-2 text-gray-100 duration-75 fill-current hover:text-gray-200" href="{{ siteUrl('') }}" name="Home">
                     {{ craft.inlin.er('/dist/img/logo-oakland-tree.svg') | replace('<svg ', '<svg class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden" ') | raw }}
                     {{ craft.inlin.er('/dist/img/logo-oakland.svg') | replace('<svg ', '<svg class="w-40 h-10 oak-hidden sm:block" ') | raw }}
                     <span class="hidden-visually">Home</span>

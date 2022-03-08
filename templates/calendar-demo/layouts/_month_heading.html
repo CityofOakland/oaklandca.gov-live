@@ -13,7 +13,7 @@
             {% if date == month.date %}
                 <div class="dropdown-divider"></div>{% endif %}
 
-            <a class="dropdown-item" href="{{ siteUrl }}calendar-demo/month/{{ date.format('Y/m') }}/">
+            <a class="dropdown-item" href="{{ siteUrl('calendar-demo/month/{{ date.format('Y/m') }}/') }}">
                 {{ date.format('F Y') }}
             </a>
 

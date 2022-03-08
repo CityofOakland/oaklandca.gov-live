@@ -34,7 +34,7 @@
                 <div class="row justify-content-between mb-3">
                     <div class="col-3">
                         <a class="btn btn-outline-secondary"
-                           href="{{ siteUrl }}calendar-demo/month/{{ segment3 == "calendar" ? "calendar/"~segment4~"/" }}{{ month.previousDate.format('Y/m') }}">
+                           href="{{ siteUrl('calendar-demo/month/{{ segment3 == ') }}"calendar" ? "calendar/"~segment4~"/" }}{{ month.previousDate.format('Y/m') }}">
                             <span class="fas fa-arrow-left"></span> {{ month.previousDate.format('F') }}
                         </a>
                     </div>
@@ -50,7 +50,7 @@
 
                     <div class="col-3 clearfix">
                         <a class="btn btn-outline-secondary float-right"
-                           href="{{ siteUrl }}calendar-demo/month/{{ segment3 == "calendar" ? "calendar/"~segment4~"/" }}{{ month.nextDate.format('Y/m') }}">
+                           href="{{ siteUrl('calendar-demo/month/{{ segment3 == ') }}"calendar" ? "calendar/"~segment4~"/" }}{{ month.nextDate.format('Y/m') }}">
                             {{ month.nextDate.format('F') }} <span class="fas fa-arrow-right"></span>
                         </a>
                     </div>
@@ -74,7 +74,7 @@
                                 <td class="day_cell{{ day.dateLocalized.isToday ? " today" }}">
                                     <div class="date{{ day.eventCount ? " has_events" }}">
                                         <a class="num"
-                                           href="{{ siteUrl }}calendar-demo/day/{{ segment3 == 'calendar' ? "calendar/"~segment4~"/" }}{{ day.date.format('Y/m/d') }}">
+                                           href="{{ siteUrl('calendar-demo/day/{{ segment3 == 'calendar' ? ') }}"calendar/"~segment4~"/" }}{{ day.date.format('Y/m/d') }}">
                                             {{ day.date.format('j') }}
                                         </a>
                                     </div>
