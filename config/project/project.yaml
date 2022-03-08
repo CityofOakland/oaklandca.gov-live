@@ -1,4 +1,4 @@
-dateModified: 1642024709
+dateModified: 1646684397
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -56,6 +56,7 @@ meta:
     3c47182a-0520-4bca-921f-65dce2849cb5: 'Projects Index' # Projects Index
     003ce16b-5d20-4821-93ae-516c70778291: 'Project Start Date' # Project Start Date
     3cf4e603-4947-4358-9293-da9c833260f4: Header # Header
+    3d8ee7f9-27a6-4d4e-a55f-b869d5afee11: Linkit # Linkit
     3f4cdb0c-ae0b-4145-bbcb-05e53f7ed81f: Content # Content
     3f29603b-dede-4258-8ae1-fc01c48f372d: Staff # Staff
     3ff802bf-48ac-4e96-8e64-c7988d029bc1: Documents # Documents
@@ -122,11 +123,13 @@ meta:
     7f40da34-211c-4ece-a025-8611e9442ec7: Location # Location
     7fa33ef2-a89e-4979-a729-70b04e79eb0c: 'Embed - YouTube' # Embed - YouTube
     07faad04-9ec4-4f68-9fe8-0ca20f189f8a: Staff # Staff
+    7ff43a45-a85f-4be9-b97c-c1fff5d916b1: 'Section Heading' # Section Heading
     8a7f1f75-cb2f-4707-8047-676959644f08: 'Before You Start' # Before You Start
     8a89416e-010d-4a83-a254-dafb9b29ce26: 'Staff Import Given Name' # Staff Import Given Name
     8ac349fa-f382-4bc4-9f01-25e04abf073c: Homepage # Homepage
     8b7c4e26-9aab-4c5d-874e-aee151107de3: Documents # Documents
     8bcf4697-1dd2-47b2-91e2-8ad9b4b86741: 'Service Categories' # Service Categories
+    8db301bf-0d15-4511-98a8-8a4021bbef60: 'End Date' # End Date
     8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884: Projects # Projects
     8e550712-d313-4f60-a6dd-50a0f79aaef2: 'Teams Index' # Teams Index
     8f7d7d14-020f-43e1-a3e3-74f2bcd19c9d: 'Online Link' # Online Link
@@ -149,6 +152,7 @@ meta:
     09e3ac15-7089-4e7f-9f6b-33267bfebc94: 'Project Status' # Project Status
     9ea91970-dd04-4a69-91e0-ba30496e7905: 'Meeting Entries' # Meeting Entries
     9ec6157c-9817-4627-af74-f5f88358e251: Style # Style
+    9f3ae38f-aef6-476b-9fea-e9d1ef0c03c4: 'Start Time' # Start Time
     9fcc72cc-184c-467a-a45f-a154ba8a01d2: 'Employment Type' # Employment Type
     10fea577-3555-45aa-9169-8e3dee085cae: 'Press Release Images' # Press Release Images
     11cee513-a997-49f5-b711-315e780559b9: YouTube # YouTube
@@ -159,6 +163,7 @@ meta:
     18c27d2b-612d-49e3-87d4-9a61c6c85408: 'Online Title' # Online Title
     18fa95ee-449e-4c22-9d88-b0fb8918a38b: 'Highlighted Services' # Highlighted Services
     21d8d4c8-4c81-444b-8732-2b5cf2e023d8: Icons # Icons
+    21e2b002-d7ac-465c-8233-a2c62a251dcd: 'Meeting Status' # Meeting Status
     24fa116b-8516-4626-84f3-86b685e71071: Resources # Resources
     25bae0ad-a048-4573-a10a-8b9f823ed9dc: Stats # Stats
     28b0988c-b6ee-404e-922d-8278e9ab4daa: 'Digital Leads' # Digital Leads
@@ -180,6 +185,7 @@ meta:
     40abab6e-fe75-4f91-b6bd-9016b2b01dbe: 'Column 2 Heading' # Column 2 Heading
     42daf001-6cda-4eab-a3a2-3dd24077d76c: 'Volunteer Index' # Volunteer Index
     42e47b92-4d9f-4ba3-8a3f-886a122470b9: Label # Label
+    43cb8609-820e-4df0-9b62-fa6cf21ba074: 'Agenda Topics' # Agenda Topics
     44b00870-0842-4c4e-838f-dcd688fb5b05: Topics # Topics
     45b5d319-ac8e-491f-9c8a-47d1c6657bff: 'External Link' # External Link
     46bb2577-b14e-4f53-8a65-a7b9139b21e4: Heading # Heading
@@ -217,7 +223,9 @@ meta:
     86dfc275-b48e-44d4-8c8c-acda592d92b0: Meetings # Meetings
     88a32feb-2474-4af8-b9af-e6a409b21bae: 'Meetings Index' # Meetings Index
     89cda626-6500-4ace-b9f4-0f8a54a9ad02: 'Services Index' # Services Index
+    89e7af89-0b4d-4305-9ffe-5098b3f73779: 'Related Meeting' # Related Meeting
     90d724d7-7c32-4d04-8b9a-3900d6ecdb84: Address(es) # Address(es)
+    91c23dce-ef50-451f-9d55-9f1facb6fa6f: Meetings # Meetings
     91cc77d8-149b-4b48-9c59-736e2f7ff651: Link # Link
     91d1c2cd-f6b8-4c71-a224-ba9ef8c284f4: Text # Text
     93b22059-684d-4ee6-acee-03132189083f: 'Button Link' # Button Link
@@ -287,6 +295,7 @@ meta:
     907bf933-4e47-49e9-a6dd-7f5bc2d3459e: Button # Button
     909c71fc-999c-4729-86d5-49cc9061f521: Common # Common
     912c64e2-6d85-46bb-b826-955df643a5ef: 'Milestone Description' # Milestone Description
+    929c9f65-22a0-4e45-8210-43f030986c84: 'Physical Location' # Physical Location
     946b75ee-7882-4bdc-b28b-7009a8398e2e: 'Hide Related Pages?' # Hide Related Pages?
     947de11d-3d94-45c2-8565-04542ce0e737: 'Event Types' # Event Types
     983c9f6f-9251-4fd3-91e1-b598eccc6a1a: News # News
@@ -296,6 +305,7 @@ meta:
     1300d573-d7c2-4d30-b840-2b94165d5d4f: 'Volunteer Index' # Volunteer Index
     1654d938-91c4-4160-a263-90ee5eaf9301: Header # Header
     1842e99e-b458-4d33-951e-3e773623efd4: 'Related Documents' # Related Documents
+    1942a740-bba9-4cde-97c7-fe0c718e5065: 'Meeting ID' # Meeting ID
     2009b6bf-bc82-4776-ad68-1fe0fa5dc6d8: 'Button Icon' # Button Icon
     2149a8bc-3dd5-41f2-a28a-c714bcf5f5c7: 'Audio Link' # Audio Link
     2200fe2a-bcb7-435e-96f9-7f00262131e5: 'Column 3 Cell' # Column 3 Cell
@@ -309,6 +319,7 @@ meta:
     4448ff2b-e958-4a61-8e36-0dab9831c66f: Projects # Projects
     4494beaa-9c1f-44ae-b040-36f60f3d055d: Logos # Logos
     4597e3f8-233a-4369-91e0-9942a60ddc2b: 'Fax Number' # Fax Number
+    4670a96c-63ff-403e-a87c-9253c102a2b4: 'Meetings - Imported' # Meetings - Imported
     5261f0db-3453-423b-87c5-e5d3112c4141: 'Document File' # Document File
     5424f488-e675-4a3e-bfc7-f63bb2288f24: Officials # Officials
     6187b052-87bb-4c88-993b-30d9c5f1779c: Other # Other
@@ -401,6 +412,7 @@ meta:
     a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc: 'Boards & Commissions' # Boards & Commissions
     a26ba17c-1ef7-47e3-949a-a26183eb54b7: '3 Columns' # 3 Columns
     a31d23bf-e3ee-4942-95e0-3d14c29620bb: Projects # Projects
+    a64a471a-5142-4112-a0ae-1d700f1e8e45: 'Index Toggle' # Index Toggle
     a80bc90b-ca79-4416-a71f-0e743836bcb9: 'Term End' # Term End
     a209b7c0-0c31-4671-a56c-f77990a377f3: 'Officials Index' # Officials Index
     a407c106-4190-4ba9-b4c1-7886e5a462c8: Datasets # Datasets
@@ -440,7 +452,6 @@ meta:
     b66198c4-d82e-4078-8034-c728b677d613: Content # Content
     b575240f-71ba-444a-ac88-0c275e078c01: 'External Link' # External Link
     b924108b-fb70-4757-ad7f-3e713f23a6d6: 'Team Members' # Team Members
-    ba27f849-b247-4db0-ae91-53a01f44bd0b: 'Calendar Index' # Calendar Index
     baa859d6-a861-4617-bb79-73d0982ee25c: Assets # Assets
     bb70071c-d8c0-4a11-91f6-d4ca02503a00: 'Funding Logos Alternate Title' # Funding Logos Alternate Title
     bc371660-39ff-45ed-add0-0ae25ff30f0a: 'Before You Start' # Before You Start
@@ -495,6 +506,7 @@ meta:
     d0cf7d52-44a5-44a7-9efa-ba27c7541ff9: 'Image Column Position' # Image Column Position
     d05048db-b41e-4294-a51e-508edfd8f988: __blank__ # __blank__
     d2df1fff-f127-4df4-9550-badfe2b7e249: Topic # Topic
+    d6ad41f7-f233-4092-81dc-9fdf439eb146: 'Start Date' # Start Date
     d7c92fa2-9002-4f28-a03d-b99b37501dde: 'Agenda - Downloadable Copy' # Agenda - Downloadable Copy
     d7c59790-6279-474b-ab32-27cca3cfc19b: Label # Label
     d7d618a5-5819-44e0-bc30-5c685f47f039: 'Resource Image' # Resource Image
@@ -510,6 +522,7 @@ meta:
     d513ffa1-20e6-405d-845e-b4a8fd041461: 'Column 3 Cell' # Column 3 Cell
     d2258f6a-704e-413b-8079-a7611a4139c4: 'Milestone Name' # Milestone Name
     d2528b2a-d63a-477c-9c22-431796381707: 'Project Map Image' # Project Map Image
+    d6004c0b-1eb3-4bf9-abb3-30870ac3a057: Subtitle # Subtitle
     d8042d7b-1c67-4b28-bb84-2002e74ed94b: 'Primary Unit' # Primary Unit
     d9164a86-877a-49bd-bc75-148e28d51df2: 'Projects Index' # Projects Index
     d9812f55-7577-413d-8df1-2514a7ae1a77: 'Small Square' # Small Square
@@ -518,13 +531,14 @@ meta:
     d535337e-0894-4ce9-80ee-a315e254df71: 'Column 1 Heading' # Column 1 Heading
     d542665e-875b-4b71-add5-d70d5317e3c6: 'User Guide' # User Guide
     da23e18d-8c38-4fad-a38d-c07ba10ec985: Size # Size
+    daee65a4-c92d-4e15-9273-1636d722cf35: 'End Time' # End Time
     daf1b54a-7841-4819-aaaa-4d568a0fbb66: 'Email Signup' # Email Signup
     db97d5d4-3cdf-46c8-85f3-fa7bef2c1d87: 'Call to Action Buttons' # Call to Action Buttons
     dc60bd1b-5618-4b28-9455-bb06946164d8: Hours # Hours
     dc495a3c-d76f-46c9-afe5-d8b012612993: '4 Columns' # 4 Columns
     dce07b77-44ba-4b27-9a62-9330a8e5a1de: SoundCloud # SoundCloud
     ddb61f35-83f1-46d4-904b-da525acf9e7c: 'Group Head Name' # Group Head Name
-    ddd25f23-4975-475c-9bef-e8a0e0e43fc0: Entries # Entries
+    ddd25f23-4975-475c-9bef-e8a0e0e43fc0: 'Entries (Deprecated)' # Entries (Deprecated)
     de65ce28-2919-4a65-9aa2-c18e5518f2fe: Program/Subdivision # Program/Subdivision
     de588e4c-ab76-4b95-8150-afebc746259b: Documents # Documents
     de14155f-e982-42aa-9b79-71ceeaf08a77: 'Hide Summary?' # Hide Summary?
@@ -537,6 +551,7 @@ meta:
     e0441456-2c87-45db-aacd-22ac957f8fc1: Heading # Heading
     e1abe78e-92f3-4d83-890e-7f67fd2db4e0: 'Related Project Entries' # Related Project Entries
     e1c61482-cd09-4ea3-8940-a602c3fe4718: Heading # Heading
+    e2b6c2d9-b6fa-4713-b819-e4a9a1b35c2b: 'How to Participate' # How to Participate
     e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8: 'Search Index' # Search Index
     e3a53ca0-960e-4ce6-933b-b3613bd64d7a: 'Job Title' # Job Title
     e3f23e85-4290-41f4-bff9-7d12b6e1b52c: 'Project Updates' # Project Updates
@@ -557,6 +572,7 @@ meta:
     e51016cb-464b-4bd1-b32c-ace827d1b9dc: 'Document Link' # Document Link
     e4562472-8b84-4213-97bc-476f6f092cad: 'Hide Thumbnails?' # Hide Thumbnails?
     e5003330-f1d5-467d-843b-ce12bc26a5bb: Heading # Heading
+    e8230537-ae50-4e3d-a71f-d43da065f108: 'Online Location' # Online Location
     e9822161-b2a8-4cd1-8ec3-c3a2e2d5b2b0: 'City Council' # City Council
     ea2bc4af-23f2-4838-99c2-9da78c63420f: 'Staff Entry' # Staff Entry
     ea2e59d4-7906-4723-8dde-7bb4012c3361: 'Press Release File' # Press Release File
@@ -570,12 +586,16 @@ meta:
     ecae3e34-8efa-4f0c-934c-d5d125641043: 'YouTube URL' # YouTube URL
     ecc31df6-640f-4fa6-a2e6-caea757e379d: Metadata # Metadata
     ed709c7c-0c3a-4457-ae2d-38a3ccb797e4: '311' # 311
-    edd782d7-6b1e-40f2-ba66-61b9b39ccd21: 'Calendar Index' # Calendar Index
     ef1b6cec-c4ea-45ca-ba65-e9dc7d0cc2ac: Services # Services
+    ef7a2eb3-d6b3-44db-9db1-5500ac82498c: Meetings # Meetings
+    ef60fa1b-14d1-4deb-8034-d0daebcb216d: 'Add a How to Participate Block' # Add a How to Participate Block
     efb06368-db7c-46e0-84e2-1857e0393801: 'Text & Image Block' # Text & Image Block
     f09dcf7b-4b1f-47a1-ac7b-4425e46473cd: Process # Process
+    f3d1bcbe-1f1a-4498-b4e5-1d57d3257690: 'Related Pages' # Related Pages
     f5c6d83d-3a64-4e6a-be6c-5304f6679801: Video # Video
     f5dead8c-3e4c-4f97-8bea-2a3af1e34f67: Resources # Resources
+    f6e8acb0-e8f3-40de-8500-b95e6ed06def: 'Event Location' # Event Location
+    f7e4a055-457f-46eb-ab3d-3e816f80a81d: 'Related Board or Commission' # Related Board or Commission
     f7fa3aa0-7245-47fd-8f47-3a3218e45e6c: 'Event Entries' # Event Entries
     f8f83baf-d18b-46db-8bb2-5372736bf21a: 'Oaklandca.gov﻿ Link' # Oaklandca.gov﻿ Link
     f9ec1965-4721-44e2-b551-069ae06c54f3: 'Staff Import Email' # Staff Import Email
@@ -589,6 +609,7 @@ meta:
     f602bcbb-5ca9-4e04-8f5c-f031ceb1c2d6: 'Milestone Name' # Milestone Name
     f645ecd3-5b0e-4625-8986-da4a7726b1db: Image # Image
     f35490ea-a075-4077-ac18-6be871f68c65: 'Page Alerts' # Page Alerts
+    f92663d9-79e4-43e9-9752-215996cb6fe7: 'Add Agenda Topic' # Add Agenda Topic
     f8342274-0ae7-48f4-867d-2efd90ca3b93: 'Background Color' # Background Color
     f9088787-d043-44c0-a831-924dd6a72489: 'Call Out Type' # Call Out Type
     fa7723cf-13c4-4edc-9b93-41c7eb30772b: Granicus # Granicus
@@ -602,6 +623,7 @@ meta:
     fbf8b9b0-8875-4e08-819a-d62603676dc4: Teams # Teams
     fccb3891-e320-45ec-b368-6bd4f47fdc91: Heading # Heading
     fd0c8e02-99b4-4ce5-ab89-b29cd0efc581: 'Content Builder' # Content Builder
+    fd3d4593-b8d2-44f7-a03c-806e2e0e2ba1: Link # Link
     fd5628cc-7472-48c6-8263-14745dbb90c9: 'Link Set Description' # Link Set Description
     fe1bbd87-c5e4-420c-b80f-11bdeabb907e: 'Staff Index' # Staff Index
     fe5b4078-9713-41ab-a60c-66622aed9991: Recordings # Recordings
@@ -760,7 +782,7 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
     settings:
-      documentation: "<p><a href=\"https://docs.google.com/document/d/1pOhZdKAyO_82BKspgiklE8pv962t3X2e3NA9hC4-jGg/edit\" rel=\"noopener\" target=\"_blank\">City of Oakland Writing for the Web Style Guide</a></p>\r\n<p><a href=\"https://datastudio.google.com/u/1/reporting/3253d1d2-dfdb-400a-9cc6-eb26afe88cae/page/1M\">City of Oakland Website Analytics Dashboard</a></p>"
+      documentation: "<p><a href=\"https://www.oaklandca.gov/admin/usermanual\" rel=\"noopener\" target=\"_blank\">Oaklandca.gov User Guide</a></p>\r\n<ul><li>-&nbsp;<a href=\"https://www.oaklandca.gov/admin/usermanual/user-guide/writing-for-oaklandca-gov\" rel=\"noopener\" target=\"_blank\">Writing for the Web Style Guide</a></li><li>-&nbsp;<a href=\"https://www.oaklandca.gov/admin/usermanual/user-guide/using-craft\" rel=\"noopener\" target=\"_blank\">Using Craft</a></li><li>-&nbsp;<a href=\"https://www.oaklandca.gov/admin/usermanual/user-guide/content-strategy\" rel=\"noopener\" target=\"_blank\">Content Strategy</a></li></ul>\r\n<p><a href=\"https://datastudio.google.com/u/1/reporting/3253d1d2-dfdb-400a-9cc6-eb26afe88cae/page/1M\" rel=\"noopener\" target=\"_blank\">City of Oakland Website Analytics Dashboard</a></p>"
   element-api:
     enabled: '1'
     licenseKey: null
@@ -781,6 +803,83 @@ plugins:
     enabled: true
     licenseKey: 80IWDHDW3ZJB27DOLCE6AQE5
     schemaVersion: 3.5.1
+    settings:
+      ajaxByDefault: true
+      alertNotificationRecipients: null
+      autoScroll: true
+      autoScrollToErrors: true
+      badgeType: all
+      blockedEmails: ''
+      blockedEmailsError: 'Invalid Email Address'
+      blockedIpAddresses: ''
+      blockedKeywords: ''
+      blockedKeywordsError: 'Invalid Entry Data'
+      clientDigestFrequency: 1
+      clientDigestRecipients: null
+      customErrorMessage: ''
+      customHoneypotName: ''
+      defaultTemplates: true
+      defaultView: dashboard
+      digestFrequency: 1
+      digestOnlyOnProduction: false
+      digestRecipients: null
+      displayFeed: true
+      emailTemplateDirectory: null
+      emailTemplateStorage: db
+      fieldDisplayOrder: name
+      fillWithGet: false
+      footerScripts: false
+      formFieldShowOnlyAllowedForms: false
+      formSubmitDisable: true
+      formSubmitExpiration: ''
+      formTemplateDirectory: null
+      formattingTemplate: flexbox.html
+      freeformHoneypot: '1'
+      freeformHoneypotEnhancement: ''
+      hideBannerDemo: false
+      hideBannerOldFreeform: false
+      minimumSubmitTime: ''
+      pluginName: null
+      purgableSpamAgeInDays: '0'
+      purgableSubmissionAgeInDays: null
+      purgableUnfinalizedAssetAgeInMinutes: 180
+      recaptchaBehaviour: display_error
+      recaptchaEnabled: false
+      recaptchaErrorMessage: 'Please verify that you are not a robot.'
+      recaptchaKey: null
+      recaptchaLazyLoad: false
+      recaptchaMinScore: 0.5
+      recaptchaSecret: null
+      recaptchaSize: normal
+      recaptchaTheme: light
+      recaptchaType: v2_checkbox
+      rememberPageSubmitOrder: true
+      removeNewlines: false
+      renderFormHtmlInCpViews: true
+      salesforce_client_id: null
+      salesforce_client_secret: null
+      salesforce_password: null
+      salesforce_username: null
+      saveFormSessionLimit: 10
+      saveFormTtl: 30
+      scriptInsertLocation: footer
+      scriptInsertType: pointers
+      sessionContext: payload
+      sessionContextCount: 100
+      sessionContextSecret: ''
+      sessionContextTimeToLiveMinutes: 180
+      sessionEntryMaxCount: 50
+      sessionEntryTTL: 10800
+      showErrorsForBlockedEmails: ''
+      showErrorsForBlockedKeywords: ''
+      showTutorial: true
+      spamFolderEnabled: '1'
+      spamProtectionBehaviour: simulate_success
+      submissionThrottlingCount: ''
+      submissionThrottlingTimeFrame: m
+      twigInHtml: true
+      twigInHtmlIsolatedMode: true
+      updateSearchIndexes: true
   google-maps:
     enabled: true
     licenseKey: 88Z3Y9HY00OZ7NQEBWTNETQL

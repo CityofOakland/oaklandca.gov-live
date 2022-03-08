@@ -42,6 +42,12 @@ permissions:
   - 'publishpeerentrydrafts:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
   - 'editpeerentrydrafts:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
   - 'editentries:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
+  - 'createentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'publishentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'deleteentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'editpeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'editpeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'editentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
   - 'createentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
   - 'publishentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
   - 'publishpeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
@@ -212,7 +218,5 @@ permissions:
   - 'editpeerimagesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
   - 'viewpeerfilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
   - 'viewvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
-  - 'calendar-manageeventsfor:all'
   - 'calendar-manageeventsfor:2'
-  - 'calendar-manageeventsfor:3'
   - calendar-manageevents
