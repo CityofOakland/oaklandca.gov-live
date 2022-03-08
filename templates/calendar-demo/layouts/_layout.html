@@ -9,7 +9,7 @@
     <title>Calendar Demo | {{ pageTitle ? pageTitle : "Home" }}</title>
     <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ siteUrl }}assets/calendar-demo/css/main.css">
+    <link rel="stylesheet" href="{{ siteUrl('dist/calendar-demo/css/main.css') }}">
     {% block headerCss %}{% endblock %}
 </head>
 
@@ -29,8 +29,8 @@
 {% endif %}
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{{ siteUrl }}calendar-demo/">
-        <img src="{{ siteUrl }}assets/calendar-demo/images/icon.svg" alt="Calendar Demo">
+    <a class="navbar-brand" href="{{ siteUrl('calendar-demo/') }}">
+        <img src="{{ siteUrl('dist/calendar-demo/images/icon.svg') }}" alt="Calendar Demo">
         Calendar Demo
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,25 +39,25 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item {{ page == 'month' ? 'active' }}">
-                <a class="nav-link" href="{{ siteUrl }}calendar-demo/month">Month</a>
+                <a class="nav-link" href="{{ siteUrl('calendar-demo/month') }}">Month</a>
             </li>
             <li class="nav-item {{ page == 'week' ? 'active' }}">
-                <a class="nav-link" href="{{ siteUrl }}calendar-demo/week">Week</a>
+                <a class="nav-link" href="{{ siteUrl('calendar-demo/week') }}">Week</a>
             </li>
             <li class="nav-item {{ page == 'day' ? 'active' }}">
-                <a class="nav-link" href="{{ siteUrl }}calendar-demo/day">Day</a>
+                <a class="nav-link" href="{{ siteUrl('calendar-demo/day') }}">Day</a>
             </li>
             <li class="nav-item {{ page == 'events' ? 'active' }}">
-                <a class="nav-link" href="{{ siteUrl }}calendar-demo/events">Events List</a>
+                <a class="nav-link" href="{{ siteUrl('calendar-demo/events') }}">Events List</a>
             </li>
             <li class="nav-item {{ page == 'calendars' ? 'active' }}">
-                <a class="nav-link" href="{{ siteUrl }}calendar-demo/calendars">Calendars</a>
+                <a class="nav-link" href="{{ siteUrl('calendar-demo/calendars') }}">Calendars</a>
             </li>
             <li class="nav-item {{ page == 'fullcalendar' ? 'active' }}">
-                <a class="nav-link" href="{{ siteUrl }}calendar-demo/fullcalendar">Full Calendar</a>
+                <a class="nav-link" href="{{ siteUrl('calendar-demo/fullcalendar') }}">Full Calendar</a>
             </li>
             <li class="nav-item {{ page == 'edit' ? 'active' }}">
-                <a class="nav-link" href="{{ siteUrl }}calendar-demo/edit/event/new">Create</a>
+                <a class="nav-link" href="{{ siteUrl('calendar-demo/edit/event/new') }}">Create</a>
             </li>
         </ul>
         <div class="navbar-nav dropdown">
@@ -90,7 +90,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<script src="{{ siteUrl }}assets/calendar-demo/js/main.js"></script>
+<script src="{{ siteUrl('dist/calendar-demo/js/main.js') }}"></script>
 
 {% block footerJs %}{% endblock %}
 </body>

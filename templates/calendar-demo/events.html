@@ -72,7 +72,7 @@
                 <div class="card" style="border-color: {{ event.calendar.color }}; margin-bottom: 20px;">
                     <h4 class="card-header d-flex justify-content-between align-items-center" style="color: {{ event.calendar.contrastColor }}; background-color: {{ event.calendar.lighterColor }};">
                         {{ event.title }}&nbsp;&nbsp;
-                        <a href="{{ siteUrl }}calendar-demo/event/{{ event.id }}/{{ event.repeating ? event.startDate.format('Y/m/d') }}" class="btn btn-light btn-sm border-light border border-dark">View Event</a>
+                        <a href="{{ siteUrl('calendar-demo/event/{{ event.id }}/{{ event.repeating ? event.startDate.format('Y/m/d') }}') }}" class="btn btn-light btn-sm border-light border border-dark">View Event</a>
                     </h4>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
@@ -127,7 +127,7 @@
             <div class="list-group">
                 {% set month = craft.calendar.month({date: targetStartDate, calendarId: 0}) %}
                 {% for date in month.dateRange(6, 6) %}
-                    <a href="{{ siteUrl }}calendar-demo/events/{{ date.format('Y/m') }}/{{ date.daysInMonth }}"
+                    <a href="{{ siteUrl('calendar-demo/events/{{ date.format('Y/m') }}/{{ date.daysInMonth }}') }}"
                        class="list-group-item list-group-item-action text-dark {{ date == month.date ? "list-group-item-warning" }}">
                         {{ date.format('M Y') }}
                     </a>

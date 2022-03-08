@@ -37,7 +37,7 @@
                 <div class="row justify-content-between mb-3">
                     <div class="col-2">
                         <a class="btn btn-outline-secondary"
-                           href="{{ siteUrl }}calendar-demo/day/{{ segment3 == "calendar" ? "calendar/"~segment4~"/" }}{{ day.previousDate.format('Y/m/d') }}">
+                           href="{{ siteUrl('calendar-demo/day/{{ segment3 == ') }}"calendar" ? "calendar/"~segment4~"/" }}{{ day.previousDate.format('Y/m/d') }}">
                             <span class="fas fa-arrow-left"></span> Previous
                         </a>
                     </div>
@@ -53,7 +53,7 @@
 
                     <div class="col-2 clearfix">
                         <a class="btn btn-outline-secondary float-right"
-                           href="{{ siteUrl }}calendar-demo/day/{{ segment3 == "calendar" ? "calendar/"~segment4~"/" }}{{ day.nextDate.format('Y/m/d') }}">
+                           href="{{ siteUrl('calendar-demo/day/{{ segment3 == ') }}"calendar" ? "calendar/"~segment4~"/" }}{{ day.nextDate.format('Y/m/d') }}">
                             Next <span class="fas fa-arrow-right"></span>
                         </a>
                     </div>
@@ -80,7 +80,7 @@
                                         >
                                             <div>
                                                 <b>
-                                                    <a href="{{ siteUrl }}calendar-demo/event/{{ event.id }}/{{ event.repeating ? event.startDate.format('Y/m/d') }}"
+                                                    <a href="{{ siteUrl('calendar-demo/event/{{ event.id }}/{{ event.repeating ? event.startDate.format('Y/m/d') }}') }}"
                                                        style="color: {{ event.calendar.contrastColor }} !important;">
                                                         {{ event.title }}</a>
                                                 </b>
@@ -90,7 +90,7 @@
                                                 {% endif %}
                                             </div>
 
-                                            <a href="{{ siteUrl }}calendar-demo/calendars/{{ event.calendar.handle }}/"
+                                            <a href="{{ siteUrl('calendar-demo/calendars/{{ event.calendar.handle }}/') }}"
                                                class="badge"
                                                style="background-color: {{ event.calendar.color }}; color: {{ event.calendar.contrastColor }};">
                                                 {{ event.calendar.name }}
@@ -135,7 +135,7 @@
                                                     {% endif %}
                                                     &nbsp;
                                                     <b>
-                                                        <a href="{{ siteUrl }}calendar-demo/event/{{ event.id }}/{{ event.repeating ? event.startDate.format('Y/m/d') }}"
+                                                        <a href="{{ siteUrl('calendar-demo/event/{{ event.id }}/{{ event.repeating ? event.startDate.format('Y/m/d') }}') }}"
                                                            class="calendar_event_title">
                                                             {{ event.title }}
                                                         </a>
@@ -146,7 +146,7 @@
                                                     {% endif %}
                                                 </div>
 
-                                                <a href="{{ siteUrl }}calendar-demo/calendars/{{ event.calendar.handle }}/"
+                                                <a href="{{ siteUrl('calendar-demo/calendars/{{ event.calendar.handle }}/') }}"
                                                    class="badge"
                                                    style="background-color: {{ event.calendar.color }}; color: {{ event.calendar.contrastColor }};">
                                                     {{ event.calendar.name }}

@@ -37,7 +37,7 @@
 
                     <div class="btn-group float-right" role="group" aria-label="actions">
                         {% if craft.calendar.exportEnabled %}
-                            <a href="{{ siteUrl }}calendar-demo/export/event/{{ segment3 }}"
+                            <a href="{{ siteUrl('calendar-demo/export/event/{{ segment3 }}') }}"
                                class="btn btn-primary btn-sm"
                                role="button">
                                 <span class="fas fa-file-export" aria-hidden="true"></span>
@@ -46,7 +46,7 @@
                         {% endif %}
 
                         {% if craft.calendar.canEditEvent(event) %}
-                            <a href="{{ siteUrl }}calendar-demo/edit/event/{{ segment3 }}"
+                            <a href="{{ siteUrl('calendar-demo/edit/event/{{ segment3 }}') }}"
                                class="btn btn-warning btn-sm"
                                role="button">
                                 <span class="fas fa-edit"></span>
@@ -62,7 +62,7 @@
                             <th style="width: 20%;">Calendar</th>
                             <td>
                                 <span class="fas fa-calendar-alt" style="color: {{ event.calendar.color }};"></span>&nbsp;
-                                <a href="{{ siteUrl }}calendar-demo/calendars/{{ event.calendar.handle }}" style="color: {{ event.calendar.color }};">
+                                <a href="{{ siteUrl('calendar-demo/calendars/{{ event.calendar.handle }}') }}" style="color: {{ event.calendar.color }};">
                                     {{ event.calendar.name }}
                                 </a>
                             </td>
@@ -147,12 +147,12 @@
                                                     {% endif %}
                                                 </small>
 
-                                                <a href="{{ siteUrl }}calendar-demo/event/{{ occurrence.id }}/{{ occurrence.startDate.format("Y/m/d") }}" class="badge mr-2"
+                                                <a href="{{ siteUrl('calendar-demo/event/{{ occurrence.id }}/{{ occurrence.startDate.format(') }}"Y/m/d") }}" class="badge mr-2"
                                                    style="background-color: {{ occurrence.calendar.color }}; color: {{ occurrence.calendar.contrastColor }} !important;">
                                                     View Recurrence
                                                 </a>
                                                 <a class="badge badge-primary"
-                                                   href="{{ siteUrl }}calendar-demo/day/{{ occurrence.startDate.format("Y/m/d") }}">
+                                                   href="{{ siteUrl('calendar-demo/day/{{ occurrence.startDate.format(') }}"Y/m/d") }}">
                                                     View Day in Calendar
                                                 </a>
                                             </li>
