@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "./_custom-styles.css";
 
+@import "tailwindcss/utilities";
 @layer utilities {
   /* Use this utility to hide text only meant for screen readers */
   .hide-text {
@@ -109,7 +111,3 @@
     @apply relative h-0 overflow-hidden;
   }
 }
-
-@import "./_custom-styles.css";
-
-@tailwind utilities;
