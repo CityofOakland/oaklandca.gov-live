@@ -1510,14 +1510,6 @@ form[data-handle="whyWasThisPageHelpful"] {
   }
 }
 
-.subnav {
-  display: none;
-}
-
-.subnav.state-active {
-  display: block;
-}
-
 .embed-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -1879,14 +1871,6 @@ form[data-handle="whyWasThisPageHelpful"] {
 
 .result .updated + p {
   margin-top: 20px;
-}
-
-.subnav {
-  display: none;
-}
-
-.subnav.state-active {
-  display: block;
 }
 
 .ul-icons {
