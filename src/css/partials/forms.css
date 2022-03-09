@@ -1,0 +1,62 @@
+.ais-Hits-item mark {
+  background: none;
+  color: inherit;
+  font-weight: 700;
+}
+
+.ais-Hits-item h2 mark {
+  text-decoration: underline;
+}
+
+#searchbox {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+#searchbox-container {
+  position: relative;
+}
+
+#searchbox-container > svg {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+}
+
+#searchbox-container > #searchbox > #search-input {
+  padding-left: 42px;
+}
+
+label.form-control {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+select.form-control {
+  border: 1px solid #CFCFCF;
+  border-radius: 4px;
+  color: #6B7280;
+  font-size: 14px;
+  padding: 0.75rem 1rem;
+  width: 100%;
+}
+
+input[type="search"].form-control {
+  background: white;
+  color: #3b3b3b;
+  font-size: 16px;
+  margin: 0;
+  padding: 14px;
+  width: 100%;
+}
+
+input[type="search"].form-control::placeholder {
+  color: #6B7280;
+}
+
+.facet-container:not(:first-of-type) {
+  margin-top: 1rem;
+}

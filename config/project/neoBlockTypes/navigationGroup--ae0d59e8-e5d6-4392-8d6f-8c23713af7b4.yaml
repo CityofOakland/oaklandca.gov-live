@@ -1,0 +1,35 @@
+childBlocks:
+  - navigationItem
+field: c7618ee8-2bc2-491b-99e6-c9deaea0809b # Navigation - Main
+fieldLayouts:
+  4f9c66ef-4921-4d9b-8f87-421dea3191da:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
+            instructions: ''
+            label: 'Dropdown Label'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4f49ca5b-c028-40c6-b67e-de07b11bf16a # Linkit
+            instructions: 'Customize the inner button of this dropdown.'
+            label: 'Dropdown Button'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Default
+        sortOrder: 1
+handle: navigationGroup
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: 'Navigation Group'
+sortOrder: 1
+topLevel: true
