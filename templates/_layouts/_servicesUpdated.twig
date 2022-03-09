@@ -13,7 +13,7 @@
   {% endif %}
 
   <h2>{{ entry.heading ? entry.heading : 'What to Do' }}</h2>
-  {% if entry.description %}<p>{{ entry.description }}</p>{% endif %}
+  {% if entry.description %}<div class="body-text">{{ entry.description }}</div>{% endif %}
 
   {% if entry.callToActionButtons %}
     {% for block in entry.callToActionButtons %}

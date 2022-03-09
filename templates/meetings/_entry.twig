@@ -104,7 +104,7 @@
                     {{ macros.videoEmbed(block.videoLink, block.videoTitle) }}
                   {% case "audio" %}
                       <h3 class="mb-4 text-lg font-semibold">{{ block.audioTitle ?? "Audio Recording" }}</h3>
-                    <p class="mt-0"><a href="{{ block.audioLink }}" target="_blank">{{ block.audioLink }}</a></p>
+                    <p class="mt-0"><a class="underline" href="{{ block.audioLink }}" target="_blank">{{ block.audioLink }}</a></p>
                   {% case "embed" %}
                     {% if block.embedTitle %}
                       <h3 class="mb-4 text-lg font-semibold">{{ block.embedTitle }}</h3>
@@ -128,7 +128,9 @@
           {% include "_partials/_elements/_module-header.twig" with {
             headerText: "Contact"
           } %}
-          {{ entry.eventContact }}
+          <div class="body-text">
+            {{ entry.eventContact }}
+          </div>
         {% endif %}
       </div>
       <div class="sm:flex-1">

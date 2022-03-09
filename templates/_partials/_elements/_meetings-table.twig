@@ -60,7 +60,7 @@
         {% set agendas = craft.categories.group('documentTypes').id(13).one %}
         <tr>
           <td class="px-3 text-white border bg-cool-gray-500 border-cool-gray-500 sm:bg-white sm:text-cool-gray-1000">
-            <a class="text-white sm:text-green-800" href="{{ meeting.url }}">{{ meeting.title }}</a>
+            <a class="text-white underline sm:text-green-800" href="{{ meeting.url }}">{{ meeting.title }}</a>
           </td>
           <td class="px-3 border border-cool-gray-500">
             {{ meeting.startDate|date('m/d/y') }}
@@ -69,7 +69,7 @@
             {% if documents is not null and documents.relatedTo(minutes) | length %}
               {% for document in documents.all() %}
                 {% set file = document.documentFile.one %}
-                <a href="{{ file.url }}">{{ file.title }}</a><br>
+                <a class="underline" href="{{ file.url }}">{{ file.title }}</a><br>
               {% endfor %}
             {% elseif meeting.documentFile|length %}
               <a href="{{ meeting.documentFile.one().url }}">{{ meeting.documentFile.one().title }}</a><br>
@@ -93,7 +93,7 @@
                     {% endif %}
                   {% case 'vimeo' %}
                     {% if item.vimeoUrl %}
-                      <a href="{{ item.vimeoUrl }}" target="_blank">Link</a>
+                      <a class="underline" href="{{ item.vimeoUrl }}" target="_blank">Link</a>
                     {% endif %}
                 {% endswitch %}
               {% endfor %}
@@ -105,7 +105,7 @@
             {% if documents is not null and documents.relatedTo(agendas) | length %}
               {% for document in documents.all() %}
                 {% set file = document.documentFile.one %}
-                <a href="{{ file.url }}">{{ file.title }}</a><br>
+                <a class="underline" href="{{ file.url }}">{{ file.title }}</a><br>
               {% endfor %}
             {% elseif meeting.agendaDownloadableCopy|length %}
               <a href="{{ meeting.agendaDownloadableCopy.one().url }}">{{ meeting.agendaDownloadableCopy.one().title }}</a><br>

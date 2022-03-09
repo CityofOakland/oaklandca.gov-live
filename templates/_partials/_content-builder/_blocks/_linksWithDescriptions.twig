@@ -1,6 +1,8 @@
 <div class="{% if not loop.last %}mb-12{% endif %}">
   {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" %}
-  {{ block.linkSetDescription }}
+  <div class="body-text">
+    {{ block.linkSetDescription }}
+  </div>
   <ul class="items-stretch mt-0 card-grid card-grid-tight">
     {% for linkSet in block.linkSet.all() %}
       {% set link = linkSet.linkLocation %}
