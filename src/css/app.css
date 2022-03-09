@@ -456,8 +456,6 @@ body.open .page-holder {
   @apply hidden;
 }
 
-@tailwind utilities;
-
 /* Custom */
 form[data-handle="reportProblem"],
 form[data-handle="whatWasWrongWithThisPage"],
@@ -1510,14 +1508,6 @@ form[data-handle="whyWasThisPageHelpful"] {
   }
 }
 
-.subnav {
-  display: none;
-}
-
-.subnav.state-active {
-  display: block;
-}
-
 .embed-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -1881,14 +1871,6 @@ form[data-handle="whyWasThisPageHelpful"] {
   margin-top: 20px;
 }
 
-.subnav {
-  display: none;
-}
-
-.subnav.state-active {
-  display: block;
-}
-
 .ul-icons {
   list-style: none;
   padding-left: 0 !important;
@@ -1946,3 +1928,5 @@ form[data-handle="whyWasThisPageHelpful"] {
 .icon svg path {
   fill: #2e8131;
 }
+
+@tailwind utilities;

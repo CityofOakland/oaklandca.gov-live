@@ -1,4 +1,10 @@
-import 'alpinejs'
+import Alpine from 'alpinejs'
+import collapse from '@alpinejs/collapse'
+
+window.Alpine = Alpine
+Alpine.plugin(collapse)
+Alpine.start()
+
 import 'picturefill'
 
 function init() {
