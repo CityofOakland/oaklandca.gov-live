@@ -1,8 +1,11 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
+@import './partials/forms.css';
+@import './partials/navigation.css';
+@import './partials/timeline.css';
 @import "./_custom-styles.css";
-
 @import "tailwindcss/utilities";
+
 @layer utilities {
   /* Use this utility to hide text only meant for screen readers */
   .hide-text {
@@ -64,7 +67,7 @@
   }
 
   .aspect-ratio-27\/9 {
-    padding-top: 33.3333333%;
+    padding-top: 33.3333333%
   }
 
   .aspect-ratio-21\/9 {

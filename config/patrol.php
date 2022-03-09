@@ -19,6 +19,9 @@ return [
   'dev' => [
       'sslRoutingEnabled' => false,
   ],
+  'staging' => [
+      'sslRoutingBaseUrl' => "https://staging.oaklandca.gov",  
+  ],
   'production' => [
       'redirectStatusCode' => 301,
       'maintenanceModeResponseStatusCode' => 503,
