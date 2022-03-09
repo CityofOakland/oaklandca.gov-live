@@ -44,9 +44,6 @@
       alt: entry.banner[0].title ?? entry.banner[0].filename
     } : false
   } %}
-  {% css %}
-  {% include "_css/timeline.css" %}
-  {% endcss %}
   {% js %}
     {% include "_js/timeline.js" %}
     timeline(document.querySelectorAll('.timeline'));
@@ -130,7 +127,7 @@
       <div class="md:pl-4 md:w-1/3">
         <h3 class="mb-4">Project Updates</h3>
         {% for entry in craft.entries.section('news').relatedTo(entry).all() %}
-          <a href="{{ entry.url }}" class="block p-4 mb-4 bg-gray-300 hover:bg-green-600 text-gray-1000 hover:text-white">
+          <a href="{{ entry.url }}" class="block p-4 mb-4 bg-gray-300 hover:bg-green-800 text-gray-1000 hover:text-white">
             <h4 class="mt-0 mb-2 text-sm">{{ entry.title }}</h4>
             <p class="my-0 text-xs">{{ entry.postDate | date() }}</p>
           </a>
@@ -159,7 +156,7 @@
         <div {% if relProj %} class="md:pl-4 md:w-1/3" {% endif %}>
           <h3 class="mb-10">Project Documents</h3>
           {% for entry in projDocs.all() %}
-            <a href="{{ entry.url }}" class="block p-4 mt-4 bg-gray-300 hover:bg-green-600 text-gray-1000 hover:text-white">
+            <a href="{{ entry.url }}" class="block p-4 mt-4 bg-gray-300 hover:bg-green-800 text-gray-1000 hover:text-white">
               <h4 class="my-0 text-sm">{{ entry.title }}</h4>
             </a>
           {% endfor %}

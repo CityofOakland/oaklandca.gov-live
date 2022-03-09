@@ -34,7 +34,7 @@ return [
     'securityKey' => getenv('SECURITY_KEY'),
 
     // Sets a maximum number of entry revisions
-    'maxRevisions' => 20,
+    'maxRevisions' => 10,
 
     'extraFileKinds' => [
       // Allows us to use CSV files when uploading to the Excel filetype
@@ -58,6 +58,9 @@ return [
 
     // Dev Mode (see https://craftcms.com/support/dev-mode)
     'devMode' => true,
+
+    // Disables caching locally
+    'enableTemplateCaching' => false,
   ],
 
   // Staging environment settings
@@ -65,7 +68,7 @@ return [
     // Base site URL
     'siteUrl' => 'https://staging.oaklandca.gov',
 
-    'devMode' => true,
+    'devMode' => false,
   ],
 
   // Production environment settings

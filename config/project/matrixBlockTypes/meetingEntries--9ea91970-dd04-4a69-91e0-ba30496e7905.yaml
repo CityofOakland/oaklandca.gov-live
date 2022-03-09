@@ -5,15 +5,6 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: ac349657-dbca-480e-8cb9-dc97ccae3b3a # Allow Autofill?
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
             fieldUid: 84c6ab36-1b2e-49f1-93a1-aa41ce3d194a # Heading
             instructions: null
             label: null
@@ -23,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ddd25f23-4975-475c-9bef-e8a0e0e43fc0 # Entries
+            fieldUid: ddd25f23-4975-475c-9bef-e8a0e0e43fc0 # Entries (Deprecated)
             instructions: null
             label: null
             required: false
@@ -32,16 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 6781472a-633d-4059-b528-3b826db0332f # Hide Thumbnails?
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: de14155f-e982-42aa-9b79-71ceeaf08a77 # Hide Summary?
+            fieldUid: 91c23dce-ef50-451f-9d55-9f1facb6fa6f # Meetings
             instructions: null
             label: null
             required: false
@@ -81,36 +63,29 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  6781472a-633d-4059-b528-3b826db0332f: # Hide Thumbnails?
+  91c23dce-ef50-451f-9d55-9f1facb6fa6f: # Meetings
     columnSuffix: null
-    contentColumnType: boolean
+    contentColumnType: string
     fieldGroup: null
-    handle: hideThumbnails
-    instructions: 'Check this box if you wish to hide the thumbnail images and/or default icons for this block.'
-    name: 'Hide Thumbnails?'
+    handle: meetings
+    instructions: 'If enabled, your meetings will automatically fill with the latest meetings that have been related to this page, up to 3, minus however many manual selections you make below.'
+    name: Meetings
     searchable: false
     settings:
-      default: false
-      offLabel: null
-      onLabel: null
+      allowSelfRelations: false
+      limit: ''
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: false
+      source: null
+      sources:
+        - 'section:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
     translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Lightswitch
-  ac349657-dbca-480e-8cb9-dc97ccae3b3a: # Allow Autofill?
-    columnSuffix: null
-    contentColumnType: boolean
-    fieldGroup: null
-    handle: allowAutofill
-    instructions: ''
-    name: 'Allow Autofill?'
-    searchable: false
-    settings:
-      default: false
-      offLabel: null
-      onLabel: null
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Lightswitch
+    translationMethod: site
+    type: craft\fields\Entries
   d446c3b2-3606-4327-bbf1-c2603c47142a: # Hide Read More Link?
     columnSuffix: null
     contentColumnType: boolean
@@ -126,13 +101,13 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
-  ddd25f23-4975-475c-9bef-e8a0e0e43fc0: # Entries
+  ddd25f23-4975-475c-9bef-e8a0e0e43fc0: # Entries (Deprecated)
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: entries
-    instructions: 'If enabled, your meetings will automatically fill with the latest meetings that have been related to this page, up to 3, minus however many manual selections you make below.'
-    name: Entries
+    instructions: 'This field is no longer in use. If you want to manually input entries, use the Meetings field below. You can also migrate your old events by searching their titles and inputting them below.'
+    name: 'Entries (Deprecated)'
     searchable: false
     settings:
       allowSelfRelations: false
@@ -149,21 +124,6 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: Solspace\Calendar\FieldTypes\EventFieldType
-  de14155f-e982-42aa-9b79-71ceeaf08a77: # Hide Summary?
-    columnSuffix: null
-    contentColumnType: boolean
-    fieldGroup: null
-    handle: hideSummary
-    instructions: 'Check this box if you wish to hide the summary text that appears at the bottom of each entry’s block.'
-    name: 'Hide Summary?'
-    searchable: true
-    settings:
-      default: false
-      offLabel: null
-      onLabel: null
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Lightswitch
 handle: meetingEntries
 name: 'Meeting Entries'
 sortOrder: 20

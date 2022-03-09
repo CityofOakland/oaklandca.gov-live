@@ -1,59 +1,109 @@
-{% macro renderForm(id, entry) %}
-		<div class="flex flex-wrap justify-between -mx-3">
-			<div class="lg:w-3/4 xl:w-1/2 px-3">
-				<div id="{{ id }}" class="hidden">
-					{% if craft.freeform.form(id) %}
-						{{ craft.freeform.form(id, {
-							labelClass: "form-label",
-							inputClass: "form-control",
-							overrideValues: {
-								entryUrl: entry['url'] is defined ? entry.url : 'N/A',
-								pageAuthor: entry['author'] is defined ? entry.author.fullName : 'N/A',
-								pageType: entry['type'] is defined and entry.type ? entry.type : entry.group.name,
-							}
-						}).render() }}
-						{% js at endBody %}
-							document.querySelector('[data-handle="{{ id }}"]').addEventListener('freeform-ajax-success', function (event) {
-								$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(document.querySelector('[data-handle="{{ id }}"]'));
-					  			$(document.querySelector('[data-handle="{{ id }}"]')).remove();
-						  	});
+{% macro renderForm(id, element) %}
+	{% set entryUrl     = craft.app.request.absoluteUrl %}
+	{% set pageAuthor 	= 'No Author' %}
+	{% set pageType 	= 'No Page Type' %}
 
-						  	$(function () {
-							    // Find the corresponding Form
-							    var form = document.querySelector('#{{ id }} form');
-							    $.ajax({
-							      	// Specify the form handle in the GET parameters
-							      	url: '{{ siteUrl }}form?form={{ id }}',
-							      	type: 'get',
-							      	dataType: 'json',
-							      	success: function (response) {
-							        	// Update the Form Hash
-							        	form.querySelector('input[name=formHash]').value = response.hash;
+	{% switch className(element) %}
+		{% case 'craft\\elements\\Entry' %}
+			{% set pageAuthor 	= element.author ? element.author.fullName : 'No Author' %}
+			{% set pageType 	= element.type ? element.type.handle : 'No Page Type' %}
+		{% case 'craft\\elements\\Category' %}
+			{% set pageType 	= element.group ? element.group.name : 'No Page Type' %}
+		{% default %}
+	{% endswitch %}
 
-							        	// Locate and update the CSRF input
-							        	var csrf = response.csrf;
-							        	form.querySelector('input[name=' + csrf.name + ']').value = csrf.value;
-							      	},
-							    });
-							 });
-						{% endjs %}
-					{% else %}
-						<p class="text-white"><b>There was an issue with loading this form.</b></p>
-					{% endif %}
-				</div>
+	<div class="flex flex-wrap justify-between -mx-3">
+		<div class="px-3 lg:w-3/4 xl:w-1/2">
+			<div id="{{ id }}" class="hidden form">
+				{% if craft.freeform.form(id) %}
+					{{ craft.freeform.form(id, {
+						labelClass: "form-label",
+						inputClass: "form-control",
+						fieldIdPrefix: "#{id}-",
+						overrideValues: {
+							entryUrl: craft.app.request.absoluteUrl,
+							pageAuthor: pageAuthor,
+							pageType: pageType,
+						}
+					}).render() }}
+					{% js at endBody %}
+						document.querySelector('[data-handle="{{ id }}"]').addEventListener('freeform-ajax-success', function (event) {
+							$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(document.querySelector('[data-handle="{{ id }}"]'));
+				  			$(document.querySelector('[data-handle="{{ id }}"]')).remove();
+				  			$('#helpful').remove();
+					  	});
+
+					  	$(function () {
+						    // Find the corresponding Form
+						    var form = document.querySelector('#{{ id }} form');
+						    $.ajax({
+						      	// Specify the form handle in the GET parameters
+						      	url: '{{ siteUrl }}form?form={{ id }}',
+						      	type: 'get',
+						      	dataType: 'json',
+						      	success: function (response) {
+						        	// Update the Form Hash
+						        	form.querySelector('input[name=formHash]').value = response.hash;
+
+						        	// Locate and update the CSRF input
+						        	var csrf = response.csrf;
+						        	form.querySelector('input[name=' + csrf.name + ']').value = csrf.value;
+						      	},
+						    });
+						 });
+					{% endjs %}
+				{% else %}
+					<p class="text-white"><b>There was an issue with loading this form.</b></p>
+				{% endif %}
 			</div>
 		</div>
+	</div>
 {% endmacro %}
 
 <section class="bg-gray-900">
-	<div class="container components py-6">
+	<div class="container py-6 components">
 		<div id="helpful" class="flex items-center justify-between text-white">
-			<div class="flex items-center">
-				<p class="mr-8">Was this page helpful?</p>
-				<button class="button secondary small" data-open="whyWasThisPageHelpful" style="margin-top:0;margin-bottom:0;">Yes</button>
-				<button class="button secondary small" data-open="whatWasWrongWithThisPage" style="margin-top:0;margin-bottom:0;">No</button>
+		  {# <fieldset class="flex items-center">
+		    <legend class="mr-8">Was this page helpful?</legend>
+				<div class="flex items-center"><input type="radio" name="helpful" id="helpfulYes" aria-expanded="false" class="my-0 button secondary small" data-open="whyWasThisPageHelpful"><label for="helpfulYes">Yes</label></div>
+				<div class="flex items-center"><input type="radio" name="helpful" id="helpfulNo" aria-expanded="false" class="my-0 button secondary small" data-open="whatWasWrongWithThisPage"><label for="helpfulNo">No</label></div>
+			</fieldset> #}
+    	<div 
+				role="radiogroup" 
+				class="p-0 m-0 list-none focus:outline-none" 
+				aria-labelledby="group_label_1" id="rg1">
+				
+				<p id="group_label_1">Was this page helpful?</p>
+
+				<div
+					role="radio" 
+					class="my-0 outline-none cursor-pointer button secondary small" 
+					id="helpfulYes"
+					aria-expanded="false"
+					data-open="whyWasThisPageHelpful"
+					aria-checked="false" 
+					tabindex="-1">
+					Yes
+				</div>
+				<div
+					role="radio"
+					class="my-0 outline-none cursor-pointer button secondary small"
+					id="helpfulNo"
+					aria-expanded="false"
+					data-open="whatWasWrongWithThisPage"
+					aria-checked="false" 
+					tabindex="-2">
+					No
+				</div>
 			</div>
-			<p class="cursor-pointer" data-open="reportProblem" role="button"><u>Report a problem with this page</u></p>
+			<button 
+				aria-expanded="false" 
+				class="underline border-none cursor-pointer background-transparent" 
+				data-open="reportProblem" 
+				tabindex="0">
+				Report a problem with this page
+			</button>
+			{% js "/assets/js/radiogroup.js" %}
 		</div>
     {{ _self.renderForm('whyWasThisPageHelpful', entry) }}
     {{ _self.renderForm('whatWasWrongWithThisPage', entry) }}
@@ -62,56 +112,13 @@
 </section>
 
 {% js at endBody %}
-		$('[data-open]').on('click',function(){
-			$('#' + $(this).data('open')).removeClass('hidden');
-			$('#helpful').addClass('hidden');
+	$('[data-open]').on('click',function(){
+		$(this).attr({
+			'aria-expanded': 'true',
+			'aria-checked': 'true'
 		});
+		$('.form').addClass('hidden');
+		$('#' + $(this).data('open')).removeClass('hidden');
+		$('#helpful').addClass('hidden');
+	});
 {% endjs %}
-
-<style>
-	form[data-handle="reportProblem"],
-	form[data-handle="whatWasWrongWithThisPage"],
-	form[data-handle="whyWasThisPageHelpful"] {
-		color: white;
-	}
-
-	.components form {
-		font-size: 16px;
-		line-height: 1.5;
-	}
-
-	.components form label {
-		font-size: 14px;
-		margin-bottom: 0.5em;
-	}
-
-	.components form button {
-	  background: white;
-	  border: 2px solid #207127;
-	  border-radius: 2px;
-	  color: #207127;
-	  display: inline-block;
-	  font-weight: 700;
-	  font-size:  16px;
-	  line-height: 1.38;
-	  margin-top: 1em;
-	  outline-offset: 2px;
-	  padding: 16px 32px;
-	  text-decoration: none;
-	}
-
-	.components form button:hover {
-	  border-color: #0D5713;
-	  color: #0D5713;
-	}
-
-	.components form button:active {
-	  border-color: #04400A;
-	  color: #04400A;
-	}
-
-	.components form textarea {
-		color: #222222;
-		padding: 0.5em;
-	}
-</style>

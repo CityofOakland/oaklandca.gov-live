@@ -1,9 +1,6 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  RewriteCond %{HTTP_HOST} staging.oaklandca.dev [NC]
-  RewriteRule ^(.*)$ https://staging.oaklandca.gov [R=301,NC,L]
-
   RewriteCond %{HTTP_HOST} 311\.oaklandca.gov [NC]
   RewriteRule ^(.*)$ https://www.oaklandca.gov/services/oak311 [R=301,NC,L]
 

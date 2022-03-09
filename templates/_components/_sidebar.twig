@@ -1,113 +1,130 @@
-<div id="components-sidebar" class="components components-format">
-  {% set sidebarContent %}
-    {% spaceless %}
-      {% if entry.department|length or entry.programSubdivision %}
-        <p>
-          {% if entry.department|length %}
-            <b><a href="{{ entry.department.one().url }}">{{ entry.department.one().title }}</a></b><br>
-          {% endif %}
-          {% if entry.programSubdivision %}
-            {{ entry.programSubdivision }}
-          {% endif %}
-        </p>
-      {% endif %}
+{% set sidebarContent %}
+  {% spaceless %}
+    {% if entry.department|length or entry.programSubdivision %}
+      <p>
+        {% if entry.department|length %}
+          <b><a href="{{ entry.department.one().url }}">{{ entry.department.one().title }}</a></b><br>
+        {% endif %}
+        {% if entry.programSubdivision %}
+          {{ entry.programSubdivision }}
+        {% endif %}
+      </p>
+    {% endif %}
 
-      {% if entry.emailAddress or entry.phoneNumber or not entry.contactAddress.isEmpty() %}
-        <ul class="ul-icons">
-        {% if entry.emailAddress %}<li><a href="mailto:{{ entry.emailAddress }}">{{ svg( '@webroot/assets/img/icon-envelope-updated.svg') }} {{ entry.emailAddress }}</a></li>{% endif %}
-        {% if entry.phoneNumber %}<li><a href="tel:{{ entry.phoneNumber|replace({'-': ''}) }}">{{ svg( '@webroot/assets/img/icon-phone-updated.svg') }} {{ entry.phoneNumber }}</a></li>{% endif %}
-        {% if not entry.contactAddress.isEmpty() %}<li>{{ svg( '@webroot/assets/img/icon-marker-updated.svg') }}{{ entry.contactAddress.name }}<br>{{ entry.contactAddress.multiline() }}</li>{% endif %}
-        </ul>
-      {% endif %}
+    {% if entry.emailAddress or entry.phoneNumber or (entry.contactAddress and not entry.contactAddress.isEmpty()) %}
+      <ul class="ul-icons">
+      {% if entry.emailAddress %}<li><a href="mailto:{{ entry.emailAddress }}">{{ svg( '@webroot/dist/img/icon-envelope-updated.svg') }} {{ entry.emailAddress }}</a></li>{% endif %}
+      {% if entry.phoneNumber %}<li><a href="tel:{{ entry.phoneNumber|replace({'-': ''}) }}">{{ svg( '@webroot/dist/img/icon-phone-updated.svg') }} {{ entry.phoneNumber }}</a></li>{% endif %}
+      {% if entry.contactAddress and not entry.contactAddress.isEmpty() %}<li>{{ svg( '@webroot/dist/img/icon-marker-updated.svg') }}{{ entry.contactAddress.name }}<br>{{ entry.contactAddress.multiline() }}</li>{% endif %}
+      </ul>
+    {% endif %}
 
-      {% if entry.relatedServices|length %}
-        <hr style="border-top: 2px solid #212121;opacity:1;"/>
-        <h4>{{ 'Related Services'|t }}</h4>
-        <ul class="ul-icons related">
-          {% for entry in entry.relatedServices.all() %}
+    {% if entry.relatedServices|length %}
+      <hr/>
+      <h4>{{ 'Related Services'|t }}</h4>
+      <ul class="ul-icons related">
+        {% for entry in entry.relatedServices.all() %}
+          <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% if entry.relatedResources|length  %}
+      <hr/>
+      <h4>{{ 'Related Resources'|t }}</h4>
+      <ul class="ul-icons related">
+        {% for entry in entry.relatedResources.all() %}
+          {% switch entry.type.section.handle %}
+            {% case 'documents' %}
+              <li><a href="{{ entry.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }}</a></li>
+            {% case 'documentPackets' %}
+              <li><a href="{{ entry.url }}">{{ svg( '@webroot/dist/img/icon-folder.svg') }} {{ entry.title }}</a></li>
+            {% default %}
+              <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+          {% endswitch %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endspaceless %}
+{% endset %}
+
+{% if entry.section.handle == 'meetings' %}
+  {% if entry.date %}
+    <hr/>
+    <h4>{{ 'Date and Time'|t }}</h4>
+    <p>{{ entry.date|date('l, F j, Y') }}
+      {% if entry.startDate %}
+        <br>{{ entry.startDate|date("g:ia") }}{{ entry.endDate ? " to " ~ entry.endDate|date("g:ia") : "" }}
+      {% elseif entry.startTime %}
+        <br>{{ entry.startTime|date("g:ia") }}{{ entry.endTime ? " to " ~ entry.endTime|date("g:ia") : "" }}
+      {% endif %}
+    </p>
+    {% set status = entry.meetingStatus ? entry.meetingStatus : entry.eventStatus %}
+    {% if now|date('Y-m-d') <= entry.date|date('Y-m-d') and (status.value !== 'canceled' and status.value !== 'rescheduled') %}
+      {% if entry.eventLocation and entry.eventLocation.type("physicalLocation")|length %}
+        {% set block = entry.eventLocation.type("physicalLocation").one() %}
+        {% if not block.contactAddress.isEmpty() %}
+          <hr class="light">
+          <h4>{{ 'In Person Location'|t }}</h4>
+          {% if block.fullName %}<p>{{ block.fullName }}</p>{% endif %}
+          <ul class="ul-icons">
+            <li>{{ svg( '@webroot/dist/img/icon-marker-updated.svg') }}{{ block.contactAddress.multiline() }}</li>
+            <li style="padding-left:32.5px;text-decoration:underline;"><a href="https://www.google.com/maps/search/{{ block.contactAddress|url_encode }}">Get Directions</a></li>
+          </ul>
+        {% endif %}
+      {% endif %}
+      {% if entry.eventLocation and entry.eventLocation.type("onlineLocation")|length %}
+        {% set block = entry.eventLocation.type("onlineLocation").one() %}
+        {% if block.href or block.phoneNumber %}
+          <hr class="light">
+          <h4>{{ 'Online'|t }}</h4>
+          {% if block.href %}<a href="{{ block.href }}" class="button">Join the meeting</a>{% endif %}
+          {% if block.phoneNumber %}
+            <p class="font-bold">Or join by phone</p>
+            <ul class="ul-icons">
+              <li><a href="tel:{{ block.phoneNumber|replace({'-': ''}) }}">{{ svg( '@webroot/dist/img/icon-phone-updated.svg') }} {{ block.phoneNumber }}</a></li>
+            </ul>
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+
+  {% if entry.fullName %}
+    <hr/>
+    <h4>{{ 'Contact'|t }}</h4>
+    <p>{{ entry.fullName }}</p>
+    {% if entry.emailAddress or entry.phoneNumber %}
+      <ul class="ul-icons">
+        {% if entry.emailAddress %}<li><a href="mailto:{{ entry.emailAddress }}">{{ svg( '@webroot/dist/img/icon-envelope-updated.svg') }} {{ entry.emailAddress }}</a></li>{% endif %}
+        {% if entry.phoneNumber %}<li><a href="tel:{{ entry.phoneNumber|replace({'-': ''}) }}">{{ svg( '@webroot/dist/img/icon-phone-updated.svg') }} {{ entry.phoneNumber }}</a></li>{% endif %}
+      </ul>
+    {% endif %}
+  {% endif %}
+
+  {% if entry.eventContact %}
+    <hr/>
+    <h4>{{ 'Contact'|t }}</h4>
+    {{ entry.eventContact|raw }}
+  {% endif %}
+
+  {% if entry.relatedPages|length  %}
+      <hr/>
+      <h4>{{ 'Related Pages'|t }}</h4>
+      <ul class="ul-icons related">
+        {% for entry in entry.relatedPages.all() %}
             <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-      {% if entry.relatedResources|length  %}
-        <hr style="border-top: 2px solid #212121;opacity:1;"/>
-        <h4>{{ 'Related Resources'|t }}</h4>
-        <ul class="ul-icons related">
-          {% for entry in entry.relatedResources.all() %}
-            {% switch entry.type.section.handle %}
-              {% case 'documents' %}
-                <li><a href="{{ entry.url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.title }}</a></li>
-              {% case 'documentPackets' %}
-                <li><a href="{{ entry.url }}">{{ svg( '@webroot/assets/img/icon-folder.svg') }} {{ entry.title }}</a></li>
-              {% default %}
-                <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-            {% endswitch %}
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endspaceless %}
-  {% endset %}
+        {% endfor %}
+      </ul>
+    {% endif %}
 
+  <hr class="light">
+  <p class="small">Posted: {{ entry.postDate|date("F j, Y g:ia") }}</p>
+  {% if entry.type == 'meetings' %}<p class="small">Last Updated: {{ entry.dateUpdated|date("F j, Y g:ia") }}</p>{% endif %}
+
+{% else %}
   {% if sidebarContent|trim|length %}
-    <hr style="border-top: 2px solid #212121;opacity:1;"/>
+    <hr/>
     <h4>{{ 'Contact'|t }}</h4>
     {{sidebarContent}}
   {% endif %}
-</div>
-
-<style>
-  #components-sidebar > hr:not(:first-child) {
-    margin-top: 2em;
-  }
-
-  #components-sidebar > h1,
-  #components-sidebar > h2,
-  #components-sidebar > h3,
-  #components-sidebar > h4 {
-    padding-top: 1em;
-  }
-
-  .ul-icons {
-    list-style: none;
-    padding-left: 0 !important;
-  }
-
-  .ul-icons > li {
-    margin-bottom: 15px;
-  }
-
-  .ul-icons > li,
-  .ul-icons > li > a {
-    display: flex;
-    align-items: start;
-  }
-
-  .ul-icons > li svg {
-    flex-shrink: 0;
-    margin-top: 2px;
-    margin-right: 10px;
-    width: 22.5px;
-  }
-
-  .related > li svg path {
-    fill: #2e8131;
-  }
-
-  .ul-icons a {
-    text-decoration: none;
-  }
-
-  .ul-icons a:hover,
-  .ul-icons a:focus {
-    text-decoration: underline;
-  }
-
-  .ul-icons.related a {
-    text-decoration: underline;
-  }
-
-  .ul-icons.related a:hover,
-  .ul-icons.related a:focus {
-    text-decoration: none;
-  }
-</style>
+{% endif %}

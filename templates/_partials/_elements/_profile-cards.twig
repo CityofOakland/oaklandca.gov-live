@@ -22,8 +22,8 @@
           ], { ratio: 1/1, position: photo.getFocalPoint()},{ fillTransforms: true}) %}
           <img src="{{ transformedImage.url }}" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ jobTitle }}, {{ name }}" class="block w-full h-full border-2 border-gray-200 rounded-full">
         {% else %}
-          <div class="h-full overflow-hidden text-gray-400 bg-gray-100 border-2 border-gray-200 rounded-full opacity-75 fill-current">
-            {{ craft.inlin.er('/assets/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="block h-full" ') | raw }}
+          <div class="h-full overflow-hidden border-2 rounded-full opacity-75 fill-current text-gray-400 bg-gray-100 border-gray-200">
+            {{ craft.inlin.er('/dist/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="block h-full" ') | raw }}
           </div>
         {% endif %}
       </a>

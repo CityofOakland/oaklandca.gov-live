@@ -10,7 +10,7 @@ var indexTemplate =
 		{{^newsImage}}
 		<figure class="w-full h-48 sm:h-64 p-4 bg-gray-300 relative z-0 flex items-center justify-center mb-4 lg:mb-0">
 		    <div class="text-gray-500 opacity-75 fill-current h-full p-12">
-		    	<img src="/assets/img/icon-newspaper.svg" class="h-full" alt="">
+		    	<img src="/dist/img/icon-newspaper.svg" class="h-full" alt="">
 		    </div>
 		</figure>
 		{{/newsImage}}

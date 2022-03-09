@@ -1,5 +1,3 @@
-import { publicDecrypt } from "crypto";
-
 const allSearch = instantsearch({
   appId: "6V5VJO8ZG2",
   apiKey: "9bded46d3070b2089499c70b2389708b",
@@ -118,7 +116,7 @@ allSearch.addWidget(
     templates: {
       empty: "No results",
       item: `
-      <div class="algolia-result">
+      <div class="result">
         <h3><a href="{{ url }}">{{{_highlightResult.title.value}}}</a> <span>{{ section }}</span></h3>
         <p>{{{ _snippetResult.leadIn.value }}}</p>
         {{{ #summary }}}<p>{{{ _snippetResult.summary.value }}}</p>{{{ /summary }}}
