@@ -16,7 +16,7 @@
             <div class="w-8 h-8 {% if started %}bg-green-400{% else %}bg-blue-500{% endif %} rounded-full"></div>
             <div class="flex-1 ml-4 font-semibold">
               {% if item.milestoneLink %}
-                <a class="underline" href="{{ item.milestoneLink.url }}">{{ heading }}</a>
+                <a href="{{ item.milestoneLink.url }}">{{ heading }}</a>
               {% else %}
                 {{ heading }}
               {% endif %}
