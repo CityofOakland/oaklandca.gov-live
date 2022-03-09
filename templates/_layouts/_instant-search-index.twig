@@ -35,7 +35,7 @@
       <div id="searchbox-container" class="flex items-center">
         {{ svg( '@webroot/assets/img/icon-magnifier.svg')|attr({ class: 'fill-current text-gray-500' }) }}
         <div id="searchbox">
-          <input id="search-input" class="form-control border border-gray-300" placeholder="{{ searchInputText ?? "Search" }}" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" type="search" required="true">
+          <input id="search-input" class="border border-gray-300 form-control" placeholder="{{ searchInputText ?? "Search" }}" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" type="search" required="true">
         </div>
       </div>
       {% if facets is defined %}
@@ -45,7 +45,7 @@
       {% endif %}
     </div>
   </div>
-  <div class="relative invisible h-0 overflow-hidden opacity-0 bg-gray-300 text-gray-700" id="algolia-filters">
+  <div class="relative invisible h-0 overflow-hidden text-gray-700 transition-all bg-gray-300 opacity-0 -z-10" id="algolia-filters">
     <div class="container flex-col -my-4" id="facet-holder">
       {% if facets is defined %}
         {% for facet in facets %}

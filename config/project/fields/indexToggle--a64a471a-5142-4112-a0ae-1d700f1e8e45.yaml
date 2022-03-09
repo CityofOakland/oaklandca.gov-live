@@ -6,7 +6,7 @@ instructions: ''
 name: 'Index Toggle'
 searchable: false
 settings:
-  default: false
+  default: true
   offLabel: null
   onLabel: null
 translationKeyFormat: null

@@ -83,6 +83,10 @@ class Module extends \yii\base\Module
           $entry = $context['entry'];
           if($entry->section->handle == 'meetings'){
             return "<style>
+              #fields-meetingId-field {
+                display: none;
+              }
+
               #fields-process .matrix-field .btn:nth-child(2) {
                 border-top-left-radius: 5px;
                 border-bottom-left-radius: 5px;
