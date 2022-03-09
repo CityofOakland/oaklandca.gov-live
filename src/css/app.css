@@ -456,8 +456,6 @@ body.open .page-holder {
   @apply hidden;
 }
 
-@tailwind utilities;
-
 /* Custom */
 form[data-handle="reportProblem"],
 form[data-handle="whatWasWrongWithThisPage"],
@@ -1930,3 +1928,5 @@ form[data-handle="whyWasThisPageHelpful"] {
 .icon svg path {
   fill: #2e8131;
 }
+
+@tailwind utilities;
