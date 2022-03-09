@@ -13,10 +13,10 @@
   <div class="p-4">
     <div class="mb-2 text-sm text-gray-800 uppercase">{{ byline }}</div>
     <h3 class="mt-0 mb-2 text-lg">
-      <a href="{{ url }}" class="underline line-clamp-3">{{ title }}</a>
+      <a href="{{ url }}" class="line-clamp-3">{{ title }}</a>
     </h3>
     {% if not summaryHide ?? '' %}
-      <div class="text-sm text-gray-1000 line-clamp-4 body-text">
+      <div class="text-sm text-gray-1000 line-clamp-4">
         {{ body | retcon('attr', '*', { class: 'mt-2 mb-0' })}}
       </div>
     {% endif %}

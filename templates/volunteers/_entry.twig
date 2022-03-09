@@ -26,7 +26,7 @@
             {{ jobTitle }}
           </p>
           {% if entry.bio | length %}
-            <div class="mt-8 text-xl body-text">{{ entry.bio }}</div>
+            <div class="mt-8 text-xl">{{ entry.bio }}</div>
           {% endif %}
           {% if email | length %}
             <p class="my-0"><span class="font-bold">Email Address:</span> <a href="mailto:{{ email }}">{{ email }}</a></p>

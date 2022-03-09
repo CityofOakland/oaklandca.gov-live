@@ -52,7 +52,7 @@
   {% endif %}
 
   {# Details #}
-  {% if entry.mainContent %}<div class="body-text">{{ entry.mainContent }}</div>{% endif %}
+  {% if entry.mainContent %}<div>{{ entry.mainContent }}</div>{% endif %}
 
   {% set minuteCat = craft.categories.group('documentTypes').id(12).one() %}
   {% set agendaCat = craft.categories.group('documentTypes').id(13).one() %}
