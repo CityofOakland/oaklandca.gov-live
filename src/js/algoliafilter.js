@@ -1,12 +1,11 @@
-const filterReveal = document.getElementById("filter-reveal");
-const filters = document.getElementById("algolia-filters");
-const openClasses = ["opacity-100", "h-auto", "z-40", "visible"];
-const closedClasses = ["opacity-0", "h-0", "z-neg-10", "invisible"];
+const filterReveal  = document.getElementById("filter-reveal");
+const filters       = document.getElementById("algolia-filters");
+const openClasses   = ["opacity-100", "h-auto", "visible"];
+const closedClasses = ["opacity-0", "h-0", "invisible"];
 
 if (filterReveal != null) {
   filterReveal.addEventListener("click", function(e) {
     e.preventDefault();
-
     if (filters.classList.contains("opacity-0")) {
       filters.classList.add(...openClasses);
       filters.classList.remove(...closedClasses);
@@ -23,26 +22,20 @@ if (window.section && window.entryTitle) {
   var filtered= `${window.section}:'${window.entryTitle}'`;
 }
 
-const ts = Math.round((new Date()).getTime() / 1000);
+// ---------- Plugin ----------
+
 const search = instantsearch({
-  appId: "6V5VJO8ZG2",
-  apiKey: "9bded46d3070b2089499c70b2389708b",
   indexName: window.algoliaIndex,
   routing: true,
-  searchParameters: {
-    filters: filtered || undefined,
-    highlightPreTag: '<b class="font-bold">',
-    highlightPostTag: '</b>',
-    snippetEllipsisText: "…",
-  },
+  searchClient: algoliasearch(
+    "6V5VJO8ZG2",
+    "9bded46d3070b2089499c70b2389708b",
+  ),
 });
 
 search.addWidget(
-  instantsearch.widgets.analytics({
-    pushFunction(formattedParameters, state, results) {
-      window.ga('set', 'page', window.location.pathname + window.location.search);
-      window.ga('send', 'pageView');
-    },
+  instantsearch.widgets.configure({
+    filters: filtered || undefined,
   })
 );
 
@@ -65,34 +58,69 @@ const defaultTemplate =
   {{/leadIn}}
 </article>`;
 
-facetFilters.forEach(facet => {
-  search.addWidget(
-    instantsearch.widgets.menuSelect({
-      container: facet.container,
-      attributeName: facet.attribute,
-      operator: 'or',
-      limit: 10,
-      templates: {
-        header: facet.header
+// ---------- Analytics ----------
+
+search.addWidget(
+  instantsearch.widgets.analytics({
+    pushFunction(formattedParameters, state, results) {
+      window.ga('set', 'page', window.location.pathname + window.location.search);
+      window.ga('send', 'pageView');
+    },
+  })
+);
+
+// ---------- Hits ----------
+
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: "#hits",
+    cssClasses: {
+      list: [(window.hitsRootClass || "block")],
+    },
+    templates: {
+      empty: "No results",
+      item: window.indexTemplate || defaultTemplate,
+    },
+    transformItems: function(items){
+      for(var i = 0; i < items.length; i++) {
+        var item    = items[i];
+        var date    = new Date(item.date);
+        var months  = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+        var nth = function(d) {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1:  return "st";
+            case 2:  return "nd";
+            case 3:  return "rd";
+            default: return "th";
+          }
+        }
+
+        var year  = date.getFullYear();
+        var month = months[date.getMonth()];
+        var day   = date.getDate();
+
+        item.formattedDate = month + " " + day + nth(day) + ", " + year;
+        items[i] = item;
       }
-    })
-  );
-});
+      return items;
+    }
+  })
+);
 
+// ---------- Date Box ----------
 if (typeof moment !== 'undefined') {
+  const ts            = Math.round((new Date()).getTime() / 1000);
   const ONE_DAY_IN_MS = 3600 * 24 * 1000;
-
-  const TODAY = moment().format('L');
-
+  const TODAY         = moment().format('L');
 
   const datePicker = instantsearch.connectors.connectRange(
     (options, isFirstRendering) => {
       if (!isFirstRendering) return;
-
       const { refine }  = options;
-
       const MONTHSTART  = new Date(moment().startOf('month')).getTime();
-      const MONTHEND    = new Date(moment().add(11, 'month').endOf('month')).getTime();
+      const MONTHEND    = new Date(moment().endOf('month')).getTime();
 
       refine([MONTHSTART, MONTHEND]);
 
@@ -134,63 +162,66 @@ if (typeof moment !== 'undefined') {
   );
 
   const dateRangeWidget = datePicker({
-    attributeName: 'date',
+    attribute: 'date',
   });
 
   search.addWidget(dateRangeWidget);
 }
 
-search.addWidget(
-  instantsearch.widgets.searchBox({
-    container: "#search-input",
+// -------------------- CUSTOM WIDGETS --------------------
+
+// ---------- Search Box ----------
+
+// 1. Create a render function
+const renderSearchBox = (renderOptions, isFirstRender) => {
+  const { query, refine, clear, isSearchStalled, widgetParams } = renderOptions;
+
+  if (isFirstRender) {
+    widgetParams.container.innerHTML = "";
+
+    const input = document.createElement('input');
+
+    input.id        = "search-input";
+    input.className = "form-control border border-gray-300";
+
+    input.setAttribute("placeholder"    , widgetParams.placeholder);
+    input.setAttribute("autocapitalize" , "off");
+    input.setAttribute("autocomplete"   , "off");
+    input.setAttribute("autocorrect"    , "off");
+    input.setAttribute("spellcheck"     , "false");
+    input.setAttribute("type"           , "search");
+    input.setAttribute("required"       , true);
+
+    input.addEventListener('input', event => {
+      refine(event.target.value);
+    });
+
+    widgetParams.container.appendChild(input);
+  }
+
+  widgetParams.container.querySelector('input').value = query;
+};
+
+// 2. Create the custom widget
+const customSearchBox = instantsearch.connectors.connectSearchBox(
+  renderSearchBox
+);
+
+// 3. Instantiate
+search.addWidgets([
+  customSearchBox({
+    container: document.querySelector('#searchbox'),
     placeholder: window.searchInputText || "Search"
   })
-);
+]);
 
-search.addWidget(
-  instantsearch.widgets.hits({
-    container: "#hits",
-    cssClasses: {
-      root: window.hitsRootClass || "block"
-    },
-    templates: {
-      empty: "No results",
-      item: window.indexTemplate || defaultTemplate,
-    },
-    transformItems: function(items){
-      for(var i = 0; i < items.length; i++) {
-        var item    = items[i];
-        var date    = new Date(item.date);
-        var months  = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-
-        var nth = function(d) {
-          if (d > 3 && d < 21) return 'th';
-          switch (d % 10) {
-            case 1:  return "st";
-            case 2:  return "nd";
-            case 3:  return "rd";
-            default: return "th";
-          }
-        }
-
-        var year  = date.getFullYear();
-        var month = months[date.getMonth()];
-        var day   = date.getDate();
-
-        item.formattedDate = month + " " + day + nth(day) + ", " + year;
-        items[i] = item;
-      }
-      return items;
-    }
-  })
-);
+// ---------- Pagination ----------
 
 // 1. Create a render function
 const renderPagination = (renderOptions, isFirstRender) => {
 
-  const container = document.querySelector('#bottom-pagination');
-
   const { pages, currentRefinement, nbPages, refine } = renderOptions;
+  const container = document.querySelector('#bottom-pagination');
 
   if(nbPages > 1 && nbPages <= 7) {
 
@@ -256,5 +287,51 @@ search.addWidgets([
     padding: 2,
   })
 ]);
+
+facetFilters.forEach(facet => {
+  // 1. Create the render function
+  const renderMenuSelect = (renderOptions, isFirstRender) => {
+    const { items, canRefine, refine, widgetParams } = renderOptions;
+
+    if (isFirstRender) {
+      const label  = document.createElement('label');
+      const select = document.createElement('select');
+
+      label.innerHTML = facet.header;
+      label.className = 'form-control';
+      label.setAttribute("for", 'algolia-' + facet.attribute);
+
+      select.classList.add('form-control');
+      select.addEventListener('change', event => {
+        refine(event.target.value);
+      });
+
+      widgetParams.container.appendChild(label);
+      widgetParams.container.appendChild(select);
+    }
+
+    const select = widgetParams.container.querySelector('select');
+
+    select.id         = 'algolia-' + facet.attribute;
+    select.disabled   = !canRefine;
+    select.innerHTML  = `
+      <option value="">See all</option>
+      ${items.map(item => `<option value="${item.value}" ${item.isRefined ? 'selected' : ''}>${item.label}</option>`).join('')}
+    `;
+  };
+
+  // 2. Create the custom widget
+  const customMenuSelect = instantsearch.connectors.connectMenu(renderMenuSelect);
+
+  // 3. Instantiate the custom widget
+  search.addWidgets([
+    customMenuSelect({
+      container: document.querySelector(facet.container),
+      attribute: facet.attribute,
+      operator: 'or',
+      limit: 10,
+    })
+  ]);
+});
 
 search.start();
