@@ -54,6 +54,7 @@
           {% for item in sideNavLinks %}
             <li class="mb-2">
               <a
+                class="underline"
                 aria-label="Navigate to {{ item.title }} on this page."
                 href="#{{ item.link }}"
               >{{ item.title }}</a>
@@ -87,6 +88,7 @@
             {% if value %}
               <li class="mb-2">
                 <a
+                  class="underline"
                   aria-label="Featured {{ fullNavMenu[key]['title'] }}"
                   href="#page-{{ fullNavMenu[key]['url'] }}"
                 >{{ fullNavMenu[key]['title'] }}</a>

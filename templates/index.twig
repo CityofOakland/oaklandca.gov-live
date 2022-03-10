@@ -84,7 +84,7 @@
               <h3 class="pt-10 pb-4">{{ "More News"|t }}</h3>
             {% endif %}
             {% for entry in otherFeaturedNews %}
-              <p class="pb-3"><a href="{{ entry.url }}">{{ entry.title }}</a></p>
+              <p class="pb-3"><a class="underline" href="{{ entry.url }}">{{ entry.title }}</a></p>
             {% endfor %}
           </div>
           <p class="pt-3 underline"><a href="{{ siteUrl('/departments/media-center') }}"><b>{{ "Newsroom"|t }} »</b></a></p>
