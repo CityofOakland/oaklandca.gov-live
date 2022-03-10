@@ -109,21 +109,23 @@
   color: #000000;
 }
 
-.has-submenu h4 {
-  padding-bottom: 0 !important;
-}
+@media (max-height: 739px) {
+  .has-submenu h4 {
+    padding-bottom: 0 !important;
+  }
 
-.has-submenu .card {
-  padding: 10px 20px;
-}
+  .has-submenu .card {
+    padding: 10px 20px;
+  }
 
-.has-submenu .card:not(.dark) {
-  border-bottom: 1px solid #3E9141;
-  border-radius: 0;
-}
-
-.has-submenu .clamp {
-  display: none;
+  .has-submenu .card:not(.dark) {
+    border-bottom: 1px solid #3E9141;
+    border-radius: 0;
+  }
+  
+  .has-submenu .clamp {
+    display: none;
+  }
 }
 
 .has-submenu > ul ul {
