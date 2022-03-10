@@ -11,12 +11,11 @@
 }
 
 .has-submenu > ul.components h4 {
-  font-size: 16px;
-  padding-bottom: 0.5rem !important;
+  @apply text-base !pb-2;
 }
 
 .has-submenu > ul.components p {
-  font-size: 14px;
+  @apply text-sm;
 }
 
 .has-submenu > ul::before {
@@ -45,12 +44,11 @@
 }
 
 .has-submenu > a {
+  @apply text-sm leading-normal;
   background: transparent;
   display: flex;
   align-items: center;
-  font-size: 14px;
   font-weight: bold;
-  line-height: 21px;
   padding: 19.5px 16px;
   position: relative;
 }
@@ -207,13 +205,7 @@
 }
 
 #main-navigation {
-  padding-left: 63px;
-}
-
-@media(min-width: 1024px) {
-  #main-navigation {
-      padding-left: 1.5rem;
-  }        
+  @apply pl-16 lg:pl-6;
 }
 
 #mobile-navigation > a {
@@ -251,12 +243,11 @@
 }
 
 #mobile-navigation > ul > li > a {
+  @apply text-lg leading-snug;
   background: #207127;
   display: flex;
   justify-content: space-between;
-  font-size: 18px;
   font-weight: 600;
-  line-height: 21px;
   padding: 15.5px 0;
 }
 
@@ -281,7 +272,7 @@ display: block;
 }
 
 #mobile-navigation .has-submenu > ul > li > a {
-  font-size: 14px;
+  @apply text-sm;
   font-weight: bold;
 }
 
@@ -314,7 +305,7 @@ display: block;
 
 #topbar li,
 #topbar p {
-  font-size: 12px;
+  @apply text-xs;
   list-style: none;
 }
 
@@ -334,9 +325,8 @@ display: block;
 }
 
 #translate > a {
+  @apply text-xs leading-normal;
   font-weight: normal;
-  font-size: 12px;
-  line-height: 1.5;
   padding: 12px 8px;
 }
 
@@ -368,6 +358,6 @@ display: block;
 }
 
 #translate > ul > li {
-  font-size: 14px;
+  @apply text-sm;
   margin: 2.5px 0;
 }
