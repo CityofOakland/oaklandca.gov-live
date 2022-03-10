@@ -48,6 +48,7 @@ return [
       '@algoliaAdminApi' => getenv('ALGOLIA_ADMIN_API'),
       '@amazonKeyId' => getenv('AMAZON_KEY_ID'),
       '@amazonSecret' => getenv('AMAZON_SECRET'),
+      '@webroot' => dirname(__DIR__) . '/web',
     ],
   ],
 
