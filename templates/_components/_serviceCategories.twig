@@ -2,7 +2,7 @@
   <div class="container py-16">
     <h2>{{ "Services"|t }}</h2>
     {% if block.getDescendants(1) %}
-      <div class="max-w-2xl">
+      <div class="max-w-6xl">
         {% for block in block.getDescendants(1) %}
           {% if block.heading %}<h3 class="pt-10" style="font-weight:600;">{{ block.heading }}</h3>{% endif %}
           {% if block.cityServicesAndResourcesUpdates|length %}
