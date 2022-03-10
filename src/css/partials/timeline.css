@@ -30,8 +30,7 @@
 }
 
 .timeline__item {
-  font-size: 16px;
-  font-size: 1rem;
+  @apply text-base;
   padding: 0.625rem 2.5rem 0.625rem 0;
   position: relative;
   width: 50%;
@@ -135,19 +134,18 @@
 }
 
 .timeline__content h2 {
-  font-size: 1.25rem;
+  @apply text-xl;
   font-weight: 900;
   margin: 0 0 0.625rem;
 }
 
 .timeline__content p {
-  font-size: 0.9375rem;
-  line-height: 1.5;
+  @apply text-sm leading-normal;
   margin-bottom: 10px;
 }
 
 .timeline--horizontal {
-  font-size: 0;
+  @apply text-[0];
   padding: 0 3.125rem;
   overflow: hidden;
   white-space: nowrap;
