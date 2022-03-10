@@ -1,6 +1,6 @@
 {% extends '_layout.twig' %}
 
-{% set hitsRootClass = 'card-grid vertical-cards' %}
+{% set hitsRootClass = 'grid grid-cols-1 md:grid-cols-2 gap-16 vertical-cards' %}
 
 {% do view.registerJsFile("https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find") %}
 {% do view.registerCssFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css") %}
@@ -30,13 +30,15 @@
   {% endblock %}
   <div class="bg-gray-100" id="search-bar-container">
     <div class="container text-right">
-      <div class="flex flex-col sm:flex-row">
-        <label class="hidden-visually" for="search-input">How can we help?</label>
-        <input class="w-full p-2 rounded-none appearance-none md:py-4 md:px-8" id="search-input" name="keywords" required type="search" value="">
+      <div class="max-w-2xl">
+        <div class="flex flex-col sm:flex-row">
+          <label class="hidden-visually" for="search-input">How can we help?</label>
+          <input class="w-full p-2 rounded-none appearance-none md:py-4 md:px-8" id="search-input" name="keywords" required type="search" value="">
+        </div>
+        {% if facets is defined %}
+          <a class="inline-block mt-4 text-right text-gray-800 hover:text-gray-900" href="#" id="filter-reveal">Show Filters</a>
+        {% endif %}
       </div>
-      {% if facets is defined %}
-        <a class="inline-block mt-4 text-right text-gray-800 hover:text-gray-900" href="#" id="filter-reveal">Show Filters</a>
-      {% endif %}
     </div>
   </div>
   <section class="relative z-0 bg-white">
@@ -49,15 +51,19 @@
         {% endif %}
       </div>
     </div>
-    <div class="container max-w-sm py-0 mt-8 daterange" id="calendar"></div>
-      <div class="container mt-4 md:flex min-h-8">
-        <div class="flex-1">
-          <div id="hits"></div>
-          <div class="flex items-center text-2xl">
-            <div class="inline-block" id="bottom-pagination"></div>
-          </div>
+    <div class="container py-0 mt-8">
+      <div class="max-w-2xl">
+        <div class="max-w-sm mx-auto daterange" id="calendar"></div>
+      </div>
+    </div>
+    <div class="container mt-4 md:flex min-h-8">
+      <div class="max-w-6xl">
+        <div id="hits"></div>
+        <div class="flex items-center text-2xl">
+          <div class="inline-block" id="bottom-pagination"></div>
         </div>
       </div>
+    </div>
   </section>
 {% endblock %}
 

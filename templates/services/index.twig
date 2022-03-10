@@ -8,7 +8,7 @@
     bannerImage: false
   } %}
   <div class="container pt-0 mx-auto components">
-    <ul class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" style="list-style: none;padding:0;">
+    <ul class="grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3" style="list-style: none;padding:0;">
       {% for category in craft.categories.group("serviceTypes").limit(null).level(1).orderBy("title asc").all()%}
         {{ macros.card(category, true, false) }}
       {% endfor %}

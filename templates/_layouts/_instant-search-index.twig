@@ -56,12 +56,16 @@
   </div>
 
   {% if datefilter is defined and datefilter == true %}
-    <div class="container max-w-sm py-0 mt-8 mb-4 daterange" id="calendar"></div>
+    <div class="container py-0 mt-8 mb-4">
+      <div class="max-w-6xl">
+        <div class="max-w-sm mx-auto daterange" id="calendar"></div>
+      </div>
+    </div>
   {% endif %}
 
   <section class="relative z-0 bg-white">
     <div class="container">
-      <div class="w-full">
+      <div class="max-w-6xl">
         <div id="hits"></div>
         <div class="flex items-center text-2xl">
           <div class="inline-block" id="bottom-pagination"></div>
