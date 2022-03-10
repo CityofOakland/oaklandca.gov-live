@@ -1,0 +1,1 @@
+php craft clear-caches/all

@@ -1,8 +1,8 @@
 <nav aria-label="Mobile Navigation" class="bg-green-1000 bg-transparent-oakland-roots h-full p-8 flex flex-col z-60 relative" id="menu" role="navigation">
   <div class="relative z-70">
     <button class="btn btn-sm text-sm" id="close-menu">Close Menu</button>
-    <a aria-labelledby="home-link" class="block my-4 text-white hover:text-green-600 fill-current trans-fast" href="/">
-      {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-8" ') | raw }}<span class="oak-hidden">Home</span>
+    <a aria-labelledby="home-link" class="block my-4 text-white hover:text-green-600 fill-current duration-75" href="/">
+      {{ craft.inlin.er('/dist/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-8" ') | raw }}<span class="oak-hidden">Home</span>
     </a>
     <ul class="mt-0 flex-1 overflow-y-scroll">
       <li>
@@ -16,7 +16,7 @@
       {% for nav in mainNav.navBuilder.all() %}
         {% set link = nav.navLink %}
         <li {% if not loop.last %} class="border-b border-white" {% endif %}>
-          <a href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %} class="block text-white hover:text-green-600 trans-fast py-4">{{ link.text }}</a>
+          <a href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %} class="block text-white hover:text-green-600 duration-75 py-4">{{ link.text }}</a>
         </li>
       {% endfor %}
     </ul>
