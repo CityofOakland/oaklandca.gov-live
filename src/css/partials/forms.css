@@ -31,23 +31,23 @@
 }
 
 label.form-control {
-  font-size: 14px;
+  @apply text-sm;
   text-transform: uppercase;
 }
 
 select.form-control {
+  @apply text-sm;
   border: 1px solid #CFCFCF;
   border-radius: 4px;
   color: #6B7280;
-  font-size: 14px;
   padding: 0.75rem 1rem;
   width: 100%;
 }
 
 input[type="search"].form-control {
+  @apply text-base;
   background: white;
   color: #3b3b3b;
-  font-size: 16px;
   margin: 0;
   padding: 14px;
   width: 100%;

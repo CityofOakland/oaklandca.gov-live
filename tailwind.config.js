@@ -35,6 +35,7 @@ module.exports = {
         '5xl': ['3rem', '3rem'],
         '6xl': ['3.75rem', '3.75rem'],
         '7xl': ['4.5rem', '4.5rem'],
+        'banner-lead': ['1.25rem', '1.875rem']
       },
       spacing: {
         "30": "7.5rem",

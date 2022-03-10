@@ -9,7 +9,7 @@
   {# Sets the navigation to the nav section entry, "Main Nav" #}
   {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
   <body class="font-body {{ pageClass ?? '' }}">
-    <div class="page-holder overflow-x-hidden">
+    <div class="overflow-x-hidden page-holder">
       {% include '_partials/_elements/_skip-to-content.twig' %}
       {% include '_partials/_elements/_nav-bar.twig' %}
       <main class="overflow-x-hidden">
@@ -29,16 +29,16 @@
           <div id="content" style="position:relative;top:-80px;"></div>
           <div class="{{ entry.slug == 'meetings-index' ? 'bg-blue-900 text-white' : '' }}">
             <div class="container components pt-8 md:pt-16 {{ entry.slug == 'meetings-index' ? 'md:mb-8' : '' }}">
-              <div style="max-width:1152px;">
+              <div class="max-w-6xl">
                 <div class="flex flex-col flex-1 lg:flex-row">
                   <div class="w-full lg:w-8/11">
                     {% if category is not defined and entry.section.handle == 'meetings' %}
                       <h1>{% if entry.meetingStatus and entry.meetingStatus.value and entry.meetingStatus.value !== 'default' %}{{ entry.meetingStatus.label }} - {% endif %}{{ entry.title }}</h1>
                       {% if entry.date %}
                         {% if now|date('Y-m-d') <= entry.date|date('Y-m-d') %}
-                          <div class="pt-4 lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} will be held on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
+                          <div class="pt-4 text-banner-lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} will be held on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
                         {% else %}
-                          <div class="pt-4 lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} was held on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
+                          <div class="pt-4 text-banner-lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} was held on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
                         {% endif %}
                       {% endif %}
                     {% else %}
@@ -55,15 +55,15 @@
         </section>
         <section> 
           {% if category is not defined %}
-            <div class="container pt-0o">
-              <div style="max-width:1152px;">
-                <div class="flex flex-wrap justify-between -mx-8 {{ layout is defined and layout == 'reverse' ? 'flex-col-reverse lg:flex-row' : '' }}">
-                  <div class="w-full lg:w-7/11 px-8 {{ layout is defined and layout == 'reverse' ? 'mt-8 lg:mt-0' : '' }}">
+            <div class="container pt-0">
+              <div class="max-w-6xl">
+                <div class="flex gap-16 justify-between {{ layout is defined and layout == 'reverse' ? 'flex-col-reverse lg:flex-row' : '' }}">
+                  <div class="w-full lg:w-7/11 {{ layout is defined and layout == 'reverse' ? 'mt-8 lg:mt-0' : '' }}">
                     <div class="components components-format">
                       {% block content %}{% endblock %}
                     </div>
                   </div>
-                  <div class="w-full lg:w-4/11 px-8 {{ layout is defined and layout == 'reverse' ? 'mt-0' : 'mt-8 lg:mt-0' }}">
+                  <div class="w-full lg:w-4/11 {{ layout is defined and layout == 'reverse' ? 'mt-0' : 'mt-8 lg:mt-0' }}">
                     <div id="components-sidebar" class="components components-format">
                       {% block sidebar %}
                         {% if category is not defined %}
