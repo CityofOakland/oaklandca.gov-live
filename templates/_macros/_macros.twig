@@ -1,10 +1,14 @@
 {% macro card(entry, dark, arrow) %}
   <li>
-    <a class="card {{ dark ? 'dark' : '' }}" href="{{ entry.url }}">
-      <h4 class="flex justify-between pb-4 {{ dark ? 'text-gray-800' : 'text-green-700' }}"><span>{{ entry.title }}</span> {% if arrow %}<span>&rarr;</span>{% endif %}</h4>
-      <div class="clamp text-gray-800">{{ entry.summary }}</div>
-    </a>
+    {{ _self.cardManual(entry.url, entry.title, entry.summary, dark, arrow) }}
   </li>
+{% endmacro %}
+
+{% macro cardManual(url, label, summary, dark, arrow ) %}
+  <a class="card {{ dark ? 'dark' : '' }}" href="{{ url }}">
+    <h4 class="flex justify-between pb-4 {{ dark ? 'text-gray-800' : 'text-green-700' }}"><span>{{ label }}</span> {% if arrow %}<span>&rarr;</span>{% endif %}</h4>
+    <div class="clamp text-gray-800">{{ summary }}</div>
+  </a>
 {% endmacro %}
 
 {% macro relatedSectionCount(entry, relations) %}

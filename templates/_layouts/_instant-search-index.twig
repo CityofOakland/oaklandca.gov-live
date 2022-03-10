@@ -1,14 +1,23 @@
 {% extends '_layout.twig' %}
 
+{% if section is defined and slug is defined %}
+  {% set facetItem = craft.entries.section(section).slug(slug).one().title %}
+  {% js at head %}
+      var section     = "{{ section }}";
+      var entryTitle  = "{{ facetItem }}";
+  {% endjs %}
+{% endif %}
+
+{% if datefilter is defined and datefilter == true %}
+  {% do view.registerJsFile("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js") %}
+  {% do view.registerJsFile("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js") %}
+  {% do view.registerJsFile("https://unpkg.com/baremetrics-calendar@1.0.14/public/js/Calendar.js") %}
+  {% do view.registerCssFile("https://unpkg.com/baremetrics-calendar@1.0.14/public/css/application.css") %}
+{% endif %}
+
 {% do view.registerJsFile("https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find") %}
-{% do view.registerCssFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css") %}
-{% do view.registerCssFile ("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css") %}
-{% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4") %}
-
-{% css %}
-{% include "_css/algoliafilter.css" %}
-{% endcss %}
-
+{% do view.registerJsFile("https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js") %}
+{% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@4.38.1") %}
 {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/algoliafilter.js")) %}
 
 {% if section is defined %}
@@ -18,22 +27,25 @@
 
 {% block content %}
   {% block pageBanner %}
-    {% include '_partials/_page-banners.twig' with {
-      bannerTitle: entry.title | replace(' Index', '') ~ bannerTitleSuffix ?? '',
-    } %}
+    {% include '_partials/_page-banners.twig' with {bannerTitle: entry.title | replace(' Index', '') ~ bannerTitleSuffix ?? ''} %}
   {% endblock %}
-  <div class="bg-gray-100" id="search-bar-container">
-    <div class="container text-right">
-      <div class="flex flex-col sm:flex-row">
-        <label class="hidden-visually" for="search-input">{{ searchInputText ?? 'Search this Index' }}</label>
-        <input class="w-full p-2 rounded-none appearance-none md:py-4 md:px-8" id="search-input" name="keywords" required type="search" value="">
+  <div class="bg-gray-100">
+    <div class="container">
+      <label class="sr-only" for="search-input">{{ searchInputText ?? 'Search this Index' }}</label>
+      <div id="searchbox-container" class="flex items-center">
+        {{ svg( '@webroot/assets/img/icon-magnifier.svg')|attr({ class: 'fill-current text-gray-500' }) }}
+        <div id="searchbox">
+          <input id="search-input" class="border border-gray-300 form-control" placeholder="{{ searchInputText ?? "Search" }}" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" type="search" required="true">
+        </div>
       </div>
       {% if facets is defined %}
-        <a class="inline-block mt-4 text-right text-gray-800 hover:text-gray-900" href="#" id="filter-reveal">Show Filters</a>
+        <div class="text-right">
+          <a class="inline-block mt-4 text-gray-800 hover:text-gray-900" href="#" id="filter-reveal">Show Filters</a>
+        </div>
       {% endif %}
     </div>
   </div>
-  <div class="relative invisible h-0 overflow-hidden opacity-0 bg-gray-300 text-gray-700 z-neg-10 trans trans-all" id="algolia-filters">
+  <div class="relative invisible h-0 overflow-hidden text-gray-700 transition-all bg-gray-300 opacity-0 -z-10" id="algolia-filters">
     <div class="container flex-col -my-4" id="facet-holder">
       {% if facets is defined %}
         {% for facet in facets %}
@@ -42,9 +54,18 @@
       {% endif %}
     </div>
   </div>
+
+  {% if datefilter is defined and datefilter == true %}
+    <div class="container py-0 mt-8 mb-4">
+      <div class="max-w-6xl">
+        <div class="max-w-sm mx-auto daterange" id="calendar"></div>
+      </div>
+    </div>
+  {% endif %}
+
   <section class="relative z-0 bg-white">
     <div class="container">
-      <div class="w-full">
+      <div class="max-w-6xl">
         <div id="hits"></div>
         <div class="flex items-center text-2xl">
           <div class="inline-block" id="bottom-pagination"></div>
@@ -52,17 +73,10 @@
       </div>
     </div>
   </section>
-
-  <style>
-    .ais-hits--item h2 b {
-      text-decoration: underline;
-    }
-  </style>
 {% endblock %}
 
 {% js on load %}
   $('#hits').on('click', 'a', function(){
-
     var search_term   = $('#search-input').val() ? $('#search-input').val() : 'No search term';
     var link_clicked  = $(this).attr('href').trim();
 
@@ -71,7 +85,7 @@
     $('.facet-container > div:visible').each(function(index, element){
       var $this = $(element);
       var item = {
-        label : $this.find('.ais-header').text(),
+        label : $this.find('label').text(),
         value : $this.find('select').val() ? $this.find('select').val() : 'N/A',
       };
 

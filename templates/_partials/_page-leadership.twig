@@ -11,7 +11,7 @@
             <img src="{{ entry.portrait[0].url }}" alt="Portrait of {{ entry.groupHeadName }}">
           {% else %}
             <div class="h-full p-12 text-gray-500 bg-gray-300 opacity-75 fill-current">
-              {{ craft.inlin.er('/assets/img/icon-user.svg') | replace('<svg ', '<svg class="w-full h-full" ') | raw }}
+              {{ craft.inlin.er('/dist/img/icon-user.svg') | replace('<svg ', '<svg class="w-full h-full" ') | raw }}
             </div>
           {% endif %}
         </figure>
@@ -28,7 +28,7 @@
         {% if pageLeadershipHeaderText is not defined %}
           <p class="mt-2">{{ entry.groupHeadTitle }}</p>
         {% endif %}
-        <div class="mt-8">{{ entry.groupHeadBio | raw }}</div>
+        <div class="mt-8 body-text">{{ entry.groupHeadBio | raw }}</div>
       </div>
     </div>
   </section>
