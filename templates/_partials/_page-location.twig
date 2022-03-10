@@ -42,12 +42,12 @@
           <ul class="mb-8">
             {% if entry.phoneNumber | length %}
               <li>Phone Number:
-                <a href="tel:{{ entry.phoneNumber }}">{{ entry.phoneNumber }}</a>
+                <a class="underline" href="tel:{{ entry.phoneNumber }}">{{ entry.phoneNumber }}</a>
               </li>
             {% endif %}
             {% if entry.faxNumber | length %}
               <li>Fax Number:
-                <a href="tel:{{ entry.faxNumber }}">{{ entry.faxNumber }}</a>
+                <a class="underline" href="tel:{{ entry.faxNumber }}">{{ entry.faxNumber }}</a>
               </li>
             {% endif %}
             {% if entry.ttyNumber | length %}
@@ -60,7 +60,7 @@
           <h3 class="mb-0 text-2xl">Email Address</h3>
           <ul class="mb-8">
           <li>
-            <a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a>
+            <a class="underline" href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a>
           </li>
           </ul>
         {% endif %}
