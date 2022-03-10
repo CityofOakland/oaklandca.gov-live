@@ -6,7 +6,7 @@
   {% elseif icon is defined %}
     <figure class="h-48 sm:h-64 p-4 bg-gray-300 relative z-0 flex items-center justify-center">
       <div class="text-gray-500 opacity-75 fill-current h-full p-12">
-        {{ craft.inlin.er('/assets/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="h-full" ') | raw }}
+        {{ craft.inlin.er('/dist/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="h-full" ') | raw }}
       </div>
     </figure>
   {% endif %}

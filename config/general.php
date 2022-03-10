@@ -58,6 +58,9 @@ return [
 
     // Dev Mode (see https://craftcms.com/support/dev-mode)
     'devMode' => true,
+
+    // Disables caching locally
+    'enableTemplateCaching' => false,
   ],
 
   // Staging environment settings
@@ -65,7 +68,7 @@ return [
     // Base site URL
     'siteUrl' => 'https://staging.oaklandca.gov',
 
-    'devMode' => true,
+    'devMode' => false,
   ],
 
   // Production environment settings

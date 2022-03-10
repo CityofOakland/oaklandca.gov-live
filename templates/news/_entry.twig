@@ -68,7 +68,7 @@
                   { width: 300, jpegQuality: 65 },
                   { width: 150, jpegQuality: 65 }
                 ], { ratio: 1/1, position: photo.getFocalPoint()},{ fillTransforms: true}) %}
-                  <img src="{{ transformedImage.url }}" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ contact.jobTitle ? contact.jobTitle : contact.staffImportJobTitle }}, {{ contact.title }}" class="block w-full border-2 mt-3 rounded-full border-gray-200" style="max-width:95px;">
+                  <img src="{{ transformedImage.url }}" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ contact.jobTitle ? contact.jobTitle : contact.staffImportJobTitle }}, {{ contact.title }}" class="block w-full mt-3 border-2 border-gray-200 rounded-full" style="max-width:95px;">
               {% endif %}
               <p>
                 <b><a target="_blank" href="{{ contact.url }}"><span>{{ contact.title }}</span></a></b>

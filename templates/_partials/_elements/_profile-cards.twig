@@ -23,7 +23,7 @@
           <img src="{{ transformedImage.url }}" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ jobTitle }}, {{ name }}" class="block w-full h-full border-2 rounded-full border-gray-200">
         {% else %}
           <div class="h-full overflow-hidden border-2 rounded-full opacity-75 fill-current text-gray-400 bg-gray-100 border-gray-200">
-            {{ craft.inlin.er('/assets/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="block h-full" ') | raw }}
+            {{ craft.inlin.er('/dist/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="block h-full" ') | raw }}
           </div>
         {% endif %}
       </a>
