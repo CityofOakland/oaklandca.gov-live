@@ -70,7 +70,7 @@
       </ul>
     {% endif %}
 
-    {% if minutes and minutes|length %}
+    {% if entry.type == 'meetingsImported' and minutes and minutes|length %}
       <h2>Minutes</h2>
       <ul class="ul-icons related" style="padding-top: 1rem;">
       {% for document in minutes.all() %}
@@ -120,7 +120,7 @@
     </figure>
   {% endif %}
 
-  {% if agendas and agendas|length %}
+  {% if entry.type == 'meetingsImported' and agendas and agendas|length %}
     <h2>Agenda</h2>
     <ul class="ul-icons related" style="padding-top: 1rem;">
     {% for agenda in agendas.all() %}
@@ -167,7 +167,7 @@
     {% endfor %}
   {% endif %}
 
-  {% if documents|length %}
+  {% if entry.type == 'meetingsImported' and documents|length %}
     <h2>Additional Documents</h2>
     <ul class="ul-icons related" style="padding-top: 1rem;">
     {% for document in documents %}
