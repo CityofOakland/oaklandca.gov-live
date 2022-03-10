@@ -1,4 +1,4 @@
-{% extends '_layouts/_instant-search-event-meetings' %}
+{% extends '_layouts/_instant-search-index' %}
 
 {% set entry = craft.entries.section('eventsIndex').one %}
 
@@ -21,10 +21,12 @@
 
 ] %}
 
+{% set datefilter = true %}
+
 {% js at head %}
 var algoliaIndex = 'production_events';
 var searchInputText = "Search for an event. E.g., “Walking Tour”";
-var hitsRootClass = 'card-grid vertical-cards';
+var hitsRootClass = 'grid grid-cols-1 md:grid-cols-3 gap-16 vertical-cards';
 var facetFilters = [
   {% for facet in facets %}
     {

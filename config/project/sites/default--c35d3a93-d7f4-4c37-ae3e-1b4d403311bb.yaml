@@ -1,4 +1,4 @@
-baseUrl: 'http://oakland.test'
+baseUrl: $SITE_URL
 enabled: true
 handle: default
 hasUrls: true

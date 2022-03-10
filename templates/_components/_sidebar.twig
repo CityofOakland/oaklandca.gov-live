@@ -13,9 +13,9 @@
 
     {% if entry.emailAddress or entry.phoneNumber or (entry.contactAddress and not entry.contactAddress.isEmpty()) %}
       <ul class="ul-icons">
-      {% if entry.emailAddress %}<li><a href="mailto:{{ entry.emailAddress }}">{{ svg( '@webroot/assets/img/icon-envelope-updated.svg') }} {{ entry.emailAddress }}</a></li>{% endif %}
-      {% if entry.phoneNumber %}<li><a href="tel:{{ entry.phoneNumber|replace({'-': ''}) }}">{{ svg( '@webroot/assets/img/icon-phone-updated.svg') }} {{ entry.phoneNumber }}</a></li>{% endif %}
-      {% if entry.contactAddress and not entry.contactAddress.isEmpty() %}<li>{{ svg( '@webroot/assets/img/icon-marker-updated.svg') }}{{ entry.contactAddress.name }}<br>{{ entry.contactAddress.multiline() }}</li>{% endif %}
+      {% if entry.emailAddress %}<li><a href="mailto:{{ entry.emailAddress }}">{{ svg( '@webroot/dist/img/icon-envelope-updated.svg') }} {{ entry.emailAddress }}</a></li>{% endif %}
+      {% if entry.phoneNumber %}<li><a href="tel:{{ entry.phoneNumber|replace({'-': ''}) }}">{{ svg( '@webroot/dist/img/icon-phone-updated.svg') }} {{ entry.phoneNumber }}</a></li>{% endif %}
+      {% if entry.contactAddress and not entry.contactAddress.isEmpty() %}<li>{{ svg( '@webroot/dist/img/icon-marker-updated.svg') }}{{ entry.contactAddress.name }}<br>{{ entry.contactAddress.multiline() }}</li>{% endif %}
       </ul>
     {% endif %}
 
@@ -35,9 +35,9 @@
         {% for entry in entry.relatedResources.all() %}
           {% switch entry.type.section.handle %}
             {% case 'documents' %}
-              <li><a href="{{ entry.url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.title }}</a></li>
+              <li><a href="{{ entry.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }}</a></li>
             {% case 'documentPackets' %}
-              <li><a href="{{ entry.url }}">{{ svg( '@webroot/assets/img/icon-folder.svg') }} {{ entry.title }}</a></li>
+              <li><a href="{{ entry.url }}">{{ svg( '@webroot/dist/img/icon-folder.svg') }} {{ entry.title }}</a></li>
             {% default %}
               <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
           {% endswitch %}
@@ -67,7 +67,7 @@
           <h4>{{ 'In Person Location'|t }}</h4>
           {% if block.fullName %}<p>{{ block.fullName }}</p>{% endif %}
           <ul class="ul-icons">
-            <li>{{ svg( '@webroot/assets/img/icon-marker-updated.svg') }}{{ block.contactAddress.multiline() }}</li>
+            <li>{{ svg( '@webroot/dist/img/icon-marker-updated.svg') }}{{ block.contactAddress.multiline() }}</li>
             <li style="padding-left:32.5px;text-decoration:underline;"><a href="https://www.google.com/maps/search/{{ block.contactAddress|url_encode }}">Get Directions</a></li>
           </ul>
         {% endif %}
@@ -81,7 +81,7 @@
           {% if block.phoneNumber %}
             <p class="font-bold">Or join by phone</p>
             <ul class="ul-icons">
-              <li><a href="tel:{{ block.phoneNumber|replace({'-': ''}) }}">{{ svg( '@webroot/assets/img/icon-phone-updated.svg') }} {{ block.phoneNumber }}</a></li>
+              <li><a href="tel:{{ block.phoneNumber|replace({'-': ''}) }}">{{ svg( '@webroot/dist/img/icon-phone-updated.svg') }} {{ block.phoneNumber }}</a></li>
             </ul>
           {% endif %}
         {% endif %}
@@ -95,8 +95,8 @@
     <p>{{ entry.fullName }}</p>
     {% if entry.emailAddress or entry.phoneNumber %}
       <ul class="ul-icons">
-        {% if entry.emailAddress %}<li><a href="mailto:{{ entry.emailAddress }}">{{ svg( '@webroot/assets/img/icon-envelope-updated.svg') }} {{ entry.emailAddress }}</a></li>{% endif %}
-        {% if entry.phoneNumber %}<li><a href="tel:{{ entry.phoneNumber|replace({'-': ''}) }}">{{ svg( '@webroot/assets/img/icon-phone-updated.svg') }} {{ entry.phoneNumber }}</a></li>{% endif %}
+        {% if entry.emailAddress %}<li><a href="mailto:{{ entry.emailAddress }}">{{ svg( '@webroot/dist/img/icon-envelope-updated.svg') }} {{ entry.emailAddress }}</a></li>{% endif %}
+        {% if entry.phoneNumber %}<li><a href="tel:{{ entry.phoneNumber|replace({'-': ''}) }}">{{ svg( '@webroot/dist/img/icon-phone-updated.svg') }} {{ entry.phoneNumber }}</a></li>{% endif %}
       </ul>
     {% endif %}
   {% endif %}
