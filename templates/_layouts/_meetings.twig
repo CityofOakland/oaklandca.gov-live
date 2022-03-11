@@ -79,7 +79,7 @@
       </ul>
     {% endif %}
 
-    {% if entry.embeds|length %}
+    {% if entry.type == 'meetings' and entry.embeds|length %}
       <h2 id="recordings">Recordings</h2>
       {% for item in entry.embeds %}
         <figure>
@@ -112,7 +112,7 @@
     {% endif %}
   {% endif %}
 
-  {% if entry.videoLink %}
+  {% if entry.type == 'meetingsImported' and entry.videoLink %}
     <h2 id="recordings">Recordings</h2>
     <figure>
       {{ macros.videoEmbed(entry.videoLink) }}
