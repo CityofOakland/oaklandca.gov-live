@@ -16,10 +16,10 @@
       <h4><span>{{ entry.title }}</span></h4>
       {% if entry.type == 'meetingsImported' %}
         <p class="flex items-center">{{ svg( '@webroot/assets/img/icon-calendar-new.svg') }} <span class="ml-2">{{ entry.date.format("l, F d, Y") }}</span></p>
-        <p class="flex items-center pt-1">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ entry.startDate.format("g:ia") }} to {{ entry.endDate.format("g:ia") }}</span></p>
+        <p class="flex items-center pt-1">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ entry.startDate.format("g:ia") }}{{ entry.endDate ? " to " ~ entry.endDate.format("g:ia") : '' }}</span></p>
       {% else %}
         <p class="flex items-center">{{ svg( '@webroot/assets/img/icon-calendar-new.svg') }} <span class="ml-2">{{ entry.date.format("l, F d, Y") }}</span></p>
-        <p class="flex items-center pt-1">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ entry.startTime.format("g:ia") }} to {{ entry.endTime.format("g:ia") }}</span></p>
+        <p class="flex items-center pt-1">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ entry.startTime.format("g:ia") }}{{ entry.endTime ? " to " entry.endTime.format("g:ia") : '' }}</span></p>
       {% endif %}
     </a>
     {% endfor %}
