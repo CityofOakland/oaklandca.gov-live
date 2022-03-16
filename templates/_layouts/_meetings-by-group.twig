@@ -71,7 +71,7 @@
       <h3>No results found</h3>
     {% endif %}
   {% else %}
-    <h3>Displaying All Meetings</h3>
+    <h3>Displaying Upcoming Meetings</h3>
   {% endif %}
   <div class="mt-8">
     {% if meetings|length %}
@@ -81,11 +81,11 @@
             <a href="{{ meeting.url }}">{{ meeting.title }}</a>
             {% switch meeting.meetingStatus %}
               {% case 'canceled' %}
-                <span>Canceled</span>
+                <span data-type="{{ meeting.meetingStatus }}">Canceled</span>
               {% case 'rescheduled' %}
-                <span>Rescheduled</span>
+                <span data-type="{{ meeting.meetingStatus }}">Rescheduled</span>
               {% case 'special' %}
-                <span>Special</span>
+                <span data-type="{{ meeting.meetingStatus }}">Special</span>
               {% default %}
             {% endswitch %}
           </h3>
@@ -147,7 +147,7 @@
     {% else %}
       <div class="px-8 pt-3 pb-5" style="background:#F7F7F7;">
         <p>Please try another search or updating your filters.</p>
-        <p><a href="?">See All Meetings</a></p>
+        <p><a href="?">See Upcoming Meetings</a></p>
       </div>
     {% endif %}
   </div>
