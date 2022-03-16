@@ -13,7 +13,7 @@
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
     {% for entry in meetings %}
     <a class="card default shadow" href="{{ entry.url }}">
-      <h4><span>{{ entry.title }}</span></h4>
+      <h4><span>{% if entry.meetingStatus and entry.meetingStatus.value and entry.meetingStatus.value !== 'default' %}{{ entry.meetingStatus.label }} - {% endif %}{{ entry.title }}</span></h4>
       {% if entry.type == 'meetingsImported' %}
         <p class="flex items-center">{{ svg( '@webroot/assets/img/icon-calendar-new.svg') }} <span class="ml-2">{{ entry.date.format("l, F d, Y") }}</span></p>
         <p class="flex items-center pt-1">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ entry.startDate.format("g:ia") }}{{ entry.endDate ? " to " ~ entry.endDate.format("g:ia") : '' }}</span></p>

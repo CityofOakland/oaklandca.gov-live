@@ -9,13 +9,13 @@
   ]
 ) %}
 
-{% set relatedMeetings = craft.calendar.events.relatedTo(entry) %}
+{% set meetings = craft.entries.section('meetings').order('date desc').relatedTo(entry) %}
+
 {% set relatedTeams = craft.entries.section('teams').relatedTo(entry).all() %}
 
 {% set aboutTrue = entry.about %}
 {% set photosTrue = entry.photoGallery.exists() %}
 {% set documentsTrue = entry.projectDocuments.exists() %}
-{% set meetingsTrue = relatedMeetings | length %}
 {% set updatesTrue = entry.projectUpdates.exists() %}
 {% set addressesTrue = entry.projectLocations.exists() %}
 {% set mapImageTrue = entry.projectMapImage.exists() %}
@@ -82,7 +82,7 @@
       'about': aboutTrue,
       'gallery': photosTrue,
       'documents': documentsTrue,
-      'meetings': meetingsTrue,
+      'meetings': meetings|length ? true : false,
       'updates': updatesTrue,
       'map': mapTrue,
       'timeline': timelineTrue,
@@ -111,7 +111,9 @@
         </section>
       {% endif %}
       {% if photosTrue %}
-        {% js %}lightGallery(document.querySelector('#js-photoGallery'));{% endjs %}
+        {% js at endBody %}
+          lightGallery(document.querySelector('#js-photoGallery'));
+        {% endjs %}
         <section class="pb-16 mb-16 border-b border-gray-500">
           <a class="anchor-link" id="page-gallery"></a>
           {% include "_partials/_elements/_module-header.twig" with {
@@ -149,21 +151,25 @@
           </div>
         </section>
       {% endif %}
-      {% if meetingsTrue %}
+
+      {% if meetings|length %}
         <section>
           <a class="anchor-link" id="page-meetings"></a>
           {% include "_partials/_elements/_module-header.twig" with {
             headerText: "Meetings"
           } %}
-          <div class="mt-8 card-grid vertical-cards">
-            {% for entry in relatedMeetings.all() %}
-              {% include '_partials/_elements/_vertical-cards.twig' with {
-                title: entry.title,
-                url: entry.url,
-                byline: entry.startDate.format("M d, Y"),
-                photoHide: true,
-                summaryHide: true
-              } %}
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for entry in meetings %}
+            <a class="card default shadow" href="{{ entry.url }}">
+              <h4><span>{% if entry.meetingStatus and entry.meetingStatus.value and entry.meetingStatus.value !== 'default' %}{{ entry.meetingStatus.label }} - {% endif %}{{ entry.title }}</span></h4>
+              {% if entry.type == 'meetingsImported' %}
+                <p class="flex items-center">{{ svg( '@webroot/assets/img/icon-calendar-new.svg') }} <span class="ml-2">{{ entry.date.format("l, F d, Y") }}</span></p>
+                <p class="flex items-center pt-1">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ entry.startDate.format("g:ia") }}{{ entry.endDate ? " to " ~ entry.endDate.format("g:ia") : '' }}</span></p>
+              {% else %}
+                <p class="flex items-center">{{ svg( '@webroot/assets/img/icon-calendar-new.svg') }} <span class="ml-2">{{ entry.date.format("l, F d, Y") }}</span></p>
+                <p class="flex items-center pt-1">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ entry.startTime.format("g:ia") }}{{ entry.endTime ? " to " ~ entry.endTime.format("g:ia") : '' }}</span></p>
+              {% endif %}
+            </a>
             {% endfor %}
           </div>
         </section>
@@ -216,6 +222,7 @@
             {% do view.registerJsFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js") %}
             {% do view.registerCssFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css") %}
             {% for location in entry.projectLocations.all() %}
+            {% if location.address %}
               {% set loc = location.address %}
               {% set src = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-l(" ~ loc.lng ~ "," ~ loc.lat ~ ")/" ~ loc.lng ~ "," ~ loc.lat ~ ",16/600x400@2x?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" %}
               {% set largePhoto = src | replace("600x400", "1280x854") %}
@@ -237,6 +244,7 @@
                 {% if loc.street2 %}{{ loc.street2 }}<br />{% endif %}
                 {{ loc.city }}, {{ loc.state }} {{ location.address.zip }}
               </p>
+            {% endif %}
             {% endfor %}
           {% endif %}
 
