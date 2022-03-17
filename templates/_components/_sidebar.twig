@@ -52,9 +52,9 @@
     <hr/>
     <h4>{{ 'Date and Time'|t }}</h4>
     <p>{{ entry.date|date('l, F j, Y') }}
-      {% if entry.startDate %}
+      {% if entry.type == 'meetingsImported' and entry.startDate %}
         <br>{{ entry.startDate|date("g:ia") }}{{ entry.endDate ? " to " ~ entry.endDate|date("g:ia") : "" }}
-      {% elseif entry.startTime %}
+      {% elseif entry.type == 'meetings' and entry.startTime %}
         <br>{{ entry.startTime|date("g:ia") }}{{ entry.endTime ? " to " ~ entry.endTime|date("g:ia") : "" }}
       {% endif %}
     </p>

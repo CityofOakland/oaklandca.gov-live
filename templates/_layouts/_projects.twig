@@ -6,7 +6,6 @@
   ['banner']
 ) %}
 
-{% set relatedMeetings = craft.calendar.events.relatedTo(entry) %}
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 
 {% set contactState = entry.addresses | length or entry.address or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
@@ -33,7 +32,6 @@
     breadCrumbLinks: breadcrumbs,
     navMenu: {
       'timeline': entry.timeline.exists(),
-      'meetings': relatedMeetings.exists(),
       'about': true,
       'contact': contactState,
       'logos': entry.fundingLogos.exists(),
