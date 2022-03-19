@@ -34,7 +34,7 @@
               {% set file = entry.documentFile.one %}
               <article class="mb-4">
                 <h3 class="mb-0 text-xl">
-                  <a href="{{ file.url }}" class="inline-flex items-center fill-current trans-fast">
+                  <a href="{{ file.url }}" class="inline-flex items-center fill-current duration-75">
                     <div class="inline-block w-8 h-5">{{ craft.inlin.er('/assets/img/icon-' ~ file.kind ~ '.svg') | replace('<svg ', '<svg class="w-full h-full" ') | raw }}</div>
                     {{ entry.title }}
                     ({{ file.kind | upper }})</a>
