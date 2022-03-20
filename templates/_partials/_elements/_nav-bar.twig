@@ -13,12 +13,12 @@
         <div class="relative z-40 flex items-center justify-center bg-gray-1000">
             <button id="mobile-menu" @click="openNav = true" class="flex items-center justify-center w-16 -my-3 text-gray-900 bg-green-500 fill-current lg:-my-5 touch-action-none lg:oak-hidden hover:bg-green-700 hover:text-gray-1000">
                 <span class="sr-only">Menu</span>
-                {{ craft.inlin.er('/assets/img/icon-menu.svg') | replace('<svg ', '<svg class="h-9 md:h-10 xl:oak-hidden" ') | raw }}
+                {{ craft.inlin.er('/dist/img/icon-menu.svg') | replace('<svg ', '<svg class="h-9 md:h-10 xl:oak-hidden" ') | raw }}
             </button>
             <nav id="main-navigation" class="flex items-stretch justify-between w-full py-3 lg:py-5" aria-label="Main">
                 <a id="home-link" class="flex items-center justify-center h-full px-2 text-gray-100 duration-75 fill-current hover:text-gray-200" href="{{ siteUrl }}" name="Home">
-                    {{ craft.inlin.er('/assets/img/logo-oakland-tree.svg') | replace('<svg ', '<svg class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden" ') | raw }}
-                    {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="w-40 h-10 oak-hidden sm:block" ') | raw }}
+                    {{ craft.inlin.er('/dist/img/logo-oakland-tree.svg') | replace('<svg ', '<svg class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden" ') | raw }}
+                    {{ craft.inlin.er('/dist/img/logo-oakland.svg') | replace('<svg ', '<svg class="w-40 h-10 oak-hidden sm:block" ') | raw }}
                     <span class="hidden-visually">Home</span>
                 </a>
                 <form id="site-search-form" class="relative z-0 flex justify-end flex-1 pl-4 pr-6 lg:pr-0" action="{{ url('search') }}" role="search">
@@ -29,7 +29,7 @@
                     {% for nav in mainNav %}
                         {% if nav.title == "Services" %}
                             <li class="has-submenu">
-                                <a tabindex="0" class="px-2 py-3 font-bold text-gray-100 uppercase" id="navbar-dropdown-{{ nav.title|kebab }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ nav.title }} {{ svg( '@webroot/assets/img/icon-arrow.svg') }}</a>
+                                <a tabindex="0" class="px-2 py-3 font-bold text-gray-100 uppercase" id="navbar-dropdown-{{ nav.title|kebab }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ nav.title }} {{ svg( '@webroot/dist/img/icon-arrow.svg') }}</a>
                                 {% set navSubitems = craft.categories
                                     .group("serviceTypes")
                                     .limit(10)
@@ -80,7 +80,7 @@
                         <li class="border-t border-gray-600">
                             <div class="flex items-center justify-between py-4">
                                 <a class="font-normal text-gray-100 fill-current text hover:text-gray-200" href="{{ nav.url }}">{{ nav.title }}</a>
-                                <div class="p-1 font-normal text-gray-100 bg-gray-800 rounded fill-current text subnav-toggler">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" style="transform: rotate(90deg);" ') | raw }}</div>
+                                <div class="p-1 font-normal text-gray-100 bg-gray-800 rounded fill-current text subnav-toggler">{{ craft.inlin.er('/dist/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" style="transform: rotate(90deg);" ') | raw }}</div>
                             </div>
 
                             {% set navSubitems = craft.categories
