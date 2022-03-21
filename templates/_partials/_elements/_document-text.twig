@@ -1,7 +1,12 @@
-<a href="{{ file.url }}" class="fill-current duration-75 flex items-center">
-  <div class="inline-block h-5 w-8">{{ craft.inlin.er('/dist/img/icon-' ~ file.kind ~ '.svg') | replace('<svg ', '<svg class="h-full w-full" ') | raw }}</div>
-  {{ entry.title }}
-  ({{ file.kind | upper }})</a>
-<span class="text-sm mt-0 pl-8 block">
-  <a href="{{ entry.url }}">Permalink</a>
+<a href="{{ file.url }}" class="flex items-center duration-75 fill-current">
+	<div class="inline-block w-8 h-5">
+    {{ svg('@webroot/dist/img/icon-' ~ file.kind ~ '.svg')|attr({
+      class: 'w-full h-full'
+    })|raw }}
+  </div>
+	{{ entry.title }}
+	({{ file.kind | upper }})
+</a>
+<span class="block pl-8 mt-0 text-sm">
+	<a href="{{ entry.url }}">Permalink</a>
 </span>

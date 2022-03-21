@@ -1,3 +1,5 @@
 <a class="inline-flex w-10 h-10 p-3 text-white transition-all border border-transparent rounded-full fill-current bg-gray-1000 hover:text-gray-1000 hover:bg-white hover:border-gray-1000" href="{{ url ?? '' }}" title="{{ network | title }} Page for {{ pageTitle ?? entry.title }}">
-  {{ craft.inlin.er('/dist/img/logo-' ~ network ~ '.svg') | replace('<svg ', '<svg class="w-full h-full" ') | raw }}
+  {{ svg('@webroot/dist/img/icon-' ~ network ~ '.svg')|attr({
+      class: 'w-full h-full'
+  })|raw }}
 </a>

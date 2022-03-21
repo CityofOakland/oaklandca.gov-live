@@ -5,7 +5,9 @@
         <img src="{{ photo.url }}" class="absolute inset-0 object-cover w-full h-full aspect-ratio" alt="{{ photo.altText ?? ''}}">
       {% elseif icon is defined %}
         <div class="flex items-center justify-center h-full p-4 text-gray-500 opacity-75 fill-current md:p-8 lg:p-12 aspect-ratio">
-          {{ craft.inlin.er('/dist/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="h-full" ') | raw }}
+          {{ svg('@webroot/dist/img/icon-' ~ icon ~ '.svg')|attr({
+              class: 'h-full'
+          })|raw }}
         </div>
       {% endif %}
     </figure>
