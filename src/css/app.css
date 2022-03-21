@@ -1,26 +1,19 @@
 @tailwind base;
 @tailwind components;
 
-/* Use this utility to hide text only meant for screen readers */
-.hide-text {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-}
+@layer utilities {
+  /* Use this utility to hide text only meant for screen readers */
+  .hide-text {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 
-/*  Formstack unfortunately includes a .hidden class that overrides our Tailwind default class,
-    so we need to @apply it's class to another one to avoid namespace collision  */
-@responsive {
+  /*  Formstack unfortunately includes a .hidden class that overrides our Tailwind default class,
+      so we need to @apply it's class to another one to avoid namespace collision  */
   .oak-hidden {
     @apply hidden;
   }
-}
-
-[x-cloak] {
-  @apply hidden;
-}
-
-@responsive {
   .touch-action-auto {
     touch-action: auto;
   }
@@ -60,6 +53,66 @@
   .touch-action-unset {
     touch-action: unset;
   }
+  .hidden-visually {
+    @apply absolute w-px h-px p-0 -mx-px overflow-hidden border-none;
+    clip: rect(0 0 0 0);
+  }
+  .aspect-ratio-1\/4 {
+    padding-top: 25%;
+  }
+
+  .aspect-ratio-27\/9 {
+    padding-top: 33.3333333%
+  }
+
+  .aspect-ratio-21\/9 {
+    padding-top: 42.8571429%
+  }
+
+  .aspect-ratio-16\/9 {
+    padding-top: 56.25%;
+  }
+
+  .aspect-ratio-4\/3 {
+    padding-top: 75%;
+  }
+
+  .aspect-ratio-square {
+    padding-top: 100%;
+  }
+
+  .full-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  .bg-transparent-oakland-roots {
+    @apply bg-cover;
+    background-image: url(../img/oaklandroots-transparent-green.png);
+  }
+
+  .bg-transparent-oakland-roots-black {
+    @apply bg-cover;
+    background-image: url(../img/oaklandroots-black.svg);
+  }
+
+  /* Aspect Ratio Box */
+  .aspect-ratio {
+    @apply absolute inset-0 w-full h-full;
+  }
+
+  .aspect-ratio-box {
+    @apply relative h-0 overflow-hidden;
+  }
+
+}
+
+[x-cloak] {
+  @apply hidden;
 }
 
 body {
@@ -153,7 +206,7 @@ a:hover {
 
 /* Button Styles */
 .btn {
-  @apply inline-block px-8 py-4 text-base font-bold tracking-wide text-white no-underline bg-green-800 rounded-sm shadow trans trans-fast;
+  @apply inline-block px-8 py-4 text-base font-bold tracking-wide text-white no-underline bg-green-800 rounded-sm shadow transition-all duration-75;
 }
 
 .btn:hover {
@@ -323,7 +376,7 @@ button {
 }
 
 .search-box {
-  background-image: url("/assets/img/icon-spyglass.svg");
+  background-image: url("/dist/img/icon-spyglass.svg");
   background-repeat: no-repeat;
   background-position: .5rem center;
 }
@@ -341,13 +394,13 @@ body.open #menu {
 }
 
 .page-holder {
-  @apply relative right-0 trans-slow trans-ease-out;
+  @apply relative right-0 duration-500 ease-out;
   transition: right 0.5s ease-out;
 }
 
 .how-it-works-block {
   @apply relative mb-4 bg-bottom bg-no-repeat;
-  background-image: url("/assets/img/icon-down-arrow.svg");
+  background-image: url("/dist/img/icon-down-arrow.svg");
 }
 
 @media (min-width: 768px) {
@@ -356,7 +409,7 @@ body.open #menu {
     background-image: none;
     &:after {
       @apply absolute bg-no-repeat;
-      background-image: url("/assets/img/icon-right-arrow.svg");
+      background-image: url("/dist/img/icon-right-arrow.svg");
       content: "";
       top: 10px;
       right: -30px;
@@ -379,7 +432,7 @@ body.open .page-holder {
 
 .timeline-grid dt {
   @apply pl-12 bg-left-top bg-no-repeat text-2xl;
-  background-image: url("/assets/img/icon-timeline-point.svg");
+  background-image: url("/dist/img/icon-timeline-point.svg");
   background-size: theme(spacing.9);
 }
 
@@ -403,147 +456,7 @@ body.open .page-holder {
   @apply hidden;
 }
 
-@responsive {
-  .hidden-visually {
-    @apply absolute w-px h-px p-0 -mx-px overflow-hidden border-none;
-    clip: rect(0 0 0 0);
-  }
-}
-
-.heading-0-margin {
-  & h2,
-  & h3 {
-    margin-bottom: 0;
-    & + .body-text > *:first-child {
-      margin-top: .5rem;
-    }
-  }
-}
-
 @tailwind utilities;
-
-@responsive {
-  .aspect-ratio-1\/4 {
-    padding-top: 25%;
-  }
-
-  .aspect-ratio-27\/9 {
-    padding-top: 33.3333333%
-  }
-
-  .aspect-ratio-21\/9 {
-    padding-top: 42.8571429%
-  }
-
-  .aspect-ratio-16\/9 {
-    padding-top: 56.25%;
-  }
-
-  .aspect-ratio-4\/3 {
-    padding-top: 75%;
-  }
-
-  .aspect-ratio-square {
-    padding-top: 100%;
-  }
-}
-
-.bg-transparent-oakland-roots {
-  @apply bg-cover;
-  background-image: url(../img/oaklandroots-transparent-green.png);
-}
-
-.bg-transparent-oakland-roots-black {
-  @apply bg-cover;
-  background-image: url(../img/oaklandroots-black.svg);
-}
-
-/* Aspect Ratio Box */
-.aspect-ratio {
-  @apply absolute inset-0 w-full h-full;
-}
-
-.aspect-ratio-box {
-  @apply relative h-0 overflow-hidden;
-}
-
-.full-width {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
-
-/* Transition Helpers */
-/* Default */
-.trans {
-  transition-duration: 0.25s;
-  transition-property: all;
-  transition-timing-function: ease-in-out;
-}
-
-/* Delays */
-.trans-delay-slow {
-  transition-delay: 1s;
-}
-.trans-delay {
-  transition-delay: 0.5s;
-}
-.trans-delay-fast {
-  transition-delay: 0.25s;
-}
-
-/* Duration */
-.trans-slower {
-  transition-duration: 0.75s;
-}
-.trans-slow {
-  transition-duration: 0.5s;
-}
-.trans-regular {
-}
-.trans-fast {
-  transition-duration: 0.15s;
-}
-.trans-faster {
-  transition-duration: 0.075s;
-}
-
-/* Properties */
-.trans-none {
-  transition-property: none;
-}
-.trans-bg {
-  transition-property: background;
-}
-.trans-opacity {
-  transition-property: opacity;
-}
-.trans-color {
-  transition-property: color;
-}
-.trans-shadow {
-  transition-property: box-shadow;
-}
-.trans-height {
-  transition-property: height;
-}
-
-/* Timing Function */
-.trans-linear {
-  transition-timing-function: linear;
-}
-.trans-ease {
-  transition-timing-function: ease;
-}
-.trans-ease-in {
-  transition-timing-function: ease-in;
-}
-.trans-ease-out {
-  transition-timing-function: ease-out;
-}
 
 /* Custom */
 form[data-handle="reportProblem"],
@@ -1350,7 +1263,7 @@ form[data-handle="whyWasThisPageHelpful"] {
 }
 
 #components-sidebar #search::before {
-  background-image: url('../../assets/img/icon-search.svg');
+  background-image: url('../../dist/img/icon-search.svg');
   background-repeat: no-repeat;
   background-position: center;
   content: "";
@@ -1829,7 +1742,7 @@ form[data-handle="whyWasThisPageHelpful"] {
 
 .pagination .next::after,
 .pagination .prev::after {
-  background-image: url(../../assets/img/icon-arrow-green.svg);
+  background-image: url(../../dist/img/icon-arrow-green.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 14px 14px;

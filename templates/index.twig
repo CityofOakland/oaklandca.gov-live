@@ -23,8 +23,8 @@
           {% include "_partials/_elements/_banner-google-translate.twig" with { paddingTop: "pt-0" } %}
         </div>
         <div class="max-w-md p-6 bg-white rounded-md shadow">
-          <h4 class="text-green-1000 uppercase"><b>{{ entry.heading|raw }}</b></h4>
-          <h1 class="text-green-1000 py-4">{{ entry.subheading|raw }}</h1>
+          <h4 class="uppercase text-green-1000"><b>{{ entry.heading|raw }}</b></h4>
+          <h1 class="py-4 text-green-1000">{{ entry.subheading|raw }}</h1>
           <p><b><a href="{{ entry.href }}">{{ entry.label }}</a></b></p>
         </div>
       </div>
@@ -68,12 +68,14 @@
                   <img class="absolute inset-0 object-cover w-full h-full" src="{{ featuredImage.url }}" alt="{{ featuredImage.title }}">
                 {% else %}
                   <div class="w-full h-full px-12 py-6 text-gray-500 opacity-75 fill-current">
-                    {{ craft.inlin.er('/assets/img/icon-newspaper.svg') | replace('<svg ', '<svg class="w-32 h-32" ') | raw }}
+                    {{ svg('@webroot/dist/img/icon-newspaper.svg')|attr({
+                      class: 'w-32 h-32'
+                    })|raw }}
                   </div>
                 {% endif %}
               </div>
               <div class="flex-1 lg:pl-12">
-                <date class="small text-gray-500">{{ featuredNews.postDate | date('M j, Y') }}</date>
+                <date class="text-gray-500 small">{{ featuredNews.postDate | date('M j, Y') }}</date>
                 <h3 class="py-3"><a href="{{ featuredNews.url }}">{{ featuredNews.title }}</a></h3>
                 {{ featuredNews.summary }}
               </div>
@@ -87,12 +89,12 @@
               <p class="pb-3"><a href="{{ entry.url }}">{{ entry.title }}</a></p>
             {% endfor %}
           </div>
-          <p class="underline pt-3"><a href="{{ siteUrl }}/departments/media-center"><b>{{ "Newsroom"|t }} »</b></a></p>
+          <p class="pt-3 underline"><a href="{{ siteUrl }}/departments/media-center"><b>{{ "Newsroom"|t }} »</b></a></p>
         </div>
         <div class="mt-8 md:mt-0 md:border-gray-500 md:border-l md:pl-10 md:w-1/2 lg:w-1/3">
           <a class="twitter-timeline" data-height="400px" data-width="100%" href="https://twitter.com/Oakland/lists/official-agencies?ref_src=twsrc%5Etfw">A Twitter List by Oakland</a>
           <script id="twitterWidgets" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          <p class="icon pt-3"><a href="https://twitter.com/Oakland" target="_blank" class="pt-3"><b class="underline">{{ "Read Oakland Updates on Twitter"|t }}</b> {{ svg( '@webroot/assets/img/icon-external.svg') }}</a></p>
+          <p class="pt-3 icon"><a href="https://twitter.com/Oakland" target="_blank" class="pt-3"><b class="underline">{{ "Read Oakland Updates on Twitter"|t }}</b> {{ svg( '@webroot/dist/img/icon-external.svg') }}</a></p>
         </div>
       </div>
     </div>
@@ -135,7 +137,7 @@
           } %}
         {% endfor %}
       </div>
-      <p class="underline pt-3"><a href="http://gisapps.mapoakland.com/councildistricts" target="_blank"><b>{{ "Find your council district"|t }} »</b></a></p>
+      <p class="pt-3 underline"><a href="http://gisapps.mapoakland.com/councildistricts" target="_blank"><b>{{ "Find your council district"|t }} »</b></a></p>
     </div>
   </section>
 </div>

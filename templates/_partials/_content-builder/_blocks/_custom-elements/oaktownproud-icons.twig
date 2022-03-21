@@ -1,28 +1,34 @@
 <div class="-mx-4 md:flex md:flex-row">
-  <a href="https://www.oaklandrecycles.com/bulky-pickup-services/" class="block mx-4 my-4 bg-green-800 rounded-sm hover:bg-green-600 trans trans-fast md:w-1/3 md:my-0 shadow-btn">
+  <a href="https://www.oaklandrecycles.com/bulky-pickup-services/" class="block mx-4 my-4 transition-all duration-75 bg-green-800 rounded-sm hover:bg-green-600 md:w-1/3 md:my-0 shadow-btn">
     <figure class="flex items-center justify-center p-4 text-white h-30">
-      {{ craft.inlin.er('/assets/img/icon-dumptruck.svg') | replace('<svg ', '<svg class="w-full h-full fill-current" ') | raw }}
+      {{ svg('@webroot/dist/img/icon-dumptruck.svg')|attr({
+        class: 'w-full h-full fill-current'
+      })|raw }}
     </figure>
     <div class="p-4 text-gray-800 bg-white">
-      <h3 class="my-0 font-bold text-center text-2xl">Schedule<br>
+      <h3 class="my-0 text-2xl font-bold text-center">Schedule<br>
       <span class="text-lg font-normal">bulky waste pick-up</span></h3>
     </div>
   </a>
-  <a href="https://www.oaklandca.gov/services/oak311" class="block mx-4 my-4 bg-green-800 rounded-sm hover:bg-green-600 trans trans-fast md:w-1/3 md:my-0 shadow-btn">
+  <a href="https://www.oaklandca.gov/services/oak311" class="block mx-4 my-4 transition-all duration-75 bg-green-800 rounded-sm hover:bg-green-600 md:w-1/3 md:my-0 shadow-btn">
     <figure class="flex items-center justify-center p-4 text-white h-30">
-      {{ craft.inlin.er('/assets/img/icon-dialog.svg') | replace('<svg ', '<svg class="w-full h-full fill-current" ') | raw }}
+      {{ svg('@webroot/dist/img/icon-dialog.svg')|attr({
+        class: 'w-full h-full fill-current'
+      })|raw }}
     </figure>
     <div class="p-4 text-gray-800 bg-white">
-      <h3 class="my-0 font-bold text-center text-2xl">Report Dumping<br>
+      <h3 class="my-0 text-2xl font-bold text-center">Report Dumping<br>
       <span class="text-lg font-normal">to OAK 311</span></h3>
     </div>
   </a>
-  <a href="https://www.oaklandca.gov/services/volunteer-opportunities" class="block mx-4 my-4 bg-green-800 rounded-sm hover:bg-green-600 trans trans-fast md:w-1/3 md:my-0 shadow-btn">
+  <a href="https://www.oaklandca.gov/services/volunteer-opportunities" class="block mx-4 my-4 transition-all duration-75 bg-green-800 rounded-sm hover:bg-green-600 md:w-1/3 md:my-0 shadow-btn">
     <figure class="flex items-center justify-center p-4 text-white h-30">
-      {{ craft.inlin.er('/assets/img/icon-volunteer.svg') | replace('<svg ', '<svg class="w-full h-full fill-current" ') | raw }}
+      {{ svg('@webroot/dist/img/icon-volunteer.svg')|attr({
+        class: 'w-full h-full fill-current'
+      })|raw }}
     </figure>
     <div class="p-4 text-gray-800 bg-white">
-      <h3 class="my-0 font-bold text-center text-2xl">Volunteer<br>
+      <h3 class="my-0 text-2xl font-bold text-center">Volunteer<br>
       <span class="text-lg font-normal">in Oakland</span></h3>
     </div>
   </a>
