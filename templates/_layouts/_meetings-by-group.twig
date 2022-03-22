@@ -91,12 +91,12 @@
           </h3>
           {% if meeting.date %}<p><b>{{ meeting.date|date("l, F j, Y") }}</b></p>{% endif %}
             <div class="md:flex items-center justify-between">
-              {% if meeting.type == 'meetings' and meeting.startTime %}<p class="flex items-center">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startTime|date("g:ia") }}{{ meeting.endTime ? " to " ~ meeting.endTime|date("g:ia") : '' }}</span></p>{% endif %}
-              {% if meeting.type == 'meetingsImported' and meeting.startDate %}<p class="flex items-center">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startDate|date("g:ia") }}{{ meeting.endDate ? " to " ~ meeting.endDate|date("g:ia") : '' }}</span></p>{% endif %}
+              {% if meeting.type == 'meetings' and meeting.startTime %}<p class="flex items-center">{{ svg( '@webroot/dist/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startTime|date("g:ia") }}{{ meeting.endTime ? " to " ~ meeting.endTime|date("g:ia") : '' }}</span></p>{% endif %}
+              {% if meeting.type == 'meetingsImported' and meeting.startDate %}<p class="flex items-center">{{ svg( '@webroot/dist/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startDate|date("g:ia") }}{{ meeting.endDate ? " to " ~ meeting.endDate|date("g:ia") : '' }}</span></p>{% endif %}
               <ul class="md:flex items-center related" style="list-style:none;padding:0;">
-                {% if meeting.agendaDownloadableCopy|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/assets/img/icon-pdf-updated.svg') }}<span class="ml-2">Agenda</span></a></li>{% endif %}
-                {% if meeting.documentFile|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-pdf-updated.svg') }}<span class="ml-2">Minutes</span></a></li>{% endif %}
-                {% if meeting.embeds|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.url }}#recordings">{{ svg( '@webroot/assets/img/icon-recording.svg') }}<span class="ml-2">Recording</span></a></li>{% endif %}
+                {% if meeting.agendaDownloadableCopy|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/dist/img/icon-pdf-updated.svg') }}<span class="ml-2">Agenda</span></a></li>{% endif %}
+                {% if meeting.documentFile|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.documentFile.one().url }}">{{ svg( '@webroot/dist/img/icon-pdf-updated.svg') }}<span class="ml-2">Minutes</span></a></li>{% endif %}
+                {% if meeting.embeds|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.url }}#recordings">{{ svg( '@webroot/dist/img/icon-recording.svg') }}<span class="ml-2">Recording</span></a></li>{% endif %}
               </ul>
             </div>
             {% if meeting.type == 'meetings' %}<p class="updated">Updated: {{ meeting.dateUpdated|date("F j, Y") }}</p>{% endif %}

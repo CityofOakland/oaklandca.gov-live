@@ -1,16 +1,17 @@
 module.exports = {
-  purge: false,
+  content: [
+    './templates/**/*.{twig,html,vue}',
+    './src/**/*.{js,jsx,ts,tsx,vue}',
+  ],
+  safelist: [
+    {
+      pattern: /bg-(red|green|yellow)-(500|600|300)/,
+      variants: ['hover']
+    }
+  ],
   theme: {
-    screens: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
-    },
     colors: {
       transparent: "transparent",
-
       white: "#ffffff",
       black: "#000000",
 
@@ -131,6 +132,9 @@ module.exports = {
       "10/11": "90.909090%",
     },
     backgroundColor: (theme) => theme("colors"),
+    fill: ({ theme }) => ({
+      white: theme('colors.white')
+    }),
     fontFamily: {
       body: ["Montserrat", "system-ui", "-apple-system", "sans-serif"],
     },
@@ -148,7 +152,7 @@ module.exports = {
       "7xl": "4.5rem", // 72px
     },
     borderWidth: {
-      default: "1px",
+      DEFAULT: "1px",
       "0": "0",
       "2": "2px",
       "4": "4px",
@@ -192,7 +196,7 @@ module.exports = {
     }),
     padding: (theme) => theme("spacing"),
     boxShadow: {
-      default: '0 1px 2px 0 rgba(theme("colors.gray-800"),.325)',
+      DEFAULT: '0 1px 2px 0 rgba(theme("colors.gray-800"),.325)',
       btn:
         '0 2px 6px 2px theme("colors.gray-200"), 0 3px 7px 1px theme("colors.green-100")',
       none: "none",
@@ -235,73 +239,6 @@ module.exports = {
       center: true,
     }),
   },
-  variants: {
-    appearance: ["responsive"],
-    backgroundAttachment: ["responsive"],
-    backgroundColor: ["responsive", "hover", "group-hover", "focus", "odd", "even"],
-    backgroundPosition: ["responsive"],
-    backgroundRepeat: ["responsive"],
-    backgroundSize: ["responsive"],
-    borderCollapse: [],
-    borderColor: ["responsive", "hover", "group-hover", "focus"],
-    borderRadius: ["responsive", "hover", "group-hover"],
-    borderStyle: ["responsive"],
-    borderWidth: ["responsive"],
-    cursor: ["responsive"],
-    display: ["responsive"],
-    flexDirection: ["responsive"],
-    flexWrap: ["responsive"],
-    alignItems: ["responsive"],
-    alignSelf: ["responsive"],
-    justifyContent: ["responsive"],
-    alignContent: ["responsive"],
-    flex: ["responsive"],
-    flexGrow: ["responsive"],
-    flexShrink: ["responsive"],
-    float: ["responsive"],
-    fontFamily: ["responsive"],
-    fontWeight: ["responsive", "hover", "group-hover", "focus"],
-    height: ["responsive"],
-    lineClamp: ["responsive"],
-    lineHeight: ["responsive"],
-    listStylePosition: ["responsive"],
-    listStyleType: ["responsive"],
-    margin: ["responsive", "first", "last"],
-    maxHeight: ["responsive"],
-    maxWidth: ["responsive"],
-    minHeight: ["responsive"],
-    minWidth: ["responsive"],
-    negativeMargin: ["responsive"],
-    opacity: ["responsive", "hover", "group-hover"],
-    outline: ["focus"],
-    overflow: ["responsive"],
-    padding: ["responsive"],
-    placeholderColor: ["responsive", "focus", "hover", "active"],
-    pointerEvents: ["responsive"],
-    position: ["responsive"],
-    inset: ["responsive"],
-    resize: ["responsive"],
-    boxShadow: ["responsive", "hover", "group-hover", "focus"],
-    fill: [],
-    stroke: [],
-    tableLayout: ["responsive"],
-    textAlign: ["responsive"],
-    textColor: ["responsive", "hover", "group-hover", "focus"],
-    fontSize: ["responsive"],
-    fontStyle: ["responsive", "hover", "group-hover", "focus"],
-    fontSmoothing: ["responsive", "hover", "group-hover", "focus"],
-    textDecoration: ["responsive", "hover", "group-hover", "focus"],
-    textTransform: ["responsive", "hover", "group-hover", "focus"],
-    letterSpacing: ["responsive"],
-    userSelect: ["responsive"],
-    verticalAlign: ["responsive"],
-    visibility: ["responsive"],
-    whitespace: ["responsive"],
-    wordBreak: ["responsive"],
-    width: ["responsive"],
-    zIndex: ["responsive"],
-  },
   plugins: [
-    require("@neojp/tailwindcss-line-clamp-utilities"),
   ]
 };

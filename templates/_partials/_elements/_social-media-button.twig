@@ -1,3 +1,5 @@
-<a class="h-10 w-10 p-3 text-white bg-gray-1000 hover:text-gray-1000 trans hover:bg-white border border-transparent hover:border-gray-1000 rounded-full inline-flex fill-current" href="{{ url ?? '' }}" title="{{ network | title }} Page for {{ pageTitle ?? entry.title }}">
-  {{ craft.inlin.er('/assets/img/logo-' ~ network ~ '.svg') | replace('<svg ', '<svg class="h-full w-full" ') | raw }}
+<a class="inline-flex w-10 h-10 p-3 text-white transition-all border border-transparent rounded-full fill-current bg-gray-1000 hover:text-gray-1000 hover:bg-white hover:border-gray-1000" href="{{ url ?? '' }}" title="{{ network | title }} Page for {{ pageTitle ?? entry.title }}">
+  {{ svg('@webroot/dist/img/logo-' ~ network ~ '.svg')|attr({
+      class: 'w-full h-full'
+  })|raw }}
 </a>
