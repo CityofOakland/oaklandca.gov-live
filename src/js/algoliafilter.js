@@ -1,7 +1,7 @@
 const filterReveal = document.getElementById("filter-reveal");
 const filters = document.getElementById("algolia-filters");
 const openClasses = ["opacity-100", "h-auto", "z-40", "visible"];
-const closedClasses = ["opacity-0", "h-0", "z-neg-10", "invisible"];
+const closedClasses = ["opacity-0", "h-0", "-z-10", "invisible"];
 
 if (filterReveal != null) {
   filterReveal.addEventListener("click", function(e) {
