@@ -84,19 +84,6 @@ input[type="text"].form-control::placeholder {
   font-size: 14px;
 }
 
-.has-submenu > ul::before {
-  background: black;
-  content: "";
-  opacity: 0.25;
-  pointer-events: none;
-  position: absolute;
-  top: 100%;
-  bottom: 0;
-  left: -50vw;
-  right: -5vw;
-  height: 100vh;
-}
-
 .has-submenu > ul::after {
   background: #207127;
   content: "";
@@ -125,6 +112,11 @@ input[type="text"].form-control::placeholder {
   margin-left: 5px;
   transform: rotateZ(90deg);
   width: 10px;
+}
+
+.has-submenu.open > a > svg:last-of-type,
+.has-submenu > a[aria-expanded="true"] > svg:last-of-type {
+  transform: rotateZ(-90deg);
 }
 
 .has-submenu > a[aria-expanded="true"],
@@ -219,7 +211,7 @@ input[type="text"].form-control::placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.5s;
+  transition: 0s;
   transform: translateX(0);
 }
 
@@ -238,23 +230,14 @@ input[type="text"].form-control::placeholder {
 .has-submenu.click > #navbar-dropdown-search[aria-expanded="true"] {
   background: #207127;
   border-radius: 0;
-  height: 52px;
+  height: 60px;
   width: 52px;
-  transform: translateX(7.5px);
-}
-
-@media(min-width: 768px) {
-  .has-submenu.click.open > #navbar-dropdown-search,
-  .has-submenu.click > #navbar-dropdown-search[aria-expanded="true"] {
-    height: 56px;
-  }
+  transform: translateX(16px);
 }
 
 @media(min-width: 1024px) {
   .has-submenu.click.open > #navbar-dropdown-search,
   .has-submenu.click > #navbar-dropdown-search[aria-expanded="true"] {
-      height: 60px;
-      width: 36px;
       transform: translateX(0);
   }        
 }
@@ -270,7 +253,10 @@ input[type="text"].form-control::placeholder {
 }
 
 #main-navigation {
-  padding-left: 63px;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding-left: 67px;
 }
 
 @media(min-width: 1024px) {
@@ -287,14 +273,8 @@ input[type="text"].form-control::placeholder {
   position: absolute;
   top: 0;
   left: 0;
-  height: 52px;
+  height: 60px;
   width: 52px;
-}
-
-@media(min-width: 768px) {
-  #mobile-navigation > a {
-    height: 56px;
-  }
 }
 
 #mobile-navigation > a > svg:first-of-type {
@@ -311,6 +291,15 @@ input[type="text"].form-control::placeholder {
 
 #mobile-navigation > a[aria-expanded="true"] > svg:last-of-type {
   display: block;
+}
+
+#mobile-navigation > ul {
+  background: #207127;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 #mobile-navigation > ul > li > a {
@@ -334,18 +323,42 @@ input[type="text"].form-control::placeholder {
 
 #mobile-navigation .has-submenu > a + ul,
 #mobile-navigation .has-submenu > ul {
-display: none;
+  display: none;
 }
 
 #mobile-navigation .has-submenu > a[aria-expanded="true"] + ul,
 #mobile-navigation .has-submenu:not(.click):hover > ul,
 #mobile-navigation .has-submenu.open > ul {
-display: block;
+  display: block;
 }
 
 #mobile-navigation .has-submenu > ul > li > a {
   font-size: 14px;
   font-weight: bold;
+}
+
+#mobile-navigation .has-submenu > a > span {
+  background: white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  width: 22px;
+}
+
+#mobile-navigation .has-submenu.open > a > span {
+  transform: rotateZ(180deg);
+}
+
+#mobile-navigation .has-submenu > a > span > svg {
+  color: #207127;
+  width: 12px;
+  transform: rotateZ(90deg);
+}
+
+#navbar-dropdown-mobile.disabled {
+  background: #222222;
 }
 
 #navbar-dropdown-mobile + ul {
@@ -372,7 +385,15 @@ display: block;
 }
 
 #topbar {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+#topbar + main {
+  margin-top: 90px;
 }
 
 #topbar li,
@@ -391,16 +412,37 @@ display: block;
   color: white;
 }
 
+#topbar #top-navigation a {
+  font-weight: 700;
+  -webkit-font-smoothing:  antialiased;
+}
+
 #topbar #top-navigation a:hover,
 #topbar #top-navigation a:focus {
   text-decoration: underline;
 }
 
+#topbar.state-active::before {
+  background: black;
+  content: "";
+  display: block;
+  opacity: 0.25;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 1;
+}
+
 #translate > a {
+  color: #fff3c4 !important;
   font-weight: normal;
   font-size: 12px;
   line-height: 1.5;
-  padding: 12px 8px;
+  padding: 6px 16px;
 }
 
 #translate > a > svg:first-of-type {

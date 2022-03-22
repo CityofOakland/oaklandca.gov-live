@@ -159,12 +159,29 @@ function closeOtherMenuItems(parent){
       if(el !== document.querySelector(parent)){
         el.parentElement.classList.remove('open');
         el.setAttribute('aria-expanded', "false");
+
+        if(el.getAttribute('data-affects') && el.getAttribute('data-affects-class')){
+          document.getElementById(el.getAttribute('data-affects')).classList.remove(el.getAttribute('data-affects-class'));
+        }
       }
     } else {
       el.parentElement.classList.remove('open');
       el.setAttribute('aria-expanded', "false");
+
+      if(el.getAttribute('data-affects') && el.getAttribute('data-affects-class')){
+        document.getElementById(el.getAttribute('data-affects')).classList.remove(el.getAttribute('data-affects-class'));
+      }
     }
   })
+}
+
+function toggleOverlay(){
+  console.log(document.querySelectorAll('#topbar .open').length);
+  if(document.querySelectorAll('#topbar .open').length > 0) {
+    document.querySelector('#topbar').classList.add('state-active');
+  } else {
+    document.querySelector('#topbar').classList.remove('state-active');
+  }
 }
 
 // Click
@@ -174,12 +191,20 @@ Array.prototype.forEach.call(menuItemsClick, function(el, i){
         this.parentElement.classList.remove('open');
         el.setAttribute('aria-expanded', "false");
 
+        if(el.getAttribute('data-affects') && el.getAttribute('data-affects-class')){
+          document.getElementById(el.getAttribute('data-affects')).classList.remove(el.getAttribute('data-affects-class'));
+        }
+
       } else {
         closeOtherMenuItems(el.getAttribute('data-parent'));
         this.parentElement.classList.add('open');
         el.setAttribute('aria-expanded', "true");
 
+        if(el.getAttribute('data-affects') && el.getAttribute('data-affects-class')){
+          document.getElementById(el.getAttribute('data-affects')).classList.add(el.getAttribute('data-affects-class'));
+        }
       }
+      toggleOverlay();
     });
 });
 
@@ -187,9 +212,11 @@ Array.prototype.forEach.call(menuItemsClick, function(el, i){
 Array.prototype.forEach.call(menuItemsHover, function(el, i){
     el.addEventListener("mouseover", function(event){
         this.className = "has-submenu open";
+        toggleOverlay();
     });
     el.addEventListener("mouseout", function(event){
         document.querySelector(".has-submenu.open").className = "has-submenu";
+        toggleOverlay();
     });
 });
 
