@@ -2,12 +2,19 @@
   display: grid;
   margin: 0 auto;
   max-width: 1475px;
-  position: absolute;
-  top: 100%;
+  padding: 1rem;
+  position: fixed;
+  top: 80px;
   left: 0;
   right: 0;
   visibility: hidden;
-  z-index: 100;
+  width: 100%;
+}
+
+@media (min-width: 1280px) {
+  .has-submenu > ul {
+    top: 83px;
+  }
 }
 
 .has-submenu > ul.components h4 {
@@ -27,7 +34,7 @@
   top: 100%;
   bottom: 0;
   left: -50vw;
-  right: -5vw;
+  right: -50vw;
   height: 100vh;
 }
 
@@ -35,6 +42,7 @@
   background: #207127;
   content: "";
   opacity: 1;
+  pointer-events: none;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -48,8 +56,10 @@
   background: transparent;
   display: flex;
   align-items: center;
-  font-weight: bold;
-  padding: 19.5px 16px;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  padding-top: 31px;
+  padding-bottom: 31px;
   position: relative;
 }
 
@@ -58,6 +68,10 @@
   margin-left: 5px;
   transform: rotateZ(90deg);
   width: 10px;
+}
+
+.has-submenu > a > svg path {
+  fill: white;
 }
 
 .has-submenu > a[aria-expanded="true"],
@@ -91,12 +105,12 @@
 }
 
 .has-submenu .card.dark {
-  background: #FFF3C4;
+  background: #fff3c4;
 }
 
 .has-submenu .card.dark:hover,
 .has-submenu .card.dark:focus {
-  background: #FFFBEA;
+  background: #fffbea;
 }
 
 .has-submenu .card.dark h4 {
@@ -117,10 +131,10 @@
   }
 
   .has-submenu .card:not(.dark) {
-    border-bottom: 1px solid #3E9141;
+    border-bottom: 1px solid #3e9141;
     border-radius: 0;
   }
-  
+
   .has-submenu .clamp {
     display: none;
   }
