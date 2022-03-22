@@ -50,7 +50,7 @@
   <div id="content" style="position:relative;top:-80px;"></div>
   <div class="leading-normal">
     <div class="container relative z-10 flex flex-col sm:flex-row">
-      <h1 class="mb-0 font-bold text-3xl md:text-4xl sm:w-1/4">{{ entry.title }}</h1>
+      <h1 class="mb-0 text-3xl font-bold md:text-4xl sm:w-1/4">{{ entry.title }}</h1>
       <form action="" class="flex-1 my-4 sm:my-0">
         <label class="hidden-visually" for="search-input">Search Term(s)</label>
         <input class="flex-1 px-8 py-4 rounded-none appearance-none" id="search-input" name="query" required type="search" value="">
@@ -62,6 +62,7 @@
     <div class="container pt-0">
       <div class="flex flex-col-reverse md:flex-row">
         <div class="md:w-3/4" data-hits id="all-holder">
+          <div id="stats" class="mb-4 md:h-8 md:mt-12"></div>
           <div id="all-hits" data-index="{{ getenv('ENVIRONMENT') }}_all"></div>
         </div>
         <div class="mb-4 md:w-1/4 md:ml-8 ">
