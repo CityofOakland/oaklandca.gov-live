@@ -39,11 +39,12 @@
 
             <ul class="flex items-center list-none">
                 {% for item in navigation.navigationMain.level(1).all() %}
-                    <li class="has-submenu hidden lg:block">
+                    <li class="has-submenu click hidden lg:block">
                         <a tabindex="0" id="navbar-dropdown-{{ item.heading|replace({' ': '-'})|lower }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ item.heading }} {{ svg( '@webroot/dist/img/icon-arrow.svg')|attr({ class: 'fill-current' }) }}</a>
                         <ul class="components grid md:grid-cols-3 gap-x-6 px-6 pt-2 pb-6 bg-green-800" aria-labelledby="navbar-dropdown-{{ item.heading|replace({' ': '-'})|lower }}">
                             <li class="pt-4 pb-32 relative">
                                 <h2 class="pt-3">{{ item.heading }}</h2>
+                                {% if item.description %}<p class="pt-2" style="font-size:20px;line-height:1.5">{{ item.description }}</p>{% endif %}
                                 {% if item.linkit %}
                                     <a class="button accent" href="{{ item.linkit.url }}">{{ item.linkit.text }}</a>
                                 {% endif %}

@@ -10,6 +10,15 @@ fieldLayouts:
             fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
             instructions: ''
             label: 'Dropdown Label'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4350b4ce-8cf4-44c9-9fee-4d81d5feec19 # Description
+            instructions: 'Short word description of this navigation item.'
+            label: 'Dropdown Description'
             required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -19,7 +28,7 @@ fieldLayouts:
             fieldUid: 4f49ca5b-c028-40c6-b67e-de07b11bf16a # Linkit
             instructions: 'Customize the inner button of this dropdown.'
             label: 'Dropdown Button'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null

@@ -1899,7 +1899,7 @@ input[type="text"].form-control::placeholder {
   font-size: 14px;
   font-weight: bold;
   line-height: 21px;
-  padding: 19.5px 16px;
+  padding: 17.5px 16px;
   position: relative;
 }
 
@@ -2059,6 +2059,16 @@ input[type="text"].form-control::placeholder {
   #main-navigation {
       padding-left: 1.5rem;
   }        
+}
+
+#main-navigation > ul > li  > a {
+  border-bottom: 2px solid transparent;
+  border-top: 2px solid transparent;
+}
+
+#main-navigation > ul > li:not(.open) > a:hover,
+#main-navigation > ul > li:not(.open) > a:focus {
+  border-bottom: 2px solid white;
 }
 
 #mobile-navigation > a {
