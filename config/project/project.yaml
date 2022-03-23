@@ -1,4 +1,4 @@
-dateModified: 1647976906
+dateModified: 1648043564
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -619,6 +619,7 @@ meta:
     fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c: 'Boards & Commissions Index' # Boards & Commissions Index
     fb2b9f42-74a0-45c4-be6e-d3d69c87557e: 'Column 2 Cell' # Column 2 Cell
     fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f: 'Boards & Commissions' # Boards & Commissions
+    fb754f0e-6d51-4289-a65a-591249144c1b: 'Legal Title' # Legal Title
     fbdba36a-ff35-4883-a29d-e5194516c7ae: 'Link URL' # Link URL
     fbf8b9b0-8875-4e08-819a-d62603676dc4: Teams # Teams
     fccb3891-e320-45ec-b368-6bd4f47fdc91: Heading # Heading
