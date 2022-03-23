@@ -65,16 +65,16 @@
       <h2>Minutes</h2>
       <ul class="ul-icons related" style="padding-top: 1rem;">
       {% for document in entry.documentFile.all() %}
-        <li><a href="{{ document.url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.title }} Minutes - {{ entry.date|date("m/d/Y") }}</a></li>
+        <li><a href="{{ document.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Minutes - {{ entry.date|date("m/d/Y") }}</a></li>
       {% endfor %}
       </ul>
     {% endif %}
 
-    {% if minutes and minutes|length %}
+    {% if entry.type == 'meetingsImported' and minutes and minutes|length %}
       <h2>Minutes</h2>
       <ul class="ul-icons related" style="padding-top: 1rem;">
       {% for document in minutes.all() %}
-        <li><a href="{{ document.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.title }} Minutes - {{ entry.date|date("m/d/Y") }}</a></li>
+        <li><a href="{{ document.documentFile.one().url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Minutes - {{ entry.date|date("m/d/Y") }}</a></li>
       {% endfor %}
       </ul>
     {% endif %}
@@ -120,11 +120,11 @@
     </figure>
   {% endif %}
 
-  {% if agendas and agendas|length %}
+  {% if entry.type == 'meetingsImported' and agendas and agendas|length %}
     <h2>Agenda</h2>
     <ul class="ul-icons related" style="padding-top: 1rem;">
     {% for agenda in agendas.all() %}
-      <li><a href="{{ agenda.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.title }} Agenda - {{ entry.date|date("m/d/Y") }}</a></li>
+      <li><a href="{{ agenda.documentFile.one().url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Agenda - {{ entry.date|date("m/d/Y") }}</a></li>
     {% endfor %}
     </ul>
   {% endif %}
@@ -133,7 +133,7 @@
     <h2>Agenda</h2>
     {% if entry.agendaDownloadableCopy|length %}
       <ul class="ul-icons related" style="padding-top: 1rem;">
-        <li><a href="{{ entry.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ entry.title }} Agenda - {{ entry.date|date("m/d/Y") }}</a></li>
+        <li><a href="{{ entry.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Agenda - {{ entry.date|date("m/d/Y") }}</a></li>
       </ul>
     {% endif %}
     {% if entry.agendaTopics|length %}
@@ -147,7 +147,7 @@
               {% if item.relatedDocuments|length %}
                 <ul class="ul-icons related" style="padding-top: 1rem;">
                     {% for document in item.relatedDocuments.all() %}
-                    <li><a href="{{ document.url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ document.title }}</a></li>
+                    <li><a href="{{ document.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ document.title }}</a></li>
                     {% endfor %}
                 </ul>
               {% endif %}
@@ -167,11 +167,11 @@
     {% endfor %}
   {% endif %}
 
-  {% if documents|length %}
+  {% if entry.type == 'meetingsImported' and documents|length %}
     <h2>Additional Documents</h2>
     <ul class="ul-icons related" style="padding-top: 1rem;">
     {% for document in documents %}
-      <li><a href="{{ document.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-document.svg') }} {{ document.title }}</a></li>
+      <li><a href="{{ document.documentFile.one().url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ document.title }}</a></li>
     {% endfor %}
     </ul>
   {% endif %}
@@ -181,7 +181,7 @@
       <ul aria-label="Accordion Control Group Buttons" class="accordion-controls">
         {% for item in entry.howToParticipate.all() %}
         <li class="accordion-item">
-          <button class="accordion-header" aria-controls="content-{{ entry.id }}-{{ loop.index }}" aria-expanded="false" id="accordion-control-{{ entry.id }}-{{ loop.index }}">{{ item.header ? item.header : "How to Participate in this Public Meeting" }} <span style="pointer-events: none;">{{ svg( '@webroot/assets/img/icon-plus.svg') }}{{ svg( '@webroot/assets/img/icon-minus.svg') }}</span></button>
+          <button class="accordion-header" aria-controls="content-{{ entry.id }}-{{ loop.index }}" aria-expanded="false" id="accordion-control-{{ entry.id }}-{{ loop.index }}">{{ item.header ? item.header : "How to Participate in this Public Meeting" }} <span style="pointer-events: none;">{{ svg( '@webroot/dist/img/icon-plus.svg') }}{{ svg( '@webroot/dist/img/icon-minus.svg') }}</span></button>
           <div class="accordion-panel" id="content-{{ entry.id }}-{{ loop.index }}" hidden>
             {{ item.description }}
           </div>

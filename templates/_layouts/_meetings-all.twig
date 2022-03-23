@@ -1,5 +1,5 @@
 {% set query          = craft.app.request.getQueryParam('q') %}
-{% set meetings       = craft.entries().section('meetings').search(query).limit(10).order('date desc') %}
+{% set meetings       = craft.entries().section('meetings').search(query).limit(10) %}
 {% set filter_enabled = false %}
 
 {% if craft.app.request.getQueryParam('public_body') %}
@@ -25,12 +25,21 @@
 {% if craft.app.request.getQueryParam('type') %}
   {% set filter_enabled = true %}
   {% switch craft.app.request.getQueryParam('type') %}
-    {% case -1 %}
-      {% set date_query = date_query|merge(['< ' ~ now|date('Y-m-d')]) %}
     {% case 1 %}
+      {% set meetings = meetings.order('date asc') %}
       {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
+    {% case 2 %}
+      {% set meetings = meetings.order('date desc') %}
+    {% case 3 %}
+      {% set meetings = meetings.order('date desc') %}
+      {% set date_query = date_query|merge(['< ' ~ now|date('Y-m-d')]) %}
     {% default %}
+      {% set meetings = meetings.order('date asc') %}
+      {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
   {% endswitch %}
+{% else %}
+  {% set meetings = meetings.order('date asc') %}
+  {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
 {% endif %}
 
 {% if date_query|length > 1 %}
@@ -75,12 +84,12 @@
           </h3>
           {% if meeting.date %}<p><b>{{ meeting.date|date("l, F j, Y") }}</b></p>{% endif %}
             <div class="md:flex items-center justify-between">
-              {% if meeting.startTime %}<p class="flex items-center">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startTime|date("g:ia") }}{{ meeting.endTime ? " to " ~ meeting.endTime|date("g:ia") : '' }}</span></p>{% endif %}
-              {% if meeting.startDate %}<p class="flex items-center">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startDate|date("g:ia") }}{{ meeting.endDate ? " to " ~ meeting.endDate|date("g:ia") : '' }}</span></p>{% endif %}
+              {% if meeting.type == 'meetings' and meeting.startTime %}<p class="flex items-center">{{ svg( '@webroot/dist/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startTime|date("g:ia") }}{{ meeting.endTime ? " to " ~ meeting.endTime|date("g:ia") : '' }}</span></p>{% endif %}
+              {% if meeting.type == 'meetingsImported' and meeting.startDate %}<p class="flex items-center">{{ svg( '@webroot/dist/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startDate|date("g:ia") }}{{ meeting.endDate ? " to " ~ meeting.endDate|date("g:ia") : '' }}</span></p>{% endif %}
               <ul class="md:flex items-center related" style="list-style:none;padding:0;">
-                {% if meeting.agendaDownloadableCopy|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/assets/img/icon-pdf-updated.svg') }}<span class="ml-2">Agenda</span></a></li>{% endif %}
-                {% if meeting.documentFile|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.documentFile.one().url }}">{{ svg( '@webroot/assets/img/icon-pdf-updated.svg') }}<span class="ml-2">Minutes</span></a></li>{% endif %}
-                {% if meeting.embeds|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.url }}#recordings">{{ svg( '@webroot/assets/img/icon-recording.svg') }}<span class="ml-2">Recording</span></a></li>{% endif %}
+                {% if meeting.agendaDownloadableCopy|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/dist/img/icon-pdf-updated.svg') }}<span class="ml-2">Agenda</span></a></li>{% endif %}
+                {% if meeting.documentFile|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.documentFile.one().url }}">{{ svg( '@webroot/dist/img/icon-pdf-updated.svg') }}<span class="ml-2">Minutes</span></a></li>{% endif %}
+                {% if meeting.embeds|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.url }}#recordings">{{ svg( '@webroot/dist/img/icon-recording.svg') }}<span class="ml-2">Recording</span></a></li>{% endif %}
               </ul>
             </div>
             {% if meeting.type == 'meetings' %}<p class="updated">Updated: {{ meeting.dateUpdated|date("F j, Y") }}</p>{% endif %}
@@ -158,9 +167,9 @@
     {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
     {{ macros.select('Public Body', 'public_body', 'public_body', craft.entries().section('boardsCommissions').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a Council, Board or Commission') }}
     {{ macros.select('Date Range', 'type', 'type', [
-        {"0"  : "Past and Upcoming Meetings"},
-        {"-1" : "Past Meetings Only"},
         {"1"  : "Upcoming Meetings Only"},
+        {"2"  : "Past and Upcoming Meetings"},
+        {"3" : "Past Meetings Only"},
       ], false
     )}}
     {{ macros.dates() }}

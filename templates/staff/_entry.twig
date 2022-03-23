@@ -28,7 +28,9 @@
               <img src="{{ entry.portrait.one.url }}" alt="Portrait of {{ entry.title }}">
             {% else %}
               <div class="h-full p-12 text-gray-500 bg-gray-300 opacity-75 fill-current">
-                {{ craft.inlin.er('/assets/img/icon-user.svg') | replace('<svg ', '<svg class="w-full h-full" ') | raw }}
+                {{ svg('@webroot/dist/img/icon-user.svg')|attr({
+                    class: 'w-full h-full'
+                })|raw }}
               </div>
             {% endif %}
           </figure>
