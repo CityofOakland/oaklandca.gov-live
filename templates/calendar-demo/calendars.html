@@ -22,7 +22,7 @@
 
 			{% for calendar in calendars %}
 
-				<div class="card" style="border-color: {{ calendar.color }}; margin-bottom: 20px;">
+				<div class="card" style="border-color: {{ calendar.color }}; margin-bottom: 1.25rem;">
 					<h4 class="card-header d-flex justify-content-between align-items-center"
 					    style="color: {{ calendar.contrastColor }}; background-color: {{ calendar.lighterColor }};">
 						<span>
@@ -30,7 +30,7 @@
 							{{ calendar.name }}
 						</span>
 						{% if craft.calendar.exportEnabled %}
-							<a href="{{ siteUrl }}calendar-demo/export/calendar/{{ calendar.id }}" class="btn btn-light btn-sm border-light border border-dark">
+							<a href="{{ siteUrl }}calendar-demo/export/calendar/{{ calendar.id }}" class="border btn btn-light btn-sm border-light border-dark">
 								<span class="fas fa-file-export"></span>&nbsp;
 								Export Events
 							</a>

@@ -23,6 +23,9 @@ module.exports = {
         btn: '0 2px 6px 2px theme("colors.gray-200"), 0 3px 7px 1px theme("colors.green-100")',
         card: '0px 0px 1px rgba(81, 81, 81, 0.35), 0px 4px 10px rgba(81, 81, 81, 0.16);'
       },
+      fontFamily: {
+        body: ["Montserrat", "system-ui", "-apple-system", "sans-serif"],
+      },
       fontSize: {
         'xs': ['.75rem', '1rem'],
         'sm': ['.875rem', '1.125rem'],
@@ -152,75 +155,6 @@ module.exports = {
       "yellow-900": "#b44d12",
       "yellow-1000": "#8d2b0b",
     },
-    fontFamily: {
-      body: ["Montserrat", "system-ui", "-apple-system", "sans-serif"],
-    },
-    fontSize: {
-      xs: ".75rem", // 12px
-      sm: ".875rem", // 14px
-      base: "1rem", // 16px
-      lg: "1.125rem", // 18px
-      xl: "1.25rem", // 20px
-      "2xl": "1.5rem", // 24px
-      "3xl": "1.875rem", // 30px
-      "4xl": "2.25rem", // 36px
-      "5xl": "3rem", // 48px
-      "6xl": "3.75rem", // 60px
-      "7xl": "4.5rem", // 72px
-    },
-    borderWidth: {
-      DEFAULT: "1px",
-      "0": "0",
-      "2": "2px",
-      "4": "4px",
-      "8": "8px",
-    },
-    minHeight: {
-      "2-1/2": "10rem",
-      "4": "16rem",
-      "8": "32rem",
-    },
-    height: (theme) => ({
-      auto: "auto",
-      ...theme("spacing"),
-      half: "50%",
-      full: "100%",
-      screen: "100vh",
-    }),
-    maxHeight: {
-      full: "100%",
-      screen: "100vh",
-    },
-    width: (theme) => ({
-      auto: "auto",
-      ...theme("spacing"),
-      full: "100%",
-      screen: "100vw",
-    }),
-    maxWidth: (theme) => ({
-      ...theme("spacing"),
-      xs: "20rem",
-      sm: "30rem",
-      md: "40rem",
-      lg: "50rem",
-      xl: "60rem",
-      full: "100%",
-    }),
-    margin: (theme, { negative }) => ({
-      auto: "auto",
-      ...theme("spacing"),
-      ...negative(theme("spacing")),
-    }),
-    padding: (theme) => theme("spacing"),
-    boxShadow: {
-      DEFAULT: '0 1px 2px 0 rgba(theme("colors.gray-800"),.325)',
-      btn:
-        '0 2px 6px 2px theme("colors.gray-200"), 0 3px 7px 1px theme("colors.green-100")',
-      none: "none",
-    },
-    container: (theme) => ({
-      center: true,
-    }),
   },
   plugins: [
     require("@tailwindcss/aspect-ratio"),

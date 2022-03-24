@@ -158,9 +158,9 @@
           {% include "_partials/_elements/_module-header.twig" with {
             headerText: "Meetings"
           } %}
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {% for entry in meetings %}
-            <a class="card default shadow" href="{{ entry.url }}">
+            <a class="shadow card default" href="{{ entry.url }}">
               <h4><span>{% if entry.meetingStatus and entry.meetingStatus.value and entry.meetingStatus.value !== 'default' %}{{ entry.meetingStatus.label }} - {% endif %}{{ entry.title }}</span></h4>
               {% if entry.type == 'meetingsImported' %}
                 <p class="flex items-center">{{ svg( '@webroot/dist/img/icon-calendar-new.svg') }} <span class="ml-2">{{ entry.date.format("l, F d, Y") }}</span></p>
@@ -257,9 +257,9 @@
 
         .milestone-name:before {
           position: absolute;
-          width: 20px;
-          height: 20px;
-          border-width: 2px;
+          width: 1.25rem;
+          height: 1.25rem;
+          border-width: .125rem;
           background-color: #f1f4f4;
           border-color: #8c9d96;
           border-radius: 50%;

@@ -69,7 +69,7 @@
 
             {% for event in events %}
 
-                <div class="card" style="border-color: {{ event.calendar.color }}; margin-bottom: 20px;">
+                <div class="card" style="border-color: {{ event.calendar.color }}; margin-bottom: 1.25rem;">
                     <h4 class="card-header d-flex justify-content-between align-items-center" style="color: {{ event.calendar.contrastColor }}; background-color: {{ event.calendar.lighterColor }};">
                         {{ event.title }}&nbsp;&nbsp;
                         <a href="{{ siteUrl }}calendar-demo/event/{{ event.id }}/{{ event.repeating ? event.startDate.format('Y/m/d') }}" class="btn btn-light btn-sm border-light border border-dark">View Event</a>
