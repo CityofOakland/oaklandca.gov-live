@@ -166,12 +166,6 @@
   <form action="{{ entry.url }}">
     {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
     {{ macros.select('Public Body', 'public_body', 'public_body', craft.entries().section('boardsCommissions').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a Council, Board or Commission') }}
-    {{ macros.select('Date Range', 'type', 'type', [
-        {"1"  : "Upcoming Meetings Only"},
-        {"2"  : "Past and Upcoming Meetings"},
-        {"3" : "Past Meetings Only"},
-      ], false
-    )}}
     {{ macros.dates() }}
     <div class="flex items-center">
       <button class="button medium">Apply</button>

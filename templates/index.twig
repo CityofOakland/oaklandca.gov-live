@@ -106,7 +106,7 @@
         'loaded',
         function (event) {
           event.widgets.forEach(function (widget) {
-            $(widget).attr('tabindex', -1);
+            widget.setAttribute('tabindex', -1);
           });
         }
       );

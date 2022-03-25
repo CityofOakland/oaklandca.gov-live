@@ -161,12 +161,6 @@
   <h4>{{ 'Search and Filter'|t }}</h4>
   <form action="{{ entry.url }}/meetings">
     {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
-    {{ macros.select('Date Range', 'type', 'type', [
-        {"1"  : "Upcoming Meetings Only"},
-        {"2"  : "Past and Upcoming Meetings"},
-        {"3" : "Past Meetings Only"},
-      ], false
-    )}}
     {{ macros.dates() }}
     <div class="flex items-center">
       <button class="button medium">Apply</button>
