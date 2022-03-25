@@ -16,6 +16,7 @@ use modules\dateinputmodule\assetbundles\dateinputmodule\DateInputModuleAsset;
 use Craft;
 
 use Exception;
+use DateTime;
 
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
@@ -56,7 +57,9 @@ class DateInputModuleTwigExtension extends AbstractExtension
      */
     public function getFilters()
     {
-        return [];
+        return [
+            new TwigFilter('applyDateFilter', [$this, 'applyDateFilter'])
+        ];
     }
 
     /**
@@ -72,6 +75,55 @@ class DateInputModuleTwigExtension extends AbstractExtension
             new TwigFunction('renderMonthpicker', [$this, 'renderMonthpicker']),
             new TwigFunction('renderRangepicker', [$this, 'renderRangepicker']),
         ];
+    }
+
+    /**
+     * Our function called via Twig; it can do anything you want
+     *
+     * @param object $query
+     *
+     * @return string
+     */
+    public function applyDateFilter(craft\elements\db\EntryQuery $query, $field_name)
+    {
+        $request    = Craft::$app->getRequest();
+        $date_query = ['and'];
+
+        $start_date = $request->getQueryParam('start_date');
+        $end_date   = $request->getQueryParam('end_date');
+        $type       = $request->getQueryParam('type');
+
+        if($start_date !== null and $end_date !== null) {
+            if($start_date !== ''){
+                $date_query = array_merge($date_query, ['>= '.($start_date.'-01')]);
+            }
+
+            if($end_date !== ''){
+                $date       = new DateTime($end_date."-01");
+                $last_day   = $date->modify("+1 month -1 day");
+                $date_query = array_merge($date_query, ['<= '.($last_day->format("Y-m-d"))]);
+            }
+        }
+
+        switch($type){
+            case 2:
+                $query->order('date desc');
+                break;
+            case 3:
+                $query->order('date desc');
+                $date_query = array_merge($date_query, ['< '.date('Y-m-d')]);
+                break;
+            default:
+                $query->order('date asc');
+                $date_query = array_merge($date_query, ['>= '.date('Y-m-d')]);
+        }
+
+        try {
+            return $query->{$field_name}($date_query);
+        } catch (Exception $e) {
+            Craft::warning('Tried to apply a date filter to a non date filter field.', 'date-input-module');
+            return $query;
+        }
     }
 
     /**

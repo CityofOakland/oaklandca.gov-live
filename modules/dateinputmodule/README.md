@@ -1,6 +1,6 @@
 # Date Input module for Craft CMS 3.x
 
-Quick plugin for generating easy date inputs.
+Quick plugin for generating more accessible date inputs.
 
 ## Requirements
 
@@ -43,18 +43,20 @@ Using the Twig Extension will load jQuery, jQuery UI, and an additional [jQuery 
 
 ## Using Date Input
 
-Once the module is installed, run the `renderRangepicker()` and `renderMonthpicker()` function on your twig templates.
+Once the module is installed, add the `renderRangepicker()` and `renderMonthpicker()` function on your twig templates.
 
-The `renderRangepicker()` will create a dropdown that influences your date inputs. Select an option will facet your date inputs into the "Upcoming", "Past", or "Both/All" options.
+The `renderRangepicker()` will create a dropdown that influences your date inputs. Selecting an option will facet your date inputs into the "Upcoming", "Past", or "Both/All" options.
 
 The `renderMonthpicker()` will render a month datepicker. You can also call `renderMonthpicker('end')` which will interact with your other date input by creating min/max month selection ranges.
+
+You can also apply the `applyDateFilter` Twig filter to your entry queries to filter your queries based on any filled form fields. Make sure to pass the name of the field as a variable into the filter function e.g. `entryQuery|applyDateFilter('date')`.
 
 ## Date Input Roadmap
 
 Some things to do, and ideas for potential features:
 
 - Allow more flexibility in usage.
-- Allow more customizability of labels
+- Allow more customizability of labels.
 
 * Release it
 
