@@ -10,7 +10,6 @@
     {# Calls in the SEOmatic tags, all handled through the CMS settings #}
     {% hook 'seomaticRender' %}
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700&display=swap" rel="stylesheet">
-    {{ craft.twigpack.includeCssModule("/css/app.css") }}
     <link rel="apple-touch-icon" sizes="57x57" href="{{ siteUrl('/dist/favicon/apple-icon-57x57.png') }}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ siteUrl('/dist/favicon/apple-icon-60x60.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ siteUrl('/dist/favicon/apple-icon-72x72.png') }}">
@@ -41,6 +40,7 @@
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
     </script>
     {% endif %}
+    {{ craft.vite.script("src/js/app.js")}}
   </head>
 
   {# Checks if the URI is empty and if not, adds the class of "home" to the page body. #}
@@ -68,11 +68,6 @@
       </main>
       {% include '_partials/_elements/_footer.twig' %}
     </div>
-    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
-    {{ craft.twigpack.includeJsModule("/js/manifest.js") }}
-    {{ craft.twigpack.includeJsModule("/js/vendor.js") }}
-    {{ craft.twigpack.includeJsModule("/js/app.js") }}
 
     {% if entry is defined %}
       {% do craft.viewCount.increment(entry.id) %}

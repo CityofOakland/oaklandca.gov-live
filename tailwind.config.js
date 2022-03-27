@@ -10,6 +10,13 @@ module.exports = {
     }
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1.5rem',
+        sm: '2rem',
+      }
+    },
     extend: {
       opacity: {
         "3": ".03",

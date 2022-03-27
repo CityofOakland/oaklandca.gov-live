@@ -7,7 +7,6 @@
     {# Calls in the SEOmatic tags, all handled through the CMS settings #}
     {% hook 'seomaticRender' %}
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700&display=swap" rel="stylesheet">
-    {{ craft.twigpack.includeCssModule("/css/app.css") }}
     <link rel="apple-touch-icon" sizes="57x57" href="{{ siteUrl('/dist/favicon/apple-icon-57x57.png') }}">
     <link rel="apple-touch-icon" sizes="60x60" href="{{ siteUrl('/dist/favicon/apple-icon-60x60.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ siteUrl('/dist/favicon/apple-icon-72x72.png') }}">
@@ -25,6 +24,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{ siteUrl('/dist/favicon/ms-icon-144x144.png') }}">
     <meta name="theme-color" content="#ffffff">
+    {{ craft.vite.script("src/js/app.js")}}
     {% if craft.app.env == "production" %}
     <!-- Hotjar Tracking Code for www.oaklandca.gov -->
     <script>
