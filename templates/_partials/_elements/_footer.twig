@@ -27,59 +27,68 @@
   [ seoMaticLinks.twitter.url, 'twitter.svg', 'Oakland Twitter Page' ],
   [ seoMaticLinks.instagram.url, 'instagram.svg', 'Oakland Instagram Page' ]
 ] %}
-<footer class="relative overflow-hidden text-sm leading-loose text-gray-300 lg:text-base bg-gray-1000 bg-transparent-oakland-roots-black">
-    <div class="container relative z-20 py-4 sm:py-8">
-        <div class="xl:flex xl:justify-between">
-            <div class="flex-wrap sm:flex xl:flex-1">
-                <div class="sm:flex sm:flex-1">
-                  <div class="flex justify-between flex-1">
-                    <ul class="w-1/2 pr-2 mt-0">
-                          {% for navItem in footerNav1 %}
-                            <li><a class="text-white hover:text-white hover:underline" href="{{ navItem[0] }}">{{ navItem[1] }}</a></li>
-                          {% endfor %}
-                    </ul>
-                    <ul class="w-1/2 pl-2 mt-0">
-                          {% for navItem in footerNav2 %}
-                            <li><a class="text-white hover:text-white hover:underline" href="{{ navItem[0] }}">{{ navItem[1] }}</a></li>
-                          {% endfor %}
-                        </ul>
-                </div>
-                <ul class="mt-0 sm:w-1/2 sm:pl-4">
-                    {% for navItem in footerNav3 %}
-                      <li><a class="text-white hover:text-white hover:underline" href="{{ navItem[0] }}">{{ navItem[1] }}</a></li>
-                    {% endfor %}
-                </ul>
-                </div>
-            </div>
-            <div class="mt-4 mb-8 space-y-4 leading-normal text-white sm:-mx-2 sm:flex xl:block sm:space-y-0 sm:space-x-8 xl:space-y-4 xl:space-x-0">
-                <div><b>For Maintenance Requests </b><br>311 or <a class="text-white hover:text-white hover:underline" href="tel:510-615-5566">510-615-5566</a> <br>Relay Service 711</div>
-                <div><b>Oakland City Hall</b> <br>1 Frank H. Ogawa Plaza <br>Oakland, CA 94612</div>
-                <div></div>
-            </div>
-        </div>
-        <div class="pt-2 mt-4 border-t border-gray-700 md:flex md:pt-6 sm:flex">
-            <div class="flex items-center justify-start mt-4 text-xs sm:w-1/4 sm:mt-0 lg:text-base">
-                <a class="text-white hover:text-white hover:underline" href="/topics/oaklandlovelife">#OaklandLoveLife</a>
-            </div>
-            <div class="flex items-center pt-2 md:justify-center md:pt-0 sm:w-1/2">
-                {% for socItem in socialMedia %}
-                    <div class="mr-4">
-                        <a href="{{ socItem[0] }}" class="flex items-center justify-center w-12 h-12 duration-75 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 hover:text-gray-1000">
-                          {{ svg('@webroot/dist/img/logo-' ~ socItem[1])|attr({
+<footer class="relative overflow-hidden text-sm leading-loose text-gray-300 lg:text-base bg-gray-1000 bg-transparent-oakland-roots-black lg:leading-loose">
+	<div class="container relative z-20 py-4 sm:py-8">
+    <div class="grid grid-cols-2 gap-4 sm:gap-8 lg:gap-x-4 sm:grid-cols-4 md:grid-cols-4 xl:grid-cols-5">
+      <ul class="my-0">
+        {% for navItem in footerNav1 %}
+          <li>
+            <a class="text-white hover:text-white hover:underline" href="{{ navItem[0] }}">{{ navItem[1] }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      <ul class="my-0">
+        {% for navItem in footerNav2 %}
+          <li>
+            <a class="text-white hover:text-white hover:underline" href="{{ navItem[0] }}">{{ navItem[1] }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      <ul class="col-span-2 my-0">
+        {% for navItem in footerNav3 %}
+          <li>
+            <a class="text-white hover:text-white hover:underline" href="{{ navItem[0] }}">{{ navItem[1] }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+			<div class="grid gap-4 leading-normal text-white sm:gap-8 lg:gap-x-4 sm:grid-cols-2 sm:col-span-3 lg:col-span-2 xl:grid-cols-1 xl:col-span-1">
+				<div>
+					<b>For Maintenance Requests
+					</b><br>311 or
+					<a class="text-white hover:text-white hover:underline" href="tel:510-615-5566">510-615-5566</a>
+					<br>Relay Service 711</div>
+				<div>
+					<b>Oakland City Hall</b>
+					<br>1 Frank H. Ogawa Plaza
+					<br>Oakland, CA 94612</div>
+				<div></div>
+			</div>
+    </div>
+		<div class="pt-2 mt-4 border-t border-gray-700 md:flex md:pt-6 sm:flex">
+			<div class="flex items-center justify-start mt-4 text-xs sm:w-1/4 sm:mt-0 lg:text-base">
+				<a class="text-white hover:text-white hover:underline" href="/topics/oaklandlovelife">#OaklandLoveLife</a>
+			</div>
+			<div class="flex items-center pt-2 md:justify-center md:pt-0 sm:w-1/2">
+				{% for socItem in socialMedia %}
+					<div class="mr-4">
+						<a href="{{ socItem[0] }}" class="flex items-center justify-center w-12 h-12 duration-75 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 hover:text-gray-1000">
+							{{ svg('@webroot/dist/img/logo-' ~ socItem[1])|attr({
                             class: 'h-6'
                           })|raw }}
-                          <span class="hidden-visually">{{ socItem[2] }}</span>
-                        </a>
-                    </div>
-                {% endfor %}
-            </div>
-            <div class="flex items-center mt-4 text-xs md:justify-end sm:w-1/4 sm:mt-0 lg:text-base">&copy; {{ now | date('Y') }} City of Oakland</div>
-        </div>
-    </div>
+							<span class="hidden-visually">{{ socItem[2] }}</span>
+						</a>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="flex items-center mt-4 text-xs md:justify-end sm:w-1/4 sm:mt-0 lg:text-base lg:leading-loose">&copy;
+				{{ now | date('Y') }}
+				City of Oakland</div>
+		</div>
+	</div>
 </footer>
 
 {% js on load %}
-    $('footer a').on('click', function(){
+$('footer a').on('click', function(){
         var link_clicked    = $(this).attr('href').trim();
         var link_label      = $(this).text().trim();
 
