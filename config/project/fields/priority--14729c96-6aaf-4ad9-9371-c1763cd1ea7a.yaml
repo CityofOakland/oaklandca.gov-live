@@ -7,9 +7,9 @@ name: Priority
 searchable: false
 settings:
   decimals: 0
-  defaultValue: '100'
+  defaultValue: 100
   max: null
-  min: '0'
+  min: 0
   prefix: null
   previewCurrency: ''
   previewFormat: decimal
