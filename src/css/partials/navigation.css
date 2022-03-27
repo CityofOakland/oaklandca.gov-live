@@ -1,25 +1,14 @@
 .has-submenu > ul {
-  opacity: 0;
-  top: -100vh;
-  transition-property: all;
-  transition-duration: 200ms;
-  transition-delay: 300ms;
   display: grid;
   margin: 0 auto;
   max-width: 1475px;
-  padding: 1rem 0;
-  position: fixed;
-  top: 80px;
+  position: absolute;
+  top: 100%;
   left: 0;
   right: 0;
   visibility: hidden;
-  width: 100%;
-}
-
-.has-submenu:hover > ul {
-  opacity: 1;
-  top: 5rem;
-  transition-delay: 0s;
+  z-index: 100;
+  padding: 1rem 0;
 }
 
 .has-submenu > ul:where(.components) h4 {
