@@ -1,5 +1,6 @@
 import legacy from '@vitejs/plugin-legacy'
 import ViteRestart from 'vite-plugin-restart';
+import critical from 'rollup-plugin-critical';
 
 // https://vitejs.dev/config/
 export default ({ command }) => ({
@@ -26,7 +27,17 @@ export default ({ command }) => ({
           'templates/**/*',
       ],
     }),
-  ],
+    critical({
+      criticalUrl: 'http://oakland.test/',
+      criticalBase: './web/dist/',
+      criticalPages: [
+          { uri: '', template: 'index' },
+          { uri: '/services', template: 'services/index' },
+      ],
+      criticalConfig: {
+      },
+  }),
+],
   server: {
     origin: 'http://localhost:3000',
     host: '0.0.0.0',
