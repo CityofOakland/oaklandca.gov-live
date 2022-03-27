@@ -53,6 +53,7 @@ fields:
       layout: null
       mapOnSearch: open
       mapOnStart: close
+      requireCoordinates: true
       showMap: null
       subfieldConfig:
         __assoc__:
