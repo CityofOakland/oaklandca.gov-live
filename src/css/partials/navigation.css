@@ -1,20 +1,32 @@
 .has-submenu > ul {
+  opacity: 0;
+  top: -100vh;
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-delay: 300ms;
   display: grid;
   margin: 0 auto;
   max-width: 1475px;
-  position: absolute;
-  top: 100%;
+  padding: 1rem 0;
+  position: fixed;
+  top: 80px;
   left: 0;
   right: 0;
   visibility: hidden;
-  z-index: 100;
+  width: 100%;
 }
 
-.has-submenu > ul.components h4 {
+.has-submenu:hover > ul {
+  opacity: 1;
+  top: 5rem;
+  transition-delay: 0s;
+}
+
+.has-submenu > ul:where(.components) h4 {
   @apply text-base !pb-2;
 }
 
-.has-submenu > ul.components p {
+.has-submenu > ul:where(.components) p {
   @apply text-sm;
 }
 
@@ -35,6 +47,7 @@
   background: #207127;
   content: "";
   opacity: 1;
+  pointer-events: none;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -43,21 +56,15 @@
   z-index: -1;
 }
 
-.has-submenu > a {
-  @apply text-sm leading-normal;
-  background: transparent;
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  padding: 19.5px 16px;
-  position: relative;
-}
-
 .has-submenu > a > svg,
 .has-arrow > svg {
   margin-left: 5px;
   transform: rotateZ(90deg);
   width: 10px;
+}
+
+.has-submenu > a > svg path {
+  fill: white;
 }
 
 .has-submenu > a[aria-expanded="true"],

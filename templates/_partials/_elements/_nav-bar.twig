@@ -17,8 +17,8 @@
                     class: 'h-9 md:h-10 xl:oak-hidden'
                 })|raw }}
             </button>
-            <nav id="main-navigation" class="flex items-stretch justify-between w-full py-3 lg:py-5" aria-label="Main">
-                <a id="home-link" class="flex items-center justify-center h-full px-2 text-gray-100 duration-75 fill-current hover:text-gray-200" href="{{ siteUrl }}" name="Home">
+            <nav id="main-navigation" class="flex items-stretch justify-between w-full" aria-label="Main">
+                <a id="home-link" class="flex items-center justify-center h-full px-2 my-3 text-gray-100 duration-75 fill-current lg:my-5 hover:text-gray-200" href="{{ siteUrl }}" name="Home">
                     {{ svg('@webroot/dist/img/logo-oakland-tree.svg')|attr({
                         class: 'h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden'
                     })|raw }}
@@ -27,15 +27,17 @@
                     })|raw }}
                     <span class="hidden-visually">Home</span>
                 </a>
-                <form id="site-search-form" class="relative z-0 flex justify-end flex-1 pl-4 pr-6 lg:pr-0" action="{{ url('search') }}" role="search">
+                <form id="site-search-form" class="relative z-0 flex justify-end flex-1 pl-4 pr-6 my-3 lg:my-5 lg:pr-0" action="{{ url('search') }}" role="search">
                     <label for="site-search" class="hidden-visually">Search?</label>
                     <input type="search" id="site-search" class="z-10 w-full pl-10 pr-6 mb-0 text-sm leading-normal text-gray-100 placeholder-gray-200 bg-gray-900 border-2 border-gray-800 rounded appearance-none search-box h-9 md:h-10 md:text-base" aria-label="Site Search" name="query" placeholder="Search" value="">
                 </form>
                 <ul class="pr-6 mr-6 text-xs tracking-wide border-r border-gray-700 lg:ml-3 lg:flex oak-hidden lg:my-0 lg:justify-end lg:items-center xl:text-sm">
                     {% for nav in mainNav %}
                         {% if nav.title == "Services" %}
-                            <li class="has-submenu">
-                                <a tabindex="0" class="px-2 py-3 font-bold text-gray-100 uppercase" id="navbar-dropdown-{{ nav.title|kebab }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ nav.title }} {{ svg( '@webroot/dist/img/icon-arrow.svg') }}</a>
+                            <li class="h-full -my-3 has-submenu lg:-my-5">
+                                <a tabindex="0"
+                                    class="relative flex items-center h-full px-4 text-sm font-bold leading-normal text-gray-100 uppercase background-transparent"
+                                    id="navbar-dropdown-{{ nav.title|kebab }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ nav.title }} {{ svg( '@webroot/dist/img/icon-arrow.svg') }}</a>
                                 {% set navSubitems = craft.categories
                                     .group("serviceTypes")
                                     .limit(10)

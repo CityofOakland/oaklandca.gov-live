@@ -1,4 +1,4 @@
-dateModified: 1648160528
+dateModified: 1648237216
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -1069,6 +1069,10 @@ plugins:
     schemaVersion: 1.0.0
     settings:
       keepViewLog: ''
+  vite:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   wordsmith:
     enabled: '1'
     licenseKey: null
