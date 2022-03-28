@@ -45,7 +45,6 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: ''
-      cleanupHtml: true
       columnType: text
       configSelectionMode: choose
       defaultTransform: ''
@@ -111,6 +110,7 @@ fields:
       layout: null
       mapOnSearch: open
       mapOnStart: close
+      requireCoordinates: true
       showMap: false
       subfieldConfig:
         __assoc__:

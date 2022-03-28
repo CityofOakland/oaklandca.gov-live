@@ -15,7 +15,7 @@
 {% include "_css/algoliafilter.css" %}
 {% endcss %}
 
-{% do view.registerJsFile(craft.twigpack.getModuleUri("/js/algoliafilter.js")) %}
+{{ craft.vite.script("src/js/algoliafilter.js") }}
 
 {% if section is defined %}
   {% set relation = craft.entries.section(section).slug(slug).one() %}
@@ -40,7 +40,7 @@
     </div>
   </div>
   <section class="relative z-0 bg-white">
-    <div class="relative invisible h-0 overflow-hidden opacity-0 text-gray-700 bg-gray-300 z-neg-10 trans trans-all" id="algolia-filters">
+    <div class="relative invisible h-0 overflow-hidden text-gray-700 transition-all bg-gray-300 opacity-0 z-neg-10" id="algolia-filters">
       <div class="container flex-col -my-4" id="facet-holder">
         {% if facets is defined %}
           {% for facet in facets %}

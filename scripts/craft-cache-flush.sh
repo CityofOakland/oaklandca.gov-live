@@ -1,0 +1,1 @@
+php craft cache/flush-all

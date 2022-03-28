@@ -30,8 +30,7 @@
 {% set contactTrue = emailTrue or phoneTrue or teamsTrue or socialMediaTrue %}
 
 {% if photosTrue or mapTrue %}
-  {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/lightgallery.js")) %}
-  {% do view.registerCssFile(craft.twigpack.getModuleUri("/css/lightgallery.css")) %}
+  {{ craft.vite.script("src/js/lightgallery.js") }}
 {% endif %}
 
 {% block content %}
@@ -158,16 +157,16 @@
           {% include "_partials/_elements/_module-header.twig" with {
             headerText: "Meetings"
           } %}
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {% for entry in meetings %}
-            <a class="card default shadow" href="{{ entry.url }}">
+            <a class="shadow card default" href="{{ entry.url }}">
               <h4><span>{% if entry.meetingStatus and entry.meetingStatus.value and entry.meetingStatus.value !== 'default' %}{{ entry.meetingStatus.label }} - {% endif %}{{ entry.title }}</span></h4>
               {% if entry.type == 'meetingsImported' %}
-                <p class="flex items-center">{{ svg( '@webroot/assets/img/icon-calendar-new.svg') }} <span class="ml-2">{{ entry.date.format("l, F d, Y") }}</span></p>
-                <p class="flex items-center pt-1">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ entry.startDate.format("g:ia") }}{{ entry.endDate ? " to " ~ entry.endDate.format("g:ia") : '' }}</span></p>
+                <p class="flex items-center">{{ svg( '@webroot/dist/img/icon-calendar-new.svg') }} <span class="ml-2">{{ entry.date.format("l, F d, Y") }}</span></p>
+                <p class="flex items-center pt-1">{{ svg( '@webroot/dist/img/icon-clock.svg') }} <span class="ml-2">{{ entry.startDate.format("g:ia") }}{{ entry.endDate ? " to " ~ entry.endDate.format("g:ia") : '' }}</span></p>
               {% else %}
-                <p class="flex items-center">{{ svg( '@webroot/assets/img/icon-calendar-new.svg') }} <span class="ml-2">{{ entry.date.format("l, F d, Y") }}</span></p>
-                <p class="flex items-center pt-1">{{ svg( '@webroot/assets/img/icon-clock.svg') }} <span class="ml-2">{{ entry.startTime.format("g:ia") }}{{ entry.endTime ? " to " ~ entry.endTime.format("g:ia") : '' }}</span></p>
+                <p class="flex items-center">{{ svg( '@webroot/dist/img/icon-calendar-new.svg') }} <span class="ml-2">{{ entry.date.format("l, F d, Y") }}</span></p>
+                <p class="flex items-center pt-1">{{ svg( '@webroot/dist/img/icon-clock.svg') }} <span class="ml-2">{{ entry.startTime.format("g:ia") }}{{ entry.endTime ? " to " ~ entry.endTime.format("g:ia") : '' }}</span></p>
               {% endif %}
             </a>
             {% endfor %}

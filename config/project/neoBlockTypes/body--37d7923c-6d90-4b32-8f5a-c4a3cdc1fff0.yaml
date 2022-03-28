@@ -21,6 +21,7 @@ fieldLayouts:
             width: 100
         name: Configuration
         sortOrder: 1
+group: null
 handle: body
 maxBlocks: 0
 maxChildBlocks: 0
