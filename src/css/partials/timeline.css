@@ -14,7 +14,7 @@
   bottom: 0;
   content: "";
   left: 50%;
-  margin-left: -2px;
+  margin-left: -.125rem;
   position: absolute;
   top: 0;
   width: 4px;
@@ -127,12 +127,11 @@
 .timeline__content h2 {
   @apply text-xl;
   font-weight: 900;
-  margin: 0 0 0.625rem;
+  margin: 0 0 .625rem;
 }
 
 .timeline__content p {
   @apply text-sm leading-normal;
-  margin-bottom: 10px;
 }
 
 .timeline--horizontal {

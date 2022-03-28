@@ -4,7 +4,7 @@
 
 :where(.components form) label {
   @apply text-sm leading-normal;
-  margin-bottom: 0.5em;
+  margin-bottom: .5rem;
 }
 
 :where(.components form) button:not(.button) {
@@ -15,7 +15,7 @@
   color: #207127;
   display: inline-block;
   font-weight: 700;
-  margin-top: 1em;
+  margin-top: 1rem;
   outline-offset: 2px;
   padding: 16px 32px;
   text-decoration: none;
@@ -41,7 +41,7 @@
   @apply text-sm leading-tight;
   background: white;
   color: #6b7280;
-  margin-top: 0.75rem;
+  margin-top: .75rem;
 }
 
 :where(.components) input[type="month"],
@@ -66,7 +66,7 @@
 
 :where(.components) table {
   @apply text-sm leading-tight md:text-base md:leading-tight;
-  margin-top: 1.5em;
+  margin-top: 1.5rem;
   width: 100%;
 }
 
@@ -156,7 +156,7 @@
 :where(.components) .callout {
   display: flex;
   padding: 16px;
-  margin-top: 1em;
+  margin-top: 1rem;
 }
 
 :where(.components) .callout.info {
@@ -185,7 +185,7 @@
   & svg {
     flex-shrink: 0;
     margin-right: 1rem;
-    margin-top: 4px;
+    margin-top: .25rem;
   }
 }
 
@@ -210,15 +210,15 @@
 }
 
 :where(.components) .hr.small {
-  margin: 16px 0;
+  margin: 1rem 0;
 }
 
 :where(.components) .hr.medium {
-  margin: 32px 0;
+  margin: 2rem 0;
 }
 
 :where(.components) .hr.large {
-  margin: 48px 0;
+  margin: 3rem 0;
 }
 
 :where(.components) p,
@@ -345,7 +345,7 @@
   .components.js-initialized td:before {
     display: block;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: .5rem;
   }
 
   /*
@@ -391,7 +391,7 @@
 }
 
 #components-sidebar > hr:not(:first-child) {
-  margin-top: 1.25em;
+  margin-top: 1.25rem;
 }
 
 #components-sidebar > hr:first-child {
@@ -414,7 +414,7 @@
 
 #components-sidebar input,
 #components-sidebar select {
-  margin-top: 8px;
+  margin-top: .5rem;
 }
 
 #components-sidebar .button {
@@ -444,7 +444,7 @@
 }
 
 #components-sidebar > hr:not(:first-child) {
-  margin-top: 2em;
+  margin-top: 2rem;
 }
 
 #components-sidebar > h1,

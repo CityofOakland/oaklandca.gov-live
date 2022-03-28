@@ -47,7 +47,7 @@
 
 .has-submenu > a > svg,
 .has-arrow > svg {
-  margin-left: 5px;
+  margin-left: .3125rem;
   transform: rotateZ(90deg);
   width: 10px;
 }
@@ -138,7 +138,7 @@
 }
 
 .has-submenu .card.dark {
-  margin-bottom: 4px;
+  margin-bottom: .25rem;
 }
 
 #navbar-dropdown-search {
@@ -157,7 +157,7 @@
 #navbar-dropdown-search > svg {
   height: auto;
   width: auto;
-  margin-left: -1px;
+  margin-left: -.0625rem;
   transform: none;
 }
 
@@ -328,7 +328,7 @@ display: block;
 
 #translate > a > svg:first-of-type {
   width: 20px;
-  margin-right: 7.5px;
+  margin-right: .5rem;
   margin-left: 0;
   transform: none;
 }
@@ -355,5 +355,5 @@ display: block;
 
 #translate > ul > li {
   @apply text-sm;
-  margin: 2.5px 0;
+  margin: .1875rem 0;
 }

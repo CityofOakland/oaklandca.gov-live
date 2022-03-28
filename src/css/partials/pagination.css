@@ -2,14 +2,14 @@
   @apply text-base;
   display: flex;
   align-items: center;
-  margin-left: -10px;
+  margin-left: -.625rem;
   padding: 0 !important;
 }
 
 .pagination > li {
   display: flex;
   align-items: center;
-  margin: 0 4px;
+  margin: 0 .25rem;
 }
 
 .pagination .disabled {
