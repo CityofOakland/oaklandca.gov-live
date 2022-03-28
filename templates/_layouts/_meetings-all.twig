@@ -16,9 +16,7 @@
   {% set filter_enabled = true %}
 {% endif %}
 
-
 {% set meetings = meetings|applyDateFilter('date') %}
-
 {% paginate meetings as pageInfo, meetings %}
 
 {% set layout = 'reverse' %}
