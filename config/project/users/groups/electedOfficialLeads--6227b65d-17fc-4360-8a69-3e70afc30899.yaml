@@ -124,5 +124,5 @@ permissions:
   - 'editpeerimagesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
   - 'viewpeerfilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
   - 'viewvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
-  - 'calendar-manageeventsfor:2'
   - calendar-manageevents
+  - 'calendar-manageeventsfor:df8685d8-8295-456f-b677-b60cced48d3d' # Events

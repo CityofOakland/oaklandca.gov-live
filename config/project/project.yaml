@@ -1,4 +1,4 @@
-dateModified: 1647977134
+dateModified: 1648485687
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -752,7 +752,7 @@ plugins:
     edition: pro
     enabled: '1'
     licenseKey: PRJ91600ENZBQ5S7HS7UE93Z
-    schemaVersion: 3.3.0
+    schemaVersion: 3.3.2
     settings:
       allDay: false
       authoredEventEditOnly: ''
@@ -816,7 +816,7 @@ plugins:
     edition: lite
     enabled: true
     licenseKey: 80IWDHDW3ZJB27DOLCE6AQE5
-    schemaVersion: 3.5.1
+    schemaVersion: 3.6.3
     settings:
       ajaxByDefault: true
       alertNotificationRecipients: null
@@ -908,10 +908,15 @@ plugins:
       maxmindService: ''
       maxmindUserId: ''
       serverKey: AIzaSyBnPcsOXM0SarMt94kDEN60juB600UKvck
+  icon-picker:
+    edition: standard
+    enabled: true
+    licenseKey: S528HF1X7FAZ4V7BQ1GARNLD
+    schemaVersion: 1.0.1
   imager-x:
     edition: pro
     enabled: true
-    licenseKey: DO8L9Q9NW2ZFBS105XUDBCMW
+    licenseKey: VN37QSJPKN968T9I03EES5AK
     schemaVersion: 3.0.0
   incognito-field:
     enabled: '1'
@@ -949,7 +954,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: MHV0BQ72A7IVPYOA3JKMD3BQ
-    schemaVersion: 2.11.6
+    schemaVersion: 2.13.0
   patrol:
     edition: standard
     enabled: true
@@ -1078,6 +1083,10 @@ plugins:
     schemaVersion: 1.0.0
     settings:
       keepViewLog: ''
+  vite:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   wordsmith:
     enabled: '1'
     licenseKey: null
@@ -1093,5 +1102,5 @@ system:
   live: true
   name: 'City of Oakland'
   retryDuration: null
-  schemaVersion: 3.7.8
+  schemaVersion: 3.7.33
   timeZone: America/Los_Angeles

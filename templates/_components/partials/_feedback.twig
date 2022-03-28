@@ -37,7 +37,7 @@
 						    var form = document.querySelector('#{{ id }} form');
 						    $.ajax({
 						      	// Specify the form handle in the GET parameters
-						      	url: '{{ siteUrl }}form?form="{{ id }}"',
+						      	url: '{{ siteUrl }}form?form={{ id }}',
 						      	type: 'get',
 						      	dataType: 'json',
 						      	success: function (response) {
