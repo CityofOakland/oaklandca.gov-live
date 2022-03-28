@@ -1,0 +1,455 @@
+:where(.components) form {
+  @apply text-base leading-normal;
+}
+
+:where(.components form) label {
+  @apply text-sm leading-normal;
+  margin-bottom: 0.5em;
+}
+
+:where(.components form) button:not(.button) {
+  @apply text-base leading-tight;
+  background: white;
+  border: 2px solid #207127;
+  border-radius: 2px;
+  color: #207127;
+  display: inline-block;
+  font-weight: 700;
+  margin-top: 1em;
+  outline-offset: 2px;
+  padding: 16px 32px;
+  text-decoration: none;
+}
+
+:where(.components form) button:not(.button):hover {
+  border-color: #0d5713;
+  color: #0d5713;
+}
+
+:where(.components form) button:not(.button):active {
+  border-color: #04400a;
+  color: #04400a;
+}
+
+:where(.components form) textarea {
+  color: #222222;
+  padding: 0.5em;
+}
+
+:where(.components) input,
+:where(.components) select {
+  @apply text-sm leading-tight;
+  background: white;
+  color: #6b7280;
+  margin-top: 0.75rem;
+}
+
+:where(.components) input[type="month"],
+:where(.components) input[type="text"] {
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
+  color: black;
+  padding: 0.75rem 1rem;
+  width: 100%;
+}
+
+:where(.components) input[type="text"]::placeholder {
+  color: #6b7280;
+}
+
+:where(.components) select {
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  width: 100%;
+}
+
+:where(.components) table {
+  @apply text-sm leading-tight md:text-base md:leading-tight;
+  margin-top: 1.5em;
+  width: 100%;
+}
+
+:where(.components table) caption {
+  padding: 8px;
+  text-align: left;
+}
+
+:where(.components) tbody {
+  border-top: 1px solid black;
+}
+
+:where(.components tbody) tr {
+  border-bottom: 1px solid black;
+}
+
+:where(.components) th {
+  background: #f5f5f5;
+  border-bottom: 1px solid black;
+  padding: 15px;
+  text-align: left;
+}
+
+:where(.components) td {
+  padding: 15px;
+  word-break: break-word;
+}
+
+:where(.components) h1 {
+  @apply text-3xl md:text-4xl;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+:where(.components) h2 {
+  @apply text-xl leading-tight md:text-3xl;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.components-format h2 {
+  padding-top: 1.5em;
+}
+
+:where(.components) h3 {
+  @apply text-xl md:text-2xl;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.components-format h3 {
+  padding-top: 1.5em;
+}
+
+:where(.components) h4 {
+  @apply text-xl;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.components-format h4 {
+  padding-top: 1.5em;
+}
+
+.components-format h5 {
+  padding-top: 1.5em;
+}
+
+:where(.components) hr {
+  clear: both;
+  opacity: 0;
+}
+
+:where(.components) hr + h1,
+:where(.components) hr + h2,
+:where(.components) hr + h3,
+:where(.components) hr + h4,
+:where(.components) hr + h5,
+:where(.components) hr + h6 {
+  padding-top: 0;
+}
+
+:where(.components) .callout {
+  display: flex;
+  padding: 16px;
+  margin-top: 1em;
+}
+
+:where(.components) .callout.info {
+  background: #f0f4f8;
+}
+
+:where(.components) .callout.attention {
+  background: #fffbea;
+}
+
+:where(.components .callout) {
+  & a:not(.button) {
+    color: inherit;
+    text-decoration: underline;
+  }
+  & a:hover {
+    text-decoration: none;
+  }
+  & p {
+    padding-top: 0.5rem;
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  & svg {
+    flex-shrink: 0;
+    margin-right: 1rem;
+    margin-top: 4px;
+  }
+}
+
+:where(.components) .embed-container {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+:where(.components) .hr {
+  border-top: 3px solid #e1e1e1;
+  opacity: 1;
+}
+
+:where(.components) .hr.dark {
+  border-top: 2px solid #212121;
+  margin: 2rem 0;
+  opacity: 1;
+}
+
+:where(.components) .hr.small {
+  margin: 0;
+}
+
+:where(.components) .hr.small {
+  margin: 16px 0;
+}
+
+:where(.components) .hr.medium {
+  margin: 32px 0;
+}
+
+:where(.components) .hr.large {
+  margin: 48px 0;
+}
+
+:where(.components) p,
+:where(.components) ol,
+:where(.components) ul {
+  @apply text-lg;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.components-format p,
+.components-format ol,
+.components-format ul {
+  padding-top: 1em;
+}
+
+.components-format ol ul,
+.components-format ol ol,
+.components-format ul ul,
+.components-format ul ol {
+  padding-top: 0;
+}
+
+.components-format a {
+  text-decoration: underline;
+}
+
+.components-format a:hover,
+.components-format a:focus {
+  text-decoration: none;
+}
+
+:where(.components) ol,
+:where(.components) ul {
+  padding-left: 1.25rem;
+  list-style-type: initial;
+}
+
+:where(.components) ol {
+  list-style-type: auto;
+}
+
+.components-format > figure {
+  margin-top: 1.5rem;
+}
+
+:where(.components) figcaption {
+  @apply text-sm;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  :where(.components) figure.image-left {
+    display: flex;
+  }
+
+  :where(.components) figure.image-left img {
+    width: 60%;
+  }
+
+  :where(.components) figure.image-left figcaption {
+    margin-top: 0;
+    margin-left: 2rem;
+    width: 40%;
+  }
+
+  :where(.components) figure.image-right {
+    float: right;
+    margin-left: 1.5rem;
+    width: 50%;
+  }
+}
+
+:where(.components) tbody {
+  border-top: 1px solid black;
+}
+
+:where(.components) tbody tr {
+  border-bottom: 1px solid black;
+}
+
+@media (max-width: 767px) {
+  :where(.components) tbody {
+    border-top: none;
+  }
+
+  :where(.components) tbody tr {
+    border-bottom: none;
+  }
+  /* Force table to not be like tables anymore */
+  .components.js-initialized table,
+  .components.js-initialized thead,
+  .components.js-initialized tbody,
+  .components.js-initialized th,
+  .components.js-initialized td,
+  .components.js-initialized tr {
+    display: block;
+  }
+
+  .components.js-initialized tbody {
+    border-top: 2px solid black;
+    border-bottom: 1px solid black;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  .components.js-initialized thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .components.js-initialized tr {
+    border: 1px solid black;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .components.js-initialized td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+  }
+
+  .components.js-initialized td:before {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  /*
+  Label the data
+  */
+  :where(.components) td::before {
+    content: attr(data-label);
+  }
+}
+
+@media (min-width: 768px) {
+  :where(.components) #twitter-widget-0 {
+    height: 95% !important;
+  }
+}
+
+.components-format > h1:first-child,
+.components-format > h2:first-child,
+.components-format > h3:first-child,
+.components-format > h4:first-child,
+.components-format > h5:first-child,
+.components-format > h6:first-child,
+.components-format > p:first-child,
+.components-format > ul:first-child,
+.components-format > ol:first-child,
+.components-format > table:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.components-format > blockquote:first-child {
+  margin-top: 0;
+}
+
+#components-sidebar > hr {
+  border-top: 2px solid #212121;
+  margin-top: 2rem;
+  opacity: 1;
+}
+
+#components-sidebar > hr.light {
+  border-top: 1px solid #e1e1e1;
+}
+
+#components-sidebar > hr:not(:first-child) {
+  margin-top: 1.25em;
+}
+
+#components-sidebar > hr:first-child {
+  margin-top: 0;
+}
+
+#components-sidebar > h1,
+#components-sidebar > h2,
+#components-sidebar > h3,
+#components-sidebar > h4 {
+  padding-top: 16px;
+}
+
+#components-sidebar label {
+  @apply text-base pt-6 md:pt-[1.125rem];
+  display: block;
+  font-weight: 700;
+  padding-top: 24px;
+}
+
+#components-sidebar input,
+#components-sidebar select {
+  margin-top: 8px;
+}
+
+#components-sidebar .button {
+  margin-bottom: 0;
+}
+
+#components-sidebar #search {
+  position: relative;
+}
+
+#components-sidebar #search::before {
+  background-image: url('../img/icon-search.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+
+#components-sidebar #search > input {
+  padding-left: 3rem;
+}
+
+#components-sidebar > hr:not(:first-child) {
+  margin-top: 2em;
+}
+
+#components-sidebar > h1,
+#components-sidebar > h2,
+#components-sidebar > h3,
+#components-sidebar > h4 {
+  padding-top: 1em;
+}

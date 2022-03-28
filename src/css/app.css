@@ -3,7 +3,17 @@
 @import './partials/forms.css';
 @import './partials/navigation.css';
 @import './partials/timeline.css';
-@import "./_custom-styles.css";
+@import './partials/base.css';
+@import './partials/buttons.css';
+@import './partials/components.css';
+@import './_custom-styles.css';
+@import './partials/process.css';
+@import './partials/pagination.css';
+@import './partials/events-meetings.css';
+@import './partials/icons.css';
+@import './partials/buttons.css';
+
+/* test */
 
 @layer utilities {
   /* Use this utility to hide text only meant for screen readers */
@@ -96,12 +106,12 @@
 
   .bg-transparent-oakland-roots {
     @apply bg-cover;
-    background-image: url(../img/oaklandroots-transparent-green.png);
+    background-image: url('../img/oaklandroots-transparent-green.png');
   }
 
   .bg-transparent-oakland-roots-black {
     @apply bg-cover;
-    background-image: url(../img/oaklandroots-black.svg);
+    background-image: url('../img/oaklandroots-black.svg');
   }
 
   /* Aspect Ratio Box */

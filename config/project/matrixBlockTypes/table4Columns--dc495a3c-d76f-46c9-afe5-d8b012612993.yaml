@@ -149,9 +149,9 @@ fields:
     searchable: false
     settings:
       decimals: 0
-      defaultValue: '25'
-      max: '99'
-      min: '1'
+      defaultValue: 25
+      max: 99
+      min: 1
       prefix: null
       previewCurrency: ''
       previewFormat: decimal
@@ -170,9 +170,9 @@ fields:
     searchable: false
     settings:
       decimals: 0
-      defaultValue: '25'
-      max: '99'
-      min: '1'
+      defaultValue: 25
+      max: 99
+      min: 1
       prefix: null
       previewCurrency: ''
       previewFormat: decimal
@@ -191,9 +191,9 @@ fields:
     searchable: false
     settings:
       decimals: 0
-      defaultValue: '25'
-      max: '99'
-      min: '1'
+      defaultValue: 25
+      max: 99
+      min: 1
       prefix: null
       previewCurrency: ''
       previewFormat: decimal
@@ -232,9 +232,9 @@ fields:
     searchable: false
     settings:
       decimals: 0
-      defaultValue: '25'
-      max: '99'
-      min: '1'
+      defaultValue: 25
+      max: 99
+      min: 1
       prefix: null
       previewCurrency: ''
       previewFormat: decimal
