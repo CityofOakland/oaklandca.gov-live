@@ -1,8 +1,10 @@
 //Navigation
 
-var menuItems = document.querySelectorAll('.has-submenu, #mobile-navigation');
-var menuItemsHover = document.querySelectorAll('.has-submenu:not(.click)');
-var menuItemsClick = document.querySelectorAll('.has-submenu.click > a, #mobile-navigation > a');
+var menuItems       = document.querySelectorAll('.has-submenu, #mobile-navigation');
+var menuItemsHover  = document.querySelectorAll('.has-submenu:not(.click)');
+var menuItemsClick  = document.querySelectorAll('.has-submenu.click > a, #mobile-navigation > a');
+
+var menuItemClicked = false;
 
 function closeOtherMenuItems(parent){
   Array.prototype.forEach.call(menuItemsClick, function(el, i){
@@ -26,8 +28,11 @@ function closeOtherMenuItems(parent){
   })
 }
 
+function clearOverlay(){
+  document.querySelector('#topbar').classList.remove('state-active');
+}
+
 function toggleOverlay(){
-  console.log(document.querySelectorAll('#topbar .open').length);
   if(document.querySelectorAll('#topbar .open').length > 0) {
     document.querySelector('#topbar').classList.add('state-active');
   } else {
@@ -37,7 +42,7 @@ function toggleOverlay(){
 
 // Click
 Array.prototype.forEach.call(menuItemsClick, function(el, i){
-    el.addEventListener("mousedown", function(event){
+    el.addEventListener("click", function(event){
       if(this.parentElement.classList.contains('open')){
         this.parentElement.classList.remove('open');
         el.setAttribute('aria-expanded', "false");
@@ -55,7 +60,14 @@ Array.prototype.forEach.call(menuItemsClick, function(el, i){
           document.getElementById(el.getAttribute('data-affects')).classList.add(el.getAttribute('data-affects-class'));
         }
       }
+
       toggleOverlay();
+
+      el.parentElement.addEventListener("click", function(event){
+        menuItemClicked = true;
+        clearOverlay();
+        event.stopPropagation();
+      });
     });
 });
 
@@ -78,11 +90,13 @@ Array.prototype.forEach.call(menuItems, function(el, i){
 
     Array.prototype.forEach.call(triggers, function(innerTrigger, i){
         innerTrigger.addEventListener('blur', function(event){
+          if(menuItemClicked === false){
             if(triggers.indexOf(event.relatedTarget) == -1){
-                el.classList.remove('open');
-                trigger.setAttribute('aria-expanded', "false");
-
+              el.classList.remove('open');
+              trigger.setAttribute('aria-expanded', "false");
             }
+          }
+          menuItemClicked = false;
         });
     })
 
@@ -91,6 +105,13 @@ Array.prototype.forEach.call(menuItems, function(el, i){
         var target          = event.target;
         var key             = event.which.toString();
         var ctrlModifier    = (event.ctrlKey && key.match(/33|34/));
+
+        if(key == "27") {
+          el.classList.remove('open');
+          trigger.setAttribute('aria-expanded', "false");
+          trigger.focus();
+          event.stopPropagation();
+        }
 
         // Press Enter
         if(key == "13"){
@@ -173,7 +194,11 @@ Array.prototype.forEach.call(menuItems, function(el, i){
           }
         }
     });
-})
+});
+
+window.addEventListener('click', function(){
+  closeOtherMenuItems();
+});
 
 // Accept HMR as per: https://vitejs.dev/guide/api-hmr.html
 if (import.meta.hot) {

@@ -66,7 +66,7 @@
                 </div>
                 <ul class="flex items-center my-0">
                     {% for socItem in socialMedia %}
-                        <li class="mr-4 lg:mr-0 lg:ml-4">
+                        <li class="mb-0 mr-4 lg:mr-0 lg:ml-4">
                             <a href="{{ socItem[0] }}" target="_blank" class="flex items-center justify-center w-10 h-10 bg-white rounded-full text-gray-1000 hover:bg-yellow-500 hover:text-gray-1000">
                                 {{ svg('@webroot/dist/img/logo-' ~ socItem[1])|attr({class:'h-5'}) }}
                                 <span class="hidden-visually">{{ socItem[2] }}</span>
