@@ -51,7 +51,7 @@
     </div>
 
     <div class="bg-black text-white">
-        <div class="container py-4">
+        <div class="container py-6">
             <nav class="lg:flex items-center justify-between" id="bottom-navigation" name="Bottom Navigation">
                 <div class="lg:flex items-end">
                     <a href="{{ siteUrl }}">
@@ -67,7 +67,7 @@
                 <ul class="flex items-center my-0">
                     {% for socItem in socialMedia %}
                         <li class="mr-4 lg:mr-0 lg:ml-4">
-                            <a href="{{ socItem[0] }}" class="flex items-center justify-center w-10 h-10 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000">
+                            <a href="{{ socItem[0] }}" target="_blank" class="flex items-center justify-center w-10 h-10 bg-white rounded-full text-gray-1000 hover:bg-yellow-500 hover:text-gray-1000">
                                 {{ svg('@webroot/dist/img/logo-' ~ socItem[1])|attr({class:'h-5'}) }}
                                 <span class="hidden-visually">{{ socItem[2] }}</span>
                             </a>
