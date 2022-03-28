@@ -32,7 +32,6 @@ export default ({ command }) => ({
       criticalBase: './web/dist/',
       criticalPages: [
         { uri: '', template: 'index' },
-        { uri: '/services', template: 'services/index' },
       ],
       criticalConfig: {
       },
