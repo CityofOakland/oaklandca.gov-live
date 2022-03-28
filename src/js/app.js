@@ -9,3 +9,10 @@ window.Alpine = Alpine
 
 Alpine.plugin(collapse)
 Alpine.start()
+
+// Accept HMR as per: https://vitejs.dev/guide/api-hmr.html
+if (import.meta.hot) {
+  import.meta.hot.accept(() => {
+    console.log("HMR")
+  });
+}
