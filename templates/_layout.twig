@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700&display=swap" rel="stylesheet">
     {% include "_components/partials/_favicons.twig" %}
     {% include "_components/partials/_hotjar.twig" %}
-    {{ craft.vite.script("src/js/app.js")}}
+    {{ craft.vite.script("src/js/app.js", false) }}
   </head>
 
   {# Checks if the URI is empty and if not, adds the class of "home" to the page body. #}
