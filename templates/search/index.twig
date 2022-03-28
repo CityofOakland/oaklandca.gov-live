@@ -7,7 +7,7 @@
 {% do view.registerCssFile ("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch-theme-algolia.min.css") %}
 {% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5") %}
 
-{% do view.registerJsFile(craft.twigpack.getModuleUri("/js/search.js")) %}
+{{ craft.vite.script("src/js/search.js") }}
 
 {% css %}
   .ais-search-box {
@@ -50,7 +50,7 @@
   <div id="content" style="position:relative;top:-5rem;"></div>
   <div class="leading-normal">
     <div class="container relative z-10 flex flex-col sm:flex-row">
-      <h1 class="mb-0 font-bold text-3xl md:text-4xl sm:w-1/4">{{ entry.title }}</h1>
+      <h1 class="mb-0 text-3xl font-bold md:text-4xl sm:w-1/4">{{ entry.title }}</h1>
       <form action="" class="flex-1 my-4 sm:my-0">
         <label class="hidden-visually" for="search-input">Search Term(s)</label>
         <input class="flex-1 px-8 py-4 rounded-none appearance-none" id="search-input" name="query" required type="search" value="">

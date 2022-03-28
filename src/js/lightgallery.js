@@ -1,3 +1,6 @@
+import '/src/css/lightgallery/lightgallery.css'
+import '/src/css/lightgallery/lg-transitions.css'
+import '/src/css/lightgallery/lg-fb-comment-box.css'
 /**!
  * lightgallery.js | 1.1.3 | February 11th 2019
  * http://sachinchoolur.github.io/lightgallery.js/
@@ -1586,3 +1589,11 @@
 
 },{"./lg-utils":1}]},{},[2])(2)
 });
+
+// Accept HMR as per: https://vitejs.dev/guide/api-hmr.html
+if (import.meta.hot) {
+    import.meta.hot.accept(() => {
+      console.log("HMR")
+    });
+  }
+  

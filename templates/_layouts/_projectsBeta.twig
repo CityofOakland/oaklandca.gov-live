@@ -30,8 +30,7 @@
 {% set contactTrue = emailTrue or phoneTrue or teamsTrue or socialMediaTrue %}
 
 {% if photosTrue or mapTrue %}
-  {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/lightgallery.js")) %}
-  {% do view.registerCssFile(craft.twigpack.getModuleUri("/css/lightgallery.css")) %}
+  {{ craft.vite.script("src/js/lightgallery.js") }}
 {% endif %}
 
 {% block content %}
