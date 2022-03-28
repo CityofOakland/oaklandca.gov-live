@@ -1,7 +1,7 @@
 {% import '_macros/_macros.twig' as macros %}
 
 <div id="topbar">
-    <div class="flex items-center justify-end lg:justify-between px-0 lg:px-6 bg-green-1000 lg:bg-green-800 hover:bg-green-1000 text-white relative">
+    <div class="flex items-center justify-end lg:justify-between px-0 lg:px-6 bg-green-1000 lg:bg-green-800 text-white relative">
         <p class="hidden lg:block"><b>Official Website for the City of Oakland</b> <span class="mx-1">|</span> <a class="hover:text-green-800 hover:underline" href="{{ siteUrl }}officials/libby-schaaf">Mayor Libby Schaaf</a></p>
         <nav class="flex items-center" id="top-navigation" name="Top Navigation">
             {% set translation_url = 'https://www-oaklandca-gov.translate.goog' ~ craft.app.request.url %}

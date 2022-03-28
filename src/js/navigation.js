@@ -65,7 +65,6 @@ Array.prototype.forEach.call(menuItemsClick, function(el, i){
 
       el.parentElement.addEventListener("click", function(event){
         menuItemClicked = true;
-        clearOverlay();
         event.stopPropagation();
       });
     });
@@ -198,6 +197,7 @@ Array.prototype.forEach.call(menuItems, function(el, i){
 
 window.addEventListener('click', function(){
   closeOtherMenuItems();
+  clearOverlay();
 });
 
 // Accept HMR as per: https://vitejs.dev/guide/api-hmr.html

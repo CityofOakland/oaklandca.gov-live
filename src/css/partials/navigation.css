@@ -454,6 +454,10 @@ input[type="text"].form-control::placeholder {
   z-index: 1;
 }
 
+#topbar.state-active > .bg-green-1000 {
+  background-color: rgb(4, 64, 10) !important;
+}
+
 #translate > a {
   color: #fff3c4 !important;
   font-weight: normal;
