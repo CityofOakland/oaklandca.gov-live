@@ -17,7 +17,7 @@
   font-weight: 700;
   margin-top: 1rem;
   outline-offset: 2px;
-  padding: 16px 32px;
+  padding: 1rem 2rem;
   text-decoration: none;
 }
 
@@ -33,7 +33,7 @@
 
 :where(.components form) textarea {
   color: #222222;
-  padding: 0.5em;
+  padding: .5rem;
 }
 
 :where(.components) input,
@@ -49,7 +49,7 @@
   border: 1px solid #cfcfcf;
   border-radius: 4px;
   color: black;
-  padding: 0.75rem 1rem;
+  padding: .75rem 1rem;
   width: 100%;
 }
 
@@ -60,7 +60,7 @@
 :where(.components) select {
   border: 1px solid #cfcfcf;
   border-radius: 4px;
-  padding: 0.75rem 1rem;
+  padding: .75rem 1rem;
   width: 100%;
 }
 
@@ -71,7 +71,7 @@
 }
 
 :where(.components table) caption {
-  padding: 8px;
+  padding: .5rem;
   text-align: left;
 }
 
@@ -86,12 +86,12 @@
 :where(.components) th {
   background: #f5f5f5;
   border-bottom: 1px solid black;
-  padding: 15px;
+  padding: .9375rem;
   text-align: left;
 }
 
 :where(.components) td {
-  padding: 15px;
+  padding: .9375rem;
   word-break: break-word;
 }
 
@@ -110,7 +110,7 @@
 }
 
 .components-format h2 {
-  padding-top: 1.5em;
+  padding-top: 1.5rem;
 }
 
 :where(.components) h3 {
@@ -121,7 +121,7 @@
 }
 
 .components-format h3 {
-  padding-top: 1.5em;
+  padding-top: 1.5rem;
 }
 
 :where(.components) h4 {
@@ -132,11 +132,11 @@
 }
 
 .components-format h4 {
-  padding-top: 1.5em;
+  padding-top: 1.5rem;
 }
 
 .components-format h5 {
-  padding-top: 1.5em;
+  padding-top: 1.5rem;
 }
 
 :where(.components) hr {
@@ -155,7 +155,7 @@
 
 :where(.components) .callout {
   display: flex;
-  padding: 16px;
+  padding: 1rem;
   margin-top: 1rem;
 }
 
@@ -176,7 +176,7 @@
     text-decoration: none;
   }
   & p {
-    padding-top: 0.5rem;
+    padding-top: .5rem;
     &:first-child {
       padding-top: 0;
     }
@@ -232,7 +232,7 @@
 .components-format p,
 .components-format ol,
 .components-format ul {
-  padding-top: 1em;
+  padding-top: 1rem;
 }
 
 .components-format ol ul,
@@ -402,14 +402,14 @@
 #components-sidebar > h2,
 #components-sidebar > h3,
 #components-sidebar > h4 {
-  padding-top: 16px;
+  padding-top: 1rem;
 }
 
 #components-sidebar label {
   @apply text-base pt-6 md:pt-[1.125rem];
   display: block;
   font-weight: 700;
-  padding-top: 24px;
+  padding-top: 1.5rem;
 }
 
 #components-sidebar input,
@@ -451,5 +451,5 @@
 #components-sidebar > h2,
 #components-sidebar > h3,
 #components-sidebar > h4 {
-  padding-top: 1em;
+  padding-top: 1rem;
 }

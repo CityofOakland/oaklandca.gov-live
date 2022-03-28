@@ -22,7 +22,7 @@
 .has-submenu > ul::before {
   background: black;
   content: "";
-  opacity: 0.25;
+  opacity: .25;
   pointer-events: none;
   position: absolute;
   top: 100%;
@@ -109,7 +109,7 @@
   }
 
   .has-submenu .card {
-    padding: 10px 20px;
+    padding: .625rem 1.25rem;
   }
 
   .has-submenu .card:not(.dark) {
@@ -134,7 +134,7 @@
 }
 
 .has-submenu .card h4 {
-  padding-top: 0.5rem;
+  padding-top: .5rem;
 }
 
 .has-submenu .card.dark {
@@ -150,7 +150,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.5s;
+  transition: .5s;
   transform: translateX(0);
 }
 
@@ -244,7 +244,7 @@
   display: flex;
   justify-content: space-between;
   font-weight: 600;
-  padding: 15.5px 0;
+  padding: 1rem 0;
 }
 
 #mobile-navigation .has-submenu > ul {
@@ -323,7 +323,7 @@ display: block;
 #translate > a {
   @apply text-xs leading-normal;
   font-weight: normal;
-  padding: 12px 8px;
+  padding: .75rem .5rem;
 }
 
 #translate > a > svg:first-of-type {

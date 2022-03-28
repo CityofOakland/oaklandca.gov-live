@@ -29,7 +29,7 @@
 
 .timeline__item {
   @apply text-base;
-  padding: 0.625rem 2.5rem 0.625rem 0;
+  padding: .625rem 2.5rem .625rem 0;
   position: relative;
   width: 50%;
   z-index: 2;
@@ -65,7 +65,7 @@
 
 .timeline__item--right {
   left: 50%;
-  padding: 0.625rem 0 0.625rem 2.5rem;
+  padding: .625rem .625rem 2.5rem;
 }
 
 .timeline__item--right:after {
@@ -153,7 +153,7 @@
 }
 
 .timeline--horizontal .timeline__items {
-  transition: all 0.8s;
+  transition: all .8s;
   will-change: transform;
 }
 
@@ -256,7 +256,7 @@
 }
 
 .timeline-nav-button:disabled {
-  opacity: 0.5;
+  opacity: .5;
   pointer-events: none;
 }
 
@@ -300,7 +300,7 @@
 
 .timeline--mobile .timeline__item {
   left: 0;
-  padding-left: 40px;
+  padding-left: 2.5rem;
   padding-right: 0;
   width: 100%;
 }
