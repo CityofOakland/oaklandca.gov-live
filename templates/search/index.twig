@@ -7,7 +7,7 @@
 {% do view.registerCssFile ("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch-theme-algolia.min.css") %}
 {% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5") %}
 
-{% do view.registerJsFile(craft.twigpack.getModuleUri("/js/search.js")) %}
+{{ craft.vite.script("src/js/search.js") }}
 
 {% css %}
   .ais-search-box {
