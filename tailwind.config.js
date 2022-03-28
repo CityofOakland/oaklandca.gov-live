@@ -10,6 +10,13 @@ module.exports = {
     }
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1.5rem',
+        sm: '2rem',
+      }
+    },
     extend: {
       opacity: {
         "3": ".03",
@@ -22,6 +29,9 @@ module.exports = {
         DEFAULT: '0 1px 2px 0 rgba(theme("colors.gray-800"),.325)',
         btn: '0 2px 6px 2px theme("colors.gray-200"), 0 3px 7px 1px theme("colors.green-100")',
         card: '0px 0px 1px rgba(81, 81, 81, 0.35), 0px 4px 10px rgba(81, 81, 81, 0.16);'
+      },
+      fontFamily: {
+        body: ["Montserrat", "system-ui", "-apple-system", "sans-serif"],
       },
       fontSize: {
         'xs': ['.75rem', '1rem'],
@@ -152,12 +162,6 @@ module.exports = {
       "yellow-900": "#b44d12",
       "yellow-1000": "#8d2b0b",
     },
-    fontFamily: {
-      body: ["Montserrat", "system-ui", "-apple-system", "sans-serif"],
-    },
-    container: (theme) => ({
-      center: true,
-    }),
   },
   plugins: [
     require("@tailwindcss/aspect-ratio"),

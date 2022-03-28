@@ -9,6 +9,7 @@
   right: 0;
   visibility: hidden;
   width: 100%;
+  padding: 1rem 0;
 }
 
 @media (min-width: 1280px) {
@@ -21,7 +22,7 @@
   @apply text-base !pb-2;
 }
 
-.has-submenu > ul.components p {
+.has-submenu > ul:where(.components) p {
   @apply text-sm;
 }
 

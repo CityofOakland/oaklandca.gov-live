@@ -27,7 +27,6 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: '*'
-      cleanupHtml: true
       columnType: mediumtext
       configSelectionMode: choose
       defaultTransform: ''

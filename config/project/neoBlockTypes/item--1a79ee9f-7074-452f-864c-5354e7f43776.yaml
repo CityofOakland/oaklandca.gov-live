@@ -25,6 +25,7 @@ fieldLayouts:
             width: 100
         name: Default
         sortOrder: 1
+group: null
 handle: item
 maxBlocks: 0
 maxChildBlocks: 0
