@@ -114,8 +114,8 @@
   display: inline-block;
   margin-left: .375rem;
   margin-bottom: .0625rem;
-  height: 16px;
-  width: 16px;
+  height: 1rem;
+  width: 1rem;
 }
 
 .button svg path {

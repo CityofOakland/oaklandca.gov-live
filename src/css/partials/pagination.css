@@ -24,8 +24,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 28px;
-  width: 28px;
+  height: 1.75rem;
+  width: 1.75rem;
   text-decoration: none;
 }
 
@@ -48,8 +48,8 @@
   background-size: 14px 14px;
   content: "";
   display: inline-block;
-  height: 25px;
-  width: 25px;
+  height: 1.5625rem;
+  width: 1.5625rem;
 }
 
 .pagination .prev::after {

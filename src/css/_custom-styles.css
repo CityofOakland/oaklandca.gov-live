@@ -127,8 +127,8 @@ button {
 /* PUSH MENU */
 #menu {
   @apply fixed top-0;
-  right: -300px;
-  width: 300px;
+  right: -18.75rem;
+  width: 18.75rem;
   transition: right .5s ease-out;
 }
 
@@ -154,10 +154,10 @@ body.open #menu {
       @apply absolute bg-no-repeat;
       background-image: url('/dist/img/icon-right-arrow.svg');
       content: "";
-      top: 10px;
-      right: -30px;
-      width: 59px;
-      height: 16px;
+      top: .625rem;
+      right: -1.875rem;
+      width: 3.6875rem;
+      height: 1rem;
     }
 
     &:last-of-type {
@@ -170,7 +170,7 @@ body.open #menu {
 
 body.open .page-holder {
   @apply overflow-hidden;
-  right: 300px;
+  right: 18.75rem;
 }
 
 .timeline-grid dt {
@@ -626,7 +626,7 @@ form[data-handle="whyWasThisPageHelpful"] {
   flex-shrink: 0;
   margin-top: .125rem;
   margin-right: .625rem;
-  width: 22.5px;
+  width: 1.40625rem;
 }
 
 .related > li svg path {
@@ -714,7 +714,6 @@ form[data-handle="whyWasThisPageHelpful"] {
 }
 
 #mobile-menu {
-  height: 60px;
   @apply h-[3.75rem] sm:h-16;
 }
 

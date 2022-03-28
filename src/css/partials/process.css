@@ -28,18 +28,18 @@
   margin-top: -.3125rem;
   margin-right: .625rem;
   padding-top: .0625rem;
-  height: 36px;
-  width: 36px;
+  height: 2.25rem;
+  width: 2.25rem;
 }
 
 .process > li::after {
   background: #e4e4e7;
   content: "";
   position: absolute;
-  top: 32px;
-  bottom: -28px;
-  width: 3px;
-  left: 16px;
+  top: 2rem;
+  bottom: -1.75rem;
+  width: .1875rem;
+  left: 1rem;
   z-index: -1;
 }
 
