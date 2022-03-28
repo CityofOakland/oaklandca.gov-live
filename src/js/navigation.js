@@ -80,3 +80,10 @@ Array.prototype.forEach.call(menuItems, function (el, i) {
     }
   });
 })
+
+// Accept HMR as per: https://vitejs.dev/guide/api-hmr.html
+if (import.meta.hot) {
+  import.meta.hot.accept(() => {
+    console.log("HMR")
+  });
+}
