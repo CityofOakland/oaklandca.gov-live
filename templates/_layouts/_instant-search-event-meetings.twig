@@ -15,8 +15,6 @@
 {% include "_css/algoliafilter.css" %}
 {% endcss %}
 
-{{ craft.vite.script("src/js/algoliafilter.js") }}
-
 {% if section is defined %}
   {% set relation = craft.entries.section(section).slug(slug).one() %}
   {% set bannerTitleSuffix = " for " ~ relation.title %}
@@ -24,6 +22,7 @@
 
 {% block content %}
   {% block pageBanner %}
+    {{ craft.vite.script("src/js/algoliafilter.js") }}
     {% include '_partials/_page-banners.twig' with {
       bannerTitle: entry.title | replace(' Index', '') ~ bannerTitleSuffix ?? '',
     } %}
