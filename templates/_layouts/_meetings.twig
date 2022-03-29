@@ -9,15 +9,33 @@
 {% extends '_content.twig' %}
 {% import '_macros/_macros' as macros %}
 
-{% block content %}
-
-  {% set status = 'default' %}
+{% set status = 'default' %}
   {% if entry.meetingStatus %}
     {% set status = entry.meetingStatus %}
   {% elseif entry.eventStatus %}
     {% set status = entry.eventStatus %}
   {% endif %}
 
+{% block title %}
+  <h1>{% if status and status.value and status.value !== 'default' and status.value !== 'active' %}{{ status.label }} - {% endif %}{{ entry.title }}</h1>
+  {% if entry.date %}
+    {% if now|date('Y-m-d') <= entry.date|date('Y-m-d') %}
+      {% if entry.type == 'meetings' %}
+        <div class="pt-4 lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} will be held on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
+      {% elseif entry.type == 'meetingsImported' %}
+        <div class="pt-4 lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} will be held on {{ entry.date|date("F j, Y") }}{{ entry.startDate ? " at " ~ entry.startDate|date("g:ia") : "" }}</div>
+      {% endif %}
+    {% else %}
+        {% if entry.type == 'meetings' %}
+          <div class="pt-4 lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} was held on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
+        {% elseif entry.type == 'meetingsImported' %}
+          <div class="pt-4 lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} was held on {{ entry.date|date("F j, Y") }}{{ entry.startDate ? " at " ~ entry.startDate|date("g:ia") : "" }}</div>
+        {% endif %}
+    {% endif %}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
   {% if status == 'canceled' %}
     {{ _self.callout('This meeting has been canceled.') }}
   {% elseif status == 'rescheduled' %}
