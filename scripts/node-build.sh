@@ -23,6 +23,6 @@ nvm use
 # https://docs.npmjs.com/cli/v8/commands/npm-ci
 npm ci
 
-# Builds the website assets and minifies them with Laravel Mix
-npx mix --production
+# Builds the website assets and minifies them with Vite
+npm run build
  
