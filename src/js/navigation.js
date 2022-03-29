@@ -3,6 +3,7 @@
 var menuItems       = document.querySelectorAll('.has-submenu, #mobile-navigation');
 var menuItemsHover  = document.querySelectorAll('.has-submenu:not(.click)');
 var menuItemsClick  = document.querySelectorAll('.has-submenu.click > a, #mobile-navigation > a');
+var menusResizable  = document.querySelectorAll('#main-navigation .has-submenu > ul');
 
 var menuItemClicked = false;
 
@@ -38,6 +39,22 @@ function toggleOverlay(){
   } else {
     document.querySelector('#topbar').classList.remove('state-active');
   }
+}
+
+function resizeMenus(){
+  var height = 0;
+
+  Array.prototype.forEach.call(menusResizable, function(el, i){
+    // Reset height
+    el.style.minHeight = "0px";
+    if(el.clientHeight > height) {
+      height = el.clientHeight;
+    }
+  });
+
+  Array.prototype.forEach.call(menusResizable, function(el, i){
+    el.style.minHeight = height + "px";
+  });
 }
 
 // Click
@@ -199,6 +216,13 @@ window.addEventListener('click', function(){
   closeOtherMenuItems();
   clearOverlay();
 });
+
+window.addEventListener('resize', function(){
+  console.log('resizing menus');
+  resizeMenus();
+})
+
+resizeMenus();
 
 // Accept HMR as per: https://vitejs.dev/guide/api-hmr.html
 if (import.meta.hot) {
