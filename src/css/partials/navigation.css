@@ -207,7 +207,7 @@ input[type="text"].form-control::placeholder {
 #navbar-dropdown-search {
   background: #f7c948;
   border-radius: 50%;
-  border: 0;
+  border: 0 !important;
   padding: 0;
   height: 36px;
   width: 36px;
