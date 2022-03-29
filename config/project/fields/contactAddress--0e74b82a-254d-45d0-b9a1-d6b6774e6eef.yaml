@@ -25,6 +25,7 @@ settings:
   layout: null
   mapOnSearch: noChange
   mapOnStart: close
+  requireCoordinates: true
   showMap: false
   subfieldConfig:
     __assoc__:

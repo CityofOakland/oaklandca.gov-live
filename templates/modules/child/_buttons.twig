@@ -12,11 +12,11 @@
 
       {% switch button.buttonColor %}
         {% case 'default' %}
-          {% set buttonClass = 'block p-8 py-5 text-lg font-bold text-green-800 no-underline bg-white border-l-4 border-green-600 rounded-sm text-gray-1000 shadow-btn trans trans-fast hover:text-white hover:underline hover:bg-green-1000' %}
+          {% set buttonClass = 'block p-8 py-5 text-lg font-bold text-green-800 no-underline bg-white border-l-4 border-green-600 rounded-sm text-gray-1000 shadow-btn transition-all duration-75 hover:text-white hover:underline hover:bg-green-1000' %}
         {% case 'green' %}
-          {% set buttonClass = 'block p-8 py-5 text-lg font-bold text-white no-underline bg-green-800 rounded-sm shadow-none trans trans-fast hover:text-white hover:underline hover:bg-green-1000' %}
+          {% set buttonClass = 'block p-8 py-5 text-lg font-bold text-white no-underline bg-green-800 rounded-sm shadow-none transition-all duration-75 hover:text-white hover:underline hover:bg-green-1000' %}
         {% default %}
-          {% set buttonClass = 'block p-8 py-5 text-lg font-bold text-green-800 no-underline bg-white border-l-4 border-green-600 rounded-sm text-gray-1000 shadow-btn trans trans-fast hover:text-white hover:underline hover:bg-green-1000' %}
+          {% set buttonClass = 'block p-8 py-5 text-lg font-bold text-green-800 no-underline bg-white border-l-4 border-green-600 rounded-sm text-gray-1000 shadow-btn transition-all duration-75 hover:text-white hover:underline hover:bg-green-1000' %}
       {% endswitch %}
 
       {% switch button.type %}

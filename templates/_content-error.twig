@@ -7,38 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{siteUrl}}assets/css/app.css">
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ siteUrl }}assets/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="{{ siteUrl }}assets/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ siteUrl }}assets/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ siteUrl }}assets/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ siteUrl }}assets/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ siteUrl }}assets/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ siteUrl }}assets/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ siteUrl }}assets/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ siteUrl }}assets/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="{{ siteUrl }}assets/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ siteUrl }}assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{ siteUrl }}assets/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ siteUrl }}assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="{{ siteUrl }}assets/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="{{ siteUrl }}assets/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    {% include "_components/partials/_favicons.twig" %}
+    {{ craft.vite.script("src/js/app.js", false) }}
   </head>
 
   <body class="overflow-x-hidden font-body {{ pageClass ?? '' }}">
     <div class="page-holder">
       {% include '_partials/_elements/_skip-to-content.twig' %}
-      <header class="bg-gray-1000 py-3 fill-current text-gray-100 px-4">
-        <div class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden">{{ svg('@webroot/assets/img/logo-oakland-tree.svg') }}</div>
-        <div class="w-40 h-10 oak-hidden sm:block">{{ svg('@webroot/assets/img/logo-oakland.svg') }}</div>
+      <header class="px-4 py-3 text-gray-100 fill-current bg-gray-1000">
+        <div class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden">{{ svg('@webroot/dist/img/logo-oakland-tree.svg') }}</div>
+        <div class="w-40 h-10 oak-hidden sm:block">{{ svg('@webroot/dist/img/logo-oakland.svg') }}</div>
       </header>
       <main id="content" style="padding-top:0;">
         <section>
           <div class="bg-transparent-oakland-roots">
             <div class="container" style="padding-top:1rem;padding-bottom:1rem;">
-              <div class="breadcrumbs relative flex flex-col items-start py-0 sm:justify-between sm:flex-row-reverse sm:items-center">
+              <div class="relative flex flex-col items-start py-0 breadcrumbs sm:justify-between sm:flex-row-reverse sm:items-center">
                 {% include "_partials/_elements/_banner-google-translate.twig" with {paddingTop: "pt-0 mb-4 md:mb-0"} %}
               </div>
             </div>
@@ -49,7 +33,7 @@
                 <div class="w-full lg:w-8/11">
                   {% block pageheader %}
                     <h1>Oaklandca.gov is currently experiencing technical difficulties</h1>
-                    <p class="lead pt-4">We are aware of the issue and working to resolve it.</p>
+                    <p class="pt-4 lead">We are aware of the issue and working to resolve it.</p>
                   {% endblock %}
                 </div>
               </div>
@@ -81,27 +65,27 @@
           </div>
         </section>
       </main>
-      <footer class="bg-gray-1000 py-3 fill-current text-gray-100 px-4 flex items-center justify-between">
+      <footer class="flex items-center justify-between px-4 py-3 text-gray-100 fill-current bg-gray-1000">
         <div>
-          <div class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden">{{ svg('@webroot/assets/img/logo-oakland-tree.svg') }}</div>
-          <div class="w-40 h-10 oak-hidden sm:block">{{ svg('@webroot/assets/img/logo-oakland.svg') }}</div>
+          <div class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden">{{ svg('@webroot/dist/img/logo-oakland-tree.svg') }}</div>
+          <div class="w-40 h-10 oak-hidden sm:block">{{ svg('@webroot/dist/img/logo-oakland.svg') }}</div>
         </div>
         <ul class="flex items-center my-0">
             <li class="ml-4">
-              <a href="https://www.facebook.com/oakland/" class="flex items-center justify-center w-10 h-10 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000">
-                {{ svg('@webroot/assets/img/logo-facebook.svg')|attr({class:'h-5'}) }}
+              <a href="https://www.facebook.com/oakland/" class="flex items-center justify-center w-10 h-10 transition-all duration-75 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 hover:text-gray-1000">
+                {{ svg('@webroot/dist/img/logo-facebook.svg')|attr({class:'h-5'}) }}
                 <span class="sr-only">Oakland Facebook Page</span>
               </a>
             </li>
             <li class="ml-4">
-              <a href="https://www.twitter.com/oakland" class="flex items-center justify-center w-10 h-10 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000">
-                {{ svg('@webroot/assets/img/logo-twitter.svg')|attr({class:'h-5'}) }}
+              <a href="https://www.twitter.com/oakland" class="flex items-center justify-center w-10 h-10 transition-all duration-75 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 hover:text-gray-1000">
+                {{ svg('@webroot/dist/img/logo-twitter.svg')|attr({class:'h-5'}) }}
                 <span class="sr-only">Oakland Twitter Page</span>
               </a>
             </li>
             <li class="ml-4">
-              <a href="https://www.instagram.com/oakland" class="flex items-center justify-center w-10 h-10 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000">
-                {{ svg('@webroot/assets/img/logo-instagram.svg')|attr({class:'h-5'}) }}
+              <a href="https://www.instagram.com/oakland" class="flex items-center justify-center w-10 h-10 transition-all duration-75 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 hover:text-gray-1000">
+                {{ svg('@webroot/dist/img/logo-instagram.svg')|attr({class:'h-5'}) }}
                 <span class="sr-only">Oakland Instagram Page</span>
               </a>
             </li>

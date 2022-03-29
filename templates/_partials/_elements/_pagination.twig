@@ -1,49 +1,73 @@
 {% if pageInfo.totalPages > 1 %}
-  {% spaceless %}
-    {% if pageInfo.totalPages > 7 %}
-      <ul class="pagination">
-        <li><a class="prev {{ pageInfo.currentPage == 1 ? 'disabled' : '' }}" href="{{ pageInfo.prevUrl }}">Previous</a></li>
-        {% if pageInfo.currentPage > 3 %}
-          <li><a class="page" href="{{ pageInfo.firstUrl }}">1</a></li>
-          <li>...</li>
-        {% endif %}
+	<nav aria-label="Pagination">
+		<ul class="pagination">
+			{% if pageInfo.totalPages > 7 %}
+				<li>
+					<a aria-label="Previous Page" class="prev {{ pageInfo.currentPage == 1 ? 'disabled' : '' }}" href="{{ pageInfo.prevUrl }}">Previous</a>
+				</li>
+				{% if pageInfo.currentPage > 3 %}
+					<li>
+						<a aria-label="Page 1" class="page" href="{{ pageInfo.firstUrl }}">1</a>
+					</li>
+					<li>…</li>
+				{% endif %}
 
-        {% for page, url in pageInfo.getPrevUrls(2) %}
-          <li><a class="page" href="{{ url }}">{{ page }}</a></li>
-        {% endfor %}
+				{% for page, url in pageInfo.getPrevUrls(2) %}
+					<li>
+						<a aria-label="Page {{ page }}" class="page" href="{{ url }}">{{ page }}</a>
+					</li>
+				{% endfor %}
 
-          <li><a class="page page-active" href="#">{{ pageInfo.currentPage }}</a></li>
+				<li>
+					<a aria-current="page" class="page page-active" href="#">{{ pageInfo.currentPage }}</a>
+				</li>
 
-        {% if pageInfo.currentPage < 3 %}
-          {% for page, url in pageInfo.getNextUrls(5 - pageInfo.currentPage) %}
-            <li><a class="page" href="{{ url }}">{{ page }}</a></li>
-          {% endfor %}
-        {% else %}
-          {% for page, url in pageInfo.getNextUrls(2) %}
-            <li><a class="page" href="{{ url }}">{{ page }}</a></li>
-          {% endfor %}
-        {% endif %}
+				{% if pageInfo.currentPage < 3 %}
+					{% for page, url in pageInfo.getNextUrls(5 - pageInfo.currentPage) %}
+						<li>
+							<a aria-label="Page {{ page }}" class="page" href="{{ url }}">{{ page }}</a>
+						</li>
+					{% endfor %}
+				{% else %}
+					{% for page, url in pageInfo.getNextUrls(2) %}
+						<li>
+							<a aria-label="Page {{ page }}" class="page" href="{{ url }}">{{ page }}</a>
+						</li>
+					{% endfor %}
+				{% endif %}
 
-        {% if pageInfo.currentPage < pageInfo.totalPages - 2 %}
-          <li>...</li>
-          <li><a class="page" href="{{ pageInfo.lastUrl }}">{{ pageInfo.totalPages }}</a></li>
-        {% endif %}
-        <li><a class="next {{ pageInfo.currentPage == pageInfo.totalPages ? 'disabled' : '' }}" href="{{ pageInfo.nextUrl }}">Next</a></li>
-      </ul>
-    {% else %}
-      <ul class="pagination">
-        <li><a class="prev {{ pageInfo.currentPage == 1 ? 'disabled' : '' }}" href="{{ pageInfo.prevUrl }}">Previous</a></li>
+				{% if pageInfo.currentPage < pageInfo.totalPages - 2 %}
+					<li>…</li>
+					<li>
+						<a aria-label="Page {{ pageInfo.totalPages }}" class="page" href="{{ pageInfo.lastUrl }}">{{ pageInfo.totalPages }}</a>
+					</li>
+				{% endif %}
+				<li>
+					<a aria-label="Next Page" class="next {{ pageInfo.currentPage == pageInfo.totalPages ? 'disabled' : '' }}" href="{{ pageInfo.nextUrl }}">Next</a>
+				</li>
+			{% else %}
+				<li>
+					<a aria-label="Previous Page" class="prev {{ pageInfo.currentPage == 1 ? 'disabled' : '' }}" href="{{ pageInfo.prevUrl }}">Previous</a>
+				</li>
 
-        {% for page, url in pageInfo.getPrevUrls(7) %}
-          <li><a class="page" href="{{ url }}">{{ page }}</a></li>
-        {% endfor %}
-          <li><a class="page page-active" href="#">{{ pageInfo.currentPage }}</a></li>
-        {% for page, url in pageInfo.getNextUrls(7) %}
-          <li><a class="page" href="{{ url }}">{{ page }}</a></li>
-        {% endfor %}
-        
-        <li><a class="next {{ pageInfo.currentPage == pageInfo.totalPages ? 'disabled' : '' }}" href="{{ pageInfo.nextUrl }}">Next</a></li>
-      </ul>
-    {% endif %}
-  {% endspaceless %}
+				{% for page, url in pageInfo.getPrevUrls(7) %}
+					<li>
+						<a aria-label="Page {{ page }}" class="page" href="{{ url }}">{{ page }}</a>
+					</li>
+				{% endfor %}
+				<li>
+					<a aria-current="page" class="page page-active" href="#">{{ pageInfo.currentPage }}</a>
+				</li>
+				{% for page, url in pageInfo.getNextUrls(7) %}
+					<li>
+						<a aria-label="Page {{ page }}" class="page" href="{{ url }}">{{ page }}</a>
+					</li>
+				{% endfor %}
+
+				<li>
+					<a aria-label="Next Page" class="next {{ pageInfo.currentPage == pageInfo.totalPages ? 'disabled' : '' }}" href="{{ pageInfo.nextUrl }}">Next</a>
+				</li>
+			{% endif %}
+		</ul>
+	</nav>
 {% endif %}
