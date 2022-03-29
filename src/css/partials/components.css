@@ -109,10 +109,6 @@
   margin-bottom: 0;
 }
 
-.:where(components-format) h2 {
-  padding-top: 1.5em;
-}
-
 :where(.components) h3 {
   @apply text-xl md:text-2xl;
   font-weight: 700;
@@ -120,7 +116,11 @@
   margin-bottom: 0;
 }
 
-.:where(components-format) h3 {
+:where(.components-format) h2 {
+  padding-top: 1.5em;
+}
+
+:where(.components-format) h3 {
   padding-top: 1.5em;
 }
 
@@ -131,11 +131,11 @@
   margin-bottom: 0;
 }
 
-.:where(components-format) h4 {
+:where(.components-format) h4 {
   padding-top: 1.5em;
 }
 
-.:where(components-format) h5 {
+:where(.components-format) h5 {
   padding-top: 1.5em;
 }
 
@@ -144,13 +144,13 @@
   opacity: 0;
 }
 
-:where(.components) hr + h1,
-:where(.components) hr + h2,
-:where(.components) hr + h3,
-:where(.components) hr + h4,
-:where(.components) hr + h5,
-:where(.components) hr + h6 {
-  padding-top: 0;
+:where(.components hr) + h1,
+:where(.components hr) + h2,
+:where(.components hr) + h3,
+:where(.components hr) + h4,
+:where(.components hr) + h5,
+:where(.components hr) + h6 {
+  margin-top: 0;
 }
 
 :where(.components) .callout {
@@ -174,12 +174,6 @@
   }
   & a:hover {
     text-decoration: none;
-  }
-  & p {
-    padding-top: 0.5rem;
-    &:first-child {
-      padding-top: 0;
-    }
   }
 
   & svg {
@@ -229,25 +223,25 @@
   margin-bottom: 0;
 }
 
-.:where(components-format) p,
-.:where(components-format) ol,
-.:where(components-format) ul {
+:where(.components-format) p,
+:where(.components-format) ol,
+:where(.components-format) ul {
   padding-top: 1em;
 }
 
-.:where(components-format) ol ul,
-.:where(components-format) ol ol,
-.:where(components-format) ul ul,
-.:where(components-format) ul ol {
+:where(.components-format) ol ul,
+:where(.components-format) ol ol,
+:where(.components-format) ul ul,
+:where(.components-format) ul ol {
   padding-top: 0;
 }
 
-.:where(components-format) a {
+:where(.components-format) a {
   text-decoration: underline;
 }
 
-.:where(components-format) a:hover,
-.:where(components-format) a:focus {
+:where(.components-format) a:hover,
+:where(.components-format) a:focus {
   text-decoration: none;
 }
 
@@ -261,7 +255,7 @@
   list-style-type: auto;
 }
 
-.:where(components-format) > figure {
+:where(.components-format) > figure {
   margin-top: 1.5rem;
 }
 
@@ -362,94 +356,82 @@
   }
 }
 
-.:where(components-format) > h1:first-child,
-.:where(components-format) > h2:first-child,
-.:where(components-format) > h3:first-child,
-.:where(components-format) > h4:first-child,
-.:where(components-format) > h5:first-child,
-.:where(components-format) > h6:first-child,
-.:where(components-format) > p:first-child,
-.:where(components-format) > ul:first-child,
-.:where(components-format) > ol:first-child,
-.:where(components-format) > table:first-child {
+:where(.components-format) > h1:first-child,
+:where(.components-format) > h2:first-child,
+:where(.components-format) > h3:first-child,
+:where(.components-format) > h4:first-child,
+:where(.components-format) > h5:first-child,
+:where(.components-format) > h6:first-child,
+:where(.components-format) > p:first-child,
+:where(.components-format) > ul:first-child,
+:where(.components-format) > ol:first-child,
+:where(.components-format) > table:first-child {
   margin-top: 0;
   padding-top: 0;
 }
 
-.:where(components-format) > blockquote:first-child {
+:where(.components-format) > blockquote:first-child {
   margin-top: 0;
 }
 
-#components-sidebar > hr {
-  border-top: 2px solid #212121;
-  margin-top: 2rem;
-  opacity: 1;
-}
+:where(#components-sidebar) {
+  & > hr {
+    @apply mt-12 first:mt-0;
+    border-top: 2px solid #212121;
+    opacity: 1;
 
-#components-sidebar > hr.light {
-  border-top: 1px solid #e1e1e1;
-}
+    &.light {
+      @apply mt-8;
+      border-top: 1px solid #e1e1e1;
+    }
+  }
 
-#components-sidebar > hr:not(:first-child) {
-  margin-top: 1.25em;
-}
+  & > h1,
+  & > h2,
+  & > h3,
+  & > h4 {
+    margin-top: 1rem;
+  }
+  
+  & > h4 {
+    @apply mb-10;
+  }
 
-#components-sidebar > hr:first-child {
-  margin-top: 0;
-}
+  & label {
+    @apply text-base pt-6 md:pt-[1.125rem];
+    display: block;
+    font-weight: 700;
+    padding-top: 24px;
+  }
 
-#components-sidebar > h1,
-#components-sidebar > h2,
-#components-sidebar > h3,
-#components-sidebar > h4 {
-  padding-top: 16px;
-}
+  & input,
+  & select {
+    @apply mt-2;
+  }
 
-#components-sidebar label {
-  @apply text-base pt-6 md:pt-[1.125rem];
-  display: block;
-  font-weight: 700;
-  padding-top: 24px;
-}
+  & .button {
+    margin-bottom: 0;
+  }
 
-#components-sidebar input,
-#components-sidebar select {
-  margin-top: 8px;
-}
+  & #search {
+    @apply relative;
 
-#components-sidebar .button {
-  margin-bottom: 0;
-}
+    &::before {
+      background-image: url('/dist/img/icon-search.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      content: "";
+      display: block;
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+    }
 
-#components-sidebar #search {
-  position: relative;
-}
-
-#components-sidebar #search::before {
-  background-image: url('/dist/img/icon-search.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  content: "";
-  display: block;
-  height: 20px;
-  width: 20px;
-  position: absolute;
-  top: 50%;
-  left: 1rem;
-  transform: translateY(-50%);
-}
-
-#components-sidebar #search > input {
-  padding-left: 3rem;
-}
-
-#components-sidebar > hr:not(:first-child) {
-  margin-top: 2em;
-}
-
-#components-sidebar > h1,
-#components-sidebar > h2,
-#components-sidebar > h3,
-#components-sidebar > h4 {
-  padding-top: 1em;
+    & > input {
+      @apply pl-12;
+    }
+  }
 }

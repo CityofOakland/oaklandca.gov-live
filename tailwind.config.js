@@ -26,9 +26,8 @@ module.exports = {
         "66": ".66",
       },
       boxShadow: {
-        DEFAULT: '0 1px 2px 0 rgba(theme("colors.gray-800"),.325)',
-        btn: '0 2px 6px 2px theme("colors.gray-200"), 0 3px 7px 1px theme("colors.green-100")',
-        card: '0px 0px 1px rgba(81, 81, 81, 0.35), 0px 4px 10px rgba(81, 81, 81, 0.16);'
+        DEFAULT: '0px 0px 1px rgba(81, 81, 81, 0.35), 0px 4px 10px rgba(81, 81, 81, 0.16)',
+        btn: '0 2px 6px 2px theme("colors.gray-200"), 0 3px 7px 1px theme("colors.green-100")'
       },
       fontFamily: {
         body: ["Montserrat", "system-ui", "-apple-system", "sans-serif"],
