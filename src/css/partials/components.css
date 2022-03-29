@@ -109,7 +109,7 @@
   margin-bottom: 0;
 }
 
-.components-format h2 {
+.:where(components-format) h2 {
   padding-top: 1.5em;
 }
 
@@ -120,7 +120,7 @@
   margin-bottom: 0;
 }
 
-.components-format h3 {
+.:where(components-format) h3 {
   padding-top: 1.5em;
 }
 
@@ -131,11 +131,11 @@
   margin-bottom: 0;
 }
 
-.components-format h4 {
+.:where(components-format) h4 {
   padding-top: 1.5em;
 }
 
-.components-format h5 {
+.:where(components-format) h5 {
   padding-top: 1.5em;
 }
 
@@ -229,25 +229,25 @@
   margin-bottom: 0;
 }
 
-.components-format p,
-.components-format ol,
-.components-format ul {
+.:where(components-format) p,
+.:where(components-format) ol,
+.:where(components-format) ul {
   padding-top: 1em;
 }
 
-.components-format ol ul,
-.components-format ol ol,
-.components-format ul ul,
-.components-format ul ol {
+.:where(components-format) ol ul,
+.:where(components-format) ol ol,
+.:where(components-format) ul ul,
+.:where(components-format) ul ol {
   padding-top: 0;
 }
 
-.components-format a {
+.:where(components-format) a {
   text-decoration: underline;
 }
 
-.components-format a:hover,
-.components-format a:focus {
+.:where(components-format) a:hover,
+.:where(components-format) a:focus {
   text-decoration: none;
 }
 
@@ -261,7 +261,7 @@
   list-style-type: auto;
 }
 
-.components-format > figure {
+.:where(components-format) > figure {
   margin-top: 1.5rem;
 }
 
@@ -362,21 +362,21 @@
   }
 }
 
-.components-format > h1:first-child,
-.components-format > h2:first-child,
-.components-format > h3:first-child,
-.components-format > h4:first-child,
-.components-format > h5:first-child,
-.components-format > h6:first-child,
-.components-format > p:first-child,
-.components-format > ul:first-child,
-.components-format > ol:first-child,
-.components-format > table:first-child {
+.:where(components-format) > h1:first-child,
+.:where(components-format) > h2:first-child,
+.:where(components-format) > h3:first-child,
+.:where(components-format) > h4:first-child,
+.:where(components-format) > h5:first-child,
+.:where(components-format) > h6:first-child,
+.:where(components-format) > p:first-child,
+.:where(components-format) > ul:first-child,
+.:where(components-format) > ol:first-child,
+.:where(components-format) > table:first-child {
   margin-top: 0;
   padding-top: 0;
 }
 
-.components-format > blockquote:first-child {
+.:where(components-format) > blockquote:first-child {
   margin-top: 0;
 }
 
