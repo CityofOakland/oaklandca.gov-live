@@ -2,7 +2,7 @@
 {% set heading     = heading is defined ? heading : block.header %}
 {% set description = description is defined ? description : block.description %}
 
-<blockquote class="callout {{ callOutType }}">
+<blockquote class="callout first:mt-0 first:mb-14 {{ callOutType }}">
 	{% switch callOutType %}
 		{% case 'info' %}
 		{{ svg( '@webroot/dist/img/icon-info.svg') }}
@@ -11,7 +11,7 @@
 		{% default %}
 		{{ svg( '@webroot/dist/img/icon-info.svg') }}
 	{% endswitch %}
-	<div>
+	<div class="space-y-5">
 		<p><b>{{ heading|raw }}</b></p>
 		{{ description|raw }}
 	</div>
