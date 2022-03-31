@@ -1,13 +1,13 @@
-:where(.components) form {
+.components form {
   @apply text-base leading-normal;
 }
 
-:where(.components form) label {
+.components form label {
   @apply text-sm leading-normal;
   margin-bottom: .5rem;
 }
 
-:where(.components form) button:not(.button) {
+.components form button:not(.button) {
   @apply text-base leading-tight;
   background: white;
   border: 2px solid #207127;
@@ -21,31 +21,31 @@
   text-decoration: none;
 }
 
-:where(.components form) button:not(.button):hover {
+.components form button:not(.button):hover {
   border-color: #0d5713;
   color: #0d5713;
 }
 
-:where(.components form) button:not(.button):active {
+.components form button:not(.button):active {
   border-color: #04400a;
   color: #04400a;
 }
 
-:where(.components form) textarea {
+.components form textarea {
   color: #222222;
   padding: .5rem;
 }
 
-:where(.components) input,
-:where(.components) select {
+.components input,
+.components select {
   @apply text-sm leading-tight;
   background: white;
   color: #6b7280;
   margin-top: .75rem;
 }
 
-:where(.components) input[type="month"],
-:where(.components) input[type="text"] {
+.components input[type="month"],
+.components input[type="text"] {
   border: 1px solid #cfcfcf;
   border-radius: 4px;
   color: black;
@@ -53,46 +53,55 @@
   width: 100%;
 }
 
-:where(.components) input[type="text"]::placeholder {
+.components input[type="text"]::placeholder {
   color: #6b7280;
 }
 
-:where(.components) select {
+.components select {
+  @apply appearance-none z-0;
   border: 1px solid #cfcfcf;
   border-radius: 4px;
   padding: .75rem 1rem;
   width: 100%;
+  position: relative;
+  background-image: url('/dist/img/icon-caret-down.svg');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
 }
 
-:where(.components) table {
+.components table {
   @apply text-sm leading-tight md:text-base md:leading-tight;
   margin-top: 1.5rem;
   width: 100%;
 }
 
-:where(.components table) caption {
-  padding: .5rem;
+.components table caption {
+  padding: 8px;
   text-align: left;
 }
 
-:where(.components) tbody {
-  border-top: .0625rem solid black;
+.components tbody {
+  border-top: 1px solid black;
 }
 
-:where(.components tbody) tr {
-  border-bottom: .0625rem solid black;
+.components tbody tr {
+  border-bottom: 1px solid black;
 }
 
-:where(.components) th {
+.components th {
   background: #f5f5f5;
   border-bottom: .0625rem solid black;
   padding: .9375rem;
   text-align: left;
 }
 
-:where(.components) td {
-  padding: .9375rem;
+.components td {
+  padding: 15px;
   word-break: break-word;
+  & > *:first-child {
+    padding-top: 0;
+    margin-top: 0;
+  }
 }
 
 :where(.components) h1 {
@@ -120,8 +129,12 @@
   margin-bottom: 0;
 }
 
-.components-format h3 {
-  padding-top: 1.5rem;
+:where(.components-format) h2 {
+  margin-top: 1.5em;
+}
+
+:where(.components-format) h3 {
+  margin-top: 1.5em;
 }
 
 :where(.components) h4 {
@@ -131,12 +144,12 @@
   margin-bottom: 0;
 }
 
-.components-format h4 {
-  padding-top: 1.5rem;
+:where(.components-format) h4 {
+  padding-top: 1.5em;
 }
 
-.components-format h5 {
-  padding-top: 1.5rem;
+:where(.components-format) h5 {
+  padding-top: 1.5em;
 }
 
 :where(.components) hr {
@@ -144,12 +157,13 @@
   opacity: 0;
 }
 
-:where(.components) hr + h1,
-:where(.components) hr + h2,
-:where(.components) hr + h3,
-:where(.components) hr + h4,
-:where(.components) hr + h5,
-:where(.components) hr + h6 {
+:where(.components hr) + h1,
+:where(.components hr) + h2,
+:where(.components hr) + h3,
+:where(.components hr) + h4,
+:where(.components hr) + h5,
+:where(.components hr) + h6 {
+  margin-top: 0;
   padding-top: 0;
 }
 
@@ -229,25 +243,25 @@
   margin-bottom: 0;
 }
 
-.components-format p,
-.components-format ol,
-.components-format ul {
-  padding-top: 1rem;
+:where(.components-format) p,
+:where(.components-format) ol,
+:where(.components-format) ul {
+  margin-top: 1em;
 }
 
-.components-format ol ul,
-.components-format ol ol,
-.components-format ul ul,
-.components-format ul ol {
+:where(.components-format) ol ul,
+:where(.components-format) ol ol,
+:where(.components-format) ul ul,
+:where(.components-format) ul ol {
   padding-top: 0;
 }
 
-.components-format a {
+:where(.components-format) a {
   text-decoration: underline;
 }
 
-.components-format a:hover,
-.components-format a:focus {
+:where(.components-format) a:hover,
+:where(.components-format) a:focus {
   text-decoration: none;
 }
 
@@ -261,7 +275,7 @@
   list-style-type: auto;
 }
 
-.components-format > figure {
+:where(.components-format) > figure {
   margin-top: 1.5rem;
 }
 
@@ -362,73 +376,70 @@
   }
 }
 
-.components-format > h1:first-child,
-.components-format > h2:first-child,
-.components-format > h3:first-child,
-.components-format > h4:first-child,
-.components-format > h5:first-child,
-.components-format > h6:first-child,
-.components-format > p:first-child,
-.components-format > ul:first-child,
-.components-format > ol:first-child,
-.components-format > table:first-child {
+:where(.components-format) > h1:first-child,
+:where(.components-format) > h2:first-child,
+:where(.components-format) > h3:first-child,
+:where(.components-format) > h4:first-child,
+:where(.components-format) > h5:first-child,
+:where(.components-format) > h6:first-child,
+:where(.components-format) > p:first-child,
+:where(.components-format) > ul:first-child,
+:where(.components-format) > ol:first-child,
+:where(.components-format) > table:first-child {
   margin-top: 0;
   padding-top: 0;
 }
 
-.components-format > blockquote:first-child {
+:where(.components-format) > blockquote:first-child {
   margin-top: 0;
 }
 
-#components-sidebar > hr {
-  border-top: .125rem solid #212121;
-  margin-top: 2rem;
+:where(#components-sidebar) > hr {
+  @apply mt-12 first:mt-0;
+  border-top: 2px solid #212121;
   opacity: 1;
 }
 
-#components-sidebar > hr.light {
+:where(#components-sidebar) > hr.light {
+  @apply mt-8;
   border-top: .0625rem solid #e1e1e1;
 }
 
-#components-sidebar > hr:not(:first-child) {
-  margin-top: 1.25rem;
+:where(#components-sidebar) > h1,
+:where(#components-sidebar) > h2,
+:where(#components-sidebar) > h3,
+:where(#components-sidebar) > h4 {
+  margin-top: 1rem;
 }
 
-#components-sidebar > hr:first-child {
-  margin-top: 0;
-}
-
-#components-sidebar > h1,
-#components-sidebar > h2,
-#components-sidebar > h3,
-#components-sidebar > h4 {
-  padding-top: 1rem;
+:where(#components-sidebar) > h4 {
+  margin-bottom: 2rem;
 }
 
 #components-sidebar label {
-  @apply text-base pt-6 md:pt-[1.125rem];
+  @apply text-base mt-6 md:mt-[1.125rem];
   display: block;
   font-weight: 700;
-  padding-top: 1.5rem;
 }
 
 #components-sidebar input,
 #components-sidebar select {
-  margin-top: .5rem;
+  @apply mt-2;
 }
 
 #components-sidebar .button {
-  margin-bottom: 0;
+  @apply mb-0;
 }
 
 #components-sidebar #search {
-  position: relative;
+  @apply relative pl-10;
+  background-image: url('/dist/img/icon-search.svg');
+  background-repeat: no-repeat;
+  background-position: left 1rem center;
+  background-size: 1rem 1rem;
 }
 
 #components-sidebar #search::before {
-  background-image: url('/dist/img/icon-search.svg');
-  background-repeat: no-repeat;
-  background-position: center;
   content: "";
   display: block;
   height: 1.25rem;
@@ -440,16 +451,5 @@
 }
 
 #components-sidebar #search > input {
-  padding-left: 3rem;
-}
-
-#components-sidebar > hr:not(:first-child) {
-  margin-top: 2rem;
-}
-
-#components-sidebar > h1,
-#components-sidebar > h2,
-#components-sidebar > h3,
-#components-sidebar > h4 {
-  padding-top: 1rem;
+  @apply pl-12;
 }

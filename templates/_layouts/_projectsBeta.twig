@@ -29,11 +29,10 @@
 {% set socialMediaTrue = entry.facebook or entry.twitter or entry.medium or entry.instagram or entry.youtube %}
 {% set contactTrue = emailTrue or phoneTrue or teamsTrue or socialMediaTrue %}
 
-{% if photosTrue or mapTrue %}
-  {{ craft.vite.script("src/js/lightgallery.js") }}
-{% endif %}
-
 {% block content %}
+  {% if photosTrue or mapTrue %}
+    {{ craft.vite.script("src/js/lightgallery.js") }}
+  {% endif %}
   {%- set headerSubContent -%}
     <div class="mt-4 md:mt-0">
     {% if entry.projectStatus %}

@@ -1,15 +1,13 @@
 .pagination {
-  @apply text-base;
-  display: flex;
-  align-items: center;
-  margin-left: -.625rem;
-  padding: 0 !important;
+  @apply text-base items-stretch flex gap-2 p-0;
+  /* margin-left: -10px;
+  padding: 0 !important; */
 }
 
 .pagination > li {
   display: flex;
   align-items: center;
-  margin: 0 .25rem;
+  /* margin: 0 4px; */
 }
 
 .pagination .disabled {
@@ -40,6 +38,13 @@
   @apply text-[0];
 }
 
+.pagination .next,
+.pagination .prev {
+  @apply relative;
+  height: 28px;
+  width: 28px;
+}
+
 .pagination .next::after,
 .pagination .prev::after {
   background-image: url('/dist/img/icon-arrow-green.svg');
@@ -48,8 +53,8 @@
   background-size: 14px 14px;
   content: "";
   display: inline-block;
-  height: 1.5625rem;
-  width: 1.5625rem;
+  height: 100%;
+  width: 100%;
 }
 
 .pagination .prev::after {
