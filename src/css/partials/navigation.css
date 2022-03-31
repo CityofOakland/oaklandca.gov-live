@@ -12,12 +12,6 @@
   padding: 1rem 0;
 }
 
-@media (min-width: 1280px) {
-  .has-submenu > ul {
-    top: 83px;
-  }
-}
-
 .has-submenu > ul.components h4 {
   @apply text-base !pb-2;
 }
@@ -57,8 +51,6 @@
   background: transparent;
   display: flex;
   align-items: center;
-  margin-top: -20px;
-  margin-bottom: -20px;
   padding-top: 31px;
   padding-bottom: 31px;
   position: relative;
