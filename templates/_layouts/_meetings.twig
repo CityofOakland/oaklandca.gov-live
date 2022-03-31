@@ -18,38 +18,42 @@
 		{% set status = entry.eventStatus %}
 	{% endif %}
 
-	{% if status == 'canceled' %}
-		{{ _self.callout('This meeting has been canceled.') }}
-	{% elseif status == 'rescheduled' %}
-		{% if entry.relatedMeeting|length %}
-			{% if entry.relatedMeeting.one().date %}
-				{{ _self.callout('This meeting was rescheduled for <a style="font-weight:400;" href="' ~ entry.relatedMeeting.one().url ~ '">' ~ entry.relatedMeeting.one().date|date('F j, Y') ~ '</a>.') }}
-			{% else %}
-				{{ _self.callout('This meeting was <a style="font-weight:400;" href="' ~ entry.relatedMeeting.one().url ~ '">rescheduled</a>.') }}
-			{% endif %}
-		{% else %}
-			{{ _self.callout('This meeting was rescheduled.') }}
-		{% endif %}
-	{% elseif status == 'special' %}
-		{{ _self.callout('This is a special meeting of the ' ~ entry.relatedBoardOrCommission.one().title) }}
-	{% endif %}
+  {% if status != "default" %}
+    <div>
+      {% if status == 'canceled' %}
+        {{ _self.callout('This meeting has been canceled.') }}
+      {% elseif status == 'rescheduled' %}
+        {% if entry.relatedMeeting|length %}
+          {% if entry.relatedMeeting.one().date %}
+            {{ _self.callout('This meeting was rescheduled for <a style="font-weight:400;" href="' ~ entry.relatedMeeting.one().url ~ '">' ~ entry.relatedMeeting.one().date|date('F j, Y') ~ '</a>.') }}
+          {% else %}
+            {{ _self.callout('This meeting was <a style="font-weight:400;" href="' ~ entry.relatedMeeting.one().url ~ '">rescheduled</a>.') }}
+          {% endif %}
+        {% else %}
+          {{ _self.callout('This meeting was rescheduled.') }}
+        {% endif %}
+      {% elseif status == 'special' %}
+        {{ _self.callout('This is a special meeting of the ' ~ entry.relatedBoardOrCommission.one().title) }}
+      {% endif %}
 
-	{% set status = entry.meetingStatus ? entry.meetingStatus : entry.eventStatus %}
-	{% if status.value !== 'canceled' and status.value !== 'rescheduled' %}
-		{% if entry.addresses and entry.addresses.type('onlineLocation')|length and not entry.addresses.type('location')|length  %}
-			{% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
-				{{ _self.callout('This meeting was held virtually and not in person.') }}
-			{% else %}
-				{{ _self.callout('This meeting will be held virtually and not in person.') }}
-			{% endif %}
-		{% elseif entry.eventLocation and entry.eventLocation.type('onlineLocation')|length and not entry.eventLocation.type('physicalLocation')|length  %}
-			{% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
-				{{ _self.callout('This meeting was held virtually and not in person.') }}
-			{% else %}
-				{{ _self.callout('This meeting will be held virtually and not in person.') }}
-			{% endif %}
-		{% endif %}
-	{% endif %}
+      {% set status = entry.meetingStatus ? entry.meetingStatus : entry.eventStatus %}
+      {% if status.value !== 'canceled' and status.value !== 'rescheduled' %}
+        {% if entry.addresses and entry.addresses.type('onlineLocation')|length and not entry.addresses.type('location')|length  %}
+          {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
+            {{ _self.callout('This meeting was held virtually and not in person.') }}
+          {% else %}
+            {{ _self.callout('This meeting will be held virtually and not in person.') }}
+          {% endif %}
+        {% elseif entry.eventLocation and entry.eventLocation.type('onlineLocation')|length and not entry.eventLocation.type('physicalLocation')|length  %}
+          {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
+            {{ _self.callout('This meeting was held virtually and not in person.') }}
+          {% else %}
+            {{ _self.callout('This meeting will be held virtually and not in person.') }}
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    </div>
+  {% endif %}
 
 	{# Details #}
 	{% if entry.mainContent %}
@@ -65,7 +69,7 @@
 	{% if entry.date and now|date('Y-m-d') > entry.date|date('Y-m-d') %}
 		{% if entry.documentFile|length %}
 			<h2 class="mt-10 mb-8 first:mt-0 md:mt-14">Minutes</h2>
-			<ul class="mt-0 mt-4 ul-icons related">
+			<ul class="mt-4 ul-icons related">
 				{% for document in entry.documentFile.all() %}
 					<li>
 						<a href="{{ document.url }}">
@@ -161,7 +165,7 @@
 
 	{% if entry.type == 'meetingsImported' and agendas and agendas|length %}
 		<h2 class="mt-10 mb-8 first:mt-0 md:mt-14">Agenda</h2>
-		<ul class="mt-4 ul-icons related">
+		<ul class="pt-0 mt-4 ul-icons related">
 			{% for agenda in agendas.all() %}
 				<li>
 					<a href="{{ agenda.documentFile.one().url }}">
@@ -174,7 +178,7 @@
 	{% if entry.agendaDownloadableCopy|length or entry.agendaTopics|length %}
 		<h2 class="mt-10 mb-8 first:mt-0 md:mt-14">Agenda</h2>
 		{% if entry.agendaDownloadableCopy|length %}
-			<ul class="mt-4 ul-icons related">
+      <ul class="pt-0 mt-4 ul-icons related">
 				<li>
 					<a href="{{ entry.agendaDownloadableCopy.one().url }}">
             {{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Agenda - {{ entry.date|date("m/d/Y") }}
@@ -191,7 +195,7 @@
 							<span class="font-bold">{{ item.topic }}</span>
 							{{ item.description }}
 							{% if item.relatedDocuments|length %}
-								<ul class="mt-4 ul-icons related">
+								<ul class="!pt-0 mt-4 ul-icons related">
 									{% for document in item.relatedDocuments.all() %}
 										<li>
 											<a href="{{ document.url }}">
