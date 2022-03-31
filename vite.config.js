@@ -1,7 +1,7 @@
 import { defineConfig, loadEnv } from 'vite'
 import legacy from '@vitejs/plugin-legacy'
 import ViteRestart from 'vite-plugin-restart';
-import critical from 'rollup-plugin-critical';
+// import critical from 'rollup-plugin-critical';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -30,15 +30,15 @@ export default defineConfig(({ command, mode }) => {
           'templates/**/*',
         ],
       }),
-      critical({
-        criticalUrl: env.VITE_URL,
-        criticalBase: './web/dist/',
-        criticalPages: [
-          { uri: '', template: 'index' },
-        ],
-        criticalConfig: {
-        },
-      }),
+      // critical({
+      //   criticalUrl: env.VITE_URL,
+      //   criticalBase: './web/dist/',
+      //   criticalPages: [
+      //     { uri: '', template: 'index' },
+      //   ],
+      //   criticalConfig: {
+      //   },
+      // }),
     ],
     server: {
       origin: 'http://localhost:3000',
