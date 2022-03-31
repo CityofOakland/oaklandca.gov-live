@@ -57,7 +57,7 @@
 
 	{# Details #}
 	{% if entry.mainContent %}
-		<div>{{ entry.mainContent }}</div>
+		<div class="main-content">{{ entry.mainContent }}</div>
 	{% endif %}
 
 	{% set minuteCat = craft.categories.group('documentTypes').id(12).one() %}

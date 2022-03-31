@@ -135,7 +135,7 @@
 {% macro select(label, id, name, options, defaultOption) %}
   <label for="{{ id }}">
     {{ label }}
-    <select name="{{ name }}">
+    <select class="shadow-form" name="{{ name }}">
       {% if defaultOption %}
         <option value="">{{ defaultOption }}</option>
       {% endif %}
@@ -151,7 +151,7 @@
 {% macro textInput(label, id, name, placeholder) %}
   <label for="{{ id }}">
     {{ label }}
-    <input id="{{ id }}" name="{{ name }}" type="text" placeholder="{{ placeholder }}" value="{{ craft.app.request.getQueryParam(name) ?? craft.app.request.getQueryParam(name) }}">
+    <input class="shadow-form" id="{{ id }}" name="{{ name }}" type="text" placeholder="{{ placeholder }}" value="{{ craft.app.request.getQueryParam(name) ?? craft.app.request.getQueryParam(name) }}">
   </label>
 {% endmacro %}
 
