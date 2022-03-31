@@ -1589,3 +1589,11 @@ import '/src/css/lightgallery/lg-fb-comment-box.css'
 
 },{"./lg-utils":1}]},{},[2])(2)
 });
+
+// Accept HMR as per: https://vitejs.dev/guide/api-hmr.html
+if (import.meta.hot) {
+    import.meta.hot.accept(() => {
+      console.log("HMR")
+    });
+  }
+  
