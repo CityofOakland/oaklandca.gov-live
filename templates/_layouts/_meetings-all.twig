@@ -69,7 +69,7 @@
   <div class="mt-8">
     {% if meetings|length %}
       {% for meeting in meetings %}
-        <div class="result pb-6" style="margin-bottom:1rem;">
+        <div class="pb-6 result" style="margin-bottom:1rem;">
           <h3 style="padding-top: 0;">
             <a href="{{ meeting.url }}">{{ meeting.title }}</a>
             {% switch meeting.meetingStatus %}
@@ -83,10 +83,10 @@
             {% endswitch %}
           </h3>
           {% if meeting.date %}<p><b>{{ meeting.date|date("l, F j, Y") }}</b></p>{% endif %}
-            <div class="md:flex items-center justify-between">
+            <div class="items-center justify-between md:flex">
               {% if meeting.type == 'meetings' and meeting.startTime %}<p class="flex items-center">{{ svg( '@webroot/dist/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startTime|date("g:ia") }}{{ meeting.endTime ? " to " ~ meeting.endTime|date("g:ia") : '' }}</span></p>{% endif %}
               {% if meeting.type == 'meetingsImported' and meeting.startDate %}<p class="flex items-center">{{ svg( '@webroot/dist/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startDate|date("g:ia") }}{{ meeting.endDate ? " to " ~ meeting.endDate|date("g:ia") : '' }}</span></p>{% endif %}
-              <ul class="md:flex items-center related" style="list-style:none;padding:0;">
+              <ul class="items-center md:flex related" style="list-style:none;padding:0;">
                 {% if meeting.agendaDownloadableCopy|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/dist/img/icon-pdf-updated.svg') }}<span class="ml-2">Agenda</span></a></li>{% endif %}
                 {% if meeting.documentFile|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.documentFile.one().url }}">{{ svg( '@webroot/dist/img/icon-pdf-updated.svg') }}<span class="ml-2">Minutes</span></a></li>{% endif %}
                 {% if meeting.embeds|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.url }}#recordings">{{ svg( '@webroot/dist/img/icon-recording.svg') }}<span class="ml-2">Recording</span></a></li>{% endif %}
@@ -162,7 +162,7 @@
 {% block sidebar %}
   <hr class="hidden lg:block"/>
   <div class="mt-2 md:mt-0"></div>
-  <h4>{{ 'Search and Filter'|t }}</h4>
+  <h4 class="py-0 mt-4 mb-6">{{ 'Search and Filter'|t }}</h4>
   <form action="{{ entry.url }}">
     {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
     {{ macros.select('Public Body', 'public_body', 'public_body', craft.entries().section('boardsCommissions').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a Council, Board or Commission') }}
@@ -182,7 +182,7 @@
   </form>
   <hr/>
   <div class="hidden lg:block">
-    <h4>{{ 'Learn More About Public Bodies'|t }}</h4>
+    <h4 class="py-0 mt-4">{{ 'Learn More About Public Bodies'|t }}</h4>
     <div class="pt-2">
       <p><a href="{{siteUrl}}boards-commissions">Boards & Commissions</a></p>
       <p><a href="{{siteUrl}}departments/oakland-city-council">City Council</a></p>

@@ -44,6 +44,7 @@ fields:
       layout: null
       mapOnSearch: open
       mapOnStart: default
+      requireCoordinates: true
       showMap: false
       subfieldConfig:
         __assoc__:
