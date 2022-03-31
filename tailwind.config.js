@@ -27,7 +27,8 @@ module.exports = {
       },
       boxShadow: {
         DEFAULT: '0px 0px 1px rgba(81, 81, 81, 0.35), 0px 4px 10px rgba(81, 81, 81, 0.16)',
-        btn: '0 2px 6px 2px theme("colors.gray-200"), 0 3px 7px 1px theme("colors.green-100")'
+        btn: '0 2px 6px 2px theme("colors.gray-200"), 0 3px 7px 1px theme("colors.green-100")',
+        form: '0px 1px 2px rgba(0, 0, 0, 0.05)'
       },
       fontFamily: {
         body: ["Montserrat", "system-ui", "-apple-system", "sans-serif"],

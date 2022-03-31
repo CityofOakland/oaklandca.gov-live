@@ -1,13 +1,13 @@
-:where(.components) form {
+.components form {
   @apply text-base leading-normal;
 }
 
-:where(.components form) label {
+.components form label {
   @apply text-sm leading-normal;
   margin-bottom: 0.5em;
 }
 
-:where(.components form) button:not(.button) {
+.components form button:not(.button) {
   @apply text-base leading-tight;
   background: white;
   border: 2px solid #207127;
@@ -21,31 +21,31 @@
   text-decoration: none;
 }
 
-:where(.components form) button:not(.button):hover {
+.components form button:not(.button):hover {
   border-color: #0d5713;
   color: #0d5713;
 }
 
-:where(.components form) button:not(.button):active {
+.components form button:not(.button):active {
   border-color: #04400a;
   color: #04400a;
 }
 
-:where(.components form) textarea {
+.components form textarea {
   color: #222222;
   padding: 0.5em;
 }
 
-:where(.components) input,
-:where(.components) select {
+.components input,
+.components select {
   @apply text-sm leading-tight;
   background: white;
   color: #6b7280;
   margin-top: 0.75rem;
 }
 
-:where(.components) input[type="month"],
-:where(.components) input[type="text"] {
+.components input[type="month"],
+.components input[type="text"] {
   border: 1px solid #cfcfcf;
   border-radius: 4px;
   color: black;
@@ -53,15 +53,20 @@
   width: 100%;
 }
 
-:where(.components) input[type="text"]::placeholder {
+.components input[type="text"]::placeholder {
   color: #6b7280;
 }
 
-:where(.components) select {
+.components select {
+  @apply appearance-none z-0;
   border: 1px solid #cfcfcf;
   border-radius: 4px;
   padding: 0.75rem 1rem;
   width: 100%;
+  position: relative;
+  background-image: url('/dist/img/icon-caret-down.svg');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
 }
 
 .components table {
@@ -379,64 +384,62 @@
   margin-top: 0;
 }
 
-:where(#components-sidebar) {
-  & > hr {
-    @apply mt-12 first:mt-0;
-    border-top: 2px solid #212121;
-    opacity: 1;
+:where(#components-sidebar) > hr {
+  @apply mt-12 first:mt-0;
+  border-top: 2px solid #212121;
+  opacity: 1;
+}
 
-    &.light {
-      @apply mt-8;
-      border-top: 1px solid #e1e1e1;
-    }
-  }
+:where(#components-sidebar) > hr.light {
+  @apply mt-8;
+  border-top: 1px solid #e1e1e1;
+}
 
-  & > h1,
-  & > h2,
-  & > h3,
-  & > h4 {
-    margin-top: 1rem;
-  }
-  
-  & > h4 {
-    @apply mb-8;
-  }
+:where(#components-sidebar) > h1,
+:where(#components-sidebar) > h2,
+:where(#components-sidebar) > h3,
+:where(#components-sidebar) > h4 {
+  margin-top: 1rem;
+}
 
-  & label {
-    @apply text-base pt-6 md:pt-[1.125rem];
-    display: block;
-    font-weight: 700;
-    padding-top: 24px;
-  }
+:where(#components-sidebar) > h4 {
+  margin-bottom: 2rem;
+}
 
-  & input,
-  & select {
-    @apply mt-2;
-  }
+#components-sidebar label {
+  @apply text-base mt-6 md:mt-[1.125rem];
+  display: block;
+  font-weight: 700;
+}
 
-  & .button {
-    margin-bottom: 0;
-  }
+#components-sidebar input,
+#components-sidebar select {
+  @apply mt-2;
+}
 
-  & #search {
-    @apply relative;
+#components-sidebar .button {
+  @apply mb-0;
+}
 
-    &::before {
-      background-image: url('/dist/img/icon-search.svg');
-      background-repeat: no-repeat;
-      background-position: center;
-      content: "";
-      display: block;
-      height: 20px;
-      width: 20px;
-      position: absolute;
-      top: 50%;
-      left: 1rem;
-      transform: translateY(-50%);
-    }
+#components-sidebar #search {
+  @apply relative pl-10;
+  background-image: url('/dist/img/icon-search.svg');
+  background-repeat: no-repeat;
+  background-position: left 1rem center;
+  background-size: 1rem 1rem;
+}
 
-    & > input {
-      @apply pl-12;
-    }
-  }
+#components-sidebar #search::before {
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+
+#components-sidebar #search > input {
+  @apply pl-12;
 }
