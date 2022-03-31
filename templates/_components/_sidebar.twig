@@ -14,36 +14,46 @@
     {% if entry.emailAddress or entry.phoneNumber or (entry.contactAddress and not entry.contactAddress.isEmpty()) %}
       <ul class="ul-icons">
         {% if entry.emailAddress %}
-          <li>
-            <a href="mailto:{{ entry.emailAddress }}">
-              {{ svg( '@webroot/dist/img/icon-envelope-updated.svg') }} {{ entry.emailAddress }}
-            </a>
-          </li>
+          {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+            params: {
+              text: entry.emailAddress,
+              icon: 'envelope',
+              url: "mailto:#{entry.emailAddress}"
+            }
+          }) }}
         {% endif %}
         {% if entry.phoneNumber %}
-          <li>
-            <a href="tel:{{ entry.phoneNumber|replace({'-': ''}) }}">
-              {{ svg( '@webroot/dist/img/icon-phone-updated.svg') }} {{ entry.phoneNumber }}
-            </a>
-          </li>
+          {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+            params: {
+              text: entry.phoneNumber,
+              icon: 'phone',
+              url: "tel:#{entry.phoneNumber|replace({'-': ''}) }}"
+            }
+          }) }}
         {% endif %}
         {% if entry.contactAddress and not entry.contactAddress.isEmpty() %}
-          <li>
-            {{ svg( '@webroot/dist/img/icon-marker-updated.svg') }}{{ entry.contactAddress.name }}<br>
-            {{ entry.contactAddress.multiline() }}
-          </li>
+          {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+            params: {
+              text: "#{entry.contactAddress.name}<br>#{entry.contactAddress.multiline()}",
+              icon: 'map'
+            }
+          }) }}
         {% endif %}
       </ul>
     {% endif %}
-
     {% if entry.relatedServices|length %}
       <hr/>
       <h4>{{ 'Related Services'|t }}</h4>
-      <ul class="ul-icons related">
-        {% for entry in entry.relatedServices.all() %}
-          <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-        {% endfor %}
-      </ul>
+<ul class="ul-icons related">
+  {% for entry in entry.relatedServices.all() %}
+    {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+      params: {
+        text: entry.title,
+        url: entry.url
+      }
+    }) }}
+  {% endfor %}
+</ul>
     {% endif %}
     {% if entry.relatedResources|length  %}
       <hr/>
@@ -52,22 +62,28 @@
         {% for entry in entry.relatedResources.all() %}
           {% switch entry.type.section.handle %}
             {% case 'documents' %}
-                <a href="{{ entry.url }}">
-                  {{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }}
-                </a>
-              </li>
+              {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+                params: {
+                  text: entry.title,
+                  icon: "document",
+                  url: entry.url
+                }
+              }) }}
             {% case 'documentPackets' %}
-              <li>
-                <a href="{{ entry.url }}">
-                  {{ svg( '@webroot/dist/img/icon-folder.svg') }} {{ entry.title }}
-                </a>
-              </li>
+              {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+                params: {
+                  text: entry.title,
+                  icon: "folder",
+                  url: entry.url
+                }
+              }) }}
             {% default %}
-              <li>
-                <a href="{{ entry.url }}">
-                  {{ entry.title }}
-                </a>
-              </li>
+              {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+                params: {
+                  text: entry.title,
+                  url: entry.url
+                }
+              }) }}
           {% endswitch %}
         {% endfor %}
       </ul>
@@ -78,7 +94,7 @@
 {% if entry.section.handle == 'meetings' %}
   {% if entry.date %}
     <hr/>
-    <h4 class="mb-8 text-xl">{{ 'Date and Time'|t }}</h4>
+    <h4 class="pt-0 text-xl">{{ 'Date and Time'|t }}</h4>
     <p>{{ entry.date|date('l, F j, Y') }}
       {% if entry.type == 'meetingsImported' and entry.startDate %}
         <br>{{ entry.startDate|date("g:ia") }}{{ entry.endDate ? " to " ~ entry.endDate|date("g:ia") : "" }}
@@ -95,13 +111,18 @@
           <h4>{{ 'In Person Location'|t }}</h4>
           {% if block.fullName %}<p class="mb-2">{{ block.fullName }}</p>{% endif %}
           <ul class="ul-icons">
-            <li class="relative pl-8">
-              <span class="absolute left-0">{{ svg( '@webroot/dist/img/icon-marker-updated.svg') }}</span>
-              {{ block.contactAddress.multiline() }}
-            </li>
-            <li class="pl-8">
-              <a class="underline" href="https://www.google.com/maps/search/{{ block.contactAddress|url_encode }}">Get Directions</a>
-            </li>
+            {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+              params: {
+                text: block.contactAddress.multiline(),
+                icon: "map"
+              }
+            }) }}
+            {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+              params: {
+                text: "Get Directions",
+                url: "https://www.google.com/maps/search/maps/search/#{block.contactAddress|url_encode}"
+              }
+            }) }}
           </ul>
         {% endif %}
       {% endif %}
@@ -114,11 +135,13 @@
           {% if block.phoneNumber %}
             <p class="mt-8 mb-4 text-base font-bold">Or join by phone</p>
             <ul class="ul-icons">
-              <li>
-                <a href="tel:{{ block.phoneNumber|replace({'-': ''}) }}">
-                  {{ svg( '@webroot/dist/img/icon-phone-updated.svg') }} {{ block.phoneNumber }}
-                </a>
-              </li>
+              {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+                params: {
+                  text: block.phoneNumber,
+                  icon: 'phone',
+                  url: "tel:#{block.phoneNumber|replace({'-': ''}) }}"
+                }
+              }) }}
             </ul>
           {% endif %}
         {% endif %}
@@ -133,18 +156,22 @@
     {% if entry.emailAddress or entry.phoneNumber %}
       <ul class="ul-icons">
         {% if entry.emailAddress %}
-          <li>
-            <a href="mailto:{{ entry.emailAddress }}">
-              {{ svg( '@webroot/dist/img/icon-envelope-updated.svg') }} {{ entry.emailAddress }}
-            </a>
-          </li>
+          {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+            params: {
+              text: entry.emailAddress,
+              icon: 'envelope',
+              url: "mailto:#{entry.emailAddress}"
+            }
+          }) }}
         {% endif %}
         {% if entry.phoneNumber %}
-          <li>
-            <a href="tel:{{ entry.phoneNumber|replace({'-': ''}) }}">
-              {{ svg( '@webroot/dist/img/icon-phone-updated.svg') }} {{ entry.phoneNumber }}
-            </a>
-          </li>
+          {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+            params: {
+              text: entry.phoneNumber,
+              icon: 'phone',
+              url: "tel:#{entry.phoneNumber|replace({'-': ''}) }}"
+            }
+          }) }}
         {% endif %}
       </ul>
     {% endif %}
