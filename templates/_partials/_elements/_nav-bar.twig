@@ -9,131 +9,155 @@
 {% import '_macros/_macros.twig' as macros %}
 
 <div id="nav-wrapper" class="fixed z-40 w-full" role="navigation">
-    <div id="nav-bar" x-data="{ openNav: false }" class="relative z-50 block w-full transition-all duration-75 nav-bar">
-        <div class="relative z-40 flex items-center justify-center bg-gray-1000">
-            <button id="mobile-menu" @click="openNav = true" class="flex items-center justify-center w-16 -my-3 text-gray-900 bg-green-500 fill-current lg:-my-5 touch-action-none lg:oak-hidden hover:bg-green-700 hover:text-gray-1000">
-                <span class="sr-only">Menu</span>
-                {{ svg('@webroot/dist/img/icon-menu.svg')|attr({
+	<div id="nav-bar" x-data="{ openNav: false }" class="relative z-50 block w-full transition-all duration-75 nav-bar">
+		<div class="relative z-40 flex items-center justify-center bg-gray-1000">
+			<button id="mobile-menu" @click="openNav = true" class="flex items-center justify-center w-16 -my-3 text-gray-900 bg-green-500 fill-current lg:-my-5 touch-action-none lg:oak-hidden hover:bg-green-700 hover:text-gray-1000">
+				<span class="sr-only">Menu</span>
+				{{ svg('@webroot/dist/img/icon-menu.svg')|attr({
                     class: 'h-9 md:h-10 xl:oak-hidden'
                 })|raw }}
-            </button>
-            <nav id="main-navigation" class="flex items-stretch justify-between w-full py-3 lg:py-5" aria-label="Main">
-                <a id="home-link" class="flex items-center justify-center h-full px-2 text-gray-100 duration-75 fill-current hover:text-gray-200" href="{{ siteUrl }}" name="Home">
-                    {{ svg('@webroot/dist/img/logo-oakland-tree.svg')|attr({
+			</button>
+			<nav id="main-navigation" class="flex items-stretch justify-between w-full" aria-label="Main">
+				<a id="home-link" class="flex items-center justify-center h-full px-2 my-3 text-gray-100 duration-75 fill-current lg:my-5 hover:text-gray-200" href="{{ siteUrl }}" name="Home">
+					{{ svg('@webroot/dist/img/logo-oakland-tree.svg')|attr({
                         class: 'h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden'
                     })|raw }}
-                    {{ svg('@webroot/dist/img/logo-oakland.svg')|attr({
+					{{ svg('@webroot/dist/img/logo-oakland.svg')|attr({
                         class: 'w-40 h-10 oak-hidden sm:block'
                     })|raw }}
-                    <span class="hidden-visually">Home</span>
-                </a>
-                <form id="site-search-form" class="relative z-0 flex justify-end flex-1 pl-4 pr-6 lg:pr-0" action="{{ url('search') }}" role="search">
-                    <label for="site-search" class="hidden-visually">Search?</label>
-                    <input type="search" id="site-search" class="z-10 w-full pl-10 pr-6 mb-0 text-sm leading-normal text-gray-100 placeholder-gray-200 bg-gray-900 border-2 border-gray-800 rounded appearance-none search-box h-9 md:h-10 md:text-base" aria-label="Site Search" name="query" placeholder="Search" value="">
-                </form>
-                <ul class="pr-6 mr-6 text-xs tracking-wide border-r border-gray-700 lg:ml-3 lg:flex oak-hidden lg:my-0 lg:justify-end lg:items-center xl:text-sm">
-                    {% for nav in mainNav %}
-                        {% if nav.title == "Services" %}
-                            <li class="has-submenu">
-                                <a tabindex="0" class="px-2 py-3 font-bold text-gray-100 uppercase" id="navbar-dropdown-{{ nav.title|kebab }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ nav.title }} {{ svg( '@webroot/dist/img/icon-arrow.svg') }}</a>
-                                {% set navSubitems = craft.categories
+					<span class="hidden-visually">Home</span>
+				</a>
+				<form id="site-search-form" class="relative z-0 flex justify-end flex-1 pl-4 pr-6 my-3 lg:my-5 lg:pr-0" action="{{ url('search') }}" role="search">
+					<label for="site-search" class="hidden-visually">Search?</label>
+					<input type="search" id="site-search" class="z-10 w-full pl-10 pr-6 mb-0 text-sm leading-normal text-gray-100 placeholder-gray-200 bg-gray-900 border-2 border-gray-800 rounded appearance-none search-box h-9 md:h-10 md:text-base" aria-label="Site Search" name="query" placeholder="Search" value="">
+				</form>
+				<ul class="pr-6 mr-6 text-xs tracking-wide border-r border-gray-700 lg:ml-3 lg:flex oak-hidden lg:my-0 lg:justify-end lg:items-center xl:text-sm">
+					{% for nav in mainNav %}
+						{% if nav.title == "Services" %}
+							<li class="h-full -my-3 has-submenu lg:-my-5">
+								<a tabindex="0" class="relative flex items-center h-full px-4 text-sm font-bold leading-normal text-gray-100 uppercase background-transparent" id="navbar-dropdown-{{ nav.title|kebab }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ nav.title }}
+									{{ svg( '@webroot/dist/img/icon-arrow.svg') }}</a>
+								{% set navSubitems = craft.categories
                                     .group("serviceTypes")
                                     .limit(10)
                                     .level(1)
                                     .orderBy("lft ASC")
                                     .all()
                                 %}
-                                {% set reportProblem = craft.categories.group("serviceTypes").slug("report-a-problem").one() %}
-                                {% set applyPermit = craft.categories.group("serviceTypes").slug("apply-for-a-permit").one() %}
-                                <ul class="grid gap-3 bg-green-800 components md:grid-cols-3" aria-labelledby="navbar-dropdown-{{ nav.title|kebab }}">
-                                    {% nav subitem in navSubitems %}
-                                        {{ macros.card(subitem, false, false) }}
-                                    {% endnav %}
-                                    {% if reportProblem %}
-                                        {{ macros.card(reportProblem, true, true) }}
-                                    {% endif %}
-                                    {% if applyPermit %}
-                                        {{ macros.card(applyPermit, true, true) }}
-                                    {% endif %}
-                                </ul>
-                            </li>
-                        {% else %}
-                            <li><a href="{{ nav.url }}" class="px-2 py-3 font-bold text-gray-100 uppercase duration-75 hover:text-gray-200 hover:underline">{{ nav.title }}</a></li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-                <div class="pr-2 lg:items-center oak-hidden lg:flex">
-                    <a href="/officials/libby-schaaf" class="flex items-center text-xs text-gray-100 hover:text-gray-200" title="View the homepage of Libby Schaaf, The Mayor of the City of Oakland">
-                        <div class="mx-2 leading-tight text-right oak-hidden xl:block">
-                            <div><span class="font-bold">{{"Mayor"|t}}</span></div>
-                            <div>{{"Libby Schaaf"|t}}</div>
-                        </div>
-                        <img src="https://city-of-oakland.imgix.net/portraits/oakland_mayor_libby_schaaf_city_of_oakland-1519844049-5198.jpg?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64" sizes="100vw" srcset="https://city-of-oakland.imgix.net/portraits/oakland_mayor_libby_schaaf_city_of_oakland-1519844049-5198.jpg?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=128&amp;q=80&amp;w=128 128w, https://city-of-oakland.imgix.net/portraits/oakland_mayor_libby_schaaf_city_of_oakland-1519844049-5198.jpg?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64 64w" alt="Portrait of Mayor, Libby Schaaf" class="block w-10 h-10 border-2 border-gray-800 rounded-full">
-                    </a>
-                    <a href="/services/oak311" class="flex ml-2" title="Report a problem online to OAK 311">
-                        <img src="https://city-of-oakland.imgix.net/news/311-Logo.png?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64" sizes="100vw" srcset="https://city-of-oakland.imgix.net/news/311-Logo.png?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=128&amp;q=80&amp;w=128 128w, https://city-of-oakland.imgix.net/news/311-Logo.png?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64 64w" alt="OAK 311 Logo" class="block w-10 h-10 border-2 border-gray-800 rounded-full">
-                        <span style="display:none;">{{"Oak 311"|t}}</span>
-                    </a>
-                </div>
-            </nav>
-        </div>
-        {# BEGIN MOBILE NAV #}
-        <div
-            class="relative z-30 py-0 bg-gray-1000" x-show="openNav" @click.away="openNav = false" x-cloak>
-            <ul class="container justify-end flex-1 w-full pt-0 pb-4 mx-auto my-0 overflow-y-scroll text-lg" style="height: 100vh;">
-                {% for nav in mainNav %}
-                    {% if nav.title == "Services" %}
-                        <li class="border-t border-gray-600">
-                            <div class="flex items-center justify-between py-4">
-                                <a class="font-normal text-gray-100 fill-current text hover:text-gray-200" href="{{ nav.url }}">{{ nav.title }}</a>
-                                <div class="p-1 font-normal text-gray-100 bg-gray-800 rounded fill-current text subnav-toggler">
-                                    {{ svg('@webroot/dist/img/icon-arrow.svg')|attr({
+								{% set reportProblem = craft.categories.group("serviceTypes").slug("report-a-problem").one() %}
+								{% set applyPermit = craft.categories.group("serviceTypes").slug("apply-for-a-permit").one() %}
+								<ul class="grid gap-3 bg-green-800 components md:grid-cols-3" aria-labelledby="navbar-dropdown-{{ nav.title|kebab }}">
+									{% nav subitem in navSubitems %}
+									{{ macros.card(subitem, false, false) }}
+									{% endnav %}
+									{% if reportProblem %}
+										{{ macros.card(reportProblem, true, true) }}
+									{% endif %}
+									{% if applyPermit %}
+										{{ macros.card(applyPermit, true, true) }}
+									{% endif %}
+								</ul>
+							</li>
+						{% else %}
+							<li>
+								<a href="{{ nav.url }}" class="px-2 py-3 font-bold text-gray-100 uppercase duration-75 hover:text-gray-200 hover:underline">{{ nav.title }}</a>
+							</li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+				<div class="pr-2 lg:items-center oak-hidden lg:flex">
+					<a href="/officials/libby-schaaf" class="flex items-center text-xs text-gray-100 hover:text-gray-200" title="View the homepage of Libby Schaaf, The Mayor of the City of Oakland">
+						<div class="mx-2 leading-tight text-right oak-hidden xl:block">
+							<div>
+								<span class="font-bold">{{"Mayor"|t}}</span>
+							</div>
+							<div>{{"Libby Schaaf"|t}}</div>
+						</div>
+						<img src="https://city-of-oakland.imgix.net/portraits/oakland_mayor_libby_schaaf_city_of_oakland-1519844049-5198.jpg?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64" sizes="100vw" srcset="https://city-of-oakland.imgix.net/portraits/oakland_mayor_libby_schaaf_city_of_oakland-1519844049-5198.jpg?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=128&amp;q=80&amp;w=128 128w, https://city-of-oakland.imgix.net/portraits/oakland_mayor_libby_schaaf_city_of_oakland-1519844049-5198.jpg?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64 64w" alt="Portrait of Mayor, Libby Schaaf" class="block w-10 h-10 border-2 border-gray-800 rounded-full">
+					</a>
+					<a href="/services/oak311" class="flex ml-2" title="Report a problem online to OAK 311">
+						<img src="https://city-of-oakland.imgix.net/news/311-Logo.png?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64" sizes="100vw" srcset="https://city-of-oakland.imgix.net/news/311-Logo.png?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=128&amp;q=80&amp;w=128 128w, https://city-of-oakland.imgix.net/news/311-Logo.png?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64 64w" alt="OAK 311 Logo" class="block w-10 h-10 border-2 border-gray-800 rounded-full">
+						<span style="display:none;">{{"Oak 311"|t}}</span>
+					</a>
+				</div>
+			</nav>
+		</div>
+		{# BEGIN MOBILE NAV #}
+		<div class="relative z-30 py-0 bg-gray-1000" x-show="openNav" @click.away="openNav = false" x-cloak>
+			<ul class="container justify-end flex-1 w-full pt-0 pb-4 mx-auto my-0 overflow-y-scroll text-lg" style="height: 100vh;">
+				{% for nav in mainNav %}
+					{% if nav.title == "Services" %}
+						<li x-data="{openSubNav: false}" class="border-t border-gray-600">
+							<div class="flex items-center justify-between py-4">
+								<a class="font-normal text-gray-100 fill-current text hover:text-gray-200" href="{{ nav.url }}">{{ nav.title }}</a>
+								<button @click="openSubNav = !openSubNav" :class="{ 'rotate-180' : openSubNav }" class="p-1 font-normal text-gray-100 transition-all duration-75 bg-gray-800 rounded fill-current text">
+									{{ svg('@webroot/dist/img/icon-arrow.svg')|attr({
                                         class: 'w-4 h-4 xl:oak-hidden rotate-90'
                                     })|raw }}
-                                </div>
-                            </div>
+								</button>
+							</div>
 
-                            {% set navSubitems = craft.categories
+							{% set navSubitems = craft.categories
                                 .group("serviceTypes")
                                 .limit(10)
                                 .orderBy("title asc")
                                 .all()
                             %}
-                            {% set reportProblem = craft.categories.group("serviceTypes").slug("report-a-problem").one() %}
-                            {% set applyPermit = craft.categories.group("serviceTypes").slug("apply-for-a-permit").one() %}
-                            <div class="overflow-y-scroll subnav">
-                                <ul class="my-0 font-bold bg-white">
-                                    {% nav subitem in navSubitems %}
-                                        <li class="border-t border-gray-600"><a class="block h-full p-4" href="{{ subitem.url }}">{{ subitem.title }}</a></li>
-                                    {% endnav %}
-                                    {% if reportProblem %}<li class="border-t border-gray-600"><a class="flex items-center justify-between block h-full p-4 bg-blue-100 text-blue-1000" href="{{ reportProblem.url }}">{{ reportProblem.title }}<span class="text-lg arrow-right text-blue-1000" role="img" aria-label="arrow right">&rarr;</span></a></li>{% endif %}
-                                    {% if applyPermit %}<li class="border-t border-gray-600"><a class="flex items-center justify-between block h-full p-4 bg-blue-100 text-blue-1000" href="{{ applyPermit.url }}">{{ applyPermit.title }}<span class="text-lg arrow-right text-blue-1000" role="img" aria-label="arrow right">&rarr;</span></a></li>{% endif %}
-                                </ul>
-                            </div>
-                        </li>
-                    {% else %}
-                    <li class="{% if not loop.first %}border-t {% endif %}border-gray-600">
-                        <a class="flex items-center justify-between py-4 font-normal text-gray-100 fill-current hover:text-gray-200" href="{{ nav.url }}"><div class="text">{{ nav.title }}</div></a>
-                    </li>
-                    {% endif %}
-                {% endfor %}
-                <li class="border-t border-gray-600">
-                    <a class="flex items-center justify-between py-4 font-normal text-gray-100 fill-current hover:text-gray-200" href="/topics/oaklandlovelife"><div class="text">#OaklandLoveLife</div></a>
-                </li>
-                <li class="border-t border-gray-600">
-                    <a class="flex items-center justify-between py-4 font-normal text-gray-100 fill-current hover:text-gray-200" href="/officials/libby-schaaf"><div class="text">Mayor Libby Schaaf</div></a>
-                </li>
-                <li class="border-t border-gray-600">
-                    <a class="flex items-center justify-between py-4 font-normal text-gray-100 fill-current hover:text-gray-200" href="/services/oak311"><div class="text">Report a problem to OAK 311</div></a>
-                </li>
-            </ul>
-        </div>
-        {# END MOBILE NAV #}
-    </div>
+							{% set reportProblem = craft.categories.group("serviceTypes").slug("report-a-problem").one() %}
+							{% set applyPermit = craft.categories.group("serviceTypes").slug("apply-for-a-permit").one() %}
+							<div class="overflow-y-scroll subnav" x-show="openSubNav" @click.away="openSubNav = false" x-collapse>
+								<ul class="my-0 font-bold bg-white">
+									{% nav subitem in navSubitems %}
+									<li class="border-t border-gray-600">
+										<a class="block h-full p-4" href="{{ subitem.url }}">{{ subitem.title }}</a>
+									</li>
+									{% endnav %}
+									{% if reportProblem %}
+										<li class="border-t border-gray-600">
+											<a class="flex items-center justify-between h-full p-4 bg-blue-100 text-blue-1000" href="{{ reportProblem.url }}">{{ reportProblem.title }}<span class="text-lg arrow-right text-blue-1000" role="img" aria-label="arrow right">&rarr;</span>
+											</a>
+										</li>
+									{% endif %}
+									{% if applyPermit %}
+										<li class="border-t border-gray-600">
+											<a class="flex items-center justify-between h-full p-4 bg-blue-100 text-blue-1000" href="{{ applyPermit.url }}">{{ applyPermit.title }}<span class="text-lg arrow-right text-blue-1000" role="img" aria-label="arrow right">&rarr;</span>
+											</a>
+										</li>
+									{% endif %}
+								</ul>
+							</div>
+						</li>
+					{% else %}
+						<li class="{% if not loop.first %}border-t {% endif %}border-gray-600">
+							<a class="flex items-center justify-between py-4 font-normal text-gray-100 fill-current hover:text-gray-200" href="{{ nav.url }}">
+								<div class="text">{{ nav.title }}</div>
+							</a>
+						</li>
+					{% endif %}
+				{% endfor %}
+				<li class="border-t border-gray-600">
+					<a class="flex items-center justify-between py-4 font-normal text-gray-100 fill-current hover:text-gray-200" href="/topics/oaklandlovelife">
+						<div class="text">#OaklandLoveLife</div>
+					</a>
+				</li>
+				<li class="border-t border-gray-600">
+					<a class="flex items-center justify-between py-4 font-normal text-gray-100 fill-current hover:text-gray-200" href="/officials/libby-schaaf">
+						<div class="text">Mayor Libby Schaaf</div>
+					</a>
+				</li>
+				<li class="border-t border-gray-600">
+					<a class="flex items-center justify-between py-4 font-normal text-gray-100 fill-current hover:text-gray-200" href="/services/oak311">
+						<div class="text">Report a problem to OAK 311</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		{# END MOBILE NAV #}
+	</div>
 </div>
 
 {% js on load %}
-    $('#site-search-form').on('submit', function(){
+$('#site-search-form').on('submit', function(){
         var search_term = $('#site-search').val();
 
         dl.push({
@@ -155,9 +179,5 @@
             'label'         : link_label,
             'debug_mode'    : true,
         });
-    });
-
-    $('.subnav-toggler').on('click', function(){
-        $(this).parent().siblings('.subnav').toggle('state-active');
     });
 {% endjs %}

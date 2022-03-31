@@ -1,0 +1,53 @@
+.process {
+  list-style: none;
+  padding-top: 0;
+  padding-left: 0;
+  margin-top: 1.5em;
+}
+
+.process > li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.process > li:last-of-type {
+  margin-bottom: 0;
+}
+
+.process > li::before {
+  @apply text-sm;
+  border: 3px solid #9e9e9e;
+  border-radius: 50%;
+  content: attr(data-index);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 600;
+  margin-top: -4.5px;
+  margin-right: 10px;
+  padding-top: 1px;
+  height: 36px;
+  width: 36px;
+}
+
+.process > li::after {
+  background: #e4e4e7;
+  content: "";
+  position: absolute;
+  top: 32px;
+  bottom: -28px;
+  width: 3px;
+  left: 16px;
+  z-index: -1;
+}
+
+.process li:last-of-type::after {
+  display: none;
+}
+
+.process .ul-icons {
+  padding-top: 1rem;
+}

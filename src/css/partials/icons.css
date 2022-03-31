@@ -1,0 +1,57 @@
+:where(.ul-icons) {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+:where(.ul-icons) > li {
+  margin-bottom: 15px;
+}
+
+:where(.ul-icons) > li,
+:where(.ul-icons > li) > a {
+  display: flex;
+  align-items: flex-start;
+}
+
+:where(.ul-icons > li) svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  margin-right: 10px;
+  width: 22.5px;
+}
+
+:where(.ul-icons) .green path {
+  fill: #2e8131;
+}
+
+.related > li svg path {
+  fill: #2e8131;
+}
+
+:where(.ul-icons) a {
+  text-decoration: none;
+}
+
+:where(.ul-icons) a:hover,
+:where(.ul-icons) a:focus {
+  text-decoration: underline;
+}
+
+:where(.ul-icons.related) a {
+  text-decoration: underline;
+}
+
+:where(.ul-icons.related) a:hover,
+:where(.ul-icons.related) a:focus {
+  text-decoration: none;
+}
+
+.icon svg {
+  display: inline;
+  height: 1rem;
+  vertical-align: middle;
+}
+
+.icon svg path {
+  fill: #2e8131;
+}
