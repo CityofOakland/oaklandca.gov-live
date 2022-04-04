@@ -1,0 +1,12 @@
+{% set vars = {
+  level: 'h2',
+  size: null,
+  color: null,
+  title: null,
+  text: null,
+  url: null,
+}|merge(params) %}
+
+<{{ vars.level }} class="font-bold {{ titleSize }} {{ vars.color }}">
+  <a class="text-current after:absolute after:inset-0" href="{{ vars.url }}">{{ vars.title }}</a>
+</{{ vars.level }}>
