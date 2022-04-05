@@ -147,7 +147,9 @@ function renderFn(MenuRenderingOptions, isFirstRendering) {
               name="section"
               value="${item.value}" ${item.isRefined ? 'checked' : ''} />
           </div>
-          <label class="text-gray-700 text-sm font-medium cursor-pointer" for="${kebabCase(item.value)}">${item.label} (${item.count})</label>
+          <label class="text-gray-700 text-sm font-medium cursor-pointer" for="${kebabCase(item.value)}">
+            ${item.label} (${item.count}<span class="sr-only">pages</span>)
+          </label>
         </div>
       `;
     });
