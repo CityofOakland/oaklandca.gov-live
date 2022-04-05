@@ -30,8 +30,7 @@
 
 {% set type = 1 %}
 {% if craft.app.request.getQueryParam('type') %}
-  {% set type           = craft.app.request.getQueryParam('type') %}
-  {% set filter_enabled = true %}
+  {% set type = craft.app.request.getQueryParam('type') %}
   {% switch craft.app.request.getQueryParam('type') %}
     {% case 1 %}
       {% set meetings = meetings.order('date asc') %}
