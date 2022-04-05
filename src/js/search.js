@@ -38,7 +38,7 @@ allSearch.addWidget(
     autoHideContainer: false,
     templates: {
       body: `
-        <h2 class="mb-4 text-base font-normal border-b border-gray-800 pb-1 text-gray-1000">Your search for “{{ query }}” returned <span class="font-bold" aria-live="polite">{{ nbHits }} results</span>.</h2>
+        <h2 class="mb-4 text-base leading-7 font-normal border-b border-gray-800 pb-1 text-gray-1000">Your search for “{{ query }}” returned <span class="font-bold" aria-live="polite">{{ nbHits }} results</span>.</h2>
       `
     }
   })
@@ -137,7 +137,7 @@ function renderFn(MenuRenderingOptions, isFirstRendering) {
   if (MenuRenderingOptions.canRefine) {
     var list = MenuRenderingOptions.items.map(function (item) {
       return `
-        <div class="flex gap-2 items-center mt-3 first:mt-0">
+        <div class="flex gap-2 items-center mt-3 first-of-type:mt-0">
           <div class="flex items-center">
             <input
               type="radio" 
@@ -152,7 +152,7 @@ function renderFn(MenuRenderingOptions, isFirstRendering) {
       `;
     });
 
-    MenuRenderingOptions.widgetParams.containerNode.find('fieldset').html('<legend class="font-medium border-b border-b-gray-300 w-full">Filter by Section</legend>' + list.join(''));
+    MenuRenderingOptions.widgetParams.containerNode.find('fieldset').html('<legend class="font-medium border-b border-gray-800 pb-1 mb-4 w-full leading-7">Filter by Section</legend>' + list.join(''));
 
     MenuRenderingOptions.widgetParams.containerNode
       .find('input[data-refine-value]')
