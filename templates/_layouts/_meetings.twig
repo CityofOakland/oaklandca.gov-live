@@ -1,5 +1,5 @@
 {% macro callout(calloutHeading) %}
-  {% include '_components/_callout' with {
+	{% include '_components/_callout' with {
       callOutType   : 'attention',
       heading       : calloutHeading,
       description   : '' 
@@ -10,11 +10,11 @@
 {% import '_macros/_macros' as macros %}
 
 {% set status = 'default' %}
-  {% if entry.meetingStatus %}
-    {% set status = entry.meetingStatus %}
-  {% elseif entry.eventStatus %}
-    {% set status = entry.eventStatus %}
-  {% endif %}
+	{% if entry.meetingStatus %}
+		{% set status = entry.meetingStatus %}
+	{% elseif entry.eventStatus %}
+		{% set status = entry.eventStatus %}
+	{% endif %}
 
 {% block title %}
   <h1>{% if status and status.value and status.value !== 'default' and status.value !== 'active' %}{{ status.label }} - {% endif %}{{ entry.title }}</h1>
@@ -36,190 +36,264 @@
 {% endblock %}
 
 {% block content %}
-  {% if status == 'canceled' %}
-    {{ _self.callout('This meeting has been canceled.') }}
-  {% elseif status == 'rescheduled' %}
-    {% if entry.relatedMeeting|length %}
-      {% if entry.relatedMeeting.one().date %}
-        {{ _self.callout('This meeting was rescheduled for <a style="font-weight:400;" href="' ~ entry.relatedMeeting.one().url ~ '">' ~ entry.relatedMeeting.one().date|date('F j, Y') ~ '</a>.') }}
-      {% else %}
-        {{ _self.callout('This meeting was <a style="font-weight:400;" href="' ~ entry.relatedMeeting.one().url ~ '">rescheduled</a>.') }}
+  {% if status != "default" and status !== "active" %}
+    <div>
+      {% if status == 'canceled' %}
+        {{ _self.callout('This meeting has been canceled.') }}
+      {% elseif status == 'rescheduled' %}
+        {% if entry.relatedMeeting|length %}
+          {% if entry.relatedMeeting.one().date %}
+            {{ _self.callout('This meeting was rescheduled for <a style="font-weight:400;" href="' ~ entry.relatedMeeting.one().url ~ '">' ~ entry.relatedMeeting.one().date|date('F j, Y') ~ '</a>.') }}
+          {% else %}
+            {{ _self.callout('This meeting was <a style="font-weight:400;" href="' ~ entry.relatedMeeting.one().url ~ '">rescheduled</a>.') }}
+          {% endif %}
+        {% else %}
+          {{ _self.callout('This meeting was rescheduled.') }}
+        {% endif %}
+      {% elseif status == 'special' %}
+        {{ _self.callout('This is a special meeting of the ' ~ entry.relatedBoardOrCommission.one().title) }}
       {% endif %}
-    {% else %}
-      {{ _self.callout('This meeting was rescheduled.') }}
-    {% endif %}
-  {% elseif status == 'special' %}
-    {{ _self.callout('This is a special meeting of the ' ~ entry.relatedBoardOrCommission.one().title) }}
-  {% endif %}
 
-  {% set status = entry.meetingStatus ? entry.meetingStatus : entry.eventStatus %}
-  {% if status.value !== 'canceled' and status.value !== 'rescheduled' %}
-    {% if entry.addresses and entry.addresses.type('onlineLocation')|length and not entry.addresses.type('location')|length  %}
-      {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
-        {{ _self.callout('This meeting was held virtually and not in person.') }}
-      {% else %}
-        {{ _self.callout('This meeting will be held virtually and not in person.') }}
+      {% set status = entry.meetingStatus ? entry.meetingStatus : entry.eventStatus %}
+      {% if status.value !== 'canceled' and status.value !== 'rescheduled' %}
+        {% if entry.addresses and entry.addresses.type('onlineLocation')|length and not entry.addresses.type('location')|length  %}
+          {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
+            {{ _self.callout('This meeting was held virtually and not in person.') }}
+          {% else %}
+            {{ _self.callout('This meeting will be held virtually and not in person.') }}
+          {% endif %}
+        {% elseif entry.eventLocation and entry.eventLocation.type('onlineLocation')|length and not entry.eventLocation.type('physicalLocation')|length  %}
+          {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
+            {{ _self.callout('This meeting was held virtually and not in person.') }}
+          {% else %}
+            {{ _self.callout('This meeting will be held virtually and not in person.') }}
+          {% endif %}
+        {% endif %}
       {% endif %}
-    {% elseif entry.eventLocation and entry.eventLocation.type('onlineLocation')|length and not entry.eventLocation.type('physicalLocation')|length  %}
-      {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
-        {{ _self.callout('This meeting was held virtually and not in person.') }}
-      {% else %}
-        {{ _self.callout('This meeting will be held virtually and not in person.') }}
-      {% endif %}
-    {% endif %}
-  {% endif %}
-
-  {# Details #}
-  {% if entry.mainContent %}<div>{{ entry.mainContent }}</div>{% endif %}
-
-  {% set minuteCat = craft.categories.group('documentTypes').id(12).one() %}
-  {% set agendaCat = craft.categories.group('documentTypes').id(13).one() %}
-
-  {% set minutes = entry.documents ? clone(entry.documents).relatedTo(minuteCat) : null %}
-  {% set agendas = entry.documents ? clone(entry.documents).relatedTo(agendaCat) : null %}
-
-  {% if entry.date and now|date('Y-m-d') > entry.date|date('Y-m-d') %}
-    {% if entry.documentFile|length %}
-      <h2>Minutes</h2>
-      <ul class="ul-icons related" style="padding-top: 1rem;">
-      {% for document in entry.documentFile.all() %}
-        <li><a href="{{ document.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Minutes - {{ entry.date|date("m/d/Y") }}</a></li>
-      {% endfor %}
-      </ul>
-    {% endif %}
-
-    {% if entry.type == 'meetingsImported' and minutes and minutes|length %}
-      <h2>Minutes</h2>
-      <ul class="ul-icons related" style="padding-top: 1rem;">
-      {% for document in minutes.all() %}
-        <li><a href="{{ document.documentFile.one().url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Minutes - {{ entry.date|date("m/d/Y") }}</a></li>
-      {% endfor %}
-      </ul>
-    {% endif %}
-
-    {% if entry.type == 'meetings' and entry.embeds|length %}
-      <h2 id="recordings">Recordings</h2>
-      {% for item in entry.embeds %}
-        <figure>
-          {% switch item.type %}
-            {% case 'granicus' %}
-              {% if item.granicusUrl %}
-                {{ macros.videoEmbed(item.granicusUrl) }}
-                <p><i>Meeting recording of {{ entry.title }} on {{ entry.date|date('F j, Y') }}</i></p>
-              {% endif %}
-            {% case 'youtube' %}
-              {% if item.youtubeUrl %}
-                {% set id = item.youtubeUrl|split('?')[1]|split('&')[0]|split('=')[1] %}
-                <div class="embed-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/{{ id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                <p><i>Meeting recording of {{ entry.title }} on {{ entry.date|date('F j, Y') }}</i></p>
-              {% endif %}
-            {% case 'soundcloud' %}
-              {% if item.soundcloudEmbed %}
-                {{ item.soundcloudEmbed|raw }}
-                <p><i>Meeting recording of {{ entry.title }} on {{ entry.date|date('F j, Y') }}</i></p>
-              {% endif %}
-            {% case 'vimeo' %}
-              {% if item.vimeoUrl %}
-                {% set id = item.vimeoUrl|split('/')|last %}
-                <div class="embed-container"><iframe src="https://player.vimeo.com/video/{{ id }}" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
-                <p><i>Meeting recording of {{ entry.title }} on {{ entry.date|date('F j, Y') }}</i></p>
-              {% endif %}
-          {% endswitch %}
-        </figure>
-      {% endfor %}
-    {% endif %}
-  {% endif %}
-
-  {% if entry.type == 'meetingsImported' and entry.videoLink %}
-    <h2 id="recordings">Recordings</h2>
-    <figure>
-      {{ macros.videoEmbed(entry.videoLink) }}
-      <p><i>Meeting recording of {{ entry.title }} on {{ entry.date|date('F j, Y') }}</i></p>
-    </figure>
-  {% endif %}
-
-  {% if entry.type == 'meetingsImported' and agendas and agendas|length %}
-    <h2>Agenda</h2>
-    <ul class="ul-icons related" style="padding-top: 1rem;">
-    {% for agenda in agendas.all() %}
-      <li><a href="{{ agenda.documentFile.one().url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Agenda - {{ entry.date|date("m/d/Y") }}</a></li>
-    {% endfor %}
-    </ul>
-  {% endif %}
-
-  {% if entry.agendaDownloadableCopy|length or entry.agendaTopics|length %}
-    <h2>Agenda</h2>
-    {% if entry.agendaDownloadableCopy|length %}
-      <ul class="ul-icons related" style="padding-top: 1rem;">
-        <li><a href="{{ entry.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Agenda - {{ entry.date|date("m/d/Y") }}</a></li>
-      </ul>
-    {% endif %}
-    {% if entry.agendaTopics|length %}
-      <h3>Topics</h3>
-      <ol class="process">
-        {% for item in entry.agendaTopics.all() %}
-          <li data-index="{{ loop.index }}">
-            <div>
-              <span class="font-bold">{{ item.topic }}</span>
-              {{ item.description }}
-              {% if item.relatedDocuments|length %}
-                <ul class="ul-icons related" style="padding-top: 1rem;">
-                    {% for document in item.relatedDocuments.all() %}
-                    <li><a href="{{ document.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ document.title }}</a></li>
-                    {% endfor %}
-                </ul>
-              {% endif %}
-            </div>
-          </li>
-        {% endfor %}
-      </ol>
-    {% endif %}
-  {% endif %}
-
-  {% set documents = [] %}
-  {% if entry.documents %}
-    {% for document in entry.documents.all() %}
-      {% if document.id not in minutes.ids() and document.id not in agendas.ids() %}
-        {% set documents = documents|merge([document]) %}
-      {% endif %}
-    {% endfor %}
-  {% endif %}
-
-  {% if entry.type == 'meetingsImported' and documents|length %}
-    <h2>Additional Documents</h2>
-    <ul class="ul-icons related" style="padding-top: 1rem;">
-    {% for document in documents %}
-      <li><a href="{{ document.documentFile.one().url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ document.title }}</a></li>
-    {% endfor %}
-    </ul>
-  {% endif %}
-
-  {% if entry.howToParticipate|length and entry.howToParticipate.one().description %}
-    <div class="accordion" data-allow-toggle style="padding-top:2em;">
-      <ul aria-label="Accordion Control Group Buttons" class="accordion-controls">
-        {% for item in entry.howToParticipate.all() %}
-        <li class="accordion-item">
-          <button class="accordion-header" aria-controls="content-{{ entry.id }}-{{ loop.index }}" aria-expanded="false" id="accordion-control-{{ entry.id }}-{{ loop.index }}">{{ item.header ? item.header : "How to Participate in this Public Meeting" }} <span style="pointer-events: none;">{{ svg( '@webroot/dist/img/icon-plus.svg') }}{{ svg( '@webroot/dist/img/icon-minus.svg') }}</span></button>
-          <div class="accordion-panel" id="content-{{ entry.id }}-{{ loop.index }}" hidden>
-            {{ item.description }}
-          </div>
-        </li>
-        {% endfor %}
-      </ul>
     </div>
   {% endif %}
 
-  {# Accessibility Request #}
-  <hr class="hr medium"/>
-  {% set accessibilityText %}
-    <p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
-    <p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a courtesy to attendees with chemical sensitivities.</p>
-    {% if entry.emailAddress %}
-      <a class="button secondary small" href="mailto:{{ entry.emailAddress }}?subject=Accessibility Request: {{ entry.title }}{{ entry.date ? ' at ' ~ entry.date|date('m/d/Y') : '' }}">Make a Request</a>
-    {% endif %}
+	{# Details #}
+	{% if entry.mainContent %}
+		<div class="main-content">{{ entry.mainContent }}</div>
+	{% endif %}
 
-  {% endset %}
-  {% include '_components/_callout' with {
+	{% set minuteCat = craft.categories.group('documentTypes').id(12).one() %}
+	{% set agendaCat = craft.categories.group('documentTypes').id(13).one() %}
+
+	{% set minutes = entry.documents ? clone(entry.documents).relatedTo(minuteCat) : null %}
+	{% set agendas = entry.documents ? clone(entry.documents).relatedTo(agendaCat) : null %}
+
+	{% if entry.date and now|date('Y-m-d') > entry.date|date('Y-m-d') %}
+		{% if entry.documentFile|length %}
+			<h2 class="mt-10 mb-8 first:mt-0 md:mt-14">Minutes</h2>
+			<ul class="mt-4 ul-icons related">
+				{% for document in entry.documentFile.all() %}
+					<li>
+						<a href="{{ document.url }}">
+              {{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Minutes - {{ entry.date|date("m/d/Y") }}
+            </a>
+					</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+
+		{% if entry.type == 'meetingsImported' and minutes and minutes|length %}
+			<h2 class="mt-10 mb-8 first:mt-0 md:mt-14">Minutes</h2>
+			<ul class="mt-4 ul-icons related">
+				{% for document in minutes.all() %}
+					<li>
+						<a href="{{ document.documentFile.one().url }}">
+              {{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Minutes - {{ entry.date|date("m/d/Y") }}
+            </a>
+					</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+
+		{% if entry.type == 'meetings' and entry.embeds|length %}
+			<h2 class="mt-10 mb-8 first:mt-0 md:mt-14" id="recordings">Recordings</h2>
+			{% for item in entry.embeds %}
+				<figure>
+					{% switch item.type %}
+						{% case 'granicus' %}
+							{% if item.granicusUrl %}
+								{{ macros.videoEmbed(item.granicusUrl) }}
+								<p>
+									<i>Meeting recording of {{ entry.title }} on {{ entry.date|date('F j, Y') }}</i>
+								</p>
+							{% endif %}
+						{% case 'youtube' %}
+							{% if item.youtubeUrl %}
+								{% set id = item.youtubeUrl|split('?')[1]|split('&')[0]|split('=')[1] %}
+								<div class="embed-container">
+									<iframe
+                    src="https://www.youtube.com/embed/{{ id }}"
+                    width="560"
+                    height="315"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                    </iframe>
+								</div>
+								<p>
+									<i>Meeting recording of {{ entry.title }} on {{ entry.date|date('F j, Y') }}</i>
+								</p>
+							{% endif %}
+						{% case 'soundcloud' %}
+							{% if item.soundcloudEmbed %}
+								{{ item.soundcloudEmbed|raw }}
+								<p>
+									<i>Meeting recording of {{ entry.title }} on {{ entry.date|date('F j, Y') }}</i>
+								</p>
+							{% endif %}
+						{% case 'vimeo' %}
+							{% if item.vimeoUrl %}
+								{% set id = item.vimeoUrl|split('/')|last %}
+								<div class="embed-container">
+									<iframe
+                    src="https://player.vimeo.com/video/{{ id }}"
+                    width="640"
+                    height="360"
+                    frameborder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowfullscreen>
+                  </iframe>
+								</div>
+								<p>
+									<i>Meeting recording of {{ entry.title }} on {{ entry.date|date('F j, Y') }}</i>
+								</p>
+							{% endif %}
+					{% endswitch %}
+				</figure>
+			{% endfor %}
+		{% endif %}
+	{% endif %}
+
+	{% if entry.type == 'meetingsImported' and entry.videoLink %}
+		<h2 class="mt-10 mb-8 first:mt-0 md:mt-14" id="recordings">Recordings</h2>
+		<figure>
+			{{ macros.videoEmbed(entry.videoLink) }}
+			<p>
+				<i>Meeting recording of {{ entry.title }} on {{ entry.date|date('F j, Y') }}</i>
+			</p>
+		</figure>
+	{% endif %}
+
+	{% if entry.type == 'meetingsImported' and agendas and agendas|length %}
+		<h2 class="mt-10 mb-8 first:mt-0 md:mt-14">Agenda</h2>
+		<ul class="pt-0 mt-4 ul-icons related">
+			{% for agenda in agendas.all() %}
+				<li>
+					<a href="{{ agenda.documentFile.one().url }}">
+            {{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Agenda - {{ entry.date|date("m/d/Y") }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	{% if entry.agendaDownloadableCopy|length or entry.agendaTopics|length %}
+		<h2 class="mt-10 mb-8 first:mt-0 md:mt-14">Agenda</h2>
+		{% if entry.agendaDownloadableCopy|length %}
+      <ul class="pt-0 mt-4 ul-icons related">
+				<li>
+					<a href="{{ entry.agendaDownloadableCopy.one().url }}">
+            {{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Agenda - {{ entry.date|date("m/d/Y") }}
+          </a>
+				</li>
+			</ul>
+		{% endif %}
+		{% if entry.agendaTopics|length %}
+			<h3 class="mb-8 mt-9">Topics</h3>
+			<ol class="process">
+				{% for item in entry.agendaTopics.all() %}
+					<li data-index="{{ loop.index }}">
+						<div>
+							<span class="font-bold">{{ item.topic }}</span>
+							{{ item.description }}
+							{% if item.relatedDocuments|length %}
+								<ul class="!pt-0 mt-4 ul-icons related">
+									{% for document in item.relatedDocuments.all() %}
+										<li>
+											<a href="{{ document.url }}">
+                        {{ svg( '@webroot/dist/img/icon-document.svg') }} {{ document.title }}
+                      </a>
+										</li>
+									{% endfor %}
+								</ul>
+							{% endif %}
+						</div>
+					</li>
+				{% endfor %}
+			</ol>
+		{% endif %}
+	{% endif %}
+
+	{% set documents = [] %}
+	{% if entry.documents %}
+		{% for document in entry.documents.all() %}
+			{% if document.id not in minutes.ids() and document.id not in agendas.ids() %}
+				{% set documents = documents|merge([document]) %}
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+
+	{% if entry.type == 'meetingsImported' and documents|length %}
+		<h2 class="mt-10 mb-8 first:mt-0 md:mt-14">Additional Documents</h2>
+		<ul class="mt-4 ul-icons related">
+			{% for document in documents %}
+				<li>
+					<a href="{{ document.documentFile.one().url }}">
+            {{ svg( '@webroot/dist/img/icon-document.svg') }} {{ document.title }}
+          </a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	{% if entry.howToParticipate|length and entry.howToParticipate.one().description %}
+		<div class="accordion !pt-8" data-allow-toggle>
+			<ul
+        class="accordion-controls"
+        aria-label="Accordion Control Group Buttons">
+				{% for item in entry.howToParticipate.all() %}
+					<li class="accordion-item">
+						<button
+              class="accordion-header"
+              aria-controls="content-{{ entry.id }}-{{ loop.index }}"
+              aria-expanded="false"
+              id="accordion-control-{{ entry.id }}-{{ loop.index }}"
+            >
+              {{ item.header ? item.header : "How to Participate in this Public Meeting" }}
+              <span style="pointer-events: none;">
+                {{ svg( '@webroot/dist/img/icon-plus.svg') }}{{ svg( '@webroot/dist/img/icon-minus.svg') }}
+              </span>
+						</button>
+						<div
+              class="accordion-panel"
+              id="content-{{ entry.id }}-{{ loop.index }}"
+              hidden
+            >
+							{{ item.description }}
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	{% endif %}
+
+	{# Accessibility Request #}
+	<hr class="hr medium"/>
+	{% set accessibilityText %}
+	  <p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
+	  <p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a courtesy to attendees with chemical sensitivities.</p>
+	  {% if entry.emailAddress %}
+		  <a class="button secondary small" href="mailto:{{ entry.emailAddress }}?subject=Accessibility Request: {{ entry.title }}{{ entry.date ? ' at ' ~ entry.date|date('m/d/Y') : '' }}">Make a Request</a>
+	  {% endif %}
+	{% endset %}
+
+	{% include '_components/_callout' with {
     callOutType   : 'info',
     heading       : 'Accessibility and interpretation requests',
     description   : accessibilityText 

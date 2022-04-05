@@ -112,7 +112,7 @@
 {% block sidebar %}
   <hr class="hidden lg:block"/>
   <div class="mt-2 md:mt-0"></div>
-  <h4>{{ 'Search and Filter'|t }}</h4>
+  <h4 class="py-0 mt-4 mb-6">{{ 'Search and Filter'|t }}</h4>
   <form action="{{ entry.url }}">
     <input type="hidden" name="type" value="{{ type }}"/>
     {{ macros.select('Month', 'month', 'month', [
@@ -149,7 +149,7 @@
   </form>
   <hr/>
   <div class="hidden lg:block">
-    <h4>{{ 'Learn More About Public Bodies'|t }}</h4>
+    <h4 class="py-0 mt-4">{{ 'Learn More About Public Bodies'|t }}</h4>
     <div class="pt-2">
       <p><a href="{{siteUrl}}boards-commissions">Boards & Commissions</a></p>
       <p><a href="{{siteUrl}}departments">Departments</a></p>
