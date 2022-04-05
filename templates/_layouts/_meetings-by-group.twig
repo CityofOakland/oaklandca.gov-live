@@ -66,12 +66,12 @@
 {% block content %}
   {% if filter_enabled %}
     {% if meetings|length %}
-      <h3>Displaying {{ meetings|length }} of {{ pageInfo.total }} Meetings</h3>
+      <h3 aria-live="polite">Displaying {{ meetings|length }} of {{ pageInfo.total }} Meetings</h3>
     {% else %}
-      <h3>No results found</h3>
+      <h3 aria-live="polite">No results found</h3>
     {% endif %}
   {% else %}
-    <h3>Displaying All Meetings</h3>
+    <h3 aria-live="polite">Displaying All Meetings</h3>
   {% endif %}
   <div class="mt-8">
     {% if meetings|length %}
