@@ -10,19 +10,27 @@
 
 {% set date_query = ['and'] %}
 
-{% if craft.app.request.getQueryParam('start_date') %}
+{% set year   = craft.app.request.getQueryParam('year') ? craft.app.request.getQueryParam('year') : '' %}
+{% set month  = craft.app.request.getQueryParam('month') ? craft.app.request.getQueryParam('month') : '' %}
+{% set ymd     = '' %}
+
+{% if year and month %}
   {% set filter_enabled = true %}
-  {% set ym = craft.app.request.getQueryParam('start_date') %}
-  {% set date_query = date_query|merge(['>= ' ~ (ym~'-01')]) %}
+  {% set ymd = year ~ '-' ~ month ~ '-01' %}
+  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
+{% elseif year %}
+  {% set filter_enabled = true %}
+  {% set ymd = year ~ '-' ~ '01-01' %}
+  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 year')|date('Y-m-d')) ]) %}
+{% elseif month %}
+  {% set filter_enabled = true %}
+  {% set ymd = now|date('Y') ~ '-' ~ month %}
+  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
 {% endif %}
 
-{% if craft.app.request.getQueryParam('end_date') %}
-  {% set filter_enabled = true %}
-  {% set ym = craft.app.request.getQueryParam('end_date') %}
-  {% set date_query = date_query|merge(['<= ' ~ (ym~'-31')]) %}
-{% endif %}
-
+{% set type = 1 %}
 {% if craft.app.request.getQueryParam('type') %}
+  {% set type           = craft.app.request.getQueryParam('type') %}
   {% set filter_enabled = true %}
   {% switch craft.app.request.getQueryParam('type') %}
     {% case 1 %}
@@ -30,12 +38,7 @@
       {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
     {% case 2 %}
       {% set meetings = meetings.order('date desc') %}
-    {% case 3 %}
-      {% set meetings = meetings.order('date desc') %}
       {% set date_query = date_query|merge(['< ' ~ now|date('Y-m-d')]) %}
-    {% default %}
-      {% set meetings = meetings.order('date asc') %}
-      {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
   {% endswitch %}
 {% else %}
   {% set meetings = meetings.order('date asc') %}
@@ -57,6 +60,13 @@
 {% import '_macros/_macros' as macros %}
 
 {% block content %}
+  <div>
+    <ul class="flex flex-wrap list-none p-0" style="padding-top:0;">
+        <li><a href="?type=1" class="button m-0 rounded-none {{ type == 1 ? 'pointer-events-none' : 'secondary' }}">Upcoming Meetings</a></li>
+        <li><a href="?type=2" class="button m-0 rounded-none {{ type == 2 ? 'pointer-events-none' : 'secondary' }}">Past Meetings</a></li>
+    </ul>
+  </div>
+
   {% if filter_enabled %}
     {% if meetings|length %}
       <h3>Displaying {{ meetings|length }} of {{ pageInfo.total }} Meetings</h3>
@@ -64,8 +74,14 @@
       <h3>No results found</h3>
     {% endif %}
   {% else %}
-    <h3>Displaying Upcoming Meetings</h3>
+    {% switch type %}
+      {% case 1 %}
+      <h3>Displaying all Upcoming Meetings</h3>
+      {% case 2 %}
+      <h3>Displaying all Past Meetings</h3>
+    {% endswitch %}
   {% endif %}
+
   <div class="mt-8">
     {% if meetings|length %}
       {% for meeting in meetings %}
@@ -98,15 +114,32 @@
   <div class="mt-2 md:mt-0"></div>
   <h4>{{ 'Search and Filter'|t }}</h4>
   <form action="{{ entry.url }}">
+    <input type="hidden" name="type" value="{{ type }}"/>
+    {{ macros.select('Month', 'month', 'month', [
+        {"01"  : "January"},
+        {"02"  : "February"},
+        {"03"  : "March"},
+        {"04"  : "April"},
+        {"05"  : "May"},
+        {"06"  : "June"},
+        {"07"  : "July"},
+        {"08"  : "August"},
+        {"09"  : "September"},
+        {"10"  : "October"},
+        {"11"  : "November"},
+        {"12"  : "December"}
+      ], "Select a month"
+    )}}
+    {% set earliest_year = (type == 2)  ? craft.entries().section('meetings').order('date asc').limit(1).one().date|date('Y') : now|date('Y') %}
+    {% set latest_year   = (type == 1)  ? craft.entries().section('meetings').order('date desc').limit(1).one().date|date('Y') : now|date('Y') %}
+    {% set years = [] %}
+    {% for year in range(latest_year, earliest_year) %}
+      {% set years =  years|merge([{(year): year}]) %}
+    {% endfor %}
+
+    {{ macros.select('Year', 'year', 'year', years, "Select a year") }}
     {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
     {{ macros.select('Public Body', 'public_body', 'public_body', craft.entries().section('boardsCommissions').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a Council, Board or Commission') }}
-    {{ macros.select('Date Range', 'type', 'type', [
-        {"1"  : "Upcoming Meetings Only"},
-        {"2"  : "Past and Upcoming Meetings"},
-        {"3" : "Past Meetings Only"},
-      ], false
-    )}}
-    {{ macros.dates() }}
     <div class="flex items-center">
       <button class="button medium">Apply</button>
       {% if query or filter_enabled %}
@@ -119,6 +152,7 @@
     <h4>{{ 'Learn More About Public Bodies'|t }}</h4>
     <div class="pt-2">
       <p><a href="{{siteUrl}}boards-commissions">Boards & Commissions</a></p>
+      <p><a href="{{siteUrl}}departments">Departments</a></p>
       <p><a href="{{siteUrl}}departments/oakland-city-council">City Council</a></p>
     </div>
     <hr class="light"/>
