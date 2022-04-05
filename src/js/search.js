@@ -2,13 +2,13 @@
 const allSearch = instantsearch({
   appId: "6V5VJO8ZG2",
   apiKey: "9bded46d3070b2089499c70b2389708b",
-  indexName: document.querySelector('#all-hits') ? (document.querySelector('#all-hits').dataset.index ? document.querySelector('#all-hits').dataset.index : 'production_all' ) : 'production_all',
+  indexName: document.querySelector('#all-hits') ? (document.querySelector('#all-hits').dataset.index ? document.querySelector('#all-hits').dataset.index : 'production_all') : 'production_all',
   searchParameters: {
     highlightPreTag: '<b class="font-bold">',
     highlightPostTag: '</b>',
   },
   routing: true,
-  searchFunction: function(helper) {
+  searchFunction: function (helper) {
     const query = allSearch.helper.state.query;
     const page = allSearch.helper.state.page;
     helper.search();
@@ -29,136 +29,147 @@ allSearch.addWidget(
     container: '#clear-refinements',
     templates: {
       link: "Remove Filters"
-    }  })
+    }
+  })
 );
 
-/*
-  Create a custom pagination widget
-  This is used to create a custom pagination widget that is used in the search results page
-*/
-  // 1. Create a render function for the pagination widget
-  const renderPagination = (renderOptions, isFirstRender) => {
+const kebabCase = string => string
+.replace(/([a-z])([A-Z])/g, "$1-$2")
+.replace(/[\s_]+/g, '-')
+.toLowerCase();
 
-    const container = document.querySelector('#bottom-pagination');
+// 1. Create a render function for the pagination widget
+const renderPagination = (renderOptions, isFirstRender) => {
 
-    const { pages, currentRefinement, nbPages, refine } = renderOptions;
+  const container = document.querySelector('#bottom-pagination');
 
-    if(nbPages > 1 && nbPages <= 7) {
+  const { pages, currentRefinement, nbPages, refine } = renderOptions;
 
-      const previous  = `<li><a class="prev ${currentRefinement > 0 ? '' : 'disabled' }" href="#" data-value="${currentRefinement - 1}">Previous</a></li>`;
-      const next      = `<li><a class="next ${currentRefinement < nbPages - 1 ? '' : 'disabled'}" href="#" data-value="${currentRefinement + 1}">Next</a></li>`;
+  if (nbPages > 1 && nbPages <= 7) {
 
-      const pages = [...Array(nbPages).keys()];;
+    const previous = `<li><a class="prev ${currentRefinement > 0 ? '' : 'disabled'}" href="#" data-value="${currentRefinement - 1}">Previous</a></li>`;
+    const next = `<li><a class="next ${currentRefinement < nbPages - 1 ? '' : 'disabled'}" href="#" data-value="${currentRefinement + 1}">Next</a></li>`;
 
-      container.innerHTML = `
+    const pages = [...Array(nbPages).keys()];;
+
+    container.innerHTML = `
         <ul class="pagination">
           ${previous}
           ${pages
-            .map(page => `<li><a class="page ${currentRefinement === page ? 'page-active' : ''}" href="#" data-value="${page}">${page + 1}</a></li>`)
-            .join('')}
+        .map(page => `<li><a class="page ${currentRefinement === page ? 'page-active' : ''}" href="#" data-value="${page}">${page + 1}</a></li>`)
+        .join('')}
           ${next}
         </ul>
       `;
 
-      [...container.querySelectorAll('a')].forEach(element => {
-        element.addEventListener('click', event => {
-          event.preventDefault();
-          refine(event.currentTarget.dataset.value);
-        });
+    [...container.querySelectorAll('a')].forEach(element => {
+      element.addEventListener('click', event => {
+        event.preventDefault();
+        refine(event.currentTarget.dataset.value);
       });
-    } else if(nbPages > 1 && nbPages > 7) {
-      const previous  = `<li><a class="prev ${currentRefinement > 0 ? '' : 'disabled' }" href="#" data-value="${currentRefinement - 1}">Previous</a></li>`;
-      const next      = `<li><a class="next ${currentRefinement < nbPages - 1 ? '' : 'disabled'}" href="#" data-value="${currentRefinement + 1}">Next</a></li>`;
+    });
+  } else if (nbPages > 1 && nbPages > 7) {
+    const previous = `<li><a class="prev ${currentRefinement > 0 ? '' : 'disabled'}" href="#" data-value="${currentRefinement - 1}">Previous</a></li>`;
+    const next = `<li><a class="next ${currentRefinement < nbPages - 1 ? '' : 'disabled'}" href="#" data-value="${currentRefinement + 1}">Next</a></li>`;
 
-      const first = pages.includes(0) ? '' : `<li><a class="page" href="#" data-value="0">1</a></li><li>...</li>`;
-      const last  = pages.includes(nbPages - 1) ? '' : `<li>...</li><li><a class="page" href="#" data-value="${nbPages - 1}">${nbPages}</a></li>`;
+    const first = pages.includes(0) ? '' : `<li><a class="page" href="#" data-value="0">1</a></li><li>...</li>`;
+    const last = pages.includes(nbPages - 1) ? '' : `<li>...</li><li><a class="page" href="#" data-value="${nbPages - 1}">${nbPages}</a></li>`;
 
-      container.innerHTML = `
+    container.innerHTML = `
         <ul class="pagination">
           ${previous}
           ${first}
           ${pages
-            .map(page => `<li><a class="page ${currentRefinement === page ? 'page-active' : ''}" href="#" data-value="${page}">${page + 1}</a></li>`)
-            .join('')}
+        .map(page => `<li><a class="page ${currentRefinement === page ? 'page-active' : ''}" href="#" data-value="${page}">${page + 1}</a></li>`)
+        .join('')}
           ${last}
           ${next}
         </ul>
       `;
 
-      [...container.querySelectorAll('a')].forEach(element => {
-        element.addEventListener('click', event => {
-          event.preventDefault();
-          refine(event.currentTarget.dataset.value);
-        });
+    [...container.querySelectorAll('a')].forEach(element => {
+      element.addEventListener('click', event => {
+        event.preventDefault();
+        refine(event.currentTarget.dataset.value);
       });
-    } else {
-      container.innerHTML = '';
-    }
-  };
+    });
+  } else {
+    container.innerHTML = '';
+  }
+};
 
-  // 2. Create the custom pagination widget
-  const customPagination = instantsearch.connectors.connectPagination(
-    renderPagination
-  );
+// 2. Create the custom pagination widget
+const customPagination = instantsearch.connectors.connectPagination(
+  renderPagination
+);
 
-  // 3. Instantiate the pagination widget
-  allSearch.addWidgets([
-    customPagination({
-      padding: 2,
-    })
-  ]);
+// 3. Instantiate the pagination widget
+allSearch.addWidgets([
+  customPagination({
+    padding: 2,
+  })
+]);
 
-// custom `renderFn` to render the custom RefinementList widget
-function renderFn(RefinementListRenderingOptions, isFirstRendering) {
+// custom `renderFn` to render the custom Menu widget
+function renderFn(MenuRenderingOptions, isFirstRendering) {
   if (isFirstRendering) {
-    RefinementListRenderingOptions.widgetParams.containerNode
-      .html('<fieldset></fieldset>')
+    MenuRenderingOptions.widgetParams.containerNode
+      .html('<fieldset role="complementary"></fieldset>')
   }
 
-    RefinementListRenderingOptions.widgetParams.containerNode
-      .find('li[data-refine-value]')
-      .each(function() { $(this).off('click'); });
+  MenuRenderingOptions.widgetParams.containerNode
+    .find('input[data-refine-value]')
+    .each(function () {
+      $(this).off('click');
+    });
 
-  if (RefinementListRenderingOptions.canRefine) {
-    var list = RefinementListRenderingOptions.items.map(function(item) {
+  if (MenuRenderingOptions.canRefine) {
+    var list = MenuRenderingOptions.items.map(function (item) {
       return `
-        <li data-refine-value="${item.value}">
-          <input type="radio" name="Section" value="${item.value}" ${item.isRefined ? 'checked' : ''} />
-          <a href="${RefinementListRenderingOptions.createURL(item.value)}">
-            ${item.label} (${item.count})
-          </a>
-        </li>
+        <div class="flex gap-2 items-center mt-3 first:mt-0">
+          <div class="flex items-center">
+            <input
+              type="radio" 
+              id="${kebabCase(item.value)}"
+              class="h-4 w-4 cursor-pointer border border-gray-300 appearance-none rounded-full checked:border-5 checked:border-green-800"
+              data-refine-value="${item.value}" 
+              name="section"
+              value="${item.value}" ${item.isRefined ? 'checked' : ''} />
+          </div>
+          <label class="text-gray-700 text-sm font-medium cursor-pointer" for="${kebabCase(item.value)}">${item.label} (${item.count})</label>
+        </div>
       `;
     });
 
-    RefinementListRenderingOptions.widgetParams.containerNode.find('fieldset').html(list);
-    RefinementListRenderingOptions.widgetParams.containerNode
-      .find('li[data-refine-value]')
-      .each(function() {
-        $(this).on('click', function(event) {
+    MenuRenderingOptions.widgetParams.containerNode.find('fieldset').html('<legend class="font-medium border-b border-b-gray-300 w-full">Filter by Section</legend>' + list.join(''));
+
+    MenuRenderingOptions.widgetParams.containerNode
+      .find('input[data-refine-value]')
+      .each(function () {
+        $(this).on('click', function (event) {
           event.stopPropagation();
           event.preventDefault();
-
-          RefinementListRenderingOptions.refine($(this).data('refine-value'));
+          MenuRenderingOptions.refine($(this).data('refine-value'));
         });
       });
   } else {
-    RefinementListRenderingOptions.widgetParams.containerNode.find('fieldset').html('');
+    MenuRenderingOptions.widgetParams.containerNode.find('fieldset').html('');
   }
 }
 
-// connect `renderFn` to RefinementList logic
-var customRefinementList = instantsearch.connectors.connectRefinementList(renderFn);
+// connect `renderFn` to Menu logic
+var customMenu = instantsearch.connectors.connectMenu(renderFn);
 
 // mount widget on the page
 allSearch.addWidget(
-  customRefinementList({
+  customMenu({
     containerNode: $('#section-filter'),
     attributeName: 'section',
-    limit: 10,
+    sortBy: ['name'],
+   limit: 10,
   })
 );
-    
+
 // Instantiate the results/hits
 allSearch.addWidget(
   instantsearch.widgets.hits({
