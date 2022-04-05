@@ -76,7 +76,7 @@
 }
 
 .components table caption {
-  padding: 8px;
+  padding: .5rem;
   text-align: left;
 }
 
@@ -96,7 +96,7 @@
 }
 
 .components td {
-  padding: 15px;
+  padding: .9375rem;
   word-break: break-word;
   & > *:first-child {
     padding-top: 0;
