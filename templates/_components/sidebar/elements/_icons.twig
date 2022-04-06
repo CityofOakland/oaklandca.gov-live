@@ -1,0 +1,16 @@
+{% set vars = {
+  items: null,
+}|merge(params) %}
+
+<ul class="ul-icons">
+  {% for item in vars.items %}
+    {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+      params: {
+        link: item.link,
+        icon: item.icon,
+        text: item.text
+      }
+    }) }}
+  {% endfor %}
+</ul>
+

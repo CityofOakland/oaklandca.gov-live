@@ -1,3 +1,10 @@
+.main-content {
+  @apply mt-4 first:mt-0;
+  & table:first-child {
+    margin-top: 0;
+  }
+}
+
 .result {
   border-bottom: 2px solid #cfcfcf;
   margin-bottom: 1.5rem;
