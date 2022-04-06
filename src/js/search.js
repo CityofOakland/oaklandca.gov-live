@@ -121,22 +121,35 @@ allSearch.addWidgets([
   })
 ]);
 
-// custom `renderFn` to render the custom Menu widget
-function renderFn(MenuRenderingOptions, isFirstRendering) {
-  if (isFirstRendering) {
-    MenuRenderingOptions.widgetParams.containerNode
-      .html('<fieldset role="complementary"></fieldset>')
+// 1. Create a render function
+const renderMenu = (renderOptions, isFirstRender) => {
+  const {
+    items,
+    refine,
+    widgetParams,
+  } = renderOptions;
+
+  if (isFirstRender) {
+    // Sets up the HTML structure:
+    const wrapper = document.createElement('fieldset');
+    wrapper.setAttribute('role', 'complementary');
+
+    const header = document.createElement('legend');
+    header.classList.add('font-medium', 'border-b', 'border-gray-800', 'pb-1', 'mb-4', 'w-full', 'leading-7');
+    header.innerHTML = 'Filter by Section';
+
+    const container = document.createElement('div');
+    container.classList.add('mt-3', 'first-of-type:mt-0', 'filters');
+
+    wrapper.appendChild(header);
+    wrapper.appendChild(container);
+
+    widgetParams.container.appendChild(wrapper);
   }
 
-  MenuRenderingOptions.widgetParams.containerNode
-    .find('input[data-refine-value]')
-    .each(function () {
-      $(this).off('click');
-    });
-
-  if (MenuRenderingOptions.canRefine) {
-    var list = MenuRenderingOptions.items.map(function (item) {
-      return `
+  widgetParams.container.querySelector('.filters').innerHTML = items
+    .map(
+      item => `
         <div class="flex gap-2 items-center mt-3 first-of-type:mt-0">
           <div class="flex items-center">
             <input
@@ -151,37 +164,32 @@ function renderFn(MenuRenderingOptions, isFirstRendering) {
             ${item.label} (${item.count}<span class="sr-only">pages</span>)
           </label>
         </div>
-      `;
+      `
+    )
+    .join('');
+
+  [...widgetParams.container.querySelectorAll('input')].forEach(element => {
+    element.addEventListener('click', event => {
+      event.preventDefault();
+      refine(event.currentTarget.dataset.refineValue);
     });
+  });
+};
 
-    MenuRenderingOptions.widgetParams.containerNode.find('fieldset').html('<legend class="font-medium border-b border-gray-800 pb-1 mb-4 w-full leading-7">Filter by Section</legend>' + list.join(''));
+// 2. Create the custom widget
+const customMenu = instantsearch.connectors.connectMenu(
+  renderMenu
+);
 
-    MenuRenderingOptions.widgetParams.containerNode
-      .find('input[data-refine-value]')
-      .each(function () {
-        $(this).on('click', function (event) {
-          event.stopPropagation();
-          event.preventDefault();
-          MenuRenderingOptions.refine($(this).data('refine-value'));
-        });
-      });
-  } else {
-    MenuRenderingOptions.widgetParams.containerNode.find('fieldset').html('');
-  }
-}
-
-// connect `renderFn` to Menu logic
-var customMenu = instantsearch.connectors.connectMenu(renderFn);
-
-// mount widget on the page
-allSearch.addWidget(
+// 3. Instantiate
+allSearch.addWidgets([
   customMenu({
-    containerNode: $('#section-filter'),
+    container: document.querySelector('#section-filter'),
     attributeName: 'section',
     sortBy: ['name'],
-   limit: 10,
+    limit: 20,
   })
-);
+]);
 
 // Instantiate the results/hits
 allSearch.addWidget(
