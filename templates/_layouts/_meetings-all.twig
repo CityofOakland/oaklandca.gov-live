@@ -1,5 +1,5 @@
 {% set query          = craft.app.request.getQueryParam('q') %}
-{% set meetings       = craft.entries().section('meetings').search(query).limit(10) %}
+{% set meetings  = craft.entries().section('meetings').search(query).limit(10) %}
 {% set filter_enabled = false %}
 
 {% if craft.app.request.getQueryParam('public_body') %}
@@ -8,48 +8,15 @@
   {% set meetings = meetings.relatedTo(craft.entries().section('boardsCommissions').id(id).one()) %}
 {% endif %}
 
-{% set date_query = ['and'] %}
-
-{% if craft.app.request.getQueryParam('start_date') %}
-  {% set filter_enabled = true %}
-  {% set ym = craft.app.request.getQueryParam('start_date') %}
-  {% set date_query = date_query|merge(['>= ' ~ (ym~'-01')]) %}
-{% endif %}
-
-{% if craft.app.request.getQueryParam('end_date') %}
-  {% set filter_enabled = true %}
-  {% set ym = craft.app.request.getQueryParam('end_date') %}
-  {% set date_query = date_query|merge(['<= ' ~ (ym~'-31')]) %}
-{% endif %}
-
-{% if craft.app.request.getQueryParam('type') %}
-  {% set filter_enabled = true %}
-  {% switch craft.app.request.getQueryParam('type') %}
-    {% case 1 %}
-      {% set meetings = meetings.order('date asc') %}
-      {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
-    {% case 2 %}
-      {% set meetings = meetings.order('date desc') %}
-    {% case 3 %}
-      {% set meetings = meetings.order('date desc') %}
-      {% set date_query = date_query|merge(['< ' ~ now|date('Y-m-d')]) %}
-    {% default %}
-      {% set meetings = meetings.order('date asc') %}
-      {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
-  {% endswitch %}
-{% else %}
-  {% set meetings = meetings.order('date asc') %}
-  {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
-{% endif %}
-
-{% if date_query|length > 1 %}
-  {% set meetings = meetings.date(date_query) %}
-{% endif %}
-
-{% if craft.app.request.getQueryParam('q') %}
+{% if craft.app.request.getQueryParam('start_date') or 
+  craft.app.request.getQueryParam('end_date') or 
+  craft.app.request.getQueryParam('type') or
+  craft.app.request.getQueryParam('q')
+%}
   {% set filter_enabled = true %}
 {% endif %}
 
+{% set meetings = meetings|applyDateFilter('date') %}
 {% paginate meetings as pageInfo, meetings %}
 
 {% set layout = 'reverse' %}

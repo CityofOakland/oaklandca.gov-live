@@ -380,13 +380,13 @@ body:not(.lg-from-hash)
   cursor: pointer;
 }
 .lg-outer .lg-has-vimeo .lg-video-play {
-  background: url("/dist/img/vimeo-play.png") no-repeat scroll 0 0 transparent;
+  background: url("../img/vimeo-play.png") no-repeat scroll 0 0 transparent;
 }
 .lg-outer .lg-has-vimeo:hover .lg-video-play {
-  background: url("/dist/img/vimeo-play.png") no-repeat scroll 0 -58px transparent;
+  background: url("../img/vimeo-play.png") no-repeat scroll 0 -58px transparent;
 }
 .lg-outer .lg-has-html5 .lg-video-play {
-  background: transparent url("/dist/img/video-play.png") no-repeat scroll 0 0;
+  background: transparent url("../img/video-play.png") no-repeat scroll 0 0;
   height: 64px;
   margin-left: -32px;
   margin-top: -32px;
@@ -397,10 +397,10 @@ body:not(.lg-from-hash)
   opacity: 1;
 }
 .lg-outer .lg-has-youtube .lg-video-play {
-  background: url("/dist/img/youtube-play.png") no-repeat scroll 0 0 transparent;
+  background: url("../img/youtube-play.png") no-repeat scroll 0 0 transparent;
 }
 .lg-outer .lg-has-youtube:hover .lg-video-play {
-  background: url("/dist/img/youtube-play.png") no-repeat scroll 0 -60px transparent;
+  background: url("../img/youtube-play.png") no-repeat scroll 0 -60px transparent;
 }
 .lg-outer .lg-video-object {
   width: 100% !important;
@@ -775,7 +775,7 @@ body:not(.lg-from-hash)
   white-space: nowrap;
 }
 .lg-outer .lg-item {
-  background: url("/dist/img/loading.gif") no-repeat scroll center center
+  background: url("../img/loading.gif") no-repeat scroll center center
     transparent;
   display: none !important;
 }

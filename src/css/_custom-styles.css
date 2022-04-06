@@ -119,7 +119,7 @@ button {
 }
 
 .search-box {
-  background-image: url('/dist/img/icon-spyglass.svg');
+  background-image: url('../img/icon-spyglass.svg');
   background-repeat: no-repeat;
   background-position: 0.5rem center;
 }
@@ -143,7 +143,7 @@ body.open #menu {
 
 .how-it-works-block {
   @apply relative mb-4 bg-bottom bg-no-repeat;
-  background-image: url('/dist/img/icon-down-arrow.svg');
+  background-image: url('../img/icon-down-arrow.svg');
 }
 
 @media (min-width: 768px) {
@@ -152,7 +152,7 @@ body.open #menu {
     background-image: none;
     &:after {
       @apply absolute bg-no-repeat;
-      background-image: url('/dist/img/icon-right-arrow.svg');
+      background-image: url('../img/icon-right-arrow.svg');
       content: "";
       top: 10px;
       right: -30px;
@@ -175,7 +175,7 @@ body.open .page-holder {
 
 .timeline-grid dt {
   @apply pl-12 bg-left-top bg-no-repeat text-2xl;
-  background-image: url('/dist/img/icon-timeline-point.svg');
+  background-image: url('../img/icon-timeline-point.svg');
   background-size: theme(spacing.9);
 }
 
