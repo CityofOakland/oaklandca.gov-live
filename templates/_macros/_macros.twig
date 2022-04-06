@@ -34,34 +34,25 @@
 {% endmacro %}
 
 {% macro dates() %}
-  <div class="flex flex-wrap items-center justify-between -mx-3">
-    <div class="w-full px-3 xl:w-2/5">
-      <label class="flex items-center mt-3" for="start_date" style="padding: 0;margin-bottom:0;">From Date:</label>
-    </div>
-    <div class="w-full px-3 xl:w-3/5">
-      <input 
-        id="start_date" 
-        type="month" 
-        name="start_date" 
-        data-today="{{ now|date('Y-m') }}" 
-        min="{{ craft.app.request.getQueryParam('type') == 1 ? now|date('Y-m') : '' }}"
-        max="{{ craft.app.request.getQueryParam('end_date') ? craft.app.request.getQueryParam('end_date') : now|date_modify('+1 year')|date('Y-m') }}" 
-        value="{{ craft.app.request.getQueryParam('start_date') ?? craft.app.request.getQueryParam('start_date') }}"/>
-    </div>
-    <div class="w-full px-3 xl:w-2/5">
-      <label class="flex items-center mt-3" for="end_date" style="padding: 0;margin-bottom:0;">To Date:</label>
-    </div>
-    <div class="w-full px-3 xl:w-3/5">
-      <input 
-        id="end_date" 
-        type="month" 
-        name="end_date"
-        data-today="{{ now|date('Y-m') }}"
-        min="{{ craft.app.request.getQueryParam('start_date') ?? craft.app.request.getQueryParam('start_date') }}" 
-        max="{{ now|date_modify('+1 year')|date('Y-m') }}" 
-        value="{{ craft.app.request.getQueryParam('end_date') ?? craft.app.request.getQueryParam('end_date') }}"/>
-    </div>
-  </div>
+  <label class="flex items-center mt-3" for="start_date" style="padding: 0;margin-bottom:0;">From Date</label>
+  <input 
+    id="start_date" 
+    type="month" 
+    name="start_date" 
+    data-today="{{ now|date('Y-m') }}" 
+    min="{{ craft.app.request.getQueryParam('type') == 1 ? now|date('Y-m') : '' }}"
+    max="{{ craft.app.request.getQueryParam('end_date') ? craft.app.request.getQueryParam('end_date') : now|date_modify('+1 year')|date('Y-m') }}" 
+    value="{{ craft.app.request.getQueryParam('start_date') ?? craft.app.request.getQueryParam('start_date') }}"/>
+  <label class="flex items-center mt-3" for="end_date" style="padding: 0;margin-bottom:0;">To Date:</label>
+
+  <input 
+    id="end_date" 
+    type="month" 
+    name="end_date"
+    data-today="{{ now|date('Y-m') }}"
+    min="{{ craft.app.request.getQueryParam('start_date') ?? craft.app.request.getQueryParam('start_date') }}" 
+    max="{{ now|date_modify('+1 year')|date('Y-m') }}" 
+    value="{{ craft.app.request.getQueryParam('end_date') ?? craft.app.request.getQueryParam('end_date') }}"/>
 
   {% js at endBody %}
     var $start_date   = $('input[name="start_date"]');
