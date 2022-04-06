@@ -47,6 +47,9 @@ module.exports = {
         '7xl': ['4.5rem', '4.5rem'],
         'banner-lead': ['1.25rem', '1.875rem']
       },
+      borderWidth: {
+        '5': '5px'
+      },
       spacing: {
         "30": "7.5rem",
         "1/2": "50%",
@@ -166,5 +169,8 @@ module.exports = {
   plugins: [
     require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/forms")({
+      strategy: 'class', // only generate classes
+    }),
   ]
 };
