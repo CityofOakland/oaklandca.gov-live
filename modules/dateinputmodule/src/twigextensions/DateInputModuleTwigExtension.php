@@ -84,21 +84,25 @@ class DateInputModuleTwigExtension extends AbstractExtension
      *
      * @return string
      */
-    public function applyDateFilter(craft\elements\db\EntryQuery $query, $field_name)
+    public function applyDateFilter(craft\elements\db\EntryQuery $query, $field_name, $default_type = 1)
     {
         $request    = Craft::$app->getRequest();
         $date_query = ['and'];
 
         $start_date = $request->getQueryParam('start_date');
         $end_date   = $request->getQueryParam('end_date');
-        $type       = $request->getQueryParam('type');
+        $type       = $request->getQueryParam('type') ? $request->getQueryParam('type') : $default_type;
 
         if($start_date !== null and $end_date !== null) {
             if($start_date !== ''){
+                $values     = explode(" / ", $start_date);
+                $start_date = $values[1] . "-" . $values[0];
                 $date_query = array_merge($date_query, ['>= '.($start_date.'-01')]);
             }
 
             if($end_date !== ''){
+                $values     = explode(" / ", $end_date);
+                $end_date   = $values[1] . "-" . $values[0];
                 $date       = new DateTime($end_date."-01");
                 $last_day   = $date->modify("+1 month -1 day");
                 $date_query = array_merge($date_query, ['<= '.($last_day->format("Y-m-d"))]);
@@ -156,9 +160,10 @@ class DateInputModuleTwigExtension extends AbstractExtension
         <div class='monthpicker-container'>
             <input
                 id='$name'
-                type='month'
+                type='text'
                 name='$name'
                 value='$value'
+                placeholder='mm / yyyy'
             />
         </div>";
         return $result;
@@ -173,16 +178,17 @@ class DateInputModuleTwigExtension extends AbstractExtension
      *
      * @return string
      */
-    public function renderRangepicker($upcoming_label = 'Upcoming Meetings Only', $both_label = 'Past and Upcoming Meetings', $past_label = 'Past Meetings Only')
+    public function renderRangepicker($upcoming_label = 'Upcoming Meetings Only', $both_label = 'Past and Upcoming Meetings', $past_label = 'Past Meetings Only', $default_value = 1)
     {
         $request = Craft::$app->getRequest();
+        $selected_value = $request->getQueryParam('type') ? $request->getQueryParam('type') : $default_value;
 
         return '<label for="type">
             Date Range
             <select name="type">
-                <option value="1" '.($request->getQueryParam('type') == 1 ? 'selected' : '').'>'.$upcoming_label.'</option>
-                <option value="2" '.($request->getQueryParam('type') == 2 ? 'selected' : '').'>'.$both_label.'</option>
-                <option value="3" '.($request->getQueryParam('type') == 3 ? 'selected' : '').'>'.$past_label.'</option>
+                <option value="1" '.($selected_value == 1 ? 'selected' : '').'>'.$upcoming_label.'</option>
+                <option value="2" '.($selected_value == 2 ? 'selected' : '').'>'.$both_label.'</option>
+                <option value="3" '.($selected_value == 3 ? 'selected' : '').'>'.$past_label.'</option>
             </select>
         </label>';
     }

@@ -15,7 +15,7 @@ var $end_date     = $('input[name="end_date"]');
 
 var config = {
   OnAfterChooseMonth: setMonthMinMax,
-  MonthFormat: 'yy-mm',
+  MonthFormat: 'mm / yy',
   Position: {collision: 'fit flip'},
   ShowOn: 'both'
 };
@@ -62,10 +62,14 @@ function setMonthMinMax() {
   }
 
   // Start date must never be greater than the set end date.
-  if($end_date.val()) $start_date.MonthPicker('option', 'MaxMonth', $end_date.val());
+  if($end_date.val()) {
+    $start_date.MonthPicker('option', 'MaxMonth', $end_date.val());
+  }
 
   // End date must never be lesser than the set start date.
-  if($start_date.val()) $end_date.MonthPicker('option', 'MinMonth', $start_date.val());
+  if($start_date.val()){
+    $end_date.MonthPicker('option', 'MinMonth', $start_date.val());
+  }
 }
 
 setMonthMinMax();

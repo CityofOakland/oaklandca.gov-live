@@ -11,15 +11,15 @@
 {% set meetings       = craft.entries().section('meetings').relatedTo(entry).search(query).limit(10) %}
 {% set filter_enabled = false %}
 
-{% if craft.app.request.getQueryParam('start_date') or 
+{% if 
+  craft.app.request.getQueryParam('start_date') or 
   craft.app.request.getQueryParam('end_date') or 
   craft.app.request.getQueryParam('type') or
-  craft.app.request.getQueryParam('q')
-%}
+  craft.app.request.getQueryParam('q') %}
   {% set filter_enabled = true %}
 {% endif %}
 
-{% set meetings = meetings|applyDateFilter('date') %}
+{% set meetings = meetings|applyDateFilter('date', 2) %}
 
 {% paginate meetings as pageInfo, meetings %}
 
@@ -62,16 +62,20 @@
   <hr/>
   <h4 class="py-0 mt-4 mb-6">{{ 'Search and Filter'|t }}</h4>
   <form action="{{ entry.url }}/meetings">
-    {{ macros.dates() }}
+    {{ renderRangepicker(
+      'Upcoming Meetings',
+      'Past and Upcoming Meetings',
+      'Past Meetings',
+      2
+    )|raw }}
+    <label class="flex items-center" for="start_date">From Date:</label>
+    {{ renderMonthpicker()|raw }}
+    <label class="flex items-center" for="end_date">To Date:</label>
+    {{ renderMonthpicker('end')|raw }}
+
     {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
-    {{ macros.select('Date Range', 'type', 'type', [
-        {"1"  : "Upcoming Meetings Only"},
-        {"2"  : "Past and Upcoming Meetings"},
-        {"3" : "Past Meetings Only"},
-      ], false
-    )}}
-    <div class="flex items-center">
-      <button class="button medium">Apply</button>
+    <div class="flex items-center mt-4">
+      <button class="button medium mt-0">Apply</button>
       {% if query or filter_enabled %}
         <a href="{{ entry.url }}/meetings">Clear filters</a>
       {% endif %}

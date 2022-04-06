@@ -8,11 +8,11 @@
   {% set meetings = meetings.relatedTo(craft.entries().section('boardsCommissions').id(id).one()) %}
 {% endif %}
 
-{% if craft.app.request.getQueryParam('start_date') or 
+{% if 
+  craft.app.request.getQueryParam('start_date') or 
   craft.app.request.getQueryParam('end_date') or 
   craft.app.request.getQueryParam('type') or
-  craft.app.request.getQueryParam('q')
-%}
+  craft.app.request.getQueryParam('q') %}
   {% set filter_enabled = true %}
 {% endif %}
 
@@ -31,7 +31,7 @@
       <h3>No results found</h3>
     {% endif %}
   {% else %}
-    <h3>Displaying All Meetings</h3>
+    <h3>Displaying Upcoming Meetings</h3>
   {% endif %}
   <div class="mt-8">
     {% if meetings|length %}
@@ -65,17 +65,20 @@
   <div class="mt-2 md:mt-0"></div>
   <h4 class="py-0 mt-4 mb-6">{{ 'Search and Filter'|t }}</h4>
   <form action="{{ entry.url }}">
-    {{ macros.dates() }}
+    {{ renderRangepicker(
+      'Upcoming Meetings',
+      'Past and Upcoming Meetings',
+      'Past Meetings',
+    )|raw }}
+    <label class="flex items-center" for="start_date">From Date:</label>
+    {{ renderMonthpicker()|raw }}
+    <label class="flex items-center" for="end_date">To Date:</label>
+    {{ renderMonthpicker('end')|raw }}
+
     {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
     {{ macros.select('Public Body', 'public_body', 'public_body', craft.entries().section('boardsCommissions').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a Council, Board or Commission') }}
-    {{ macros.select('Date Range', 'type', 'type', [
-        {"1"  : "Upcoming Meetings Only"},
-        {"2"  : "Past and Upcoming Meetings"},
-        {"3" : "Past Meetings Only"},
-      ], false
-    )}}
-    <div class="flex items-center">
-      <button class="button medium">Apply</button>
+    <div class="flex items-center mt-4">
+      <button class="button medium mt-0">Apply</button>
       {% if query or filter_enabled %}
         <a href="{{ entry.url }}">Clear filters</a>
       {% endif %}

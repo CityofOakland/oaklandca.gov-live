@@ -33,29 +33,6 @@
   {% endif %}
 {% endmacro %}
 
-{% macro dates() %}
-  {{ renderRangepicker(
-    'Upcoming Meetings Only',
-    'Past and Upcoming Meetings',
-    'Past Meetings Only',
-  )|raw }}
-
-  <div class="flex flex-wrap justify-between items-center -mx-3">
-    <div class="w-full xl:w-2/5 px-3 mt-2">
-      <label class="flex items-center" for="start_date" style="padding: 0;margin-bottom:0;">From Date:</label>
-    </div>
-    <div class="w-full xl:w-3/5 px-3 mt-2">
-      {{ renderMonthpicker()|raw }}
-    </div>
-    <div class="w-full xl:w-2/5 px-3 mt-2">
-      <label class="flex items-center" for="end_date" style="padding: 0;margin-bottom:0;">To Date:</label>
-    </div>
-    <div class="w-full xl:w-3/5 px-3 mt-2">
-      {{ renderMonthpicker('end')|raw }}
-    </div>
-  </div>
-{% endmacro %}
-
 {% macro select(label, id, name, options, defaultOption) %}
   <label for="{{ id }}">
     {{ label }}
