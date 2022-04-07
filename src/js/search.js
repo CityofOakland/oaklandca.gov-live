@@ -174,6 +174,9 @@ const renderMenu = (renderOptions, isFirstRender) => {
       refine(event.currentTarget.dataset.refineValue);
     });
   });
+  [...widgetParams.container.querySelectorAll('input')].forEach(element => {
+    if(element.checked) element.focus();
+  });
 };
 
 // 2. Create the custom widget
