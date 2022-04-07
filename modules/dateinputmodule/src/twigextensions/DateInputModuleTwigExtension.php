@@ -164,6 +164,7 @@ class DateInputModuleTwigExtension extends AbstractExtension
                 name='$name'
                 value='$value'
                 placeholder='mm / yyyy'
+                autocomplete='off'
             />
         </div>";
         return $result;
