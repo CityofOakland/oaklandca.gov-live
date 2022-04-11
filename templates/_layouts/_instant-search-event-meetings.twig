@@ -15,8 +15,6 @@
 {% include "_css/algoliafilter.css" %}
 {% endcss %}
 
-{{ craft.vite.script("src/js/algoliafilter.js") }}
-
 {% if section is defined %}
   {% set relation = craft.entries.section(section).slug(slug).one() %}
   {% set bannerTitleSuffix = " for " ~ relation.title %}
@@ -24,6 +22,7 @@
 
 {% block content %}
   {% block pageBanner %}
+    {{ craft.vite.script("src/js/algoliafilter.js") }}
     {% include '_partials/_page-banners.twig' with {
       bannerTitle: entry.title | replace(' Index', '') ~ bannerTitleSuffix ?? '',
     } %}
@@ -60,33 +59,3 @@
       </div>
   </section>
 {% endblock %}
-
-{% js on load %}
-  $('#hits').on('click', 'a', function(){
-
-    var search_term   = $('#search-input').val() ? $('#search-input').val() : 'No search term';
-    var link_clicked  = $(this).attr('href').trim();
-
-    var filters = [];
-
-    $('.facet-container > div:visible').each(function(index, element){
-      var $this = $(element);
-      var item = {
-        label : $this.find('.ais-header').text(),
-        value : $this.find('select').val() ? $this.find('select').val() : 'N/A',
-      };
-
-      filters.push(item);
-    });
-
-    dl.push({
-      'event'               : 'search_result_clicked',
-      'current_url'         : '{{ craft.app.request.absoluteUrl }}',
-      'url'                 : link_clicked,
-      'input_search_term'   : search_term,
-      'filters'             : filters,
-      'debug_mode'          : true,
-      'search_bar_id'       : 'instant-search-event-meetings'
-    });
-  });
-{% endjs %}

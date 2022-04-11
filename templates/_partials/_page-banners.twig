@@ -84,18 +84,3 @@
 <div class="container relative sm:flex">
   {{ custHeaderContent ?? headerContent }}
 </div>
-
-{% js on load %}
-  $('.breadcrumbs a').on('click', function(){
-      var link_clicked    = $(this).attr('href').trim();
-      var link_label      = $(this).text().trim().replace(/(\r\n|\n|\r)/gm, "");
-
-      dl.push({
-          'event'         : 'breadcrumb_clicked',
-          'current_url'   : '{{ craft.app.request.absoluteUrl }}',
-          'url'           : link_clicked,
-          'label'         : link_label,
-          'debug_mode'    : true,
-      });
-  });
-{% endjs %}

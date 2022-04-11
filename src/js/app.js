@@ -2,6 +2,7 @@ import '/src/css/app.css'
 import '/src/js/_init.js'
 import '/src/js/accordion.js'
 import '/src/js/navigation.js'
+import '/src/js/gtmevents.js'
 import Alpine from 'alpinejs'
 import collapse from '@alpinejs/collapse'
 

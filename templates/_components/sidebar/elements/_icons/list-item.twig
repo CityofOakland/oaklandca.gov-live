@@ -1,0 +1,36 @@
+{% set vars = {
+  text: null,
+  icon: null,
+  url: null
+}|merge(params) %}
+
+{% set icon = "" %}
+
+{% set icons = {
+  "envelope": "icon-envelope-updated.svg",
+  "phone": "icon-phone-updated.svg",
+  "map": "icon-marker-updated.svg",
+  "document": "icon-document.svg",
+  "folder": "icon-folder.svg" 
+} %}
+
+{% if vars.icon in icons|keys %}
+  {% set iconFile = icons[vars.icon] %}
+  {% set iconPath = "@webroot/dist/img/#{iconFile}" %}
+  {% set icon = svg(iconPath) %}
+{% endif %}
+
+{%- set content -%}
+  {% if icon %}{{ icon|raw }} {% endif %} {{ vars.text|raw }}
+{% endset -%}
+
+<li>
+  {% if vars.url %}
+    <a href="{{ vars.url }}">
+      {{ content }}
+    </a>
+  {% endif %}
+  {% if not vars.url %}
+    {{ content }}
+  {% endif %}
+</li>

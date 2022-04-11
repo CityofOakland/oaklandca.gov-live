@@ -134,33 +134,3 @@
         </nav>
     </div>
 </div>
-
-{% js on load %}
-    $('#site-search-form').on('submit', function(){
-        var search_term = $('#site-search').val();
-
-        dl.push({
-            'event'                 : 'site_search_clicked',
-            'current_url'           : '{{ craft.app.request.absoluteUrl }}',
-            'input_search_term'     : search_term,
-            'debug_mode'            : true,
-        });
-    });
-
-    $('#nav-wrapper a').on('click', function(){
-        var link_clicked    = $(this).attr('href').trim();
-        var link_label      = $(this).text().trim().replace(/(\r\n|\n|\r)/gm, "");
-
-        dl.push({
-            'event'         : 'topnav_clicked',
-            'current_url'   : '{{ craft.app.request.absoluteUrl }}',
-            'url'           : link_clicked,
-            'label'         : link_label,
-            'debug_mode'    : true,
-        });
-    });
-
-    $('.subnav-toggler').on('click', function(){
-        $(this).parent().siblings('.subnav').toggle('state-active');
-    });
-{% endjs %}
