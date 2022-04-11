@@ -1,0 +1,125 @@
+fieldLayouts:
+  5ab38eea-322a-4801-8f0b-4dba8f3f5682:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: 'Should be specific enough that it can stand alone.'
+            label: 'Event Title'
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5b935c33-5d69-45c2-acd9-a6a2f0a567ce # Calendarize
+            instructions: ''
+            label: Date/Time
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
+            instructions: 'Add any additional details that people should know about this event.'
+            label: 'Event Details'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f6e8acb0-e8f3-40de-8500-b95e6ed06def # Event Location
+            instructions: 'Add an online location for virtual events and/or a physical location for in-person events.'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 09053ba3-5577-4175-ba56-263da6112729 # Registration Link
+            instructions: 'Add the link for where you would like people to register for this event.'
+            label: 'Registration Link'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4b5cda22-38e1-4580-b113-b6ceee3c9c09 # Related Resources
+            instructions: 'Add related documents. This can include a flyer, agenda, or program for this event.'
+            label: 'Related Documents'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f3d1bcbe-1f1a-4498-b4e5-1d57d3257690 # Related Pages
+            instructions: 'Relate other pages to this event, including Departments, Officials, and Topics.'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: 'Event Contact'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 2260316d-d754-471f-a901-9d8ed19c13d3 # Full Name
+            instructions: 'Input the event contact name and title, or the team name.'
+            label: 'Event Contact Name'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a # Email Address
+            instructions: 'Input the email contact for this meeting.'
+            label: 'Event Email'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: 'After the Event'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: ce345611-039a-4fb5-9a1c-a9eef7d74514 # Embeds
+            instructions: 'Select the type of recording for this event. This field supports video URLs from Granicus, Youtube, and Vimeo.'
+            label: Recording
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: default
+hasTitleField: true
+name: Default
+section: 9db08bfd-737a-4544-a641-4c138f2b3b0a # Events
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

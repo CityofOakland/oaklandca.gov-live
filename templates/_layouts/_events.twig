@@ -1,0 +1,13 @@
+{% macro callout(calloutHeading) %}
+	{% include '_components/_callout' with {
+      callOutType   : 'attention',
+      heading       : calloutHeading,
+      description   : '' 
+    } %}
+{% endmacro %}
+
+{% extends '_content.twig' %}
+{% import '_macros/_macros' as macros %}
+
+{% block content %}
+{% endblock %}

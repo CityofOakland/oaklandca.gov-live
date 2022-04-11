@@ -1,0 +1,19 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
+handle: calendarize
+instructions: ''
+name: Calendarize
+searchable: false
+settings:
+  allDay: false
+  endDate: null
+  endRepeat: null
+  endRepeatDate: null
+  months: null
+  repeatType: null
+  repeats: false
+  startDate: null
+translationKeyFormat: null
+translationMethod: none
+type: unionco\calendarize\fields\CalendarizeField

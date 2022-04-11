@@ -1,4 +1,4 @@
-dateModified: 1648421714
+dateModified: 1649697885
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -75,6 +75,7 @@ meta:
     5a43f979-1654-4514-a9a8-d925fc846063: 'Stats Block with Icons' # Stats Block with Icons
     5ae976d4-1fd7-4dd5-bfd7-f25cb1ce7a0f: 'Call Out' # Call Out
     5b066077-3ce6-4583-af94-4fa87136ab3a: 'Milestone Link' # Milestone Link
+    5b935c33-5d69-45c2-acd9-a6a2f0a567ce: Calendarize # Calendarize
     5bc46e53-a87c-4584-89aa-808cacedf461: Categories # Categories
     5c49fc38-f64d-4b71-aeb4-cfa13aa112c3: 'Thumb Full Ratio' # Thumb Full Ratio
     5ca3c157-200f-49a4-9390-48c84349b0be: 'Column 3 Heading' # Column 3 Heading
@@ -148,6 +149,7 @@ meta:
     9c457cb3-7498-4b3d-8b1e-84454f649934: 'Link Set' # Link Set
     9c805dc0-3e7b-4361-ace3-62b856d8711e: 'Column 3 Heading' # Column 3 Heading
     9da43fd8-c505-4d19-9486-e0cb669c568a: 'Document Packets' # Document Packets
+    9db08bfd-737a-4544-a641-4c138f2b3b0a: Events # Events
     9dda7113-fc9a-4806-9315-3625689c332d: __blank__ # __blank__
     09e3ac15-7089-4e7f-9f6b-33267bfebc94: 'Project Status' # Project Status
     9ea91970-dd04-4a69-91e0-ba30496e7905: 'Meeting Entries' # Meeting Entries
@@ -449,6 +451,7 @@ meta:
     b936e275-7cde-473a-8849-7342b65b94db: Embed # Embed
     b3411cb1-e860-46ed-9cd6-58cf9b8daacb: Departments # Departments
     b3761a4e-9346-448a-ba6a-f441f75e61fc: 'Components - Footer' # Components - Footer
+    b57063ea-0fb9-49f5-94c2-c51bbdfef0ee: Default # Default
     b66198c4-d82e-4078-8034-c728b677d613: Content # Content
     b575240f-71ba-444a-ac88-0c275e078c01: 'External Link' # External Link
     b924108b-fb70-4757-ad7f-3e713f23a6d6: 'Team Members' # Team Members
@@ -755,6 +758,10 @@ plugins:
       showDisabledEvents: '1'
       showMiniCal: '1'
       timeInterval: 30
+  calendarize:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.3.0
   cp-body-classes:
     enabled: '1'
     licenseKey: null
