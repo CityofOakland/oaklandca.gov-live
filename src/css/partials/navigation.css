@@ -313,6 +313,8 @@ input[type="text"].form-control::placeholder {
   right: 0;
   left: 0;
   z-index: 1000;
+  max-height: calc(100vh - 90px);
+  overflow: scroll;
 }
 
 #mobile-navigation > ul > li > a {

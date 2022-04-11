@@ -108,27 +108,33 @@
             </a>
             <ul aria-labelledby="navbar-dropdown-mobile" class="px-4 py-2">
                 {% for item in navigation.navigationMain.level(1).all() %}
-                    <li class="has-submenu click border-green-600 border-b">
-                        <a 
-                            tabindex="0" 
-                            id="navbar-dropdown-mobile-{{ item.heading|replace({' ': '-'})|lower }}" 
-                            role="button" 
-                            aria-haspopup="true" 
-                            aria-expanded="false" 
-                            data-parent="#navbar-dropdown-mobile" 
-                            data-toggle="dropdown" 
-                            class="focusable"
-                        >{{ item.heading }} <span>{{ svg( '@webroot/dist/img/icon-arrow.svg')|attr({ class: 'fill-current' }) }}</span></a>
-                        <ul class="components" aria-labelledby="navbar-dropdown-mobile-{{ item.heading|replace({' ': '-'})|lower }}">
-                            {% set navItems = item.children.all() %}
-                            {% for navItem in navItems %}
-                                <li><a class="block focusable p-4 border-green-600 bg-green-900 border-t" href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
-                            {% endfor %}
-                            {% if item.linkit %}
-                                <li><a class="block focusable p-4 border-green-600 bg-yellow-500 text-gray-1000 border-t" href="{{ item.linkit.url }}" style="color:#222222">{{ item.linkit.text }}</a></li>
-                            {% endif %}
-                        </ul>
-                    </li>
+                    {% if item.toggle %}
+                        {% if item.linkit %}
+                            <li class="border-green-600 border-b"><a href="{{ item.linkit.url }}">{{ item.heading }}</a></li>
+                        {% endif %}
+                    {% else %}
+                        <li class="has-submenu click border-green-600 border-b">
+                            <a 
+                                tabindex="0" 
+                                id="navbar-dropdown-mobile-{{ item.heading|replace({' ': '-'})|lower }}" 
+                                role="button" 
+                                aria-haspopup="true" 
+                                aria-expanded="false" 
+                                data-parent="#navbar-dropdown-mobile" 
+                                data-toggle="dropdown" 
+                                class="focusable"
+                            >{{ item.heading }} <span>{{ svg( '@webroot/dist/img/icon-arrow.svg')|attr({ class: 'fill-current' }) }}</span></a>
+                            <ul class="components" aria-labelledby="navbar-dropdown-mobile-{{ item.heading|replace({' ': '-'})|lower }}">
+                                {% set navItems = item.children.all() %}
+                                {% for navItem in navItems %}
+                                    <li><a class="block focusable p-4 border-green-600 bg-green-900 border-t" href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
+                                {% endfor %}
+                                {% if item.linkit %}
+                                    <li><a class="block focusable p-4 border-green-600 bg-yellow-500 text-gray-1000 border-t" href="{{ item.linkit.url }}" style="color:#222222">{{ item.linkit.text }}</a></li>
+                                {% endif %}
+                            </ul>
+                        </li>
+                    {% endif %}
                 {% endfor %}
             </ul>
         </nav>

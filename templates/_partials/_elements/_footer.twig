@@ -60,7 +60,7 @@
                     </a>
                     <ul class="grid grid-cols-2 lg:flex items-center my-4 lg:my-0 lg:ml-6">
                         {% for item in navigationFooter.linkits.all() %}
-                            <li class="lg:ml-6"><a href="{{ item.linkit.url }}">{{ item.linkit.text }}</a></li>
+                            <li class="lg:ml-6 mb-0"><a href="{{ item.linkit.url }}">{{ item.linkit.text }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -77,26 +77,4 @@
             </nav>
         </div>
     </div>
-
-		{# <div class="pt-2 mt-4 border-t border-gray-700 md:flex md:pt-6 sm:flex">
-			<div class="flex items-center justify-start mt-4 text-xs sm:w-1/4 sm:mt-0 lg:text-base">
-				<a class="text-white hover:text-white hover:underline" href="/topics/oaklandlovelife">#OaklandLoveLife</a>
-			</div>
-			<div class="flex items-center pt-2 md:justify-center md:pt-0 sm:w-1/2">
-				{% for socItem in socialMedia %}
-					<div class="mr-4">
-						<a href="{{ socItem[0] }}" class="flex items-center justify-center w-12 h-12 duration-75 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 hover:text-gray-1000">
-							{{ svg('@webroot/dist/img/logo-' ~ socItem[1])|attr({
-                            class: 'h-6'
-                          })|raw }}
-							<span class="hidden-visually">{{ socItem[2] }}</span>
-						</a>
-					</div>
-				{% endfor %}
-			</div>
-			<div class="flex items-center mt-4 text-xs md:justify-end sm:w-1/4 sm:mt-0 lg:text-base lg:leading-loose">&copy;
-				{{ now | date('Y') }}
-				City of Oakland</div>
-		</div> #}
-	</div>
 </footer>

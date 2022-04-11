@@ -41,21 +41,30 @@ function toggleOverlay(){
   }
 }
 
-function resizeMenus(){
-  var height = 0;
+// TODO: Remove if deployed on production, was a feature request that turned out buggy in the actual use case.
 
-  Array.prototype.forEach.call(menusResizable, function(el, i){
-    // Reset height
-    el.style.minHeight = "0px";
-    if(el.clientHeight > height) {
-      height = el.clientHeight;
-    }
-  });
-
-  Array.prototype.forEach.call(menusResizable, function(el, i){
-    el.style.minHeight = height + "px";
-  });
-}
+// function resizeMenus(){
+//   var height = 0;
+//
+//   Array.prototype.forEach.call(menusResizable, function(el, i){
+//     // Reset height
+//     el.style.minHeight = "0px";
+//     if(el.clientHeight > height) {
+//       height = el.clientHeight;
+//     }
+//   });
+//
+//   Array.prototype.forEach.call(menusResizable, function(el, i){
+//     el.style.minHeight = height + "px";
+//   });
+// }
+//
+// window.addEventListener('resize', function(){
+//   console.log('resizing menus');
+//   resizeMenus();
+// })
+//
+// resizeMenus();
 
 // Click
 Array.prototype.forEach.call(menuItemsClick, function(el, i){
@@ -216,13 +225,6 @@ window.addEventListener('click', function(){
   closeOtherMenuItems();
   clearOverlay();
 });
-
-window.addEventListener('resize', function(){
-  console.log('resizing menus');
-  resizeMenus();
-})
-
-resizeMenus();
 
 // Accept HMR as per: https://vitejs.dev/guide/api-hmr.html
 if (import.meta.hot) {
