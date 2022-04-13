@@ -430,6 +430,9 @@
 }
 
 #components-sidebar #search::before {
+  background-image: url('../img/icon-search.svg');
+  background-repeat: no-repeat;
+  background-position: center;
   content: "";
   display: block;
   height: 20px;

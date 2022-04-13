@@ -86,18 +86,3 @@
 		</div>
 	</div>
 </footer>
-
-{% js on load %}
-$('footer a').on('click', function(){
-        var link_clicked    = $(this).attr('href').trim();
-        var link_label      = $(this).text().trim();
-
-        dl.push({
-            'event'         : 'footer_clicked',
-            'current_url'   : '{{ craft.app.request.absoluteUrl }}',
-            'url'           : link_clicked,
-            'label'         : link_label,
-            'debug_mode'    : true,
-        });
-    });
-{% endjs %}

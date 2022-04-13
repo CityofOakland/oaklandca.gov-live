@@ -39,9 +39,6 @@
   <div class="leading-none banner bg-transparent-oakland-roots">
     <div class="container pt-2 pb-8 md:pt-4 md:pb-6">
       <div class="relative z-10 inline-block px-2 py-1 text-xs text-green-800 bg-white rounded-sm shadow md:text-xs">
-        {# <a class="text-green-800 hover:text-green-800 hover:underline" href="/">
-          Oakland
-        </a> → #}
         <span class="font-bold">Search</span>
       </div>
     </div>
@@ -72,22 +69,3 @@
     </div>
   </section>
 {% endblock %}
-
-{% js on load %}
-    $('#all-hits').on('click', 'a', function(){
-      var search_term   = $('#search-input').val() ? $('#search-input').val() : 'No search term';
-      var link_clicked  = $(this).attr('href').trim();
-
-      var filters = [];
-
-      dl.push({
-        'event'               : 'search_result_clicked',
-        'current_url'         : '{{ craft.app.request.absoluteUrl }}',
-        'url'                 : link_clicked,
-        'input_search_term'   : search_term,
-        'filters'             : filters,
-        'debug_mode'          : true,
-        'search_bar_id'       : 'index'
-      });
-    });
-{% endjs %}
