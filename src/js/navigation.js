@@ -41,30 +41,30 @@ function toggleOverlay(){
   }
 }
 
-// TODO: Remove if deployed on production, was a feature request that turned out buggy in the actual use case.
-
-// function resizeMenus(){
-//   var height = 0;
-//
-//   Array.prototype.forEach.call(menusResizable, function(el, i){
-//     // Reset height
-//     el.style.minHeight = "0px";
-//     if(el.clientHeight > height) {
-//       height = el.clientHeight;
-//     }
-//   });
-//
-//   Array.prototype.forEach.call(menusResizable, function(el, i){
-//     el.style.minHeight = height + "px";
-//   });
-// }
-//
-// window.addEventListener('resize', function(){
-//   console.log('resizing menus');
-//   resizeMenus();
-// })
-//
-// resizeMenus();
+function isVisible(elem) {
+    if (!(elem instanceof Element)) throw Error('DomUtil: elem is not an element.');
+    const style = getComputedStyle(elem);
+    if (style.display === 'none') return false;
+    if (style.visibility !== 'visible') return false;
+    if (style.opacity < 0.1) return false;
+    if (elem.offsetWidth + elem.offsetHeight + elem.getBoundingClientRect().height +
+        elem.getBoundingClientRect().width === 0) {
+        return false;
+    }
+    const elemCenter   = {
+        x: elem.getBoundingClientRect().left + elem.offsetWidth / 2,
+        y: elem.getBoundingClientRect().top + elem.offsetHeight / 2
+    };
+    if (elemCenter.x < 0) return false;
+    if (elemCenter.x > (document.documentElement.clientWidth || window.innerWidth)) return false;
+    if (elemCenter.y < 0) return false;
+    if (elemCenter.y > (document.documentElement.clientHeight || window.innerHeight)) return false;
+    let pointContainer = document.elementFromPoint(elemCenter.x, elemCenter.y);
+    do {
+        if (pointContainer === elem) return true;
+    } while (pointContainer = pointContainer.parentNode);
+    return false;
+}
 
 // Click
 Array.prototype.forEach.call(menuItemsClick, function(el, i){
@@ -131,6 +131,7 @@ Array.prototype.forEach.call(menuItems, function(el, i){
         var key             = event.which.toString();
         var ctrlModifier    = (event.ctrlKey && key.match(/33|34/));
 
+        // Press ESC
         if(key == "27") {
           el.classList.remove('open');
           trigger.setAttribute('aria-expanded', "false");
@@ -155,6 +156,8 @@ Array.prototype.forEach.call(menuItems, function(el, i){
         }
 
         if(trigger.getAttribute('aria-expanded') == "true"){
+
+          // Up/ Down Arrow key
           if (key.match(/38|40/) || ctrlModifier) {
               var index       = triggers.indexOf(target);
               var direction   = (key.match(/34|40/)) ? 1 : -1;
@@ -206,6 +209,8 @@ Array.prototype.forEach.call(menuItems, function(el, i){
                   }
               }
               event.preventDefault();
+
+          // Home / End
           } else if (key.match(/35|36/)) {
               switch (key) {
                 case '36':

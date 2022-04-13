@@ -15,10 +15,10 @@
             <li id="translate" class="has-submenu click fill-current">
                 <a tabindex="0" id="navbar-dropdown-translate" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ svg( '@webroot/dist/img/icon-translate.svg')|attr({ class: 'fill-current text-yellow-200 lg:hidden' }) }} {{ "Translate"|t }} {{ svg( '@webroot/dist/img/icon-arrow.svg')|attr({ class: 'fill-current' }) }}</a>
                 <ul class="components grid grid-cols-2 gap-x-6 p-4 lg:p-6 bg-green-800" aria-labelledby="navbar-dropdown-translate">
-                    <li><a class="focusable language underline" href="{{ translation_url }}?_x_tr_sl=auto&_x_tr_tl=ceb&_x_tr_hl=en&_x_tr_pto=wapp">Sinugboanon</a></li>
+                    <li><a class="focusable language underline" href="{{ translation_url }}?_x_tr_sl=auto&_x_tr_tl=ceb&_x_tr_hl=en&_x_tr_pto=wapp">Cebuano</a></li>
                     <li><a class="focusable language underline" href="{{ translation_url }}?_x_tr_sl=auto&_x_tr_tl=zh-TW&_x_tr_hl=en&_x_tr_pto=wapp">中文</a></li>
                     <li><a class="focusable language underline" href="{{ translation_url }}?_x_tr_sl=auto&_x_tr_tl=tl&_x_tr_hl=en&_x_tr_pto=wapp">Filipino</a></li>
-                    <li style="font-family: 'Noto Serif Nyiakeng Puachue Hmong', serif;"><a class="focusable language underline" href="{{ translation_url }}?_x_tr_sl=auto&_x_tr_tl=hmn&_x_tr_hl=en&_x_tr_pto=wapp">𞄉𞄧𞄵𞄀𞄩𞄰</a></li>
+                    <li><a class="focusable language underline" href="{{ translation_url }}?_x_tr_sl=auto&_x_tr_tl=hmn&_x_tr_hl=en&_x_tr_pto=wapp">Hmoob</a></li>
                     <li><a class="focusable language underline" href="{{ translation_url }}?_x_tr_sl=auto&_x_tr_tl=ja&_x_tr_hl=en&_x_tr_pto=wapp">日本語</a></li>
                     <li><a class="focusable language underline" href="{{ translation_url }}?_x_tr_sl=auto&_x_tr_tl=km&_x_tr_hl=en&_x_tr_pto=wapp">ភាសាខ្មែរ</a></li>
                     <li><a class="focusable language underline" href="{{ translation_url }}?_x_tr_sl=auto&_x_tr_tl=ko&_x_tr_hl=en&_x_tr_pto=wapp">한국어</a></li>
@@ -110,7 +110,7 @@
                 {% for item in navigation.navigationMain.level(1).all() %}
                     {% if item.toggle %}
                         {% if item.linkit %}
-                            <li class="border-green-600 border-b"><a href="{{ item.linkit.url }}">{{ item.heading }}</a></li>
+                            <li class="border-green-600 border-b"><a class="focusable" href="{{ item.linkit.url }}">{{ item.heading }}</a></li>
                         {% endif %}
                     {% else %}
                         <li class="has-submenu click border-green-600 border-b">
