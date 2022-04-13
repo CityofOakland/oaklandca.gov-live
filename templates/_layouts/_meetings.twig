@@ -9,15 +9,33 @@
 {% extends '_content.twig' %}
 {% import '_macros/_macros' as macros %}
 
-{% block content %}
+{% set status = 'default' %}
+{% if entry.meetingStatus %}
+	{% set status = entry.meetingStatus %}
+{% elseif entry.eventStatus %}
+	{% set status = entry.eventStatus %}
+{% endif %}
 
-	{% set status = 'default' %}
-	{% if entry.meetingStatus %}
-		{% set status = entry.meetingStatus %}
-	{% elseif entry.eventStatus %}
-		{% set status = entry.eventStatus %}
+{% block title %}
+	<h1>{% if status and status.value and status.value !== 'default' and status.value !== 'active' %}{{ status.label }} - {% endif %}{{ entry.title }}</h1>
+	{% if entry.date %}
+	  {% if now|date('Y-m-d') <= entry.date|date('Y-m-d') %}
+	    {% if entry.type == 'meetings' %}
+	      <div class="pt-4 lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} will be held on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
+	    {% elseif entry.type == 'meetingsImported' %}
+	      <div class="pt-4 lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} will be held on {{ entry.date|date("F j, Y") }}{{ entry.startDate ? " at " ~ entry.startDate|date("g:ia") : "" }}</div>
+	    {% endif %}
+	  {% else %}
+	      {% if entry.type == 'meetings' %}
+	        <div class="pt-4 lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} was held on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
+	      {% elseif entry.type == 'meetingsImported' %}
+	        <div class="pt-4 lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} was held on {{ entry.date|date("F j, Y") }}{{ entry.startDate ? " at " ~ entry.startDate|date("g:ia") : "" }}</div>
+	      {% endif %}
+	  {% endif %}
 	{% endif %}
+{% endblock %}
 
+{% block content %}
   {% if status != "default" %}
     <div>
       {% if status == 'canceled' %}
@@ -36,7 +54,6 @@
         {{ _self.callout('This is a special meeting of the ' ~ entry.relatedBoardOrCommission.one().title) }}
       {% endif %}
 
-      {% set status = entry.meetingStatus ? entry.meetingStatus : entry.eventStatus %}
       {% if status.value !== 'canceled' and status.value !== 'rescheduled' %}
         {% if entry.addresses and entry.addresses.type('onlineLocation')|length and not entry.addresses.type('location')|length  %}
           {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}

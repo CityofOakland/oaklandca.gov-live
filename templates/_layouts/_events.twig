@@ -1,13 +1,185 @@
-{% macro callout(calloutHeading) %}
+{# {% macro callout(calloutHeading) %}
 	{% include '_components/_callout' with {
-      callOutType   : 'attention',
+      callOutType   : 'info',
       heading       : calloutHeading,
       description   : '' 
     } %}
-{% endmacro %}
+{% endmacro %} #}
 
 {% extends '_content.twig' %}
 {% import '_macros/_macros' as macros %}
 
+{% set physicalLocation = false %}
+{% set onlineLocation   = false %}
+
+{% set locations = [] %}
+
+{% if entry.eventLocation.type('physicalLocation')|length %}
+    {% set locations = locations|merge(['in-person']) %}
+{% endif %}
+
+{% if entry.eventLocation.type('onlineLocation')|length %}
+    {% set locations = locations|merge(['online']) %}
+{% endif %}
+
+
+{% block title %}
+    <h1>{{ entry.title }}</h1>
+    <p class="mt-4">This event will be held {{ locations|join(" and ") }} on {{ entry.calendarize.startDate|date("F j, Y") }}</p>
+{% endblock %}
+
+{% block precontent %}
+    <section class="bg-green-800 mb-16 text-white">
+        <div class="container">
+          <div style="max-width:1152px;">
+            <div class="flex flex-wrap justify-between -mx-8">
+              <div class="w-full lg:w-5/12 px-8">
+                <div class="components components-format">
+                    <h3>{{ entry.calendarize.startDate|date("l, F j, Y") }}</h3>
+                    <p>{{ entry.calendarize.startDate|date("g:ia") }}{{ entry.calendarize.endDate ? " to " ~ entry.calendarize.endDate|date("g:ia") }}</p>
+                    {% if entry.calendarize.repeats %}
+                        <p><i>This event repeats {{ entry.calendarize.repeatType }}, with the next event occurring on {{ entry.calendarize.next.start|date("l, F j, Y") }} </i></p>
+                    {% endif %}
+                </div>
+              </div>
+              <div class="w-full lg:w-1/12 px-8"></div>
+              <div class="w-full lg:w-3/12 px-8">
+                <div class="components components-format">
+                    {% if entry.eventLocation.type('physicalLocation')|length %}
+                        {% set address = entry.eventLocation.type('physicalLocation').one() %}
+                        <h3>In-Person</h3>
+                        <p>{{ address.contactAddress.multiline() }}</p>
+                        <p><a class="text-white hover:text-gray-200 underline" href="{{ address.contactAddress.linkToDirections() }}">Get Directions</a></p>
+                    {% endif %}
+                </div>
+              </div>
+              <div class="w-full lg:w-3/12 px-8">
+                <div class="components components-format">
+                    {% if entry.eventLocation.type('onlineLocation')|length %}
+                        {% set address = entry.eventLocation.type('onlineLocation').one() %}
+                        <h3>Online</h3>
+                        <p>This event will be held virtually</p>
+                        {% if address.href %}<a href="{{ address.href }}" class="button secondary mb-0">Online Link</a>{% endif %}
+                    {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+{% endblock %}
+
 {% block content %}
+    {% if entry.eventImage.one() %}
+        {% set landscape = {
+          mode: 'crop',
+          width: 730,
+          quality: 100,
+          position: 'top-center'
+        } %}
+        {% set image = entry.eventImage.one() %}
+        <img src="{{ image.getUrl(landscape) }}" alt="{{ image.altText }}"/>
+    {% endif %}
+
+    {% if entry.calendarize.repeats %}
+        {% include '_components/_callout' with {
+          callOutType   : 'info',
+          heading       : 'This event is part of a series',
+          description   : '<p class="small">See more events <a href="' ~ siteUrl ~ 'events' ~ '">' ~ entry.title ~ '</a></p>', 
+        } %}
+    {% endif %}
+
+    {{ entry.mainContent }}
+
+    {% if entry.relatedResources|length %}
+    <hr class="hr medium"/>
+    <h3>Related Documents</h3>
+    <ul class="ul-icons related">
+        {% for resource in entry.relatedResources.all() %}
+
+            {% switch resource.type %}
+                {% case 'documents' %}
+                    <li><a href="{{ resource.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ resource.title }}</a></li>
+                {% default %}
+                    <li><a href="{{ resource.url }}">{{ resource.title }}</a></li>
+            {% endswitch %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {# Accessibility Request #}
+    <hr class="hr medium"/>
+    {% if entry.eventTypes|length %}<p><b>Event Type:</b> {{ entry.eventType.one().title }}</p>{% endif %}
+
+    {% set accessibilityText %}
+      <p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
+      <p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a courtesy to attendees with chemical sensitivities.</p>
+      {% if entry.emailAddress %}
+          <a class="button secondary small" href="mailto:{{ entry.emailAddress }}?subject=Accessibility Request: {{ entry.title }}{{ entry.date ? ' at ' ~ entry.date|date('m/d/Y') : '' }}">Make a Request</a>
+      {% endif %}
+    {% endset %}
+
+    {% include '_components/_callout' with {
+        callOutType   : 'info',
+        heading       : 'Accessibility and interpretation requests',
+        description   : accessibilityText 
+    } %}
+{% endblock %}
+
+{% block sidebar %}
+    {% if entry.registrationLink %}
+        <hr/>
+        <h4>{{ 'Register'|t }}</h4>
+        <p>This is a free event for the public. Fill out this Google Form to register.</p>
+        <a class="button secondary" href="{{ entry.registrationLink }}">Register for Event</a>
+    {% endif %}
+
+    {% if entry.fullName or entry.emailAddress or entry.phoneNumber %}
+        <hr/>
+        <h4>{{ 'Contact'|t }}</h4>
+        {% if entry.fullName  %}<p>{{ entry.fullName }}</p>{% endif %}
+        {% if entry.emailAddress or entry.phoneNumber %}
+            <ul class="ul-icons">
+                {% if entry.emailAddress %}
+                {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+                    params: {
+                        text: entry.emailAddress,
+                        icon: 'envelope',
+                        url: "mailto:#{entry.emailAddress}"
+                    }
+                }) }}
+                {% endif %}
+                {% if entry.phoneNumber %}
+                {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+                    params: {
+                        text: entry.phoneNumber,
+                        icon: 'phone',
+                        url: "tel:#{entry.phoneNumber|replace({'-': ''}) }}"
+                    }
+                }) }}
+                {% endif %}
+            </ul>
+        {% endif %}
+    {% endif %}
+
+    <hr/>
+    <h4>{{ 'Add to Calendar'|t }}</h4>
+    <p>Save this event to your iCal, Outlook or Google Calendar</p>
+    <a class="button secondary" href="{{entry.url}}/calendar.ics">Add to Calendar</a>
+    <hr class="light">
+    <h4>{{ 'Share'|t }}</h4>
+    <ul>
+        <li>Facebook</li>
+        <li>Twitter</li>
+        <li>Instagram</li>
+    </ul>
+    <hr/>
+    <h4>{{ 'Related Pages'|t }}</h4>
+    <ul>
+        <li>dskalfjalsfj</li>
+        <li>dskalfjalsfj</li>
+    </ul>
+    <hr class="light">
+    <p class="small">Posted: {{ entry.postDate|date("F j, Y g:ia") }}</p>
+    <p class="small">Last Updated: {{ entry.dateUpdated|date("F j, Y g:ia") }}</p>
 {% endblock %}

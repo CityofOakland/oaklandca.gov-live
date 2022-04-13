@@ -1,0 +1,29 @@
+{% spaceless %}
+{% if slug is not defined %}
+    {% redirect '404' %}
+{% endif %}
+
+{% set query = craft.entries.section('events').slug(slug) %}
+
+{% if query|length == 0 %}
+    {% redirect '404' %}
+{% else %}
+
+{% set event = query.one() %}
+{% header "Content-Type: text/calendar; charset=utf-8" %}
+{% header "Content-Disposition: attachment; filename=calendar.ics" %}
+BEGIN:VCALENDAR
+VERSION:2.0
+METHOD:PUBLISH
+PRODID:-//oaklandca.gov//NONSGML Events Calendar V1.0//EN
+BEGIN:VEVENT
+UID:{{ event.id }}@events.oaklandca.gov
+DTSTART:{{ event.calendarize.startDate|date_modify('+4 hours')|date("Ymd") }}T{{ event.calendarize.startDate|date_modify('+4 hours')|date("His") }}Z
+DTEND:{{ event.calendarize.endDate|date_modify('+4 hours')|date("Ymd") }}T{{ event.calendarize.endDate|date_modify('+4 hours')|date("His") }}Z
+SUMMARY:{{ 'summary' }}
+DESCRIPTION:{{ 'description' }}
+END:VEVENT
+END:VCALENDAR
+{% endif %}
+
+{% endspaceless %}

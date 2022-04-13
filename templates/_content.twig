@@ -32,35 +32,20 @@
               <div style="max-width:1152px;">
                 <div class="flex flex-col flex-1 lg:flex-row">
                   <div class="w-full lg:w-8/11">
-                    {% if category is not defined and entry.section.handle == 'meetings' %}
-                      <h1>{% if entry.meetingStatus and entry.meetingStatus.value and entry.meetingStatus.value !== 'default' %}{{ entry.meetingStatus.label }} - {% endif %}{{ entry.title }}</h1>
-                      {% if entry.date %}
-                        {% if now|date('Y-m-d') <= entry.date|date('Y-m-d') %}
-                          {% if entry.type == 'meetings' %}
-                            <div class="pt-4 lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} will be held on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
-                          {% elseif entry.type == 'meetingsImported' %}
-                            <div class="pt-4 lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} will be held on {{ entry.date|date("F j, Y") }}{{ entry.startDate ? " at " ~ entry.startDate|date("g:ia") : "" }}</div>
-                          {% endif %}
-                        {% else %}
-                            {% if entry.type == 'meetings' %}
-                              <div class="pt-4 lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} was held on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
-                            {% elseif entry.type == 'meetingsImported' %}
-                              <div class="pt-4 lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} was held on {{ entry.date|date("F j, Y") }}{{ entry.startDate ? " at " ~ entry.startDate|date("g:ia") : "" }}</div>
-                            {% endif %}
-                        {% endif %}
-                      {% endif %}
-                    {% else %}
+                    {% block title %}
                       <h1>{{ entry.title }}</h1>
                       {% if entry.leadIn or entry.summary %}
                         <div class="pt-4 lead">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
                       {% endif %}
-                    {% endif %}
+                    {% endblock %}
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
+        {% block precontent %}
+        {% endblock %}
         <section> 
           {% if category is not defined %}
             <div class="container pt-0">

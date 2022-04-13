@@ -36,6 +36,24 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: 7084b5f1-19ef-4812-97fc-927d55c98c93 # Event Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 6b0e6bd2-24c1-4341-acf8-97862725a74c # Event Types
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
             fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
             instructions: 'Add any additional details that people should know about this event.'
             label: 'Event Details'
