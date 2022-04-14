@@ -31,10 +31,9 @@
   {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
 {% endif %}
 
-{% set type = 2 %}
-{% if craft.app.request.getQueryParam('type') %}
-  {% set type           = craft.app.request.getQueryParam('type') %}
-  {% set filter_enabled = true %}
+{% set type = craft.app.request.getQueryParam('type') ? craft.app.request.getQueryParam('type') : 2 %}
+{% if type %}
+  {% switch type %}
   {% switch craft.app.request.getQueryParam('type') %}
     {% case 1 %}
       {% set meetings = meetings.order('date asc') %}
