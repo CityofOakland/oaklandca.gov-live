@@ -1,5 +1,5 @@
 {% set query          = craft.app.request.getQueryParam('q') %}
-{% set meetings  = craft.entries().section('meetings').search(query).limit(10) %}
+{% set meetings       = craft.entries().section('meetings').search(query).limit(10) %}
 {% set filter_enabled = false %}
 
 {% if craft.app.request.getQueryParam('public_body') %}
@@ -8,15 +8,50 @@
   {% set meetings = meetings.relatedTo(craft.entries().section('boardsCommissions').id(id).one()) %}
 {% endif %}
 
-{% if 
-  craft.app.request.getQueryParam('start_date') or 
-  craft.app.request.getQueryParam('end_date') or 
-  craft.app.request.getQueryParam('type') or
-  craft.app.request.getQueryParam('q') %}
+{% set date_query = ['and'] %}
+
+{% set year   = craft.app.request.getQueryParam('year') ? craft.app.request.getQueryParam('year') : '' %}
+{% set month  = craft.app.request.getQueryParam('month') ? craft.app.request.getQueryParam('month') : '' %}
+{% set ymd     = '' %}
+
+{% if year and month %}
+  {% set filter_enabled = true %}
+  {% set ymd = year ~ '-' ~ month ~ '-01' %}
+  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
+{% elseif year %}
+  {% set filter_enabled = true %}
+  {% set ymd = year ~ '-' ~ '01-01' %}
+  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 year')|date('Y-m-d')) ]) %}
+{% elseif month %}
+  {% set filter_enabled = true %}
+  {% set ymd = now|date('Y') ~ '-' ~ month %}
+  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
+{% endif %}
+
+{% set type = 1 %}
+{% if craft.app.request.getQueryParam('type') %}
+  {% set type = craft.app.request.getQueryParam('type') %}
+  {% switch craft.app.request.getQueryParam('type') %}
+    {% case 1 %}
+      {% set meetings = meetings.order('date asc') %}
+      {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
+    {% case 2 %}
+      {% set meetings = meetings.order('date desc') %}
+      {% set date_query = date_query|merge(['< ' ~ now|date('Y-m-d')]) %}
+  {% endswitch %}
+{% else %}
+  {% set meetings = meetings.order('date asc') %}
+  {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
+{% endif %}
+
+{% if date_query|length > 1 %}
+  {% set meetings = meetings.date(date_query) %}
+{% endif %}
+
+{% if craft.app.request.getQueryParam('q') %}
   {% set filter_enabled = true %}
 {% endif %}
 
-{% set meetings = meetings|applyDateFilter('date') %}
 {% paginate meetings as pageInfo, meetings %}
 
 {% set layout = 'reverse' %}
@@ -38,16 +73,12 @@
       <h3>No results found</h3>
     {% endif %}
   {% else %}
-<<<<<<< HEAD
     {% switch type %}
       {% case 1 %}
       <h3>Displaying all Upcoming Meetings</h3>
       {% case 2 %}
       <h3>Displaying all Past Meetings</h3>
     {% endswitch %}
-=======
-    <h3>Displaying Upcoming Meetings</h3>
->>>>>>> ae514c567ae6419fe3f6e16f9b01d3a1417e4ddd
   {% endif %}
 
   <div class="mt-8">
@@ -82,7 +113,6 @@
   <div class="mt-2 md:mt-0"></div>
   <h4 class="py-0 mt-4 mb-6">{{ 'Search & Filter'|t }}</h4>
   <form action="{{ entry.url }}">
-<<<<<<< HEAD
     <input type="hidden" name="type" value="{{ type }}"/>
     {{ macros.select('Month', 'month', 'month', [
         {"01"  : "January"},
@@ -111,22 +141,6 @@
     {{ macros.select('Public Body', 'public_body', 'public_body', craft.entries().section('boardsCommissions').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a Council, Board or Commission') }}
     <div class="flex items-center">
       <button class="button medium">Apply</button>
-=======
-    {{ renderRangepicker(
-      'Upcoming Meetings',
-      'Past and Upcoming Meetings',
-      'Past Meetings',
-    )|raw }}
-    <label class="flex items-center" for="start_date">From Date:</label>
-    {{ renderMonthpicker()|raw }}
-    <label class="flex items-center" for="end_date">To Date:</label>
-    {{ renderMonthpicker('end')|raw }}
-
-    {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
-    {{ macros.select('Public Body', 'public_body', 'public_body', craft.entries().section('boardsCommissions').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a Council, Board or Commission') }}
-    <div class="flex items-center mt-4">
-      <button class="button medium mt-0">Apply</button>
->>>>>>> ae514c567ae6419fe3f6e16f9b01d3a1417e4ddd
       {% if query or filter_enabled %}
         <a href="{{ entry.url }}">Clear filters</a>
       {% endif %}
