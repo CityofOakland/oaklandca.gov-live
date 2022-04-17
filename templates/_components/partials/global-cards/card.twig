@@ -9,7 +9,7 @@
 
 {% set padding = "p-4" %}
 {% set titleSize = "text-lg leading-tight" %}
-{% set textSize = "text-sm leading-loose" %}
+{% set textSize = "text-sm leading-normal" %}
 {% set bgColor = "bg-white hover:bg-green-800" %}
 {% set shadow = "shadow" %}
 {% set textColor = "text-gray-1000 group-hover:text-white" %}
@@ -20,14 +20,13 @@
     {% set padding = "p-8" %}    
   {% case "xl" %}
     {% set padding = "p-8" %}
-    {% set titleSize = "text-xl leading-loose" %}
+    {% set titleSize = "text-xl leading-tight" %}
 {% endswitch %}
 
 {% switch vars.style %}
   {% case "secondary" %}
     {% set bgColor = "bg-gray-100 hover:bg-gray-200" %}
     {% set shadow = "shadow-none" %}
-    {% set textSize = "text-base leading-loose" %}
     {% set headingColor = "text-green-800 group-hover:text-green-900" %}
 {% endswitch %}
 
