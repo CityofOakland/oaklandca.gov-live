@@ -1,5 +1,6 @@
 //Navigation
 
+var menuLinks       = document.querySelectorAll('#topbar a[href]');
 var menuItems       = document.querySelectorAll('.has-submenu, #mobile-navigation');
 var menuItemsHover  = document.querySelectorAll('.has-submenu:not(.click)');
 var menuItemsClick  = document.querySelectorAll('.has-submenu.click > a, #mobile-navigation > a');
@@ -66,6 +67,11 @@ function isVisible(elem) {
     return false;
 }
 
+// Links
+Array.prototype.forEach.call(menuLinks, function(el, i){
+  return false;
+});
+
 // Click
 Array.prototype.forEach.call(menuItemsClick, function(el, i){
     el.addEventListener("click", function(event){
@@ -122,6 +128,7 @@ Array.prototype.forEach.call(menuItems, function(el, i){
             }
           }
           menuItemClicked = false;
+          toggleOverlay();
         });
     })
 
@@ -145,6 +152,7 @@ Array.prototype.forEach.call(menuItems, function(el, i){
             el.classList.remove('open');
             trigger.setAttribute('aria-expanded', "false");
           } else {
+            el.classList.add('open');
             trigger.setAttribute('aria-expanded', "true");
             triggers[0].focus();
 
@@ -223,6 +231,8 @@ Array.prototype.forEach.call(menuItems, function(el, i){
               event.preventDefault();
           }
         }
+
+        toggleOverlay();
     });
 });
 
