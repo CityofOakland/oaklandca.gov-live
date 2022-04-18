@@ -134,8 +134,8 @@
     {% for year in range(latest_year, earliest_year) %}
       {% set years =  years|merge([{(year): year}]) %}
     {% endfor %}
-
     {{ macros.select('Year', 'year', 'year', years, "Select a year") }}
+
     {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
     {{ macros.select('Public Body', 'public_body', 'public_body', craft.entries().section('boardsCommissions').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a Council, Board or Commission') }}
     <div class="flex items-center">
