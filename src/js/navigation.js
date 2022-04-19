@@ -71,7 +71,7 @@ function isVisible(elem) {
 Array.prototype.forEach.call(menuLinks, function(el, i){
   el.addEventListener("mousedown", function(event){
     return false;
-  }
+  });
 });
 
 // Click
