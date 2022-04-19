@@ -9,7 +9,6 @@ var menusResizable  = document.querySelectorAll('#main-navigation .has-submenu >
 var menuItemClicked = false;
 
 function closeOtherMenuItems(parent){
-
   Array.prototype.forEach.call(menuItemsClick, function(el, i){
     if(parent){
       if(el !== document.querySelector(parent)){
@@ -70,13 +69,14 @@ function isVisible(elem) {
 
 // Links
 Array.prototype.forEach.call(menuLinks, function(el, i){
-  return false;
+  el.addEventListener("mousedown", function(event){
+    return false;
+  }
 });
 
 // Click
 Array.prototype.forEach.call(menuItemsClick, function(el, i){
     el.addEventListener("mousedown", function(event){
-      console.log('yes');
       menuItemClicked = true;
       event.stopPropagation();
 
@@ -237,7 +237,6 @@ Array.prototype.forEach.call(menuItems, function(el, i){
 });
 
 window.addEventListener('mousedown', function(){
-  console.log('no');
   closeOtherMenuItems();
   clearOverlay();
 });
