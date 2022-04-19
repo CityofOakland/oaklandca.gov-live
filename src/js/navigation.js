@@ -70,7 +70,8 @@ function isVisible(elem) {
 // Links
 Array.prototype.forEach.call(menuLinks, function(el, i){
   el.addEventListener("mousedown", function(event){
-    return false;
+    window.location.assign(el.href);
+    event.stopPropagation();
   });
 });
 
