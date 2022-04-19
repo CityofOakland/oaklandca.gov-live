@@ -78,9 +78,6 @@ Array.prototype.forEach.call(menuLinks, function(el, i){
 // Click
 Array.prototype.forEach.call(menuItemsClick, function(el, i){
     el.addEventListener("mousedown", function(event){
-      menuItemClicked = true;
-      event.stopPropagation();
-
       if(this.parentElement.classList.contains('open')){
         this.parentElement.classList.remove('open');
         el.setAttribute('aria-expanded', "false");
@@ -100,6 +97,11 @@ Array.prototype.forEach.call(menuItemsClick, function(el, i){
       }
 
       toggleOverlay();
+    });
+
+    el.parentElement.addEventListener("mousedown", function(event){
+      menuItemClicked = true;
+      event.stopPropagation();
     });
 });
 
