@@ -27,6 +27,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: a4001c79-48f7-4666-8658-4981e8e232d6 # Image Credit
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: fff5cf49-87e6-4751-9032-b4ca8136e237 # Alt Text
             instructions: null
             label: null
@@ -41,7 +50,7 @@ handle: headers
 hasUrls: true
 name: Headers
 settings:
-  addSubfolderToRootUrl: true
+  addSubfolderToRootUrl: '1'
   autoFocalPoint: ''
   bucket: cao-94612
   bucketSelectionMode: choose
@@ -56,6 +65,6 @@ settings:
   subfolder: headers
 sortOrder: 5
 titleTranslationKeyFormat: null
-titleTranslationMethod: site
+titleTranslationMethod: null
 type: craft\awss3\Volume
 url: 'https://cao-94612.s3.amazonaws.com/'
