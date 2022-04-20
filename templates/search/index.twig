@@ -29,9 +29,6 @@
     background-color: #eae2f8 !important;
   }
 
-  .ais-clear-all--link {
-    background-color: #653cad !important;
-  }
 {% endcss %}
 
 {% block content %}
@@ -47,8 +44,8 @@
     </div>
   </div>
   <div id="content" style="position:relative;top:-80px;"></div>
-  <div class="leading-normal">
-    <div class="container relative z-10 flex flex-col sm:flex-row">
+  <div class="container leading-normal">
+    <div class="relative z-10 flex flex-col max-w-6xl sm:flex-row">
       <h1 class="mb-0 text-3xl font-bold md:text-4xl sm:w-1/4">{{ entry.title }}</h1>
       <form action="" class="flex-1 my-4 sm:my-0">
         <label class="hidden-visually" for="search-input">Search Term(s)</label>
@@ -59,7 +56,7 @@
   </div>
   <section class="relative z-0 bg-white">
     <div class="container pt-0">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-x-8 gap-y-4">
+      <div class="grid max-w-6xl grid-cols-1 md:grid-cols-4 gap-x-16 gap-y-4">
         <div class="order-2 md:col-span-3 md:order-1" data-hits id="all-holder">
           <div id="stats" class="mb-4"></div>
           <div id="all-hits" data-index="{{ getenv('ENVIRONMENT') }}_all"></div>

@@ -29,7 +29,11 @@ allSearch.addWidget(
     container: '#clear-refinements',
     templates: {
       link: "Remove Filters"
-    }  })
+    },
+    cssClasses: {
+      link: 'button medium'
+    }
+  })
 );
 
 allSearch.addWidget(
@@ -135,7 +139,7 @@ const renderMenu = (renderOptions, isFirstRender) => {
     wrapper.setAttribute('role', 'complementary');
 
     const header = document.createElement('legend');
-    header.classList.add('font-medium', 'border-b', 'border-gray-800', 'pb-1', 'mb-4', 'w-full', 'leading-7');
+    header.classList.add('font-bold', 'border-t-2', 'border-gray-1000', 'pb-0', 'pt-4', 'mt-0', 'mb-6', 'w-full', 'leading-7');
     header.innerHTML = 'Filter by Section';
 
     const container = document.createElement('div');
