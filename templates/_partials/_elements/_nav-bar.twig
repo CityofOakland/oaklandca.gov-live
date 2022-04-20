@@ -1,7 +1,7 @@
 {% import '_macros/_macros.twig' as macros %}
 
 {%- macro translate_url(code) -%}
-    https://translate.google.com/translate?sl={{ code }}&tl=en&hl=en&u={{ craft.app.request.absoluteUrl }}&client=webapp
+    https://translate.google.com/translate?sl=en&tl={{ code }}&hl=en&u={{ craft.app.request.absoluteUrl }}&client=webapp
 {%- endmacro -%}
 
 <div id="topbar">
