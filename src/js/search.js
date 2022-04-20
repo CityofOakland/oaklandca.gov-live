@@ -31,7 +31,7 @@ allSearch.addWidget(
       link: "Remove Filters"
     },
     cssClasses: {
-      link: 'button medium'
+      link: 'text-base bg-green-800 border-2 border-green-800 text-white font-black mt-4 py-4 px-8 no-underline hover:border-green-800 hover:bg-green-800 inline-block hover:text-white'
     }
   })
 );

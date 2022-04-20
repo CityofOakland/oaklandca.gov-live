@@ -31,6 +31,10 @@
     color: #653cad !important;
     background-color: #eae2f8 !important;
   }
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 {% endcss %}
 
@@ -39,9 +43,6 @@
   <div class="leading-none banner bg-transparent-oakland-roots">
     <div class="container pt-2 pb-8 md:pt-4 md:pb-6">
       <div class="relative z-10 inline-block px-2 py-1 text-xs text-green-800 bg-white rounded-sm shadow md:text-xs">
-        {# <a class="text-green-800 hover:text-green-800 hover:underline" href="/">
-          Oakland
-        </a> → #}
         <span class="font-bold">Search</span>
       </div>
     </div>
