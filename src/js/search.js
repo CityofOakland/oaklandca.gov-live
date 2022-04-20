@@ -42,7 +42,7 @@ allSearch.addWidget(
     autoHideContainer: false,
     templates: {
       body: `
-        <h2 class="mb-4 text-base leading-7 font-normal border-b border-gray-800 pb-1 text-gray-1000">Your search for “{{ query }}” returned <span class="font-bold" aria-live="polite">{{ nbHits }} results</span>.</h2>
+        <h2 class="mb-4 text-xl leading-7 md:text-2xl md:leading-loose font-bold text-gray-1000">Your search for “{{ query }}” returned <em class="not-italic" aria-live="polite">{{ nbHits }} results</em>.</h2>
       `
     }
   })

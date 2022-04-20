@@ -8,6 +8,9 @@
 {% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5") %}
 
 {% css %}
+  #stats .ais-stats {
+    opacity: 1;
+  }
   .ais-search-box {
     max-width: initial;
   }
@@ -58,12 +61,12 @@
     <div class="container pt-0">
       <div class="grid max-w-6xl grid-cols-1 md:grid-cols-4 gap-x-16 gap-y-4">
         <div class="order-2 md:col-span-3 md:order-1" data-hits id="all-holder">
-          <div id="stats" class="mb-4"></div>
-          <div id="all-hits" data-index="{{ getenv('ENVIRONMENT') }}_all"></div>
+          <div id="stats"></div>
+          <div id="all-hits" class="mt-8" data-index="{{ getenv('ENVIRONMENT') }}_all"></div>
         </div>
         <div class="order-1 md:order-2">
           <div id="section-filter" class="hidden md:block"></div>
-          <div class="mt-2" id="clear-refinements"></div>
+          <div class="hidden mt-2 md:block" id="clear-refinements"></div>
         </div>
       </div>
       <div id="bottom-pagination"></div>
