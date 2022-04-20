@@ -31,13 +31,13 @@
   {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
 {% endif %}
 
-{% set type = craft.app.request.getQueryParam('type') ? craft.app.request.getQueryParam('type') : 2 %}
+{% set type = craft.app.request.getQueryParam('type') ? craft.app.request.getQueryParam('type') : 'upcoming' %}
 {% if type %}
   {% switch type %}
-    {% case 1 %}
+    {% case 'upcoming' %}
       {% set meetings = meetings.order('date asc') %}
       {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
-    {% case 2 %}
+    {% case 'past' %}
       {% set meetings = meetings.order('date desc') %}
       {% set date_query = date_query|merge(['< ' ~ now|date('Y-m-d')]) %}
   {% endswitch %}
@@ -67,8 +67,8 @@
 {% block content %}
   <div>
     <ul class="flex flex-wrap list-none m-0 p-0">
-        <li><a href="?type=1" class="button m-0 rounded-none {{ type == 1 ? 'pointer-events-none' : 'secondary' }}">Upcoming Meetings</a></li>
-        <li><a href="?type=2" class="button m-0 rounded-none {{ type == 2 ? 'pointer-events-none' : 'secondary' }}">Past Meetings</a></li>
+        <li><a href="?type=upcoming&q={{ query }}&year={{ year }}&month={{ month }}" class="button m-0 rounded-none {{ type == 'upcoming' ? 'pointer-events-none' : 'secondary' }}">Upcoming Meetings</a></li>
+        <li><a href="?type=past&q={{ query }}&year={{ year }}&month={{ month }}" class="button m-0 rounded-none {{ type == 'past' ? 'pointer-events-none' : 'secondary' }}">Past Meetings</a></li>
     </ul>
   </div>
 
@@ -80,9 +80,9 @@
     {% endif %}
   {% else %}
     {% switch type %}
-      {% case 1 %}
+      {% case 'upcoming' %}
       <h3>Displaying all Upcoming Meetings</h3>
-      {% case 2 %}
+      {% case 'past' %}
       <h3>Displaying all Past Meetings</h3>
     {% endswitch %}
   {% endif %}
@@ -124,8 +124,8 @@
         {"12"  : "December"}
       ], "Select a month"
     )}}
-    {% set earliest_year = (type == 2)  ? craft.entries().section('meetings').order('date asc').limit(1).one().date|date('Y') : now|date('Y') %}
-    {% set latest_year   = (type == 1)  ? craft.entries().section('meetings').order('date desc').limit(1).one().date|date('Y') : now|date('Y') %}
+    {% set earliest_year = craft.entries().section('meetings').order('date asc').limit(1).one().date|date('Y') %}
+    {% set latest_year   = craft.entries().section('meetings').order('date desc').limit(1).one().date|date('Y') %}
     {% set years = [] %}
     {% for year in range(latest_year, earliest_year) %}
       {% set years =  years|merge([{(year): year}]) %}
