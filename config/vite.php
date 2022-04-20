@@ -6,7 +6,7 @@ return [
     'useDevServer' => App::env('ENVIRONMENT') === 'dev',
     'manifestPath' => '@webroot/dist/manifest.json',
     'devServerPublic' => 'http://localhost:3000/',
-    'serverPublic' => App::env('USE_SUBDIRECTORY') === 'true' ? App::env('SITE_URL') . '/dist/' : '/dist/',
+    'serverPublic' => App::env('VITE_PUBLIC_SERVER') ? App::env('VITE_PUBLIC_SERVER') : '/dist/',
     'errorEntry' => '',
     'cacheKeySuffix' => '',
     'devServerInternal' => 'http://localhost:3000/',
