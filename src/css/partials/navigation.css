@@ -86,17 +86,14 @@ input[type="text"].form-control::placeholder {
   @apply text-sm;
 }
 
-.has-submenu > ul::before {
-  background: black;
-  content: "";
-  opacity: .25;
-  pointer-events: none;
-  position: absolute;
-  top: 100%;
-  bottom: 0;
-  left: -50vw;
-  right: -5vw;
-  height: 100vh;
+.has-submenu > ul {
+  overflow-x: hidden;
+}
+
+@media(min-width: 1475px) {
+  .has-submenu > ul {
+    overflow-x: visible;
+  }  
 }
 
 .has-submenu > ul::after {
@@ -109,6 +106,13 @@ input[type="text"].form-control::placeholder {
   left: -50vw;
   right: -50vw;
   z-index: -1;
+}
+
+@media(min-width: 1475px) {
+  .has-submenu > ul::after {
+    left: calc((100vw - 1475px) / -2);
+    right: calc((100vw - 1475px) / -2);
+  }  
 }
 
 .has-submenu > a {
@@ -451,7 +455,6 @@ input[type="text"].form-control::placeholder {
 .navbar ul {
   margin-top: 0;
   margin-bottom: 0;
-  overflow-x: hidden;
 }
 
 .navbar a:not(.button) {
