@@ -6,22 +6,6 @@ p.small {
   @apply !text-base;
 }
 
-a {
-  @apply text-green-700 no-underline;
-}
-
-a:hover {
-  @apply text-green-900;
-}
-
-.body-text a {
-  @apply underline break-words;
-}
-
-.anchor-link {
-  @apply relative invisible block md:-top-40;
-}
-
 .container {
   @apply py-6 sm:py-12;
 }

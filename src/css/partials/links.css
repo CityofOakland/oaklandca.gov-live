@@ -1,0 +1,19 @@
+a {
+  @apply text-green-700 no-underline hover:text-green-900;
+}
+
+.body-text a {
+  @apply underline break-words;
+}
+
+.anchor-link {
+  @apply relative invisible block md:-top-40;
+}
+
+.tw-only a {
+  color: unset;
+}
+
+.tw-only a:hover {
+  color: unset;
+}
