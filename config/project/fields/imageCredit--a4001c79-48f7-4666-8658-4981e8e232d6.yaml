@@ -1,0 +1,27 @@
+columnSuffix: marnfpuz
+contentColumnType: text
+fieldGroup: baa859d6-a861-4617-bb79-73d0982ee25c # Assets
+handle: imageCredit
+instructions: 'Provide detail about where this image was sourced. E.g., “Photo by Alyssa Wright”'
+name: 'Image Credit'
+searchable: false
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  columnType: text
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: 'Simple with Links.json'
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+  showHtmlButtonForNonAdmins: ''
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field
