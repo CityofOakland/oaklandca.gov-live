@@ -187,10 +187,10 @@ fieldLayouts:
         name: Relationships
         sortOrder: 2
 handle: meetingsImported
-hasTitleField: false
+hasTitleField: true
 name: 'Meetings - Imported'
 section: 86dfc275-b48e-44d4-8c8c-acda592d92b0 # Meetings
 sortOrder: 2
-titleFormat: '{{ object.relatedBoardOrCommission.one().title }} Meeting - {{ object.date|date("F j, Y") }}'
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

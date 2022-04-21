@@ -1,4 +1,4 @@
-dateModified: 1650565054
+dateModified: 1650567962
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -427,8 +427,8 @@ meta:
     a407c106-4190-4ba9-b4c1-7886e5a462c8: Datasets # Datasets
     a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087: Globals # Globals
     a2224dcd-7dbd-4096-bc29-a79aa6b7b2ba: 'Vimeo URL' # Vimeo URL
-    a6935d0a-2019-455c-8ab4-8adc959dea2e: 'Navigation Item' # Navigation Item
     a4001c79-48f7-4666-8658-4981e8e232d6: 'Image Credit' # Image Credit
+    a6935d0a-2019-455c-8ab4-8adc959dea2e: 'Navigation Item' # Navigation Item
     a9027f1f-7200-4053-9b64-7be69dc993e5: 'Column 2 Width' # Column 2 Width
     a64389e9-e0f9-4d5b-ae78-16f6b5db6785: 'Related Departments' # Related Departments
     a2623193-86a7-40d6-9f1c-1be72d77b6d0: Destination # Destination
