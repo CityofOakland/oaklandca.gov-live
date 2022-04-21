@@ -28,14 +28,28 @@
           </div>
           <div id="content" style="position:relative;top:-5rem;"></div>
           <div class="{{ entry.slug == 'meetings-index' ? 'bg-blue-900 text-white' : '' }}">
-            <div class="container components pt-8 md:pt-16 {{ entry.slug == 'meetings-index' ? 'md:mb-8' : '' }}">
-              <div class="max-w-6xl">
+            <div class="container pt-8 md:pt-16 {{ entry.slug == 'meetings-index' ? 'md:mb-8' : '' }}">
+              <div style="max-width:1152px;">
                 <div class="flex flex-col flex-1 lg:flex-row">
                   <div class="w-full lg:w-8/11">
                     {% block title %}
-                      <h1>{{ entry.title }}</h1>
+                      {% if category is not defined and entry.section.handle == 'meetings' %}
+                        {% set statusLabel = entry.meetingStatus and entry.meetingStatus.value and entry.meetingStatus.value !== 'default' %}
+                        <h1 class="my-0 text-3xl font-bold md:text-4xl">{{ statusLabel ? "#{entry.meetingStatus.label} - " : '' }}{{ entry.title }}</h1>
+                        {% if entry.date %}
+                          <div class="mt-4 text-xl leading-8 tw-only">
+                            {% set relatedBoard = entry.relatedBoardOrCommission.one() %}
+                            {% set isRelated = relatedBoard|length %}
+                            {% set importedMeeting = entry.type == 'meetingsImported' %}
+                            {% set start = importedMeeting ? entry.startDate : entry.startTime %}
+                            {% set isFuture = now|date('Y-m-d') <= entry.date|date('Y-m-d') %}
+                            This meeting of the {{ isRelated ? relatedBoard.title : 'Commission' }} {{ isFuture ? "will be" : "was" }} held on {{ entry.date|date("F j, Y") }}{{ start ? " at " ~ start|date("g:ia") : "" }}
+                          </div>
+                        {% endif %}
+                      {% else %}
+                      <h1 class="my-0 text-3xl font-bold md:text-4xl">{{ entry.title }}</h1>
                       {% if entry.leadIn or entry.summary %}
-                        <div class="pt-4 lead">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
+                        <div class="mt-4 text-xl leading-8 tw-only">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
                       {% endif %}
                     {% endblock %}
                   </div>

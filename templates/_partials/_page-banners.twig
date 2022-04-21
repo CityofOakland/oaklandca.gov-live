@@ -26,9 +26,9 @@
       {% include "_partials/_elements/_page-alerts.twig" %}
       {% if leadIn %}
         {% if leadInParagraph ?? "" %}
-          {{ leadIn | replace({'<p' : '<p class="my-2 last:mb-0"', '<a': '<a class="font-bold text-green-800 hover:text-green-700"'}) | raw }}
+          {{ leadIn | replace({'<p' : '<p class="my-2 text-xl leading-8 last:mb-0"', '<a': '<a class="font-bold text-green-800 hover:text-green-700"'}) | raw }}
         {% else %}
-          <p class="mb-0 md:leading-normal">{{ leadIn | raw }}</p>
+          <p class="mb-0 text-xl leading-8">{{ leadIn | raw }}</p>
         {% endif %}
       {% endif %}
       <div class="flex space-x-4">
