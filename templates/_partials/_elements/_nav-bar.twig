@@ -2,12 +2,10 @@
 
 <script>
     var container = document.body;
-
     var dom_observer = new MutationObserver(function(mutation) {
         console.log(container.style.top);
         document.getElementById('mainbar').style.top = container.style.top;
     });
-
     var config = { attributes: true };
     dom_observer.observe(container, config);
 </script>
