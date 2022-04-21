@@ -13,8 +13,6 @@
 @import './partials/icons.css';
 @import './partials/buttons.css';
 
-/* test */
-
 @layer utilities {
   /* Use this utility to hide text only meant for screen readers */
   .hide-text {

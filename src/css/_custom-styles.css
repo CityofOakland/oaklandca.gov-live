@@ -55,10 +55,6 @@ footer {
   position: relative;
 }
 
-main {
-  @apply pt-[3.75rem] md:pt-16 lg:pt-20;
-}
-
 /* Banner Styles */
 .banner {
   @apply relative text-xl leading-loose text-white bg-white;
