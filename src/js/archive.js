@@ -61,21 +61,16 @@ function setFilterRules($){
       }
     });
 
-    // if($year.find('option').length > 2) {
-    //   $year.on('change', function(){
-    //     if(type == 'past') {
-    //       disableMonths(parseInt(this.value), 'more')
-    //     } else if(type == 'upcoming') {
-    //       disableMonths(parseInt(this.value), 'less')
-    //     }
-    //   });
-    // } else {
-    //   if(type == 'past') {
-    //     disableMonths(parseInt(currentYear), 'more')
-    //   } else if(type == 'upcoming') {
-    //     disableMonths(parseInt(currentYear), 'less')
-    //   }
-    // }
+    function changeToBlack() {
+      if(this.value){
+        $(this).css('color', 'black');
+      } else {
+        $(this).css('color', '');
+      }
+    }
+
+    $('select').on('change', changeToBlack);
+    $('select').each(changeToBlack);
   }
 }
 

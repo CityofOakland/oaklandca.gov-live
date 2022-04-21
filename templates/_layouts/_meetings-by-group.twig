@@ -95,7 +95,11 @@
     {% else %}
       <div class="px-8 pt-3 pb-5" style="background:#F7F7F7;">
         <p>Please try another search or updating your filters.</p>
-        <p><a href="?">See Upcoming Meetings</a></p>
+        {% if type == 'past' %}
+          <p><a href="?type=past">See all Past Meetings</a></p>
+        {% elseif type == 'upcoming' %}
+          <p><a href="?type=upcoming">See all Upcoming Meetings</a></p>
+        {% endif %}
       </div>
     {% endif %}
   </div>
