@@ -1,4 +1,4 @@
-dateModified: 1650560524
+dateModified: 1650565054
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -794,6 +794,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.0.0
+  craft-sentry:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   dashboard-configuration:
     edition: standard
     enabled: true
