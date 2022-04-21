@@ -308,14 +308,8 @@ input[type="text"].form-control::placeholder {
   position: absolute;
   top: 0;
   left: 0;
-  height: 3.25rem;
+  height: 3.75rem;
   width: 3.25rem;
-}
-
-@media(min-width: 48rem) {
-  #mobile-navigation > a {
-    height: 3.5rem;
-  }
 }
 
 #mobile-navigation > a > svg:first-of-type {
