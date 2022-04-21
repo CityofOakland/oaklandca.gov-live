@@ -421,66 +421,65 @@ input[type="text"].form-control::placeholder {
   width: 3.25rem;
 }
 
-#topbar {
-  position: fixed;
+#mainbar {
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 100;
 }
 
-#topbar + main {
-  margin-top: 90px;
+#topbar {
+  position: relative;
+  z-index: 101;
 }
 
-#topbar svg,
-#topbar path {
+#topbar.state-active > .bg-green-1000 {
+  background-color: rgb(4, 64, 10) !important;
+}
+
+.navbar svg,
+.navbar path {
   fill: currentColor;
 }
 
-#topbar li,
-#topbar p {
+.navbar li,
+.navbar p {
   font-size: 12px;
   list-style: none;
 }
 
-#topbar p,
-#topbar ul {
+.navbar p,
+.navbar ul {
   margin-top: 0;
   margin-bottom: 0;
+  overflow-x: hidden;
 }
 
-#topbar a:not(.button) {
+.navbar a:not(.button) {
   color: white;
 }
 
-#topbar #top-navigation a {
+.navbar #top-navigation a {
   font-weight: 700;
   -webkit-font-smoothing:  antialiased;
 }
 
-#topbar #top-navigation a:hover,
-#topbar #top-navigation a:focus {
+.navbar #top-navigation a:hover,
+.navbar #top-navigation a:focus {
   text-decoration: underline;
 }
 
-#topbar.state-active::before {
+.page-holder.state-active::before {
   background: black;
   content: "";
   display: block;
   opacity: 0.25;
   pointer-events: none;
   position: absolute;
-  top: 100%;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100vh;
-  z-index: 1;
-}
-
-#topbar.state-active > .bg-green-1000 {
-  background-color: rgb(4, 64, 10) !important;
+  z-index: 30;
 }
 
 #translate > a {

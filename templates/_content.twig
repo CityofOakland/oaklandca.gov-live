@@ -9,9 +9,9 @@
   {# Sets the navigation to the nav section entry, "Main Nav" #}
   {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
   <body class="font-body {{ pageClass ?? '' }}">
+    {% include '_partials/_elements/_nav-bar.twig' %}
     <div class="page-holder overflow-x-hidden">
       {% include '_partials/_elements/_skip-to-content.twig' %}
-      {% include '_partials/_elements/_nav-bar.twig' %}
       <main class="overflow-x-hidden">
         {% include '_partials/_elements/_sitewide-alert.twig' %}
         {% if category is defined %}

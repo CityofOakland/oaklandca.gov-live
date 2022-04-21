@@ -1,6 +1,6 @@
 //Navigation
 
-var menuLinks       = document.querySelectorAll('#topbar a[href]');
+var menuLinks       = document.querySelectorAll('.navbar a[href]');
 var menuItems       = document.querySelectorAll('.has-submenu, #mobile-navigation');
 var menuItemsHover  = document.querySelectorAll('.has-submenu:not(.click)');
 var menuItemsClick  = document.querySelectorAll('.has-submenu.click > a, #mobile-navigation > a');
@@ -32,13 +32,16 @@ function closeOtherMenuItems(parent){
 
 function clearOverlay(){
   document.querySelector('#topbar').classList.remove('state-active');
+  document.querySelector('.page-holder').classList.remove('state-active');
 }
 
 function toggleOverlay(){
-  if(document.querySelectorAll('#topbar .open').length > 0) {
+  if(document.querySelectorAll('.navbar .open').length > 0) {
     document.querySelector('#topbar').classList.add('state-active');
+    document.querySelector('.page-holder').classList.add('state-active');
   } else {
     document.querySelector('#topbar').classList.remove('state-active');
+    document.querySelector('.page-holder').classList.remove('state-active');
   }
 }
 
