@@ -16,8 +16,11 @@
 		{% set status = entry.eventStatus %}
 	{% endif %}
 
-{% block title %}
-  <h1>{% if status and status.value and status.value !== 'default' and status.value !== 'active' %}{{ status.label }} - {% endif %}{{ entry.title }}</h1>
+
+{# Commenting out if we decide to revert. Otherwise remove this if we've moved on. #}
+
+{# {% block title %}
+  <h1 class="my-0 text-3xl font-bold md:text-4xl">{% if status and status.value and status.value !== 'default' and status.value !== 'active' %}{{ status.label }} - {% endif %}{{ entry.title }}</h1>
   {% if entry.date %}
     {% if now|date('Y-m-d') <= entry.date|date('Y-m-d') %}
       {% if entry.type == 'meetings' %}
@@ -33,7 +36,7 @@
         {% endif %}
     {% endif %}
   {% endif %}
-{% endblock %}
+{% endblock %} #}
 
 {% block content %}
   {% if status != "default" and status !== "active" %}
