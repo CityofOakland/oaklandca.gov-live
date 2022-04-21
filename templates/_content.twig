@@ -47,9 +47,10 @@
                           </div>
                         {% endif %}
                       {% else %}
-                      <h1 class="my-0 text-3xl font-bold md:text-4xl">{{ entry.title }}</h1>
-                      {% if entry.leadIn or entry.summary %}
-                        <div class="mt-4 text-xl leading-8 tw-only">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
+                        <h1 class="my-0 text-3xl font-bold md:text-4xl">{{ entry.title }}</h1>
+                        {% if entry.leadIn or entry.summary %}
+                          <div class="mt-4 text-xl leading-8 tw-only">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
+                        {% endif %}
                       {% endif %}
                     {% endblock %}
                   </div>
