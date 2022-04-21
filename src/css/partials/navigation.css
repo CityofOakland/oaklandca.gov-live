@@ -82,8 +82,21 @@ input[type="text"].form-control::placeholder {
   padding-bottom: 0.5rem !important;
 }
 
-.has-submenu > ul.components p {
-  font-size: 14px;
+.has-submenu > ul:where(.components) p {
+  @apply text-sm;
+}
+
+.has-submenu > ul::before {
+  background: black;
+  content: "";
+  opacity: .25;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  bottom: 0;
+  left: -50vw;
+  right: -5vw;
+  height: 100vh;
 }
 
 .has-submenu > ul::after {
@@ -111,9 +124,9 @@ input[type="text"].form-control::placeholder {
 
 .has-submenu > a > svg,
 .has-arrow > svg {
-  margin-left: 5px;
+  margin-left: .3125rem;
   transform: rotateZ(90deg);
-  width: 10px;
+  width: .625rem;
 }
 
 .has-submenu.open > a > svg:last-of-type,
@@ -173,11 +186,11 @@ input[type="text"].form-control::placeholder {
 }
 
 .has-submenu .card {
-  padding: 10px 20px;
+  padding: .625rem 1.25rem;
 }
 
 .has-submenu .card:not(.dark) {
-  border-bottom: 1px solid #3E9141;
+  border-bottom: .0625rem solid #3E9141;
   border-radius: 0;
 }
 
@@ -197,11 +210,11 @@ input[type="text"].form-control::placeholder {
 }
 
 .has-submenu .card h4 {
-  padding-top: 0.5rem;
+  padding-top: .5rem;
 }
 
 .has-submenu .card.dark {
-  margin-bottom: 4px;
+  margin-bottom: .25rem;
 }
 
 #navbar-dropdown-search {
@@ -209,8 +222,8 @@ input[type="text"].form-control::placeholder {
   border-radius: 50%;
   border: 0 !important;
   padding: 0;
-  height: 36px;
-  width: 36px;
+  height: 2.25rem;
+  width: 2.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,7 +234,7 @@ input[type="text"].form-control::placeholder {
 #navbar-dropdown-search > svg {
   height: auto;
   width: auto;
-  margin-left: -1px;
+  margin-left: -.0625rem;
   transform: none;
 }
 
@@ -233,16 +246,25 @@ input[type="text"].form-control::placeholder {
 .has-submenu.click > #navbar-dropdown-search[aria-expanded="true"] {
   background: #207127;
   border-radius: 0;
-  height: 60px;
-  width: 52px;
-  transform: translateX(16px);
+  height: 3.25rem;
+  width: 3.25rem;
+  transform: translateX(.46875rem);
+}
+
+@media(min-width: 768px) {
+  .has-submenu.click.open > #navbar-dropdown-search,
+  .has-submenu.click > #navbar-dropdown-search[aria-expanded="true"] {
+    height: 3.5rem;
+  }
 }
 
 @media(min-width: 1024px) {
   .has-submenu.click.open > #navbar-dropdown-search,
   .has-submenu.click > #navbar-dropdown-search[aria-expanded="true"] {
-      transform: translateX(0);
-  }        
+    height: 3.75rem;
+    width: 2.25rem;
+    transform: translateX(0);
+  }
 }
 
 .has-submenu.click.open > #navbar-dropdown-search > svg:first-of-type,
@@ -286,12 +308,18 @@ input[type="text"].form-control::placeholder {
   position: absolute;
   top: 0;
   left: 0;
-  height: 60px;
-  width: 52px;
+  height: 3.25rem;
+  width: 3.25rem;
+}
+
+@media(min-width: 48rem) {
+  #mobile-navigation > a {
+    height: 3.5rem;
+  }
 }
 
 #mobile-navigation > a > svg:first-of-type {
-  width: 30px;
+  width: 1.875rem;
 }
 
 #mobile-navigation > a > svg:last-of-type {
@@ -324,7 +352,7 @@ input[type="text"].form-control::placeholder {
   font-size: 18px;
   font-weight: 600;
   line-height: 21px;
-  padding: 15.5px 0;
+  padding: 1rem 0;
 }
 
 #mobile-navigation .has-submenu > ul {
@@ -396,7 +424,7 @@ input[type="text"].form-control::placeholder {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 52px;
+  width: 3.25rem;
 }
 
 #topbar {
@@ -466,12 +494,12 @@ input[type="text"].form-control::placeholder {
   font-weight: normal;
   font-size: 12px;
   line-height: 1.5;
-  padding: 6px 16px;
+  padding: .75rem .5rem;
 }
 
 #translate > a > svg:first-of-type {
-  width: 20px;
-  margin-right: 7.5px;
+  width: 1.25rem;
+  margin-right: .5rem;
   margin-left: 0;
   transform: none;
 }
@@ -487,7 +515,7 @@ input[type="text"].form-control::placeholder {
   #translate > ul {
       right: 0;
       left: auto;
-      width: 375px;
+      width: 23.4375rem;
   }        
 }
 
@@ -497,6 +525,6 @@ input[type="text"].form-control::placeholder {
 }
 
 #translate > ul > li {
-  font-size: 14px;
-  margin: 2.5px 0;
+  @apply text-sm;
+  margin: .1875rem 0;
 }

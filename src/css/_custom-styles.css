@@ -117,15 +117,15 @@ button {
 .search-box {
   background-image: url('../img/icon-spyglass.svg');
   background-repeat: no-repeat;
-  background-position: 0.5rem center;
+  background-position: .5rem center;
 }
 
 /* PUSH MENU */
 #menu {
   @apply fixed top-0;
-  right: -300px;
-  width: 300px;
-  transition: right 0.5s ease-out;
+  right: -18.75rem;
+  width: 18.75rem;
+  transition: right .5s ease-out;
 }
 
 body.open #menu {
@@ -134,7 +134,7 @@ body.open #menu {
 
 .page-holder {
   @apply relative right-0 duration-500 ease-out;
-  transition: right 0.5s ease-out;
+  transition: right .5s ease-out;
 }
 
 .how-it-works-block {
@@ -150,10 +150,10 @@ body.open #menu {
       @apply absolute bg-no-repeat;
       background-image: url('../img/icon-right-arrow.svg');
       content: "";
-      top: 10px;
-      right: -30px;
-      width: 59px;
-      height: 16px;
+      top: .625rem;
+      right: -1.875rem;
+      width: 3.6875rem;
+      height: 1rem;
     }
 
     &:last-of-type {
@@ -166,7 +166,7 @@ body.open #menu {
 
 body.open .page-holder {
   @apply overflow-hidden;
-  right: 300px;
+  right: 18.75rem;
 }
 
 .timeline-grid dt {
@@ -203,7 +203,7 @@ form[data-handle="whyWasThisPageHelpful"] {
 }
 
 .accordion {
-  padding-top: 1em;
+  padding-top: 1rem;
 }
 
 .accordion > ul {
@@ -217,7 +217,7 @@ form[data-handle="whyWasThisPageHelpful"] {
 
 .accordion-item {
   border: 2px solid #616e7c;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
 .accordion-item:last-child {
@@ -230,7 +230,7 @@ form[data-handle="whyWasThisPageHelpful"] {
   display: flex;
   align-items: center;
   font-weight: 700;
-  padding: 16px 24px;
+  padding: 1rem 1.5rem;
   justify-content: space-between;
   width: 100%;
 }
@@ -245,7 +245,7 @@ form[data-handle="whyWasThisPageHelpful"] {
 }
 
 .accordion-item > button > span {
-  margin-bottom: 3px;
+  margin-bottom: .1875rem;
 }
 
 .accordion-item > button > span > svg:last-child {
@@ -265,7 +265,7 @@ form[data-handle="whyWasThisPageHelpful"] {
 }
 
 .accordion-item > div {
-  padding: 24px;
+  padding: 1.5rem;
 }
 
 .accordion-item > div > *:first-child:not(.button) {
@@ -288,7 +288,7 @@ form[data-handle="whyWasThisPageHelpful"] {
   @apply text-xs leading-normal;
   box-shadow: 0 1px 2px 0 rgb(81 81 81 / 33%);
   color: #207127;
-  padding: 0.25rem 0.5rem;
+  padding: .25rem .5rem;
 }
 
 .card-grid {
@@ -361,7 +361,7 @@ form[data-handle="whyWasThisPageHelpful"] {
   border-radius: 4px;
   display: block;
   height: 100%;
-  padding: 20px;
+  padding: 1.25rem;
 }
 
 .card:hover,
@@ -378,7 +378,7 @@ form[data-handle="whyWasThisPageHelpful"] {
   @apply text-base leading-normal;
   color: #207127;
   font-weight: 600;
-  padding-bottom: 0.5rem;
+  padding-bottom: .5rem;
 }
 
 .card p {
@@ -390,7 +390,7 @@ form[data-handle="whyWasThisPageHelpful"] {
 
 .card.dark {
   background: #f5f7fa;
-  box-shadow: 0px 2px 1px 0px rgba(81, 81, 81, 0.25);
+  box-shadow: 0px 2px 1px 0px rgba(81, 81, 81,.25);
 }
 
 .card.dark:hover,
@@ -513,7 +513,7 @@ form[data-handle="whyWasThisPageHelpful"] {
   border-radius: 4px;
   display: block;
   height: 100%;
-  padding: 20px;
+  padding: 1.25rem;
 }
 
 .card:hover,
@@ -530,7 +530,7 @@ form[data-handle="whyWasThisPageHelpful"] {
   @apply text-base leading-normal;
   color: #207127;
   font-weight: 600;
-  padding-bottom: 0.5rem;
+  padding-bottom: .5rem;
 }
 
 .card p {
@@ -542,7 +542,7 @@ form[data-handle="whyWasThisPageHelpful"] {
 
 .card.dark {
   background: #f5f7fa;
-  box-shadow: 0px 2px 1px 0px rgba(81, 81, 81, 0.25);
+  box-shadow: 0px 2px 1px 0px rgba(81, 81, 81,.25);
 }
 
 .card.dark:hover,
@@ -608,7 +608,7 @@ form[data-handle="whyWasThisPageHelpful"] {
 }
 
 :where(.ul-icons) > li {
-  margin-bottom: 15px;
+  margin-bottom: .9375rem;
 }
 
 :where(.ul-icons) > li,
@@ -619,9 +619,9 @@ form[data-handle="whyWasThisPageHelpful"] {
 
 :where(.ul-icons > li) svg {
   flex-shrink: 0;
-  margin-top: 2px;
-  margin-right: 10px;
-  width: 22.5px;
+  margin-top: .125rem;
+  margin-right: .625rem;
+  width: 1.40625rem;
 }
 
 .related > li svg path {
@@ -670,7 +670,7 @@ form[data-handle="whyWasThisPageHelpful"] {
 
 .content > ul > li > ul {
   margin-top: 0;
-  padding-left: 0.5rem;
+  padding-left: .5rem;
 }
 
 .embed-container {
@@ -694,7 +694,7 @@ form[data-handle="whyWasThisPageHelpful"] {
 .has-submenu > ul::before {
   background: black;
   content: "";
-  opacity: 0.25;
+  opacity: .25;
   pointer-events: none;
   position: absolute;
   top: 100%;
@@ -709,7 +709,6 @@ form[data-handle="whyWasThisPageHelpful"] {
 }
 
 #mobile-menu {
-  height: 60px;
   @apply h-[3.75rem] sm:h-16;
 }
 

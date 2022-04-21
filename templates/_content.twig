@@ -26,10 +26,10 @@
               </div>
             </div>
           </div>
-          <div id="content" style="position:relative;top:-80px;"></div>
+          <div id="content" style="position:relative;top:-5rem;"></div>
           <div class="{{ entry.slug == 'meetings-index' ? 'bg-blue-900 text-white' : '' }}">
             <div class="container components pt-8 md:pt-16 {{ entry.slug == 'meetings-index' ? 'md:mb-8' : '' }}">
-              <div style="max-width:1152px;">
+              <div class="max-w-6xl">
                 <div class="flex flex-col flex-1 lg:flex-row">
                   <div class="w-full lg:w-8/11">
                     {% block title %}
@@ -47,7 +47,7 @@
         <section> 
           {% if category is not defined %}
             <div class="container pt-0">
-              <div style="max-width:1152px;">
+              <div class="max-w-6xl">
                 <div class="flex flex-wrap justify-between -mx-8 {{ layout is defined and layout == 'reverse' ? 'flex-col-reverse lg:flex-row' : '' }}">
                   <div class="w-full lg:w-7/11 px-8 {{ layout is defined and layout == 'reverse' ? 'mt-8 lg:mt-0' : '' }}">
                     <div class="components components-format">

@@ -6,7 +6,7 @@
 }
 
 .result {
-  border-bottom: 2px solid #cfcfcf;
+  border-bottom: .125rem solid #cfcfcf;
   margin-bottom: 1.5rem;
 }
 
@@ -35,8 +35,8 @@
   display: inline-block;
   font-weight: 400;
   flex-shrink: 0;
-  padding: 6px 12px;
-  margin-top: 0.5rem;
+  padding: .375rem .75rem;
+  margin-top: .5rem;
   width: auto;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .result p {
-  margin-top: 10px;
+  margin-top: .625rem;
   max-width: 730px;
   padding-top: 0;
 }
@@ -63,5 +63,5 @@
 }
 
 .result .updated + p {
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
