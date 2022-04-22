@@ -3,11 +3,14 @@
 <script>
     var container = document.body;
     var dom_observer = new MutationObserver(function(mutation) {
-        console.log(container.style.top);
         document.getElementById('mainbar').style.top = container.style.top;
     });
     var config = { attributes: true };
     dom_observer.observe(container, config);
+
+    function delete_cookie(name) {
+        document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
 </script>
 
 <div id="topbar" class="navbar">
@@ -15,7 +18,7 @@
         <p class="hidden lg:block"><b>Official Website for the City of Oakland</b> <span class="mx-1">|</span> <a class="hover:text-green-800 hover:underline" href="{{ siteUrl }}officials/libby-schaaf">Mayor Libby Schaaf</a></p>
         <nav class="flex items-center" id="top-navigation" name="Top Navigation">
             <ul class="flex items-center">
-                <li class="hidden lg:block ml-4"><a class="language" href="#googtrans(en|en)" onclick="location.reload()"><span class="notranslate">English</span></a></li>
+                <li class="hidden lg:block ml-4"><a class="language" href="#googtrans(en|en)" onclick="delete_cookie('googtrans');location.reload()"><span class="notranslate">English</span></a></li>
                 <li class="hidden lg:block ml-4"><a class="language" href="#googtrans(en|es)" onclick="location.reload()"><span class="notranslate">Español</span></a></li>
                 <li class="hidden lg:block ml-4"><a class="language" href="#googtrans(en|zh-TW)" onclick="location.reload()"><span class="notranslate">中文</span></a></li>
                 <li class="hidden lg:block ml-4"><a class="language" href="#googtrans(en|vi)" onclick="location.reload()"><span class="notranslate">Tiếng Việt</span></a></li>
@@ -28,7 +31,7 @@
                     <li><a class="focusable language underline" href="#googtrans(en|km)" onclick="location.reload()"><span class="notranslate">ភាសាខ្មែរ</span></a></li>
                     <li><a class="focusable language underline" href="#googtrans(en|zh-TW)" onclick="location.reload()"><span class="notranslate">中文</span></a></li>
                     <li><a class="focusable language underline" href="#googtrans(en|ko)" onclick="location.reload()"><span class="notranslate">한국어</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|en)" onclick="location.reload()"><span class="notranslate">English</span></a></li>
+                    <li><a class="focusable language underline" href="#googtrans(en|en)" onclick="delete_cookie('googtrans');location.reload()"><span class="notranslate">English</span></a></li>
                     <li><a class="focusable language underline" href="#googtrans(en|mn)" onclick="location.reload()"><span class="notranslate">монгол</span></a></li>
                     <li><a class="focusable language underline" href="#googtrans(en|tl)" onclick="location.reload()"><span class="notranslate">Filipino</span></a></li>
                     <li><a class="focusable language underline" href="#googtrans(en|es)" onclick="location.reload()"><span class="notranslate">Español</span></a></li>
