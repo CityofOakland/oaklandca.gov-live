@@ -140,7 +140,7 @@
     <div class="flex items-center">
       <button class="button medium">Apply</button>
       {% if query or filter_enabled %}
-        <a href="{{ entry.url }}/meetings">Clear filters</a>
+        <a class="mt-4" href="{{ entry.url }}/meetings?type={{type}}">Clear filters</a>
       {% endif %}
     </div>
   </form>
