@@ -20,10 +20,7 @@
         <section>
           <div class="bg-transparent-oakland-roots">
             <div class="container" style="padding-top:1rem;padding-bottom:1rem;">
-              <div class="relative flex flex-col items-start py-0 breadcrumbs sm:justify-between sm:flex-row-reverse sm:items-center">
-                {% include "_partials/_elements/_banner-google-translate.twig" with {paddingTop: "pt-0 mb-4 md:mb-0"} %}
-                {% include "_components/partials/_breadcrumbs.twig" %}
-              </div>
+              {% include "_components/partials/_breadcrumbs.twig" %}
             </div>
           </div>
           <div id="content" style="position:relative;top:-5rem;"></div>
@@ -130,31 +127,3 @@
       var entryTitle = "{{ facetItem }}";
   {% endjs %}
 {% endif %}
-
-{% js %}
-(function() {
-  // Observe DOM mutations whether the <html> node was changed by Google Translate
-  if (window.MutationObserver) {
-    var mutationObserver = new MutationObserver(function(mutations) {
-      mutations.forEach(function (mutation) {
-        var oldElementClass = mutation.oldValue;
-        var currentElementClass = mutation.target.className;
-        if (oldElementClass.indexOf('translated-') === -1 && currentElementClass.indexOf('translated-') > -1) {
-          dl.push({
-            'event' : 'page_translated',
-            'translationLanguage' : mutation.target.lang || document.getElementsByTagName('html')[0].getAttribute('xml:lang'),
-            'debug_mode'          : true,
-          });
-        }
-    })
-  })
-
-    var htmlNode = document.querySelector('html');
-    mutationObserver.observe(htmlNode, {
-      attributes: true,
-      attributeOldValue: true,
-      attributeFilter: ['class']
-    })
-  }
-})();
-{% endjs %}

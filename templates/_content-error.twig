@@ -22,8 +22,18 @@
         <section>
           <div class="bg-transparent-oakland-roots">
             <div class="container" style="padding-top:1rem;padding-bottom:1rem;">
-              <div class="relative flex flex-col items-start py-0 breadcrumbs sm:justify-between sm:flex-row-reverse sm:items-center">
-                {% include "_partials/_elements/_banner-google-translate.twig" with {paddingTop: "pt-0 mb-4 md:mb-0"} %}
+              <div class="relative flex lg:justify-end">
+                <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                <script>
+                  function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({
+                      pageLanguage: 'en',
+                      includedLanguages: 'ceb,en,es,hmn,ja,km,ko,mn,tl,vi,zh-TW',
+                      layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT
+                    }, 'google_translate_element');
+                  }
+                </script>
+                <div class="relative z-30 block" id="google_translate_element"></div>
               </div>
             </div>
           </div>

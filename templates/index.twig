@@ -23,9 +23,6 @@
     <div class="container {{ bannerImage.imageCredit ? 'pb-0 lg:pb-12' : '' }}">
       <div class="relative z-20 max-w-xl p-6 bg-white rounded-md shadow md:p-12">
         <div class="flex flex-col items-start justify-start gap-4 lg:items-center lg:justify-between lg:flex-row">
-          <div class="order-1 lg:order-2">
-            {% include "_partials/_elements/_banner-google-translate.twig" with { paddingTop: "pt-0" } %}
-          </div>
           <p class="order-2 lg:order-1"><a class="text-lg font-bold leading-normal text-green-800 hover:text-green-900" href="https://www.oaklandca.gov/topics/oaklandlovelife">#oaklandlovelife</a></p>
         </div>
         <h1 class="my-4 text-3xl font-bold leading-tight md:text-4xl md:leading-tight text-green-1000">{{ entry.heading|raw }}</h1>
