@@ -8,8 +8,21 @@
     var config = { attributes: true };
     dom_observer.observe(container, config);
 
-    function delete_cookie(name) {
-        document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    function clear_languages() {
+      var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+      if(!iframe) return;
+
+      var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+      var restore_el = innerDoc.getElementsByTagName("button");
+
+      for(var i = 0; i < restore_el.length; i++){
+        if(restore_el[i].id.indexOf("restore") >= 0) {
+          restore_el[i].click();
+          var close_el = innerDoc.getElementsByClassName("goog-close-link");
+          close_el[0].click();
+          return;
+        }
+      }
     }
 </script>
 
@@ -18,7 +31,7 @@
         <p class="hidden lg:block"><b>Official Website for the City of Oakland</b> <span class="mx-1">|</span> <a class="hover:text-green-800 hover:underline" href="{{ siteUrl }}officials/libby-schaaf">Mayor Libby Schaaf</a></p>
         <nav class="flex items-center" id="top-navigation" name="Top Navigation">
             <ul class="flex items-center">
-                <li class="hidden lg:block ml-4"><a class="language" href="#googtrans(en|en)" onclick="delete_cookie('googtrans');location.reload()"><span class="notranslate">English</span></a></li>
+                <li class="hidden lg:block ml-4"><a class="language" href="#googtrans(en|en)" onclick="clear_languages()"><span class="notranslate">English</span></a></li>
                 <li class="hidden lg:block ml-4"><a class="language" href="#googtrans(en|es)" onclick="location.reload()"><span class="notranslate">Español</span></a></li>
                 <li class="hidden lg:block ml-4"><a class="language" href="#googtrans(en|zh-TW)" onclick="location.reload()"><span class="notranslate">中文</span></a></li>
                 <li class="hidden lg:block ml-4"><a class="language" href="#googtrans(en|vi)" onclick="location.reload()"><span class="notranslate">Tiếng Việt</span></a></li>
@@ -31,7 +44,7 @@
                     <li><a class="focusable language underline" href="#googtrans(en|km)" onclick="location.reload()"><span class="notranslate">ភាសាខ្មែរ</span></a></li>
                     <li><a class="focusable language underline" href="#googtrans(en|zh-TW)" onclick="location.reload()"><span class="notranslate">中文</span></a></li>
                     <li><a class="focusable language underline" href="#googtrans(en|ko)" onclick="location.reload()"><span class="notranslate">한국어</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|en)" onclick="delete_cookie('googtrans');location.reload()"><span class="notranslate">English</span></a></li>
+                    <li><a class="focusable language underline" href="#googtrans(en|en)" onclick="clear_languages()"><span class="notranslate">English</span></a></li>
                     <li><a class="focusable language underline" href="#googtrans(en|mn)" onclick="location.reload()"><span class="notranslate">монгол</span></a></li>
                     <li><a class="focusable language underline" href="#googtrans(en|tl)" onclick="location.reload()"><span class="notranslate">Filipino</span></a></li>
                     <li><a class="focusable language underline" href="#googtrans(en|es)" onclick="location.reload()"><span class="notranslate">Español</span></a></li>
