@@ -31,13 +31,15 @@
     </div>
     <figure class="w-full h-full lg:inset-0 lg:z-0 lg:absolute">
       <img src="{{ craft.imager.placeholder({ type: 'silhouette', width: 160, height: 90, source: src }) }}" sizes="100vw" srcset="{{ craft.imager.srcset(transformedBannerImages) }}" class="absolute inset-0 z-0 object-cover w-full h-full" alt="{{ bannerImage.altText ?? bannerImage.title }}" style="object-position: {{ bannerImage.getFocalPoint('asCss') }}">
-      <figcaption class="relative z-10 w-full h-full mt-0 lg:absolute">
-        <div class="container flex items-start justify-start h-full pt-4 lg:pt-0 lg:items-end lg:justify-end">
-          <div class="relative z-30 max-w-xs px-2 py-1 bg-white rounded-sm shadow line-clamp-2">
-            {{ bannerImage.imageCredit | retcon('attr', 'p', { class: 'text-xs leading-normal' }) }}
+      {% if bannerImage.imageCredit %}
+        <figcaption class="relative z-10 w-full h-full mt-0 lg:absolute">
+          <div class="container flex items-start justify-start h-full pt-4 lg:pt-0 lg:items-end lg:justify-end">
+            <div class="relative z-30 max-w-xs px-2 py-1 bg-white rounded-sm shadow line-clamp-2">
+              {{ bannerImage.imageCredit | retcon('attr', 'p', { class: 'text-xs leading-normal' }) }}
+            </div>
           </div>
-        </div>
-      </figcaption>
+        </figcaption>
+      {% endif %}
     </figure>
   </section>
 
