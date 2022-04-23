@@ -45,6 +45,27 @@
                         inputClass: "form-control",
                         submitClass: "button small",
                     }).render() }}
+
+                    {% js on ready %}
+                        $(function () {
+                            // Find the corresponding Form
+                            var form = document.querySelector('#footer-navigation form');
+                            $.ajax({
+                                // Specify the form handle in the GET parameters
+                                url: '{{ siteUrl }}form?form=signUp',
+                                type: 'get',
+                                dataType: 'json',
+                                success: function (response) {
+                                    // Update the Form Hash
+                                    form.querySelector('input[name=formHash]').value = response.hash;
+
+                                    // Locate and update the CSRF input
+                                    var csrf = response.csrf;
+                                    form.querySelector('input[name=' + csrf.name + ']').value = csrf.value;
+                                },
+                            });
+                         });
+                    {% endjs %}
                 {% endif %}
             </div>
         </nav>
