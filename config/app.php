@@ -21,6 +21,11 @@ return [
     'modules' => [
         'my-module' => \modules\Module::class,
         'matrix-mate-module' => \modules\MatrixMateModule::class,
+        // 'date-input-module' => modules\dateinputmodule\DateInputModule::class,
     ],
-    'bootstrap' => ['my-module', 'matrix-mate-module'],
+    'bootstrap' => [
+        'my-module', 
+        'matrix-mate-module',
+        // 'date-input-module'
+    ],
 ];

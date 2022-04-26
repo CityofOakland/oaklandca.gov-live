@@ -9,16 +9,15 @@
 {% extends '_content.twig' %}
 {% import '_macros/_macros' as macros %}
 
-{% block content %}
-
-	{% set status = 'default' %}
+{% set status = 'default' %}
 	{% if entry.meetingStatus %}
 		{% set status = entry.meetingStatus %}
 	{% elseif entry.eventStatus %}
 		{% set status = entry.eventStatus %}
 	{% endif %}
 
-  {% if status != "default" %}
+{% block content %}
+  {% if status != "default" and status !== "active" %}
     <div>
       {% if status == 'canceled' %}
         {{ _self.callout('This meeting has been canceled.') }}
