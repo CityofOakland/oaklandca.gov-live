@@ -11,15 +11,48 @@
 {% set meetings       = craft.entries().section('meetings').relatedTo(entry).search(query).limit(10) %}
 {% set filter_enabled = false %}
 
-{% if 
-  craft.app.request.getQueryParam('start_date') or 
-  craft.app.request.getQueryParam('end_date') or 
-  craft.app.request.getQueryParam('type') or
-  craft.app.request.getQueryParam('q') %}
+{% set date_query = ['and'] %}
+
+{% set year   = craft.app.request.getQueryParam('year') ? craft.app.request.getQueryParam('year') : '' %}
+{% set month  = craft.app.request.getQueryParam('month') ? craft.app.request.getQueryParam('month') : '' %}
+{% set ymd     = '' %}
+
+{% if year and month %}
   {% set filter_enabled = true %}
+  {% set ymd = year ~ '-' ~ month ~ '-01' %}
+  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
+{% elseif year %}
+  {% set filter_enabled = true %}
+  {% set ymd = year ~ '-' ~ '01-01' %}
+  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 year')|date('Y-m-d')) ]) %}
+{% elseif month %}
+  {% set filter_enabled = true %}
+  {% set ymd = now|date('Y') ~ '-' ~ month %}
+  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
 {% endif %}
 
-{% set meetings = meetings|applyDateFilter('date', 2) %}
+{% set type = craft.app.request.getQueryParam('type') ? craft.app.request.getQueryParam('type') : 'upcoming' %}
+{% if type %}
+  {% switch type %}
+    {% case 'upcoming' %}
+      {% set meetings = meetings.order('date asc') %}
+      {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
+    {% case 'past' %}
+      {% set meetings = meetings.order('date desc') %}
+      {% set date_query = date_query|merge(['< ' ~ now|date('Y-m-d')]) %}
+  {% endswitch %}
+{% else %}
+  {% set meetings = meetings.order('date asc') %}
+  {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
+{% endif %}
+
+{% if date_query|length > 1 %}
+  {% set meetings = meetings.date(date_query) %}
+{% endif %}
+
+{% if craft.app.request.getQueryParam('q') %}
+  {% set filter_enabled = true %}
+{% endif %}
 
 {% paginate meetings as pageInfo, meetings %}
 
@@ -32,6 +65,13 @@
 {% import '_macros/_macros' as macros %}
 
 {% block content %}
+  <div>
+    <ul class="flex flex-wrap list-none m-0 p-0">
+        <li><a href="?type=upcoming&q={{ query }}&year={{ year }}&month={{ month }}" class="button m-0 rounded-none {{ type == 'upcoming' ? 'pointer-events-none' : 'secondary' }}">Upcoming Meetings</a></li>
+        <li><a href="?type=past&q={{ query }}&year={{ year }}&month={{ month }}" class="button m-0 rounded-none {{ type == 'past' ? 'pointer-events-none' : 'secondary' }}">Past Meetings</a></li>
+    </ul>
+  </div>
+
   {% if filter_enabled %}
     {% if meetings|length %}
       <h3>Displaying {{ meetings|length }} of {{ pageInfo.total }} Meetings</h3>
@@ -39,8 +79,14 @@
       <h3>No results found</h3>
     {% endif %}
   {% else %}
-    <h3>Displaying All Meetings</h3>
+    {% switch type %}
+      {% case 'upcoming' %}
+      <h3>Displaying all Upcoming Meetings</h3>
+      {% case 'past' %}
+      <h3>Displaying all Past Meetings</h3>
+    {% endswitch %}
   {% endif %}
+
   <div class="mt-8">
     {% if meetings|length %}
       {% for meeting in meetings %}
@@ -49,7 +95,11 @@
     {% else %}
       <div class="px-8 pt-3 pb-5" style="background:#F7F7F7;">
         <p>Please try another search or updating your filters.</p>
-        <p><a href="?">See All Meetings</a></p>
+        {% if type == 'past' %}
+          <p><a href="?type=past">See all Past Meetings</a></p>
+        {% elseif type == 'upcoming' %}
+          <p><a href="?type=upcoming">See all Upcoming Meetings</a></p>
+        {% endif %}
       </div>
     {% endif %}
   </div>
@@ -60,24 +110,37 @@
 
 {% block sidebar %}
   <hr/>
-  <h4 class="py-0 mt-4 mb-6">{{ 'Search and Filter'|t }}</h4>
+  <h4 class="py-0 mt-4 mb-6">{{ 'Search & Filter'|t }}</h4>
   <form action="{{ entry.url }}/meetings">
-    {{ renderRangepicker(
-      'Upcoming Meetings',
-      'Past and Upcoming Meetings',
-      'Past Meetings',
-      2
-    )|raw }}
-    <label class="flex items-center" for="start_date">From Date:</label>
-    {{ renderMonthpicker()|raw }}
-    <label class="flex items-center" for="end_date">To Date:</label>
-    {{ renderMonthpicker('end')|raw }}
+    <input type="hidden" name="type" value="{{ type }}"/>
+    {{ macros.select('Month', 'month', 'month', [
+        {"01"  : "January"},
+        {"02"  : "February"},
+        {"03"  : "March"},
+        {"04"  : "April"},
+        {"05"  : "May"},
+        {"06"  : "June"},
+        {"07"  : "July"},
+        {"08"  : "August"},
+        {"09"  : "September"},
+        {"10"  : "October"},
+        {"11"  : "November"},
+        {"12"  : "December"}
+      ], "Select a month"
+    )}}
+    {% set earliest_year = craft.entries().section('meetings').order('date asc').limit(1).one().date|date('Y') %}
+    {% set latest_year   = craft.entries().section('meetings').order('date desc').limit(1).one().date|date('Y') %}
+    {% set years = [] %}
+    {% for year in range(latest_year, earliest_year) %}
+      {% set years =  years|merge([{(year): year}]) %}
+    {% endfor %}
 
+    {{ macros.select('Year', 'year', 'year', years, "Select a year") }}
     {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
-    <div class="flex items-center mt-4">
-      <button class="button medium mt-0">Apply</button>
+    <div class="flex items-center">
+      <button class="button medium">Apply</button>
       {% if query or filter_enabled %}
-        <a href="{{ entry.url }}/meetings">Clear filters</a>
+        <a class="mt-4" href="{{ entry.url }}/meetings?type={{type}}">Clear filters</a>
       {% endif %}
     </div>
   </form>

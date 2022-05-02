@@ -1,5 +1,6 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
+@import './partials/links.css';
 @import './partials/forms.css';
 @import './partials/navigation.css';
 @import './partials/timeline.css';
@@ -12,8 +13,6 @@
 @import './partials/events-meetings.css';
 @import './partials/icons.css';
 @import './partials/buttons.css';
-
-/* test */
 
 @layer utilities {
   /* Use this utility to hide text only meant for screen readers */

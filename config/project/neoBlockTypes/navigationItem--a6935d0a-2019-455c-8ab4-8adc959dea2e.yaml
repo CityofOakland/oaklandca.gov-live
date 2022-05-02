@@ -1,0 +1,25 @@
+childBlocks: null
+field: 00d908b9-5bc7-4fbf-9cc5-404b99648865 # Navigation - Footer
+fieldLayouts:
+  154e70db-d2a6-433e-b9c5-e217d8b26d5d:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 4f49ca5b-c028-40c6-b67e-de07b11bf16a # Linkit
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Default
+        sortOrder: 1
+handle: navigationItem
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: 'Navigation Item'
+sortOrder: 2
+topLevel: false

@@ -54,7 +54,9 @@
     "verbb/icon-picker": "1.1.12",
     "nystudio107/craft-vite": "1.0.24",
     "hillholliday/craft-user-manual": "2.1.2",
-    "unionco/calendarize": "1.2.18"
+    "unionco/calendarize": "1.2.18",
+    "statikbe/craft-sentry": "^1.1",
+    "sentry/sdk": "^3.1"
   },
   "autoload": {
     "psr-4": {

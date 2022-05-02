@@ -35,3 +35,12 @@ dl,
 p {
   @apply my-4;
 }
+
+.tw-only {
+  & ol,
+  & ul,
+  & dl,
+  & p {
+    @apply my-0;
+  }
+}

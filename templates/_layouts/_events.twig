@@ -1,11 +1,3 @@
-{# {% macro callout(calloutHeading) %}
-	{% include '_components/_callout' with {
-      callOutType   : 'info',
-      heading       : calloutHeading,
-      description   : '' 
-    } %}
-{% endmacro %} #}
-
 {% extends '_content.twig' %}
 {% import '_macros/_macros' as macros %}
 
@@ -15,17 +7,17 @@
 {% set locations = [] %}
 
 {% if entry.eventLocation.type('physicalLocation')|length %}
-    {% set locations = locations|merge(['in-person']) %}
+  {% set locations = locations|merge(['in-person']) %}
 {% endif %}
 
 {% if entry.eventLocation.type('onlineLocation')|length %}
-    {% set locations = locations|merge(['online']) %}
+  {% set locations = locations|merge(['online']) %}
 {% endif %}
 
 
 {% block title %}
-    <h1>{{ entry.title }}</h1>
-    <p class="mt-4">This event will be held {{ locations|join(" and ") }} on {{ entry.calendarize.startDate|date("F j, Y") }}</p>
+  <h1 class="my-0 text-3xl font-bold md:text-4xl">{{ entry.title }}</h1>
+  <div class="mt-4 text-xl leading-8 tw-only">This event will be held {{ locations|join(" and ") }} on {{ entry.calendarize.startDate|date("F j, Y") }}</div>
 {% endblock %}
 
 {% block precontent %}
@@ -127,59 +119,77 @@
 {% endblock %}
 
 {% block sidebar %}
-    {% if entry.registrationLink %}
-        <hr/>
-        <h4>{{ 'Register'|t }}</h4>
-        <p>This is a free event for the public. Fill out this Google Form to register.</p>
-        <a class="button secondary" href="{{ entry.registrationLink }}">Register for Event</a>
-    {% endif %}
-
-    {% if entry.fullName or entry.emailAddress or entry.phoneNumber %}
-        <hr/>
-        <h4>{{ 'Contact'|t }}</h4>
-        {% if entry.fullName  %}<p>{{ entry.fullName }}</p>{% endif %}
-        {% if entry.emailAddress or entry.phoneNumber %}
-            <ul class="ul-icons">
-                {% if entry.emailAddress %}
-                {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-                    params: {
-                        text: entry.emailAddress,
-                        icon: 'envelope',
-                        url: "mailto:#{entry.emailAddress}"
-                    }
-                }) }}
-                {% endif %}
-                {% if entry.phoneNumber %}
-                {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-                    params: {
-                        text: entry.phoneNumber,
-                        icon: 'phone',
-                        url: "tel:#{entry.phoneNumber|replace({'-': ''}) }}"
-                    }
-                }) }}
-                {% endif %}
-            </ul>
-        {% endif %}
-    {% endif %}
-
+  {% if entry.registrationLink %}
     <hr/>
-    <h4>{{ 'Add to Calendar'|t }}</h4>
-    <p>Save this event to your iCal, Outlook or Google Calendar</p>
-    <a class="button secondary" href="{{entry.url}}/calendar.ics">Add to Calendar</a>
-    <hr class="light">
-    <h4>{{ 'Share'|t }}</h4>
-    <ul>
-        <li>Facebook</li>
-        <li>Twitter</li>
-        <li>Instagram</li>
-    </ul>
+    <h4>{{ 'Register'|t }}</h4>
+    <p>This is a free event for the public. Fill out this Google Form to register.</p>
+    <a class="button secondary" href="{{ entry.registrationLink }}">Register for Event</a>
+  {% endif %}
+
+  {% if entry.fullName or entry.emailAddress or entry.phoneNumber %}
+    <hr/>
+    <h4>{{ 'Contact'|t }}</h4>
+    {% if entry.fullName  %}<p>{{ entry.fullName }}</p>{% endif %}
+    {% if entry.emailAddress or entry.phoneNumber %}
+      <ul class="ul-icons">
+        {% if entry.emailAddress %}
+        {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+            params: {
+              text: entry.emailAddress,
+              icon: 'envelope',
+              url: "mailto:#{entry.emailAddress}"
+            }
+        }) }}
+        {% endif %}
+        {% if entry.phoneNumber %}
+        {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+            params: {
+              text: entry.phoneNumber,
+              icon: 'phone',
+              url: "tel:#{entry.phoneNumber|replace({'-': ''}) }}"
+            }
+        }) }}
+        {% endif %}
+      </ul>
+    {% endif %}
+  {% endif %}
+
+  <hr/>
+  <h4>{{ 'Add to Calendar'|t }}</h4>
+  <p>Save this event to your iCal, Outlook or Google Calendar</p>
+  <a class="button secondary" href="{{entry.url}}/calendar.ics">Add to Calendar</a>
+  <hr class="light">
+  <h4>{{ 'Share'|t }}</h4>
+  <ul class="list-none flex items-center px-0 -mt-4">
+    <li class="mb-0 mr-4">
+      <a href="" target="_blank" class="flex items-center justify-center w-10 h-10 bg-green-800 rounded-full text-white hover:bg-green-1000">
+          {{ svg('@webroot/dist/img/logo-facebook.svg')|attr({class:'h-5'}) }}
+          <span class="sr-only">Share on Facebook</span>
+      </a>
+    </li>
+    <li class="mb-0 mr-4">
+      <a href="" target="_blank" class="flex items-center justify-center w-10 h-10 bg-green-800 rounded-full text-white hover:bg-green-1000">
+          {{ svg('@webroot/dist/img/logo-twitter.svg')|attr({class:'h-5'}) }}
+          <span class="sr-only">Share on Twitter</span>
+      </a>
+    </li>
+    <li class="mb-0 mr-4">
+      <a href="" target="_blank" class="flex items-center justify-center w-10 h-10 bg-green-800 rounded-full text-white hover:bg-green-1000">
+          {{ svg('@webroot/dist/img/logo-instagram.svg')|attr({class:'h-5'}) }}
+          <span class="sr-only">Share on Instagram</span>
+      </a>
+    </li>
+  </ul>
+  {% if entry.relatedPages|length %}
     <hr/>
     <h4>{{ 'Related Pages'|t }}</h4>
-    <ul>
-        <li>dskalfjalsfj</li>
-        <li>dskalfjalsfj</li>
+    <ul class="list-none pl-0">
+      {% for page in entry.relatedPages.all() %}
+        <li class="mb-4"><a href="{{ page.url }}">{{ page.title }}</a></li>
+      {% endfor %}
     </ul>
-    <hr class="light">
-    <p class="small">Posted: {{ entry.postDate|date("F j, Y g:ia") }}</p>
-    <p class="small">Last Updated: {{ entry.dateUpdated|date("F j, Y g:ia") }}</p>
+  {% endif %}
+  <hr class="light">
+  <p class="small">Posted: {{ entry.postDate|date("F j, Y g:ia") }}</p>
+  <p class="small">Last Updated: {{ entry.dateUpdated|date("F j, Y g:ia") }}</p>
 {% endblock %}

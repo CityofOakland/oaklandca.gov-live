@@ -1,10 +1,24 @@
-<section style="background-color:#F7F7F7">
+<section class="bg-gray-100">
   <div class="container py-16">
     <h2>{{ "Services"|t }}</h2>
     {% for block in block.getDescendants(1) %}
-      {% if block.heading %}<h3 class="pt-10" style="font-weight:600;">{{ block.heading }}</h3>{% endif %}
-      {% if block.cityServicesAndResourcesUpdates|length %}
-        {% include '_components/partials/_cards-grid' with { entries: block.cityServicesAndResourcesUpdates.all(), shadow: true } %}
+      {% if block.heading %}
+        <h3 class="pt-10 font-semibold">{{ block.heading }}</h3>
+      {% endif %}
+      {% set entries = block.cityServicesAndResourcesUpdates.all() %}
+      {% if entries|length %}
+        <ul class="grid pl-0 mt-6 list-none gap-y-6 gap-x-8 md:grid-cols-2 lg:grid-cols-3 tw-only">
+          {% for entry in entries %}
+            {{ include ('_components/partials/global-cards/card.twig', {
+              params: {
+                size: 'xl',
+                title: entry.destination.text,
+                url: entry.destination.url,
+                level: 'h4'
+              }
+            }) }}
+          {% endfor %}
+        </ul>
       {% endif %}
     {% endfor %}
   </div>

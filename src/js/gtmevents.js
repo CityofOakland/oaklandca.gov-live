@@ -84,8 +84,6 @@ function bindGoogleEvents($){
           'label'         : link_label,
           'debug_mode'    : true,
       });
-
-      console.log('ddd');
   });
 
   $('#nav-wrapper a').on('click', function(){

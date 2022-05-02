@@ -17,26 +17,15 @@
 {% endif %}
 
 {% block title %}
-	<h1>{% if status and status.value and status.value !== 'default' and status.value !== 'active' %}{{ status.label }} - {% endif %}{{ entry.title }}</h1>
+	{% set meetingDate = (entry.type == 'meetings' ? entry.startTime : entry.startDate) %}
+	<h1 class="my-0 text-3xl font-bold md:text-4xl">{% if status and status.value and status.value !== 'default' and status.value !== 'active' %}{{ status.label }} - {% endif %}{{ entry.title }}</h1>
 	{% if entry.date %}
-	  {% if now|date('Y-m-d') <= entry.date|date('Y-m-d') %}
-	    {% if entry.type == 'meetings' %}
-	      <div class="pt-4 lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} will be held on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
-	    {% elseif entry.type == 'meetingsImported' %}
-	      <div class="pt-4 lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} will be held on {{ entry.date|date("F j, Y") }}{{ entry.startDate ? " at " ~ entry.startDate|date("g:ia") : "" }}</div>
-	    {% endif %}
-	  {% else %}
-	      {% if entry.type == 'meetings' %}
-	        <div class="pt-4 lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} was held on {{ entry.date|date("F j, Y") }}{{ entry.startTime ? " at " ~ entry.startTime|date("g:ia") : "" }}</div>
-	      {% elseif entry.type == 'meetingsImported' %}
-	        <div class="pt-4 lead">This meeting of the {{ entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' }} was held on {{ entry.date|date("F j, Y") }}{{ entry.startDate ? " at " ~ entry.startDate|date("g:ia") : "" }}</div>
-	      {% endif %}
-	  {% endif %}
+		<div class="mt-4 text-xl leading-8 tw-only">This meeting of the {{ now|date('Y-m-d') <= entry.date|date('Y-m-d') ? 'will be held on' : 'was held on'}} {{ entry.date|date("F j, Y") }}{{ meetingDate ? " at " ~ meetingDate|date("g:ia") : "" }}</div>
 	{% endif %}
 {% endblock %}
 
 {% block content %}
-  {% if status != "default" %}
+  {% if status != "default" and status !== "active" %}
     <div>
       {% if status == 'canceled' %}
         {{ _self.callout('This meeting has been canceled.') }}
