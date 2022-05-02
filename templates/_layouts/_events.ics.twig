@@ -18,8 +18,8 @@ METHOD:PUBLISH
 PRODID:-//oaklandca.gov//NONSGML Events Calendar V1.0//EN
 BEGIN:VEVENT
 UID:{{ event.id }}@events.oaklandca.gov
-DTSTART:{{ event.calendarize.startDate|date_modify('+4 hours')|date("Ymd") }}T{{ event.calendarize.startDate|date_modify('+4 hours')|date("His") }}Z
-DTEND:{{ event.calendarize.endDate|date_modify('+4 hours')|date("Ymd") }}T{{ event.calendarize.endDate|date_modify('+4 hours')|date("His") }}Z
+DTSTART:{{ event.calendarize.startDate|date_modify('+7 hours')|date("Ymd") }}T{{ event.calendarize.startDate|date_modify('+7 hours')|date("His") }}Z
+DTEND:{{ event.calendarize.endDate|date_modify('+7 hours')|date("Ymd") }}T{{ event.calendarize.endDate|date_modify('+7 hours')|date("His") }}Z
 SUMMARY:{{ 'summary' }}
 DESCRIPTION:{{ 'description' }}
 END:VEVENT
