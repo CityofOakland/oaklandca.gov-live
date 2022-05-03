@@ -26,9 +26,9 @@
       {% include "_partials/_elements/_page-alerts.twig" %}
       {% if leadIn %}
         {% if leadInParagraph ?? "" %}
-          {{ leadIn | replace({'<p' : '<p class="my-2 last:mb-0"', '<a': '<a class="font-bold text-green-800 hover:text-green-700"'}) | raw }}
+          {{ leadIn | replace({'<p' : '<p class="my-2 text-xl leading-8 last:mb-0"', '<a': '<a class="font-bold text-green-800 hover:text-green-700"'}) | raw }}
         {% else %}
-          <p class="mb-0 md:leading-normal">{{ leadIn | raw }}</p>
+          <p class="mb-0 text-xl leading-8">{{ leadIn | raw }}</p>
         {% endif %}
       {% endif %}
       <div class="flex space-x-4">
@@ -51,10 +51,7 @@
 {%- endset -%}
 
 {%- set breadcrumbs -%}
-<div class="breadcrumbs relative flex flex-col items-start py-0 sm:justify-between sm:flex-row-reverse sm:items-center">
-  {% include "_partials/_elements/_banner-google-translate.twig" with {paddingTop: "pt-0 mb-4 md:mb-0"} %}
   {% include "_components/partials/_breadcrumbs.twig" %}
-</div>
 {%- endset -%}
 
 {% if bannerImage | length %}
@@ -80,22 +77,7 @@
     </div>
   </div>
 {% endif %}
-<div id="content" style="position:relative;top:-80px;"></div>
+<div id="content" style="position:relative;top:-5rem;"></div>
 <div class="container relative sm:flex">
   {{ custHeaderContent ?? headerContent }}
 </div>
-
-{% js on load %}
-  $('.breadcrumbs a').on('click', function(){
-      var link_clicked    = $(this).attr('href').trim();
-      var link_label      = $(this).text().trim().replace(/(\r\n|\n|\r)/gm, "");
-
-      dl.push({
-          'event'         : 'breadcrumb_clicked',
-          'current_url'   : '{{ craft.app.request.absoluteUrl }}',
-          'url'           : link_clicked,
-          'label'         : link_label,
-          'debug_mode'    : true,
-      });
-  });
-{% endjs %}

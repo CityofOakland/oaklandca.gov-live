@@ -1,0 +1,35 @@
+childBlocks: null
+field: c7618ee8-2bc2-491b-99e6-c9deaea0809b # Navigation - Main
+fieldLayouts:
+  d57e27ae-8d5d-422e-a81c-3fbea63e2ab7:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 4f49ca5b-c028-40c6-b67e-de07b11bf16a # Linkit
+            instructions: ''
+            label: 'Card Link'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: bc66a003-7f42-4018-99ea-3fd635a804b9 # Style - Card
+            instructions: ''
+            label: 'Card Style'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Default
+        sortOrder: 1
+group: null
+handle: navigationItem
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: 'Navigation Item'
+sortOrder: 2
+topLevel: false

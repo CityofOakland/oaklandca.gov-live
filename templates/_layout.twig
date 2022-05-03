@@ -2,14 +2,13 @@
 {# @var entry \craft\elements\Entry #}
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     {# Calls in the SEOmatic tags, all handled through the CMS settings #}
     {% hook 'seomaticRender' %}
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+Nyiakeng+Puachue+Hmong&display=swap" rel="stylesheet">
     {% include "_components/partials/_favicons.twig" %}
     {% include "_components/partials/_hotjar.twig" %}
     {{ craft.vite.script("src/js/app.js", false) }}
@@ -23,10 +22,10 @@
   {# Sets the navigation to the nav section entry, "Main Nav" #}
   {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
   {# We’re setting the class to overflow-x-hidden to prevent content from stretching page width on mobile views.#}
-  <body class="overflow-x-hidden font-body {{ pageClass ?? '' }}">
-    <div class="page-holder">
+  <body class="font-body {{ pageClass ?? '' }}">
+    {% include '_partials/_elements/_nav-bar.twig' %}
+    <div class="page-holder overflow-x-hidden">
       {% include '_partials/_elements/_skip-to-content.twig' %}
-      {% include '_partials/_elements/_nav-bar.twig' %}
       <main>
         {% include '_partials/_elements/_sitewide-alert.twig' %}
         {% block content %}
@@ -73,31 +72,3 @@
       var entryTitle = "{{ facetItem }}";
   {% endjs %}
 {% endif %}
-
-{% js %}
-(function() {
-  // Observe DOM mutations whether the <html> node was changed by Google Translate
-  if (window.MutationObserver) {
-    var mutationObserver = new MutationObserver(function(mutations) {
-      mutations.forEach(function (mutation) {
-        var oldElementClass = mutation.oldValue;
-        var currentElementClass = mutation.target.className;
-        if (oldElementClass.indexOf('translated-') === -1 && currentElementClass.indexOf('translated-') > -1) {
-          dl.push({
-            'event' : 'page_translated',
-            'translationLanguage' : mutation.target.lang || document.getElementsByTagName('html')[0].getAttribute('xml:lang'),
-            'debug_mode'          : true,
-          });
-        }
-    })
-  })
-
-    var htmlNode = document.querySelector('html');
-    mutationObserver.observe(htmlNode, {
-      attributes: true,
-      attributeOldValue: true,
-      attributeFilter: ['class']
-    })
-  }
-})();
-{% endjs %}

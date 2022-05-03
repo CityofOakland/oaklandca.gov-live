@@ -25,7 +25,7 @@
 							pageType: pageType,
 						}
 					}).render() }}
-					{% js at endBody %}
+					{% js on ready %}
 						document.querySelector('[data-handle="{{ id }}"]').addEventListener('freeform-ajax-success', function (event) {
 							$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(document.querySelector('[data-handle="{{ id }}"]'));
 				  			$(document.querySelector('[data-handle="{{ id }}"]')).remove();
@@ -37,7 +37,7 @@
 						    var form = document.querySelector('#{{ id }} form');
 						    $.ajax({
 						      	// Specify the form handle in the GET parameters
-						      	url: '{{ siteUrl }}form?form="{{ id }}"',
+						      	url: '{{ siteUrl }}form?form={{ id }}',
 						      	type: 'get',
 						      	dataType: 'json',
 						      	success: function (response) {
