@@ -80,22 +80,3 @@
     </div>
   </section>
 {% endblock %}
-
-{% js on load %}
-    $('#all-hits').on('click', 'a', function(){
-      var search_term   = $('#search-input').val() ? $('#search-input').val() : 'No search term';
-      var link_clicked  = $(this).attr('href').trim();
-
-      var filters = [];
-
-      dl.push({
-        'event'               : 'search_result_clicked',
-        'current_url'         : '{{ craft.app.request.absoluteUrl }}',
-        'url'                 : link_clicked,
-        'input_search_term'   : search_term,
-        'filters'             : filters,
-        'debug_mode'          : true,
-        'search_bar_id'       : 'index'
-      });
-    });
-{% endjs %}

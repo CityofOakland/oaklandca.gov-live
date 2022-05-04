@@ -3,7 +3,7 @@
     {% if entry.department|length or entry.programSubdivision %}
       <p>
         {% if entry.department|length %}
-          <b><a href="{{ entry.department.one().url }}">{{ entry.department.one().title }}</a></b><br>
+          <b><a href="{{ entry.department.one().url }}">{{ entry.department.one().legalTitle ? entry.department.one().legalTitle : entry.department.one().title }}</a></b><br>
         {% endif %}
         {% if entry.programSubdivision %}
           {{ entry.programSubdivision }}

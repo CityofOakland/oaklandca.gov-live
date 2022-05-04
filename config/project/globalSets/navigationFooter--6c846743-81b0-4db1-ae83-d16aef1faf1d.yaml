@@ -1,0 +1,32 @@
+fieldLayouts:
+  a356982a-9404-4bc6-bd6b-0b8a9b384558:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 00d908b9-5bc7-4fbf-9cc5-404b99648865 # Navigation - Footer
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Navigation - Footer'
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: ca585b68-038a-438f-9636-8ec4b01f9091 # Linkits
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Navigation - Bottom'
+        sortOrder: 2
+handle: navigationFooter
+name: 'Navigation - Footer'
+sortOrder: 3
