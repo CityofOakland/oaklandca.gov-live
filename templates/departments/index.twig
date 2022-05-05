@@ -7,39 +7,22 @@
   <section class="relative z-0 bg-white">
     <div class="container pt-0 mx-auto">
       {% set departmentsGrouped = craft.entries.section('departments').officialDepartment(true).orderBy('title').all() | group('title | first') %}
-      <div class="grid md:grid-cols-2 gap-5">
+      <ul class="grid my-0 mb-12 list-none gap-y-6 gap-x-8 md:grid-cols-2 lg:grid-cols-3 tw-only">
         {% for entries in departmentsGrouped %}
             {% for entry in entries %}
-              <a class="card" href="{{ entry.redirectUrl ?? entry.url }}">
-                <h3 class="mb-4 text-lg">{{ entry.title }}</h3>
-                <p class="max-w-md my-0">{{ entry.leadIn | chop(limit=200, unit='c', append='…') }}</p>
-              </a>
+              {{ include ('_components/partials/global-cards/card.twig', {
+                params: {
+                  size: 'xl',
+                  style: 'secondary',
+                  title: entry.title,
+                  url: entry.redirectUrl ?? entry.url,
+                  text: entry.leadIn|chop(limit=200, unit='c', append='…')
+                }
+              }) }}
             {% endfor %}
         {% endfor %}
-      </div>
+      </ul>
     </div>
   </section>
-
-  <style>
-    .card {
-      border-radius: 4px;
-      box-shadow: 0px 2px 3px 1px rgb(81 81 81 / 33%);
-      color: initial;
-      padding: 16px;
-    }
-
-    .card h3 {
-      color: #2e8131
-    }
-
-    .card:hover {
-      color: initial;
-    }
-
-    .card:hover h3 {
-      color: #0D5713;
-      text-decoration: underline;
-    }
-  </style>
   {# End Departments #}
 {% endblock %}

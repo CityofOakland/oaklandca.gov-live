@@ -19,6 +19,9 @@ return [
   'dev' => [
       'sslRoutingEnabled' => false,
   ],
+  'hotfix' => [
+      'sslRoutingEnabled' => false,
+  ],
   'production' => [
       'redirectStatusCode' => 301,
       'maintenanceModeResponseStatusCode' => 503,
