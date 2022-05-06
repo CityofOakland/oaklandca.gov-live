@@ -21,44 +21,59 @@
 {% endblock %}
 
 {% block precontent %}
-    <section class="bg-green-800 mb-16 text-white">
-        <div class="container">
-          <div style="max-width:1152px;">
-            <div class="flex flex-wrap justify-between -mx-8">
-              <div class="w-full lg:w-5/12 px-8">
-                <div class="components components-format">
-                    <h3>{{ entry.calendarize.startDate|date("l, F j, Y") }}</h3>
-                    <p>{{ entry.calendarize.startDate|date("g:ia") }}{{ entry.calendarize.endDate ? " to " ~ entry.calendarize.endDate|date("g:ia") }}</p>
-                    {% if entry.calendarize.repeats %}
-                        <p><i>This event repeats {{ entry.calendarize.repeatType }}, with the next event occurring on {{ entry.calendarize.next.start|date("l, F j, Y") }} </i></p>
-                    {% endif %}
+  <section class="bg-green-800 mb-16 text-white">
+    <div class="container">
+      <div style="max-width:1152px;">
+        <div class="flex flex-wrap justify-between -mx-8">
+          <div class="w-full lg:w-1/3 px-8">
+            <div class="components components-format flex items-start">
+                {{ svg( '@webroot/dist/img/fa-clock.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }}
+                <div>
+                  <h3 class="mt-0">{{ entry.calendarize.startDate|date("l, F j, Y") }}</h3>
+                  <p class="mt-2">{{ entry.calendarize.startDate|date("g:ia") }}{{ entry.calendarize.endDate ? " to " ~ entry.calendarize.endDate|date("g:ia") }}</p>
+                  {% if entry.calendarize.repeats %}
+                      <p><i>This event repeats {{ entry.calendarize.repeatType }}, with the next event occurring on {{ entry.calendarize.next.start|date("l, F j, Y") }} </i></p>
+                  {% endif %}
                 </div>
-              </div>
-              <div class="w-full lg:w-1/12 px-8"></div>
-              <div class="w-full lg:w-3/12 px-8">
-                <div class="components components-format">
-                    {% if entry.eventLocation.type('physicalLocation')|length %}
-                        {% set address = entry.eventLocation.type('physicalLocation').one() %}
-                        <h3>In-Person</h3>
-                        <p>{{ address.contactAddress.multiline() }}</p>
-                        <p><a class="text-white hover:text-gray-200 underline" href="{{ address.contactAddress.linkToDirections() }}">Get Directions</a></p>
-                    {% endif %}
-                </div>
-              </div>
-              <div class="w-full lg:w-3/12 px-8">
-                <div class="components components-format">
-                    {% if entry.eventLocation.type('onlineLocation')|length %}
-                        {% set address = entry.eventLocation.type('onlineLocation').one() %}
-                        <h3>Online</h3>
-                        <p>This event will be held virtually</p>
-                        {% if address.href %}<a href="{{ address.href }}" class="button secondary mb-0">Online Link</a>{% endif %}
-                    {% endif %}
-                </div>
-              </div>
             </div>
           </div>
+          <div class="w-full xl:w-1/6 lg:hidden xl:block px-8"></div>
+          <div class="w-full md:w-1/2 lg:w-1/3 xl:w-3/12 px-8">
+            <div class="components components-format flex items-start mt-12 lg:mt-0">
+              {% if entry.eventLocation.type('physicalLocation')|length %}
+                {% set address = entry.eventLocation.type('physicalLocation').one() %}
+                {{ svg( '@webroot/dist/img/fa-map.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }} 
+                <div>
+                  <h3 class="mt-0">In-Person</h3>
+                  <p class="mt-2">{{ address.contactAddress.multiline() }}</p>
+                  <p><a class="text-white hover:text-gray-200 underline" href="{{ address.contactAddress.linkToDirections() }}">Get Directions</a></p>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+          {% set dateToPass = entry.calendarize.endDate ? entry.calendarize.endDate : entry.calendarize.startDate %}
+          {# {{ dateToPass|date("l, F j, Y") }} #}
+
+
+          <div class="w-full md:w-1/2 lg:w-1/3 xl:w-3/12 px-8">
+            {% if now < dateToPass %}
+              <div class="components components-format flex items-start mt-12 lg:mt-0">
+                {% if entry.eventLocation.type('onlineLocation')|length %}
+                  {% set address = entry.eventLocation.type('onlineLocation').one() %}
+                  {{ svg( '@webroot/dist/img/fa-globe-solid.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }}
+                  <div>
+                    <h3 class="mt-0">Online</h3>
+                    <p class="mt-2">This event will be held virtually</p>
+                    {% if address.href %}<a href="{{ address.href }}" class="button secondary mb-0">Online Link</a>{% endif %}
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 {% endblock %}
 
 {% block content %}
@@ -83,18 +98,14 @@
 
     {{ entry.mainContent }}
 
-    {% if entry.relatedResources|length %}
+    {% if entry.relatedDocuments|length %}
     <hr class="hr medium"/>
     <h3>Related Documents</h3>
     <ul class="ul-icons related">
-        {% for resource in entry.relatedResources.all() %}
-
-            {% switch resource.type %}
-                {% case 'documents' %}
-                    <li><a href="{{ resource.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ resource.title }}</a></li>
-                {% default %}
-                    <li><a href="{{ resource.url }}">{{ resource.title }}</a></li>
-            {% endswitch %}
+        {% for document in entry.relatedDocuments.all() %}
+          {% if document.documentEntry|length %}
+            <li><a href="{{ document.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ document.documentTitle ? document.documentTitle : (document.documentEntry.one().title) }}</a></li>
+          {% endif %}
         {% endfor %}
     </ul>
     {% endif %}
@@ -104,9 +115,14 @@
     {% if entry.eventTypes|length %}<p><b>Event Type:</b> {{ entry.eventTypes.one().title }}</p>{% endif %}
 
     {% set accessibilityText %}
-      <p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
-      <p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a courtesy to attendees with chemical sensitivities.</p>
+      {% if entry.accessibilityText %}
+        <p>{{ entry.accessibilityText|raw }}</p>
+      {% else %}
+        <p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
+        <p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a courtesy to attendees with chemical sensitivities.</p>
+      {% endif %}
       {% if entry.emailAddress %}
+          <div></div>
           <a class="button secondary small" href="mailto:{{ entry.emailAddress }}?subject=Accessibility Request: {{ entry.title }}{{ entry.date ? ' at ' ~ entry.date|date('m/d/Y') : '' }}">Make a Request</a>
       {% endif %}
     {% endset %}

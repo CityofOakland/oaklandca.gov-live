@@ -1,0 +1,73 @@
+field: 28933675-d3ec-4b03-bd2c-515c63e5a7e4 # Related Documents
+fieldLayouts:
+  76285b3c-750c-47ee-8f23-6cfbac0ded47:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: bdbd7028-39a7-46fd-bb10-e81ae4794d22 # Document Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 977809f3-bab3-42c8-ab3d-6ef9e55280e7 # Document Entry
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  977809f3-bab3-42c8-ab3d-6ef9e55280e7: # Document Entry
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: documentEntry
+    instructions: 'Choose a related document entry to link to.'
+    name: 'Document Entry'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: null
+      sources:
+        - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  bdbd7028-39a7-46fd-bb10-e81ae4794d22: # Document Title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: documentTitle
+    instructions: 'If no title is provided, this link will assume the title of the selected entry below.'
+    name: 'Document Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: document
+name: Document
+sortOrder: 1
