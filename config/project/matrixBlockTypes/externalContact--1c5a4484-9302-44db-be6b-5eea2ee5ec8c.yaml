@@ -1,0 +1,157 @@
+field: b4027b04-f764-4b35-93ee-88ff570bfeaf # Point of Contact
+fieldLayouts:
+  3212face-5ad7-4613-9d9d-8d11b0fc28a7:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 32427104-11d1-4eb4-965e-b05673f89d12 # Name
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 622282c9-d031-4271-966b-8a952587ff07 # Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 59b4632f-26b6-4942-a96a-21909e7eb176 # Organization
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c9827dcd-855e-4cb7-95f8-715acb054da6 # Phone
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: cd0b6f82-6dca-4aee-bbdf-bd17d28ddcc5 # Email
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  59b4632f-26b6-4942-a96a-21909e7eb176: # Organization
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: organization
+    instructions: ''
+    name: Organization
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  622282c9-d031-4271-966b-8a952587ff07: # Title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: contactTitle
+    instructions: ''
+    name: Title
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  32427104-11d1-4eb4-965e-b05673f89d12: # Name
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: contactName
+    instructions: ''
+    name: Name
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c9827dcd-855e-4cb7-95f8-715acb054da6: # Phone
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: phone
+    instructions: ''
+    name: Phone
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  cd0b6f82-6dca-4aee-bbdf-bd17d28ddcc5: # Email
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: email
+    instructions: ''
+    name: Email
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: externalContact
+name: 'External Contact'
+sortOrder: 2

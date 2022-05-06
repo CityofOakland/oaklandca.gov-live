@@ -111,19 +111,10 @@ fieldLayouts:
             heading: 'Event Contact'
             type: craft\fieldlayoutelements\Heading
           -
-            fieldUid: 2260316d-d754-471f-a901-9d8ed19c13d3 # Full Name
-            instructions: 'Input the event contact name and title, or the team name.'
-            label: 'Event Contact Name'
-            required: ''
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a # Email Address
-            instructions: 'Input the email contact for this meeting.'
-            label: 'Event Email'
-            required: ''
+            fieldUid: b4027b04-f764-4b35-93ee-88ff570bfeaf # Point of Contact
+            instructions: null
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null

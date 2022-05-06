@@ -1,4 +1,4 @@
-dateModified: 1651864064
+dateModified: 1651864862
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -32,6 +32,7 @@ meta:
     1b8f26ab-01a9-4570-9e96-1d18389f8226: 'Read More Link' # Read More Link
     1bf6e3cb-26b9-405b-94ea-fbfc944c27b9: Size # Size
     1c1e50b0-b20e-4596-90d8-be5bc63bee3b: 'Button Icon' # Button Icon
+    1c5a4484-9302-44db-be6b-5eea2ee5ec8c: 'External Contact' # External Contact
     1c5d91eb-8c31-4a5e-ba23-4b6a28986f93: Email # Email
     1c974e73-c709-48c5-bc6e-fb8a9ae1ba8a: Table # Table
     1cfca893-de32-4979-8ba3-68de97b5cd03: Linkit # Linkit
@@ -210,6 +211,7 @@ meta:
     58c3bf22-aa23-441f-bd65-acf677638ae6: Data # Data
     58c51c8d-ba49-46af-a341-45be4758244e: 'Contact Form' # Contact Form
     58eda166-7a65-4fb6-8f7d-c6590b0591ae: Summary # Summary
+    59b4632f-26b6-4942-a96a-21909e7eb176: Organization # Organization
     61bef9fa-6716-4df3-a88d-46f256cdee73: 'Link Location' # Link Location
     61dec751-c375-471c-a4ed-1df3b7469237: 'Online Meeting Phone Number' # Online Meeting Phone Number
     62b6620d-66f1-4499-abb2-35960313b3dd: 'Boards & Commissions Index' # Boards & Commissions Index
@@ -334,6 +336,7 @@ meta:
     4670a96c-63ff-403e-a87c-9253c102a2b4: 'Meetings - Imported' # Meetings - Imported
     5261f0db-3453-423b-87c5-e5d3112c4141: 'Document File' # Document File
     5424f488-e675-4a3e-bfc7-f63bb2288f24: Officials # Officials
+    5452fd2c-3905-426b-85bc-9fd90bcd5c30: Contact # Contact
     6187b052-87bb-4c88-993b-30d9c5f1779c: Other # Other
     6227b65d-17fc-4360-8a69-3e70afc30899: 'Elected Official Leads' # Elected Official Leads
     06433c3d-3f3d-4d0a-9619-f28a9d57d27b: 'Need to Know' # Need to Know
@@ -385,6 +388,7 @@ meta:
     321943ce-06f4-4125-b82a-baf2e174a37f: 'Allow Autofill?' # Allow Autofill?
     341595b4-52a8-432f-b327-5fbc3a4289a8: 'Staff Import Department' # Staff Import Department
     451349f6-f11d-40c2-ae6e-47c1e78f32c7: 'Boards & Commissions Redirect' # Boards & Commissions Redirect
+    622282c9-d031-4271-966b-8a952587ff07: Title # Title
     646188fb-7ed1-48ae-b539-736f4fd442d1: Entries # Entries
     714977a3-2a75-4e25-b9b4-7db488f791b0: 'Contract Employees' # Contract Employees
     842891f1-23fb-4af0-93b5-d197738f08a0: Role # Role
@@ -395,12 +399,14 @@ meta:
     06394615-97e5-4f64-8d80-da62f9f1582c: 'Location Description' # Location Description
     6781472a-633d-4059-b528-3b826db0332f: 'Hide Thumbnails?' # Hide Thumbnails?
     6982234e-dc9c-4165-a2a0-4d6edfcbea52: 'Group Head Bio' # Group Head Bio
+    7200487a-d71e-4520-b5d5-b31c1d4b3e5e: 'Internal Contact' # Internal Contact
     7657014a-eefc-419e-921e-8896ed282ab3: 'Sitewide Alert' # Sitewide Alert
     7664938a-7aa3-400c-ab55-335b7ef374bd: 'Column 1 Heading' # Column 1 Heading
     19567722-f3ec-4502-977f-61661602f624: 'City Services and Resources Updates' # City Services and Resources Updates
     20567858-8423-4c20-9004-d0b02150fa2a: 'Meetings Index' # Meetings Index
     23389191-2978-49d8-a70e-6da12c8aeab0: 'Column 1 Cell' # Column 1 Cell
     28933675-d3ec-4b03-bd2c-515c63e5a7e4: 'Related Documents' # Related Documents
+    32427104-11d1-4eb4-965e-b05673f89d12: Name # Name
     42276684-be78-4449-b3e9-8eeb42ad49ba: Table # Table
     49212505-ad0a-4db1-92de-6033ed5d7d9e: 'Large Entry Links' # Large Entry Links
     50023496-1a16-49f2-95f2-f3ce3ac4e20b: 'Rescheduled Meeting' # Rescheduled Meeting
@@ -466,6 +472,7 @@ meta:
     b936e275-7cde-473a-8849-7342b65b94db: Embed # Embed
     b3411cb1-e860-46ed-9cd6-58cf9b8daacb: Departments # Departments
     b3761a4e-9346-448a-ba6a-f441f75e61fc: 'Components - Footer' # Components - Footer
+    b4027b04-f764-4b35-93ee-88ff570bfeaf: 'Point of Contact' # Point of Contact
     b57063ea-0fb9-49f5-94c2-c51bbdfef0ee: Default # Default
     b66198c4-d82e-4078-8034-c728b677d613: Content # Content
     b575240f-71ba-444a-ac88-0c275e078c01: 'External Link' # External Link
@@ -506,6 +513,7 @@ meta:
     c516a5f3-3955-47d3-96a8-73a2658e3fe7: Description # Description
     c964d82c-a4e7-4ec4-ad42-7c3e843193c0: Images # Images
     c7618ee8-2bc2-491b-99e6-c9deaea0809b: 'Navigation - Main' # Navigation - Main
+    c9827dcd-855e-4cb7-95f8-715acb054da6: Phone # Phone
     c27974b4-89ad-4504-abb1-e76e44ff4b5d: Events # Events
     c1969337-e50a-48d2-8823-fbb68bd3776b: 'Resources Index' # Resources Index
     c8061611-d9e5-4ee6-b698-dc19feb2e2a5: 'Call to Action' # Call to Action
@@ -520,6 +528,7 @@ meta:
     cbfce010-f6e1-46eb-a360-1152a3a07447: 'Link Image' # Link Image
     cc787c11-2a78-41cd-8a90-eddcfddaa89f: 'Embedded Content' # Embedded Content
     cccbcd50-864f-49a8-bbde-d44e04005272: 'Project End Date' # Project End Date
+    cd0b6f82-6dca-4aee-bbdf-bd17d28ddcc5: Email # Email
     cd008cb1-3f5b-4444-a259-bf905f9c6f96: Contributors # Contributors
     ce43edd2-2eec-45cc-afa1-e3bd6b6e20ac: People # People
     ce345611-039a-4fb5-9a1c-a9eef7d74514: Embeds # Embeds

@@ -1,0 +1,44 @@
+field: b4027b04-f764-4b35-93ee-88ff570bfeaf # Point of Contact
+fieldLayouts:
+  3ecb33af-3ed8-4a25-9fa9-649c7e9de8d1:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 5452fd2c-3905-426b-85bc-9fd90bcd5c30 # Contact
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  5452fd2c-3905-426b-85bc-9fd90bcd5c30: # Contact
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: contact
+    instructions: ''
+    name: Contact
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: null
+      sources:
+        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+handle: internalContact
+name: 'Internal Contact'
+sortOrder: 1

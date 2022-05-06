@@ -14,7 +14,6 @@
   {% set locations = locations|merge(['online']) %}
 {% endif %}
 
-
 {% block title %}
   <h1 class="my-0 text-3xl font-bold md:text-4xl">{{ entry.title }}</h1>
   <div class="mt-4 text-xl leading-8 tw-only">This event will be held {{ locations|join(" and ") }} on {{ entry.calendarize.startDate|date("F j, Y") }}</div>
@@ -27,17 +26,17 @@
         <div class="flex flex-wrap justify-between -mx-8">
           <div class="w-full lg:w-1/3 px-8">
             <div class="components components-format flex items-start">
-                {{ svg( '@webroot/dist/img/fa-clock.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }}
-                <div>
-                  <h3 class="mt-0">{{ entry.calendarize.startDate|date("l, F j, Y") }}</h3>
-                  <p class="mt-2">{{ entry.calendarize.startDate|date("g:ia") }}{{ entry.calendarize.endDate ? " to " ~ entry.calendarize.endDate|date("g:ia") }}</p>
-                  {% if entry.calendarize.repeats %}
-                      <p><i>This event repeats {{ entry.calendarize.repeatType }}, with the next event occurring on {{ entry.calendarize.next.start|date("l, F j, Y") }} </i></p>
-                  {% endif %}
-                </div>
+              {{ svg( '@webroot/dist/img/fa-clock.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }}
+              <div>
+                <h3 class="mt-0">{{ entry.calendarize.startDate|date("l, F j, Y") }}</h3>
+                <p class="mt-2">{{ entry.calendarize.startDate|date("g:ia") }}{{ entry.calendarize.endDate ? " to " ~ entry.calendarize.endDate|date("g:ia") }}</p>
+                {% if entry.calendarize.repeats %}
+                  <p><i>This event repeats {{ entry.calendarize.repeatType }}, with the next event occurring on {{ entry.calendarize.next.start|date("l, F j, Y") }} </i></p>
+                {% endif %}
+              </div>
             </div>
           </div>
-          <div class="w-full xl:w-1/6 lg:hidden xl:block px-8"></div>
+          <div class="w-full xl:w-1/12 lg:hidden xl:block px-8"></div>
           <div class="w-full md:w-1/2 lg:w-1/3 xl:w-3/12 px-8">
             <div class="components components-format flex items-start mt-12 lg:mt-0">
               {% if entry.eventLocation.type('physicalLocation')|length %}
@@ -52,9 +51,6 @@
             </div>
           </div>
           {% set dateToPass = entry.calendarize.endDate ? entry.calendarize.endDate : entry.calendarize.startDate %}
-          {# {{ dateToPass|date("l, F j, Y") }} #}
-
-
           <div class="w-full md:w-1/2 lg:w-1/3 xl:w-3/12 px-8">
             {% if now < dateToPass %}
               <div class="components components-format flex items-start mt-12 lg:mt-0">
@@ -77,28 +73,28 @@
 {% endblock %}
 
 {% block content %}
-    {% if entry.eventImage.one() %}
-        {% set landscape = {
-          mode: 'crop',
-          width: 730,
-          quality: 100,
-          position: 'top-center'
-        } %}
-        {% set image = entry.eventImage.one() %}
-        <img src="{{ image.getUrl(landscape) }}" alt="{{ image.altText }}"/>
-    {% endif %}
+  {% if entry.eventImage.one() %}
+    {% set landscape = {
+      mode: 'crop',
+      width: 730,
+      quality: 100,
+      position: 'top-center'
+    } %}
+    {% set image = entry.eventImage.one() %}
+    <img src="{{ image.getUrl(landscape) }}" alt="{{ image.altText }}"/>
+  {% endif %}
 
-    {% if entry.calendarize.repeats %}
-        {% include '_components/_callout' with {
-          callOutType   : 'info',
-          heading       : 'This event is part of a series',
-          description   : '<p class="small">See more events <a href="' ~ siteUrl ~ 'events' ~ '">' ~ entry.title ~ '</a></p>', 
-        } %}
-    {% endif %}
+  {% if entry.calendarize.repeats %}
+    {% include '_components/_callout' with {
+      callOutType   : 'info',
+      heading       : 'This event is part of a series',
+      description   : '<p class="small">See more events <a href="' ~ siteUrl ~ 'events' ~ '">' ~ entry.title ~ '</a></p>', 
+    } %}
+  {% endif %}
 
-    {{ entry.mainContent }}
+  {{ entry.mainContent }}
 
-    {% if entry.relatedDocuments|length %}
+  {% if entry.relatedDocuments|length %}
     <hr class="hr medium"/>
     <h3>Related Documents</h3>
     <ul class="ul-icons related">
@@ -108,30 +104,30 @@
           {% endif %}
         {% endfor %}
     </ul>
+  {% endif %}
+
+  {# Accessibility Request #}
+  <hr class="hr medium"/>
+  {% if entry.eventTypes|length %}<p><b>Event Type:</b> {{ entry.eventTypes.one().title }}</p>{% endif %}
+
+  {% set accessibilityText %}
+    {% if entry.accessibilityText %}
+      <p>{{ entry.accessibilityText|raw }}</p>
+    {% else %}
+      <p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
+      <p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a courtesy to attendees with chemical sensitivities.</p>
     {% endif %}
+    {% if entry.emailAddress %}
+        <div></div>
+        <a class="button secondary small" href="mailto:{{ entry.emailAddress }}?subject=Accessibility Request: {{ entry.title }}{{ entry.date ? ' at ' ~ entry.date|date('m/d/Y') : '' }}">Make a Request</a>
+    {% endif %}
+  {% endset %}
 
-    {# Accessibility Request #}
-    <hr class="hr medium"/>
-    {% if entry.eventTypes|length %}<p><b>Event Type:</b> {{ entry.eventTypes.one().title }}</p>{% endif %}
-
-    {% set accessibilityText %}
-      {% if entry.accessibilityText %}
-        <p>{{ entry.accessibilityText|raw }}</p>
-      {% else %}
-        <p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
-        <p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a courtesy to attendees with chemical sensitivities.</p>
-      {% endif %}
-      {% if entry.emailAddress %}
-          <div></div>
-          <a class="button secondary small" href="mailto:{{ entry.emailAddress }}?subject=Accessibility Request: {{ entry.title }}{{ entry.date ? ' at ' ~ entry.date|date('m/d/Y') : '' }}">Make a Request</a>
-      {% endif %}
-    {% endset %}
-
-    {% include '_components/_callout' with {
-        callOutType   : 'info',
-        heading       : 'Accessibility and interpretation requests',
-        description   : accessibilityText 
-    } %}
+  {% include '_components/_callout' with {
+      callOutType   : 'info',
+      heading       : 'Accessibility and interpretation requests',
+      description   : accessibilityText 
+  } %}
 {% endblock %}
 
 {% block sidebar %}
@@ -142,32 +138,97 @@
     <a class="button secondary" href="{{ entry.registrationLink }}">Register for Event</a>
   {% endif %}
 
-  {% if entry.fullName or entry.emailAddress or entry.phoneNumber %}
+  {% if entry.pointOfContact|length %}
     <hr/>
     <h4>{{ 'Contact'|t }}</h4>
-    {% if entry.fullName  %}<p>{{ entry.fullName }}</p>{% endif %}
+    {# {% set contact = entry.pointOfContact.one() %} #}
+    {% for contact in entry.pointOfContact.all() %}
+    {% switch contact.type %}
+      {% case 'internalContact' %}
+        {% set contact = contact.contact.one() %}
+        <p>
+          <b>{{ contact.title }}</b>
+          {% if contact.staffImportJobTitle %}<br>{{ contact.staffImportJobTitle }}{% endif %}
+          {% if contact.staffImportOrganization %}<br>{{ contact.staffImportOrganization }}{% endif %}
+        </p>
+        {% if contact.staffImportEmail or contact.staffImportPhoneNumber %}
+          <ul class="ul-icons">
+            {% if contact.staffImportEmail %}
+            {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+              params: {
+                text: contact.staffImportEmail,
+                icon: 'envelope',
+                url: "mailto:#{contact.staffImportEmail}"
+              }
+            }) }}
+            {% endif %}
+            {% if contact.staffImportPhoneNumber %}
+            {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+              params: {
+                text: contact.staffImportPhoneNumber,
+                icon: 'phone',
+                url: "tel:#{contact.staffImportPhoneNumber|replace({'-': ''}) }}"
+              }
+            }) }}
+            {% endif %}
+          </ul>
+        {% endif %}
+      {% case 'externalContact' %}
+        <p>
+          <b>{{ contact.contactName }}</b>
+          {% if contact.contactTitle %}<br>{{ contact.contactTitle }}{% endif %}
+          {% if contact.organization %}<br>{{ contact.organization }}{% endif %}
+        </p>
+        {% if contact.email or contact.phoneNumber %}
+          <ul class="ul-icons">
+            {% if contact.email %}
+            {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+              params: {
+                text: contact.email,
+                icon: 'envelope',
+                url: "mailto:#{contact.email}"
+              }
+            }) }}
+            {% endif %}
+            {% if contact.phoneNumber %}
+            {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+              params: {
+                text: contact.phoneNumber,
+                icon: 'phone',
+                url: "tel:#{contact.phoneNumber|replace({'-': ''}) }}"
+              }
+            }) }}
+            {% endif %}
+          </ul>
+        {% endif %}
+    {% endswitch %}
+    {% endfor %}
+
+
+
+{#     {% if entry.fullName  %}<p>{{ entry.fullName }}</p>{% endif %}
     {% if entry.emailAddress or entry.phoneNumber %}
       <ul class="ul-icons">
         {% if entry.emailAddress %}
         {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-            params: {
-              text: entry.emailAddress,
-              icon: 'envelope',
-              url: "mailto:#{entry.emailAddress}"
-            }
+          params: {
+            text: entry.emailAddress,
+            icon: 'envelope',
+            url: "mailto:#{entry.emailAddress}"
+          }
         }) }}
         {% endif %}
         {% if entry.phoneNumber %}
         {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-            params: {
-              text: entry.phoneNumber,
-              icon: 'phone',
-              url: "tel:#{entry.phoneNumber|replace({'-': ''}) }}"
-            }
+          params: {
+            text: entry.phoneNumber,
+            icon: 'phone',
+            url: "tel:#{entry.phoneNumber|replace({'-': ''}) }}"
+          }
         }) }}
         {% endif %}
       </ul>
-    {% endif %}
+    {% endif %} #}
   {% endif %}
 
   <hr/>
@@ -179,20 +240,20 @@
   <ul class="list-none flex items-center px-0 -mt-4">
     <li class="mb-0 mr-4">
       <a href="" target="_blank" class="flex items-center justify-center w-10 h-10 bg-green-800 rounded-full text-white hover:bg-green-1000">
-          {{ svg('@webroot/dist/img/logo-facebook.svg')|attr({class:'h-5'}) }}
-          <span class="sr-only">Share on Facebook</span>
+        {{ svg('@webroot/dist/img/logo-facebook.svg')|attr({class:'h-5'}) }}
+        <span class="sr-only">Share on Facebook</span>
       </a>
     </li>
     <li class="mb-0 mr-4">
       <a href="" target="_blank" class="flex items-center justify-center w-10 h-10 bg-green-800 rounded-full text-white hover:bg-green-1000">
-          {{ svg('@webroot/dist/img/logo-twitter.svg')|attr({class:'h-5'}) }}
-          <span class="sr-only">Share on Twitter</span>
+        {{ svg('@webroot/dist/img/logo-twitter.svg')|attr({class:'h-5'}) }}
+        <span class="sr-only">Share on Twitter</span>
       </a>
     </li>
     <li class="mb-0 mr-4">
       <a href="" target="_blank" class="flex items-center justify-center w-10 h-10 bg-green-800 rounded-full text-white hover:bg-green-1000">
-          {{ svg('@webroot/dist/img/logo-instagram.svg')|attr({class:'h-5'}) }}
-          <span class="sr-only">Share on Instagram</span>
+        {{ svg('@webroot/dist/img/logo-instagram.svg')|attr({class:'h-5'}) }}
+        <span class="sr-only">Share on Instagram</span>
       </a>
     </li>
   </ul>
