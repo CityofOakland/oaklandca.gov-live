@@ -4,6 +4,8 @@
 {% set physicalLocation = false %}
 {% set onlineLocation   = false %}
 
+{% set dateToPass = entry.calendarize.endDate ? entry.calendarize.endDate : entry.calendarize.startDate %}
+
 {% set locations = [] %}
 
 {% if entry.eventLocation.type('physicalLocation')|length %}
@@ -50,9 +52,8 @@
               {% endif %}
             </div>
           </div>
-          {% set dateToPass = entry.calendarize.endDate ? entry.calendarize.endDate : entry.calendarize.startDate %}
           <div class="w-full md:w-1/2 lg:w-1/3 xl:w-3/12 px-8">
-            {% if now < dateToPass %}
+            {% if now <= dateToPass %}
               <div class="components components-format flex items-start mt-12 lg:mt-0">
                 {% if entry.eventLocation.type('onlineLocation')|length %}
                   {% set address = entry.eventLocation.type('onlineLocation').one() %}
@@ -88,8 +89,33 @@
     {% include '_components/_callout' with {
       callOutType   : 'info',
       heading       : 'This event is part of a series',
-      description   : '<p class="small">See more events <a href="' ~ siteUrl ~ 'events' ~ '">' ~ entry.title ~ '</a></p>', 
+      description   : '<p>See more events <a href="' ~ siteUrl ~ 'events' ~ '">' ~ entry.title ~ '</a></p>', 
     } %}
+  {% endif %}
+
+  {% if now > dateToPass %}
+    {% set link_array = [] %}
+    {% if entry.relatedPages|length %}
+      {% for page in entry.relatedPages.all() %}
+        {% if page.section.handle == 'departments' or page.section.handle == 'topics' or page.section.handle == 'officials' %}
+          {% set link_array = link_array|merge(['<a class="text-green-800 hover:text-green-1000" href="'~ page.url ~'">'~ page.title ~'</a>']) %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    {% if link_array|length %}
+      {% include '_components/_callout' with {
+        callOutType   : 'info',
+        heading       : 'This event has passed',
+        description   : '<p>See more events from ' ~ link_array|join(", ", ', and ') ~ '</p>', 
+      } %}
+    {% endif %}
+  {% endif %}
+
+  {% if entry.callOut|length %}
+    {% for block in entry.callOut.all() %}
+      {% include '_components/_callout.twig' %}
+    {% endfor %}
   {% endif %}
 
   {{ entry.mainContent }}

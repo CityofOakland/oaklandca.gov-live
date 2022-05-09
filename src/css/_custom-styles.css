@@ -6,6 +6,10 @@ p.small {
   @apply !text-base;
 }
 
+.small > p {
+  @apply !text-base;
+}
+
 .container {
   @apply py-6 sm:py-12;
 }

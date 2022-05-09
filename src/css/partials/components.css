@@ -118,10 +118,6 @@
   margin-bottom: 0;
 }
 
-.components-format h2 {
-  padding-top: 1.5rem;
-}
-
 :where(.components) h3 {
   @apply text-xl md:text-2xl;
   font-weight: 700;
@@ -182,24 +178,18 @@
 }
 
 :where(.components .callout) {
-  & a:not(.button) {
-    color: inherit;
-    text-decoration: underline;
-  }
   & a:hover {
     text-decoration: none;
-  }
-  & p {
-    padding-top: .5rem;
-    &:first-child {
-      padding-top: 0;
-    }
   }
 
   & svg {
     flex-shrink: 0;
     margin-right: 1rem;
     margin-top: .25rem;
+  }
+
+  & .small > p:first-child {
+    margin-top: 0;
   }
 }
 
