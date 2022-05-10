@@ -8,12 +8,14 @@
   phone: false,
 }|merge(params) %}
 
-{{ include ("news/_partials/portrait.twig", {
-  params: {
-    image: vars.portrait,
-    alt: vars.portrait.altText ? vars.portrait.altText : "Portrait of #{vars.title}, #{vars.name}"
-  }}
-) }}
+{% if vars.portrait %}
+  {{ include ("news/_partials/portrait.twig", {
+    params: {
+      image: vars.portrait,
+      alt: vars.portrait.altText ? vars.portrait.altText : "Portrait of #{vars.title}, #{vars.name}"
+    }}
+  ) }}
+{% endif %}
 
 <ul>
   <a class="font-bold" target="_blank" href="{{ vars.link }}">{{ vars.name }}</a>
