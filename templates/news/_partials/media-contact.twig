@@ -1,0 +1,32 @@
+{% set vars = {
+  portrait: false,
+  title: false,
+  name: false,
+  link: false,
+  workgroup: false,
+  email: false,
+  phone: false,
+}|merge(params) %}
+
+{{ include ("news/_partials/portrait.twig", {
+  params: {
+    image: vars.portrait,
+    alt: vars.portrait.altText ? vars.portrait.altText : "Portrait of #{vars.title}, #{vars.name}"
+  }}
+) }}
+
+<ul>
+  <a class="font-bold" target="_blank" href="{{ vars.link }}">{{ vars.name }}</a>
+  {% if vars.title %}
+    <li>{{ vars.title }}</li>
+  {% endif %}
+  {% if vars.workgroup %}
+    <li>{{ vars.workgroup }}</li>
+  {% endif %}
+  {% if vars.email %}
+    <li><a href="mailto:{{ vars.email }}">{{ vars.email }}</a></li>
+  {% endif %}
+  {% if vars.phone %}
+    <li><a href="tel:{{ vars.phone }}">{{ vars.phone }}</a></li>
+  {% endif %}
+</ul>

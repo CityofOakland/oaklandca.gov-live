@@ -1,0 +1,9 @@
+{% for entry in craft.entries
+  .section("news")
+  .limit(null)
+  .mediaContact(":notempty:")
+  .contact(":notempty:")
+  .all()
+%}
+  <a href="{{ entry.url }}">{{ entry.title }}</a>
+{% endfor %}

@@ -1,0 +1,29 @@
+{% set vars = {
+  image: false,
+  alt: false,
+}|merge(params) %}
+
+{% if vars.image %}
+  {# Sets the base image if the browser doesn't support srcset #}
+	{% set transformedImage = craft.imager.transformImage(
+    vars.image,
+    { width: 96 },
+    { ratio: 1/1, position: vars.image.getFocalPoint() },
+    { fillTransforms: true }
+  ) %}
+  {# Sets the responsive srcset values to optimize image size for the browser #}
+	{% set transformedImages = craft.imager.transformImage(
+    vars.image, [
+      { width: 288 },
+      { width: 192, jpegQuality: 65 },
+      { width: 96, jpegQuality: 65 }
+    ],
+    { ratio: 1/1, position: vars.image.getFocalPoint() },
+    { fillTransforms: true })
+  %}
+	<img
+    src="{{ transformedImage.url }}"
+    srcset="{{ transformedImages | srcset }}"
+    alt="{{ vars.alt }}"
+    class="block w-full mt-3 border-2 border-gray-200 rounded-full max-w-24">
+{% endif %}

@@ -32,8 +32,8 @@
   <div class="container pt-0">
     <div class="flex">
       {% include "_partials/_elements/_nav-sidebar.twig" %}
-      <div class="flex flex-1">
-        <div class="md:w-3/4 md:mr-8">
+      <article class="grid flex-1 max-w-6xl gap-8 md:grid-cols-11 md:gap-16">
+        <div class="md:col-span-7">
           {% include '_partials/_elements/_last-update.twig' %}
           {% if entry.newsImage | length %}
             <figure class="max-w-full mb-8">
@@ -49,44 +49,38 @@
             </div>
           {% endif %}
         </div>
-        <div class="md:flex-1">
-          {% if entry.contact|length or entry.mediaContact %}
-            <h3>Media Contact{{ entry.contact|length > 1 or (entry.contact|length and entry.mediaContact) ? 's' }}</h3>
-          {% endif %}
-          {% if entry.contact|length %}
-            {% for contact in entry.contact.all() %}
-              {% if contact.portrait|length %}
-                {% set photo = contact.portrait.one() %}
-                {% set transformedImage = craft.imager.transformImage(
-                  photo,
-                  {width: 150 },
-                  { ratio: 1/1, position: photo.getFocalPoint()},
-                  { fillTransforms: true}
-                ) %}
-                {% set transformedImages = craft.imager.transformImage(photo, [
-                  { width: 500 },
-                  { width: 300, jpegQuality: 65 },
-                  { width: 150, jpegQuality: 65 }
-                ], { ratio: 1/1, position: photo.getFocalPoint()},{ fillTransforms: true}) %}
-                  <img src="{{ transformedImage.url }}" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ contact.jobTitle ? contact.jobTitle : contact.staffImportJobTitle }}, {{ contact.title }}" class="block w-full border-2 mt-3 rounded-full border-gray-200" style="max-width:95px;">
-              {% endif %}
-              <p>
-                <b><a target="_blank" href="{{ contact.url }}"><span>{{ contact.title }}</span></a></b>
-                {% if contact.jobTitle or contact.staffImportJobTitle %}<br><span>{{ contact.jobTitle ? contact.jobTitle : contact.staffImportJobTitle }}</span>{% endif %}
-                {% if contact.departmentOfficialBoardCommission|length or contact.staffImportDepartment %}<br><span>{{ contact.departmentOfficialBoardCommission.one() ? contact.departmentOfficialBoardCommission.one().title : contact.staffImportDepartment }}</span>{% endif %}
-                {% if contact.emailAddress or contact.staffImportEmail %}<br><a href="mailto:{{ contact.emailAddress ? contact.emailAddress : contact.staffImportEmail }}">{{ contact.emailAddress ? contact.emailAddress : contact.staffImportEmail }}</a>{% endif %}
-                {% if contact.phoneNumber or contact.staffImportPhoneNumber %}<br><a href="tel:{{ contact.phoneNumber ? contact.phoneNumber : contact.staffImportPhoneNumber }}">{{ contact.phoneNumber ? contact.phoneNumber : contact.staffImportPhoneNumber }}</a>{% endif %}
-              </p>
-            {% endfor %}
-          {% endif %}
-          {% if entry.mediaContact %}
-            {{ entry.mediaContact }}
+        <aside class="md:col-span-4">
+          {# Query for related staff entries under `entry.contact` #}
+          {% set contactEntry = entry.contact.all() %}
+          {# Query for manually enetered media contact #}
+          {% set mediaContact = entry.mediaContact %}
+
+          {% if contactEntry|length or mediaContact  %}
+            <h3>Media Contact{{ contactEntry|length > 1 ? 's' }}</h3>
+            {% if contactEntry|length %}
+              {% for contact in contactEntry %}
+                {{ include ("news/_partials/media-contact.twig", {
+                  params: {
+                    portrait: contact.portrait.one(),
+                    title: contact.jobTitle ? contact.jobTitle : contact.staffImportJobTitle,
+                    name: contact.title,
+                    link: contact.url,
+                    workgroup: contact.departmentOfficialBoardCommission.one() ? contact.departmentOfficialBoardCommission.one().title : contact.staffImportDepartment,
+                    email: contact.emailAddress ? contact.emailAddress : contact.staffImportEmail,
+                    phone: contact.phoneNumber ? contact.phoneNumber : contact.staffImportPhoneNumber
+                  }
+                }) }}
+              {% endfor %}
+            {% endif %}
+            {% if entry.mediaContact %}
+              {{ entry.mediaContact }}
+            {% endif %}
           {% endif %}
           {% if pressRelease.exists() %}
             <a href="{{ pressRelease.one.url }}" class="w-full btn">Download Press Release</a>
           {% endif %}
-        </div>
-      </div>
+        </aside>
+      </article>
     </div>
   </div>
 {% endblock %}
