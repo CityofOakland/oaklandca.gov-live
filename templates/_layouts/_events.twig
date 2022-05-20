@@ -167,7 +167,6 @@
   {% if entry.pointOfContact|length %}
     <hr/>
     <h4>{{ 'Contact'|t }}</h4>
-    {# {% set contact = entry.pointOfContact.one() %} #}
     {% for contact in entry.pointOfContact.all() %}
     {% switch contact.type %}
       {% case 'internalContact' %}

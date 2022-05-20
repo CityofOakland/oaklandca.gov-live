@@ -70,7 +70,7 @@ fieldLayouts:
             width: 100
           -
             fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
-            instructions: "Add any additional details that people should know about this event.\r\nDetails should be related only to the city's role in the event. Any additional information can be provided in an external link. "
+            instructions: 'Add any additional details that people should know about this event. Details should be related only to the city''s role in the event. Any additional information can be provided in an external link. '
             label: 'Event Details'
             required: ''
             tip: null
