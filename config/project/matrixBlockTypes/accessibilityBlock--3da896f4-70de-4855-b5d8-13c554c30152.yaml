@@ -1,0 +1,41 @@
+field: 61baa25b-3bbb-41a1-b13c-a976d1d109b6 # Accessibility Block
+fieldLayouts:
+  db2003b2-e52c-476e-820b-1e3b9f967706:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: abd529f9-d523-48f3-9b3c-4728eef71ad3 # Accessibility Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  abd529f9-d523-48f3-9b3c-4728eef71ad3: # Accessibility Text
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: accessibilityText
+    instructions: ''
+    name: 'Accessibility Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: '1'
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: accessibilityBlock
+name: 'Accessibility Block'
+sortOrder: 1

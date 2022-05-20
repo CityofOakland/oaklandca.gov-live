@@ -1,4 +1,4 @@
-dateModified: 1653078964
+dateModified: 1653082334
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -14,6 +14,7 @@ email:
   transportType: craft\mail\transportadapters\Smtp
 meta:
   __names__:
+    0a0640ef-4c1c-484f-a2cb-b70930d83893: 'Sidebar Description' # Sidebar Description
     0a3b410b-3e65-4ca3-ac05-f2c6933fa880: Step # Step
     0accbbf3-3501-4536-b0f0-19facda9bb98: 'Number Title' # Number Title
     0b609d8d-ec6c-476d-9953-eef0377c30f7: Entry # Entry
@@ -25,6 +26,7 @@ meta:
     0e74b82a-254d-45d0-b9a1-d6b6774e6eef: 'Contact Address' # Contact Address
     0e81d688-16ec-4519-9f60-7d2e2d72526d: Heading # Heading
     0f78b738-1d72-4bb5-a6c0-6b9f3ab2b422: 'Meetings Table' # Meetings Table
+    0f93d6ce-26a3-40dd-9f62-6b8f91b7f35f: 'Sidebar Button Text' # Sidebar Button Text
     1a79ee9f-7074-452f-864c-5354e7f43776: 'Add an Option' # Add an Option
     1a78695a-f041-4562-9ee4-5405711bd29c: SEO # SEO
     1ab8269c-e225-472e-b5e1-1504af7a1622: Datasets # Datasets
@@ -32,7 +34,6 @@ meta:
     1b8f26ab-01a9-4570-9e96-1d18389f8226: 'Read More Link' # Read More Link
     1bf6e3cb-26b9-405b-94ea-fbfc944c27b9: Size # Size
     1c1e50b0-b20e-4596-90d8-be5bc63bee3b: 'Button Icon' # Button Icon
-    1c5a4484-9302-44db-be6b-5eea2ee5ec8c: 'External Contact' # External Contact
     1c5d91eb-8c31-4a5e-ba23-4b6a28986f93: Email # Email
     1c974e73-c709-48c5-bc6e-fb8a9ae1ba8a: Table # Table
     1cfca893-de32-4979-8ba3-68de97b5cd03: Linkit # Linkit
@@ -61,6 +62,7 @@ meta:
     003ce16b-5d20-4821-93ae-516c70778291: 'Project Start Date' # Project Start Date
     3cf4e603-4947-4358-9293-da9c833260f4: Header # Header
     3d8ee7f9-27a6-4d4e-a55f-b869d5afee11: Linkit # Linkit
+    3da896f4-70de-4855-b5d8-13c554c30152: 'Accessibility Block' # Accessibility Block
     3f4cdb0c-ae0b-4145-bbcb-05e53f7ed81f: Content # Content
     3f29603b-dede-4258-8ae1-fc01c48f372d: Staff # Staff
     3ff802bf-48ac-4e96-8e64-c7988d029bc1: Documents # Documents
@@ -76,6 +78,7 @@ meta:
     4ed914c6-b7ea-44be-a061-4430ad33baf2: News # News
     4f49ca5b-c028-40c6-b67e-de07b11bf16a: Linkit # Linkit
     4f58a8e7-8cf8-472a-b479-73a156087dfc: Fax # Fax
+    4f98a66d-2f55-4ee3-b4d1-ea1d668b273b: 'Location Address' # Location Address
     5a5cab1b-f214-4ee8-b6a9-b68c7df6b7d7: 'Open in New Tab?' # Open in New Tab?
     5a43f979-1654-4514-a9a8-d925fc846063: 'Stats Block with Icons' # Stats Block with Icons
     5ae976d4-1fd7-4dd5-bfd7-f25cb1ce7a0f: 'Call Out' # Call Out
@@ -212,6 +215,8 @@ meta:
     58c51c8d-ba49-46af-a341-45be4758244e: 'Contact Form' # Contact Form
     58eda166-7a65-4fb6-8f7d-c6590b0591ae: Summary # Summary
     59b4632f-26b6-4942-a96a-21909e7eb176: Organization # Organization
+    59d68eb6-f130-4b6f-b193-240480a8b68f: 'Online Meeting Link' # Online Meeting Link
+    61baa25b-3bbb-41a1-b13c-a976d1d109b6: 'Accessibility Block' # Accessibility Block
     61bef9fa-6716-4df3-a88d-46f256cdee73: 'Link Location' # Link Location
     61dec751-c375-471c-a4ed-1df3b7469237: 'Online Meeting Phone Number' # Online Meeting Phone Number
     62b6620d-66f1-4499-abb2-35960313b3dd: 'Boards & Commissions Index' # Boards & Commissions Index
@@ -255,6 +260,7 @@ meta:
     107df6dd-7f1a-4575-811d-ae34d2258fd8: Number # Number
     109ddbd1-80ea-471e-a6f9-ef77d84a0800: 'Link Description' # Link Description
     112bec4a-44ab-4d8b-afab-679c5e8bfb5c: SEO # SEO
+    113adde6-33a9-47ce-8a9a-6cf2aaf13bc1: 'Location Name' # Location Name
     146e43c8-9154-487d-ab15-799e0f67185a: 'Image File' # Image File
     196f68cc-36a4-42b0-9605-feeef72fa330: Homepage # Homepage
     210f35e9-172e-4116-9382-05774c79d1ff: 'Topics Index' # Topics Index
@@ -375,7 +381,6 @@ meta:
     28881fc8-3e61-4fdb-a5ee-cce1bab725bf: Officials # Officials
     33857d17-d8e8-4c03-8902-f1fb2e4422da: 'Service Redirect' # Service Redirect
     37807b41-86f2-4f92-b56e-1f76739a03bb: Label # Label
-    40140c47-fe48-4679-8511-702fd17436a6: 'Accessibility Text' # Accessibility Text
     41124ab0-0e88-44c6-b4f2-f002669d8133: Departments # Departments
     45846dfd-0e86-40a2-81d2-b47bf69f16ae: 'Need to Know' # Need to Know
     62026d94-4213-4ab2-9a58-ff780a972c67: 'Department Redirect' # Department Redirect
@@ -451,6 +456,7 @@ meta:
     aa4a1968-c11b-4442-8b1a-edaffe40511d: Description # Description
     ab06f460-5f10-4ce6-9623-9a5ff14a8685: 'Website Updates' # Website Updates
     ab9a27a4-49e9-44fe-9ee2-2ca89f07bc4c: Contact # Contact
+    abd529f9-d523-48f3-9b3c-4728eef71ad3: 'Accessibility Text' # Accessibility Text
     ac30e2e0-2f26-4b6c-a404-07b749af00dc: 'Link Location' # Link Location
     ac349657-dbca-480e-8cb9-dc97ccae3b3a: 'Allow Autofill?' # Allow Autofill?
     ad4e3d36-752c-48da-bfbd-bd61e083119b: Heading # Heading
@@ -540,6 +546,7 @@ meta:
     cfe09f9c-1b0b-49d8-aa1a-c75cd32aa94c: 'Sort Documents by Date?' # Sort Documents by Date?
     d0cf7d52-44a5-44a7-9efa-ba27c7541ff9: 'Image Column Position' # Image Column Position
     d05048db-b41e-4294-a51e-508edfd8f988: __blank__ # __blank__
+    d0559678-a434-4178-91b9-10dfdbc9775a: 'Physical Location' # Physical Location
     d2df1fff-f127-4df4-9550-badfe2b7e249: Topic # Topic
     d6ad41f7-f233-4092-81dc-9fdf439eb146: 'Start Date' # Start Date
     d7c92fa2-9002-4f28-a03d-b99b37501dde: 'Agenda - Downloadable Copy' # Agenda - Downloadable Copy
@@ -601,6 +608,7 @@ meta:
     e57d997c-ca20-4022-8841-f9fd919933df: Accordion # Accordion
     e58f615b-174a-4196-a96c-e824862acfa9: 'Image Column Width' # Image Column Width
     e67ec759-ea3a-4568-bfa6-a314ff3d1036: Projects # Projects
+    e278f4b7-9939-4bd1-8575-a593bd3c8e27: 'Online Location' # Online Location
     e287f156-7373-4131-bd1f-e746e20d2e99: 'Column 1 Width' # Column 1 Width
     e2442a2e-e191-4b02-b170-7ecad09c52e2: Modules # Modules
     e3606e42-d455-4501-bbb1-55f049cd1738: Documents # Documents
@@ -621,11 +629,15 @@ meta:
     ecae3e34-8efa-4f0c-934c-d5d125641043: 'YouTube URL' # YouTube URL
     ecc31df6-640f-4fa6-a2e6-caea757e379d: Metadata # Metadata
     ed709c7c-0c3a-4457-ae2d-38a3ccb797e4: '311' # 311
+    ee22aae2-290f-43d0-93d8-402d47ee7c88: 'Sidebar Heading' # Sidebar Heading
     ef1b6cec-c4ea-45ca-ba65-e9dc7d0cc2ac: Services # Services
     ef7a2eb3-d6b3-44db-9db1-5500ac82498c: Meetings # Meetings
     ef60fa1b-14d1-4deb-8034-d0daebcb216d: 'Add a How to Participate Block' # Add a How to Participate Block
+    ef757b77-b1b4-4bbf-9110-41185f7093e5: 'Online Meeting Phone Number' # Online Meeting Phone Number
+    ef3925f3-23b4-404d-93d6-154519305756: 'Event Locations' # Event Locations
     efb06368-db7c-46e0-84e2-1857e0393801: 'Text & Image Block' # Text & Image Block
     f09dcf7b-4b1f-47a1-ac7b-4425e46473cd: Process # Process
+    f3b30494-874d-4fc7-a4fc-331c31edb68f: 'Sidebar Button URL' # Sidebar Button URL
     f3d1bcbe-1f1a-4498-b4e5-1d57d3257690: 'Related Pages' # Related Pages
     f5c6d83d-3a64-4e6a-be6c-5304f6679801: Video # Video
     f5dead8c-3e4c-4f97-8bea-2a3af1e34f67: Resources # Resources

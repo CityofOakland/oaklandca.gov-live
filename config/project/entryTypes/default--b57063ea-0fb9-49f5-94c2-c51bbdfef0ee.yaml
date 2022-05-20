@@ -27,23 +27,29 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            heading: 'Event Date and Location Banner'
+            type: craft\fieldlayoutelements\Heading
+          -
             fieldUid: 5b935c33-5d69-45c2-acd9-a6a2f0a567ce # Calendarize
-            instructions: ''
+            instructions: 'If this is an all-day event, toggle on the "all day". If this is a repeatable event, toggle on the "repeats" and select when the event should repeat. Please note, if you have changing videos, details, meeting links, you will need to create a new event"'
             label: 'Date and Time'
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ef3925f3-23b4-404d-93d6-154519305756 # Event Locations
+            instructions: 'Add an online location for virtual events and/or a physical location for in-person events.'
+            label: 'Event Location'
             required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
           -
-            fieldUid: f6e8acb0-e8f3-40de-8500-b95e6ed06def # Event Location
-            instructions: 'Add an online location for virtual events and/or a physical location for in-person events.'
-            label: ''
-            required: ''
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
+            heading: 'Main Content Section'
+            type: craft\fieldlayoutelements\Heading
           -
             fieldUid: 7084b5f1-19ef-4812-97fc-927d55c98c93 # Event Image
             instructions: null
@@ -52,16 +58,7 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 50
-          -
-            fieldUid: 6b0e6bd2-24c1-4341-acf8-97862725a74c # Event Types
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 50
+            width: 100
           -
             fieldUid: 812c490f-c059-47ff-9ef2-25fbd40c77fe # Call Out
             instructions: null
@@ -73,17 +70,8 @@ fieldLayouts:
             width: 100
           -
             fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
-            instructions: 'Add any additional details that people should know about this event.'
+            instructions: "Add any additional details that people should know about this event.\r\nDetails should be related only to the city's role in the event. Any additional information can be provided in an external link. "
             label: 'Event Details'
-            required: ''
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 09053ba3-5577-4175-ba56-263da6112729 # Registration Link
-            instructions: 'Add the link for where you would like people to register for this event.'
-            label: 'Registration Link'
             required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -99,16 +87,64 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f3d1bcbe-1f1a-4498-b4e5-1d57d3257690 # Related Pages
-            instructions: 'Relate other pages to this event, including Departments, Officials, and Topics.'
-            label: ''
+            fieldUid: 6b0e6bd2-24c1-4341-acf8-97862725a74c # Event Types
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 61baa25b-3bbb-41a1-b13c-a976d1d109b6 # Accessibility Block
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: 'Sidebar Section'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: ee22aae2-290f-43d0-93d8-402d47ee7c88 # Sidebar Heading
+            instructions: 'Defaults to “Register”. If you would like to change the text, fill in the field below. '
+            label: 'Event or Registration Button Section Title'
             required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
           -
-            fieldUid: 40140c47-fe48-4679-8511-702fd17436a6 # Accessibility Text
+            fieldUid: 0a0640ef-4c1c-484f-a2cb-b70930d83893 # Sidebar Description
+            instructions: 'Appears below the title. Describe more about the page linked in the button.'
+            label: 'Event or Registration Section Description'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f3b30494-874d-4fc7-a4fc-331c31edb68f # Sidebar Button URL
+            instructions: 'Input URL below.'
+            label: 'Event or Registration Button URL'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0f93d6ce-26a3-40dd-9f62-6b8f91b7f35f # Sidebar Button Text
+            instructions: 'What the button text will display.'
+            label: 'Event or Registration Button Text'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b4027b04-f764-4b35-93ee-88ff570bfeaf # Point of Contact
             instructions: null
             label: null
             required: false
@@ -117,13 +153,10 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            heading: 'Event Contact'
-            type: craft\fieldlayoutelements\Heading
-          -
-            fieldUid: b4027b04-f764-4b35-93ee-88ff570bfeaf # Point of Contact
-            instructions: null
-            label: null
-            required: false
+            fieldUid: f3d1bcbe-1f1a-4498-b4e5-1d57d3257690 # Related Pages
+            instructions: 'Relate other pages to this event.'
+            label: ''
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
