@@ -105,9 +105,9 @@
 
     {% if link_array|length %}
       {% include '_components/_callout' with {
-        callOutType   : 'info',
+        callOutType   : 'action',
         heading       : 'This event has passed',
-        description   : '<p>See more events from ' ~ link_array|join(", ", ', and ') ~ '</p>', 
+        description   : '<p>See more events from ' ~ link_array|join(", ", ', and ') ~ '</p>',
       } %}
     {% endif %}
   {% endif %}
