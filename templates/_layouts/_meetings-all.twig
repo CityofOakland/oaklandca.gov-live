@@ -1,3 +1,4 @@
+{% set archive        = true %}
 {% set query          = craft.app.request.getQueryParam('q') %}
 {% set public_body    = craft.app.request.getQueryParam('public_body') %}
 {% set meetings       = craft.entries().section('meetings').search(query).limit(10) %}

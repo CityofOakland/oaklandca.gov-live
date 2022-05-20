@@ -1,0 +1,5 @@
+{% set events = craft.calendar.events({calendar: 'events'}) %}
+{{ events|length }}
+{# {% for event in events %}
+{{ craft.entries().section('events').eventId(event.id)|length ? craft.entries().section('events').eventId(event.id).one().id : 'N/A' }},{{event.startDate|format("Y-m-d g:i:a") }},{{ event.endDate|format("Y-m-d g:i:a") }},{{ event.id }},{{event.title}}<br>
+{% endfor %} #}

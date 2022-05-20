@@ -1,0 +1,221 @@
+field: bc4ef155-41f4-4129-956e-120892a0c111 # Event Location
+fieldLayouts:
+  2227caee-5ac7-4120-b338-b9c1c0e45e22:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 74f98eba-6d50-4f10-ab0b-e3dadaca25d6 # Location Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a093da22-5c78-46d1-a7b8-19ad9d41b583 # Location Address
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  74f98eba-6d50-4f10-ab0b-e3dadaca25d6: # Location Name
+    columnSuffix: qyrwcdbl
+    contentColumnType: text
+    fieldGroup: null
+    handle: locationName
+    instructions: ''
+    name: 'Location Name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  a093da22-5c78-46d1-a7b8-19ad9d41b583: # Location Address
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: locationAddress
+    instructions: ''
+    name: 'Location Address'
+    searchable: false
+    settings:
+      coordinatesDefault:
+        __assoc__:
+          -
+            - lat
+            - '32.3113966'
+          -
+            - lng
+            - '-64.7527469'
+          -
+            - zoom
+            - '6'
+      coordinatesMode: readOnly
+      dragPinDefault: null
+      dragPinLatitude: null
+      dragPinLongitude: null
+      dragPinZoom: null
+      layout: null
+      mapOnSearch: open
+      mapOnStart: default
+      requireCoordinates: '1'
+      showMap: false
+      subfieldConfig:
+        __assoc__:
+          -
+            - name
+            -
+              __assoc__:
+                -
+                  - label
+                  - Name
+                -
+                  - width
+                  - '100'
+                -
+                  - position
+                  - '1'
+          -
+            - street1
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'Street Address'
+                -
+                  - width
+                  - '100'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '2'
+          -
+            - street2
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'Apartment or Suite'
+                -
+                  - width
+                  - '100'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '3'
+          -
+            - city
+            -
+              __assoc__:
+                -
+                  - label
+                  - City
+                -
+                  - width
+                  - '50'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '4'
+          -
+            - state
+            -
+              __assoc__:
+                -
+                  - label
+                  - State
+                -
+                  - width
+                  - '15'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '5'
+          -
+            - zip
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'Zip Code'
+                -
+                  - width
+                  - '35'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '6'
+          -
+            - county
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'County or District'
+                -
+                  - width
+                  - '100'
+                -
+                  - position
+                  - '7'
+          -
+            - country
+            -
+              __assoc__:
+                -
+                  - label
+                  - Country
+                -
+                  - width
+                  - '100'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '8'
+          -
+            - placeId
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'Place ID'
+                -
+                  - width
+                  - '100'
+                -
+                  - position
+                  - '9'
+      visibilityToggle: both
+    translationKeyFormat: null
+    translationMethod: none
+    type: doublesecretagency\googlemaps\fields\AddressField
+handle: physicalLocation
+name: 'Physical Location'
+sortOrder: 2

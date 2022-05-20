@@ -4,6 +4,15 @@ fieldLayouts:
       -
         elements:
           -
+            fieldUid: e7a47351-1c2b-44ac-ba40-cbedbdce4b0f # Event ID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             autocapitalize: true
             autocomplete: false
             autocorrect: true
@@ -36,7 +45,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f6e8acb0-e8f3-40de-8500-b95e6ed06def # Event Location
+            fieldUid: bc4ef155-41f4-4129-956e-120892a0c111 # Event Location
             instructions: 'Add an online location for virtual events and/or a physical location for in-person events.'
             label: ''
             required: ''

@@ -24,8 +24,8 @@
             </div>
           </div>
           <div id="content" style="position:relative;top:-5rem;"></div>
-          <div class="{{ entry.slug == 'meetings-index' ? 'bg-blue-900 text-white' : '' }}">
-            <div class="container pt-8 md:pt-16 {{ entry.slug == 'meetings-index' ? 'md:mb-8' : '' }}">
+          <div class="{{ archive is defined and archive == true ? 'bg-blue-900 text-white' : '' }}">
+            <div class="container pt-8 md:pt-16 {{ archive is defined and archive == true ? 'md:mb-8' : '' }}">
               <div style="max-width:1152px;">
                 <div class="flex flex-col flex-1 lg:flex-row">
                   <div class="w-full lg:w-8/11">

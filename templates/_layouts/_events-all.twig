@@ -1,0 +1,164 @@
+{% set archive        = true %}
+{% set query          = craft.app.request.getQueryParam('q') %}
+{% set public_body    = craft.app.request.getQueryParam('public_body') %}
+{% set events         = craft.entries().section('events').search(query).limit(10) %}
+{% set filter_enabled = false %}
+
+{% if public_body %}
+  {% set filter_enabled = true %}
+  {% set id = craft.entries().section('boardsCommissions').id(public_body).one() %}
+  {% set events = events.relatedTo(craft.entries().section('boardsCommissions').id(id).one()) %}
+{% endif %}
+
+{% set date_query = ['and'] %}
+
+{% set year   = craft.app.request.getQueryParam('year') ? craft.app.request.getQueryParam('year') : '' %}
+{% set month  = craft.app.request.getQueryParam('month') ? craft.app.request.getQueryParam('month') : '' %}
+{% set ymd     = '' %}
+
+{% if year and month %}
+  {% set filter_enabled = true %}
+  {% set ymd = year ~ '-' ~ month ~ '-01' %}
+  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
+{% elseif year %}
+  {% set filter_enabled = true %}
+  {% set ymd = year ~ '-' ~ '01-01' %}
+  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 year')|date('Y-m-d')) ]) %}
+{% elseif month %}
+  {% set filter_enabled = true %}
+  {% set ymd = now|date('Y') ~ '-' ~ month %}
+  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
+{% endif %}
+
+{% set type = craft.app.request.getQueryParam('type') ? craft.app.request.getQueryParam('type') : 'upcoming' %}
+{% if type %}
+  {% switch type %}
+    {% case 'upcoming' %}
+      {% set events = events.order('date asc') %}
+      {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
+    {% case 'past' %}
+      {% set events = events.order('date desc') %}
+      {% set date_query = date_query|merge(['< ' ~ now|date('Y-m-d')]) %}
+  {% endswitch %}
+{% else %}
+  {% set events = events.order('date asc') %}
+  {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
+{% endif %}
+
+{% if date_query|length > 1 %}
+  {% set events = events.date(date_query) %}
+{% endif %}
+
+{% if craft.app.request.getQueryParam('q') %}
+  {% set filter_enabled = true %}
+{% endif %}
+
+{% paginate events as pageInfo, events %}
+
+{% set layout = 'reverse' %}
+{% extends '_content.twig' %}
+{% import '_macros/_macros' as macros %}
+
+{% block content %}
+  <div>
+    <ul class="flex flex-wrap list-none m-0 p-0">
+        <li><a href="?type=upcoming&q={{ query }}&public_body={{ public_body }}&year={{ year }}&month={{ month }}" class="button m-0 rounded-none {{ type == 'upcoming' ? 'pointer-events-none' : 'secondary' }}">Upcoming events</a></li>
+        <li><a href="?type=past&q={{ query }}&public_body={{ public_body }}&year={{ year }}&month={{ month }}" class="button m-0 rounded-none {{ type == 'past' ? 'pointer-events-none' : 'secondary' }}">Past events</a></li>
+    </ul>
+  </div>
+
+  {% if filter_enabled %}
+    {% if events|length %}
+      <h3>Displaying {{ events|length }} of {{ pageInfo.total }} Events</h3>
+    {% else %}
+      <h3>No results found</h3>
+    {% endif %}
+  {% else %}
+    {% switch type %}
+      {% case 'upcoming' %}
+      <h3>Displaying all Upcoming Events</h3>
+      {% case 'past' %}
+      <h3>Displaying all Past Events</h3>
+    {% endswitch %}
+  {% endif %}
+
+  <div class="mt-8">
+    {% if events|length %}
+      {% for meeting in events %}
+        {% include '_components/_meeting' %}
+      {% endfor %}
+    {% else %}
+      <div class="px-8 pt-3 pb-5" style="background:#F7F7F7;">
+        <p>Please try another search or updating your filters.</p>
+        {% if type == 'past' %}
+          <p><a href="?type=past">See all Past Events</a></p>
+        {% elseif type == 'upcoming' %}
+          <p><a href="?type=upcoming">See all Upcoming Events</a></p>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="my-8">
+    {% include '_partials/_elements/_pagination' %}
+  </div>
+
+  <div class="lg:hidden">
+    <hr class="hr dark"/>
+    <h4>{{ 'Learn More About Public Bodies'|t }}</h4>
+    <div class="pt-2">
+      <p><a href="{{siteUrl}}boards-commissions">Boards & Commissions</a></p>
+      <p><a href="{{siteUrl}}departments/oakland-city-council">City Council</a></p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block sidebar %}
+  <hr class="hidden lg:block"/>
+  <div class="mt-2 md:mt-0"></div>
+  <h4 class="py-0 mt-4 mb-6">{{ 'Search & Filter'|t }}</h4>
+  <form action="{{ entry.url }}">
+    <input type="hidden" name="type" value="{{ type }}"/>
+    {{ macros.select('Month', 'month', 'month', [
+        {"01"  : "January"},
+        {"02"  : "February"},
+        {"03"  : "March"},
+        {"04"  : "April"},
+        {"05"  : "May"},
+        {"06"  : "June"},
+        {"07"  : "July"},
+        {"08"  : "August"},
+        {"09"  : "September"},
+        {"10"  : "October"},
+        {"11"  : "November"},
+        {"12"  : "December"}
+      ], "Select a month"
+    )}}
+    {% set earliest_year = craft.entries().section('events').order('date asc').limit(1).one().date|date('Y') %}
+    {% set latest_year   = craft.entries().section('events').order('date desc').limit(1).one().date|date('Y') %}
+    {% set years = [] %}
+    {% for year in range(latest_year, earliest_year) %}
+      {% set years =  years|merge([{(year): year}]) %}
+    {% endfor %}
+    {{ macros.select('Year', 'year', 'year', years, "Select a year") }}
+
+    {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
+    {{ macros.select('Public Body', 'public_body', 'public_body', craft.entries().section('boardsCommissions').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a Council, Board or Commission') }}
+    <div class="flex items-center">
+      <button class="button medium">Apply</button>
+      {% if query or filter_enabled %}
+        <a class="mt-4" href="{{ entry.url }}?type={{type}}">Clear filters</a>
+      {% endif %}
+    </div>
+  </form>
+  <hr/>
+  <div class="hidden lg:block">
+    <h4 class="py-0 mt-4">{{ 'Learn More About Public Bodies'|t }}</h4>
+    <div class="pt-2">
+      <p><a href="{{siteUrl}}boards-commissions">Boards & Commissions</a></p>
+      <p><a href="{{siteUrl}}departments">Departments</a></p>
+      <p><a href="{{siteUrl}}departments/oakland-city-council">City Council</a></p>
+    </div>
+    <hr class="light"/>
+  </div>
+{% endblock %}

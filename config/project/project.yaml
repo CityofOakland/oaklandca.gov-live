@@ -1,4 +1,4 @@
-dateModified: 1652123049
+dateModified: 1652468115
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -224,7 +224,9 @@ meta:
     069f8ed4-d4ee-4ed8-bf37-efafb4e633e8: 'Term Start' # Term Start
     71fb693f-011b-4669-ba10-f1b379557bb9: 'Staff Fields' # Staff Fields
     73b7b0c7-bff1-4c55-97aa-fc62042f0347: Officials # Officials
+    73fb3d63-bf50-4201-b8ae-8bc90e956ced: 'Online Meeting Phone Number' # Online Meeting Phone Number
     74ecde2f-b254-4f3e-b889-1affac6f5999: 'Embeddable Content' # Embeddable Content
+    74f98eba-6d50-4f10-ab0b-e3dadaca25d6: 'Location Name' # Location Name
     80f381a7-8fbc-487c-a705-dedbc7a15da7: Phone # Phone
     82a071f5-19ec-49b0-aca7-f390757c0892: 'CSV Upload' # CSV Upload
     83c14444-efcf-4d13-a20a-56275fd18855: Relationships # Relationships
@@ -274,6 +276,7 @@ meta:
     353d020b-e6ef-421a-874d-794687526841: Hours # Hours
     380be87a-8c09-4edd-ac41-7a110a5dba44: 'Physical Address' # Physical Address
     403ad0b1-fb18-4f8f-9fa4-d299c1138836: Location # Location
+    469ca78b-2438-4fdc-8bb0-eede26b2f672: 'Online Meeting Link' # Online Meeting Link
     474e10df-7bcd-4737-8b49-8c14f7c11b79: Embed # Embed
     483fcf2d-eedc-47e4-8cff-179bd5b0397b: 'Location Name' # Location Name
     491b80fa-1cd7-4a5d-9192-284372015209: Embed # Embed
@@ -328,6 +331,7 @@ meta:
     2894ae3a-7b9b-4435-8435-8df18709cf7b: Hours # Hours
     2935e144-4fb1-42e3-a0c2-db09b8f6d658: __blank__ # __blank__
     3151b527-f445-433d-bb56-2eef8910d561: Email # Email
+    03160f21-4427-427e-bbe1-bbbb0d41ab7b: 'Physical Location' # Physical Location
     4285c9b9-9f18-4b89-a234-a90c512f6603: 'Test Schema' # Test Schema
     4350b4ce-8cf4-44c9-9fee-4d81d5feec19: Description # Description
     4448ff2b-e958-4a61-8e36-0dab9831c66f: Projects # Projects
@@ -420,6 +424,7 @@ meta:
     98698930-f730-4a54-a9fa-491f477e8252: Officials # Officials
     a0ebc1aa-769e-4adc-a633-87b0e2c2626c: 'Services Index' # Services Index
     a027ac28-65c7-472f-b9ea-d30253b0205f: 'Entries Description' # Entries Description
+    a093da22-5c78-46d1-a7b8-19ad9d41b583: 'Location Address' # Location Address
     a1a9a232-768c-41ae-a487-aebf145b4062: Vimeo # Vimeo
     a2cf024d-962c-4e66-a16e-9b6faefbae19: 'Hide Thumbnails?' # Hide Thumbnails?
     a3fccaa0-bcac-433c-9b51-7d3f47c751f2: 'TTY Number' # TTY Number
@@ -436,6 +441,7 @@ meta:
     a80bc90b-ca79-4416-a71f-0e743836bcb9: 'Term End' # Term End
     a209b7c0-0c31-4671-a56c-f77990a377f3: 'Officials Index' # Officials Index
     a407c106-4190-4ba9-b4c1-7886e5a462c8: Datasets # Datasets
+    a614ccd6-413f-445d-8fc7-d887ff7f9f80: 'Online Location' # Online Location
     a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087: Globals # Globals
     a2224dcd-7dbd-4096-bc29-a79aa6b7b2ba: 'Vimeo URL' # Vimeo URL
     a4001c79-48f7-4666-8658-4981e8e232d6: 'Image Credit' # Image Credit
@@ -479,6 +485,7 @@ meta:
     b924108b-fb70-4757-ad7f-3e713f23a6d6: 'Team Members' # Team Members
     baa859d6-a861-4617-bb79-73d0982ee25c: Assets # Assets
     bb70071c-d8c0-4a11-91f6-d4ca02503a00: 'Funding Logos Alternate Title' # Funding Logos Alternate Title
+    bc4ef155-41f4-4129-956e-120892a0c111: 'Event Location' # Event Location
     bc66a003-7f42-4018-99ea-3fd635a804b9: 'Style - Card' # Style - Card
     bc371660-39ff-45ed-add0-0ae25ff30f0a: 'Before You Start' # Before You Start
     bca01eec-d702-410d-8417-9f70c9146820: Entry # Entry
@@ -586,6 +593,7 @@ meta:
     e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8: 'Search Index' # Search Index
     e3a53ca0-960e-4ce6-933b-b3613bd64d7a: 'Job Title' # Job Title
     e3f23e85-4290-41f4-bff9-7d12b6e1b52c: 'Project Updates' # Project Updates
+    e7a47351-1c2b-44ac-ba40-cbedbdce4b0f: 'Event ID' # Event ID
     e7dc9a6e-abdf-4824-ad86-bf0c994fc760: 'Departments Index' # Departments Index
     e8b1b583-82e1-4793-a5fc-048294165afd: Heading # Heading
     e9c00016-6698-4bae-ae61-26a8ced249d7: 'Column 3 Width' # Column 3 Width
@@ -671,23 +679,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.0.0
-  audit:
-    edition: standard
-    enabled: true
-    licenseKey: DIHEDGOO9YB18029NWMB3149
-    schemaVersion: 1.0.3
-    settings:
-      dbPath: /Users/ckennedy/Code/oaklandca.gov/storage/audit/
-      enabled: true
-      enabledGeolocation: true
-      logDraftEvents: false
-      logElementEvents: true
-      logPluginEvents: true
-      logRouteEvents: true
-      logUserEvents: true
-      pruneDays: 30
-      pruneRecordsOnAdminRequests: false
-      updateAuthKey: tszernjiniefppwr
   aws-s3:
     enabled: '1'
     licenseKey: null
