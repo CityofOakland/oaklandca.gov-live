@@ -23,7 +23,6 @@ return [
   'boards-commissions/<slug>/meetings' => ['template' => '_layouts/_meetings-by-group'],
   'boards-commissions/<slug>/meetings-table' => ['template' => 'boards-commissions/_meetings-table'],
   'documents/related-to/<section>/<slug>' => ['template' => 'documents'],
-  'events/<slug>/calendar.ics' => ['template' => '_layouts/_events.ics'],
   'events/related-to/<section>/<slug>' => ['template' => 'events'],
   'meetings/related-to/<section>/<slug>' => ['template' => 'meetings'],
   'news/related-to/<section>/<slug>' => ['template' => 'news'],

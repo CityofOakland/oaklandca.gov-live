@@ -157,12 +157,10 @@
 {% endblock %}
 
 {% block sidebar %}
-  {% if entry.registrationLink %}
     <hr/>
-    <h4>{{ 'Register'|t }}</h4>
-    <p>This is a free event for the public. Fill out this Google Form to register.</p>
-    <a class="button secondary" href="{{ entry.registrationLink }}">Register for Event</a>
-  {% endif %}
+    <h4>{{ entry.sidebarHeading ? entry.sidebarHeading : 'Register' }}</h4>
+    {% if entry.sidebarDescription %}<p>{{ entry.sidebarDescription }}</p>{% endif %}
+    {% if entry.sidebarButtonUrl and entry.sidebarButtonText %}<a class="button secondary" href="{{ entry.sidebarButtonUrl }}">{{ entry.sidebarButtonText }}</a>{% endif %}
 
   {% if entry.pointOfContact|length %}
     <hr/>
@@ -233,7 +231,7 @@
   <hr/>
   <h4>{{ 'Add to Calendar'|t }}</h4>
   <p>Save this event to your iCal, Outlook or Google Calendar</p>
-  <a class="button secondary" href="{{entry.url}}/calendar.ics">Add to Calendar</a>
+  <a class="button secondary" href="{{ entry.calendarize.getIcsUrl }}">Add to Calendar</a>
   <hr class="light">
   <h4>{{ 'Share'|t }}</h4>
   <ul class="list-none flex items-center px-0 -mt-4">
