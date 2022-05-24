@@ -176,7 +176,7 @@
     <hr/>
     <h4>{{ entry.sidebarHeading ? entry.sidebarHeading : 'Register' }}</h4>
     {% if entry.sidebarDescription %}<p>{{ entry.sidebarDescription }}</p>{% endif %}
-    {% if entry.sidebarButtonUrl and entry.sidebarButtonText %}<a class="button secondary" href="{{ entry.sidebarButtonUrl }}">{{ entry.sidebarButtonText }}</a>{% endif %}
+    {% if entry.linkit %}<a class="button secondary" href="{{ entry.linkit.url }}">{{ entry.linkit.text }}</a>{% endif %}
 
   {% if entry.pointOfContact|length %}
     <hr/>

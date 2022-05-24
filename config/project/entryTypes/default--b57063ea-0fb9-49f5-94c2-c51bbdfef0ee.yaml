@@ -126,18 +126,9 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f3b30494-874d-4fc7-a4fc-331c31edb68f # Sidebar Button URL
-            instructions: 'Input URL below.'
-            label: 'Event or Registration Button URL'
-            required: ''
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 0f93d6ce-26a3-40dd-9f62-6b8f91b7f35f # Sidebar Button Text
-            instructions: 'What the button text will display.'
-            label: 'Event or Registration Button Text'
+            fieldUid: 4f49ca5b-c028-40c6-b67e-de07b11bf16a # Linkit
+            instructions: 'Input the URL and what the button text will display.'
+            label: 'Event or Registration Button'
             required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
