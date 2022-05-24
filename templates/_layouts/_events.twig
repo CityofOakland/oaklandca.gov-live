@@ -42,7 +42,9 @@
           </div>
           <div class="w-full md:w-1/2 px-8 mt-12 lg:mt-0">
             <div class="components components-format flex items-start">
-              {{ svg( '@webroot/dist/img/fa-map.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }} 
+              {% if locationBlocks|length %}
+                {{ svg( '@webroot/dist/img/fa-map.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }} 
+              {% endif %}
               <div>
                 {% if locationBlocks|length == 1 %}
                   {% for location in locationBlocks.all() %}
