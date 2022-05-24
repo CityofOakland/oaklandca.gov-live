@@ -153,29 +153,29 @@
   {# Accessibility Request #}
   <hr class="hr medium"/>
   {% if entry.eventTypes|length %}<p><b>Event Type:</b> {{ entry.eventTypes.one().title }}</p>{% endif %}
-
-  {% set accessibilityText %}
-    {% if entry.accessibilityBlock|length %}
-      <p>{{ entry.accessibilityBlock.one().accessibilityText|raw }}</p>
-    {% else %}
-      <p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
-      <p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a courtesy to attendees with chemical sensitivities.</p>
-    {% endif %}
-    {% if entry.pointOfContact|length %}
-      {% set block = entry.pointOfContact.one() %}
-      {% if block.contact|length %}
-        {% set emailContact = block.contact.one() %}
-        <div></div>
-        <a class="button secondary small" href="mailto:{{ emailContact.emailAddress ? emailContact.emailAddress : emailContact.staffImportEmail }}?subject=Accessibility Request: {{ entry.title }}{{ entry.calendarize.startDate ? ' at ' ~ entry.calendarize.startDate|date('m/d/Y') : '' }}">Make a Request</a>
+  {% if entry.accessibilityBlock|length %}
+    {% set accessibilityText %}
+      {% if entry.accessibilityBlock|length %}
+        <p>{{ entry.accessibilityBlock.one().accessibilityText|raw }}</p>
+      {% else %}
+        <p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
+        <p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a courtesy to attendees with chemical sensitivities.</p>
       {% endif %}
-    {% endif %}
-  {% endset %}
-
-  {% include '_components/_callout' with {
+      {% if entry.pointOfContact|length %}
+        {% set block = entry.pointOfContact.one() %}
+        {% if block.contact|length %}
+          {% set emailContact = block.contact.one() %}
+          <div></div>
+          <a class="button secondary small" href="mailto:{{ emailContact.emailAddress ? emailContact.emailAddress : emailContact.staffImportEmail }}?subject=Accessibility Request: {{ entry.title }}{{ entry.calendarize.startDate ? ' at ' ~ entry.calendarize.startDate|date('m/d/Y') : '' }}">Make a Request</a>
+        {% endif %}
+      {% endif %}
+    {% endset %}
+    {% include '_components/_callout' with {
       callOutType   : 'info',
       heading       : 'Accessibility and interpretation requests',
       description   : accessibilityText 
-  } %}
+    } %}
+  {% endif %}
 {% endblock %}
 
 {% block sidebar %}
