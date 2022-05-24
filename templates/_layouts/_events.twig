@@ -161,9 +161,13 @@
       <p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
       <p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a courtesy to attendees with chemical sensitivities.</p>
     {% endif %}
-    {% if entry.emailAddress %}
+    {% if entry.pointOfContact|length %}
+      {% set block = entry.pointOfContact.one() %}
+      {% if block.contact|length %}
+        {% set emailContact = block.contact.one() %}
         <div></div>
-        <a class="button secondary small" href="mailto:{{ entry.emailAddress }}?subject=Accessibility Request: {{ entry.title }}{{ entry.date ? ' at ' ~ entry.date|date('m/d/Y') : '' }}">Make a Request</a>
+        <a class="button secondary small" href="mailto:{{ emailContact.emailAddress ? emailContact.emailAddress : emailContact.staffImportEmail }}?subject=Accessibility Request: {{ entry.title }}{{ entry.calendarize.startDate ? ' at ' ~ entry.calendarize.startDate|date('m/d/Y') : '' }}">Make a Request</a>
+      {% endif %}
     {% endif %}
   {% endset %}
 
