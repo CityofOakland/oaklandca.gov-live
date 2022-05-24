@@ -20,7 +20,7 @@
 
 {% block title %}
   <h1 class="my-0 text-3xl font-bold md:text-4xl">{{ entry.title }}</h1>
-  <div class="mt-4 text-xl leading-8 tw-only">This event will be held {{ locations|join(" and ") }} on {{ entry.calendarize.startDate|date("F j, Y") }}</div>
+  <div class="mt-4 text-xl leading-8 tw-only">This event {{ now <= dateToPass ? 'will be' : 'was' }} held {{ locations|join(" and ") }} on {{ entry.calendarize.startDate|date("F j, Y") }}</div>
 {% endblock %}
 
 {% block precontent %}
