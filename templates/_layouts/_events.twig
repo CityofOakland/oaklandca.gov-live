@@ -155,7 +155,7 @@
   {% if entry.eventTypes|length %}<p><b>Event Type:</b> {{ entry.eventTypes.one().title }}</p>{% endif %}
   {% if entry.accessibilityBlock|length %}
     {% set accessibilityText %}
-      {% if entry.accessibilityBlock|length %}
+      {% if entry.accessibilityBlock.one().accessibilityText %}
         <p>{{ entry.accessibilityBlock.one().accessibilityText|raw }}</p>
       {% else %}
         <p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
