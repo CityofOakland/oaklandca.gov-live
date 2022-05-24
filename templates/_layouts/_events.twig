@@ -193,7 +193,7 @@
         {% set contact = contact.contact.one() %}
         <p>
           <b>{{ contact.title }}</b>
-          {% if contact.staffImportJobTitle %}<br>{{ contact.staffImportJobTitle }}{% endif %}
+          {% if contact.staffImportJobTitle or contact.jobTitle %}<br>{{ contact.jobTitle ? contact.jobTitle : contact.staffImportJobTitle }}{% endif %}
           {% if contact.staffImportOrganization %}<br>{{ contact.staffImportOrganization }}{% endif %}
         </p>
         {% if contact.staffImportEmail or contact.staffImportPhoneNumber %}
