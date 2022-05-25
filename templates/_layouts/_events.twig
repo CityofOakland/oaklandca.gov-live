@@ -33,7 +33,11 @@
               {{ svg( '@webroot/dist/img/fa-clock.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }}
               <div>
                 <h3 class="mt-0">{{ entry.calendarize.startDate|date("l, F j, Y") }}</h3>
-                <p class="mt-2">{{ entry.calendarize.startDate|date("g:ia") }}{{ entry.calendarize.endDate ? " to " ~ entry.calendarize.endDate|date("g:ia") }}</p>
+                {% if entry.calendarize.allDay %}
+                  <p class="mt-2">All day event</p>
+                {% else %}
+                  <p class="mt-2">{{ entry.calendarize.startDate|date("g:ia") }}{{ entry.calendarize.endDate ? " to " ~ entry.calendarize.endDate|date("g:ia") }}</p>
+                {% endif %}
                 {% if entry.calendarize.repeats %}
                   <p><i>This event repeats {{ entry.calendarize.repeatType }}, with the next event occurring on {{ entry.calendarize.next.start|date("l, F j, Y") }} </i></p>
                 {% endif %}
@@ -52,12 +56,12 @@
                       {% case 'physicalLocation' %}
                         <h3 class="mt-0">In-Person</h3>
                         <p class="mt-2">{{ location.locationAddress.multiline() }}</p>
-                        <p><a class="text-white hover:text-gray-200 underline" href="{{ location.locationAddress.linkToDirections() }}">Get Directions</a></p>
+                        <p><a class="text-white hover:text-gray-200 underline" href="{{ location.locationAddress.linkToDirections() }}" target="_blank" aria-label="Open directions to event in a new tab">Get Directions</a></p>
                       {% case 'onlineLocation' %}
                         {% if now <= dateToPass %}
                           <h3 class="mt-0">Online</h3>
                           <p class="mt-2">This event will be held online via Zoom</p>
-                          {% if location.onlineMeetingLink %}<a href="{{ location.onlineMeetingLink }}" class="button secondary mb-0">Join Event Online</a>{% endif %}
+                          {% if location.onlineMeetingLink %}<a href="{{ location.onlineMeetingLink }}" class="button secondary mb-0" target="_blank" aria-label="Open online event link in a new tab">Join Event Online</a>{% endif %}
                         {% endif %}
                       {% default %}
                     {% endswitch %}
@@ -69,17 +73,17 @@
                   <p class="mt-2">This event will be held in-person and online</p>
                   {% if primary.type == 'physicalLocation' %}
                     <h4>Address</h4>
-                    <p class="mt-2">{{ primary.locationAddress.multiline() }}<br><a class="text-white hover:text-gray-200" href="{{ primary.locationAddress.linkToDirections() }}">Get Directions</a></p>
+                    <p class="mt-2">{{ primary.locationAddress.multiline() }}<br><a class="text-white hover:text-gray-200" href="{{ primary.locationAddress.linkToDirections() }}" target="_blank" aria-label="Open directions to event in a new tab">Get Directions</a></p>
                   {% elseif primary.type == 'onlineLocation' %}
                     <h4>Online</h4>
-                    {% if primary.onlineMeetingLink %}<a href="{{ primary.onlineMeetingLink }}" class="button secondary mb-0">Join the Event</a>{% endif %}
+                    {% if primary.onlineMeetingLink %}<a href="{{ primary.onlineMeetingLink }}" class="button secondary mb-0" target="_blank" aria-label="Open online event link in a new tab">Join the Event</a>{% endif %}
                   {% endif %}
                   {% if secondary.type == 'physicalLocation' %}
                     <p class="small"><b>Or join in person</b></p>
-                    <p class="mt-2">{{ secondary.locationAddress.multiline() }}<br><a class="text-white hover:text-gray-200" href="{{ primary.locationAddress.linkToDirections() }}">Get Directions</a></p>
+                    <p class="mt-2">{{ secondary.locationAddress.multiline() }}<br><a class="text-white hover:text-gray-200" href="{{ primary.locationAddress.linkToDirections() }}" target="_blank" aria-label="Open directions to event in a new tab">Get Directions</a></p>
                   {% elseif secondary.type == 'onlineLocation' %}
                     <p class="small"><b>Or join online</b></p>
-                    {% if secondary.onlineMeetingLink %}<a href="{{ secondary.onlineMeetingLink }}" class="button secondary mb-0">Join the Event</a>{% endif %}
+                    {% if secondary.onlineMeetingLink %}<a href="{{ secondary.onlineMeetingLink }}" class="button secondary mb-0" target="_blank" aria-label="Open online event link in a new tab">Join the Event</a>{% endif %}
                   {% endif %}
                 {% endif %}
               </div>
