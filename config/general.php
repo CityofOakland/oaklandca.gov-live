@@ -65,7 +65,7 @@ return [
     // Base site URL
     'siteUrl' => 'https://staging.oaklandca.gov',
 
-    'devMode' => true,
+    'devMode' => false,
   ],
 
   // Hotfix environment settings
