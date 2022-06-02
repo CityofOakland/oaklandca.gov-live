@@ -140,7 +140,7 @@ const renderMenu = (renderOptions, isFirstRender) => {
 
     const header = document.createElement('legend');
     header.classList.add('font-bold', 'border-t-2', 'border-gray-1000', 'pb-0', 'pt-4', 'mt-0', 'mb-6', 'w-full', 'leading-7');
-    header.innerHTML = 'Filter by Section';
+    header.innerHTML = 'Filter by Type';
 
     const container = document.createElement('div');
     container.classList.add('mt-3', 'first-of-type:mt-0', 'filters');
