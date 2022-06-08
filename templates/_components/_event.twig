@@ -1,10 +1,10 @@
 {% if event.type is defined and event.type == 'api' %}
   <div class="result pb-6" style="margin-bottom:1rem;">
-    <div class="flex -mx-4">
-      <div class="w-1/4 px-4" style="flex-shrink:0;">
+    <div class="flex flex-wrap -mx-4">
+      <div class="w-full md:w-1/4 mb-3 md:mb-0 px-4" style="flex-shrink:0;">
         <div class="bg-gray-300" style="padding-top:75%;"></div>
       </div>
-      <div class="w-full px-4">
+      <div class="w-full md:w-3/4 px-4">
         <h3 class="mt-0">
           <a href="https://oaklandlibrary.bibliocommons.com/events/{{ event.uid }}" target="_blank">{{ event.title }} {{ svg( '@webroot/dist/img/icon-external.svg')|attr({class: 'h-6 ml-2 inline'}) }}</a>
           <span data-type="Library">Library</span>
@@ -29,7 +29,7 @@
 
   <div class="result pb-6" style="margin-bottom:1rem;">
     <div class="flex -mx-4">
-      <div class="w-1/4 px-4" style="flex-shrink:0;">
+      <div class="md:w-1/4 px-4" style="flex-shrink:0;">
         <a href="{{ event.url }}">
           {% if entry.eventImage|length %}
             <img src="{{ entry.eventImage.getUrl(thumb) }}" alt="{{ entry.eventImage.one().altText }}"/>
@@ -38,7 +38,7 @@
           {% endif %}
         </a>
       </div>
-      <div class="w-full px-4">
+      <div class="w-full md:w-3/4 px-4">
         <h3 class="mt-0">
           <a href="{{ event.url }}">{{ event.title }}</a>
           {% if onlineLocation %}
