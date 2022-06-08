@@ -42,100 +42,38 @@ class OaklandLibraryEventsModuleTwigExtension extends AbstractExtension
     public function getFilters()
     {
         return [
-            new TwigFilter('insertUpcomingLibraryEventsTotal', [$this, 'insertUpcomingLibraryEventsTotal']),
-            new TwigFilter('insertUpcomingLibraryEventsPaginationTotal', [$this, 'insertUpcomingLibraryEventsPaginationTotal']),
+            new TwigFilter('addEventsTotal', [$this, 'addEventsTotal']),
             new TwigFilter('insertUpcomingLibraryEvents', [$this, 'insertUpcomingLibraryEvents']),
         ];
     }
 
-    // /**
-    //  * @inheritdoc
-    //  */
-    // public function getFunctions()
-    // {
-    //     return [
-    //         new TwigFunction('someFunction', [$this, 'someInternalFunction']),
-    //     ];
-    // }
-
     /**
      * @param null $text
      *
      * @return string
      */
-    public function insertUpcomingLibraryEventsTotal($number, $start = null, $end = null)
+    public function addEventsTotal($number, $start = null, $end = null, $limit = 10, $currentPage, $type = 'pagination')
     {
-        $params = array(
-            'startDate' => $start ? $start : date('Y-m-d'),
-            'limit'     => 1,
-        );
-
-        if($end !== null) {
-            $params['endDate'] = $end;
-        }
-
-        $headers = array(
-            'x-api-key:lowBUEGFfy9dX4O06hsMj42jbwoElt7raf6Oxp3C'
-        );
-
-        $data = self::curl('https://api2.bibliocommons.com/v1/oaklandlibrary/events', $headers, $params);
+        $params = self::buildParams($start, $end, $limit, $currentPage);
+        $data   = self::getCacheResult('https://api2.bibliocommons.com/v1/oaklandlibrary/events', $params, 300);
 
         $total = $number;
 
         if($data) {
-            $data = json_decode($data, true);
-            // var_dump($data);
             if(isset($data['events'])){
                 $api_total = $data['events']['pagination']['count'];
 
                 $total = $total + $api_total;
-            }
-        }
 
-        // echo $total;
-
-        return $total;
-    }
-
-    /**
-     * @param null $text
-     *
-     * @return string
-     */
-    public function insertUpcomingLibraryEventsPaginationTotal($number, $start = null, $end = null)
-    {
-        $params = array(
-            'startDate' => $start ? $start : date('Y-m-d'),
-            'limit'     => 1,
-        );
-
-        // if($end !== null) {
-        //     $params['endDate'] = $end;
-        // }
-
-        $headers = array(
-            'x-api-key:lowBUEGFfy9dX4O06hsMj42jbwoElt7raf6Oxp3C'
-        );
-
-        $data = self::curl('https://api2.bibliocommons.com/v1/oaklandlibrary/events', $headers, $params);
-
-        $total = $number;
-
-        if($data) {
-            $data = json_decode($data, true);
-            // var_dump($data);
-            if(isset($data['events'])){
-                $api_total = $data['events']['pagination']['count'];
-
-                if($api_total > $total) {
-                    return $api_total;
-                } else {
-                    return $total;
+                if($type == 'pagination') {
+                    if($api_total > $total) {
+                        return $api_total;
+                    } else {
+                        return $total;
+                    }
                 }
             }
         }
-
-        // echo $total;
 
         return $total;
     }
@@ -147,63 +85,14 @@ class OaklandLibraryEventsModuleTwigExtension extends AbstractExtension
      */
     public function insertUpcomingLibraryEvents($array = [], $start = null, $end = null, $limit = 10, $currentPage)
     {
+        $params = self::buildParams($start, $end, $limit, $currentPage);
 
-        // $array[] = ['type'=>'api'];
-
-        // if(empty($array)) {
-            $params = array(
-                'startDate' => $start ? $start : date('Y-m-d'),
-                'limit'     => $limit,
-                'page'      => $currentPage,
-            );
-
-            if($end !== null) {
-                $params['endDate'] = $end;
-            }
-        // }
-
-        //  elseif(count($array) < 10) {
-        //     $firstElement   = $array[0];
-
-        //     $startDate = $firstElement->start->format('Y-m-d');
-        //     // $endDate = $lastElement->end->format('Y-m-d');
-
-        //     $params = array(
-        //         'startDate' => $startDate,
-        //         // 'endDate'   => $endDate,
-        //         'limit'     => $limit - count($array),
-        //         'page'      => $currentPage,
-        //     );
-        // } elseif(count($array) == 10) {
-        //     $firstElement   = $array[0];
-        //     $lastElement    = $array[count($array) - 1];
-
-        //     $startDate = $firstElement->start->format('Y-m-d');
-        //     $endDate = $lastElement->end->format('Y-m-d');
-
-        //     echo $startDate;
-        //     echo $endDate;
-
-        //     $params = array(
-        //         'startDate' => $startDate,
-        //         'endDate'   => $endDate,
-        //         'limit'     => $limit,
-        //         'page'      => $currentPage,
-        //     );
-        // }
-
-        $headers = array(
-            'x-api-key:lowBUEGFfy9dX4O06hsMj42jbwoElt7raf6Oxp3C'
-        );
-
-        $data           = self::curl('https://api2.bibliocommons.com/v1/oaklandlibrary/events', $headers, $params);
-        $location_data  = self::curl('https://api2.bibliocommons.com/v1/oaklandlibrary/locations', $headers, array('limit'=>100));
+        $data           = self::getCacheResult('https://api2.bibliocommons.com/v1/oaklandlibrary/events', $params, 300);
+        $location_data  = self::getCacheResult('https://api2.bibliocommons.com/v1/oaklandlibrary/locations', array('limit'=>100), 3600);
 
         $events = [];
 
         if($data && $location_data) {
-            $data           = json_decode($data, true);
-            $location_data  = json_decode($location_data, true);
             if(isset($data['events']) && isset($location_data['locations'])){
                 foreach($data['entities']['events'] as $uid => $event) {
                     $locationId = $event['definition']['branchLocationId'];
@@ -245,7 +134,50 @@ class OaklandLibraryEventsModuleTwigExtension extends AbstractExtension
         return $array;
     }
 
-    public static function curl($url, $headers=array(), $params=array()) {
+    public static function buildParams($start = null, $end = null, $limit = 10, $currentPage){
+        $params = array(
+            'startDate' => $start ? $start : date('Y-m-d'),
+            'limit'     => $limit,
+            'page'      => $currentPage,
+        );
+
+        if($end !== null) {
+            $params['endDate'] = $end;
+        }
+
+        return $params;
+    }
+
+    public static function getCacheResult($url, $params, $time=3600){
+        $cache      = Craft::$app->getCache();
+        $cache_key  = $url . '?' . http_build_query($params);
+        $value      = $cache->get($cache_key);
+
+        if ($value !== null && \is_array($value) && isset($value['time']) && $value['time'] >= time() - $time) {
+            return $value['value'];
+        } else {
+            $data = self::curl($url, $params);
+            if($data) {
+                $data = json_decode($data, true);
+                if(!isset($data['message'])) {
+                    $cache->set($cache_key,[
+                        'time'  => time(),
+                        'value' => $data
+                    ]);
+                    return $data;
+                }
+            }
+            return false;
+        }
+    }
+
+    public static function curl($url, $params=array()) {
+        if(!getenv('LIBRARY_EVENTS_API_KEY')){
+            return false;
+        } else {
+            $headers = array('x-api-key:'.getenv('LIBRARY_EVENTS_API_KEY'));
+        }
+
         $ch = curl_init();
 
         if($params != null) {
@@ -256,21 +188,13 @@ class OaklandLibraryEventsModuleTwigExtension extends AbstractExtension
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($ch, CURLOPT_URL, $url);
 
-        // if($params != null){
-        //     curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
-        // }
         if($headers != null){
-            // curl_setopt($ch, CURLOPT_VERBOSE, 1);
-            // curl_setopt($ch, CURLOPT_HEADER, 1);
             curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         }
+
         $result = curl_exec($ch);
 
         curl_close($ch);
         return $result;
     }
-
-    // public static function getJson($url, $params=array()) {
-    //     return json_decode(self::curl($url), false);
-    // }
 }
