@@ -6,8 +6,8 @@
 			<eventId>{{ event.startDate.format("Ymd") ~ event.id  }}</eventId>
 			<eventTitle>{{ event.title }}</eventTitle>
 			<eventEditUrl>{{ event.cpEditUrl }}</eventEditUrl>
-			<eventStartDate>{{ event.startDate.format("F, j Y g:i:a") }}</eventStartDate>
-			<eventEndDate>{{ event.endDate.format("F, j Y g:i:a") }}</eventEndDate>
+			<eventStartDate>{{ event.startDate.format("Y-m-d H:i:s") }}</eventStartDate>
+			<eventEndDate>{{ event.endDate.format("Y-m-d H:i:s") }}</eventEndDate>
 			<eventBody>{{ event.body|escape }}</eventBody>
 			{% if event.eventTypes|length %}
 				<eventTypes>

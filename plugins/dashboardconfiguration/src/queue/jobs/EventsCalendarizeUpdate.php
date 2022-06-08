@@ -37,10 +37,10 @@ class EventsCalendarizeUpdate extends BaseJob
         Db::update(
             '{{%calendarize}}', 
             [
-                'startDate' => $startDate,
-                'endDate'   => $endDate
+                'startDate' => $this->startDate,
+                'endDate'   => $this->endDate
             ],
-            'ownerId='.$elementId
+            'ownerId='.$this->elementId
         );
     }
 

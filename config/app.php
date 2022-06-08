@@ -21,11 +21,11 @@ return [
     'modules' => [
         'my-module' => \modules\Module::class,
         'matrix-mate-module' => \modules\MatrixMateModule::class,
-        // 'date-input-module' => modules\dateinputmodule\DateInputModule::class,
+        'oakland-library-events-module' => modules\oaklandlibraryeventsmodule\OaklandLibraryEventsModule::class,
     ],
     'bootstrap' => [
         'my-module', 
         'matrix-mate-module',
-        // 'date-input-module'
+        'oakland-library-events-module'
     ],
 ];

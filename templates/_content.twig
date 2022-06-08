@@ -18,11 +18,13 @@
           {% set entry = category %}
         {% endif %}
         <section>
-          <div class="bg-transparent-oakland-roots">
-            <div class="container" style="padding-top:1rem;padding-bottom:1rem;">
-              {% include "_components/partials/_breadcrumbs.twig" %}
+          {% block banner %}
+            <div class="bg-transparent-oakland-roots">
+              <div class="container" style="padding-top:1rem;padding-bottom:1rem;">
+                {% include "_components/partials/_breadcrumbs.twig" %}
+              </div>
             </div>
-          </div>
+          {% endblock %}
           <div id="content" style="position:relative;top:-5rem;"></div>
           <div class="{{ archive is defined and archive == true ? 'bg-blue-900 text-white' : '' }}">
             <div class="container pt-8 md:pt-16 {{ archive is defined and archive == true ? 'md:mb-8' : '' }}">

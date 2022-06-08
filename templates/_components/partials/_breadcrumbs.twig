@@ -68,6 +68,12 @@
     {% endfor %}
     <a href="{{ entry.url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ entry.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
     <span class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">Meetings for {{ entry.title }}</span>
+  {% elseif section is defined and slug is defined and craft.request.lastSegment == 'events' %}
+    {% for link in breadcrumbs ?? '' %}
+      <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
+    {% endfor %}
+    <a href="{{ entry.url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ entry.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
+    <span class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">Events for {{ entry.title }}</span>
   {% else %}
     {% for link in breadcrumbs ?? '' %}
       <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>

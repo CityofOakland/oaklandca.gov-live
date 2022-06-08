@@ -177,6 +177,10 @@
   background: #fffbea;
 }
 
+:where(.components) .callout.action {
+  background: #fffbea;
+}
+
 :where(.components .callout) {
   & a:hover {
     text-decoration: none;

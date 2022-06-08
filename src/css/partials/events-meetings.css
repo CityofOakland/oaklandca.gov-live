@@ -47,6 +47,10 @@
   }
 }
 
+.result h3 svg {
+  margin-top: -5px;
+}
+
 .result h3 .font-bold {
   text-decoration: underline;
 }

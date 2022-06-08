@@ -1,10 +1,22 @@
-{% set archive        = true %}
+{% set layout = 'reverse' %}
+{% extends '_content.twig' %}
+{% import '_macros/_macros' as macros %}
+
+{% if section is defined and slug is defined %}
+  {% set entry = craft.entries().section(section).slug(slug).one() %}
+  {# {% if not entry.indexToggle  %}
+    {% redirect 404 %}
+  {% endif %} #}
+{% else %}
+  {% redirect 404 %}
+{% endif %}
+
 {% set q              = craft.app.request.getQueryParam('q') %}
 {% set filter_enabled = false %}
 {% set event_type     = craft.app.request.getQueryParam('event_type') %}
 {% set department     = craft.app.request.getQueryParam('department') %}
 
-{% set relatedToElements = [] %}
+{% set relatedToElements = [entry] %}
 
 {% if event_type %}
   {% set filter_enabled     = true %}
@@ -32,49 +44,33 @@
   {% set filter_enabled = true %}
 {% endif %}
 
-{% if filter_enabled or type == 'past' %}
-  {% if year and month %}
-    {% set ymd              = year ~ '-' ~ month ~ '-01' %}
-    {% set pagination_total = craft.calendarize.between(ymd, (ymd|date_modify('+1 month')|date('Y-m-d')),{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
-    {% set date_query       = craft.calendarize.between(ymd, (ymd|date_modify('+1 month')|date('Y-m-d')),{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc')) %}
-  {% elseif year %}
-    {% set ymd              = year ~ '-' ~ '01-01' %}
-    {% set pagination_total = craft.calendarize.between(ymd, (ymd|date_modify('+1 year')|date('Y-m-d')),{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
-    {% set date_query       = craft.calendarize.between(ymd, (ymd|date_modify('+1 year')|date('Y-m-d')),{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc')) %}
-  {% elseif month %}
-    {% set ymd              = now|date('Y') ~ '-' ~ month ~ '-01' %}
-    {% set pagination_total = craft.calendarize.between(ymd, (ymd|date_modify('+1 month')|date('Y-m-d')),{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
-    {% set date_query       = craft.calendarize.between(ymd, (ymd|date_modify('+1 month')|date('Y-m-d')),{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc')) %}
-  {% endif %}
-{% else %}
-  {% if year and month %}
-    {% set filter_enabled   = true %}
-    {% set ymd              = year ~ '-' ~ month ~ '-01' %}
-    {% set end              = ymd|date_modify('+1 month')|date('Y-m-d') %}
-    {% set pagination_total = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length|insertUpcomingLibraryEventsPaginationTotal(ymd, end) %}
-    {% set actual_total     = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length|insertUpcomingLibraryEventsTotal(ymd, end) %}
-    {% set date_query       = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc'))|insertUpcomingLibraryEvents(ymd, end, perPage, currentPage) %}
-  {% elseif year %}
-    {% set filter_enabled   = true %}
-    {% set ymd              = year ~ '-' ~ '01-01' %}
-    {% set end              = ymd|date_modify('+1 year')|date('Y-m-d') %}
-    {% set pagination_total = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length|insertUpcomingLibraryEventsPaginationTotal(ymd, end) %}
-    {% set actual_total     = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length|insertUpcomingLibraryEventsTotal(ymd, end) %}
-    {% set date_query       = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc'))|insertUpcomingLibraryEvents(ymd, end, perPage, currentPage) %}
-  {% elseif month %}
-    {% set filter_enabled   = true %}
-    {% set ymd              = now|date('Y') ~ '-' ~ month ~ '-01' %}
-    {% set end              = ymd|date_modify('+1 month')|date('Y-m-d') %}
-    {% set pagination_total = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length|insertUpcomingLibraryEventsPaginationTotal(ymd, end) %}
-    {% set actual_total     = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length|insertUpcomingLibraryEventsTotal(ymd, end) %}
-    {% set date_query       = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc'))|insertUpcomingLibraryEvents(ymd, end, perPage, currentPage) %}
-  {% endif %}
+{% if year and month %}
+  {% set filter_enabled   = true %}
+  {% set ymd              = year ~ '-' ~ month ~ '-01' %}
+  {% set end              = ymd|date_modify('+1 month')|date('Y-m-d') %}
+  {% set pagination_total = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
+  {% set actual_total     = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
+  {% set date_query       = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc')) %}
+{% elseif year %}
+  {% set filter_enabled   = true %}
+  {% set ymd              = year ~ '-' ~ '01-01' %}
+  {% set end              = ymd|date_modify('+1 year')|date('Y-m-d') %}
+  {% set pagination_total = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
+  {% set actual_total     = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
+  {% set date_query       = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc')) %}
+{% elseif month %}
+  {% set filter_enabled   = true %}
+  {% set ymd              = now|date('Y') ~ '-' ~ month ~ '-01' %}
+  {% set end              = ymd|date_modify('+1 month')|date('Y-m-d') %}
+  {% set pagination_total = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
+  {% set actual_total     = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
+  {% set date_query       = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc')) %}
 {% endif %}
 
 {% switch type %}
   {% case 'upcoming' %}
-    {% set total      = pagination_total is defined ? pagination_total : craft.calendarize.upcoming({section: ['events'], search: q, relatedTo: relatedToElements })|length|insertUpcomingLibraryEventsPaginationTotal(null, null) %}
-    {% set events     = date_query is defined ? date_query : craft.calendarize.upcoming({section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1) * perPage}, 'asc', true)|insertUpcomingLibraryEvents(null, null, perPage, currentPage) %}
+    {% set total      = pagination_total is defined ? pagination_total : craft.calendarize.upcoming({section: ['events'], search: q, relatedTo: relatedToElements })|length %}
+    {% set events     = date_query is defined ? date_query : craft.calendarize.upcoming({section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1) * perPage}, 'asc', true) %}
     {% set totalPages = (total / perPage)|round(0, 'ceil') %}
   {% case 'past' %}
     {% set total      = pagination_total is defined ? pagination_total : craft.calendarize.between('2017-01-01', now|date('Y-m-d'),{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
@@ -93,9 +89,40 @@
   lastUrl: entry.url ~ '?type='~ type ~'&page=' ~ totalPages,
 } %}
 
-{% set layout = 'reverse' %}
-{% extends '_content.twig' %}
-{% import '_macros/_macros' as macros %}
+{% block title %}
+  <h1 class="my-0 text-3xl font-bold md:text-4xl">Events for {{ entry.title }}</h1>
+  {% if entry.leadIn or entry.summary %}
+    <div class="mt-4 text-xl leading-8 tw-only">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
+  {% endif %}
+{% endblock %}
+
+{% block banner %}
+  {% if entry.banner|length %}
+    {% set banner = entry.banner.one() %}
+    <div class="leading-normal aspect-ratio-box aspect-ratio-1/4 banner">
+      <div class="object-cover pt-2 pb-8 leading-none aspect-ratio md:pt-4 md:pb-6 min-h-2-1/2 md:min-h-4">
+        <figure class="absolute inset-0 z-0">
+          <img
+            class="absolute inset-0 z-0 object-cover w-full h-full"
+            style="object-position:{{ banner.getFocalPoint('asCss') }};"
+            src="{{ banner.url }}"
+            alt="{{ banner.title ?? banner.filename }}">
+        </figure>
+        <div class="container py-0">
+          {% include "_components/partials/_breadcrumbs.twig" %}
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <div class="leading-none banner">
+      <div class="container pt-2 pb-8 md:pt-4 md:pb-6">
+        <div class="absolute inset-0 z-0 bg-transparent-oakland-roots"></div>
+        {% include "_components/partials/_breadcrumbs.twig" %}
+      </div>
+    </div>
+  {% endif %}
+
+{% endblock %}
 
 {% block content %}
   <div>
@@ -257,7 +284,6 @@
 
     {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
     {{ macros.select('Event Type', 'event_type', 'event_type', craft.categories().group('eventTypes').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select an event type') }}
-    {{ macros.select('Department', 'department', 'department', craft.entries().section('departments').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a department') }}
     <div class="flex items-center">
       <button class="button medium">Apply</button>
       {% if q or filter_enabled %}
@@ -269,6 +295,7 @@
   <div class="hidden lg:block">
     <h4 class="py-0 mt-4">{{ 'Related'|t }}</h4>
     <div class="pt-2">
+      <p><a href="{{siteUrl}}events">All Community Events</a></p>
       <p><a href="{{siteUrl}}meetings">Oakland City Meetings Calendar</a></p>
       <p><a href="https://oaklandlibrary.bibliocommons.com/v2/events" target="_blank">Library Calendar</a></p>
     </div>

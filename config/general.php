@@ -54,7 +54,7 @@ return [
   // Dev environment settings
   'dev' => [
     // Base site URL
-    'siteUrl' => getenv('LOCAL_SITE_URL'),
+    'siteUrl' => getenv('SITE_URL'),
 
     // Dev Mode (see https://craftcms.com/support/dev-mode)
     'devMode' => true,
@@ -65,7 +65,19 @@ return [
     // Base site URL
     'siteUrl' => 'https://staging.oaklandca.gov',
 
-    'devMode' => true,
+    'devMode' => false,
+  ],
+
+  // Hotfix environment settings
+  'hotfix' => [
+    // Base site URL
+    'siteUrl' => getenv('SITE_URL'),
+    // Changes the default preview duration from 24 hours to 5 days
+    'defaultTokenDuration' => 432000,
+
+    'allowAdminChanges' => false,
+
+    'devMode' => false,
   ],
 
   // Production environment settings
