@@ -169,6 +169,10 @@ fieldLayouts:
       -
         elements:
           -
+            style: tip
+            tip: 'Only admins should be able to view this tab. These fields are for aiding the Events Import process. This tab will be removed in a future deployment.'
+            type: craft\fieldlayoutelements\Tip
+          -
             fieldUid: e7a47351-1c2b-44ac-ba40-cbedbdce4b0f # Event ID
             instructions: null
             label: null
