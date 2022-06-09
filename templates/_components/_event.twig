@@ -2,12 +2,16 @@
   <div class="result pb-6" style="margin-bottom:1rem;">
     <div class="flex flex-wrap -mx-4">
       <div class="w-full md:w-1/4 mb-3 md:mb-0 px-4" style="flex-shrink:0;">
-        <div class="bg-gray-300" style="padding-top:75%;"></div>
+        <img src="{{ siteUrl }}dist/img/placeholder-event.png" alt="Icon of a Calendar"/>
       </div>
       <div class="w-full md:w-3/4 px-4">
         <h3 class="mt-0">
           <a href="https://oaklandlibrary.bibliocommons.com/events/{{ event.uid }}" target="_blank">{{ event.title }} {{ svg( '@webroot/dist/img/icon-external.svg')|attr({class: 'h-6 ml-2 inline'}) }}</a>
-          <span data-type="Library">Library</span>
+          {% if event.isCancelled %}
+            <span data-type="Cancelled">Cancelled</span>
+          {% elseif event.isVirtual %}
+            <span data-type="Cancelled">Online</span>
+          {% endif %}
         </h3>
         <p><b>{{ event.startDate|date("l, F j, Y") }}</b></p>
         <p class="flex items-center">{{ svg( '@webroot/dist/img/icon-clock.svg') }} <span class="ml-4 pl-1">{{ event.startDate|date("g:ia") }}{{ event.endDate ? " to " ~ event.endDate|date("g:ia") : '' }}</span></p>
@@ -34,7 +38,7 @@
           {% if entry.eventImage|length %}
             <img src="{{ entry.eventImage.getUrl(thumb) }}" alt="{{ entry.eventImage.one().altText }}"/>
           {% else %}
-            <div class="bg-gray-300" style="padding-top:75%;"></div>
+            <img src="{{ siteUrl }}dist/img/placeholder-event.png" alt="Icon of a Calendar"/>
           {% endif %}
         </a>
       </div>

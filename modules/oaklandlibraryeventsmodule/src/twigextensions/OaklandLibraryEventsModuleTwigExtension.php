@@ -104,10 +104,13 @@ class OaklandLibraryEventsModuleTwigExtension extends AbstractExtension
                         'startDate' => strtotime($event['definition']['start']),
                         'endDate'   => strtotime($event['definition']['end']),
                         'isVirtual' => isset($event['definition']['isVirtual']) ? $event['definition']['isVirtual'] : false,
+                        'isCancelled' => isset($event['definition']['isCancelled']) ? $event['definition']['isCancelled'] : false,
                     ];
 
                     if($locationId) {
-                        $event_parsed_object['location'] = $location_data['entities']['locations'][$locationId]['name'];
+                        if(isset($location_data['entities']['locations'][$locationId]['name'])){
+                            $event_parsed_object['location'] = $location_data['entities']['locations'][$locationId]['name'];
+                        }
                     }
 
                     $events[] = $event_parsed_object;
