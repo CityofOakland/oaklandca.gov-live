@@ -1,4 +1,4 @@
-dateModified: 1654187702
+dateModified: 1654794925
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -311,7 +311,7 @@ meta:
     839d534c-c552-405e-bc0e-0d7414bad9c3: 'Navigation - Top' # Navigation - Top
     843d53f7-253d-4ed1-b7da-309cd0e4df69: __blank__ # __blank__
     850b24e6-fbe7-41e2-bd2b-6207a108a503: 'Emergency Public Information Officers' # Emergency Public Information Officers
-    853a4c55-fd81-4715-8804-22a057720485: Entries # Entries
+    853a4c55-fd81-4715-8804-22a057720485: 'Entries (Deprecated)' # Entries (Deprecated)
     853acfc8-1959-4654-89f9-e544989d27d5: Departments # Departments
     856e0565-3a66-4305-825e-757ac41b9ff4: Link # Link
     899b11d8-2bd0-43d6-b39b-31e362b7534f: 'Project Documents' # Project Documents
@@ -352,6 +352,7 @@ meta:
     06433c3d-3f3d-4d0a-9619-f28a9d57d27b: 'Need to Know' # Need to Know
     6444dc50-fd8a-41d1-94c1-7af9ba982cc1: 'Hide Summary?' # Hide Summary?
     6615dd71-4083-4e2d-a89b-26de79047282: 'Internal Link' # Internal Link
+    6661f731-7c41-4607-9a82-a18f44fb4008: Events # Events
     6694c82b-6e98-442b-976a-907b6c2f4bcc: 'Android Download Link' # Android Download Link
     6722d0c2-c9b0-4b2c-adf2-97e13adaecb3: Style # Style
     6730cced-6743-4ada-abb8-1f4c0f2e8878: 'Alert Link' # Alert Link
