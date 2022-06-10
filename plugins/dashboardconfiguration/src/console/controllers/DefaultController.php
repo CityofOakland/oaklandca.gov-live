@@ -30,7 +30,7 @@ class DefaultController extends Controller
                 $endDate    = null;
                 $elementId  = $entry->id;
 
-                $hours = 7;
+                $hours = 8;
 
                 if($entry->startDate){
                     echo $entry->startDate->format('Y-m-d H:i:s');
