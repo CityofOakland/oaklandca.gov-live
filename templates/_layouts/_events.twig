@@ -56,7 +56,7 @@
                   {% for location in locationBlocks.all() %}
                     {% switch location.type %}
                       {% case 'physicalLocation' %}
-                        {% if not location.locationAddress.isEmpty() %}
+                        {% if location.locationAddress and not location.locationAddress.isEmpty() %}
                           <h3 class="mt-0">In-Person</h3>
                           {% if location.locationAddress %}<p class="mt-2">{{ location.locationAddress.multiline() }}</p>{% endif %}
                           {% if location.locationAddress %}<p><a class="text-white hover:text-gray-200 underline" href="{{ location.locationAddress.linkToDirections() }}" target="_blank" aria-label="Open directions to event in a new tab">Get Directions</a></p>{% endif %}
@@ -76,7 +76,7 @@
                   <h3 class="mt-0">Location</h3>
                   <p class="mt-2">This event will be held in-person and online</p>
                   {% if primary.type == 'physicalLocation' %}
-                    {% if not primary.locationAddress.isEmpty() %}
+                    {% if primary.locationAddress and not primary.locationAddress.isEmpty() %}
                       <h4>Address</h4>
                       <p class="mt-2">{{ primary.locationAddress.multiline() }}<br><a class="text-white hover:text-gray-200" href="{{ primary.locationAddress.linkToDirections() }}" target="_blank" aria-label="Open directions to event in a new tab">Get Directions</a></p>
                     {% endif %}
@@ -87,7 +87,7 @@
                     {% endif %}
                   {% endif %}
                   {% if secondary.type == 'physicalLocation' %}
-                    {% if not secondary.locationAddress.isEmpty() %}
+                    {% if secondary.locationAddress and not secondary.locationAddress.isEmpty() %}
                       <p class="small"><b>Or join in person</b></p>
                       <p class="mt-2">{{ secondary.locationAddress.multiline() }}<br><a class="text-white hover:text-gray-200" href="{{ primary.locationAddress.linkToDirections() }}" target="_blank" aria-label="Open directions to event in a new tab">Get Directions</a></p>
                     {% endif %}
