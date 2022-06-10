@@ -2,15 +2,22 @@
 {% extends '_layout.twig' %}
 {% set entry = craft.entries.section('searchIndex').one %}
 
+{% block headTop %}
+  <link href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch-theme-algolia.min.css" rel="stylesheet">
+{% endblock %}
+
 {% do view.registerJsFile("https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find") %}
-{% do view.registerCssFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.css") %}
-{% do view.registerCssFile ("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch-theme-algolia.min.css") %}
 {% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5") %}
 
 {% css %}
+  #stats .ais-stats {
+    opacity: 1;
+  }
   .ais-search-box {
     max-width: initial;
   }
+  
   .ais-search-box--magnifier {
     top: 50%;
     transform: translateY(-50%);
@@ -29,9 +36,12 @@
     background-color: #eae2f8 !important;
   }
 
-  .ais-clear-all--link {
-    background-color: #653cad !important;
-  }
+  /* Removing the `x` icon in Chrome's search input on this page */
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration { display: none; }
+
 {% endcss %}
 
 {% block content %}
@@ -43,9 +53,9 @@
       </div>
     </div>
   </div>
-  <div id="content" style="position:relative;top:-5rem;"></div>
-  <div class="leading-normal">
-    <div class="container relative z-10 flex flex-col sm:flex-row">
+  <div id="content" style="position:relative;top:-80px;"></div>
+  <div class="container leading-normal">
+    <div class="relative z-10 flex flex-col max-w-6xl sm:flex-row">
       <h1 class="mb-0 text-3xl font-bold md:text-4xl sm:w-1/4">{{ entry.title }}</h1>
       <form action="" class="flex-1 my-4 sm:my-0">
         <label class="hidden-visually" for="search-input">Search Term(s)</label>
@@ -56,13 +66,14 @@
   </div>
   <section class="relative z-0 bg-white">
     <div class="container pt-0">
-      <div class="flex flex-col-reverse md:flex-row">
-        <div class="md:w-3/4" data-hits id="all-holder">
-          <div id="all-hits" data-index="{{ getenv('ENVIRONMENT') }}_all"></div>
+      <div class="grid max-w-6xl grid-cols-1 md:grid-cols-4 gap-x-16 gap-y-4">
+        <div class="order-2 md:col-span-3 md:order-1" data-hits id="all-holder">
+          <div id="stats"></div>
+          <div id="all-hits" class="mt-8" data-index="{{ getenv('ENVIRONMENT') }}_all"></div>
         </div>
-        <div class="mb-4 md:w-1/4 md:ml-8 ">
+        <div class="order-1 md:order-2">
           <div id="section-filter" class="hidden md:block"></div>
-          <div class="mt-2" id="clear-refinements"></div>
+          <div class="hidden mt-2 md:block" id="clear-refinements"></div>
         </div>
       </div>
       <div id="bottom-pagination"></div>

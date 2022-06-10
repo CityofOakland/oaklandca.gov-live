@@ -46,6 +46,18 @@ search.addWidget(
   })
 );
 
+search.addWidget(
+  instantsearch.widgets.stats({
+    container: '#stats',
+    autoHideContainer: false,
+    templates: {
+      body: `
+        <h2 class="mb-4 text-base font-normal border-b border-gray-800 pb-1 text-gray-1000">Your search for “{{ query }}” returned <span class="font-bold" aria-live="polite">{{ nbHits }} results</span>.</h2>
+      `
+    }
+  })
+);
+
 const defaultTemplate =
 `<article class="py-8 sm:py-12 border-gray-300 border-b-2">
   {{#displayDate}}

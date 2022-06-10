@@ -32,7 +32,7 @@
       {% endif %}
     </div>
   </div>
-  <div class="relative invisible h-0 overflow-hidden text-gray-700 transition-all bg-gray-300 opacity-0 z-neg-10" id="algolia-filters">
+  <div class="relative invisible h-0 overflow-hidden text-gray-700 bg-gray-300 opacity-0 -z-10 trans trans-all" id="algolia-filters">
     <div class="container flex-col -my-4" id="facet-holder">
       {% if facets is defined %}
         {% for facet in facets %}
@@ -44,6 +44,7 @@
   <section class="relative z-0 bg-white">
     <div class="container">
       <div class="w-full">
+        <div id="stats"></div>
         <div id="hits"></div>
         <div class="flex items-center text-2xl">
           <div class="inline-block" id="bottom-pagination"></div>
