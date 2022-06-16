@@ -93,7 +93,7 @@ class OaklandLibraryEventsModuleTwigExtension extends AbstractExtension
         $events = [];
 
         if($data && $location_data) {
-            if(isset($data['events']) && isset($location_data['locations'])){
+            if(isset($data['events']) && isset($location_data['locations']) && isset($data['entities']['events']) ){
                 foreach($data['entities']['events'] as $uid => $event) {
                     $locationId = $event['definition']['branchLocationId'];
 

@@ -13,9 +13,11 @@
 {% endif %}
 
 {% if department %}
-  {% set filter_enabled     = true %}
   {% set department_entry   = craft.entries().section('departments').id(department).one() %}
   {% set relatedToElements  = relatedToElements|merge([department_entry]) %}
+  {% if department_entry.title !== 'Library' %}
+    {% set filter_enabled = true %}
+  {% endif %}
 {% endif %}
 
 {% set currentPage = craft.app.request.getQueryParam('page') ? craft.app.request.getQueryParam('page') : 1 %}
