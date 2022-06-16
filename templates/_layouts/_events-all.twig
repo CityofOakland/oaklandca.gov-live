@@ -8,14 +8,14 @@
 
 {% if event_type %}
   {% set filter_enabled     = true %}
-  {% set event_type         = craft.categories().group('eventTypes').id(event_type).one() %}
-  {% set relatedToElements  = relatedToElements|merge([event_type]) %}
+  {% set event_type_entry   = craft.categories().group('eventTypes').id(event_type).one() %}
+  {% set relatedToElements  = relatedToElements|merge([event_type_entry]) %}
 {% endif %}
 
 {% if department %}
   {% set filter_enabled     = true %}
-  {% set department         = craft.entries().section('departments').id(department).one() %}
-  {% set relatedToElements  = relatedToElements|merge([department]) %}
+  {% set department_entry   = craft.entries().section('departments').id(department).one() %}
+  {% set relatedToElements  = relatedToElements|merge([department_entry]) %}
 {% endif %}
 
 {% set currentPage = craft.app.request.getQueryParam('page') ? craft.app.request.getQueryParam('page') : 1 %}
