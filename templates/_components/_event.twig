@@ -35,8 +35,9 @@
     <div class="flex -mx-4">
       <div class="md:w-1/4 px-4" style="flex-shrink:0;">
         <a href="{{ event.url }}">
-          {% if entry.eventImage|length %}
-            <img src="{{ entry.eventImage.getUrl(thumb) }}" alt="{{ entry.eventImage.one().altText }}"/>
+          {% if event.eventImage|length %}
+            {% set transformedImage = craft.imager.transformImage(event.eventImage.one(), { height:240, width: 320 }) %}
+            <img src="{{ transformedImage.url }}" alt="{{ event.eventImage.one().altText }}"/>
           {% else %}
             <img src="{{ siteUrl }}dist/img/placeholder-event.png" alt="Icon of a Calendar"/>
           {% endif %}
