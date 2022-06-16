@@ -27,6 +27,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: 37557891-109f-46ef-bbc5-040f628a36a4 # Event - Primary Relationship
+            instructions: ''
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             heading: 'Event Date and Location Banner'
             type: craft\fieldlayoutelements\Heading
           -
