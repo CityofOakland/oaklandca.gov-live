@@ -28,10 +28,6 @@
 {% set month  = craft.app.request.getQueryParam('month') ? craft.app.request.getQueryParam('month') : '' %}
 {% set ymd     = '' %}
 
-{% if craft.app.request.getQueryParam('q') %}
-  {% set filter_enabled = true %}
-{% endif %}
-
 {% if filter_enabled or type == 'past' %}
   {% if year and month %}
     {% set ymd              = year ~ '-' ~ month ~ '-01' %}
@@ -51,46 +47,54 @@
     {% set filter_enabled   = true %}
     {% set ymd              = year ~ '-' ~ month ~ '-01' %}
     {% set end              = ymd|date_modify('+1 month')|date('Y-m-d') %}
-    {% set pagination_total = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length|addEventsTotal(ymd, end, perPage, currentPage) %}
-    {% set actual_total     = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length|addEventsTotal(ymd, end, perPage, currentPage, 'total') %}
-    {% set date_query       = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc'))|insertUpcomingLibraryEvents(ymd, end, perPage, currentPage) %}
+    {% set pagination_total = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length|addEventsTotal(q,ymd, end, perPage, currentPage) %}
+    {% set actual_total     = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length|addEventsTotal(q,ymd, end, perPage, currentPage, 'total') %}
+    {% set date_query       = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc'))|insertUpcomingLibraryEvents(q, ymd, end, perPage, currentPage) %}
   {% elseif year %}
     {% set filter_enabled   = true %}
     {% set ymd              = year ~ '-' ~ '01-01' %}
     {% set end              = ymd|date_modify('+1 year')|date('Y-m-d') %}
-    {% set pagination_total = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length|addEventsTotal(ymd, end, perPage, currentPage) %}
-    {% set actual_total     = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length|addEventsTotal(ymd, end, perPage, currentPage, 'total') %}
-    {% set date_query       = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc'))|insertUpcomingLibraryEvents(ymd, end, perPage, currentPage) %}
+    {% set pagination_total = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length|addEventsTotal(q,ymd, end, perPage, currentPage) %}
+    {% set actual_total     = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length|addEventsTotal(q,ymd, end, perPage, currentPage, 'total') %}
+    {% set date_query       = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc'))|insertUpcomingLibraryEvents(q, ymd, end, perPage, currentPage) %}
   {% elseif month %}
     {% set filter_enabled   = true %}
     {% set ymd              = now|date('Y') ~ '-' ~ month ~ '-01' %}
     {% set end              = ymd|date_modify('+1 month')|date('Y-m-d') %}
-    {% set pagination_total = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length|addEventsTotal(ymd, end, perPage, currentPage) %}
-    {% set actual_total     = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length|addEventsTotal(ymd, end, perPage, currentPage, 'total') %}
-    {% set date_query       = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc'))|insertUpcomingLibraryEvents(ymd, end, perPage, currentPage) %}
+    {% set pagination_total = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length|addEventsTotal(q,ymd, end, perPage, currentPage) %}
+    {% set actual_total     = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length|addEventsTotal(q,ymd, end, perPage, currentPage, 'total') %}
+    {% set date_query       = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc'))|insertUpcomingLibraryEvents(q, ymd, end, perPage, currentPage) %}
   {% endif %}
 {% endif %}
 
 {% switch type %}
   {% case 'upcoming' %}
-    {% set total      = pagination_total is defined ? pagination_total : craft.calendarize.upcoming({section: ['events'], search: q, relatedTo: relatedToElements })|length|addEventsTotal(null, null, perPage, currentPage) %}
-    {% set events     = date_query is defined ? date_query : craft.calendarize.upcoming({section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1) * perPage}, 'asc', true)|insertUpcomingLibraryEvents(null, null, perPage, currentPage) %}
-    {% set totalPages = (total / perPage)|round(0, 'ceil') %}
+    {% if filter_enabled %}
+      {% set total      = pagination_total is defined ? pagination_total : craft.calendarize.upcoming({section: ['events'], search: q, relatedTo: relatedToElements })|length %}
+      {% set events     = date_query is defined ? date_query : craft.calendarize.upcoming({section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1) * perPage}, 'asc', true) %}
+      {% set totalPages = (total / perPage)|round(0, 'ceil') %}
+    {% else %}
+      {% set total      = pagination_total is defined ? pagination_total : craft.calendarize.upcoming({section: ['events'], search: q, relatedTo: relatedToElements })|length|addEventsTotal(q,null, null, perPage, currentPage) %}
+      {% set events     = date_query is defined ? date_query : craft.calendarize.upcoming({section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1) * perPage}, 'asc', true)|insertUpcomingLibraryEvents(q, null, null, perPage, currentPage) %}
+      {% set totalPages = (total / perPage)|round(0, 'ceil') %}
+    {% endif %}
   {% case 'past' %}
     {% set total      = pagination_total is defined ? pagination_total : craft.calendarize.between('2017-01-01', now|date('Y-m-d'),{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
     {% set events     = date_query is defined ? date_query : craft.calendarize.between('2017-01-01', now|date('Y-m-d'),{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1) * perPage}, 'desc', true) %}
     {% set totalPages = (total / perPage)|round(0, 'ceil') %}
 {% endswitch %}
 
+{% set query_string = 'q='~q~'&department='~department~'&event_type='~event_type~'&year='~year~'&month='~month %}
+
 {% set pageInfo = {
   total: total,
   actualTotal: (actual_total is defined ? actual_total : total),
   totalPages: totalPages,
   currentPage: currentPage,
-  prevUrl: entry.url ~ '?type='~ type ~'&page=' ~(currentPage > 1 ? currentPage - 1 : null),
-  nextUrl: entry.url ~ '?type='~ type ~'&page=' ~ (currentPage < totalPages ? currentPage + 1 : null),
-  firstUrl: entry.url ~ '?type='~ type ~'&page=1',
-  lastUrl: entry.url ~ '?type='~ type ~'&page=' ~ totalPages,
+  prevUrl: entry.url ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~(currentPage > 1 ? currentPage - 1 : null),
+  nextUrl: entry.url ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~ (currentPage < totalPages ? currentPage + 1 : null),
+  firstUrl: entry.url ~ '?type=' ~ type ~ '&' ~ query_string ~ '&page=1',
+  lastUrl: entry.url ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~ totalPages,
 } %}
 
 {% set layout = 'reverse' %}
@@ -100,8 +104,8 @@
 {% block content %}
   <div>
     <ul class="flex flex-wrap list-none m-0 p-0">
-      <li><a href="?type=upcoming" class="button m-0 rounded-none {{ type == 'upcoming' ? 'pointer-events-none' : 'secondary' }}">Upcoming events</a></li>
-      <li><a href="?type=past" class="button m-0 rounded-none {{ type == 'past' ? 'pointer-events-none' : 'secondary' }}">Past events</a></li>
+      <li><a href="?type=upcoming&{{ query_string }}" class="button m-0 rounded-none {{ type == 'upcoming' ? 'pointer-events-none' : 'secondary' }}">Upcoming events</a></li>
+      <li><a href="?type=past&{{ query_string }}" class="button m-0 rounded-none {{ type == 'past' ? 'pointer-events-none' : 'secondary' }}">Past events</a></li>
     </ul>
   </div>
 
@@ -154,12 +158,12 @@
 
             {% if pageInfo.currentPage > 2 %}
               <li>
-                <a aria-label="Page {{ pageInfo.currentPage - 2 }}" class="page" href="{{ entry.url }}?type={{ type }}&page={{ pageInfo.currentPage - 2 }}">{{ pageInfo.currentPage - 2 }}</a>
+                <a aria-label="Page {{ pageInfo.currentPage - 2 }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage - 2 }}">{{ pageInfo.currentPage - 2 }}</a>
               </li>
             {% endif %}
             {% if pageInfo.currentPage > 1 %}
               <li>
-                <a aria-label="Page {{ pageInfo.currentPage - 1 }}" class="page" href="{{ entry.url }}?type={{ type }}&page={{ pageInfo.currentPage - 1 }}">{{ pageInfo.currentPage - 1 }}</a>
+                <a aria-label="Page {{ pageInfo.currentPage - 1 }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage - 1 }}">{{ pageInfo.currentPage - 1 }}</a>
               </li>
             {% endif %}
 
@@ -169,13 +173,13 @@
 
             {% if pageInfo.totalPages - pageInfo.currentPage > 0 %}
               <li>
-                <a aria-label="Page {{ pageInfo.currentPage + 1 }}" class="page" href="{{ entry.url }}?type={{ type }}&page={{ pageInfo.currentPage + 1 }}">{{ pageInfo.currentPage + 1 }}</a>
+                <a aria-label="Page {{ pageInfo.currentPage + 1 }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage + 1 }}">{{ pageInfo.currentPage + 1 }}</a>
               </li>
             {% endif %}
 
             {% if pageInfo.totalPages - pageInfo.currentPage > 1 %}
               <li>
-                <a aria-label="Page {{ pageInfo.currentPage + 2 }}" class="page" href="{{ entry.url }}?type={{ type }}&page={{ pageInfo.currentPage + 2 }}">{{ pageInfo.currentPage + 2 }}</a>
+                <a aria-label="Page {{ pageInfo.currentPage + 2 }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage + 2 }}">{{ pageInfo.currentPage + 2 }}</a>
               </li>
             {% endif %}
 
@@ -202,7 +206,7 @@
                 </li>
               {% else %}
                 <li>
-                  <a aria-label="Page {{ page }}" class="page" href="{{ entry.url }}?type={{ type }}&page={{ page }}">{{ page }}</a>
+                  <a aria-label="Page {{ page }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ page }}">{{ page }}</a>
                 </li>
               {% endif %}
             {% endfor %}

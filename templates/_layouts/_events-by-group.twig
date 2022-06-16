@@ -4,9 +4,6 @@
 
 {% if section is defined and slug is defined %}
   {% set entry = craft.entries().section(section).slug(slug).one() %}
-  {# {% if not entry.indexToggle  %}
-    {% redirect 404 %}
-  {% endif %} #}
 {% else %}
   {% redirect 404 %}
 {% endif %}
@@ -78,15 +75,17 @@
     {% set totalPages = (total / perPage)|round(0, 'ceil') %}
 {% endswitch %}
 
+{% set query_string = 'q={{ q }}&department={{department}}&event_type={{ event_type }}&year={{ year }}&month={{ month }}' %}
+
 {% set pageInfo = {
   total: total,
   actualTotal: (actual_total is defined ? actual_total : total),
   totalPages: totalPages,
   currentPage: currentPage,
-  prevUrl: entry.url ~ '?type='~ type ~'&page=' ~(currentPage > 1 ? currentPage - 1 : null),
-  nextUrl: entry.url ~ '?type='~ type ~'&page=' ~ (currentPage < totalPages ? currentPage + 1 : null),
-  firstUrl: entry.url ~ '?type='~ type ~'&page=1',
-  lastUrl: entry.url ~ '?type='~ type ~'&page=' ~ totalPages,
+  prevUrl: entry.url ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~(currentPage > 1 ? currentPage - 1 : null),
+  nextUrl: entry.url ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~ (currentPage < totalPages ? currentPage + 1 : null),
+  firstUrl: entry.url ~ '?type=' ~ type ~ '&' ~ query_string ~ '&page=1',
+  lastUrl: entry.url ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~ totalPages,
 } %}
 
 {% block title %}
@@ -127,8 +126,8 @@
 {% block content %}
   <div>
     <ul class="flex flex-wrap list-none m-0 p-0">
-      <li><a href="?type=upcoming" class="button m-0 rounded-none {{ type == 'upcoming' ? 'pointer-events-none' : 'secondary' }}">Upcoming events</a></li>
-      <li><a href="?type=past" class="button m-0 rounded-none {{ type == 'past' ? 'pointer-events-none' : 'secondary' }}">Past events</a></li>
+      <li><a href="?type=upcoming&{{ query_string }}" class="button m-0 rounded-none {{ type == 'upcoming' ? 'pointer-events-none' : 'secondary' }}">Upcoming events</a></li>
+      <li><a href="?type=past&{{ query_string }}" class="button m-0 rounded-none {{ type == 'past' ? 'pointer-events-none' : 'secondary' }}">Past events</a></li>
     </ul>
   </div>
 
@@ -181,12 +180,12 @@
 
             {% if pageInfo.currentPage > 2 %}
               <li>
-                <a aria-label="Page {{ pageInfo.currentPage - 2 }}" class="page" href="{{ entry.url }}?type={{ type }}&page={{ pageInfo.currentPage - 2 }}">{{ pageInfo.currentPage - 2 }}</a>
+                <a aria-label="Page {{ pageInfo.currentPage - 2 }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage - 2 }}">{{ pageInfo.currentPage - 2 }}</a>
               </li>
             {% endif %}
             {% if pageInfo.currentPage > 1 %}
               <li>
-                <a aria-label="Page {{ pageInfo.currentPage - 1 }}" class="page" href="{{ entry.url }}?type={{ type }}&page={{ pageInfo.currentPage - 1 }}">{{ pageInfo.currentPage - 1 }}</a>
+                <a aria-label="Page {{ pageInfo.currentPage - 1 }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage - 1 }}">{{ pageInfo.currentPage - 1 }}</a>
               </li>
             {% endif %}
 
@@ -196,13 +195,13 @@
 
             {% if pageInfo.totalPages - pageInfo.currentPage > 0 %}
               <li>
-                <a aria-label="Page {{ pageInfo.currentPage + 1 }}" class="page" href="{{ entry.url }}?type={{ type }}&page={{ pageInfo.currentPage + 1 }}">{{ pageInfo.currentPage + 1 }}</a>
+                <a aria-label="Page {{ pageInfo.currentPage + 1 }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage + 1 }}">{{ pageInfo.currentPage + 1 }}</a>
               </li>
             {% endif %}
 
             {% if pageInfo.totalPages - pageInfo.currentPage > 1 %}
               <li>
-                <a aria-label="Page {{ pageInfo.currentPage + 2 }}" class="page" href="{{ entry.url }}?type={{ type }}&page={{ pageInfo.currentPage + 2 }}">{{ pageInfo.currentPage + 2 }}</a>
+                <a aria-label="Page {{ pageInfo.currentPage + 2 }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage + 2 }}">{{ pageInfo.currentPage + 2 }}</a>
               </li>
             {% endif %}
 
@@ -229,7 +228,7 @@
                 </li>
               {% else %}
                 <li>
-                  <a aria-label="Page {{ page }}" class="page" href="{{ entry.url }}?type={{ type }}&page={{ page }}">{{ page }}</a>
+                  <a aria-label="Page {{ page }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ page }}">{{ page }}</a>
                 </li>
               {% endif %}
             {% endfor %}
