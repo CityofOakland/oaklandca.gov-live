@@ -125,6 +125,8 @@ allSearch.addWidgets([
   })
 ]);
 
+var justClicked = false;
+
 // 1. Create a render function
 const renderMenu = (renderOptions, isFirstRender) => {
   const {
@@ -176,10 +178,16 @@ const renderMenu = (renderOptions, isFirstRender) => {
     element.addEventListener('click', event => {
       event.preventDefault();
       refine(event.currentTarget.dataset.refineValue);
+      justClicked = true;
     });
   });
   [...widgetParams.container.querySelectorAll('input')].forEach(element => {
-    if(element.checked) element.focus();
+    if(element.checked){
+      if(justClicked){
+        justClicked = false;
+        element.focus();
+      }
+    }
   });
 };
 

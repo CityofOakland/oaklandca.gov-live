@@ -108,6 +108,21 @@ class Module extends \yii\base\Module
 
         Craft::$app->view->hook('cp.entries.edit.content', function(&$context) {
           $entry = $context['entry'];
+          if($entry->section->handle == 'meetings'){
+            $user = Craft::$app->getUser();
+            if(!$user->isAdmin) {
+              return "<style>
+                #tab-relationships,
+                #tab-tab-relationships {
+                  display: none;
+                }
+              </style>";
+            }
+          }
+        });
+
+        Craft::$app->view->hook('cp.entries.edit.content', function(&$context) {
+          $entry = $context['entry'];
           if($entry->section->handle == 'events'){
             $user = Craft::$app->getUser();
             if(!$user->isAdmin) {

@@ -1,4 +1,4 @@
-dateModified: 1655396663
+dateModified: 1655748549
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -201,6 +201,7 @@ meta:
     43cb8609-820e-4df0-9b62-fa6cf21ba074: 'Agenda Topics' # Agenda Topics
     44b00870-0842-4c4e-838f-dcd688fb5b05: Topics # Topics
     45b5d319-ac8e-491f-9c8a-47d1c6657bff: 'External Link' # External Link
+    45c5aca8-37bb-42d5-94ef-4a85bbf2de46: 'Related Project, Topic, or Public Body' # Related Project, Topic, or Public Body
     46bb2577-b14e-4f53-8a65-a7b9139b21e4: Heading # Heading
     47d702f0-cf61-4746-ab30-131fed922b61: 'SoundCloud Embed' # SoundCloud Embed
     48c81254-0e2d-4211-8859-7a45eef186ad: TTY # TTY
@@ -648,7 +649,7 @@ meta:
     f5c6d83d-3a64-4e6a-be6c-5304f6679801: Video # Video
     f5dead8c-3e4c-4f97-8bea-2a3af1e34f67: Resources # Resources
     f6e8acb0-e8f3-40de-8500-b95e6ed06def: 'Event Location' # Event Location
-    f7e4a055-457f-46eb-ab3d-3e816f80a81d: 'Related Board or Commission' # Related Board or Commission
+    f7e4a055-457f-46eb-ab3d-3e816f80a81d: 'Related Public Body' # Related Public Body
     f7fa3aa0-7245-47fd-8f47-3a3218e45e6c: 'Event Entries' # Event Entries
     f8f83baf-d18b-46db-8bb2-5372736bf21a: 'Oaklandca.gov﻿ Link' # Oaklandca.gov﻿ Link
     f9ec1965-4721-44e2-b551-069ae06c54f3: 'Staff Import Email' # Staff Import Email

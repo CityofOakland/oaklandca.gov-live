@@ -20,14 +20,6 @@
     </div>
   </div>
 {% else %}
-  {% set thumb = {
-    mode: 'crop',
-    width: 320,
-    height: 240,
-    quality: 100,
-    position: 'center'
-  } %}
-
   {% set physicalLocation = clone(event.eventLocations).type('physicalLocation') %}
   {% set onlineLocation   = clone(event.eventLocations).type('onlineLocation') %}
 
