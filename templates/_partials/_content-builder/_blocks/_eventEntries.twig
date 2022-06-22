@@ -1,21 +1,18 @@
 {% set events     	= craft.calendarize.upcoming({section: ['events'], limit:3, relatedTo: entry}) %}
-{% set headingText  = 'Upcoming Events' %}
-{% set buttonText   = 'See Upcoming Events' %}
+{% set headingText  = 'Related Events' %}
+{% set buttonText   = 'See Past Events' %}
 {% if entry.section.handle == 'boardsCommissions' or entry.section.handle == 'topics' or entry.section.handle == 'departments' %}
-  {% set buttonLink   = entry.url ~ '/events' %}
+  {% set buttonLink   = entry.url ~ '/events?type=past' %}
 {% else %}
-  {% set buttonLink   = siteUrl ~ 'events' %}
+  {% set buttonLink   = siteUrl ~ 'events?type=past' %}
 {% endif %}
 
 {% if block.events|length %}
   {% set events     	= block.events %}
-  {% set headingText  = block.heading ? block.heading : 'Events' %}
 {% else %}
   {% if events|length == 0 %}
     {% set events  			= craft.calendarize.between('2017-01-01', now|date('Y-m-d'),{section: ['events'], limit: 3, relatedTo: entry }) %}
-    {% set headingText  = 'Events' %}
-    {% set buttonText   = 'See Past Events' %}
-    {% set buttonLink   = buttonLink ~ '?type=past' %}
+    {% set buttonText   = 'See All Past Events' %}
   {% endif %}
 {% endif %}
 
