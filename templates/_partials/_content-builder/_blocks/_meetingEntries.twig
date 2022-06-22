@@ -16,6 +16,7 @@
   {% endif %}
 {% endif %}
 
+{% if meetings|length %}
 <div class="{% if not loop.last %}mb-12{% endif %}">
   <h2 class="{{ hClass }} {{ addClasses ?? "" }}">{{ headingText }}</h2>
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -38,4 +39,4 @@
     {% endif %}
   </div>
 </div>
-
+{% endif %}

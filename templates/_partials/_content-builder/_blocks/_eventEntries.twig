@@ -11,7 +11,7 @@
   {% set events     	= block.events %}
 {% else %}
   {% if events|length == 0 %}
-    {% set events  			= craft.calendarize.between('2017-01-01', now|date('Y-m-d'),{section: ['events'], limit: 3, relatedTo: entry }) %}
+    {% set events  			= craft.calendarize.between('2017-01-01', now|date('Y-m-d'),{section: ['events'], limit: 3, relatedTo: entry }, 'desc') %}
     {% set buttonText   = 'See All Past Events' %}
   {% endif %}
 {% endif %}
