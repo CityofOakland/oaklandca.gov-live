@@ -20,6 +20,11 @@
 
 {% set eventHasPassed = (now > dateToPass) %}
 
+{% set physicalLocation = clone(entry.eventLocations).type('physicalLocation') %}
+{% set physicalLocationDisplays = physicalLocation|length and physicalLocation.one().locationAddress and not physicalLocation.one().locationAddress.isEmpty()  %}
+{% set onlineLocation = clone(entry.eventLocations).type('onlineLocation') %}
+{% set onlineLocationDisplays = onlineLocation|length and not eventHasPassed %}
+
 {% block title %}
   <h1 class="my-0 text-3xl font-bold md:text-4xl">{{ entry.title }}</h1>
   <div class="mt-4 text-xl leading-8 tw-only">This event {{ eventHasPassed ? 'was' : 'will be' }} held {{ locations|join(" and ") }} on {{ entry.calendarize.startDate|date("F j, Y") }}</div>
@@ -48,7 +53,7 @@
           </div>
           <div class="w-full md:w-1/2 px-8 mt-12 md:mt-0">
             <div class="components components-format flex items-start">
-              {% if locationBlocks|length %}
+              {% if locationBlocks|length == 2 or (locationBlocks|length and (physicalLocationDisplays or onlineLocationDisplays)) %}
                 {{ svg( '@webroot/dist/img/fa-map.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }} 
               {% endif %}
               <div>
