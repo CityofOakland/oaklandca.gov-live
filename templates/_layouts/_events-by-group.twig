@@ -3,6 +3,7 @@
 {% import '_macros/_macros' as macros %}
 
 {% if section is defined and slug is defined %}
+  {% set section = (section == 'boards-commissions') ? 'boardsCommissions' : section %}
   {% set entry = craft.entries().section(section).slug(slug).one() %}
 {% else %}
   {% redirect 404 %}
