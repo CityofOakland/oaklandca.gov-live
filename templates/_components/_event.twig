@@ -57,7 +57,7 @@
           <p class="flex items-center">{{ svg( '@webroot/dist/img/icon-clock.svg') }} <span class="ml-4 pl-1">{{ event.calendarize.startDate|date("g:ia") }}{{ event.calendarize.endDate ? " to " ~ event.calendarize.endDate|date("g:ia") : '' }}</span></p>
         {% endif %}
         {% if physicalLocation|length %}
-          <p class="flex items-center">{{ svg( '@webroot/dist/img/icon-map-marker.svg') }} <span class="ml-4">{{ event.eventLocations.type('physicalLocation').one().locationName }}</span></p>
+          {% if physicalLocation.one().locationName %}<p class="flex items-center">{{ svg( '@webroot/dist/img/icon-map-marker.svg') }} <span class="ml-4">{{ physicalLocation.one().locationName }}</span></p>{% endif %}
         {% endif %}
       </div>
     </div>
