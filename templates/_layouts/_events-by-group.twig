@@ -3,6 +3,7 @@
 {% import '_macros/_macros' as macros %}
 
 {% if section is defined and slug is defined %}
+  {% set section = (section == 'boards-commissions') ? 'boardsCommissions' : section %}
   {% set entry = craft.entries().section(section).slug(slug).one() %}
 {% else %}
   {% redirect 404 %}
@@ -11,7 +12,6 @@
 {% set q              = craft.app.request.getQueryParam('q') %}
 {% set filter_enabled = false %}
 {% set event_type     = craft.app.request.getQueryParam('event_type') %}
-{% set department     = craft.app.request.getQueryParam('department') %}
 
 {% set relatedToElements = [entry] %}
 
@@ -19,12 +19,6 @@
   {% set filter_enabled     = true %}
   {% set event_type_entry   = craft.categories().group('eventTypes').id(event_type).one() %}
   {% set relatedToElements  = relatedToElements|merge([event_type_entry]) %}
-{% endif %}
-
-{% if department %}
-  {% set filter_enabled     = true %}
-  {% set department_entry   = craft.entries().section('departments').id(department).one() %}
-  {% set relatedToElements  = relatedToElements|merge([department_entry]) %}
 {% endif %}
 
 {% set currentPage = craft.app.request.getQueryParam('page') ? craft.app.request.getQueryParam('page') : 1 %}
@@ -75,17 +69,17 @@
     {% set totalPages = (total / perPage)|round(0, 'ceil') %}
 {% endswitch %}
 
-{% set query_string = 'q={{ q }}&department={{department}}&event_type={{ event_type }}&year={{ year }}&month={{ month }}' %}
+{% set query_string = 'q='~q~'&event_type='~event_type~'&year='~year~'&month='~month %}
 
 {% set pageInfo = {
   total: total,
   actualTotal: (actual_total is defined ? actual_total : total),
   totalPages: totalPages,
   currentPage: currentPage,
-  prevUrl: entry.url ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~(currentPage > 1 ? currentPage - 1 : null),
-  nextUrl: entry.url ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~ (currentPage < totalPages ? currentPage + 1 : null),
-  firstUrl: entry.url ~ '?type=' ~ type ~ '&' ~ query_string ~ '&page=1',
-  lastUrl: entry.url ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~ totalPages,
+  prevUrl: entry.url ~ '/events' ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~(currentPage > 1 ? currentPage - 1 : null),
+  nextUrl: entry.url ~ '/events' ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~ (currentPage < totalPages ? currentPage + 1 : null),
+  firstUrl: entry.url ~ '/events' ~ '?type=' ~ type ~ '&' ~ query_string ~ '&page=1',
+  lastUrl: entry.url ~ '/events' ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~ totalPages,
 } %}
 
 {% block title %}
@@ -180,12 +174,12 @@
 
             {% if pageInfo.currentPage > 2 %}
               <li>
-                <a aria-label="Page {{ pageInfo.currentPage - 2 }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage - 2 }}">{{ pageInfo.currentPage - 2 }}</a>
+                <a aria-label="Page {{ pageInfo.currentPage - 2 }}" class="page" href="{{ entry.url ~ '/events' }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage - 2 }}">{{ pageInfo.currentPage - 2 }}</a>
               </li>
             {% endif %}
             {% if pageInfo.currentPage > 1 %}
               <li>
-                <a aria-label="Page {{ pageInfo.currentPage - 1 }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage - 1 }}">{{ pageInfo.currentPage - 1 }}</a>
+                <a aria-label="Page {{ pageInfo.currentPage - 1 }}" class="page" href="{{ entry.url ~ '/events' }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage - 1 }}">{{ pageInfo.currentPage - 1 }}</a>
               </li>
             {% endif %}
 
@@ -195,13 +189,13 @@
 
             {% if pageInfo.totalPages - pageInfo.currentPage > 0 %}
               <li>
-                <a aria-label="Page {{ pageInfo.currentPage + 1 }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage + 1 }}">{{ pageInfo.currentPage + 1 }}</a>
+                <a aria-label="Page {{ pageInfo.currentPage + 1 }}" class="page" href="{{ entry.url ~ '/events' }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage + 1 }}">{{ pageInfo.currentPage + 1 }}</a>
               </li>
             {% endif %}
 
             {% if pageInfo.totalPages - pageInfo.currentPage > 1 %}
               <li>
-                <a aria-label="Page {{ pageInfo.currentPage + 2 }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage + 2 }}">{{ pageInfo.currentPage + 2 }}</a>
+                <a aria-label="Page {{ pageInfo.currentPage + 2 }}" class="page" href="{{ entry.url ~ '/events' }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage + 2 }}">{{ pageInfo.currentPage + 2 }}</a>
               </li>
             {% endif %}
 
@@ -228,7 +222,7 @@
                 </li>
               {% else %}
                 <li>
-                  <a aria-label="Page {{ page }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ page }}">{{ page }}</a>
+                  <a aria-label="Page {{ page }}" class="page" href="{{ entry.url ~ '/events' }}?type={{ type }}&{{ query_string }}&page={{ page }}">{{ page }}</a>
                 </li>
               {% endif %}
             {% endfor %}
@@ -256,7 +250,7 @@
   <hr class="hidden lg:block"/>
   <div class="mt-2 md:mt-0"></div>
   <h4 class="py-0 mt-4 mb-6">{{ 'Search & Filter'|t }}</h4>
-  <form action="{{ entry.url }}">
+  <form action="{{ entry.url ~ '/events' }}">
     <input type="hidden" name="type" value="{{ type }}"/>
     {{ macros.select('Month', 'month', 'month', [
         {"01"  : "January"},
@@ -286,7 +280,7 @@
     <div class="flex items-center">
       <button class="button medium">Apply</button>
       {% if q or filter_enabled %}
-        <a class="mt-4" href="{{ entry.url }}?type={{type}}">Clear filters</a>
+        <a class="mt-4" href="{{ entry.url ~ '/events' }}?type={{type}}">Clear filters</a>
       {% endif %}
     </div>
   </form>

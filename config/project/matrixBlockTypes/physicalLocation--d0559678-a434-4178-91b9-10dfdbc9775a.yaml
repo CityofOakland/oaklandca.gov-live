@@ -203,7 +203,7 @@ fields:
     handle: locationName
     instructions: ''
     name: 'Location Name'
-    searchable: false
+    searchable: true
     settings:
       byteLimit: null
       charLimit: null
