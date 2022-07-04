@@ -14,7 +14,8 @@
   @apply px-4 py-4;
 }
 
-.button {
+.button,
+.hs-button {
   @apply text-base leading-tight;
   background: #207127;
   border: 2px solid #207127;
@@ -31,22 +32,26 @@
   text-decoration: none !important;
 }
 
-.button:hover {
+.button:hover,
+.hs-button:hover {
   background: #0d5713;
   border-color: #0d5713;
   color: white;
 }
 
-.button:active {
+.button:active,
+.hs-button:active {
   background: #04400a;
   border-color: #04400a;
 }
 
-.button:focus {
+.button:focus,
+.hs-button:active {
   outline: 4px solid #0ea5e9;
 }
 
-.button[disabled] {
+.button[disabled],
+.hs-button[disabled] {
   background: #b1b1b1;
   border-color: #b1b1b1;
   pointer-events: none;
@@ -102,7 +107,8 @@
   padding: 1rem;
 }
 
-.button.small {
+.button.small,
+.hs-button {
   padding: .5rem;
 }
 

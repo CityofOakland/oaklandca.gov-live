@@ -38,35 +38,15 @@
             {% endif %}
             {% endfor %}
             <div class="md:w-1/2 lg:w-1/4 mt-8 lg:mt-0">
-                {% if craft.freeform.form('signUp') %}
-                    <h5>Sign Up</h5>
-                    {{ craft.freeform.form('signUp', {
-                        labelClass: "form-label",
-                        inputClass: "form-control",
-                        submitClass: "button small",
-                    }).render() }}
-
-                    {% js on ready %}
-                        $(function () {
-                            // Find the corresponding Form
-                            var form = document.querySelector('#footer-navigation form');
-                            $.ajax({
-                                // Specify the form handle in the GET parameters
-                                url: '{{ siteUrl }}form?form=signUp',
-                                type: 'get',
-                                dataType: 'json',
-                                success: function (response) {
-                                    // Update the Form Hash
-                                    form.querySelector('input[name=formHash]').value = response.hash;
-
-                                    // Locate and update the CSRF input
-                                    var csrf = response.csrf;
-                                    form.querySelector('input[name=' + csrf.name + ']').value = csrf.value;
-                                },
-                            });
-                         });
-                    {% endjs %}
-                {% endif %}
+                <h5 class="mb-4">Sign up for updates</h5>
+                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+                <script>
+                  hbspt.forms.create({
+                    region: "na1",
+                    portalId: "20956996",
+                    formId: "a8c92d43-1143-4d15-9d33-7313c3067086"
+                  });
+                </script>
             </div>
         </nav>
     </div>
