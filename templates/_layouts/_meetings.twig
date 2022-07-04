@@ -1,6 +1,7 @@
 {% set fullTitle = entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' %}
-{% if entry.relatedProjectTopicOrPublicBody|length ? entry.relatedProjectTopicOrPublicBody.type('boardsCommissions')|length %}
-	{% set fullTitle = fullTitle ~ ' - ' ~ entry.relatedProjectTopicOrPublicBody.type('boardsCommissions').one().title %}
+{% set subTitle = clone(entry.relatedProjectTopicOrPublicBody) %}
+{% if subTitle|length and subTitle.type('boardsCommissions')|length %}
+	{% set fullTitle = fullTitle ~ ' - ' ~ subTitle.type('boardsCommissions').one().title %}
 {% endif %}
 
 {% macro callout(calloutHeading) %}
