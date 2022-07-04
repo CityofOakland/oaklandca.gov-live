@@ -1,4 +1,4 @@
-dateModified: 1656614706
+dateModified: 1656964359
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -351,7 +351,6 @@ meta:
     6187b052-87bb-4c88-993b-30d9c5f1779c: Other # Other
     6227b65d-17fc-4360-8a69-3e70afc30899: 'Elected Official Leads' # Elected Official Leads
     06433c3d-3f3d-4d0a-9619-f28a9d57d27b: 'Need to Know' # Need to Know
-    6444dc50-fd8a-41d1-94c1-7af9ba982cc1: 'Hide Summary?' # Hide Summary?
     6615dd71-4083-4e2d-a89b-26de79047282: 'Internal Link' # Internal Link
     6661f731-7c41-4607-9a82-a18f44fb4008: Events # Events
     6694c82b-6e98-442b-976a-907b6c2f4bcc: 'Android Download Link' # Android Download Link
@@ -396,7 +395,6 @@ meta:
     226351ad-9bcd-4a73-bd65-bf1ef65f710c: 'City of Oakland' # City of Oakland
     243725a4-eeda-4e57-8cf4-d545bd6edf9c: 'Email Title' # Email Title
     277068ba-95c5-4881-862f-85c19b60d4da: 'Alert URL' # Alert URL
-    321943ce-06f4-4125-b82a-baf2e174a37f: 'Allow Autofill?' # Allow Autofill?
     341595b4-52a8-432f-b327-5fbc3a4289a8: 'Staff Import Department' # Staff Import Department
     451349f6-f11d-40c2-ae6e-47c1e78f32c7: 'Boards & Commissions Redirect' # Boards & Commissions Redirect
     622282c9-d031-4271-966b-8a952587ff07: Title # Title
@@ -620,7 +618,6 @@ meta:
     e2442a2e-e191-4b02-b170-7ecad09c52e2: Modules # Modules
     e3606e42-d455-4501-bbb1-55f049cd1738: Documents # Documents
     e51016cb-464b-4bd1-b32c-ace827d1b9dc: 'Document Link' # Document Link
-    e4562472-8b84-4213-97bc-476f6f092cad: 'Hide Thumbnails?' # Hide Thumbnails?
     e5003330-f1d5-467d-843b-ce12bc26a5bb: Heading # Heading
     e8230537-ae50-4e3d-a71f-d43da065f108: 'Online Location' # Online Location
     e9822161-b2a8-4cd1-8ec3-c3a2e2d5b2b0: 'City Council' # City Council
