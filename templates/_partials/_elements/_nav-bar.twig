@@ -1,5 +1,3 @@
-{% import '_macros/_macros.twig' as macros %}
-
 <script>
     var container = document.body;
     var dom_observer = new MutationObserver(function(mutation) {
@@ -81,14 +79,14 @@
                             <li>
                                 <ul>
                                 {% for navItem in navItems|slice(0, navItems|length/2) %}
-                                    <li>{{ macros.cardManual(navItem.linkit.url, navItem.linkit.text, navItem.linkit.element ? (navItem.linkit.element.summary) , (navItem.styleCard == 'dark' ? true : false), false) }}</li>
+                                    <li><a class="card {{ navItem.styleCard }}" href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
                                 {% endfor %}
                                 </ul>
                             </li>
                             <li>
                                 <ul>
                                 {% for navItem in navItems|slice(navItems|length/2, navItems|length) %}
-                                    <li>{{ macros.cardManual(navItem.linkit.url, navItem.linkit.text, navItem.linkit.element ? (navItem.linkit.element.summary) , (navItem.styleCard == 'dark' ? true : false), false) }}</li>
+                                    <li><a class="card {{ navItem.styleCard }}" href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
                                 {% endfor %}
                                 </ul>
                             </li>
@@ -120,7 +118,7 @@
                             <h3 class="pt-6">Popular on Oakland.ca.gov</h3>
                             <ul class="list-none grid md:grid-cols-3 gap-x-6 pt-4">
                                 {% for navItem in navigation.linkits.all() %}
-                                    <li>{{ macros.cardManual(navItem.linkit.url, navItem.linkit.text, navItem.linkit.element ? (navItem.linkit.element.summary) , (navItem.styleCard == 'dark' ? true : false), false) }}</li>
+                                    <li><a class="card {{ navItem.styleCard }}" href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>

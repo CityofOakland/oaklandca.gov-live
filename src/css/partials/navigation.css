@@ -1,5 +1,3 @@
-/* Navigation (TODO:  Move to a separate file called navigation.css)  */
-
 footer h5 {
   font-size: 18px;
   font-weight: 700;
@@ -82,11 +80,6 @@ input[type="text"].form-control::placeholder {
   z-index: 100;
 }
 
-.has-submenu > ul.components h4 {
-  font-size: 16px;
-  padding-bottom: 0.5rem !important;
-}
-
 .has-submenu > ul:where(.components) p {
   @apply text-sm;
 }
@@ -158,53 +151,37 @@ input[type="text"].form-control::placeholder {
 
 .has-submenu .card:hover,
 .has-submenu .card:focus {
-  background: #0D5713;
+  background: #0D5713 !important;
+  text-decoration: underline;
 }
 
-.has-submenu .card h4 {
-  color: #FFF3C4;
-}
-
-.has-submenu .card p {
-  color: white;
-}
-
-.has-submenu .card span {
-  text-decoration: none;
+.has-submenu .card {
+  color: #fff3c4 !important;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .has-submenu .card.dark {
-  background: #FFF3C4;
+  color: #207127 !important;
+  background: #FFF3C4 !important;
 }
 
 .has-submenu .card.dark:hover,
 .has-submenu .card.dark:focus {
-  background: #FFFBEA;
+  background: #FFFBEA !important;
 }
 
-.has-submenu .card.dark h4 {
+.has-submenu .card.dark {
   color: #207127;
 }
 
-.has-submenu .card.dark p {
-  color: #000000;
-}
-
-.has-submenu h4 {
-  padding-bottom: 0 !important;
-}
-
 .has-submenu .card {
-  padding: .625rem 1.25rem;
+  padding: 1rem 1.25rem;
 }
 
 .has-submenu .card:not(.dark) {
   border-bottom: .0625rem solid #3E9141;
   border-radius: 0;
-}
-
-.has-submenu .clamp {
-  display: none;
 }
 
 .has-submenu > ul ul {
@@ -216,10 +193,6 @@ input[type="text"].form-control::placeholder {
   margin-right: 0;
   position: absolute;
   bottom: 0;
-}
-
-.has-submenu .card h4 {
-  padding-top: .5rem;
 }
 
 .has-submenu .card.dark {
