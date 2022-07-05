@@ -139,9 +139,7 @@
     {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
     <div class="flex items-center">
       <button class="button medium">Apply</button>
-      {% if query or filter_enabled %}
-        <a class="mt-4" href="{{ entry.url }}/meetings?type={{type}}">Clear filters</a>
-      {% endif %}
+      <a class="mt-4" href="{{ entry.url }}/meetings?type={{type}}">Clear filters</a>
     </div>
   </form>
   <hr class="light"/>

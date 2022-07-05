@@ -279,9 +279,7 @@
     {{ macros.select('Event Type', 'event_type', 'event_type', craft.categories().group('eventTypes').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select an event type') }}
     <div class="flex items-center">
       <button class="button medium">Apply</button>
-      {% if q or filter_enabled %}
-        <a class="mt-4" href="{{ entry.url ~ '/events' }}?type={{type}}">Clear filters</a>
-      {% endif %}
+      <a class="mt-4" href="{{ entry.url ~ '/events' }}?type={{type}}">Clear filters</a>
     </div>
   </form>
   <hr/>

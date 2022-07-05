@@ -266,9 +266,7 @@
     {{ macros.select('Department', 'department', 'department', craft.entries().section('departments').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a department') }}
     <div class="flex items-center">
       <button class="button medium">Apply</button>
-      {% if q or filter_enabled %}
-        <a class="mt-4" href="{{ entry.url }}?type={{type}}">Clear filters</a>
-      {% endif %}
+      <a class="mt-4" href="{{ entry.url }}?type={{type}}">Clear filters</a>
     </div>
   </form>
   <hr/>
