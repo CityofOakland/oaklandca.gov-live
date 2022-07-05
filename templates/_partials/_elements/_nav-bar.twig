@@ -100,6 +100,7 @@
                         id="navbar-dropdown-search" 
                         data-toggle="dropdown" 
                         role="button" 
+                        aria-label="Open Site Search"
                         aria-haspopup="true" 
                         aria-expanded="false"
                         data-affects="navbar-dropdown-mobile"
@@ -111,7 +112,7 @@
                             <form id="site-search-form" class="mt-4 relative" action="{{ url('search') }}" role="search">
                                 <label for="site-search" class="hidden-visually">Search?</label>
                                 <input type="search" id="site-search" class="form-control" aria-label="Site Search" name="query" placeholder="Search for keywords" value="">
-                                <button>{{ svg( '@webroot/dist/img/icon-magnifier.svg')|attr({ class: 'fill-current text-gray-900' }) }}</button>
+                                <button aria-label="Site Search Button" type="submit">{{ svg( '@webroot/dist/img/icon-magnifier.svg')|attr({ class: 'fill-current text-gray-900' }) }}</button>
                             </form>
                         </li>
                         <li class="hidden lg:block">
