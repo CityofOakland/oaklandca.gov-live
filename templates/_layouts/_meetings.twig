@@ -397,7 +397,9 @@
           </a>
         </li>
       {% endfor %}
-      {% for entry in entry.relatedProjectTopicOrPublicBody.all() %}
+      {% set child_query = ['not'] %}
+      {% set child_query = child_query|merge(entry.relatedBoardOrCommission.ids()) %}
+      {% for entry in entry.relatedProjectTopicOrPublicBody.id(child_query).all() %}
         <li>
           <a href="{{ entry.url }}">
             {{ entry.title }}
