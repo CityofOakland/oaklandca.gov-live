@@ -110,14 +110,12 @@ class Module extends \yii\base\Module
           $entry = $context['entry'];
           if($entry->section->handle == 'meetings'){
             $user = Craft::$app->getUser();
-            if(!$user->isAdmin) {
-              return "<style>
-                #tab-relationships,
-                #tab-tab-relationships {
-                  display: none;
-                }
-              </style>";
-            }
+            return "<style>
+              #tab-relationships,
+              #tab-tab-relationships {
+                display: none;
+              }
+            </style>";
           }
         });
 
