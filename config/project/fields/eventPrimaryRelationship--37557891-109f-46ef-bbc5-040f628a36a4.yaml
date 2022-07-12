@@ -13,7 +13,7 @@ settings:
   showSiteMenu: true
   source: null
   sources:
-    - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+    - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
     - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
     - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
     - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects

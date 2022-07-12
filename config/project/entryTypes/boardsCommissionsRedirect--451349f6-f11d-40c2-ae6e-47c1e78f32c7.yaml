@@ -31,7 +31,7 @@ fieldLayouts:
 handle: boardsCommissionsRedirect
 hasTitleField: true
 name: 'Boards & Commissions Redirect'
-section: fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f # Boards & Commissions
+section: fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f # Public Bodies
 sortOrder: 2
 titleFormat: null
 titleTranslationKeyFormat: null

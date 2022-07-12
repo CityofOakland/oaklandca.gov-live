@@ -13,7 +13,7 @@ settings:
   showSiteMenu: true
   source: null
   sources:
-    - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+    - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
   targetSiteId: null
   validateRelatedElements: false
   viewMode: null

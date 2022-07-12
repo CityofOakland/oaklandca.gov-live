@@ -4,16 +4,16 @@ name: 'Emergency Public Information Officers'
 permissions:
   - accessplugin-usermanual
   - accesscp
-  - 'createentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'publishentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'deleteentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'publishpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'deletepeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'editpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'publishpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'deletepeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'editpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'editentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'createentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
+  - 'publishentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
+  - 'deleteentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
+  - 'publishpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
+  - 'deletepeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
+  - 'editpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
+  - 'publishpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
+  - 'deletepeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
+  - 'editpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
+  - 'editentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
   - 'publishentries:fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c' # Boards & Commissions Index
   - 'publishpeerentrydrafts:fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c' # Boards & Commissions Index
   - 'deletepeerentrydrafts:fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c' # Boards & Commissions Index

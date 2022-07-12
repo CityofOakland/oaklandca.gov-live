@@ -27,6 +27,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: dfc8cfa9-56e1-4698-bfe5-2c80960297c0 # Is this an official Board or Commission?
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: f62c85ae-2203-4d1a-8702-da515126a398 # Banner
             instructions: null
             label: null
@@ -240,8 +249,8 @@ fieldLayouts:
         sortOrder: 4
 handle: boardsCommissions
 hasTitleField: true
-name: 'Boards & Commissions'
-section: fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f # Boards & Commissions
+name: 'Public Bodies'
+section: fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f # Public Bodies
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null
