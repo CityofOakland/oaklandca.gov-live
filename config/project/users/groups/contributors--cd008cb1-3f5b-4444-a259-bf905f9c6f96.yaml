@@ -5,7 +5,6 @@ permissions:
   - accesssitewhensystemisoff
   - accessplugin-usermanual
   - accesscp
-  - 'editentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
   - 'editentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
   - 'createentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
   - 'publishentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
@@ -13,6 +12,10 @@ permissions:
   - 'createentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
   - 'publishentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
   - 'editentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'createentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'publishentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'deleteentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'editentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
   - 'createentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
   - 'publishentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
   - 'deleteentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
@@ -21,6 +24,7 @@ permissions:
   - 'editentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
   - 'createentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   - 'editentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'editentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
   - 'createentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
   - 'editentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
   - 'editpeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
