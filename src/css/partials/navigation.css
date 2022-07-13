@@ -199,11 +199,20 @@ input[type="text"].form-control::placeholder {
   margin-bottom: .25rem;
 }
 
+.hs_error_rollup,
+.hs-error-msg {
+  color: #f29b9b;
+}
+
 .hbspt-form .submitted-message {
   background: #E3F9E4;
   color: #000000;
   padding: 16px 16px 16px 48px;
   position: relative;
+}
+
+.hbspt-form .submitted-message p {
+  margin: 0;
 }
 
 .hbspt-form .submitted-message::before {
