@@ -6,7 +6,7 @@ instructions: 'This will determine if it listed on the website as a board a comm
 name: 'Is this an official Board or Commission?'
 searchable: false
 settings:
-  default: false
+  default: true
   offLabel: null
   onLabel: null
 translationKeyFormat: null
