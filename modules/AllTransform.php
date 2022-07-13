@@ -38,6 +38,7 @@ class AllTransform extends TransformerAbstract
             'mediaContact'      => $entry->mediaContact,
             'priority'          => isset($entry->priority) ? ($entry->priority ? $entry->priority : 100) : 100,
             'section'           => $entry->section->name,
+            'sectionPriority'   => ScoutModule::sectionPriority($entry->section->name),
             'summary'           => ScoutModule::richTextSplit($entry->summary),
             'title'             => $entry->title,
             'type'              => $entry->type->handle,

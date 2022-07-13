@@ -125,4 +125,13 @@ class ScoutModule extends \yii\base\Module
             return $array;
         }
     }
+
+    // Format rich text field.
+    public static function sectionPriority($name){
+        if($name == 'Documents'){
+            return 1;
+        } else {
+            return 0;
+        }
+    }
 }
