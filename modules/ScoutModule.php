@@ -49,10 +49,10 @@ class ScoutModule extends \yii\base\Module
                         break;
                     default:
                 }
-
-                if(strlen($text) > 1000) {
-                    $body[] = substr($text, 0, 1000) . '...';
-                } else {
+                if($text){
+                    if(strlen($text) > 1000) {
+                        $text = mb_substr($text, 0, 1000) . '...';
+                    }
                     $body[] = $text;
                 }
             }
