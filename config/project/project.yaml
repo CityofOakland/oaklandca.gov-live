@@ -1,4 +1,4 @@
-dateModified: 1657739418
+dateModified: 1657741790
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -148,7 +148,7 @@ meta:
     8f34ad32-e01b-4c4f-8ae1-57e94e5b415f: Location # Location
     8fc249ab-8729-4542-912e-7a4303aa9598: 'Alert Type' # Alert Type
     8ff1f216-9327-4d13-952e-f47f08febbfd: Status # Status
-    8ff41718-54b7-4c93-a893-78619f6d632e: 'Public Bodies' # Public Bodies
+    8ff41718-54b7-4c93-a893-78619f6d632e: 'Boards & Commissions' # Boards & Commissions
     9a9e5725-12f9-4f36-81cc-7762a4912de0: 'Events Index' # Events Index
     9a33b1ce-5545-4a3e-b6d9-1dea16f8869c: 'Audio Title' # Audio Title
     9a298e31-b79c-43c1-ae08-28970fb062b3: Icon # Icon
@@ -671,7 +671,7 @@ meta:
     facc7196-7444-4e77-873f-68c1b09d1298: 'Column 2 Heading' # Column 2 Heading
     fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c: 'Boards & Commissions Index' # Boards & Commissions Index
     fb2b9f42-74a0-45c4-be6e-d3d69c87557e: 'Column 2 Cell' # Column 2 Cell
-    fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f: 'Public Bodies' # Public Bodies
+    fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f: 'Boards & Commissions' # Boards & Commissions
     fb754f0e-6d51-4289-a65a-591249144c1b: 'Legal Title' # Legal Title
     fbdba36a-ff35-4883-a29d-e5194516c7ae: 'Link URL' # Link URL
     fbf8b9b0-8875-4e08-819a-d62603676dc4: Teams # Teams

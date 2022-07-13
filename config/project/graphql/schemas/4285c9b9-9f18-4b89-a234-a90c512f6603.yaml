@@ -4,8 +4,8 @@ scope:
   - 'elements.drafts:read'
   - 'elements.revisions:read'
   - 'elements.inactive:read'
-  - 'sections.fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f:read' # Public Bodies
-  - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:read' # Public Bodies
+  - 'sections.fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f:read' # Boards & Commissions
+  - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:read' # Boards & Commissions
   - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:read' # Boards & Commissions Redirect
   - 'sections.fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c:read' # Boards & Commissions Index
   - 'entrytypes.62b6620d-66f1-4499-abb2-35960313b3dd:read' # Boards & Commissions Index
@@ -111,11 +111,11 @@ scope:
   - 'categorygroups.ce43edd2-2eec-45cc-afa1-e3bd6b6e20ac:read' # People
   - 'categorygroups.8bcf4697-1dd2-47b2-91e2-8ad9b4b86741:read' # Service Categories
   - 'taggroups.56057193-b9d8-4ac0-9f31-d4a755c91447:read' # News
-  - 'sections.fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f:edit' # Public Bodies
-  - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:edit' # Public Bodies
-  - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:create' # Public Bodies
-  - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:save' # Public Bodies
-  - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:delete' # Public Bodies
+  - 'sections.fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f:edit' # Boards & Commissions
+  - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:edit' # Boards & Commissions
+  - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:create' # Boards & Commissions
+  - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:save' # Boards & Commissions
+  - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:delete' # Boards & Commissions
   - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:edit' # Boards & Commissions Redirect
   - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:create' # Boards & Commissions Redirect
   - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:save' # Boards & Commissions Redirect

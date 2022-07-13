@@ -1,7 +1,7 @@
 defaultPlacement: end
 enableVersioning: true
 handle: boardsCommissions
-name: 'Public Bodies'
+name: 'Boards & Commissions'
 previewTargets:
   -
     __assoc__:

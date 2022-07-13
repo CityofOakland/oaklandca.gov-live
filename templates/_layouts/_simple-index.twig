@@ -12,11 +12,11 @@
   } %}
   <section class="relative z-0 bg-white">
     <div class="container p-8 py-16 mx-auto">
-      {% if entrySection == 'boardsCommissions' %}
-        {% set query = craft.entries.section(entrySection).isThisAnOfficialBoardOrCommission(true).relatedTo(relatedEntry).limit(25).orderBy('title') %}
-      {% else %}
+      {# {% if entrySection == 'boardsCommissions' %} #}
+        {# {% set query = craft.entries.section(entrySection).isThisAnOfficialBoardOrCommission(true).relatedTo(relatedEntry).limit(25).orderBy('title') %} #}
+      {# {% else %} #}
         {% set query = craft.entries.section(entrySection).relatedTo(relatedEntry).limit(25).orderBy('title') %}
-      {% endif %}
+      {# {% endif %} #}
 
       {% paginate query as pageInfo, pageEntries %}
       {% include '_partials/_elements/_pagination' %}

@@ -10,12 +10,12 @@ permissions:
   - 'assignusergroup:cd008cb1-3f5b-4444-a259-bf905f9c6f96' # Contributors
   - assignusergroups
   - editusers
-  - 'publishentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
-  - 'publishpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
-  - 'editpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
-  - 'publishpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
-  - 'editpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
-  - 'editentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
+  - 'publishentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'publishpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'editpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'publishpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'editpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'editentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
   - 'publishentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
   - 'publishpeerentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
   - 'editpeerentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments

@@ -284,7 +284,7 @@ fields:
                   - ''
                 -
                   - customPlaceholder
-                  - '["section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f","section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb","section:9da43fd8-c505-4d19-9486-e0cb669c568a","section:8b7c4e26-9aab-4c5d-874e-aee151107de3","section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a","section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf","section:be8acece-2031-4965-a62f-31911d00e24c","section:98d541ae-56ee-4c98-ba9c-37438dc485a0","section:24fa116b-8516-4626-84f3-86b685e71071","section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c","section:70778563-6dac-453d-a4b0-5121f3a614b7"]' # Documents # Document Packets # Resources # Projects # News # Officials # Topics # Services # Departments # Page Alerts # Public Bodies
+                  - '["section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f","section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb","section:9da43fd8-c505-4d19-9486-e0cb669c568a","section:8b7c4e26-9aab-4c5d-874e-aee151107de3","section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a","section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf","section:be8acece-2031-4965-a62f-31911d00e24c","section:98d541ae-56ee-4c98-ba9c-37438dc485a0","section:24fa116b-8516-4626-84f3-86b685e71071","section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c","section:70778563-6dac-453d-a4b0-5121f3a614b7"]' # Documents # Document Packets # Resources # Projects # News # Officials # Topics # Services # Departments # Page Alerts # Boards & Commissions
           -
             - fruitstudios\linkit\models\Entry
             -
@@ -298,7 +298,7 @@ fields:
                 -
                   - sources
                   -
-                    - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Public Bodies
+                    - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
                     - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
                     - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
                     - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
