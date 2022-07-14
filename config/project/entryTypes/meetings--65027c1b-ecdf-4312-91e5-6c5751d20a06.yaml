@@ -230,7 +230,7 @@ fieldLayouts:
         name: Relationships
         sortOrder: 2
 handle: meetings
-hasTitleField: false
+hasTitleField: true
 name: Meetings
 section: 86dfc275-b48e-44d4-8c8c-acda592d92b0 # Meetings
 sortOrder: 1
