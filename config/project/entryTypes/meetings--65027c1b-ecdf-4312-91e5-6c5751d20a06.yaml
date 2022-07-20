@@ -27,10 +27,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            style: tip
-            tip: 'Meeting title will be automated. To preview the title, preview the meeting.'
-            type: craft\fieldlayoutelements\Tip
-          -
             fieldUid: f7e4a055-457f-46eb-ab3d-3e816f80a81d # Related Public Body
             instructions: 'Select the Board or Commission this meeting is related to.'
             label: ''

@@ -22,9 +22,33 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: 068eee1c-6ef7-4edb-982d-0f5198cd8979 # Open in a New Tab?
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
+  068eee1c-6ef7-4edb-982d-0f5198cd8979: # Open in a New Tab?
+    columnSuffix: hcsalesz
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: newTab
+    instructions: ''
+    name: 'Open in a New Tab?'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
   93b22059-684d-4ee6-acee-03132189083f: # Button Link
     columnSuffix: null
     contentColumnType: text

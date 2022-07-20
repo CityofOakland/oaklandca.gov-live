@@ -1,5 +1,16 @@
-<a class="button {{ style is defined ? style : (block.style is defined ? block.style : '') }}" href="{{ block.buttonLink.url }}" {{ block.buttonLink.url ? '' : 'disabled' }}>
-  {{ block.buttonLink.text }}
-  {% if block.buttonIcon == 'arrowRight' %}<span class="arrow-right" role="img" aria-label="arrow right">&rarr;</span>{% endif %}
-  {% if block.buttonIcon == 'download' %}{{ svg( '@webroot/dist/img/icon-download-updated.svg') }}{% endif %}
-</a>
+{% if block.buttonLink %}
+  <a 
+    class="button {{ style is defined ? style : (block.style is defined ? block.style : '') }}" 
+    href="{{ block.buttonLink.url }}" 
+    aria-label="{{ block.buttonLink.text }}{{ block.newTab ? ' (Open in New Tab)' : '' }}"
+    {{ block.buttonLink.url ? '' : 'disabled' }}
+  >
+    {{ block.buttonLink.text }}
+    {% if block.newTab %}
+      {{ svg( '@webroot/dist/img/icon-external.svg') }}
+    {% else %}
+      {% if block.buttonIcon == 'arrowRight' %}<span class="arrow-right" role="img" aria-label="arrow right">&rarr;</span>{% endif %}
+      {% if block.buttonIcon == 'download' %}{{ svg( '@webroot/dist/img/icon-download-updated.svg') }}{% endif %}
+    {% endif %}
+  </a>
+{% endif %}

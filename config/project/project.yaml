@@ -1,4 +1,4 @@
-dateModified: 1657822692
+dateModified: 1658338638
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -75,12 +75,14 @@ meta:
     4cac2797-e23e-4714-b9fa-3afcd009044a: 'Related Departments' # Related Departments
     4d6dd644-455e-4186-8d05-a00079622246: 'Last Name' # Last Name
     4d57a64d-2312-4c14-b4af-6c8b4f823e55: 'Button Link' # Button Link
+    4ece3169-fc75-4c9e-a16d-e64de6ebfaea: 'Icon Picker' # Icon Picker
     4ed914c6-b7ea-44be-a061-4430ad33baf2: News # News
     4f49ca5b-c028-40c6-b67e-de07b11bf16a: Linkit # Linkit
     4f58a8e7-8cf8-472a-b479-73a156087dfc: Fax # Fax
     4f98a66d-2f55-4ee3-b4d1-ea1d668b273b: 'Location Address' # Location Address
     5a5cab1b-f214-4ee8-b6a9-b68c7df6b7d7: 'Open in New Tab?' # Open in New Tab?
     5a43f979-1654-4514-a9a8-d925fc846063: 'Stats Block with Icons' # Stats Block with Icons
+    5acb7701-40d9-4344-9b0a-946869c789ab: 'Button Icon Picker' # Button Icon Picker
     5ae976d4-1fd7-4dd5-bfd7-f25cb1ce7a0f: 'Call Out' # Call Out
     5b066077-3ce6-4583-af94-4fa87136ab3a: 'Milestone Link' # Milestone Link
     5b935c33-5d69-45c2-acd9-a6a2f0a567ce: Calendarize # Calendarize
@@ -226,6 +228,7 @@ meta:
     66aecd33-c8da-48d8-a6d9-163ed9010751: Address # Address
     66c28d05-1cce-4903-af5e-5667d0a1cb53: 'Milestone Date(s)' # Milestone Date(s)
     67bbdab6-8a94-441d-9c36-6d093274da43: Editors # Editors
+    068eee1c-6ef7-4edb-982d-0f5198cd8979: 'Open in a New Tab?' # Open in a New Tab?
     69bcd320-8ec1-4156-892e-81357352806f: 'Location Address' # Location Address
     069f8ed4-d4ee-4ed8-bf37-efafb4e633e8: 'Term Start' # Term Start
     71fb693f-011b-4669-ba10-f1b379557bb9: 'Staff Fields' # Staff Fields
