@@ -2,7 +2,7 @@
   <a 
     class="button {{ style is defined ? style : (block.style is defined ? block.style : '') }}" 
     href="{{ block.buttonLink.url }}" 
-    aria-label="{{ block.buttonLink.text }}{{ block.newTab ? ' (Open in New Tab)' : '' }}"
+    aria-label="{{ block.buttonLink.text }}{{ block.newTab ? ' (open in new tab)' : '' }}"
     {{ block.buttonLink.url ? '' : 'disabled' }}
   >
     {{ block.buttonLink.text }}
