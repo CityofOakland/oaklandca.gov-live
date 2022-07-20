@@ -1,4 +1,4 @@
-dateModified: 1658338638
+dateModified: 1658349069
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -773,7 +773,7 @@ plugins:
   buttonbox:
     edition: standard
     enabled: true
-    schemaVersion: 1.0.0
+    schemaVersion: 2.0.0
   calendar:
     edition: pro
     enabled: '1'
@@ -850,7 +850,7 @@ plugins:
     edition: lite
     enabled: true
     licenseKey: 80IWDHDW3ZJB27DOLCE6AQE5
-    schemaVersion: 3.6.3
+    schemaVersion: 3.6.4
     settings:
       ajaxByDefault: true
       alertNotificationRecipients: null
@@ -969,7 +969,7 @@ plugins:
   linkit:
     enabled: '1'
     licenseKey: 46HXL3KFU6B2Z3R5LOC856G4
-    schemaVersion: 1.0.8
+    schemaVersion: 1.2.0
     settings: null
   lockout:
     edition: standard
@@ -1071,7 +1071,7 @@ plugins:
   tablemaker:
     enabled: true
     licenseKey: null
-    schemaVersion: 1.0.0
+    schemaVersion: 2.0.0
     settings: null
   template-select:
     edition: standard
