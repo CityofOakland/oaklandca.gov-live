@@ -7,9 +7,9 @@ function updateExternalLinks($){
       var $this = $(element);
       $this.attr('aria-label', $this.text() + ' (open in new tab)');
 
-      if($this.find('img').length == 0 && $this.find('svg').length == 0){
-        $this.addClass('external-link');
-      }
+      // if($this.find('img').length == 0 && $this.find('svg').length == 0){
+      //   $this.addClass('external-link');
+      // }
     });
   }
 }
