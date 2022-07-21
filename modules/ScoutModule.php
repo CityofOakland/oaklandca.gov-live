@@ -128,7 +128,7 @@ class ScoutModule extends \yii\base\Module
 
     // Format rich text field.
     public static function sectionPriority($name){
-        if($name == 'Documents'){
+        if($name == 'documents'){
             return 2;
         } elseif( in_array($name, ['boardsCommissions', 'departments', 'topics'])) {
             return 0;
