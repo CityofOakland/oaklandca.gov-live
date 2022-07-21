@@ -1,7 +1,7 @@
 import jQuery from 'jquery'
 
 function updateExternalLinks($){
-  var $links = $('.components a[target="_blank"]');
+  var $links = $('a[target="_blank"]');
   if($links.length > 0) {
     $links.each(function(index, element){
       var $this = $(element);

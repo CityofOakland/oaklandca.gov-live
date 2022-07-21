@@ -10,7 +10,8 @@ a {
   @apply relative invisible block md:-top-40;
 }
 
-.external-link::after {
+.body-text .external-link::after,
+.components .external-link::after {
   background-image: url('../img/icon-external-green.svg');
   content: "";
   display: inline-block;
