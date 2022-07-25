@@ -8,8 +8,7 @@ searchable: false
 settings:
   columnType: text
   iconSets: null
-  remoteSets:
-    - font-awesome-all
+  remoteSets: ''
   showLabels: ''
 translationKeyFormat: null
 translationMethod: none

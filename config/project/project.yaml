@@ -1,4 +1,4 @@
-dateModified: 1658349069
+dateModified: 1658773896
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -947,6 +947,12 @@ plugins:
     enabled: true
     licenseKey: S528HF1X7FAZ4V7BQ1GARNLD
     schemaVersion: 1.0.1
+    settings:
+      enableCache: true
+      iconSetsPath: '@webroot/dist/icons/'
+      iconSetsUrl: '@web/dist/icons/'
+      maxIconsShown: '100'
+      redactorFieldHandle: ''
   imager-x:
     edition: pro
     enabled: true

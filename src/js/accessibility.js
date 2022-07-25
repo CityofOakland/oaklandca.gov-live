@@ -9,7 +9,8 @@ function updateExternalLinks($){
 
       if(!$this.hasClass('.btn')){
         if($this.find('img').length == 0 && $this.find('svg').length == 0){
-          $this.addClass('external-link');
+          // $this.addClass('external-link');
+          $this.append('<i class="fa-regular fa-arrow-up-right-from-square ml-1"></i>');
         }
       }
     });
