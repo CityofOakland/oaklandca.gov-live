@@ -3,6 +3,7 @@
     class="button {{ style is defined ? style : (block.style is defined ? block.style : '') }}" 
     href="{{ block.buttonLink.url }}" 
     aria-label="{{ block.buttonLink.text }}{{ block.newTab ? ' (open in new tab)' : '' }}"
+    {% if block.newTab %}target="_blank"{% endif %}
     {{ block.buttonLink.url ? '' : 'disabled' }}
   >
     {{ block.buttonLink.text }}
