@@ -32,19 +32,6 @@ function bindGoogleEvents($){
       });
   });
 
-  $('.components table').each(function(index, element){
-      var $table   = $(element);
-      var $heads  = $table.find('th');
-
-      $heads.each(function(index, element){
-        var $heading      = $(element);
-
-        $table.find('td:nth-of-type(' + (index + 1) + ')').attr('data-label', $heading.text());
-      });
-  });
-
-  $('.components').addClass('js-initialized');
-
   $('#hits').on('click', 'a', function(){
       var search_term   = $('#search-input').val() ? $('#search-input').val() : 'No search term';
       var link_clicked  = $(this).attr('href').trim();

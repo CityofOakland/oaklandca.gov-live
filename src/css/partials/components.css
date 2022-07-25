@@ -300,6 +300,11 @@
   }
 }
 
+:where(.components) table p {
+  font-size: inherit;
+  line-height: inherit;
+}
+
 :where(.components) tbody {
   border-top: .0625rem solid black;
 }

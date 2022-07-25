@@ -16,7 +16,23 @@ function updateExternalLinks($){
   }
 }
 
+function mobileTables($){
+  $('.components table').each(function(index, element){
+      var $table   = $(element);
+      var $heads  = $table.find('th');
+
+      $heads.each(function(index, element){
+        var $heading      = $(element);
+
+        $table.find('td:nth-of-type(' + (index + 1) + ')').attr('data-label', $heading.text());
+      });
+  });
+
+  $('.components').addClass('js-initialized');
+}
+
 updateExternalLinks(jQuery);
+mobileTables(jQuery);
 
 // Accept HMR as per: https://vitejs.dev/guide/api-hmr.html
 if (import.meta.hot) {
