@@ -300,7 +300,9 @@
   }
 }
 
-:where(.components) table p {
+:where(.components) table p,
+:where(.components) table li,
+:where(.components) table ul {
   font-size: inherit;
   line-height: inherit;
 }
