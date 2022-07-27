@@ -303,7 +303,7 @@
 :where(.components) table p,
 :where(.components) table li,
 :where(.components) table ul {
-  font-size: inherit;
+  font-size: 14px;
   line-height: inherit;
 }
 
