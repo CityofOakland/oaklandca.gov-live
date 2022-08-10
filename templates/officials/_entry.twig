@@ -7,15 +7,6 @@
   'teams']
 ) %}
 
-{% set relatedContent = [
-  ['events', 'calendar'],
-  ['news', 'entries'],
-  ['services', 'entries'],
-  ['topics', 'entries'],
-  ['projects', 'entries'],
-  ['documents', 'entries']
-] %}
-
 {% if entry.type == "officialsRedirect" %}{% redirect entry.redirectUrl %}{% endif %}
 
 {% set relatedEvents = craft.calendar.events.relatedTo(entry) %}
