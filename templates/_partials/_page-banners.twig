@@ -23,7 +23,6 @@
   <div class="flex flex-col flex-1 lg:flex-row">
     <div class="w-full lg:w-2/3">
       <h1 class="mb-0 text-3xl font-bold md:text-4xl">{{ bannerTitle }}</h1>
-      {% include "_partials/_elements/_page-alerts.twig" %}
       {% if leadIn %}
         {% if leadInParagraph ?? "" %}
           {{ leadIn | replace({'<p' : '<p class="my-2 text-xl leading-normal last:mb-0"', '<a': '<a class="font-bold text-green-800 hover:text-green-700"'}) | raw }}
@@ -33,14 +32,18 @@
       {% endif %}
       <div class="flex space-x-4">
         {% if ctaButton | length %}
-          {% set attributes = {
-            class: 'btn py-2 mt-4 text-sm',
-            "data-custom": 'custom-data-attribute'
+          {% include '_components/_button' with {
+            class: 'mt-4',
+            url: ctaButton.url,
+            text: ctaButton.text,
           } %}
-          {{ ctaButton.link(attributes) }}
         {% endif %}
         {% if entry is defined and entry.id == 34229 %}
-          <a class="py-2 mt-4 text-sm btn" href="https://www.oaklandca.gov/documents/special-vacancy-notices">View Local Appointments List and Special Vacancy Notices</a>
+          {% include '_components/_button' with {
+            class: 'mt-4',
+            url: 'https://www.oaklandca.gov/documents/special-vacancy-notices',
+            text: 'View Local Appointments List and Special Vacancy Notices',
+          } %}
         {% endif %}
       </div>
     </div>

@@ -22,33 +22,9 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
-          -
-            fieldUid: 068eee1c-6ef7-4edb-982d-0f5198cd8979 # Open in a New Tab?
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
         name: Content
         sortOrder: 1
 fields:
-  068eee1c-6ef7-4edb-982d-0f5198cd8979: # Open in a New Tab?
-    columnSuffix: hcsalesz
-    contentColumnType: boolean
-    fieldGroup: null
-    handle: newTab
-    instructions: ''
-    name: 'Open in a New Tab?'
-    searchable: false
-    settings:
-      default: false
-      offLabel: null
-      onLabel: null
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Lightswitch
   93b22059-684d-4ee6-acee-03132189083f: # Button Link
     columnSuffix: null
     contentColumnType: text
@@ -59,13 +35,13 @@ fields:
     searchable: false
     settings:
       allowCustomText: '1'
-      allowTarget: ''
+      allowTarget: '1'
       defaultText: ''
       selectLinkText: ''
       types:
         __assoc__:
           -
-            - fruitstudios\linkit\models\Email
+            - presseddigital\linkit\models\Email
             -
               __assoc__:
                 -
@@ -78,7 +54,7 @@ fields:
                   - customPlaceholder
                   - ''
           -
-            - fruitstudios\linkit\models\Phone
+            - presseddigital\linkit\models\Phone
             -
               __assoc__:
                 -
@@ -91,7 +67,7 @@ fields:
                   - customPlaceholder
                   - ''
           -
-            - fruitstudios\linkit\models\Url
+            - presseddigital\linkit\models\Url
             -
               __assoc__:
                 -
@@ -116,7 +92,7 @@ fields:
                   - allowPaths
                   - '1'
           -
-            - fruitstudios\linkit\models\Twitter
+            - presseddigital\linkit\models\Twitter
             -
               __assoc__:
                 -
@@ -129,7 +105,7 @@ fields:
                   - customPlaceholder
                   - ''
           -
-            - fruitstudios\linkit\models\Facebook
+            - presseddigital\linkit\models\Facebook
             -
               __assoc__:
                 -
@@ -142,7 +118,7 @@ fields:
                   - customPlaceholder
                   - ''
           -
-            - fruitstudios\linkit\models\Instagram
+            - presseddigital\linkit\models\Instagram
             -
               __assoc__:
                 -
@@ -155,7 +131,7 @@ fields:
                   - customPlaceholder
                   - ''
           -
-            - fruitstudios\linkit\models\LinkedIn
+            - presseddigital\linkit\models\LinkedIn
             -
               __assoc__:
                 -
@@ -168,7 +144,7 @@ fields:
                   - customPlaceholder
                   - ''
           -
-            - fruitstudios\linkit\models\Entry
+            - presseddigital\linkit\models\Entry
             -
               __assoc__:
                 -
@@ -184,7 +160,7 @@ fields:
                   - customSelectionLabel
                   - ''
           -
-            - fruitstudios\linkit\models\Category
+            - presseddigital\linkit\models\Category
             -
               __assoc__:
                 -
@@ -200,7 +176,7 @@ fields:
                   - customSelectionLabel
                   - ''
           -
-            - fruitstudios\linkit\models\Asset
+            - presseddigital\linkit\models\Asset
             -
               __assoc__:
                 -
@@ -216,7 +192,7 @@ fields:
                   - customSelectionLabel
                   - ''
           -
-            - fruitstudios\linkit\models\User
+            - presseddigital\linkit\models\User
             -
               __assoc__:
                 -
@@ -236,7 +212,7 @@ fields:
                   - ''
     translationKeyFormat: null
     translationMethod: none
-    type: fruitstudios\linkit\fields\LinkitField
+    type: presseddigital\linkit\fields\LinkitField
   2009b6bf-bc82-4776-ad68-1fe0fa5dc6d8: # Button Icon
     columnSuffix: null
     contentColumnType: string

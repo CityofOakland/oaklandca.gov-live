@@ -83,7 +83,11 @@
             {{ entry.mediaContact }}
           {% endif %}
           {% if pressRelease.exists() %}
-            <a href="{{ pressRelease.one.url }}" class="w-full btn">Download Press Release</a>
+            {% include '_components/_button' with {
+              class: 'medium mt-0 mr-0',
+              text: 'Download Press Release',
+              url: pressRelease.one.url,
+            } %}
           {% endif %}
         </div>
       </div>

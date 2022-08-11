@@ -1,6 +1,9 @@
 {% set link = link ?? "" %}
 {% if link %}
-  <p class="md:mb-0">
-    <a href="{{ link.url }}" target="{{ link.target }}" class="btn btn-md">{{ link.text }}</a>
-  </p>
+  {% include '_components/_button' with {
+    class: 'mt-0 mr-0',
+    url: link.url,
+    target: link.target,
+    text: link.text,
+  } %}
 {% endif %}

@@ -109,9 +109,7 @@
         </section>
       {% endif %}
       {% if photosTrue %}
-        {% js at endBody %}
-          lightGallery(document.querySelector('#js-photoGallery'));
-        {% endjs %}
+        {% js at endBody %}lightGallery(document.querySelector('#js-photoGallery'));{% endjs %}
         <section class="pb-16 mb-16 border-b border-gray-500">
           <a class="anchor-link" id="page-gallery"></a>
           {% include "_partials/_elements/_module-header.twig" with {
@@ -188,7 +186,7 @@
         </section>
       {% endif %}
       {% if mapTrue %}
-        {% js %}lightGallery(document.querySelector('#js-map'));{% endjs %}
+        {% js at endBody %}lightGallery(document.querySelector('#js-map'));{% endjs %}
         <section class="pb-16 mb-16 border-b border-gray-500">
           <a class="anchor-link" id="page-map"></a>
           {% include "_partials/_elements/_module-header.twig" with {
@@ -331,7 +329,10 @@
             <h3 class="mb-2 text-xl">Teams</h3>
             <p class="mt-0">
               {% for team in relatedTeams %}
-                <a href="{{ team.url }}" class="inline-block mr-2 btn btn-sm">{{ team.title }}</a>
+                {% include '_components/_button' with {
+                  url: team.url,
+                  text: team.title,
+                } %}
               {% endfor %}
             </p>
           {% endif %}

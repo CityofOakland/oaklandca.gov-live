@@ -1,17 +1,27 @@
-{% if block.buttonLink %}
+{% set linkit = linkit is defined ? linkit  : (block is defined and block.buttonLink is defined ? block.buttonLink : null ) %}
+
+{% set label  = label is defined  ? label   : '' %}
+{% set icon   = icon is defined   ? icon    : (block is defined and block.buttonIcon is defined ? block.buttonIcon : '') %}
+{% set style  = style is defined  ? style   : (block is defined and block.style is defined      ? block.style      : '') %}
+{% set text   = text is defined   ? text    : (linkit is not null ? linkit.text   : '') %}
+{% set target = target is defined ? target  : (linkit is not null ? linkit.target : false) %}
+{% set url    = url is defined    ? url     : (linkit is not null ? linkit.url    : '') %}
+
+{% set class  = class is defined ? class : '' %}
+
+{% if text %}
   <a 
-    class="button {{ style is defined ? style : (block.style is defined ? block.style : '') }}" 
-    href="{{ block.buttonLink.url }}" 
-    aria-label="{{ block.buttonLink.text }}{{ block.newTab ? ' (open in new tab)' : '' }}"
-    {% if block.newTab %}target="_blank"{% endif %}
-    {{ block.buttonLink.url ? '' : 'disabled' }}
-  >
-    {{ block.buttonLink.text }}
-    {% if block.newTab %}
+    class="button {{ class }} {{ style }}" 
+    href="{{ url }}" 
+    aria-label="{% if label %}{{ label }}{% else %}{{ text }}{{ target ? ' (open in new tab)' : '' }}{% endif %}"
+    {% if target %}target="_blank"{% endif %}
+    {{ url ? '' : 'disabled' }}>
+    {{ text }}
+    {% if target %}
       {{ svg( '@webroot/dist/img/icon-external.svg') }}
     {% else %}
-      {% if block.buttonIcon == 'arrowRight' %}<span class="arrow-right" role="img" aria-label="arrow right">&rarr;</span>{% endif %}
-      {% if block.buttonIcon == 'download' %}{{ svg( '@webroot/dist/img/icon-download-updated.svg') }}{% endif %}
+      {% if icon == 'arrowRight' %}<span class="arrow-right" role="img" aria-label="arrow right">&rarr;</span>{% endif %}
+      {% if icon == 'download' %}{{ svg( '@webroot/dist/img/icon-download-updated.svg') }}{% endif %}
     {% endif %}
   </a>
 {% endif %}

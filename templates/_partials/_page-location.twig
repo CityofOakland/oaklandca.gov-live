@@ -18,9 +18,11 @@
                 <div class="mt-4 mb-8">
                   {% if block.locationName %}<h4 class="{% if not loop.first %} mt-8 {% endif %} text-2xl mb-0">{{ block.locationName }}</h4>{% endif %}
                   {{ block.locationDescription }}
-                  <p class="mb-0">
-                    <a href="{{ block.webAddress }}" class="btn btn-sm">Visit {{ block.locationName }}</a>
-                  </p>
+                  {% include '_components/_button' with {
+                    class: 'mt-4 mr-0 mb-0',
+                    url: block.webAddress,
+                    text: block.locationName,
+                  } %}
                 </div>
               {% default %}
             {% endswitch %}

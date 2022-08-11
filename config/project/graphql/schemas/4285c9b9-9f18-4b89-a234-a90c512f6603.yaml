@@ -44,8 +44,8 @@ scope:
   - 'entrytypes.7783fdbb-2862-4451-b263-af32798f5e13:read' # Officials Redirect
   - 'sections.a209b7c0-0c31-4671-a56c-f77990a377f3:read' # Officials Index
   - 'entrytypes.7b84b01f-d365-4d29-8d43-64c42a1adc83:read' # Officials Index
-  - 'sections.be8acece-2031-4965-a62f-31911d00e24c:read' # Page Alerts
-  - 'entrytypes.f35490ea-a075-4077-ac18-6be871f68c65:read' # Page Alerts
+  - 'sections.be8acece-2031-4965-a62f-31911d00e24c:read'
+  - 'entrytypes.f35490ea-a075-4077-ac18-6be871f68c65:read'
   - 'sections.98d541ae-56ee-4c98-ba9c-37438dc485a0:read' # Projects
   - 'entrytypes.4448ff2b-e958-4a61-8e36-0dab9831c66f:read' # Projects
   - 'entrytypes.35ad8ea4-2989-47d3-820b-d5cf1d398bc9:read' # Projects Beta
@@ -190,11 +190,11 @@ scope:
   - 'entrytypes.7783fdbb-2862-4451-b263-af32798f5e13:delete' # Officials Redirect
   - 'sections.a209b7c0-0c31-4671-a56c-f77990a377f3:edit' # Officials Index
   - 'entrytypes.7b84b01f-d365-4d29-8d43-64c42a1adc83:save' # Officials Index
-  - 'sections.be8acece-2031-4965-a62f-31911d00e24c:edit' # Page Alerts
-  - 'entrytypes.f35490ea-a075-4077-ac18-6be871f68c65:edit' # Page Alerts
-  - 'entrytypes.f35490ea-a075-4077-ac18-6be871f68c65:create' # Page Alerts
-  - 'entrytypes.f35490ea-a075-4077-ac18-6be871f68c65:save' # Page Alerts
-  - 'entrytypes.f35490ea-a075-4077-ac18-6be871f68c65:delete' # Page Alerts
+  - 'sections.be8acece-2031-4965-a62f-31911d00e24c:edit'
+  - 'entrytypes.f35490ea-a075-4077-ac18-6be871f68c65:edit'
+  - 'entrytypes.f35490ea-a075-4077-ac18-6be871f68c65:create'
+  - 'entrytypes.f35490ea-a075-4077-ac18-6be871f68c65:save'
+  - 'entrytypes.f35490ea-a075-4077-ac18-6be871f68c65:delete'
   - 'sections.98d541ae-56ee-4c98-ba9c-37438dc485a0:edit' # Projects
   - 'entrytypes.4448ff2b-e958-4a61-8e36-0dab9831c66f:edit' # Projects
   - 'entrytypes.4448ff2b-e958-4a61-8e36-0dab9831c66f:create' # Projects
