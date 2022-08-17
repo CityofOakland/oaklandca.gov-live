@@ -7,6 +7,7 @@ $textGroup = modules\MatrixMateModule::createConfigBlock('Text', [
     'subheading'        => ['adminOnly'=>false],
     'text'              => ['adminOnly'=>false],
     'textImageBlock'    => ['adminOnly'=>false],
+    'callout'            => ['adminOnly'=>false],
     'button'            => ['adminOnly'=>false],
     'noticeBlock'       => ['adminOnly'=>false],
 ]);

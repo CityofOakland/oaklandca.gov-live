@@ -119,4 +119,4 @@ fields:
     type: craft\fields\PlainText
 handle: largeEntryLinks
 name: 'Large Entry Links'
-sortOrder: 15
+sortOrder: 16

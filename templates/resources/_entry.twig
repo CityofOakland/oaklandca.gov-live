@@ -57,6 +57,20 @@
           </figure>
         {% endif %}
         {% include '_partials/_elements/_last-update.twig' %}
+
+        {% if entry.accordion|length %}
+          <div class="mb-12">
+            {% if entry.accordionHeader %}<h2 class="text-2xl mt-6 mb-0">{{ entry.accordionHeader }}</h2>{% endif %}
+            {% include '_components/_accordion.twig' with {accordion: entry.accordion.all()} %}
+          </div>
+        {% endif %}
+        {% if entry.process|length %}
+          <div class="mb-8">
+            {% if entry.processHeader %}<h2 class="text-2xl my-6">{{ entry.processHeader }}</h2>{% endif %}
+            {% include '_components/_process.twig' %}
+          </div>
+        {% endif %}
+
         {% include '_partials/_content-builder/_tool.twig' %}
       </div>
     </div>

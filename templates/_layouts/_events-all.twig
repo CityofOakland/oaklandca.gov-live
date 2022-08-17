@@ -93,13 +93,17 @@
   actualTotal: (actual_total is defined ? actual_total : total),
   totalPages: totalPages,
   currentPage: currentPage,
-  prevUrl: entry.url ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~(currentPage > 1 ? currentPage - 1 : null),
-  nextUrl: entry.url ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~ (currentPage < totalPages ? currentPage + 1 : null),
-  firstUrl: entry.url ~ '?type=' ~ type ~ '&' ~ query_string ~ '&page=1',
-  lastUrl: entry.url ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~ totalPages,
+  prevUrl: entry.url ~ '/p' ~ (currentPage > 1 ? currentPage - 1 : null) ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~(currentPage > 1 ? currentPage - 1 : null),
+  nextUrl: entry.url ~ '/p' ~ (currentPage < totalPages ? currentPage + 1 : null) ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~ (currentPage < totalPages ? currentPage + 1 : null),
+  firstUrl: entry.url ~ '/p' ~ 1 ~ '?type=' ~ type ~ '&' ~ query_string ~ '&page=1',
+  lastUrl: entry.url ~ '/p' ~ totalPages ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~ totalPages,
 } %}
 
-{% set layout = 'reverse' %}
+{% if pageInfo.currentPage > 1 %}
+  {% do seomatic.meta.seoTitle(entry.title ~ ' | Page ' ~ pageInfo.currentPage ~ ' of ' ~ pageInfo.totalPages) %}
+{% endif %}
+
+{% set layout = 'filter' %}
 {% extends '_content.twig' %}
 {% import '_macros/_macros' as macros %}
 
@@ -113,16 +117,16 @@
 
   {% if filter_enabled %}
     {% if events|length %}
-      <h3>Displaying {{ events|length }} of {{ pageInfo.actualTotal }} Events</h3>
+      <h2>Displaying {{ events|length }} of {{ pageInfo.actualTotal }} Events</h2>
     {% else %}
-      <h3>No results found</h3>
+      <h2>No results found</h2>
     {% endif %}
   {% else %}
     {% switch type %}
       {% case 'upcoming' %}
-      <h3>Displaying all Upcoming Events</h3>
+      <h2>Displaying all Upcoming Events</h2>
       {% case 'past' %}
-      <h3>Displaying all Past Events</h3>
+      <h2>Displaying all Past Events</h2>
     {% endswitch %}
   {% endif %}
 
@@ -149,7 +153,7 @@
         <ul class="pagination">
           {% if pageInfo.totalPages > 7 %}
             <li>
-              <a aria-label="Previous Page" class="prev {{ pageInfo.currentPage == 1 ? 'disabled' : '' }}" href="{{ pageInfo.prevUrl }}">Previous</a>
+              <a aria-label="Previous Page" class="prev {{ pageInfo.currentPage == 1 ? 'disabled' : '' }}" {% if pageInfo.currentPage != 1 %}href="{{ pageInfo.prevUrl }}"{% endif %}>Previous</a>
             </li>
             {% if pageInfo.currentPage > 3 %}
               <li>
@@ -160,12 +164,12 @@
 
             {% if pageInfo.currentPage > 2 %}
               <li>
-                <a aria-label="Page {{ pageInfo.currentPage - 2 }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage - 2 }}">{{ pageInfo.currentPage - 2 }}</a>
+                <a aria-label="Page {{ pageInfo.currentPage - 2 }}" class="page" href="{{ entry.url }}/p{{ pageInfo.currentPage - 2 }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage - 2 }}">{{ pageInfo.currentPage - 2 }}</a>
               </li>
             {% endif %}
             {% if pageInfo.currentPage > 1 %}
               <li>
-                <a aria-label="Page {{ pageInfo.currentPage - 1 }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage - 1 }}">{{ pageInfo.currentPage - 1 }}</a>
+                <a aria-label="Page {{ pageInfo.currentPage - 1 }}" class="page" href="{{ entry.url }}/p{{ pageInfo.currentPage - 1 }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage - 1 }}">{{ pageInfo.currentPage - 1 }}</a>
               </li>
             {% endif %}
 
@@ -175,13 +179,13 @@
 
             {% if pageInfo.totalPages - pageInfo.currentPage > 0 %}
               <li>
-                <a aria-label="Page {{ pageInfo.currentPage + 1 }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage + 1 }}">{{ pageInfo.currentPage + 1 }}</a>
+                <a aria-label="Page {{ pageInfo.currentPage + 1 }}" class="page" href="{{ entry.url }}/p{{ pageInfo.currentPage + 1 }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage + 1 }}">{{ pageInfo.currentPage + 1 }}</a>
               </li>
             {% endif %}
 
             {% if pageInfo.totalPages - pageInfo.currentPage > 1 %}
               <li>
-                <a aria-label="Page {{ pageInfo.currentPage + 2 }}" class="page" href="{{ entry.url }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage + 2 }}">{{ pageInfo.currentPage + 2 }}</a>
+                <a aria-label="Page {{ pageInfo.currentPage + 2 }}" class="page" href="{{ entry.url }}/p{{ pageInfo.currentPage + 2 }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage + 2 }}">{{ pageInfo.currentPage + 2 }}</a>
               </li>
             {% endif %}
 
@@ -193,12 +197,12 @@
             {% endif %}
 
             <li>
-              <a aria-label="Next Page" class="next {{ pageInfo.currentPage == pageInfo.totalPages ? 'disabled' : '' }}" href="{{ pageInfo.nextUrl }}">Next</a>
+              <a aria-label="Next Page" class="next {{ pageInfo.currentPage == pageInfo.totalPages ? 'disabled' : '' }}" {% if pageInfo.currentPage != pageInfo.totalPages %}href="{{ pageInfo.nextUrl }}"{% endif %}>Next</a>
             </li>
 
           {% else %}
             <li>
-              <a aria-label="Previous Page" class="prev {{ pageInfo.currentPage == 1 ? 'disabled' : '' }}" href="{{ pageInfo.prevUrl }}">Previous</a>
+              <a aria-label="Previous Page" class="prev {{ pageInfo.currentPage == 1 ? 'disabled' : '' }}" {% if pageInfo.currentPage != 1 %}href="{{ pageInfo.prevUrl }}"{% endif %}>Previous</a>
             </li>
 
             {% for page in range(1, pageInfo.totalPages) %}
@@ -214,7 +218,7 @@
             {% endfor %}
 
             <li>
-              <a aria-label="Next Page" class="next {{ pageInfo.currentPage == pageInfo.totalPages ? 'disabled' : '' }}" href="{{ pageInfo.nextUrl }}">Next</a>
+              <a aria-label="Next Page" class="next {{ pageInfo.currentPage == pageInfo.totalPages ? 'disabled' : '' }}" {% if pageInfo.currentPage != pageInfo.totalPages %}href="{{ pageInfo.nextUrl }}"{% endif %}>Next</a>
             </li>
           {% endif %}
         </ul>

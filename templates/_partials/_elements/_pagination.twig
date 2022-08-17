@@ -3,7 +3,7 @@
 		<ul class="pagination">
 			{% if pageInfo.totalPages > 7 %}
 				<li>
-					<a aria-label="Previous Page" class="prev {{ pageInfo.currentPage == 1 ? 'disabled' : '' }}" href="{{ pageInfo.prevUrl }}">Previous</a>
+					<a aria-label="Previous Page" class="prev {{ pageInfo.currentPage == 1 ? 'disabled' : '' }}" {% if pageInfo.currentPage != 1 %}href="{{ pageInfo.prevUrl }}"{% endif %}>Previous</a>
 				</li>
 				{% if pageInfo.currentPage > 3 %}
 					<li>
@@ -43,11 +43,11 @@
 					</li>
 				{% endif %}
 				<li>
-					<a aria-label="Next Page" class="next {{ pageInfo.currentPage == pageInfo.totalPages ? 'disabled' : '' }}" href="{{ pageInfo.nextUrl }}">Next</a>
+					<a aria-label="Next Page" class="next {{ pageInfo.currentPage == pageInfo.totalPages ? 'disabled' : '' }}" {% if pageInfo.currentPage != pageInfo.totalPages %}href="{{ pageInfo.nextUrl }}"{% endif %}>Next</a>
 				</li>
 			{% else %}
 				<li>
-					<a aria-label="Previous Page" class="prev {{ pageInfo.currentPage == 1 ? 'disabled' : '' }}" href="{{ pageInfo.prevUrl }}">Previous</a>
+					<a aria-label="Previous Page" class="prev {{ pageInfo.currentPage == 1 ? 'disabled' : '' }}" {% if pageInfo.currentPage != 1 %}href="{{ pageInfo.prevUrl }}"{% endif %}>Previous</a>
 				</li>
 
 				{% for page, url in pageInfo.getPrevUrls(7) %}
@@ -65,7 +65,7 @@
 				{% endfor %}
 
 				<li>
-					<a aria-label="Next Page" class="next {{ pageInfo.currentPage == pageInfo.totalPages ? 'disabled' : '' }}" href="{{ pageInfo.nextUrl }}">Next</a>
+					<a aria-label="Next Page" class="next {{ pageInfo.currentPage == pageInfo.totalPages ? 'disabled' : '' }}" {% if pageInfo.currentPage != pageInfo.totalPages %}href="{{ pageInfo.nextUrl }}"{% endif %}>Next</a>
 				</li>
 			{% endif %}
 		</ul>

@@ -2,269 +2,279 @@ description: ''
 handle: digitalLeads
 name: 'Digital Leads'
 permissions:
-  - accesssitewhensystemisoff
+  - accesscp
   - accesscpwhensystemisoff
   - accessplugin-usermanual
-  - accesscp
-  - registerusers
-  - moderateusers
-  - 'assignusergroup:cd008cb1-3f5b-4444-a259-bf905f9c6f96' # Contributors
+  - accesssitewhensystemisoff
   - 'assignusergroup:67bbdab6-8a94-441d-9c36-6d093274da43' # Editors
+  - 'assignusergroup:cd008cb1-3f5b-4444-a259-bf905f9c6f96' # Contributors
   - assignusergroups
-  - editusers
-  - 'publishentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'deleteentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'publishpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'deletepeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'editpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'publishpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'deletepeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'editpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'editentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'publishentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
-  - 'publishpeerentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
-  - 'deletepeerentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
-  - 'editpeerentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
-  - 'publishpeerentrydrafts:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
-  - 'deletepeerentrydrafts:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
-  - 'editpeerentrydrafts:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
-  - 'editentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
-  - 'createentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-  - 'publishentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-  - 'deleteentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-  - 'publishpeerentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-  - 'deletepeerentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-  - 'editpeerentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-  - 'publishpeerentrydrafts:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-  - 'deletepeerentrydrafts:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-  - 'editpeerentrydrafts:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-  - 'editentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-  - 'createentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-  - 'publishentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-  - 'deleteentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-  - 'publishpeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-  - 'deletepeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-  - 'editpeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-  - 'publishpeerentrydrafts:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-  - 'deletepeerentrydrafts:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-  - 'editpeerentrydrafts:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-  - 'editentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-  - 'publishentries:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
-  - 'publishpeerentrydrafts:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
-  - 'deletepeerentrydrafts:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
-  - 'editpeerentrydrafts:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
-  - 'editentries:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
-  - 'createentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-  - 'publishentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-  - 'deleteentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-  - 'publishpeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-  - 'deletepeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-  - 'editpeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-  - 'publishpeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-  - 'deletepeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-  - 'editpeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-  - 'editentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-  - 'createentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-  - 'publishentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-  - 'deleteentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-  - 'publishpeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-  - 'deletepeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-  - 'editpeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-  - 'publishpeerentrydrafts:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-  - 'deletepeerentrydrafts:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-  - 'editpeerentrydrafts:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-  - 'editentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-  - 'publishentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-  - 'publishpeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-  - 'editpeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-  - 'publishpeerentrydrafts:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-  - 'editpeerentrydrafts:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-  - 'editentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-  - 'createentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-  - 'publishentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-  - 'deleteentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-  - 'publishpeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-  - 'deletepeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-  - 'editpeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-  - 'publishpeerentrydrafts:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-  - 'deletepeerentrydrafts:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-  - 'editpeerentrydrafts:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-  - 'editentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-  - 'createentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-  - 'publishentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-  - 'deleteentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-  - 'publishpeerentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-  - 'deletepeerentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-  - 'editpeerentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-  - 'publishpeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-  - 'deletepeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-  - 'editpeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-  - 'editentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-  - 'createentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-  - 'publishentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-  - 'deleteentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-  - 'publishpeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-  - 'deletepeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-  - 'editpeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-  - 'publishpeerentrydrafts:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-  - 'deletepeerentrydrafts:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-  - 'editpeerentrydrafts:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-  - 'editentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-  - 'publishentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
-  - 'publishpeerentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
-  - 'editpeerentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
-  - 'publishpeerentrydrafts:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
-  - 'editpeerentrydrafts:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
-  - 'editentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
-  - 'createentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
-  - 'publishentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
-  - 'deleteentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
-  - 'publishpeerentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
-  - 'deletepeerentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
-  - 'editpeerentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
-  - 'publishpeerentrydrafts:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
-  - 'deletepeerentrydrafts:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
-  - 'editpeerentrydrafts:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
-  - 'editentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
-  - 'createentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-  - 'publishentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-  - 'deleteentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-  - 'publishpeerentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-  - 'deletepeerentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-  - 'editpeerentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-  - 'publishpeerentrydrafts:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-  - 'deletepeerentrydrafts:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-  - 'editpeerentrydrafts:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-  - 'editentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-  - 'createentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-  - 'publishentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-  - 'deleteentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-  - 'publishpeerentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-  - 'deletepeerentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-  - 'editpeerentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-  - 'publishpeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-  - 'deletepeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-  - 'editpeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-  - 'editentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-  - 'saveassetinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
-  - 'deletefilesandfoldersinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
-  - 'replacefilesinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
-  - 'editimagesinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
-  - 'editpeerfilesinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
-  - 'replacepeerfilesinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
-  - 'deletepeerfilesinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
-  - 'editpeerimagesinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
-  - 'viewpeerfilesinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
-  - 'viewvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
-  - 'saveassetinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
-  - 'deletefilesandfoldersinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
-  - 'replacefilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
-  - 'editimagesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
-  - 'editpeerfilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
-  - 'replacepeerfilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
-  - 'deletepeerfilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
-  - 'editpeerimagesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
-  - 'viewpeerfilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
-  - 'viewvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
-  - 'saveassetinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
-  - 'deletefilesandfoldersinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
-  - 'replacefilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
-  - 'editimagesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
-  - 'editpeerfilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
-  - 'replacepeerfilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
-  - 'deletepeerfilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
-  - 'editpeerimagesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
-  - 'viewpeerfilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
-  - 'viewvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
-  - 'saveassetinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
-  - 'deletefilesandfoldersinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
-  - 'replacefilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
-  - 'editimagesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
-  - 'editpeerfilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
-  - 'replacepeerfilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
-  - 'deletepeerfilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
-  - 'editpeerimagesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
-  - 'viewpeerfilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
-  - 'viewvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
-  - 'saveassetinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
-  - 'deletefilesandfoldersinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
-  - 'replacefilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
-  - 'editimagesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
-  - 'editpeerfilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
-  - 'replacepeerfilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
-  - 'deletepeerfilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
-  - 'editpeerimagesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
-  - 'viewpeerfilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
-  - 'viewvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
-  - 'saveassetinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
-  - 'deletefilesandfoldersinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
-  - 'replacefilesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
-  - 'editimagesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
-  - 'editpeerfilesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
-  - 'replacepeerfilesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
-  - 'deletepeerfilesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
-  - 'editpeerimagesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
-  - 'viewpeerfilesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
-  - 'viewvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
-  - 'saveassetinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
-  - 'deletefilesandfoldersinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
-  - 'replacefilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
-  - 'editimagesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
-  - 'editpeerfilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
-  - 'replacepeerfilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
-  - 'deletepeerfilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
-  - 'editpeerimagesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
-  - 'viewpeerfilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
-  - 'viewvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
-  - 'saveassetinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
-  - 'deletefilesandfoldersinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
-  - 'replacefilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
-  - 'editimagesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
-  - 'editpeerfilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
-  - 'replacepeerfilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
-  - 'deletepeerfilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
-  - 'editpeerimagesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
-  - 'viewpeerfilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
-  - 'viewvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
-  - 'saveassetinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
-  - 'deletefilesandfoldersinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
-  - 'replacefilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
-  - 'editimagesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
-  - 'editpeerfilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
-  - 'replacepeerfilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
-  - 'deletepeerfilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
-  - 'editpeerimagesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
-  - 'viewpeerfilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
-  - 'viewvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
-  - 'saveassetinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
-  - 'deletefilesandfoldersinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
-  - 'replacefilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
-  - 'editimagesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
-  - 'editpeerfilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
-  - 'replacepeerfilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
-  - 'deletepeerfilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
-  - 'editpeerimagesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
-  - 'viewpeerfilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
-  - 'viewvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
-  - 'saveassetinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
-  - 'deletefilesandfoldersinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
-  - 'replacefilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
-  - 'editimagesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
-  - 'editpeerfilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
-  - 'replacepeerfilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
-  - 'deletepeerfilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
-  - 'editpeerimagesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
-  - 'viewpeerfilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
-  - 'viewvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
-  - 'saveassetinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
-  - 'deletefilesandfoldersinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
-  - 'replacefilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
-  - 'editimagesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
-  - 'editpeerfilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
-  - 'replacepeerfilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
-  - 'deletepeerfilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
-  - 'editpeerimagesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
-  - 'viewpeerfilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
-  - 'viewvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
-  - 'calendar-manageeventsfor:df8685d8-8295-456f-b677-b60cced48d3d' # Events
   - calendar-manageevents
+  - 'calendar-manageeventsfor:df8685d8-8295-456f-b677-b60cced48d3d' # Events
+  - 'createentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'createentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'createentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'createentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'createentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'createentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'createentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'createentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'createentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'createentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'createentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'deleteentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'deleteentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'deleteentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'deleteentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'deleteentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'deleteentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'deleteentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'deleteentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'deleteentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'deleteentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'deleteentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'deleteentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'deletefilesandfoldersinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'deletefilesandfoldersinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'deletefilesandfoldersinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'deletefilesandfoldersinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
+  - 'deletefilesandfoldersinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'deletefilesandfoldersinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'deletefilesandfoldersinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'deletefilesandfoldersinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'deletefilesandfoldersinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'deletefilesandfoldersinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'deletefilesandfoldersinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'deletefilesandfoldersinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'deletepeerentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'deletepeerentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'deletepeerentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'deletepeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'deletepeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'deletepeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'deletepeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'deletepeerentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'deletepeerentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'deletepeerentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'deletepeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'deletepeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'deletepeerentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'deletepeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'deletepeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'deletepeerentrydrafts:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'deletepeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'deletepeerentrydrafts:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'deletepeerentrydrafts:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'deletepeerentrydrafts:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'deletepeerentrydrafts:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'deletepeerentrydrafts:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'deletepeerentrydrafts:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'deletepeerentrydrafts:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'deletepeerentrydrafts:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
+  - 'deletepeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'deletepeerentrydrafts:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'deletepeerfilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'deletepeerfilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'deletepeerfilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'deletepeerfilesinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
+  - 'deletepeerfilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'deletepeerfilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'deletepeerfilesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'deletepeerfilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'deletepeerfilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'deletepeerfilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'deletepeerfilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'deletepeerfilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'editentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'editentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'editentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'editentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'editentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'editentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'editentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'editentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'editentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'editentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'editentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'editentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'editentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'editentries:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
+  - 'editentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'editentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'editimagesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'editimagesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'editimagesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'editimagesinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
+  - 'editimagesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'editimagesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'editimagesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'editimagesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'editimagesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'editimagesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'editimagesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'editimagesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'editpeerentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'editpeerentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'editpeerentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'editpeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'editpeerentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'editpeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'editpeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'editpeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'editpeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'editpeerentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'editpeerentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'editpeerentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'editpeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'editpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'editpeerentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'editpeerentrydrafts:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'editpeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'editpeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'editpeerentrydrafts:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'editpeerentrydrafts:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'editpeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'editpeerentrydrafts:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'editpeerentrydrafts:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'editpeerentrydrafts:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'editpeerentrydrafts:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'editpeerentrydrafts:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'editpeerentrydrafts:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'editpeerentrydrafts:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'editpeerentrydrafts:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
+  - 'editpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'editpeerentrydrafts:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'editpeerfilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'editpeerfilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'editpeerfilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'editpeerfilesinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
+  - 'editpeerfilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'editpeerfilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'editpeerfilesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'editpeerfilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'editpeerfilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'editpeerfilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'editpeerfilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'editpeerfilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'editpeerimagesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'editpeerimagesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'editpeerimagesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'editpeerimagesinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
+  - 'editpeerimagesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'editpeerimagesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'editpeerimagesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'editpeerimagesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'editpeerimagesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'editpeerimagesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'editpeerimagesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'editpeerimagesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - editusers
+  - moderateusers
+  - 'publishentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'publishentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'publishentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'publishentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'publishentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'publishentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'publishentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'publishentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'publishentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'publishentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'publishentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'publishentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'publishentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'publishentries:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
+  - 'publishentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'publishentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'publishpeerentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'publishpeerentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'publishpeerentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'publishpeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'publishpeerentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'publishpeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'publishpeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'publishpeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'publishpeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'publishpeerentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'publishpeerentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'publishpeerentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'publishpeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'publishpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'publishpeerentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'publishpeerentrydrafts:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'publishpeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'publishpeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'publishpeerentrydrafts:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'publishpeerentrydrafts:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'publishpeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'publishpeerentrydrafts:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'publishpeerentrydrafts:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'publishpeerentrydrafts:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'publishpeerentrydrafts:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'publishpeerentrydrafts:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'publishpeerentrydrafts:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'publishpeerentrydrafts:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'publishpeerentrydrafts:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
+  - 'publishpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'publishpeerentrydrafts:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - registerusers
+  - 'replacefilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'replacefilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'replacefilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'replacefilesinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
+  - 'replacefilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'replacefilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'replacefilesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'replacefilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'replacefilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'replacefilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'replacefilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'replacefilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'replacepeerfilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'replacepeerfilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'replacepeerfilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'replacepeerfilesinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
+  - 'replacepeerfilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'replacepeerfilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'replacepeerfilesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'replacepeerfilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'replacepeerfilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'replacepeerfilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'replacepeerfilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'replacepeerfilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'saveassetinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'saveassetinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'saveassetinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'saveassetinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
+  - 'saveassetinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'saveassetinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'saveassetinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'saveassetinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'saveassetinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'saveassetinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'saveassetinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'saveassetinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'viewpeerfilesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'viewpeerfilesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'viewpeerfilesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'viewpeerfilesinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
+  - 'viewpeerfilesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'viewpeerfilesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'viewpeerfilesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'viewpeerfilesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'viewpeerfilesinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'viewpeerfilesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'viewpeerfilesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'viewpeerfilesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'viewvolume:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'viewvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'viewvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'viewvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
+  - 'viewvolume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'viewvolume:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'viewvolume:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'viewvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'viewvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'viewvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'viewvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'viewvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources

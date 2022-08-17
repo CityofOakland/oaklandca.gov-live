@@ -126,4 +126,4 @@ fields:
     type: Solspace\Calendar\FieldTypes\EventFieldType
 handle: meetingEntries
 name: 'Meeting Entries'
-sortOrder: 20
+sortOrder: 21

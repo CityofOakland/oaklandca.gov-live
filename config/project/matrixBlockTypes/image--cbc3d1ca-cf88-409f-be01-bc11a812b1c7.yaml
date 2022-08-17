@@ -52,4 +52,4 @@ fields:
     type: craft\fields\Assets
 handle: image
 name: Image
-sortOrder: 8
+sortOrder: 9
