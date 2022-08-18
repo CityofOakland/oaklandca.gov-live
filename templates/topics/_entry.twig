@@ -60,12 +60,14 @@
       <div class="flex-1">
         {% if entry.accordion|length %}
           <div class="mb-12">
+            <div id="page-accordion" class="relative -top-16"></div>
             {% if entry.accordionHeader %}<h2 class="text-2xl mb-0">{{ entry.accordionHeader }}</h2>{% endif %}
             {% include '_components/_accordion.twig' with {accordion: entry.accordion.all()} %}
           </div>
         {% endif %}
         {% if entry.process|length %}
           <div class="mb-12">
+            <div id="page-process" class="relative -top-16"></div>
             {% if entry.processHeader %}<h2 class="text-2xl my-6">{{ entry.processHeader }}</h2>{% endif %}
             {% include '_components/_process.twig' %}
           </div>

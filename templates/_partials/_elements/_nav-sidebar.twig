@@ -4,6 +4,14 @@
 
 {% if contentBuilder | length %}
   {% set sideNavLinks = [] %}
+
+  {% if entry.accordion is defined and entry.accordion|length %}
+    {% set sideNavLinks = sideNavLinks | merge([{title: entry.accordionHeader ? entry.accordionHeader : 'Accordion' , link: "page-accordion"}]) %}
+  {% endif %}
+  {% if entry.process is defined and entry.process|length %}
+    {% set sideNavLinks = sideNavLinks | merge([{title: entry.processHeader ? entry.processHeader : 'Process' , link: "page-process"}]) %}
+  {% endif %}
+
   {% for block in entry.contentBuilder %}
     {% switch block.type %}
       {% case "heading" %}
