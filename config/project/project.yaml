@@ -1,4 +1,4 @@
-dateModified: 1660771917
+dateModified: 1660784014
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -768,10 +768,6 @@ plugins:
       refreshCacheWhenElementSavedUnchanged: false
       sendPoweredByHeader: true
       warmCacheAutomatically: ''
-  blitz-recommendations:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
   buttonbox:
     edition: standard
     enabled: true
