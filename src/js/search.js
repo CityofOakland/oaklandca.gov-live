@@ -218,7 +218,7 @@ allSearch.addWidget(
           <a href="{{ url }}">
             {{{_highlightResult.title.value}}}
             {{#fileType}}
-            ({{ fileType }})
+            <div class="inline uppercase">({{ fileType }})</div>
             {{/fileType}}
           </a> 
           <span>{{ section }}</span>
