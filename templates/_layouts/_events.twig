@@ -186,7 +186,7 @@
         {% set block = entry.pointOfContact.one() %}
         {% if block.contact|length %}
           {% set emailContact = block.contact.one() %}
-          <h3 class="font-semibold mt-4 text-lg" style="font-size:16px;">To make a request contact <a class="no-underline hover:underline" href="mailto:{{ emailContact.emailAddress ? emailContact.emailAddress : emailContact.staffImportEmail }}?subject=Accessibility Request: {{ entry.title }}{{ entry.calendarize.startDate ? ' at ' ~ entry.calendarize.startDate|date('m/d/Y') : '' }}">{{ emailContact.emailAddress ? emailContact.emailAddress : emailContact.staffImportEmail }} <i class="fa fa-envelope"></i></a></h3>
+          <p class="font-semibold">To make a request contact <a class="no-underline hover:underline" href="mailto:{{ emailContact.emailAddress ? emailContact.emailAddress : emailContact.staffImportEmail }}?subject=Accessibility Request: {{ entry.title }}{{ entry.calendarize.startDate ? ' at ' ~ entry.calendarize.startDate|date('m/d/Y') : '' }}">{{ emailContact.emailAddress ? emailContact.emailAddress : emailContact.staffImportEmail }} <i class="fa fa-envelope"></i></a></p>
         {% endif %}
       {% endif %}
     {% endset %}
