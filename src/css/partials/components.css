@@ -378,12 +378,6 @@
   }
 }
 
-@media (min-width: 768px) {
-  :where(.components) #twitter-widget-0 {
-    height: 95% !important;
-  }
-}
-
 :where(.components-format) > h1:first-child,
 :where(.components-format) > h2:first-child,
 :where(.components-format) > h3:first-child,
