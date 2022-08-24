@@ -37,10 +37,11 @@
   {% endif %}
 {% endmacro %}
 
-{% macro select(label, id, name, options, defaultOption) %}
+{% macro select(label, id, name, options, defaultOption, disabled) %}
+  {% set disabled = disabled is defined ? disabled : false %}
   <label for="{{ id }}">
     {{ label }}
-    <select class="shadow-form" name="{{ name }}">
+    <select class="shadow-form" name="{{ name }}" {{ disabled ? 'disabled' : '' }}>
       {% if defaultOption %}
         <option value="">{{ defaultOption }}</option>
       {% endif %}

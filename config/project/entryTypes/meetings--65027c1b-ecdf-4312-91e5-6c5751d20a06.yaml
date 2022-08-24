@@ -36,10 +36,10 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 45c5aca8-37bb-42d5-94ef-4a85bbf2de46 # Related Project, Topic, or Public Body
-            instructions: null
-            label: null
-            required: false
+            fieldUid: 8d984aa7-0f0a-4e7a-8c43-d726c6645e38 # Subcommittees
+            instructions: 'Select any Subcommittees or Topics, or sub public bodies this meeting is related to.'
+            label: ''
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
