@@ -3,7 +3,7 @@
     {% if entry.department|length or entry.programSubdivision %}
       <p>
         {% if entry.department|length %}
-          <b><a href="{{ entry.department.one().url }}">{{ entry.department.one().title }}</a></b><br>
+          <b><a href="{{ entry.department.one().url }}">{{ entry.department.one().legalTitle ? entry.department.one().legalTitle : entry.department.one().title }}</a></b><br>
         {% endif %}
         {% if entry.programSubdivision %}
           {{ entry.programSubdivision }}
@@ -91,120 +91,8 @@
   {% endspaceless %}
 {% endset %}
 
-{% if entry.section.handle == 'meetings' %}
-  {% if entry.date %}
-    <hr/>
-    <h4 class="pt-0 text-xl">{{ 'Date and Time'|t }}</h4>
-    <p>{{ entry.date|date('l, F j, Y') }}
-      {% if entry.type == 'meetingsImported' and entry.startDate %}
-        <br>{{ entry.startDate|date("g:ia") }}{{ entry.endDate ? " to " ~ entry.endDate|date("g:ia") : "" }}
-      {% elseif entry.type == 'meetings' and entry.startTime %}
-        <br>{{ entry.startTime|date("g:ia") }}{{ entry.endTime ? " to " ~ entry.endTime|date("g:ia") : "" }}
-      {% endif %}
-    </p>
-    {% set status = entry.meetingStatus ? entry.meetingStatus : entry.eventStatus %}
-    {% if now|date('Y-m-d') <= entry.date|date('Y-m-d') and (status.value !== 'canceled' and status.value !== 'rescheduled') %}
-      {% if entry.eventLocation and entry.eventLocation.type("physicalLocation")|length %}
-        {% set block = entry.eventLocation.type("physicalLocation").one() %}
-        {% if not block.contactAddress.isEmpty() %}
-          <hr class="light">
-          <h4>{{ 'In Person Location'|t }}</h4>
-          {% if block.fullName %}<p class="mb-2">{{ block.fullName }}</p>{% endif %}
-          <ul class="ul-icons">
-            {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-              params: {
-                text: block.contactAddress.multiline(),
-                icon: "map"
-              }
-            }) }}
-            {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-              params: {
-                text: "Get Directions",
-                url: "https://www.google.com/maps/search/maps/search/#{block.contactAddress|url_encode}"
-              }
-            }) }}
-          </ul>
-        {% endif %}
-      {% endif %}
-      {% if entry.eventLocation and entry.eventLocation.type("onlineLocation")|length %}
-        {% set block = entry.eventLocation.type("onlineLocation").one() %}
-        {% if block.href or block.phoneNumber %}
-          <hr class="light">
-          <h4 class="mb-6">{{ 'Online'|t }}</h4>
-          {% if block.href %}<a href="{{ block.href }}" class="m-0 button">Join the meeting</a>{% endif %}
-          {% if block.phoneNumber %}
-            <p class="mt-8 mb-4 text-base font-bold">Or join by phone</p>
-            <ul class="ul-icons">
-              {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-                params: {
-                  text: block.phoneNumber,
-                  icon: 'phone',
-                  url: "tel:#{block.phoneNumber|replace({'-': ''}) }}"
-                }
-              }) }}
-            </ul>
-          {% endif %}
-        {% endif %}
-      {% endif %}
-    {% endif %}
-  {% endif %}
-
-  {% if entry.fullName %}
-    <hr/>
-    <h4>{{ 'Contact'|t }}</h4>
-    <p class="mb-4">{{ entry.fullName }}</p>
-    {% if entry.emailAddress or entry.phoneNumber %}
-      <ul class="ul-icons">
-        {% if entry.emailAddress %}
-          {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-            params: {
-              text: entry.emailAddress,
-              icon: 'envelope',
-              url: "mailto:#{entry.emailAddress}"
-            }
-          }) }}
-        {% endif %}
-        {% if entry.phoneNumber %}
-          {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-            params: {
-              text: entry.phoneNumber,
-              icon: 'phone',
-              url: "tel:#{entry.phoneNumber|replace({'-': ''}) }}"
-            }
-          }) }}
-        {% endif %}
-      </ul>
-    {% endif %}
-  {% endif %}
-
-  {% if entry.eventContact %}
-    <hr/>
-    <h4>{{ 'Contact'|t }}</h4>
-    {{ entry.eventContact|raw }}
-  {% endif %}
-
-  {% if entry.relatedPages|length  %}
-    <hr/>
-    <h4>{{ 'Related Pages'|t }}</h4>
-    <ul class="ul-icons related">
-      {% for entry in entry.relatedPages.all() %}
-        <li>
-          <a href="{{ entry.url }}">
-            {{ entry.title }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-
-  <hr class="light">
-  <p class="mt-4 small">Posted: {{ entry.postDate|date("F j, Y g:ia") }}</p>
-  {% if entry.type == 'meetings' %}<p class="mt-4 small">Last Updated: {{ entry.dateUpdated|date("F j, Y g:ia") }}</p>{% endif %}
-
-{% else %}
-  {% if sidebarContent|trim|length %}
-    <hr/>
-    <h4>{{ 'Contact'|t }}</h4>
-    {{sidebarContent}}
-  {% endif %}
+{% if sidebarContent|trim|length %}
+  <hr/>
+  <h4>{{ 'Contact'|t }}</h4>
+  {{sidebarContent}}
 {% endif %}

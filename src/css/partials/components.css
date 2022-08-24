@@ -4,7 +4,7 @@
 
 .components form label {
   @apply text-sm leading-normal;
-  margin-bottom: 0.5em;
+  margin-bottom: .5rem;
 }
 
 .components form button:not(.button) {
@@ -15,9 +15,9 @@
   color: #207127;
   display: inline-block;
   font-weight: 700;
-  margin-top: 1em;
+  margin-top: 1rem;
   outline-offset: 2px;
-  padding: 16px 32px;
+  padding: 1rem 2rem;
   text-decoration: none;
 }
 
@@ -33,7 +33,7 @@
 
 .components form textarea {
   color: #222222;
-  padding: 0.5em;
+  padding: .5rem;
 }
 
 .components input,
@@ -41,7 +41,7 @@
   @apply text-sm leading-tight;
   background: white;
   color: #6b7280;
-  margin-top: 0.75rem;
+  margin-top: .75rem;
 }
 
 .components input[type="month"],
@@ -49,7 +49,7 @@
   border: 1px solid #cfcfcf;
   border-radius: 4px;
   color: black;
-  padding: 0.75rem 1rem;
+  padding: .75rem 1rem;
   width: 100%;
 }
 
@@ -61,7 +61,7 @@
   @apply appearance-none z-0;
   border: 1px solid #cfcfcf;
   border-radius: 4px;
-  padding: 0.75rem 1rem;
+  padding: .75rem 1rem;
   width: 100%;
   position: relative;
   background-image: url('/dist/img/icon-caret-down.svg');
@@ -71,12 +71,12 @@
 
 .components table {
   @apply text-sm leading-tight md:text-base md:leading-tight;
-  margin-top: 1.5em;
+  margin-top: 1.5rem;
   width: 100%;
 }
 
 .components table caption {
-  padding: 8px;
+  padding: .5rem;
   text-align: left;
 }
 
@@ -90,13 +90,13 @@
 
 .components th {
   background: #f5f5f5;
-  border-bottom: 1px solid black;
-  padding: 15px;
+  border-bottom: .0625rem solid black;
+  padding: .9375rem;
   text-align: left;
 }
 
 .components td {
-  padding: 15px;
+  padding: .9375rem;
   word-break: break-word;
   & > *:first-child {
     padding-top: 0;
@@ -165,8 +165,8 @@
 
 :where(.components) .callout {
   display: flex;
-  padding: 16px;
-  margin-top: 1em;
+  padding: 1rem;
+  margin-top: 1rem;
 }
 
 :where(.components) .callout.info {
@@ -177,11 +177,11 @@
   background: #fffbea;
 }
 
+:where(.components) .callout.action {
+  background: #fffbea;
+}
+
 :where(.components .callout) {
-  & a:not(.button) {
-    color: inherit;
-    text-decoration: underline;
-  }
   & a:hover {
     text-decoration: none;
   }
@@ -189,7 +189,11 @@
   & svg {
     flex-shrink: 0;
     margin-right: 1rem;
-    margin-top: 4px;
+    margin-top: .25rem;
+  }
+
+  & .small > p:first-child {
+    margin-top: 0;
   }
 }
 
@@ -199,12 +203,12 @@
 }
 
 :where(.components) .hr {
-  border-top: 3px solid #e1e1e1;
+  border-top: .1875rem solid #e1e1e1;
   opacity: 1;
 }
 
 :where(.components) .hr.dark {
-  border-top: 2px solid #212121;
+  border-top: .125rem solid #212121;
   margin: 2rem 0;
   opacity: 1;
 }
@@ -214,15 +218,15 @@
 }
 
 :where(.components) .hr.small {
-  margin: 16px 0;
+  margin: 1rem 0;
 }
 
 :where(.components) .hr.medium {
-  margin: 32px 0;
+  margin: 2rem 0;
 }
 
 :where(.components) .hr.large {
-  margin: 48px 0;
+  margin: 3rem 0;
 }
 
 :where(.components) p,
@@ -296,12 +300,19 @@
   }
 }
 
+:where(.components) table p,
+:where(.components) table li,
+:where(.components) table ul {
+  font-size: 14px;
+  line-height: inherit;
+}
+
 :where(.components) tbody {
-  border-top: 1px solid black;
+  border-top: .0625rem solid black;
 }
 
 :where(.components) tbody tr {
-  border-bottom: 1px solid black;
+  border-bottom: .0625rem solid black;
 }
 
 @media (max-width: 767px) {
@@ -323,8 +334,8 @@
   }
 
   .components.js-initialized tbody {
-    border-top: 2px solid black;
-    border-bottom: 1px solid black;
+    border-top: .125rem solid black;
+    border-bottom: .0625rem solid black;
   }
 
   /* Hide table headers (but not display: none;, for accessibility) */
@@ -342,14 +353,14 @@
 
   .components.js-initialized td {
     border: none;
-    border-bottom: 1px solid #eee;
+    border-bottom: .0625rem solid #eee;
     position: relative;
   }
 
   .components.js-initialized td:before {
     display: block;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: .5rem;
   }
 
   /*
@@ -392,7 +403,7 @@
 
 :where(#components-sidebar) > hr.light {
   @apply mt-8;
-  border-top: 1px solid #e1e1e1;
+  border-top: .0625rem solid #e1e1e1;
 }
 
 :where(#components-sidebar) > h1,
@@ -430,10 +441,13 @@
 }
 
 #components-sidebar #search::before {
+  background-image: url('../img/icon-search.svg');
+  background-repeat: no-repeat;
+  background-position: center;
   content: "";
   display: block;
-  height: 20px;
-  width: 20px;
+  height: 1.25rem;
+  width: 1.25rem;
   position: absolute;
   top: 50%;
   left: 1rem;

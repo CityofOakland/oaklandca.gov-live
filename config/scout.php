@@ -193,44 +193,28 @@ return [
         ];
       }),
 
-    // BEGIN CALENDAR INDEX
-    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_calendars')
-      ->elementType(\Solspace\Calendar\Elements\Event::class)
-      ->criteria(function (Solspace\Calendar\Elements\Db\EventQuery $query) {
-        return $query
-          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'topics']);
-      })
-      ->splitElementsOn(['summary', 'body'])
-      ->transformer(new EventTransform()),
-
-    // BEGIN EVENTS INDEX
-    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_events')
-      ->elementType(\Solspace\Calendar\Elements\Event::class)
-      ->criteria(function (Solspace\Calendar\Elements\Db\EventQuery $query) {
-        return $query
-          ->setCalendar('events')
-          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'topics']);
-      })
-      ->splitElementsOn(['summary', 'body'])
-      ->transformer(new EventTransform()),
-
-    // BEGIN MEETINGS INDEX
-    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_meetings')
-      ->elementType(\Solspace\Calendar\Elements\Event::class)
-      ->criteria(function (Solspace\Calendar\Elements\Db\EventQuery $query) {
-        return $query
-          ->setCalendar('meetings')
-          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'topics']);
-      })
-      ->splitElementsOn(['summary', 'body'])
-      ->transformer(new EventTransform()),
-
     // BEGIN ALL INDEX
     \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_all')
       ->elementType(\craft\elements\Entry::class)
       ->criteria(function (\craft\elements\db\EntryQuery $query) {
         return $query
-          ->section(['boardsCommissions', 'departments', 'news',  'officials', 'processes', 'projects', 'resources', 'services', 'staff', 'teams', 'topics', 'volunteers', 'documents']);
+          ->section([
+            'boardsCommissions',
+            'departments',
+            'documents',
+            'events',
+            'meetings',
+            'news',
+            'officials',
+            'processes',
+            'projects',
+            'resources',
+            'services',
+            'staff',
+            'teams',
+            'topics',
+            'volunteers'
+          ]);
       })
       ->splitElementsOn(['summary', 'body', 'about'])
       ->transformer(new AllTransform())

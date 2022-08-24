@@ -4,7 +4,7 @@
 }
 
 :where(.ul-icons) > li {
-  margin-bottom: 15px;
+  margin-bottom: .9375rem;
 }
 
 :where(.ul-icons) > li,
@@ -15,9 +15,9 @@
 
 :where(.ul-icons > li) svg {
   flex-shrink: 0;
-  margin-top: 2px;
-  margin-right: 10px;
-  width: 22.5px;
+  margin-top: .125rem;
+  margin-right: .625rem;
+  width: 1.40625rem;
 }
 
 :where(.ul-icons) .green path {

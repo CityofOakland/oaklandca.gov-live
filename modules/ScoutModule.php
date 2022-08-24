@@ -27,26 +27,33 @@ class ScoutModule extends \yii\base\Module
     // Format specific modules in the content builder field.
     public static function contentBuilder($element)
     {
-        $body = [];
+        $body   = [];
         if (!empty($element)) {
             foreach ($element->all() as $block) {
+                $text = '';
                 switch ($block->type) {
                     case 'heading':
                     case 'subheading':
                     case 'text':
-                        $body[] = strip_tags($block->text);
+                        $text = strip_tags($block->text);
                         break;
                     case 'textImageBlock':
-                        $body[] = strip_tags($block->textBlock);
+                        $text = strip_tags($block->textBlock);
                         break;
                     case 'linksWithDescriptions':
-                        $body[] = strip_tags($block->linkDescription);
+                        $text = strip_tags($block->linkDescription);
                         break;
                     case 'largeEntryLinks':
                     case 'smallEntryLinks':
-                        $body[] = strip_tags($block->entriesDescription);
+                        $text = strip_tags($block->entriesDescription);
                         break;
                     default:
+                }
+                if($text){
+                    if(strlen($text) > 1000) {
+                        $text = mb_substr($text, 0, 1000) . '...';
+                    }
+                    $body[] = $text;
                 }
             }
         }
@@ -116,6 +123,17 @@ class ScoutModule extends \yii\base\Module
                 $array[] = $node;
             }
             return $array;
+        }
+    }
+
+    // Format rich text field.
+    public static function sectionPriority($name){
+        if($name == 'documents'){
+            return 2;
+        } elseif( in_array($name, ['boardsCommissions', 'departments', 'topics'])) {
+            return 0;
+        } else {
+            return 1;
         }
     }
 }

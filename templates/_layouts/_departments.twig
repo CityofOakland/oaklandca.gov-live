@@ -60,7 +60,8 @@
       position: entry.banner[0].getFocalPoint('asCss'),
       src: entry.banner[0].url,
       alt: entry.banner[0].title ?? entry.banner[0].filename
-    } : false
+    } : false,
+    bannerTitle: (entry.legalTitle ? entry.legalTitle : entry.title)
   } %}
   <div class="container pt-0">
     <div class="flex">

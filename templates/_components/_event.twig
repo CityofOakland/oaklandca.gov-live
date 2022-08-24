@@ -1,0 +1,57 @@
+{% if event.type is defined and event.type == 'api' %}
+  <div class="result pb-6" style="margin-bottom:1rem;">
+    <div class="flex flex-wrap -mx-4">
+      <div class="w-full md:w-1/4 mb-3 md:mb-0 px-4" style="flex-shrink:0;">
+        <img src="{{ siteUrl }}dist/img/placeholder-event.png" alt="Icon of a Calendar"/>
+      </div>
+      <div class="w-full md:w-3/4 px-4">
+        <h3 class="mt-0">
+          <a href="https://oaklandlibrary.bibliocommons.com/events/{{ event.uid }}" target="_blank">{{ event.title }} {{ svg( '@webroot/dist/img/icon-external.svg')|attr({class: 'h-6 ml-2 inline'}) }}</a>
+          {% if event.isCancelled %}
+            <span data-type="Cancelled">Cancelled</span>
+          {% elseif event.isVirtual %}
+            <span data-type="Cancelled">Online</span>
+          {% endif %}
+        </h3>
+        <p><b>{{ event.startDate|date("l, F j, Y") }}</b></p>
+        <p class="flex items-center">{{ svg( '@webroot/dist/img/icon-clock.svg') }} <span class="ml-4 pl-1">{{ event.startDate|date("g:ia") }}{{ event.endDate ? " to " ~ event.endDate|date("g:ia") : '' }}</span></p>
+        {% if event.location is defined %}<p class="flex items-center">{{ svg( '@webroot/dist/img/icon-map-marker.svg') }} <span class="ml-4">{{ event.location }}</span></p>{% endif %}
+      </div>
+    </div>
+  </div>
+{% else %}
+  {% set physicalLocation = clone(event.eventLocations).type('physicalLocation') %}
+  {% set onlineLocation   = clone(event.eventLocations).type('onlineLocation') %}
+
+  <div class="result pb-6" style="margin-bottom:1rem;">
+    <div class="flex -mx-4">
+      <div class="md:w-1/4 px-4" style="flex-shrink:0;">
+        <a href="{{ event.url }}">
+          {% if event.eventImage|length %}
+            {% set transformedImage = craft.imager.transformImage(event.eventImage.one(), { height:240, width: 320 }) %}
+            <img src="{{ transformedImage.url }}" alt="{{ event.eventImage.one().altText }}"/>
+          {% else %}
+            <img src="{{ siteUrl }}dist/img/placeholder-event.png" alt="Icon of a Calendar"/>
+          {% endif %}
+        </a>
+      </div>
+      <div class="w-full md:w-3/4 px-4">
+        <h3 class="mt-0">
+          <a href="{{ event.url }}">{{ event.title }}</a>
+          {% if onlineLocation %}
+            <span data-type="Online">Online</span>
+          {% endif %}
+        </h3>
+        <p><b>{{ event.calendarize.startDate|date("l, F j, Y") }}</b></p>
+        {% if event.calendarize.allDay %}
+          <p class="flex items-center">{{ svg( '@webroot/dist/img/icon-clock.svg') }} <span class="ml-4 pl-1">All Day</span></p>
+        {% else %}
+          <p class="flex items-center">{{ svg( '@webroot/dist/img/icon-clock.svg') }} <span class="ml-4 pl-1">{{ event.calendarize.startDate|date("g:ia") }}{{ event.calendarize.endDate ? " to " ~ event.calendarize.endDate|date("g:ia") : '' }}</span></p>
+        {% endif %}
+        {% if physicalLocation|length %}
+          {% if physicalLocation.one().locationName %}<p class="flex items-center">{{ svg( '@webroot/dist/img/icon-map-marker.svg') }} <span class="ml-4">{{ physicalLocation.one().locationName }}</span></p>{% endif %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}

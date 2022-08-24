@@ -28,64 +28,30 @@ class ExportModule extends ElementExporter
 
         foreach ($query->each() as $element) {
 
-            $primaryUnitArray = [];
-
-            if($element->primaryUnit){
-                foreach($element->primaryUnit->all() as $entry){
-                    $primaryUnitArray[] = $entry->title;
-                }
-            }
-
-            $departmentsArray = [];
+            $relatedEntries = [];
 
             if($element->departments){
                 foreach($element->departments->all() as $entry){
-                    $departmentsArray[] = $entry->title;
+                    $relatedEntries[] = $entry->id;
                 }
             }
 
-            $officialsArray = [];
-
-            if($element->officials){
-                foreach($element->officials->all() as $entry){
-                    $officialsArray[] = $entry->title;
+            if($element->projects){
+                foreach($element->projects->all() as $entry){
+                    $relatedEntries[] = $entry->id;
                 }
             }
-
-            $topicsArray = [];
 
             if($element->topics){
                 foreach($element->topics->all() as $entry){
-                    $topicsArray[] = $entry->title;
-                }
-            }
-
-            $topicsArray = [];
-
-            if($element->topics){
-                foreach($element->topics->all() as $entry){
-                    $topicsArray[] = $entry->title;
-                }
-            }
-
-            $serviceTypesArray = [];
-
-            if($element->serviceTypes){
-                foreach($element->serviceTypes->all() as $entry){
-                    $serviceTypesArray[] = $entry->title;
+                    $relatedEntries[] = $entry->id;
                 }
             }
 
             $results[] = [
-                'Title' => $element->title ?? '',
-                'Primary Unit' => $primaryUnitArray,
-                'Entry Type' => $element->type->name,
-                'Service Types' => $serviceTypesArray,
-                'Departments' => $departmentsArray,
-                'Officials' => $officialsArray,
-                'Topics' => $topicsArray,
-                'URL' => $element->url,
-                'Author' => $element->author ? $element->author->fullName : '',
+                'ID'             => $element->id,
+                'Title'          => $element->title ?? '',
+                'relatedEntries' => $relatedEntries
             ];
         }
 

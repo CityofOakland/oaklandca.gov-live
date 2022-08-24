@@ -1,0 +1,41 @@
+field: ef3925f3-23b4-404d-93d6-154519305756 # Event Locations
+fieldLayouts:
+  e4ca3375-a65c-4895-8ae0-5fcff1071dd0:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 59d68eb6-f130-4b6f-b193-240480a8b68f # Online Meeting Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  59d68eb6-f130-4b6f-b193-240480a8b68f: # Online Meeting Link
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: onlineMeetingLink
+    instructions: ''
+    name: 'Online Meeting Link'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: onlineLocation
+name: 'Online Location'
+sortOrder: 1

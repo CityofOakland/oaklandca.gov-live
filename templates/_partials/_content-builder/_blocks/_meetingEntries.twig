@@ -1,16 +1,25 @@
-{% set meetings  = craft.entries.section('meetings').date(['>= ' ~ now|date('Y-m-d')]).order('date asc').limit(3).relatedTo(entry) %}
+{% set meetings     = craft.entries.section('meetings').date(['>= ' ~ now|date('Y-m-d')]).order('date asc').limit(3).relatedTo(entry) %}
+{% set headingText  = 'Related Meetings' %}
+{% set buttonText   = 'See Past Meetings' %}
+{% if entry.section.handle == 'boardsCommissions' %}
+  {% set buttonLink   = entry.url ~ '/meetings?type=past' %}
+{% else %}
+  {% set buttonLink   = siteUrl ~ 'meetings?type=past' %}
+{% endif %}
 
 {% if block.meetings|length %}
-  {% set meetings = block.meetings %}
+  {% set meetings     = block.meetings %}
 {% else %}
   {% if meetings|length == 0 %}
     {% set meetings  = craft.entries.section('meetings').order('date desc').limit(3).relatedTo(entry) %}
+    {% set buttonText   = 'See All Past Meetings' %}
   {% endif %}
 {% endif %}
 
+{% if meetings|length %}
 <div class="{% if not loop.last %}mb-12{% endif %}">
-  {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" %}
-  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+  <h2 class="{{ hClass }} {{ addClasses ?? "" }}">{{ headingText }}</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
     {% for entry in meetings %}
     <a class="shadow card default" href="{{ entry.url }}">
       <h4><span>{% if entry.meetingStatus and entry.meetingStatus.value and entry.meetingStatus.value !== 'default' %}{{ entry.meetingStatus.label }} - {% endif %}{{ entry.title }}</span></h4>
@@ -26,12 +35,8 @@
   </div>
   <div class="pt-3">
     {% if not block.hideReadMoreLink %}
-      {% if entry.section.handle == 'boardsCommissions' %}
-        <a class="mt-6 button small secondary" href="{{ entry.url ~ '/meetings' }}">View All Meetings, Minutes & Agendas »</a>
-      {% else %}
-        <a class="mt-6 button small secondary" href="{{ siteUrl ~ 'meetings' }}">View All Meetings, Minutes & Agendas »</a>
-      {% endif %}
+        <a class="button small secondary mt-6" href="{{ buttonLink }}">{{ buttonText }}</a>
     {% endif %}
   </div>
 </div>
-
+{% endif %}

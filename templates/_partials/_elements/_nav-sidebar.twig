@@ -1,5 +1,6 @@
-{% set contentBuilder = entry.contentBuilder ?? '' %}
-{% set customNav = customNav ?? '' %}
+{% set contentBuilder       = entry.contentBuilder ?? '' %}
+{% set customNav            = customNav ?? '' %}
+{% set disableRelatedPages  = disableRelatedPages is defined ? disableRelatedPages : false %}
 
 {% if contentBuilder | length %}
   {% set sideNavLinks = [] %}
@@ -40,8 +41,10 @@
   {% if about ?? '' %}
     {% set sideNavLinks = sideNavLinks | merge([{title: "About", link: "page-about"}]) %}
   {% endif %}
-  {% if relatedContent ?? '' and not entry.hideRelatedPages %}
-    {% set sideNavLinks = sideNavLinks | merge([{title: "Related Pages", link: "page-relatedpages"}]) %}
+  {% if not disableRelatedPages %}
+    {% if relatedContent ?? '' and not entry.hideRelatedPages %}
+      {% set sideNavLinks = sideNavLinks | merge([{title: "Related Pages", link: "page-relatedpages"}]) %}
+    {% endif %}
   {% endif %}
   {% if contact ?? '' %}
     {% set sideNavLinks = sideNavLinks | merge([{title: "Contact Us", link: "page-contact"}]) %}

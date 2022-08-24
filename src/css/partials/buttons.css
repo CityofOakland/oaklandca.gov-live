@@ -14,7 +14,8 @@
   @apply px-4 py-4;
 }
 
-.button {
+.button,
+.hs-button {
   @apply text-base leading-tight;
   background: #207127;
   border: 2px solid #207127;
@@ -23,27 +24,34 @@
   display: inline-block;
   font-weight: 700;
   outline-offset: 2px;
-  margin: 1em 15px 15px 0;
-  padding: 16px 32px;
+  margin-top: 1rem;
+  margin-right: .9375rem;
+  margin-bottom: .9375rem;
+  margin-bottom: 0;
+  padding: 1rem 2rem;
   text-decoration: none !important;
 }
 
-.button:hover {
+.button:hover,
+.hs-button:hover {
   background: #0d5713;
   border-color: #0d5713;
   color: white;
 }
 
-.button:active {
+.button:active,
+.hs-button:active {
   background: #04400a;
   border-color: #04400a;
 }
 
-.button:focus {
+.button:focus,
+.hs-button:active {
   outline: 4px solid #0ea5e9;
 }
 
-.button[disabled] {
+.button[disabled],
+.hs-button[disabled] {
   background: #b1b1b1;
   border-color: #b1b1b1;
   pointer-events: none;
@@ -96,11 +104,12 @@
 }
 
 .button.medium {
-  padding: 16px 16px;
+  padding: 1rem;
 }
 
-.button.small {
-  padding: 8px 8px;
+.button.small,
+.hs-button {
+  padding: .5rem;
 }
 
 .button span {
@@ -109,10 +118,10 @@
 
 .button svg {
   display: inline-block;
-  margin-left: 6px;
-  margin-bottom: 1px;
-  height: 16px;
-  width: 16px;
+  margin-left: .375rem;
+  margin-bottom: .0625rem;
+  height: 1rem;
+  width: 1rem;
 }
 
 .button svg path {
@@ -148,9 +157,9 @@
 }
 
 .button .arrow-left {
-  margin-right: 6px;
+  margin-right: .375rem;
 }
 
 .button .arrow-right {
-  margin-left: 6px;
+  margin-left: .375rem;
 }

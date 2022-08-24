@@ -33,6 +33,9 @@ return [
       ['siteId' => 1, 'uriPattern' => '/author'],
       ['siteId' => 1, 'uriPattern' => '/meetings'],
       ['siteId' => 1, 'uriPattern' => '/boards-commissions/*/meetings'],
+      ['siteId' => 1, 'uriPattern' => '/events'],
+      ['siteId' => 1, 'uriPattern' => '/departments/*/events'],
+      ['siteId' => 1, 'uriPattern' => '/topics/*/events'],
     ],
 
     // Whether the cache should automatically be warmed after clearing.

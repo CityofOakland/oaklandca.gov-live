@@ -9,7 +9,7 @@ settings:
   allowSelfRelations: false
   limit: ''
   localizeRelations: false
-  selectionLabel: ''
+  selectionLabel: 'Add Related Resources'
   showSiteMenu: true
   source: null
   sources:

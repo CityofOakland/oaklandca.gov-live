@@ -1,41 +1,44 @@
+{% set archive        = true %}
 {% set query          = craft.app.request.getQueryParam('q') %}
+{% set public_body    = craft.app.request.getQueryParam('public_body') %}
 {% set meetings       = craft.entries().section('meetings').search(query).limit(10) %}
 {% set filter_enabled = false %}
 
-{% if craft.app.request.getQueryParam('public_body') %}
+{% if public_body %}
   {% set filter_enabled = true %}
-  {% set id = craft.entries().section('boardsCommissions').id(craft.app.request.getQueryParam('public_body')).one() %}
+  {% set id = craft.entries().section('boardsCommissions').id(public_body).one() %}
   {% set meetings = meetings.relatedTo(craft.entries().section('boardsCommissions').id(id).one()) %}
 {% endif %}
 
 {% set date_query = ['and'] %}
 
-{% if craft.app.request.getQueryParam('start_date') %}
+{% set year   = craft.app.request.getQueryParam('year') ? craft.app.request.getQueryParam('year') : '' %}
+{% set month  = craft.app.request.getQueryParam('month') ? craft.app.request.getQueryParam('month') : '' %}
+{% set ymd     = '' %}
+
+{% if year and month %}
   {% set filter_enabled = true %}
-  {% set ym = craft.app.request.getQueryParam('start_date') %}
-  {% set date_query = date_query|merge(['>= ' ~ (ym~'-01')]) %}
+  {% set ymd = year ~ '-' ~ month ~ '-01' %}
+  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
+{% elseif year %}
+  {% set filter_enabled = true %}
+  {% set ymd = year ~ '-' ~ '01-01' %}
+  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 year')|date('Y-m-d')) ]) %}
+{% elseif month %}
+  {% set filter_enabled = true %}
+  {% set ymd = now|date('Y') ~ '-' ~ month %}
+  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
 {% endif %}
 
-{% if craft.app.request.getQueryParam('end_date') %}
-  {% set filter_enabled = true %}
-  {% set ym = craft.app.request.getQueryParam('end_date') %}
-  {% set date_query = date_query|merge(['<= ' ~ (ym~'-31')]) %}
-{% endif %}
-
-{% if craft.app.request.getQueryParam('type') %}
-  {% set filter_enabled = true %}
-  {% switch craft.app.request.getQueryParam('type') %}
-    {% case 1 %}
+{% set type = craft.app.request.getQueryParam('type') ? craft.app.request.getQueryParam('type') : 'upcoming' %}
+{% if type %}
+  {% switch type %}
+    {% case 'upcoming' %}
       {% set meetings = meetings.order('date asc') %}
       {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
-    {% case 2 %}
-      {% set meetings = meetings.order('date desc') %}
-    {% case 3 %}
+    {% case 'past' %}
       {% set meetings = meetings.order('date desc') %}
       {% set date_query = date_query|merge(['< ' ~ now|date('Y-m-d')]) %}
-    {% default %}
-      {% set meetings = meetings.order('date asc') %}
-      {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
   {% endswitch %}
 {% else %}
   {% set meetings = meetings.order('date asc') %}
@@ -57,90 +60,41 @@
 {% import '_macros/_macros' as macros %}
 
 {% block content %}
+  <div>
+    <ul class="flex flex-wrap list-none m-0 p-0">
+        <li><a href="?type=upcoming&q={{ query }}&public_body={{ public_body }}&year={{ year }}&month={{ month }}" class="button m-0 rounded-none {{ type == 'upcoming' ? 'pointer-events-none' : 'secondary' }}">Upcoming Meetings</a></li>
+        <li><a href="?type=past&q={{ query }}&public_body={{ public_body }}&year={{ year }}&month={{ month }}" class="button m-0 rounded-none {{ type == 'past' ? 'pointer-events-none' : 'secondary' }}">Past Meetings</a></li>
+    </ul>
+  </div>
+
   {% if filter_enabled %}
     {% if meetings|length %}
-      <h3>Displaying {{ meetings|length }} of {{ pageInfo.total }} Meetings</h3>
+      <h3 aria-live="polite">Displaying {{ meetings|length }} of {{ pageInfo.total }} Meetings</h3>
     {% else %}
-      <h3>No results found</h3>
+      <h3 aria-live="polite">No results found</h3>
     {% endif %}
   {% else %}
-    <h3>Displaying All Meetings</h3>
+    {% switch type %}
+      {% case 'upcoming' %}
+        <h3 aria-live="polite">Displaying all Upcoming Meetings</h3>
+      {% case 'past' %}
+        <h3 aria-live="polite">Displaying All Past Meetings</h3>
+    {% endswitch %}
   {% endif %}
+
   <div class="mt-8">
     {% if meetings|length %}
       {% for meeting in meetings %}
-        <div class="pb-6 result" style="margin-bottom:1rem;">
-          <h3 style="padding-top: 0;">
-            <a href="{{ meeting.url }}">{{ meeting.title }}</a>
-            {% switch meeting.meetingStatus %}
-              {% case 'canceled' %}
-                <span>Canceled</span>
-              {% case 'rescheduled' %}
-                <span>Rescheduled</span>
-              {% case 'special' %}
-                <span>Special</span>
-              {% default %}
-            {% endswitch %}
-          </h3>
-          {% if meeting.date %}<p><b>{{ meeting.date|date("l, F j, Y") }}</b></p>{% endif %}
-            <div class="items-center justify-between md:flex">
-              {% if meeting.type == 'meetings' and meeting.startTime %}<p class="flex items-center">{{ svg( '@webroot/dist/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startTime|date("g:ia") }}{{ meeting.endTime ? " to " ~ meeting.endTime|date("g:ia") : '' }}</span></p>{% endif %}
-              {% if meeting.type == 'meetingsImported' and meeting.startDate %}<p class="flex items-center">{{ svg( '@webroot/dist/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startDate|date("g:ia") }}{{ meeting.endDate ? " to " ~ meeting.endDate|date("g:ia") : '' }}</span></p>{% endif %}
-              <ul class="items-center md:flex related" style="list-style:none;padding:0;">
-                {% if meeting.agendaDownloadableCopy|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/dist/img/icon-pdf-updated.svg') }}<span class="ml-2">Agenda</span></a></li>{% endif %}
-                {% if meeting.documentFile|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.documentFile.one().url }}">{{ svg( '@webroot/dist/img/icon-pdf-updated.svg') }}<span class="ml-2">Minutes</span></a></li>{% endif %}
-                {% if meeting.embeds|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.url }}#recordings">{{ svg( '@webroot/dist/img/icon-recording.svg') }}<span class="ml-2">Recording</span></a></li>{% endif %}
-              </ul>
-            </div>
-            {% if meeting.type == 'meetings' %}<p class="updated">Updated: {{ meeting.dateUpdated|date("F j, Y") }}</p>{% endif %}
-            {% set result = false %}
-            {% if query and meeting.agendaDownloadableCopy|length and query|lower in meeting.agendaDownloadableCopy.one().filename|lower %}
-              {% set result = true %}
-              <p class="small">
-                {% set filename     = meeting.agendaDownloadableCopy.one().filename|trim %}
-                {% set query_index  = filename|lower|indexOf(query|lower) %}
-                <b>Agenda: </b>{{ filename|slice(0, query_index) }}<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
-              </p>
-            {% endif %}
-            {% if query and meeting.documentFile|length and query|lower in meeting.documentFile.one().title|lower and result == false %}
-              {% set result = true %}
-              <p class="small">
-                {% set filename     = meeting.documentFile.one().filename|trim %}
-                {% set query_index  = filename|lower|indexOf(query|lower) %}
-                <b>Minutes: </b>{{ filename|slice(0, query_index) }}<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
-              </p>
-            {% endif %}
-            {% if query and meeting.agendaTopics and meeting.agendaTopics.search(query)|length and result == false %}
-              {% set result = true %}
-              <p class="small">
-                {% set topic        = meeting.agendaTopics.search(query).one().topic|trim %}
-                {% set query_index  = topic|lower|indexOf(query|lower) %}
-
-                {% set description  = meeting.agendaTopics.search(query).one().description|trim|striptags %}
-                {% set desc_query_index  = description|lower|indexOf(query|lower) %}
-
-                {% if query_index !== -1 %}<b>Agenda Topic: </b>{{ topic|slice(0, query_index) }}<u>{{ topic|slice(query_index, query|length) }}</u>{{ topic|slice(query_index + query|length, topic|length) }}{% endif %}
-                {% if query_index == -1 and desc_query_index !== -1 %}<b>Agenda Description: </b>{{ description|slice(0, desc_query_index) }}<u>{{ description|slice(desc_query_index, query|length) }}</u>{{ description|slice(desc_query_index + query|length, description|length) }}{% endif %}
-              </p>
-            {% endif %}
-            {% if query and meeting.documents and meeting.documents.search(query)|length and result == false %}
-              <p class="small">
-                {% set filename     = meeting.documents.search(query).one().title|trim %}
-                {% set query_index  = filename|lower|indexOf(query|lower) %}
-                <b>Document: </b>{{ filename|slice(0, query_index) }}<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
-              </p>
-            {% endif %}
-            {% if meeting.meetingStatus and meeting.relatedMeeting|length %}
-              <p class="small">
-                <b>New Meeting: </b><a href="{{ meeting.relatedMeeting.one().url }}">{{ meeting.relatedMeeting.one().title }}</a>
-              </p>
-            {% endif %}
-        </div>
+        {% include '_components/_meeting' %}
       {% endfor %}
     {% else %}
       <div class="px-8 pt-3 pb-5" style="background:#F7F7F7;">
         <p>Please try another search or updating your filters.</p>
-        <p><a href="?">See All Meetings</a></p>
+        {% if type == 'past' %}
+          <p><a href="?type=past">See all Past Meetings</a></p>
+        {% elseif type == 'upcoming' %}
+          <p><a href="?type=upcoming">See all Upcoming Meetings</a></p>
+        {% endif %}
       </div>
     {% endif %}
   </div>
@@ -162,22 +116,37 @@
 {% block sidebar %}
   <hr class="hidden lg:block"/>
   <div class="mt-2 md:mt-0"></div>
-  <h4 class="py-0 mt-4 mb-6">{{ 'Search and Filter'|t }}</h4>
+  <h4 class="py-0 mt-4 mb-6">{{ 'Search & Filter'|t }}</h4>
   <form action="{{ entry.url }}">
+    <input type="hidden" name="type" value="{{ type }}"/>
+    {{ macros.select('Month', 'month', 'month', [
+        {"01"  : "January"},
+        {"02"  : "February"},
+        {"03"  : "March"},
+        {"04"  : "April"},
+        {"05"  : "May"},
+        {"06"  : "June"},
+        {"07"  : "July"},
+        {"08"  : "August"},
+        {"09"  : "September"},
+        {"10"  : "October"},
+        {"11"  : "November"},
+        {"12"  : "December"}
+      ], "Select a month"
+    )}}
+    {% set earliest_year = craft.entries().section('meetings').order('date asc').limit(1).one().date|date('Y') %}
+    {% set latest_year   = craft.entries().section('meetings').order('date desc').limit(1).one().date|date('Y') %}
+    {% set years = [] %}
+    {% for year in range(latest_year, earliest_year) %}
+      {% set years =  years|merge([{(year): year}]) %}
+    {% endfor %}
+    {{ macros.select('Year', 'year', 'year', years, "Select a year") }}
+
     {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
     {{ macros.select('Public Body', 'public_body', 'public_body', craft.entries().section('boardsCommissions').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a Council, Board or Commission') }}
-    {{ macros.select('Date Range', 'type', 'type', [
-        {"1"  : "Upcoming Meetings Only"},
-        {"2"  : "Past and Upcoming Meetings"},
-        {"3" : "Past Meetings Only"},
-      ], false
-    )}}
-    {{ macros.dates() }}
     <div class="flex items-center">
       <button class="button medium">Apply</button>
-      {% if query or filter_enabled %}
-        <a href="{{ entry.url }}">Clear filters</a>
-      {% endif %}
+      <a class="mt-4" href="{{ entry.url }}?type={{type}}">Clear filters</a>
     </div>
   </form>
   <hr/>
@@ -185,6 +154,7 @@
     <h4 class="py-0 mt-4">{{ 'Learn More About Public Bodies'|t }}</h4>
     <div class="pt-2">
       <p><a href="{{siteUrl}}boards-commissions">Boards & Commissions</a></p>
+      <p><a href="{{siteUrl}}departments">Departments</a></p>
       <p><a href="{{siteUrl}}departments/oakland-city-council">City Council</a></p>
     </div>
     <hr class="light"/>

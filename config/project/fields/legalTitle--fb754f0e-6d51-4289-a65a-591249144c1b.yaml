@@ -1,0 +1,19 @@
+columnSuffix: iourzqhe
+contentColumnType: text
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
+handle: legalTitle
+instructions: 'Enter the legal title of this department. This name will be used for specific sections of the site where long-form titles are more appropriate.'
+name: 'Legal Title'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

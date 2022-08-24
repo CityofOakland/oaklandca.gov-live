@@ -5,15 +5,6 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 321943ce-06f4-4125-b82a-baf2e174a37f # Allow Autofill?
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
             fieldUid: 0e81d688-16ec-4519-9f60-7d2e2d72526d # Heading
             instructions: null
             label: null
@@ -23,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 853a4c55-fd81-4715-8804-22a057720485 # Entries
+            fieldUid: 853a4c55-fd81-4715-8804-22a057720485 # Entries (Deprecated)
             instructions: null
             label: null
             required: false
@@ -32,16 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: e4562472-8b84-4213-97bc-476f6f092cad # Hide Thumbnails?
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 6444dc50-fd8a-41d1-94c1-7af9ba982cc1 # Hide Summary?
+            fieldUid: 6661f731-7c41-4607-9a82-a18f44fb4008 # Events
             instructions: null
             label: null
             required: false
@@ -96,13 +78,13 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
-  853a4c55-fd81-4715-8804-22a057720485: # Entries
+  853a4c55-fd81-4715-8804-22a057720485: # Entries (Deprecated)
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: entries
-    instructions: ''
-    name: Entries
+    instructions: 'This field is no longer in use. If you want to manually input entries, use the Meetings field below. You can also migrate your old events by searching their titles and inputting them below.'
+    name: 'Entries (Deprecated)'
     searchable: false
     settings:
       allowSelfRelations: false
@@ -119,51 +101,29 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: Solspace\Calendar\FieldTypes\EventFieldType
-  6444dc50-fd8a-41d1-94c1-7af9ba982cc1: # Hide Summary?
+  6661f731-7c41-4607-9a82-a18f44fb4008: # Events
     columnSuffix: null
-    contentColumnType: boolean
+    contentColumnType: string
     fieldGroup: null
-    handle: hideSummary
-    instructions: 'Check this box if you wish to hide the summary text that appears at the bottom of each entry’s block.'
-    name: 'Hide Summary?'
+    handle: events
+    instructions: 'If enabled, your entries will automatically fill with the latest meetings that have been related to this page, up to 3, minus however many manual selections you make below.'
+    name: Events
     searchable: false
     settings:
-      default: false
-      offLabel: null
-      onLabel: null
+      allowSelfRelations: false
+      limit: ''
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: false
+      source: null
+      sources:
+        - 'section:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
     translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Lightswitch
-  321943ce-06f4-4125-b82a-baf2e174a37f: # Allow Autofill?
-    columnSuffix: null
-    contentColumnType: boolean
-    fieldGroup: null
-    handle: allowAutofill
-    instructions: 'If enabled, your events will automatically fill with the latest events that have been related to this page, up to 3, minus however many manual selections you make below.'
-    name: 'Allow Autofill?'
-    searchable: false
-    settings:
-      default: false
-      offLabel: null
-      onLabel: null
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Lightswitch
-  e4562472-8b84-4213-97bc-476f6f092cad: # Hide Thumbnails?
-    columnSuffix: null
-    contentColumnType: boolean
-    fieldGroup: null
-    handle: hideThumbnails
-    instructions: 'Check this box if you wish to hide the thumbnail images and/or default icons for this block.'
-    name: 'Hide Thumbnails?'
-    searchable: false
-    settings:
-      default: false
-      offLabel: null
-      onLabel: null
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Lightswitch
+    translationMethod: site
+    type: craft\fields\Entries
 handle: eventEntries
 name: 'Event Entries'
 sortOrder: 19

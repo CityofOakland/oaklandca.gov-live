@@ -2,7 +2,7 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0 # Images
 handle: banner
-instructions: 'Choose images that will rotate in the background of the hero banner. Be sure to double click the image after uploading it and assigning the ALT TEXT, as this is an ADA requirement.'
+instructions: "Choose an image that will be displayed in the hero banner.\r\nDouble click the image after uploading it and assign the **Alt Text** as well as add an Image Credit."
 name: Banner
 searchable: false
 settings:

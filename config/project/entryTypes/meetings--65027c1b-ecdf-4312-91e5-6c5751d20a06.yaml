@@ -27,10 +27,19 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: f7e4a055-457f-46eb-ab3d-3e816f80a81d # Related Board or Commission
+            fieldUid: f7e4a055-457f-46eb-ab3d-3e816f80a81d # Related Public Body
             instructions: 'Select the Board or Commission this meeting is related to.'
             label: ''
             required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 45c5aca8-37bb-42d5-94ef-4a85bbf2de46 # Related Project, Topic, or Public Body
+            instructions: null
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -93,15 +102,6 @@ fieldLayouts:
             fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
             instructions: 'Add any additional details that people should know about this meeting.'
             label: 'Meeting Details'
-            required: ''
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: f3d1bcbe-1f1a-4498-b4e5-1d57d3257690 # Related Pages
-            instructions: 'Relate other pages to this meeting, including Departments, Officials and Topics.'
-            label: ''
             required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -230,6 +230,6 @@ hasTitleField: true
 name: Meetings
 section: 86dfc275-b48e-44d4-8c8c-acda592d92b0 # Meetings
 sortOrder: 1
-titleFormat: null
+titleFormat: '{relatedBoardOrCommission.one().title}{relatedProjectTopicOrPublicBody.type(''boardsCommissions'')|length ? '' - '' ~ relatedProjectTopicOrPublicBody.type(''boardsCommissions'').one().title : ''''} Meeting'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
