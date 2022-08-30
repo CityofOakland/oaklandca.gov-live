@@ -154,13 +154,30 @@
     {{ macros.select('Year', 'year', 'year', years, "Select a year") }}
 
     {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
-    {{ macros.select('Public Body', 'public_body', 'public_body', craft.entries().section('boardsCommissions').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a Council, Board or Commission') }}
 
-    {% if public_body %}
-      {{ macros.select('Subcommittee', 'subcommittee', 'subcommittee', craft.entries().section('boardsCommissions').id(public_body).one().subcommittees.all()|map(body=>{(body.id): body.title}), 'Select a Subcommittee') }}
-    {% else %}
-      {{ macros.select('Subcommittee', 'subcommittee', 'subcommittee', craft.entries().section('boardsCommissions').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a Subcommittee', true) }}
-    {% endif %}
+    <label for="public_body">
+      Public Body
+      <select class="shadow-form" name="public_body">
+        <option value="" data-subcommittees="[]">Select a Council, Board or Commission</option>
+        {% for entry in craft.entries().section('boardsCommissions').orderBy('title asc').all() %}
+          {% set subcommittees = entry.subcommittees ? entry.subcommittees.all()|map(body=>{id: body.id, text:body.title}) : [] %}
+          <option value="{{ entry.id }}" data-subcommittees="{{ subcommittees|json_encode }}" {% if public_body and public_body == entry.id %}selected{% endif %}>{{ entry.title }}</option>
+        {% endfor %}
+      </select>
+    </label>
+
+    <label for="subcommittee">
+      Subcommittee
+      <select class="shadow-form" name="subcommittee" {% if not subcommittee %}disabled{% endif %}>
+        <option value="">Select a Subcommittee</option>
+        {% if public_body %}
+          {% for entry in craft.entries().section('boardsCommissions').id(public_body).one().subcommittees.all() %}
+            <option value="{{ entry.id }}" {% if subcommittee and subcommittee == entry.id %}selected{% endif %}>{{ entry.title }}</option>
+          {% endfor %}
+        {% endif %}
+      </select>
+    </label>
+
     <div class="flex items-center">
       <button class="button medium">Apply</button>
       <a class="mt-4" href="{{ entry.url }}?type={{type}}">Clear filters</a>

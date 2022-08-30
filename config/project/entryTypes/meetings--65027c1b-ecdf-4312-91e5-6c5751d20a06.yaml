@@ -4,6 +4,10 @@ fieldLayouts:
       -
         elements:
           -
+            style: tip
+            tip: 'Meeting title will be automated. To preview the title, preview the meeting.'
+            type: craft\fieldlayoutelements\Tip
+          -
             autocapitalize: true
             autocomplete: false
             autocorrect: true
@@ -28,7 +32,7 @@ fieldLayouts:
             width: 100
           -
             fieldUid: f7e4a055-457f-46eb-ab3d-3e816f80a81d # Related Public Body
-            instructions: 'Select the Board or Commission this meeting is related to.'
+            instructions: 'Select the Board or Commission or Topic this meeting is related to.'
             label: ''
             required: ''
             tip: null
@@ -226,7 +230,7 @@ fieldLayouts:
         name: Relationships
         sortOrder: 2
 handle: meetings
-hasTitleField: true
+hasTitleField: false
 name: Meetings
 section: 86dfc275-b48e-44d4-8c8c-acda592d92b0 # Meetings
 sortOrder: 1
