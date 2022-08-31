@@ -1,0 +1,111 @@
+fieldLayouts:
+  a82f284f-b37a-42a2-9185-89611ec02bef:
+    tabs:
+      -
+        elements:
+          -
+            style: tip
+            tip: 'Notify the public of official city business. If this is not an official public notice use the [Documents entry type](/admin/entries/documents/new?site=default).'
+            type: craft\fieldlayoutelements\Tip
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: 'Title needs to be the legal title of the document.'
+            label: ''
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9ccc1819-38ef-4725-bc2c-3b701fb0ce92 # Public Notice Type
+            instructions: ''
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5261f0db-3453-423b-87c5-e5d3112c4141 # Document File
+            instructions: ''
+            label: 'Public Notice File'
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 58eda166-7a65-4fb6-8f7d-c6590b0591ae # Summary
+            instructions: ''
+            label: Details
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: 'Add Contact'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: b4027b04-f764-4b35-93ee-88ff570bfeaf # Point of Contact
+            instructions: ''
+            label: Contact
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 02edcc9a-9985-4401-9a49-38455f47ff84 # Contact Notes
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            heading: 'Related Content'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 4b5cda22-38e1-4580-b113-b6ceee3c9c09 # Related Resources
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a64389e9-e0f9-4d5b-ae78-16f6b5db6785 # Related Departments
+            instructions: ''
+            label: 'Related Official, Public Bodies or Department'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: default
+hasTitleField: true
+name: Default
+section: 1c6c0101-1a67-45f3-bbf7-67e50a5433a4 # Public Notices
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

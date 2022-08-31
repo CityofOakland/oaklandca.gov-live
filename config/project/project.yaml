@@ -1,4 +1,4 @@
-dateModified: 1661445621
+dateModified: 1661969785
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -35,6 +35,7 @@ meta:
     1bf6e3cb-26b9-405b-94ea-fbfc944c27b9: Size # Size
     1c1e50b0-b20e-4596-90d8-be5bc63bee3b: 'Button Icon' # Button Icon
     1c5d91eb-8c31-4a5e-ba23-4b6a28986f93: Email # Email
+    1c6c0101-1a67-45f3-bbf7-67e50a5433a4: 'Public Notices' # Public Notices
     1c974e73-c709-48c5-bc6e-fb8a9ae1ba8a: Table # Table
     1cfca893-de32-4979-8ba3-68de97b5cd03: Linkit # Linkit
     01d73fd7-5170-4523-8658-02c344e3ff55: 'Middle Initial' # Middle Initial
@@ -130,6 +131,7 @@ meta:
     7bf706ae-613e-4f58-b97c-757dfcb2965c: 'Navigation Item' # Navigation Item
     7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0: News # News
     7c42e182-2c0f-45c6-9b1a-229a0312589a: 'Entries Description' # Entries Description
+    7cdf9a2c-580b-4d98-8d49-1e3a24205000: 'Charter Number' # Charter Number
     7e17b706-c00f-4f94-84df-b0e91247051f: Description # Description
     07e65c29-fba5-4a88-ade2-bd8abfb4cc69: 'Link Set' # Link Set
     7f1c68e9-03e1-4887-8395-3229363a4f46: 'Video Title' # Video Title
@@ -162,6 +164,7 @@ meta:
     9c0b44a4-b6de-498e-bc9d-4f7a4f9fe5f2: 'Alert Type' # Alert Type
     9c457cb3-7498-4b3d-8b1e-84454f649934: 'Link Set' # Link Set
     9c805dc0-3e7b-4361-ace3-62b856d8711e: 'Column 3 Heading' # Column 3 Heading
+    9ccc1819-38ef-4725-bc2c-3b701fb0ce92: 'Public Notice Type' # Public Notice Type
     9da43fd8-c505-4d19-9486-e0cb669c568a: 'Document Packets' # Document Packets
     9db08bfd-737a-4544-a641-4c138f2b3b0a: Events # Events
     9dda7113-fc9a-4806-9315-3625689c332d: __blank__ # __blank__
@@ -238,6 +241,7 @@ meta:
     73fb3d63-bf50-4201-b8ae-8bc90e956ced: 'Online Meeting Phone Number' # Online Meeting Phone Number
     74ecde2f-b254-4f3e-b889-1affac6f5999: 'Embeddable Content' # Embeddable Content
     74f98eba-6d50-4f10-ab0b-e3dadaca25d6: 'Location Name' # Location Name
+    79a1e552-74a9-44ac-b34e-c65e2c683597: 'Public Notice Types' # Public Notice Types
     80f381a7-8fbc-487c-a705-dedbc7a15da7: Phone # Phone
     82a071f5-19ec-49b0-aca7-f390757c0892: 'CSV Upload' # CSV Upload
     83c14444-efcf-4d13-a20a-56275fd18855: Relationships # Relationships
@@ -278,6 +282,7 @@ meta:
     281e840f-0b8f-4781-bdf6-071f668eb6ac: 'Button Color' # Button Color
     282bd016-6a8d-414c-bdb6-8bf952eef35a: 'Service Category' # Service Category
     286b7386-711a-4eae-abe1-b4e397656bcb: Department # Department
+    295cc3ee-1fbc-4b96-8ad5-128e24953d2b: 'Public Notices Index' # Public Notices Index
     295df0c5-cc10-4392-9fbb-3452cc97b84a: Entries # Entries
     307d4a59-6007-4c95-8879-5411247cc8d0: Icon # Icon
     314d167b-d1f4-47dd-92e5-4d0f75339e09: 'Location Name' # Location Name
@@ -345,6 +350,7 @@ meta:
     3151b527-f445-433d-bb56-2eef8910d561: Email # Email
     03160f21-4427-427e-bbe1-bbbb0d41ab7b: 'Physical Location' # Physical Location
     4285c9b9-9f18-4b89-a234-a90c512f6603: 'Test Schema' # Test Schema
+    4347f7fd-c1f5-4d86-a1d6-35def64a51d3: 'Public Notices Index' # Public Notices Index
     4350b4ce-8cf4-44c9-9fee-4d81d5feec19: Description # Description
     4448ff2b-e958-4a61-8e36-0dab9831c66f: Projects # Projects
     4494beaa-9c1f-44ae-b040-36f60f3d055d: Logos # Logos
@@ -458,6 +464,7 @@ meta:
     a4001c79-48f7-4666-8658-4981e8e232d6: 'Image Credit' # Image Credit
     a6935d0a-2019-455c-8ab4-8adc959dea2e: 'Navigation Item' # Navigation Item
     a9027f1f-7200-4053-9b64-7be69dc993e5: 'Column 2 Width' # Column 2 Width
+    a35566b4-f079-4b08-b912-ad98bf81ed82: Default # Default
     a64389e9-e0f9-4d5b-ae78-16f6b5db6785: 'Related Departments' # Related Departments
     a2623193-86a7-40d6-9f1c-1be72d77b6d0: Destination # Destination
     a2912177-914b-4d07-b46e-bacb7bb05359: 'Call to Action' # Call to Action
