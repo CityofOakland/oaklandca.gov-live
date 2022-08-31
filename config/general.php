@@ -58,6 +58,8 @@ return [
 
     // Dev Mode (see https://craftcms.com/support/dev-mode)
     'devMode' => true,
+
+    'disallowRobots' => true
   ],
 
   // Staging environment settings
@@ -66,6 +68,8 @@ return [
     'siteUrl' => 'https://staging.oaklandca.gov',
 
     'devMode' => false,
+
+    'disallowRobots' => true
   ],
 
   // Hotfix environment settings
