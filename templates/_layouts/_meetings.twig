@@ -1,7 +1,9 @@
 {% set fullTitle = entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' %}
+{% if entry.type == 'meetings' %}
 {% set subTitle = clone(entry.subcommittees) %}
 {% if subTitle|length and subTitle.type('boardsCommissions')|length %}
 	{% set fullTitle = fullTitle ~ ' - ' ~ subTitle.type('boardsCommissions').one().title %}
+{% endif %}
 {% endif %}
 
 {% do seomatic.meta.seoTitle(fullTitle) %}
@@ -399,15 +401,17 @@
           </a>
         </li>
       {% endfor %}
-      {% set child_query = ['not'] %}
-      {% set child_query = child_query|merge(entry.relatedBoardOrCommission.ids()) %}
-      {% for entry in entry.subcommittees.id(child_query).all() %}
-        <li>
-          <a href="{{ entry.url }}">
-            {{ entry.title }}
-          </a>
-        </li>
-      {% endfor %}
+      {% if entry.subcommittees %}
+	      {% set child_query = ['not'] %}
+	      {% set child_query = child_query|merge(entry.relatedBoardOrCommission.ids()) %}
+	      {% for entry in entry.subcommittees.id(child_query).all() %}
+	        <li>
+	          <a href="{{ entry.url }}">
+	            {{ entry.title }}
+	          </a>
+	        </li>
+	      {% endfor %}
+      {% endif %}
     </ul>
   {% endif %}
 

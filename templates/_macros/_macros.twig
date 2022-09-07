@@ -13,7 +13,7 @@
 
 {% macro meetingTitle(meeting) %}
   {% set fullTitle = meeting.relatedBoardOrCommission|length ? meeting.relatedBoardOrCommission.one().title : 'Commission' %}
-  {% if meeting.subcommittees is defined %}
+  {% if meeting.subcommittees %}
     {% set subTitle = meeting.subcommittees %}
     {% if subTitle|length and subTitle.type('boardsCommissions')|length %}
       {% set fullTitle = fullTitle ~ ' - ' ~ subTitle.type('boardsCommissions').one().title %}
