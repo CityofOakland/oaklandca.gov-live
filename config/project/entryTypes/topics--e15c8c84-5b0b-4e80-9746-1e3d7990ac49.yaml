@@ -63,48 +63,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            type: craft\fieldlayoutelements\HorizontalRule
-          -
-            fieldUid: 6aaa96ea-268b-4fb7-b27c-0a481c5b3c51 # Accordion Header
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: e57d997c-ca20-4022-8841-f9fd919933df # Accordion
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            type: craft\fieldlayoutelements\HorizontalRule
-          -
-            fieldUid: b90c5e54-1301-4711-845c-d3f5b4643487 # Process Header
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: f09dcf7b-4b1f-47a1-ac7b-4425e46473cd # Process
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            type: craft\fieldlayoutelements\HorizontalRule
-          -
             fieldUid: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581 # Content Builder
             instructions: null
             label: null
