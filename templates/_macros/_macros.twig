@@ -15,8 +15,8 @@
   {% set fullTitle = meeting.relatedBoardOrCommission|length ? meeting.relatedBoardOrCommission.one().title : 'Commission' %}
   {% if meeting.subcommittees %}
     {% set subTitle = meeting.subcommittees %}
-    {% if subTitle|length and subTitle.type('boardsCommissions')|length %}
-      {% set fullTitle = fullTitle ~ ' - ' ~ subTitle.type('boardsCommissions').one().title %}
+    {% if subTitle|length and subTitle.section('boardsCommissions')|length %}
+      {% set fullTitle = fullTitle ~ ' - ' ~ subTitle.section('boardsCommissions').one().title %}
     {% endif %}
   {% endif %}
   {{ fullTitle }} Meeting

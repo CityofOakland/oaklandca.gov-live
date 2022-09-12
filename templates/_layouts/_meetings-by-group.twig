@@ -161,7 +161,7 @@
     {{ macros.select('Year', 'year', 'year', years, "Select a year") }}
     {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
 
-    {{ macros.select('Subcommittee', 'subcommittee', 'subcommittee', entry.subcommittees.all()|map(body=>{(body.id): body.title}), 'Select a Subcommittee') }}
+    {# {{ macros.select('Subcommittee', 'subcommittee', 'subcommittee', entry.subcommittees.all()|map(body=>{(body.id): body.title}), 'Select a Subcommittee') }} #}
     <div class="flex items-center">
       <button class="button medium">Apply</button>
       <a class="mt-4" href="{{ entry.url }}/meetings?type={{type}}">Clear filters</a>

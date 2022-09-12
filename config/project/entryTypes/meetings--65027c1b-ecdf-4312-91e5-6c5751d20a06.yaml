@@ -234,6 +234,6 @@ hasTitleField: false
 name: Meetings
 section: 86dfc275-b48e-44d4-8c8c-acda592d92b0 # Meetings
 sortOrder: 1
-titleFormat: '{relatedBoardOrCommission.one().title}{relatedProjectTopicOrPublicBody.type(''boardsCommissions'')|length ? '' - '' ~ relatedProjectTopicOrPublicBody.type(''boardsCommissions'').one().title : ''''} Meeting - {date|date("F j, Y")}'
+titleFormat: '{relatedBoardOrCommission.one().title}{subcommittees.section(''boardsCommissions'')|length ? '' - '' ~ subcommittees.section(''boardsCommissions'').one().title : ''''} Meeting - {date|date("F j, Y")}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
