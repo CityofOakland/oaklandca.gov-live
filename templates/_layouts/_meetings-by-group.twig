@@ -125,7 +125,7 @@
         {% include '_components/_meeting' %}
       {% endfor %}
       {% if upcomingMeetings.count() > 3 %}
-      <a class="button secondary" href="?type=upcoming">See All Upcoming Events</a>
+        <a class="button secondary" href="?type=upcoming">See All Upcoming Meetings</a>
       {% endif %}
     {% endif %}
     {% if pastMeetings|length %}
@@ -134,7 +134,7 @@
         {% include '_components/_meeting' %}
       {% endfor %}
       {% if pastMeetings.count() > 3 %}
-      <a class="button secondary" href="?type=past">See All Past Events</a>
+        <a class="button secondary" href="?type=past">See All Past Meetings</a>
       {% endif %}
     {% endif %}
   {% endif %}
