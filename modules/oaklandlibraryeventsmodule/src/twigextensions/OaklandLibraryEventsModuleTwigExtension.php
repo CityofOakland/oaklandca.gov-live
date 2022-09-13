@@ -88,11 +88,10 @@ class OaklandLibraryEventsModuleTwigExtension extends AbstractExtension
         $params = self::buildParams($q, $start, $end);
 
         $data           = self::getCacheResult('https://api2.bibliocommons.com/v1/oaklandlibrary/events', $params, 300);
-        $location_data  = self::getCacheResult('https://api2.bibliocommons.com/v1/oaklandlibrary/locations', array('limit'=>100), 3600);
 
         $events = [];
 
-        if($data && $location_data) {
+        if($data) {
             if(isset($data['events']) && isset($location_data['locations']) && isset($data['entities']['events']) ){
                 foreach($data['entities']['events'] as $uid => $event) {
                     $locationId = $event['definition']['branchLocationId'];
@@ -108,8 +107,8 @@ class OaklandLibraryEventsModuleTwigExtension extends AbstractExtension
                     ];
 
                     if($locationId) {
-                        if(isset($location_data['entities']['locations'][$locationId]['name'])){
-                            $event_parsed_object['location'] = $location_data['entities']['locations'][$locationId]['name'];
+                        if(isset($data['entities']['locations'][$locationId]['name'])){
+                            $event_parsed_object['location'] = $data['entities']['locations'][$locationId]['name'];
                         }
                     }
 
@@ -141,7 +140,7 @@ class OaklandLibraryEventsModuleTwigExtension extends AbstractExtension
         $params = array(
             'term'      => $q,
             'startDate' => $start ? $start : date('Y-m-d'),
-            'limit'     => 43,
+            'limit'     => 42,
             // 'page'      => $currentPage,
         );
 

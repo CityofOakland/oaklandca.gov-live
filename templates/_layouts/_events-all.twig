@@ -54,7 +54,7 @@
       {% set events     = date_query is defined ? date_query : craft.calendarize.upcoming({section: ['events'], search: q, relatedTo: relatedToElements, limit: null}, 'asc') %}
       {% set totalPages = (events|length / perPage)|round(0, 'ceil') %}
     {% else %}
-      {% set events     = date_query is defined ? date_query : craft.calendarize.upcoming({section: ['events'], search: q, relatedTo: relatedToElements, limit: null}, 'asc')|insertUpcomingLibraryEvents(q, null, null, perPage) %}
+      {% set events     = date_query is defined ? date_query : craft.calendarize.upcoming({section: ['events'], search: q, relatedTo: relatedToElements, limit: null}, 'asc')|insertUpcomingLibraryEvents(q, null, null) %}
       {% set totalPages = (events|length / perPage)|round(0, 'ceil') %}
     {% endif %}
   {% case 'past' %}
