@@ -92,9 +92,9 @@
     {% else %}
       {% switch type %}
         {% case 'upcoming' %}
-        <h2>Displaying all Upcoming Meetings</h2>
+        <h2 aria-live="polite">Displaying all Upcoming Meetings</h2>
         {% case 'past' %}
-      <h2 aria-live="polite">Displaying All Meetings</h2>
+        <h2 aria-live="polite">Displaying all Past Meetings</h2>
       {% endswitch %}
     {% endif %}
     <div class="mt-8">
@@ -129,7 +129,7 @@
       {% endif %}
     {% endif %}
     {% if pastMeetings|length %}
-      <h3 class="{{ upcomingMeetings|length ? '' : 'mt-0' }}">Past Meetings</h3>
+      <h3 class="{{ upcomingMeetings|length ? 'mt-12' : 'mt-0' }}">Past Meetings</h3>
       {% for meeting in pastMeetings.all() %}
         {% include '_components/_meeting' %}
       {% endfor %}
