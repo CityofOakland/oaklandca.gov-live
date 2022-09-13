@@ -68,7 +68,9 @@
             <h3 class="mt-0">{{ notice.title }}</h3>
           </a>
           {{ notice.summary }}
-          <span class="mt-4" data-type>{{ notice.publicNoticeType.one().title }}</span>
+          {% if notice.publicNoticeType|length %}
+            <span class="mt-4" data-type>{{ notice.publicNoticeType.one().title }}</span>
+          {% endif %}
           <div class="md:flex items-center justify-between mt-4">
             <p class="mt-0 updated">Posted: {{ notice.postDate|date("F j, Y") }}</p>
             {% include '_components/_button' with {

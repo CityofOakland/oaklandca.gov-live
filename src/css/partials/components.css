@@ -145,63 +145,60 @@
   }
 }
 
-:where(.components) h1 {
+:where(.components) h1,
+:where(.components) .h1 {
   @apply text-3xl md:text-4xl;
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-:where(.components) h2 {
+:where(.components) h2,
+:where(.components) .h2 {
   @apply text-xl leading-tight md:text-3xl;
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-:where(.components) h3 {
+:where(.components) h3,
+:where(.components) .h3 {
   @apply text-xl md:text-2xl;
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-:where(.components-format) h2 {
+:where(.components-format) h2,
+:where(.components-format) .h2 {
   margin-top: 1.5em;
 }
 
-:where(.components-format) h3 {
+:where(.components-format) h3,
+:where(.components-format) .h3 {
   margin-top: 1.5em;
 }
 
-:where(.components) h4 {
+:where(.components) h4,
+:where(.components) .h4 {
   @apply text-xl;
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-:where(.components-format) h4 {
-  padding-top: 1.5em;
+:where(.components-format) h4,
+:where(.components-format) .h4 {
+  margin-top: 1.5em;
 }
 
 :where(.components-format) h5 {
-  padding-top: 1.5em;
+  margin-top: 1.5em;
 }
 
 :where(.components) hr {
   clear: both;
   opacity: 0;
-}
-
-:where(.components hr) + h1,
-:where(.components hr) + h2,
-:where(.components hr) + h3,
-:where(.components hr) + h4,
-:where(.components hr) + h5,
-:where(.components hr) + h6 {
-  margin-top: 0;
-  padding-top: 0;
 }
 
 :where(.components) .embed-container {

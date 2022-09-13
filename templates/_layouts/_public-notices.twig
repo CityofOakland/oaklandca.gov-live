@@ -18,12 +18,13 @@
 
   <h2>Preview</h2>
   {% if file.kind == 'pdf' %}
-    <embed class="mt-4" src="{{ entry.documentFile.one().url }}" width="100%" height="375" type="application/pdf">
+    <embed class="embed-pdf mt-4" src="{{ entry.documentFile.one().url }}" width="100%" height="375" type="application/pdf">
   {% endif %}
 
   {% if publicNoticeType %}
     <hr class="hr medium"/>
-    <h3>Public Notice Type</h3>
+    <h3 class="h4">Public Notice Type</h3>
+    <h4>Public Notice Type</h4>
     <p><a href="{{ publicNoticeType.url }}">{{ publicNoticeType.title }}</a></p>
     {% if publicNoticeType.summary %}
       {{ publicNoticeType.summary }}

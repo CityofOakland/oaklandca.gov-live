@@ -36,7 +36,7 @@
       <div style="max-width:1152px;">
         <div class="flex flex-wrap justify-between -mx-8">
           <div class="w-full md:w-1/2 px-8">
-            <div class="components components-format flex items-start">
+            <div class="components flex items-start">
               {{ svg( '@webroot/dist/img/fa-clock.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }}
               <div>
                 <h3 class="mt-0">{{ entry.calendarize.startDate|date("l, F j, Y") }}</h3>
@@ -52,7 +52,7 @@
             </div>
           </div>
           <div class="w-full md:w-1/2 px-8 mt-12 md:mt-0">
-            <div class="components components-format flex items-start">
+            <div class="components flex items-start">
               {% if locationBlocks|length == 2 or (locationBlocks|length and (physicalLocationDisplays or onlineLocationDisplays)) %}
                 {{ svg( '@webroot/dist/img/fa-map.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }} 
               {% endif %}
