@@ -15,7 +15,8 @@
     href="{{ url }}" 
     aria-label="{% if label %}{{ label }}{% else %}{{ text }}{{ target ? ' (open in new tab)' : '' }}{% endif %}"
     {% if target %}target="_blank"{% endif %}
-    {{ url ? '' : 'disabled' }}>
+    {{ url ? '' : 'disabled' }}
+    {% if icon == 'download' %}download{% endif %}>
     {{ text }}
     {% if target %}
       {{ svg( '@webroot/dist/img/icon-external.svg') }}
