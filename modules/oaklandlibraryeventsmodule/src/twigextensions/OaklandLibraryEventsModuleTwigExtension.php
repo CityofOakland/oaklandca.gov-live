@@ -52,9 +52,9 @@ class OaklandLibraryEventsModuleTwigExtension extends AbstractExtension
      *
      * @return string
      */
-    public function addEventsTotal($number, $q = null, $start = null, $end = null, $limit = 10, $currentPage, $type = 'pagination')
+    public function addEventsTotal($number, $q = null, $start = null, $end = null, $limit = 100, $currentPage, $type = 'pagination')
     {
-        $params = self::buildParams($q, $start, $end, $limit, $currentPage);
+        $params = self::buildParams($q, $start, $end);
         $data   = self::getCacheResult('https://api2.bibliocommons.com/v1/oaklandlibrary/events', $params, 300);
 
         $total = $number;
@@ -83,9 +83,9 @@ class OaklandLibraryEventsModuleTwigExtension extends AbstractExtension
      *
      * @return string
      */
-    public function insertUpcomingLibraryEvents($array = [], $q = null, $start = null, $end = null, $limit = 10, $currentPage)
+    public function insertUpcomingLibraryEvents($array = [], $q = null, $start = null, $end = null)
     {
-        $params = self::buildParams($q, $start, $end, $limit, $currentPage);
+        $params = self::buildParams($q, $start, $end);
 
         $data           = self::getCacheResult('https://api2.bibliocommons.com/v1/oaklandlibrary/events', $params, 300);
         $location_data  = self::getCacheResult('https://api2.bibliocommons.com/v1/oaklandlibrary/locations', array('limit'=>100), 3600);
@@ -137,12 +137,12 @@ class OaklandLibraryEventsModuleTwigExtension extends AbstractExtension
         return $array;
     }
 
-    public static function buildParams($q = null, $start = null, $end = null, $limit = 10, $currentPage){
+    public static function buildParams($q = null, $start = null, $end = null){
         $params = array(
             'term'      => $q,
             'startDate' => $start ? $start : date('Y-m-d'),
-            'limit'     => $limit,
-            'page'      => $currentPage,
+            'limit'     => 43,
+            // 'page'      => $currentPage,
         );
 
         if($end !== null) {
