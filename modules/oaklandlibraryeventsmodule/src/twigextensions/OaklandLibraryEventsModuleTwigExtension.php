@@ -87,12 +87,12 @@ class OaklandLibraryEventsModuleTwigExtension extends AbstractExtension
     {
         $params = self::buildParams($q, $start, $end);
 
-        $data           = self::getCacheResult('https://api2.bibliocommons.com/v1/oaklandlibrary/events', $params, 300);
+        $data   = self::getCacheResult('https://api2.bibliocommons.com/v1/oaklandlibrary/events', $params, 300);
 
         $events = [];
 
         if($data) {
-            if(isset($data['events']) && isset($location_data['locations']) && isset($data['entities']['events']) ){
+            if(isset($data['events']) && isset($data['entities']['events']) ){
                 foreach($data['entities']['events'] as $uid => $event) {
                     $locationId = $event['definition']['branchLocationId'];
 
