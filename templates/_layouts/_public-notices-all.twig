@@ -73,13 +73,17 @@
           {% endif %}
           <div class="md:flex items-center justify-between mt-4">
             <p class="mt-0 updated">Posted: {{ notice.postDate|date("F j, Y") }}</p>
-            {% include '_components/_button' with {
-              class: 'small mt-0 mr-0',
-              style: 'secondary',
-              url: notice.documentFile.one().url,
-              text: 'Download',
-              icon: 'download',
-            } %}
+            {% set file = notice.documentFile.one() %}
+            {% if file %}
+              {% include '_components/_button' with {
+                class: 'small mt-0 mr-0',
+                style: 'secondary',
+                url: notice.documentFile.one().url,
+                text: 'Download',
+                icon: 'download',
+                label: 'Download '~ notice.documentFile.one().title ~' (' ~ notice.documentFile.one().kind|upper ~ ')'
+              } %}
+            {% endif %}
           </div>
         </div>
       {% endfor %}
