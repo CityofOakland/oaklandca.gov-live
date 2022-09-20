@@ -12,9 +12,9 @@
 		{% default %}
 	{% endswitch %}
 
-	<div class="flex flex-wrap justify-between -mx-3">
-		<div class="lg:w-3/4 xl:w-1/2 px-3">
-			<div id="{{ id }}" class="hidden form">
+	<div id="{{ id }}" class="container components hidden form py-6">
+		<div class="flex flex-wrap justify-between -mx-3">
+			<div class="lg:w-3/4 xl:w-1/2 px-3">
 				{% if craft.freeform.form(id) %}
 					{{ craft.freeform.form(id, {
 						labelClass: "form-label",
@@ -59,16 +59,20 @@
 	</div>
 {% endmacro %}
 
-<section class="bg-gray-900">
-	<div class="container components py-6">
-		<div id="helpful" class="md:flex items-center justify-between text-white">
-			<div class="flex items-center">
-				<p class="mr-8"><b>Was this page helpful?</b></p>
-				<button class="button secondary small" data-open="whyWasThisPageHelpful" style="margin-top:0;margin-bottom:0;">Yes</button>
-				<button class="button secondary small" data-open="whatWasWrongWithThisPage" style="margin-top:0;margin-bottom:0;margin-right:0;">No</button>
+<section>
+	<div class="bg-gray-900">
+		<div id="helpful" class="container components py-6">
+			<div class="md:flex items-center justify-between text-white">
+				<div class="flex items-center">
+					<p class="mr-8"><b>Was this page helpful?</b></p>
+					<button class="button secondary small" data-open="whyWasThisPageHelpful" style="margin-top:0;margin-bottom:0;">Yes</button>
+					<button class="button secondary small" data-open="whatWasWrongWithThisPage" style="margin-top:0;margin-bottom:0;margin-right:0;">No</button>
+				</div>
+				<p class="cursor-pointer pt-6 md:pt-0" data-open="reportProblem" role="button"><u>Report a problem with this page</u></p>
 			</div>
-			<p class="cursor-pointer pt-6 md:pt-0" data-open="reportProblem" role="button"><u>Report a problem with this page</u></p>
 		</div>
+	</div>
+	<div class="bg-gray-800">
     {{ _self.renderForm('whyWasThisPageHelpful', entry) }}
     {{ _self.renderForm('whatWasWrongWithThisPage', entry) }}
     {{ _self.renderForm('reportProblem', entry) }}
@@ -76,9 +80,14 @@
 </section>
 
 {% js at endBody %}
-	$('[data-open]').on('click',function(){
+	var $buttons = $('[data-open]');
+	$buttons.on('click',function(){
+		var $this = $(this);
+
 		$('.form').addClass('hidden');
 		$('#' + $(this).data('open')).removeClass('hidden');
-		$('#helpful').addClass('hidden');
+
+		$buttons.removeClass('state-active');
+		$this.addClass('state-active');
 	});
 {% endjs %}
