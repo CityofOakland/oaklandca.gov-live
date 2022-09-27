@@ -63,8 +63,8 @@
     {% if notices|length %}
       {% for notice in notices %}
         <div class="result pb-6" style="margin-bottom:1rem;">
-          <a class="flex" href="{{ notice.url }}">
-            <i class="fas fa-file-pdf mt-0 mr-4 text-2xl"></i>
+          <a class="md:flex" href="{{ notice.url }}">
+            <i class="fas fa-file-pdf mt-0 mb-2 md:mb-0 mr-4 text-2xl"></i>
             <h3 class="mt-0">{{ notice.title }}</h3>
           </a>
           {{ notice.summary }}
@@ -76,7 +76,7 @@
             {% set file = notice.documentFile.one() %}
             {% if file %}
               {% include '_components/_button' with {
-                class: 'small mt-0 mr-0',
+                class: 'small mt-4 mt-md:0 mr-0',
                 style: 'secondary',
                 url: notice.documentFile.one().url,
                 text: 'Download',
