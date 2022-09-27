@@ -39,6 +39,10 @@ fieldLayouts:
             heading: 'Event Date and Location Banner'
             type: craft\fieldlayoutelements\Heading
           -
+            style: tip
+            tip: 'Make sure to populate a start date/time, etc. or the template will not render correctly.'
+            type: craft\fieldlayoutelements\Tip
+          -
             fieldUid: 5b935c33-5d69-45c2-acd9-a6a2f0a567ce # Calendarize
             instructions: 'If this is an all-day event, toggle on the "all day". If this is a repeatable event, toggle on the "repeats" and select when the event should repeat. Please note, if you have changing videos, details, meeting links, you will need to create a new event"'
             label: 'Date and Time'
