@@ -1,4 +1,4 @@
-dateModified: 1663782894
+dateModified: 1664312125
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -358,6 +358,7 @@ meta:
     06433c3d-3f3d-4d0a-9619-f28a9d57d27b: 'Need to Know' # Need to Know
     6615dd71-4083-4e2d-a89b-26de79047282: 'Internal Link' # Internal Link
     6661f731-7c41-4607-9a82-a18f44fb4008: Events # Events
+    6672c4ed-d3ef-4b5a-9ebe-94aa942dc976: 'Subscribed Emails' # Subscribed Emails
     6694c82b-6e98-442b-976a-907b6c2f4bcc: 'Android Download Link' # Android Download Link
     6722d0c2-c9b0-4b2c-adf2-97e13adaecb3: Style # Style
     6730cced-6743-4ada-abb8-1f4c0f2e8878: 'Alert Link' # Alert Link
@@ -522,7 +523,6 @@ meta:
     c9d86e3f-9738-4d97-a271-5331264c10b8: 'Address Extended' # Address Extended
     c14fea44-3f71-477c-88d9-6f37c168d868: Content # Content
     c18e25ad-bdd5-4629-a5d4-daf8579db08f: 'Project After Photo' # Project After Photo
-    c35d3a93-d7f4-4c37-ae3e-1b4d403311bb: 'City of Oakland' # City of Oakland
     c48fd91b-ae6d-42f1-9c3b-62258d7e681f: 'Column 2 Cell' # Column 2 Cell
     c51bb818-8e54-4a71-b8e6-e623907d4cae: 'Column 1 Cell' # Column 1 Cell
     c83f2d58-995d-4f8d-9b09-8e2e131b9f09: Embed # Embed
@@ -774,7 +774,7 @@ plugins:
     schemaVersion: 2.0.0
   calendar:
     edition: pro
-    enabled: '1'
+    enabled: false
     licenseKey: PRJ91600ENZBQ5S7HS7UE93Z
     schemaVersion: 3.3.2
     settings:
@@ -993,6 +993,10 @@ plugins:
     enabled: true
     licenseKey: MHV0BQ72A7IVPYOA3JKMD3BQ
     schemaVersion: 2.13.0
+  oakland-email-notifications:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   patrol:
     edition: standard
     enabled: true

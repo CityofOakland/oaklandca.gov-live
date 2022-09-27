@@ -157,7 +157,7 @@ siteSettings:
   933e51d9-a6a9-4173-8362-b065d269bb0e:
     enabledByDefault: true
     hasUrls: true
-    siteId: c35d3a93-d7f4-4c37-ae3e-1b4d403311bb # City of Oakland
+    siteId: c35d3a93-d7f4-4c37-ae3e-1b4d403311bb
     template: meetings/_entry
     uriFormat: 'meetings/{slug}'
 titleFormat: ''

@@ -184,6 +184,15 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: 6672c4ed-d3ef-4b5a-9ebe-94aa942dc976 # Subscribed Emails
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Relationships
         sortOrder: 2
 handle: meetingsImported
