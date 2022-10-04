@@ -343,6 +343,7 @@ form[data-handle="whyWasThisPageHelpful"] {
   display: block;
   height: 100%;
   padding: 1.25rem;
+  text-decoration: none;
 }
 
 .card:hover,

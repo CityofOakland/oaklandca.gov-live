@@ -114,7 +114,7 @@ fields:
       limit: ''
       localizeRelations: false
       selectionLabel: ''
-      showSiteMenu: false
+      showSiteMenu: true
       source: null
       sources:
         - 'section:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
@@ -126,4 +126,4 @@ fields:
     type: craft\fields\Entries
 handle: eventEntries
 name: 'Event Entries'
-sortOrder: 19
+sortOrder: 20

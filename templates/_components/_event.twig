@@ -38,7 +38,7 @@
       <div class="w-full md:w-3/4 px-4">
         <h3 class="mt-0">
           <a href="{{ event.url }}">{{ event.title }}</a>
-          {% if onlineLocation %}
+          {% if onlineLocation|length %}
             <span data-type="Online">Online</span>
           {% endif %}
         </h3>

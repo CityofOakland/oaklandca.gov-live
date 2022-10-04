@@ -27,6 +27,15 @@ class Module extends \yii\base\Module
             $this->controllerNamespace = 'modules\\controllers';
         }
 
+        // Remove "All Entries" source
+        Event::on(
+            Entry::class,
+            Entry::EVENT_REGISTER_SOURCES,
+            function (Event $event) {
+                array_shift($event->sources);
+            }
+        );
+
         Event::on(
             Entry::class,
             Element::EVENT_REGISTER_EXPORTERS,

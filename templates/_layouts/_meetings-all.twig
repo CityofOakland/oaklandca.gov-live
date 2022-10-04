@@ -55,7 +55,11 @@
 
 {% paginate meetings as pageInfo, meetings %}
 
-{% set layout = 'reverse' %}
+{% if pageInfo.currentPage > 1 %}
+  {% do seomatic.meta.seoTitle(entry.title ~ ' | Page ' ~ pageInfo.currentPage ~ ' of ' ~ pageInfo.totalPages) %}
+{% endif %}
+
+{% set layout = 'filter' %}
 {% extends '_content.twig' %}
 {% import '_macros/_macros' as macros %}
 
@@ -69,16 +73,16 @@
 
   {% if filter_enabled %}
     {% if meetings|length %}
-      <h3 aria-live="polite">Displaying {{ meetings|length }} of {{ pageInfo.total }} Meetings</h3>
+      <h2 aria-live="polite">Displaying {{ meetings|length }} of {{ pageInfo.total }} Meetings</h2>
     {% else %}
-      <h3 aria-live="polite">No results found</h3>
+      <h2 aria-live="polite">No results found</h2>
     {% endif %}
   {% else %}
     {% switch type %}
       {% case 'upcoming' %}
-        <h3 aria-live="polite">Displaying all Upcoming Meetings</h3>
+        <h2 aria-live="polite">Displaying all Upcoming Meetings</h2>
       {% case 'past' %}
-        <h3 aria-live="polite">Displaying All Past Meetings</h3>
+        <h2 aria-live="polite">Displaying All Past Meetings</h2>
     {% endswitch %}
   {% endif %}
 

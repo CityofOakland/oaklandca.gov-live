@@ -173,4 +173,4 @@ fields:
     type: craft\fields\Number
 handle: table2Columns
 name: '2 Columns'
-sortOrder: 5
+sortOrder: 6

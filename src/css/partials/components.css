@@ -1,3 +1,44 @@
+.callout {
+  display: flex;
+  font-size: 18px;
+  padding: 1rem;
+  margin-top: 1rem;
+  max-width: 710px;
+}
+
+.callout .small {
+  font-size: 16px;
+}
+
+.callout.info {
+  background: #f0f4f8;
+}
+
+.callout.attention {
+  background: #fffbea;
+}
+
+.callout.action {
+  background: #fffbea;
+}
+
+.callout {
+  & a:hover {
+    text-decoration: none;
+  }
+
+  & svg {
+    flex-shrink: 0;
+    margin-right: 1rem;
+    margin-top: .45rem;
+  }
+
+  & .small > p:first-child {
+    margin-top: 0;
+  }
+}
+
+
 .components form {
   @apply text-base leading-normal;
 }
@@ -161,40 +202,6 @@
 :where(.components hr) + h6 {
   margin-top: 0;
   padding-top: 0;
-}
-
-:where(.components) .callout {
-  display: flex;
-  padding: 1rem;
-  margin-top: 1rem;
-}
-
-:where(.components) .callout.info {
-  background: #f0f4f8;
-}
-
-:where(.components) .callout.attention {
-  background: #fffbea;
-}
-
-:where(.components) .callout.action {
-  background: #fffbea;
-}
-
-:where(.components .callout) {
-  & a:hover {
-    text-decoration: none;
-  }
-
-  & svg {
-    flex-shrink: 0;
-    margin-right: 1rem;
-    margin-top: .25rem;
-  }
-
-  & .small > p:first-child {
-    margin-top: 0;
-  }
 }
 
 :where(.components) .embed-container {
@@ -368,12 +375,6 @@
   */
   :where(.components) td::before {
     content: attr(data-label);
-  }
-}
-
-@media (min-width: 768px) {
-  :where(.components) #twitter-widget-0 {
-    height: 95% !important;
   }
 }
 

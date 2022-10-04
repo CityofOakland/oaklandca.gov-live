@@ -31,6 +31,7 @@ class AllTransform extends TransformerAbstract
             'date'              => ScoutModule::entryDate($entry),
             'dateUpdated'       => $entry->dateUpdated->format('F j, Y'),
             'displayDate'       => ScoutModule::entryPrettyDate($entry),
+            'fileType'          => isset($entry->documentFile) && $entry->documentFile->one() ? $entry->documentFile->one()->kind : null,
             'groupHeadBio'      => strip_tags($entry->groupHeadBio),
             'groupHeadName'     => $entry->groupHeadName,
             'groupHeadTitle'    => $entry->groupHeadTitle,

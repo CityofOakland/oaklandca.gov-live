@@ -1,3 +1,23 @@
+{% set layout           = layout is defined ? layout : 'default' %}
+{% set flex_class       = '' %}
+{% set column_one_class = '' %}
+{% set column_two_class = '' %}
+
+{% switch layout %}
+  {% case 'filter' %}
+    {% set flex_class = 'flex-col-reverse lg:flex-row' %}
+    {% set column_one_class = 'mt-8 lg:mt-0' %}
+    {% set column_two_class = 'mt-0' %}
+  {% case 'reverse' %}
+    {% set flex_class = 'lg:flex-row-reverse' %}
+    {% set column_one_class = '' %}
+    {% set column_two_class = 'mt-8 lg:mt-0' %}
+  {% default %}
+    {% set flex_class = '' %}
+    {% set column_one_class = '' %}
+    {% set column_two_class = 'mt-8 lg:mt-0' %}
+{% endswitch %}
+
 {% include '_partials/_head' %}
 
   {# Checks if the URI is empty and if not, adds the class of "home" to the page body. #}
@@ -36,6 +56,20 @@
                       {% if entry.leadIn or entry.summary %}
                         <div class="mt-4 text-xl leading-8 tw-only">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
                       {% endif %}
+                      {% if entry.ctaButton | length %}
+                        {% include '_components/_button' with {
+                          class: 'mt-4',
+                          url: entry.ctaButton.url,
+                          text: entry.ctaButton.text,
+                        } %}
+                      {% endif %}
+                      {% if entry is defined and entry.id == 34229 %}
+                        {% include '_components/_button' with {
+                          class: 'mt-4',
+                          url: 'https://www.oaklandca.gov/documents/special-vacancy-notices',
+                          text: 'View Local Appointments List and Special Vacancy Notices',
+                        } %}
+                      {% endif %}
                     {% endblock %}
                   </div>
                 </div>
@@ -49,13 +83,13 @@
           {% if category is not defined %}
             <div class="container pt-0">
               <div class="max-w-6xl">
-                <div class="flex flex-wrap justify-between -mx-8 {{ layout is defined and layout == 'reverse' ? 'flex-col-reverse lg:flex-row' : '' }}">
-                  <div class="w-full lg:w-7/11 px-8 {{ layout is defined and layout == 'reverse' ? 'mt-8 lg:mt-0' : '' }}">
+                <div class="flex flex-wrap justify-between -mx-8 {{ flex_class }}">
+                  <div class="w-full {{ fullwidth is defined and fullwidth == true ? '' : 'lg:w-7/11' }} px-8 {{ column_one_class }}">
                     <div class="components components-format">
                       {% block content %}{% endblock %}
                     </div>
                   </div>
-                  <div class="w-full lg:w-4/11 px-8 {{ layout is defined and layout == 'reverse' ? 'mt-0' : 'mt-8 lg:mt-0' }}">
+                  <div class="w-full lg:w-4/11 px-8 {{ column_two_class }}">
                     <div id="components-sidebar" class="components components-format">
                       {% block sidebar %}
                         {% if category is not defined %}
@@ -84,6 +118,8 @@
             {% endif %}
           </div>
         </section>
+        {% block prefooter %}
+        {% endblock %}
         {% include '_components/partials/_feedback.twig' %}
       </main>
       {% include '_partials/_elements/_footer.twig' %}

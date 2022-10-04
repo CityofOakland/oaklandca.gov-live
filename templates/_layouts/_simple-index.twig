@@ -1,4 +1,6 @@
-{% extends '_layout' %}
+{% set fullwidth = true %}
+
+{% extends '_content' %}
 {% set entry = craft.entries.section(indexPage).one %}
 {% set relatedEntry = null %}
 {% if craft.app.request.getSegment(2) == 'related-to' %}
@@ -7,30 +9,18 @@
 {% endif %}
 
 {% block content %}
-  {% include '_partials/_page-banners' with {
-    breadCrumbs: true,
-  } %}
-  <section class="relative z-0 bg-white">
-    <div class="container p-8 py-16 mx-auto">
-      {# {% if entrySection == 'boardsCommissions' %} #}
-        {# {% set query = craft.entries.section(entrySection).isThisAnOfficialBoardOrCommission(true).relatedTo(relatedEntry).limit(25).orderBy('title') %} #}
-      {# {% else %} #}
-        {% set query = craft.entries.section(entrySection).relatedTo(relatedEntry).limit(25).orderBy('title') %}
-      {# {% endif %} #}
-
-      {% paginate query as pageInfo, pageEntries %}
-      {% include '_partials/_elements/_pagination' %}
-      <div class="my-4 space-y-4 md:space-y-8 md:my-8">
-        {% for entry in pageEntries %}
-          <article>
-            <h2 class="my-0 text-lg font-normal md:text-2xl"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
-            {% if entry.leadIn %}
-              <p class="mt-2 mb-0 text-sm md:text-lg">{{ entry.leadIn }}</p>
-            {% endif %}
-          </article>
-        {% endfor %}
-      </div>
-      {% include '_partials/_elements/_pagination' %}
-    </div>
-  </section>
+  {% set query = craft.entries.section(entrySection).relatedTo(relatedEntry).limit(25).orderBy('title') %}
+  {% paginate query as pageInfo, pageEntries %}
+  {% include '_partials/_elements/_pagination' %}
+  <div class="my-4 space-y-4 md:space-y-8 md:my-8">
+    {% for entry in pageEntries %}
+      <article>
+        <h2 class="my-0 text-lg font-normal md:text-2xl"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+        {% if entry.leadIn %}
+          <p class="mt-2 mb-0 text-sm md:text-lg">{{ entry.leadIn }}</p>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
+  {% include '_partials/_elements/_pagination' %}
 {% endblock %}

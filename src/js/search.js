@@ -214,7 +214,15 @@ allSearch.addWidget(
       empty: "No results",
       item: `
       <div class="result">
-        <h3><a href="{{ url }}">{{{_highlightResult.title.value}}}</a> <span>{{ section }}</span></h3>
+        <h3>
+          <a href="{{ url }}">
+            {{{_highlightResult.title.value}}}
+            {{#fileType}}
+            <div class="inline uppercase">({{ fileType }})</div>
+            {{/fileType}}
+          </a> 
+          <span>{{ section }}</span>
+        </h3>
         <p>{{{ _snippetResult.leadIn.value }}}</p>
         {{{ #summary }}}<p>{{{ _snippetResult.summary.value }}}</p>{{{ /summary }}}
         {{ ^summary }}<p>{{{ _snippetResult.body.value }}}</p>{{{ /summary }}}

@@ -16,7 +16,12 @@
         </div>
         {% if sitewideAlert.alertUrl %}
           <div>
-            <a href="{{ sitewideAlert.alertUrl.url }}" class="p-1 text-xs text-red-600 uppercase bg-white shadow-sm btn btn-sm hover:text-white hover:bg-red-600 hover:no-underline sm:p-2">Read More »</a>
+            {% include '_components/_button' with {
+              class: 'small mt-0 mr-0',
+              style: 'accent',
+              text: 'Read More »',
+              url: sitewideAlert.alertUrl.url,
+            } %}
           </div>
         {% endif %}
       </div>

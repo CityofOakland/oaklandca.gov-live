@@ -59,7 +59,7 @@ fields:
       types:
         __assoc__:
           -
-            - fruitstudios\linkit\models\Email
+            - presseddigital\linkit\models\Email
             -
               __assoc__:
                 -
@@ -72,7 +72,7 @@ fields:
                   - customPlaceholder
                   - dotgovsupport@oaklandca.gov
           -
-            - fruitstudios\linkit\models\Phone
+            - presseddigital\linkit\models\Phone
             -
               __assoc__:
                 -
@@ -85,7 +85,7 @@ fields:
                   - customPlaceholder
                   - ''
           -
-            - fruitstudios\linkit\models\Url
+            - presseddigital\linkit\models\Url
             -
               __assoc__:
                 -
@@ -110,7 +110,7 @@ fields:
                   - allowPaths
                   - ''
           -
-            - fruitstudios\linkit\models\Twitter
+            - presseddigital\linkit\models\Twitter
             -
               __assoc__:
                 -
@@ -123,7 +123,7 @@ fields:
                   - customPlaceholder
                   - ''
           -
-            - fruitstudios\linkit\models\Facebook
+            - presseddigital\linkit\models\Facebook
             -
               __assoc__:
                 -
@@ -136,7 +136,7 @@ fields:
                   - customPlaceholder
                   - ''
           -
-            - fruitstudios\linkit\models\Instagram
+            - presseddigital\linkit\models\Instagram
             -
               __assoc__:
                 -
@@ -149,7 +149,7 @@ fields:
                   - customPlaceholder
                   - ''
           -
-            - fruitstudios\linkit\models\LinkedIn
+            - presseddigital\linkit\models\LinkedIn
             -
               __assoc__:
                 -
@@ -162,7 +162,7 @@ fields:
                   - customPlaceholder
                   - '["section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f","section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb","section:9da43fd8-c505-4d19-9486-e0cb669c568a","section:8b7c4e26-9aab-4c5d-874e-aee151107de3","section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a","section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf","section:98d541ae-56ee-4c98-ba9c-37438dc485a0","section:24fa116b-8516-4626-84f3-86b685e71071","section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c","section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a","section:fbf8b9b0-8875-4e08-819a-d62603676dc4","section:70778563-6dac-453d-a4b0-5121f3a614b7","section:17d5d48d-2d75-4742-8820-cdce13764482"]' # Staff # Documents # Document Packets # Volunteers # Resources # Projects # News # Officials # Topics # Services # Departments # Boards & Commissions # Teams
           -
-            - fruitstudios\linkit\models\Entry
+            - presseddigital\linkit\models\Entry
             -
               __assoc__:
                 -
@@ -191,7 +191,7 @@ fields:
                   - customSelectionLabel
                   - ''
           -
-            - fruitstudios\linkit\models\Category
+            - presseddigital\linkit\models\Category
             -
               __assoc__:
                 -
@@ -207,7 +207,7 @@ fields:
                   - customSelectionLabel
                   - ''
           -
-            - fruitstudios\linkit\models\Asset
+            - presseddigital\linkit\models\Asset
             -
               __assoc__:
                 -
@@ -224,7 +224,7 @@ fields:
                   - customSelectionLabel
                   - ''
           -
-            - fruitstudios\linkit\models\User
+            - presseddigital\linkit\models\User
             -
               __assoc__:
                 -
@@ -244,7 +244,7 @@ fields:
                   - ''
     translationKeyFormat: null
     translationMethod: none
-    type: fruitstudios\linkit\fields\LinkitField
+    type: presseddigital\linkit\fields\LinkitField
   5dc172d1-4954-444f-b558-6f9f388d0ac3: # Link Set Description
     columnSuffix: null
     contentColumnType: text
@@ -332,4 +332,4 @@ fields:
     type: craft\fields\PlainText
 handle: linksWithDescriptions
 name: 'Links with Descriptions'
-sortOrder: 14
+sortOrder: 15

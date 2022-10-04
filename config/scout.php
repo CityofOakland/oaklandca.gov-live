@@ -6,7 +6,6 @@ use modules\ScoutModule;
 
 
 return [
-  "sync" => true,
   "application_id" => getenv('ALGOLIA_APP_ID'),
   "admin_api_key" => getenv('ALGOLIA_ADMIN_API'),
   /*
@@ -14,7 +13,7 @@ return [
      * their respective indices. You can disable these and update
      * your indices manually using the commands.
      */
-  'sync' => true,
+  'sync' => getenv('ENVIRONMENT') == 'dev' ? false : true,
 
   /*
      * By default Scout handles all indexing in a queued job, you can disable

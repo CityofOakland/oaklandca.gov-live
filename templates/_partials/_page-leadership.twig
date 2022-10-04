@@ -19,7 +19,11 @@
         </figure>
         {% if entry.teams | length %}
           {% for entry in entry.teams %}
-            <a href="{{ entry.url }}" class="block mt-4 text-center btn btn-sm">{{ entry.title }}</a>
+            {% include '_components/_button' with {
+              class: 'block mt-4 mr-0 mb-0 text-center',
+              url: entry.url,
+              text: entry.title,
+            } %}
           {% endfor %}
         {% endif %}
       </div>
