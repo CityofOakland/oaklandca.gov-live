@@ -57,7 +57,7 @@ class OaklandEmailNotificationsVariable
         if($element && get_class($element) == 'craft\elements\Entry'){
             if($element->fieldLayout){
                 foreach($element->fieldLayout->customFieldElements as $customField){
-                    if(get_class($customField->field) == 'meetgoat\oaklandemailnotifications\fields\OaklandEmailNotificationsField'){
+                    if(get_class($customField->field) == 'meetgoat\oaklandemailnotifications\fields\OaklandEmailSubscriptionsField'){
                         $email_notification_field = $customField->field;
                         break;
                     }
@@ -68,10 +68,14 @@ class OaklandEmailNotificationsVariable
         if($email_notification_field) {
             $token = Craft::$app->request->getCsrfToken();
 
+            $handle = $email_notification_field->handle;
+
+            echo var_dump($element->$handle);
+
             $html .= '
                 <form action="" method="POST">
                     <input type="hidden" name="CRAFT_CSRF_TOKEN" value="'.$token.'">
-                    <input type="hidden" name="elementId" value="'.$element->id.'"/>
+                    <input type="hidden" name="element_id" value="'.$element->id.'"/>
                     <input type="hidden" name="action" value="oakland-email-notifications/default/submit">
                     <label class="w-6/12">
                         <span>Full Name</span>

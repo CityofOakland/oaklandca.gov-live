@@ -33,17 +33,17 @@ use craft\helpers\Json;
  * @package   OaklandEmailNotifications
  * @since     1.0.0
  */
-class OaklandEmailNotificationsField extends Field
+class OaklandEmailSubscriptionsField extends Field
 {
     // Public Properties
     // =========================================================================
 
-    /**
-     * Subscribed emails
-     *
-     * @var array
-     */
-    public $subscribed = [];
+    // /**
+    //  * Subscribed emails
+    //  *
+    //  * @var array
+    //  */
+    // public $subscribed = [];
 
     // Static Methods
     // =========================================================================
@@ -55,7 +55,7 @@ class OaklandEmailNotificationsField extends Field
      */
     public static function displayName(): string
     {
-        return Craft::t('oakland-email-notifications', 'Email Notifications');
+        return Craft::t('oakland-email-notifications', 'Email Subscriptions');
     }
 
     // Public Methods
@@ -75,8 +75,8 @@ class OaklandEmailNotificationsField extends Field
     {
         $rules = parent::rules();
         $rules = array_merge($rules, [
-            ['subscribed', 'array'],
-            ['subscribed', 'default', 'value' => []],
+            // ['subscribed', 'json'],
+            // ['subscribed', 'default', 'value' => []],
         ]);
         return $rules;
     }
@@ -94,7 +94,7 @@ class OaklandEmailNotificationsField extends Field
      */
     public function getContentColumnType(): string
     {
-        return Schema::TYPE_STRING;
+        return Schema::TYPE_JSON;
     }
 
     /**
@@ -112,6 +112,18 @@ class OaklandEmailNotificationsField extends Field
      */
     public function normalizeValue($value, ElementInterface $element = null)
     {
+        // Note: I can not figure out why I have to do this twice to return an unserialized array.
+        // At some point it's serialized twice, but the only the default serializeFunction is called.
+        // ¯\_(ツ)_/¯
+
+        if (is_string($value) && !empty($value)) {
+            $value = Json::decodeIfJson($value);
+        }
+
+        if (is_string($value) && !empty($value)) {
+            $value = Json::decodeIfJson($value);
+        }
+
         return $value;
     }
 
@@ -226,7 +238,7 @@ class OaklandEmailNotificationsField extends Field
     {
         // Render the settings template
         return Craft::$app->getView()->renderTemplate(
-            'oakland-email-notifications/_components/fields/OaklandEmailNotificationsField_settings',
+            'oakland-email-notifications/_components/fields/OaklandEmailSubscriptionsField_settings',
             [
                 'field' => $this,
             ]
@@ -351,7 +363,7 @@ class OaklandEmailNotificationsField extends Field
 
         // Render the input template
         return Craft::$app->getView()->renderTemplate(
-            'oakland-email-notifications/_components/fields/OaklandEmailNotificationsField_input',
+            'oakland-email-notifications/_components/fields/OaklandEmailSubscriptionsField_input',
             [
                 'name' => $this->handle,
                 'value' => $value,

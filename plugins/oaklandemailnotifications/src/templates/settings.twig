@@ -17,10 +17,32 @@
 
 {% do view.registerAssetBundle("meetgoat\\oaklandemailnotifications\\assetbundles\\oaklandemailnotifications\\OaklandEmailNotificationsAsset") %}
 
-{{ forms.textField({
-    label: 'Some Field',
-    instructions: 'Enter some setting here.',
-    id: 'someAttribute',
-    name: 'someAttribute',
-    value: settings['someAttribute']})
-}}
+{% for section in craft.sections.allSections %}
+  {% if section.type !== 'single' %}
+    {% for entryType in section.entryTypes %}
+      {% set subscription_emails_exist = false %}
+      {% for field in entryType.fields %}
+        {% if 'meetgoat\\oaklandemailnotifications\\fields\\OaklandEmailSubscriptionsField' == className(field) %}
+          {% set subscription_emails_exist = true %}
+        {% endif %}
+      {% endfor %}
+      {% if subscription_emails_exist %}
+        {{ forms.textField({
+            label: entryType.name ~ ' - Email Subject',
+            instructions: 'Enter the email subject for this specific entry here.',
+            id: 'emailSubjects_'~entryType.handle,
+            name: 'emailSubjects['~ entryType.handle ~']',
+            value: settings['emailSubjects'][entryType.handle] is defined ? settings['emailSubjects'][entryType.handle] : ''
+        }) }}
+        {{ forms.textareaField({
+          label: entryType.name ~ ' - Email Template',
+          instructions: 'Enter the email template for this specific entry here.',
+          id: 'emailTemplates_'~entryType.handle,
+          name: 'emailTemplates['~ entryType.handle ~']',
+          rows: 8,
+          value: settings['emailTemplates'][entryType.handle] is defined ? settings['emailTemplates'][entryType.handle] : ''
+        }) }}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}

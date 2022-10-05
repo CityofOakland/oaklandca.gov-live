@@ -39,7 +39,8 @@ class Settings extends Model
      *
      * @var string
      */
-    public $someAttribute = 'Some Default';
+    public $emailTemplates  = [];
+    public $emailSubjects   = [];
 
     // Public Methods
     // =========================================================================
@@ -57,8 +58,8 @@ class Settings extends Model
     public function rules()
     {
         return [
-            ['someAttribute', 'string'],
-            ['someAttribute', 'default', 'value' => 'Some Default'],
+            // ['emailTemplates', 'array'],
+            // ['emailTemplates', 'default', 'value' => []],
         ];
     }
 }

@@ -193,6 +193,28 @@ fieldLayouts:
       -
         elements:
           -
+            fieldUid: 1ddcc13e-3bfa-4a0e-9661-34bc1052f299 # Email Subscriptions
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1bbdfcc0-b085-435d-afc9-344998a67876 # Email Trigger
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Notifications
+        sortOrder: 2
+      -
+        elements:
+          -
             style: tip
             tip: 'Relating these items will surface these meetings in content builder components such as the Meeting Entries module, etc.'
             type: craft\fieldlayoutelements\Tip
@@ -223,17 +245,8 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
-          -
-            fieldUid: 6672c4ed-d3ef-4b5a-9ebe-94aa942dc976 # Subscribed Emails
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
         name: Relationships
-        sortOrder: 2
+        sortOrder: 3
 handle: meetings
 hasTitleField: true
 name: Meetings

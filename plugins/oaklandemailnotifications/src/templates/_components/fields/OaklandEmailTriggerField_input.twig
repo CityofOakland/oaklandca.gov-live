@@ -1,0 +1,32 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Oakland Email Notifications plugin for Craft CMS 3.x
+ *
+ * OaklandEmailNotificationsField Field Input
+ *
+ * @author    Goat Creative Inc.
+ * @copyright Copyright (c) 2022 Goat Creative Inc.
+ * @link      https://meetgoat.com
+ * @package   OaklandEmailNotifications
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+<p>When this lightswitch is enabled, saving this entry will automatically trigger an email if one the following happen:</p>
+<ul style="list-style:auto;padding-left:1rem;">
+  <li>Meeting date and/or time is changed.</li>
+  <li>Meeting status is changed.</li>
+  <li>Agenda items are updated</li>
+</ul>
+
+{{ forms.lightswitchField({
+  label: '',
+  instructions: '',
+  id: name,
+  on: value,
+  name: name,
+  value: value })
+}}

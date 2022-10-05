@@ -12,7 +12,8 @@ namespace meetgoat\oaklandemailnotifications;
 
 use meetgoat\oaklandemailnotifications\variables\OaklandEmailNotificationsVariable;
 use meetgoat\oaklandemailnotifications\models\Settings;
-use meetgoat\oaklandemailnotifications\fields\OaklandEmailNotificationsField as OaklandEmailNotificationsFieldField;
+use meetgoat\oaklandemailnotifications\fields\OaklandEmailSubscriptionsField;
+use meetgoat\oaklandemailnotifications\fields\OaklandEmailTriggerField;
 
 use Craft;
 use craft\base\Plugin;
@@ -23,6 +24,10 @@ use craft\services\Fields;
 use craft\web\twig\variables\CraftVariable;
 use craft\events\RegisterComponentTypesEvent;
 use craft\events\RegisterUrlRulesEvent;
+
+use craft\events\ElementEvent;
+use craft\helpers\ElementHelper;
+use craft\services\Elements;
 
 use yii\base\Event;
 
@@ -104,7 +109,8 @@ class OaklandEmailNotifications extends Plugin
             Fields::class,
             Fields::EVENT_REGISTER_FIELD_TYPES,
             function (RegisterComponentTypesEvent $event) {
-                $event->types[] = OaklandEmailNotificationsFieldField::class;
+                $event->types[] = OaklandEmailSubscriptionsField::class;
+                $event->types[] = OaklandEmailTriggerField::class;
             }
         );
 
@@ -129,6 +135,133 @@ class OaklandEmailNotifications extends Plugin
                 }
             }
         );
+
+        Craft::$app->elements->on(Elements::EVENT_BEFORE_SAVE_ELEMENT, function(ElementEvent $e) {
+            if (ElementHelper::isDraftOrRevision($e->element)) {
+                return;
+            }
+
+            $element                    = $e->element;
+            $email_subscription_field   = null;
+            $email_trigger_field        = null;
+
+            if($element->isFresh) {
+                return;
+            }
+
+            $old_element = Craft::$app->elements->getElementById($element->id);
+
+            // Check if elements have a subscription field and a email trigger field.
+            if($element && get_class($element) == 'craft\elements\Entry'){
+                if($element->fieldLayout){
+                    foreach($element->fieldLayout->customFieldElements as $customField){
+                        if(get_class($customField->field) == 'meetgoat\oaklandemailnotifications\fields\OaklandEmailSubscriptionsField'){
+                            $email_subscription_field = $customField->field;
+                            break;
+                        }
+                    }
+
+                    foreach($element->fieldLayout->customFieldElements as $customField){
+                        if(get_class($customField->field) == 'meetgoat\oaklandemailnotifications\fields\OaklandEmailTriggerField'){
+                            $email_trigger_field = $customField->field;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if($email_subscription_field && $email_trigger_field) {
+                $email_trigger          = $email_trigger_field->handle;
+                $email_should_trigger   = false;
+
+                if($element->$email_trigger === true){
+                    $settings = $this->getSettings();
+
+                    if(isset($settings['emailTemplates'][$element->type->handle])) {
+                        $subject    = $settings['emailSubjects'][$element->type->handle];
+                        $template   = $settings['emailTemplates'][$element->type->handle];
+                        $body       = '';
+
+                        if(preg_match_all("~\{\{(.*?)\}\}~", $template, $matches_array)){
+                            $matches = $matches_array[1];
+
+                            foreach($matches as $attribute_name) {
+                                $attribute_name = trim($attribute_name);
+                                $value          = $element->$attribute_name;
+                                if($element->isAttributeDirty($attribute_name)){
+                                    $email_should_trigger = true;
+                                    $old_value = $old_element->$attribute_name;
+                                }
+
+                                $field = Craft::$app->fields->getFieldByHandle($attribute_name);
+                                $class = $field ? get_class($field) : null;
+
+                                if($class) {
+                                    switch($class){
+                                        case 'craft\\fields\\Time':
+                                            $value = $value->format('g:ia');
+                                            break;
+                                        case 'craft\\fields\\Date':
+                                            $value = $value->format('F j, Y');
+                                            break;
+                                        case 'craft\\fields\\Dropdown':
+                                            $value = ucfirst($value);
+                                            break;
+                                        case 'craft\\fields\\Matrix':
+                                            $matrix_string = '<ul>';
+                                            foreach($value as $block){
+                                                foreach($block->fieldLayout->fields as $field) {
+                                                    $block_class        = $field ? get_class($field) : null;
+                                                    $block_field_handle = $field->handle;
+
+                                                    switch($block_class){
+                                                        case 'craft\\fields\\PlainText':
+                                                            $matrix_string .= ("<li>" . $field->name . ": ");
+                                                            $matrix_string .= $block->$block_field_handle;
+                                                            $matrix_string .= "</li>";
+                                                            break;
+                                                        case 'craft\\fields\\Assets':
+                                                            if(count($block->$block_field_handle->all())){
+                                                                $matrix_string .= ("<li>" . $field->name . ": ");
+                                                                $matrix_string .="<ul>";
+                                                                foreach($block->$block_field_handle->all() as $asset){
+                                                                    $matrix_string .="<li><a href='" . $asset->url . "'>". $asset->title ."</a></li>";
+                                                                }
+                                                                $matrix_string .="</ul>";
+                                                                $matrix_string .= "</li>";
+                                                            }
+                                                            break;
+                                                        default:
+                                                            break;
+                                                    }
+                                                }
+                                            }
+                                            $matrix_string .= "</ul>";
+                                            $value = $matrix_string;
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                }
+
+                                $subject    = str_replace('{{ '. $attribute_name .' }}', $value, $subject);
+                                $template   = str_replace('{{ '. $attribute_name .' }}', $value, $template);
+                            }
+                        }
+
+                        if($email_should_trigger) {
+                            Craft::$app
+                                ->getMailer()
+                                ->compose()
+                                ->setTo('tim.lu@meetgoat.com')
+                                ->setSubject($subject)
+                                ->setHtmlBody($template)
+                                ->send();
+                        }
+                    }
+                }
+            }
+        });
 
 /**
  * Logging in Craft involves using one of the following methods:

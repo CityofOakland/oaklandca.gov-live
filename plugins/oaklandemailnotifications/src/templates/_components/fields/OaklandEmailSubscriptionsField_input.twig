@@ -1,0 +1,38 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Oakland Email Notifications plugin for Craft CMS 3.x
+ *
+ * OaklandEmailNotificationsField Field Input
+ *
+ * @author    Goat Creative Inc.
+ * @copyright Copyright (c) 2022 Goat Creative Inc.
+ * @link      https://meetgoat.com
+ * @package   OaklandEmailNotifications
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+<p>The following represents the list of emails subscribed updates for this specific entry.</p>
+{% if value|length %}
+  <table>
+    <thead>
+      <tr>
+        <td><strong>Email</strong></td>
+        <td><strong>Full Name</strong></td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for email, name in value %}
+        <tr>
+          <td>{{ email }}</td>
+          <td>{{ name }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+<p>No people are subscribed to these meeting updates.</p>
+{% endif %}
