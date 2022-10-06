@@ -70,8 +70,6 @@ class OaklandEmailNotificationsVariable
 
             $handle = $email_notification_field->handle;
 
-            echo var_dump($element->$handle);
-
             $html .= '
                 <form action="" method="POST">
                     <input type="hidden" name="CRAFT_CSRF_TOKEN" value="'.$token.'">

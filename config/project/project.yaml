@@ -1,4 +1,4 @@
-dateModified: 1664999249
+dateModified: 1665076293
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -51,7 +51,7 @@ meta:
     2c145c6e-d6b2-418c-aa28-3ea1eaa51944: 'Column 3 Width' # Column 3 Width
     2ce783d0-daf9-44d1-a0b4-84a0163dcaad: 'Column 2 Width' # Column 2 Width
     2dc1fa8f-aa9c-488d-8c3e-ed572699c7a4: 'Open in New Tab?' # Open in New Tab?
-    2e9a2810-afb2-4358-82f1-d152b0598d4b: 'Subscribed Emails' # Subscribed Emails
+    2e9a2810-afb2-4358-82f1-d152b0598d4b: 'Subscribed Emails'
     2e52b334-4732-47a2-9c3b-7a8bf656425e: Link # Link
     2ec9801b-fd1b-4e5f-bf30-80d457a08afd: 'Service Category' # Service Category
     02edcc9a-9985-4401-9a49-38455f47ff84: 'Contact Notes' # Contact Notes

@@ -13,6 +13,7 @@
 @import './partials/events-meetings.css';
 @import './partials/icons.css';
 @import './partials/buttons.css';
+@import './partials/modal.css';
 
 @layer utilities {
   /* Use this utility to hide text only meant for screen readers */
