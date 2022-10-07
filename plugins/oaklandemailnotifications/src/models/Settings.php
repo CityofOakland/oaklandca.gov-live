@@ -35,11 +35,17 @@ class Settings extends Model
     // =========================================================================
 
     /**
-     * Some field model attribute
+     * Pre-Merge Email Templates
      *
-     * @var string
+     * @var array
      */
     public $emailTemplates  = [];
+
+    /**
+     * Pre-Merge Email Subjects
+     *
+     * @var array
+     */
     public $emailSubjects   = [];
 
     // Public Methods
@@ -57,9 +63,6 @@ class Settings extends Model
      */
     public function rules()
     {
-        return [
-            // ['emailTemplates', 'array'],
-            // ['emailTemplates', 'default', 'value' => []],
-        ];
+        return [];
     }
 }

@@ -21,7 +21,7 @@ use yii\db\Schema;
 use craft\helpers\Json;
 
 /**
- * OaklandEmailNotificationsField Field
+ * OaklandEmailTriggerField Field
  *
  * Whenever someone creates a new field in Craft, they must specify what
  * type of field it is. The system comes with a handful of field types baked in,
@@ -35,15 +35,6 @@ use craft\helpers\Json;
  */
 class OaklandEmailTriggerField extends Field
 {
-    // Public Properties
-    // =========================================================================
-
-    // /**
-    //  * Subscribed emails
-    //  *
-    //  * @var array
-    //  */
-    // public $subscribed = [];
 
     // Static Methods
     // =========================================================================
@@ -74,10 +65,7 @@ class OaklandEmailTriggerField extends Field
     public function rules()
     {
         $rules = parent::rules();
-        $rules = array_merge($rules, [
-            // ['subscribed', 'json'],
-            // ['subscribed', 'default', 'value' => []],
-        ]);
+        $rules = array_merge($rules, []);
         return $rules;
     }
 

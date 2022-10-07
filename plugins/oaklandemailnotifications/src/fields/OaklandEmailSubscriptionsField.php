@@ -21,7 +21,7 @@ use yii\db\Schema;
 use craft\helpers\Json;
 
 /**
- * OaklandEmailNotificationsField Field
+ * OaklandEmailSubscriptionsField Field
  *
  * Whenever someone creates a new field in Craft, they must specify what
  * type of field it is. The system comes with a handful of field types baked in,
@@ -35,15 +35,6 @@ use craft\helpers\Json;
  */
 class OaklandEmailSubscriptionsField extends Field
 {
-    // Public Properties
-    // =========================================================================
-
-    // /**
-    //  * Subscribed emails
-    //  *
-    //  * @var array
-    //  */
-    // public $subscribed = [];
 
     // Static Methods
     // =========================================================================
@@ -74,10 +65,7 @@ class OaklandEmailSubscriptionsField extends Field
     public function rules()
     {
         $rules = parent::rules();
-        $rules = array_merge($rules, [
-            // ['subscribed', 'json'],
-            // ['subscribed', 'default', 'value' => []],
-        ]);
+        $rules = array_merge($rules, []);
         return $rules;
     }
 
@@ -350,6 +338,7 @@ class OaklandEmailSubscriptionsField extends Field
         // Get our id and namespace
         $id = Craft::$app->getView()->formatInputId($this->handle);
         $namespacedId = Craft::$app->getView()->namespaceInputId($id);
+        $elementId = $element ? $element->id : null;
 
         // Variables to pass down to our field JavaScript to let it namespace properly
         $jsonVars = [
@@ -366,6 +355,7 @@ class OaklandEmailSubscriptionsField extends Field
             'oakland-email-notifications/_components/fields/OaklandEmailSubscriptionsField_input',
             [
                 'name' => $this->handle,
+                'elementId' => $elementId,
                 'value' => $value,
                 'field' => $this,
                 'id' => $id,

@@ -39,7 +39,6 @@ if($modal.length && $modalOpen.length && $modalClose.length){
   $modal.on('click', closeModal);
 
   $modalContent.on('click', function(e){
-    e.preventDefault();
     e.stopPropagation();
   });
 }

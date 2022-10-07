@@ -46,19 +46,23 @@ class DefaultController extends Controller
      *         The actions must be in 'kebab-case'
      * @access protected
      */
-    protected $allowAnonymous = ['submit'];
+    protected $allowAnonymous = ['submit', 'unsubscribe'];
 
     // Public Methods
     // =========================================================================
 
     /**
-     * Handle a request going to our plugin's index action URL,
-     * e.g.: actions/oakland-email-notifications/default
+     * Handle a request going to our plugin's submit action URL,
+     * This takes form submissions from the current entry and appends the email information into an array.
+     * 
+     * e.g.: actions/oakland-email-notifications/default/submit
      *
      * @return mixed
      */
     public function actionSubmit()
     {
+        $this->requirePostRequest();
+
         $request                    = Craft::$app->request;
         $id                         = $request->getParam('element_id')  ? filter_var($request->getParam('element_id'), FILTER_SANITIZE_NUMBER_INT) : null;
         $full_name                  = $request->getParam('full_name')   ? filter_var($request->getParam('full_name'), FILTER_SANITIZE_STRING) : null;
@@ -96,5 +100,49 @@ class DefaultController extends Controller
         }
 
         $this->redirectToPostedUrl();
+    }
+
+    /**
+     * Handle a request going to our plugin's unsubscribe action URL,
+     * This takes route removes specific emails from an entry's subscription list.
+     * 
+     * e.g.: actions/oakland-email-notifications/default/unsubscribe
+     *
+     * @return mixed
+     */
+    public function actionUnsubscribe()
+    {
+        $request    = Craft::$app->request;
+        $id         = $request->getParam('elementId')  ? filter_var($request->getParam('elementId'), FILTER_SANITIZE_NUMBER_INT) : null;
+        $email      = $request->getParam('email')      ? filter_var($request->getParam('email'), FILTER_SANITIZE_EMAIL) : null;
+        
+        $email_notification_field   = null;
+        $element                    = Craft::$app->elements->getElementById($id);
+
+        if($element && get_class($element) == 'craft\elements\Entry'){
+            if($element->fieldLayout){
+                foreach($element->fieldLayout->customFieldElements as $customField){
+                    if(get_class($customField->field) == 'meetgoat\oaklandemailnotifications\fields\OaklandEmailSubscriptionsField'){
+                        $email_notification_field = $customField->field;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if($email_notification_field && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $handle     = $email_notification_field->handle;
+            $email_list = $element->$handle;
+
+            if(is_array($email_list)){
+                unset($email_list[$email]);
+                $element->setFieldValue($handle, $email_list);
+                Craft::$app->elements->saveElement($element);
+            }
+        }
+
+        if($element) {
+            return $this->redirect($element->getCpEditUrl());
+        }
     }
 }

@@ -126,15 +126,15 @@ class OaklandEmailNotifications extends Plugin
         );
 
         // Do something after we're installed
-        Event::on(
-            Plugins::class,
-            Plugins::EVENT_AFTER_INSTALL_PLUGIN,
-            function (PluginEvent $event) {
-                if ($event->plugin === $this) {
-                    // We were just installed
-                }
-            }
-        );
+        // Event::on(
+        //     Plugins::class,
+        //     Plugins::EVENT_AFTER_INSTALL_PLUGIN,
+        //     function (PluginEvent $event) {
+        //         if ($event->plugin === $this) {
+        //             // We were just installed
+        //         }
+        //     }
+        // );
 
         Craft::$app->elements->on(Elements::EVENT_BEFORE_SAVE_ELEMENT, function(ElementEvent $e) {
             if (ElementHelper::isDraftOrRevision($e->element)) {
@@ -185,79 +185,46 @@ class OaklandEmailNotifications extends Plugin
                         if(preg_match_all("~\{\{(.*?)\}\}~", $template, $matches_array)){
                             $matches = $matches_array[1];
 
-                            foreach($matches as $attribute_name) {
-                                $attribute_name = trim($attribute_name);
-                                $value          = $element->$attribute_name;
-                                if($element->isAttributeDirty($attribute_name)){
+                            foreach($matches as $field_handle) {
+                                $field_handle   = trim($field_handle);
+                                $value          = $element->$field_handle;
+                                if($element->isFieldDirty($field_handle)){
                                     $email_should_trigger = true;
-                                    $old_value = $old_element->$attribute_name;
                                 }
 
-                                $field = Craft::$app->fields->getFieldByHandle($attribute_name);
+                                $field = Craft::$app->fields->getFieldByHandle($field_handle);
                                 $class = $field ? get_class($field) : null;
 
                                 if($class) {
-                                    switch($class){
-                                        case 'craft\\fields\\Time':
-                                            $value = $value->format('g:ia');
-                                            break;
-                                        case 'craft\\fields\\Date':
-                                            $value = $value->format('F j, Y');
-                                            break;
-                                        case 'craft\\fields\\Dropdown':
-                                            $value = ucfirst($value);
-                                            break;
-                                        case 'craft\\fields\\Matrix':
-                                            $matrix_string = '<ul>';
-                                            foreach($value as $block){
-                                                foreach($block->fieldLayout->fields as $field) {
-                                                    $block_class        = $field ? get_class($field) : null;
-                                                    $block_field_handle = $field->handle;
+                                    $value = $this->formatFieldIntoString($field, $element);
 
-                                                    switch($block_class){
-                                                        case 'craft\\fields\\PlainText':
-                                                            $matrix_string .= ("<li>" . $field->name . ": ");
-                                                            $matrix_string .= $block->$block_field_handle;
-                                                            $matrix_string .= "</li>";
-                                                            break;
-                                                        case 'craft\\fields\\Assets':
-                                                            if(count($block->$block_field_handle->all())){
-                                                                $matrix_string .= ("<li>" . $field->name . ": ");
-                                                                $matrix_string .="<ul>";
-                                                                foreach($block->$block_field_handle->all() as $asset){
-                                                                    $matrix_string .="<li><a href='" . $asset->url . "'>". $asset->title ."</a></li>";
-                                                                }
-                                                                $matrix_string .="</ul>";
-                                                                $matrix_string .= "</li>";
-                                                            }
-                                                            break;
-                                                        default:
-                                                            break;
-                                                    }
-                                                }
-                                            }
-                                            $matrix_string .= "</ul>";
-                                            $value = $matrix_string;
-                                            break;
-                                        default:
-                                            break;
+                                    if($class != 'craft\\fields\\Matrix'){
+                                        if($element->isFieldDirty($field_handle)){
+                                            $value  = '<strong>' . $this->formatFieldIntoString($field, $old_element);
+                                            $value .= ' => '. $value;
+                                            $value .= '</strong>';
+                                        }
                                     }
                                 }
 
-                                $subject    = str_replace('{{ '. $attribute_name .' }}', $value, $subject);
-                                $template   = str_replace('{{ '. $attribute_name .' }}', $value, $template);
+                                $subject    = str_replace('{{ '. $field_handle .' }}', $value, $subject);
+                                $template   = str_replace('{{ '. $field_handle .' }}', $value, $template);
                             }
                         }
 
-                        if($email_should_trigger) {
-                            Craft::$app
-                                ->getMailer()
-                                ->compose()
-                                ->setTo('tim.lu@meetgoat.com')
-                                ->setSubject($subject)
-                                ->setHtmlBody($template)
-                                ->send();
-                        }
+                        // if($email_should_trigger) {
+                            $subscription_field_handle = $email_subscription_field->handle;
+                            $emails = $element->$subscription_field_handle;
+                            foreach($emails as $email=>$name){
+                                Craft::$app
+                                    ->getMailer()
+                                    ->compose()
+                                    ->setTo($email)
+                                    ->setSubject($subject)
+                                    ->setHtmlBody($template)
+                                    ->send();
+                            }
+                        // }
                     }
                 }
             }
@@ -289,6 +256,62 @@ class OaklandEmailNotifications extends Plugin
             ),
             __METHOD__
         );
+    }
+
+
+    // I've only formatted the fields that are currently used in the current template implementation.
+    // The others should probably be pretty easy to slot in, but unfortunately without live examples
+    // It's hard to get them QC'd in time.
+    public function formatFieldIntoString($field, $element)
+    {
+        $class  = get_class($field);
+        $handle = $field->handle;
+        $value  = $element->$handle;
+
+        switch($class){
+            case 'craft\\fields\\Assets':
+                $html = '';
+                if(count($value->all())){
+                    $html .="<ul>";
+                    foreach($value->all() as $asset){
+                        $html .="<li><a href='" . $asset->url . "'>". $asset->title ."</a></li>";
+                    }
+                    $html .="</ul>";
+                }
+                return $html;
+                break;
+            case 'craft\\fields\\Date':
+                return $value->format('F j, Y');
+                break;
+            case 'craft\\fields\\Matrix':
+                $html = '<ul>';
+                foreach($value as $block){
+                    foreach($block->fieldLayout->fields as $field) {
+                        $inner_html = $this->formatFieldIntoString($field, $block);
+                        if($inner_html){
+                            $html .= ("<li>" . $field->name . ": ");
+                            $html .= $inner_html;
+                            $html .= "</li>";
+                        }
+                    }
+                }
+                $html .= "</ul>";
+                return $html;
+                break;
+            case 'craft\\fields\\PlainText':
+                return $value;
+                break;
+            case 'craft\\fields\\RadioButtons':
+                $label = ucfirst($value);
+                return $label;
+                break;
+            case 'craft\\fields\\Time':
+                return $value->format('g:ia');
+                break;
+            default:
+                return '';
+                break;
+        }
     }
 
     // Protected Methods
