@@ -24,7 +24,7 @@
   {% if publicNoticeType %}
     <hr class="hr medium"/>
     <h3 class="h4">Public Notice Type</h3>
-    <p><a href="{{ publicNoticeType.url }}">{{ publicNoticeType.title }}</a></p>
+    <p><a href="{{ siteUrl }}public-notices?public_notice_type={{ publicNoticeType.id }}">{{ publicNoticeType.title }}</a></p>
     {% if publicNoticeType.summary %}
       {{ publicNoticeType.summary }}
     {% endif %}

@@ -122,13 +122,15 @@
         {"12"  : "December"}
       ], "Select a month"
     )}}
-    {% set earliest_year = craft.entries().section('publicNotices').order('date asc').limit(1).one().date|date('Y') %}
-    {% set latest_year   = craft.entries().section('publicNotices').order('date desc').limit(1).one().date|date('Y') %}
-    {% set years = [] %}
-    {% for year in range(latest_year, earliest_year) %}
-      {% set years =  years|merge([{(year): year}]) %}
-    {% endfor %}
-    {{ macros.select('Year', 'year', 'year', years, "Select a year") }}
+    {% if craft.entries().section('publicNotices').limit(1).one() %}
+      {% set earliest_year = craft.entries().section('publicNotices').order('date asc').limit(1).one().date|date('Y') %}
+      {% set latest_year   = craft.entries().section('publicNotices').order('date desc').limit(1).one().date|date('Y') %}
+      {% set years = [] %}
+      {% for year in range(latest_year, earliest_year) %}
+        {% set years =  years|merge([{(year): year}]) %}
+      {% endfor %}
+      {{ macros.select('Year', 'year', 'year', years, "Select a year") }}
+    {% endif %}
     <div class="flex items-center">
       <button class="button medium">Apply</button>
       <a class="mt-4" href="{{ entry.url }}">Clear filters</a>
