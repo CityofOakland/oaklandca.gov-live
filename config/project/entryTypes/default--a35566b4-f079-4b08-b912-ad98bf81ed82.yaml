@@ -58,27 +58,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            heading: 'Add Contact'
-            type: craft\fieldlayoutelements\Heading
-          -
-            fieldUid: b4027b04-f764-4b35-93ee-88ff570bfeaf # Point of Contact
-            instructions: ''
-            label: Contact
-            required: ''
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 02edcc9a-9985-4401-9a49-38455f47ff84 # Contact Notes
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
             heading: 'Related Content'
             type: craft\fieldlayoutelements\Heading
           -
@@ -99,8 +78,60 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
-        name: Content
+        name: 'Main Body Content'
         sortOrder: 1
+      -
+        elements:
+          -
+            heading: 'Contact Information'
+            type: craft\fieldlayoutelements\Heading
+          -
+            fieldUid: 286b7386-711a-4eae-abe1-b4e397656bcb # Department
+            instructions: 'Choose the Department that is responsible for this public notice.'
+            label: 'Contact Department'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: de65ce28-2919-4a65-9aa2-c18e5518f2fe # Program/Subdivision
+            instructions: 'If the contact is a specific division, office or bureau within your department, add that here.'
+            label: 'Contact Subdivision'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a # Email Address
+            instructions: ''
+            label: 'Contact Email'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5e5aad16-6bdc-4d3e-adfd-75147a323b78 # Phone Number
+            instructions: ''
+            label: 'Contact Phone Number'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0e74b82a-254d-45d0-b9a1-d6b6774e6eef # Contact Address
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Sidebar Content'
+        sortOrder: 2
 handle: default
 hasTitleField: true
 name: Default
