@@ -32,8 +32,18 @@ function mobileTables($){
   $('.components').addClass('js-initialized');
 }
 
+function resizeButtonText($){
+  $('.button-container > span').each(function(index, element){
+    var $this = $(this);
+    var $button = $this.parent().find('.button');
+
+    $this.width($button.outerWidth());
+  });
+}
+
 updateExternalLinks(jQuery);
 mobileTables(jQuery);
+resizeButtonText(jQuery);
 
 // Accept HMR as per: https://vitejs.dev/guide/api-hmr.html
 if (import.meta.hot) {

@@ -46,9 +46,9 @@ fieldLayouts:
             width: 100
           -
             fieldUid: 5261f0db-3453-423b-87c5-e5d3112c4141 # Document File
-            instructions: null
-            label: null
-            required: false
+            instructions: ''
+            label: ''
+            required: '1'
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null

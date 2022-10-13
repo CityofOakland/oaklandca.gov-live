@@ -22,7 +22,7 @@
         class="block border border-gray-200">
         {% if block.displayAltTextAsCaption %}<figcaption class="block my-2 text-base text-center">{{ text }}</figcaption>{% endif %}
     </figure>
-    <div class="{{ textPad }} md:flex-1 flex flex-col">
+    <div class="{{ textPad }} md:flex-1 flex flex-col items-start">
       <div class="body-text">
         {{ block.textBlock }}
       </div>
