@@ -14,15 +14,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 853a4c55-fd81-4715-8804-22a057720485 # Entries (Deprecated)
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
             fieldUid: 6661f731-7c41-4607-9a82-a18f44fb4008 # Events
             instructions: null
             label: null
@@ -78,29 +69,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
-  853a4c55-fd81-4715-8804-22a057720485: # Entries (Deprecated)
-    columnSuffix: null
-    contentColumnType: string
-    fieldGroup: null
-    handle: entries
-    instructions: 'This field is no longer in use. If you want to manually input entries, use the Meetings field below. You can also migrate your old events by searching their titles and inputting them below.'
-    name: 'Entries (Deprecated)'
-    searchable: false
-    settings:
-      allowSelfRelations: false
-      limit: '3'
-      localizeRelations: false
-      selectionLabel: ''
-      showSiteMenu: true
-      source: null
-      sources:
-        - 'calendar:2'
-      targetSiteId: null
-      validateRelatedElements: false
-      viewMode: null
-    translationKeyFormat: null
-    translationMethod: site
-    type: Solspace\Calendar\FieldTypes\EventFieldType
   6661f731-7c41-4607-9a82-a18f44fb4008: # Events
     columnSuffix: null
     contentColumnType: string
