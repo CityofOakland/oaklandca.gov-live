@@ -102,23 +102,25 @@
               </div>
             </div>
           {% endif %}
-          <div id="components-footer" class="components">
-            {% if entry['relatedDepartments'] is defined and entry.relatedDepartments|length %}
-              {% include '_components/partials/_cards' with {
-                background: '#334E68',
-                class:      'text-white',
-                heading:    "Related Departments",
-                entries:    entry.relatedDepartments.all()
-              } %}
-            {% endif %}
-            {% if entry.componentsFooter %}
-              {% for block in entry.componentsFooter.level(1).all() %}
-                {% include '_components/_' ~ block.type %}
-              {% endfor %}
-            {% endif %}
-          </div>
         </section>
         {% block prefooter %}
+          <section>
+            <div id="components-footer" class="components">
+              {% if entry['relatedDepartments'] is defined and entry.relatedDepartments|length %}
+                {% include '_components/partials/_cards' with {
+                  background: '#334E68',
+                  class:      'text-white',
+                  heading:    "Related Departments",
+                  entries:    entry.relatedDepartments.all()
+                } %}
+              {% endif %}
+              {% if entry.componentsFooter %}
+                {% for block in entry.componentsFooter.level(1).all() %}
+                  {% include '_components/_' ~ block.type %}
+                {% endfor %}
+              {% endif %}
+            </div>
+          </section>
         {% endblock %}
         {% include '_components/partials/_feedback.twig' %}
       </main>
