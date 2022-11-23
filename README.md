@@ -59,3 +59,62 @@ Depending on how tech-savvy the client is, changes can be committed various ways
 - Inside the GitHub web application. Files can be edited and new branches can be created from saved changes (can be limiting on the number of edited pages).
 
 This section is subject to change.
+
+### CLI Utilities
+
+All CLI utility scripts currently live under `scripts/` directory.
+
+#### Craft Data Download Utility
+
+This utility helps download Craft data from a remote server to a local environment. It can be useful for automating data synchronization across various environments (e.g. production, staging, development, etc).
+
+**Features:**
+* Downloading a DB SQL dump from a remote server containing a Craft schema.
+* Searching and replacing certain strings in the SQL dump to make sure the installation works on the local / destination environment (e.g. Craft address, directory, etc).
+* Interactively prompts the user to optionally run Craft CLI commands:
+  * Apply YAML config from and to the imported database.
+  * Run all migrations.
+  * Create a new local user.
+  * Retain or delete the downloaded SQL dump file.
+
+**Software Stack:**
+* Bash.
+* Common UNIX utilities like: ssh, sed, tee, cat, etc.
+* MySQL CLI utilities like mysql, mysqldump, etc.
+* Operating System:
+  * UNIX (Native)
+    * GNU/Linux.
+    * BSD-based (e.g. FreeBSD, MacOS, etc).
+  * Windows 10+ (via WSL, containers, VMs / hypervisors, etc).
+
+**Usage Instructions:**
+1. Consult the CLI utility's usage manual by invoking `craft-download-db.sh -h`.
+2. Either create an environment file to be used by the CLI utility (see `-e` option in usage manual), or make sure the current shell environment has all the required environment variables set while invoking the CLI utility. Here's an example environment file to start with:
+```
+# Local & remote MySQL connection info.
+LOCAL_MYSQL_USER=""
+REMOTE_MYSQL_USER=""
+REMOTE_MYSQL_DB=""
+
+# Local & remote Craft addresses (e.g. domain name, IP, etc)
+# without the scheme prefix (e.g. http://, https://, etc).
+LOCAL_CRAFT_ADDRESS=""
+REMOTE_CRAFT_ADDRESS=""
+
+# Local and remote Craft directory on the server without a trailing slash.
+LOCAL_CRAFT_DIRECTORY=""
+REMOTE_CRAFT_DIRECTORY=""
+
+# SSH connection string. This could be in the format user@server-address,
+# or a host in local SSH config.
+REMOTE_MYSQL_SSH=""
+
+# Additional mysqldump command line options.
+# The variable is a bash array.
+# Example: ADDITIONAL_MYSQLDUMP_OPTIONS=("--no-tablespaces" "--column-statistics=0")
+# Depending on the mysqldump version, or MySQL server config, additional flags may be necessary.
+# Consult the remote mysqldump version's manual for reference.
+ADDITIONAL_MYSQLDUMP_OPTIONS=()
+```
+3. Make sure the destination / local Craft environment has what it needs to connect to its local database server and function properly. You do not need a full Craft schema setup, but at least a `.env` file with all the variables needed.
+4. Run utility, and follow all prompts and instructions on the screen.
