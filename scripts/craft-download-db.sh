@@ -153,6 +153,7 @@ mysqldump_cli_args=( \
 # Search & replace for incoming MySQL dump stream via "sed" command.
 # The search array can have simple strings, or regular expressions.
 search=( \
+    "\`${REMOTE_MYSQL_DB}\`" \
     "$REMOTE_CRAFT_DIRECTORY" \
     "$REMOTE_CRAFT_ADDRESS" \
     "https://${LOCAL_CRAFT_ADDRESS}" \
@@ -162,6 +163,7 @@ search=( \
 # Replacement strings must align in the same order / index as their
 # search counterparts.
 replace=( \
+    "\`${LOCAL_MYSQL_DB}\`" \
     "$LOCAL_CRAFT_DIRECTORY" \
     "$LOCAL_CRAFT_ADDRESS" \
     "http://${LOCAL_CRAFT_ADDRESS}" \
