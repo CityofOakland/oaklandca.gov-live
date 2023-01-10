@@ -51,6 +51,16 @@ $embedsGroup = modules\MatrixMateModule::createConfigBlock('Embeds', [
     'embedYouTube'      => ['adminOnly'=>true, 'groups'=>['digitalLeads']],
 ]);
 
+$componentsGroup = modules\MatrixMateModule::createConfigBlock('Components', [
+    'featuredProfile'   => ['adminOnly'=>false],
+    'iconCards'         => ['adminOnly'=>false],
+    'newsCards'         => ['adminOnly'=>false],
+    'profileCards'      => ['adminOnly'=>false],
+    'spotlight'         => ['adminOnly'=>false],
+    'serviceCards'      => ['adminOnly'=>false],
+    'textCards'          => ['adminOnly'=>false],
+]);
+
 $adminBlock = [
     $textGroup,
     $linksGroup,
@@ -58,6 +68,7 @@ $adminBlock = [
     $tablesGroup,
     $pageElementsGroup,
     $embedsGroup,
+    $componentsGroup
 ];
 
 return [
@@ -65,12 +76,13 @@ return [
         'contentBuilder' => [
             '*' => modules\MatrixMateModule::createConfigPermissions(( $user->isAdmin ? $adminBlock : [
                 $textGroup,
-                $linksGroup,
+                $linksGroup
             ])),
 
             'section:departments, section:boardsCommissions, section:officials' => modules\MatrixMateModule::createConfigPermissions(( $user->isAdmin ? $adminBlock : [
                 $textGroup,
-                $linksGroup
+                $linksGroup,
+                $componentsGroup
             ])),
 
             'section:topics' => modules\MatrixMateModule::createConfigPermissions(( $user->isAdmin ? $adminBlock : [
@@ -78,6 +90,7 @@ return [
                 $linksGroup,
                 $imagesGroup,
                 $tablesGroup,
+                $componentsGroup
             ])),
 
             'section:resources' => modules\MatrixMateModule::createConfigPermissions(( $user->isAdmin ? $adminBlock : [
@@ -86,6 +99,7 @@ return [
                 $imagesGroup,
                 $tablesGroup,
                 $embedsGroup,
+                $componentsGroup
             ])),
         ],
         'recordings' => [

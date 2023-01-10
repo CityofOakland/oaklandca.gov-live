@@ -1,0 +1,41 @@
+field: c7310505-6762-445f-80c9-5cfc9137794c # Link Collection
+fieldLayouts:
+  ca116ff5-34dc-4926-a58c-a19def2c63aa:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 22a07414-8f3d-4053-81c0-068e12ec97eb # Header
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  22a07414-8f3d-4053-81c0-068e12ec97eb: # Header
+    columnSuffix: jdbotdlm
+    contentColumnType: text
+    fieldGroup: null
+    handle: header
+    instructions: ''
+    name: Header
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: linkSetHeader
+name: 'Link Set Header'
+sortOrder: 1

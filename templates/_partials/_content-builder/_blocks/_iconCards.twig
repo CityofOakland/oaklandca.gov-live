@@ -1,0 +1,36 @@
+<section class="mb-12">
+	<div class="container px-6 pt-10 pb-8 {{ block.background }}">
+		<div class="px-2 sm:px-6 md:px-6 lg:px-6 pb-1">
+
+			<h3>{{ block.heading|default('Services') }}</h3>
+			{{ block.description }}
+
+			{% if block.iconCards|length %}
+				<div class="items-stretch card-grid">
+
+					{% set gridSize = "" %}
+					{% if (block.iconCards|length == 2) or (block.iconCards|length == 4) %}
+						{% set gridSize = "sm:w-1/2 md:w-1/2 lg:w-1/2" %}
+					{% else %}
+						{% set gridSize = "sm:w-1/2 md:w-1/2 lg:w-1/3" %}
+					{% endif %}
+
+					{% for iconCards in block.iconCards.all() %}
+						{% set card = iconCards.card %}
+						{% set linkType = card.typeHandle %}
+						
+						<a class="{{ gridSize }} mb-1" href="{{ card.url }}" target="{{ card.target }}" style="margin-left:0;margin-right:0">
+							<div class="p-6 text-lg font-bold h-full {{ iconCards.background }} no-underline rounded-sm shadow-btn transition-all duration-75" style="margin:0 1rem">
+                                <i class="fal fa-{{ iconCards.icon }}" style="height:48px"></i>
+								<{{ subheading }} class="my-0 text-lg pt-2">{{ card.text }}</{{ subheading }}>
+								<p class="mt-3 mb-0 text-sm font-normal">{{ iconCards.description }}</p>
+							</div>
+						</a>
+					{% endfor %}
+
+				</div>
+			{% endif %}
+
+		</div>
+	</div>
+</section>

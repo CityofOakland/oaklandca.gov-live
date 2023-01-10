@@ -1,0 +1,190 @@
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581 # Content Builder
+fieldLayouts:
+  ef7e8153-36a6-4f15-9042-59a088fd402e:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 26021ddf-fc18-41f3-8fc2-1ef5bf4460f8 # News Header
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 745c0b03-2047-48d3-beee-04d9f014eccc # Section Background Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 514ef01b-6b97-4fc4-9840-4923745288d3 # News Entries
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 99484ea5-884e-47cc-94c6-8704a2977122 # Featured News Entry
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1dcaf4f4-736d-4b90-af74-eed1db266dd6 # Featured Entry Expiration Date
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  1dcaf4f4-736d-4b90-af74-eed1db266dd6: # Featured Entry Expiration Date
+    columnSuffix: nhwthrpx
+    contentColumnType:
+      - 'date:datetime'
+      - 'tz:string'
+    fieldGroup: null
+    handle: expiryDate
+    instructions: 'Provide a date when the featured entry will be replaced by a recent entry.'
+    name: 'Featured Entry Expiration Date'
+    searchable: false
+    settings:
+      max: null
+      min: null
+      minuteIncrement: '30'
+      showDate: true
+      showTime: true
+      showTimeZone: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Date
+  514ef01b-6b97-4fc4-9840-4923745288d3: # News Entries
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: news
+    instructions: 'Choose up to 3 news items you wish to display in this section.'
+    name: 'News Entries'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '3'
+      localizeRelations: false
+      selectionLabel: 'Add a news entry'
+      showSiteMenu: true
+      source: null
+      sources:
+        - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  745c0b03-2047-48d3-beee-04d9f014eccc: # Section Background Color
+    columnSuffix: fgnmhhim
+    contentColumnType: string
+    fieldGroup: null
+    handle: background
+    instructions: 'Select a background color for this section.'
+    name: 'Section Background Color'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - White
+            -
+              - value
+              - bg-white
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Light Grey'
+            -
+              - value
+              - bg-gray-100
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Light Blue'
+            -
+              - value
+              - bg-blue-100
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  26021ddf-fc18-41f3-8fc2-1ef5bf4460f8: # News Header
+    columnSuffix: impbqvhx
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: 'Will default to ''News''. Customize if needed.'
+    name: 'News Header'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  99484ea5-884e-47cc-94c6-8704a2977122: # Featured News Entry
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: featured
+    instructions: ''
+    name: 'Featured News Entry'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: null
+      sources:
+        - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+handle: newsCards
+name: 'News Cards'
+sortOrder: 34

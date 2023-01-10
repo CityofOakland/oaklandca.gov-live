@@ -1,0 +1,51 @@
+field: c7310505-6762-445f-80c9-5cfc9137794c # Link Collection
+fieldLayouts:
+  0a6f19a4-e39f-4fc5-828a-4b918736507f:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: ca397109-2a19-42e5-ac3b-51811009059d # Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  ca397109-2a19-42e5-ac3b-51811009059d: # Link
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: linkEntry
+    instructions: ''
+    name: Link
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 5739a81c-6eeb-47e8-8658-7bd07e0fe511 # Link
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_103_linkentry}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: 'Add a link'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: links
+name: Links
+sortOrder: 2

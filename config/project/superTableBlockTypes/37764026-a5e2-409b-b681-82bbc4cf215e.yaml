@@ -1,0 +1,99 @@
+field: 9c5a5207-8f38-4715-993b-741d8919f3f0 # Featured Staff
+fieldLayouts:
+  f80bf4f1-0b4f-4f03-b8a7-e7a63b3b75f4:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: cfd8d58a-04c4-47d6-a974-c3290affb7c3 # Staff Member
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 88b5eb52-5431-40f1-88bb-e750acbed184 # Job Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6d032aec-91d5-43a0-b50b-71a2112d5eda # Caption
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  6d032aec-91d5-43a0-b50b-71a2112d5eda: # Caption
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: caption
+    instructions: ''
+    name: Caption
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  88b5eb52-5431-40f1-88bb-e750acbed184: # Job Title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: jobTitle
+    instructions: 'Will overwrite job title from ''Staff'' page'
+    name: 'Job Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  cfd8d58a-04c4-47d6-a974-c3290affb7c3: # Staff Member
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: member
+    instructions: ''
+    name: 'Staff Member'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: 'Add a member'
+      showSiteMenu: true
+      source: null
+      sources:
+        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries

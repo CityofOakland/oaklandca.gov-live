@@ -1,0 +1,319 @@
+field: 0bbec91d-57e2-4212-b449-f04f19c770da # Icon Card
+fieldLayouts:
+  ddcb1cd6-1137-4ba1-94a3-daec80c17c92:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: bf87f997-9ddf-47bc-b5d7-d97398a04f75 # Card Link & Title
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ea343841-f178-4431-8604-710541a13061 # Card Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 902a91ff-7682-47b7-ad10-df776953d2a2 # Card Background
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2a191283-500f-41e2-94a3-8b68e9ef6b1c # Card Icon
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  2a191283-500f-41e2-94a3-8b68e9ef6b1c: # Card Icon
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: icon
+    instructions: 'Choose an icon that will be displayed in the card.'
+    name: 'Card Icon'
+    searchable: false
+    settings:
+      columnType: text
+      iconSets: '*'
+      remoteSets: '*'
+      showLabels: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: verbb\iconpicker\fields\IconPickerField
+  902a91ff-7682-47b7-ad10-df776953d2a2: # Card Background
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: background
+    instructions: ''
+    name: 'Card Background'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - White
+            -
+              - value
+              - 'bg-white text-gray-1000 hover:bg-gray-100'
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Dark Green'
+            -
+              - value
+              - 'bg-green-800 text-white hover:bg-green-600'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  bf87f997-9ddf-47bc-b5d7-d97398a04f75: # Card Link & Title
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: card
+    instructions: ''
+    name: 'Card Link & Title'
+    searchable: false
+    settings:
+      allowCustomText: '1'
+      allowTarget: '1'
+      defaultText: ''
+      selectLinkText: ''
+      types:
+        __assoc__:
+          -
+            - presseddigital\linkit\models\Email
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Phone
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Url
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - 'https://www.oaklandca.gov'
+                -
+                  - allowAlias
+                  - ''
+                -
+                  - allowMailto
+                  - ''
+                -
+                  - allowHash
+                  - ''
+                -
+                  - allowPaths
+                  - ''
+          -
+            - presseddigital\linkit\models\Twitter
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Facebook
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Instagram
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\LinkedIn
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Entry
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  -
+                    - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+                    - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+                    - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+                    - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+                    - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+                    - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+                    - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+                    - 'section:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+                    - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+                    - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+                    - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+                    - 'section:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+                    - 'section:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - presseddigital\linkit\models\Category
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - presseddigital\linkit\models\Asset
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  -
+                    - 'folder:baf733c3-48be-42a7-8b4f-7a6bf9763542'
+                -
+                  - customSelectionLabel
+                  - 'Select Document'
+          -
+            - presseddigital\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: presseddigital\linkit\fields\LinkitField
+  ea343841-f178-4431-8604-710541a13061: # Card Description
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: description
+    instructions: Optional
+    name: 'Card Description'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
