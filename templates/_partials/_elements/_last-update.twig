@@ -1,2 +1,5 @@
-<div class="text-sm mb-4">Date Posted: <strong>{{ entry.postDate | date('F jS, Y @ g:i A') }}</strong><br>
-Last Updated: <strong>{{ entry.dateUpdated | date('F jS, Y @ g:i A') }}</strong></div>
+<div class="text-sm mb-4">
+    Posted: {{ entry.postDate | date('F jS, Y g:i A') }}
+    <br>
+    Last Updated: {{ entry.dateUpdated | date('F jS, Y g:i A') }}
+</div>
