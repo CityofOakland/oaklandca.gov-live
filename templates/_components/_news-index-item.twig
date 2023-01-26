@@ -7,8 +7,8 @@
         alt="{{ news_image.title ?? news_image.filename }}"
         title="{{ news_image.title ?? news_image.filename }}">
     {% else %}
-      <img src="/dist/img/icon-newspaper.svg"
-        class="h-32 text-gray-500 opacity-75 fill-current"
+      <img src="{{ alias('@web/dist/img/icon-newspaper-blue-1000.svg') }}"
+        class="p-12 bg-blue-200"
         alt="No article image to display">
     {% endif %}
   </figure>
