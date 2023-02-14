@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+handle: publicNotices
+name: 'Public Notices'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  c35d3a93-d7f4-4c37-ae3e-1b4d403311bb: # City of Oakland
+    enabledByDefault: true
+    hasUrls: true
+    template: _layouts/_public-notices.twig
+    uriFormat: 'public-notices/{slug}'
+type: channel

@@ -36,7 +36,7 @@
       <div style="max-width:1152px;">
         <div class="flex flex-wrap justify-between -mx-8">
           <div class="w-full md:w-1/2 px-8">
-            <div class="components components-format flex items-start">
+            <div class="components flex items-start">
               {{ svg( '@webroot/dist/img/fa-clock.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }}
               <div>
                 <h3 class="mt-0">{{ entry.calendarize.startDate|date("l, F j, Y") }}</h3>
@@ -52,7 +52,7 @@
             </div>
           </div>
           <div class="w-full md:w-1/2 px-8 mt-12 md:mt-0">
-            <div class="components components-format flex items-start">
+            <div class="components flex items-start">
               {% if locationBlocks|length == 2 or (locationBlocks|length and (physicalLocationDisplays or onlineLocationDisplays)) %}
                 {{ svg( '@webroot/dist/img/fa-map.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }} 
               {% endif %}
@@ -163,11 +163,11 @@
     <hr class="hr medium"/>
     <h3>Related Documents</h3>
     <ul class="ul-icons related">
-        {% for document in entry.relatedDocuments.all() %}
-          {% if document.documentEntry|length %}
-            <li><a href="{{ document.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ document.documentTitle ? document.documentTitle : (document.documentEntry.one().title) }}</a></li>
-          {% endif %}
-        {% endfor %}
+      {% for document in entry.relatedDocuments.all() %}
+        {% if document.documentEntry|length %}
+          <li><a href="{{ document.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ document.documentTitle ? document.documentTitle : (document.documentEntry.one().title) }}</a></li>
+        {% endif %}
+      {% endfor %}
     </ul>
   {% endif %}
 
@@ -206,74 +206,7 @@
     {% if entry.linkit %}<a class="button secondary" href="{{ entry.linkit.url }}">{{ entry.linkit.text }}</a>{% endif %}
   {% endif %}
 
-  {% if entry.pointOfContact|length %}
-    <hr/>
-    <h4>{{ 'Contact'|t }}</h4>
-    {% for contact in entry.pointOfContact.all() %}
-    {% switch contact.type %}
-      {% case 'internalContact' %}
-        {% set contact = contact.contact.one() %}
-        <p>
-          <b>{{ contact.title }}</b>
-          {% if contact.staffImportJobTitle or contact.jobTitle %}<br>{{ contact.jobTitle ? contact.jobTitle : contact.staffImportJobTitle }}{% endif %}
-          {% if contact.staffImportOrganization %}<br>{{ contact.staffImportOrganization }}{% endif %}
-        </p>
-        {% set contactEmail = contact.emailAddress  ? contact.emailAddress  : contact.staffImportEmail %}
-        {% set contactPhone = contact.phoneNumber   ? contact.phoneNumber   : contact.staffImportPhoneNumber %}
-
-        {% if contactEmail or contactPhone %}
-          <ul class="ul-icons">
-            {% if contactEmail %}
-            {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-              params: {
-                text: contactEmail,
-                icon: 'envelope',
-                url: "mailto:#{contactEmail}"
-              }
-            }) }}
-            {% endif %}
-            {% if contactPhone %}
-            {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-              params: {
-                text: contactPhone,
-                icon: 'phone',
-                url: "tel:#{contactPhone|replace({'-': ''}) }}"
-              }
-            }) }}
-            {% endif %}
-          </ul>
-        {% endif %}
-      {% case 'externalContact' %}
-        <p>
-          <b>{{ contact.contactName }}</b>
-          {% if contact.contactTitle %}<br>{{ contact.contactTitle }}{% endif %}
-          {% if contact.organization %}<br>{{ contact.organization }}{% endif %}
-        </p>
-        {% if contact.email or contact.phoneNumber %}
-          <ul class="ul-icons">
-            {% if contact.email %}
-            {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-              params: {
-                text: contact.email,
-                icon: 'envelope',
-                url: "mailto:#{contact.email}"
-              }
-            }) }}
-            {% endif %}
-            {% if contact.phoneNumber %}
-            {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-              params: {
-                text: contact.phoneNumber,
-                icon: 'phone',
-                url: "tel:#{contact.phoneNumber|replace({'-': ''}) }}"
-              }
-            }) }}
-            {% endif %}
-          </ul>
-        {% endif %}
-    {% endswitch %}
-    {% endfor %}
-  {% endif %}
+  {% include '_components/sidebar/_contact' %}
 
   <hr/>
   <h4>{{ 'Add to Calendar'|t }}</h4>

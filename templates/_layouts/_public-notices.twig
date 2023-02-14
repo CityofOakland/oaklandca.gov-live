@@ -1,0 +1,58 @@
+{% extends '_content.twig' %}
+
+{% set file                 = entry.documentFile.one() %}
+{% set publicNoticeType     = entry.publicNoticeType.one() %}
+
+{% block title %}
+  <h1 class="my-0 text-3xl font-bold md:text-4xl">{{ entry.title }}</h1>
+{% endblock %}
+
+{% block content %}
+  <h2>Details</h2>
+  {{ entry.summary }}
+  {% include '_components/_button' with {
+    url: file.url,
+    text: 'Download Public Notice',
+    icon: 'download',
+  } %}
+
+  <h2>Preview</h2>
+  {% if file.kind == 'pdf' %}
+    <embed class="embed-pdf mt-4" src="{{ entry.documentFile.one().url }}" width="100%" height="375" type="application/pdf">
+  {% endif %}
+
+  {% if publicNoticeType %}
+    <hr class="hr medium"/>
+    <h3 class="h4">Public Notice Type</h3>
+    <p><a href="{{ siteUrl }}public-notices?public_notice_type={{ publicNoticeType.id }}">{{ publicNoticeType.title }}</a></p>
+    {% if publicNoticeType.summary %}
+      {{ publicNoticeType.summary }}
+    {% endif %}
+  {% endif %}
+{% endblock %}
+
+{% block sidebar %}
+  {% include '_components/_sidebar' %}
+  {% if entry.relatedResources|length or entry.relatedDepartments|length %}
+    <hr/>
+    <h4>{{ 'Related'|t }}</h4>
+    <ul class="ul-icons related">
+      {% for page in entry.relatedResources.all() %}
+        {% if page.section.handle == 'documents' %}
+          <li><a href="{{ page.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ page.title }}</a></li>
+        {% else %}
+          <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+      {% for page in entry.relatedDepartments.all() %}
+        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <hr class="light">
+  <p class="small">Posted: {{ entry.postDate|date("F j, Y g:ia") }}</p>
+  <p class="small">Last Updated: {{ entry.dateUpdated|date("F j, Y g:ia") }}</p>
+{% endblock %}
+
+{% block prefooter %}{% endblock %}

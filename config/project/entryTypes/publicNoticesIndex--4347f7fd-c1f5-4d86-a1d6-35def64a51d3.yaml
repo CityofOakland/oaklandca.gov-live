@@ -1,0 +1,47 @@
+fieldLayouts:
+  687a5de5-4e6a-4c08-b1df-a1a29ae224fc:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210 # Lead In
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: publicNoticesIndex
+hasTitleField: true
+name: 'Public Notices Index'
+section: 295cc3ee-1fbc-4b96-8ad5-128e24953d2b # Public Notices Index
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

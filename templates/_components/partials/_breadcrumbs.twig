@@ -29,9 +29,18 @@
       {% endif %}
     {% elseif entry.section.handle == 'boardsCommissions' and craft.request.lastSegment == 'meetings' %}
     {% else %}
+      {% switch entry.section.handle %}
+        {% case 'boardsCommissions' %}
+          {% set handle = 'boards-commissions' %}
+        {% case 'publicNotices' %}
+          {% set handle = 'public-notices' %}
+        {% default %}
+          {% set handle = entry.section.handle %}
+      {% endswitch %}
+
       {% set breadcrumbs = breadcrumbs|merge([{
         title: entry.section.name,
-        link: siteUrl ~ (entry.section.handle == 'boardsCommissions' ? 'boards-commissions' : entry.section.handle)
+        link: siteUrl ~ handle
       }]) %}
     {% endif %}
   {% endif %}

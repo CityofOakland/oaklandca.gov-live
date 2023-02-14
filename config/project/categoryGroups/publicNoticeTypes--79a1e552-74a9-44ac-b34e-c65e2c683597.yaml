@@ -1,0 +1,77 @@
+defaultPlacement: end
+fieldLayouts:
+  0d2a98ab-fda1-4a2e-9b71-7d1241f0d436:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: fb754f0e-6d51-4289-a65a-591249144c1b # Legal Title
+            instructions: 'Enter the long title of this Public Notice Type. This name will be used for specific sections of the site where long-form titles are more appropriate.'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 58eda166-7a65-4fb6-8f7d-c6590b0591ae # Summary
+            instructions: ' '
+            label: Description
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7cdf9a2c-580b-4d98-8d49-1e3a24205000 # Charter Number
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 93eaa329-904e-4a23-9047-4decf3d47cac # Redirect URL
+            instructions: ' '
+            label: URL
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: publicNoticeTypes
+name: 'Public Notice Types'
+siteSettings:
+  c35d3a93-d7f4-4c37-ae3e-1b4d403311bb: # City of Oakland
+    hasUrls: true
+    template: null
+    uriFormat: 'public-notice-categories/{slug}'
+structure:
+  maxLevels: null
+  uid: 99768e06-c359-48d2-906c-8c5465f74dd2
