@@ -207,6 +207,16 @@
   opacity: 0;
 }
 
+:where(.components hr) + h1,
+:where(.components hr) + h2,
+:where(.components hr) + h3,
+:where(.components hr) + h4,
+:where(.components hr) + h5,
+:where(.components hr) + h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 :where(.components) .embed-container {
   margin-top: 1rem;
   margin-bottom: 0;
@@ -419,45 +429,4 @@
 
 :where(#components-sidebar) > h4 {
   margin-bottom: 2rem;
-}
-
-#components-sidebar label {
-  @apply text-base mt-6 md:mt-[1.125rem];
-  display: block;
-  font-weight: 700;
-}
-
-#components-sidebar input,
-#components-sidebar select {
-  @apply mt-2;
-}
-
-#components-sidebar .button {
-  @apply mb-0;
-}
-
-#components-sidebar #search {
-  @apply relative pl-10;
-  background-image: url('/dist/img/icon-search.svg');
-  background-repeat: no-repeat;
-  background-position: left 1rem center;
-  background-size: 1rem 1rem;
-}
-
-#components-sidebar #search::before {
-  background-image: url('../img/icon-search.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  content: "";
-  display: block;
-  height: 1.25rem;
-  width: 1.25rem;
-  position: absolute;
-  top: 50%;
-  left: 1rem;
-  transform: translateY(-50%);
-}
-
-#components-sidebar #search > input {
-  @apply pl-12;
 }

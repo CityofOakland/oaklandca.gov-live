@@ -32,7 +32,7 @@
     {% include '_partials/_elements/_skip-to-content.twig' %}
     {% include '_partials/_elements/_nav-bar.twig' %}
     <div class="page-holder overflow-x-hidden">
-      <main class="overflow-x-hidden">
+      <main id="main" aria-hidden="false" role="main" class="overflow-x-hidden">
         {% include '_partials/_elements/_sitewide-alert.twig' %}
         {% if category is defined %}
           {% set entry = category %}
@@ -124,6 +124,8 @@
         {% endblock %}
         {% include '_components/partials/_feedback.twig' %}
       </main>
+      {# Currently only used in one template (_layouts/_meetings.twig). Need a better way to make this more reusable #}
+      {% block modal %}{% endblock %}
       {% include '_partials/_elements/_footer.twig' %}
     </div>
     {% if entry is defined %}

@@ -43,6 +43,7 @@
     "jalendport/craft-lockout": "1.0.1",
     "doublesecretagency/craft-googlemaps": "4.1.5",
     "goat/dashboard-configuration": "^1.0",
+    "meetgoat/oakland-email-notifications": "^1.0",
     "spicyweb/craft-neo": "2.13.3",
     "studioespresso/craft-scout": "2.7.2",
     "solspace/craft-freeform": "3.13.15",
@@ -78,6 +79,10 @@
     {
       "type": "path",
       "url": "./plugins/dashboardconfiguration"
+    },
+    {
+      "type": "path",
+      "url": "./plugins/oaklandemailnotifications"
     }
   ],
   "scripts": {
