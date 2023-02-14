@@ -1,4 +1,4 @@
-dateModified: 1676376963
+dateModified: 1676408105
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -786,7 +786,7 @@ plugins:
     settings: null
   blitz:
     edition: standard
-    enabled: false
+    enabled: true
     licenseKey: V1MGTTWWOX2B8VX28A8VJ2ZQ
     schemaVersion: 3.10.0
     settings:
@@ -1129,7 +1129,7 @@ plugins:
       stripQueryStringFromStats: '1'
   scout:
     edition: standard
-    enabled: false
+    enabled: true
     schemaVersion: 0.1.0
   seomatic:
     enabled: '1'
