@@ -21,7 +21,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: linkType
-    instructions: ''
+    instructions: 'Will default to entry title. Customize if needed.'
     name: Link
     searchable: false
     settings:

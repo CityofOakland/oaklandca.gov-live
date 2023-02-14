@@ -1,0 +1,32 @@
+{% set contentBuilder = entry.contentBuilder ?? '' %}
+{% if contentBuilder | length %}
+
+    <section class="in-page-nav bg-green-100">
+        <div class="container py-4">
+            <ul class="m-0">
+                <li><span>On this page:</span></li>
+
+                {% for block in entry.contentBuilder %}
+                    <li>
+                        <a href="#{{ block.type }}">
+
+                            {% if block.type == 'spotlight' %}
+                                Spotlight
+                            {% elseif block.type == 'newsCards' %}
+                                News
+                            {% elseif block.heading %}
+                                {{ block.heading }}
+                            {% elseif block.type == 'featuredProfile' %}
+                                Profile
+                            {% elseif block.type == 'serviceCards' %}
+                                Services
+                            {% endif %}
+
+                        </a>
+                    </li>
+               {% endfor %}
+        
+            </ul>
+        </div>
+    </section>
+{% endif %}

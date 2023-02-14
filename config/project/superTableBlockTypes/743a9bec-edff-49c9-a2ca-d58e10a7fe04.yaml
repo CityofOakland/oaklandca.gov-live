@@ -30,7 +30,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: card
-    instructions: ''
+    instructions: 'Header will default to (Name of Service). Customize if needed.'
     name: 'Service Link & Header'
     searchable: false
     settings:
@@ -219,7 +219,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: description
-    instructions: ''
+    instructions: Optional.
     name: 'Service Description'
     searchable: false
     settings:

@@ -8,7 +8,7 @@ fieldLayouts:
             fieldUid: 0567fab2-a7c6-4e2f-91c2-ea0072e45960 # Profile Cards Header
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null

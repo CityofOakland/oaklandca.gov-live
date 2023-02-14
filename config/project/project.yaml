@@ -1,4 +1,4 @@
-dateModified: 1673379178
+dateModified: 1676376963
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -16,6 +16,7 @@ meta:
   __names__:
     0a0640ef-4c1c-484f-a2cb-b70930d83893: 'Sidebar Description' # Sidebar Description
     0a3b410b-3e65-4ca3-ac05-f2c6933fa880: Step # Step
+    00a1526a-3ada-4ed0-a15a-582f087925d4: 'Landing Page' # Landing Page
     0accbbf3-3501-4536-b0f0-19facda9bb98: 'Number Title' # Number Title
     0b609d8d-ec6c-476d-9953-eef0377c30f7: Entry # Entry
     0bbec91d-57e2-4212-b449-f04f19c770da: 'Icon Card' # Icon Card
@@ -51,7 +52,7 @@ meta:
     1f60a4d5-d5d9-46f2-8f90-d58d47a2bb34: 'Email Address' # Email Address
     1fe293ad-52d9-4002-984e-b7a256d4b158: 'Social Media' # Social Media
     2a191283-500f-41e2-94a3-8b68e9ef6b1c: 'Card Icon' # Card Icon
-    2b2f913f-13fd-485a-bec2-801cf041c5af: Background # Background
+    2b2f913f-13fd-485a-bec2-801cf041c5af: 'Section Background Color' # Section Background Color
     2c145c6e-d6b2-418c-aa28-3ea1eaa51944: 'Column 3 Width' # Column 3 Width
     2ce783d0-daf9-44d1-a0b4-84a0163dcaad: 'Column 2 Width' # Column 2 Width
     2dc1fa8f-aa9c-488d-8c3e-ed572699c7a4: 'Open in New Tab?' # Open in New Tab?
@@ -232,7 +233,7 @@ meta:
     51b92fa5-0440-4de2-b988-6e63a6b9d10e: Icon # Icon
     52bbbd6c-79fe-419a-9d91-648022ff54be: 'Navigation Item' # Navigation Item
     54b48d39-e6a7-4d50-9cf7-91ce11c798ee: 'Staff Import Surname' # Staff Import Surname
-    54de1c1c-79d6-40ed-911b-422f630094e1: Summary # Summary
+    54de1c1c-79d6-40ed-911b-422f630094e1: 'Spotlight Description' # Spotlight Description
     55afc13e-16e3-4080-9c67-ae7a4c46e3e2: 'Additional Address Info' # Additional Address Info
     56ad4140-da85-43ea-8292-3fac04cbefc1: Galleries # Galleries
     057c9181-27ec-4d3e-a5b0-fbdce2462afd: 'Special Assessment Test Status' # Special Assessment Test Status
@@ -479,10 +480,11 @@ meta:
     98698930-f730-4a54-a9fa-491f477e8252: Officials # Officials
     a0ebc1aa-769e-4adc-a633-87b0e2c2626c: 'Services Index' # Services Index
     a027ac28-65c7-472f-b9ea-d30253b0205f: 'Entries Description' # Entries Description
+    a081fc5f-03ce-4909-8255-dd92e7c9076c: Button # Button
     a093da22-5c78-46d1-a7b8-19ad9d41b583: 'Location Address' # Location Address
     a1a9a232-768c-41ae-a487-aebf145b4062: Vimeo # Vimeo
     a2cf024d-962c-4e66-a16e-9b6faefbae19: 'Hide Thumbnails?' # Hide Thumbnails?
-    a3aa486f-473f-4b4d-b3ae-808963595c58: 'Content Alignment' # Content Alignment
+    a3aa486f-473f-4b4d-b3ae-808963595c58: 'Image Column Position' # Image Column Position
     a3fccaa0-bcac-433c-9b51-7d3f47c751f2: 'TTY Number' # TTY Number
     a5f4a9fc-df41-498a-b3b2-e30e383453bc: Link # Link
     a7cd6f1e-a5c0-47fc-9080-1bc5ace85242: 'Staff Import Phone Number' # Staff Import Phone Number
@@ -540,6 +542,7 @@ meta:
     b459e528-515b-48b5-9ad6-a8dcd722d9f6: Links # Links
     b703d11b-3d2f-4305-b0bf-3abf4ebeeec7: 'Embed Code' # Embed Code
     b936e275-7cde-473a-8849-7342b65b94db: Embed # Embed
+    b938af0b-ce00-45a0-861c-0ff28fce1f7f: 'Call to Action' # Call to Action
     b3411cb1-e860-46ed-9cd6-58cf9b8daacb: Departments # Departments
     b3761a4e-9346-448a-ba6a-f441f75e61fc: 'Components - Footer' # Components - Footer
     b4027b04-f764-4b35-93ee-88ff570bfeaf: 'Point of Contact' # Point of Contact
@@ -559,7 +562,7 @@ meta:
     bde3bd63-a118-435a-b947-3f2667918e1b: Heading # Heading
     bef74be8-b22d-4dd0-9217-9707bb43d888: 'CTA Button' # CTA Button
     bf6d4af1-38c9-4159-8980-38c9f2e52568: 'Related Services' # Related Services
-    bf87f997-9ddf-47bc-b5d7-d97398a04f75: 'Card Link & Title' # Card Link & Title
+    bf87f997-9ddf-47bc-b5d7-d97398a04f75: 'Card Link & Header' # Card Link & Header
     bf9907da-64c0-4cb6-bc21-493b39110166: 'Alert Heading' # Alert Heading
     c0bc7743-af8d-4be5-90ae-436b92b79bfe: 'Service Categories' # Service Categories
     c01a4b08-11e1-42c3-97c4-e3de1bd7974e: YouTube # YouTube
@@ -574,6 +577,7 @@ meta:
     c8e06b4a-2f85-41db-94e3-101a5c02dd6d: Documents # Documents
     c9d86e3f-9738-4d97-a271-5331264c10b8: 'Address Extended' # Address Extended
     c14fea44-3f71-477c-88d9-6f37c168d868: Content # Content
+    c15dc685-5a25-4664-9fac-82eada21679a: 'Card Background Color' # Card Background Color
     c18e25ad-bdd5-4629-a5d4-daf8579db08f: 'Project After Photo' # Project After Photo
     c35d3a93-d7f4-4c37-ae3e-1b4d403311bb: 'City of Oakland' # City of Oakland
     c48fd91b-ae6d-42f1-9c3b-62258d7e681f: 'Column 2 Cell' # Column 2 Cell
@@ -584,6 +588,7 @@ meta:
     c419ecb0-79c8-411d-b440-db5bdfa1f823: Documents # Documents
     c516a5f3-3955-47d3-96a8-73a2658e3fe7: Description # Description
     c964d82c-a4e7-4ec4-ad42-7c3e843193c0: Images # Images
+    c2858c5f-1822-49b6-b541-53f943fdb540: 'Card Background Color' # Card Background Color
     c7618ee8-2bc2-491b-99e6-c9deaea0809b: 'Navigation - Main' # Navigation - Main
     c9827dcd-855e-4cb7-95f8-715acb054da6: Phone # Phone
     c27974b4-89ad-4504-abb1-e76e44ff4b5d: Events # Events
@@ -621,6 +626,7 @@ meta:
     d7c59790-6279-474b-ab32-27cca3cfc19b: Label # Label
     d7d618a5-5819-44e0-bc30-5c685f47f039: 'Resource Image' # Resource Image
     d9a54ffb-26e9-4883-83bb-8e41650c8927: Twitter # Twitter
+    d20f755d-2c8d-459a-971b-1f3957a561a9: Columns # Columns
     d31fcb52-3b99-42dc-8dc7-f0d137d8d478: Location # Location
     d49a42e8-c33e-4689-a1df-83ba0b8d67be: 'Column 4 Heading' # Column 4 Heading
     d51c595d-b874-430f-bd4b-b66aafecac0e: 'Text Cards Brow' # Text Cards Brow
@@ -745,6 +751,7 @@ meta:
     fac29cc3-6f0c-43f5-b0e6-f9f8786692f9: 'Services Header' # Services Header
     facc7196-7444-4e77-873f-68c1b09d1298: 'Column 2 Heading' # Column 2 Heading
     fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c: 'Boards & Commissions Index' # Boards & Commissions Index
+    fae605bf-6b7f-404c-9c50-a492493f71a1: 'Call to Action ' # Call to Action 
     fb2b9f42-74a0-45c4-be6e-d3d69c87557e: 'Column 2 Cell' # Column 2 Cell
     fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f: 'Boards & Commissions' # Boards & Commissions
     fb754f0e-6d51-4289-a65a-591249144c1b: 'Legal Title' # Legal Title
@@ -779,7 +786,7 @@ plugins:
     settings: null
   blitz:
     edition: standard
-    enabled: true
+    enabled: false
     licenseKey: V1MGTTWWOX2B8VX28A8VJ2ZQ
     schemaVersion: 3.10.0
     settings:
@@ -1122,7 +1129,7 @@ plugins:
       stripQueryStringFromStats: '1'
   scout:
     edition: standard
-    enabled: true
+    enabled: false
     schemaVersion: 0.1.0
   seomatic:
     enabled: '1'

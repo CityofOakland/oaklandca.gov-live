@@ -5,7 +5,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: bf87f997-9ddf-47bc-b5d7-d97398a04f75 # Card Link & Title
+            fieldUid: bf87f997-9ddf-47bc-b5d7-d97398a04f75 # Card Link & Header
             instructions: null
             label: null
             required: true
@@ -15,15 +15,6 @@ fieldLayouts:
             width: 100
           -
             fieldUid: ea343841-f178-4431-8604-710541a13061 # Card Description
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 902a91ff-7682-47b7-ad10-df776953d2a2 # Card Background
             instructions: null
             label: null
             required: false
@@ -59,49 +50,13 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: verbb\iconpicker\fields\IconPickerField
-  902a91ff-7682-47b7-ad10-df776953d2a2: # Card Background
-    columnSuffix: null
-    contentColumnType: string
-    fieldGroup: null
-    handle: background
-    instructions: ''
-    name: 'Card Background'
-    searchable: false
-    settings:
-      optgroups: true
-      options:
-        -
-          __assoc__:
-            -
-              - label
-              - White
-            -
-              - value
-              - 'bg-white text-gray-1000 hover:bg-gray-100'
-            -
-              - default
-              - '1'
-        -
-          __assoc__:
-            -
-              - label
-              - 'Dark Green'
-            -
-              - value
-              - 'bg-green-800 text-white hover:bg-green-600'
-            -
-              - default
-              - ''
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Dropdown
-  bf87f997-9ddf-47bc-b5d7-d97398a04f75: # Card Link & Title
+  bf87f997-9ddf-47bc-b5d7-d97398a04f75: # Card Link & Header
     columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: card
     instructions: ''
-    name: 'Card Link & Title'
+    name: 'Card Link & Header'
     searchable: false
     settings:
       allowCustomText: '1'

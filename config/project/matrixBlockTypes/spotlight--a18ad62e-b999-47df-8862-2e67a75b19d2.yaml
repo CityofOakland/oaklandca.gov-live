@@ -17,7 +17,7 @@ fieldLayouts:
             fieldUid: 18a0a5e6-1f4f-47f5-8962-8b7e132b4f4c # Featured Content
             instructions: null
             label: null
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 54de1c1c-79d6-40ed-911b-422f630094e1 # Summary
+            fieldUid: 54de1c1c-79d6-40ed-911b-422f630094e1 # Spotlight Description
             instructions: null
             label: null
             required: false
@@ -50,14 +50,14 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: a3aa486f-473f-4b4d-b3ae-808963595c58 # Content Alignment
+            fieldUid: a3aa486f-473f-4b4d-b3ae-808963595c58 # Image Column Position
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 50
+            width: 100
           -
             fieldUid: 8ed0d9cb-1498-4dbd-b451-573a77710798 # Background
             instructions: null
@@ -66,7 +66,16 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 50
+            width: 100
+          -
+            fieldUid: a081fc5f-03ce-4909-8255-dd92e7c9076c # Button
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -155,7 +164,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: featured
-    instructions: ''
+    instructions: 'Optional. Header, description, image and button link will be auto generated if featured content is chosen.'
     name: 'Featured Content'
     searchable: false
     settings:
@@ -177,13 +186,13 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Entries
-  54de1c1c-79d6-40ed-911b-422f630094e1: # Summary
+  54de1c1c-79d6-40ed-911b-422f630094e1: # Spotlight Description
     columnSuffix: llsqgbsx
     contentColumnType: text
     fieldGroup: null
     handle: summary
-    instructions: 'Overwrite default summary.'
-    name: Summary
+    instructions: 'Enter summary content. On mobile, the image will appear above the description, so avoid referring to the image’s position in the text. Will overwrite the default summary on featured content.'
+    name: 'Spotlight Description'
     searchable: false
     settings:
       availableTransforms: '*'
@@ -210,7 +219,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: heading
-    instructions: 'Will overwrite entry header.'
+    instructions: 'Will overwrite featured content header.'
     name: 'Spotlight Header'
     searchable: false
     settings:
@@ -225,13 +234,201 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  a3aa486f-473f-4b4d-b3ae-808963595c58: # Content Alignment
+  a081fc5f-03ce-4909-8255-dd92e7c9076c: # Button
+    columnSuffix: rilqaebz
+    contentColumnType: text
+    fieldGroup: null
+    handle: button
+    instructions: 'Add a button at the bottom of your spotlight that can link out to other content. Will overwrite featured content button link. '
+    name: Button
+    searchable: false
+    settings:
+      allowCustomText: '1'
+      allowTarget: '1'
+      defaultText: ''
+      selectLinkText: ''
+      types:
+        __assoc__:
+          -
+            - presseddigital\linkit\models\Email
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Phone
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Url
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+                -
+                  - allowAlias
+                  - '1'
+                -
+                  - allowMailto
+                  - '1'
+                -
+                  - allowHash
+                  - '1'
+                -
+                  - allowPaths
+                  - '1'
+          -
+            - presseddigital\linkit\models\Twitter
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Facebook
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Instagram
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\LinkedIn
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Entry
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - presseddigital\linkit\models\Category
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - presseddigital\linkit\models\Asset
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - presseddigital\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: presseddigital\linkit\fields\LinkitField
+  a3aa486f-473f-4b4d-b3ae-808963595c58: # Image Column Position
     columnSuffix: lpbivgdt
     contentColumnType: boolean
     fieldGroup: null
     handle: alignment
-    instructions: ''
-    name: 'Content Alignment'
+    instructions: 'Choose which side the image appears on desktop layouts. On mobile layouts it will appear above the text.'
+    name: 'Image Column Position'
     searchable: false
     settings:
       default: false
@@ -265,7 +462,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: image
-    instructions: 'Choose an image that will be displayed to the side of the text on desktop. Will overwrite entry default image.'
+    instructions: 'Choose an image that will be displayed to the side of the text on desktop. Will overwrite featured content image.'
     name: Image
     searchable: false
     settings:

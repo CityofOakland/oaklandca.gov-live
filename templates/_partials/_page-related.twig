@@ -1,39 +1,41 @@
-<section class="mt-16">
+{% if entry.linkCollection | length %}
+	<section class="component py-12">
 
-	<h2 class="mt-0 text-2xl sm:leading-none sm:flex-1 sm:text-3xl">{{ block.relatedContentHeader|default('Related Content') }}</h2>
+		<h2 class="mt-0 text-2xl sm:leading-none sm:flex-1 sm:text-3xl">{{ block.relatedContentHeader|default('Related Content') }}</h2>
 
-	<div class="lg:flex flex-wrap pr-4">
-		{% for row in entry.linkCollection.all() %}
+		<div class="lg:flex flex-wrap pr-4">
+			{% for row in entry.linkCollection.all() %}
 
-			{% if loop.first %}
-				{% if row.header %}
-					<div class="mt-10 lg:w-1/2 lg:pr-8">
-						<h3 class="mt-0 mb-4 font-bold text-xl sm:leading-none sm:flex-1 sm:text-2xl">{{ row.header }}</h3>
+				{% if loop.first %}
+					{% if row.header %}
+						<div class="mt-10 lg:w-1/2 lg:pr-8">
+							<h3 class="mt-0 mb-4 font-bold text-xl sm:leading-none sm:flex-1 sm:text-2xl">{{ row.header }}</h3>
+					{% endif %}
+				{% else %}
+					{% if row.header %}
+						</div>
+						<div class="mt-10 lg:w-1/2 lg:pr-8">
+							<h3 class="mt-0 mb-4 font-bold text-xl sm:leading-none sm:flex-1 sm:text-2xl">{{ row.header }}</h3>
+					{% endif %}
 				{% endif %}
-			{% else %}
-				{% if row.header %}
+
+				{% if row.linkEntry|length %}
+					{% for linkEntry in row.linkEntry.all() %}
+						{% set link = linkEntry.linkType %}
+						{% set linkType = link.typeHandle %}
+						<a href="{{ link.url }}" target="{{ link.target }}" class="block m-0 py-4 font-bold border-b-2 border-gray-300">
+							{{ link.text }}
+							{% if link.target %}<i class="fas fa-external-link-alt" style="margin-left:6px;height:18px"></i>{% endif %}
+						</a>
+					{% endfor %}
+				{% endif %}
+
+				{% if loop.last %}
 					</div>
-					<div class="mt-10 lg:w-1/2 lg:pr-8">
-						<h3 class="mt-0 mb-4 font-bold text-xl sm:leading-none sm:flex-1 sm:text-2xl">{{ row.header }}</h3>
 				{% endif %}
-			{% endif %}
 
-			{% if row.linkEntry|length %}
-				{% for linkEntry in row.linkEntry.all() %}
-					{% set link = linkEntry.linkType %}
-					{% set linkType = link.typeHandle %}
-					<a href="{{ link.url }}" target="{{ link.target }}" class="block m-0 py-4 font-bold border-b-2 border-gray-300">
-						{{ link.text }}
-						{% if link.target %}<i class="fas fa-external-link-alt" style="margin-left:6px;height:18px"></i>{% endif %}
-					</a>
-				{% endfor %}
-			{% endif %}
+			{% endfor %}
+		</div>
 
-			{% if loop.last %}
-				</div>
-			{% endif %}
-
-		{% endfor %}
-	</div>
-
-</section>
+	</section>
+{% endif %}

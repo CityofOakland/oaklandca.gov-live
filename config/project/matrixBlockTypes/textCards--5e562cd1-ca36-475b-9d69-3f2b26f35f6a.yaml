@@ -8,7 +8,7 @@ fieldLayouts:
             fieldUid: d8339d43-dc04-44b8-8f5d-415a2774fe73 # Text Cards Header
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -23,10 +23,28 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 2b2f913f-13fd-485a-bec2-801cf041c5af # Background
+            fieldUid: 2b2f913f-13fd-485a-bec2-801cf041c5af # Section Background Color
             instructions: null
             label: null
             required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c2858c5f-1822-49b6-b541-53f943fdb540 # Card Background Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d20f755d-2c8d-459a-971b-1f3957a561a9 # Columns
+            instructions: null
+            label: null
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -43,13 +61,13 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  2b2f913f-13fd-485a-bec2-801cf041c5af: # Background
+  2b2f913f-13fd-485a-bec2-801cf041c5af: # Section Background Color
     columnSuffix: ogztyjdn
     contentColumnType: string
     fieldGroup: null
     handle: background
     instructions: 'Select a background color for this section. Options include white, light grey or light blue.'
-    name: Background
+    name: 'Section Background Color'
     searchable: false
     settings:
       optgroups: true
@@ -180,6 +198,77 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
+  c2858c5f-1822-49b6-b541-53f943fdb540: # Card Background Color
+    columnSuffix: mqekxohx
+    contentColumnType: string
+    fieldGroup: null
+    handle: textCardBg
+    instructions: 'Select a background color for each card. Options include white or dark green.'
+    name: 'Card Background Color'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - White
+            -
+              - value
+              - bg-white
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Dark Green'
+            -
+              - value
+              - 'bg-green-800 text-white'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  d20f755d-2c8d-459a-971b-1f3957a561a9: # Columns
+    columnSuffix: okolrjrq
+    contentColumnType: string
+    fieldGroup: null
+    handle: textColumns
+    instructions: 'Select the number of columns for this section.'
+    name: Columns
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - '3'
+            -
+              - value
+              - '3'
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - '2'
+            -
+              - value
+              - '2'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\RadioButtons
   d8339d43-dc04-44b8-8f5d-415a2774fe73: # Text Cards Header
     columnSuffix: lsobbdxn
     contentColumnType: text

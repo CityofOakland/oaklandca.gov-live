@@ -48,7 +48,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: card
-    instructions: ''
+    instructions: 'Header will default to entry title. Customize if needed.'
     name: 'Card Link & Header'
     searchable: false
     settings:

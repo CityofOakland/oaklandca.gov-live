@@ -464,3 +464,30 @@
 #components-sidebar #search > input {
   @apply pl-12;
 }
+
+@media (max-width: theme("screens.sm")) {
+  .component h3{
+    font-size: 1.5rem;
+  }
+}
+
+.component .shadow-btn {
+  --tw-shadow: 0 2px 6px 2px #e1e1e1, 0 3px 7px 1px #e1e1e1;
+}
+
+.component.bg-blue-800 .shadow-btn{
+  box-shadow: none;
+}
+
+.in-page-nav ul li {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 0 .25rem;
+}
+
+.in-page-nav ul li a {
+  padding: 0 .25rem;
+  text-decoration: underline;
+}

@@ -1,0 +1,47 @@
+{% extends '_layouts/_banner-with-nav.twig' %}
+
+{% do craft.app.elements.eagerLoadElements(
+  className(entry),
+  [entry],
+  [
+    'banner',
+    'addresses',
+    'contentBuilder',
+    'portrait',
+    'teams',
+    'phoneNumbers',
+    'openHours',
+    'contentBuilder',
+    'contentBuilder.largeEntryLinks:entries',
+    'contentBuilder.largeEntryLinks:documentFile'
+  ]
+) %}
+
+
+{% block content %}
+
+    {% include '_partials/_page-banners.twig' with {
+        breadCrumbLinks: [
+        {
+            title: 'Departments',
+            link: '/departments'
+        }
+        ],
+        bannerImage: entry.banner | length ? {
+        position: entry.banner[0].getFocalPoint('asCss'),
+        src: entry.banner[0].url,
+        alt: entry.banner[0].title ?? entry.banner[0].filename
+        } : false,
+        bannerTitle: (entry.legalTitle ? entry.legalTitle : entry.title)
+    } %}
+
+    {% include '_partials/_in-page-nav.twig' %}
+    
+    {% include '_partials/_content-builder/_tool.twig' %}
+
+    <div class="container py-0">
+        {% include '_partials/_page-related.twig' %}
+        {% include '_partials/_page-location-v2.twig' %}
+    </div>
+
+{% endblock %}

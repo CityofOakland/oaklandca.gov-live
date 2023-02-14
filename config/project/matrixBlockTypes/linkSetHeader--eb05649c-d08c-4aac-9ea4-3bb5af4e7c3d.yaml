@@ -21,7 +21,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: header
-    instructions: ''
+    instructions: 'Provide a subheader for each set of links. '
     name: Header
     searchable: false
     settings:

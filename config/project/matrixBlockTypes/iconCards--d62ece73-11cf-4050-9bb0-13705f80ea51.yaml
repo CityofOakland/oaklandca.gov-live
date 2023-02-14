@@ -8,7 +8,7 @@ fieldLayouts:
             fieldUid: b04f002c-84db-42eb-bc4f-afa552e3e3f6 # Icon Cards Header
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -24,6 +24,15 @@ fieldLayouts:
             width: 100
           -
             fieldUid: e4546cfb-cdc7-4a55-b637-f44ae35fbf31 # Background
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c15dc685-5a25-4664-9fac-82eada21679a # Card Background Color
             instructions: null
             label: null
             required: false
@@ -55,7 +64,7 @@ fields:
       columns:
         __assoc__:
           -
-            - bf87f997-9ddf-47bc-b5d7-d97398a04f75 # Card Link & Title
+            - bf87f997-9ddf-47bc-b5d7-d97398a04f75 # Card Link & Header
             -
               __assoc__:
                 -
@@ -63,13 +72,6 @@ fields:
                   - ''
           -
             - ea343841-f178-4431-8604-710541a13061 # Card Description
-            -
-              __assoc__:
-                -
-                  - width
-                  - ''
-          -
-            - 902a91ff-7682-47b7-ad10-df776953d2a2 # Card Background
             -
               __assoc__:
                 -
@@ -142,6 +144,42 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  c15dc685-5a25-4664-9fac-82eada21679a: # Card Background Color
+    columnSuffix: eiuuslgp
+    contentColumnType: string
+    fieldGroup: null
+    handle: cardBackgroundColor
+    instructions: 'Select a background color for each card. Options include white or dark green.'
+    name: 'Card Background Color'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - White
+            -
+              - value
+              - 'bg-white text-gray-1000 hover:bg-gray-100'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Dark Green'
+            -
+              - value
+              - 'bg-green-800 text-white hover:bg-green-600'
+            -
+              - default
+              - '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
   e4546cfb-cdc7-4a55-b637-f44ae35fbf31: # Background
     columnSuffix: ggkrxaep
     contentColumnType: string
