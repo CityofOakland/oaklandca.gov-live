@@ -7,113 +7,137 @@
   {% redirect 404 %}
 {% endif %}
 
-{% set query          = craft.app.request.getQueryParam('q') %}
-{% set meetings       = craft.entries().section('meetings').relatedTo(entry).search(query).limit(10) %}
-{% set filter_enabled = false %}
+{% set query = craft.app.request.getQueryParam('q') %}
+{% set type  = craft.app.request.getQueryParam('type') ? craft.app.request.getQueryParam('type') : 'upcoming' %}
 
-{% set date_query = ['and'] %}
+{% if craft.app.request.getQueryParam('type') %}
+  {% set meetings       = craft.entries().section('meetings').relatedTo(entry).search(query).limit(10) %}
+  {% set filter_enabled = false %}
 
-{% set year   = craft.app.request.getQueryParam('year') ? craft.app.request.getQueryParam('year') : '' %}
-{% set month  = craft.app.request.getQueryParam('month') ? craft.app.request.getQueryParam('month') : '' %}
-{% set ymd     = '' %}
+  {% set date_query = ['and'] %}
 
-{% if year and month %}
-  {% set filter_enabled = true %}
-  {% set ymd = year ~ '-' ~ month ~ '-01' %}
-  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
-{% elseif year %}
-  {% set filter_enabled = true %}
-  {% set ymd = year ~ '-' ~ '01-01' %}
-  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 year')|date('Y-m-d')) ]) %}
-{% elseif month %}
-  {% set filter_enabled = true %}
-  {% set ymd = now|date('Y') ~ '-' ~ month %}
-  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
+  {% set year   = craft.app.request.getQueryParam('year')   ? craft.app.request.getQueryParam('year')   : '' %}
+  {% set month  = craft.app.request.getQueryParam('month')  ? craft.app.request.getQueryParam('month')  : '' %}
+  {% set ymd    = '' %}
+
+  {% if year and month %}
+    {% set filter_enabled = true %}
+    {% set ymd = year ~ '-' ~ month ~ '-01' %}
+    {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
+  {% elseif year %}
+    {% set filter_enabled = true %}
+    {% set ymd = year ~ '-' ~ '01-01' %}
+    {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 year')|date('Y-m-d')) ]) %}
+  {% elseif month %}
+    {% set filter_enabled = true %}
+    {% set ymd = now|date('Y') ~ '-' ~ month %}
+    {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
+  {% endif %}
+
+  {% if type %}
+    {% switch type %}
+      {% case 'upcoming' %}
+        {% set meetings = meetings.order('date asc') %}
+        {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
+      {% case 'past' %}
+        {% set meetings = meetings.order('date desc') %}
+        {% set date_query = date_query|merge(['< ' ~ now|date('Y-m-d')]) %}
+    {% endswitch %}
+  {% else %}
+    {% set meetings = meetings.order('date asc') %}
+    {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
+  {% endif %}
+
+  {% if date_query|length > 1 %}
+    {% set meetings = meetings.date(date_query) %}
+  {% endif %}
+
+  {% if craft.app.request.getQueryParam('q') %}
+    {% set filter_enabled = true %}
+  {% endif %}
+
+  {% paginate meetings as pageInfo, meetings %}
+
+  {% if pageInfo.currentPage > 1 %}
+    {% set filter_enabled = true %}
+  {% endif %}
+
+  {% set seoTitle = entry.title ~ ' Meetings' %}
+
+  {% if pageInfo.currentPage > 1 %}
+    {% set seoTitle = seoTitle ~ ' | Page ' ~ pageInfo.currentPage ~ ' of ' ~ pageInfo.totalPages %}
+  {% endif %}
+
+  {% do seomatic.meta.seoTitle(seoTitle) %}
 {% endif %}
-
-{% set type = craft.app.request.getQueryParam('type') ? craft.app.request.getQueryParam('type') : 'upcoming' %}
-{% if type %}
-  {% switch type %}
-    {% case 'upcoming' %}
-      {% set meetings = meetings.order('date asc') %}
-      {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
-    {% case 'past' %}
-      {% set meetings = meetings.order('date desc') %}
-      {% set date_query = date_query|merge(['< ' ~ now|date('Y-m-d')]) %}
-  {% endswitch %}
-{% else %}
-  {% set meetings = meetings.order('date asc') %}
-  {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
-{% endif %}
-
-{% if date_query|length > 1 %}
-  {% set meetings = meetings.date(date_query) %}
-{% endif %}
-
-{% if craft.app.request.getQueryParam('q') %}
-  {% set filter_enabled = true %}
-{% endif %}
-
-{% paginate meetings as pageInfo, meetings %}
-
-{% if pageInfo.currentPage > 1 %}
-  {% set filter_enabled = true %}
-{% endif %}
-
-{% set seoTitle = entry.title ~ ' Meetings' %}
-
-{% if pageInfo.currentPage > 1 %}
-  {% set seoTitle = seoTitle ~ ' | Page ' ~ pageInfo.currentPage ~ ' of ' ~ pageInfo.totalPages %}
-{% endif %}
-
-{% do seomatic.meta.seoTitle(seoTitle) %}
 
 {% set layout = 'filter' %}
 {% extends '_content.twig' %}
 {% import '_macros/_macros' as macros %}
 
 {% block content %}
-  <div>
-    <ul class="flex flex-wrap list-none m-0 p-0">
-        <li><a href="?type=upcoming&q={{ query }}&year={{ year }}&month={{ month }}" class="button m-0 rounded-none {{ type == 'upcoming' ? 'pointer-events-none' : 'secondary' }}">Upcoming Meetings</a></li>
-        <li><a href="?type=past&q={{ query }}&year={{ year }}&month={{ month }}" class="button m-0 rounded-none {{ type == 'past' ? 'pointer-events-none' : 'secondary' }}">Past Meetings</a></li>
-    </ul>
-  </div>
-
-  {% if filter_enabled %}
-    {% if meetings|length %}
-      <h2 aria-live="polite">Displaying {{ meetings|length }} of {{ pageInfo.total }} Meetings</h2>
+  {% if craft.app.request.getQueryParam('type') %}
+    <div>
+      <ul class="flex flex-wrap list-none m-0 p-0">
+          <li><a href="?type=upcoming&q={{ query }}&year={{ year }}&month={{ month }}" class="button m-0 rounded-none {{ type == 'upcoming' ? 'pointer-events-none' : 'secondary' }}">Upcoming Meetings</a></li>
+          <li><a href="?type=past&q={{ query }}&year={{ year }}&month={{ month }}" class="button m-0 rounded-none {{ type == 'past' ? 'pointer-events-none' : 'secondary' }}">Past Meetings</a></li>
+      </ul>
+    </div>
+    {% if filter_enabled %}
+      {% if meetings|length %}
+        <h2 aria-live="polite">Displaying {{ meetings|length }} of {{ pageInfo.total }} Meetings</h2>
+      {% else %}
+        <h2 aria-live="polite">No results found</h2>
+      {% endif %}
     {% else %}
-      <h2 aria-live="polite">No results found</h2>
+      {% switch type %}
+        {% case 'upcoming' %}
+        <h2 aria-live="polite">Displaying all Upcoming Meetings</h2>
+        {% case 'past' %}
+        <h2 aria-live="polite">Displaying all Past Meetings</h2>
+      {% endswitch %}
     {% endif %}
+    <div class="mt-8">
+      {% if meetings|length %}
+        {% for meeting in meetings %}
+          {% include '_components/_meeting' %}
+        {% endfor %}
+      {% else %}
+        <div class="px-8 pt-3 pb-5" style="background:#F7F7F7;">
+          <p>Please try another search or updating your filters.</p>
+          {% if type == 'past' %}
+            <p><a href="?type=past">See all Past Meetings</a></p>
+          {% elseif type == 'upcoming' %}
+            <p><a href="?type=upcoming">See all Upcoming Meetings</a></p>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="my-8">
+      {% include '_partials/_elements/_pagination' %}
+    </div>
   {% else %}
-    {% switch type %}
-      {% case 'upcoming' %}
-      <h2>Displaying all Upcoming Meetings</h2>
-      {% case 'past' %}
-    <h2 aria-live="polite">Displaying All Meetings</h2>
-    {% endswitch %}
-  {% endif %}
-
-  <div class="mt-8">
-    {% if meetings|length %}
-      {% for meeting in meetings %}
+    {% set upcomingMeetings = craft.entries().section('meetings').relatedTo(entry).date('>= ' ~ now|date('Y-m-d')).limit(3) %}
+    {% set pastMeetings     = craft.entries().section('meetings').relatedTo(entry).date('< ' ~ now|date('Y-m-d')).limit(3) %}
+    {% if upcomingMeetings|length %}
+      <h3 class="mt-0">Upcoming Meetings</h3>
+      {% for meeting in upcomingMeetings.all() %}
         {% include '_components/_meeting' %}
       {% endfor %}
-    {% else %}
-      <div class="px-8 pt-3 pb-5" style="background:#F7F7F7;">
-        <p>Please try another search or updating your filters.</p>
-        {% if type == 'past' %}
-          <p><a href="?type=past">See all Past Meetings</a></p>
-        {% elseif type == 'upcoming' %}
-          <p><a href="?type=upcoming">See all Upcoming Meetings</a></p>
-        {% endif %}
-      </div>
+      {% if upcomingMeetings.count() > 3 %}
+        <a class="button secondary" href="?type=upcoming">See All Upcoming Meetings</a>
+      {% endif %}
     {% endif %}
-  </div>
-  <div class="my-8">
-    {% include '_partials/_elements/_pagination' %}
-  </div>
+    {% if pastMeetings|length %}
+      <h3 class="{{ upcomingMeetings|length ? 'mt-12' : 'mt-0' }}">Past Meetings</h3>
+      {% for meeting in pastMeetings.all() %}
+        {% include '_components/_meeting' %}
+      {% endfor %}
+      {% if pastMeetings.count() > 3 %}
+        <a class="button secondary" href="?type=past">See All Past Meetings</a>
+      {% endif %}
+    {% endif %}
+  {% endif %}
 {% endblock %}
 
 {% block sidebar %}
