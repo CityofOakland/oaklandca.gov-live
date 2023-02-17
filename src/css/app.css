@@ -7,13 +7,14 @@
 @import './partials/base.css';
 @import './partials/buttons.css';
 @import './partials/components.css';
-@import './_custom-styles.css';
+@import './partials/custom.css';
 @import './partials/process.css';
 @import './partials/pagination.css';
 @import './partials/events-meetings.css';
 @import './partials/icons.css';
 @import './partials/buttons.css';
 @import './partials/modal.css';
+@import './partials/rtl.css';
 
 @layer utilities {
   /* Use this utility to hide text only meant for screen readers */
