@@ -1,3 +1,24 @@
+{% set primaryDropdown = [
+	{ short: 'en', long: 'English' },
+	{ short: 'es', long: 'Español' },
+	{ short: 'zh-TW', long: '中文' },
+	{ short: 'vi', long: 'Tiếng Việt' }
+] %}
+{% set secondaryDropdown = [
+	{ short: 'ceb', long: 'Cebuano' },
+	{ short: 'km', long: 'ភាសាខ្មែរ' },
+	{ short: 'zh-TW', long: '中文' },
+	{ short: 'ko', long: '한국어' },
+	{ short: 'en', long: 'English' },
+	{ short: 'mn', long: 'монгол' },
+	{ short: 'tl', long: 'Filipino' },
+	{ short: 'es', long: 'Español' },
+	{ short: 'hmn', long: 'Hmoob' },
+	{ short: 'vi', long: 'Tiếng Việt' },
+	{ short: 'ja', long: '日本語' },
+	{ short: 'ar', long: 'العربية' }
+] %}
+
 <script>
     var container = document.body;
     var dom_observer = new MutationObserver(function(mutation) {
@@ -25,31 +46,21 @@
 </script>
 
 <div id="topbar" class="navbar">
-    <div class="flex items-center justify-end lg:justify-between px-0 lg:px-6 bg-green-1000 lg:bg-green-800 text-white relative h-8">
+    <div class="relative flex items-center justify-end h-8 px-0 text-white lg:justify-between lg:px-6 bg-green-1000 lg:bg-green-800">
         <p class="hidden lg:block"><b>Official Website for the City of Oakland</b> <span class="mx-1">|</span> <a class="hover:text-green-800 hover:underline" href="{{ siteUrl }}officials/sheng-thao">Mayor Sheng Thao</a></p>
         <nav class="flex items-center" id="top-navigation" name="Top Navigation">
             <ul class="flex items-center">
-                <li class="hidden lg:block ml-4"><a class="language" href="#googtrans(en|en)" onclick="clear_languages()"><span lang="en" class="notranslate">English</span></a></li>
-                <li class="hidden lg:block ml-4"><a class="language" href="#googtrans(en|es)" onclick="location.reload()"><span lang="es" class="notranslate">Español</span></a></li>
-                <li class="hidden lg:block ml-4"><a class="language" href="#googtrans(en|zh-TW)" onclick="location.reload()"><span lang="zh-TW" class="notranslate">中文</span></a></li>
-                <li class="hidden lg:block ml-4"><a class="language" href="#googtrans(en|vi)" onclick="location.reload()"><span lang="vi" class="notranslate">Tiếng Việt</span></a></li>
+							{% for item in primaryDropdown %}
+								<li class="hidden ml-4 lg:block"><a class="language" href="#googtrans(en|{{ item.short }})" onclick="{{ item.short == 'en' ? 'clear_languages()' : 'location.reload()' }}"><span lang="{{ item.short }}" class="notranslate">{{ item.long }}</span></a></li>
+							{% endfor %}
             </li>
-            <p class="hidden lg:block ml-4">|</p>
-            <li id="translate" class="has-submenu click fill-current">
+            <p class="hidden ml-4 lg:block">|</p>
+            <li id="translate" class="fill-current has-submenu click">
                 <a tabindex="0" id="navbar-dropdown-translate" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ svg( '@webroot/dist/img/icon-translate.svg')|attr({ class: 'fill-current text-yellow-200 lg:hidden' }) }} {{ "Translate"|t }} {{ svg( '@webroot/dist/img/icon-arrow.svg')|attr({ class: 'fill-current' }) }}</a>
-                <ul class="components grid grid-cols-2 gap-x-6 p-4 lg:p-6 bg-green-800" aria-labelledby="navbar-dropdown-translate">
-                    <li><a class="focusable language underline" href="#googtrans(en|ceb)" onclick="location.reload()"><span lang="ceb" class="notranslate">Cebuano</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|km)" onclick="location.reload()"><span lang="km" class="notranslate">ភាសាខ្មែរ</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|zh-TW)" onclick="location.reload()"><span lang="zh-TW" class="notranslate">中文</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|ko)" onclick="location.reload()"><span lang="ko" class="notranslate">한국어</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|en)" onclick="clear_languages()"><span lang="en" class="notranslate">English</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|mn)" onclick="location.reload()"><span lang="mn" class="notranslate">монгол</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|tl)" onclick="location.reload()"><span lang="tl" class="notranslate">Filipino</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|es)" onclick="location.reload()"><span lang="es" class="notranslate">Español</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|hmn)" onclick="location.reload()"><span lang="hmn" class="notranslate">Hmoob</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|vi)" onclick="location.reload()"><span lang="vi" class="notranslate">Tiếng Việt</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|ja)" onclick="location.reload()"><span lang="ja" class="notranslate">日本語</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|ar)" onclick="location.reload()"><span lang="ar" class="notranslate">Arabic</span></a></li>
+                <ul class="grid grid-cols-2 p-4 bg-green-800 components gap-x-6 lg:p-6" aria-labelledby="navbar-dropdown-translate">
+									{% for item in secondaryDropdown %}
+										<li><a class="underline focusable language" href="#googtrans(en|{{ item.short }})" onclick="{{ item.short == 'en' ? 'clear_languages()' : 'location.reload()' }}"><span lang="{{ item.short }}" class="notranslate">{{ item.long }}</span></a></li>
+									{% endfor %}
                 </ul>
             </li>
         </nav>
@@ -57,7 +68,7 @@
 </div>
 <div id="mainbar" class="navbar">
     <div class="relative">
-        <nav id="main-navigation" class="flex items-center justify-between px-4 lg:px-6 bg-gray-1000 text-white relative" name="Main Navigation">
+        <nav id="main-navigation" class="relative flex items-center justify-between px-4 text-white lg:px-6 bg-gray-1000" name="Main Navigation">
             <a id="home-link" class="flex items-center justify-center py-2 lg:py-2" href="{{ siteUrl }}" name="Home">
                 {{ svg( '@webroot/dist/img/logo-oakland-tree.svg')|attr({ class: 'h-9 sm:h-10 w-14 md:h-10 lg:hidden fill-current text-gray-100 hover:text-gray-200' }) }}
                 {{ svg( '@webroot/dist/img/logo-oakland.svg')|attr({ class: 'w-40 h-10 hidden lg:block fill-current text-gray-100 hover:text-gray-200' }) }}
@@ -66,11 +77,11 @@
 
             <ul class="flex items-center list-none">
                 {% for item in navigation.navigationMain.level(1).all() %}
-                    <li class="has-submenu click hidden lg:block">
+                    <li class="hidden has-submenu click lg:block">
                         <a tabindex="0" id="navbar-dropdown-{{ item.heading|replace({' ': '-'})|lower }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ item.heading }} {{ svg( '@webroot/dist/img/icon-arrow.svg')|attr({ class: 'fill-current' }) }}</a>
-                        <ul class="components grid md:grid-cols-3 gap-x-6 px-6 pt-2 pb-6 bg-green-800" aria-labelledby="navbar-dropdown-{{ item.heading|replace({' ': '-'})|lower }}">
-                            <li class="pt-4 pb-32 relative">
-                                <span class="block font-bold leading-tight text-3xl pt-3">{{ item.heading }}</span>
+                        <ul class="grid px-6 pt-2 pb-6 bg-green-800 components md:grid-cols-3 gap-x-6" aria-labelledby="navbar-dropdown-{{ item.heading|replace({' ': '-'})|lower }}">
+                            <li class="relative pt-4 pb-32">
+                                <span class="block pt-3 text-3xl font-bold leading-tight">{{ item.heading }}</span>
                                 {% if item.description %}<p class="pt-2" style="font-size:20px;line-height:1.5">{{ item.description }}</p>{% endif %}
                                 {% if item.linkit %}
                                     <a class="button accent" href="{{ item.linkit.url }}">{{ item.linkit.text }}</a>
@@ -95,7 +106,7 @@
                     </li>
                 {% endfor %}
 
-                <li class="has-submenu click ml-5 flex items-center justify-end lg:justify-center" style="min-width:52px;">
+                <li class="flex items-center justify-end ml-5 has-submenu click lg:justify-center" style="min-width:52px;">
                     <a 
                         tabindex="0" 
                         id="navbar-dropdown-search" 
@@ -107,18 +118,23 @@
                         data-affects="navbar-dropdown-mobile"
                         data-affects-class="disabled"
                     >{{ svg( '@webroot/dist/img/icon-magnifier.svg')|attr({ class: 'fill-current text-gray-900' }) }}{{ svg( '@webroot/dist/img/icon-x.svg')|attr({ class: 'fill-current text-white' }) }}</a>
-                    <ul class="components px-4 lg:px-6 pt-2 pb-6 bg-green-800" aria-labelledby="navbar-dropdown-search">
+                    <ul class="px-4 pt-2 pb-6 bg-green-800 lg:px-6" aria-labelledby="navbar-dropdown-search">
                         <li>
                             <h3 class="pt-6">Search Oakland.ca.gov</h3>
-                            <form id="site-search-form" class="mt-4 relative" action="{{ url('search') }}" role="search">
+                            <form id="site-search-form" class="relative mt-4" action="{{ url('search') }}" role="search">
                                 <label for="site-search" class="hidden-visually">Search?</label>
                                 <input type="search" id="site-search" class="form-control" aria-label="Site Search" name="query" placeholder="Search for keywords" value="">
-                                <button aria-label="Site Search Button" type="submit">{{ svg( '@webroot/dist/img/icon-magnifier.svg')|attr({ class: 'fill-current text-gray-900' }) }}</button>
+                                <button
+																	aria-label="Site Search Button"
+																	class="bg-yellow-500 border-none flex items-center justify-center m-0 p-0 absolute ltr:right-0 rtl:left-0 top-0 w-[3.25rem] h-[3.25rem]"
+																	type="submit">
+																	{{ svg( '@webroot/dist/img/icon-magnifier.svg')|attr({ class: 'fill-current text-gray-900' }) }}
+																</button>
                             </form>
                         </li>
                         <li class="hidden lg:block">
                             <h3 class="pt-6">Popular on Oakland.ca.gov</h3>
-                            <ul class="list-none grid md:grid-cols-3 gap-x-6 pt-4">
+                            <ul class="grid pt-4 list-none md:grid-cols-3 gap-x-6">
                                 {% for navItem in navigation.linkits.all() %}
                                     <li><a class="card {{ navItem.styleCard }}" href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
                                 {% endfor %}
@@ -128,7 +144,7 @@
                 </li>
             </ul>
         </nav>
-        <nav id="mobile-navigation" class="bg-green-800 text-white lg:hidden" name="Mobile Navigation">
+        <nav id="mobile-navigation" class="text-white bg-green-800 lg:hidden" name="Mobile Navigation">
             <a tabindex="0" id="navbar-dropdown-mobile" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 {{ svg( '@webroot/dist/img/icon-menu.svg')|attr({ class: 'fill-current text-white' }) }}
                 {{ svg( '@webroot/dist/img/icon-x.svg')|attr({ class: 'fill-current text-white' }) }}
@@ -138,10 +154,10 @@
                 {% for item in navigation.navigationMain.level(1).all() %}
                     {% if item.toggle %}
                         {% if item.linkit %}
-                            <li class="border-green-600 border-b"><a class="focusable" href="{{ item.linkit.url }}">{{ item.heading }}</a></li>
+                            <li class="border-b border-green-600"><a class="focusable" href="{{ item.linkit.url }}">{{ item.heading }}</a></li>
                         {% endif %}
                     {% else %}
-                        <li class="has-submenu click border-green-600 border-b">
+                        <li class="border-b border-green-600 has-submenu click">
                             <a 
                                 tabindex="0" 
                                 id="navbar-dropdown-mobile-{{ item.heading|replace({' ': '-'})|lower }}" 
@@ -155,10 +171,10 @@
                             <ul class="components" aria-labelledby="navbar-dropdown-mobile-{{ item.heading|replace({' ': '-'})|lower }}">
                                 {% set navItems = item.children.all() %}
                                 {% for navItem in navItems %}
-                                    <li><a class="block focusable p-4 border-green-600 bg-green-900 border-t" href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
+                                    <li><a class="block p-4 bg-green-900 border-t border-green-600 focusable" href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
                                 {% endfor %}
                                 {% if item.linkit %}
-                                    <li><a class="block focusable p-4 border-green-600 bg-yellow-500 text-gray-1000 border-t" href="{{ item.linkit.url }}" style="color:#222222">{{ item.linkit.text }}</a></li>
+                                    <li><a class="block p-4 bg-yellow-500 border-t border-green-600 focusable text-gray-1000" href="{{ item.linkit.url }}" style="color:#222222">{{ item.linkit.text }}</a></li>
                                 {% endif %}
                             </ul>
                         </li>
