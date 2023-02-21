@@ -1,26 +1,15 @@
-{% extends '_layout.twig' %}
-
-{% do craft.app.elements.eagerLoadElements(
-  className(entry),
-  [entry],
-  [
-    'banner',
-    'addresses',
-    'contentBuilder',
-    'portrait',
-    'teams',
-    'phoneNumbers',
-    'openHours',
-    'contentBuilder.largeEntryLinks:entries',
-    'contentBuilder.largeEntryLinks:documentFile',
-    'contentBuilder.officials.officials',
-  ]
-) %}
+{% extends '_content.twig' %}
 
 {% set pressRelease = entry.pressReleaseFile %}
-{% set contentBuilder = entry.contentBuilder | length %}
+{% set seoMaticLinks = seomatic.site.sameAsLinks %}
+{% set socialMedia = [
+  [ seoMaticLinks.facebook.url, 'facebook.svg', 'Oakland Facebook Page' ],
+  [ seoMaticLinks.twitter.url, 'twitter.svg', 'Oakland Twitter Page' ],
+  [ seoMaticLinks.instagram.url, 'instagram.svg', 'Oakland Instagram Page' ]
+] %}
 
-{% block content %}
+{# Banner #}
+{% block banner %}
   {% include '_partials/_page-banners.twig' with {
     breadCrumbLinks: [
       {
@@ -28,65 +17,195 @@
         link: '/news'
       }
     ],
+    bannerImage: entry.banner|length ? {
+      position: entry.banner.one().getFocalPoint('asCss'),
+      src: entry.banner.one().url,
+      alt: entry.banner.one().title ?? entry.banner.one().filename
+    } : false,
+    bannerTitle: entry.title,
+    custHeaderContent: null
   } %}
-  <div class="container pt-0">
-    <div class="flex">
-      {% include "_partials/_elements/_nav-sidebar.twig" %}
-      <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
-        <div class="md:col-span-2 lg:col-span-3">
-          {% include '_partials/_elements/_last-update.twig' %}
-          {% if entry.newsImage | length %}
-            <figure class="max-w-full mb-8">
-              {% set newsImage = entry.newsImage.one() %}
-              <img src="{{ newsImage.url }}" alt="{{ newsImage.altText ?? ''}}" />
-            </figure>
+{% endblock %}
+
+{# Content #}
+{% block content %}
+  <div>
+    {# News image #}
+    {% if entry.newsImage|length %}
+      <figure class="max-w-full mb-8">
+        {% set newsImage = entry.newsImage.one() %}
+        <img src="{{ newsImage.url }}" alt="{{ newsImage.altText ?? ''}}" />
+      </figure>
+    {% endif %}
+
+    {# Content body, or content builder #}
+    {% if entry.contentBuilder|length %}
+      {% include '_partials/_content-builder/_tool.twig' %}
+    {% else %}
+      <div class="body-text">
+        {{ entry.body }}
+      </div>
+    {% endif %}
+
+    {# Tags (relationships) #}
+    <hr class="mt-12 mb-4 hr border">
+
+    {# An array offers more control over which relationships can be linked as tags. #}
+    {% set relationshipFields = [
+      'boardsCommissions',
+      'departments',
+      'officials',
+      'projects',
+      'topics',
+      'serviceTypes'
+    ] %}
+
+    {% set tagLinks = [] %}
+
+    {% for relationshipField in relationshipFields %}
+      {% for relatedEntity in attribute(entry, relationshipField).all() %}
+        {% set tagLinks = tagLinks|merge([
+          '<a class="font-bold" href="' ~ relatedEntity.url ~ '">' ~ relatedEntity.title ~ '</a>'
+        ]) %}
+      {% endfor %}
+    {% endfor %}
+
+    <div>
+      Tagged with:
+      {{ tagLinks|join(', ')|raw }}
+    </div>
+  </div>
+{% endblock %}
+
+{# Sidebar #}
+{% block sidebar %}
+  {# Press Release #}
+  {% if entry.pressReleaseFile|length %}
+    {% set pressReleaseFile = entry.pressReleaseFile.one() %}
+
+    <hr class="mb-4">
+
+    <div>
+      <h4 class="pt-0 mb-8">{{ 'Press Release'|t }}</h4>
+
+      <div>
+        <a class="button secondary m-0 text-center text-sm" href="{{ pressReleaseFile.url }}">
+          Download {{ entry.altText ? '"' ~ entry.altText ~ '"' : '' }} Press Release File
+        </a>
+      </div>
+    </div>
+  {% endif %}
+
+  {# Contact #}
+  {% if entry.contact|length %}
+    <hr class="mb-4">
+
+    <div>
+      <h4 class="pt-0 mb-8">{{ 'Contact'|t }}</h4>
+
+      {% for contactEntry in entry.contact %}
+        {#
+          Staff info isn't always set in primary fields.
+          In case primary fields are blank, resort to alternate fields
+          populated by the staff import automation.
+        #}
+        {% set contactFirstName = contactEntry.firstName ?: contactEntry.staffImportGivenName %}
+        {% set contactLastName = contactEntry.lastName ?: contactEntry.staffImportSurname %}
+        {% set contactJobTitle = contactEntry.jobTitle ?: contactEntry.staffImportJobTitle %}
+        {% set contactEmailAddress = contactEntry.emailAddress ?: contactEntry.staffImportEmail %}
+        {% set contactPhoneNumber = contactEntry.phoneNumber ?: contactEntry.staffImportPhoneNumber %}
+
+        <div class="mb-12">
+          <p class="mb-5">
+            {{ contactFirstName ~ ' ' ~ contactLastName }}
+            <br>
+            {{ contactJobTitle }}
+          </p>
+
+          {% if contactEmailAddress|length %}
+            <div class="mb-6">
+              <img class="inline w-5" src="{{ alias('@web/dist/img/icon-envelope-updated.svg') }}">
+              <a href="mailto:{{ contactEmailAddress }}">{{ contactEmailAddress }}</a>
+            </div>
           {% endif %}
-          {% if contentBuilder %}
-            {% include '_partials/_content-builder/_tool.twig' %}
-          {% else %}
-            <div class="body-text">
-              {{ entry.body }}
+
+          {% if contactPhoneNumber|length %}
+            <div>
+              <img class="inline w-5" src="{{ alias('@web/dist/img/icon-phone-updated.svg') }}">
+              <a href="tel:{{ contactPhoneNumber }}">{{ contactPhoneNumber }}</a>
             </div>
           {% endif %}
         </div>
-        <div class="md:col-span-2 lg:col-span-1">
-          {% if entry.contact|length or entry.mediaContact %}
-            <h3>Media Contact{{ entry.contact|length > 1 or (entry.contact|length and entry.mediaContact) ? 's' }}</h3>
-          {% endif %}
-          {% if entry.contact|length %}
-            {% for contact in entry.contact.all() %}
-              {% if contact.portrait|length %}
-                {% set photo = contact.portrait.one() %}
-                {% set transformedImage = craft.imager.transformImage(
-                  photo,
-                  {width: 150 },
-                  { ratio: 1/1, position: photo.getFocalPoint()},
-                  { fillTransforms: true}
-                ) %}
-                {% set transformedImages = craft.imager.transformImage(photo, [
-                  { width: 500 },
-                  { width: 300, jpegQuality: 65 },
-                  { width: 150, jpegQuality: 65 }
-                ], { ratio: 1/1, position: photo.getFocalPoint()},{ fillTransforms: true}) %}
-                  <img src="{{ transformedImage.url }}" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ contact.jobTitle ? contact.jobTitle : contact.staffImportJobTitle }}, {{ contact.title }}" class="block w-full mt-3 border-2 border-gray-200 rounded-full" style="max-width:95px;">
-              {% endif %}
-              <p>
-                <b><a target="_blank" href="{{ contact.url }}"><span>{{ contact.title }}</span></a></b>
-                {% if contact.jobTitle or contact.staffImportJobTitle %}<br><span>{{ contact.jobTitle ? contact.jobTitle : contact.staffImportJobTitle }}</span>{% endif %}
-                {% if contact.departmentOfficialBoardCommission|length or contact.staffImportDepartment %}<br><span>{{ contact.departmentOfficialBoardCommission.one() ? contact.departmentOfficialBoardCommission.one().title : contact.staffImportDepartment }}</span>{% endif %}
-                {% if contact.emailAddress or contact.staffImportEmail %}<br><a href="mailto:{{ contact.emailAddress ? contact.emailAddress : contact.staffImportEmail }}">{{ contact.emailAddress ? contact.emailAddress : contact.staffImportEmail }}</a>{% endif %}
-                {% if contact.phoneNumber or contact.staffImportPhoneNumber %}<br><a href="tel:{{ contact.phoneNumber ? contact.phoneNumber : contact.staffImportPhoneNumber }}">{{ contact.phoneNumber ? contact.phoneNumber : contact.staffImportPhoneNumber }}</a>{% endif %}
-              </p>
-            {% endfor %}
-          {% endif %}
-          {% if entry.mediaContact %}
-            {{ entry.mediaContact }}
-          {% endif %}
-          {% if pressRelease.exists() %}
-            <a href="{{ pressRelease.one.url }}" class="w-full btn">Download Press Release</a>
-          {% endif %}
-        </div>
-      </div>
+      {% endfor %}
     </div>
+  {% endif %}
+
+  {# Share (social buttons) #}
+  <hr class="mb-4">
+
+  <div>
+    <h4 class="pt-0 mb-4">{{ 'Share'|t }}</h4>
+
+    <ul class="flex p-0 m-0 gap-4 list-none">
+      {% for socItem in socialMedia %}
+        <li>
+          <a href="{{ socItem[0] }}" target="_blank" class="flex items-center justify-center w-10 h-10 bg-green-800 text-white hover:text-white rounded-full">
+              {{ svg('@webroot/dist/img/logo-' ~ socItem[1])|attr({class:'h-5'}) }}
+              <span class="hidden-visually">{{ socItem[2] }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
   </div>
+
+  {# Post & update dates #}
+  <hr class="mt-8 mb-4 hr border">
+
+  <div class="text-gray-900">
+    {% include '_partials/_elements/_last-update.twig' %}
+  </div>
+{% endblock %}
+
+{# Any content or elements before footer #}
+{% block prefooter %}
+  {% if entry.news|length %}
+    <section class="bg-blue-100 p-12">
+      <div class="mb-8">
+        <h2>More Related News</h2>
+      </div>
+      <div class="xl:flex xl:flex-column xl:items-start xl:gap-12">
+        {% for relatedNewsEntry in entry.news %}
+          {% set relatedNewsEntryImage = relatedNewsEntry.newsImage|length ? relatedNewsEntry.newsImage.one() : null %}
+          <article class="md:flex md:flex-row md:items-start xl:w-1/2 md:h-52 h-auto mb-8 bg-white rounded shadow">
+            {% if relatedNewsEntryImage %}
+              <figure>
+                <img src="{{ relatedNewsEntryImage.url }}"
+                  class="md:w-52 md:h-52"
+                  alt="{{ relatedNewsEntryImage.title ?? relatedNewsEntryImage.filename }}"
+                  title="{{ relatedNewsEntryImage.title ?? relatedNewsEntryImage.filename }}">
+              </figure>
+            {% else %}
+              <figure class="md:w-52 md:h-52 p-12 bg-blue-800">
+                <img src="{{ alias('@web/dist/img/icon-newspaper-blue-300.svg') }}"
+                  class="mx-auto"
+                  alt="No article image to display">
+              </figure>
+            {% endif %}
+            <div class="md:w-3/4 p-4">
+              <div class="mb-2 text-sm text-gray-1000 uppercase">
+                {{ relatedNewsEntry.postDate|date("M d, Y") }}
+              </div>
+              <h4 class="my-2 text-md font-bold">
+                <a href="{{ relatedNewsEntry.url }}">{{ relatedNewsEntry.title }}</a>
+              </h4>
+              <div class="md:line-clamp-2 text-gray-1000">
+                {% set relatedNewsEntryExcerpt = relatedNewsEntry.summary ?: relatedNewsEntry.body %}
+                {{ relatedNewsEntryExcerpt|striptags|slice(0, 200) ~ (relatedNewsEntryExcerpt|length > 200 ? '...' : '') }}
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
 {% endblock %}

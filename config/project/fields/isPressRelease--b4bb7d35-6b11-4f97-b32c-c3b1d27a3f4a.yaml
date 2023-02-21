@@ -1,0 +1,34 @@
+columnSuffix: orecsnxv
+contentColumnType: string
+fieldGroup: 4ed914c6-b7ea-44be-a061-4430ad33baf2 # News
+handle: isPressRelease
+instructions: 'This field is only for PIOs.'
+name: 'Is this an official press release?'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Yes'
+        -
+          - value
+          - 'yes'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'No'
+        -
+          - value
+          - 'no'
+        -
+          - default
+          - '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\RadioButtons
