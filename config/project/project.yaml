@@ -1,4 +1,4 @@
-dateModified: 1678389055
+dateModified: 1678389182
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -1117,7 +1117,7 @@ plugins:
   retour:
     enabled: '1'
     licenseKey: 5DC6J57ZUDZKVM1WI3TONGUK
-    schemaVersion: 3.0.10
+    schemaVersion: 3.0.11
     settings:
       alwaysStripQueryString: ''
       createUriChangeRedirects: '1'
@@ -1217,5 +1217,5 @@ system:
   live: true
   name: 'City of Oakland'
   retryDuration: null
-  schemaVersion: 3.7.33
+  schemaVersion: 3.8.0.1
   timeZone: America/Los_Angeles
