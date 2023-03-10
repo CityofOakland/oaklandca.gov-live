@@ -20,7 +20,7 @@
 					<a class="{{ gridSize }} mt-0 mb-6" href="{{ card.url }}" target="{{ card.target }}" style="margin-left:0;margin-right:0">
 						<div class="p-6 text-lg font-bold h-full {{ block.cardBackgroundColor }} no-underline rounded-sm shadow-btn transition-all duration-75" style="margin:0 1rem">
 							<i class="fal fa-{{ iconCards.icon }}" style="height:48px"></i>
-							<{{ subheading }} class="my-0 text-lg pt-2">{{ card.text }}{% if card.target %} <i class="fas fa-external-link-alt pl-1" style="height:17px"></i>{% endif %}</{{ subheading }}>
+							<h3 class="my-0 text-lg pt-2">{{ card.text }}{% if card.target %} <i class="fas fa-external-link-alt pl-1" style="height:17px"></i>{% endif %}</h3>
 							<p class="mt-3 mb-0 text-sm font-normal">{{ iconCards.description }}</p>
 						</div>
 					</a>

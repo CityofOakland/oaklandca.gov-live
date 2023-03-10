@@ -21,7 +21,7 @@
 					<a class="{{ gridSize }} mt-0 mb-6" href="{{ card.url }}" target="{{ card.target }}" style="margin-left:0;margin-right:0">
 						<div class="p-6 text-lg font-bold {{ textCards.background }} no-underline rounded-sm shadow-btn transition-all duration-75 h-full" style="margin:0 1rem">
 							<div class="uppercase font-normal text-sm mb-2">{{ textCards.brow }}</div>
-							<{{ subheading }} class="my-0 text-lg md:text-xl font-bold {% if 'bg-white' in textCards.background.value %}text-green-800{% else %}text-white{% endif %}">{{ card.text }}{% if card.target %} <i class="fas fa-external-link-alt" style="height:17px"></i>{% endif %}</{{ subheading }}>
+							<h3 class="my-0 text-lg md:text-xl font-bold {% if 'bg-white' in textCards.background.value %}text-green-800{% else %}text-white{% endif %}">{{ card.text }}{% if card.target %} <i class="fas fa-external-link-alt" style="height:17px"></i>{% endif %}</h3>
 							<p class="mt-3 mb-0 text-sm font-normal">{{ textCards.description }}</p>
 						</div>
 					</a>
