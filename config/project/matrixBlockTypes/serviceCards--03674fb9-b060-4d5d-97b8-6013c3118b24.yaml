@@ -96,7 +96,7 @@ fields:
                 -
                   - width
                   - ''
-      contentTable: '{{%stc_95_servicecards}}'
+      contentTable: '{{%stc_100_servicecards}}'
       fieldLayout: table
       maxRows: '9'
       minRows: '2'

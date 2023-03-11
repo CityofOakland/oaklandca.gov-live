@@ -1,4 +1,4 @@
-dateModified: 1678389182
+dateModified: 1678490978
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -874,6 +874,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.3.0
+  colour-swatches:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.4.2
   cp-body-classes:
     enabled: '1'
     licenseKey: null
@@ -1026,8 +1030,8 @@ plugins:
       enableCache: true
       iconSetsPath: '@webroot/dist/icons/'
       iconSetsUrl: '@web/dist/icons/'
-      maxIconsShown: '100'
-      redactorFieldHandle: ''
+      maxIconsShown: '25'
+      redactorFieldHandle: iconPicker
   imager-x:
     edition: pro
     enabled: true

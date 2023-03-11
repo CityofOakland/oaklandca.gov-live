@@ -151,7 +151,7 @@ fields:
                 -
                   - width
                   - ''
-      contentTable: '{{%stc_100_buttons}}'
+      contentTable: '{{%stc_97_buttons}}'
       fieldLayout: table
       maxRows: ''
       minRows: ''

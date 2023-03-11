@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1cd9767baa898b495bcfb662711e68d9",
+    "content-hash": "577ea3889e63e0d694064641ce48e969",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -2806,11 +2806,6 @@
         {
             "name": "guzzlehttp/psr7",
             "version": "2.4.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/guzzle/psr7.git",
-                "reference": "3cf1b6d4f0c820a2cf8bcaec39fc698f3443b5cf"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/guzzle/psr7/zipball/3cf1b6d4f0c820a2cf8bcaec39fc698f3443b5cf",
@@ -2826,11 +2821,6 @@
             "provide": {
                 "psr/http-factory-implementation": "1.0",
                 "psr/http-message-implementation": "1.0"
-            },
-            "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.8.1",
-                "http-interop/http-factory-tests": "^0.9",
-                "phpunit/phpunit": "^8.5.29 || ^9.5.23"
             },
             "suggest": {
                 "laminas/laminas-httphandlerrunner": "Emit PSR-7 responses"
@@ -2850,7 +2840,6 @@
                     "GuzzleHttp\\Psr7\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2901,24 +2890,6 @@
                 "stream",
                 "uri",
                 "url"
-            ],
-            "support": {
-                "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.4.4"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/GrahamCampbell",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/Nyholm",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/guzzlehttp/psr7",
-                    "type": "tidelift"
-                }
             ],
             "time": "2023-03-09T13:19:02+00:00"
         },
@@ -5366,6 +5337,59 @@
                 "random"
             ],
             "time": "2020-10-15T08:29:30+00:00"
+        },
+        {
+            "name": "percipioglobal/craft-colour-swatches",
+            "version": "1.7.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/percipioglobal/craft-colour-swatches/zipball/4601b5b3de98a19ff0a9397ef596c6fcfff06cef",
+                "reference": "4601b5b3de98a19ff0a9397ef596c6fcfff06cef",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.6.0",
+                "twig/twig": "^2.9.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Colour Swatches",
+                "handle": "colour-swatches",
+                "description": "Adding custom selectable colour palettes, gradients, classes and more to your field types.",
+                "schemaVersion": "1.4.2",
+                "changelogUrl": "https://raw.githubusercontent.com/percipioglobal/craft-colour-swatches/master/CHANGELOG.md",
+                "class": "percipioglobal\\colourswatches\\ColourSwatches"
+            },
+            "autoload": {
+                "psr-4": {
+                    "percipioglobal\\colourswatches\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Percipio Global",
+                    "homepage": "https://percipio.london"
+                }
+            ],
+            "description": "Let clients choose from a predefined set of colours and utilise associated colour codes and class names in your templates.",
+            "keywords": [
+                "cms",
+                "color-swatches",
+                "colour-swatches",
+                "craft",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "support": {
+                "email": "support@percipio.london",
+                "docs": "https://github.com/percipioglobal/craft-colour-swatches/blob/master/README.md",
+                "issues": "https://github.com/percipioglobal/craft-colour-swatches/issues",
+                "source": "https://github.com/percipioglobal/craft-colour-swatches"
+            },
+            "time": "2022-07-08T19:26:04+00:00"
         },
         {
             "name": "phenx/php-font-lib",
@@ -11297,5 +11321,5 @@
     "platform-overrides": {
         "php": "7.2.5"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

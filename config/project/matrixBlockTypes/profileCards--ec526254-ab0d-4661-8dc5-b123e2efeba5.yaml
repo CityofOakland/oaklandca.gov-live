@@ -122,7 +122,7 @@ fields:
                 -
                   - width
                   - ''
-      contentTable: '{{%stc_101_profilefeatured}}'
+      contentTable: '{{%stc_95_profilefeatured}}'
       fieldLayout: table
       maxRows: '9'
       minRows: ''
