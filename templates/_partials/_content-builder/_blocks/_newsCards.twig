@@ -13,9 +13,13 @@
 	{% endif %}
 {% endif %}
 
+{# Here we are removing the first item from the list so that we can have a “big” first item and then separating the
+   remainder of the entries into a second array. #}
 {% set firstEntry = newsEntries|slice(0,1) %}
 {% set remainingEntries = newsEntries|slice(-1,0) %}
 
+{# If there is a featured entry on this block, we go ahead and replace the “first entry” previously set and set the
+   remaining entries to default to the original array. #}
 {% set featuredEntry = block.featured.one() ?? null %}
 {% if featuredEntry and block.expiryDate > now %}
 	{% set firstEntry = featuredEntry %}
