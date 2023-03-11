@@ -30,15 +30,6 @@ export default defineConfig(({ command, mode }) => {
           'templates/**/*',
         ],
       }),
-      // critical({
-      //   criticalUrl: env.VITE_URL,
-      //   criticalBase: './web/dist/',
-      //   criticalPages: [
-      //     { uri: '', template: 'index' },
-      //   ],
-      //   criticalConfig: {
-      //   },
-      // }),
     ],
     server: {
       origin: 'http://localhost:3000',
