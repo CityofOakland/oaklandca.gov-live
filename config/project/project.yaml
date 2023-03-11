@@ -1,4 +1,4 @@
-dateModified: 1678490978
+dateModified: 1678567357
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -910,6 +910,10 @@ plugins:
     schemaVersion: 1.0.0
     settings:
       documentation: "<p><a href=\"https://www.oaklandca.gov/admin/usermanual\" rel=\"noopener\" target=\"_blank\">Oaklandca.gov User Guide</a></p>\r\n<ul><li>-&nbsp;<a href=\"https://www.oaklandca.gov/admin/usermanual/user-guide/writing-for-oaklandca-gov\" rel=\"noopener\" target=\"_blank\">Writing for the Web Style Guide</a></li><li>-&nbsp;<a href=\"https://www.oaklandca.gov/admin/usermanual/user-guide/using-craft\" rel=\"noopener\" target=\"_blank\">Using Craft</a></li><li>-&nbsp;<a href=\"https://www.oaklandca.gov/admin/usermanual/user-guide/content-strategy\" rel=\"noopener\" target=\"_blank\">Content Strategy</a></li></ul>\r\n<p><a href=\"https://datastudio.google.com/u/1/reporting/3253d1d2-dfdb-400a-9cc6-eb26afe88cae/page/1M\" rel=\"noopener\" target=\"_blank\">City of Oakland Website Analytics Dashboard</a></p>"
+  dumper:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   element-api:
     enabled: '1'
     licenseKey: null

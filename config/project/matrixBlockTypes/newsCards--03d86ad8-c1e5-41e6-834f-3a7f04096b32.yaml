@@ -26,7 +26,7 @@ fieldLayouts:
             fieldUid: 514ef01b-6b97-4fc4-9840-4923745288d3 # News Entries
             instructions: null
             label: null
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -77,7 +77,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: news
-    instructions: 'Choose up to 3 news items you wish to display in this section.'
+    instructions: 'Choose up to 3 news items you wish to display in this section. If you have less than 3, the remaining amount of related entries will be placed at the end of the list, if available.'
     name: 'News Entries'
     searchable: false
     settings:
