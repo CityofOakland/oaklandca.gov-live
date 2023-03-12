@@ -179,13 +179,6 @@ fields:
                 -
                   - width
                   - ''
-          -
-            - c4febe43-86c3-44a8-abb6-674dfcec8af9 # Card Background Color
-            -
-              __assoc__:
-                -
-                  - width
-                  - ''
       contentTable: '{{%stc_99_textcards}}'
       fieldLayout: table
       maxRows: '9'
@@ -200,40 +193,20 @@ fields:
     type: verbb\supertable\fields\SuperTableField
   c2858c5f-1822-49b6-b541-53f943fdb540: # Card Background Color
     columnSuffix: mqekxohx
-    contentColumnType: string
+    contentColumnType: text
     fieldGroup: null
-    handle: textCardBg
-    instructions: 'Select a background color for each card. Options include white or dark green.'
+    handle: cardBackgroundColor
+    instructions: 'Select a background color for the cards. Options include white or dark green.'
     name: 'Card Background Color'
     searchable: false
     settings:
-      optgroups: true
-      options:
-        -
-          __assoc__:
-            -
-              - label
-              - White
-            -
-              - value
-              - bg-white
-            -
-              - default
-              - '1'
-        -
-          __assoc__:
-            -
-              - label
-              - 'Dark Green'
-            -
-              - value
-              - 'bg-green-800 text-white'
-            -
-              - default
-              - ''
+      default: null
+      options: ''
+      palette: Cards
+      useConfigFile: '1'
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\Dropdown
+    type: percipioglobal\colourswatches\fields\ColourSwatches
   d20f755d-2c8d-459a-971b-1f3957a561a9: # Columns
     columnSuffix: okolrjrq
     contentColumnType: string

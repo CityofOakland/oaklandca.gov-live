@@ -23,7 +23,9 @@ return [
 												'background'        => 'bg-green-800',
 												'backgroundHover'   => 'hover:bg-green-600',
 												'text'              => 'text-white',
-												'textHover'         => 'hover:text-white'
+												'textHover'         => 'hover:text-white group-hover:text-white',
+												'link'              => 'text-white',
+												'linkHover'         => 'hover:text-white group-hover:text-white'
 										]
 								]
 						],
@@ -36,7 +38,9 @@ return [
 												'background'        => 'bg-white',
 												'backgroundHover'   => 'hover:bg-gray-100',
 												'text'              => 'text-gray-1000',
-												'textHover'         => 'hover:text-gray-1000'
+												'textHover'         => 'hover:text-gray-1000 group-hover:text-gray-1000',
+												'link'              => 'text-green-800',
+												'linkHover'         => 'hover:text-green-600 group-hover:text-green-600'
 										]
 								]
 						],
