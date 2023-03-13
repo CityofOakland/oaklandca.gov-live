@@ -478,16 +478,3 @@
 .component.bg-blue-800 .shadow-btn{
   box-shadow: none;
 }
-
-.in-page-nav ul li {
-  position: relative;
-  display: inline-block;
-  font-weight: 700;
-  font-size: 14px;
-  margin: 0 .25rem;
-}
-
-.in-page-nav ul li a {
-  padding: 0 .25rem;
-  text-decoration: underline;
-}

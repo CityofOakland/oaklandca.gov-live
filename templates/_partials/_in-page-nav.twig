@@ -1,32 +1,29 @@
-{% set contentBuilder = entry.contentBuilder ?? '' %}
-{% if contentBuilder | length %}
-
-    <section class="in-page-nav bg-green-100">
-        <div class="container py-4">
-            <ul class="m-0">
-                <li><span>On this page:</span></li>
-
-                {% for block in entry.contentBuilder %}
-                    <li>
-                        <a href="#{{ block.type }}">
-
-                            {% if block.type == 'spotlight' %}
-                                Spotlight
-                            {% elseif block.type == 'newsCards' %}
-                                News
-                            {% elseif block.heading %}
-                                {{ block.heading }}
-                            {% elseif block.type == 'featuredProfile' %}
-                                Profile
-                            {% elseif block.type == 'serviceCards' %}
-                                Services
-                            {% endif %}
-
-                        </a>
-                    </li>
-               {% endfor %}
-        
-            </ul>
-        </div>
-    </section>
+{% set content = entry.contentBuilder ?? null %}
+{% if content %}
+  <section class="bg-green-100">
+    <div class="container flex flex-col md:flex-row gap-4 py-6 md:py-4">
+      <span class="text-sm font-bold leading-loose">On&nbsp;this&nbsp;page:</span>
+      <nav>
+        <ul class="m-0 columns-2 md:columns-1 space-y-6 md:space-y-0 md:gap-x-4 md:gap-y-0 md:flex md:flex-wrap h-full md:items-center">
+          {% for block in entry.contentBuilder %}
+            <li class="relative font-bold text-sm leading-loose">
+              <a class="underline" href="#{{ block.type }}">
+                {% if block.type == 'spotlight' %}
+                  Spotlight
+                {% elseif block.type == 'newsCards' %}
+                  News
+                {% elseif block.heading %}
+                  {{ block.heading }}
+                {% elseif block.type == 'featuredProfile' %}
+                  Profile
+                {% elseif block.type == 'serviceCards' %}
+                  Services
+                {% endif %}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </section>
 {% endif %}
