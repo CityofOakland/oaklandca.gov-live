@@ -5,7 +5,7 @@
 {% set textRight = block.alignment ?? false %}
 {% set bgColor = block.backgroundColor.color[0] ?? null %}
 {% set description = block.description ?? null %}
-{% set button = block.button ?? null %}
+{% set button = block.callToAction ?? null %}
 
 {% if image %}
 	{% set transformedImage = craft.imager.transformImage(

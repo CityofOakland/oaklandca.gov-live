@@ -68,7 +68,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: a081fc5f-03ce-4909-8255-dd92e7c9076c # Button
+            fieldUid: a081fc5f-03ce-4909-8255-dd92e7c9076c # Call to Action
             instructions: null
             label: null
             required: false
@@ -158,13 +158,13 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  a081fc5f-03ce-4909-8255-dd92e7c9076c: # Button
+  a081fc5f-03ce-4909-8255-dd92e7c9076c: # Call to Action
     columnSuffix: rilqaebz
     contentColumnType: text
     fieldGroup: null
-    handle: button
+    handle: callToAction
     instructions: 'Add a button at the bottom of your spotlight that can link out to other content.'
-    name: Button
+    name: 'Call to Action'
     searchable: false
     settings:
       allowCustomText: '1'
