@@ -1,4 +1,4 @@
-dateModified: 1678659628
+dateModified: 1678736152
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -159,7 +159,7 @@ meta:
     8db301bf-0d15-4511-98a8-8a4021bbef60: 'End Date' # End Date
     8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884: Projects # Projects
     8e550712-d313-4f60-a6dd-50a0f79aaef2: 'Teams Index' # Teams Index
-    8ed0d9cb-1498-4dbd-b451-573a77710798: Background # Background
+    8ed0d9cb-1498-4dbd-b451-573a77710798: 'Background Color' # Background Color
     8f7d7d14-020f-43e1-a3e3-74f2bcd19c9d: 'Online Link' # Online Link
     8f34ad32-e01b-4c4f-8ae1-57e94e5b415f: Location # Location
     8fc249ab-8729-4542-912e-7a4303aa9598: 'Alert Type' # Alert Type
@@ -219,6 +219,7 @@ meta:
     37b9cad8-04be-41c4-938a-c869de41bfc6: 'Template Select' # Template Select
     37d7923c-6d90-4b32-8f5a-c4a3cdc1fff0: Body # Body
     40abab6e-fe75-4f91-b6bd-9016b2b01dbe: 'Column 2 Heading' # Column 2 Heading
+    40ec5343-f083-489f-a6eb-49ff9ee6d600: 'Use Image as Background?' # Use Image as Background?
     42daf001-6cda-4eab-a3a2-3dd24077d76c: 'Volunteer Index' # Volunteer Index
     42e47b92-4d9f-4ba3-8a3f-886a122470b9: Label # Label
     43cb8609-820e-4df0-9b62-fa6cf21ba074: 'Agenda Topics' # Agenda Topics
@@ -233,7 +234,7 @@ meta:
     51b92fa5-0440-4de2-b988-6e63a6b9d10e: Icon # Icon
     52bbbd6c-79fe-419a-9d91-648022ff54be: 'Navigation Item' # Navigation Item
     54b48d39-e6a7-4d50-9cf7-91ce11c798ee: 'Staff Import Surname' # Staff Import Surname
-    54de1c1c-79d6-40ed-911b-422f630094e1: 'Spotlight Description' # Spotlight Description
+    54de1c1c-79d6-40ed-911b-422f630094e1: Description # Description
     55afc13e-16e3-4080-9c67-ae7a4c46e3e2: 'Additional Address Info' # Additional Address Info
     56ad4140-da85-43ea-8292-3fac04cbefc1: Galleries # Galleries
     057c9181-27ec-4d3e-a5b0-fbdce2462afd: 'Special Assessment Test Status' # Special Assessment Test Status
@@ -471,7 +472,7 @@ meta:
     56057193-b9d8-4ac0-9f31-d4a755c91447: News # News
     58263077-210c-44b9-9b7c-beecb708601f: 'Website Updates' # Website Updates
     70778563-6dac-453d-a4b0-5121f3a614b7: Topics # Topics
-    70842856-8b10-4b22-ac3d-e127825aca24: 'Spotlight Header' # Spotlight Header
+    70842856-8b10-4b22-ac3d-e127825aca24: Heading # Heading
     71390558-d90c-4764-9b4c-3193ce8c1c0f: News # News
     80185635-48b7-48d7-847a-53d941fdda68: Address # Address
     80554222-e44d-4971-b6db-30843c2f3a7d: Facebook # Facebook
@@ -484,7 +485,7 @@ meta:
     a093da22-5c78-46d1-a7b8-19ad9d41b583: 'Location Address' # Location Address
     a1a9a232-768c-41ae-a487-aebf145b4062: Vimeo # Vimeo
     a2cf024d-962c-4e66-a16e-9b6faefbae19: 'Hide Thumbnails?' # Hide Thumbnails?
-    a3aa486f-473f-4b4d-b3ae-808963595c58: 'Image Column Position' # Image Column Position
+    a3aa486f-473f-4b4d-b3ae-808963595c58: 'Text Position' # Text Position
     a3fccaa0-bcac-433c-9b51-7d3f47c751f2: 'TTY Number' # TTY Number
     a5f4a9fc-df41-498a-b3b2-e30e383453bc: Link # Link
     a7cd6f1e-a5c0-47fc-9080-1bc5ace85242: 'Staff Import Phone Number' # Staff Import Phone Number
@@ -613,7 +614,7 @@ meta:
     ce43edd2-2eec-45cc-afa1-e3bd6b6e20ac: People # People
     ce345611-039a-4fb5-9a1c-a9eef7d74514: Embeds # Embeds
     ce969731-41e7-42b9-aad7-a6bff2089c57: 'News Index' # News Index
-    cfa9b9fb-13ac-48d4-9525-d51caed66583: 'Spotlight Brow' # Spotlight Brow
+    cfa9b9fb-13ac-48d4-9525-d51caed66583: Brow # Brow
     cfd8d58a-04c4-47d6-a974-c3290affb7c3: 'Staff Member' # Staff Member
     cfe09f9c-1b0b-49d8-aa1a-c75cd32aa94c: 'Sort Documents by Date?' # Sort Documents by Date?
     d0cf7d52-44a5-44a7-9efa-ba27c7541ff9: 'Image Column Position' # Image Column Position

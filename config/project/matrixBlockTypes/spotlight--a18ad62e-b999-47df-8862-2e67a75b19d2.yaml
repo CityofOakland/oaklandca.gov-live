@@ -5,37 +5,28 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: cfa9b9fb-13ac-48d4-9525-d51caed66583 # Spotlight Brow
+            fieldUid: cfa9b9fb-13ac-48d4-9525-d51caed66583 # Brow
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 100
+            width: 50
           -
-            fieldUid: 18a0a5e6-1f4f-47f5-8962-8b7e132b4f4c # Featured Content
+            fieldUid: 70842856-8b10-4b22-ac3d-e127825aca24 # Heading
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
           -
-            fieldUid: 70842856-8b10-4b22-ac3d-e127825aca24 # Spotlight Header
+            fieldUid: 54de1c1c-79d6-40ed-911b-422f630094e1 # Description
             instructions: null
             label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 54de1c1c-79d6-40ed-911b-422f630094e1 # Spotlight Description
-            instructions: null
-            label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -50,16 +41,25 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: a3aa486f-473f-4b4d-b3ae-808963595c58 # Image Column Position
+            fieldUid: 40ec5343-f083-489f-a6eb-49ff9ee6d600 # Use Image as Background?
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
-            width: 100
+            width: 50
           -
-            fieldUid: 8ed0d9cb-1498-4dbd-b451-573a77710798 # Background
+            fieldUid: a3aa486f-473f-4b4d-b3ae-808963595c58 # Text Position
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 8ed0d9cb-1498-4dbd-b451-573a77710798 # Background Color
             instructions: null
             label: null
             required: false
@@ -79,120 +79,44 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  8ed0d9cb-1498-4dbd-b451-573a77710798: # Background
+  8ed0d9cb-1498-4dbd-b451-573a77710798: # Background Color
     columnSuffix: ccgsctma
-    contentColumnType: string
+    contentColumnType: text
     fieldGroup: null
-    handle: background
-    instructions: 'Select a background style for this section.'
-    name: Background
+    handle: backgroundColor
+    instructions: 'Select a background color for this section.'
+    name: 'Background Color'
     searchable: false
     settings:
-      optgroups: true
-      options:
-        -
-          __assoc__:
-            -
-              - label
-              - 'Light Yellow'
-            -
-              - value
-              - 'bg-yellow-100 text-gray-1000'
-            -
-              - default
-              - '1'
-        -
-          __assoc__:
-            -
-              - label
-              - 'Light Grey'
-            -
-              - value
-              - 'bg-gray-100 text-gray-1000'
-            -
-              - default
-              - ''
-        -
-          __assoc__:
-            -
-              - label
-              - 'Light Blue'
-            -
-              - value
-              - 'bg-light-100 text-gray-1000'
-            -
-              - default
-              - ''
-        -
-          __assoc__:
-            -
-              - label
-              - 'Dark Blue'
-            -
-              - value
-              - 'bg-blue-800 text-white'
-            -
-              - default
-              - ''
-        -
-          __assoc__:
-            -
-              - label
-              - White
-            -
-              - value
-              - 'bg-white text-gray-1000'
-            -
-              - default
-              - ''
-        -
-          __assoc__:
-            -
-              - label
-              - 'Photo Background'
-            -
-              - value
-              - photobg
-            -
-              - default
-              - ''
+      default: null
+      options: ''
+      palette: 'Spotlight Backgrounds'
+      useConfigFile: '1'
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\Dropdown
-  18a0a5e6-1f4f-47f5-8962-8b7e132b4f4c: # Featured Content
-    columnSuffix: null
-    contentColumnType: string
+    type: percipioglobal\colourswatches\fields\ColourSwatches
+  40ec5343-f083-489f-a6eb-49ff9ee6d600: # Use Image as Background?
+    columnSuffix: qjfuiqbu
+    contentColumnType: boolean
     fieldGroup: null
-    handle: featured
-    instructions: 'Optional. Header, description, image and button link will be auto generated if featured content is chosen.'
-    name: 'Featured Content'
+    handle: useImageAsBackground
+    instructions: 'If enabled, the spotlight image will be used as a background image instead of being shown to the side.'
+    name: 'Use Image as Background?'
     searchable: false
     settings:
-      allowSelfRelations: false
-      limit: '1'
-      localizeRelations: false
-      selectionLabel: 'Add featured content'
-      showSiteMenu: true
-      source: null
-      sources:
-        - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-        - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-        - 'section:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-        - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-        - 'section:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-      targetSiteId: null
-      validateRelatedElements: false
-      viewMode: null
+      default: false
+      offLabel: null
+      onLabel: null
     translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Entries
-  54de1c1c-79d6-40ed-911b-422f630094e1: # Spotlight Description
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  54de1c1c-79d6-40ed-911b-422f630094e1: # Description
     columnSuffix: llsqgbsx
     contentColumnType: text
     fieldGroup: null
     handle: summary
-    instructions: 'Enter summary content. On mobile, the image will appear above the description, so avoid referring to the image’s position in the text. Will overwrite the default summary on featured content.'
-    name: 'Spotlight Description'
+    instructions: 'Enter summary content. On mobile, the image will appear above the description, so avoid referring to the image’s position in the text.'
+    name: Description
     searchable: false
     settings:
       availableTransforms: '*'
@@ -214,13 +138,13 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  70842856-8b10-4b22-ac3d-e127825aca24: # Spotlight Header
+  70842856-8b10-4b22-ac3d-e127825aca24: # Heading
     columnSuffix: yltyilio
     contentColumnType: text
     fieldGroup: null
     handle: heading
-    instructions: 'Will overwrite featured content header.'
-    name: 'Spotlight Header'
+    instructions: ''
+    name: Heading
     searchable: false
     settings:
       byteLimit: null
@@ -239,7 +163,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: button
-    instructions: 'Add a button at the bottom of your spotlight that can link out to other content. Will overwrite featured content button link. '
+    instructions: 'Add a button at the bottom of your spotlight that can link out to other content.'
     name: Button
     searchable: false
     settings:
@@ -364,7 +288,23 @@ fields:
                   - ''
                 -
                   - sources
-                  - '*'
+                  -
+                    - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+                    - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+                    - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+                    - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+                    - 'section:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+                    - 'section:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+                    - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+                    - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+                    - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+                    - 'section:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+                    - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+                    - singles
+                    - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+                    - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+                    - 'section:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+                    - 'section:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
                 -
                   - customSelectionLabel
                   - ''
@@ -422,13 +362,13 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: presseddigital\linkit\fields\LinkitField
-  a3aa486f-473f-4b4d-b3ae-808963595c58: # Image Column Position
+  a3aa486f-473f-4b4d-b3ae-808963595c58: # Text Position
     columnSuffix: lpbivgdt
     contentColumnType: boolean
     fieldGroup: null
     handle: alignment
-    instructions: 'Choose which side the image appears on desktop layouts. On mobile layouts it will appear above the text.'
-    name: 'Image Column Position'
+    instructions: 'Choose which side the text appears on desktop layouts. On mobile layouts it will appear below the image, if shown.'
+    name: 'Text Position'
     searchable: false
     settings:
       default: false
@@ -437,13 +377,13 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
-  cfa9b9fb-13ac-48d4-9525-d51caed66583: # Spotlight Brow
+  cfa9b9fb-13ac-48d4-9525-d51caed66583: # Brow
     columnSuffix: fnatkbow
     contentColumnType: text
     fieldGroup: null
     handle: brow
     instructions: 'Will default to ‘Spotlight’. Customize if needed.'
-    name: 'Spotlight Brow'
+    name: Brow
     searchable: false
     settings:
       byteLimit: null
@@ -462,20 +402,21 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: image
-    instructions: 'Choose an image that will be displayed to the side of the text on desktop. Will overwrite featured content image.'
+    instructions: 'Choose an image that will be displayed to the side of the text on desktop.'
     name: Image
     searchable: false
     settings:
       allowSelfRelations: false
       allowUploads: true
-      allowedKinds: null
-      defaultUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
       defaultUploadLocationSubpath: ''
-      limit: ''
+      limit: '1'
       localizeRelations: false
       previewMode: full
-      restrictFiles: ''
-      selectionLabel: ''
+      restrictFiles: '1'
+      selectionLabel: 'Add an image'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
@@ -485,7 +426,7 @@ fields:
       sources: '*'
       targetSiteId: null
       useSingleFolder: false
-      validateRelatedElements: false
+      validateRelatedElements: true
       viewMode: list
     translationKeyFormat: null
     translationMethod: site
