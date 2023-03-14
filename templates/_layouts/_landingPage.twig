@@ -40,8 +40,13 @@
     {% include '_partials/_content-builder/_tool.twig' %}
 
     <div class="container py-0">
-        {% include '_partials/_page-related.twig' %}
-        {% include '_partials/_page-location-v2.twig' %}
+      {% include '_partials/_page-related.twig' with {
+        params: {
+          heading: entry.relatedContentHeader|default('Related Content'),
+          content: entry.linkCollection.all()
+        }
+      } %}
+      {% include '_partials/_page-location-v2.twig' %}
     </div>
 
 {% endblock %}
