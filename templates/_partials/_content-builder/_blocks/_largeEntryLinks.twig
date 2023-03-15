@@ -1,5 +1,9 @@
 <div class="{% if not loop.last %}mb-12{% endif %}">
-  {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" %}
+  {{ include("_partials/_heading.twig", {
+    params: {
+      text: block.heading
+    }
+  }) }}
   {{ block.entriesDescription }}
   <div class="items-stretch card-grid">
     {% for entry in block.entries %}

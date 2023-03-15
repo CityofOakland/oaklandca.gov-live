@@ -6,7 +6,11 @@
 {% if vars.content %}
 	{% set soloBlock = vars.content|length == 1 %}
 	<section class="py-12">
-		<h2 class="mt-0 text-2xl sm:leading-none sm:flex-1 sm:text-3xl">{{ vars.heading }}</h2>
+		{{ include("_partials/_heading.twig", {
+			params: {
+				text: vars.heading
+			}
+		}) }}
 		<div class="grid gap-8 mt-8 md:mt-12 md:grid-cols-2">
 			{% for row in vars.content %}
 				{% set linkCollection = row.setLinks.all() %}

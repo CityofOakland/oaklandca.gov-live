@@ -1,0 +1,15 @@
+{% set vars = {
+	subheading: false,
+	text: null,
+	classes: "text-2xl font-bold md:text-3xl",
+	padding: null,
+	margin: null
+}|merge(params) %}
+
+{% if vars.text %}
+	{% if not vars.subheading %}
+		<h2 id="{{ vars.text|kebab }}" class="scroll-m-16 {{ vars.classes }} {{ vars.padding }} {{ vars.margin }}">{{ vars.text }}</h2>
+	{% else %}
+		<h3 id="{{ vars.text|kebab }}" class="scroll-m-16 {{ vars.classes }} {{ vars.padding }} {{ vars.margin }}">{{ vars.text }}</h3>
+	{% endif %}
+{% endif %}

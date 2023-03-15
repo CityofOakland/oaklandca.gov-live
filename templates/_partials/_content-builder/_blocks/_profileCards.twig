@@ -1,7 +1,12 @@
 <section id="profileCards" class="component flex-1 {{ block.background }}">
 	<div class="container px-6 pt-10 pb-8">
 
-		<h3 class="font-bold">{{ block.heading }}</h3>
+		{{ include("_partials/_heading.twig", {
+			params: {
+				text: block.heading
+			}
+		}) }}
+
 		{{ block.description }}
 
 		{# Members from a Team page #}

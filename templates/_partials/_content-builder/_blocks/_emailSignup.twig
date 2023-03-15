@@ -1,7 +1,15 @@
 <div class="p-6 bg-cool-gray-100 {% if not loop.last %}mb-12{% endif %}">
-  {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" with {
-    addClasses: "mt-0 mb-4"
-  } %}
+  {{ include("_partials/_heading.twig", {
+    params: {
+      text: block.heading
+    }
+  }) }}
+  {{ include("_partials/_heading.twig", {
+    params: {
+      text: block.heading,
+      margin: "mb-4"
+    }
+  }) }}
   {% if block.description %}
     <div class="max-w-sm text-sm">
       {{ block.description }}

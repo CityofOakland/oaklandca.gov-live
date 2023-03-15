@@ -28,8 +28,12 @@
 
 <section id="newsCards" class="component flex-1 {{ block.background }}">
 	<div class="container px-6 py-12">
-		<h3 class="font-bold pb-6">{{ block.heading|default('News') }}</h3>
-		<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+		{{ include("_partials/_heading.twig", {
+			params: {
+				text: block.heading|default("News")
+			}
+		}) }}
+		<div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
 			{% if newsEntries %}
 				{% if firstEntry %}
 					<div>

@@ -6,7 +6,12 @@
   {% if relatedContent | length %}
     {% set isRelated = macros.relatedSectionCount(pageObject, relatedContent) %}
     <a id="page-relatedpages" class="anchor-link"></a>
-    <h2 class="my-8 text-2xl">Related Pages</h2>
+    {{ include("_partials/_heading.twig", {
+      params: {
+        text: "Related Pages",
+        margin: "my-8"
+      }
+    }) }}
     {% if isRelated %}
       <section class="mb-16 card-grid">
         {% for section in relatedContent %}

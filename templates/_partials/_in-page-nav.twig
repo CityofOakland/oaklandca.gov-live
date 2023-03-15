@@ -1,4 +1,5 @@
 {% set content = entry.contentBuilder ?? null %}
+
 {% if content %}
   <section class="bg-green-100">
     <div class="container flex flex-col md:flex-row gap-4 py-6 md:py-4">
@@ -6,21 +7,32 @@
       <nav>
         <ul class="m-0 columns-2 md:columns-1 space-y-6 md:space-y-0 md:gap-x-4 md:gap-y-0 md:flex md:flex-wrap h-full md:items-center">
           {% for block in entry.contentBuilder %}
-            <li class="relative font-bold text-sm leading-loose">
-              <a class="underline" href="#{{ block.type }}">
-                {% if block.type == 'spotlight' %}
-                  Spotlight
-                {% elseif block.type == 'newsCards' %}
-                  News
-                {% elseif block.heading %}
-                  {{ block.heading }}
-                {% elseif block.type == 'featuredProfile' %}
-                  Profile
-                {% elseif block.type == 'serviceCards' %}
-                  Services
-                {% endif %}
-              </a>
-            </li>
+            {% set text = "" %}
+            {% set url = "" %}
+            {% if block.heading %}
+              {% set text = block.heading %}
+              {% set url = block.heading|kebab %}
+            {% else %}
+              {% switch block.type %}
+                {% case "spotlight" %}
+                  {% set text = "Spotlight" %}
+                  {% set url = "spotlight" %}
+                {% case "newsCards" %}
+                  {% set text = "News" %}
+                  {% set url = "news" %}
+                {% case "featuredProfile" %}
+                  {% set text = "Profile" %}
+                  {% set url = "profile" %}
+                {% case "serviceCards" %}
+                  {% set text = "Services" %}
+                  {% set url = "services" %}
+              {% endswitch %}
+            {% endif %}
+            {% if url and text %}
+              <li class="relative font-bold text-sm leading-loose">
+                <a class="underline" href="#{{ url }}">{{ text }}</a>
+              </li>
+            {% endif %}
           {% endfor %}
         </ul>
       </nav>

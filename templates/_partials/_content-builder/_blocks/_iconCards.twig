@@ -3,9 +3,13 @@
 {% set wideCards = cardLength == 2 or cardLength == 4 %}
 {% set cardColor = block.cardBackgroundColor.color[0] ?? null %}
 
-<section id="iconCards" class="component flex-1 {{ block.background }}">
+<section id="iconCards" class="flex-1 {{ block.background }}">
 	<div class="container px-6 pt-10 pb-8">
-		<h3 class="font-bold">{{ block.heading|default('Services') }}</h3>
+		{{ include("_partials/_heading.twig", {
+			params: {
+				text: block.heading|default("Services")
+			}
+		}) }}
 		{% if cards %}
 			<div class="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 {{ wideCards ? '' : 'lg:grid-cols-3' }} md:gap-8 mt-8 md:mt-12">
 				{% for card in cards %}

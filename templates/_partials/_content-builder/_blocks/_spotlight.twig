@@ -1,4 +1,4 @@
-{% set brow = block.brow|default("Spotlight") %}
+{% set brow = block.brow|default('Spotlight') %}
 {% set heading = block.heading ?? null %}
 {% set image = block.image.one() ?? null %}
 {% set imgBg = block.useImageAsBackground ?? false %}
@@ -8,43 +8,50 @@
 {% set button = block.callToAction ?? null %}
 
 {% if image %}
-	{% set transformedImage = craft.imager.transformImage(
-		image,
-		{ width: 1220 },
-		{ ratio: (imgBg ? 16/9 : 1/1), position: image.getFocalPoint() },
-		{ fillTransforms: true }
-	) %}
-	{% set transformedImages = craft.imager.transformImage(
-		image, [
-			{ width: 800 },
-			{ width: 400, jpegQuality: 65 },
-			{ width: 300, jpegQuality: 65 }
-		],
-		{ ratio: 1/1, position: image.getFocalPoint() },
-		{ fillTransforms: true }
-	) %}
+  {% set transformedImage = craft.imager.transformImage(
+    image, 
+    { width: 1220 }, 
+    { ratio: imgBg ? 16 / 9 : 1 / 1, position: image.getFocalPoint() }, 
+    { fillTransforms: true }
+  ) %}
+  {% set transformedImages = craft.imager.transformImage(
+    image, 
+    [
+      { width: 800 }, 
+      { width: 400, jpegQuality: 65 }, 
+      { width: 300, jpegQuality: 65 }], 
+    { ratio: 1 / 1, position: image.getFocalPoint() }, 
+    { fillTransforms: true }
+  ) %}
 {% endif %}
 
-<section class="component {{ bgColor ? "#{bgColor.background} #{bgColor.text}" }} relative">
-	<div id="spotlight" class="container px-6 py-12">
-		<div class="grid gap-4 md:grid-cols-12 md:gap-8">
-			<div class="relative z-10 {{ imgBg ? 'order-1 md:bg-white md:p-8 md:text-gray-1000' : 'order-2' }} {{ textRight ? 'md:order-2' : 'md:order-1' }} {{ image ? 'md:col-span-6' : 'md:col-span-9' }}">
-				<span class="block font-bold text-md mb-5">{{ block.brow|default('Spotlight') }}</span>
-				<h3 class="font-bold p-0 mb-4">{{ heading }}</h3>
-				{{ block.summary }}
-				{% if block.button %}
-					<div class="block mt-6">
-						<a class="button text-sm secondary mt-0" href="{{ block.button.url }}" target="{{ block.button.target }}">
-							{{ block.button.text }}{% if block.button.target %} <i class="fas fa-external-link-alt pl-1" style="height:17px"></i>{% endif %}
-						</a>
-					</div>
-				{% endif %}
-			</div>
-			{% if image %}
-				<figure class="{{ imgBg ? 'hidden' : 'md:block' }} order-1 {{ textRight ? 'md:order-1' : 'md:order-2' }} md:col-span-6">
-					<img src="{{ transformedImage.url }}" srcset="{{ transformedImages | srcset }}" alt="{{ image.altText }}" class="block w-full h-full object-cover {{ imgBg ? 'absolute z-0 inset-0 h-full w-full' : 'relative' }}">
-				</figure>
-			{% endif %}
-		</div>
-	</div>
+<section class="relative {{ bgColor ? "#{bgColor.background} #{bgColor.text}" }}">
+  <div id="spotlight" class="container px-6 py-12">
+    <div class="grid gap-4 md:grid-cols-12 md:gap-8">
+      <div class="relative z-10 [&>*:last-child]:mb-0 {{ imgBg ? 'order-1 md:bg-white md:p-8 md:text-gray-1000' : 'order-2' }} {{ textRight ? 'md:order-2' : 'md:order-1' }} {{ image ? 'md:col-span-6' : 'md:col-span-9' }}">
+        <span class="block mb-5 font-bold text-md">{{ block.brow|default('Spotlight') }}</span>
+        {{ include("_partials/_heading.twig", {
+          params: {
+            text: heading,
+            margin: "mb-4"
+          }
+        }) }}
+        {{ block.summary }}
+        {% if block.button %}
+          <div class="block mt-6">
+            <a class="mt-0 text-sm button secondary" href="{{ block.button.url }}" target="{{ block.button.target }}">
+              {{ block.button.text }}{% if block.button.target %}
+                <i class="pl-1 fas fa-external-link-alt" style="height:17px"></i>
+              {% endif %}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+      {% if image %}
+        <figure class="{{ imgBg ? 'hidden' : 'md:block' }} order-1 {{ textRight ? 'md:order-1' : 'md:order-2' }} md:col-span-6">
+          <img src="{{ transformedImage.url }}" srcset="{{ transformedImages|srcset }}" alt="{{ image.altText }}" class="block w-full h-full object-cover {{ imgBg ? 'absolute z-0 inset-0 h-full w-full' : 'relative' }}" />
+        </figure>
+      {% endif %}
+    </div>
+  </div>
 </section>

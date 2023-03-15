@@ -2,10 +2,15 @@
 {% set cardLength = cards|length %}
 {% set wideCards = cardLength == 2 or cardLength == 4 %}
 
-<section id="serviceCards" class="component flex-1 bg-yellow-100">
-	<div class="container px-6 pt-10 pb-8">
+<section id="serviceCards" class="flex-1 bg-yellow-100">
+	<div class="container px-6 pt-12 pb-6">
 
-		<h3 class="font-bold">{{ block.heading|default('Services') }}</h3>
+		{{ include("_partials/_heading.twig", {
+			params: {
+				text: block.heading|default("Services")
+			}
+		}) }}
+
 		{{ block.description }}
 
 		{% if cards %}

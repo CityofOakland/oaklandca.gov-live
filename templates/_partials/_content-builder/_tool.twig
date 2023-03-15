@@ -11,7 +11,7 @@
 
 <div class="break-word">
   {% for block in entry.contentBuilder %}
-    {% set blockId =  (block.text ?? block.heading ?? "block") | kebab %}
+    {% set blockId = (block.text ?? block.heading ?? "block")|kebab %}
     {% switch loop.index0 %}
       {% case 0 %}
         {% set hClass = topHeadingClass %}

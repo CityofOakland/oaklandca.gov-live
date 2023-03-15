@@ -1,7 +1,12 @@
 <section id="featuredProfile" class="component {{ block.background }}">
 	<div class="container px-6 pt-10 pb-8">
-			
-		<h3 class="font-bold pb-6">{{ block.heading|default('Profile') }}</h3>
+
+		{{ include("_partials/_heading.twig", {
+			params: {
+				text: block.heading|default("Profile"),
+				margin: "mb-6"
+			}
+		}) }}
 
 		{% if block.featured|length %}
 			{% for entry in block.featured.all() %}
@@ -34,7 +39,13 @@
 						</figure>
 
 						<div class="mt-4 lg:mt-0 lg:ml-6 lg:w-3/4">
-							<h3 class="font-bold">{{ entry.title }}</h3>
+							{{ include("_partials/_heading.twig", {
+								params: {
+									text: entry.title,
+									subheading: true
+								}
+							}) }}
+
 							<span class="text-md font-bold mt-4 block">{{ entry.jobTitle }}</span>
 							{% if entry.bio %}{{ entry.bio }}{% endif %}
 
