@@ -1,7 +1,6 @@
 import { defineConfig, loadEnv } from 'vite'
 import legacy from '@vitejs/plugin-legacy'
 import ViteRestart from 'vite-plugin-restart';
-// import critical from 'rollup-plugin-critical';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -33,6 +32,7 @@ export default defineConfig(({ command, mode }) => {
     ],
     server: {
       origin: 'http://localhost:3000',
+      port: 3000,
       host: '0.0.0.0',
     },
     publicDir: 'src/public'
