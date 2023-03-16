@@ -18,6 +18,79 @@
       {% default %}
         {% set hClass = headingClass %}
     {% endswitch %}
-    {% include templateBase ~ block.type ~ ".twig" %}
+    {% switch block.type %}
+      {% case "heading" %}
+        {{ include("_partials/_content-builder/_blocks/_heading.twig") }}
+      {% case "subheading" %}
+        {{ include("_partials/_content-builder/_blocks/_subheading.twig") }}
+      {% case "text" %}
+        {{ include("_partials/_content-builder/_blocks/_text.twig") }}
+      {% case "textImageBlock" %}
+        {{ include("_partials/_content-builder/_blocks/_textImageBlock.twig") }}
+      {% case "callout" %}
+        {{ include("_partials/_content-builder/_blocks/_callout.twig") }}
+      {% case "table2Columns" %}
+        {{ include("_partials/_content-builder/_blocks/_table2Columns.twig") }}
+      {% case "table3Columns" %}
+        {{ include("_partials/_content-builder/_blocks/_table3Columns.twig") }}
+      {% case "table4Columns" %}
+        {{ include("_partials/_content-builder/_blocks/_table4Columns.twig") }}
+      {% case "image" %}
+        {{ include("_partials/_content-builder/_blocks/_image.twig") }}
+      {% case "gallery" %}
+        {{ include("_partials/_content-builder/_blocks/_gallery.twig") }}
+      {% case "officials" %}
+        {{ include("_partials/_content-builder/_blocks/_officials.twig") }}
+      {% case "linkBlocksWithImages" %}
+        {{ include("_partials/_content-builder/_blocks/_linkBlocksWithImages.twig") }}
+      {% case "linkBlocksWithIcons" %}
+        {{ include("_partials/_content-builder/_blocks/_linkBlocksWithIcons.twig") }}
+      {% case "statsBlockWithIcons" %}
+        {{ include("_partials/_content-builder/_blocks/_statsBlockWithIcons.twig") }}
+      {% case "linksWithDescriptions" %}
+        {{ include("_partials/_content-builder/_blocks/_linksWithDescriptions.twig") }}
+      {% case "largeEntryLinks" %}
+        {{ include("_partials/_content-builder/_blocks/_largeEntryLinks.twig") }}
+      {% case "noticeBlock" %}
+        {{ include("_partials/_content-builder/_blocks/_noticeBlock.twig") }}
+      {% case "smallEntryLinks" %}
+        {{ include("_partials/_content-builder/_blocks/_smallEntryLinks.twig") }}
+      {% case "newsEntries" %}
+        {{ include("_partials/_content-builder/_blocks/_newsEntries.twig") }}
+      {% case "eventEntries" %}
+        {{ include("_partials/_content-builder/_blocks/_eventEntries.twig") }}
+      {% case "meetingEntries" %}
+        {{ include("_partials/_content-builder/_blocks/_meetingEntries.twig") }}
+      {% case "customTemplate" %}
+        {{ include("_partials/_content-builder/_blocks/_customTemplate.twig") }}
+      {% case "embeddedContent" %}
+        {{ include("_partials/_content-builder/_blocks/_embeddedContent.twig") }}
+      {% case "callToAction" %}
+        {{ include("_partials/_content-builder/_blocks/_callToAction.twig") }}
+      {% case "timeline" %}
+        {{ include("_partials/_content-builder/_blocks/_timeline.twig") }}
+      {% case "meetingsTable" %}
+        {{ include("_partials/_content-builder/_blocks/_meetingsTable.twig") }}
+      {% case "embed" %}
+        {{ include("_partials/_content-builder/_blocks/_embed.twig") }}
+      {% case "embedOpenForms" %}
+        {{ include("_partials/_content-builder/_blocks/_embedOpenForms.twig") }}
+      {% case "embedYouTube" %}
+        {{ include("_partials/_content-builder/_blocks/_embedYouTube.twig") }}
+      {% case "serviceCards" %}
+        {{ include("_partials/_content-builder/_blocks/_serviceCards.twig") }}
+      {% case "iconCards" %}
+        {{ include("_partials/_content-builder/_blocks/_iconCards.twig") }}
+      {% case "spotlight" %}
+        {{ include("_partials/_content-builder/_blocks/_spotlight.twig") }}
+      {% case "newsCards" %}
+        {{ include("_partials/_content-builder/_blocks/_newsCards.twig") }}
+      {% case "textCards" %}
+        {{ include("_partials/_content-builder/_blocks/_textCards.twig") }}
+      {% case "featuredProfile" %}
+        {{ include("_partials/_content-builder/_blocks/_featuredProfile.twig") }}
+      {% case "profileCards" %}
+        {{ include("_partials/_content-builder/_blocks/_profileCards.twig") }}
+    {% endswitch %}
   {% endfor %}
 </div>
