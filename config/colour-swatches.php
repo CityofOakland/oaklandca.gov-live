@@ -13,6 +13,41 @@ return [
 
 // Custom  palettes, fixed options [label, default (boolean), colour (array(colour, customOptions)) ]
 		'palettes' => [
+				'Profile Card Backgrounds' => [
+						[
+								'label'   => 'White',
+								'default' => true,
+								'color'   =>  [
+										[
+												'color'             => '#fff',
+												'background'        => 'bg-white',
+												'text'              => 'text-gray-1000'
+										]
+								]
+						],
+						[
+								'label'   => 'Light Gray',
+								'default' => false,
+								'color'   =>  [
+										[
+												'color'             => '#f7f7f7',
+												'background'        => 'bg-gray-100',
+												'text'              => 'text-gray-1000'
+										]
+								]
+						],
+						[
+								'label'   => 'Light Blue',
+								'default' => false,
+								'color'   =>  [
+										[
+												'color'             => '#f0f4f8',
+												'background'        => 'bg-blue-100',
+												'text'              => 'text-gray-1000'
+										]
+								]
+						]
+				],
 				'Spotlight Backgrounds' => [
 						[
 								'label'   => 'Light Yellow',
