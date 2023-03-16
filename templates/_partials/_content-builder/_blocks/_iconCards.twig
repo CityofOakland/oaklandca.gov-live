@@ -3,8 +3,8 @@
 {% set wideCards = cardLength == 2 or cardLength == 4 %}
 {% set cardColor = block.cardBackgroundColor.color[0] ?? null %}
 
-<section id="iconCards" class="flex-1 {{ block.background }}">
-	<div class="container px-6 pt-10 pb-8">
+<section class="@container flex-1 {{ block.background }}">
+	<div class="container px-6 pt-8 pb-6 @3xl:px-16 @3xl:pt-12">
 		{{ include("_partials/_heading.twig", {
 			params: {
 				text: block.heading|default("Services")

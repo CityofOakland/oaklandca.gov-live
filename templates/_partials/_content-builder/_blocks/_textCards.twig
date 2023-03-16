@@ -2,8 +2,8 @@
 {% set threeCols = block.textColumns == "3" %}
 {% set cardColor = block.cardBackgroundColor.color[0] ?? null %}
 
-<section id="textCards" class="component flex-1 {{ block.background }}">
-	<div class="container px-6 pt-10 pb-8">
+<section class="@container flex-1 {{ block.background }}">
+	<div class="container px-6 pt-8 pb-6 @3xl:px-16 @3xl:pt-12 @3xl:pb-8">
 		{{ include("_partials/_heading.twig", {
 			params: {
 				text: block.heading
