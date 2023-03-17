@@ -114,7 +114,7 @@ fields:
     columnSuffix: llsqgbsx
     contentColumnType: text
     fieldGroup: null
-    handle: summary
+    handle: description
     instructions: 'Enter summary content. On mobile, the image will appear above the description, so avoid referring to the image’s position in the text.'
     name: Description
     searchable: false

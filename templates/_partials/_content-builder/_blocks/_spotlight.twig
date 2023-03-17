@@ -1,10 +1,7 @@
-{% set brow = block.brow|default('Spotlight') %}
-{% set heading = block.heading ?? null %}
 {% set image = block.image.one() ?? null %}
 {% set imgBg = block.useImageAsBackground ?? false %}
 {% set textRight = block.alignment ?? false %}
 {% set bgColor = block.backgroundColor.color[0] ?? null %}
-{% set description = block.description ?? null %}
 {% set button = block.callToAction ?? null %}
 
 {% if image %}
@@ -30,13 +27,12 @@
     <div class="grid gap-4 md:grid-cols-12 md:gap-8">
       <div class="relative z-10 [&>*:last-child]:mb-0 {{ imgBg ? 'order-1 md:bg-white md:p-8 md:text-gray-1000' : 'order-2' }} {{ textRight ? 'md:order-2' : 'md:order-1' }} {{ image ? 'md:col-span-6' : 'md:col-span-9' }}">
         <span class="block mb-5 font-bold text-md">{{ block.brow|default('Spotlight') }}</span>
-        {{ include("_partials/_heading.twig", {
+        {{ include("_partials/_content-builder/_blocks/_elements/_component-header.twig", {
           params: {
-            text: heading,
-            margin: "mb-4"
+            text: block.heading,
+            description: block.description
           }
         }) }}
-        {{ block.summary }}
         {% if block.button %}
           <div class="block mt-6">
             <a class="mt-0 text-sm button secondary" href="{{ block.button.url }}" target="{{ block.button.target }}">

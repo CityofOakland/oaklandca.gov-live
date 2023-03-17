@@ -4,13 +4,12 @@
 
 <section class="@container flex-1 bg-yellow-100">
 	<div class="container px-6 pt-8 pb-6 @3xl:px-16 @3xl:pt-12 @3xl:pb-8">
-		{{ include("_partials/_heading.twig", {
+		{{ include("_partials/_content-builder/_blocks/_elements/_component-header.twig", {
 			params: {
-				text: block.heading|default("Services")
+				text: block.heading|default("Services"),
+				description: block.description
 			}
 		}) }}
-
-		{{ block.description }}
 
 		{% if cards %}
 			<div class="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 {{ wideCards ? '' : 'lg:grid-cols-3' }} md:gap-8 mt-8 md:mt-12">

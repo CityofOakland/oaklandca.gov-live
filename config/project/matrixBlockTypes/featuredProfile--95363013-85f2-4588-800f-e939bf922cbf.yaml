@@ -114,7 +114,7 @@ fields:
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
-    handle: featured
+    handle: featuredStaffMember
     instructions: ''
     name: 'Featured Staff Member'
     searchable: false
