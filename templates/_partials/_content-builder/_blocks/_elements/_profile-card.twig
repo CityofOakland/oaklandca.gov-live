@@ -1,0 +1,73 @@
+{% set vars = {
+	url: null,
+	photo: null,
+	photoAlt: null,
+	heading: null,
+	subheading: null,
+	caption: null
+}|merge(params) %}
+
+{% set cardContent %}
+	<div class="flex gap-4 text-gray-1000">
+		<figure
+				class="block flex-no-shrink w-[7.1875rem] h-[7.1875rem] @sm:w-20 @sm:h-20 @2xl:w-[7.1875rem] @2xl:h-[7.1875rem]">
+			{% if vars.photo %}
+				{% set transformedImage = craft.imager.transformImage(
+					vars.photo,
+					{ width: 150 },
+					{ ratio: 1/1, position: photo.getFocalPoint() },
+					{ fillTransforms: true }
+				) %}
+				{% set transformedImages = craft.imager.transformImage(
+					vars.photo, [
+						{ width: 150 },
+						{ width: 120, jpegQuality: 65 }
+					],
+					{ ratio: 1/1, position: photo.getFocalPoint() },
+					{ fillTransforms: true }
+				) %}
+				<img
+						src="{{ transformedImage.url }}"
+						srcset="{{ transformedImages|srcset }}"
+						alt="{{ vars.photoAlt }}"
+						class="block h-full w-full rounded-full">
+			{% else %}
+				<div
+						class="h-full overflow-hidden rounded-full border-2 border-gray-200 bg-gray-100 fill-current text-gray-400 opacity-75">
+					<svg
+							class="block h-full"
+							xmlns="http://www.w3.org/2000/svg"
+							fill-rule="evenodd"
+							stroke-linejoin="round"
+							stroke-miterlimit="2"
+							clip-rule="evenodd"
+							viewBox="0 0 140 140"
+							xml:space="preserve"
+							fill="currentColor">
+						<path
+								d="M39.168 47.556C39.168 64.473 53.083 78.39 70 78.39s30.832-13.916 30.832-30.833c0-16.916-13.915-30.832-30.832-30.832S39.168 30.64 39.168 47.555zm7.708 0c0-12.687 10.437-23.124 23.124-23.124S93.124 34.87 93.124 47.556c0 12.688-10.437 23.125-23.124 23.125S46.876 60.244 46.876 47.556zm-23.124 88.643c0-25.37 20.878-46.248 46.248-46.248 25.37 0 46.248 20.878 46.248 46.248a3.855 3.855 0 0 0 3.854 3.854 3.855 3.855 0 0 0 3.854-3.854c0-29.6-24.357-53.956-53.956-53.956-29.6 0-53.956 24.357-53.956 53.956a3.855 3.855 0 0 0 3.854 3.854 3.855 3.855 0 0 0 3.854-3.854z"/>
+					</svg>
+				</div>
+			{% endif %}
+		</figure>
+		<div class="flex-1">
+			{% if vars.heading %}
+				<h3 class="text-xl text-green-800">{{ vars.heading }}</h3>
+			{% endif %}
+			{% if vars.subheading %}
+				<span class="mt-3 block text-sm first:mt-0">{{ vars.subheading }}</span>
+			{% endif %}
+			{% if vars.caption %}
+				<span class="mt-1 block text-sm first:mt-0">{{ vars.caption }}</span>
+			{% endif %}
+		</div>
+	</div>
+{% endset %}
+
+{% if vars.url %}
+	<a href="{{ vars.url }}">
+		{{ cardContent }}
+	</a>
+{% else %}
+	{{ cardContent }}
+{% endif %}

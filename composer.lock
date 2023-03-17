@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e77febeb40f5a1f108bb546dbf3af57",
+    "content-hash": "ca4131fa5433cb1b687a47b8332de4e2",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -1722,62 +1722,6 @@
                 "source": "https://github.com/doublesecretagency/craft-cpcss/tree/2.4.0"
             },
             "time": "2021-09-22T06:14:06+00:00"
-        },
-        {
-            "name": "doublesecretagency/craft-cpjs",
-            "version": "2.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doublesecretagency/craft-cpjs.git",
-                "reference": "e38ace061c988386643f3aa03356f2669bcc5a9c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doublesecretagency/craft-cpjs/zipball/e38ace061c988386643f3aa03356f2669bcc5a9c",
-                "reference": "e38ace061c988386643f3aa03356f2669bcc5a9c",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.1.5"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Control Panel JS",
-                "handle": "cp-js",
-                "schemaVersion": "2.0.0",
-                "changelogUrl": "https://raw.githubusercontent.com/doublesecretagency/craft-cpjs/v2/CHANGELOG.md",
-                "class": "doublesecretagency\\cpjs\\CpJs"
-            },
-            "autoload": {
-                "psr-4": {
-                    "doublesecretagency\\cpjs\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Double Secret Agency",
-                    "homepage": "https://www.doublesecretagency.com/plugins"
-                }
-            ],
-            "description": "Add custom JavaScript to your Control Panel.",
-            "keywords": [
-                "Craft",
-                "cms",
-                "cp-js",
-                "craft-plugin",
-                "craftcms",
-                "javascript"
-            ],
-            "support": {
-                "docs": "https://github.com/doublesecretagency/craft-cpjs/blob/v2/README.md",
-                "issues": "https://github.com/doublesecretagency/craft-cpjs/issues",
-                "source": "https://github.com/doublesecretagency/craft-cpjs/tree/2.4.0"
-            },
-            "time": "2021-09-22T06:14:09+00:00"
         },
         {
             "name": "doublesecretagency/craft-googlemaps",

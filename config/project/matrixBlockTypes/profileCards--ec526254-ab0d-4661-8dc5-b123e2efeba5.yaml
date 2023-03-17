@@ -58,38 +58,9 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
-          -
-            fieldUid: 6d8d38e9-569f-4e71-a55e-9c51fc4c58a3 # testing
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
         name: Content
         sortOrder: 1
 fields:
-  6d8d38e9-569f-4e71-a55e-9c51fc4c58a3: # testing
-    columnSuffix: jkyngisp
-    contentColumnType: text
-    fieldGroup: null
-    handle: testing
-    instructions: ''
-    name: testing
-    searchable: false
-    settings:
-      byteLimit: null
-      charLimit: null
-      code: ''
-      columnType: null
-      initialRows: '4'
-      multiline: ''
-      placeholder: null
-      uiMode: normal
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
   9c5a5207-8f38-4715-993b-741d8919f3f0: # Featured Staff
     columnSuffix: null
     contentColumnType: string
@@ -146,7 +117,7 @@ fields:
       allowSelfRelations: false
       limit: '1'
       localizeRelations: false
-      selectionLabel: 'Add featured staff'
+      selectionLabel: 'Add a team'
       showSiteMenu: true
       source: null
       sources:
@@ -159,51 +130,20 @@ fields:
     type: craft\fields\Entries
   35d55b1f-f6b0-404f-9b1d-5b90e0a621bf: # Background
     columnSuffix: lanclgja
-    contentColumnType: string
+    contentColumnType: text
     fieldGroup: null
     handle: background
     instructions: 'Select a background color for this section. Options include white, light grey or light blue.'
     name: Background
     searchable: false
     settings:
-      optgroups: true
-      options:
-        -
-          __assoc__:
-            -
-              - label
-              - White
-            -
-              - value
-              - bg-white
-            -
-              - default
-              - '1'
-        -
-          __assoc__:
-            -
-              - label
-              - 'Light Grey'
-            -
-              - value
-              - bg-gray-100
-            -
-              - default
-              - ''
-        -
-          __assoc__:
-            -
-              - label
-              - 'Light Blue'
-            -
-              - value
-              - bg-blue-100
-            -
-              - default
-              - ''
+      default: null
+      options: ''
+      palette: 'Profile Card Backgrounds'
+      useConfigFile: '1'
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\Dropdown
+    type: percipioglobal\colourswatches\fields\ColourSwatches
   46d3aa66-3202-4738-84df-b55003fae447: # Profile Cards Description
     columnSuffix: obfviuhh
     contentColumnType: text
@@ -257,7 +197,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: linkTeam
-    instructions: ''
+    instructions: 'If your team is over 9 people link to your team page.'
     name: 'Link to Team Page'
     searchable: false
     settings:

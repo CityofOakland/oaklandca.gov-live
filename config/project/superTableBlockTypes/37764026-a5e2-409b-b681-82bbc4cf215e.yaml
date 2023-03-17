@@ -78,7 +78,7 @@ fields:
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
-    handle: member
+    handle: staffMember
     instructions: ''
     name: 'Staff Member'
     searchable: false
