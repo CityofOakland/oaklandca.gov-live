@@ -16,7 +16,7 @@
 {# Here we are removing the first item from the list so that we can have a “big” first item and then separating the
    remainder of the entries into a second array. #}
 {% set firstEntry = newsEntries|slice(0,1) %}
-{% set remainingEntries = newsEntries|slice(-1,0) %}
+{% set remainingEntries = newsEntries|slice(1,2) %}
 
 {# If there is a featured entry on this block, we go ahead and replace the “first entry” previously set and set the
    remaining entries to default to the original array. #}
@@ -35,45 +35,43 @@
 		}) }}
 		<div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
 			{% if newsEntries %}
-				{% if firstEntry %}
-					<div>
-						{% set firstEntry = firstEntry[0] %}
-						<a href="{{ firstEntry.url }}">
-							<article class="overflow-hidden bg-white rounded shadow">
-								{% set newsImage = entry.newsImage.one() ?? null %}
-								{% if newsImage %}
-									<figure class="relative z-0 flex items-center justify-center w-full p-4 bg-gray-300" style="padding-bottom:42%">
-										{% if newsImage %}
-											<img src="{{ newsImage.url }}" class="absolute inset-0 object-cover w-full h-full aspect-ratio" alt="{{ newsImage.altText ?? '' }}">
-										{% endif %}
-									</figure>
-								{% endif %}
-								<div class="p-8">
-									<div class="mb-2 text-sm text-gray-800 uppercase">{{ firstEntry.postDate | date("M d, Y") }}</div>
-									<h3 class="mt-4 mb-1 text-xl font-bold">
-										<span class="line-clamp-3 leading-[1.3]">{{ firstEntry.title }}</span>
-									</h3>
-									<div class="text-sm text-gray-1000 line-clamp-4">
-										{{ firstEntry.summary }}
-									</div>
-								</div>
-							</article>
-						</a>
-					</div>
-				{% endif %}
 				<div>
-					{% for entry in newsEntries %}
+					{% set firstEntry = firstEntry[0] %}
+					<a href="{{ firstEntry.url }}">
+						<article class="overflow-hidden bg-white rounded shadow">
+							{% set newsImage = entry.newsImage.one() ?? null %}
+							{% if newsImage %}
+								<figure class="relative z-0 flex items-center justify-center w-full p-4 bg-gray-300" style="padding-bottom:42%">
+									{% if newsImage %}
+										<img src="{{ newsImage.url }}" class="absolute inset-0 object-cover w-full h-full aspect-ratio" alt="{{ newsImage.altText ?? '' }}">
+									{% endif %}
+								</figure>
+							{% endif %}
+							<div class="p-8">
+								<div class="mb-2 text-sm text-gray-800 uppercase">{{ firstEntry.postDate | date("M d, Y") }}</div>
+								<h3 class="mt-4 mb-1 text-xl font-bold">
+									<span class="line-clamp-3 leading-[1.3]">{{ firstEntry.title }}</span>
+								</h3>
+								<div class="text-sm text-gray-1000 line-clamp-4">
+									{{ firstEntry.summary }}
+								</div>
+							</div>
+						</article>
+					</a>
+				</div>
+				<div>
+					{% for entry in remainingEntries %}
 						{% set newsImage = entry.newsImage.one() ?? null %}
 						<a href="{{ entry.url }}">
-							<article class="{{ newsImage ? 'horizontal-card' }} bg-white overflow-hidden rounded shadow mb-6 justify-start">
+							<article class="{{ newsImage ? 'flex flex-col md:flex-row' }} bg-white overflow-hidden rounded shadow mb-6 justify-start">
 								{% if newsImage %}
-									<figure class="z-0 bg-white">
+									<figure class="z-0 bg-white aspect-video w-[12.5rem]">
 										<img class="object-cover h-full w-full" src="{{ newsImage.url }}" alt="{{ newsImage.altText ?? '' }}">
 									</figure>
 								{% endif %}
-								<div class="flex flex-col p-4">
+								<div class="flex-1 flex flex-col p-4">
 									<div class="mb-2 text-sm text-gray-800 uppercase">{{ entry.postDate | date("M d, Y") }}</div>
-									<h3 class="mt-0 text-xl font-bold">
+									<h3 class="mt-0 text-xl font-bold line-clamp-3">
 										{{ entry.title }}
 									</h3>
 								</div>
