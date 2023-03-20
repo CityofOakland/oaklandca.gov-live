@@ -21,7 +21,9 @@
 							class="p-6 group text-lg font-bold no-underline rounded-sm shadow-btn transition-all duration-75 h-full {{ cardColor ? "#{cardColor.background} #{cardColor.backgroundHover} #{cardColor.text} #{cardColor.textHover}" }}"
 							href="{{ link.url }}"
 							target="{{ link.target }}">
-						<div class="uppercase font-normal text-sm mb-2">{{ card.brow }}</div>
+						{% if card.brow %}
+							<div class="uppercase font-normal text-sm mb-2">{{ card.brow }}</div>
+						{% endif %}
 						<h3 class="my-0 text-xl font-bold {{ cardColor ? "#{cardColor.link} #{cardColor.linkHover}" }}">
 							{{ link.text }}{% if link.target %} <i class="fas fa-external-link-alt h-[17px]"></i>{% endif %}
 						</h3>
