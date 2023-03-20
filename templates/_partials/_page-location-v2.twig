@@ -1,6 +1,6 @@
 {% set address = entry.address %}
 {% if address or entry.phoneNumbers or entry.emailAddress %}
-	<section class="py-12 bg-white">
+	<section class="bg-white py-12">
 		<a class="anchor-link" id="page-contact"></a>
 		{{ include("_partials/_heading.twig", {
 			params: {
@@ -12,40 +12,53 @@
 			{% if address %}
 			<div class="lg:w-1/2 lg:pr-8">
 
-				<div class="relative pl-8 border-t-2 border-black contact-icon pt-3 mt-8">
-					<i class="fas fa-map-marker-alt absolute" style="left:0;top:20px"></i>
-					<h3 class="mb-0 text-2xl font-bold mt-0">Address</h3>
+				<div class="relative mt-8 border-t-2 border-black pt-3 pl-8 contact-icon grid gap-4 lg:grid-cols-2">
+					<div>
+						<i class="absolute fas fa-map-marker-alt" style="left:0;top:20px"></i>
+						<h3 class="mt-0 mb-0 text-2xl font-bold">Address</h3>
 
-					{{ entry.subtitle }}
+						{{ entry.subtitle }}
 
-					{% set location = location ?? entry %}
+						{% set location = location ?? entry %}
 
-					{% do view.registerJsFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js") %}
-					{% do view.registerCssFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css") %}
-					{% set loc = location.address %}
+						{% do view.registerJsFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js") %}
+						{% do view.registerCssFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css") %}
+						{% set loc = location.address %}
+						{% set src = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-l(#{loc.lng},#{loc.lat})/#{loc.lng},#{loc.lat},15/300x200@2x?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" %}
+						{% set largePhoto = src|replace("300x200", "600x400") %}
+						{% set locationText = "#{loc.street1}, #{loc.city}, #{loc.state}, #{loc.zip}" %}
 
-					{% if loc %}
-						{% set lat = loc.lat %}
-						{% set lon = loc.lng %}
-						{% if lat and lon %}
-							<div class="mt-4 mb-8">
-								{{ loc.street1 }}<br>
-								{% if loc.street2 | length %}
-									{{ loc.street2 }}<br>
-								{% endif %}
-								{{ loc.city }},
-								{{ loc.state }}
-								{{ loc.zip }}
-							</div>
+						{% if loc %}
+							{% set lat = loc.lat %}
+							{% set lon = loc.lng %}
+							{% if lat and lon %}
+								<div class="mt-4 mb-8">
+									{{ loc.street1 }}<br>
+									{% if loc.street2 | length %}
+										{{ loc.street2 }}<br>
+									{% endif %}
+									{{ loc.city }},
+									{{ loc.state }}
+									{{ loc.zip }}
+								</div>
+							{% endif %}
 						{% endif %}
-					{% endif %}
 
-					{{ entry.addressExtended }}
+						{{ entry.addressExtended }}
+					</div>
+					{% if loc %}
+						<figure class="w-full cursor-pointer" id='js-map'>
+							<img
+								data-src="{{ largePhoto }}"
+								src="{{ src }}"
+								alt="Map location of: {{ entry.title }} at {{ locationText }}">
+						</figure>
+					{% endif %}
 				</div>
 
 				{% if entry.openHours | length %}
-					<div class="relative pl-8 border-t-2 contact-icon pt-3 mt-8">
-						<i class="fas fa-clock absolute" style="left:0;top:20px"></i>
+					<div class="relative mt-8 border-t-2 pt-3 pl-8 contact-icon">
+						<i class="absolute fas fa-clock" style="left:0;top:20px"></i>
 						<h3 class="mb-0 text-2xl font-bold">Office Hours</h3>
 						{% for item in entry.openHours %}
 							{% if item.hoursTitle | length %}
@@ -62,8 +75,8 @@
 
 				{# TODO: Move Topics, processes (negligible) and officials to matrix immediately #}
 				{% if entry.boardHours | length %}
-					<div class="relative pl-8 border-t-2 contact-icon pt-3 mt-8">
-						<i class="fas fa-clock absolute" style="left:0;top:20px"></i>
+					<div class="relative mt-8 border-t-2 pt-3 pl-8 contact-icon">
+						<i class="absolute fas fa-clock" style="left:0;top:20px"></i>
 						<h3 class="mb-0 text-2xl font-bold">Office Hours</h3>
 						{{ entry.boardHours }}
 					</div>
@@ -74,8 +87,8 @@
 			<div class="{% if address %} lg:w-1/2 {% else %} flex-1 {% endif %}">
 				{% set phonesTrue = entry.phoneNumber ?? entry.faxNumber ?? entry.ttyNumber ?? false %}
 				{% if entry.phoneNumbers | length %}
-					<div class="relative pl-8 border-t-2 border-black contact-icon pt-3 mt-8">
-						<i class="fas fa-phone absolute" style="left:0;top:20px"></i>
+					<div class="relative mt-8 border-t-2 border-black pt-3 pl-8 contact-icon">
+						<i class="absolute fas fa-phone" style="left:0;top:20px"></i>
 						<h3 class="mb-0 text-2xl font-bold">Phone</h3>
 						<dl>
 							{% for phone in entry.phoneNumbers %}
@@ -104,8 +117,8 @@
 				{% endif %}
 
 				{% if entry.emailAddress | length %}
-					<div class="relative pl-8 border-t-2 border-black contact-icon pt-3 mt-8">
-						<i class="fas fa-envelope absolute" style="left:0;top:20px"></i>
+					<div class="relative mt-8 border-t-2 border-black pt-3 pl-8 contact-icon">
+						<i class="absolute fas fa-envelope" style="left:0;top:20px"></i>
 						<h3 class="mb-0 text-2xl font-bold">Email</h3>
 						<ul class="mb-8">
 							<li>
@@ -116,8 +129,8 @@
 				{% endif %}
 
 				{% if entry.facebook or entry.twitter or entry.instagram or entry.medium %}
-					<div class="relative pl-8 border-t-2 border-black contact-icon pt-3 mt-8">
-					<i class="fas fa-globe absolute" style="left:0;top:20px"></i>
+					<div class="relative mt-8 border-t-2 border-black pt-3 pl-8 contact-icon">
+					<i class="absolute fas fa-globe" style="left:0;top:20px"></i>
 						{% include '_partials/_elements/_social-media-v2.twig' %}
 					</div>
 				{% endif %}
