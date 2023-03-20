@@ -3,7 +3,7 @@
 {% set featuredStaff = block.profileFeatured.all() ?? null %}
 
 <section class="@container flex-1 {{ sectionColor ? "#{sectionColor.background} #{sectionColor.text}" }}">
-	<div class="container px-6 py-8 @3xl:px-16 @3xl:pt-12">
+	<div class="@container container px-6 py-8 @3xl:px-16 @3xl:pt-12">
 		{{ include("_partials/_content-builder/_blocks/_elements/_component-header.twig", {
 			params: {
 				text: block.heading,
