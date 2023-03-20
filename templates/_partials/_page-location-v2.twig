@@ -10,78 +10,73 @@
 		}) }}
 		<div class="mt-4 lg:flex">
 			{% if address %}
-			<div class="lg:w-1/2 lg:pr-8">
+				{% do view.registerJsFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js") %}
+				{% do view.registerCssFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css") %}
+				{% set loc = entry.address %}
+				{% set src = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-l(#{loc.lng},#{loc.lat})/#{loc.lng},#{loc.lat},15/300x200@2x?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" %}
+				{% set largePhoto = src|replace("300x200", "600x400") %}
+				{% set locationText = "#{loc.street1}, #{loc.city}, #{loc.state}, #{loc.zip}" %}
 
-				<div class="relative mt-8 border-t-2 border-black pt-3 pl-8 contact-icon grid gap-4 lg:grid-cols-2">
-					<div>
-						<i class="absolute fas fa-map-marker-alt" style="left:0;top:20px"></i>
-						<h3 class="mt-0 mb-0 text-2xl font-bold">Address</h3>
+				<div class="lg:w-1/2 lg:pr-8 @container">
+					<div class="relative mt-8 border-t-2 border-black pt-3 pl-8 contact-icon {{ loc ? "grid gap-4 @lg:gap-6 @lg:grid-cols-2" }}">
+						<div>
+							<i class="absolute top-5 left-0 fas fa-map-marker-alt"></i>
+							<h3 class="mt-0 mb-0 text-2xl font-bold">Address</h3>
+							{{ entry.subtitle }}
 
-						{{ entry.subtitle }}
-
-						{% set location = location ?? entry %}
-
-						{% do view.registerJsFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js") %}
-						{% do view.registerCssFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css") %}
-						{% set loc = location.address %}
-						{% set src = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-l(#{loc.lng},#{loc.lat})/#{loc.lng},#{loc.lat},15/300x200@2x?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" %}
-						{% set largePhoto = src|replace("300x200", "600x400") %}
-						{% set locationText = "#{loc.street1}, #{loc.city}, #{loc.state}, #{loc.zip}" %}
-
-						{% if loc %}
-							{% set lat = loc.lat %}
-							{% set lon = loc.lng %}
-							{% if lat and lon %}
-								<div class="mt-4 mb-8">
-									{{ loc.street1 }}<br>
-									{% if loc.street2 | length %}
-										{{ loc.street2 }}<br>
-									{% endif %}
-									{{ loc.city }},
-									{{ loc.state }}
-									{{ loc.zip }}
-								</div>
+							{% if loc %}
+								{% set lat = loc.lat %}
+								{% set lon = loc.lng %}
+								{% if lat and lon %}
+									<div class="mt-4 mb-8">
+										{{ loc.street1 }}<br>
+										{% if loc.street2 | length %}
+											{{ loc.street2 }}<br>
+										{% endif %}
+										{{ loc.city }},
+										{{ loc.state }}
+										{{ loc.zip }}
+									</div>
+								{% endif %}
 							{% endif %}
+							{{ entry.addressExtended }}
+						</div>
+						{% if loc %}
+							<figure class="w-full" id='js-map'>
+								<img
+									data-src="{{ largePhoto }}"
+									src="{{ src }}"
+									alt="Map location of: {{ entry.title }} at {{ locationText }}">
+							</figure>
 						{% endif %}
-
-						{{ entry.addressExtended }}
 					</div>
-					{% if loc %}
-						<figure class="w-full cursor-pointer" id='js-map'>
-							<img
-								data-src="{{ largePhoto }}"
-								src="{{ src }}"
-								alt="Map location of: {{ entry.title }} at {{ locationText }}">
-						</figure>
+					
+					{% if entry.openHours | length %}
+						<div class="relative mt-8 border-t-2 pt-3 pl-8 contact-icon">
+							<i class="absolute fas fa-clock" style="left:0;top:20px"></i>
+							<h3 class="mb-0 text-2xl font-bold">Office Hours</h3>
+							{% for item in entry.openHours %}
+								{% if item.hoursTitle | length %}
+									<h4 class="text-lg">{{ item.hoursTitle }}</h4>
+								{% endif %}
+								<dl>
+									{% for day in item.hours.getRange(1, 0) %}
+										{% include '_partials/_elements/_hours.twig' %}
+									{% endfor %}
+								</dl>
+							{% endfor %}
+						</div>
+					{% endif %}
+
+					{# TODO: Move Topics, processes (negligible) and officials to matrix immediately #}
+					{% if entry.boardHours | length %}
+						<div class="relative mt-8 border-t-2 pt-3 pl-8 contact-icon">
+							<i class="absolute fas fa-clock" style="left:0;top:20px"></i>
+							<h3 class="mb-0 text-2xl font-bold">Office Hours</h3>
+							{{ entry.boardHours }}
+						</div>
 					{% endif %}
 				</div>
-
-				{% if entry.openHours | length %}
-					<div class="relative mt-8 border-t-2 pt-3 pl-8 contact-icon">
-						<i class="absolute fas fa-clock" style="left:0;top:20px"></i>
-						<h3 class="mb-0 text-2xl font-bold">Office Hours</h3>
-						{% for item in entry.openHours %}
-							{% if item.hoursTitle | length %}
-								<h4 class="text-lg">{{ item.hoursTitle }}</h4>
-							{% endif %}
-							<dl>
-								{% for day in item.hours.getRange(1, 0) %}
-									{% include '_partials/_elements/_hours.twig' %}
-								{% endfor %}
-							</dl>
-						{% endfor %}
-					</div>
-				{% endif %}
-
-				{# TODO: Move Topics, processes (negligible) and officials to matrix immediately #}
-				{% if entry.boardHours | length %}
-					<div class="relative mt-8 border-t-2 pt-3 pl-8 contact-icon">
-						<i class="absolute fas fa-clock" style="left:0;top:20px"></i>
-						<h3 class="mb-0 text-2xl font-bold">Office Hours</h3>
-						{{ entry.boardHours }}
-					</div>
-				{% endif %}
-			</div>
 			{% endif %}
 
 			<div class="{% if address %} lg:w-1/2 {% else %} flex-1 {% endif %}">
