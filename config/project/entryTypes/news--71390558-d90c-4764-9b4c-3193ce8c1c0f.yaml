@@ -98,6 +98,19 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: b4bb7d35-6b11-4f97-b32c-c3b1d27a3f4a # Is this an official press release?
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
           -
             fieldUid: ea2e59d4-7906-4723-8dde-7bb4012c3361 # Press Release File
             instructions: null
@@ -107,8 +120,17 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
-        name: Content
-        sortOrder: 1
+          -
+            fieldUid: fff5cf49-87e6-4751-9032-b4ca8136e237 # Alt Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Press Release'
+        sortOrder: 2
       -
         elements:
           -
@@ -156,8 +178,26 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: cb9bcb47-f3e9-4ed8-a4d8-506aa11fe546 # News
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7594e9ae-f194-47c8-9a6b-076789f1087b # Service Categories
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Relationships
-        sortOrder: 2
+        sortOrder: 3
       -
         elements:
           -
@@ -179,7 +219,7 @@ fieldLayouts:
             warning: null
             width: 100
         name: SEO
-        sortOrder: 3
+        sortOrder: 4
 handle: news
 hasTitleField: true
 name: News

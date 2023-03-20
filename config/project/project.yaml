@@ -532,6 +532,7 @@ meta:
     b1b0e0eb-fd37-4708-96c7-4f5f11d8fdb0: Departments # Departments
     b3b7323b-b212-4d0a-a2f4-b205edf3f056: 'Meetings Description' # Meetings Description
     b4b3c606-9215-46dd-926d-ecc0cdd900e7: 'Street Address' # Street Address
+    b4bb7d35-6b11-4f97-b32c-c3b1d27a3f4a: 'Is this an official press release?' # Is this an official press release?
     b7e437e1-239f-4c5c-8c62-5f0323f9d22c: Services # Services
     b7ec3bdf-65b5-4385-8d12-cd2110b1c75c: 'Document Type' # Document Type
     b7f96204-106f-4d15-85ed-e0fda8e8551f: 'Button Group' # Button Group
