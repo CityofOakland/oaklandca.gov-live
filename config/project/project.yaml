@@ -1,4 +1,4 @@
-dateModified: 1679023489
+dateModified: 1679597648
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -925,7 +925,7 @@ plugins:
   feed-me:
     enabled: '1'
     licenseKey: null
-    schemaVersion: 4.4.0
+    schemaVersion: 4.4.1
     settings: null
   freeform:
     edition: lite

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca4131fa5433cb1b687a47b8332de4e2",
+    "content-hash": "8b25f3d8be29aff97e83619456fabdf3",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -143,11 +143,11 @@
         },
         {
             "name": "aws/aws-crt-php",
-            "version": "v1.0.2",
+            "version": "v1.0.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/awslabs/aws-crt-php/zipball/3942776a8c99209908ee0b287746263725685732",
-                "reference": "3942776a8c99209908ee0b287746263725685732",
+                "url": "https://api.github.com/repos/awslabs/aws-crt-php/zipball/f5c64ee7c5fce196e2519b3d9b7138649efe032d",
+                "reference": "f5c64ee7c5fce196e2519b3d9b7138649efe032d",
                 "shasum": ""
             },
             "require": {
@@ -176,24 +176,24 @@
                 "crt",
                 "sdk"
             ],
-            "time": "2021-09-03T22:57:30+00:00"
+            "time": "2023-01-31T23:08:25+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.231.10",
+            "version": "3.262.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "e46b7c5fcb70fadf38079755982cc1d3f0583c41"
+                "reference": "f45eefe4735d5a16ecc44cfd9a6c29421ae1e802"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/e46b7c5fcb70fadf38079755982cc1d3f0583c41",
-                "reference": "e46b7c5fcb70fadf38079755982cc1d3f0583c41",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f45eefe4735d5a16ecc44cfd9a6c29421ae1e802",
+                "reference": "f45eefe4735d5a16ecc44cfd9a6c29421ae1e802",
                 "shasum": ""
             },
             "require": {
-                "aws/aws-crt-php": "^1.0.2",
+                "aws/aws-crt-php": "^1.0.4",
                 "ext-json": "*",
                 "ext-pcre": "*",
                 "ext-simplexml": "*",
@@ -208,6 +208,7 @@
                 "aws/aws-php-sns-message-validator": "~1.0",
                 "behat/behat": "~3.0",
                 "composer/composer": "^1.10.22",
+                "dms/phpunit-arraysubset-asserts": "^0.4.0",
                 "doctrine/cache": "~1.4",
                 "ext-dom": "*",
                 "ext-openssl": "*",
@@ -215,10 +216,11 @@
                 "ext-sockets": "*",
                 "nette/neon": "^2.3",
                 "paragonie/random_compat": ">= 2",
-                "phpunit/phpunit": "^4.8.35 || ^5.6.3",
+                "phpunit/phpunit": "^4.8.35 || ^5.6.3 || ^9.5",
                 "psr/cache": "^1.0",
                 "psr/simple-cache": "^1.0",
-                "sebastian/comparator": "^1.2.3"
+                "sebastian/comparator": "^1.2.3 || ^4.0",
+                "yoast/phpunit-polyfills": "^1.0"
             },
             "suggest": {
                 "aws/aws-php-sns-message-validator": "To validate incoming SNS notifications",
@@ -266,9 +268,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.231.10"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.262.0"
             },
-            "time": "2022-07-20T18:17:18+00:00"
+            "time": "2023-03-23T18:21:18+00:00"
         },
         {
             "name": "born05/craft-assetusage",
@@ -907,24 +909,16 @@
         },
         {
             "name": "craftcms/aws-s3",
-            "version": "1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/craftcms/aws-s3.git",
-                "reference": "d8515e3e8dc8867b635ea87b9ed578c06184e497"
-            },
+            "version": "1.3.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/aws-s3/zipball/d8515e3e8dc8867b635ea87b9ed578c06184e497",
-                "reference": "d8515e3e8dc8867b635ea87b9ed578c06184e497",
+                "url": "https://api.github.com/repos/craftcms/aws-s3/zipball/670aaac4d18adaf98ef3a8896ebd9daf663b099e",
+                "reference": "670aaac4d18adaf98ef3a8896ebd9daf663b099e",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^3.4.0",
                 "league/flysystem-aws-s3-v3": "^1.0.28"
-            },
-            "require-dev": {
-                "phpstan/phpstan": "^0.12.96"
             },
             "type": "craft-plugin",
             "extra": {
@@ -937,7 +931,6 @@
                     "craft\\awss3\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -949,29 +942,29 @@
             ],
             "description": "Amazon S3 integration for Craft CMS",
             "keywords": [
-                "Flysystem",
                 "aws",
                 "cms",
                 "craftcms",
+                "flysystem",
                 "s3",
                 "yii2"
             ],
             "support": {
-                "docs": "https://github.com/craftcms/aws-s3/blob/master/README.md",
                 "email": "support@craftcms.com",
                 "issues": "https://github.com/craftcms/aws-s3/issues?state=open",
-                "rss": "https://github.com/craftcms/aws-s3/commits/master.atom",
-                "source": "https://github.com/craftcms/aws-s3"
+                "source": "https://github.com/craftcms/aws-s3",
+                "docs": "https://github.com/craftcms/aws-s3/blob/master/README.md",
+                "rss": "https://github.com/craftcms/aws-s3/commits/master.atom"
             },
-            "time": "2021-10-21T15:06:05+00:00"
+            "time": "2023-03-16T22:47:23+00:00"
         },
         {
             "name": "craftcms/cms",
-            "version": "3.8.0",
+            "version": "3.8.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/3c05446b1ff0832cef072754617d3b84a6413762",
-                "reference": "3c05446b1ff0832cef072754617d3b84a6413762",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/7cc52794683a3258024601b2c1f5a45cfa8dc8c6",
+                "reference": "7cc52794683a3258024601b2c1f5a45cfa8dc8c6",
                 "shasum": ""
             },
             "require": {
@@ -981,7 +974,7 @@
                 "craftcms/server-check": "~1.2.0",
                 "creocoder/yii2-nested-sets": "~0.9.0",
                 "elvanto/litemoji": "^3.0.1",
-                "enshrined/svg-sanitize": "~0.15.2",
+                "enshrined/svg-sanitize": "~0.16.0",
                 "ext-curl": "*",
                 "ext-dom": "*",
                 "ext-json": "*",
@@ -1054,7 +1047,7 @@
                 "docs": "https://craftcms.com/docs/3.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2023-03-08T18:03:20+00:00"
+            "time": "2023-03-21T21:18:22+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -1108,11 +1101,11 @@
         },
         {
             "name": "craftcms/feed-me",
-            "version": "4.5.4",
+            "version": "4.6.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/ca196331cc5fdb0e8944820ea0eb25147fd4e1fa",
-                "reference": "ca196331cc5fdb0e8944820ea0eb25147fd4e1fa",
+                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/735282ee5b5c079482512f85e8514dc90e665971",
+                "reference": "735282ee5b5c079482512f85e8514dc90e665971",
                 "shasum": ""
             },
             "require": {
@@ -1161,7 +1154,7 @@
                 "docs": "https://docs.craftcms.com/feed-me/v4/",
                 "rss": "https://github.com/craftcms/feed-me/commits/master.atom"
             },
-            "time": "2023-01-09T20:16:12+00:00"
+            "time": "2023-03-20T18:51:06+00:00"
         },
         {
             "name": "craftcms/html-field",
@@ -1278,11 +1271,11 @@
         },
         {
             "name": "craftcms/redactor",
-            "version": "2.10.11",
+            "version": "2.10.12",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/218d83040d6e3c2d2b8eca72c51fc1d22d634abc",
-                "reference": "218d83040d6e3c2d2b8eca72c51fc1d22d634abc",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/17c0cace54a53dc1d874484568b8ce74575bf37c",
+                "reference": "17c0cace54a53dc1d874484568b8ce74575bf37c",
                 "shasum": ""
             },
             "require": {
@@ -1324,7 +1317,7 @@
                 "docs": "https://github.com/craftcms/redactor/blob/v2/README.md",
                 "rss": "https://github.com/craftcms/redactor/commits/v2.atom"
             },
-            "time": "2023-01-01T01:27:39+00:00"
+            "time": "2023-03-16T22:52:43+00:00"
         },
         {
             "name": "craftcms/server-check",
@@ -2036,17 +2029,18 @@
         },
         {
             "name": "enshrined/svg-sanitize",
-            "version": "0.15.4",
+            "version": "0.16.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/e50b83a2f1f296ca61394fe88fbfe3e896a84cf4",
-                "reference": "e50b83a2f1f296ca61394fe88fbfe3e896a84cf4",
+                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/239e257605e2141265b429e40987b2ee51bba4b4",
+                "reference": "239e257605e2141265b429e40987b2ee51bba4b4",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-libxml": "*",
-                "php": "^7.0 || ^8.0"
+                "ezyang/htmlpurifier": "^4.16",
+                "php": "^5.6 || ^7.0 || ^8.0"
             },
             "type": "library",
             "autoload": {
@@ -2064,7 +2058,7 @@
                 }
             ],
             "description": "An SVG sanitizer for PHP",
-            "time": "2022-02-21T09:13:59+00:00"
+            "time": "2023-03-20T10:51:12+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -3763,26 +3757,17 @@
         },
         {
             "name": "league/flysystem-aws-s3-v3",
-            "version": "1.0.29",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/flysystem-aws-s3-v3.git",
-                "reference": "4e25cc0582a36a786c31115e419c6e40498f6972"
-            },
+            "version": "1.0.30",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem-aws-s3-v3/zipball/4e25cc0582a36a786c31115e419c6e40498f6972",
-                "reference": "4e25cc0582a36a786c31115e419c6e40498f6972",
+                "url": "https://api.github.com/repos/thephpleague/flysystem-aws-s3-v3/zipball/af286f291ebab6877bac0c359c6c2cb017eb061d",
+                "reference": "af286f291ebab6877bac0c359c6c2cb017eb061d",
                 "shasum": ""
             },
             "require": {
                 "aws/aws-sdk-php": "^3.20.0",
                 "league/flysystem": "^1.0.40",
                 "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "henrikbjorn/phpspec-code-coverage": "~1.0.1",
-                "phpspec/phpspec": "^2.0.0"
             },
             "type": "library",
             "extra": {
@@ -3795,7 +3780,6 @@
                     "League\\Flysystem\\AwsS3v3\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3806,11 +3790,7 @@
                 }
             ],
             "description": "Flysystem adapter for the AWS S3 SDK v3.x",
-            "support": {
-                "issues": "https://github.com/thephpleague/flysystem-aws-s3-v3/issues",
-                "source": "https://github.com/thephpleague/flysystem-aws-s3-v3/tree/1.0.29"
-            },
-            "time": "2020-10-08T18:58:37+00:00"
+            "time": "2022-07-02T13:51:38+00:00"
         },
         {
             "name": "league/fractal",
