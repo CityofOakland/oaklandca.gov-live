@@ -105,12 +105,12 @@
 
   .bg-transparent-oakland-roots {
     @apply bg-cover;
-    background-image: url('../img/oaklandroots-transparent-green.png');
+    background-image: url('/dist/img/oaklandroots-transparent-green.png');
   }
 
   .bg-transparent-oakland-roots-black {
     @apply bg-cover;
-    background-image: url('../img/oaklandroots-black.svg');
+    background-image: url('/dist/img/oaklandroots-black.svg');
   }
 
   /* Aspect Ratio Box */
