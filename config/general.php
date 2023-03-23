@@ -10,90 +10,42 @@
  */
 
 return [
-  // Global settings
-  '*' => [
-    // Default Week Start Day (0 = Sunday, 1 = Monday...)
-    'defaultWeekStartDay' => 0,
+	// Global settings
+		'*' => [
+				'siteUrl' => getenv('SITE_URL'),
+				'defaultWeekStartDay' => 0,
+				'enableCsrfProtection' => true,
+				'omitScriptNameInUrls' => true,
+				'cpTrigger' => 'admin',
+				'maxUploadFileSize' => 268435456,
+				'useProjectConfigFile' => true,
+				'securityKey' => getenv('SECURITY_KEY'),
+				'maxRevisions' => 10,
+				'devMode' => false,
+				'allowAdminChanges' => false,
+				'disallowRobots' => true,
+				'extraFileKinds' => [
+						'excel' => [
+								'extensions' => ['csv']
+						]
+				],
+				'aliases' => [
+						'@algoliaAppId' => getenv('ALGOLIA_APP_ID'),
+						'@algoliaAdminApi' => getenv('ALGOLIA_ADMIN_API'),
+						'@amazonKeyId' => getenv('AMAZON_KEY_ID'),
+						'@amazonSecret' => getenv('AMAZON_SECRET'),
+				],
+		],
 
-    // Enable CSRF Protection (recommended)
-    'enableCsrfProtection' => true,
+		'dev' => [
+				'devMode' => true,
+		],
 
-    // Whether generated URLs should omit "index.php"
-    'omitScriptNameInUrls' => true,
-
-    // Control Panel trigger word
-    'cpTrigger' => 'admin',
-
-    // Maximum Upload Size
-    'maxUploadFileSize' => 268435456,
-
-    // Stores all Control Panel changes in a `project.yaml` file.
-    'useProjectConfigFile' => true,
-
-    // The secure key Craft will use for hashing and encrypting data
-    'securityKey' => getenv('SECURITY_KEY'),
-
-    // Sets a maximum number of entry revisions
-    'maxRevisions' => 10,
-
-    'extraFileKinds' => [
-      // Allows us to use CSV files when uploading to the Excel filetype
-      'excel' => [
-        'extensions' => ['csv']
-      ]
-    ],
-
-    'aliases' => [
-      '@algoliaAppId' => getenv('ALGOLIA_APP_ID'),
-      '@algoliaAdminApi' => getenv('ALGOLIA_ADMIN_API'),
-      '@amazonKeyId' => getenv('AMAZON_KEY_ID'),
-      '@amazonSecret' => getenv('AMAZON_SECRET'),
-    ],
-  ],
-
-  // Dev environment settings
-  'dev' => [
-    // Base site URL
-    'siteUrl' => getenv('SITE_URL'),
-
-    // Dev Mode (see https://craftcms.com/support/dev-mode)
-    'devMode' => true,
-
-    'disallowRobots' => true
-  ],
-
-  // Staging environment settings
-  'staging' => [
-    // Base site URL
-    'siteUrl' => 'https://staging.oaklandca.gov',
-
-    'devMode' => false,
-
-    'disallowRobots' => true
-  ],
-
-  // Hotfix environment settings
-  'hotfix' => [
-    // Base site URL
-    'siteUrl' => getenv('SITE_URL'),
-    // Changes the default preview duration from 24 hours to 5 days
-    'defaultTokenDuration' => 432000,
-
-    'allowAdminChanges' => false,
-
-    'devMode' => false,
-  ],
-
-  // Production environment settings
-  'production' => [
-
-    // Base site URL
-    'siteUrl' => 'https://www.oaklandca.gov',
-    // Changes the default preview duration from 24 hours to 5 days
-    'defaultTokenDuration' => 432000,
-
-    'allowAdminChanges' => false,
-
-    'devMode' => false,
-  ],
+		'production' => [
+			// Base site URL
+				'siteUrl' => 'https://www.oaklandca.gov',
+			// Changes the default preview duration from 24 hours to 5 days
+				'defaultTokenDuration' => 432000,
+				'disallowRobots' => true
+		],
 ];
