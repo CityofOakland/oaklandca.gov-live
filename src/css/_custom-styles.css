@@ -100,7 +100,7 @@ button {
 }
 
 .search-box {
-  background-image: url('../img/icon-spyglass.svg');
+  background-image: url('/dist/img/icon-spyglass.svg');
   background-repeat: no-repeat;
   background-position: .5rem center;
 }
@@ -124,7 +124,7 @@ body.open #menu {
 
 .how-it-works-block {
   @apply relative mb-4 bg-bottom bg-no-repeat;
-  background-image: url('../img/icon-down-arrow.svg');
+  background-image: url('/dist/img/icon-down-arrow.svg');
 }
 
 @media (min-width: 768px) {
@@ -133,7 +133,7 @@ body.open #menu {
     background-image: none;
     &:after {
       @apply absolute bg-no-repeat;
-      background-image: url('../img/icon-right-arrow.svg');
+      background-image: url('/dist/img/icon-right-arrow.svg');
       content: "";
       top: .625rem;
       right: -1.875rem;
@@ -156,7 +156,7 @@ body.open .page-holder {
 
 .timeline-grid dt {
   @apply pl-12 bg-left-top bg-no-repeat text-2xl;
-  background-image: url('../img/icon-timeline-point.svg');
+  background-image: url('/dist/img/icon-timeline-point.svg');
   background-size: theme(spacing.9);
 }
 
@@ -372,7 +372,7 @@ form[data-handle="whyWasThisPageHelpful"] {
 
 .card.dark {
   background: #f5f7fa;
-  box-shadow: 0px 2px 1px 0px rgba(81, 81, 81,.25);
+  box-shadow: 0 2px 1px 0 rgba(81, 81, 81,.25);
 }
 
 .card.dark:hover,
@@ -524,7 +524,7 @@ form[data-handle="whyWasThisPageHelpful"] {
 
 .card.dark {
   background: #f5f7fa;
-  box-shadow: 0px 2px 1px 0px rgba(81, 81, 81,.25);
+  box-shadow: 0 2px 1px 0 rgba(81, 81, 81,.25);
 }
 
 .card.dark:hover,
@@ -691,10 +691,9 @@ form[data-handle="whyWasThisPageHelpful"] {
 
 .text-md{
   font-size: 18px;
-  line-height: 22.5px;
+  line-height: 1.25;
 }
 
 h2 a:focus,h3 a:focus,h4 a:focus, a.button:focus{
   outline:none!important
 }
-
