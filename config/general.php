@@ -39,6 +39,7 @@ return [
 
 		'dev' => [
 				'devMode' => true,
+				'allowAdminChanges' => true,
 		],
 
 		'production' => [
