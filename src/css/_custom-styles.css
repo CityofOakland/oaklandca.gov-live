@@ -685,15 +685,6 @@ form[data-handle="whyWasThisPageHelpful"] {
   border-color: #000000;
 }
 
-.d-none{
-  display: none;
-}
-
-.text-md{
-  font-size: 18px;
-  line-height: 1.25;
-}
-
 h2 a:focus,h3 a:focus,h4 a:focus, a.button:focus{
   outline:none!important
 }

@@ -32,7 +32,7 @@
   <div>
     {# News image #}
     {% if entry.newsImage|length %}
-      <figure class="max-w-full mb-8">
+      <figure class="mb-8 max-w-full">
         {% set newsImage = entry.newsImage.one() %}
         <img src="{{ newsImage.url }}" alt="{{ newsImage.altText ?? ''}}" />
       </figure>
@@ -48,7 +48,7 @@
     {% endif %}
 
     {# Tags (relationships) #}
-    <hr class="mt-12 mb-4 hr border">
+    <hr class="mt-12 mb-4 border hr">
 
     {# An array offers more control over which relationships can be linked as tags. #}
     {% set relationshipFields = [
@@ -86,10 +86,10 @@
     <hr class="mb-4">
 
     <div>
-      <h4 class="pt-0 mb-8">{{ 'Press Release'|t }}</h4>
+      <h4 class="mb-8 pt-0">{{ 'Press Release'|t }}</h4>
 
       <div>
-        <a class="button secondary m-0 text-center text-sm" href="{{ pressReleaseFile.url }}">
+        <a class="m-0 text-center text-sm button secondary" href="{{ pressReleaseFile.url }}">
           Download {{ entry.altText ? '"' ~ entry.altText ~ '"' : '' }} Press Release File
         </a>
       </div>
@@ -101,7 +101,7 @@
     <hr class="mb-4">
 
     <div>
-      <h4 class="pt-0 mb-8">{{ 'Contact'|t }}</h4>
+      <h4 class="mb-8 pt-0">{{ 'Contact'|t }}</h4>
 
       {% for contactEntry in entry.contact %}
         {#
@@ -144,12 +144,12 @@
   <hr class="mb-4">
 
   <div>
-    <h4 class="pt-0 mb-4">{{ 'Share'|t }}</h4>
+    <h4 class="mb-4 pt-0">{{ 'Share'|t }}</h4>
 
-    <ul class="flex p-0 m-0 gap-4 list-none">
+    <ul class="m-0 flex list-none gap-4 p-0">
       {% for socItem in socialMedia %}
         <li>
-          <a href="{{ socItem[0] }}" target="_blank" class="flex items-center justify-center w-10 h-10 bg-green-800 text-white hover:text-white rounded-full">
+          <a href="{{ socItem[0] }}" target="_blank" class="flex h-10 w-10 items-center justify-center rounded-full bg-green-800 text-white hover:text-white">
               {{ svg('@webroot/dist/img/logo-' ~ socItem[1])|attr({class:'h-5'}) }}
               <span class="hidden-visually">{{ socItem[2] }}</span>
           </a>
@@ -159,7 +159,7 @@
   </div>
 
   {# Post & update dates #}
-  <hr class="mt-8 mb-4 hr border">
+  <hr class="mt-8 mb-4 border hr">
 
   <div class="text-gray-900">
     {% include '_partials/_elements/_last-update.twig' %}
@@ -173,32 +173,32 @@
       <div class="mb-8">
         <h2>More Related News</h2>
       </div>
-      <div class="xl:flex xl:flex-column xl:items-start xl:gap-12">
+      <div class="xl:flex-column xl:flex xl:items-start xl:gap-12">
         {% for relatedNewsEntry in entry.news %}
           {% set relatedNewsEntryImage = relatedNewsEntry.newsImage|length ? relatedNewsEntry.newsImage.one() : null %}
-          <article class="md:flex md:flex-row md:items-start xl:w-1/2 md:h-52 h-auto mb-8 bg-white rounded shadow">
+          <article class="mb-8 h-auto rounded bg-white shadow md:flex md:h-52 md:flex-row md:items-start xl:w-1/2">
             {% if relatedNewsEntryImage %}
               <figure>
                 <img src="{{ relatedNewsEntryImage.url }}"
-                  class="md:w-52 md:h-52"
+                  class="md:h-52 md:w-52"
                   alt="{{ relatedNewsEntryImage.title ?? relatedNewsEntryImage.filename }}"
                   title="{{ relatedNewsEntryImage.title ?? relatedNewsEntryImage.filename }}">
               </figure>
             {% else %}
-              <figure class="md:w-52 md:h-52 p-12 bg-blue-800">
+              <figure class="bg-blue-800 p-12 md:h-52 md:w-52">
                 <img src="{{ alias('@web/dist/img/icon-newspaper-blue-300.svg') }}"
                   class="mx-auto"
                   alt="No article image to display">
               </figure>
             {% endif %}
-            <div class="md:w-3/4 p-4">
-              <div class="mb-2 text-sm text-gray-1000 uppercase">
+            <div class="p-4 md:w-3/4">
+              <div class="mb-2 text-sm uppercase text-gray-1000">
                 {{ relatedNewsEntry.postDate|date("M d, Y") }}
               </div>
-              <h4 class="my-2 text-md font-bold">
+              <h4 class="my-2 text-lg font-bold leading-tight">
                 <a href="{{ relatedNewsEntry.url }}">{{ relatedNewsEntry.title }}</a>
               </h4>
-              <div class="md:line-clamp-2 text-gray-1000">
+              <div class="text-gray-1000 md:line-clamp-2">
                 {% set relatedNewsEntryExcerpt = relatedNewsEntry.summary ?: relatedNewsEntry.body %}
                 {{ relatedNewsEntryExcerpt|striptags|slice(0, 200) ~ (relatedNewsEntryExcerpt|length > 200 ? '...' : '') }}
               </div>

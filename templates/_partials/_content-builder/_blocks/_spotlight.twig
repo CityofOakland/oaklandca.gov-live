@@ -26,7 +26,7 @@
   <div class="container px-6 py-12 @3xl:px-16 @3xl:py-12">
     <div class="grid gap-4 md:grid-cols-12 md:gap-8">
       <div class="relative z-10 [&>*:last-child]:mb-0 {{ imgBg ? 'order-1 md:bg-white md:p-8 md:text-gray-1000' : 'order-2' }} {{ textRight ? 'md:order-2' : 'md:order-1' }} {{ image ? 'md:col-span-6' : 'md:col-span-9' }}">
-        <span class="block mb-5 font-bold text-md">{{ block.brow|default('Spotlight') }}</span>
+        <span class="mb-5 block text-lg font-bold leading-tight">{{ block.brow|default('Spotlight') }}</span>
         {{ include("_partials/_content-builder/_blocks/_elements/_component-header.twig", {
           params: {
             text: block.heading,
@@ -34,7 +34,7 @@
           }
         }) }}
         {% if button %}
-          <div class="block mt-6">
+          <div class="mt-6 block">
             <a class="mt-0 text-sm button secondary" href="{{ button.url }}" target="{{ button.target }}">
               {{ button.text }}{% if button.target %}
                 <i class="pl-1 fas fa-external-link-alt" style="height:17px"></i>

@@ -30,9 +30,9 @@
 							{ ratio: 1/1, position: photo.getFocalPoint() },
 							{ fillTransforms: true }
 						) %}
-						<img class="block w-full h-full object-cover" src="{{ transformedImage.url }}" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ entry.jobTitle }}, {{ entry.title }}">
+						<img class="block h-full w-full object-cover" src="{{ transformedImage.url }}" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ entry.jobTitle }}, {{ entry.title }}">
 					{% else %}
-						<div class="h-full overflow-hidden text-gray-400 bg-gray-100 border-2 border-gray-200 rounded-full opacity-75 fill-current">
+						<div class="h-full overflow-hidden rounded-full border-2 border-gray-200 bg-gray-100 fill-current text-gray-400 opacity-75">
 							<svg class="block h-full" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" fill="" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" viewBox="0 0 140 140" xml:space="preserve" fill="currentColor"><path d="M39.168 47.556C39.168 64.473 53.083 78.39 70 78.39s30.832-13.916 30.832-30.833c0-16.916-13.915-30.832-30.832-30.832S39.168 30.64 39.168 47.555zm7.708 0c0-12.687 10.437-23.124 23.124-23.124S93.124 34.87 93.124 47.556c0 12.688-10.437 23.125-23.124 23.125S46.876 60.244 46.876 47.556zm-23.124 88.643c0-25.37 20.878-46.248 46.248-46.248 25.37 0 46.248 20.878 46.248 46.248a3.855 3.855 0 0 0 3.854 3.854 3.855 3.855 0 0 0 3.854-3.854c0-29.6-24.357-53.956-53.956-53.956-29.6 0-53.956 24.357-53.956 53.956a3.855 3.855 0 0 0 3.854 3.854 3.855 3.855 0 0 0 3.854-3.854z"/></svg>
 						</div>
 					{% endif %}
@@ -46,7 +46,7 @@
 						}
 					}) }}
 
-					<span class="text-md font-bold mt-4 block">{{ profile.jobTitle }}</span>
+					<span class="mt-4 block text-lg font-bold leading-tight">{{ profile.jobTitle }}</span>
 					{% if profile.bio %}
 						{{ profile.bio }}
 					{% endif %}
@@ -54,7 +54,7 @@
 					{% if block.buttons|length %}
 						{% for buttons in block.buttons.all() %}
 							{% set card = buttons.button %}
-							<a class="button text-sm secondary p-4" href="{{ card.url }}" target="{{ card.target }}">
+							<a class="p-4 text-sm button secondary" href="{{ card.url }}" target="{{ card.target }}">
 								{{ buttons.button.text }}{% if card.target %} <i class="fas fa-external-link-alt" style="height:17px"></i>{% endif %}
 							</a>
 						{% endfor %}
