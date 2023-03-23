@@ -44,7 +44,7 @@
         {% endif %}
       </div>
       {% if image %}
-        <figure class="{{ imgBg ? 'hidden' : 'md:block' }} order-1 {{ textRight ? 'md:order-1' : 'md:order-2' }} md:col-span-6">
+        <figure class="{{ imgBg ? 'oak-hidden' : 'md:block' }} order-1 {{ textRight ? 'md:order-1' : 'md:order-2' }} md:col-span-6">
           <img src="{{ transformedImage.url }}" srcset="{{ transformedImages|srcset }}" alt="{{ image.altText }}" class="block w-full h-full object-cover {{ imgBg ? 'absolute z-0 inset-0 h-full w-full' : 'relative' }}" />
         </figure>
       {% endif %}

@@ -65,7 +65,7 @@
 
 {% macro fieldSelectors(groupName, groupFields, context) %}
     {% set showGroup = groupFields|contains(f => not context.fieldLayout.isFieldIncluded(f.attribute())) %}
-    <div class="fld-field-group{% if not showGroup %} hidden{% endif %}" data-name="{{ groupName|replace('"', '')|lower }}">
+    <div class="fld-field-group{% if not showGroup %} oak-hidden{% endif %}" data-name="{{ groupName|replace('"', '')|lower }}">
         <h6>{{ groupName }}</h6>
         {% for field in groupFields %}
             {{ _self.elementSelector(field, true, {
@@ -119,7 +119,7 @@
                     inputmode: 'search',
                     placeholder: "Search"|t('app')
                 }) }}
-                <div class="clear hidden" title="{{ 'Clear'|t('app') }}" aria-label="{{ 'Clear'|t('app') }}"></div>
+                <div class="clear oak-hidden" title="{{ 'Clear'|t('app') }}" aria-label="{{ 'Clear'|t('app') }}"></div>
             </div>
 
             {{ _self.fieldSelectors('Standard Fields'|t('app'), fieldLayout.getAvailableStandardFields(), _context) }}
@@ -130,7 +130,7 @@
         </div>
 
         {% if customizableUi %}
-            <div class="fld-ui-library hidden">
+            <div class="fld-ui-library oak-hidden">
                 {% for element in fieldLayout.getAvailableUiElements() %}
                     {{ _self.elementSelector(element, true) }}
                 {% endfor %}

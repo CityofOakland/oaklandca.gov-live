@@ -107,7 +107,7 @@
     {% include '_partials/_elements/_pagination' %}
   </div>
 
-  <div class="lg:hidden">
+  <div class="lg:oak-hidden">
     <hr class="hr dark"/>
     <h4>{{ 'Learn More About Public Bodies'|t }}</h4>
     <div class="pt-2">
@@ -118,7 +118,7 @@
 {% endblock %}
 
 {% block sidebar %}
-  <hr class="hidden lg:block"/>
+  <hr class="oak-hidden lg:block"/>
   <div class="mt-2 md:mt-0"></div>
   <h4 class="py-0 mt-4 mb-6">{{ 'Search & Filter'|t }}</h4>
   <form action="{{ entry.url }}">
@@ -154,7 +154,7 @@
     </div>
   </form>
   <hr/>
-  <div class="hidden lg:block">
+  <div class="oak-hidden lg:block">
     <h4 class="py-0 mt-4">{{ 'Learn More About Public Bodies'|t }}</h4>
     <div class="pt-2">
       <p><a href="{{siteUrl}}boards-commissions">Boards & Commissions</a></p>

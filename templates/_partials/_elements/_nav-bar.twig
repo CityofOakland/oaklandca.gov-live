@@ -26,31 +26,31 @@
 
 <div id="topbar" class="navbar">
     <div class="flex items-center justify-end lg:justify-between px-0 lg:px-6 bg-green-1000 lg:bg-green-800 text-white relative h-8">
-        <p class="hidden lg:block"><b>Official Website for the City of Oakland</b> <span class="mx-1">|</span> <a class="hover:text-green-800 hover:underline" href="{{ siteUrl }}officials/sheng-thao">Mayor Sheng Thao</a></p>
+        <p class="oak-hidden lg:block"><b>Official Website for the City of Oakland</b> <span class="mx-1">|</span> <a class="hover:text-green-800 hover:underline" href="{{ siteUrl }}officials/sheng-thao">Mayor Sheng Thao</a></p>
         <nav class="flex items-center" id="top-navigation" name="Top Navigation">
             <ul class="flex items-center">
-                <li class="hidden lg:block ml-4"><a class="language" href="#googtrans(en|en)" onclick="clear_languages()"><span lang="en" class="notranslate">English</span></a></li>
-                <li class="hidden lg:block ml-4"><a class="language" href="#googtrans(en|es)" onclick="location.reload()"><span lang="es" class="notranslate">Español</span></a></li>
-                <li class="hidden lg:block ml-4"><a class="language" href="#googtrans(en|zh-TW)" onclick="location.reload()"><span lang="zh-TW" class="notranslate">中文</span></a></li>
-                <li class="hidden lg:block ml-4"><a class="language" href="#googtrans(en|vi)" onclick="location.reload()"><span lang="vi" class="notranslate">Tiếng Việt</span></a></li>
-            </li>
-            <p class="hidden lg:block ml-4">|</p>
-            <li id="translate" class="has-submenu click fill-current">
-                <a tabindex="0" id="navbar-dropdown-translate" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ svg( '@webroot/dist/img/icon-translate.svg')|attr({ class: 'fill-current text-yellow-200 lg:hidden' }) }} {{ "Translate"|t }} {{ svg( '@webroot/dist/img/icon-arrow.svg')|attr({ class: 'fill-current' }) }}</a>
-                <ul class="components grid grid-cols-2 gap-x-6 p-4 lg:p-6 bg-green-800" aria-labelledby="navbar-dropdown-translate">
-                    <li><a class="focusable language underline" href="#googtrans(en|ceb)" onclick="location.reload()"><span lang="ceb" class="notranslate">Cebuano</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|km)" onclick="location.reload()"><span lang="km" class="notranslate">ភាសាខ្មែរ</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|zh-TW)" onclick="location.reload()"><span lang="zh-TW" class="notranslate">中文</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|ko)" onclick="location.reload()"><span lang="ko" class="notranslate">한국어</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|en)" onclick="clear_languages()"><span lang="en" class="notranslate">English</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|mn)" onclick="location.reload()"><span lang="mn" class="notranslate">монгол</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|tl)" onclick="location.reload()"><span lang="tl" class="notranslate">Filipino</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|es)" onclick="location.reload()"><span lang="es" class="notranslate">Español</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|hmn)" onclick="location.reload()"><span lang="hmn" class="notranslate">Hmoob</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|vi)" onclick="location.reload()"><span lang="vi" class="notranslate">Tiếng Việt</span></a></li>
-                    <li><a class="focusable language underline" href="#googtrans(en|ja)" onclick="location.reload()"><span lang="ja" class="notranslate">日本語</span></a></li>
-                </ul>
-            </li>
+                <li class="oak-hidden lg:block ml-4"><a class="language" href="#googtrans(en|en)" onclick="clear_languages()"><span lang="en" class="notranslate">English</span></a></li>
+                <li class="oak-hidden lg:block ml-4"><a class="language" href="#googtrans(en|es)" onclick="location.reload()"><span lang="es" class="notranslate">Español</span></a></li>
+                <li class="oak-hidden lg:block ml-4"><a class="language" href="#googtrans(en|zh-TW)" onclick="location.reload()"><span lang="zh-TW" class="notranslate">中文</span></a></li>
+                <li class="oak-hidden lg:block ml-4"><a class="language" href="#googtrans(en|vi)" onclick="location.reload()"><span lang="vi" class="notranslate">Tiếng Việt</span></a></li>
+                <p class="oak-hidden lg:block ml-4">|</p>
+                <li id="translate" class="has-submenu click fill-current">
+                    <a tabindex="0" id="navbar-dropdown-translate" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ svg( '@webroot/dist/img/icon-translate.svg')|attr({ class: 'fill-current text-yellow-200 lg:oak-hidden' }) }} {{ "Translate"|t }} {{ svg( '@webroot/dist/img/icon-arrow.svg')|attr({ class: 'fill-current' }) }}</a>
+                    <ul class="components grid grid-cols-2 gap-x-6 p-4 lg:p-6 bg-green-800" aria-labelledby="navbar-dropdown-translate">
+                        <li><a class="focusable language underline" href="#googtrans(en|ceb)" onclick="location.reload()"><span lang="ceb" class="notranslate">Cebuano</span></a></li>
+                        <li><a class="focusable language underline" href="#googtrans(en|km)" onclick="location.reload()"><span lang="km" class="notranslate">ភាសាខ្មែរ</span></a></li>
+                        <li><a class="focusable language underline" href="#googtrans(en|zh-TW)" onclick="location.reload()"><span lang="zh-TW" class="notranslate">中文</span></a></li>
+                        <li><a class="focusable language underline" href="#googtrans(en|ko)" onclick="location.reload()"><span lang="ko" class="notranslate">한국어</span></a></li>
+                        <li><a class="focusable language underline" href="#googtrans(en|en)" onclick="clear_languages()"><span lang="en" class="notranslate">English</span></a></li>
+                        <li><a class="focusable language underline" href="#googtrans(en|mn)" onclick="location.reload()"><span lang="mn" class="notranslate">монгол</span></a></li>
+                        <li><a class="focusable language underline" href="#googtrans(en|tl)" onclick="location.reload()"><span lang="tl" class="notranslate">Filipino</span></a></li>
+                        <li><a class="focusable language underline" href="#googtrans(en|es)" onclick="location.reload()"><span lang="es" class="notranslate">Español</span></a></li>
+                        <li><a class="focusable language underline" href="#googtrans(en|hmn)" onclick="location.reload()"><span lang="hmn" class="notranslate">Hmoob</span></a></li>
+                        <li><a class="focusable language underline" href="#googtrans(en|vi)" onclick="location.reload()"><span lang="vi" class="notranslate">Tiếng Việt</span></a></li>
+                        <li><a class="focusable language underline" href="#googtrans(en|ja)" onclick="location.reload()"><span lang="ja" class="notranslate">日本語</span></a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
     </div>
 </div>
@@ -58,14 +58,14 @@
     <div class="relative">
         <nav id="main-navigation" class="flex items-center justify-between px-4 lg:px-6 bg-gray-1000 text-white relative" name="Main Navigation">
             <a id="home-link" class="flex items-center justify-center py-2 lg:py-2" href="{{ siteUrl }}" name="Home">
-                {{ svg( '@webroot/dist/img/logo-oakland-tree.svg')|attr({ class: 'h-9 sm:h-10 w-14 md:h-10 lg:hidden fill-current text-gray-100 hover:text-gray-200' }) }}
-                {{ svg( '@webroot/dist/img/logo-oakland.svg')|attr({ class: 'w-40 h-10 hidden lg:block fill-current text-gray-100 hover:text-gray-200' }) }}
+                {{ svg( '@webroot/dist/img/logo-oakland-tree.svg')|attr({ class: 'h-9 sm:h-10 w-14 md:h-10 lg:oak-hidden fill-current text-gray-100 hover:text-gray-200' }) }}
+                {{ svg( '@webroot/dist/img/logo-oakland.svg')|attr({ class: 'w-40 h-10 oak-hidden lg:block fill-current text-gray-100 hover:text-gray-200' }) }}
                 <span class="sr-only">Home</span>
             </a>
 
             <ul class="flex items-center list-none">
                 {% for item in navigation.navigationMain.level(1).all() %}
-                    <li class="has-submenu click hidden lg:block">
+                    <li class="has-submenu click oak-hidden lg:block">
                         <a tabindex="0" id="navbar-dropdown-{{ item.heading|replace({' ': '-'})|lower }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ item.heading }} {{ svg( '@webroot/dist/img/icon-arrow.svg')|attr({ class: 'fill-current' }) }}</a>
                         <ul class="components grid md:grid-cols-3 gap-x-6 px-6 pt-2 pb-6 bg-green-800" aria-labelledby="navbar-dropdown-{{ item.heading|replace({' ': '-'})|lower }}">
                             <li class="pt-4 pb-32 relative">
@@ -115,7 +115,7 @@
                                 <button aria-label="Site Search Button" type="submit">{{ svg( '@webroot/dist/img/icon-magnifier.svg')|attr({ class: 'fill-current text-gray-900' }) }}</button>
                             </form>
                         </li>
-                        <li class="hidden lg:block">
+                        <li class="oak-hidden lg:block">
                             <h3 class="pt-6">Popular on Oakland.ca.gov</h3>
                             <ul class="list-none grid md:grid-cols-3 gap-x-6 pt-4">
                                 {% for navItem in navigation.linkits.all() %}
@@ -127,7 +127,7 @@
                 </li>
             </ul>
         </nav>
-        <nav id="mobile-navigation" class="bg-green-800 text-white lg:hidden" name="Mobile Navigation">
+        <nav id="mobile-navigation" class="bg-green-800 text-white lg:oak-hidden" name="Mobile Navigation">
             <a tabindex="0" id="navbar-dropdown-mobile" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 {{ svg( '@webroot/dist/img/icon-menu.svg')|attr({ class: 'fill-current text-white' }) }}
                 {{ svg( '@webroot/dist/img/icon-x.svg')|attr({ class: 'fill-current text-white' }) }}

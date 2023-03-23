@@ -1,7 +1,7 @@
 {% set news_image = news_item.newsImage|length ? news_item.newsImage.one() : null %}
 
 <article class="sm:flex mb-6 pb-8 border-gray-300 border-b-2">
-  <figure class="hidden sm:block sm:w-1/4">
+  <figure class="oak-hidden sm:block sm:w-1/4">
     {% if news_image %}
       <img src="{{ news_image.url }}"
         alt="{{ news_image.title ?? news_image.filename }}"

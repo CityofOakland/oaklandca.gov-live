@@ -152,7 +152,7 @@
       <div class="container lg:flex lg:gap-8">
         {# Spotlight image comes first in smaller responsive view. #}
         {% if spotlightNewsEntryImage %}
-          <figure class="lg:hidden mb-6">
+          <figure class="lg:oak-hidden mb-6">
             <img src="{{ spotlightNewsEntryImage.url }}">
           </figure>
         {% endif %}
@@ -168,7 +168,7 @@
 
         {# Spotlight image comes second on larger display (to the right in flex). #}
         {% if spotlightNewsEntryImage %}
-          <figure class="hidden lg:block lg:w-1/2">
+          <figure class="oak-hidden lg:block lg:w-1/2">
             <img src="{{ spotlightNewsEntryImage.url }}">
           </figure>
         {% endif %}
@@ -221,7 +221,7 @@
     {% include '_partials/_elements/_pagination' %}
   </div>
 
-  <div class="lg:hidden mb-4">
+  <div class="lg:oak-hidden mb-4">
     <hr class="hr dark">
     {{ relatedContentSection }}
   </div>
@@ -229,7 +229,7 @@
 
 {# Search & Filter Sidebar #}
 {% block sidebar %}
-  <hr class="hidden lg:block">
+  <hr class="oak-hidden lg:block">
 
   <h4 class="py-0 mt-4 mb-6">{{ 'Search & Filter'|t }}</h4>
 
@@ -345,7 +345,7 @@
 
   <hr class="hr dark">
 
-  <div class="hidden lg:block">
+  <div class="oak-hidden lg:block">
     {{ relatedContentSection }}
   </div>
 {% endblock %}
