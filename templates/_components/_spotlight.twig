@@ -1,0 +1,81 @@
+{% set vars = {
+	bgColor: "bg-blue-800",
+	textColor: "text-white",
+	brow: "Spotlight",
+	imgBg: false,
+	textRight: false,
+	image: null,
+	heading: null,
+	description: null,
+	button: null
+}|merge(params) %}
+
+{% set textClasses = [] %}
+
+{% if vars.imgBg %}
+	{% set textClasses = textClasses|merge(["order-1", "md:bg-white", "md:p-8", "md:text-gray-1000"]) %}
+{% else %}
+	{% set textClasses = textClasses|merge(["order-2"]) %}
+{% endif %}
+{% if vars.textRight %}
+	{% set textClasses = textClasses|merge(["md:order-2"]) %}
+{% else %}
+	{% set textClasses = textClasses|merge(["md:order-1"]) %}
+{% endif %}
+{% if vars.image %}
+	{% set textClasses = textClasses|merge(["md:col-span-6"]) %}
+	{% if vars.imgBg and vars.textRight %}
+		{% set textClasses = textClasses|merge(["md:col-start-7"]) %}
+	{% endif %}
+{% else %}
+	{% set textClasses = textClasses|merge(["md:col-span-9"]) %}
+	{% if vars.textRight %}
+		{% set textClasses = textClasses|merge(["md:col-start-4"]) %}
+	{% endif %}
+{% endif %}
+
+<section class="@container relative {{ vars.bgColor }}">
+	<div class="container px-6 py-12 @3xl:px-16 @3xl:py-12">
+		<div class="grid gap-4 md:grid-cols-12 md:gap-8 {{ vars.textColor }}">
+			<div class="relative z-10 [&>*:last-child]:mb-0 {{ textClasses|join(' ') }}">
+				<span class="mb-5 block text-lg font-bold leading-tight">{{ vars.brow }}</span>
+				{{ include("_partials/_content-builder/_blocks/_elements/_component-header.twig", {
+					params: {
+						text: vars.heading,
+						description: vars.description
+					}
+				}) }}
+				{% if vars.button %}
+					<div class="mt-6 block">
+						<a class="mt-0 text-sm button secondary" href="{{ vars.button.url }}" target="{{ vars.button.target }}">
+							{{ vars.button.text }}
+							{% if vars.button.target %}
+								<i class="pl-1 fas fa-external-link-alt h-[17px]"></i>
+							{% endif %}
+						</a>
+					</div>
+				{% endif %}
+			</div>
+			{% if vars.image %}
+				{% set transformedImage = craft.imager.transformImage(
+					vars.image,
+					{ width: 1220 },
+					{ ratio: vars.imgBg ? 16 / 9 : 1 / 1, position: vars.image.getFocalPoint() },
+					{ fillTransforms: true }
+				) %}
+				{% set transformedImages = craft.imager.transformImage(
+					vars.image,
+					[
+						{ width: 800 },
+						{ width: 400, jpegQuality: 65 },
+						{ width: 300, jpegQuality: 65 }],
+					{ ratio: 1 / 1, position: vars.image.getFocalPoint() },
+					{ fillTransforms: true }
+				) %}
+				<figure class="{{ vars.imgBg ? 'oak-hidden md:block absolute z-0 inset-0 h-full w-full' }} order-1 {{ vars.textRight ? 'md:order-1' : 'md:order-2' }} md:col-span-6">
+					<img src="{{ transformedImage.url }}" srcset="{{ transformedImages|srcset }}" alt="{{ vars.image.altText }}" class="block w-full h-full object-cover" />
+				</figure>
+			{% endif %}
+		</div>
+	</div>
+</section>
