@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8b25f3d8be29aff97e83619456fabdf3",
+    "content-hash": "4952f7d93f89891183aa799e3712dd4d",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -7081,11 +7081,11 @@
         },
         {
             "name": "solspace/craft-calendar",
-            "version": "3.3.20",
+            "version": "3.3.21",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-calendar/zipball/cd3252753d0aded5305b844b983626fd1830408a",
-                "reference": "cd3252753d0aded5305b844b983626fd1830408a",
+                "url": "https://api.github.com/repos/solspace/craft-calendar/zipball/3922ea0ca7b2d68c117bc6f5a2d106fc0696b033",
+                "reference": "3922ea0ca7b2d68c117bc6f5a2d106fc0696b033",
                 "shasum": ""
             },
             "require": {
@@ -7137,7 +7137,7 @@
                 }
             ],
             "description": "The most reliable and powerful event management plugin for Craft.",
-            "time": "2023-02-21T19:59:47+00:00"
+            "time": "2023-03-23T18:59:02+00:00"
         },
         {
             "name": "solspace/craft-freeform",
