@@ -3,8 +3,8 @@ type: craftcms
 docroot: web
 php_version: "7.4"
 webserver_type: nginx-fpm
-router_http_port: "8080"
-router_https_port: "8443"
+router_http_port: "80"
+router_https_port: "443"
 xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: []
@@ -17,6 +17,7 @@ use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
 nodejs_version: "18"
+upload_dir: /web
 
 # Key features of ddev's config.yaml:
 
