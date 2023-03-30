@@ -1,4 +1,4 @@
-dateModified: 1680198675
+dateModified: 1680202998
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -1048,6 +1048,10 @@ plugins:
     licenseKey: null
     schemaVersion: 2.0.0
     settings: null
+  inventory:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
   linkit:
     enabled: '1'
     licenseKey: 46HXL3KFU6B2Z3R5LOC856G4
