@@ -1,4 +1,4 @@
-dateModified: 1679597648
+dateModified: 1680196984
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -78,7 +78,7 @@ meta:
     4ae79c6e-4218-4dc0-8c8e-d1e19e0c00e8: Gallery # Gallery
     4b5cda22-38e1-4580-b113-b6ceee3c9c09: 'Related Resources' # Related Resources
     4b278e2a-dc49-4f60-a4bd-18575fb15098: 'Milestone Started?' # Milestone Started?
-    4c0f9e7c-fe6a-47d0-b8c9-17e8a34a39f2: Address # Address
+    4c0f9e7c-fe6a-47d0-b8c9-17e8a34a39f2: 'Location Address' # Location Address
     4c46efcc-d38f-4f25-8873-d8c0837babd9: 'Document Label' # Document Label
     4cac2797-e23e-4714-b9fa-3afcd009044a: 'Related Departments' # Related Departments
     4d6dd644-455e-4186-8d05-a00079622246: 'Last Name' # Last Name
@@ -317,7 +317,6 @@ meta:
     328a8ce9-6f28-43a8-a858-db782f75ce8a: 'Online Location' # Online Location
     353d020b-e6ef-421a-874d-794687526841: Hours # Hours
     380be87a-8c09-4edd-ac41-7a110a5dba44: 'Physical Address' # Physical Address
-    403ad0b1-fb18-4f8f-9fa4-d299c1138836: Location # Location
     469ca78b-2438-4fdc-8bb0-eede26b2f672: 'Online Meeting Link' # Online Meeting Link
     474e10df-7bcd-4737-8b49-8c14f7c11b79: Embed # Embed
     483fcf2d-eedc-47e4-8cff-179bd5b0397b: 'Location Name' # Location Name
@@ -475,7 +474,7 @@ meta:
     70778563-6dac-453d-a4b0-5121f3a614b7: Topics # Topics
     70842856-8b10-4b22-ac3d-e127825aca24: Heading # Heading
     71390558-d90c-4764-9b4c-3193ce8c1c0f: News # News
-    80185635-48b7-48d7-847a-53d941fdda68: Address # Address
+    80185635-48b7-48d7-847a-53d941fdda68: 'New Address' # New Address
     80554222-e44d-4971-b6db-30843c2f3a7d: Facebook # Facebook
     93529926-6c77-4675-9951-602d6d06458e: 'Public Schema' # Public Schema
     95363013-85f2-4588-800f-e939bf922cbf: 'Featured Profile' # Featured Profile
@@ -927,6 +926,10 @@ plugins:
     licenseKey: null
     schemaVersion: 4.4.1
     settings: null
+  field-manager:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   freeform:
     edition: lite
     enabled: true

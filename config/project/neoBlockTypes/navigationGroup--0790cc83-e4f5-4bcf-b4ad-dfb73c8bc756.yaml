@@ -17,6 +17,7 @@ fieldLayouts:
             width: 100
         name: Default
         sortOrder: 1
+group: null
 handle: navigationGroup
 maxBlocks: 2
 maxChildBlocks: 0

@@ -55,7 +55,8 @@
     "solspace/craft-calendar": "3.3.21",
     "verbb/patrol": "4.0.2",
     "percipioglobal/craft-colour-swatches": "1.7.0",
-    "studioespresso/craft-dumper": "2.0.0"
+    "studioespresso/craft-dumper": "2.0.0",
+    "verbb/field-manager": "2.2.5"
   },
   "autoload": {
     "psr-4": {

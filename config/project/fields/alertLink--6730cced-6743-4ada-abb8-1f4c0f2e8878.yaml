@@ -13,7 +13,7 @@ settings:
   types:
     __assoc__:
       -
-        - fruitstudios\linkit\models\Email
+        - presseddigital\linkit\models\Email
         -
           __assoc__:
             -
@@ -26,7 +26,7 @@ settings:
               - customPlaceholder
               - dotgovsupport@oaklandca.gov
       -
-        - fruitstudios\linkit\models\Phone
+        - presseddigital\linkit\models\Phone
         -
           __assoc__:
             -
@@ -39,7 +39,7 @@ settings:
               - customPlaceholder
               - ''
       -
-        - fruitstudios\linkit\models\User
+        - presseddigital\linkit\models\User
         -
           __assoc__:
             -
@@ -58,7 +58,7 @@ settings:
               - userPath
               - ''
       -
-        - fruitstudios\linkit\models\Url
+        - presseddigital\linkit\models\Url
         -
           __assoc__:
             -
@@ -83,7 +83,7 @@ settings:
               - allowPaths
               - ''
       -
-        - fruitstudios\linkit\models\Twitter
+        - presseddigital\linkit\models\Twitter
         -
           __assoc__:
             -
@@ -96,7 +96,7 @@ settings:
               - customPlaceholder
               - ''
       -
-        - fruitstudios\linkit\models\Facebook
+        - presseddigital\linkit\models\Facebook
         -
           __assoc__:
             -
@@ -109,7 +109,7 @@ settings:
               - customPlaceholder
               - ''
       -
-        - fruitstudios\linkit\models\Instagram
+        - presseddigital\linkit\models\Instagram
         -
           __assoc__:
             -
@@ -122,7 +122,7 @@ settings:
               - customPlaceholder
               - ''
       -
-        - fruitstudios\linkit\models\LinkedIn
+        - presseddigital\linkit\models\LinkedIn
         -
           __assoc__:
             -
@@ -135,7 +135,7 @@ settings:
               - customPlaceholder
               - ''
       -
-        - fruitstudios\linkit\models\Entry
+        - presseddigital\linkit\models\Entry
         -
           __assoc__:
             -
@@ -164,7 +164,7 @@ settings:
               - customSelectionLabel
               - ''
       -
-        - fruitstudios\linkit\models\Category
+        - presseddigital\linkit\models\Category
         -
           __assoc__:
             -
@@ -180,7 +180,7 @@ settings:
               - customSelectionLabel
               - ''
       -
-        - fruitstudios\linkit\models\Asset
+        - presseddigital\linkit\models\Asset
         -
           __assoc__:
             -
@@ -198,4 +198,4 @@ settings:
               - ''
 translationKeyFormat: null
 translationMethod: none
-type: fruitstudios\linkit\fields\LinkitField
+type: presseddigital\linkit\fields\LinkitField

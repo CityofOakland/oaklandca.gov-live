@@ -1,22 +1,22 @@
 columnSuffix: null
 contentColumnType: string
 fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
-handle: location
-instructions: ''
-name: Location
+handle: newAddress
+instructions: 'To ensure your map is generated correctly on your page, make sure to pick an address the popup provides. If you haven''t received a popup, click **"Search Addresses"** and then choose from that list. If you have successfully chosen an address, you will see the **Latitude** and **Longitude** fields below filled out automatically.'
+name: 'New Address'
 searchable: false
 settings:
   coordinatesDefault:
     __assoc__:
       -
         - lat
-        - '32.3113966'
+        - '37.805248982254'
       -
         - lng
-        - '-64.7527469'
+        - '-122.27233886719'
       -
         - zoom
-        - '6'
+        - '15'
   coordinatesMode: readOnly
   dragPinDefault: null
   dragPinLatitude: null
@@ -24,8 +24,8 @@ settings:
   dragPinZoom: null
   layout: null
   mapOnSearch: open
-  mapOnStart: default
-  requireCoordinates: true
+  mapOnStart: close
+  requireCoordinates: '1'
   showMap: false
   subfieldConfig:
     __assoc__:
@@ -120,11 +120,47 @@ settings:
               - width
               - '100'
             -
-              - enabled
-              - '1'
-            -
               - position
               - '6'
+      -
+        - name
+        -
+          __assoc__:
+            -
+              - label
+              - Name
+            -
+              - width
+              - '100'
+            -
+              - position
+              - '101'
+      -
+        - county
+        -
+          __assoc__:
+            -
+              - label
+              - 'County or District'
+            -
+              - width
+              - '100'
+            -
+              - position
+              - '102'
+      -
+        - placeId
+        -
+          __assoc__:
+            -
+              - label
+              - 'Place ID'
+            -
+              - width
+              - '100'
+            -
+              - position
+              - '103'
   visibilityToggle: both
 translationKeyFormat: null
 translationMethod: none

@@ -65,6 +65,6 @@ settings:
   subfolder: headers
 sortOrder: 5
 titleTranslationKeyFormat: null
-titleTranslationMethod: null
+titleTranslationMethod: site
 type: craft\awss3\Volume
 url: 'https://cao-94612.s3.amazonaws.com/'
