@@ -1,4 +1,4 @@
-dateModified: 1680196984
+dateModified: 1680198675
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -474,7 +474,7 @@ meta:
     70778563-6dac-453d-a4b0-5121f3a614b7: Topics # Topics
     70842856-8b10-4b22-ac3d-e127825aca24: Heading # Heading
     71390558-d90c-4764-9b4c-3193ce8c1c0f: News # News
-    80185635-48b7-48d7-847a-53d941fdda68: 'New Address' # New Address
+    80185635-48b7-48d7-847a-53d941fdda68: Address # Address
     80554222-e44d-4971-b6db-30843c2f3a7d: Facebook # Facebook
     93529926-6c77-4675-9951-602d6d06458e: 'Public Schema' # Public Schema
     95363013-85f2-4588-800f-e939bf922cbf: 'Featured Profile' # Featured Profile
@@ -530,7 +530,7 @@ meta:
     b08ffb42-c370-4cdd-8973-abe245822ae9: 'Spotlight Description' # Spotlight Description
     b1b0e0eb-fd37-4708-96c7-4f5f11d8fdb0: Departments # Departments
     b3b7323b-b212-4d0a-a2f4-b205edf3f056: 'Meetings Description' # Meetings Description
-    b4b3c606-9215-46dd-926d-ecc0cdd900e7: 'Street Address' # Street Address
+    b4b3c606-9215-46dd-926d-ecc0cdd900e7: Address # Address
     b4bb7d35-6b11-4f97-b32c-c3b1d27a3f4a: 'Is this an official press release?' # Is this an official press release?
     b7e437e1-239f-4c5c-8c62-5f0323f9d22c: Services # Services
     b7ec3bdf-65b5-4385-8d12-cd2110b1c75c: 'Document Type' # Document Type
@@ -926,10 +926,6 @@ plugins:
     licenseKey: null
     schemaVersion: 4.4.1
     settings: null
-  field-manager:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
   freeform:
     edition: lite
     enabled: true
@@ -1052,10 +1048,6 @@ plugins:
     licenseKey: null
     schemaVersion: 2.0.0
     settings: null
-  inventory:
-    edition: standard
-    enabled: true
-    schemaVersion: 2.0.0
   linkit:
     enabled: '1'
     licenseKey: 46HXL3KFU6B2Z3R5LOC856G4

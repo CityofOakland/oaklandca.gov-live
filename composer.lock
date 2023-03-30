@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8725ad74941e1bb7452b1fe481841a81",
+    "content-hash": "9c1b0ab60a5aa0819975dfcc09038f9c",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -1781,62 +1781,6 @@
                 "source": "https://github.com/doublesecretagency/craft-googlemaps/tree/4.1.5"
             },
             "time": "2022-03-25T18:54:53+00:00"
-        },
-        {
-            "name": "doublesecretagency/craft-inventory",
-            "version": "2.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doublesecretagency/craft-inventory.git",
-                "reference": "37de17aea82150a6aa114f3ae0c90179684f6a7d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doublesecretagency/craft-inventory/zipball/37de17aea82150a6aa114f3ae0c90179684f6a7d",
-                "reference": "37de17aea82150a6aa114f3ae0c90179684f6a7d",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.4"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Inventory",
-                "handle": "inventory",
-                "schemaVersion": "2.0.0",
-                "changelogUrl": "https://raw.githubusercontent.com/doublesecretagency/craft-inventory/v2/CHANGELOG.md",
-                "class": "doublesecretagency\\inventory\\Inventory"
-            },
-            "autoload": {
-                "psr-4": {
-                    "doublesecretagency\\inventory\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Double Secret Agency",
-                    "homepage": "https://www.doublesecretagency.com/plugins"
-                }
-            ],
-            "description": "Take stock of your field usage.",
-            "keywords": [
-                "Craft",
-                "cms",
-                "craft-plugin",
-                "craftcms",
-                "fields",
-                "inventory"
-            ],
-            "support": {
-                "docs": "https://github.com/doublesecretagency/craft-inventory/blob/v2/README.md",
-                "issues": "https://github.com/doublesecretagency/craft-inventory/issues",
-                "source": "https://github.com/doublesecretagency/craft-inventory/tree/2.1.1"
-            },
-            "time": "2020-08-22T05:05:07+00:00"
         },
         {
             "name": "doublesecretagency/craft-viewcount",
@@ -9964,57 +9908,6 @@
                 "rss": "https://github.com/verbb/buttonbox/commits/v2.atom"
             },
             "time": "2022-07-31T00:30:27+00:00"
-        },
-        {
-            "name": "verbb/field-manager",
-            "version": "2.2.5",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/verbb/field-manager/zipball/172ca273e79035387ffce0c772e03bc200b57064",
-                "reference": "172ca273e79035387ffce0c772e03bc200b57064",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.5.0",
-                "verbb/base": "^1.0.2"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Field Manager",
-                "handle": "field-manager",
-                "changelogUrl": "https://raw.githubusercontent.com/verbb/field-manager/craft-3/CHANGELOG.md",
-                "class": "verbb\\fieldmanager\\FieldManager"
-            },
-            "autoload": {
-                "psr-4": {
-                    "verbb\\fieldmanager\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Verbb",
-                    "homepage": "https://verbb.io"
-                }
-            ],
-            "description": "Manage your fields and field groups with ease with simple field or group cloning and quicker overall management.",
-            "keywords": [
-                "cms",
-                "craft",
-                "craft-plugin",
-                "craftcms",
-                "field manager"
-            ],
-            "support": {
-                "email": "support@verbb.io",
-                "issues": "https://github.com/verbb/field-manager/issues?state=open",
-                "source": "https://github.com/verbb/field-manager",
-                "docs": "https://github.com/verbb/field-manager",
-                "rss": "https://github.com/verbb/field-manager/commits/v2.atom"
-            },
-            "time": "2022-07-10T02:59:45+00:00"
         },
         {
             "name": "verbb/icon-picker",

@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 80185635-48b7-48d7-847a-53d941fdda68 # New Address
+            fieldUid: 80185635-48b7-48d7-847a-53d941fdda68 # Address
             instructions: null
             label: null
             required: true
@@ -45,7 +45,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  80185635-48b7-48d7-847a-53d941fdda68: # New Address
+  80185635-48b7-48d7-847a-53d941fdda68: # Address
     columnSuffix: null
     contentColumnType: string
     fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common

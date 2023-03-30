@@ -30,7 +30,6 @@
     "craftcms/element-api": "2.8.6.1",
     "mmikkel/retcon": "2.6.1",
     "superbig/craft3-templateselect": "2.0.2",
-    "doublesecretagency/craft-inventory": "2.1.1",
     "doublesecretagency/craft-viewcount": "1.0.6",
     "spacecatninja/imager-x": "v3.6.2",
     "hybridinteractive/craft-position-fieldtype": "1.0.17",
@@ -55,8 +54,7 @@
     "solspace/craft-calendar": "3.3.21",
     "verbb/patrol": "4.0.2",
     "percipioglobal/craft-colour-swatches": "1.7.0",
-    "studioespresso/craft-dumper": "2.0.0",
-    "verbb/field-manager": "2.2.5"
+    "studioespresso/craft-dumper": "2.0.0"
   },
   "autoload": {
     "psr-4": {
