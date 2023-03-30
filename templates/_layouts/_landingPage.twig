@@ -17,36 +17,36 @@
   ]
 ) %}
 
+{% set relatedContent = entry.linkCollection.all() ?? null %}
 
 {% block content %}
+  {% include '_partials/_page-banners.twig' with {
+    breadCrumbLinks: [
+      {
+        title: 'Departments',
+        link: '/departments'
+      }
+    ],
+    bannerImage: entry.banner | length ? {
+      position: entry.banner[0].getFocalPoint('asCss'),
+      src: entry.banner[0].url,
+      alt: entry.banner[0].title ?? entry.banner[0].filename
+    } : false,
+    bannerTitle: (entry.legalTitle ? entry.legalTitle : entry.title)
+  } %}
 
-    {% include '_partials/_page-banners.twig' with {
-        breadCrumbLinks: [
-        {
-            title: 'Departments',
-            link: '/departments'
-        }
-        ],
-        bannerImage: entry.banner | length ? {
-        position: entry.banner[0].getFocalPoint('asCss'),
-        src: entry.banner[0].url,
-        alt: entry.banner[0].title ?? entry.banner[0].filename
-        } : false,
-        bannerTitle: (entry.legalTitle ? entry.legalTitle : entry.title)
+  {% include '_partials/_in-page-nav.twig' %}
+
+  {% include '_partials/_content-builder/_tool.twig' %}
+
+  <div class="container px-6 py-0 md:px-16">
+    {% include '_partials/_page-related.twig' with {
+      params: {
+        heading: entry.relatedContentHeader|default('Related Content'),
+        content: relatedContent
+      }
     } %}
-
-    {% include '_partials/_in-page-nav.twig' %}
-    
-    {% include '_partials/_content-builder/_tool.twig' %}
-
-    <div class="container px-6 py-0 md:px-16">
-      {% include '_partials/_page-related.twig' with {
-        params: {
-          heading: entry.relatedContentHeader|default('Related Content'),
-          content: entry.linkCollection.all()
-        }
-      } %}
-      {% include '_partials/_page-location-v2.twig' %}
-    </div>
+    {% include '_partials/_page-location-v2.twig' %}
+  </div>
 
 {% endblock %}
