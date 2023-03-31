@@ -19,14 +19,15 @@
 				{% for row in featuredStaff %}
 					{% set staff = row.staffMember.one() ?? null %}
 					{% set photo = staff.portrait.one ?? '' %}
-					{% set jobTitle = staff.jobTitle ?? staff.staffImportJobTitle %}
+					{% set jobTitle = row.jobTitle ?? staff.jobTitle ?? staff.staffImportJobTitle %}
 					{{ include("_partials/_content-builder/_blocks/_elements/_profile-card.twig", {
 						params: {
 							url: staff.url,
 							photo: photo,
 							photoAlt: "Portrait of #{jobTitle}, #{staff.title}",
 							heading: staff.title,
-							subheading: jobTitle
+							subheading: jobTitle,
+							caption: row.caption
 						}
 					}) }}
 				{% endfor %}
