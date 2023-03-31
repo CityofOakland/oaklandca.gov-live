@@ -34,17 +34,21 @@
 	{% endif %}
 {% endif %}
 
+{% set whiteLinks = vars.textColor ==  "text-white" %}
+
 <section class="@container relative {{ vars.bgColor }}">
 	<div class="container px-6 py-12 @3xl:px-16 @3xl:py-12">
 		<div class="grid gap-4 md:grid-cols-12 md:gap-8 {{ vars.textColor }}">
 			<div class="relative z-10 [&>*:last-child]:mb-0 {{ textClasses|join(' ') }}">
-				<span class="mb-5 block text-lg font-bold leading-tight">{{ vars.brow }}</span>
-				{{ include("_partials/_content-builder/_blocks/_elements/_component-header.twig", {
-					params: {
-						text: vars.heading,
-						description: vars.description
-					}
-				}) }}
+				<div class="{{ whiteLinks ? vars.imgBg ? "[&_a]:text-white [&_a]:underline [&_a:hover]:no-underline md:[&_a]:text-green-700 md:[&_a]:no-underline md:[&_a:hover]:text-green-900" : "[&_a]:text-white [&_a]:underline [&_a:hover]:no-underline" }}">
+					<span class="mb-5 block text-lg font-bold leading-tight">{{ vars.brow }}</span>
+					{{ include("_partials/_content-builder/_blocks/_elements/_component-header.twig", {
+						params: {
+							text: vars.heading,
+							description: vars.description
+						}
+					}) }}
+				</div>
 				{% if vars.button %}
 					<div class="mt-6 block">
 						<a class="mt-0 text-sm button secondary" href="{{ vars.button.url }}" target="{{ vars.button.target }}">

@@ -4,10 +4,10 @@
 }|merge(params) %}
 
 {% if vars.text ?? null %}
-	<div class="[&>*:last-child]:mb-0">
-		{{ include("_partials/_heading.twig") }}
-		{% if vars.description %}
+	{{ include("_partials/_heading.twig") }}
+	{% if vars.description %}
+		<div class="[&>*:last-child]:mb-0">
 			{{ vars.description }}
-		{% endif %}
-	</div>
+		</div>
+	{% endif %}
 {% endif %}
