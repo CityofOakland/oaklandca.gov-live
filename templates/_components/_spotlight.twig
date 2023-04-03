@@ -1,6 +1,6 @@
 {% set vars = {
-	bgColor: "bg-blue-800",
-	textColor: "text-white",
+	bgColor: null,
+	textColor: null,
 	brow: "Spotlight",
 	imgBg: false,
 	textRight: false,
@@ -9,6 +9,12 @@
 	description: null,
 	button: null
 }|merge(params) %}
+
+{# We check the background and text colors to see if the include tag passes a `null` value. #}
+{# If so, ensure that the value is set to something we can use instead of being overwritten. #}
+
+{% set vars.bgColor = vars.bgColor ? vars.bgColor : "bg-blue-800" %}
+{% set vars.textColor = vars.textColro ? vars.textColor : "text-white" %}
 
 {% set textClasses = [] %}
 

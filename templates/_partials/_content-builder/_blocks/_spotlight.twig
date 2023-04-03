@@ -2,8 +2,8 @@
 
 {{ include("_components/_spotlight.twig", {
   params: {
-    bgColor: bgColor.background,
-    textColor: bgColor.text,
+    bgColor: bgColor ? bgColor.background,
+    textColor: bgColor ? bgColor.text,
     brow: block.brow|default('Spotlight'),
     imgBg: block.useImageAsBackground ?? false,
     textRight: block.alignment ?? false,
