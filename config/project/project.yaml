@@ -1,4 +1,4 @@
-dateModified: 1680624473
+dateModified: 1680635330
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -332,6 +332,7 @@ meta:
     566b5a14-6baa-4a4e-bb29-50502dd83fa1: Heading # Heading
     566d26c2-9af4-45bb-b994-a552cc3fc03b: 'Display Alt Text as Caption?' # Display Alt Text as Caption?
     0567fab2-a7c6-4e2f-91c2-ea0072e45960: 'Profile Cards Header' # Profile Cards Header
+    644ec222-ee25-430c-9368-8a64b662496c: 'Dynamic News Entries' # Dynamic News Entries
     658cca3c-01d9-4de0-b0be-bc04b699d806: 'Alert Expiration' # Alert Expiration
     685f508c-5f66-45ea-be6a-1da3ee403eff: Background # Background
     734ed009-6dc6-4803-93b5-593791135810: 'Column 1 Heading' # Column 1 Heading

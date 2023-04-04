@@ -21,7 +21,7 @@
 {# If there is a featured entry on this block, we go ahead and replace the “first entry” previously set and set the
    remaining entries to default to the original array. #}
 {% set featuredEntry = block.featured.one() ?? null %}
-{% if featuredEntry and block.expiryDate > now %}
+{% if featuredEntry and (not block.expiryDate or (block.expiryDate and block.expiryDate > now)) %}
 	{% set firstEntry = featuredEntry %}
 	{% set remainingEntries = newsEntries %}
 {% endif %}
@@ -36,7 +36,6 @@
 		<div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
 			{% if newsEntries %}
 				<div>
-					{% set firstEntry = firstEntry[0] %}
 					<a href="{{ firstEntry.url }}">
 						<article class="overflow-hidden bg-white rounded shadow">
 							{% set newsImage = entry.newsImage.one() ?? null %}
@@ -60,7 +59,7 @@
 					</a>
 				</div>
 				<div>
-					{% for entry in remainingEntries %}
+					{% for entry in remainingEntries|slice(1,2) %}
 						{% set newsImage = entry.newsImage.one() ?? null %}
 						<a href="{{ entry.url }}">
 							<article class="{{ newsImage ? 'flex flex-col md:flex-row' }} bg-white overflow-hidden rounded shadow mb-6 justify-start">

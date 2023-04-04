@@ -48,7 +48,7 @@ fields:
   80185635-48b7-48d7-847a-53d941fdda68: # Address
     columnSuffix: null
     contentColumnType: string
-    fieldGroup: null
+    fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
     handle: address
     instructions: 'To ensure your map is generated correctly on your page, make sure to pick an address the popup provides. If you haven''t received a popup, click **"Search Addresses"** and then choose from that list. If you have successfully chosen an address, you will see the **Latitude** and **Longitude** fields below filled out automatically.'
     name: Address
@@ -78,6 +78,22 @@ fields:
       subfieldConfig:
         __assoc__:
           -
+            - name
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'Address Name'
+                -
+                  - width
+                  - '100'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '1'
+          -
             - street1
             -
               __assoc__:
@@ -92,7 +108,7 @@ fields:
                   - '1'
                 -
                   - position
-                  - '1'
+                  - '2'
           -
             - street2
             -
@@ -108,7 +124,7 @@ fields:
                   - '1'
                 -
                   - position
-                  - '2'
+                  - '3'
           -
             - city
             -
@@ -124,7 +140,7 @@ fields:
                   - '1'
                 -
                   - position
-                  - '3'
+                  - '4'
           -
             - state
             -
@@ -140,7 +156,7 @@ fields:
                   - '1'
                 -
                   - position
-                  - '4'
+                  - '5'
           -
             - zip
             -
@@ -156,7 +172,7 @@ fields:
                   - '1'
                 -
                   - position
-                  - '5'
+                  - '6'
           -
             - country
             -
@@ -169,20 +185,7 @@ fields:
                   - '100'
                 -
                   - position
-                  - '6'
-          -
-            - name
-            -
-              __assoc__:
-                -
-                  - label
-                  - Name
-                -
-                  - width
-                  - '100'
-                -
-                  - position
-                  - '101'
+                  - '7'
           -
             - county
             -
@@ -195,7 +198,7 @@ fields:
                   - '100'
                 -
                   - position
-                  - '102'
+                  - '8'
           -
             - placeId
             -
@@ -208,7 +211,7 @@ fields:
                   - '100'
                 -
                   - position
-                  - '103'
+                  - '9'
       visibilityToggle: both
     translationKeyFormat: null
     translationMethod: none
