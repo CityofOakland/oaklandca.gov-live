@@ -45,7 +45,7 @@ fields:
     settings:
       columnType: text
       iconSets: '*'
-      remoteSets: '*'
+      remoteSets: ''
       showLabels: ''
     translationKeyFormat: null
     translationMethod: none
