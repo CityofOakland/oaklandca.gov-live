@@ -6,7 +6,7 @@
 {% if vars.content %}
 	{% set soloBlock = vars.content|length == 1 %}
 	<section class="py-12">
-		{{ include("_partials/_heading.twig", {
+		{{ include("_partials/_content-builder/_blocks/_elements/_component-header.twig", {
 			params: {
 				text: vars.heading
 			}

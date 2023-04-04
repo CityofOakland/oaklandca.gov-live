@@ -1,5 +1,15 @@
-<a class="inline-flex w-9 h-9 p-2 text-white transition-all border border-transparent rounded-full fill-current bg-green-800 hover:text-gray-1000 hover:bg-white hover:border-gray-1000" href="{{ url ?? '' }}" title="{{ network | title }} Page for {{ pageTitle ?? entry.title }}">
-  {{ svg('@webroot/dist/img/logo-' ~ network ~ '.svg')|attr({
-      class: 'w-full h-full'
-  })|raw }}
-</a>
+{% set vars = {
+	url: null,
+	network: null,
+}|merge(params) %}
+
+{% if vars.url %}
+	<a
+		class="inline-flex h-9 w-9 rounded-full border border-transparent bg-green-800 fill-current p-2 text-white transition-all hover:text-gray-1000 hover:border-gray-1000 hover:bg-white"
+		href="{{ vars.url }}"
+		title="{{ vars.network|title }} Page for {{ pageTitle ?? entry.title }}">
+	  {{ svg("@webroot/dist/img/logo-#{vars.network}.svg")|attr({
+	      class: 'w-full h-full'
+	  })|raw }}
+	</a>
+{% endif %}

@@ -107,15 +107,6 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: d6004c0b-1eb3-4bf9-abb3-30870ac3a057 # Subtitle
-            instructions: ''
-            label: 'Address Name'
-            required: ''
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
             fieldUid: 80185635-48b7-48d7-847a-53d941fdda68 # Address
             instructions: null
             label: null

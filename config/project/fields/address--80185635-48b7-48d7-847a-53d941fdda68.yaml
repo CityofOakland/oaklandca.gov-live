@@ -30,6 +30,22 @@ settings:
   subfieldConfig:
     __assoc__:
       -
+        - name
+        -
+          __assoc__:
+            -
+              - label
+              - 'Address Name'
+            -
+              - width
+              - '100'
+            -
+              - enabled
+              - '1'
+            -
+              - position
+              - '1'
+      -
         - street1
         -
           __assoc__:
@@ -44,7 +60,7 @@ settings:
               - '1'
             -
               - position
-              - '1'
+              - '2'
       -
         - street2
         -
@@ -60,7 +76,7 @@ settings:
               - '1'
             -
               - position
-              - '2'
+              - '3'
       -
         - city
         -
@@ -76,7 +92,7 @@ settings:
               - '1'
             -
               - position
-              - '3'
+              - '4'
       -
         - state
         -
@@ -92,7 +108,7 @@ settings:
               - '1'
             -
               - position
-              - '4'
+              - '5'
       -
         - zip
         -
@@ -108,7 +124,7 @@ settings:
               - '1'
             -
               - position
-              - '5'
+              - '6'
       -
         - country
         -
@@ -121,20 +137,7 @@ settings:
               - '100'
             -
               - position
-              - '6'
-      -
-        - name
-        -
-          __assoc__:
-            -
-              - label
-              - Name
-            -
-              - width
-              - '100'
-            -
-              - position
-              - '101'
+              - '7'
       -
         - county
         -
@@ -147,7 +150,7 @@ settings:
               - '100'
             -
               - position
-              - '102'
+              - '8'
       -
         - placeId
         -
@@ -160,7 +163,7 @@ settings:
               - '100'
             -
               - position
-              - '103'
+              - '9'
   visibilityToggle: both
 translationKeyFormat: null
 translationMethod: none

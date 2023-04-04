@@ -1,36 +1,48 @@
-{% set address = entry.address %}
-{% if address or entry.phoneNumbers or entry.emailAddress %}
+{% set vars = {
+	address: null,
+	addressExtended: null,
+	phoneNumbers: null,
+	emailAddress: null,
+	openHours: null,
+	twitter: null,
+	facebook: null,
+	instagram: null,
+	medium: null,
+}|merge(params) %}
+
+{% set loc = vars.address %}
+{% set social = vars.twitter or vars.facebook or vars.instagram or vars.medium %}
+
+{% if loc or vars.phoneNumbers or vars.emailAddress %}
 	<section class="bg-white py-12">
-		<a class="anchor-link" id="page-contact"></a>
-		{{ include("_partials/_heading.twig", {
+		{{ include("_partials/_content-builder/_blocks/_elements/_component-header.twig", {
 			params: {
-				text: "Contact Us",
-				margin: "mb-4"
+				text: "Contact Us"
 			}
 		}) }}
 		<div class="mt-4 lg:flex">
-			{% if address %}
+			{% if loc %}
 				{% do view.registerJsFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js") %}
 				{% do view.registerCssFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css") %}
-				{% set loc = entry.address %}
 				{% set src = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-l(#{loc.lng},#{loc.lat})/#{loc.lng},#{loc.lat},15/300x200@2x?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" %}
 				{% set largePhoto = src|replace("300x200", "600x400") %}
 				{% set locationText = "#{loc.street1}, #{loc.city}, #{loc.state}, #{loc.zip}" %}
 
 				<div class="lg:w-1/2 lg:pr-8 @container">
-					<div class="relative mt-8 border-t-2 border-black pt-3 pl-8 contact-icon {{ loc ? "grid gap-4 @lg:gap-6 @lg:grid-cols-2" }}">
+					<div class="relative mt-8 border-t-2 border-black pt-3 pl-8 contact-icon grid gap-4 @lg:gap-6 @lg:grid-cols-2">
 						<div>
 							<i class="absolute top-5 left-0 fas fa-map-marker-alt"></i>
 							<h3 class="mt-0 mb-0 text-2xl font-bold">Address</h3>
-							{{ entry.subtitle }}
-
 							{% if loc %}
+								{% if loc.name %}
+									<p>{{ loc.name }}</p>
+								{% endif %}
 								{% set lat = loc.lat %}
 								{% set lon = loc.lng %}
 								{% if lat and lon %}
 									<div class="mt-4 mb-8">
 										{{ loc.street1 }}<br>
-										{% if loc.street2 | length %}
+										{% if loc.street2 %}
 											{{ loc.street2 }}<br>
 										{% endif %}
 										{{ loc.city }},
@@ -51,11 +63,11 @@
 						{% endif %}
 					</div>
 					
-					{% if entry.openHours | length %}
+					{% if vars.openHours %}
 						<div class="relative mt-8 border-t-2 pt-3 pl-8 contact-icon">
 							<i class="absolute fas fa-clock" style="left:0;top:20px"></i>
 							<h3 class="mb-0 text-2xl font-bold">Office Hours</h3>
-							{% for item in entry.openHours %}
+							{% for item in vars.openHours %}
 								{% if item.hoursTitle | length %}
 									<h4 class="text-lg">{{ item.hoursTitle }}</h4>
 								{% endif %}
@@ -67,66 +79,64 @@
 							{% endfor %}
 						</div>
 					{% endif %}
-
-					{# TODO: Move Topics, processes (negligible) and officials to matrix immediately #}
-					{% if entry.boardHours | length %}
-						<div class="relative mt-8 border-t-2 pt-3 pl-8 contact-icon">
-							<i class="absolute fas fa-clock" style="left:0;top:20px"></i>
-							<h3 class="mb-0 text-2xl font-bold">Office Hours</h3>
-							{{ entry.boardHours }}
-						</div>
-					{% endif %}
 				</div>
 			{% endif %}
 
-			<div class="{% if address %} lg:w-1/2 {% else %} flex-1 {% endif %}">
-				{% set phonesTrue = entry.phoneNumber ?? entry.faxNumber ?? entry.ttyNumber ?? false %}
-				{% if entry.phoneNumbers | length %}
+			<div class="{{ vars.address ? "lg:w-1/2" : flex-1 }}">
+				{% if vars.phoneNumbers %}
 					<div class="relative mt-8 border-t-2 border-black pt-3 pl-8 contact-icon">
 						<i class="absolute fas fa-phone" style="left:0;top:20px"></i>
 						<h3 class="mb-0 text-2xl font-bold">Phone</h3>
 						<dl>
-							{% for phone in entry.phoneNumbers %}
+							{% for phone in vars.phoneNumbers %}
 								{% include '_partials/_elements/_phone-numbers-v2.twig' %}
 							{% endfor %}
 						</dl>
 					</div>
-				{% elseif phonesTrue %}
-					<h3 class="mb-0 text-2xl">Phone</h3>
-					<ul class="mb-8">
-					{% if entry.phoneNumber | length %}
-						<li>Phone Number:
-						<a href="tel:{{ entry.phoneNumber }}">{{ entry.phoneNumber }}</a>
-						</li>
-					{% endif %}
-					{% if entry.faxNumber | length %}
-						<li>Fax Number:
-						<a href="tel:{{ entry.faxNumber }}">{{ entry.faxNumber }}</a>
-						</li>
-					{% endif %}
-					{% if entry.ttyNumber | length %}
-						<li>TTY Number:
-						{{ entry.ttyNumber }}</li>
-					{% endif %}
-					</ul>
 				{% endif %}
 
-				{% if entry.emailAddress | length %}
+				{% if vars.emailAddress %}
 					<div class="relative mt-8 border-t-2 border-black pt-3 pl-8 contact-icon">
 						<i class="absolute fas fa-envelope" style="left:0;top:20px"></i>
 						<h3 class="mb-0 text-2xl font-bold">Email</h3>
 						<ul class="mb-8">
 							<li>
-								<a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a>
+								<a href="mailto:{{ entry.emailAddress }}">{{ vars.emailAddress }}</a>
 							</li>
 						</ul>
 					</div>
 				{% endif %}
 
-				{% if entry.facebook or entry.twitter or entry.instagram or entry.medium %}
+				{% if social %}
 					<div class="relative mt-8 border-t-2 border-black pt-3 pl-8 contact-icon">
 					<i class="absolute fas fa-globe" style="left:0;top:20px"></i>
-						{% include '_partials/_elements/_social-media-v2.twig' %}
+						<h3 class="mb-4 text-2xl font-bold">Connect</h3>
+						<div class="mb-8">
+							{{ include ("_partials/_elements/_social-media-button-v2.twig", {
+								params: {
+									url: vars.facebook,
+									network: "facebook"
+								}
+							}) }}
+							{{ include ("_partials/_elements/_social-media-button-v2.twig", {
+								params: {
+									url: vars.twitter,
+									network: "twitter"
+								}
+							}) }}
+							{{ include ("_partials/_elements/_social-media-button-v2.twig", {
+								params: {
+									url: vars.instagram,
+									network: "instagram"
+								}
+							}) }}
+							{{ include ("_partials/_elements/_social-media-button-v2.twig", {
+								params: {
+									url: vars.medium,
+									network: "medium"
+								}
+							}) }}
+						</div>
 					</div>
 				{% endif %}
 

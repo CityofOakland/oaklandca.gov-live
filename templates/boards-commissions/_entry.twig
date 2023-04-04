@@ -10,6 +10,7 @@
     'portrait',
     'teams',
     'phoneNumbers',
+    'linkCollection',
     'openHours',
     'contentBuilder.largeEntryLinks:entries',
     'contentBuilder.largeEntryLinks:documentFile',
@@ -51,7 +52,7 @@
         {% include '_partials/_page-related.twig' with {
           params: {
             heading: entry.relatedContentHeader|default('Related Content'),
-            content: entry.linkCollection.all()
+            content: entry.linkCollection
           }
         } %}
 

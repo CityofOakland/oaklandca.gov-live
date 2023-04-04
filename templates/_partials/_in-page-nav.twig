@@ -1,41 +1,54 @@
-{% set content = entry.contentBuilder ?? null %}
+{% set vars = {
+  content: null,
+  relatedContent: null,
+  relatedContentHeader: null,
+  contact: null
+}|merge(params) %}
 
-{% if content %}
-  <section class="bg-green-100">
-    <div class="container flex flex-col md:flex-row gap-4 py-6 md:py-4 px-6 md:px-16">
-      <span class="text-sm font-bold leading-loose">On&nbsp;this&nbsp;page:</span>
-      <nav>
-        <ul class="m-0 columns-2 md:columns-1 space-y-6 md:space-y-0 md:gap-x-4 md:gap-y-0 md:flex md:flex-wrap h-full md:items-center">
-          {% for block in entry.contentBuilder %}
-            {% set text = "" %}
-            {% set url = "" %}
-            {% if block.heading %}
-              {% set text = block.heading %}
-              {% set url = block.heading|kebab %}
-            {% else %}
-              {% switch block.type %}
-                {% case "spotlight" %}
-                  {% set text = "Spotlight" %}
-                  {% set url = "spotlight" %}
-                {% case "newsCards" %}
-                  {% set text = "News" %}
-                  {% set url = "news" %}
-                {% case "featuredProfile" %}
-                  {% set text = "Profile" %}
-                  {% set url = "profile" %}
-                {% case "serviceCards" %}
-                  {% set text = "Services" %}
-                  {% set url = "services" %}
-              {% endswitch %}
-            {% endif %}
-            {% if url and text %}
-              <li class="relative font-bold text-sm leading-loose">
-                <a class="underline" href="#{{ url }}">{{ text }}</a>
-              </li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </nav>
-    </div>
-  </section>
-{% endif %}
+<section class="bg-green-100">
+  <div class="container flex flex-col md:flex-row gap-4 py-6 md:py-4 px-6 md:px-16">
+    <span class="text-sm font-bold leading-loose">On&nbsp;this&nbsp;page:</span>
+    <nav>
+      <ul class="m-0 columns-2 md:columns-1 space-y-6 md:space-y-0 md:gap-x-4 md:gap-y-0 md:flex md:flex-wrap h-full md:items-center">
+        {% for block in vars.content %}
+          {% set text = "" %}
+          {% set url = "" %}
+          {% if block.heading %}
+            {% set text = block.heading %}
+            {% set url = block.heading|kebab %}
+          {% else %}
+            {% switch block.type %}
+              {% case "spotlight" %}
+                {% set text = "Spotlight" %}
+                {% set url = "spotlight" %}
+              {% case "newsCards" %}
+                {% set text = "News" %}
+                {% set url = "news" %}
+              {% case "featuredProfile" %}
+                {% set text = "Profile" %}
+                {% set url = "profile" %}
+              {% case "serviceCards" %}
+                {% set text = "Services" %}
+                {% set url = "services" %}
+            {% endswitch %}
+          {% endif %}
+          {% if url and text %}
+            <li class="relative font-bold text-sm leading-loose">
+              <a class="underline" href="#{{ url }}">{{ text }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+        {% if vars.relatedContent %}
+          <li class="relative font-bold text-sm leading-loose">
+            <a class="underline" href="#{{ vars.relatedContentHeader|kebab }}">{{ vars.relatedContentHeader }}</a>
+          </li>
+        {% endif %}
+        {% if vars.contact %}
+          <li class="relative font-bold text-sm leading-loose">
+            <a class="underline" href="#contact-us">Contact Us</a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+</section>
