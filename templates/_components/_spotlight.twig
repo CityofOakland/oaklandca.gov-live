@@ -13,8 +13,8 @@
 {# We check the background and text colors to see if the include tag passes a `null` value. #}
 {# If so, ensure that the value is set to something we can use instead of being overwritten. #}
 
-{% set vars.bgColor = vars.bgColor ? vars.bgColor : "bg-blue-800" %}
-{% set vars.textColor = vars.textColro ? vars.textColor : "text-white" %}
+{% set bgColor = vars.bgColor ? vars.bgColor : "bg-blue-800" %}
+{% set textColor = vars.textColor ? vars.textColor : "text-white" %}
 
 {% set textClasses = [] %}
 
@@ -40,11 +40,11 @@
 	{% endif %}
 {% endif %}
 
-{% set whiteLinks = vars.textColor ==  "text-white" %}
+{% set whiteLinks = textColor ==  "text-white" %}
 
-<section class="@container relative {{ vars.bgColor }}">
+<section class="@container relative {{ bgColor }}">
 	<div class="container px-6 py-12 @3xl:px-16 @3xl:py-12">
-		<div class="grid gap-4 md:grid-cols-12 md:gap-8 {{ vars.textColor }}">
+		<div class="grid gap-4 md:grid-cols-12 md:gap-8 {{ textColor }}">
 			<div class="relative z-10 [&>*:last-child]:mb-0 {{ textClasses|join(' ') }}">
 				<div class="{{ whiteLinks ? vars.imgBg ? "[&_a]:text-white [&_a]:underline [&_a:hover]:no-underline md:[&_a]:text-green-700 md:[&_a]:no-underline md:[&_a:hover]:text-green-900" : "[&_a]:text-white [&_a]:underline [&_a:hover]:no-underline" }}">
 					<span class="mb-5 block text-lg font-bold leading-tight">{{ vars.brow }}</span>
