@@ -107,7 +107,7 @@ fieldLayouts:
             width: 100
           -
             fieldUid: e57d997c-ca20-4022-8841-f9fd919933df # Accordion
-            instructions: 'Add additional ways to complete the service. These options will be embedded in accordions.'
+            instructions: "Add additional ways to complete the service. These options will be embedded in accordions.\r\n\r\nYour **heading** should be action oriented. “Pay by Phone” or “Apply in Person.”\r\n\r\nYour **content** is “how to complete this action.” You can include text, buttons, contact information, and documents."
             label: 'Other Options'
             required: ''
             tip: null

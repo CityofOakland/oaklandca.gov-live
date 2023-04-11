@@ -7,6 +7,7 @@
   [ seoMaticLinks.twitter.url, 'twitter.svg', 'Oakland Twitter Page' ],
   [ seoMaticLinks.instagram.url, 'instagram.svg', 'Oakland Instagram Page' ]
 ] %}
+{% set updates = entry.accordion.all() ?? null %}
 
 {# Banner #}
 {% block banner %}
@@ -45,6 +46,15 @@
       <div class="body-text">
         {{ entry.body }}
       </div>
+    {% endif %}
+
+    {% if updates %}
+      {{ include ("_components/_accordion.twig", {
+        params: {
+          header: "Updates",
+          content: updates
+        }
+      }) }}
     {% endif %}
 
     {# Tags (relationships) #}

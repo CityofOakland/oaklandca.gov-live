@@ -63,6 +63,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: e57d997c-ca20-4022-8841-f9fd919933df # Accordion
+            instructions: ''
+            label: 'Entry Updates'
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: e9d7be93-3feb-4c21-ae81-84429ed485df # Contact
             instructions: null
             label: null

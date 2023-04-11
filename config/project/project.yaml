@@ -1,4 +1,4 @@
-dateModified: 1680635330
+dateModified: 1681192136
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -29,7 +29,7 @@ meta:
     0e81d688-16ec-4519-9f60-7d2e2d72526d: Heading # Heading
     0f78b738-1d72-4bb5-a6c0-6b9f3ab2b422: 'Meetings Table' # Meetings Table
     0f93d6ce-26a3-40dd-9f62-6b8f91b7f35f: 'Sidebar Button Text' # Sidebar Button Text
-    1a79ee9f-7074-452f-864c-5354e7f43776: 'Add an Option' # Add an Option
+    1a79ee9f-7074-452f-864c-5354e7f43776: 'Add an Item' # Add an Item
     1a78695a-f041-4562-9ee4-5405711bd29c: SEO # SEO
     1ab8269c-e225-472e-b5e1-1504af7a1622: Datasets # Datasets
     1b2e86ae-5451-4896-82f2-23c74e25a7e4: 'Related Content Header' # Related Content Header
@@ -245,6 +245,7 @@ meta:
     58eda166-7a65-4fb6-8f7d-c6590b0591ae: Summary # Summary
     59b4632f-26b6-4942-a96a-21909e7eb176: Organization # Organization
     59d68eb6-f130-4b6f-b193-240480a8b68f: 'Online Meeting Link' # Online Meeting Link
+    59d87cbd-cfc8-43f8-b208-8fcf36ce00c9: 'Summary with Links' # Summary with Links
     61baa25b-3bbb-41a1-b13c-a976d1d109b6: 'Accessibility Block' # Accessibility Block
     61bef9fa-6716-4df3-a88d-46f256cdee73: 'Link Location' # Link Location
     61dec751-c375-471c-a4ed-1df3b7469237: 'Online Meeting Phone Number' # Online Meeting Phone Number
