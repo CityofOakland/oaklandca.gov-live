@@ -1,0 +1,45 @@
+{% set vars = {
+	baseRelationId: null,
+	selectedIds: []
+}|merge(params) %}
+
+{% set selectedIds = vars.selectedIds %}
+
+{# Get the selected IDs length #}
+{% set selectedLength = vars.selectedIds|length %}
+
+{# If the selected ID length is less than 2, take the base relation ID and grab up to the two latest news entry IDs that are related to it. #}
+{% if selectedLength < 2 %}
+	{% set relatedLimit = 2 - selectedLength %}
+	{% set relatedIds = craft.entries.section("news").relatedTo(vars.baseRelationId).limit(relatedLimit).ids() %}
+	{% set selectedIds = selectedIds|merge(relatedIds) %}
+{% endif %}
+
+{# Query the news entries with the finalized array #}
+{% set newsEntries = craft.entries.section("news").limit(2).id(selectedIds).fixedOrder(true).all() ?? null %}
+
+<div>
+	{% for entry in newsEntries %}
+		{% set newsImage = entry.newsImage.one() ?? null %}
+		<a href="{{ entry.url }}">
+			<article class="{{ newsImage ? 'flex flex-col md:flex-row' }} bg-white overflow-hidden rounded shadow mb-6 justify-start">
+				{% if newsImage %}
+					<figure class="z-0 bg-white aspect-video w-[12.5rem]">
+						<img class="object-cover h-full w-full" src="{{ newsImage.url }}" alt="{{ newsImage.altText ?? '' }}">
+					</figure>
+				{% endif %}
+				<div class="flex-1 flex flex-col p-4">
+					<div class="mb-2 text-sm text-gray-800 uppercase">{{ entry.postDate | date("M d, Y") }}</div>
+					<h3 class="mt-0 text-xl font-bold line-clamp-3">
+						{{ entry.title }}
+					</h3>
+				</div>
+			</article>
+		</a>
+		{% if loop.last %}
+			<a class="button text-sm secondary px-4 py-2 mt-0 mb-1 inline-flex" href="/news">
+				See All News <i class="fa-regular fa-arrow-right mb-0"></i>
+			</a>
+		{% endif %}
+	{% endfor %}
+</div>

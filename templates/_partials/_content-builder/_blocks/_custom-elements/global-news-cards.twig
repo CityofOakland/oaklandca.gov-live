@@ -1,0 +1,22 @@
+{% set featuredEntry = null %}
+{% set featuredItem = globalNews.featuredNewsItem.one() ?? null %}
+
+{% if featuredItem %}
+	{% set featuredEntry = featuredItem.featuredNews.one() ?? null %}
+	{% set featuredExpire = featuredItem.featuredExpiration ?? null %}
+	{% if featuredExpire <= now and featuredExpire != null %}
+		{% set featuredEntry = null %}
+	{% endif %}
+{% endif %}
+
+{% set selectedNews = globalNews.news.ids() ?? null %}
+
+{{ include("_components/_newsCards/index.twig", {
+	params: {
+		background: "bg-white",
+		baseRelationId: 17939,
+		heading: "News",
+		featuredEntry: featuredEntry,
+		selectedEntries: selectedNews
+	}
+}) }}

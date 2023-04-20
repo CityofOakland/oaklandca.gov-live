@@ -1,0 +1,20 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 4ed914c6-b7ea-44be-a061-4430ad33baf2 # News
+handle: featuredNewsItem
+instructions: ''
+name: 'Featured News Item'
+searchable: false
+settings:
+  contentTable: '{{%stc_featurednewsitem}}'
+  fieldLayout: table
+  maxRows: '1'
+  minRows: ''
+  placeholderKey: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: ''
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

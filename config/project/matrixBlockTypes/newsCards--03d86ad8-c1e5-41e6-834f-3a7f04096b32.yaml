@@ -54,9 +54,7 @@ fieldLayouts:
 fields:
   1dcaf4f4-736d-4b90-af74-eed1db266dd6: # Featured Entry Expiration Date
     columnSuffix: nhwthrpx
-    contentColumnType:
-      - 'date:datetime'
-      - 'tz:string'
+    contentColumnType: datetime
     fieldGroup: null
     handle: expiryDate
     instructions: 'Provide a date when the featured entry will be replaced by a recent entry.'
@@ -67,8 +65,8 @@ fields:
       min: null
       minuteIncrement: '30'
       showDate: true
-      showTime: true
-      showTimeZone: '1'
+      showTime: false
+      showTimeZone: false
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Date
@@ -77,12 +75,12 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: news
-    instructions: 'Choose up to 3 news items you wish to display in this section. If you have less than 3, the remaining amount of related entries will be placed at the end of the list, if available.'
+    instructions: 'Choose up to 2 news items you wish to display in this section. If you have less than 3, the remaining amount of related entries will be placed at the end of the list, if available.'
     name: 'News Entries'
     searchable: false
     settings:
       allowSelfRelations: false
-      limit: '3'
+      limit: '2'
       localizeRelations: false
       selectionLabel: 'Add a news entry'
       showSiteMenu: true

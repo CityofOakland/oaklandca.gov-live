@@ -1,4 +1,4 @@
-dateModified: 1681401509
+dateModified: 1682007179
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -33,6 +33,7 @@ meta:
     1a78695a-f041-4562-9ee4-5405711bd29c: SEO # SEO
     1ab8269c-e225-472e-b5e1-1504af7a1622: Datasets # Datasets
     1b2e86ae-5451-4896-82f2-23c74e25a7e4: 'Related Content Header' # Related Content Header
+    1b4c105f-8669-42e5-a28a-360015f23aa0: 'Featured News Item' # Featured News Item
     1b7fc839-7de9-4717-b41d-d74bfa40b5c8: Portrait # Portrait
     1b8f26ab-01a9-4570-9e96-1d18389f8226: 'Read More Link' # Read More Link
     1bf6e3cb-26b9-405b-94ea-fbfc944c27b9: Size # Size
@@ -93,6 +94,7 @@ meta:
     5acb7701-40d9-4344-9b0a-946869c789ab: 'Button Icon Picker' # Button Icon Picker
     5ae976d4-1fd7-4dd5-bfd7-f25cb1ce7a0f: 'Call Out' # Call Out
     5b066077-3ce6-4583-af94-4fa87136ab3a: 'Milestone Link' # Milestone Link
+    5b7d00dc-8d0f-43b6-a422-2d6f18921f1a: 'Featured News' # Featured News
     5b935c33-5d69-45c2-acd9-a6a2f0a567ce: Calendarize # Calendarize
     5bc46e53-a87c-4584-89aa-808cacedf461: Categories # Categories
     5c49fc38-f64d-4b71-aeb4-cfa13aa112c3: 'Thumb Full Ratio' # Thumb Full Ratio
@@ -430,6 +432,7 @@ meta:
     33857d17-d8e8-4c03-8902-f1fb2e4422da: 'Service Redirect' # Service Redirect
     37807b41-86f2-4f92-b56e-1f76739a03bb: Label # Label
     41124ab0-0e88-44c6-b4f2-f002669d8133: Departments # Departments
+    41882c66-71eb-44dd-b234-2aeead2aed97: 'Featured Expiration' # Featured Expiration
     45846dfd-0e86-40a2-81d2-b47bf69f16ae: 'Need to Know' # Need to Know
     62026d94-4213-4ab2-9a58-ff780a972c67: 'Department Redirect' # Department Redirect
     63825c77-41b6-4fee-8d10-2131c6ab8c3b: Location # Location
@@ -499,6 +502,7 @@ meta:
     a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc: 'Boards & Commissions' # Boards & Commissions
     a26ba17c-1ef7-47e3-949a-a26183eb54b7: '3 Columns' # 3 Columns
     a31d23bf-e3ee-4942-95e0-3d14c29620bb: Projects # Projects
+    a46eaf20-7b47-4970-948c-faa4702b4bf1: 'Global News' # Global News
     a64a471a-5142-4112-a0ae-1d700f1e8e45: 'Index Toggle' # Index Toggle
     a80bc90b-ca79-4416-a71f-0e743836bcb9: 'Term End' # Term End
     a209b7c0-0c31-4671-a56c-f77990a377f3: 'Officials Index' # Officials Index

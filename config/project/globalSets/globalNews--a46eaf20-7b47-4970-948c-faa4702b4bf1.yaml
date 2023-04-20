@@ -1,0 +1,28 @@
+fieldLayouts:
+  a7464747-f7e2-4865-bb03-6f1b6bc74d0e:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 1b4c105f-8669-42e5-a28a-360015f23aa0 # Featured News Item
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: cb9bcb47-f3e9-4ed8-a4d8-506aa11fe546 # News
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: globalNews
+name: 'Global News'
+sortOrder: 4
