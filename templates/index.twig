@@ -69,7 +69,7 @@
   {% endif %}
 
   {% set selectedNews = globalNews.news.ids() ?? null %}
-  
+
   {{ include("_components/_newsCards/index.twig", {
     params: {
       background: "bg-white",
@@ -79,19 +79,6 @@
       selectedEntries: selectedNews
     }
   }) }}
-
-  {% js at endBody %}
-    document.getElementById('twitterWidgets').addEventListener('load', function() {
-      twttr.events.bind(
-        'loaded',
-        function (event) {
-          event.widgets.forEach(function (widget) {
-            widget.setAttribute('tabindex', -1);
-          });
-        }
-      );
-    });
-  {% endjs %}
 
   {% if learnMore|length %}
     {% include '_components/partials/_cards' with {
