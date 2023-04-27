@@ -57,80 +57,28 @@
     } %}
   {% endif %}
 
-  <section class="bg-white">
-    <div class="container py-10">
-      <div class="md:flex">
-        <div class="md:border-gray-500 md:border-r md:pr-10 md:w-1/2 lg:w-2/3">
-          <h2 class="pb-4">{{ "News & Updates"|t }}</h2>
-          <div class="mt-5 lg:flex lg:flex-col">
-            {% if hlNews | length %}
-              {% set featuredNews = hlNews[0] %}
-            {% else %}
-              {% set featuredNews = craft.entries
-                .section('news')
-                .featureOnHomepage(true)
-                .newsImage(':notempty:')
-                .orderBy('postDate desc')
-                [0] %}
-            {% endif %}
-            {% set featuredImage = featuredNews.newsImage[0] ?? "" %}
-            <article class="lg:flex lg:flex-row">
-              <div class="relative z-0 flex items-center justify-center h-48 p-4 mb-4 bg-gray-700 lg:w-2/5">
-                {% if featuredImage | length %}
-                  <img class="absolute inset-0 object-cover w-full h-full" src="{{ featuredImage.url }}" alt="{{ featuredImage.title }}">
-                {% else %}
-                  <div class="w-full h-full px-12 py-6 text-gray-500 opacity-75 fill-current">
-                    {{ svg('@webroot/dist/img/icon-newspaper.svg')|attr({
-                      class: 'w-32 h-32'
-                    })|raw }}
-                  </div>
-                {% endif %}
-              </div>
-              <div class="flex-1 lg:pl-12">
-                <date class="text-gray-500 small">{{ featuredNews.postDate | date('M j, Y') }}</date>
-                <h3 class="py-3"><a href="{{ featuredNews.url }}">{{ featuredNews.title }}</a></h3>
-                {{ featuredNews.summary }}
-              </div>
-            </article>
-            {% set featuredNewsId = featuredNews.id ?? '' %}
-            {% set otherFeaturedNews = craft.entries.section('news').id('not ' ~ featuredNewsId).featureOnHomepage(true).limit(4).all() %}
-            {% if otherFeaturedNews | length %}
-              <h3 class="pt-10 pb-4">{{ "More News"|t }}</h3>
-            {% endif %}
-            {% for entry in otherFeaturedNews %}
-              <p class="pb-3"><a href="{{ entry.url }}">{{ entry.title }}</a></p>
-            {% endfor %}
-          </div>
-          <p class="pt-3 underline"><a href="{{ siteUrl }}/departments/media-center"><b>{{ "Newsroom"|t }} »</b></a></p>
-        </div>
-        <div class="mt-8 md:mt-0 md:pl-10 md:w-1/2 lg:w-1/3">
-          <div id="twitterModule">
-            <a class="twitter-timeline" href="https://twitter.com/Oakland/lists/official-agencies?ref_src=twsrc%5Etfw">A Twitter List by Oakland</a>
-            <script id="twitterWidgets" async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
-          <p class="pt-3 icon"><a href="https://twitter.com/Oakland" target="_blank" class="pt-3"><b class="underline">{{ "Read Oakland Updates on Twitter"|t }}</b> {{ svg( '@webroot/dist/img/icon-external.svg') }}</a></p>
-          <style>
-            #twitterModule {
-              max-height: 300px;
-              overflow: scroll;
-            }
+  {% set featuredEntry = null %}
+  {% set featuredItem = globalNews.featuredNewsItem.one() ?? null %}
 
-            @media(min-width: 768px) {
-              #twitterModule {
-                max-height: 850px;
-              }              
-            }
+  {% if featuredItem %}
+    {% set featuredEntry = featuredItem.featuredNews.one() ?? null %}
+    {% set featuredExpire = featuredItem.featuredExpiration ?? null %}
+    {% if featuredExpire <= now and featuredExpire != null %}
+      {% set featuredEntry = null %}
+    {% endif %}
+  {% endif %}
 
-            @media(min-width: 1024px) {
-              #twitterModule {
-                max-height: 600px;
-              }              
-            }
-          </style>
-        </div>
-      </div>
-    </div>
-  </section>
+  {% set selectedNews = globalNews.news.ids() ?? null %}
+  
+  {{ include("_components/_newsCards/index.twig", {
+    params: {
+      background: "bg-white",
+      baseRelationId: 17939,
+      heading: "News",
+      featuredEntry: featuredEntry,
+      selectedEntries: selectedNews
+    }
+  }) }}
 
   {% js at endBody %}
     document.getElementById('twitterWidgets').addEventListener('load', function() {
