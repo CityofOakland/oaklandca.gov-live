@@ -108,7 +108,7 @@
                     >{{ svg( '@webroot/dist/img/icon-magnifier.svg')|attr({ class: 'fill-current text-gray-900' }) }}{{ svg( '@webroot/dist/img/icon-x.svg')|attr({ class: 'fill-current text-white' }) }}</a>
                     <ul class="components px-4 lg:px-6 pt-2 pb-6 bg-green-800" aria-labelledby="navbar-dropdown-search">
                         <li>
-                            <h3 class="pt-6">Search Oakland.ca.gov</h3>
+                            <h3 class="pt-6">Search oaklandca.gov</h3>
                             <form id="site-search-form" class="mt-4 relative" action="{{ url('search') }}" role="search">
                                 <label for="site-search" class="hidden-visually">Search?</label>
                                 <input type="search" id="site-search" class="form-control" aria-label="Site Search" name="query" placeholder="Search for keywords" value="">
@@ -116,7 +116,7 @@
                             </form>
                         </li>
                         <li class="oak-hidden lg:block">
-                            <h3 class="pt-6">Popular on Oakland.ca.gov</h3>
+                            <h3 class="pt-6">Popular on oaklandca.gov</h3>
                             <ul class="list-none grid md:grid-cols-3 gap-x-6 pt-4">
                                 {% for navItem in navigation.linkits.all() %}
                                     <li><a class="card {{ navItem.styleCard }}" href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
