@@ -12,41 +12,40 @@
 return [
 	// Global settings
 		'*' => [
-				'siteUrl' => getenv('SITE_URL'),
-				'defaultWeekStartDay' => 0,
-				'enableCsrfProtection' => true,
-				'omitScriptNameInUrls' => true,
-				'cpTrigger' => 'admin',
-				'maxUploadFileSize' => 268435456,
-				'useProjectConfigFile' => true,
-				'securityKey' => getenv('SECURITY_KEY'),
-				'maxRevisions' => 10,
-				'devMode' => false,
-				'allowAdminChanges' => false,
-				'disallowRobots' => true,
-				'extraFileKinds' => [
-						'excel' => [
-								'extensions' => ['csv']
-						]
-				],
 				'aliases' => [
 						'@algoliaAppId' => getenv('ALGOLIA_APP_ID'),
 						'@algoliaAdminApi' => getenv('ALGOLIA_ADMIN_API'),
 						'@amazonKeyId' => getenv('AMAZON_KEY_ID'),
 						'@amazonSecret' => getenv('AMAZON_SECRET'),
 				],
+				'allowAdminChanges' => false,
+				'cpTrigger' => 'admin',
+				'defaultWeekStartDay' => 0,
+				'devMode' => false,
+				'disallowRobots' => true,
+				'enableCsrfProtection' => true,
+				'extraFileKinds' => [
+						'excel' => [
+								'extensions' => ['csv']
+						]
+				],
+				'maxRevisions' => 10,
+				'maxUploadFileSize' => 268435456,
+				'omitScriptNameInUrls' => true,
+				'securityKey' => getenv('SECURITY_KEY'),
+				'siteUrl' => getenv('SITE_URL'),
+				'useProjectConfigFile' => true,
 		],
 
 		'dev' => [
-				'devMode' => true,
 				'allowAdminChanges' => true,
+				'devMode' => true,
+				'enableTemplateCaching' => true,
 		],
 
 		'production' => [
-			// Base site URL
 				'siteUrl' => 'https://www.oaklandca.gov',
-			// Changes the default preview duration from 24 hours to 5 days
+				'disallowRobots' => false,
 				'defaultTokenDuration' => 432000,
-				'disallowRobots' => false
 		],
 ];
