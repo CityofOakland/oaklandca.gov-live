@@ -43,17 +43,15 @@
   {% set filter_enabled = true %}
   {% set ymd = year ~ '-' ~ month ~ '-01' %}
   {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
+  {% set news = news.postDate(date_query) %}
 {% elseif year %}
   {% set filter_enabled = true %}
-  {% set ymd = year ~ '-' ~ '01-01' %}
-  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 year')|date('Y-m-d')) ]) %}
+  {% set news = news.postYear(year) %}
 {% elseif month %}
   {% set filter_enabled = true %}
-  {% set ymd = now|date('Y') ~ '-' ~ month %}
-  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
+  {% set news = news.postMonth(month) %}
 {% endif %}
 {% if date_query|length > 1 %}
-  {% set news = news.postDate(date_query) %}
 {% endif %}
 
 {# Filter by department #}

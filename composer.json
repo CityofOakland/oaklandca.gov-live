@@ -55,7 +55,8 @@
     "verbb/patrol": "4.0.2",
     "percipioglobal/craft-colour-swatches": "1.7.0",
     "studioespresso/craft-dumper": "2.0.0",
-    "doublesecretagency/craft-inventory": "2.1.1"
+    "doublesecretagency/craft-inventory": "2.1.1",
+    "besteadfast/craft-preparse-field": "1.4.1"
   },
   "autoload": {
     "psr-4": {

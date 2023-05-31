@@ -1,4 +1,4 @@
-dateModified: 1685501165
+dateModified: 1685510097
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -114,6 +114,7 @@ meta:
     6a3e4392-eb9c-470f-a379-10e0fcf5074e: Audio # Audio
     6aaa96ea-268b-4fb7-b27c-0a481c5b3c51: 'Accordion Header' # Accordion Header
     6ac11602-f5a4-4e2e-bc97-fdfea3e3d005: 'Open Hours' # Open Hours
+    6ad2cb80-1b58-41a6-b189-35d37bd81601: 'Post Year' # Post Year
     6ad6bb8d-7fc5-4c49-8695-d7ea3c27da98: Number # Number
     6b0e6bd2-24c1-4341-acf8-97862725a74c: 'Event Types' # Event Types
     6b621e4b-68cd-48c0-8f16-60b0e3a9e3c8: Document # Document
@@ -163,6 +164,7 @@ meta:
     8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884: Projects # Projects
     8e550712-d313-4f60-a6dd-50a0f79aaef2: 'Teams Index' # Teams Index
     8ed0d9cb-1498-4dbd-b451-573a77710798: 'Background Color' # Background Color
+    8ee95f74-ea53-414f-818a-ce9185bc9d8d: 'Post Month' # Post Month
     8f7d7d14-020f-43e1-a3e3-74f2bcd19c9d: 'Online Link' # Online Link
     8f34ad32-e01b-4c4f-8ae1-57e94e5b415f: Location # Location
     8fc249ab-8729-4542-912e-7a4303aa9598: 'Alert Type' # Alert Type
@@ -1105,6 +1107,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  preparse-field:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.5
   redactor:
     enabled: '1'
     licenseKey: null
