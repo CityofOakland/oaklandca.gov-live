@@ -1,0 +1,29 @@
+{% set vars = {
+	url: entry.url ?? null,
+	title: entry.title ?? null,
+}|merge(params) %}
+
+{% macro socialLink(url, icon, text) %}
+	<li class="mb-0">
+		<a href="{{ url }}" target="_blank" class="flex items-center justify-center w-10 h-10 bg-green-800 rounded-full text-white hover:bg-green-1000">
+			{{ svg(icon)|attr({class:'h-5'}) }}
+			<span class="sr-only">{{ text }}</span>
+		</a>
+	</li>
+{% endmacro %}
+
+{% import _self as macros %}
+
+<h4>{{ 'Share'|t }}</h4>
+<ul class="list-none flex gap-4 items-center px-0 -mt-4">
+	{{ macros.socialLink(
+		"https://www.facebook.com/sharer/sharer.php?u=#{vars.url|url_encode}",
+		"@webroot/dist/img/logo-facebook.svg",
+		"Share on Facebook"
+	) }}
+	{{ macros.socialLink(
+		"https://twitter.com/intent/tweet?url=#{vars.url|url_encode}&text=#{vars.title}",
+		"@webroot/dist/img/logo-twitter.svg",
+		"Share on Twitter"
+	) }}
+</ul>

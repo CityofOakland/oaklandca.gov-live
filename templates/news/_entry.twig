@@ -2,11 +2,6 @@
 
 {% set pressRelease = entry.pressReleaseFile %}
 {% set seoMaticLinks = seomatic.site.sameAsLinks %}
-{% set socialMedia = [
-  [ seoMaticLinks.facebook.url, 'facebook.svg', 'Oakland Facebook Page' ],
-  [ seoMaticLinks.twitter.url, 'twitter.svg', 'Oakland Twitter Page' ],
-  [ seoMaticLinks.instagram.url, 'instagram.svg', 'Oakland Instagram Page' ]
-] %}
 {% set updates = entry.accordion.all() ?? null %}
 
 {# Banner #}
@@ -39,14 +34,9 @@
       </figure>
     {% endif %}
 
-    {# Content body, or content builder #}
-    {% if entry.contentBuilder|length %}
-      {% include '_partials/_content-builder/_tool.twig' %}
-    {% else %}
-      <div class="body-text">
-        {{ entry.body }}
-      </div>
-    {% endif %}
+    <div class="body-text">
+      {{ entry.body }}
+    </div>
 
     {% if updates %}
       {{ include ("_components/_accordion.twig", {
@@ -134,14 +124,14 @@
 
           {% if contactEmailAddress|length %}
             <div class="mb-6">
-              <img class="inline w-5" src="{{ alias('@web/dist/img/icon-envelope-updated.svg') }}">
+              <img alt="" class="inline w-5" src="{{ alias('@web/dist/img/icon-envelope-updated.svg') }}">
               <a href="mailto:{{ contactEmailAddress }}">{{ contactEmailAddress }}</a>
             </div>
           {% endif %}
 
           {% if contactPhoneNumber|length %}
             <div>
-              <img class="inline w-5" src="{{ alias('@web/dist/img/icon-phone-updated.svg') }}">
+              <img alt="" class="inline w-5" src="{{ alias('@web/dist/img/icon-phone-updated.svg') }}">
               <a href="tel:{{ contactPhoneNumber }}">{{ contactPhoneNumber }}</a>
             </div>
           {% endif %}
@@ -153,20 +143,7 @@
   {# Share (social buttons) #}
   <hr class="mb-4">
 
-  <div>
-    <h4 class="mb-4 pt-0">{{ 'Share'|t }}</h4>
-
-    <ul class="m-0 flex list-none gap-4 p-0">
-      {% for socItem in socialMedia %}
-        <li>
-          <a href="{{ socItem[0] }}" target="_blank" class="flex h-10 w-10 items-center justify-center rounded-full bg-green-800 text-white hover:text-white">
-              {{ svg('@webroot/dist/img/logo-' ~ socItem[1])|attr({class:'h-5'}) }}
-              <span class="hidden-visually">{{ socItem[2] }}</span>
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
+  {{ include("_partials/_elements/_social-media-share.twig", {params: {}}) }}
 
   {# Post & update dates #}
   <hr class="mt-8 mb-4 border hr">
