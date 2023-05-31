@@ -6,10 +6,10 @@
 {% set selectedIds = vars.selectedIds %}
 
 {# Get the selected IDs length #}
-{% set selectedLength = vars.selectedIds|length %}
+{% set selectedLength = selectedIds|length %}
 
 {# If the selected ID length is less than 2, take the base relation ID and grab up to the two latest news entry IDs that are related to it. #}
-{% if selectedLength < 2 %}
+{% if selectedLength < 2 and selectedLength != null %}
 	{% set relatedLimit = 2 - selectedLength %}
 	{% set relatedIds = craft.entries.section("news").relatedTo(vars.baseRelationId).limit(relatedLimit).ids() %}
 	{% set selectedIds = selectedIds|merge(relatedIds) %}

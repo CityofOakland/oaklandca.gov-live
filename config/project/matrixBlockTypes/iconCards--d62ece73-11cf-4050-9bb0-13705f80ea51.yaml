@@ -84,7 +84,7 @@ fields:
                 -
                   - width
                   - ''
-      contentTable: '{{%stc_96_iconcards}}'
+      contentTable: '{{%stc_101_iconcards}}'
       fieldLayout: table
       maxRows: '4'
       minRows: '2'

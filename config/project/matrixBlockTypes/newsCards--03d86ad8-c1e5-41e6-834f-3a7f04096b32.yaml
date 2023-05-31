@@ -23,15 +23,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 514ef01b-6b97-4fc4-9840-4923745288d3 # News Entries
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
             fieldUid: 99484ea5-884e-47cc-94c6-8704a2977122 # Featured News Entry
             instructions: null
             label: null
@@ -41,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 1dcaf4f4-736d-4b90-af74-eed1db266dd6 # Featured Entry Expiration Date
+            fieldUid: 514ef01b-6b97-4fc4-9840-4923745288d3 # News Entries
             instructions: null
             label: null
             required: false
@@ -52,24 +43,6 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  1dcaf4f4-736d-4b90-af74-eed1db266dd6: # Featured Entry Expiration Date
-    columnSuffix: nhwthrpx
-    contentColumnType: datetime
-    fieldGroup: null
-    handle: expiryDate
-    instructions: 'Provide a date when the featured entry will be replaced by a recent entry.'
-    name: 'Featured Entry Expiration Date'
-    searchable: false
-    settings:
-      max: null
-      min: null
-      minuteIncrement: '30'
-      showDate: true
-      showTime: false
-      showTimeZone: false
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Date
   514ef01b-6b97-4fc4-9840-4923745288d3: # News Entries
     columnSuffix: null
     contentColumnType: string

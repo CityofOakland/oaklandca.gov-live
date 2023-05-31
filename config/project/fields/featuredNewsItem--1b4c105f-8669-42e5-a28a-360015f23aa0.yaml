@@ -6,15 +6,17 @@ instructions: ''
 name: 'Featured News Item'
 searchable: false
 settings:
-  contentTable: '{{%stc_featurednewsitem}}'
-  fieldLayout: table
-  maxRows: '1'
-  minRows: ''
-  placeholderKey: null
-  propagationKeyFormat: null
-  propagationMethod: all
-  selectionLabel: ''
-  staticField: ''
+  allowSelfRelations: false
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: 'Add an entry'
+  showSiteMenu: true
+  source: null
+  sources:
+    - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
 translationKeyFormat: null
 translationMethod: site
-type: verbb\supertable\fields\SuperTableField
+type: craft\fields\Entries

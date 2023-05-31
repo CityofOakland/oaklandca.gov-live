@@ -179,7 +179,7 @@ fields:
                 -
                   - width
                   - ''
-      contentTable: '{{%stc_99_textcards}}'
+      contentTable: '{{%stc_97_textcards}}'
       fieldLayout: table
       maxRows: '9'
       minRows: '2'

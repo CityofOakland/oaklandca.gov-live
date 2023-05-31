@@ -99,20 +99,10 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 21768f47-1c01-40db-8160-bc10697e7054 # Feature on Homepage
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-        name: Content
-        sortOrder: 1
-      -
-        elements:
+            heading: 'Press Release'
+            type: craft\fieldlayoutelements\Heading
           -
-            fieldUid: b4bb7d35-6b11-4f97-b32c-c3b1d27a3f4a # Is this an official press release?
+            fieldUid: 21768f47-1c01-40db-8160-bc10697e7054 # Official Press Release
             instructions: null
             label: null
             required: false
@@ -129,17 +119,8 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
-          -
-            fieldUid: fff5cf49-87e6-4751-9032-b4ca8136e237 # Alt Text
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-        name: 'Press Release'
-        sortOrder: 2
+        name: Content
+        sortOrder: 1
       -
         elements:
           -
@@ -206,7 +187,7 @@ fieldLayouts:
             warning: null
             width: 100
         name: Relationships
-        sortOrder: 3
+        sortOrder: 2
       -
         elements:
           -
@@ -228,7 +209,7 @@ fieldLayouts:
             warning: null
             width: 100
         name: SEO
-        sortOrder: 4
+        sortOrder: 3
 handle: news
 hasTitleField: true
 name: News

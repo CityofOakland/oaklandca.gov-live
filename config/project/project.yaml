@@ -1,4 +1,4 @@
-dateModified: 1682007179
+dateModified: 1685501165
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -425,7 +425,7 @@ meta:
     15951bab-0dc3-4b9b-a788-d95d20ee0837: 'Add Call to Action Button' # Add Call to Action Button
     18445fbb-5d82-481a-a3c1-c7e58c81cf18: 'Button Color' # Button Color
     19443cdb-77c5-4c3c-ac94-a8530dc39587: 'Staff Import ID' # Staff Import ID
-    21768f47-1c01-40db-8160-bc10697e7054: 'Feature on Homepage' # Feature on Homepage
+    21768f47-1c01-40db-8160-bc10697e7054: 'Official Press Release' # Official Press Release
     26021ddf-fc18-41f3-8fc2-1ef5bf4460f8: 'News Header' # News Header
     27636d1f-fd7e-41ce-81a5-c9728c61337f: 'Small Entry Links' # Small Entry Links
     28881fc8-3e61-4fdb-a5ee-cce1bab725bf: Officials # Officials
@@ -536,7 +536,6 @@ meta:
     b1b0e0eb-fd37-4708-96c7-4f5f11d8fdb0: Departments # Departments
     b3b7323b-b212-4d0a-a2f4-b205edf3f056: 'Meetings Description' # Meetings Description
     b4b3c606-9215-46dd-926d-ecc0cdd900e7: Address # Address
-    b4bb7d35-6b11-4f97-b32c-c3b1d27a3f4a: 'Is this an official press release?' # Is this an official press release?
     b7e437e1-239f-4c5c-8c62-5f0323f9d22c: Services # Services
     b7ec3bdf-65b5-4385-8d12-cd2110b1c75c: 'Document Type' # Document Type
     b7f96204-106f-4d15-85ed-e0fda8e8551f: 'Button Group' # Button Group
