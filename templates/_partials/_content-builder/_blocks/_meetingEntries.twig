@@ -2,11 +2,11 @@
 
 {% set meetings     = craft.entries.section('meetings').date(['>= ' ~ now|date('Y-m-d')]).order('date asc').limit(3).relatedTo(entry) %}
 {% set headingText  = 'Related Meetings' %}
-{% set buttonText   = 'See Past Meetings' %}
+{% set buttonText   = 'See All Meetings' %}
 {% if entry.section.handle == 'boardsCommissions' %}
-  {% set buttonLink   = entry.url ~ '/meetings?type=past' %}
+  {% set buttonLink   = entry.url ~ '/meetings' %}
 {% else %}
-  {% set buttonLink   = siteUrl ~ 'meetings?type=past' %}
+  {% set buttonLink   = siteUrl ~ 'meetings' %}
 {% endif %}
 
 {% if block.meetings|length %}
@@ -14,7 +14,6 @@
 {% else %}
   {% if meetings|length == 0 %}
     {% set meetings  = craft.entries.section('meetings').order('date desc').limit(3).relatedTo(entry) %}
-    {% set buttonText   = 'See All Past Meetings' %}
   {% endif %}
 {% endif %}
 

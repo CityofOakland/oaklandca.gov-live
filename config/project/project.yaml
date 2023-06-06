@@ -1,4 +1,4 @@
-dateModified: 1686068243
+dateModified: 1686068513
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -360,7 +360,6 @@ meta:
     839d534c-c552-405e-bc0e-0d7414bad9c3: 'Navigation - Top' # Navigation - Top
     843d53f7-253d-4ed1-b7da-309cd0e4df69: __blank__ # __blank__
     850b24e6-fbe7-41e2-bd2b-6207a108a503: 'Emergency Public Information Officers' # Emergency Public Information Officers
-    853a4c55-fd81-4715-8804-22a057720485: 'Entries (Deprecated)' # Entries (Deprecated)
     853acfc8-1959-4654-89f9-e544989d27d5: Departments # Departments
     856e0565-3a66-4305-825e-757ac41b9ff4: Link # Link
     899b11d8-2bd0-43d6-b39b-31e362b7534f: 'Project Documents' # Project Documents
@@ -670,7 +669,6 @@ meta:
     dc495a3c-d76f-46c9-afe5-d8b012612993: '4 Columns' # 4 Columns
     dce07b77-44ba-4b27-9a62-9330a8e5a1de: SoundCloud # SoundCloud
     ddb61f35-83f1-46d4-904b-da525acf9e7c: 'Group Head Name' # Group Head Name
-    ddd25f23-4975-475c-9bef-e8a0e0e43fc0: 'Entries (Deprecated)' # Entries (Deprecated)
     de65ce28-2919-4a65-9aa2-c18e5518f2fe: Program/Subdivision # Program/Subdivision
     de588e4c-ab76-4b95-8150-afebc746259b: Documents # Documents
     de14155f-e982-42aa-9b79-71ceeaf08a77: 'Hide Summary?' # Hide Summary?
