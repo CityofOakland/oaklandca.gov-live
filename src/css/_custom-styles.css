@@ -673,6 +673,28 @@ form[data-handle="whyWasThisPageHelpful"] {
   height: 100%;
 }
 
+.embed-pdf {
+  height: 340px;
+}
+
+@media(min-width: 768px) {
+  .embed-pdf {
+    height: 880px;
+  }
+}
+
+@media(min-width: 1024px) {
+  .embed-pdf {
+    height: 735px;
+  }
+}
+
+@media(min-width: 1280px) {
+  .embed-pdf {
+    height: 890px;
+  }
+}
+
 #helpful p {
   @apply text-sm;
 }
