@@ -298,6 +298,25 @@
   } %}
 {% endblock %}
 
+{% block modal %}
+	<div id="modal" class="components" aria-hidden='true' aria-labelledby='modalTitle' aria-describedby='modalDescription' role='dialog'>
+    <div class='sr-only' id='modalDescription'>This is a dialog window which overlays the main content of the page. The modal begins with a heading 2 called &quot;Subscribe to get updates&quot;. Pressing the Close Modal button at the top of the modal will close the modal and bring you back to where you were on the page.</div>
+    <div class='container'>
+      <div class="w-7/11 mx-auto">
+        <div id="modalContent" class="bg-white relative p-12" style="border: 1px solid #9E9E9E;border-radius: 8px;">
+          <button id='modalCloseButton' class="absolute top-8 right-8 modal-close" aria-label='Close email subscription modal'><i class="fa-light fa-xmark h-8"></i></button>
+          <span class="w-6/12"></span>
+          <div class="w-9/12">
+            <h2 id="modalTitle">Subscribe to get updates</h2>
+            <p class="lead mt-4 mb-6">Use the form below to specify which email and updates you would like to receive.</p>
+          </div>
+          {{ craft.oaklandEmailNotifications.renderForm()|raw }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
 {% block sidebar %}
 	{% if entry.date %}
     <hr/>
@@ -414,6 +433,11 @@
       {% endif %}
     </ul>
   {% endif %}
+
+  <hr/>
+  <h4>{{ 'Subscribe to get updates'|t }}</h4>
+  <p class="mb-4">We’ll let you know when the minutes are posted</p>
+  <button class="button secondary modal-open">Subscribe</button>
 
   <hr class="light">
   <p class="mt-4 small">Posted: {{ entry.postDate|date("F j, Y g:ia") }}</p>

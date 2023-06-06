@@ -207,6 +207,16 @@
   opacity: 0;
 }
 
+:where(.components hr) + h1,
+:where(.components hr) + h2,
+:where(.components hr) + h3,
+:where(.components hr) + h4,
+:where(.components hr) + h5,
+:where(.components hr) + h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 :where(.components) .embed-container {
   margin-top: 1rem;
   margin-bottom: 0;

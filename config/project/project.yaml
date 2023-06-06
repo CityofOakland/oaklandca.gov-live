@@ -1,4 +1,4 @@
-dateModified: 1686068795
+dateModified: 1686070198
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -36,6 +36,7 @@ meta:
     1b4c105f-8669-42e5-a28a-360015f23aa0: 'Featured News Item' # Featured News Item
     1b7fc839-7de9-4717-b41d-d74bfa40b5c8: Portrait # Portrait
     1b8f26ab-01a9-4570-9e96-1d18389f8226: 'Read More Link' # Read More Link
+    1bbdfcc0-b085-435d-afc9-344998a67876: 'Email Trigger' # Email Trigger
     1bf6e3cb-26b9-405b-94ea-fbfc944c27b9: Size # Size
     1c1e50b0-b20e-4596-90d8-be5bc63bee3b: 'Button Icon' # Button Icon
     1c5d91eb-8c31-4a5e-ba23-4b6a28986f93: Email # Email
@@ -46,6 +47,7 @@ meta:
     01d73fd7-5170-4523-8658-02c344e3ff55: 'Middle Initial' # Middle Initial
     1d1557ea-679f-40f8-90d8-3c9eae44d800: Navigation # Navigation
     1dcaf4f4-736d-4b90-af74-eed1db266dd6: 'Featured Entry Expiration Date' # Featured Entry Expiration Date
+    1ddcc13e-3bfa-4a0e-9661-34bc1052f299: 'Email Subscriptions' # Email Subscriptions
     1df2afd1-1725-4190-ae6d-b40882c360af: 'Column 1 Cell' # Column 1 Cell
     1e78d0ad-2af1-4556-ab43-7b6c110e75b8: Headers # Headers
     1e960f43-f531-48ab-81a0-67d143aebac6: Heading # Heading
@@ -58,6 +60,7 @@ meta:
     2c145c6e-d6b2-418c-aa28-3ea1eaa51944: 'Column 3 Width' # Column 3 Width
     2ce783d0-daf9-44d1-a0b4-84a0163dcaad: 'Column 2 Width' # Column 2 Width
     2dc1fa8f-aa9c-488d-8c3e-ed572699c7a4: 'Open in New Tab?' # Open in New Tab?
+    2e9a2810-afb2-4358-82f1-d152b0598d4b: 'Subscribed Emails' # Subscribed Emails
     2e52b334-4732-47a2-9c3b-7a8bf656425e: Link # Link
     2ec9801b-fd1b-4e5f-bf30-80d457a08afd: 'Service Category' # Service Category
     02edcc9a-9985-4401-9a49-38455f47ff84: 'Contact Notes' # Contact Notes
@@ -411,6 +414,7 @@ meta:
     6516b9a1-48aa-4146-b253-19e5eda7b289: Subcommittee # Subcommittee
     6615dd71-4083-4e2d-a89b-26de79047282: 'Internal Link' # Internal Link
     6661f731-7c41-4607-9a82-a18f44fb4008: Events # Events
+    6672c4ed-d3ef-4b5a-9ebe-94aa942dc976: 'Subscribed Emails' # Subscribed Emails
     6694c82b-6e98-442b-976a-907b6c2f4bcc: 'Android Download Link' # Android Download Link
     6722d0c2-c9b0-4b2c-adf2-97e13adaecb3: Style # Style
     6730cced-6743-4ada-abb8-1f4c0f2e8878: 'Alert Link' # Alert Link
@@ -867,7 +871,7 @@ plugins:
     schemaVersion: 2.0.0
   calendar:
     edition: pro
-    enabled: '1'
+    enabled: false
     licenseKey: PRJ91600ENZBQ5S7HS7UE93Z
     schemaVersion: 3.3.2
     settings:
@@ -1090,6 +1094,21 @@ plugins:
     enabled: true
     licenseKey: MHV0BQ72A7IVPYOA3JKMD3BQ
     schemaVersion: 2.13.0
+  oakland-email-notifications:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      emailSubjects:
+        __assoc__:
+          -
+            - meetings
+            - 'Email Notification: {{ title }}'
+      emailTemplates:
+        __assoc__:
+          -
+            - meetings
+            - "<p>This email is notify you that {{ title }} has been updated. Below is the current status of this meeting:</p>\r\n<ul>\r\n<li>Meeting Date: {{ date }}</li>\r\n<li>Meeting Start Time: {{ startTime }}</li>\r\n<li>Meeting End Time: {{ endTime }}</li>\r\n<li>Meeting Status: {{ meetingStatus }}</li>\r\n</ul>\r\n<p>Agenda Topics:</p>\r\n{{ agendaTopics }}"
   patrol:
     edition: standard
     enabled: true

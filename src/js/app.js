@@ -5,6 +5,7 @@ import '/src/js/accordion.js'
 import '/src/js/archive.js'
 import '/src/js/navigation.js'
 import '/src/js/gtmevents.js'
+import '/src/js/modal.js'
 import Alpine from 'alpinejs'
 import collapse from '@alpinejs/collapse'
 
