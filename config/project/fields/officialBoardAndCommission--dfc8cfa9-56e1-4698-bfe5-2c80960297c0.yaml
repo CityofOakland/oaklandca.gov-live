@@ -1,9 +1,9 @@
 columnSuffix: tkokuzvh
 contentColumnType: boolean
 fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
-handle: isThisAnOfficialBoardOrCommission
-instructions: 'This will determine if it listed on the website as a board a commission page.'
-name: 'Is this an official Board or Commission?'
+handle: officialBoardAndCommission
+instructions: 'Turn this switch on so that this Board and Commission landing page appears in the Board and Commission index.'
+name: 'Official Board and Commission'
 searchable: false
 settings:
   default: true

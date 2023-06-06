@@ -1,6 +1,8 @@
+{% import '_macros/_macros' as macros %}
+
 <div class="result pb-6" style="margin-bottom:1rem;">
   <h3>
-    <a href="{{ meeting.url }}">{{ meeting.title }}</a>
+    <a href="{{ meeting.url }}">{{ macros.meetingTitle(meeting) }}</a>
     {% set status = meeting.type == 'meetings' ? meeting.meetingStatus : meeting.eventStatus %}
     {% switch status %}
       {% case 'canceled' %}

@@ -1,3 +1,9 @@
+{% if entry.type == 'subcommittee' %}
+  {% if not entry.officialSubcommittee %}
+    {% redirect 404 %}
+  {% endif %}
+{% endif %}
+
 {% extends '_layouts/_banner-with-nav.twig' %}
 
 {% do craft.app.elements.eagerLoadElements(

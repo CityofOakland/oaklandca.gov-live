@@ -1,3 +1,5 @@
+{% import '_macros/_macros' as macros %}
+
 {% set breadcrumbs = [] %}
 
 {% if category is not defined and breadCrumbLinks is not defined %}
@@ -25,6 +27,12 @@
         {% set breadcrumbs = breadcrumbs|merge([{
           title: entry.relatedBoardOrCommission.one().title,
           link: entry.relatedBoardOrCommission.one().url
+        }]) %}
+      {% endif %}
+      {% if entry.subcommittees.section('boardsCommissions')|length %}
+        {% set breadcrumbs = breadcrumbs|merge([{
+          title: entry.subcommittees.section('boardsCommissions').one().title,
+          link: entry.subcommittees.section('boardsCommissions').one().url
         }]) %}
       {% endif %}
     {% elseif entry.section.handle == 'boardsCommissions' and craft.request.lastSegment == 'meetings' %}
@@ -67,6 +75,9 @@
       <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
     {% endfor %}
     <a href="{{ entry.url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ entry.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
+    {% if subcommittee is defined %}
+      <a href="{{ subcommittee.url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ subcommittee.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
+    {% endif %}
     <span aria-current="page" class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">Meetings for {{ entry.title }}</span>
   {% elseif section is defined and slug is defined and craft.request.lastSegment == 'events' %}
     {% for link in breadcrumbs ?? '' %}
@@ -78,6 +89,11 @@
     {% for link in breadcrumbs ?? '' %}
       <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
     {% endfor %}
-    <span aria-current="page" class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">{{ entry.title }}</span>
+
+    {% if entry.section.handle == 'meetings' %}
+      <span aria-current="page" class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">{{ macros.meetingTitle(entry) }}</span>
+    {% else %}
+      <span aria-current="page" class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">{{ entry.title }}</span>
+    {% endif %}
   {% endif %}
 </div>
