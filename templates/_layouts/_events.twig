@@ -159,15 +159,17 @@
 
   {{ entry.mainContent }}
 
-  {% if entry.relatedDocuments|length %}
+  {% set relatedDocuments = entry.relatedDocuments.all() ?? null %}
+  {% if relatedDocuments %}
     <hr class="hr medium"/>
     <h3>Related Documents</h3>
     <ul class="ul-icons related">
-        {% for document in entry.relatedDocuments.all() %}
-          {% if document.documentEntry|length %}
-            <li><a href="{{ document.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ document.documentTitle ? document.documentTitle : (document.documentEntry.one().title) }}</a></li>
-          {% endif %}
-        {% endfor %}
+      {% for document in relatedDocuments %}
+        {% set docEntry = document.documentEntry.one() ?? null %}
+        {% if docEntry %}
+          <li><a target="_blank" href="{{ docEntry.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ document.documentTitle ?? docEntry.title }}</a></li>
+        {% endif %}
+      {% endfor %}
     </ul>
   {% endif %}
 
