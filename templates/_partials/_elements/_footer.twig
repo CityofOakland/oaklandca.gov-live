@@ -5,8 +5,8 @@
   [ seoMaticLinks.instagram.url, 'instagram.svg', 'Oakland Instagram Page' ]
 ] %}
 
-<footer class="bg-gray-1000 bg-transparent-oakland-roots-black">
-    <div class="container py-8">
+<footer class="bg-gray-1000 bg-transparent-oakland-roots-black @container">
+    <div class="container px-6 @3xl:px-16 py-8">
         <nav id="footer-navigation" class="lg:flex flex-wrap text-white" name="Footer Navigation">
             {% for item in navigationFooter.navigationFooter.level(1).all() %}
             {% if loop.index == 1 %}
@@ -51,8 +51,8 @@
         </nav>
     </div>
 
-    <div class="bg-black text-white">
-        <div class="container py-6">
+    <div class="bg-black text-white @container">
+        <div class="container py-6 px-6 @3xl:px-16">
             <nav class="lg:flex items-center justify-between" id="bottom-navigation" name="Bottom Navigation">
                 <div class="lg:flex items-end">
                     <a href="{{ siteUrl }}">
