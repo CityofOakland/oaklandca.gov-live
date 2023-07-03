@@ -38,6 +38,12 @@
   }
 }
 
+.article-yellow-tag {
+  background-color: #FFF3C4;
+  font-size: 12px;
+  @apply rounded;
+  @apply p-2;
+}
 
 .components form {
   @apply text-base leading-normal;

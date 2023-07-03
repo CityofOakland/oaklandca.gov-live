@@ -22,7 +22,9 @@
 {%- set headerContent -%}
   <div class="flex flex-col flex-1 lg:flex-row">
     <div class="w-full lg:w-2/3">
-      <h1 class="mb-0 text-3xl font-bold md:text-4xl">{{ bannerTitle }}</h1>
+      {% if bannerTitle|length %}
+        <h1 class="mb-0 text-3xl font-bold md:text-4xl">{{ bannerTitle }}</h1>
+      {% endif %}
       {% if leadIn %}
         {% if leadInParagraph ?? "" %}
           {{ leadIn | replace({'<p' : '<p class="my-2 text-xl leading-normal last:mb-0"', '<a': '<a class="font-bold text-green-800 hover:text-green-700"'}) | raw }}
@@ -80,7 +82,15 @@
     </div>
   </div>
 {% endif %}
-<div id="content" style="position:relative;top:-5rem;"></div>
-<div class="container relative sm:flex">
-  {{ custHeaderContent ?? headerContent }}
-</div>
+
+{% autoescape false %}
+  {% if custHeaderContent is not defined %}
+    <div class="container">
+      {{ headerContent }}
+    </div>
+  {% elseif custHeaderContent|length %}
+    <div class="container">
+      {{ custHeaderContent }}
+    </div>
+  {% endif %}
+{% endautoescape %}

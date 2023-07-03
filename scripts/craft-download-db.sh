@@ -6,16 +6,27 @@ set -e -o pipefail
 # This is where premature termination of the script gets a chance to cleanup,
 # or do anything necessary to offer a graceful exit for an abrupt termination.
 function exit_handler() {
-    rm -f "$MYSQL_DUMP_FILE" &> /dev/null
+    # Reset directory stack.
+    cd "$(dirs -0)"; dirs -c
+
+    # Prompt the user whether to keep or delete the downloaded MySQL dump file.
+    if [ -e "$MYSQL_DUMP_FILE" ]; then
+        read -p 'Delete the downloaded MySQL dump file? [y/N]: ' delete_sql_dump_file_choice
+        case $delete_sql_dump_file_choice in
+            y|Y)
+                rm "$MYSQL_DUMP_FILE"
+                ;;
+        esac
+    fi
 }
 trap "exit_handler" ERR # Invoke exit handler when an error happens anywhere in the script.
 trap "exit_handler" INT # Invoke exit handler when the user issues a keyboard interrupt (CTRL + C).
 
 # Array of required environment variables.
 required_environment_variables=( \
-    'MYSQL_DB' \
     'LOCAL_MYSQL_USER' \
     'REMOTE_MYSQL_USER' \
+    'REMOTE_MYSQL_DB' \
     'LOCAL_CRAFT_ADDRESS' \
     'REMOTE_CRAFT_ADDRESS' \
     'LOCAL_CRAFT_DIRECTORY' \
@@ -43,10 +54,16 @@ ENVIRONMENT VARIABLES
 
     Optional (with defaults):
         LOCAL_MYSQL_ADDRESS="127.0.0.1"
+        LOCAL_MYSQL_PORT="3306"
+        LOCAL_MYSQL_DB=<REMOTE_MYSQL_DB>
+        LOCAL_MYSQL_DB_CHARSET="" implies DB engine's default
+        LOCAL_MYSQL_DB_COLLATION="" implies DB engine's default
         REMOTE_MYSQL_ADDRESS="127.0.0.1"
+        REMOTE_MYSQL_PORT="3306"
         MYSQL_DUMP_FILE="<REMOTE_CRAFT_ADDRESS>-db-dump-<timestamp>.sql"
-        MYSQL_NET_BUFFER_LENGTH="8388608"
-        MYSQL_MAX_ALLOWED_PACKET="33554432"
+        MYSQLDUMP_NET_BUFFER_LENGTH="8388608"
+        MYSQLDUMP_MAX_ALLOWED_PACKET="33554432"
+        ADDITIONAL_MYSQLDUMP_OPTIONS=()
 
 OPTIONS
 
@@ -101,36 +118,42 @@ done
 
 # Optional environment variables can have default values if not set.
 [ -n "$LOCAL_MYSQL_ADDRESS" ] || LOCAL_MYSQL_ADDRESS="127.0.0.1"
+[ -n "$LOCAL_MYSQL_PORT" ] || LOCAL_MYSQL_PORT="3306"
+[ -n "$LOCAL_MYSQL_DB" ] || LOCAL_MYSQL_DB="$REMOTE_MYSQL_DB"
 [ -n "$REMOTE_MYSQL_ADDRESS" ] || REMOTE_MYSQL_ADDRESS="127.0.0.1"
+[ -n "$REMOTE_MYSQL_PORT" ] || REMOTE_MYSQL_PORT="3306"
 [ -n "$MYSQL_DUMP_FILE" ] || MYSQL_DUMP_FILE="${REMOTE_CRAFT_ADDRESS}-db-dump-$(date +"%s").sql"
-[ -n "$MYSQL_NET_BUFFER_LENGTH" ] || MYSQL_NET_BUFFER_LENGTH="8388608"
-[ -n "$MYSQL_MAX_ALLOWED_PACKET" ] || MYSQL_MAX_ALLOWED_PACKET="33554432"
+[ -n "$MYSQLDUMP_NET_BUFFER_LENGTH" ] || MYSQLDUMP_NET_BUFFER_LENGTH="8388608"
+[ -n "$MYSQLDUMP_MAX_ALLOWED_PACKET" ] || MYSQLDUMP_MAX_ALLOWED_PACKET="33554432"
+[ -n "$ADDITIONAL_MYSQLDUMP_OPTIONS" ] || ADDITIONAL_MYSQLDUMP_OPTIONS=()
 
 # MySQL dump command line arguments.
 # Consult the official "mysqldump" command documentation.
 mysqldump_cli_args=( \
     "-h ${REMOTE_MYSQL_ADDRESS}" \
+    "-P ${REMOTE_MYSQL_PORT}" \
     "-u ${REMOTE_MYSQL_USER}" \
     "-p" \
+    "--no-create-db" \
     "--add-drop-table" \
     "--add-locks" \
     "--skip-lock-tables" \
     "--single-transaction" \
-    "--no-tablespaces" \
-    "--column-statistics=0" \
     "--routines" \
     "--triggers" \
     "--events" \
     "--hex-blob" \
     "--extended-insert" \
-    "--net-buffer-length=${MYSQL_NET_BUFFER_LENGTH}" \
-    "--max-allowed-packet=${MYSQL_MAX_ALLOWED_PACKET}" \
-    "--databases ${MYSQL_DB}" \
+    "--net-buffer-length=${MYSQLDUMP_NET_BUFFER_LENGTH}" \
+    "--max-allowed-packet=${MYSQLDUMP_MAX_ALLOWED_PACKET}" \
+    "--databases ${REMOTE_MYSQL_DB}" \
+    "${ADDITIONAL_MYSQLDUMP_OPTIONS[@]}" \
 )
 
 # Search & replace for incoming MySQL dump stream via "sed" command.
 # The search array can have simple strings, or regular expressions.
 search=( \
+    "\`${REMOTE_MYSQL_DB}\`" \
     "$REMOTE_CRAFT_DIRECTORY" \
     "$REMOTE_CRAFT_ADDRESS" \
     "https://${LOCAL_CRAFT_ADDRESS}" \
@@ -140,6 +163,7 @@ search=( \
 # Replacement strings must align in the same order / index as their
 # search counterparts.
 replace=( \
+    "\`${LOCAL_MYSQL_DB}\`" \
     "$LOCAL_CRAFT_DIRECTORY" \
     "$LOCAL_CRAFT_ADDRESS" \
     "http://${LOCAL_CRAFT_ADDRESS}" \
@@ -152,9 +176,13 @@ for i in "${!search[@]}"; do
 done
 
 # Initialize the local MySQL dump file.
+if [ -n "$LOCAL_MYSQL_DB_CHARSET" ] && [ -n "$LOCAL_MYSQL_DB_COLLATION" ]; then
+    mysql_create_db_charset_string="CHARACTER SET ${LOCAL_MYSQL_DB_CHARSET} COLLATE ${LOCAL_MYSQL_DB_COLLATION}"
+fi
+
 cat << EOS > "$MYSQL_DUMP_FILE"
-DROP SCHEMA IF EXISTS \`${MYSQL_DB}\`;
-CREATE SCHEMA \`${MYSQL_DB}\`;
+DROP DATABASE IF EXISTS \`${LOCAL_MYSQL_DB}\`;
+CREATE DATABASE \`${LOCAL_MYSQL_DB}\` ${mysql_create_db_charset_string};
 
 EOS
 
@@ -174,12 +202,12 @@ When ready, proceed by entering the local MySQL password below.
 
 EOT
 
-mysql -h "${LOCAL_MYSQL_ADDRESS}" -u "${LOCAL_MYSQL_USER}" -p -A -N -B < "$MYSQL_DUMP_FILE"
+mysql -h "$LOCAL_MYSQL_ADDRESS" -P "$LOCAL_MYSQL_PORT" -u "$LOCAL_MYSQL_USER" -p -A -N -B < "$MYSQL_DUMP_FILE"
 
 # Change to Craft local directory in order to run Craft commands.
 pushd "$LOCAL_CRAFT_DIRECTORY"
 
-# Craft CMS config synchronization against imported data.
+# Prompt the user for a Craft CMS config synchronization option against the imported data.
 cat << 'EOT'
 
 Choose one of the following Craft CMS config synchronization options:
@@ -200,7 +228,7 @@ case $craft_config_sync_choice in
         ;;
 esac
 
-# Craft CMS migrations.
+# Prompt the user to run Craft CMS migrations.
 read -p 'Run Craft CMS migrations? [y/N]: ' craft_migrations_choice
 case $craft_migrations_choice in
     y|Y)
@@ -208,16 +236,18 @@ case $craft_migrations_choice in
         ;;
 esac
 
+# Prompt the user to create a Craft user.
+read -p 'Create a Craft user? [y/N]: ' create_craft_user_choice
+case $create_craft_user_choice in
+    y|Y)
+        php craft users/create
+        ;;
+esac
+
 # Leave Craft local directory back to the previous directory when done running Craft commands.
 popd
 
-# Prompt the user whether to keep or delete the downloaded MySQL dump file.
-read -p 'Delete the downloaded MySQL dump file? [y/N]: ' delete_sql_dump_file_choice
-case $delete_sql_dump_file_choice in
-    y|Y)
-        rm "$MYSQL_DUMP_FILE"
-        ;;
-esac
+exit_handler
 
 # Print final confirmation of successful database download.
 cat << 'EOT'
