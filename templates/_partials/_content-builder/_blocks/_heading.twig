@@ -1,2 +1,6 @@
 <a id="{{ blockId }}" class="anchor-link"></a>
-<{{ heading }} class="{{ hClass }} {% if loop.index0 == 0 %} mt-0{% endif %}">{{ block.text }}</{{ heading }}>
+<section class="@container relative z-0 {{ loop.index0 == 0 ? "mt-0" }}">
+  <div class="container px-6 @3xl:px-16">
+    <{{ heading }} class="{{ hClass }}">{{ block.text }}</{{ heading }}>
+  </div>
+</section>

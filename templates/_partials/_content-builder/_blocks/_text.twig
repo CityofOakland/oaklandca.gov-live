@@ -1,1 +1,3 @@
-<div class="body-text {% if not loop.last %} mb-12{% endif %}">{{ block.text }}</div>
+<section class="@container relative z-0 {{ not loop.last ? "mb-12" }}">
+  <div class="container px-6 @3xl:px-16 body-text">{{ block.text }}</div>
+</section>
