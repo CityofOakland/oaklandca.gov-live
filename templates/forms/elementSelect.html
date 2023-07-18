@@ -34,7 +34,7 @@
         {% endfor %}
     </div>
 
-    <div class="flex{% if limit and elements|length >= limit %} hidden{% endif %}">
+    <div class="flex{% if limit and elements|length >= limit %} oak-hidden{% endif %}">
         <button type="button" class="btn add icon dashed">{{ selectionLabel ?? "Choose"|t('app') }}</button>
     </div>
 {% endtag %}

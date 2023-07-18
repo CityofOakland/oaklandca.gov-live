@@ -28,4 +28,9 @@ return [
         'matrix-mate-module',
         'oakland-library-events-module'
     ],
+    'components' => [
+        'search' => [
+            'useFullText' => false,
+        ],
+    ],
 ];

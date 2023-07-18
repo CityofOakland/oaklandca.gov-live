@@ -1,0 +1,32 @@
+{% set vars = {
+	background: null,
+	heading: null,
+	baseRelationId: null,
+	featuredEntry: null,
+	selectedEntries: null
+}|merge(params) %}
+
+{% if vars.featuredEntry %}
+	<section class="@container flex-1 {{ vars.background }}">
+		<div class="container px-6 pt-8 pb-6 @3xl:px-16 @3xl:py-12">
+			{{ include("_partials/_heading.twig", {
+				params: {
+					text: vars.heading
+				}
+			}) }}
+			<div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+				{{ include("_components/_newsCards/_featuredEntry.twig", {
+					params: {
+						featuredEntry: vars.featuredEntry
+					}
+				}) }}
+				{{ include("_components/_newsCards/_remainingEntries.twig", {
+					params: {
+						baseRelationId: vars.baseRelationId,
+						selectedIds: vars.selectedEntries
+					}
+				}) }}
+			</div>
+		</div>
+	</section>
+{% endif %}

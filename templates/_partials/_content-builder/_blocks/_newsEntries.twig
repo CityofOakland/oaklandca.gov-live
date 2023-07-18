@@ -9,7 +9,18 @@
 {% set excludedNews = craft.entries.section('news').relatedTo(entry).id(idsToExcludeString) %}
 {% set defaultButtonUrl = "" %}
 {% if excludedNews | length %}
-  {% set defaultButtonUrl = "/news/related-to/"  ~ entry.section.handle ~ "/" ~ entry.slug %}
+  {% if entry.section.handle %}
+    {% switch entry.section.handle %}
+      {% case "topics" %}
+        {% set defaultButtonUrl = "/news/related-to/topics/#{entry.slug}" %}
+      {% case "boardsCommissions" %}
+        {% set defaultButtonUrl = "/news?search=&month=&year=&department=&official=&public=body=#{entry.slug}" %}
+      {% case "officials" %}
+        {% set defaultButtonUrl = "/news?search=&month=&year=&department=&official=#{entry.slug}&public=body=" %}
+      {% case "departments" %}
+        {% set defaultButtonUrl = "/news?search=&month=&year=&department=#{entry.slug}&official=&public=body=" %}
+    {% endswitch %}
+  {% endif %}
 {% endif %}
 
 {% if block.allowAutofill %}
@@ -23,25 +34,31 @@
   {% set entryIds = entryIds | merge(relatedNews) %}
 {% endif %}
 
-<div class="{% if not loop.last %}mb-12{% endif %}">
-  {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" %}
-  <div class="card-grid vertical-cards">
-    {% for entryId in entryIds %}
-      {% set entry = craft.entries.id(entryId).one() %}
-      {% include '_partials/_elements/_vertical-cards.twig' with {
-        title: entry.title,
-        url: entry.url,
-        icon: 'newspaper',
-        photo: entry.newsImage.one,
-        byline: entry.postDate.format("M d, Y"),
-        body: entry.summary,
-        photoHide: block.hideThumbnails,
-        summaryHide: block.hideSummary
-      } %}
-    {% endfor %}
+<section class="@container relative z-0 {{ not loop.last ? "mb-12" }}">
+  <div class="container px-6 @3xl:px-16">
+    {{ include("_partials/_heading.twig", {
+      params: {
+        text: block.heading
+      }
+    }) }}
+    <div class="card-grid vertical-cards">
+      {% for entryId in entryIds %}
+        {% set entry = craft.entries.id(entryId).one() %}
+        {% include '_partials/_elements/_vertical-cards.twig' with {
+          title: entry.title,
+          url: entry.url,
+          icon: 'newspaper',
+          photo: entry.newsImage.one,
+          byline: entry.postDate.format("M d, Y"),
+          body: entry.summary,
+          photoHide: block.hideThumbnails,
+          summaryHide: block.hideSummary
+        } %}
+      {% endfor %}
+    </div>
+    {% include "_partials/_elements/_module-readmore.twig" with {
+      linkText: pageNewsLinkText ?? "Related News",
+      linkUrl: pageNewsLinkUrl ?? defaultButtonUrl
+    } %}
   </div>
-  {% include "_partials/_elements/_module-readmore.twig" with {
-    linkText: pageNewsLinkText ?? "Related News",
-    linkUrl: pageNewsLinkUrl ?? defaultButtonUrl
-  } %}
-</div>
+</section>

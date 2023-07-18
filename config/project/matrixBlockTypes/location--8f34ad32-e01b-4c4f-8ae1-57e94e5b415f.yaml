@@ -58,13 +58,13 @@ fields:
         __assoc__:
           -
             - lat
-            - 37.805248982254
+            - '37.805248982254'
           -
             - lng
-            - -122.27233886719
+            - '-122.27233886719'
           -
             - zoom
-            - 15
+            - '15'
       coordinatesMode: readOnly
       dragPinDefault: null
       dragPinLatitude: null
@@ -73,10 +73,26 @@ fields:
       layout: null
       mapOnSearch: open
       mapOnStart: close
-      requireCoordinates: true
-      showMap: null
+      requireCoordinates: '1'
+      showMap: false
       subfieldConfig:
         __assoc__:
+          -
+            - name
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'Address Name'
+                -
+                  - width
+                  - '100'
+                -
+                  - enabled
+                  - '1'
+                -
+                  - position
+                  - '1'
           -
             - street1
             -
@@ -86,13 +102,13 @@ fields:
                   - 'Street Address'
                 -
                   - width
-                  - 100
+                  - '100'
                 -
                   - enabled
-                  - 1
+                  - '1'
                 -
                   - position
-                  - 1
+                  - '2'
           -
             - street2
             -
@@ -102,13 +118,13 @@ fields:
                   - 'Apartment or Suite'
                 -
                   - width
-                  - 100
+                  - '100'
                 -
                   - enabled
-                  - 1
+                  - '1'
                 -
                   - position
-                  - 2
+                  - '3'
           -
             - city
             -
@@ -118,13 +134,13 @@ fields:
                   - City
                 -
                   - width
-                  - 50
+                  - '50'
                 -
                   - enabled
-                  - 1
+                  - '1'
                 -
                   - position
-                  - 3
+                  - '4'
           -
             - state
             -
@@ -134,13 +150,13 @@ fields:
                   - State
                 -
                   - width
-                  - 15
+                  - '15'
                 -
                   - enabled
-                  - 1
+                  - '1'
                 -
                   - position
-                  - 4
+                  - '5'
           -
             - zip
             -
@@ -150,13 +166,13 @@ fields:
                   - 'Zip Code'
                 -
                   - width
-                  - 35
+                  - '35'
                 -
                   - enabled
-                  - 1
+                  - '1'
                 -
                   - position
-                  - 5
+                  - '6'
           -
             - country
             -
@@ -166,13 +182,36 @@ fields:
                   - Country
                 -
                   - width
-                  - 100
-                -
-                  - enabled
-                  - 0
+                  - '100'
                 -
                   - position
-                  - 6
+                  - '7'
+          -
+            - county
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'County or District'
+                -
+                  - width
+                  - '100'
+                -
+                  - position
+                  - '8'
+          -
+            - placeId
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'Place ID'
+                -
+                  - width
+                  - '100'
+                -
+                  - position
+                  - '9'
       visibilityToggle: both
     translationKeyFormat: null
     translationMethod: none

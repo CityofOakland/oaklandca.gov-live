@@ -1,5 +1,8 @@
-{% set layout           = layout is defined ? layout : 'default' %}
-{% set flex_class       = '' %}
+{# Checks if the URI is empty and if not, adds the class of "home" to the page body. #}
+{% set pageClass = not craft.app.request.segments() ? "home" %}
+
+{% set layout = layout is defined ? layout : "default" %}
+{% set flex_class = '' %}
 {% set column_one_class = '' %}
 {% set column_two_class = '' %}
 
@@ -18,21 +21,16 @@
     {% set column_two_class = 'mt-8 lg:mt-0' %}
 {% endswitch %}
 
-{% include '_partials/_head' %}
-
-  {# Checks if the URI is empty and if not, adds the class of "home" to the page body. #}
-  {% if not craft.app.request.segments() %}
-    {% set pageClass = "home" %}
-  {% endif %}
+<!DOCTYPE html>
+<html lang="en">
+  {% include '_partials/_head.twig' %}
 
   {# We’re setting the class to overflow-x-hidden to prevent content from stretching page width on mobile views.#}
-  {# Sets the navigation to the nav section entry, "Main Nav" #}
-  {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
-  <body class="font-body {{ pageClass ?? '' }}">
+  <body class="font-body {{ pageClass }}">
     {% include '_partials/_elements/_skip-to-content.twig' %}
     {% include '_partials/_elements/_nav-bar.twig' %}
     <div class="page-holder overflow-x-hidden">
-      <main class="overflow-x-hidden">
+      <main id="main" aria-hidden="false" role="main" class="overflow-x-hidden">
         {% include '_partials/_elements/_sitewide-alert.twig' %}
         {% if category is defined %}
           {% set entry = category %}
@@ -40,15 +38,15 @@
         <section>
           {% block banner %}
             <div class="bg-transparent-oakland-roots">
-              <div class="container" style="padding-top:1rem;padding-bottom:1rem;">
+              <div class="container py-4">
                 {% include "_components/partials/_breadcrumbs.twig" %}
               </div>
             </div>
           {% endblock %}
-          <div id="content" style="position:relative;top:-5rem;"></div>
+          <div id="content" class="relative top-[-5rem]"></div>
           <div class="{{ archive is defined and archive == true ? 'bg-blue-900 text-white' : '' }}">
             <div class="container pt-8 md:pt-16 {{ archive is defined and archive == true ? 'md:mb-8' : '' }}">
-              <div style="max-width:1152px;">
+              <div class="max-w-6xl" style="max-width:1152px;">
                 <div class="flex flex-col flex-1 lg:flex-row">
                   <div class="w-full lg:w-8/11">
                     {% block title %}
@@ -57,14 +55,14 @@
                         <div class="mt-4 text-xl leading-8 tw-only">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
                       {% endif %}
                       {% if entry.ctaButton | length %}
-                        {% include '_components/_button' with {
+                        {% include '_components/_button.twig' with {
                           class: 'mt-4',
                           url: entry.ctaButton.url,
                           text: entry.ctaButton.text,
                         } %}
                       {% endif %}
                       {% if entry is defined and entry.id == 34229 %}
-                        {% include '_components/_button' with {
+                        {% include '_components/_button.twig' with {
                           class: 'mt-4',
                           url: 'https://www.oaklandca.gov/documents/special-vacancy-notices',
                           text: 'View Local Appointments List and Special Vacancy Notices',
@@ -86,7 +84,8 @@
                 <div class="flex flex-wrap justify-between -mx-8 {{ flex_class }}">
                   <div class="w-full {{ fullwidth is defined and fullwidth == true ? '' : 'lg:w-7/11' }} px-8 {{ column_one_class }}">
                     <div class="components components-format">
-                      {% block content %}{% endblock %}
+                      {% block content %}
+                      {% endblock %}
                     </div>
                   </div>
                   <div class="w-full lg:w-4/11 px-8 {{ column_two_class }}">
@@ -104,9 +103,9 @@
           {% endif %}
           <div id="components-footer" class="components">
             {% if entry['relatedDepartments'] is defined and entry.relatedDepartments|length %}
-              {% include '_components/partials/_cards' with {
-                background: '#334E68',
-                class:      'text-white',
+              {% include "_components/partials/_cards.twig" with {
+                background: "#334E68",
+                class:      "text-white",
                 heading:    "Related Departments",
                 entries:    entry.relatedDepartments.all()
               } %}
@@ -119,9 +118,28 @@
           </div>
         </section>
         {% block prefooter %}
+          <section>
+            <div id="components-footer" class="components">
+              {% if entry['relatedDepartments'] is defined and entry.relatedDepartments|length %}
+                {% include '_components/partials/_cards' with {
+                  background: '#334E68',
+                  class:      'text-white',
+                  heading:    "Related Departments",
+                  entries:    entry.relatedDepartments.all()
+                } %}
+              {% endif %}
+              {% if entry.componentsFooter %}
+                {% for block in entry.componentsFooter.level(1).all() %}
+                  {% include '_components/_' ~ block.type %}
+                {% endfor %}
+              {% endif %}
+            </div>
+          </section>
         {% endblock %}
         {% include '_components/partials/_feedback.twig' %}
       </main>
+      {# Currently only used in one template (_layouts/_meetings.twig). Need a better way to make this more reusable #}
+      {% block modal %}{% endblock %}
       {% include '_partials/_elements/_footer.twig' %}
     </div>
     {% if entry is defined %}

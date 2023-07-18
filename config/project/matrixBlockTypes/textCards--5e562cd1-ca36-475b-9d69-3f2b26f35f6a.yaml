@@ -1,0 +1,267 @@
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581 # Content Builder
+fieldLayouts:
+  df73829f-ebcf-4bfa-830d-c1f87a678834:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: d8339d43-dc04-44b8-8f5d-415a2774fe73 # Text Cards Header
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 32b64633-1b5f-4111-a6d2-c2baaaaeb951 # Text Cards Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2b2f913f-13fd-485a-bec2-801cf041c5af # Section Background Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c2858c5f-1822-49b6-b541-53f943fdb540 # Card Background Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d20f755d-2c8d-459a-971b-1f3957a561a9 # Columns
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 24776178-dc7d-4971-bb42-16dba0790379 # Text Cards
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  2b2f913f-13fd-485a-bec2-801cf041c5af: # Section Background Color
+    columnSuffix: ogztyjdn
+    contentColumnType: string
+    fieldGroup: null
+    handle: background
+    instructions: 'Select a background color for this section. Options include white, light grey or light blue.'
+    name: 'Section Background Color'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - White
+            -
+              - value
+              - bg-white
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 'Light Grey'
+            -
+              - value
+              - bg-gray-100
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Light Blue'
+            -
+              - value
+              - bg-blue-100
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Dark Blue'
+            -
+              - value
+              - 'bg-blue-800 text-white'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  32b64633-1b5f-4111-a6d2-c2baaaaeb951: # Text Cards Description
+    columnSuffix: aklqnhvt
+    contentColumnType: text
+    fieldGroup: null
+    handle: description
+    instructions: 'Optional. Keep this brief in order to avoid pushing content further down the page.'
+    name: 'Text Cards Description'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  24776178-dc7d-4971-bb42-16dba0790379: # Text Cards
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: textCards
+    instructions: 'Add 2 to 9 cards to this section.'
+    name: 'Text Cards'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 72ce6013-9e2a-4f33-a3f0-61cd31ff0d55 # Card Link & Header
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - ca12471c-81ec-4753-906e-8e886f423360 # Card Brow
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 4010e340-f639-46bf-8d82-ab42b8c9a540 # Card Description
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_97_textcards}}'
+      fieldLayout: table
+      maxRows: '9'
+      minRows: '2'
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: 'Add a card'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  c2858c5f-1822-49b6-b541-53f943fdb540: # Card Background Color
+    columnSuffix: mqekxohx
+    contentColumnType: text
+    fieldGroup: null
+    handle: cardBackgroundColor
+    instructions: 'Select a background color for the cards. Options include white or dark green.'
+    name: 'Card Background Color'
+    searchable: false
+    settings:
+      default: null
+      options: ''
+      palette: Cards
+      useConfigFile: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: percipioglobal\colourswatches\fields\ColourSwatches
+  d20f755d-2c8d-459a-971b-1f3957a561a9: # Columns
+    columnSuffix: okolrjrq
+    contentColumnType: string
+    fieldGroup: null
+    handle: textColumns
+    instructions: 'Select the number of columns for this section.'
+    name: Columns
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - '3'
+            -
+              - value
+              - '3'
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - '2'
+            -
+              - value
+              - '2'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\RadioButtons
+  d8339d43-dc04-44b8-8f5d-415a2774fe73: # Text Cards Header
+    columnSuffix: lsobbdxn
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: 'Text Cards Header'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: textCards
+name: 'Text Cards'
+sortOrder: 35

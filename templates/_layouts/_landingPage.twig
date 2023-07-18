@@ -1,0 +1,76 @@
+{% extends '_layouts/_banner-with-nav.twig' %}
+
+{% do craft.app.elements.eagerLoadElements(
+  className(entry),
+  [entry],
+  [
+    'banner',
+    'contentBuilder',
+    'teams',
+    'phoneNumbers',
+    'linkCollection',
+    'openHours',
+    'contentBuilder',
+    'contentBuilder.largeEntryLinks:entries',
+    'contentBuilder.largeEntryLinks:documentFile'
+  ]
+) %}
+
+{% set relatedContent = entry.linkCollection.all() ?? null %}
+{% set relatedContentHeader = entry.relatedContentHeader|default('Related Content') %}
+{% set addressExtended = entry.addressExtended ?? null %}
+{% set twitter = entry.twitter ?? null %}
+{% set facebook = entry.facebook ?? null %}
+{% set instagram = entry.instagram ?? null %}
+{% set medium = entry.medium ?? null %}
+
+{% block content %}
+  {% include '_partials/_page-banners.twig' with {
+    breadCrumbLinks: [
+      {
+        title: 'Departments',
+        link: '/departments'
+      }
+    ],
+    bannerImage: entry.banner | length ? {
+      position: entry.banner[0].getFocalPoint('asCss'),
+      src: entry.banner[0].url,
+      alt: entry.banner[0].title ?? entry.banner[0].filename
+    } : false,
+    bannerTitle: (entry.legalTitle ? entry.legalTitle : entry.title)
+  } %}
+
+  {{ include ("_partials/_in-page-nav.twig", {
+    params: {
+      content: entry.contentBuilder,
+      relatedContent: entry.linkCollection ? true : false,
+      relatedContentHeader: relatedContentHeader,
+      contact: entry.address or entry.phoneNumbers or entry.emailAddress,
+    }
+  }) }}
+
+  {% include '_partials/_content-builder/_tool.twig' %}
+
+  <div class="container px-6 py-0 md:px-16">
+    {{ include("_partials/_page-related.twig", {
+      params: {
+        heading: entry.relatedContentHeader|default('Related Content'),
+        content: entry.linkCollection
+      }
+    }) }}
+    {{ include ("_partials/_page-location-v2.twig", {
+      params: {
+        address: entry.address,
+        addressExtended: addressExtended,
+        phoneNumbers: entry.phoneNumbers,
+        emailAddress: entry.emailAddress,
+        openHours: entry.openHours,
+        twitter: twitter,
+        facebook: facebook,
+        instagram: instagram,
+        medium: medium
+      }
+    }) }}
+  </div>
+
+{% endblock %}

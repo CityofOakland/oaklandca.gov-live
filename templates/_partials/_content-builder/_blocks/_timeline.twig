@@ -1,7 +1,9 @@
 <div class="p-6 bg-cool-gray-100 {% if not loop.last %}mb-12{% endif %}">
-  {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" with {
-    addClasses: "mt-0"
-  } %}
+  {{ include("_partials/_heading.twig", {
+    params: {
+      text: block.heading
+    }
+  }) }}
   <div class="relative">
     <div class="absolute top-0 z-10 h-full border-r-2 border-blue-500" style="left: 15px"></div>
     <ul class="relative z-20 p-0 m-0 list-none">

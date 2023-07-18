@@ -1,0 +1,13 @@
+{% set vars = {
+	text: null,
+	description: null
+}|merge(params) %}
+
+{% if vars.text ?? null %}
+	{{ include("_partials/_heading.twig") }}
+	{% if vars.description %}
+		<div class="[&>*:last-child]:mb-0">
+			{{ vars.description }}
+		</div>
+	{% endif %}
+{% endif %}

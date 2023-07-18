@@ -27,6 +27,24 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: dfc8cfa9-56e1-4698-bfe5-2c80960297c0 # Official Board and Commission
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8d984aa7-0f0a-4e7a-8c43-d726c6645e38 # Subcommittees
+            instructions: 'Select any Subcommittees or Topics, or sub public bodies this Board & Commission is related to.'
+            label: ''
+            required: ''
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: f62c85ae-2203-4d1a-8702-da515126a398 # Banner
             instructions: null
             label: null
@@ -94,6 +112,28 @@ fieldLayouts:
       -
         elements:
           -
+            fieldUid: 1b2e86ae-5451-4896-82f2-23c74e25a7e4 # Related Content Header
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c7310505-6762-445f-80c9-5cfc9137794c # Link Collection
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Related Content'
+        sortOrder: 2
+      -
+        elements:
+          -
             fieldUid: 90d724d7-7c32-4d04-8b9a-3900d6ecdb84 # Address(es)
             instructions: null
             label: null
@@ -107,6 +147,15 @@ fieldLayouts:
             instructions: null
             label: null
             required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6ac11602-f5a4-4e2e-bc97-fdfea3e3d005 # Open Hours
+            instructions: null
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -175,7 +224,7 @@ fieldLayouts:
             warning: null
             width: 100
         name: Contact
-        sortOrder: 2
+        sortOrder: 3
       -
         elements:
           -
@@ -206,7 +255,7 @@ fieldLayouts:
             warning: null
             width: 100
         name: 'Meeting Page Settings'
-        sortOrder: 3
+        sortOrder: 4
       -
         elements:
           -
@@ -228,7 +277,7 @@ fieldLayouts:
             warning: null
             width: 100
         name: SEO
-        sortOrder: 4
+        sortOrder: 5
 handle: boardsCommissions
 hasTitleField: true
 name: 'Boards & Commissions'

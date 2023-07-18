@@ -22,8 +22,12 @@
   {% endif %}
 
   {% if entry.accordion|length %}
-    <h3>{{ entry.accordionHeader }}</h3>
-    {% include '_components/_accordion.twig' with {accordion: entry.accordion.all()} %}
+    {{ include ("_components/_accordion.twig", {
+      params: {
+        header: entry.accordionHeader,
+        content: entry.accordion.all()
+      }
+    }) }}
   {% endif %}
 
   {% include '_components/_process.twig' with {heading: entry.processHeader} %}

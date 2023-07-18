@@ -1,0 +1,13 @@
+<div class="flex">
+    <dt class="font-bold w-32">
+      {% switch phone.type %}
+      {% case "other" %}
+      {{ phone.numberTitle }}
+      {% default %}
+      {{ phone.getType().name }}
+    </dt>
+    <dd class="flex-1">
+      <a href="tel:{{ phone.number }}">{{ phone.number }}</a>
+    </dd>
+  {% endswitch %}
+</div>

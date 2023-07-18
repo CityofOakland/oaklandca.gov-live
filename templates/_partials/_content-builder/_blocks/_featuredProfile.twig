@@ -1,0 +1,66 @@
+{% set profile = block.featuredStaffMember.one() ?? null %}
+
+<section class="@container {{ block.background }}">
+	<div class="container px-6 pt-10 pb-8 @3xl:px-16 @3xl:py-12">
+
+		{{ include("_partials/_heading.twig", {
+			params: {
+				text: block.heading|default("Profile")
+			}
+		}) }}
+
+		{% if profile %}
+			{% set photo = profile.portrait.one() ?? null %}
+			<div class="flex flex-col @3xl:flex-row gap-8 text-gray-1000 items-start mt-4 @3xl:mt-8">
+				<figure class="rounded-full overflow-hidden aspect-square @3xl:w-80">
+					{% if photo %}
+						{% set transformedImage = craft.imager.transformImage(
+							photo,
+							{ width: 150 },
+							{ ratio: 1/1, position: photo.getFocalPoint() },
+							{ fillTransforms: true }
+						) %}
+						{% set transformedImages = craft.imager.transformImage(
+							photo,
+							[
+								{ width: 360 },
+								{ width: 250, jpegQuality: 65 },
+								{ width: 150, jpegQuality: 65 }
+							],
+							{ ratio: 1/1, position: photo.getFocalPoint() },
+							{ fillTransforms: true }
+						) %}
+						<img class="block h-full w-full object-cover" src="{{ transformedImage.url }}" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ entry.jobTitle }}, {{ entry.title }}">
+					{% else %}
+						<div class="h-full overflow-hidden rounded-full border-2 border-gray-200 bg-gray-100 fill-current text-gray-400 opacity-75">
+							<svg class="block h-full" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" fill="" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" viewBox="0 0 140 140" xml:space="preserve" fill="currentColor"><path d="M39.168 47.556C39.168 64.473 53.083 78.39 70 78.39s30.832-13.916 30.832-30.833c0-16.916-13.915-30.832-30.832-30.832S39.168 30.64 39.168 47.555zm7.708 0c0-12.687 10.437-23.124 23.124-23.124S93.124 34.87 93.124 47.556c0 12.688-10.437 23.125-23.124 23.125S46.876 60.244 46.876 47.556zm-23.124 88.643c0-25.37 20.878-46.248 46.248-46.248 25.37 0 46.248 20.878 46.248 46.248a3.855 3.855 0 0 0 3.854 3.854 3.855 3.855 0 0 0 3.854-3.854c0-29.6-24.357-53.956-53.956-53.956-29.6 0-53.956 24.357-53.956 53.956a3.855 3.855 0 0 0 3.854 3.854 3.855 3.855 0 0 0 3.854-3.854z"/></svg>
+						</div>
+					{% endif %}
+				</figure>
+
+				<div class="flex-1">
+					{{ include("_partials/_heading.twig", {
+						params: {
+							text: profile.title,
+							subheading: true
+						}
+					}) }}
+
+					<span class="mt-4 block text-lg font-bold leading-tight">{{ profile.jobTitle }}</span>
+					{% if profile.bio %}
+						{{ profile.bio }}
+					{% endif %}
+
+					{% if block.buttons|length %}
+						{% for buttons in block.buttons.all() %}
+							{% set card = buttons.button %}
+							<a class="p-4 text-sm button secondary" href="{{ card.url }}" target="{{ card.target }}">
+								{{ buttons.button.text }}{% if card.target %} <i class="fas fa-external-link-alt" style="height:17px"></i>{% endif %}
+							</a>
+						{% endfor %}
+					{% endif %}
+				</div>
+			</div>
+		{% endif %}
+	</div>
+</section>

@@ -2,10 +2,11 @@ module.exports = {
   content: [
     './templates/**/*.{twig,html,vue}',
     './src/**/*.{js,jsx,ts,tsx,vue}',
+    './config/colour-swatches.php'
   ],
   safelist: [
     {
-      pattern: /bg-(red|green|yellow)-(500|600|300)/,
+      pattern: /bg-(red|gray|green|yellow)-(100|300|500|600|800|1000)/,
       variants: ['hover']
     }
   ],
@@ -170,6 +171,7 @@ module.exports = {
   plugins: [
     require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/container-queries"),
     require("@tailwindcss/forms")({
       strategy: 'class', // only generate classes
     }),

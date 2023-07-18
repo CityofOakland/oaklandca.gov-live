@@ -1,0 +1,17 @@
+.translated-rtl {
+	direction: rtl;
+}
+
+.translated-rtl .button,
+.translated-rtl .hs-button {
+	margin-left: 0.9375rem;
+	margin-right: 0;
+}
+
+@media (min-width: 1024px) {
+	.translated-rtl #translate > ul {
+    right: 0;
+    left: auto;
+    width: 23.4375rem;
+	}
+}

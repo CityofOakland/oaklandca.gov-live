@@ -1,8 +1,10 @@
 <?php
 
+use craft\elements\db\EntryQuery;
+use craft\elements\Entry;
 use modules\AllTransform;
-use modules\EventTransform;
 use modules\ScoutModule;
+use rias\scout\ScoutIndex;
 
 
 return [
@@ -13,7 +15,7 @@ return [
      * their respective indices. You can disable these and update
      * your indices manually using the commands.
      */
-  'sync' => getenv('ENVIRONMENT') == 'dev' ? false : true,
+  'sync' => !(getenv('ENVIRONMENT') == 'dev'),
 
   /*
      * By default Scout handles all indexing in a queued job, you can disable
@@ -31,17 +33,6 @@ return [
      */
   'batch_size' => 100,
 
-  /*
-     * The Algolia Application ID, this id can be found in your Algolia Account
-     * https://www.algolia.com/api-keys. This id is used to update records.
-     */
-  'application_id' => getenv('ALGOLIA_APP_ID'),
-
-  /*
-     * The Algolia Admin API key, this key can be found in your Algolia Account
-     * https://www.algolia.com/api-keys. This key is used to update records.
-     */
-  'admin_api_key'  => getenv('ALGOLIA_ADMIN_API'),
 
   /*
      * The Algolia search API key, this key can be found in your Algolia Account
@@ -58,11 +49,11 @@ return [
   'indices' => [
 
     // BEGIN NEWS INDEX
-    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_news')
+    ScoutIndex::create(getenv('ENVIRONMENT') . '_news')
       // Scout uses this by default, so this is optional
-      ->elementType(\craft\elements\Entry::class)
+      ->elementType(Entry::class)
       // If you don't define a siteId, the primary site is used
-      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+      ->criteria(function (EntryQuery $query) {
         return $query
           ->section(['news'])
           ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents']);
@@ -87,8 +78,8 @@ return [
       }),
 
     // BEGIN DOCUMENTS INDEX
-    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_documents')
-      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+    ScoutIndex::create(getenv('ENVIRONMENT') . '_documents')
+      ->criteria(function (EntryQuery $query) {
         return $query
           ->section(['documents', 'documentPackets'])
           ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents']);
@@ -125,8 +116,8 @@ return [
       }),
 
     // BEGIN STAFF INDEX
-    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_staff')
-      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+    ScoutIndex::create(getenv('ENVIRONMENT') . '_staff')
+      ->criteria(function (EntryQuery $query) {
         return $query
           ->section('staff')
           ->with(['portrait', 'department']);
@@ -149,8 +140,8 @@ return [
       }),
 
     // BEGIN VOLUNTEERS INDEX
-    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_volunteers')
-      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+    ScoutIndex::create(getenv('ENVIRONMENT') . '_volunteers')
+      ->criteria(function (EntryQuery $query) {
         return $query
           ->section('volunteers')
           ->with(['portrait', 'department']);
@@ -171,8 +162,8 @@ return [
       }),
 
     // BEGIN TEAMS INDEX
-    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_teams')
-      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+    ScoutIndex::create(getenv('ENVIRONMENT') . '_teams')
+      ->criteria(function (EntryQuery $query) {
         return $query
           ->section('teams')
           ->with(['teamMembers']);
@@ -193,14 +184,15 @@ return [
       }),
 
     // BEGIN ALL INDEX
-    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_all')
-      ->elementType(\craft\elements\Entry::class)
-      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+    ScoutIndex::create(getenv('ENVIRONMENT') . '_all')
+      ->elementType(Entry::class)
+      ->criteria(function (EntryQuery $query) {
         return $query
           ->section([
             'boardsCommissions',
             'departments',
             'documents',
+						'documentPackets',
             'events',
             'meetings',
             'news',

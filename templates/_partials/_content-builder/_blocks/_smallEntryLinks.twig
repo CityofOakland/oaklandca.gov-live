@@ -1,12 +1,18 @@
-<div class="{% if not loop.last %}mb-12 {% endif %}body-text">
-  {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" %}
-  {{ block.entriesDescription }}
-  <ul class="">
-    {% for entry in block.entries %}
-      {% set isDoc = (entry.type == "documents") ? true : false %}
-      {% set url = isDoc ? entry.documentFile[0].url : entry.redirectUrl ?? entry.url %}
-      {% set target = isDoc ? "_blank" : "_self" %}
-      <li class="my-2"><a href="{{ url }}" target="{{ target }}">{{ entry.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
+<section class="@container relative z-0 bg-cool-gray-100 p-6 {{ not loop.last ? "mb-12" }}">
+  <div class="container px-6 @3xl:px-16 body-text">
+    {{ include("_partials/_heading.twig", {
+      params: {
+        text: block.heading
+      }
+    }) }}
+    {{ block.entriesDescription }}
+    <ul class="">
+      {% for entry in block.entries %}
+        {% set isDoc = (entry.type == "documents") ? true : false %}
+        {% set url = isDoc ? entry.documentFile[0].url : entry.redirectUrl ?? entry.url %}
+        {% set target = isDoc ? "_blank" : "_self" %}
+        <li class="my-2"><a href="{{ url }}" target="{{ target }}">{{ entry.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

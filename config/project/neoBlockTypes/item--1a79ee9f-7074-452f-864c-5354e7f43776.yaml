@@ -7,18 +7,18 @@ fieldLayouts:
         elements:
           -
             fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
-            instructions: 'Should be action oriented. "Pay by Phone" or "Apply in Person".'
-            label: Header
-            required: false
+            instructions: ''
+            label: ''
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
           -
             fieldUid: c14fea44-3f71-477c-88d9-6f37c168d868 # Content
-            instructions: 'How to complete this action. You can include text, buttons, contact information and documents.'
+            instructions: ''
             label: ''
-            required: false
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -30,6 +30,6 @@ handle: item
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
-name: 'Add an Option'
+name: 'Add an Item'
 sortOrder: 1
 topLevel: true

@@ -1,7 +1,9 @@
 {% set fullTitle = entry.relatedBoardOrCommission|length ? entry.relatedBoardOrCommission.one().title : 'Commission' %}
-{% set subTitle = clone(entry.relatedProjectTopicOrPublicBody) %}
-{% if subTitle|length and subTitle.type('boardsCommissions')|length %}
-	{% set fullTitle = fullTitle ~ ' - ' ~ subTitle.type('boardsCommissions').one().title %}
+{% if entry.type == 'meetings' %}
+{% set subTitle = clone(entry.subcommittees) %}
+{% if subTitle|length and subTitle.section('boardsCommissions')|length %}
+	{% set fullTitle = fullTitle ~ ' - ' ~ subTitle.section('boardsCommissions').one().title %}
+{% endif %}
 {% endif %}
 
 {% do seomatic.meta.seoTitle(fullTitle) %}
@@ -296,6 +298,25 @@
   } %}
 {% endblock %}
 
+{% block modal %}
+	<div id="modal" class="components" aria-hidden='true' aria-labelledby='modalTitle' aria-describedby='modalDescription' role='dialog'>
+    <div class='sr-only' id='modalDescription'>This is a dialog window which overlays the main content of the page. The modal begins with a heading 2 called &quot;Subscribe to get updates&quot;. Pressing the Close Modal button at the top of the modal will close the modal and bring you back to where you were on the page.</div>
+    <div class='container'>
+      <div class="w-7/11 mx-auto">
+        <div id="modalContent" class="bg-white relative p-12" style="border: 1px solid #9E9E9E;border-radius: 8px;">
+          <button id='modalCloseButton' class="absolute top-8 right-8 modal-close" aria-label='Close email subscription modal'><i class="fa-light fa-xmark h-8"></i></button>
+          <span class="w-6/12"></span>
+          <div class="w-9/12">
+            <h2 id="modalTitle">Subscribe to get updates</h2>
+            <p class="lead mt-4 mb-6">Use the form below to specify which email and updates you would like to receive.</p>
+          </div>
+          {{ craft.oaklandEmailNotifications.renderForm()|raw }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
 {% block sidebar %}
 	{% if entry.date %}
     <hr/>
@@ -388,7 +409,7 @@
     {{ entry.eventContact|raw }}
   {% endif %}
 
-  {% if entry.relatedBoardOrCommission|length or entry.relatedProjectTopicOrPublicBody|length %}
+  {% if entry.relatedBoardOrCommission|length or entry.subcommittees|length %}
     <hr/>
     <h4>{{ 'Related Pages'|t }}</h4>
     <ul class="ul-icons related">
@@ -399,17 +420,24 @@
           </a>
         </li>
       {% endfor %}
-      {% set child_query = ['not'] %}
-      {% set child_query = child_query|merge(entry.relatedBoardOrCommission.ids()) %}
-      {% for entry in entry.relatedProjectTopicOrPublicBody.id(child_query).all() %}
-        <li>
-          <a href="{{ entry.url }}">
-            {{ entry.title }}
-          </a>
-        </li>
-      {% endfor %}
+      {% if entry.subcommittees %}
+	      {% set child_query = ['not'] %}
+	      {% set child_query = child_query|merge(entry.relatedBoardOrCommission.ids()) %}
+	      {% for entry in entry.subcommittees.id(child_query).all() %}
+	        <li>
+	          <a href="{{ entry.url }}">
+	            {{ entry.title }}
+	          </a>
+	        </li>
+	      {% endfor %}
+      {% endif %}
     </ul>
   {% endif %}
+
+  <hr/>
+  <h4>{{ 'Subscribe to get updates'|t }}</h4>
+  <p class="mb-4">We’ll let you know when the minutes are posted</p>
+  <button class="button secondary modal-open">Subscribe</button>
 
   <hr class="light">
   <p class="mt-4 small">Posted: {{ entry.postDate|date("F j, Y g:ia") }}</p>

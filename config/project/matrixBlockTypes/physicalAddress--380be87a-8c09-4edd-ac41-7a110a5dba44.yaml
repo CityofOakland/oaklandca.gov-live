@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: b4b3c606-9215-46dd-926d-ecc0cdd900e7 # Street Address
+            fieldUid: b4b3c606-9215-46dd-926d-ecc0cdd900e7 # Address
             instructions: null
             label: null
             required: true
@@ -82,13 +82,13 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  b4b3c606-9215-46dd-926d-ecc0cdd900e7: # Street Address
+  b4b3c606-9215-46dd-926d-ecc0cdd900e7: # Address
     columnSuffix: null
     contentColumnType: string
-    fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
-    handle: streetAddress
+    fieldGroup: null
+    handle: ctaAddress
     instructions: 'Use this field to enter your street address.'
-    name: 'Street Address'
+    name: Address
     searchable: false
     settings:
       coordinatesDefault:
@@ -110,7 +110,7 @@ fields:
       layout: null
       mapOnSearch: open
       mapOnStart: close
-      requireCoordinates: true
+      requireCoordinates: '1'
       showMap: false
       subfieldConfig:
         __assoc__:
@@ -207,6 +207,45 @@ fields:
                 -
                   - position
                   - '8'
+          -
+            - name
+            -
+              __assoc__:
+                -
+                  - label
+                  - Name
+                -
+                  - width
+                  - '100'
+                -
+                  - position
+                  - '101'
+          -
+            - county
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'County or District'
+                -
+                  - width
+                  - '100'
+                -
+                  - position
+                  - '102'
+          -
+            - placeId
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'Place ID'
+                -
+                  - width
+                  - '100'
+                -
+                  - position
+                  - '103'
       visibilityToggle: both
     translationKeyFormat: null
     translationMethod: none

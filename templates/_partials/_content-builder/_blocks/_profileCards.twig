@@ -1,0 +1,69 @@
+{% set sectionColor = block.background.color[0] ?? null %}
+{% set teamEntry = block.profileTeam.one() ?? null %}
+{% set featuredStaff = block.profileFeatured.all() ?? null %}
+
+<section class="@container flex-1 {{ sectionColor ? "#{sectionColor.background} #{sectionColor.text}" }}">
+	<div class="@container container px-6 py-8 @3xl:px-16 @3xl:pt-12">
+		{{ include("_partials/_content-builder/_blocks/_elements/_component-header.twig", {
+			params: {
+				text: block.heading,
+				description: block.description
+			}
+		}) }}
+
+		{# Featured Team Members #}
+		{% if featuredStaff %}
+			{% set twoUp = featuredStaff|length == 2 or featuredStaff|length == 4 %}
+			<div
+					class="grid gap-6 mt-8 @xl:mt-12 @xl:gap-8 @xl:grid-cols-2 {{ twoUp ? '' : "@3xl:grid-cols-3" }}">
+				{% for row in featuredStaff %}
+					{% set staff = row.staffMember.one() ?? null %}
+					{% set photo = staff.portrait.one ?? '' %}
+					{% set jobTitle = row.jobTitle ?? staff.jobTitle ?? staff.staffImportJobTitle %}
+					{{ include("_partials/_content-builder/_blocks/_elements/_profile-card.twig", {
+						params: {
+							url: staff.url,
+							photo: photo,
+							photoAlt: "Portrait of #{jobTitle}, #{staff.title}",
+							heading: staff.title,
+							subheading: jobTitle,
+							caption: row.caption
+						}
+					}) }}
+				{% endfor %}
+			</div>
+			{% if block.linkTeam %}
+				<a class="mt-12 p-4 text-sm button secondary" href="{{ block.linkTeam.url }}"
+				   target="{{ block.linkTeam.target }}">
+					{{ block.linkTeam.text }}
+				</a>
+			{% endif %}
+		{# Members from a Team page #}
+		{% elseif teamEntry %}
+			{% set members = teamEntry.teamMembers.all() ?? null %}
+			{% if members %}
+				<div class="mt-8 @xl:mt-12 space-y-4 @3xl:space-y-8">
+					{% for group in members %}
+						{% set staffMembers = group.staff.all() ?? null %}
+						{% set twoUp = staffMembers|length == 2 or staffMembers|length == 4 %}
+						<div class="grid gap-6 @xl:gap-8 @xl:grid-cols-2 {{ twoUp ? '' : "@3xl:grid-cols-3" }}">
+							{% for staff in staffMembers %}
+								{% set photo = staff.portrait.one ?? '' %}
+								{% set jobTitle = staff.jobTitle ?? staff.staffImportJobTitle %}
+								{{ include("_partials/_content-builder/_blocks/_elements/_profile-card.twig", {
+									params: {
+										url: staff.url,
+										photo: photo,
+										photoAlt: "Portrait of #{jobTitle}, #{staff.title}",
+										heading: staff.title,
+										subheading: jobTitle
+									}
+								}) }}
+							{% endfor %}
+						</div>
+					{% endfor %}
+				</div>
+			{% endif %}
+		{% endif %}
+	</div>
+</section>

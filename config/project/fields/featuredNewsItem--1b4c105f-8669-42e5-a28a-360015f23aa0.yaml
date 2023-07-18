@@ -1,0 +1,22 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 4ed914c6-b7ea-44be-a061-4430ad33baf2 # News
+handle: featuredNewsItem
+instructions: ''
+name: 'Featured News Item'
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: 'Add an entry'
+  showSiteMenu: true
+  source: null
+  sources:
+    - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

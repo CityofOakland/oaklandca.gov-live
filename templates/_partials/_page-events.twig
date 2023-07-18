@@ -8,9 +8,12 @@
 {% if events | length %}
   <section class="mb-16">
     <a class="anchor-link" id="page-events"></a>
-    {% include '_partials/_elements/_module-header.twig' with {
-      headerText: pageEventsHeaderText ?? "Events",
-    } %}
+    {{ include("_partials/_heading.twig", {
+      params: {
+        text: "Events",
+        margin: "mb-4"
+      }
+    }) }}
     <div class="card-grid vertical-cards mt-8">
       {% for entry in events %}
         {% include '_partials/_elements/_vertical-cards.twig' with {

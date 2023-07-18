@@ -1,0 +1,15 @@
+{% set bgColor = block.backgroundColor.color[0] ?? null %}
+
+{{ include("_components/_spotlight.twig", {
+  params: {
+    bgColor: bgColor ? bgColor.background,
+    textColor: bgColor ? bgColor.text,
+    brow: block.brow|default('Spotlight'),
+    imgBg: block.useImageAsBackground ?? false,
+    textRight: block.alignment ?? false,
+    image: block.image.one() ?? null,
+    heading: block.heading,
+    description: block.description,
+    button: block.callToAction ?? null
+  }
+}) }}

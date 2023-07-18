@@ -1,0 +1,20 @@
+columnSuffix: zniwioob
+contentColumnType: text
+fieldGroup: 4ed914c6-b7ea-44be-a061-4430ad33baf2 # News
+handle: postMonth
+instructions: ''
+name: 'Post Month'
+searchable: false
+settings:
+  allowSelect: false
+  columnType: text
+  decimals: '0'
+  displayType: hidden
+  fieldTwig: '{{ include("_partials/preparse/postMonth.twig") }}'
+  parseBeforeSave: false
+  parseOnMove: false
+  showField: false
+  textareaRows: '5'
+translationKeyFormat: null
+translationMethod: none
+type: besteadfast\preparsefield\fields\PreparseFieldType

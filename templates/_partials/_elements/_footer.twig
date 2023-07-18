@@ -5,8 +5,8 @@
   [ seoMaticLinks.instagram.url, 'instagram.svg', 'Oakland Instagram Page' ]
 ] %}
 
-<footer class="bg-gray-1000 bg-transparent-oakland-roots-black">
-    <div class="container py-8">
+<footer class="bg-gray-1000 bg-transparent-oakland-roots-black @container">
+    <div class="container px-6 @3xl:px-16 py-8">
         <nav id="footer-navigation" class="lg:flex flex-wrap text-white" name="Footer Navigation">
             {% for item in navigationFooter.navigationFooter.level(1).all() %}
             {% if loop.index == 1 %}
@@ -51,15 +51,15 @@
         </nav>
     </div>
 
-    <div class="bg-black text-white">
-        <div class="container py-6">
+    <div class="bg-black text-white @container">
+        <div class="container py-6 px-6 @3xl:px-16">
             <nav class="lg:flex items-center justify-between" id="bottom-navigation" name="Bottom Navigation">
                 <div class="lg:flex items-end">
                     <a href="{{ siteUrl }}">
                         {{ svg( '@webroot/dist/img/logo-oakland.svg')|attr({ class: 'w-40 h-10 fill-current text-gray-100 hover:text-gray-200' }) }}
                         <span class="sr-only">Home</span>
                     </a>
-                    <ul class="grid grid-cols-2 lg:flex items-center my-4 lg:my-0 lg:ml-6">
+                    <ul class="grid grid-cols-2 lg:flex items-center my-4 lg:my-0 lg:mx-6">
                         {% for item in navigationFooter.linkits.all() %}
                             <li class="lg:ml-6 mb-0"><a href="{{ item.linkit.url }}">{{ item.linkit.text }}</a></li>
                         {% endfor %}
@@ -85,7 +85,7 @@
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
       pageLanguage: 'en',
-      includedLanguages: 'ceb,en,es,hmn,ja,km,ko,mn,tl,vi,zh-TW',
+      includedLanguages: 'ceb,en,es,hmn,ja,km,ko,mn,tl,vi,zh-TW,ar',
       layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT
     }, 'google_translate_element');
   }

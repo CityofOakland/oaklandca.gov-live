@@ -72,14 +72,14 @@
         {%- endif -%}
     </button>
 
-    <div class="menu{% if not showMenu %} hidden{% endif %}">
+    <div class="menu{% if not showMenu %} oak-hidden{% endif %}">
         {% set enabledSiteIds = craft.app.elements.getEnabledSiteIdsForElement(element.id) %}
         {% set siteGroups = craft.app.sites.getAllGroups() %}
         {% for group in siteGroups %}
             {% set groupSites = group.getSites() %}
             {% if groupSites|length %}
                 {% set groupIsVisible = canEditMultipleSites and groupSites|column('id')|intersect(editableSiteIds)|length %}
-                <div class="site-group{% if not groupIsVisible %} hidden{% endif %}">
+                <div class="site-group{% if not groupIsVisible %} oak-hidden{% endif %}">
                     {% if siteGroups|length > 1 %}<h6>{{ group.name|t('site') }}</h6>{% endif %}
                     <ul class="padded">
                         {% for site in groupSites %}
@@ -103,7 +103,7 @@
         {% endfor %}
 
         {% if showRevisions %}
-            <hr class="revision-hr{% if not canEditMultipleSites %} hidden{% endif %}">
+            <hr class="revision-hr{% if not canEditMultipleSites %} oak-hidden{% endif %}">
             <ul class="padded revision-group-current">
                 {% set currentRevision = element.getCurrentRevision() %}
                 {% set currentRevisionEditTime = currentRevision.dateCreated ?? element.dateUpdated %}
@@ -171,5 +171,5 @@
     </div>
 </div>
 
-<div id="revision-spinner" class="spinner hidden" title="{{ 'Saving'|t('app') }}" aria-label="{{ 'Saving'|t('app') }}"></div>
+<div id="revision-spinner" class="spinner oak-hidden" title="{{ 'Saving'|t('app') }}" aria-label="{{ 'Saving'|t('app') }}"></div>
 <div id="revision-status" class="invisible"></div>

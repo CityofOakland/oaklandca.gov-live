@@ -1,0 +1,19 @@
+columnSuffix: wrmcapwj
+contentColumnType: text
+fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855 # Relationships
+handle: relatedContentHeader
+instructions: 'Will default to ''Related Content''. Customize if needed.'
+name: 'Related Content Header'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

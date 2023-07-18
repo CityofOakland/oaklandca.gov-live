@@ -1,0 +1,32 @@
+{# Get the manually selected featured entry, if it exists. #}
+{% set featuredEntry = globalNews.featuredNewsItem.one() ?? null %}
+{# Get the first news entry that is marked as an official press release and has a main image. #}
+{% set autoFeaturedEntry =  craft.entries.section("news").officialPressRelease(true).newsImage(":notempty:").one() ?? null %}
+
+{# If the featured entry is selected, check to see if it is older than one month since being posted.
+	 If it is, then use the previously set autoFeaturedEntry. Othe #}
+{% if featuredEntry %}
+	{% set expireDate = featuredEntry.postDate|date_modify('+1 month') %}
+	{% set isExpired = expireDate <= now %}
+	{% if isExpired %}
+		{% set featuredEntry = autoFeaturedEntry %}
+	{% endif %}
+{% else %}
+	{% set featuredEntry = autoFeaturedEntry %}
+{% endif %}
+
+{# Get the featured entry’s ID #}
+{% set featuredId = featuredEntry.id() %}
+
+{# Get the IDs of the global news #}
+{% set selectedNews = craft.entries.section("news").officialPressRelease(true).id("not #{featuredId}").ids() ?? null %}
+
+{{ include("_components/_newsCards/index.twig", {
+	params: {
+		background: "bg-white",
+		baseRelationId: 17939,
+		heading: "News",
+		featuredEntry: featuredEntry,
+		selectedEntries: selectedNews
+	}
+}) }}

@@ -6,17 +6,9 @@ instructions: 'Select the new meeting you have rescheduled for here.'
 name: 'Rescheduled Meeting'
 searchable: false
 settings:
-  allowSelfRelations: false
-  limit: '1'
-  localizeRelations: false
-  selectionLabel: 'Add a meeting'
-  showSiteMenu: true
-  source: null
-  sources:
-    - 'calendar:3'
-  targetSiteId: null
-  validateRelatedElements: false
-  viewMode: null
+  errorMessage: 'Component class ''Solspace\Calendar\FieldTypes\EventFieldType'' belongs to a disabled plugin (Calendar).'
+  expectedType: Solspace\Calendar\FieldTypes\EventFieldType
+  settings: '{"allowSelfRelations":false,"limit":"1","localizeRelations":false,"selectionLabel":"Add a meeting","showSiteMenu":true,"source":null,"sources":["calendar:3"],"targetSiteId":null,"validateRelatedElements":false,"viewMode":null}'
 translationKeyFormat: null
-translationMethod: site
-type: Solspace\Calendar\FieldTypes\EventFieldType
+translationMethod: none
+type: craft\fields\MissingField

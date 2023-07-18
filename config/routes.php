@@ -26,7 +26,7 @@ return [
   'departments/<slug>/news' => ['template' => 'departments/_news'],
   'documents/related-to/<section>/<slug>' => ['template' => 'documents'],
   'meetings/related-to/<section>/<slug>' => ['template' => 'meetings'],
-  'news/related-to/<section>/<slug>' => ['template' => 'news'],
+  'news/related-to/<section>/<slug>' => ['template' => 'news/_related-to'],
   'projects/related-to/<section>/<slug>' => ['template' => 'projects'],
   'resources/related-to/<section>/<slug>' => ['template' => 'resources'],
   'services/related-to/<section>/<slug>' => ['template' => '_layouts/_instant-search-services'],

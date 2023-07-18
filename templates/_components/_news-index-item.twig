@@ -1,7 +1,7 @@
-{% set news_image = news_item.newsImage|length ? news_item.newsImage.one() : null %}
+{% set news_image = news_item.newsImage.one() ?? null %}
 
 <article class="sm:flex mb-6 pb-8 border-gray-300 border-b-2">
-  <figure class="hidden sm:block sm:w-1/4">
+  <figure class="oak-hidden sm:block sm:w-1/4">
     {% if news_image %}
       <img src="{{ news_image.url }}"
         alt="{{ news_image.title ?? news_image.filename }}"
@@ -25,7 +25,7 @@
       </h3>
     </div>
 
-    <div class="text-base text-gray-1000 my-2">
+    <div class="text-base text-gray-1000 [&>*:first-child]:mt-2">
       {#
         If the news article summary is present, render it in full,
         otherwise print the first 200 characters from the article's body.
@@ -35,7 +35,7 @@
       #}
       {{ news_item.summary ?: (news_item.body|striptags|slice(0, 200) ~ (news_item.body|length > 200 ? ' ...' : '')) }}
     </div>
-    <p class="text-sm my-2 text-gray-700">
+    <p class="text-sm mt-2 text-gray-700">
       Posted: {{ news_item.postDate|date('F jS, Y') }}
     </p>
   </div>

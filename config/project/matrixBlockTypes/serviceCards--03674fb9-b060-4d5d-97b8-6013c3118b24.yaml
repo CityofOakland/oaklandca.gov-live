@@ -1,0 +1,321 @@
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581 # Content Builder
+fieldLayouts:
+  e415d814-38d1-4ce4-a0f7-82a6f9db4210:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: fac29cc3-6f0c-43f5-b0e6-f9f8786692f9 # Services Header
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 160d2b9c-86be-4d69-98b0-fa6b6c84d993 # Services Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ed948d68-fa7c-4932-bfea-222e8f79c913 # Service Cards
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fae605bf-6b7f-404c-9c50-a492493f71a1 # Call to Action 
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  160d2b9c-86be-4d69-98b0-fa6b6c84d993: # Services Description
+    columnSuffix: wohnmzzg
+    contentColumnType: text
+    fieldGroup: null
+    handle: description
+    instructions: 'Optional. Keep this brief in order to avoid pushing content further down the page.'
+    name: 'Services Description'
+    searchable: false
+    settings:
+      availableTransforms: ''
+      availableVolumes: ''
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  ed948d68-fa7c-4932-bfea-222e8f79c913: # Service Cards
+    columnSuffix: hawqmrla
+    contentColumnType: string
+    fieldGroup: null
+    handle: serviceCards
+    instructions: 'Add 2 to 9 cards to this section.'
+    name: 'Service Cards'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 82e72e80-21fd-4df3-bb14-a7833d01f3bf # Service Link & Header
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - d220b1b2-d0fd-4029-b1ff-ee7ebaec877b # Service Description
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_98_servicecards}}'
+      fieldLayout: table
+      maxRows: '9'
+      minRows: '2'
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: 'Add a service'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  fac29cc3-6f0c-43f5-b0e6-f9f8786692f9: # Services Header
+    columnSuffix: zstgvnwh
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: 'Will default to ''Services''. Customize if needed.'
+    name: 'Services Header'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  fae605bf-6b7f-404c-9c50-a492493f71a1: # Call to Action 
+    columnSuffix: krkucizc
+    contentColumnType: text
+    fieldGroup: null
+    handle: serviceCTA
+    instructions: 'Add a button at the bottom of your spotlight that can link out to other content.'
+    name: 'Call to Action '
+    searchable: false
+    settings:
+      allowCustomText: '1'
+      allowTarget: '1'
+      defaultText: ''
+      selectLinkText: ''
+      types:
+        __assoc__:
+          -
+            - presseddigital\linkit\models\Email
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Phone
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Url
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+                -
+                  - allowAlias
+                  - ''
+                -
+                  - allowMailto
+                  - ''
+                -
+                  - allowHash
+                  - ''
+                -
+                  - allowPaths
+                  - ''
+          -
+            - presseddigital\linkit\models\Twitter
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Facebook
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Instagram
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\LinkedIn
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Entry
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - presseddigital\linkit\models\Category
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - presseddigital\linkit\models\Asset
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - presseddigital\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: presseddigital\linkit\fields\LinkitField
+handle: serviceCards
+name: 'Service Cards'
+sortOrder: 31

@@ -1,0 +1,386 @@
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581 # Content Builder
+fieldLayouts:
+  064041ce-3f75-4ada-a1a8-cad2f182791f:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 0567fab2-a7c6-4e2f-91c2-ea0072e45960 # Profile Cards Header
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 46d3aa66-3202-4738-84df-b55003fae447 # Profile Cards Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 35d55b1f-f6b0-404f-9b1d-5b90e0a621bf # Background
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 10d32360-4144-4cc7-9b3a-10c5b8335103 # Team
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9c5a5207-8f38-4715-993b-741d8919f3f0 # Featured Staff
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 935574ad-74e5-409a-9f25-d100d5962f99 # Link to Team Page
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  9c5a5207-8f38-4715-993b-741d8919f3f0: # Featured Staff
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: profileFeatured
+    instructions: 'If your team is over 9 people you can choose to feature key team members and link to your team page.'
+    name: 'Featured Staff'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - cfd8d58a-04c4-47d6-a974-c3290affb7c3 # Staff Member
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 88b5eb52-5431-40f1-88bb-e750acbed184 # Job Title
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 6d032aec-91d5-43a0-b50b-71a2112d5eda # Caption
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_95_profilefeatured}}'
+      fieldLayout: table
+      maxRows: '9'
+      minRows: ''
+      placeholderKey: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: 'Add a featured member'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  10d32360-4144-4cc7-9b3a-10c5b8335103: # Team
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: profileTeam
+    instructions: 'If your team is under 9 people, you can embed a summary of your team members here.'
+    name: Team
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: 'Add a team'
+      showSiteMenu: true
+      source: null
+      sources:
+        - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  35d55b1f-f6b0-404f-9b1d-5b90e0a621bf: # Background
+    columnSuffix: lanclgja
+    contentColumnType: text
+    fieldGroup: null
+    handle: background
+    instructions: 'Select a background color for this section. Options include white, light grey or light blue.'
+    name: Background
+    searchable: false
+    settings:
+      default: null
+      options: ''
+      palette: 'Profile Card Backgrounds'
+      useConfigFile: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: percipioglobal\colourswatches\fields\ColourSwatches
+  46d3aa66-3202-4738-84df-b55003fae447: # Profile Cards Description
+    columnSuffix: obfviuhh
+    contentColumnType: text
+    fieldGroup: null
+    handle: description
+    instructions: 'Optional. Keep this brief in order to avoid pushing content further down the page.'
+    name: 'Profile Cards Description'
+    searchable: false
+    settings:
+      availableTransforms: ''
+      availableVolumes: ''
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  0567fab2-a7c6-4e2f-91c2-ea0072e45960: # Profile Cards Header
+    columnSuffix: ypbiahjj
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: 'Profile Cards Header'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  935574ad-74e5-409a-9f25-d100d5962f99: # Link to Team Page
+    columnSuffix: sxvefnpt
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkTeam
+    instructions: 'If your team is over 9 people link to your team page.'
+    name: 'Link to Team Page'
+    searchable: false
+    settings:
+      allowCustomText: ''
+      allowTarget: '1'
+      defaultText: 'View Full Team'
+      selectLinkText: ''
+      types:
+        __assoc__:
+          -
+            - presseddigital\linkit\models\Email
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Phone
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Url
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - 'https://www.oaklandca.gov/'
+                -
+                  - allowAlias
+                  - ''
+                -
+                  - allowMailto
+                  - ''
+                -
+                  - allowHash
+                  - ''
+                -
+                  - allowPaths
+                  - ''
+          -
+            - presseddigital\linkit\models\Twitter
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Facebook
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Instagram
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\LinkedIn
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Entry
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  -
+                    - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+                -
+                  - customSelectionLabel
+                  - 'Add link to team page'
+          -
+            - presseddigital\linkit\models\Category
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - presseddigital\linkit\models\Asset
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - presseddigital\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: presseddigital\linkit\fields\LinkitField
+handle: profileCards
+name: 'Profile Cards'
+sortOrder: 37

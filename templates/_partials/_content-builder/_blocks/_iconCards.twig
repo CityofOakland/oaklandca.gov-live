@@ -1,0 +1,39 @@
+{% set cards = block.iconCards.all() ?? null %}
+{% set cardLength = cards|length %}
+{% set wideCards = cardLength == 2 or cardLength == 4 %}
+{% set cardColor = block.cardBackgroundColor.color[0] ?? null %}
+
+<section class="@container flex-1 {{ block.background }}">
+	<div class="container px-6 pt-8 pb-6 @3xl:px-16 @3xl:pt-12">
+		{{ include("_partials/_content-builder/_blocks/_elements/_component-header.twig", {
+			params: {
+				text: block.heading|default("Services"),
+				description: block.description
+			}
+		}) }}
+		{% if cards %}
+			<div class="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 {{ wideCards ? '' : 'lg:grid-cols-3' }} md:gap-8 mt-8 md:mt-12">
+				{% for card in cards %}
+					{% set link = card.card %}
+					{% set external = link.target == 1 %}
+					<a
+						aria-label="Open link to {{ link.text }}{{ external ? ' in new tab' }}"
+						class="p-6 text-lg font-bold h-full {{ cardColor ? "#{cardColor.background} #{cardColor.backgroundHover} #{cardColor.text} #{cardColor.textHover}" }} no-underline rounded-sm shadow-btn transition-all duration-75"
+						href="{{ link.url }}"
+						target="{{ link.target }}">
+						{{ svg(card.icon.path, class='h-12 w-auto fill-current') }}
+						<h3 class="my-0 text-lg pt-2">
+							{{ link.text }}
+							{% if link.target %}
+								<i class="fas fa-external-link-alt pl-1 h-[17px]"></i>
+							{% endif %}
+						</h3>
+						{% if card.description %}
+							<p class="mt-3 mb-0 text-sm font-normal">{{ card.description }}</p>
+						{% endif %}
+					</a>
+				{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+</section>

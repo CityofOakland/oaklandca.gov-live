@@ -2,9 +2,12 @@
 {% if addresses or entry.phoneNumbers | length or entry.emailAddress %}
   <section class="mt-16 bg-white">
     <a class="anchor-link" id="page-contact"></a>
-    {% include '_partials/_elements/_module-header.twig' with {
-      headerText: pageLocationHeaderText ?? "Contact Us",
-    } %}
+    {{ include("_partials/_heading.twig", {
+      params: {
+        text: "Contact Us",
+        margin: "mb-4"
+      }
+    }) }}
     <div class="mt-4 lg:flex">
       {% if addresses %}
         <div class="lg:w-1/2 lg:pr-8">

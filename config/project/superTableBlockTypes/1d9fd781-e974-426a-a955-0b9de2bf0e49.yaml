@@ -1,0 +1,222 @@
+field: ca397109-2a19-42e5-ac3b-51811009059d # Set Links
+fieldLayouts:
+  b7bdc928-b234-4023-b8ca-c3c749b805e8:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 5739a81c-6eeb-47e8-8658-7bd07e0fe511 # Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  5739a81c-6eeb-47e8-8658-7bd07e0fe511: # Link
+    columnSuffix: null
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkLocation
+    instructions: 'Will default to entry title. Customize if needed.'
+    name: Link
+    searchable: false
+    settings:
+      allowCustomText: '1'
+      allowTarget: '1'
+      defaultText: ''
+      selectLinkText: ''
+      types:
+        __assoc__:
+          -
+            - presseddigital\linkit\models\Email
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Phone
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Url
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - 'https://www.oaklandca.gov'
+                -
+                  - allowAlias
+                  - ''
+                -
+                  - allowMailto
+                  - ''
+                -
+                  - allowHash
+                  - ''
+                -
+                  - allowPaths
+                  - ''
+          -
+            - presseddigital\linkit\models\Twitter
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Facebook
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Instagram
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\LinkedIn
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - presseddigital\linkit\models\Entry
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  -
+                    - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+                    - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+                    - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+                    - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+                    - 'section:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+                    - 'section:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+                    - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+                    - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+                    - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+                    - 'section:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+                    - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+                    - singles
+                    - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+                    - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+                    - 'section:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+                    - 'section:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - presseddigital\linkit\models\Category
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - presseddigital\linkit\models\Asset
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - presseddigital\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: presseddigital\linkit\fields\LinkitField

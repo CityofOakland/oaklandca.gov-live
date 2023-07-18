@@ -6,7 +6,7 @@ scope:
   - 'elements.inactive:read'
   - 'sections.fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f:read' # Boards & Commissions
   - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:read' # Boards & Commissions
-  - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:read' # Boards & Commissions Redirect
+  - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:read'
   - 'sections.fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c:read' # Boards & Commissions Index
   - 'entrytypes.62b6620d-66f1-4499-abb2-35960313b3dd:read' # Boards & Commissions Index
   - 'sections.ba27f849-b247-4db0-ae91-53a01f44bd0b:read'
@@ -116,10 +116,10 @@ scope:
   - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:create' # Boards & Commissions
   - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:save' # Boards & Commissions
   - 'entrytypes.8ff41718-54b7-4c93-a893-78619f6d632e:delete' # Boards & Commissions
-  - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:edit' # Boards & Commissions Redirect
-  - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:create' # Boards & Commissions Redirect
-  - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:save' # Boards & Commissions Redirect
-  - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:delete' # Boards & Commissions Redirect
+  - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:edit'
+  - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:create'
+  - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:save'
+  - 'entrytypes.451349f6-f11d-40c2-ae6e-47c1e78f32c7:delete'
   - 'sections.fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c:edit' # Boards & Commissions Index
   - 'entrytypes.62b6620d-66f1-4499-abb2-35960313b3dd:save' # Boards & Commissions Index
   - 'sections.ba27f849-b247-4db0-ae91-53a01f44bd0b:edit'

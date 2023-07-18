@@ -1,0 +1,52 @@
+{# Get the manually selected featured entry, if it exists. #}
+{% set featuredEntry = block.featured.one() ?? null %}
+{# Get the first news entry that is marked as an official press release and has a main image. #}
+{% set autoFeaturedEntry =  craft.entries.section("news").officialPressRelease(true).newsImage(":notempty:").relatedTo(block.ownerId).one() ?? null %}
+
+{# If the featured entry is selected, check to see if it is older than one month since being posted.
+	 If it is, then use the previously set autoFeaturedEntry. Othe #}
+{% if featuredEntry %}
+	{% set expireDate = featuredEntry.postDate|date_modify('+1 month') %}
+	{% set isExpired = expireDate <= now %}
+	{% if isExpired %}
+		{% set featuredEntry = autoFeaturedEntry %}
+	{% endif %}
+{% else %}
+	{% set featuredEntry = autoFeaturedEntry %}
+{% endif %}
+
+{# Get the featured entry’s ID #}
+{% set featuredId = featuredEntry.id() %}
+
+{# Get the manually selected news entries for this block #}
+{% set selectedNews = block.news.ids() ?? null %}
+
+{# Get the IDs of the selected news #}
+{% set selectedIds = selectedNews.id("not #{featuredId}").ids() ?? null %}
+
+{# Get the IDs of the news entries that are already related to this post #}
+{% set autoSelectedIds = craft.entries.section("news").relatedTo(block.ownerId).id("not #{featuredId}").ids() ?? null %}
+
+{# Get the selected IDs length #}
+{% set selectedLength = selectedIds|length %}
+{% set selectedLength = (selectedLength != null) ? selectedLength : 0 %}
+
+{# If the selected ID length is less than 2, take the base relation ID and grab up to the two latest news entry IDs that are related to it. #}
+{% if selectedLength < 2 and autoSelectedIds%}
+	{% if selectedLength == 0 %}
+		{% set selectedIds = [] %}
+	{% endif %}
+	{% set relatedLimit = 2 - selectedLength %}
+	{% set relatedIds = autoSelectedIds[0:relatedLimit] %}
+	{% set selectedIds = selectedIds|merge(relatedIds) %}
+{% endif %}
+
+{{ include("_components/_newsCards/index.twig", {
+	params: {
+		background: block.background,
+		baseRelationId: block.ownerId,
+		heading: block.heading|default("News"),
+		featuredEntry: featuredEntry,
+		selectedEntries: selectedIds
+	}
+}) }}

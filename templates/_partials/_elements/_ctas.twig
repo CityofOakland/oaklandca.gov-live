@@ -32,7 +32,7 @@
           {{ macro.buttonTemplate(cta.emailTitle, 'mailto:' ~ cta.emailAddress, cta.linkText) }}
         {% case "physicalAddress" %}
           <div class="mb-4">
-            {% set location = cta.streetAddress %}
+            {% set location = cta.ctaAddress %}
             <p class="text-sm tracking-wide uppercase">{{ cta.addressTitle }}</p>
             <p>
               {{ location.street1 }}<br>

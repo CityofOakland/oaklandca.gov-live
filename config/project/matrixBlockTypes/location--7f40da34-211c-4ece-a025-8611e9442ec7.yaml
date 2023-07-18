@@ -5,7 +5,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 4c0f9e7c-fe6a-47d0-b8c9-17e8a34a39f2 # Address
+            fieldUid: 4c0f9e7c-fe6a-47d0-b8c9-17e8a34a39f2 # Location Address
             instructions: null
             label: null
             required: false
@@ -25,26 +25,26 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  4c0f9e7c-fe6a-47d0-b8c9-17e8a34a39f2: # Address
+  4c0f9e7c-fe6a-47d0-b8c9-17e8a34a39f2: # Location Address
     columnSuffix: null
     contentColumnType: string
-    fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
-    handle: address
+    fieldGroup: null
+    handle: locationAddress
     instructions: ''
-    name: Address
+    name: 'Location Address'
     searchable: false
     settings:
       coordinatesDefault:
         __assoc__:
           -
             - lat
-            - 37.805277357932
+            - '37.805277357932'
           -
             - lng
-            - -122.27239626522
+            - '-122.27239626522'
           -
             - zoom
-            - 18
+            - '18'
       coordinatesMode: readOnly
       dragPinDefault: null
       dragPinLatitude: null
@@ -53,8 +53,8 @@ fields:
       layout: null
       mapOnSearch: open
       mapOnStart: close
-      requireCoordinates: true
-      showMap: null
+      requireCoordinates: '1'
+      showMap: false
       subfieldConfig:
         __assoc__:
           -
@@ -66,13 +66,13 @@ fields:
                   - 'Street Address'
                 -
                   - width
-                  - 100
+                  - '100'
                 -
                   - enabled
-                  - 1
+                  - '1'
                 -
                   - position
-                  - 1
+                  - '1'
           -
             - street2
             -
@@ -82,13 +82,13 @@ fields:
                   - 'Apartment or Suite'
                 -
                   - width
-                  - 100
+                  - '100'
                 -
                   - enabled
-                  - 1
+                  - '1'
                 -
                   - position
-                  - 2
+                  - '2'
           -
             - city
             -
@@ -98,13 +98,13 @@ fields:
                   - City
                 -
                   - width
-                  - 50
+                  - '50'
                 -
                   - enabled
-                  - 1
+                  - '1'
                 -
                   - position
-                  - 3
+                  - '3'
           -
             - state
             -
@@ -114,13 +114,13 @@ fields:
                   - State
                 -
                   - width
-                  - 15
+                  - '15'
                 -
                   - enabled
-                  - 1
+                  - '1'
                 -
                   - position
-                  - 4
+                  - '4'
           -
             - zip
             -
@@ -130,13 +130,13 @@ fields:
                   - 'Zip Code'
                 -
                   - width
-                  - 35
+                  - '35'
                 -
                   - enabled
-                  - 1
+                  - '1'
                 -
                   - position
-                  - 5
+                  - '5'
           -
             - country
             -
@@ -146,13 +146,52 @@ fields:
                   - Country
                 -
                   - width
-                  - 100
+                  - '100'
                 -
                   - enabled
-                  - 1
+                  - '1'
                 -
                   - position
-                  - 6
+                  - '6'
+          -
+            - name
+            -
+              __assoc__:
+                -
+                  - label
+                  - Name
+                -
+                  - width
+                  - '100'
+                -
+                  - position
+                  - '101'
+          -
+            - county
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'County or District'
+                -
+                  - width
+                  - '100'
+                -
+                  - position
+                  - '102'
+          -
+            - placeId
+            -
+              __assoc__:
+                -
+                  - label
+                  - 'Place ID'
+                -
+                  - width
+                  - '100'
+                -
+                  - position
+                  - '103'
       visibilityToggle: both
     translationKeyFormat: null
     translationMethod: none

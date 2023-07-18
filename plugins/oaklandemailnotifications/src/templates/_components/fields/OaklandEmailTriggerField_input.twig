@@ -1,0 +1,29 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Oakland Email Notifications plugin for Craft CMS 3.x
+ *
+ * OaklandEmailTriggerField Field Input
+ *
+ * @author    Goat Creative Inc.
+ * @copyright Copyright (c) 2022 Goat Creative Inc.
+ * @link      https://meetgoat.com
+ * @package   OaklandEmailNotifications
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+<p>When this lightswitch is enabled, saving this entry will automatically trigger an email if a corresponding variable is changed.</p>
+<p>For example, if the <strong>Meeting Status</strong> field is updated and <strong>{% verbatim %}{{ meetingStatus }}{% endverbatim %}</strong> variable is in the corresponding email template, the merged email template will automatically send towards the email subscriptions (if this lightswitch field is on).</p>
+<p>You can view the full list of templates <a href="{{ siteUrl }}admin/settings/plugins/oakland-email-notifications">here</a></p>
+
+{{ forms.lightswitchField({
+  label: '',
+  instructions: '',
+  id: name,
+  on: value,
+  name: name,
+  value: value })
+}}

@@ -74,6 +74,35 @@ function setFilterRules($){
   }
 }
 
+// function setFilterCommittees($) {
+//   var $public_body  = $('select[name="public_body"]');
+//   var $subcommittee = $('select[name="subcommittee"]');
+
+//   $public_body.on('change', function(){
+//     var $this = $(this);
+//     var $options = $this.find(":selected");
+//     var options = $options.data('subcommittees');
+
+//     $subcommittee.find('option:not(:first-child)').remove();
+
+//     if(options.length) {
+//       $subcommittee.removeAttr('disabled');
+
+//       for(var i = 0; i < options.length; i++) {
+//         var $option = $('<option>')
+//           .attr('value', options[i]['id'])
+//           .text(options[i]['text']);
+
+//         $subcommittee.append($option);
+//       }
+//     } else {
+//       $subcommittee.attr('disabled', true);
+//     }
+
+//   });
+// }
+
+// setFilterCommittees(jQuery);
 setFilterRules(jQuery);
 
 // Accept HMR as per: https://vitejs.dev/guide/api-hmr.html

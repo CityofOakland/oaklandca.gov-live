@@ -9,86 +9,89 @@
   {% redirect 404 %}
 {% endif %}
 
-{% set q              = craft.app.request.getQueryParam('q') %}
-{% set filter_enabled = false %}
-{% set event_type     = craft.app.request.getQueryParam('event_type') %}
+{% set type = craft.app.request.getQueryParam('type') ? craft.app.request.getQueryParam('type') : 'upcoming' %}
 
-{% set relatedToElements = [entry] %}
+{% if craft.app.request.getQueryParam('type') %}
+  {% set q              = craft.app.request.getQueryParam('q') %}
+  {% set filter_enabled = false %}
+  {% set event_type     = craft.app.request.getQueryParam('event_type') %}
 
-{% if event_type %}
-  {% set filter_enabled     = true %}
-  {% set event_type_entry   = craft.categories().group('eventTypes').id(event_type).one() %}
-  {% set relatedToElements  = relatedToElements|merge([event_type_entry]) %}
+  {% set relatedToElements = [entry] %}
+
+  {% if event_type %}
+    {% set filter_enabled     = true %}
+    {% set event_type_entry   = craft.categories().group('eventTypes').id(event_type).one() %}
+    {% set relatedToElements  = relatedToElements|merge([event_type_entry]) %}
+  {% endif %}
+
+  {% set currentPage = craft.app.request.getQueryParam('page') ? craft.app.request.getQueryParam('page') : 1 %}
+
+  {% set events   = [] %}
+  {% set perPage  = 10 %}
+
+  {% set year   = craft.app.request.getQueryParam('year') ? craft.app.request.getQueryParam('year') : '' %}
+  {% set month  = craft.app.request.getQueryParam('month') ? craft.app.request.getQueryParam('month') : '' %}
+  {% set ymd     = '' %}
+
+  {% if craft.app.request.getQueryParam('q') %}
+    {% set filter_enabled = true %}
+  {% endif %}
+
+  {% if year and month %}
+    {% set filter_enabled   = true %}
+    {% set ymd              = year ~ '-' ~ month ~ '-01' %}
+    {% set end              = ymd|date_modify('+1 month')|date('Y-m-d') %}
+    {% set pagination_total = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
+    {% set actual_total     = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
+    {% set date_query       = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc')) %}
+  {% elseif year %}
+    {% set filter_enabled   = true %}
+    {% set ymd              = year ~ '-' ~ '01-01' %}
+    {% set end              = ymd|date_modify('+1 year')|date('Y-m-d') %}
+    {% set pagination_total = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
+    {% set actual_total     = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
+    {% set date_query       = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc')) %}
+  {% elseif month %}
+    {% set filter_enabled   = true %}
+    {% set ymd              = now|date('Y') ~ '-' ~ month ~ '-01' %}
+    {% set end              = ymd|date_modify('+1 month')|date('Y-m-d') %}
+    {% set pagination_total = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
+    {% set actual_total     = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
+    {% set date_query       = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc')) %}
+  {% endif %}
+
+  {% switch type %}
+    {% case 'upcoming' %}
+      {% set total      = pagination_total is defined ? pagination_total : craft.calendarize.upcoming({section: ['events'], search: q, relatedTo: relatedToElements })|length %}
+      {% set events     = date_query is defined ? date_query : craft.calendarize.upcoming({section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1) * perPage}, 'asc', true) %}
+      {% set totalPages = (total / perPage)|round(0, 'ceil') %}
+    {% case 'past' %}
+      {% set total      = pagination_total is defined ? pagination_total : craft.calendarize.between('2017-01-01', now|date('Y-m-d'),{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
+      {% set events     = date_query is defined ? date_query : craft.calendarize.between('2017-01-01', now|date('Y-m-d'),{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1) * perPage}, 'desc', true) %}
+      {% set totalPages = (total / perPage)|round(0, 'ceil') %}
+  {% endswitch %}
+
+  {% set query_string = 'q='~q~'&event_type='~event_type~'&year='~year~'&month='~month %}
+
+  {% set pageInfo = {
+    total: total,
+    actualTotal: (actual_total is defined ? actual_total : total),
+    totalPages: totalPages,
+    currentPage: currentPage,
+    prevUrl: entry.url ~ '/p' ~ (currentPage > 1 ? currentPage - 1 : null) ~ '/events' ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~(currentPage > 1 ? currentPage - 1 : null),
+    nextUrl: entry.url ~ '/p' ~ (currentPage < totalPages ? currentPage + 1 : null) ~ '/events' ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~ (currentPage < totalPages ? currentPage + 1 : null),
+    firstUrl: entry.url ~ '/p' ~ 1 ~ '/events' ~ '?type=' ~ type ~ '&' ~ query_string ~ '&page=1',
+    lastUrl: entry.url ~ '/p' ~ totalPages ~ '/events' ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~ totalPages,
+  } %}
+
+  {% set seoTitle = entry.title ~ ' Meetings' %}
+
+  {% if pageInfo.currentPage > 1 %}
+    {% set seoTitle = seoTitle ~ ' | Page ' ~ pageInfo.currentPage ~ ' of ' ~ pageInfo.totalPages %}
+  {% endif %}
+
+  {% do seomatic.meta.seoTitle(seoTitle) %}
 {% endif %}
-
-{% set currentPage = craft.app.request.getQueryParam('page') ? craft.app.request.getQueryParam('page') : 1 %}
-
-{% set type     = craft.app.request.getQueryParam('type') ? craft.app.request.getQueryParam('type') : 'upcoming' %}
-{% set events   = [] %}
-{% set perPage  = 10 %}
-
-{% set year   = craft.app.request.getQueryParam('year') ? craft.app.request.getQueryParam('year') : '' %}
-{% set month  = craft.app.request.getQueryParam('month') ? craft.app.request.getQueryParam('month') : '' %}
-{% set ymd     = '' %}
-
-{% if craft.app.request.getQueryParam('q') %}
-  {% set filter_enabled = true %}
-{% endif %}
-
-{% if year and month %}
-  {% set filter_enabled   = true %}
-  {% set ymd              = year ~ '-' ~ month ~ '-01' %}
-  {% set end              = ymd|date_modify('+1 month')|date('Y-m-d') %}
-  {% set pagination_total = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
-  {% set actual_total     = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
-  {% set date_query       = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc')) %}
-{% elseif year %}
-  {% set filter_enabled   = true %}
-  {% set ymd              = year ~ '-' ~ '01-01' %}
-  {% set end              = ymd|date_modify('+1 year')|date('Y-m-d') %}
-  {% set pagination_total = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
-  {% set actual_total     = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
-  {% set date_query       = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc')) %}
-{% elseif month %}
-  {% set filter_enabled   = true %}
-  {% set ymd              = now|date('Y') ~ '-' ~ month ~ '-01' %}
-  {% set end              = ymd|date_modify('+1 month')|date('Y-m-d') %}
-  {% set pagination_total = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
-  {% set actual_total     = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
-  {% set date_query       = craft.calendarize.between(ymd, end,{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1)*perPage }, (type == 'upcoming' ? 'asc' : 'desc')) %}
-{% endif %}
-
-{% switch type %}
-  {% case 'upcoming' %}
-    {% set total      = pagination_total is defined ? pagination_total : craft.calendarize.upcoming({section: ['events'], search: q, relatedTo: relatedToElements })|length %}
-    {% set events     = date_query is defined ? date_query : craft.calendarize.upcoming({section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1) * perPage}, 'asc', true) %}
-    {% set totalPages = (total / perPage)|round(0, 'ceil') %}
-  {% case 'past' %}
-    {% set total      = pagination_total is defined ? pagination_total : craft.calendarize.between('2017-01-01', now|date('Y-m-d'),{section: ['events'], search: q, relatedTo: relatedToElements })|length %}
-    {% set events     = date_query is defined ? date_query : craft.calendarize.between('2017-01-01', now|date('Y-m-d'),{section: ['events'], search: q, relatedTo: relatedToElements, limit: perPage, offset: (currentPage - 1) * perPage}, 'desc', true) %}
-    {% set totalPages = (total / perPage)|round(0, 'ceil') %}
-{% endswitch %}
-
-{% set query_string = 'q='~q~'&event_type='~event_type~'&year='~year~'&month='~month %}
-
-{% set pageInfo = {
-  total: total,
-  actualTotal: (actual_total is defined ? actual_total : total),
-  totalPages: totalPages,
-  currentPage: currentPage,
-  prevUrl: entry.url ~ '/p' ~ (currentPage > 1 ? currentPage - 1 : null) ~ '/events' ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~(currentPage > 1 ? currentPage - 1 : null),
-  nextUrl: entry.url ~ '/p' ~ (currentPage < totalPages ? currentPage + 1 : null) ~ '/events' ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~ (currentPage < totalPages ? currentPage + 1 : null),
-  firstUrl: entry.url ~ '/p' ~ 1 ~ '/events' ~ '?type=' ~ type ~ '&' ~ query_string ~ '&page=1',
-  lastUrl: entry.url ~ '/p' ~ totalPages ~ '/events' ~ '?type='  ~ type ~ '&' ~ query_string ~ '&page=' ~ totalPages,
-} %}
-
-{% set seoTitle = entry.title ~ ' Meetings' %}
-
-{% if pageInfo.currentPage > 1 %}
-  {% set seoTitle = seoTitle ~ ' | Page ' ~ pageInfo.currentPage ~ ' of ' ~ pageInfo.totalPages %}
-{% endif %}
-
-{% do seomatic.meta.seoTitle(seoTitle) %}
 
 {% block title %}
   <h1 class="my-0 text-3xl font-bold md:text-4xl">Events for {{ entry.title }}</h1>
@@ -125,125 +128,149 @@
 {% endblock %}
 
 {% block content %}
-  <div>
-    <ul class="flex flex-wrap list-none m-0 p-0">
-      <li><a href="?type=upcoming&{{ query_string }}" class="button m-0 rounded-none {{ type == 'upcoming' ? 'pointer-events-none' : 'secondary' }}">Upcoming events</a></li>
-      <li><a href="?type=past&{{ query_string }}" class="button m-0 rounded-none {{ type == 'past' ? 'pointer-events-none' : 'secondary' }}">Past events</a></li>
-    </ul>
-  </div>
-
-  {% if filter_enabled %}
-    {% if events|length %}
-      <h2>Displaying {{ events|length }} of {{ pageInfo.actualTotal }} Events</h2>
+  {% if craft.app.request.getQueryParam('type') %}
+    <div>
+      <ul class="flex flex-wrap list-none m-0 p-0">
+        <li><a href="?type=upcoming&{{ query_string }}" class="button m-0 rounded-none {{ type == 'upcoming' ? 'pointer-events-none' : 'secondary' }}">Upcoming events</a></li>
+        <li><a href="?type=past&{{ query_string }}" class="button m-0 rounded-none {{ type == 'past' ? 'pointer-events-none' : 'secondary' }}">Past events</a></li>
+      </ul>
+    </div>
+    {% if filter_enabled %}
+      {% if events|length %}
+        <h2>Displaying {{ events|length }} of {{ pageInfo.actualTotal }} Events</h2>
+      {% else %}
+        <h2>No results found</h2>
+      {% endif %}
     {% else %}
-      <h2>No results found</h2>
+      {% switch type %}
+        {% case 'upcoming' %}
+        <h2>Displaying all Upcoming Events</h2>
+        {% case 'past' %}
+        <h2>Displaying all Past Events</h2>
+      {% endswitch %}
     {% endif %}
-  {% else %}
-    {% switch type %}
-      {% case 'upcoming' %}
-      <h2>Displaying all Upcoming Events</h2>
-      {% case 'past' %}
-      <h2>Displaying all Past Events</h2>
-    {% endswitch %}
-  {% endif %}
-
-  <div class="mt-8">
-    {% if events|length %}
-      {% for event in events %}
-        {% include '_components/_event' %}
-      {% endfor %}
-    {% else %}
-      <div class="px-8 pt-3 pb-5" style="background:#F7F7F7;">
-        <p>Please try another search or updating your filters.</p>
-        {% if type == 'past' %}
-          <p><a href="?type=past">See all Past Events</a></p>
-        {% elseif type == 'upcoming' %}
-          <p><a href="?type=upcoming">See all Upcoming Events</a></p>
-        {% endif %}
-      </div>
-    {% endif %}
-  </div>
-
-  <div class="my-8">
-    {% if pageInfo.totalPages > 1 %}
-      <nav aria-label="Pagination">
-        <ul class="pagination">
-          {% if pageInfo.totalPages > 7 %}
-            <li>
-              <a aria-label="Previous Page" class="prev {{ pageInfo.currentPage == 1 ? 'disabled' : '' }}" {% if pageInfo.currentPage != 1 %}href="{{ pageInfo.prevUrl }}"{% endif %}>Previous</a>
-            </li>
-            {% if pageInfo.currentPage > 3 %}
+    <div class="mt-8">
+      {% if events|length %}
+        {% for event in events %}
+          {% include '_components/_event' %}
+        {% endfor %}
+      {% else %}
+        <div class="px-8 pt-3 pb-5" style="background:#F7F7F7;">
+          <p>Please try another search or updating your filters.</p>
+          {% if type == 'past' %}
+            <p><a href="?type=past">See all Past Events</a></p>
+          {% elseif type == 'upcoming' %}
+            <p><a href="?type=upcoming">See all Upcoming Events</a></p>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+    <div class="my-8">
+      {% if pageInfo.totalPages > 1 %}
+        <nav aria-label="Pagination">
+          <ul class="pagination">
+            {% if pageInfo.totalPages > 7 %}
               <li>
-                <a aria-label="Page 1" class="page" href="{{ pageInfo.firstUrl }}">1</a>
+                <a aria-label="Previous Page" class="prev {{ pageInfo.currentPage == 1 ? 'disabled' : '' }}" {% if pageInfo.currentPage != 1 %}href="{{ pageInfo.prevUrl }}"{% endif %}>Previous</a>
               </li>
-              <li>…</li>
-            {% endif %}
-
-            {% if pageInfo.currentPage > 2 %}
-              <li>
-                <a aria-label="Page {{ pageInfo.currentPage - 2 }}" class="page" href="{{ entry.url ~ '/events' }}/p{{ pageInfo.currentPage - 2 }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage - 2 }}">{{ pageInfo.currentPage - 2 }}</a>
-              </li>
-            {% endif %}
-            {% if pageInfo.currentPage > 1 %}
-              <li>
-                <a aria-label="Page {{ pageInfo.currentPage - 1 }}" class="page" href="{{ entry.url ~ '/events' }}/p{{ pageInfo.currentPage - 1 }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage - 1 }}">{{ pageInfo.currentPage - 1 }}</a>
-              </li>
-            {% endif %}
-
-            <li>
-              <a aria-current="page" class="page page-active" href="#">{{ pageInfo.currentPage }}</a>
-            </li>
-
-            {% if pageInfo.totalPages - pageInfo.currentPage > 0 %}
-              <li>
-                <a aria-label="Page {{ pageInfo.currentPage + 1 }}" class="page" href="{{ entry.url ~ '/events' }}/p{{ pageInfo.currentPage + 1 }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage + 1 }}">{{ pageInfo.currentPage + 1 }}</a>
-              </li>
-            {% endif %}
-
-            {% if pageInfo.totalPages - pageInfo.currentPage > 1 %}
-              <li>
-                <a aria-label="Page {{ pageInfo.currentPage + 2 }}" class="page" href="{{ entry.url ~ '/events' }}/p{{ pageInfo.currentPage + 2 }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage + 2 }}">{{ pageInfo.currentPage + 2 }}</a>
-              </li>
-            {% endif %}
-
-            {% if pageInfo.currentPage < pageInfo.totalPages - 2 %}
-              <li>…</li>
-              <li>
-                <a aria-label="Page {{ pageInfo.totalPages }}" class="page" href="{{ pageInfo.lastUrl }}">{{ pageInfo.totalPages }}</a>
-              </li>
-            {% endif %}
-
-            <li>
-              <a aria-label="Next Page" class="next {{ pageInfo.currentPage == pageInfo.totalPages ? 'disabled' : '' }}" {% if pageInfo.currentPage != pageInfo.totalPages %}href="{{ pageInfo.nextUrl }}"{% endif %}>Next</a>
-            </li>
-
-          {% else %}
-            <li>
-              <a aria-label="Previous Page" class="prev {{ pageInfo.currentPage == 1 ? 'disabled' : '' }}" {% if pageInfo.currentPage != 1 %}href="{{ pageInfo.prevUrl }}"{% endif %}>Previous</a>
-            </li>
-
-            {% for page in range(1, pageInfo.totalPages) %}
-              {% if page == pageInfo.currentPage %}
+              {% if pageInfo.currentPage > 3 %}
                 <li>
-                  <a aria-current="page" class="page page-active" href="#">{{ pageInfo.currentPage }}</a>
+                  <a aria-label="Page 1" class="page" href="{{ pageInfo.firstUrl }}">1</a>
                 </li>
-              {% else %}
+                <li>…</li>
+              {% endif %}
+
+              {% if pageInfo.currentPage > 2 %}
                 <li>
-                  <a aria-label="Page {{ page }}" class="page" href="{{ entry.url ~ '/events' }}/p{{ page }}?type={{ type }}&{{ query_string }}&page={{ page }}">{{ page }}</a>
+                  <a aria-label="Page {{ pageInfo.currentPage - 2 }}" class="page" href="{{ entry.url ~ '/events' }}/p{{ pageInfo.currentPage - 2 }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage - 2 }}">{{ pageInfo.currentPage - 2 }}</a>
                 </li>
               {% endif %}
-            {% endfor %}
+              {% if pageInfo.currentPage > 1 %}
+                <li>
+                  <a aria-label="Page {{ pageInfo.currentPage - 1 }}" class="page" href="{{ entry.url ~ '/events' }}/p{{ pageInfo.currentPage - 1 }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage - 1 }}">{{ pageInfo.currentPage - 1 }}</a>
+                </li>
+              {% endif %}
 
-            <li>
-              <a aria-label="Next Page" class="next {{ pageInfo.currentPage == pageInfo.totalPages ? 'disabled' : '' }}" {% if pageInfo.currentPage != pageInfo.totalPages %}href="{{ pageInfo.nextUrl }}"{% endif %}>Next</a>
-            </li>
-          {% endif %}
-        </ul>
-      </nav>
+              <li>
+                <a aria-current="page" class="page page-active" href="#">{{ pageInfo.currentPage }}</a>
+              </li>
+
+              {% if pageInfo.totalPages - pageInfo.currentPage > 0 %}
+                <li>
+                  <a aria-label="Page {{ pageInfo.currentPage + 1 }}" class="page" href="{{ entry.url ~ '/events' }}/p{{ pageInfo.currentPage + 1 }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage + 1 }}">{{ pageInfo.currentPage + 1 }}</a>
+                </li>
+              {% endif %}
+
+              {% if pageInfo.totalPages - pageInfo.currentPage > 1 %}
+                <li>
+                  <a aria-label="Page {{ pageInfo.currentPage + 2 }}" class="page" href="{{ entry.url ~ '/events' }}/p{{ pageInfo.currentPage + 2 }}?type={{ type }}&{{ query_string }}&page={{ pageInfo.currentPage + 2 }}">{{ pageInfo.currentPage + 2 }}</a>
+                </li>
+              {% endif %}
+
+              {% if pageInfo.currentPage < pageInfo.totalPages - 2 %}
+                <li>…</li>
+                <li>
+                  <a aria-label="Page {{ pageInfo.totalPages }}" class="page" href="{{ pageInfo.lastUrl }}">{{ pageInfo.totalPages }}</a>
+                </li>
+              {% endif %}
+
+              <li>
+                <a aria-label="Next Page" class="next {{ pageInfo.currentPage == pageInfo.totalPages ? 'disabled' : '' }}" {% if pageInfo.currentPage != pageInfo.totalPages %}href="{{ pageInfo.nextUrl }}"{% endif %}>Next</a>
+              </li>
+
+            {% else %}
+              <li>
+                <a aria-label="Previous Page" class="prev {{ pageInfo.currentPage == 1 ? 'disabled' : '' }}" {% if pageInfo.currentPage != 1 %}href="{{ pageInfo.prevUrl }}"{% endif %}>Previous</a>
+              </li>
+
+              {% for page in range(1, pageInfo.totalPages) %}
+                {% if page == pageInfo.currentPage %}
+                  <li>
+                    <a aria-current="page" class="page page-active" href="#">{{ pageInfo.currentPage }}</a>
+                  </li>
+                {% else %}
+                  <li>
+                    <a aria-label="Page {{ page }}" class="page" href="{{ entry.url ~ '/events' }}/p{{ page }}?type={{ type }}&{{ query_string }}&page={{ page }}">{{ page }}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+
+              <li>
+                <a aria-label="Next Page" class="next {{ pageInfo.currentPage == pageInfo.totalPages ? 'disabled' : '' }}" {% if pageInfo.currentPage != pageInfo.totalPages %}href="{{ pageInfo.nextUrl }}"{% endif %}>Next</a>
+              </li>
+            {% endif %}
+          </ul>
+        </nav>
+      {% endif %}
+    </div>
+  {% else %}
+    {% set upcomingEvents = craft.calendarize.upcoming({section: ['events'], relatedTo: [entry], limit: 4}, 'asc', true) %}
+    {% set pastEvents     = craft.calendarize.between('2017-01-01', now|date('Y-m-d'),{section: ['events'], relatedTo: [entry], limit: 4}, 'desc', true) %}
+    {% if upcomingEvents|length %}
+      <h3 class="mt-0 mb-8">Upcoming Events</h3>
+      {% for event in upcomingEvents %}
+        {% if loop.index <= 3 %}
+          {% include '_components/_event' %}
+        {% endif %}
+      {% endfor %}
+      {% if upcomingEvents|length > 3 %}
+        <a class="button secondary" href="?type=upcoming">See All Upcoming Events</a>
+      {% endif %}
     {% endif %}
-  </div>
+    {% if pastEvents|length %}
+      <h3 class="{{ upcomingEvents|length ? 'mt-12 mb-8' : 'mt-0 mb-8' }}">Past Events</h3>
+      {% for event in pastEvents %}
+        {% if loop.index <= 3 %}
+          {% include '_components/_event' %}
+        {% endif %}
+      {% endfor %}
+      {% if pastEvents|length > 3 %}
+        <a class="button secondary" href="?type=past">See All Past Events</a>
+      {% endif %}
+    {% endif %}
+  {% endif %}
 
-  <div class="lg:hidden">
+  <div class="lg:oak-hidden">
     <hr class="hr dark"/>
     <h4>{{ 'Learn More About Public Bodies'|t }}</h4>
     <div class="pt-2">
@@ -254,7 +281,7 @@
 {% endblock %}
 
 {% block sidebar %}
-  <hr class="hidden lg:block"/>
+  <hr class="oak-hidden lg:block"/>
   <div class="mt-2 md:mt-0"></div>
   <h4 class="py-0 mt-4 mb-6">{{ 'Search & Filter'|t }}</h4>
   <form action="{{ entry.url ~ '/events' }}">
@@ -290,7 +317,7 @@
     </div>
   </form>
   <hr/>
-  <div class="hidden lg:block">
+  <div class="oak-hidden lg:block">
     <h4 class="py-0 mt-4">{{ 'Related'|t }}</h4>
     <div class="pt-2">
       <p><a href="{{siteUrl}}events">All Community Events</a></p>

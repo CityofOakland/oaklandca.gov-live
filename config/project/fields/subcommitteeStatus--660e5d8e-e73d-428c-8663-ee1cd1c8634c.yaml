@@ -1,0 +1,14 @@
+columnSuffix: rivoxzty
+contentColumnType: boolean
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
+handle: subcommitteeStatus
+instructions: 'Turn this switch off if this Subcommittee is no longer active.'
+name: 'Subcommittee Status'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

@@ -61,7 +61,7 @@
 
 {% if bannerImage | length %}
   <div class="leading-normal aspect-ratio-box aspect-ratio-1/4 banner">
-    <div class="object-cover pt-2 pb-8 leading-none aspect-ratio md:pt-4 md:pb-6 min-h-2-1/2 md:min-h-4">
+    <div class="object-cover pt-2 pb-8 leading-none aspect-ratio md:pt-4 md:pb-6 min-h-2-1/2 md:min-h-4 @container">
       <figure class="absolute inset-0 z-0">
         <img
           class="absolute inset-0 z-0 object-cover w-full h-full"
@@ -69,14 +69,14 @@
           src="{{ bannerImage.src }}"
           alt="{{ bannerImage.alt }}">
       </figure>
-      <div class="container py-0">
+      <div class="container px-6 @3xl:px-16 py-0 ">
         {{ breadcrumbs }}
       </div>
     </div>
   </div>
 {% else %}
-  <div class="leading-none banner">
-    <div class="container pt-2 pb-8 md:pt-4 md:pb-6">
+  <div class="leading-none banner @container">
+    <div class="container px-6 @3xl:px-16 pt-2 pb-8 md:pt-4 md:pb-6">
       <div class="absolute inset-0 z-0 bg-transparent-oakland-roots"></div>
       {{ breadcrumbs }}
     </div>
@@ -85,12 +85,16 @@
 
 {% autoescape false %}
   {% if custHeaderContent is not defined %}
-    <div class="container">
-      {{ headerContent }}
+    <div class="@container">
+      <div class="container px-6 @3xl:px-16">
+        {{ headerContent }}
+      </div>
     </div>
   {% elseif custHeaderContent|length %}
-    <div class="container">
-      {{ custHeaderContent }}
+    <div class="@container">
+      <div class="container px-6 @3xl:px-16">
+        {{ custHeaderContent }}
+      </div>
     </div>
   {% endif %}
 {% endautoescape %}

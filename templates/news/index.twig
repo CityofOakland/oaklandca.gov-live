@@ -1,39 +1,340 @@
-{% extends '_layouts/_instant-search-index' %}
+{% if entry is not defined  %}
+  {% redirect 404 %}
+{% endif %}
 
-{% set entry = craft.entries.section('newsIndex').one %}
+{% set filter_enabled = false %}
+{% set homepage_entry = craft.entries()
+    .section('homepage')
+    .one() %}
+{% set all_department_entries = craft.entries()
+    .section('departments')
+    .order('title asc')
+    .all() %}
+{% set all_official_entries = craft.entries()
+    .section('officials')
+    .all() %}
+{#
+ # TODO: "Boards & Commissions" are pending transition to become "Public Bodies".
+ # Once the change is completed in the backend, update the query below and delete this note.
+ #}
+{% set all_public_body_entries = craft.entries()
+    .section('boardsCommissions')
+    .order('title asc')
+    .all() %}
+{% set news = craft.entries()
+    .section('news')
+    .officialPressRelease(true)
+    .order('postDate desc')
+    .limit(10) %}
 
-{% set facets = [
-  {
-    container: 'boardsCommissions',
-    attribute: 'boardsCommissions',
-    header: 'Boards & Commissions'
-  },
-  {
-    container: 'departments',
-    attribute: 'departments',
-    header: 'Departments'
-  },
-  {
-    container: 'projects',
-    attribute: 'projects',
-    header: 'Projects'
-  },
+{# Search query #}
+{% set search = craft.app.request.getQueryParam('search') ?: '' %}
+{% if search %}
+  {% set news = news.search(search) %}
+  {% set filter_enabled = true %}
+{% endif %}
 
-] %}
+{# Filter by date #}
+{% set year = craft.app.request.getQueryParam('year') ?: '' %}
+{% set month = craft.app.request.getQueryParam('month') ?: '' %}
+{% set ymd = '' %}
+{% set date_query = ['and'] %}
+{% if year and month %}
+  {% set filter_enabled = true %}
+  {% set news = news.postYear(year).postMonth(month) %}
+{% elseif year %}
+  {% set filter_enabled = true %}
+  {% set news = news.postYear(year) %}
+{% elseif month %}
+  {% set filter_enabled = true %}
+  {% set news = news.postMonth(month) %}
+{% endif %}
 
-{% js at head %}
-var algoliaIndex = '{{ getenv('ENVIRONMENT') }}_news';
-var searchInputText = "Search for a news item. E.g., “Announcements”";
-var facetFilters = [
-  {% for facet in facets %}
-    {
-      container: '#{{ facet.container }}',
-      attribute: '{{ facet.attribute }}',
-      header: '{{ facet.header }}'
-    },
-  {% endfor %}
-];
+{# Filter by department #}
+{% set filter_department_slug = craft.app.request.getQueryParam('department') ?: '' %}
+{% if filter_department_slug %}
+  {% set filter_department_entry = craft.entries()
+      .section('departments')
+      .slug(filter_department_slug)
+      .one() %}
+  {% if filter_department_entry %}
+    {% set news = news.relatedTo(filter_department_entry) %}
+    {% set filter_enabled = true %}
+  {% endif %}
+{% endif %}
 
-{{ source('_js/algolia-templates/news.js') }}
+{# Filter by official #}
+{% set filter_official_slug = craft.app.request.getQueryParam('official') ?: '' %}
+{% if filter_official_slug %}
+  {% set filter_official_entry = craft.entries()
+      .section('officials')
+      .slug(filter_official_slug)
+      .one() %}
+  {% if filter_official_entry %}
+    {% set news = news.relatedTo(filter_official_entry) %}
+    {% set filter_enabled = true %}
+  {% endif %}
+{% endif %}
 
-{% endjs %}
+{# Filter by public body #}
+{% set filter_public_body_slug = craft.app.request.getQueryParam('public-body') ?: '' %}
+{% if filter_public_body_slug %}
+  {#
+   # TODO: "Boards & Commissions" are pending transition to become "Public Bodies".
+   # Once the change is completed in the backend, update the query below and delete this note.
+   #}
+  {% set filter_public_body_entry = craft.entries()
+      .section('boardsCommissions')
+      .slug(filter_public_body_slug)
+      .one() %}
+  {% if filter_public_body_entry %}
+    {% set news = news.relatedTo(filter_public_body_entry) %}
+    {% set filter_enabled = true %}
+  {% endif %}
+{% endif %}
+
+{# Pagination #}
+{% paginate news as pageInfo, news %}
+
+{% if pageInfo.currentPage > 1 %}
+  {% set filter_enabled = true %}
+{% endif %}
+
+{# SEO Title #}
+{% set seoTitle = 'Oakland News' %}
+{% if pageInfo.currentPage > 1 %}
+  {% set seoTitle = seoTitle ~ ' | Page ' ~ pageInfo.currentPage ~ ' of ' ~ pageInfo.totalPages %}
+{% endif %}
+{% do seomatic.meta.seoTitle(seoTitle) %}
+
+{# Extending parent layout and other imports #}
+{% set layout = 'filter' %}
+{% extends '_content.twig' %}
+{% import '_macros/_macros.twig' as macros %}
+
+{# Banner #}
+{% block banner %}
+  <div class="leading-none banner">
+    <div class="container pt-2 pb-8 md:pt-4 md:pb-6">
+      <div class="absolute inset-0 z-0 bg-transparent-oakland-roots"></div>
+      <div id="breadcrumbs" class="relative inline-block bg-white z-[1]">
+        <a class="font-bold text-green-800 hover:text-green-800 hover:underline" href="/">Oakland</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
+        <span aria-current="page" class="text-gray-800">News</span>
+      </div>
+    </div>
+  </div>
+  <div class="bg-blue-900 text-white min-h-44">
+    <div class="container">
+      <h1 class="mt-2 text-4xl">News</h1>
+      <p class="mt-6 text-xl">The latest news from the City of Oakland</p>
+    </div>
+  </div>
+
+  {# Spotlight News #}
+  {% set spotlightNews = entry.highlightedNews|length ? entry.highlightedNews.one() : null %}
+  {% set spotlightNewsExpiryDate = entry.endDate ? entry.endDate|datetime('U') : null %}
+  {% if spotlightNews and (not spotlightNewsExpiryDate or 'now'|datetime('U') <= spotlightNewsExpiryDate) %}
+    {% set spotlightNewsEntryExcerpt = spotlightNews.summary ?: spotlightNews.body %}
+    {% set spotlightNewsEntryImage = spotlightNews.newsImage|length ? spotlightNews.newsImage.one() : null %}
+    <div class="bg-blue-800 text-white min-h-96">
+      {# Spotlight body #}
+      <div class="container lg:flex lg:gap-8">
+        {# Spotlight image comes first in smaller responsive view. #}
+        {% if spotlightNewsEntryImage %}
+          <figure class="mb-6 lg:oak-hidden">
+            <img alt="{{ spotlightNewsEntryImage.altText }}" src="{{ spotlightNewsEntryImage.url }}">
+          </figure>
+        {% endif %}
+
+        {# Spotlight textual info (e.g. title, summary, date, etc). #}
+        <div class="{{ spotlightNewsEntryImage ? 'lg:w-1/2' : '' }}">
+          <h4 class="font-bold">Spotlight</h4>
+          <h3 class="mt-6 font-bold">{{ spotlightNews.title }}</h3>
+          <p class="mt-5 text-xl">{{ spotlightNews.postDate|date|upper }}</p>
+          <p class="mt-5 text-lg">{{ spotlightNewsEntryExcerpt|striptags|slice(0, 300) ~ (spotlightNewsEntryExcerpt|length > 300 ? '...' : '') }}</p>
+          <a class="mt-2 text-sm button secondary" href="{{ spotlightNews.url }}">Read More</a>
+        </div>
+
+        {# Spotlight image comes second on larger display (to the right in flex). #}
+        {% if spotlightNewsEntryImage %}
+          <figure class="oak-hidden lg:block lg:w-1/2">
+            <img alt="{{ spotlightNewsEntryImage.altText }}" src="{{ spotlightNewsEntryImage.url }}">
+          </figure>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{# Suppress title block in parent template #}
+{% block title %}{% endblock %}
+
+{# Related Content Section #}
+{%- set relatedContentSection -%}
+  <h4 class="py-0">{{ 'Related'|t }}</h4>
+
+  <a class="mt-8 block" href="{{ siteUrl('departments/media-center') }}">Newsroom</a>
+  <a class="mt-8 block" href="{{ siteUrl('events') }}">Community Events</a>
+  <a class="mt-8 block" href="{{ siteUrl('meetings') }}">Public Meetings</a>
+{%- endset -%}
+
+{# Content Section #}
+{% block content %}
+  <h2 aria-live="polite">
+    {% if filter_enabled %}
+      {% if news|length %}
+        Displaying {{ news|length }} of {{ pageInfo.total }} News
+      {% else %}
+        No results found
+      {% endif %}
+    {% else %}
+      Displaying All News and Press Releases
+    {% endif %}
+  </h2>
+
+  <div class="mt-8">
+    {% if news|length %}
+      {% for news_item in news %}
+        {% include '_components/_news-index-item.twig' %}
+      {% endfor %}
+    {% else %}
+      <div class="bg-gray-100 px-8 pt-3 pb-5">
+        <p>Please try another search or updating your filters.</p>
+        <div class="my-4">
+          <a href="{{ craft.request.url }}">See All News</a>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  <div class="my-8">
+    {% include '_partials/_elements/_pagination.twig' %}
+  </div>
+
+  <div class="mb-4 lg:oak-hidden">
+    <hr class="hr dark">
+    {{ relatedContentSection }}
+  </div>
+{% endblock %}
+
+{# Search & Filter Sidebar #}
+{% block sidebar %}
+  <hr class="oak-hidden lg:block">
+
+  <h4 class="mt-4 mb-6 py-0">{{ 'Search & Filter'|t }}</h4>
+
+  <form action="{{ craft.request.url }}">
+    {# Search input field #}
+    {{
+      macros.textInput(
+        'Search', 'search', 'search',
+        'Search a keyword'
+      )
+    }}
+
+    {# Month filter drop-down #}
+    {{
+      macros.select(
+        'Month', 'month', 'month',
+        [
+          {"01"  : "January"},
+          {"02"  : "February"},
+          {"03"  : "March"},
+          {"04"  : "April"},
+          {"05"  : "May"},
+          {"06"  : "June"},
+          {"07"  : "July"},
+          {"08"  : "August"},
+          {"09"  : "September"},
+          {"10"  : "October"},
+          {"11"  : "November"},
+          {"12"  : "December"}
+        ],
+        "Select a month"
+      )
+    }}
+
+    {# Year filter drop-down #}
+    {% set earliest_year = craft.entries()
+        .section('news')
+        .order('postDate asc')
+        .limit(1)
+        .one()
+        .postDate|date('Y') %}
+    {% set latest_year = craft.entries()
+        .section('news')
+        .order('postDate desc')
+        .limit(1)
+        .one()
+        .postDate|date('Y') %}
+    {% set years = [] %}
+    {% for year in range(latest_year, earliest_year) %}
+      {% set years = years|merge([{(year): year}]) %}
+    {% endfor %}
+    {{
+      macros.select(
+        'Year', 'year', 'year',
+        years, "Select a year"
+      )
+    }}
+
+    {# Department filter drop-down #}
+    {% set department_filter_dropdown_options = [] %}
+    {% for department_entry in all_department_entries %}
+      {%
+        set department_filter_dropdown_options = department_filter_dropdown_options|merge([
+          { (department_entry.slug): (department_entry.title) }
+        ])
+      %}
+    {% endfor %}
+    {{
+      macros.select(
+        'Department', 'department', 'department',
+        department_filter_dropdown_options, "Select a department"
+      )
+    }}
+
+    {# Official filter drop-down #}
+    {% set official_filter_dropdown_options = [] %}
+    {% for official_entry in all_official_entries %}
+      {%
+        set official_filter_dropdown_options = official_filter_dropdown_options|merge([
+          { (official_entry.slug): (official_entry.title) }
+        ])
+      %}
+    {% endfor %}
+    {{
+      macros.select(
+        'Official', 'official', 'official',
+        official_filter_dropdown_options, "Select an official"
+      )
+    }}
+
+    {# Public body filter drop-down #}
+    {% set public_body_filter_dropdown_options = [] %}
+    {% for public_body_entry in all_public_body_entries %}
+      {%
+        set public_body_filter_dropdown_options = public_body_filter_dropdown_options|merge([
+          { (public_body_entry.slug): (public_body_entry.title) }
+        ])
+      %}
+    {% endfor %}
+    {{
+      macros.select(
+        'Public Body', 'public-body', 'public-body',
+        public_body_filter_dropdown_options, "Select a public body"
+      )
+    }}
+
+    {# Search & filter section's buttons #}
+    <div class="flex items-center">
+      <button class="button medium">Apply</button>
+      <a class="mt-4" href="{{ craft.request.url }}">Clear filters</a>
+    </div>
+  </form>
+
+  <hr class="hr dark">
+
+  <div class="oak-hidden lg:block">
+    {{ relatedContentSection }}
+  </div>
+{% endblock %}

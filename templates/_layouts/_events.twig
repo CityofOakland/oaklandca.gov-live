@@ -1,5 +1,5 @@
-{% extends '_content.twig' %}
-{% import '_macros/_macros' as macros %}
+{% extends "_content.twig" %}
+{% import "_macros/_macros.twig" as macros %}
 
 {% set physicalLocation = false %}
 {% set onlineLocation   = false %}
@@ -10,34 +10,34 @@
 
 {% set locationBlocks = clone(entry.eventLocations) %}
 
-{% if entry.eventLocations.type('physicalLocation')|length %}
-  {% set locations = locations|merge(['in-person']) %}
+{% if entry.eventLocations.type("physicalLocation")|length %}
+  {% set locations = locations|merge(["in-person"]) %}
 {% endif %}
 
-{% if entry.eventLocations.type('onlineLocation')|length %}
-  {% set locations = locations|merge(['online']) %}
+{% if entry.eventLocations.type("onlineLocation")|length %}
+  {% set locations = locations|merge(["online"]) %}
 {% endif %}
 
 {% set eventHasPassed = (now > dateToPass) %}
 
-{% set physicalLocation = clone(entry.eventLocations).type('physicalLocation') %}
+{% set physicalLocation = clone(entry.eventLocations).type("physicalLocation") %}
 {% set physicalLocationDisplays = physicalLocation|length and physicalLocation.one().locationAddress and not physicalLocation.one().locationAddress.isEmpty()  %}
-{% set onlineLocation = clone(entry.eventLocations).type('onlineLocation') %}
+{% set onlineLocation = clone(entry.eventLocations).type("onlineLocation") %}
 {% set onlineLocationDisplays = onlineLocation|length and not eventHasPassed %}
 
 {% block title %}
   <h1 class="my-0 text-3xl font-bold md:text-4xl">{{ entry.title }}</h1>
-  <div class="mt-4 text-xl leading-8 tw-only">This event {{ eventHasPassed ? 'was' : 'will be' }} held {{ locations|join(" and ") }} on {{ entry.calendarize.startDate|date("F j, Y") }}</div>
+  <div class="mt-4 text-xl leading-8 tw-only">This event {{ eventHasPassed ? "was" : "will be" }} held {{ locations|join(" and ") }} on {{ entry.calendarize.startDate|date("F j, Y") }}</div>
 {% endblock %}
 
 {% block precontent %}
   <section class="bg-green-800 mb-16 text-white">
     <div class="container">
-      <div style="max-width:1152px;">
+      <div class="max-w-6xl">
         <div class="flex flex-wrap justify-between -mx-8">
           <div class="w-full md:w-1/2 px-8">
             <div class="components components-format flex items-start">
-              {{ svg( '@webroot/dist/img/fa-clock.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }}
+              {{ svg( '@webroot/dist/img/fa-clock.svg')|attr({class: "w-8 mr-4", style: "flex-shrink:0;"}) }}
               <div>
                 <h3 class="mt-0">{{ entry.calendarize.startDate|date("l, F j, Y") }}</h3>
                 {% if entry.calendarize.allDay %}
@@ -52,7 +52,7 @@
             </div>
           </div>
           <div class="w-full md:w-1/2 px-8 mt-12 md:mt-0">
-            <div class="components components-format flex items-start">
+            <div class="components flex items-start">
               {% if locationBlocks|length == 2 or (locationBlocks|length and (physicalLocationDisplays or onlineLocationDisplays)) %}
                 {{ svg( '@webroot/dist/img/fa-map.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }} 
               {% endif %}
@@ -208,95 +208,15 @@
     {% if entry.linkit %}<a class="button secondary" href="{{ entry.linkit.url }}">{{ entry.linkit.text }}</a>{% endif %}
   {% endif %}
 
-  {% if entry.pointOfContact|length %}
-    <hr/>
-    <h4>{{ 'Contact'|t }}</h4>
-    {% for contact in entry.pointOfContact.all() %}
-    {% switch contact.type %}
-      {% case 'internalContact' %}
-        {% set contact = contact.contact.one() %}
-        <p>
-          <b>{{ contact.title }}</b>
-          {% if contact.staffImportJobTitle or contact.jobTitle %}<br>{{ contact.jobTitle ? contact.jobTitle : contact.staffImportJobTitle }}{% endif %}
-          {% if contact.staffImportOrganization %}<br>{{ contact.staffImportOrganization }}{% endif %}
-        </p>
-        {% set contactEmail = contact.emailAddress  ? contact.emailAddress  : contact.staffImportEmail %}
-        {% set contactPhone = contact.phoneNumber   ? contact.phoneNumber   : contact.staffImportPhoneNumber %}
-
-        {% if contactEmail or contactPhone %}
-          <ul class="ul-icons">
-            {% if contactEmail %}
-            {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-              params: {
-                text: contactEmail,
-                icon: 'envelope',
-                url: "mailto:#{contactEmail}"
-              }
-            }) }}
-            {% endif %}
-            {% if contactPhone %}
-            {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-              params: {
-                text: contactPhone,
-                icon: 'phone',
-                url: "tel:#{contactPhone|replace({'-': ''}) }}"
-              }
-            }) }}
-            {% endif %}
-          </ul>
-        {% endif %}
-      {% case 'externalContact' %}
-        <p>
-          <b>{{ contact.contactName }}</b>
-          {% if contact.contactTitle %}<br>{{ contact.contactTitle }}{% endif %}
-          {% if contact.organization %}<br>{{ contact.organization }}{% endif %}
-        </p>
-        {% if contact.email or contact.phoneNumber %}
-          <ul class="ul-icons">
-            {% if contact.email %}
-            {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-              params: {
-                text: contact.email,
-                icon: 'envelope',
-                url: "mailto:#{contact.email}"
-              }
-            }) }}
-            {% endif %}
-            {% if contact.phoneNumber %}
-            {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-              params: {
-                text: contact.phoneNumber,
-                icon: 'phone',
-                url: "tel:#{contact.phoneNumber|replace({'-': ''}) }}"
-              }
-            }) }}
-            {% endif %}
-          </ul>
-        {% endif %}
-    {% endswitch %}
-    {% endfor %}
-  {% endif %}
+  {% include '_components/sidebar/_contact' %}
 
   <hr/>
   <h4>{{ 'Add to Calendar'|t }}</h4>
   <p>Save this event to your iCal, Outlook or Google Calendar</p>
   <a class="button secondary" href="{{ entry.calendarize.getIcsUrl }}">Add to Calendar</a>
   <hr class="light">
-  <h4>{{ 'Share'|t }}</h4>
-  <ul class="list-none flex items-center px-0 -mt-4">
-    <li class="mb-0 mr-4">
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{ entry.url|url_encode }}" target="_blank" class="flex items-center justify-center w-10 h-10 bg-green-800 rounded-full text-white hover:bg-green-1000">
-        {{ svg('@webroot/dist/img/logo-facebook.svg')|attr({class:'h-5'}) }}
-        <span class="sr-only">Share on Facebook</span>
-      </a>
-    </li>
-    <li class="mb-0 mr-4">
-      <a href="https://twitter.com/intent/tweet?url={{ entry.url|url_encode }}&text={{ entry.title }}" target="_blank" class="flex items-center justify-center w-10 h-10 bg-green-800 rounded-full text-white hover:bg-green-1000">
-        {{ svg('@webroot/dist/img/logo-twitter.svg')|attr({class:'h-5'}) }}
-        <span class="sr-only">Share on Twitter</span>
-      </a>
-    </li>
-  </ul>
+  {{ include("_partials/_elements/_social-media-share.twig", {params: {}}) }}
+
   {% if entry.relatedPages|length %}
     <hr/>
     <h4>{{ 'Related Pages'|t }}</h4>

@@ -151,48 +151,55 @@
   }
 }
 
-:where(.components) h1 {
+:where(.components) h1,
+:where(.components) .h1 {
   @apply text-3xl md:text-4xl;
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-:where(.components) h2 {
+:where(.components) h2,
+:where(.components) .h2 {
   @apply text-xl leading-tight md:text-3xl;
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-:where(.components) h3 {
+:where(.components) h3,
+:where(.components) .h3 {
   @apply text-xl md:text-2xl;
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-:where(.components-format) h2 {
+:where(.components-format) h2,
+:where(.components-format) .h2 {
   margin-top: 1.5em;
 }
 
-:where(.components-format) h3 {
+:where(.components-format) h3,
+:where(.components-format) .h3 {
   margin-top: 1.5em;
 }
 
-:where(.components) h4 {
+:where(.components) h4,
+:where(.components) .h4 {
   @apply text-xl;
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-:where(.components-format) h4 {
-  padding-top: 1.5em;
+:where(.components-format) h4,
+:where(.components-format) .h4 {
+  margin-top: 1.5em;
 }
 
 :where(.components-format) h5 {
-  padding-top: 1.5em;
+  margin-top: 1.5em;
 }
 
 :where(.components) hr {
@@ -463,4 +470,18 @@
 
 #components-sidebar #search > input {
   @apply pl-12;
+}
+
+@media (max-width: theme("screens.sm")) {
+  .component h3{
+    font-size: 1.5rem;
+  }
+}
+
+.component .shadow-btn {
+  --tw-shadow: 0 2px 6px 2px #e1e1e1, 0 3px 7px 1px #e1e1e1;
+}
+
+.component.bg-blue-800 .shadow-btn{
+  box-shadow: none;
 }

@@ -9,7 +9,11 @@
 {% endif %}
 
 {% block content %}
-  {% set query = craft.entries.section(entrySection).relatedTo(relatedEntry).limit(25).orderBy('title') %}
+  {% if entrySection == 'boardsCommissions' %}
+    {% set query = craft.entries.section(entrySection).relatedTo(relatedEntry).officialBoardAndCommission(true).type('boardsCommissions').limit(25).orderBy('title') %}
+  {% else %}
+    {% set query = craft.entries.section(entrySection).relatedTo(relatedEntry).limit(25).orderBy('title') %}
+  {% endif %}
   {% paginate query as pageInfo, pageEntries %}
   {% include '_partials/_elements/_pagination' %}
   <div class="my-4 space-y-4 md:space-y-8 md:my-8">
