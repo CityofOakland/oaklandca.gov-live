@@ -23,7 +23,6 @@
     .all() %}
 {% set news = craft.entries()
     .section('news')
-    .officialPressRelease(true)
     .order('postDate desc')
     .limit(10) %}
 
