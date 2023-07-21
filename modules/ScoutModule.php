@@ -103,9 +103,9 @@ class ScoutModule extends \yii\base\Module
 
     public static function portrait($element)
     {
-        if (!empty($element->banner)) {
-            if (!empty($element->banner->one())) {
-                return $element->banner->one()->url;
+        if (!empty($element->portrait)) {
+            if (!empty($element->portrait->one())) {
+                return $element->portrait->one()->url;
             }
         }
         return null;
