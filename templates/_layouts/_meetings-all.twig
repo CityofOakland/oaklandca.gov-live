@@ -155,16 +155,16 @@
 
     {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
 
-    <label for="public_body">
-      Public Body
-      <select class="shadow-form" name="public_body">
-        <option value="" data-subcommittees="[]">Select a Council, Board or Commission</option>
-        {% for entry in craft.entries().section('boardsCommissions').orderBy('title asc').all() %}
-          {% set subcommittees = entry.subcommittees ? entry.subcommittees.all()|map(body=>{id: body.id, text:body.title}) : [] %}
-          <option value="{{ entry.id }}" data-subcommittees="{{ subcommittees|json_encode }}" {% if public_body and public_body == entry.id %}selected{% endif %}>{{ entry.title }}</option>
-        {% endfor %}
-      </select>
-    </label>
+{#    <label for="public_body">#}
+{#      Public Body#}
+{#      <select class="shadow-form" name="public_body">#}
+{#        <option value="" data-subcommittees="[]">Select a Council, Board or Commission</option>#}
+{#        {% for entry in craft.entries().section('boardsCommissions').orderBy('title asc').all() %}#}
+{#          {% set subcommittees = entry.subcommittees ? entry.subcommittees.all()|map(body=>{id: body.id, text:body.title}) : [] %}#}
+{#          <option value="{{ entry.id }}" data-subcommittees="{{ subcommittees|json_encode }}" {% if public_body and public_body == entry.id %}selected{% endif %}>{{ entry.title }}</option>#}
+{#        {% endfor %}#}
+{#      </select>#}
+{#    </label>#}
 
     {# <label for="subcommittee">
       Subcommittee
