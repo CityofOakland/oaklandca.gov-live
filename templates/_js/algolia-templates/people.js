@@ -1,3 +1,31 @@
 "use strict";
 
-var indexTemplate = "<div class=\"block\">\n  <div class=\"text-gray-1000 md:flex items-start\">\n    <figure class=\"block h-12 w-12 md:w-1/4\">\n      <a class=\"block\" href=\"{{ url }}\" aria-label=\"Profile of {{ title }}\">\n        {{#portrait}}\n          <figure class=\"aspect-ratio-box aspect-ratio-square\">\n            <img\n              src=\"{{ portrait }}\"\n              alt=\"Portrait of {{ jobTitle }}, {{ title }}\"\n              class=\"aspect-ratio rounded-full object-cover\">\n            </figure>\n        {{/portrait}}\n        {{^portrait}}\n          <div class=\"h-full overflow-hidden border-2 rounded-full opacity-75 fill-current text-gray-400 bg-gray-100 border-gray-200\">\n            <img src=\"/dist/img/icon-user.svg\" class=\"h-full block fill-current\" alt=\"\">\n          </div>\n        {{/portrait}}\n      </a>\n    </figure>\n    <div class=\"pt-4 md:pt-0 md:pl-6 md:w-3/4\">\n      <h2 class=\"m-0 text-2xl\"><a aria-label=\"{{ title }}, {{jobTitle }}\" href=\"{{ url }}\">{{ title }}</a></h2>\n      <p class=\"mt-2\">\n        {{ jobTitle }}\n        {{#department}}<br>{{ department }}{{/department}}\n        {{#email}}<br><a href=\"mailto:{{ email }}\" aria-label=\"Email {{ title }} at {{ email }}\">Email</a>{{/email}}\n        {{#phone}}<br><a href=\"tel:{{ phone }}\" aria-label=\"Call {{ title }} at {{ phone }}\">{{ phone }}</a>{{/phone}}\n      </p>\n    </div>\n  </div>\n</div>";
+var indexTemplate = `
+<div class="block">
+    <div class="text-gray-1000 md:flex md:items-start md:gap-6">
+        <figure class="block h-12 w-12 md:h-auto md:w-auto md:flex-1 aspect-[1/1] overflow-hidden border-2 rounded-full bg-gray-100 border-gray-200">
+            {{#portrait}}
+                <img src="{{ portrait }}" alt="Portrait of {{ jobTitle }}, {{ title }}" class="object-cover h-full w-full">
+            {{/portrait}}
+            {{^portrait}}
+                <div class="opacity-75 fill-current text-gray-400 bg-gray-100 border-gray-200">
+                    <img src="/dist/img/icon-user.svg" class="h-full block fill-current" alt="">
+                </div>
+            {{/portrait}}
+        </figure>
+        <div class="pt-4 md:pt-0 md:w-3/4">
+            <h2 class="m-0 text-2xl">
+                <a aria-label="{{ title }}, {{jobTitle }}" href="{{ url }}">
+                    {{ title }}
+                </a>
+            </h2>
+            <p class="mt-2">
+                {{ jobTitle }}
+                {{#department}}<br>{{ department }}{{/department}}
+                {{#email}}<br><a href="mailto:{{ email }}" aria-label="Email {{ title }} at {{ email }}">Email</a>{{/email}}
+                {{#phone}}<br><a href="tel:{{ phone }}" aria-label="Call {{ title }} at {{ phone }}">{{ phone }}</a>{{/phone}}
+            </p>
+        </div>
+    </div>
+</div>
+`;

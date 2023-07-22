@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6a537745a41c49521c0474b9711c7441",
+    "content-hash": "caf9ce539520a69f5adc56182afda129",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -197,16 +197,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.276.2",
+            "version": "3.276.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "78c9510280512121e8fdaa9538b744778ab48bf9"
+                "reference": "c8b38cfab677a3ec98e3f40bccd1a2bf851a014f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/78c9510280512121e8fdaa9538b744778ab48bf9",
-                "reference": "78c9510280512121e8fdaa9538b744778ab48bf9",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c8b38cfab677a3ec98e3f40bccd1a2bf851a014f",
+                "reference": "c8b38cfab677a3ec98e3f40bccd1a2bf851a014f",
                 "shasum": ""
             },
             "require": {
@@ -286,9 +286,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.276.2"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.276.3"
             },
-            "time": "2023-07-20T18:16:37+00:00"
+            "time": "2023-07-21T18:30:18+00:00"
         },
         {
             "name": "besteadfast/craft-preparse-field",
@@ -1332,21 +1332,20 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.8.5",
+            "version": "3.8.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "7cc52794683a3258024601b2c1f5a45cfa8dc8c6"
+                "reference": "a49dad16ce4c2e4504b7543f3192e55f3348ba32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/7cc52794683a3258024601b2c1f5a45cfa8dc8c6",
-                "reference": "7cc52794683a3258024601b2c1f5a45cfa8dc8c6",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/a49dad16ce4c2e4504b7543f3192e55f3348ba32",
+                "reference": "a49dad16ce4c2e4504b7543f3192e55f3348ba32",
                 "shasum": ""
             },
             "require": {
                 "composer/composer": "2.2.19",
-                "craftcms/oauth2-craftid": "~1.0.0",
                 "craftcms/plugin-installer": "~1.6.0",
                 "craftcms/server-check": "~1.2.0",
                 "creocoder/yii2-nested-sets": "~0.9.0",
@@ -1363,7 +1362,6 @@
                 "guzzlehttp/guzzle": "^6.5.5|^7.2.0",
                 "laminas/laminas-feed": "~2.12.3|^2.13.1",
                 "league/flysystem": "^1.1.4",
-                "league/oauth2-client": "^2.6.0",
                 "mikehaertl/php-shellcommand": "^1.6.3",
                 "php": ">=7.2.5",
                 "pixelandtonic/imagine": "~1.3.3.1",
@@ -1378,7 +1376,6 @@
                 "yiisoft/yii2-swiftmailer": "^2.1.2"
             },
             "conflict": {
-                "league/oauth2-client": "2.4.0",
                 "webonyx/graphql-php": "14.11.7"
             },
             "provide": {
@@ -1437,7 +1434,7 @@
                 "rss": "https://github.com/craftcms/cms/releases.atom",
                 "source": "https://github.com/craftcms/cms"
             },
-            "time": "2023-03-21T21:18:22+00:00"
+            "time": "2023-07-18T15:57:26+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -1501,16 +1498,16 @@
         },
         {
             "name": "craftcms/feed-me",
-            "version": "4.6.1",
+            "version": "4.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/feed-me.git",
-                "reference": "735282ee5b5c079482512f85e8514dc90e665971"
+                "reference": "e22f91bacbcc08901839566d3897edad207a7b96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/735282ee5b5c079482512f85e8514dc90e665971",
-                "reference": "735282ee5b5c079482512f85e8514dc90e665971",
+                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/e22f91bacbcc08901839566d3897edad207a7b96",
+                "reference": "e22f91bacbcc08901839566d3897edad207a7b96",
                 "shasum": ""
             },
             "require": {
@@ -1566,7 +1563,7 @@
                 "rss": "https://github.com/craftcms/feed-me/commits/master.atom",
                 "source": "https://github.com/craftcms/feed-me"
             },
-            "time": "2023-03-20T18:51:06+00:00"
+            "time": "2023-07-06T23:21:10+00:00"
         },
         {
             "name": "craftcms/html-field",
@@ -1614,61 +1611,6 @@
                 "source": "https://github.com/craftcms/html-field"
             },
             "time": "2022-11-16T11:12:00+00:00"
-        },
-        {
-            "name": "craftcms/oauth2-craftid",
-            "version": "1.0.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/craftcms/oauth2-craftid.git",
-                "reference": "3f18364139d72d83fb50546d85130beaaa868836"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/oauth2-craftid/zipball/3f18364139d72d83fb50546d85130beaaa868836",
-                "reference": "3f18364139d72d83fb50546d85130beaaa868836",
-                "shasum": ""
-            },
-            "require": {
-                "league/oauth2-client": "^2.2.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5.0",
-                "satooshi/php-coveralls": "^1.0",
-                "squizlabs/php_codesniffer": "^2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "craftcms\\oauth2\\client\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Pixel & Tonic",
-                    "homepage": "https://pixelandtonic.com/"
-                }
-            ],
-            "description": "Craft OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
-            "keywords": [
-                "Authentication",
-                "authorization",
-                "client",
-                "cms",
-                "craftcms",
-                "craftid",
-                "oauth",
-                "oauth2"
-            ],
-            "support": {
-                "issues": "https://github.com/craftcms/oauth2-craftid/issues",
-                "source": "https://github.com/craftcms/oauth2-craftid/tree/1.0.0.1"
-            },
-            "time": "2017-11-22T19:46:18+00:00"
         },
         {
             "name": "craftcms/plugin-installer",
@@ -2293,16 +2235,16 @@
         },
         {
             "name": "doublesecretagency/craft-googlemaps",
-            "version": "4.1.5",
+            "version": "4.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doublesecretagency/craft-googlemaps.git",
-                "reference": "ac46b49d7db8a23b6bb22a2e4eb526c4aff6b768"
+                "reference": "9fb1c4da3fe0751770f62c26aef31234ec1d3162"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doublesecretagency/craft-googlemaps/zipball/ac46b49d7db8a23b6bb22a2e4eb526c4aff6b768",
-                "reference": "ac46b49d7db8a23b6bb22a2e4eb526c4aff6b768",
+                "url": "https://api.github.com/repos/doublesecretagency/craft-googlemaps/zipball/9fb1c4da3fe0751770f62c26aef31234ec1d3162",
+                "reference": "9fb1c4da3fe0751770f62c26aef31234ec1d3162",
                 "shasum": ""
             },
             "require": {
@@ -2353,9 +2295,9 @@
             "support": {
                 "docs": "https://plugins.doublesecretagency.com/google-maps",
                 "issues": "https://github.com/doublesecretagency/craft-googlemaps/issues",
-                "source": "https://github.com/doublesecretagency/craft-googlemaps/tree/4.1.5"
+                "source": "https://github.com/doublesecretagency/craft-googlemaps/tree/4.1.9"
             },
-            "time": "2022-03-25T18:54:53+00:00"
+            "time": "2022-04-16T05:17:37+00:00"
         },
         {
             "name": "doublesecretagency/craft-inventory",
@@ -4072,16 +4014,16 @@
         },
         {
             "name": "jalendport/craft-lockout",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jalendport/craft-lockout.git",
-                "reference": "8eb80e32726ef318d5d533b9245b7662a463950a"
+                "reference": "6b710258c52711df579e88fc87a7c0f8be071715"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jalendport/craft-lockout/zipball/8eb80e32726ef318d5d533b9245b7662a463950a",
-                "reference": "8eb80e32726ef318d5d533b9245b7662a463950a",
+                "url": "https://api.github.com/repos/jalendport/craft-lockout/zipball/6b710258c52711df579e88fc87a7c0f8be071715",
+                "reference": "6b710258c52711df579e88fc87a7c0f8be071715",
                 "shasum": ""
             },
             "require": {
@@ -4128,9 +4070,23 @@
             "support": {
                 "docs": "https://github.com/jalendport/craft-lockout/blob/master/README.md",
                 "issues": "https://github.com/jalendport/craft-lockout/issues",
-                "source": "https://github.com/jalendport/craft-lockout/tree/1.0.1"
+                "source": "https://github.com/jalendport/craft-lockout/tree/1.0.2"
             },
-            "time": "2020-01-03T18:12:56+00:00"
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/jalenconner",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/jalendport",
+                    "type": "github"
+                },
+                {
+                    "url": "https://ko-fi.com/jalendport",
+                    "type": "ko_fi"
+                }
+            ],
+            "time": "2023-06-09T03:54:53+00:00"
         },
         {
             "name": "jean85/pretty-package-versions",
@@ -5068,76 +5024,6 @@
                 }
             ],
             "time": "2022-04-17T13:12:02+00:00"
-        },
-        {
-            "name": "league/oauth2-client",
-            "version": "2.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/oauth2-client.git",
-                "reference": "160d6274b03562ebeb55ed18399281d8118b76c8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/160d6274b03562ebeb55ed18399281d8118b76c8",
-                "reference": "160d6274b03562ebeb55ed18399281d8118b76c8",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "^6.0 || ^7.0",
-                "paragonie/random_compat": "^1 || ^2 || ^9.99",
-                "php": "^5.6 || ^7.0 || ^8.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.3.5",
-                "php-parallel-lint/php-parallel-lint": "^1.3.1",
-                "phpunit/phpunit": "^5.7 || ^6.0 || ^9.5",
-                "squizlabs/php_codesniffer": "^2.3 || ^3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "League\\OAuth2\\Client\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alex Bilbie",
-                    "email": "hello@alexbilbie.com",
-                    "homepage": "http://www.alexbilbie.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Woody Gilk",
-                    "homepage": "https://github.com/shadowhand",
-                    "role": "Contributor"
-                }
-            ],
-            "description": "OAuth 2.0 Client Library",
-            "keywords": [
-                "Authentication",
-                "SSO",
-                "authorization",
-                "identity",
-                "idp",
-                "oauth",
-                "oauth2",
-                "single sign on"
-            ],
-            "support": {
-                "issues": "https://github.com/thephpleague/oauth2-client/issues",
-                "source": "https://github.com/thephpleague/oauth2-client/tree/2.7.0"
-            },
-            "time": "2023-04-16T18:19:15+00:00"
         },
         {
             "name": "maennchen/zipstream-php",
@@ -6476,58 +6362,6 @@
             "time": "2019-05-23T21:58:02+00:00"
         },
         {
-            "name": "nystudio107/craft-plugin-manifest",
-            "version": "1.0.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nystudio107/craft-plugin-manifest.git",
-                "reference": "d94d147b548384c7d9bd59777e12462d32042445"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-plugin-manifest/zipball/d94d147b548384c7d9bd59777e12462d32042445",
-                "reference": "d94d147b548384c7d9bd59777e12462d32042445",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.0.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "nystudio107\\pluginmanifest\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "nystudio107",
-                    "homepage": "https://nystudio107.com"
-                }
-            ],
-            "description": "Plugin Manifest is the conduit between Craft CMS plugins and webpack, with manifest.json & webpack-dev-server HMR support",
-            "keywords": [
-                "craftcms",
-                "manifest",
-                "plugin"
-            ],
-            "support": {
-                "docs": "https://github.com/nystudio107/craft-plugin-manifest/blob/v1/README.md",
-                "issues": "https://github.com/nystudio107/craft-plugin-manifest/issues",
-                "source": "https://github.com/nystudio107/craft-plugin-manifest/tree/1.0.10"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/khalwat",
-                    "type": "github"
-                }
-            ],
-            "time": "2022-04-26T14:57:11+00:00"
-        },
-        {
             "name": "nystudio107/craft-plugin-vite",
             "version": "1.0.32",
             "source": {
@@ -6581,16 +6415,16 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "3.2.9",
+            "version": "3.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nystudio107/craft-retour.git",
-                "reference": "603cd9dfcb40be7390c53d83c4a6d1ec667043cb"
+                "reference": "a64e58ce3a42451b1191368a785b4866b578d0c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/603cd9dfcb40be7390c53d83c4a6d1ec667043cb",
-                "reference": "603cd9dfcb40be7390c53d83c4a6d1ec667043cb",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/a64e58ce3a42451b1191368a785b4866b578d0c1",
+                "reference": "a64e58ce3a42451b1191368a785b4866b578d0c1",
                 "shasum": ""
             },
             "require": {
@@ -6637,7 +6471,7 @@
             "support": {
                 "docs": "https://nystudio107.com/plugins/retour/documentation",
                 "issues": "https://nystudio107.com/plugins/retour/support",
-                "source": "https://github.com/nystudio107/craft-retour/tree/3.2.9"
+                "source": "https://github.com/nystudio107/craft-retour/tree/3.2.10"
             },
             "funding": [
                 {
@@ -6645,27 +6479,27 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-03-07T20:14:50+00:00"
+            "time": "2023-04-07T18:15:31+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.4.36",
+            "version": "3.4.59",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nystudio107/craft-seomatic.git",
-                "reference": "472bead1bec071a3f96685f3c48492f05a64ad6a"
+                "reference": "81cbeba9bdb202ac340b385f823ab7d77dda9363"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/472bead1bec071a3f96685f3c48492f05a64ad6a",
-                "reference": "472bead1bec071a3f96685f3c48492f05a64ad6a",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/81cbeba9bdb202ac340b385f823ab7d77dda9363",
+                "reference": "81cbeba9bdb202ac340b385f823ab7d77dda9363",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^3.1.19",
                 "davechild/textstatistics": "1.0.2",
-                "nystudio107/craft-plugin-manifest": "^1.0.4",
-                "nystudio107/craft-twigfield": "^1.0.9",
+                "nystudio107/craft-code-editor": "^1.0.0",
+                "nystudio107/craft-plugin-vite": "^1.0.31",
                 "php-science/textrank": "^1.0.3",
                 "sunra/php-simple-html-dom-parser": "^1.5.2"
             },
@@ -6713,7 +6547,7 @@
             "support": {
                 "docs": "https://nystudio107.com/plugins/seomatic/documentation",
                 "issues": "https://nystudio107.com/plugins/seomatic/support",
-                "source": "https://github.com/nystudio107/craft-seomatic/tree/3.4.36"
+                "source": "https://github.com/nystudio107/craft-seomatic/tree/3.4.59"
             },
             "funding": [
                 {
@@ -6721,71 +6555,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-06-30T18:04:42+00:00"
-        },
-        {
-            "name": "nystudio107/craft-twigfield",
-            "version": "1.0.18",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nystudio107/craft-twigfield.git",
-                "reference": "836705ca56e303a4adf50d189dc889ece2934a1b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-twigfield/zipball/836705ca56e303a4adf50d189dc889ece2934a1b",
-                "reference": "836705ca56e303a4adf50d189dc889ece2934a1b",
-                "shasum": ""
-            },
-            "require": {
-                "phpdocumentor/reflection-docblock": "^5.0.0"
-            },
-            "require-dev": {
-                "craftcms/cms": "^3.0.0 || ^4.0.0"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "bootstrap": "nystudio107\\twigfield\\Twigfield"
-            },
-            "autoload": {
-                "psr-4": {
-                    "nystudio107\\twigfield\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "nystudio107",
-                    "homepage": "https://nystudio107.com"
-                }
-            ],
-            "description": "Provides a twig editor field with Twig & Craft API autocomplete",
-            "keywords": [
-                "Craft",
-                "auto",
-                "autocomplete",
-                "cms",
-                "complete",
-                "craftcms",
-                "editor",
-                "twig"
-            ],
-            "support": {
-                "docs": "https://github.com/nystudio107/craft-twigfield/blob/v1/README.md",
-                "issues": "https://github.com/nystudio107/craft-twigfield/issues",
-                "source": "https://github.com/nystudio107/craft-twigfield"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/khalwat",
-                    "type": "github"
-                }
-            ],
-            "abandoned": "nystudio107/craft-code-editor",
-            "time": "2022-10-26T04:29:32+00:00"
+            "time": "2023-07-19T16:05:53+00:00"
         },
         {
             "name": "nystudio107/craft-twigpack",
@@ -6919,16 +6689,16 @@
         },
         {
             "name": "nystudio107/craft-vite",
-            "version": "1.0.30",
+            "version": "1.0.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nystudio107/craft-vite.git",
-                "reference": "dbed69b9f8ffd3c85803623597ec2171c61bd8db"
+                "reference": "43e7c26675ce77b97add3c5f04e817aa4f59a187"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-vite/zipball/dbed69b9f8ffd3c85803623597ec2171c61bd8db",
-                "reference": "dbed69b9f8ffd3c85803623597ec2171c61bd8db",
+                "url": "https://api.github.com/repos/nystudio107/craft-vite/zipball/43e7c26675ce77b97add3c5f04e817aa4f59a187",
+                "reference": "43e7c26675ce77b97add3c5f04e817aa4f59a187",
                 "shasum": ""
             },
             "require": {
@@ -6971,7 +6741,7 @@
             "support": {
                 "docs": "https://github.com/nystudio107/craft-vite/blob/master/README.md",
                 "issues": "https://github.com/nystudio107/craft-vite/issues",
-                "source": "https://github.com/nystudio107/craft-vite/tree/1.0.30"
+                "source": "https://github.com/nystudio107/craft-vite/tree/1.0.31"
             },
             "funding": [
                 {
@@ -6979,7 +6749,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-01-25T21:36:44+00:00"
+            "time": "2023-06-07T17:24:34+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -8371,16 +8141,16 @@
         },
         {
             "name": "putyourlightson/craft-blitz",
-            "version": "3.12.8",
+            "version": "3.12.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/putyourlightson/craft-blitz.git",
-                "reference": "e6efa943a2ff87b3d1f9e2af41a9a1f3b55f81e1"
+                "reference": "5899fb6bcdf461bd887c8cb34e702be31d6b44f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/e6efa943a2ff87b3d1f9e2af41a9a1f3b55f81e1",
-                "reference": "e6efa943a2ff87b3d1f9e2af41a9a1f3b55f81e1",
+                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/5899fb6bcdf461bd887c8cb34e702be31d6b44f4",
+                "reference": "5899fb6bcdf461bd887c8cb34e702be31d6b44f4",
                 "shasum": ""
             },
             "require": {
@@ -8433,7 +8203,7 @@
                 "issues": "https://github.com/putyourlightson/craft-blitz/issues",
                 "source": "https://github.com/putyourlightson/craft-blitz"
             },
-            "time": "2023-01-14T01:51:25+00:00"
+            "time": "2023-07-17T08:21:21+00:00"
         },
         {
             "name": "putyourlightson/craft-blitz-recommendations",
@@ -9220,16 +8990,16 @@
         },
         {
             "name": "solspace/craft-freeform",
-            "version": "3.13.15",
+            "version": "3.13.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/solspace/craft-freeform.git",
-                "reference": "18456f2bad9678edd64a3499d404e7f3fba64adf"
+                "reference": "7df046cc5dfbfa3d8c8abf9f199dce52bcfb524c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/18456f2bad9678edd64a3499d404e7f3fba64adf",
-                "reference": "18456f2bad9678edd64a3499d404e7f3fba64adf",
+                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/7df046cc5dfbfa3d8c8abf9f199dce52bcfb524c",
+                "reference": "7df046cc5dfbfa3d8c8abf9f199dce52bcfb524c",
                 "shasum": ""
             },
             "require": {
@@ -9254,14 +9024,14 @@
             },
             "type": "craft-plugin",
             "extra": {
-                "schemaVersion": "3.6.4",
+                "schemaVersion": "3.6.5",
                 "handle": "freeform",
                 "class": "Solspace\\Freeform\\Freeform",
                 "name": "Freeform",
                 "developer": "Solspace",
                 "developerUrl": "https://docs.solspace.com/",
                 "documentationUrl": "https://docs.solspace.com/craft/freeform/v3/",
-                "changelogUrl": "https://raw.githubusercontent.com/solspace/craft-freeform/master/CHANGELOG.md",
+                "changelogUrl": "https://raw.githubusercontent.com/solspace/craft-freeform/v3/CHANGELOG.md",
                 "hasSettings": true,
                 "hasCpSection": true,
                 "hooks": {
@@ -9294,9 +9064,9 @@
             "description": "Reliable form builder that's ready for wherever your project takes you.",
             "support": {
                 "issues": "https://github.com/solspace/craft-freeform/issues",
-                "source": "https://github.com/solspace/craft-freeform/tree/v3.13.15"
+                "source": "https://github.com/solspace/craft-freeform/tree/v3.13.31"
             },
-            "time": "2022-07-20T04:40:41+00:00"
+            "time": "2023-07-11T16:24:36+00:00"
         },
         {
             "name": "solspace/craft3-commons",
@@ -9334,16 +9104,16 @@
         },
         {
             "name": "spacecatninja/imager-x",
-            "version": "v3.6.2",
+            "version": "v3.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spacecatninja/craft-imager-x.git",
-                "reference": "65d64b7850d50857d655dee2f5f468708f0fee3e"
+                "reference": "fb311edc0347dc621c89094858d598415d106126"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spacecatninja/craft-imager-x/zipball/65d64b7850d50857d655dee2f5f468708f0fee3e",
-                "reference": "65d64b7850d50857d655dee2f5f468708f0fee3e",
+                "url": "https://api.github.com/repos/spacecatninja/craft-imager-x/zipball/fb311edc0347dc621c89094858d598415d106126",
+                "reference": "fb311edc0347dc621c89094858d598415d106126",
                 "shasum": ""
             },
             "require": {
@@ -9400,22 +9170,22 @@
             "support": {
                 "docs": "http://imager-x-v3.spacecat.ninja/",
                 "issues": "https://github.com/spacecatninja/craft-imager-x/issues",
-                "source": "https://github.com/spacecatninja/craft-imager-x/tree/v3.6.2"
+                "source": "https://github.com/spacecatninja/craft-imager-x/tree/v3.6.6"
             },
-            "time": "2022-07-13T14:45:34+00:00"
+            "time": "2023-03-24T15:38:00+00:00"
         },
         {
             "name": "spicyweb/craft-neo",
-            "version": "2.13.3",
+            "version": "2.13.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spicywebau/craft-neo.git",
-                "reference": "1752c8182023b992ee6bd4008ef58096a3fa4f75"
+                "reference": "8e25330249b1aba2d0d98a3eec7e05ab3e5a7609"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/1752c8182023b992ee6bd4008ef58096a3fa4f75",
-                "reference": "1752c8182023b992ee6bd4008ef58096a3fa4f75",
+                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/8e25330249b1aba2d0d98a3eec7e05ab3e5a7609",
+                "reference": "8e25330249b1aba2d0d98a3eec7e05ab3e5a7609",
                 "shasum": ""
             },
             "require": {
@@ -9455,12 +9225,12 @@
                 "plugin"
             ],
             "support": {
-                "docs": "https://github.com/spicywebau/craft-neo/blob/2.13.3/README.md",
+                "docs": "https://github.com/spicywebau/craft-neo/blob/2.13.19/README.md",
                 "issues": "https://github.com/spicywebau/craft-neo/issues",
                 "rss": "https://github.com/spicywebau/craft-neo/commits/master.atom",
                 "source": "https://github.com/spicywebau/craft-neo"
             },
-            "time": "2022-03-24T09:58:32+00:00"
+            "time": "2023-06-15T12:33:36+00:00"
         },
         {
             "name": "ssnepenthe/color-utils",
@@ -13084,16 +12854,16 @@
         },
         {
             "name": "verbb/super-table",
-            "version": "2.7.4",
+            "version": "2.7.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/super-table.git",
-                "reference": "2586b230ed92dae1d830a42133bda2d151f5b119"
+                "reference": "594e3330c89b9abb6acbb64090bbb14997f1b0e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/super-table/zipball/2586b230ed92dae1d830a42133bda2d151f5b119",
-                "reference": "2586b230ed92dae1d830a42133bda2d151f5b119",
+                "url": "https://api.github.com/repos/verbb/super-table/zipball/594e3330c89b9abb6acbb64090bbb14997f1b0e0",
+                "reference": "594e3330c89b9abb6acbb64090bbb14997f1b0e0",
                 "shasum": ""
             },
             "require": {
@@ -13145,7 +12915,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-12-24T23:55:12+00:00"
+            "time": "2023-03-28T11:42:34+00:00"
         },
         {
             "name": "verbb/tablemaker",

@@ -2,7 +2,7 @@
 {% set direction = imageIsLeft ? "md:flex-row" : "md:flex-row-reverse" %}
 {% set imagePad = imageIsLeft ? "md:pr-4" : "md:pl-4" %}
 {% set textPad = imageIsLeft ? "md:pl-4" : "md:pr-4" %}
-<section class="@container relative z-0 {{ not loop.last ? "mb-12" }}">
+<section class="@container relative z-0 pb-12">
   <div class="container px-6 @3xl:px-16">
     {{ include("_partials/_heading.twig", {
       params: {

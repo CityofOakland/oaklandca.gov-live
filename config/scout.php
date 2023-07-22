@@ -15,7 +15,7 @@ return [
      * their respective indices. You can disable these and update
      * your indices manually using the commands.
      */
-  'sync' => !(getenv('ENVIRONMENT') == 'dev'),
+  'sync' => true,
 
   /*
      * By default Scout handles all indexing in a queued job, you can disable
@@ -120,7 +120,7 @@ return [
       ->criteria(function (EntryQuery $query) {
         return $query
           ->section('staff')
-          ->with(['portrait', 'department']);
+          ->with(['department']);
       })
       ->transformer(function (craft\elements\Entry $entry) {
         return [

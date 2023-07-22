@@ -1,6 +1,6 @@
 module.exports = {
   content: [
-    './templates/**/*.{twig,html,vue}',
+    './templates/**/*.{twig,html,vue,js}',
     './src/**/*.{js,jsx,ts,tsx,vue}',
     './config/colour-swatches.php'
   ],
@@ -13,10 +13,6 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: {
-        DEFAULT: '1.5rem',
-        sm: '2rem',
-      }
     },
     extend: {
       colors: {
@@ -170,7 +166,6 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/aspect-ratio"),
-    require("@tailwindcss/line-clamp"),
     require("@tailwindcss/container-queries"),
     require("@tailwindcss/forms")({
       strategy: 'class', // only generate classes
