@@ -1,7 +1,9 @@
-<div class="{% if not loop.last %}mb-12{% endif %}">
-    {% set url      = parseUrl(block.embed) %}
-    {% set params   = url.query|split('&') %}
-    {% set idParam  = params[0] %}
-    {% set id       = idParam|split('=')[1] %}
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="@container relative z-0 pb-12">
+    <div class="components container px-6 @3xl:px-16">
+        {% set url      = parseUrl(block.embed) %}
+        {% set params   = url.query|split('&') %}
+        {% set idParam  = params[0] %}
+        {% set id       = idParam|split('=')[1] %}
+        <iframe class="w-full aspect-[16/9] h-auto" width="560" height="315" src="https://www.youtube.com/embed/{{ id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 </div>

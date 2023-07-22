@@ -34,7 +34,7 @@
   {% set entryIds = entryIds | merge(relatedNews) %}
 {% endif %}
 
-<section class="@container relative z-0 {{ not loop.last ? "mb-12" }}">
+<section class="@container relative z-0 pb-12">
   <div class="container px-6 @3xl:px-16">
     {{ include("_partials/_heading.twig", {
       params: {
