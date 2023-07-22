@@ -10,10 +10,6 @@ p.small {
   @apply !text-base;
 }
 
-.container {
-  @apply py-6 sm:py-12;
-}
-
 .logo {
   fill: #ffffff;
 }

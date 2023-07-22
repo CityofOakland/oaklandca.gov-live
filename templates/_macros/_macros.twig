@@ -28,7 +28,7 @@
     {% set relSectionHandle = relation[0] %}
     {% set relType = relation[1] %}
     {% set isEntries = (relType == "entries") ? true : false %}
-    {% set hasRels = isEntries ? craft.entries.section(relSectionHandle).relatedTo(entry) : craft.calendar.events({calendar: relSectionHandle}).relatedTo(entry) %}
+    {% set hasRels = isEntries ? craft.entries.section(relSectionHandle).relatedTo(entry) %}
     {% set relCount = true %}
     {% return relCount %}
   {% endfor %}
@@ -38,10 +38,10 @@
   {% set relSectionHandle = relSection[0] %}
   {% set relType = relSection[1] %}
   {% set isEntries = (relType == "entries") ? true : false %}
-  {% set hasRels = isEntries ? craft.entries.section(relSectionHandle).relatedTo(entry) : craft.calendar.events({calendar: relSectionHandle}).relatedTo(entry) %}
+  {% set hasRels = isEntries ? craft.entries.section(relSectionHandle).relatedTo(entry) %}
   {% if hasRels | length %}
     {% set section = entry.section %}
-    {% set relSection = isEntries ? craft.app.sections.getSectionByHandle(relSectionHandle) : craft.calendar.calendar({handle: relSectionHandle}) %}
+    {% set relSection = isEntries ? craft.app.sections.getSectionByHandle(relSectionHandle) %}
     {% set urlBase = relSectionHandle | kebab %}
     {% set relUrl = "/" ~ urlBase ~ "/related-to/" ~ section.handle ~ "/" ~ entry.slug %}
     {% include "_partials/_elements/_title-cards" with { title: relSection.name, url: relUrl} %}
@@ -73,27 +73,29 @@
 {% endmacro %}
 
 {% macro tableBuilder(object, columns) %}
-  <table class="w-full text-sm border border-cool-gray-500">
-    <thead>
-      <tr>
-        {% for col in 1..columns %}
-          {% set colAttrib = 'column' ~ col ~ 'Heading' %}
-          {% set widthAttrib = 'column' ~ col ~ 'Width' %}
-          <th style="width: {{ attribute(object, widthAttrib) ~ '%' ?? '' }}">{{ attribute(object, colAttrib) }}</th>
-        {% endfor %}
-      </tr>
-    </thead>
-    <tbody>
-      {% for row in object.table.all() %}
+  <div class="components container px-6 @3xl:px-16">
+    <table class="w-full text-sm border border-cool-gray-500">
+      <thead>
         <tr>
           {% for col in 1..columns %}
-            {% set colAttrib = 'column' ~ col ~ 'Cell' %}
-            <td>{{ attribute(row, colAttrib) | retconAttr( '*', { 'class' : 'last:mb-0' }, false ) }}</td>
+            {% set colAttrib = 'column' ~ col ~ 'Heading' %}
+            {% set widthAttrib = 'column' ~ col ~ 'Width' %}
+            <th style="width: {{ attribute(object, widthAttrib) ~ '%' ?? '' }}">{{ attribute(object, colAttrib) }}</th>
           {% endfor %}
         </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {% for row in object.table.all() %}
+          <tr>
+            {% for col in 1..columns %}
+              {% set colAttrib = 'column' ~ col ~ 'Cell' %}
+              <td>{{ attribute(row, colAttrib) | retconAttr( '*', { 'class' : 'last:mb-0' }, false ) }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 {% endmacro %}
 
 {% macro videoEmbed(videoUrl, videoTitle) %}

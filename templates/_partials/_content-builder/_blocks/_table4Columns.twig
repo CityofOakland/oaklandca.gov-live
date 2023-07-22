@@ -1,5 +1,5 @@
 {% import '_macros/_macros' as macro %}
-<section class="@container relative z-0 {{ not loop.last ? "mb-12" }}">
+<section class="@container relative z-0 pb-12">
   <div class="components container px-6 @3xl:px-16 body-text">{{ block.text }}</div>
     {{ macro.tableBuilder(block, 4)}}
   </div>

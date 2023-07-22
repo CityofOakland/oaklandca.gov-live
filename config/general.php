@@ -9,14 +9,18 @@
  * @see craft\config\GeneralConfig
  */
 
+use craft\helpers\App;
+
 return [
 	// Global settings
 		'*' => [
 				'aliases' => [
-						'@algoliaAppId' => getenv('ALGOLIA_APP_ID'),
-						'@algoliaAdminApi' => getenv('ALGOLIA_ADMIN_API'),
-						'@amazonKeyId' => getenv('AMAZON_KEY_ID'),
-						'@amazonSecret' => getenv('AMAZON_SECRET'),
+                    '@algoliaAppId' => App::env('ALGOLIA_APP_ID'),
+                    '@algoliaAdminApi' => App::env('ALGOLIA_ADMIN_API'),
+                    '@amazonKeyId' => App::env('AMAZON_KEY_ID'),
+                    '@amazonSecret' => App::env('AMAZON_SECRET'),
+                    'siteUrl' => App::env('PRIMARY_SITE_URL') ?: '@web',
+                    'webroot' => App::env('WEB_ROOT'),
 				],
 				'allowAdminChanges' => false,
 				'cpTrigger' => 'admin',
@@ -32,8 +36,8 @@ return [
 				'maxRevisions' => 10,
 				'maxUploadFileSize' => 268435456,
 				'omitScriptNameInUrls' => true,
-				'securityKey' => getenv('SECURITY_KEY'),
-				'siteUrl' => getenv('SITE_URL'),
+				'securityKey' => App::env('SECURITY_KEY'),
+				'siteUrl' => App::env('SITE_URL'),
 				'useProjectConfigFile' => true,
 		],
 

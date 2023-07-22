@@ -30,9 +30,6 @@
 {% set contactTrue = emailTrue or phoneTrue or teamsTrue or socialMediaTrue %}
 
 {% block content %}
-  {% if photosTrue or mapTrue %}
-    {{ craft.vite.script("src/js/lightgallery.js") }}
-  {% endif %}
   {%- set headerSubContent -%}
     <div class="mt-4 md:mt-0">
     {% if entry.projectStatus %}
