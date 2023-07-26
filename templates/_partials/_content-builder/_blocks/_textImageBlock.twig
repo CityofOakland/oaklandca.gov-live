@@ -7,7 +7,8 @@
   <div class="container px-6 @3xl:px-16">
     {{ include("_partials/_heading.twig", {
       params: {
-        text: block.heading
+        text: block.heading,
+        margin: "mb-6",
       }
     }) }}
     <div class="md:flex {{ direction }}">

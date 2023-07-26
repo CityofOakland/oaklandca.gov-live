@@ -21,8 +21,8 @@
       bannerTitle: entry.title | replace(' Index', '') ~ bannerTitleSuffix ?? '',
     } %}
   {% endblock %}
-  <div class="bg-gray-100" id="search-bar-container">
-    <div class="container text-right">
+  <div class="@container z-0 relative bg-gray-100 py-6 sm:py-12 mt-6 sm:mt-12" id="search-bar-container">
+    <div class="container px-6 @3xl:px-16 mx-auto text-right">
       <div class="flex flex-col sm:flex-row">
         <label class="hidden-visually" for="search-input">{{ searchInputText ?? 'Search this Index' }}</label>
         <input class="w-full p-2 rounded-none appearance-none md:py-4 md:px-8" id="search-input" name="keywords" required type="search" value="">
@@ -41,8 +41,8 @@
       {% endif %}
     </div>
   </div>
-  <section class="relative z-0 bg-white">
-    <div class="container">
+  <section class="@container mt-16 z-0 relative bg-white py-6 sm:py-12">
+    <div class="container px-6 @3xl:px-16 mx-auto">
       <div class="w-full">
         <div id="stats"></div>
         <div id="hits"></div>
