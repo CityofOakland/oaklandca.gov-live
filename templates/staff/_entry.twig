@@ -13,15 +13,15 @@
 {% set phone          = entry.phoneNumber ? entry.phoneNumber : entry.staffImportPhoneNumber %}
 
 {% block content %}
-  <div class="leading-none banner">
-    <div class="container pt-2 pb-8 md:pt-4 md:pb-6">
+  <div class="leading-none banner @container">
+    <div class="container px-6 @3xl:px-16 pt-2 pb-8 md:pt-4 md:pb-6">
       <div class="absolute inset-0 z-0 bg-transparent-oakland-roots"></div>
       {% include "_components/partials/_breadcrumbs.twig" %}
     </div>
   </div>
   <div id="content" style="position:relative;top:-5rem;"></div>
-  <section class="bg-white">
-    <div class="container pb-16">
+  <section class="bg-white @container">
+    <div class="container px-6 @3xl:px-16 py-8 sm:py-12">
       <div class="sm:flex">
         <div class="sm:w-1/4 sm:mr-8">
           <figure class="w-full">
