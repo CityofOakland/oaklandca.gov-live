@@ -1,36 +1,40 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
-<div class="p-6 bg-cool-gray-100 {% if not loop.last %}mb-12{% endif %}">
-  {{ include("_partials/_heading.twig", {
-    params: {
-      text: block.heading
-    }
-  }) }}
-  <div class="relative">
-    <div class="absolute top-0 z-10 h-full border-r-2 border-blue-500" style="left: 15px"></div>
-    <ul class="relative z-20 p-0 m-0 list-none">
-      {% for item in block.timeline %}
-        {% set heading = item.milestoneDate %}
-        {% if item.milestoneName %}
-          {% set heading = heading ~ " - " ~ item.milestoneName %}
-        {% endif %}
-        {% set started = item.milestoneStarted.contains("yes") %}
-        <li class="mb-4 last:mb-0">
-          <div class="flex items-center">
-            <div class="w-8 h-8 {% if started %}bg-green-400{% else %}bg-blue-500{% endif %} rounded-full"></div>
-            <div class="flex-1 ml-4 font-semibold">
-              {% if item.milestoneLink %}
-                <a href="{{ item.milestoneLink.url }}">{{ heading }}</a>
-              {% else %}
-                {{ heading }}
-              {% endif %}
-            </div>
-          </div>
-          <div class="max-w-sm ml-12">
-            {{ item.milestoneDescription | retcon('attr', '*', { class: 'mt-2 mb-0 text-gray-800 text-sm md:text-base' }) }}
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
+<section class="@container relative z-0 {{ not loop.last ? 'mb-12' }}">
+  <div class="px-6 @3xl:px-16 @3xl:pt-12 @3xl:pb-8">
+    <div class="p-6 bg-cool-gray-100">
+      {{ include("_partials/_heading.twig", {
+        params: {
+          text: block.heading
+        }
+      }) }}
+      <div class="relative">
+        <div class="absolute top-0 z-10 h-full border-r-2 border-blue-500" style="left: 15px"></div>
+        <ul class="relative z-20 p-0 m-0 list-none">
+          {% for item in block.timeline %}
+            {% set heading = item.milestoneDate %}
+            {% if item.milestoneName %}
+              {% set heading = heading ~ " - " ~ item.milestoneName %}
+            {% endif %}
+            {% set started = item.milestoneStarted.contains("yes") %}
+            <li class="mb-4 last:mb-0">
+              <div class="flex items-center">
+                <div class="w-8 h-8 {% if started %}bg-green-400{% else %}bg-blue-500{% endif %} rounded-full"></div>
+                <div class="flex-1 ml-4 font-semibold">
+                  {% if item.milestoneLink %}
+                    <a href="{{ item.milestoneLink.url }}">{{ heading }}</a>
+                  {% else %}
+                    {{ heading }}
+                  {% endif %}
+                </div>
+              </div>
+              <div class="max-w-sm ml-12">
+                {{ item.milestoneDescription | retcon('attr', '*', { class: 'mt-2 mb-0 text-gray-800 text-sm md:text-base' }) }}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}
