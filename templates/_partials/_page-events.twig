@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set defaultButtonUrl = "/events/related-to/" ~ entry.section.handle ~ "/" ~ entry.slug %}
 {% set options = {
   calendar: "events",
@@ -32,3 +33,4 @@
     } %}
   </section>
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

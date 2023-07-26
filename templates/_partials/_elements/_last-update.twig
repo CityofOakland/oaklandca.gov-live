@@ -1,6 +1,8 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <p class="mt-4 text-base">
     Posted: {{ entry.postDate | date('F jS, Y g:i A') }}
 </p>
 <p class="mt-4 text-base">
     Last Updated: {{ entry.dateUpdated | date('F jS, Y g:i A') }}
 </p>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

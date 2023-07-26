@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <li>
   {% switch phone.type %}
     {% case "other" %}
@@ -8,3 +9,4 @@
     <a href="tel:{{ phone.number }}">{{ phone.number }}</a>
     {% endswitch %}
 </li>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

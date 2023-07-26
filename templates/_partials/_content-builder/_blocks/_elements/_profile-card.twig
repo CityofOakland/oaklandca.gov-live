@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set vars = {
 	url: null,
 	photo: null,
@@ -68,3 +69,4 @@
 {% else %}
 	{{ cardContent }}
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

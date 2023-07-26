@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <section class="@container relative z-0 bg-cool-gray-100 p-6 {{ not loop.last ? "mb-12" }}">
   <div class="container px-6 @3xl:px-16 body-text">
     {{ include("_partials/_heading.twig", {
@@ -16,3 +17,4 @@
     </ul>
   </div>
 </section>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

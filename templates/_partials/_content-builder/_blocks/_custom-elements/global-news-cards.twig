@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {# Get the manually selected featured entry, if it exists. #}
 {% set featuredEntry = globalNews.featuredNewsItem.one() ?? null %}
 {# Get the first news entry that is marked as an official press release and has a main image. #}
@@ -30,3 +31,4 @@
 		selectedEntries: selectedNews
 	}
 }) }}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

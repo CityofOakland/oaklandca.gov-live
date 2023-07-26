@@ -1,3 +1,4 @@
+<!-- Begin {{ _self }} -->
 {% macro renderForm(id, element) %}
 	{% set entryUrl     = craft.app.request.absoluteUrl %}
 	{% set pageAuthor 	= 'No Author' %}
@@ -91,3 +92,4 @@
 		$this.addClass('state-active');
 	});
 {% endjs %}
+<!-- End {{ _self }} -->

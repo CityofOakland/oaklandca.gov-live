@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set vars = {
 	subheading: false,
 	text: null,
@@ -13,3 +14,4 @@
 		<h3 id="{{ vars.text|kebab }}" class="scroll-m-16 {{ vars.classes }} {{ vars.padding }} {{ vars.margin }}">{{ vars.text }}</h3>
 	{% endif %}
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% if entry.groupHeadName | length %}
   <section class="mt-16 bg-white">
     <a class="anchor-link" id="page-leadership"></a>
@@ -42,3 +43,4 @@
     </div>
   </section>
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% if entry.facebook | length or entry.twitter | length or entry.instagram | length or entry.medium | length %}
   <h3 class="mb-4 text-2xl">Social Media</h3>
   <div class="mb-8">
@@ -27,3 +28,4 @@
     {% endif %}
   </div>
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

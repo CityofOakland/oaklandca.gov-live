@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set infoMemos = craft.categories.id(29) %}
 <div class="{% if not loop.last %}mb-12{% endif %}">
   <div class="body-text">
@@ -8,3 +9,4 @@
     </ul>
   </div>
 </div>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

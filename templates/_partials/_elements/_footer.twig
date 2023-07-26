@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set seoMaticLinks = seomatic.site.sameAsLinks %}
 {% set socialMedia = [
   [ seoMaticLinks.facebook.url, 'facebook.svg', 'Oakland Facebook Page' ],
@@ -116,3 +117,4 @@
     }
   })();
 </script>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

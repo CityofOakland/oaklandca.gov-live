@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set vars = {
 	heading: null,
 	content: null
@@ -39,3 +40,4 @@
 		</div>
 	</section>
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

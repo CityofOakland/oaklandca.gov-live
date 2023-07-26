@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set location = location ?? entry %}
 
 {% do view.registerJsFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js") %}
@@ -24,3 +25,4 @@
     </div>
   {% endif %}
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

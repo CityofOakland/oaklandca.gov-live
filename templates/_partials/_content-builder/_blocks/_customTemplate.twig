@@ -1,1 +1,3 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% include templateBase ~ "custom-elements/" ~ block.templateSelect %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

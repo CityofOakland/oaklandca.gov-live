@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set link = link ?? "" %}
 {% if link %}
   {% include '_components/_button' with {
@@ -7,3 +8,4 @@
     text: link.text,
   } %}
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

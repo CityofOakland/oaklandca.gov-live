@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <section class="@container relative z-0 pb-12">
   <div class="container px-6 @3xl:px-16">
     {% include "_partials/_elements/_meetings-table.twig" with {
@@ -5,3 +6,4 @@
     } %}
   </div>
 </section>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

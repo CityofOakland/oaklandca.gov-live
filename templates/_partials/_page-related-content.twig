@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% import "_macros/_macros.twig" as macros %}
 {% set pageObject = entry ?? event %}
 
@@ -23,3 +24,4 @@
     {% endif %}
   {% endif %}
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

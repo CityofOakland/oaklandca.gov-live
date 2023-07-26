@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set bgColor = block.backgroundColor.color[0] ?? null %}
 
 {{ include("_components/_spotlight.twig", {
@@ -13,3 +14,4 @@
     button: block.callToAction ?? null
   }
 }) }}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% macro buttonTemplate(descriptorText, url, buttonText) %}
   <div class="mb-4 md:px-3">
     <div class="button-container">
@@ -50,3 +51,4 @@
     {% endfor %}
   </div>
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

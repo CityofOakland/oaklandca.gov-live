@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set contentBuilder       = entry.contentBuilder ?? '' %}
 {% set customNav            = customNav ?? '' %}
 {% set disableRelatedPages  = disableRelatedPages is defined ? disableRelatedPages : false %}
@@ -111,3 +112,4 @@
 {% endif %}
 
 {{ custSideNav ?? sideNav }}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

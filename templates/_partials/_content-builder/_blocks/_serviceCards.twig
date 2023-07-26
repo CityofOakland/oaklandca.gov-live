@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set cards = block.serviceCards.all() ?? null %}
 {% set cardLength = cards|length %}
 {% set wideCards = cardLength == 2 or cardLength == 4 %}
@@ -35,7 +36,6 @@
 				{{ block.serviceCTA.text }}{% if block.serviceCTA.target %} <i class="fas fa-external-link-alt pl-1 h-[17px]"></i>{% endif %}
 			</a>
 		{% endif %}
-
 	</div>
 </section>
-
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

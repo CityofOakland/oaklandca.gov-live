@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set imageIsLeft = block.imageColumnPosition == "left" ? true : false %}
 {% set direction = imageIsLeft ? "md:flex-row" : "md:flex-row-reverse" %}
 {% set imagePad = imageIsLeft ? "md:pr-4" : "md:pl-4" %}
@@ -38,3 +39,4 @@
     </div>
   </div>
 </section>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

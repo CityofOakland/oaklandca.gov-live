@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% import '_macros/_macros' as macros %}
 
 {% set meetings     = craft.entries.section('meetings').date(['>= ' ~ now|date('Y-m-d')]).order('date asc').limit(3).relatedTo(entry) %}
@@ -43,3 +44,4 @@
     </div>
   </section>
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

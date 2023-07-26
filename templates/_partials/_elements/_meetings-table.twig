@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {# Use these variables to set the table status attributes  #}
 {% set tableColorPalette = {
   'default': {
@@ -131,3 +132,4 @@
   {% include '_js/responsivetable.js'  %}
   responsiveTable('meetings');
 {% endjs %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}
