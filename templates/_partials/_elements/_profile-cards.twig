@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set url = url ?? entry.url ?? '' %}
 {% set photo = photo ?? entry.photo.one ?? '' %}
 {% set jobTitle = jobTitle ?? entry.jobTitle ?? entry.staffImportJobTitle ?? '' %}
@@ -41,3 +42,4 @@
     </div>
   </div>
 </div>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

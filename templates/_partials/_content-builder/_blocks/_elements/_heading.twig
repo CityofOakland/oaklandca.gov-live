@@ -1,4 +1,6 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <a class="anchor-link" id="{{ blockId }}"></a>
 {% if block.heading %}
   <{{ heading }} class="{{ hClass }} {{ addClasses ?? "" }}">{{ block.heading }}</{{ heading }}>
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

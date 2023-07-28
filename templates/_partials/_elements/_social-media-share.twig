@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set vars = {
 	url: entry.url ?? null,
 	title: entry.title ?? null,
@@ -27,3 +28,4 @@
 		"Share on Twitter"
 	) }}
 </ul>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

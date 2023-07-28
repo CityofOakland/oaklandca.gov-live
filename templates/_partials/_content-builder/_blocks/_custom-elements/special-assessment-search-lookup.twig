@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <div class="my-8">
   <form action="{{ url(craft.request.url ~ '?apn=') }}">
     <label class="block font-bold" for="apn">Assessor's parcel number</label>
@@ -25,3 +26,4 @@
     {% endif %}
   {% endif %}
 </div>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

@@ -1,6 +1,7 @@
-{% import '_macros/_macros' as macro %}
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
+{% import '_macros/_macros.twig' as macro %}
 <section class="@container relative z-0 pb-12">
   <div class="components container px-6 @3xl:px-16 body-text">{{ block.text }}</div>
-    {{ macro.tableBuilder(block, 4)}}
-  </div>
+  {{ macro.tableBuilder(block, 4)}}
 </section>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

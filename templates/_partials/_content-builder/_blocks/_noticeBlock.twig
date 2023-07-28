@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% switch block.alertType %}
   {% case "information" %}
     {% set colors = {
@@ -33,3 +34,4 @@
     </div>
   </div>
 </section>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

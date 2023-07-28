@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% if bannerTitle is defined %}
   {% do seomatic.meta.seoTitle(bannerTitle) %}
 {% else %}
@@ -98,3 +99,4 @@
     </div>
   {% endif %}
 {% endautoescape %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

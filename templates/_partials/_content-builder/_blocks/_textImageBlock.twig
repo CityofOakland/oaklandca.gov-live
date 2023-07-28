@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set imageIsLeft = block.imageColumnPosition == "left" ? true : false %}
 {% set direction = imageIsLeft ? "md:flex-row" : "md:flex-row-reverse" %}
 {% set imagePad = imageIsLeft ? "md:pr-4" : "md:pl-4" %}
@@ -6,7 +7,8 @@
   <div class="container px-6 @3xl:px-16">
     {{ include("_partials/_heading.twig", {
       params: {
-        text: block.heading
+        text: block.heading,
+        margin: "mb-6",
       }
     }) }}
     <div class="md:flex {{ direction }}">
@@ -38,3 +40,4 @@
     </div>
   </div>
 </section>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set events     	= craft.calendarize.upcoming({section: ['events'], limit:3, relatedTo: entry}) %}
 {% set headingText  = 'Related Events' %}
 {% set buttonText   = 'See All Events' %}
@@ -34,3 +35,4 @@
   </div>
 </div>
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

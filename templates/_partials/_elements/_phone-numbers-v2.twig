@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <div class="flex">
     <dt class="font-bold w-32">
       {% switch phone.type %}
@@ -11,3 +12,4 @@
     </dd>
   {% endswitch %}
 </div>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

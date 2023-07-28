@@ -37,16 +37,16 @@
         {% endif %}
         <section>
           {% block banner %}
-            <div class="bg-transparent-oakland-roots">
-              <div class="container py-4">
+            <div class="@container relative bg-transparent-oakland-roots">
+              <div class="container px-6 @3xl:px-16 py-4">
                 {% include "_components/partials/_breadcrumbs.twig" %}
               </div>
             </div>
           {% endblock %}
           <div id="content" class="relative top-[-5rem]"></div>
-          <div class="{{ archive is defined and archive == true ? 'bg-blue-900 text-white' : '' }}">
-            <div class="container pt-8 md:pt-16 {{ archive is defined and archive == true ? 'md:mb-8' : '' }}">
-              <div class="max-w-6xl" style="max-width:1152px;">
+          <div class="@container relative {{ archive is defined and archive == true ? 'bg-blue-900 text-white' : '' }}">
+            <div class="container px-6 py-8 @3xl:px-16 md:py-16  {{ archive is defined and archive == true ? 'md:mb-8' : '' }}">
+              <div class="max-w-6xl">
                 <div class="flex flex-col flex-1 lg:flex-row">
                   <div class="w-full lg:w-8/11">
                     {% block title %}
@@ -77,9 +77,9 @@
         </section>
         {% block precontent %}
         {% endblock %}
-        <section> 
+        <section class="@container relative">
           {% if category is not defined %}
-            <div class="container pt-0">
+            <div class="container px-6 py-8 @3xl:px-16 md:py-16">
               <div class="max-w-6xl">
                 <div class="flex flex-wrap justify-between -mx-8 {{ flex_class }}">
                   <div class="w-full {{ fullwidth is defined and fullwidth == true ? '' : 'lg:w-7/11' }} px-8 {{ column_one_class }}">

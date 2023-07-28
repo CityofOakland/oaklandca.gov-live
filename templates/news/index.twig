@@ -1,6 +1,7 @@
 {% if entry is not defined  %}
   {% redirect 404 %}
 {% endif %}
+{% set archive        = true %}
 
 {% set filter_enabled = false %}
 {% set homepage_entry = craft.entries()
@@ -112,61 +113,6 @@
 {% import '_macros/_macros.twig' as macros %}
 
 {# Banner #}
-{% block banner %}
-  <div class="leading-none banner">
-    <div class="container pt-2 pb-8 md:pt-4 md:pb-6">
-      <div class="absolute inset-0 z-0 bg-transparent-oakland-roots"></div>
-      <div id="breadcrumbs" class="relative inline-block bg-white z-[1]">
-        <a class="font-bold text-green-800 hover:text-green-800 hover:underline" href="/">Oakland</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
-        <span aria-current="page" class="text-gray-800">News</span>
-      </div>
-    </div>
-  </div>
-  <div class="bg-blue-900 text-white min-h-44">
-    <div class="container">
-      <h1 class="mt-2 text-4xl">News</h1>
-      <p class="mt-6 text-xl">The latest news from the City of Oakland</p>
-    </div>
-  </div>
-
-  {# Spotlight News #}
-  {% set spotlightNews = entry.highlightedNews|length ? entry.highlightedNews.one() : null %}
-  {% set spotlightNewsExpiryDate = entry.endDate ? entry.endDate|datetime('U') : null %}
-  {% if spotlightNews and (not spotlightNewsExpiryDate or 'now'|datetime('U') <= spotlightNewsExpiryDate) %}
-    {% set spotlightNewsEntryExcerpt = spotlightNews.summary ?: spotlightNews.body %}
-    {% set spotlightNewsEntryImage = spotlightNews.newsImage|length ? spotlightNews.newsImage.one() : null %}
-    <div class="bg-blue-800 text-white min-h-96">
-      {# Spotlight body #}
-      <div class="container lg:flex lg:gap-8">
-        {# Spotlight image comes first in smaller responsive view. #}
-        {% if spotlightNewsEntryImage %}
-          <figure class="mb-6 lg:oak-hidden">
-            <img alt="{{ spotlightNewsEntryImage.altText }}" src="{{ spotlightNewsEntryImage.url }}">
-          </figure>
-        {% endif %}
-
-        {# Spotlight textual info (e.g. title, summary, date, etc). #}
-        <div class="{{ spotlightNewsEntryImage ? 'lg:w-1/2' : '' }}">
-          <h4 class="font-bold">Spotlight</h4>
-          <h3 class="mt-6 font-bold">{{ spotlightNews.title }}</h3>
-          <p class="mt-5 text-xl">{{ spotlightNews.postDate|date|upper }}</p>
-          <p class="mt-5 text-lg">{{ spotlightNewsEntryExcerpt|striptags|slice(0, 300) ~ (spotlightNewsEntryExcerpt|length > 300 ? '...' : '') }}</p>
-          <a class="mt-2 text-sm button secondary" href="{{ spotlightNews.url }}">Read More</a>
-        </div>
-
-        {# Spotlight image comes second on larger display (to the right in flex). #}
-        {% if spotlightNewsEntryImage %}
-          <figure class="oak-hidden lg:block lg:w-1/2">
-            <img alt="{{ spotlightNewsEntryImage.altText }}" src="{{ spotlightNewsEntryImage.url }}">
-          </figure>
-        {% endif %}
-      </div>
-    </div>
-  {% endif %}
-{% endblock %}
-
-{# Suppress title block in parent template #}
-{% block title %}{% endblock %}
 
 {# Related Content Section #}
 {%- set relatedContentSection -%}

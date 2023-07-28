@@ -1,6 +1,7 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set templateBase = "_partials/_content-builder/_blocks/_" %}
 {% set heading = heading ?? 'h2' %}
-{% set headingClass = headingClass ?? 'text-2xl my-6' %}
+{% set headingClass = headingClass ?? 'text-2xl mb-6' %}
 {% set topHeadingClass = 'text-2xl mt-0 mb-6' %}
 {% set subheadingClass = subheadingClass ?? 'text-xl my-4' %}
 {% set galleryTrue = craft.matrixBlocks().owner(entry).fieldId(66).type('gallery') %}
@@ -90,3 +91,4 @@
     {% endswitch %}
   {% endfor %}
 </div>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

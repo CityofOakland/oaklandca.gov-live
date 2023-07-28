@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% import "_macros/_macros.twig" as macros %}
 {% set pageObject = entry ?? event %}
 
@@ -12,14 +13,19 @@
         margin: "my-8"
       }
     }) }}
-    {% if isRelated %}
-      <section class="mb-16 card-grid">
-        {% for section in relatedContent %}
-          {{ macros.relatedEntry(pageObject, section) }}
-        {% endfor %}
-      </section>
-    {% else %}
-      <p class="text-xl">No pages have been related to this entry yet.</p>
-    {% endif %}
+    <div class="@container mt-16 bg-white">
+      <div class="container px-6 @3xl:px-16 mx-auto">
+        {% if isRelated %}
+          <section class="mb-16 card-grid">
+            {% for section in relatedContent %}
+              {{ macros.relatedEntry(pageObject, section) }}
+            {% endfor %}
+          </section>
+        {% else %}
+          <p class="text-xl">No pages have been related to this entry yet.</p>
+        {% endif %}
+      </div>
+    </div>
   {% endif %}
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

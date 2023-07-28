@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <script>
     var container = document.body;
     var dom_observer = new MutationObserver(function(mutation) {
@@ -167,3 +168,4 @@
         </nav>
     </div>
 </div>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

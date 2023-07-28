@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set vars = {
   content: null,
   relatedContent: null,
@@ -52,3 +53,4 @@
     </nav>
   </div>
 </section>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

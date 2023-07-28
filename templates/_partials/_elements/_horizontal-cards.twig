@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <article class="horizontal-card {% if loop is defined and not loop.last %} border-gray-300 border-b-2 {% endif %}">
   {% if photo | length %}
     <figure class="z-0 bg-white">
@@ -27,3 +28,4 @@
     </div>
   </div>
 </article>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

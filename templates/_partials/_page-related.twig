@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set vars = {
 	heading: null,
 	content: null
@@ -5,37 +6,40 @@
 
 {% if vars.content %}
 	{% set soloBlock = vars.content|length == 1 %}
-	<section class="py-12">
-		{{ include("_partials/_content-builder/_blocks/_elements/_component-header.twig", {
-			params: {
-				text: vars.heading
-			}
-		}) }}
-		<div class="grid gap-8 mt-8 md:mt-12 md:grid-cols-2">
-			{% for row in vars.content %}
-				{% set linkCollection = row.setLinks.all() %}
-				<div class="{{ soloBlock ? 'md:col-span-2' }}">
-					{% if row.header %}
-						<div>
-							<h3 class="mt-0 mb-4 font-bold text-xl sm:leading-none sm:flex-1 sm:text-2xl">{{ row.header }}</h3>
-						</div>
-					{% endif %}
-					{% if linkCollection %}
-						<ul class="my-0 {{ soloBlock ? 'md:grid md:gap-x-8 md:grid-cols-2' }}">
-							{% for block in linkCollection %}
-								{% set link = block.linkLocation %}
-								{% set linkType = link.typeHandle %}
-								<li>
-									<a href="{{ link.url }}" target="{{ link.target }}" class="block m-0 py-4 font-bold border-b-2 border-gray-300">
-										{{ link.text }}
-										{% if link.target %}<i class="fas fa-external-link-alt" style="margin-left:6px;height:18px"></i>{% endif %}
-									</a>
-								</li>
-							{% endfor %}
-						</ul>
-					{% endif %}
-				</div>
-			{% endfor %}
+	<section class="@container py-12">
+		<div class="container px-6 @3xl:px-16 mx-auto">
+			{{ include("_partials/_content-builder/_blocks/_elements/_component-header.twig", {
+				params: {
+					text: vars.heading
+				}
+			}) }}
+			<div class="grid gap-8 mt-8 md:mt-12 md:grid-cols-2">
+				{% for row in vars.content %}
+					{% set linkCollection = row.setLinks.all() %}
+					<div class="{{ soloBlock ? 'md:col-span-2' }}">
+						{% if row.header %}
+							<div>
+								<h3 class="mt-0 mb-4 font-bold text-xl sm:leading-none sm:flex-1 sm:text-2xl">{{ row.header }}</h3>
+							</div>
+						{% endif %}
+						{% if linkCollection %}
+							<ul class="my-0 {{ soloBlock ? 'md:grid md:gap-x-8 md:grid-cols-2' }}">
+								{% for block in linkCollection %}
+									{% set link = block.linkLocation %}
+									{% set linkType = link.typeHandle %}
+									<li>
+										<a href="{{ link.url }}" target="{{ link.target }}" class="block m-0 py-4 font-bold border-b-2 border-gray-300">
+											{{ link.text }}
+											{% if link.target %}<i class="fas fa-external-link-alt" style="margin-left:6px;height:18px"></i>{% endif %}
+										</a>
+									</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</div>
+				{% endfor %}
+			</div>
 		</div>
 	</section>
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

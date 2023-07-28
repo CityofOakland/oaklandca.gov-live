@@ -1,6 +1,8 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set url = url ?? entry.redirectUrl ?? entry.url ?? '' ?? null %}
 {% set title = title ?? entry.title ?? null %}
 {% set cardStyle = cardStyle ?? null %}
 {% set cardColor = cardColor ?? null %}
 {% set target = target ?? "_self" %}
 <a href="{{ url }}" target="{{ target }}" class="p-8 text-lg font-bold text-gray-1000 no-underline bg-white rounded-sm shadow-btn transition-all duration-75 hover:text-white hover:underline hover:bg-green-800 {{ cardStyle }} {{ cardColor }}">{{ title | raw }}</a>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set profile = block.featuredStaffMember.one() ?? null %}
 
 <section class="@container {{ block.background }}">
@@ -64,3 +65,4 @@
 		{% endif %}
 	</div>
 </section>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}
