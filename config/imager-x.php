@@ -15,7 +15,7 @@
       'imgixEnablePurgeElementAction' => true,
       'imgixConfig' => [
         'default' => [
-          'domains' => [getenv('IMGOPT_IMGIX_SOURCE_DOMAIN')],
+          'domain' => getenv('IMGOPT_IMGIX_SOURCE_DOMAIN'),
           'useHttps' => true,
           'getExternalImageDimensions' => true,
           'defaultParams' => ['auto'=>'compress,format', 'q'=>80],

@@ -19,7 +19,7 @@ return [
                     '@algoliaAdminApi' => App::env('ALGOLIA_ADMIN_API'),
                     '@amazonKeyId' => App::env('AMAZON_KEY_ID'),
                     '@amazonSecret' => App::env('AMAZON_SECRET'),
-                    'siteUrl' => App::env('PRIMARY_SITE_URL') ?: '@web',
+                    'siteUrl' => App::env('SITE_URL') ?: '@web',
                     'webroot' => App::env('WEB_ROOT'),
 				],
 				'allowAdminChanges' => false,
@@ -37,7 +37,6 @@ return [
 				'maxUploadFileSize' => 268435456,
 				'omitScriptNameInUrls' => true,
 				'securityKey' => App::env('SECURITY_KEY'),
-				'siteUrl' => App::env('SITE_URL'),
 				'useProjectConfigFile' => true,
 		],
 
@@ -48,7 +47,6 @@ return [
 		],
 
 		'production' => [
-				'siteUrl' => 'https://www.oaklandca.gov',
 				'disallowRobots' => false,
 				'defaultTokenDuration' => 432000,
 		],
