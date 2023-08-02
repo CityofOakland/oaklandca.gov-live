@@ -4,6 +4,13 @@
 {# Get the first news entry that is marked as an official press release and has a main image. #}
 {% set autoFeaturedEntry =  craft.entries.section("news").officialPressRelease(true).newsImage(":notempty:").one() ?? null %}
 
+{# Get the manually selected regular entries, if they exist. #}
+{% set selectedEntries = globalNews.news ?? null %}
+{% set selectedIds = selectedEntries is defined ? selectedEntries.ids() : [] %}
+{#{% set relatedEntryIds = entry is defined
+  ? entry.myFieldHandle.ids()
+  : [] %}#}
+
 {# If the featured entry is selected, check to see if it is older than one month since being posted.
 	 If it is, then use the previously set autoFeaturedEntry. Othe #}
 {% if featuredEntry %}
@@ -19,8 +26,13 @@
 {# Get the featured entry’s ID #}
 {% set featuredId = featuredEntry.id() %}
 
-{# Get the IDs of the global news #}
-{% set selectedNews = craft.entries.section("news").officialPressRelease(true).id("not #{featuredId}").ids() ?? null %}
+{# If the news have been manually selected, use them, otherwise, get them automatically #}
+{% if selectedEntries %}
+	{% set selectedNews = selectedIds %}
+{% else %}
+	{# Get the IDs of the global news #}
+	{% set selectedNews = craft.entries.section("news").officialPressRelease(true).id("not #{featuredId}").ids() ?? null %}
+{% endif %}
 
 {{ include("_components/_newsCards/index.twig", {
 	params: {
