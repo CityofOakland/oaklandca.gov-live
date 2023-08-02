@@ -4,8 +4,8 @@
   {% include '_partials/_page-banners.twig' %}
 
   {# Begin Departments #}
-  <section class="relative z-0 bg-white">
-    <div class="container pt-0 mx-auto">
+  <section class="relative z-0 bg-white @container">
+    <div class="container px-6 py-8 @3xl:px-16 sm:py-12">
       {% set departmentsGrouped = craft.entries.section('departments').officialDepartment(true).orderBy('title').all() | group('title | first') %}
       <ul class="grid my-0 mb-12 list-none gap-y-6 gap-x-8 md:grid-cols-2 lg:grid-cols-3 tw-only">
         {% for entries in departmentsGrouped %}

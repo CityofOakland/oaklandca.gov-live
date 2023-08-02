@@ -1,4 +1,4 @@
-<!-- Begin {{ _self }} -->
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set vars = {
 	baseRelationId: null,
 	selectedIds: []
@@ -44,4 +44,4 @@
 		{% endif %}
 	{% endfor %}
 </div>
-<!-- End {{ _self }} -->
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

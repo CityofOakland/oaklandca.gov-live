@@ -31,79 +31,75 @@
 {% endblock %}
 
 {% block precontent %}
-  <section class="bg-green-800 mb-16 text-white">
-    <div class="container py-6 sm:py-12">
+  <section class="bg-green-800 mb-16 text-white @container relative">
+    <div class="container px-6 py-8 @3xl:px-16 sm:py-12">
       <div class="max-w-6xl">
-        <div class="flex flex-wrap justify-between -mx-8">
-          <div class="w-full md:w-1/2 px-8">
-            <div class="components components-format flex items-start">
-              {{ svg( '@webroot/dist/img/fa-clock.svg')|attr({class: "w-8 mr-4", style: "flex-shrink:0;"}) }}
-              <div>
-                <h3 class="mt-0">{{ entry.calendarize.startDate|date("l, F j, Y") }}</h3>
-                {% if entry.calendarize.allDay %}
-                  <p class="mt-2">All day event</p>
-                {% else %}
-                  <p class="mt-2">{{ entry.calendarize.startDate|date("g:ia") }}{{ entry.calendarize.endDate ? " to " ~ entry.calendarize.endDate|date("g:ia") }}</p>
-                {% endif %}
-                {% if entry.calendarize.repeats %}
-                  <p><i>This event repeats {{ entry.calendarize.repeatType }}, with the next event occurring on {{ entry.calendarize.next.start|date("l, F j, Y") }} </i></p>
-                {% endif %}
-              </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="components components-format flex items-start">
+            {{ svg( '@webroot/dist/img/fa-clock.svg')|attr({class: "w-8 mr-4", style: "flex-shrink:0;"}) }}
+            <div>
+              <h3 class="mt-0">{{ entry.calendarize.startDate|date("l, F j, Y") }}</h3>
+              {% if entry.calendarize.allDay %}
+                <p class="mt-2">All day event</p>
+              {% else %}
+                <p class="mt-2">{{ entry.calendarize.startDate|date("g:ia") }}{{ entry.calendarize.endDate ? " to " ~ entry.calendarize.endDate|date("g:ia") }}</p>
+              {% endif %}
+              {% if entry.calendarize.repeats %}
+                <p><i>This event repeats {{ entry.calendarize.repeatType }}, with the next event occurring on {{ entry.calendarize.next.start|date("l, F j, Y") }} </i></p>
+              {% endif %}
             </div>
           </div>
-          <div class="w-full md:w-1/2 px-8 mt-12 md:mt-0">
-            <div class="components flex items-start">
-              {% if locationBlocks|length == 2 or (locationBlocks|length and (physicalLocationDisplays or onlineLocationDisplays)) %}
-                {{ svg( '@webroot/dist/img/fa-map.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }} 
-              {% endif %}
-              <div>
-                {% if locationBlocks|length == 1 %}
-                  {% for location in locationBlocks.all() %}
-                    {% switch location.type %}
-                      {% case 'physicalLocation' %}
-                        {% if location.locationAddress and not location.locationAddress.isEmpty() %}
-                          <h3 class="mt-0">In-Person</h3>
-                          {% if location.locationAddress %}<p class="mt-2">{{ location.locationAddress.multiline() }}</p>{% endif %}
-                          {% if location.locationAddress %}<p><a class="text-white hover:text-gray-200 underline" href="{{ location.locationAddress.linkToDirections() }}" target="_blank" aria-label="Open directions to event in a new tab">Get Directions</a></p>{% endif %}
-                        {% endif %}
-                      {% case 'onlineLocation' %}
-                        {% if not eventHasPassed %}
-                          <h3 class="mt-0">Online</h3>
-                          <p class="mt-2">This event will be held online via Zoom</p>
-                          {% if location.onlineMeetingLink %}<a href="{{ location.onlineMeetingLink }}" class="button secondary mb-0" target="_blank" aria-label="Open online event link in a new tab">Join Event Online</a>{% endif %}
-                        {% endif %}
-                      {% default %}
-                    {% endswitch %}
-                  {% endfor %}
-                {% elseif locationBlocks|length == 2 %}
-                  {% set primary    = locationBlocks.all()[0] %}
-                  {% set secondary  = locationBlocks.all()[1] %}
-                  <h3 class="mt-0">Location</h3>
-                  <p class="mt-2">This event will be held in-person and online</p>
-                  {% if primary.type == 'physicalLocation' %}
-                    {% if primary.locationAddress and not primary.locationAddress.isEmpty() %}
-                      <h4>Address</h4>
-                      <p class="mt-2">{{ primary.locationAddress.multiline() }}<br><a class="text-white hover:text-gray-200" href="{{ primary.locationAddress.linkToDirections() }}" target="_blank" aria-label="Open directions to event in a new tab">Get Directions</a></p>
+          <div class="components flex items-start">
+            {% if locationBlocks|length == 2 or (locationBlocks|length and (physicalLocationDisplays or onlineLocationDisplays)) %}
+              {{ svg( '@webroot/dist/img/fa-map.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }}
+            {% endif %}
+            <div>
+              {% if locationBlocks|length == 1 %}
+                {% for location in locationBlocks.all() %}
+                  {% switch location.type %}
+                  {% case 'physicalLocation' %}
+                    {% if location.locationAddress and not location.locationAddress.isEmpty() %}
+                      <h3 class="mt-0">In-Person</h3>
+                      {% if location.locationAddress %}<p class="mt-2">{{ location.locationAddress.multiline() }}</p>{% endif %}
+                      {% if location.locationAddress %}<p><a class="text-white hover:text-gray-200 underline" href="{{ location.locationAddress.linkToDirections() }}" target="_blank" aria-label="Open directions to event in a new tab">Get Directions</a></p>{% endif %}
                     {% endif %}
-                  {% elseif primary.type == 'onlineLocation' %}
+                  {% case 'onlineLocation' %}
                     {% if not eventHasPassed %}
-                      <h4>Online</h4>
-                      {% if primary.onlineMeetingLink %}<a href="{{ primary.onlineMeetingLink }}" class="button secondary mb-0" target="_blank" aria-label="Open online event link in a new tab">Join the Event</a>{% endif %}
+                      <h3 class="mt-0">Online</h3>
+                      <p class="mt-2">This event will be held online via Zoom</p>
+                      {% if location.onlineMeetingLink %}<a href="{{ location.onlineMeetingLink }}" class="button secondary mb-0" target="_blank" aria-label="Open online event link in a new tab">Join Event Online</a>{% endif %}
                     {% endif %}
+                  {% default %}
+                  {% endswitch %}
+                {% endfor %}
+              {% elseif locationBlocks|length == 2 %}
+                {% set primary    = locationBlocks.all()[0] %}
+                {% set secondary  = locationBlocks.all()[1] %}
+                <h3 class="mt-0">Location</h3>
+                <p class="mt-2">This event will be held in-person and online</p>
+                {% if primary.type == 'physicalLocation' %}
+                  {% if primary.locationAddress and not primary.locationAddress.isEmpty() %}
+                    <h4>Address</h4>
+                    <p class="mt-2">{{ primary.locationAddress.multiline() }}<br><a class="text-white hover:text-gray-200" href="{{ primary.locationAddress.linkToDirections() }}" target="_blank" aria-label="Open directions to event in a new tab">Get Directions</a></p>
                   {% endif %}
-                  {% if secondary.type == 'physicalLocation' %}
-                    {% if secondary.locationAddress and not secondary.locationAddress.isEmpty() %}
-                      <p class="small"><b>Or join in person</b></p>
-                      <p class="mt-2">{{ secondary.locationAddress.multiline() }}<br><a class="text-white hover:text-gray-200" href="{{ primary.locationAddress.linkToDirections() }}" target="_blank" aria-label="Open directions to event in a new tab">Get Directions</a></p>
-                    {% endif %}
-                  {% elseif secondary.type == 'onlineLocation' %}
-                    {% if not eventHasPassed %}
-                      <p class="small"><b>Or join online</b></p>
-                      {% if secondary.onlineMeetingLink %}<a href="{{ secondary.onlineMeetingLink }}" class="button secondary mb-0" target="_blank" aria-label="Open online event link in a new tab">Join the Event</a>{% endif %}
-                    {% endif %}
+                {% elseif primary.type == 'onlineLocation' %}
+                  {% if not eventHasPassed %}
+                    <h4>Online</h4>
+                    {% if primary.onlineMeetingLink %}<a href="{{ primary.onlineMeetingLink }}" class="button secondary mb-0" target="_blank" aria-label="Open online event link in a new tab">Join the Event</a>{% endif %}
                   {% endif %}
                 {% endif %}
-              </div>
+                {% if secondary.type == 'physicalLocation' %}
+                  {% if secondary.locationAddress and not secondary.locationAddress.isEmpty() %}
+                    <p class="small"><b>Or join in person</b></p>
+                    <p class="mt-2">{{ secondary.locationAddress.multiline() }}<br><a class="text-white hover:text-gray-200" href="{{ primary.locationAddress.linkToDirections() }}" target="_blank" aria-label="Open directions to event in a new tab">Get Directions</a></p>
+                  {% endif %}
+                {% elseif secondary.type == 'onlineLocation' %}
+                  {% if not eventHasPassed %}
+                    <p class="small"><b>Or join online</b></p>
+                    {% if secondary.onlineMeetingLink %}<a href="{{ secondary.onlineMeetingLink }}" class="button secondary mb-0" target="_blank" aria-label="Open online event link in a new tab">Join the Event</a>{% endif %}
+                  {% endif %}
+                {% endif %}
+              {% endif %}
             </div>
           </div>
         </div>

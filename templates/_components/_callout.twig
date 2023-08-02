@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set callOutType = callOutType is defined ? callOutType : block.callOutType %}
 {% set heading     = heading is defined ? heading : block.header %}
 {% set description = description is defined ? description : block.description %}
@@ -14,3 +15,4 @@
 		<div class="small">{{ description|raw }}</div>
 	</div>
 </blockquote>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

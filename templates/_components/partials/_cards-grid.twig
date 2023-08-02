@@ -1,7 +1,7 @@
-<!-- Begin {{ _self }} -->
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <div class="cards grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 {{ shadow is defined and shadow ? 'cards-shadow' }}">
   {% for entry in entries %}
     <a href="{{ entry.destination ? entry.destination.url : entry.url }}"><p><b>{{ entry.destination ? entry.destination.text : entry.title }}</b></p></a>
   {% endfor %}
 </div>
-<!-- End {{ _self }} -->
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

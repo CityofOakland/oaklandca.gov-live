@@ -1,4 +1,4 @@
-<!-- Begin {{ _self }} -->
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set vars = {
   text: null,
   icon: null,
@@ -35,4 +35,4 @@
     {{ content }}
   {% endif %}
 </li>
-<!-- End {{ _self }} -->
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

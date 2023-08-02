@@ -1,4 +1,4 @@
-<!-- Begin {{ _self }} -->
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set vars = {
 	featuredEntry: null,
 }|merge(params) %}
@@ -26,4 +26,4 @@
 		</article>
 	</a>
 </div>
-<!-- End {{ _self }} -->
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

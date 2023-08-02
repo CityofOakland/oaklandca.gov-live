@@ -1,4 +1,4 @@
-<!-- Begin {{ _self }} -->
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% macro renderForm(id, element) %}
 	{% set entryUrl     = craft.app.request.absoluteUrl %}
 	{% set pageAuthor 	= 'No Author' %}
@@ -61,8 +61,8 @@
 {% endmacro %}
 
 <section>
-	<div class="bg-gray-900">
-		<div id="helpful" class="container components py-6">
+	<div class="@container bg-gray-900">
+		<div id="helpful" class="container px-6 py-6 @3xl:px-16 components">
 			<div class="md:flex items-center justify-between text-white">
 				<div class="flex items-center">
 					<p class="mr-8"><b>Was this page helpful?</b></p>
@@ -92,4 +92,4 @@
 		$this.addClass('state-active');
 	});
 {% endjs %}
-<!-- End {{ _self }} -->
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

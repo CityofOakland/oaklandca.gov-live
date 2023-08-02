@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% import '_macros/_macros.twig' as macros %}
 
 <div class="result pb-6" style="margin-bottom:1rem;">
@@ -80,3 +81,4 @@
       </p>
     {% endif %}
 </div>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

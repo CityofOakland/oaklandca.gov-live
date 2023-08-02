@@ -1,4 +1,4 @@
-<!-- Begin {{ _self }} -->
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% import '_macros/_macros.twig' as macros %}
 
 {% set breadcrumbs = [] %}
@@ -108,4 +108,4 @@
     <span aria-current="page" class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">{{ entry.title }}</span>
   {% endif %}
 </div>
-<!-- End {{ _self }} -->
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

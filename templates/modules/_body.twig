@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <section class="{{ block.backgroundColor }}">
   <div class="container">
     {% for child in block.children %}
@@ -5,3 +6,4 @@
     {% endfor %}
   </div>
 </section>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

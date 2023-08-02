@@ -1,4 +1,4 @@
-<!-- Begin {{ _self }} -->
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set vars = {
   text: null,
   size: null,
@@ -9,4 +9,4 @@
     {{ vars.text|raw }}
   </div>
 {% endif %}
-<!-- End {{ _self }} -->
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}
