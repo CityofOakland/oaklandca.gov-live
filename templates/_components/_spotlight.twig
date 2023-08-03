@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set vars = {
 	bgColor: null,
 	textColor: null,
@@ -89,3 +90,4 @@
 		</div>
 	</div>
 </section>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

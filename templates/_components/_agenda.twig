@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <h2>Agenda</h2>
 {% if entry.agendaDownloadableCopy|length %}
 	<ul class="ul-icons related" style="padding-top: 1rem;">
@@ -6,3 +7,4 @@
 {% endif %}
 <h3>Agenda Items</h3>
 {% include '_components/_process' %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

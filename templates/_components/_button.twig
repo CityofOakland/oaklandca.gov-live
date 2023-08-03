@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set linkit = linkit is defined ? linkit  : (block is defined and block.buttonLink is defined ? block.buttonLink : null ) %}
 
 {% set label  = label is defined  ? label   : '' %}
@@ -26,3 +27,4 @@
     {% endif %}
   </a>
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set sidebarContent %}
   {% spaceless %}
     {% if entry.department|length or entry.programSubdivision %}
@@ -96,3 +97,4 @@
   <h4>{{ 'Contact'|t }}</h4>
   {{sidebarContent}}
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

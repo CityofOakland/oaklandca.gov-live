@@ -1,4 +1,4 @@
-<!-- Begin {{ _self }} -->
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% import '_macros/_macros.twig' as macros %}
 
 {% set breadcrumbs = [] %}
@@ -100,11 +100,12 @@
       <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
     {% endfor %}
 
-    {% if entry.section.handle == 'meetings' %}
-      <span aria-current="page" class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">{{ macros.meetingTitle(entry) }}</span>
-    {% else %}
-      <span aria-current="page" class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">{{ entry.title }}</span>
-    {% endif %}
+{#    {% if entry.section.handle == 'meetings' %}#}
+{#      <span aria-current="page" class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">{{ macros.meetingTitle(entry) }}</span>#}
+{#    {% else %}#}
+{#      <span aria-current="page" class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">{{ entry.title }}</span>#}
+{#    {% endif %}#}
+    <span aria-current="page" class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">{{ entry.title }}</span>
   {% endif %}
 </div>
-<!-- End {{ _self }} -->
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

@@ -1,4 +1,4 @@
-baseUrl: $SITE_URL
+baseUrl: '@siteUrl'
 enabled: true
 handle: default
 hasUrls: true

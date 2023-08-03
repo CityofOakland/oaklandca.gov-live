@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% if block.icons|length %}
   <ol class="flex-row text-center md:flex">
     {% for icon in block.icons.all() %}
@@ -13,3 +14,4 @@
     {% endfor %}
   </ol>
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

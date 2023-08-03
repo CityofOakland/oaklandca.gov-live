@@ -77,8 +77,8 @@
         </section>
         {% block precontent %}
         {% endblock %}
-        <section class="@container relative">
-          {% if category is not defined %}
+        {% if category is not defined %}
+          <section class="@container relative">
             <div class="container px-6 py-8 @3xl:px-16 md:py-16">
               <div class="max-w-6xl">
                 <div class="flex flex-wrap justify-between -mx-8 {{ flex_class }}">
@@ -100,30 +100,15 @@
                 </div>
               </div>
             </div>
-          {% endif %}
-          <div id="components-footer" class="components">
-            {% if entry['relatedDepartments'] is defined and entry.relatedDepartments|length %}
-              {% include "_components/partials/_cards.twig" with {
-                background: "#334E68",
-                class:      "text-white",
-                heading:    "Related Departments",
-                entries:    entry.relatedDepartments.all()
-              } %}
-            {% endif %}
-            {% if entry.componentsFooter %}
-              {% for block in entry.componentsFooter.level(1).all() %}
-                {% include '_components/_' ~ block.type %}
-              {% endfor %}
-            {% endif %}
-          </div>
-        </section>
+          </section>
+        {% endif %}
         {% block prefooter %}
           <section>
             <div id="components-footer" class="components">
               {% if entry['relatedDepartments'] is defined and entry.relatedDepartments|length %}
-                {% include '_components/partials/_cards' with {
-                  background: '#334E68',
-                  class:      'text-white',
+                {% include "_components/partials/_cards.twig" with {
+                  background: "#334E68",
+                  class:      "text-white",
                   heading:    "Related Departments",
                   entries:    entry.relatedDepartments.all()
                 } %}

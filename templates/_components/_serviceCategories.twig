@@ -1,5 +1,6 @@
-<section class="bg-gray-100">
-  <div class="container py-16">
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
+<section class="@container bg-gray-100">
+  <div class="container px-6 py-8 @3xl:px-16 md:py-16">
     <h2>{{ "Services"|t }}</h2>
     {% for block in block.getDescendants(1) %}
       {% if block.heading %}
@@ -23,3 +24,4 @@
     {% endfor %}
   </div>
 </section>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set vars = {
   header: null,
   content: null,
@@ -22,3 +23,4 @@
     </ul>
   </div>
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

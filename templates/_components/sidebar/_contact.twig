@@ -1,4 +1,4 @@
-<!-- Begin {{ _self }} -->
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% if entry.pointOfContact|length %}
   <hr/>
   <h4>{{ 'Contact'|t }}</h4>
@@ -67,4 +67,4 @@
   {% endswitch %}
   {% endfor %}
 {% endif %}
-<!-- End {{ _self }} -->
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

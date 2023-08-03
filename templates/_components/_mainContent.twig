@@ -1,1 +1,3 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {{ block.mainContent }}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

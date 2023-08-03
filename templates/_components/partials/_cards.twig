@@ -1,12 +1,14 @@
-<!-- Begin {{ _self }} -->
-<section class="{{ class is defined ? class }}" style="background-color:{{ background is defined ? background }}">
-  <div class="container py-16">
-    <h2>{{ heading is defined ? heading }}</h2>
-    {% if content is defined %}<div class="mt-5">{{ content }}</div>{% endif %}
-    {% include '_components/partials/_cards-grid' with { entries: entries, shadow: (shadow is defined and shadow) } %}
-    {% if button_url is defined and button_label is defined %}
-      <a href="{{ button_url }}" class="button mt-8">{{ button_label }}</a>
-    {% endif %}
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
+<section class="@container {{ class is defined ? class }}" style="background-color:{{ background is defined ? background }}">
+  <div class="container px-6 py-8 @3xl:px-16 md:py-16">
+    <div class="max-w-6xl">
+      <h2>{{ heading is defined ? heading }}</h2>
+      {% if content is defined %}<div class="mt-5">{{ content }}</div>{% endif %}
+      {% include '_components/partials/_cards-grid' with { entries: entries, shadow: (shadow is defined and shadow) } %}
+      {% if button_url is defined and button_label is defined %}
+        <a href="{{ button_url }}" class="button mt-8">{{ button_label }}</a>
+      {% endif %}
+    </div>
   </div>
 </section>
-<!-- End {{ _self }} -->
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

@@ -1,2 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <h2>{{ block.header ? block.header : defaultHeader }}</h2>
 {{ block.description|raw }}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% if block.documents|length %}
 	<ul class="ul-icons related" style="padding-top: 1rem;">
 	  	{% for document in block.documents.all() %}
@@ -5,3 +6,4 @@
 	  	{% endfor %}
 	</ul>
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% if event.type is defined and event.type == 'api' %}
   <div class="result pb-6" style="margin-bottom:1rem;">
     <div class="flex flex-wrap -mx-4">
@@ -55,3 +56,4 @@
     </div>
   </div>
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

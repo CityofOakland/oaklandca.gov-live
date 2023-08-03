@@ -1,3 +1,4 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% if entry.process|length %}
   {% if heading is defined %}<h3>{{ heading }}</h3>{% endif %}
   <ol class="process">
@@ -13,3 +14,4 @@
     {% endfor %}
   </ol>
 {% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

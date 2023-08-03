@@ -1,4 +1,4 @@
-<!-- Begin {{ _self }} -->
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <link rel="apple-touch-icon" sizes="180x180" href="{{ siteUrl('/dist/favicon/apple-touch-icon.png?v=345') }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ siteUrl('/dist/favicon/favicon-32x32.png?v=345') }}">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ siteUrl('/dist/favicon/favicon-16x16.png?v=345') }}">
@@ -8,4 +8,4 @@
 <meta name="msapplication-TileColor" content="#207127">
 <meta name="msapplication-config" content="{{ siteUrl('/dist/favicon/browserconfig.xml?v=345') }}">
 <meta name="theme-color" content="#222222">
-<!-- End {{ _self }} -->
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}
