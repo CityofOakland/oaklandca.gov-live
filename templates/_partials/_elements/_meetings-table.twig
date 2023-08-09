@@ -1,7 +1,10 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {# Use these variables to set the table status attributes  #}
-{% set tableColorPalette = {
-  'default': {
+{% set tableColorPalette = {  {% include "_partials/_elements/_meetings-table.twig" with {
+  hideUpdate: true
+} %}
+
+'default': {
     'statusTextColor': 'cool-gray-1000',
     'statusBgColor': 'white',
   },

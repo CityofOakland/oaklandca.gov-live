@@ -8,8 +8,8 @@
 }|merge(params) %}
 
 {% if vars.featuredEntry %}
-	<section class="@container flex-1 {{ vars.background }}">
-		<div class="container px-6 pt-8 pb-6 @3xl:px-16 @3xl:py-12">
+	<section class="flex-1 {{ vars.background }}">
+		<div class="container px-6 py-8 @3xl:px-16 md:py-16">
 			{{ include("_partials/_heading.twig", {
 				params: {
 					text: vars.heading

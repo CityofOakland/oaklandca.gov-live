@@ -18,9 +18,9 @@
 {% set learnMore = entry.learnMoreAbout %}
 
 {% block content %}
-<div class="components">
+<div class="components @container">
   <section class="relative overflow-hidden">
-    <div class="container py-6 lg:py-12 {{ bannerImage.imageCredit ? 'pb-0 lg:pb-12' }}">
+    <div class="container px-6 @3xl:px-16 py-6 lg:py-12 {{ bannerImage.imageCredit ? 'pb-0 lg:pb-12' }}">
       <div class="relative z-20 max-w-xl p-6 bg-white rounded-md shadow md:p-12">
         <div class="flex flex-col items-start justify-start gap-4 lg:items-center lg:justify-between lg:flex-row">
           <p class="order-2 lg:order-1"><a class="text-lg font-bold leading-normal text-green-800 hover:text-green-900" href="https://www.oaklandca.gov/topics/oaklandlovelife">#oaklandlovelife</a></p>
@@ -69,7 +69,7 @@
   {% endif %}
 
   <section class="bg-white">
-    <div class="container py-10">
+    <div class="container px-6 py-8 @3xl:px-16 md:py-16">
       <h2 class="pb-4">{{ "City Officials"|t }}</h2>
       <div class="card-grid grid-equal-height profile-cards">
         {% for entry in craft.entries.section('officials').with(['portrait']).all() %}

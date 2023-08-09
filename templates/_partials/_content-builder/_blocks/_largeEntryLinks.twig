@@ -1,21 +1,19 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
-<section class="@container relative z-0 pb-12">
-  <div class="container px-6 @3xl:px-16">
-    {{ include("_partials/_heading.twig", {
-      params: {
-        text: block.heading
-      }
-    }) }}
-    {{ block.entriesDescription }}
-    <div class="items-stretch card-grid">
-      {% for entry in block.entries %}
-        {% set isDoc = (entry.type == "documents") ? true : false %}
-        {% include '_partials/_elements/_title-cards.twig' with {
-          url: isDoc ? entry.documentFile[0].url : entry.url,
-          target: isDoc ? "_blank" : "_self"
-        } %}
-      {% endfor %}
-    </div>
+<section class="relative z-0 pb-12">
+  {{ include("_partials/_heading.twig", {
+    params: {
+      text: block.heading
+    }
+  }) }}
+  {{ block.entriesDescription }}
+  <div class="items-stretch card-grid">
+    {% for entry in block.entries %}
+      {% set isDoc = (entry.type == "documents") ? true : false %}
+      {% include '_partials/_elements/_title-cards.twig' with {
+        url: isDoc ? entry.documentFile[0].url : entry.url,
+        target: isDoc ? "_blank" : "_self"
+      } %}
+    {% endfor %}
   </div>
 </section>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

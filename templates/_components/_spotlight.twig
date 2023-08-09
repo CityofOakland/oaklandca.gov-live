@@ -43,8 +43,8 @@
 
 {% set whiteLinks = textColor ==  "text-white" %}
 
-<section class="@container relative {{ bgColor }}">
-	<div class="container px-6 py-12 @3xl:px-16 @3xl:py-12">
+<section class="relative {{ bgColor }}">
+	<div class="container py-12 @3xl:py-12">
 		<div class="grid gap-4 md:grid-cols-12 md:gap-8 {{ textColor }}">
 			<div class="relative z-10 [&>*:last-child]:mb-0 {{ textClasses|join(' ') }}">
 				<div class="{{ whiteLinks ? vars.imgBg ? "[&_a]:text-white [&_a]:underline [&_a:hover]:no-underline md:[&_a]:text-green-700 md:[&_a]:no-underline md:[&_a:hover]:text-green-900" : "[&_a]:text-white [&_a]:underline [&_a:hover]:no-underline" }}">

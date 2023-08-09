@@ -1,44 +1,46 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% if entry.groupHeadName | length %}
   <section class="mt-16 bg-white">
-    <a class="anchor-link" id="page-leadership"></a>
-    {{ include("_partials/_heading.twig", {
-      params: {
-        text: "Leadership",
-        margin: "mb-4"
-      }
-    }) }}
-    <div class="mt-8 sm:flex">
-      <div class="sm:w-1/4 sm:mr-8">
-        <figure class="w-full">
-          {% if entry.portrait | length %}
-            <img src="{{ entry.portrait[0].url }}" alt="Portrait of {{ entry.groupHeadName }}">
-          {% else %}
-            <div class="h-full p-12 text-gray-500 bg-gray-300 opacity-75 fill-current">
-              {{ svg('@webroot/dist/img/icon-user.svg')|attr({
-                class: 'w-full h-full'
-              })|raw }}
-            </div>
+    <div class="container">
+      <a class="anchor-link" id="page-leadership"></a>
+      {{ include("_partials/_heading.twig", {
+        params: {
+          text: "Leadership",
+          margin: "mb-4"
+        }
+      }) }}
+      <div class="mt-8 sm:grid sm:grid-cols-4 sm:gap-8">
+        <div class="sm:col-span-1">
+          <figure class="w-full">
+            {% if entry.portrait | length %}
+              <img src="{{ entry.portrait[0].url }}" alt="Portrait of {{ entry.groupHeadName }}">
+            {% else %}
+              <div class="h-full p-12 text-gray-500 bg-gray-300 opacity-75 fill-current">
+                {{ svg('@webroot/dist/img/icon-user.svg')|attr({
+                  class: 'w-full h-full'
+                })|raw }}
+              </div>
+            {% endif %}
+          </figure>
+          {% if entry.teams | length %}
+            {% for entry in entry.teams %}
+              {% include '_components/_button' with {
+                class: 'block mt-4 mr-0 mb-0 text-center',
+                url: entry.url,
+                text: entry.title,
+              } %}
+            {% endfor %}
           {% endif %}
-        </figure>
-        {% if entry.teams | length %}
-          {% for entry in entry.teams %}
-            {% include '_components/_button' with {
-              class: 'block mt-4 mr-0 mb-0 text-center',
-              url: entry.url,
-              text: entry.title,
-            } %}
-          {% endfor %}
-        {% endif %}
-      </div>
-      <div class="sm:flex-1">
-        {% include "_partials/_elements/_module-header.twig" with {
-          headerText: entry.groupHeadName
-        } %}
-        {% if pageLeadershipHeaderText is not defined %}
-          <p class="mt-2">{{ entry.groupHeadTitle }}</p>
-        {% endif %}
-        <div class="mt-8">{{ entry.groupHeadBio | raw }}</div>
+        </div>
+        <div class="sm:col-span-3">
+          {% include "_partials/_elements/_module-header.twig" with {
+            headerText: entry.groupHeadName
+          } %}
+          {% if pageLeadershipHeaderText is not defined %}
+            <p class="mt-2">{{ entry.groupHeadTitle }}</p>
+          {% endif %}
+          <div class="mt-8">{{ entry.groupHeadBio | raw }}</div>
+        </div>
       </div>
     </div>
   </section>

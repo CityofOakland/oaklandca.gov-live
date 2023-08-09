@@ -1,7 +1,7 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% js at endBody %}lightGallery(document.querySelector('#js-photoGallery-{{ block.id }}'));{% endjs %}
-<div class="@container relative z-0 pb-12">
-  <div class="components container px-6 @3xl:px-16">
+<div class="relative z-0 pb-12">
+  <div class="components">
     <div class="flex flex-row flex-wrap" id="js-photoGallery-{{ block.id }}">
       {% for photo in block.images.all() %}
         <figure class="w-1/6" data-src="{{ photo.url }}" data-sub-html="<p class='font-bold'>{{ photo.title }}</p><p>{{ photo.altText }}</p>">

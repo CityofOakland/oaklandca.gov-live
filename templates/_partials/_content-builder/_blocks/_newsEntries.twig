@@ -35,32 +35,30 @@
   {% set entryIds = entryIds | merge(relatedNews) %}
 {% endif %}
 
-<section class="@container relative z-0 pb-12">
-  <div class="container px-6 @3xl:px-16">
-    {{ include("_partials/_heading.twig", {
-      params: {
-        text: block.heading
-      }
-    }) }}
-    <div class="card-grid vertical-cards">
-      {% for entryId in entryIds %}
-        {% set entry = craft.entries.id(entryId).one() %}
-        {% include '_partials/_elements/_vertical-cards.twig' with {
-          title: entry.title,
-          url: entry.url,
-          icon: 'newspaper',
-          photo: entry.newsImage.one,
-          byline: entry.postDate.format("M d, Y"),
-          body: entry.summary,
-          photoHide: block.hideThumbnails,
-          summaryHide: block.hideSummary
-        } %}
-      {% endfor %}
-    </div>
-    {% include "_partials/_elements/_module-readmore.twig" with {
-      linkText: pageNewsLinkText ?? "Related News",
-      linkUrl: pageNewsLinkUrl ?? defaultButtonUrl
-    } %}
+<section class="relative z-0 pb-12">
+  {{ include("_partials/_heading.twig", {
+    params: {
+      text: block.heading
+    }
+  }) }}
+  <div class="card-grid vertical-cards">
+    {% for entryId in entryIds %}
+      {% set entry = craft.entries.id(entryId).one() %}
+      {% include '_partials/_elements/_vertical-cards.twig' with {
+        title: entry.title,
+        url: entry.url,
+        icon: 'newspaper',
+        photo: entry.newsImage.one,
+        byline: entry.postDate.format("M d, Y"),
+        body: entry.summary,
+        photoHide: block.hideThumbnails,
+        summaryHide: block.hideSummary
+      } %}
+    {% endfor %}
   </div>
+  {% include "_partials/_elements/_module-readmore.twig" with {
+    linkText: pageNewsLinkText ?? "Related News",
+    linkUrl: pageNewsLinkUrl ?? defaultButtonUrl
+  } %}
 </section>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

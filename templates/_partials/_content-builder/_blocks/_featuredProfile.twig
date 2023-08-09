@@ -1,8 +1,8 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set profile = block.featuredStaffMember.one() ?? null %}
 
-<section class="@container {{ block.background }}">
-	<div class="container px-6 pt-10 pb-8 @3xl:px-16 @3xl:py-12">
+<section class="{{ block.background }}">
+	<div class="container pt-10 pb-8 @3xl:py-12">
 
 		{{ include("_partials/_heading.twig", {
 			params: {

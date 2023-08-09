@@ -38,14 +38,14 @@
         <section>
           {% block banner %}
             <div class="@container relative bg-transparent-oakland-roots">
-              <div class="container px-6 @3xl:px-16 py-4">
+              <div class="container px-6 @3xl:px-16 py-4 @3xl:py-12">
                 {% include "_components/partials/_breadcrumbs.twig" %}
               </div>
             </div>
           {% endblock %}
           <div id="content" class="relative top-[-5rem]"></div>
           <div class="@container relative {{ archive is defined and archive == true ? 'bg-blue-900 text-white' : '' }}">
-            <div class="container px-6 py-8 @3xl:px-16 md:py-16  {{ archive is defined and archive == true ? 'md:mb-8' : '' }}">
+            <div class="container px-6 py-8 @3xl:px-16 md:py-16 {{ archive is defined and archive == true ? 'md:mb-8' : '' }}">
               <div class="max-w-6xl">
                 <div class="flex flex-col flex-1 lg:flex-row">
                   <div class="w-full lg:w-8/11">

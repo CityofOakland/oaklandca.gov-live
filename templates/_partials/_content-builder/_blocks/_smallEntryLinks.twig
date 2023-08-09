@@ -1,6 +1,6 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
-<section class="@container relative z-0 bg-cool-gray-100 py-6 {{ not loop.last ? "mb-12" }}">
-  <div class="container px-6 @3xl:px-16 body-text">
+<section class="relative z-0 bg-cool-gray-100 py-6 {{ not loop.last ? "mb-12" }}">
+  <div class="body-text">
     {{ include("_partials/_heading.twig", {
       params: {
         text: block.heading

@@ -1,6 +1,6 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
-<div class="@container relative z-0 pb-12">
-    <div class="components container px-6 @3xl:px-16">
+<div class="relative z-0 pb-12">
+    <div class="components">
         {% set url      = parseUrl(block.embed) %}
         {% set params   = url.query|split('&') %}
         {% set idParam  = params[0] %}
