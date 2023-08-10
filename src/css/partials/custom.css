@@ -269,9 +269,9 @@ form[data-handle="whyWasThisPageHelpful"] {
 }
 
 .card-grid {
-  @apply flex flex-row flex-wrap -mx-4;
+  @apply grid grid-cols-1 gap-4;
   & > * {
-    @apply w-full m-4;
+    @apply w-full;
   }
 }
 
@@ -283,37 +283,32 @@ form[data-handle="whyWasThisPageHelpful"] {
 }
 
 @media (min-width: theme("screens.sm")) {
-  .card-grid > * {
-    @apply self-stretch;
-    width: calc(theme("width.1/3") - theme(margin.8));
+  .card-grid {
+    @apply grid-cols-3 gap-8
   }
-  .card-grid-2up > * {
-    width: calc(theme("width.1/2") - theme(margin.8));
+  .card-grid-2up {
+    @apply grid-cols-2 gap-8
   }
   .card-grid-tight {
-    @apply -mx-2;
-    & > * {
-      @apply m-2;
-      width: calc(theme("width.1/2") - theme(margin.4));
-    }
+    @apply grid-cols-2 gap-4
   }
-  .profile-cards > * {
-    width: calc(theme("width.1/2") - theme(margin.4));
+  .profile-cards {
+    @apply grid-cols-2 gap-4
   }
 }
 
 @media (min-width: theme("screens.md")) {
-  .profile-cards > * {
-    width: calc(theme("width.1/2") - theme(margin.8));
+  .profile-cards {
+    @apply grid-cols-2 gap-8
   }
 }
 
 @media (min-width: theme("screens.lg")) {
-  .card-grid-tight > * {
-    width: calc(theme("width.1/3") - theme(margin.4));
+  .card-grid-tight {
+    @apply grid-cols-3 gap-4
   }
-  .profile-cards > * {
-    width: calc(theme("width.1/3") - theme(margin.8));
+  .profile-cards {
+    @apply grid-cols-3 gap-8
   }
 }
 
@@ -419,55 +414,6 @@ form[data-handle="whyWasThisPageHelpful"] {
 
 .cards.cards-shadow a {
   box-shadow: 2px 2px 6px #e1e1e1;
-}
-
-.card-grid {
-  @apply flex flex-row flex-wrap -mx-4;
-  & > * {
-    @apply w-full m-4;
-  }
-}
-
-.card-grid-tight {
-  @apply mx-0;
-  & > * {
-    @apply mx-0 my-2;
-  }
-}
-
-@media (min-width: theme("screens.sm")) {
-  .card-grid > * {
-    @apply self-stretch;
-    width: calc(theme("width.1/3") - theme(margin.8));
-  }
-  .card-grid-2up > * {
-    width: calc(theme("width.1/2") - theme(margin.8));
-  }
-  .card-grid-tight {
-    @apply -mx-2;
-    & > * {
-      @apply m-2;
-      width: calc(theme("width.1/2") - theme(margin.4));
-    }
-  }
-  .profile-cards > * {
-    width: calc(theme("width.1/2") - theme(margin.4));
-  }
-}
-
-@media (min-width: theme("screens.md")) {
-  .profile-cards > * {
-    width: calc(theme("width.1/2") - theme(margin.8));
-  }
-}
-
-@media (min-width: theme("screens.lg")) {
-  .card-grid-tight > * {
-    width: calc(theme("width.1/3") - theme(margin.4));
-  }
-  .profile-cards > * {
-    width: calc(theme("width.1/3") - theme(margin.8));
-  }
 }
 
 .horizontal-card {

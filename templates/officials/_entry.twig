@@ -9,7 +9,6 @@
 
 {% if entry.type == "officialsRedirect" %}{% redirect entry.redirectUrl %}{% endif %}
 
-{% set relatedEvents = craft.calendar.events.relatedTo(entry) %}
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 
 {% set contactState = entry.addresses | length or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}

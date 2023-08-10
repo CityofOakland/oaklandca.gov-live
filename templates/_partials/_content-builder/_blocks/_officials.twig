@@ -1,23 +1,21 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
-<section class="@container relative z-0 pb-12">
-  <div class="container px-6 @3xl:px-16">
-    {{ include("_partials/_heading.twig", {
-      params: {
-        text: block.heading|default("Services")
-      }
-    }) }}
-    {{ block.entriesDescription }}
-    <div class="mt-4 card-grid grid-equal-height profile-cards">
-      {% for entry in block.officials.all() %}
-        {% include '_partials/_elements/_profile-cards.twig' with {
-          photo: entry.portrait.one(),
-          name: entry.groupHeadName,
-          jobTitle: entry.title,
-          url: entry.redirectUrl ?? entry.url ?? '',
-          icon: "user"
-        } %}
-      {% endfor %}
-    </div>
+<section class="relative z-0 pb-12">
+  {{ include("_partials/_heading.twig", {
+    params: {
+      text: block.heading|default("Services")
+    }
+  }) }}
+  {{ block.entriesDescription }}
+  <div class="mt-4 card-grid grid-equal-height profile-cards">
+    {% for entry in block.officials.all() %}
+      {% include '_partials/_elements/_profile-cards.twig' with {
+        photo: entry.portrait.one(),
+        name: entry.groupHeadName,
+        jobTitle: entry.title,
+        url: entry.redirectUrl ?? entry.url ?? '',
+        icon: "user"
+      } %}
+    {% endfor %}
   </div>
 </section>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

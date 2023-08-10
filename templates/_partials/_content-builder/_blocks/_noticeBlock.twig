@@ -27,11 +27,9 @@
   {% default %}
 {% endswitch %}
 
-<section class="@container relative z-0 pb-12">
-  <div class="container px-6 @3xl:px-16">
-    <div class="p-4 border-l-8 bg-cool-gray-100 {{ colors.border }} text-base">
-      {{ block.text | retcon('attr', 'a', { class: colors.links.link ~ " " ~ colors.links.hover }) | retcon('attr', 'p', { class: "first:mt-0 my-4 last:mb-0" }) }}
-    </div>
+<section class="relative z-0 pb-12">
+  <div class="p-4 border-l-8 bg-cool-gray-100 {{ colors.border }} text-base">
+    {{ block.text | retcon('attr', 'a', { class: colors.links.link ~ " " ~ colors.links.hover }) | retcon('attr', 'p', { class: "first:mt-0 my-4 last:mb-0" }) }}
   </div>
 </section>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

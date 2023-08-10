@@ -1,8 +1,8 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set addresses = entry.addresses | length %}
 {% if addresses or entry.phoneNumbers | length or entry.emailAddress %}
-  <section class="@container mt-16 bg-white">
-    <div class="container px-6 @3xl:px-16 mx-auto">
+  <section class="mt-16 bg-white">
+    <div class="container mx-auto">
       <a class="anchor-link" id="page-contact"></a>
       {{ include("_partials/_heading.twig", {
         params: {

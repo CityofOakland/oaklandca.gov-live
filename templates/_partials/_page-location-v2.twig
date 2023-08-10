@@ -15,8 +15,8 @@
 {% set social = vars.twitter or vars.facebook or vars.instagram or vars.medium %}
 
 {% if loc or vars.phoneNumbers or vars.emailAddress %}
-	<section class="@container mt-16 bg-white">
-		<div class="container px-6 @3xl:px-16 mx-auto">
+	<section class="mt-16 bg-white">
+		<div class="container">
 			{{ include("_partials/_content-builder/_blocks/_elements/_component-header.twig", {
 				params: {
 					text: "Contact Us"

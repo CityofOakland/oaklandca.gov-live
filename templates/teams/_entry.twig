@@ -21,15 +21,15 @@
       alt: entry.banner[0].title ?? entry.banner[0].filename
     } : false
   } %}
-  <section class="relative z-0 bg-white">
-    <div class="container">
+  <section class="relative z-0 bg-white pb-12 @container">
+    <div class="container px-6 @3xl:px-16 pt-6 sm:pt-12">
       {% for team in entry.teamMembers.all() %}
         {% if team.staffHeading | length %}
-          <h2 class="mb-0">{{ team.staffHeading }}</h2>
+          <h2 class="text-2xl my-6 first:mt-0">{{ team.staffHeading }}</h2>
         {% else %}
-          <h2 class="mb-0">Team</h2>
+          <h2 class="text-2xl my-6 first:mt-0">Team</h2>
         {% endif %}
-        <div class="mt-12 card-grid grid-equal-height profile-cards">
+        <div class="card-grid grid-equal-height profile-cards">
           {% for entry in team.staff.all() %}
             {% set organization = entry.staffImportOrganization ?? '' %}
             {% set department = entry.departments.one.title ?? organization ?? entry.staffImportDepartment ?? '' %}
