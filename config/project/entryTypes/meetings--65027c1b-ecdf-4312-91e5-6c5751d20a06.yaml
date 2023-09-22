@@ -23,7 +23,7 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
             warning: null
             width: 100
           -
@@ -193,7 +193,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 1ddcc13e-3bfa-4a0e-9661-34bc1052f299 # Email Subscriptions
+            fieldUid: 1ddcc13e-3bfa-4a0e-9661-34bc1052f299
             instructions: null
             label: null
             required: false
@@ -202,7 +202,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 1bbdfcc0-b085-435d-afc9-344998a67876 # Email Trigger
+            fieldUid: 1bbdfcc0-b085-435d-afc9-344998a67876
             instructions: null
             label: null
             required: false

@@ -37,7 +37,6 @@ return [
 				'maxUploadFileSize' => 268435456,
 				'omitScriptNameInUrls' => true,
 				'securityKey' => App::env('SECURITY_KEY'),
-				'useProjectConfigFile' => true,
 		],
 
 		'dev' => [

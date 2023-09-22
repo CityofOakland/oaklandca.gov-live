@@ -23,7 +23,7 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
+            type: craft\fieldlayoutelements\assets\AssetTitleField
             warning: null
             width: 100
           -
@@ -37,25 +37,11 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
+fs: data
 handle: data
 hasUrls: true
 name: Data
-settings:
-  addSubfolderToRootUrl: true
-  autoFocalPoint: false
-  bucket: cao-94612
-  bucketSelectionMode: choose
-  cfDistributionId: ''
-  cfPrefix: null
-  expires: ''
-  keyId: $S3_API_KEY
-  makeUploadsPublic: true
-  region: us-west-2
-  secret: $S3_SECRET
-  storageClass: ''
-  subfolder: data
 sortOrder: 9
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-type: craft\awss3\Volume
 url: 'https://cao-94612.s3.amazonaws.com/'

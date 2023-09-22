@@ -152,7 +152,6 @@ return [
           'url' => ScoutModule::entryUrl($entry),
           'date' => ScoutModule::entryDate($entry),
           'displayDate' => ScoutModule::entryPrettyDate($entry),
-          'portrait' => ScoutModule::portrait($entry),
           'jobTitle' => !empty($entry->jobTitle) ? $entry->jobTitle : null,
           'bio' => $entry->bio,
           'email' => !empty($entry->emailAddress) ? $entry->emailAddress : null,

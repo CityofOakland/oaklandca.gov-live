@@ -1,5 +1,5 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
-<section class="relative z-0 bg-cool-gray-100 py-6 {{ not loop.last ? "mb-12" }}">
+<section class="relative z-0 bg-cool-gray-100 p-6 {{ not loop.last ? "mb-12" }}">
   <div class="body-text">
     {{ include("_partials/_heading.twig", {
       params: {
@@ -7,12 +7,12 @@
       }
     }) }}
     {{ block.entriesDescription }}
-    <ul class="">
+    <ul class="mb-0">
       {% for entry in block.entries %}
         {% set isDoc = (entry.type == "documents") ? true : false %}
         {% set url = isDoc ? entry.documentFile[0].url : entry.redirectUrl ?? entry.url %}
         {% set target = isDoc ? "_blank" : "_self" %}
-        <li class="my-2"><a href="{{ url }}" target="{{ target }}">{{ entry.title }}</a></li>
+        <li class="my-2 last:mb-0"><a href="{{ url }}" target="{{ target }}">{{ entry.title }}</a></li>
       {% endfor %}
     </ul>
   </div>

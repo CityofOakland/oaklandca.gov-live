@@ -91,182 +91,182 @@ permissions:
   - 'deletepeerentrydrafts:fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c' # Boards & Commissions Index
   - 'deletepeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
   - 'deletepeerentrydrafts:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
-  - 'editentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
-  - 'editentries:1300d573-d7c2-4d30-b840-2b94165d5d4f' # Volunteer Index
-  - 'editentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-  - 'editentries:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
-  - 'editentries:20567858-8423-4c20-9004-d0b02150fa2a' # Meetings Index
-  - 'editentries:210f35e9-172e-4116-9382-05774c79d1ff' # Topics Index
-  - 'editentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-  - 'editentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-  - 'editentries:5e4e2c33-9bc3-4620-a00b-7ca3fb5d8688' # Departments Index
-  - 'editentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-  - 'editentries:74ecde2f-b254-4f3e-b889-1affac6f5999' # Embeddable Content
-  - 'editentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-  - 'editentries:89cda626-6500-4ace-b9f4-0f8a54a9ad02' # Services Index
-  - 'editentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-  - 'editentries:9168f154-c0f9-4cf9-991d-60b287a85fc0' # Imported Content
-  - 'editentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-  - 'editentries:98c4abc4-7360-4759-a926-a7673c124809' # Staff Index
-  - 'editentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-  - 'editentries:9a9e5725-12f9-4f36-81cc-7762a4912de0' # Events Index
-  - 'editentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-  - 'editentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
-  - 'editentries:a209b7c0-0c31-4671-a56c-f77990a377f3' # Officials Index
-  - 'editentries:ab06f460-5f10-4ce6-9623-9a5ff14a8685' # Website Updates
-  - 'editentries:ae05e014-38d0-4bcf-904d-e0ef291e71db' # Documents Index
-  - 'editentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
-  - 'editentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-  - 'editentries:c1969337-e50a-48d2-8823-fbb68bd3776b' # Resources Index
-  - 'editentries:ce969731-41e7-42b9-aad7-a6bff2089c57' # News Index
-  - 'editentries:d9164a86-877a-49bd-bc75-148e28d51df2' # Projects Index
-  - 'editentries:e0be1e19-d6d8-4d1d-849e-14d179664811' # Teams Index
-  - 'editentries:e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8' # Search Index
-  - 'editentries:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
-  - 'editentries:fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c' # Boards & Commissions Index
-  - 'editentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'editentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
   - 'editglobalset:7657014a-eefc-419e-921e-8896ed282ab3' # Sitewide Alert
-  - 'editpeerentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
-  - 'editpeerentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-  - 'editpeerentries:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
-  - 'editpeerentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-  - 'editpeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-  - 'editpeerentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-  - 'editpeerentries:74ecde2f-b254-4f3e-b889-1affac6f5999' # Embeddable Content
-  - 'editpeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-  - 'editpeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-  - 'editpeerentries:9168f154-c0f9-4cf9-991d-60b287a85fc0' # Imported Content
-  - 'editpeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-  - 'editpeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-  - 'editpeerentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-  - 'editpeerentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
-  - 'editpeerentries:ab06f460-5f10-4ce6-9623-9a5ff14a8685' # Website Updates
-  - 'editpeerentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
-  - 'editpeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-  - 'editpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'editpeerentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
-  - 'editpeerentrydrafts:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
-  - 'editpeerentrydrafts:1300d573-d7c2-4d30-b840-2b94165d5d4f' # Volunteer Index
-  - 'editpeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-  - 'editpeerentrydrafts:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
-  - 'editpeerentrydrafts:20567858-8423-4c20-9004-d0b02150fa2a' # Meetings Index
-  - 'editpeerentrydrafts:210f35e9-172e-4116-9382-05774c79d1ff' # Topics Index
-  - 'editpeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-  - 'editpeerentrydrafts:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-  - 'editpeerentrydrafts:5e4e2c33-9bc3-4620-a00b-7ca3fb5d8688' # Departments Index
-  - 'editpeerentrydrafts:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-  - 'editpeerentrydrafts:74ecde2f-b254-4f3e-b889-1affac6f5999' # Embeddable Content
-  - 'editpeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-  - 'editpeerentrydrafts:89cda626-6500-4ace-b9f4-0f8a54a9ad02' # Services Index
-  - 'editpeerentrydrafts:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-  - 'editpeerentrydrafts:9168f154-c0f9-4cf9-991d-60b287a85fc0' # Imported Content
-  - 'editpeerentrydrafts:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-  - 'editpeerentrydrafts:98c4abc4-7360-4759-a926-a7673c124809' # Staff Index
-  - 'editpeerentrydrafts:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-  - 'editpeerentrydrafts:9a9e5725-12f9-4f36-81cc-7762a4912de0' # Events Index
-  - 'editpeerentrydrafts:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-  - 'editpeerentrydrafts:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
-  - 'editpeerentrydrafts:a209b7c0-0c31-4671-a56c-f77990a377f3' # Officials Index
-  - 'editpeerentrydrafts:ab06f460-5f10-4ce6-9623-9a5ff14a8685' # Website Updates
-  - 'editpeerentrydrafts:ae05e014-38d0-4bcf-904d-e0ef291e71db' # Documents Index
-  - 'editpeerentrydrafts:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
-  - 'editpeerentrydrafts:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-  - 'editpeerentrydrafts:c1969337-e50a-48d2-8823-fbb68bd3776b' # Resources Index
-  - 'editpeerentrydrafts:ce969731-41e7-42b9-aad7-a6bff2089c57' # News Index
-  - 'editpeerentrydrafts:d9164a86-877a-49bd-bc75-148e28d51df2' # Projects Index
-  - 'editpeerentrydrafts:e0be1e19-d6d8-4d1d-849e-14d179664811' # Teams Index
-  - 'editpeerentrydrafts:e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8' # Search Index
-  - 'editpeerentrydrafts:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
-  - 'editpeerentrydrafts:fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c' # Boards & Commissions Index
-  - 'editpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'editpeerentrydrafts:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
-  - 'publishentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
-  - 'publishentries:1300d573-d7c2-4d30-b840-2b94165d5d4f' # Volunteer Index
-  - 'publishentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-  - 'publishentries:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
-  - 'publishentries:20567858-8423-4c20-9004-d0b02150fa2a' # Meetings Index
-  - 'publishentries:210f35e9-172e-4116-9382-05774c79d1ff' # Topics Index
-  - 'publishentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-  - 'publishentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-  - 'publishentries:5e4e2c33-9bc3-4620-a00b-7ca3fb5d8688' # Departments Index
-  - 'publishentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-  - 'publishentries:74ecde2f-b254-4f3e-b889-1affac6f5999' # Embeddable Content
-  - 'publishentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-  - 'publishentries:89cda626-6500-4ace-b9f4-0f8a54a9ad02' # Services Index
-  - 'publishentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-  - 'publishentries:9168f154-c0f9-4cf9-991d-60b287a85fc0' # Imported Content
-  - 'publishentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-  - 'publishentries:98c4abc4-7360-4759-a926-a7673c124809' # Staff Index
-  - 'publishentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-  - 'publishentries:9a9e5725-12f9-4f36-81cc-7762a4912de0' # Events Index
-  - 'publishentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-  - 'publishentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
-  - 'publishentries:a209b7c0-0c31-4671-a56c-f77990a377f3' # Officials Index
-  - 'publishentries:ab06f460-5f10-4ce6-9623-9a5ff14a8685' # Website Updates
-  - 'publishentries:ae05e014-38d0-4bcf-904d-e0ef291e71db' # Documents Index
-  - 'publishentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
-  - 'publishentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-  - 'publishentries:c1969337-e50a-48d2-8823-fbb68bd3776b' # Resources Index
-  - 'publishentries:ce969731-41e7-42b9-aad7-a6bff2089c57' # News Index
-  - 'publishentries:d9164a86-877a-49bd-bc75-148e28d51df2' # Projects Index
-  - 'publishentries:e0be1e19-d6d8-4d1d-849e-14d179664811' # Teams Index
-  - 'publishentries:e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8' # Search Index
-  - 'publishentries:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
-  - 'publishentries:fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c' # Boards & Commissions Index
-  - 'publishentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'publishentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
-  - 'publishpeerentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
-  - 'publishpeerentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-  - 'publishpeerentries:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
-  - 'publishpeerentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-  - 'publishpeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-  - 'publishpeerentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-  - 'publishpeerentries:74ecde2f-b254-4f3e-b889-1affac6f5999' # Embeddable Content
-  - 'publishpeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-  - 'publishpeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-  - 'publishpeerentries:9168f154-c0f9-4cf9-991d-60b287a85fc0' # Imported Content
-  - 'publishpeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-  - 'publishpeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-  - 'publishpeerentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-  - 'publishpeerentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
-  - 'publishpeerentries:ab06f460-5f10-4ce6-9623-9a5ff14a8685' # Website Updates
-  - 'publishpeerentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
-  - 'publishpeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-  - 'publishpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'publishpeerentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
-  - 'publishpeerentrydrafts:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
-  - 'publishpeerentrydrafts:1300d573-d7c2-4d30-b840-2b94165d5d4f' # Volunteer Index
-  - 'publishpeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-  - 'publishpeerentrydrafts:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
-  - 'publishpeerentrydrafts:20567858-8423-4c20-9004-d0b02150fa2a' # Meetings Index
-  - 'publishpeerentrydrafts:210f35e9-172e-4116-9382-05774c79d1ff' # Topics Index
-  - 'publishpeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-  - 'publishpeerentrydrafts:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-  - 'publishpeerentrydrafts:5e4e2c33-9bc3-4620-a00b-7ca3fb5d8688' # Departments Index
-  - 'publishpeerentrydrafts:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-  - 'publishpeerentrydrafts:74ecde2f-b254-4f3e-b889-1affac6f5999' # Embeddable Content
-  - 'publishpeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-  - 'publishpeerentrydrafts:89cda626-6500-4ace-b9f4-0f8a54a9ad02' # Services Index
-  - 'publishpeerentrydrafts:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-  - 'publishpeerentrydrafts:9168f154-c0f9-4cf9-991d-60b287a85fc0' # Imported Content
-  - 'publishpeerentrydrafts:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-  - 'publishpeerentrydrafts:98c4abc4-7360-4759-a926-a7673c124809' # Staff Index
-  - 'publishpeerentrydrafts:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-  - 'publishpeerentrydrafts:9a9e5725-12f9-4f36-81cc-7762a4912de0' # Events Index
-  - 'publishpeerentrydrafts:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-  - 'publishpeerentrydrafts:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
-  - 'publishpeerentrydrafts:a209b7c0-0c31-4671-a56c-f77990a377f3' # Officials Index
-  - 'publishpeerentrydrafts:ab06f460-5f10-4ce6-9623-9a5ff14a8685' # Website Updates
-  - 'publishpeerentrydrafts:ae05e014-38d0-4bcf-904d-e0ef291e71db' # Documents Index
-  - 'publishpeerentrydrafts:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
-  - 'publishpeerentrydrafts:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-  - 'publishpeerentrydrafts:c1969337-e50a-48d2-8823-fbb68bd3776b' # Resources Index
-  - 'publishpeerentrydrafts:ce969731-41e7-42b9-aad7-a6bff2089c57' # News Index
-  - 'publishpeerentrydrafts:d9164a86-877a-49bd-bc75-148e28d51df2' # Projects Index
-  - 'publishpeerentrydrafts:e0be1e19-d6d8-4d1d-849e-14d179664811' # Teams Index
-  - 'publishpeerentrydrafts:e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8' # Search Index
-  - 'publishpeerentrydrafts:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
-  - 'publishpeerentrydrafts:fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c' # Boards & Commissions Index
-  - 'publishpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-  - 'publishpeerentrydrafts:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'viewentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'saveentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'viewpeerentrydrafts:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'savepeerentrydrafts:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'viewpeerentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'savepeerentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'viewentries:c1969337-e50a-48d2-8823-fbb68bd3776b' # Resources Index
+  - 'saveentries:c1969337-e50a-48d2-8823-fbb68bd3776b' # Resources Index
+  - 'viewpeerentrydrafts:c1969337-e50a-48d2-8823-fbb68bd3776b' # Resources Index
+  - 'savepeerentrydrafts:c1969337-e50a-48d2-8823-fbb68bd3776b' # Resources Index
+  - 'viewentries:e0be1e19-d6d8-4d1d-849e-14d179664811' # Teams Index
+  - 'saveentries:e0be1e19-d6d8-4d1d-849e-14d179664811' # Teams Index
+  - 'viewpeerentrydrafts:e0be1e19-d6d8-4d1d-849e-14d179664811' # Teams Index
+  - 'savepeerentrydrafts:e0be1e19-d6d8-4d1d-849e-14d179664811' # Teams Index
+  - 'viewentries:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
+  - 'saveentries:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
+  - 'viewpeerentrydrafts:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
+  - 'savepeerentrydrafts:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
+  - 'viewpeerentries:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
+  - 'savepeerentries:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
+  - 'viewentries:d9164a86-877a-49bd-bc75-148e28d51df2' # Projects Index
+  - 'saveentries:d9164a86-877a-49bd-bc75-148e28d51df2' # Projects Index
+  - 'viewpeerentrydrafts:d9164a86-877a-49bd-bc75-148e28d51df2' # Projects Index
+  - 'savepeerentrydrafts:d9164a86-877a-49bd-bc75-148e28d51df2' # Projects Index
+  - 'viewentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'saveentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'viewpeerentrydrafts:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'savepeerentrydrafts:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'viewpeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'savepeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'viewentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'saveentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'viewpeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'savepeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'viewpeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'savepeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'viewentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'saveentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'viewpeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'savepeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'viewpeerentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'savepeerentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'viewentries:20567858-8423-4c20-9004-d0b02150fa2a' # Meetings Index
+  - 'saveentries:20567858-8423-4c20-9004-d0b02150fa2a' # Meetings Index
+  - 'viewpeerentrydrafts:20567858-8423-4c20-9004-d0b02150fa2a' # Meetings Index
+  - 'savepeerentrydrafts:20567858-8423-4c20-9004-d0b02150fa2a' # Meetings Index
+  - 'viewentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'saveentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'viewpeerentrydrafts:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'savepeerentrydrafts:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'viewpeerentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'savepeerentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'viewentries:9a9e5725-12f9-4f36-81cc-7762a4912de0' # Events Index
+  - 'saveentries:9a9e5725-12f9-4f36-81cc-7762a4912de0' # Events Index
+  - 'viewpeerentrydrafts:9a9e5725-12f9-4f36-81cc-7762a4912de0' # Events Index
+  - 'savepeerentrydrafts:9a9e5725-12f9-4f36-81cc-7762a4912de0' # Events Index
+  - 'viewentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'saveentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'viewpeerentrydrafts:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'savepeerentrydrafts:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'viewpeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'savepeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
+  - 'viewentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'saveentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'viewpeerentrydrafts:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'savepeerentrydrafts:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'viewpeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'savepeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'viewentries:210f35e9-172e-4116-9382-05774c79d1ff' # Topics Index
+  - 'saveentries:210f35e9-172e-4116-9382-05774c79d1ff' # Topics Index
+  - 'viewpeerentrydrafts:210f35e9-172e-4116-9382-05774c79d1ff' # Topics Index
+  - 'savepeerentrydrafts:210f35e9-172e-4116-9382-05774c79d1ff' # Topics Index
+  - 'viewentries:5e4e2c33-9bc3-4620-a00b-7ca3fb5d8688' # Departments Index
+  - 'saveentries:5e4e2c33-9bc3-4620-a00b-7ca3fb5d8688' # Departments Index
+  - 'viewpeerentrydrafts:5e4e2c33-9bc3-4620-a00b-7ca3fb5d8688' # Departments Index
+  - 'savepeerentrydrafts:5e4e2c33-9bc3-4620-a00b-7ca3fb5d8688' # Departments Index
+  - 'viewentries:89cda626-6500-4ace-b9f4-0f8a54a9ad02' # Services Index
+  - 'saveentries:89cda626-6500-4ace-b9f4-0f8a54a9ad02' # Services Index
+  - 'viewpeerentrydrafts:89cda626-6500-4ace-b9f4-0f8a54a9ad02' # Services Index
+  - 'savepeerentrydrafts:89cda626-6500-4ace-b9f4-0f8a54a9ad02' # Services Index
+  - 'viewentries:98c4abc4-7360-4759-a926-a7673c124809' # Staff Index
+  - 'saveentries:98c4abc4-7360-4759-a926-a7673c124809' # Staff Index
+  - 'viewpeerentrydrafts:98c4abc4-7360-4759-a926-a7673c124809' # Staff Index
+  - 'savepeerentrydrafts:98c4abc4-7360-4759-a926-a7673c124809' # Staff Index
+  - 'viewentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'saveentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'viewpeerentrydrafts:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'savepeerentrydrafts:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'viewpeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'savepeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'viewentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'saveentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'viewpeerentrydrafts:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'savepeerentrydrafts:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'viewpeerentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'savepeerentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'viewentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'saveentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'viewpeerentrydrafts:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'savepeerentrydrafts:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'viewpeerentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'savepeerentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'viewentries:a209b7c0-0c31-4671-a56c-f77990a377f3' # Officials Index
+  - 'saveentries:a209b7c0-0c31-4671-a56c-f77990a377f3' # Officials Index
+  - 'viewpeerentrydrafts:a209b7c0-0c31-4671-a56c-f77990a377f3' # Officials Index
+  - 'savepeerentrydrafts:a209b7c0-0c31-4671-a56c-f77990a377f3' # Officials Index
+  - 'viewentries:1300d573-d7c2-4d30-b840-2b94165d5d4f' # Volunteer Index
+  - 'saveentries:1300d573-d7c2-4d30-b840-2b94165d5d4f' # Volunteer Index
+  - 'viewpeerentrydrafts:1300d573-d7c2-4d30-b840-2b94165d5d4f' # Volunteer Index
+  - 'savepeerentrydrafts:1300d573-d7c2-4d30-b840-2b94165d5d4f' # Volunteer Index
+  - 'viewentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'saveentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'viewpeerentrydrafts:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'savepeerentrydrafts:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'viewpeerentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'savepeerentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'viewentries:9168f154-c0f9-4cf9-991d-60b287a85fc0' # Imported Content
+  - 'saveentries:9168f154-c0f9-4cf9-991d-60b287a85fc0' # Imported Content
+  - 'viewpeerentrydrafts:9168f154-c0f9-4cf9-991d-60b287a85fc0' # Imported Content
+  - 'savepeerentrydrafts:9168f154-c0f9-4cf9-991d-60b287a85fc0' # Imported Content
+  - 'viewpeerentries:9168f154-c0f9-4cf9-991d-60b287a85fc0' # Imported Content
+  - 'savepeerentries:9168f154-c0f9-4cf9-991d-60b287a85fc0' # Imported Content
+  - 'viewentries:74ecde2f-b254-4f3e-b889-1affac6f5999' # Embeddable Content
+  - 'saveentries:74ecde2f-b254-4f3e-b889-1affac6f5999' # Embeddable Content
+  - 'viewpeerentrydrafts:74ecde2f-b254-4f3e-b889-1affac6f5999' # Embeddable Content
+  - 'savepeerentrydrafts:74ecde2f-b254-4f3e-b889-1affac6f5999' # Embeddable Content
+  - 'viewpeerentries:74ecde2f-b254-4f3e-b889-1affac6f5999' # Embeddable Content
+  - 'savepeerentries:74ecde2f-b254-4f3e-b889-1affac6f5999' # Embeddable Content
+  - 'viewentries:ae05e014-38d0-4bcf-904d-e0ef291e71db' # Documents Index
+  - 'saveentries:ae05e014-38d0-4bcf-904d-e0ef291e71db' # Documents Index
+  - 'viewpeerentrydrafts:ae05e014-38d0-4bcf-904d-e0ef291e71db' # Documents Index
+  - 'savepeerentrydrafts:ae05e014-38d0-4bcf-904d-e0ef291e71db' # Documents Index
+  - 'viewentries:e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8' # Search Index
+  - 'saveentries:e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8' # Search Index
+  - 'viewpeerentrydrafts:e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8' # Search Index
+  - 'savepeerentrydrafts:e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8' # Search Index
+  - 'viewentries:ce969731-41e7-42b9-aad7-a6bff2089c57' # News Index
+  - 'saveentries:ce969731-41e7-42b9-aad7-a6bff2089c57' # News Index
+  - 'viewpeerentrydrafts:ce969731-41e7-42b9-aad7-a6bff2089c57' # News Index
+  - 'savepeerentrydrafts:ce969731-41e7-42b9-aad7-a6bff2089c57' # News Index
+  - 'viewentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'saveentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'viewpeerentrydrafts:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'savepeerentrydrafts:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'viewpeerentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'savepeerentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'viewentries:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
+  - 'saveentries:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
+  - 'viewpeerentrydrafts:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
+  - 'savepeerentrydrafts:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
+  - 'viewentries:fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c' # Boards & Commissions Index
+  - 'saveentries:fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c' # Boards & Commissions Index
+  - 'viewpeerentrydrafts:fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c' # Boards & Commissions Index
+  - 'savepeerentrydrafts:fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c' # Boards & Commissions Index
+  - 'viewentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'saveentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'viewpeerentrydrafts:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'savepeerentrydrafts:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'viewpeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'savepeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'viewentries:ab06f460-5f10-4ce6-9623-9a5ff14a8685' # Website Updates
+  - 'saveentries:ab06f460-5f10-4ce6-9623-9a5ff14a8685' # Website Updates
+  - 'viewpeerentrydrafts:ab06f460-5f10-4ce6-9623-9a5ff14a8685' # Website Updates
+  - 'savepeerentrydrafts:ab06f460-5f10-4ce6-9623-9a5ff14a8685' # Website Updates
+  - 'viewpeerentries:ab06f460-5f10-4ce6-9623-9a5ff14a8685' # Website Updates
+  - 'savepeerentries:ab06f460-5f10-4ce6-9623-9a5ff14a8685' # Website Updates
+  - 'viewentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'saveentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'viewpeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'savepeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'viewpeerentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'savepeerentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'viewentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'saveentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'viewpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'savepeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'viewpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'savepeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions

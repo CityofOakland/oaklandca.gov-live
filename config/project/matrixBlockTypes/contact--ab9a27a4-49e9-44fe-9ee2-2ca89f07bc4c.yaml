@@ -3,47 +3,58 @@ fieldLayouts:
   be87396d-8bbb-4fef-ad87-fa6a99b114f2:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 1c5d91eb-8c31-4a5e-ba23-4b6a28986f93 # Email
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 6a893e8a-8008-46a9-aa47-29cd85058ca9
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: eb56abb2-5b18-4c5f-8dac-3a9bf998f6ca # Phone
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 56a98424-a393-4c38-95bf-a0893e79c425
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: d31fcb52-3b99-42dc-8dc7-f0d137d8d478 # Location
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: c39f5531-b71e-430f-9d8a-0c8e233cb868
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 407a1176-1e42-48c9-8d8a-8c61399ed29a
+        userCondition: null
 fields:
   1c5d91eb-8c31-4a5e-ba23-4b6a28986f93: # Email
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: email
-    instructions: ''
+    instructions: null
     name: Email
     searchable: false
     settings:
-      placeholder: ''
+      placeholder: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Email
@@ -52,7 +63,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: location
-    instructions: ''
+    instructions: null
     name: Location
     searchable: false
     settings:
@@ -75,148 +86,189 @@ fields:
       layout: null
       mapOnSearch: open
       mapOnStart: default
-      requireCoordinates: '1'
+      requireCoordinates: true
       showMap: false
       subfieldConfig:
-        __assoc__:
-          -
-            - name
+        -
+          __assoc__:
             -
-              __assoc__:
-                -
-                  - label
-                  - Name
-                -
-                  - width
-                  - '100'
-                -
-                  - enabled
-                  - '1'
-                -
-                  - position
-                  - '1'
-          -
-            - street1
+              - handle
+              - name
             -
-              __assoc__:
-                -
-                  - label
-                  - 'Street Address'
-                -
-                  - width
-                  - '100'
-                -
-                  - enabled
-                  - '1'
-                -
-                  - position
-                  - '2'
-          -
-            - street2
+              - label
+              - Name
             -
-              __assoc__:
-                -
-                  - label
-                  - 'Apartment or Suite'
-                -
-                  - width
-                  - '100'
-                -
-                  - enabled
-                  - '1'
-                -
-                  - position
-                  - '3'
-          -
-            - city
+              - width
+              - 100
             -
-              __assoc__:
-                -
-                  - label
-                  - City
-                -
-                  - width
-                  - '50'
-                -
-                  - enabled
-                  - '1'
-                -
-                  - position
-                  - '4'
-          -
-            - state
+              - enabled
+              - true
             -
-              __assoc__:
-                -
-                  - label
-                  - State
-                -
-                  - width
-                  - '15'
-                -
-                  - enabled
-                  - '1'
-                -
-                  - position
-                  - '5'
-          -
-            - zip
+              - autocomplete
+              - false
             -
-              __assoc__:
-                -
-                  - label
-                  - 'Zip Code'
-                -
-                  - width
-                  - '35'
-                -
-                  - enabled
-                  - '1'
-                -
-                  - position
-                  - '6'
-          -
-            - country
+              - required
+              - false
+        -
+          __assoc__:
             -
-              __assoc__:
-                -
-                  - label
-                  - Country
-                -
-                  - width
-                  - '100'
-                -
-                  - enabled
-                  - '1'
-                -
-                  - position
-                  - '7'
-          -
-            - county
+              - handle
+              - street1
             -
-              __assoc__:
-                -
-                  - label
-                  - 'County or District'
-                -
-                  - width
-                  - '100'
-                -
-                  - position
-                  - '8'
-          -
-            - placeId
+              - label
+              - 'Street Address'
             -
-              __assoc__:
-                -
-                  - label
-                  - 'Place ID'
-                -
-                  - width
-                  - '100'
-                -
-                  - position
-                  - '9'
+              - width
+              - 100
+            -
+              - enabled
+              - true
+            -
+              - autocomplete
+              - true
+            -
+              - required
+              - false
+        -
+          __assoc__:
+            -
+              - handle
+              - street2
+            -
+              - label
+              - 'Apartment or Suite'
+            -
+              - width
+              - 100
+            -
+              - enabled
+              - true
+            -
+              - autocomplete
+              - false
+            -
+              - required
+              - false
+        -
+          __assoc__:
+            -
+              - handle
+              - city
+            -
+              - label
+              - City
+            -
+              - width
+              - 50
+            -
+              - enabled
+              - true
+            -
+              - autocomplete
+              - false
+            -
+              - required
+              - false
+        -
+          __assoc__:
+            -
+              - handle
+              - state
+            -
+              - label
+              - State
+            -
+              - width
+              - 15
+            -
+              - enabled
+              - true
+            -
+              - autocomplete
+              - false
+            -
+              - required
+              - false
+        -
+          __assoc__:
+            -
+              - handle
+              - zip
+            -
+              - label
+              - 'Zip Code'
+            -
+              - width
+              - 35
+            -
+              - enabled
+              - true
+            -
+              - autocomplete
+              - false
+            -
+              - required
+              - false
+        -
+          __assoc__:
+            -
+              - handle
+              - country
+            -
+              - label
+              - Country
+            -
+              - width
+              - 100
+            -
+              - enabled
+              - true
+            -
+              - autocomplete
+              - false
+            -
+              - required
+              - false
+        -
+          __assoc__:
+            -
+              - handle
+              - county
+            -
+              - label
+              - 'County or District'
+            -
+              - width
+              - 100
+            -
+              - enabled
+              - false
+            -
+              - autocomplete
+              - false
+            -
+              - required
+              - false
+        -
+          __assoc__:
+            -
+              - handle
+              - placeId
+            -
+              - label
+              - 'Place ID'
+            -
+              - width
+              - 100
+            -
+              - enabled
+              - false
+            -
+              - autocomplete
+              - false
+            -
+              - required
+              - false
       visibilityToggle: both
     translationKeyFormat: null
     translationMethod: none
@@ -226,16 +278,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: phone
-    instructions: ''
+    instructions: null
     name: Phone
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
