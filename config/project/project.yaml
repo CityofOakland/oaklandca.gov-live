@@ -1,178 +1,4 @@
-dateModified: 1695417569
-elementSources:
-  craft\elements\Entry:
-    -
-      heading: 'Content Types'
-      type: heading
-    -
-      key: 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-      tableAttributes:
-        - postDate
-        - author
-        - link
-        - 'field:b7ec3bdf-65b5-4385-8d12-cd2110b1c75c' # Document Type
-      type: native
-    -
-      key: 'section:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-      tableAttributes:
-        - postDate
-        - author
-        - link
-      type: native
-    -
-      key: 'section:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
-      tableAttributes:
-        - 'field:5b935c33-5d69-45c2-acd9-a6a2f0a567ce' # Calendarize
-        - postDate
-        - author
-        - link
-      type: native
-    -
-      key: 'section:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-      tableAttributes:
-        - 'field:31d30a51-422e-471c-be55-3441a4219dd8' # Date
-        - author
-        - postDate
-        - link
-      type: native
-    -
-      key: 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-      tableAttributes:
-        - postDate
-        - author
-        - link
-        - 'field:21768f47-1c01-40db-8160-bc10697e7054' # Official Press Release
-      type: native
-    -
-      key: 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-      tableAttributes:
-        - postDate
-        - author
-        - link
-        - type
-        - 'field:d8042d7b-1c67-4b28-bb84-2002e74ed94b' # Primary Unit
-        - slug
-      type: native
-    -
-      key: 'section:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-      tableAttributes:
-        - postDate
-        - author
-        - link
-        - 'field:d8042d7b-1c67-4b28-bb84-2002e74ed94b' # Primary Unit
-      type: native
-    -
-      key: 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-      tableAttributes:
-        - postDate
-        - author
-        - link
-        - 'field:d8042d7b-1c67-4b28-bb84-2002e74ed94b' # Primary Unit
-        - type
-      type: native
-    -
-      key: 'section:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-      tableAttributes:
-        - postDate
-        - author
-        - link
-        - 'field:d8042d7b-1c67-4b28-bb84-2002e74ed94b' # Primary Unit
-      type: native
-    -
-      heading: 'Landing Pages'
-      type: heading
-    -
-      key: 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-      tableAttributes:
-        - postDate
-        - author
-        - link
-        - type
-      type: native
-    -
-      key: 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
-      tableAttributes:
-        - postDate
-        - author
-        - link
-        - type
-        - 'field:b0a28612-04bc-4669-a6d1-816c9c768a29' # Official Department
-        - dateUpdated
-      type: native
-    -
-      key: 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-      tableAttributes:
-        - postDate
-        - author
-        - link
-        - 'field:1b7fc839-7de9-4717-b41d-d74bfa40b5c8' # Portrait
-      type: native
-    -
-      heading: People
-      type: heading
-    -
-      key: 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
-      tableAttributes:
-        - postDate
-        - author
-        - link
-      type: native
-    -
-      key: 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
-      tableAttributes:
-        - slug
-        - postDate
-        - author
-        - link
-        - 'field:1b7fc839-7de9-4717-b41d-d74bfa40b5c8' # Portrait
-        - dateUpdated
-        - 'field:19443cdb-77c5-4c3c-ac94-a8530dc39587' # Staff Import ID
-        - 'field:a7cd6f1e-a5c0-47fc-9080-1bc5ace85242' # Staff Import Phone Number
-        - 'field:28e53a14-23f2-492a-be43-e6e83bca9aa1' # Staff Import Section
-      type: native
-    -
-      key: 'section:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-      tableAttributes:
-        - postDate
-        - author
-        - link
-        - 'field:1b7fc839-7de9-4717-b41d-d74bfa40b5c8' # Portrait
-      type: native
-    -
-      heading: Admins
-      type: heading
-    -
-      key: singles
-      tableAttributes:
-        - author
-        - link
-        - 'field:f62c85ae-2203-4d1a-8702-da515126a398' # Banner
-      type: native
-    -
-      key: 'section:ab06f460-5f10-4ce6-9623-9a5ff14a8685' # Website Updates
-      type: native
-    -
-      key: 'section:d542665e-875b-4b71-add5-d70d5317e3c6' # User Guide
-      type: native
-    -
-      key: 'section:74ecde2f-b254-4f3e-b889-1affac6f5999' # Embeddable Content
-      tableAttributes:
-        - postDate
-        - author
-        - link
-      type: native
-    -
-      key: 'section:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
-      type: native
-    -
-      key: 'section:9168f154-c0f9-4cf9-991d-60b287a85fc0' # Imported Content
-      tableAttributes:
-        - postDate
-        - expiryDate
-        - author
-        - link
-        - 'field:31d30a51-422e-471c-be55-3441a4219dd8' # Date
-      type: native
+dateModified: 1695422849
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -186,277 +12,6 @@ email:
     useAuthentication: '1'
     username: $EMAIL_USER
   transportType: craft\mail\transportadapters\Smtp
-fs:
-  data:
-    hasUrls: true
-    name: Data
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: cao-94612
-      bucketSelectionMode: choose
-      cfDistributionId: ''
-      cfPrefix: null
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: us-west-2
-      secret: $S3_SECRET
-      subfolder: data
-    type: craft\awss3\Fs
-    url: 'https://cao-94612.s3.amazonaws.com/'
-  documents:
-    hasUrls: true
-    name: Documents
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: cao-94612
-      bucketSelectionMode: choose
-      cfDistributionId: ''
-      cfPrefix: null
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: us-west-2
-      secret: $S3_SECRET
-      subfolder: documents
-    type: craft\awss3\Fs
-    url: 'https://cao-94612.s3.amazonaws.com/'
-  events:
-    hasUrls: true
-    name: Events
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: cao-94612
-      bucketSelectionMode: choose
-      cfDistributionId: ''
-      cfPrefix: null
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: us-west-2
-      secret: $S3_SECRET
-      subfolder: events
-    type: craft\awss3\Fs
-    url: 'https://cao-94612.s3.amazonaws.com/'
-  galleries:
-    hasUrls: true
-    name: Galleries
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: ''
-      bucket: cao-94612
-      bucketSelectionMode: choose
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: '1'
-      region: us-west-2
-      secret: $S3_SECRET
-      subfolder: galleries
-    type: craft\awss3\Fs
-    url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'
-  generalImages:
-    hasUrls: true
-    name: 'General Images'
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: ''
-      bucket: cao-94612
-      bucketSelectionMode: choose
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: '1'
-      region: us-west-2
-      secret: $S3_SECRET
-      subfolder: general-images
-    type: craft\awss3\Fs
-    url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'
-  headers:
-    hasUrls: true
-    name: Headers
-    settings:
-      addSubfolderToRootUrl: '1'
-      autoFocalPoint: ''
-      bucket: cao-94612
-      bucketSelectionMode: choose
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: '1'
-      region: us-west-2
-      secret: $S3_SECRET
-      subfolder: headers
-    type: craft\awss3\Fs
-    url: 'https://cao-94612.s3.amazonaws.com/'
-  icons:
-    hasUrls: true
-    name: Icons
-    settings:
-      addSubfolderToRootUrl: '1'
-      autoFocalPoint: ''
-      bucket: cao-94612
-      bucketSelectionMode: choose
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: '1'
-      region: us-west-2
-      secret: $S3_SECRET
-      subfolder: icons
-    type: craft\awss3\Fs
-    url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'
-  logos:
-    hasUrls: true
-    name: Logos
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: ''
-      bucket: cao-94612
-      bucketSelectionMode: choose
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: '1'
-      region: us-west-2
-      secret: $S3_SECRET
-      subfolder: logos
-    type: craft\awss3\Fs
-    url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'
-  news:
-    hasUrls: true
-    name: News
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: ''
-      bucket: cao-94612
-      bucketSelectionMode: choose
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: '1'
-      region: us-west-2
-      secret: $S3_SECRET
-      subfolder: news
-    type: craft\awss3\Fs
-    url: 'https://cao-94612.s3.us-west-2.amazonaws.com'
-  portraits:
-    hasUrls: true
-    name: Portraits
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: ''
-      bucket: cao-94612
-      bucketSelectionMode: choose
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: '1'
-      region: us-west-2
-      secret: $S3_SECRET
-      subfolder: portraits
-    type: craft\awss3\Fs
-    url: 'https://cao-94612.s3.us-west-2.amazonaws.com'
-  pressReleaseFiles:
-    hasUrls: true
-    name: 'Press Release Files'
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: ''
-      bucket: cao-94612
-      bucketSelectionMode: choose
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: '1'
-      region: us-west-2
-      secret: $S3_SECRET
-      subfolder: press-release-files
-    type: craft\awss3\Fs
-    url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'
-  pressReleaseImages:
-    hasUrls: true
-    name: 'Press Release Images'
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: ''
-      bucket: cao-94612
-      bucketSelectionMode: choose
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: '1'
-      region: us-west-2
-      secret: $S3_SECRET
-      subfolder: press-release-images
-    type: craft\awss3\Fs
-    url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'
-  projects:
-    hasUrls: true
-    name: Projects
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: ''
-      bucket: cao-94612
-      bucketSelectionMode: choose
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: '1'
-      region: us-west-2
-      secret: $S3_SECRET
-      subfolder: projects
-    type: craft\awss3\Fs
-    url: 'https://cao-94612.s3.us-west-2.amazonaws.com'
-  resources:
-    hasUrls: true
-    name: Resources
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: ''
-      bucket: cao-94612
-      bucketSelectionMode: choose
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: '1'
-      region: us-west-2
-      secret: $S3_SECRET
-      subfolder: resources
-    type: craft\awss3\Fs
-    url: $S3_URL
-  seo:
-    hasUrls: true
-    name: SEO
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: cao-94612
-      bucketSelectionMode: choose
-      cfDistributionId: ''
-      cfPrefix: null
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: us-west-2
-      secret: $S3_SECRET
-      subfolder: seo
-    type: craft\awss3\Fs
-    url: $S3_URL
 meta:
   __names__:
     0a0640ef-4c1c-484f-a2cb-b70930d83893: 'Sidebar Description' # Sidebar Description
@@ -481,6 +36,7 @@ meta:
     1b4c105f-8669-42e5-a28a-360015f23aa0: 'Featured News Item' # Featured News Item
     1b7fc839-7de9-4717-b41d-d74bfa40b5c8: Portrait # Portrait
     1b8f26ab-01a9-4570-9e96-1d18389f8226: 'Read More Link' # Read More Link
+    1bbdfcc0-b085-435d-afc9-344998a67876: 'Email Trigger' # Email Trigger
     1bf6e3cb-26b9-405b-94ea-fbfc944c27b9: Size # Size
     1c1e50b0-b20e-4596-90d8-be5bc63bee3b: 'Button Icon' # Button Icon
     1c5d91eb-8c31-4a5e-ba23-4b6a28986f93: Email # Email
@@ -491,6 +47,7 @@ meta:
     01d73fd7-5170-4523-8658-02c344e3ff55: 'Middle Initial' # Middle Initial
     1d1557ea-679f-40f8-90d8-3c9eae44d800: Navigation # Navigation
     1dcaf4f4-736d-4b90-af74-eed1db266dd6: 'Featured Entry Expiration Date' # Featured Entry Expiration Date
+    1ddcc13e-3bfa-4a0e-9661-34bc1052f299: 'Email Subscriptions' # Email Subscriptions
     1df2afd1-1725-4190-ae6d-b40882c360af: 'Column 1 Cell' # Column 1 Cell
     1e78d0ad-2af1-4556-ab43-7b6c110e75b8: Headers # Headers
     1e960f43-f531-48ab-81a0-67d143aebac6: Heading # Heading
@@ -884,7 +441,6 @@ meta:
     18445fbb-5d82-481a-a3c1-c7e58c81cf18: 'Button Color' # Button Color
     19443cdb-77c5-4c3c-ac94-a8530dc39587: 'Staff Import ID' # Staff Import ID
     21768f47-1c01-40db-8160-bc10697e7054: 'Official Press Release' # Official Press Release
-    25848f6e-8e6a-4d44-94ad-9207fdfc28ec: 'Font Awesome 6' # Font Awesome 6
     26021ddf-fc18-41f3-8fc2-1ef5bf4460f8: 'News Header' # News Header
     27636d1f-fd7e-41ce-81a5-c9728c61337f: 'Small Entry Links' # Small Entry Links
     28881fc8-3e61-4fdb-a5ee-cce1bab725bf: Officials # Officials
@@ -992,7 +548,6 @@ meta:
     afb94d9f-c334-44c9-a37a-e71360270610: 'Button Label' # Button Label
     b0a28612-04bc-4669-a6d1-816c9c768a29: 'Official Department' # Official Department
     b04f002c-84db-42eb-bc4f-afa552e3e3f6: 'Icon Cards Header' # Icon Cards Header
-    b060e848-3112-4363-a5c7-ab4891706382: '[root]' # [root]
     b08ffb42-c370-4cdd-8973-abe245822ae9: 'Spotlight Description' # Spotlight Description
     b1b0e0eb-fd37-4708-96c7-4f5f11d8fdb0: Departments # Departments
     b3b7323b-b212-4d0a-a2f4-b205edf3f056: 'Meetings Description' # Meetings Description
@@ -1242,7 +797,7 @@ plugins:
   aws-s3:
     enabled: '1'
     licenseKey: null
-    schemaVersion: '2.0'
+    schemaVersion: '1.2'
     settings: null
   beam:
     enabled: '1'
@@ -1253,19 +808,13 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: V1MGTTWWOX2B8VX28A8VJ2ZQ
-    schemaVersion: 4.5.0
+    schemaVersion: 3.10.0
     settings:
       apiKey: ''
       cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
       cacheDuration: null
       cacheElementQueries: true
       cacheElements: true
-      cacheGeneratorSettings:
-        __assoc__:
-          -
-            - concurrency
-            - '10'
-      cacheGeneratorType: putyourlightson\blitz\drivers\generators\HttpGenerator
       cachePurgerType: putyourlightson\blitz\drivers\purgers\DummyPurger
       cacheStorageSettings:
         __assoc__:
@@ -1276,18 +825,21 @@ plugins:
             - createGzipFiles
             - ''
       cacheStorageType: putyourlightson\blitz\drivers\storage\FileStorage
+      cacheWarmerSettings:
+        __assoc__:
+          -
+            - concurrency
+            - '10'
+      cacheWarmerType: putyourlightson\blitz\drivers\warmers\GuzzleWarmer
       cachingEnabled: ''
+      clearCacheAutomatically: '1'
       customSiteUris: ''
       debug: false
       deployerType: putyourlightson\blitz\drivers\deployers\DummyDeployer
       driverJobPriority: 100
       excludedQueryStringParams:
-        -
-          queryStringParam: gclid
-          siteId: ''
-        -
-          queryStringParam: fbclid
-          siteId: ''
+        - gclid
+        - fbclid
       excludedUriPatterns:
         -
           __assoc__:
@@ -1302,7 +854,6 @@ plugins:
               - '.*'
       injectScriptEvent: DOMContentLoaded
       integrations:
-        - putyourlightson\blitz\drivers\integrations\CommerceIntegration
         - putyourlightson\blitz\drivers\integrations\FeedMeIntegration
         - putyourlightson\blitz\drivers\integrations\SeomaticIntegration
       mutexTimeout: 1
@@ -1312,22 +863,17 @@ plugins:
       refreshCacheJobPriority: 10
       refreshCacheWhenElementSavedNotLive: false
       refreshCacheWhenElementSavedUnchanged: false
-      refreshMode: 1
       sendPoweredByHeader: true
       warmCacheAutomatically: ''
-  blitz-recommendations:
-    edition: standard
-    enabled: true
-    schemaVersion: 2.1.0
   buttonbox:
     edition: standard
     enabled: true
-    schemaVersion: 3.0.0
+    schemaVersion: 2.0.0
   calendar:
     edition: pro
-    enabled: true
+    enabled: false
     licenseKey: PRJ91600ENZBQ5S7HS7UE93Z
-    schemaVersion: 4.0.2
+    schemaVersion: 3.3.2
     settings:
       allDay: false
       authoredEventEditOnly: ''
@@ -1351,7 +897,7 @@ plugins:
   colour-swatches:
     edition: standard
     enabled: true
-    schemaVersion: 1.4.3
+    schemaVersion: 1.4.2
   cp-body-classes:
     enabled: '1'
     licenseKey: null
@@ -1374,10 +920,22 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  dashboard-configuration:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      documentation: "<p><a href=\"https://www.oaklandca.gov/admin/usermanual\" rel=\"noopener\" target=\"_blank\">Oaklandca.gov User Guide</a></p>\r\n<ul><li>-&nbsp;<a href=\"https://www.oaklandca.gov/admin/usermanual/user-guide/writing-for-oaklandca-gov\" rel=\"noopener\" target=\"_blank\">Writing for the Web Style Guide</a></li><li>-&nbsp;<a href=\"https://www.oaklandca.gov/admin/usermanual/user-guide/using-craft\" rel=\"noopener\" target=\"_blank\">Using Craft</a></li><li>-&nbsp;<a href=\"https://www.oaklandca.gov/admin/usermanual/user-guide/content-strategy\" rel=\"noopener\" target=\"_blank\">Content Strategy</a></li></ul>\r\n<p><a href=\"https://datastudio.google.com/u/1/reporting/3253d1d2-dfdb-400a-9cc6-eb26afe88cae/page/1M\" rel=\"noopener\" target=\"_blank\">City of Oakland Website Analytics Dashboard</a></p>"
   default-dashboard:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+    settings:
+      excludeAdmin: false
+      logErrors: false
+      logInfo: false
+      override: true
+      userDashboard: 1
   dumper:
     edition: standard
     enabled: true
@@ -1395,17 +953,16 @@ plugins:
   feed-me:
     enabled: '1'
     licenseKey: null
-    schemaVersion: 5.1.0.0
+    schemaVersion: 4.4.1
     settings: null
   freeform:
     edition: lite
     enabled: true
     licenseKey: 80IWDHDW3ZJB27DOLCE6AQE5
-    schemaVersion: 4.2.7
+    schemaVersion: 3.6.5
     settings:
       ajaxByDefault: true
       alertNotificationRecipients: null
-      allowFileTemplateEdit: true
       autoScroll: true
       autoScrollToErrors: true
       badgeType: all
@@ -1414,7 +971,6 @@ plugins:
       blockedIpAddresses: ''
       blockedKeywords: ''
       blockedKeywordsError: 'Invalid Entry Data'
-      bypassSpamCheckOnLoggedInUsers: false
       clientDigestFrequency: 1
       clientDigestRecipients: null
       customErrorMessage: ''
@@ -1425,11 +981,8 @@ plugins:
       digestOnlyOnProduction: false
       digestRecipients: null
       displayFeed: true
-      emailTemplateDefault: files
       emailTemplateDirectory: null
-      emailTemplateStorageType: files_database
-      exportHandlesAsNames: false
-      exportLabels: false
+      emailTemplateStorage: db
       fieldDisplayOrder: name
       fillWithGet: false
       footerScripts: false
@@ -1437,7 +990,7 @@ plugins:
       formSubmitDisable: true
       formSubmitExpiration: ''
       formTemplateDirectory: null
-      formattingTemplate: flexbox.twig
+      formattingTemplate: flexbox.html
       freeformHoneypot: '1'
       freeformHoneypotEnhancement: ''
       hideBannerDemo: false
@@ -1481,14 +1034,13 @@ plugins:
       spamProtectionBehaviour: simulate_success
       submissionThrottlingCount: ''
       submissionThrottlingTimeFrame: m
-      successTemplateDirectory: null
       twigInHtml: true
       twigInHtmlIsolatedMode: true
       updateSearchIndexes: true
   google-maps:
     enabled: true
     licenseKey: 88Z3Y9HY00OZ7NQEBWTNETQL
-    schemaVersion: 4.3.0
+    schemaVersion: 4.1.0
     settings:
       browserKey: AIzaSyAjLOAKFea8xqgeL9Hf8TyXLNcLxXVgJzo
       enableJsLogging: true
@@ -1503,7 +1055,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: S528HF1X7FAZ4V7BQ1GARNLD
-    schemaVersion: 1.2.3
+    schemaVersion: 1.0.1
     settings:
       enableCache: true
       iconSetsPath: '@webroot/dist/icons/'
@@ -1514,7 +1066,7 @@ plugins:
     edition: pro
     enabled: true
     licenseKey: VN37QSJPKN968T9I03EES5AK
-    schemaVersion: 4.0.0
+    schemaVersion: 3.0.0
   incognito-field:
     enabled: '1'
     licenseKey: null
@@ -1528,7 +1080,7 @@ plugins:
   inventory:
     edition: standard
     enabled: true
-    schemaVersion: 3.0.0
+    schemaVersion: 2.0.0
   linkit:
     enabled: '1'
     licenseKey: 46HXL3KFU6B2Z3R5LOC856G4
@@ -1551,7 +1103,22 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: MHV0BQ72A7IVPYOA3JKMD3BQ
-    schemaVersion: 3.6.2
+    schemaVersion: 2.13.0
+  oakland-email-notifications:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      emailSubjects:
+        __assoc__:
+          -
+            - meetings
+            - 'Email Notification: {{ title }}'
+      emailTemplates:
+        __assoc__:
+          -
+            - meetings
+            - "<p>This email is notify you that {{ title }} has been updated. Below is the current status of this meeting:</p>\r\n<ul>\r\n<li>Meeting Date: {{ date }}</li>\r\n<li>Meeting Start Time: {{ startTime }}</li>\r\n<li>Meeting End Time: {{ endTime }}</li>\r\n<li>Meeting Status: {{ meetingStatus }}</li>\r\n</ul>\r\n<p>Agenda Topics:</p>\r\n{{ agendaTopics }}"
   patrol:
     edition: standard
     enabled: true
@@ -1603,7 +1170,7 @@ plugins:
   retour:
     enabled: '1'
     licenseKey: 5DC6J57ZUDZKVM1WI3TONGUK
-    schemaVersion: 3.0.12
+    schemaVersion: 3.0.11
     settings:
       alwaysStripQueryString: ''
       createUriChangeRedirects: '1'
@@ -1625,7 +1192,7 @@ plugins:
   sherlock:
     edition: lite
     enabled: true
-    schemaVersion: 4.1.0
+    schemaVersion: 3.1.3
     settings:
       apiKey: mjfdcbwqahbasajdrudcnenyzzcnhcsj
       blowfishHashCost:
@@ -1878,8 +1445,10 @@ plugins:
             - canFail
             - true
       strictTransportSecurity:
-        canFail: true
-        threshold: 15552000
+        __assoc__:
+          -
+            - canFail
+            - true
       testToEmailAddress:
         __assoc__:
           -
@@ -1943,16 +1512,16 @@ plugins:
   super-table:
     edition: standard
     enabled: true
-    schemaVersion: 3.0.0
+    schemaVersion: 2.2.1
   tablemaker:
     enabled: true
     licenseKey: null
-    schemaVersion: 3.0.0
+    schemaVersion: 2.0.0
     settings: null
   template-select:
     edition: standard
     enabled: true
-    schemaVersion: 4.0.0
+    schemaVersion: 2.0.0
   templatecomments:
     enabled: '1'
     licenseKey: null
@@ -1975,12 +1544,17 @@ plugins:
   usermanual:
     edition: standard
     enabled: true
-    schemaVersion: 4.0.0
+    schemaVersion: 2.0.1
     settings:
       enabledSideBar: true
       pluginNameOverride: 'User Guide'
       section: '75'
       templateOverride: ''
+  video-embedder:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
   view-count:
     edition: standard
     enabled: true
@@ -2007,5 +1581,5 @@ system:
   live: true
   name: 'City of Oakland'
   retryDuration: null
-  schemaVersion: 4.5.3.0
+  schemaVersion: 3.8.0.1
   timeZone: America/Los_Angeles

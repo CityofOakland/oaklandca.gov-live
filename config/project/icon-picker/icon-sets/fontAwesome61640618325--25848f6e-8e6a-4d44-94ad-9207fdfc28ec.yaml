@@ -1,7 +1,0 @@
-enabled: true
-handle: fontAwesome61640618325
-name: 'Font Awesome 6'
-settings:
-  folder: '/Font Awesome 6'
-sortOrder: 2
-type: verbb\iconpicker\iconsets\SvgFolder

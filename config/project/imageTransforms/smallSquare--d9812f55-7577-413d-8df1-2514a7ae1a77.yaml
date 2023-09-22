@@ -6,5 +6,4 @@ mode: crop
 name: 'Small Square'
 position: center-center
 quality: null
-upscale: true
 width: 250

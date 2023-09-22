@@ -23,16 +23,30 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\assets\AssetTitleField
+            type: craft\fieldlayoutelements\AssetTitleField
             warning: null
             width: 100
         name: Content
         sortOrder: 1
-fs: logos
 handle: logos
 hasUrls: true
 name: Logos
+settings:
+  addSubfolderToRootUrl: true
+  autoFocalPoint: ''
+  bucket: cao-94612
+  bucketSelectionMode: choose
+  cfDistributionId: ''
+  cfPrefix: ''
+  expires: ''
+  keyId: $S3_API_KEY
+  makeUploadsPublic: '1'
+  region: us-west-2
+  secret: $S3_SECRET
+  storageClass: ''
+  subfolder: logos
 sortOrder: 13
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+type: craft\awss3\Volume
 url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'

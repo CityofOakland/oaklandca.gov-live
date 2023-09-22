@@ -23,7 +23,7 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\entries\EntryTitleField
+            type: craft\fieldlayoutelements\EntryTitleField
             warning: null
             width: 100
           -
