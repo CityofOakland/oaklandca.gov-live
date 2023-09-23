@@ -2,63 +2,83 @@ fieldLayouts:
   5a2d2246-c14b-4c8b-a973-cc070f30ce97:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 7485ca3f-30b1-4ca6-a095-c2061d848559 # Alert Show/Hide
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 75bf554b-e81b-4305-84df-984492643232
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 658cca3c-01d9-4de0-b0be-bc04b699d806 # Alert Expiration
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 069777f3-a15c-4071-bf38-06f740188722
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 36fcc9c4-85be-4bd9-959a-5b26e30673d4 # Alert Label
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: dcd35c21-2119-442f-9620-1e1af777be5f
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 9c0b44a4-b6de-498e-bc9d-4f7a4f9fe5f2 # Alert Type
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ac4fa131-18d2-4b9a-bf1b-cff64ed8f0d4
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 6fb3f41c-93f6-4185-9622-e6765cdcc837 # Alert Message
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 00f2a856-4ecb-48d7-aa60-0427c4bdf9d9
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 277068ba-95c5-4881-862f-85c19b60d4da # Alert URL
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: e4ec194c-5526-4e25-b4a9-f4f02763d085
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 41866a51-8de8-4c5c-80b5-9e8e65f8b99f
+        userCondition: null
 handle: sitewideAlert
 name: 'Sitewide Alert'
 sortOrder: 1

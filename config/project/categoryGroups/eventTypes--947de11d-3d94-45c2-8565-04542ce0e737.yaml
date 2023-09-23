@@ -3,6 +3,7 @@ fieldLayouts:
   2222949e-7a6f-4ed1-9f91-897a9bd5cd5b:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -10,6 +11,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -25,10 +27,13 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\TitleField
+            uid: 961d39c9-b4dd-4f7b-bc6c-72d9b4a5273e
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: eeaf088d-3a61-4b5f-a157-68d23dd2f074
+        userCondition: null
 handle: eventTypes
 name: 'Event Types'
 siteSettings:

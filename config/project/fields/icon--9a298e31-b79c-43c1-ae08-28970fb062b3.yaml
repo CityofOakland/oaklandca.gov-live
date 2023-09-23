@@ -6,7 +6,7 @@ instructions: 'Add an icon to this component.'
 name: Icon
 searchable: false
 settings:
-  optgroups: true
+  columnType: string
   options:
     -
       __assoc__:

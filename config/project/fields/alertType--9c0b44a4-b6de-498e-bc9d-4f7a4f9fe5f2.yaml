@@ -6,6 +6,7 @@ instructions: 'Choose the color of the alert based on the purpose.'
 name: 'Alert Type'
 searchable: false
 settings:
+  columnType: string
   options:
     -
       __assoc__:

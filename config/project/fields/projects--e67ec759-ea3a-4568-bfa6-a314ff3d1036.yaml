@@ -7,11 +7,13 @@ name: Projects
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: ''
+  branchLimit: null
   localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
   selectionLabel: 'Add a project'
   showSiteMenu: true
-  source: null
   sources:
     - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   targetSiteId: null

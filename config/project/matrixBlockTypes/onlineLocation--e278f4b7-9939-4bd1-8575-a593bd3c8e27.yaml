@@ -3,34 +3,39 @@ fieldLayouts:
   e4ca3375-a65c-4895-8ae0-5fcff1071dd0:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 59d68eb6-f130-4b6f-b193-240480a8b68f # Online Meeting Link
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f4bad812-d76d-4d75-bf2b-ca75fa47cd5c
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: d0bf5205-5046-47c2-b303-3421f456b049
+        userCondition: null
 fields:
   59d68eb6-f130-4b6f-b193-240480a8b68f: # Online Meeting Link
     columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: onlineMeetingLink
-    instructions: ''
+    instructions: null
     name: 'Online Meeting Link'
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

@@ -3,34 +3,42 @@ fieldLayouts:
   99496d84-73a6-4699-8070-1945a27235f1:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 4c0f9e7c-fe6a-47d0-b8c9-17e8a34a39f2 # Location Address
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 945ad94e-7a78-4bfa-8307-71835fb5cdb2
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 7e17b706-c00f-4f94-84df-b0e91247051f # Description
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 93205786-b360-4034-befb-5588aeb38e4e
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 0209a61a-968c-4072-8e4d-0155435e5fdd
+        userCondition: null
 fields:
   4c0f9e7c-fe6a-47d0-b8c9-17e8a34a39f2: # Location Address
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: locationAddress
-    instructions: ''
+    instructions: null
     name: 'Location Address'
     searchable: false
     settings:
@@ -53,7 +61,7 @@ fields:
       layout: null
       mapOnSearch: open
       mapOnStart: close
-      requireCoordinates: '1'
+      requireCoordinates: true
       showMap: false
       subfieldConfig:
         __assoc__:
@@ -201,16 +209,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: description
-    instructions: ''
+    instructions: null
     name: Description
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

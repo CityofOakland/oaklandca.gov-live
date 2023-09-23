@@ -2,6 +2,7 @@ fieldLayouts:
   a0978fea-d022-4abe-ad90-df013c7d675f:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,9 +10,10 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
-            label: Title
+            label: null
             max: null
             min: null
             name: null
@@ -23,46 +25,63 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: dd668b73-3811-4a00-85b7-a7336ce89eb3
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210 # Lead In
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d58c9510-5c5f-47f2-802d-4c8e0351b676
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: bef74be8-b22d-4dd0-9217-9707bb43d888 # CTA Button
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a9e15e9e-d75a-41e1-8699-298c0b1db13f
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 69f11e58-8d37-4ef8-9ef2-d91c595f3598
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d # Metadata
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ff041f7c-ad68-4f67-8bfb-36863e64b40f
+            userCondition: null
             warning: null
             width: 100
         name: SEO
-        sortOrder: 2
+        uid: 5fa8c428-5dbc-44ea-a3c4-8e2952ee86bc
+        userCondition: null
 handle: officialsIndex
 hasTitleField: true
 name: 'Officials Index'
 section: a209b7c0-0c31-4671-a56c-f77990a377f3 # Officials Index
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

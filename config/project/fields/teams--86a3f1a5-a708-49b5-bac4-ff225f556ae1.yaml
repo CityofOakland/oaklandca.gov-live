@@ -7,11 +7,13 @@ name: Teams
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: ''
+  branchLimit: null
   localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
   selectionLabel: 'Add a team'
   showSiteMenu: true
-  source: null
   sources:
     - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
   targetSiteId: null

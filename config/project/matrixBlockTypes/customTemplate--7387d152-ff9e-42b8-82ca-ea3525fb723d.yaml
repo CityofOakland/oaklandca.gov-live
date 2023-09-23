@@ -3,18 +3,23 @@ fieldLayouts:
   be600bf9-8d6e-4a13-9a5a-2f58593ee956:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 37b9cad8-04be-41c4-938a-c869de41bfc6 # Template Select
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 263d26b5-f678-4dcd-8e72-6f0afef5be50
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 8c730b46-a120-417e-a77d-89117c6a774f
+        userCondition: null
 fields:
   37b9cad8-04be-41c4-938a-c869de41bfc6: # Template Select
     columnSuffix: null

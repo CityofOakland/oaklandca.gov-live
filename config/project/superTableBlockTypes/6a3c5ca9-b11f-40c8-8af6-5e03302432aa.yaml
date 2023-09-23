@@ -1,45 +1,57 @@
+changedFieldIndicator: null
 field: ff148937-9066-4578-8eb1-56090c97b181 # Table
 fieldLayouts:
   4131573e-9016-47f4-bff6-b499fc6bae82:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 23389191-2978-49d8-a70e-6da12c8aeab0 # Column 1 Cell
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b6ca2926-67c5-4728-afa0-77ee05f74b1c
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: fb2b9f42-74a0-45c4-be6e-d3d69c87557e # Column 2 Cell
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 16e9559b-410d-4e56-9b75-5d8c9cc9329a
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: d513ffa1-20e6-405d-845e-b4a8fd041461 # Column 3 Cell
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 68900f77-f805-4598-b59b-0744cf0ce0e1
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: fda2102c-07ea-49a1-b5c9-03582d6f6b46
+        userCondition: null
 fields:
   23389191-2978-49d8-a70e-6da12c8aeab0: # Column 1 Cell
     columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: column1Cell
-    instructions: ''
+    instructions: null
     name: 'Column 1 Cell'
     searchable: true
     settings:
@@ -49,13 +61,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: 'Basic with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: '1'
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
       uiMode: enlarged
@@ -67,7 +79,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: column3Cell
-    instructions: ''
+    instructions: null
     name: 'Column 3 Cell'
     searchable: true
     settings:
@@ -77,13 +89,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: 'Basic with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: '1'
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
       uiMode: enlarged
@@ -95,7 +107,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: column2Cell
-    instructions: ''
+    instructions: null
     name: 'Column 2 Cell'
     searchable: true
     settings:
@@ -105,13 +117,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: 'Basic with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: '1'
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
       uiMode: enlarged

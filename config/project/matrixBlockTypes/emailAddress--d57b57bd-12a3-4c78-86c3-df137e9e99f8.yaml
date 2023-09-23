@@ -3,36 +3,47 @@ fieldLayouts:
   3f1a1379-bdb2-48aa-9a5b-fb6cf6d0b97d:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 243725a4-eeda-4e57-8cf4-d545bd6edf9c # Email Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 5600e592-c735-4ec5-ad33-d399ad698789
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: b50fa2f6-4a94-44ce-ae39-82951e06a717 # Link Text
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2b933a7a-a500-416e-b6c1-e549fb80a197
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 1f60a4d5-d5d9-46f2-8f90-d58d47a2bb34 # Email Address
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4a6fa24e-5f68-497d-997f-46a6f41a5245
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: db81a9f9-8490-430c-a5e2-41ef54c4da7f
+        userCondition: null
 fields:
   1f60a4d5-d5d9-46f2-8f90-d58d47a2bb34: # Email Address
     columnSuffix: null
@@ -43,7 +54,7 @@ fields:
     name: 'Email Address'
     searchable: false
     settings:
-      placeholder: ''
+      placeholder: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Email
@@ -52,16 +63,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: emailTitle
-    instructions: ''
+    instructions: null
     name: 'Email Title'
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -78,10 +89,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

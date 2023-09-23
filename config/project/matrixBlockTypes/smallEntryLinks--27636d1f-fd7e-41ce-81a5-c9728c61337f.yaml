@@ -3,52 +3,63 @@ fieldLayouts:
   9841506c-74ac-4441-8887-761cb5aca44a:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 5eb32746-ba01-4a64-b84f-f6b988abfa97 # Heading
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 750c6464-14f5-4be7-8060-c0dec695c468
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: a027ac28-65c7-472f-b9ea-d30253b0205f # Entries Description
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 9950f3d0-ba62-4bb9-98e4-809b604dc457
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 646188fb-7ed1-48ae-b539-736f4fd442d1 # Entries
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 0d3f3fc8-6645-4f1a-9c10-54cd0b334e54
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 1ba7a654-99da-470d-9b34-0333ea4b0af9
+        userCondition: null
 fields:
   5eb32746-ba01-4a64-b84f-f6b988abfa97: # Heading
     columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: heading
-    instructions: ''
+    instructions: null
     name: Heading
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -64,11 +75,13 @@ fields:
     searchable: true
     settings:
       allowSelfRelations: false
-      limit: '24'
+      branchLimit: null
       localizeRelations: false
-      selectionLabel: ''
+      maintainHierarchy: false
+      maxRelations: 24
+      minRelations: null
+      selectionLabel: null
       showSiteMenu: true
-      source: null
       sources:
         - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
         - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
@@ -104,13 +117,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: 'Simple with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: '1'
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       uiMode: enlarged

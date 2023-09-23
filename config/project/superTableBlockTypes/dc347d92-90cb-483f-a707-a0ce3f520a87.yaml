@@ -1,67 +1,84 @@
+changedFieldIndicator: null
 field: f93e423e-051d-4b4c-bb85-2a5b168296b4 # Timeline
 fieldLayouts:
   4c254873-4567-44b6-a087-a6d4cb70b1ea:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: c0129db2-783d-4927-b125-203bd8cbdebc # Milestone Date
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 9b5b59f4-daa9-48cf-84eb-755aec584521
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f602bcbb-5ca9-4e04-8f5c-f031ceb1c2d6 # Milestone Name
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2b505ec4-0b68-4dc6-9c25-dbaa5773381f
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 5b066077-3ce6-4583-af94-4fa87136ab3a # Milestone Link
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4ceef92b-0dd7-4501-b158-e5432ef44e66
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 912c64e2-6d85-46bb-b826-955df643a5ef # Milestone Description
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: fb017589-eb00-43e7-8dd7-9d46a412abfe
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 4b278e2a-dc49-4f60-a4bd-18575fb15098 # Milestone Started?
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 56991d60-b4f9-4c96-8e02-b7a7eb3af875
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 649d399f-1bf6-42dc-9740-5fd450bdeb2c
+        userCondition: null
 fields:
   4b278e2a-dc49-4f60-a4bd-18575fb15098: # Milestone Started?
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: milestoneStarted
-    instructions: ''
+    instructions: null
     name: 'Milestone Started?'
     searchable: false
     settings:
-      multi: true
       options:
         -
           __assoc__:
@@ -82,13 +99,13 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: milestoneLink
-    instructions: ''
+    instructions: null
     name: 'Milestone Link'
     searchable: false
     settings:
-      allowCustomText: ''
-      allowTarget: ''
-      defaultText: ''
+      allowCustomText: false
+      allowTarget: false
+      defaultText: null
       selectLinkText: ''
       types:
         __assoc__:
@@ -281,7 +298,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: milestoneDescription
-    instructions: ''
+    instructions: null
     name: 'Milestone Description'
     searchable: true
     settings:
@@ -291,13 +308,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: 'Simple with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: ''
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       uiMode: normal
@@ -309,16 +326,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: milestoneDate
-    instructions: ''
+    instructions: null
     name: 'Milestone Date'
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -329,16 +346,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: milestoneName
-    instructions: ''
+    instructions: null
     name: 'Milestone Name'
     searchable: true
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

@@ -2,16 +2,18 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
 handle: relatedServices
-instructions: ''
+instructions: null
 name: 'Related Services'
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: ''
+  branchLimit: null
   localizeRelations: false
-  selectionLabel: ''
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
   showSiteMenu: false
-  source: null
   sources:
     - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
   targetSiteId: null

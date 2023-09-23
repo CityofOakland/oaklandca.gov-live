@@ -7,11 +7,13 @@ name: 'Project Documents'
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: ''
+  branchLimit: null
   localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
   selectionLabel: 'Add a document'
   showSiteMenu: true
-  source: null
   sources:
     - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
     - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents

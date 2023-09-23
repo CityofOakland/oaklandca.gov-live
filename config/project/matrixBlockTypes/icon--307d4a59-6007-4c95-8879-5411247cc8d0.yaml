@@ -3,52 +3,63 @@ fieldLayouts:
   65e4836e-6bda-45d9-ba8e-c9ea48725ff5:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: d315d8d7-521c-49c9-93ff-3fe340ab0429 # Icon
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 3df00544-5098-49c3-90be-658505f49a4b
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 4a09ac0b-b25e-4160-92b9-ad5b1e8b97b9 # Heading
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 8024c98a-b9cf-4f84-8d22-814bee997d5d
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 7bbb6a39-d6ff-42d1-8442-548114cdb6f7 # Subheading
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 70807229-6fe6-4963-9115-16d9bbfbf323
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: a90c18c0-c14e-4660-a70e-0ef88fd546dc
+        userCondition: null
 fields:
   4a09ac0b-b25e-4160-92b9-ad5b1e8b97b9: # Heading
     columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: heading
-    instructions: ''
+    instructions: null
     name: Heading
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -59,16 +70,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: subheading
-    instructions: ''
+    instructions: null
     name: Subheading
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -79,30 +90,34 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: icon
-    instructions: ''
+    instructions: null
     name: Icon
     searchable: false
     settings:
       allowSelfRelations: false
+      allowSubfolders: false
       allowUploads: true
       allowedKinds: null
+      branchLimit: null
       defaultUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
-      defaultUploadLocationSubpath: ''
-      limit: '1'
+      defaultUploadLocationSubpath: null
       localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
       previewMode: full
-      restrictFiles: ''
-      selectionLabel: ''
+      restrictFiles: false
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
+      restrictedLocationSubpath: null
+      selectionLabel: null
       showSiteMenu: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
-      singleUploadLocationSubpath: ''
-      source: null
       sources:
         - 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
       targetSiteId: null
-      useSingleFolder: false
       validateRelatedElements: false
       viewMode: list
     translationKeyFormat: null

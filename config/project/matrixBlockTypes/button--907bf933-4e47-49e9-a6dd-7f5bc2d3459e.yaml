@@ -3,40 +3,48 @@ fieldLayouts:
   94d017eb-e540-403f-9634-a3d76f6a6924:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 93b22059-684d-4ee6-acee-03132189083f # Button Link
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 57fb8b1e-6696-4a02-93f4-099ee15570ac
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 2009b6bf-bc82-4776-ad68-1fe0fa5dc6d8 # Button Icon
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 8e553dec-a4b1-4e3c-a0cc-fa2e3b29eaf4
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 524382ee-7395-43fc-bb7f-37698a78bfb0
+        userCondition: null
 fields:
   93b22059-684d-4ee6-acee-03132189083f: # Button Link
     columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: buttonLink
-    instructions: ''
+    instructions: null
     name: 'Button Link'
     searchable: false
     settings:
-      allowCustomText: '1'
-      allowTarget: '1'
-      defaultText: ''
+      allowCustomText: true
+      allowTarget: true
+      defaultText: null
       selectLinkText: ''
       types:
         __assoc__:
@@ -218,11 +226,11 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: buttonIcon
-    instructions: ''
+    instructions: null
     name: 'Button Icon'
     searchable: false
     settings:
-      optgroups: true
+      columnType: string
       options:
         -
           __assoc__:

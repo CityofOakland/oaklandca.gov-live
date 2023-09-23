@@ -7,11 +7,13 @@ name: Resources
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: ''
+  branchLimit: null
   localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
   selectionLabel: 'Add a resource'
   showSiteMenu: true
-  source: null
   sources:
     - 'section:24fa116b-8516-4626-84f3-86b685e71071' # Resources
   targetSiteId: null

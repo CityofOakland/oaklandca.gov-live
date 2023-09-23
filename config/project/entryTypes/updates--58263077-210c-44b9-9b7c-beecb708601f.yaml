@@ -2,6 +2,7 @@ fieldLayouts:
   b5ca47f3-26b6-4bd3-b153-60c3bd886e48:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -23,33 +25,45 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 7dbd0d17-6a57-4e8d-ae9f-39aa878a868c
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f645ecd3-5b0e-4625-8986-da4a7726b1db # Image
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 08d058dd-e11d-47cc-ad03-0887497f656f
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: da49fb13-e893-47c1-82d3-83bb9ad7fd2b
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 490d1550-2f04-4047-8af4-632360afb636
+        userCondition: null
 handle: updates
 hasTitleField: true
 name: 'Website Updates'
 section: ab06f460-5f10-4ce6-9623-9a5ff14a8685 # Website Updates
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

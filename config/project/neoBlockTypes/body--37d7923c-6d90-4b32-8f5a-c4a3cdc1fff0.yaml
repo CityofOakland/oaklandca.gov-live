@@ -4,28 +4,42 @@ childBlocks:
   - columns
   - embeds
   - icons
+conditions: null
+description: ''
+enabled: true
 field: e2442a2e-e191-4b02-b170-7ecad09c52e2 # Modules
 fieldLayouts:
   f79d8bd6-835c-4f50-89c2-e2b42ece2fd6:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: f8342274-0ae7-48f4-867d-2efd90ca3b93 # Background Color
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 76b64622-4b53-4cd9-a1d1-9c6e9aad48fb
+            userCondition: null
             warning: null
             width: 100
         name: Configuration
-        sortOrder: 1
+        uid: cf8966a0-86d3-47e2-b53e-9831827005ef
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: body
+icon: null
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: Body
 sortOrder: 1
 topLevel: true

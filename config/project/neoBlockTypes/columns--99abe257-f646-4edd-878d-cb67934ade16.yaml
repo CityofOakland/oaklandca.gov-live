@@ -1,11 +1,20 @@
 childBlocks:
   - column
+conditions: null
+description: ''
+enabled: true
 field: e2442a2e-e191-4b02-b170-7ecad09c52e2 # Modules
 group: null
+groupChildBlockTypes: true
 handle: columns
+icon: null
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: Columns
 sortOrder: 4
 topLevel: false

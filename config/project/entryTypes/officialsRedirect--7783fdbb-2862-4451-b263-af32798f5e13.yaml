@@ -2,6 +2,7 @@ fieldLayouts:
   90acc5c7-0b36-4c64-af3b-40e34b0409b4:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,9 +10,10 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
-            label: Title
+            label: null
             max: null
             min: null
             name: null
@@ -23,64 +25,87 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: de27d9c3-cf61-4648-8b7f-babf6373c714
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: ddb61f35-83f1-46d4-904b-da525acf9e7c # Group Head Name
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4affcd4c-e51a-420c-b9e6-64708a974b0f
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 211069ad-7abf-4b4d-a040-1b26ddb7a816 # Group Head Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 292b5435-a16c-4fc6-aeb1-03d3e39e91cc
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 1b7fc839-7de9-4717-b41d-d74bfa40b5c8 # Portrait
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 0dfabe4a-f372-409e-a2b3-e862c20956b7
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 93eaa329-904e-4a23-9047-4decf3d47cac # Redirect URL
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 529cf93e-4d94-4dc4-b8c6-ea6cd8cee44e
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 88378d50-8c50-4993-9ea0-3f3e878eec84
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d # Metadata
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 62da7c66-75e2-4051-9d88-80cd1f3aa0e0
+            userCondition: null
             warning: null
             width: 100
         name: SEO
-        sortOrder: 2
+        uid: ff42f3be-0262-4244-8881-6b13688b6450
+        userCondition: null
 handle: officialsRedirect
 hasTitleField: true
 name: 'Officials Redirect'
 section: 28881fc8-3e61-4fdb-a5ee-cce1bab725bf # Officials
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 2
 titleFormat: null
 titleTranslationKeyFormat: null

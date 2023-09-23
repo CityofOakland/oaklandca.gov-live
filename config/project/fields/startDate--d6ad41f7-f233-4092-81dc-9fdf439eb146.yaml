@@ -2,16 +2,16 @@ columnSuffix: fyagnwox
 contentColumnType: datetime
 fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
 handle: startDate
-instructions: ''
+instructions: null
 name: 'Start Date'
 searchable: false
 settings:
   max: null
   min: null
-  minuteIncrement: '15'
+  minuteIncrement: 15
   showDate: true
   showTime: true
-  showTimeZone: ''
+  showTimeZone: false
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Date

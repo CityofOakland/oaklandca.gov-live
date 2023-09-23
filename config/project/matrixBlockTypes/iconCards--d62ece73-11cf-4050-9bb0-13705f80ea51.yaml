@@ -3,64 +3,83 @@ fieldLayouts:
   eeda545d-1fa4-4766-b56a-3eec22b53cdf:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: b04f002c-84db-42eb-bc4f-afa552e3e3f6 # Icon Cards Header
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: afc2bbb7-820f-4960-9b3f-1ffb66aa70f5
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 7b2c00c6-3912-498d-99a7-eb8230b09b9e # Icon Cards Description
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 35bbca56-a66b-468f-a361-c3c7643e12c7
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: e4546cfb-cdc7-4a55-b637-f44ae35fbf31 # Background
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 812c55b4-0308-4454-94be-544b166a8b84
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: c15dc685-5a25-4664-9fac-82eada21679a # Card Background Color
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 96221a18-530c-414e-92b8-27cbf2bbee18
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 0bbec91d-57e2-4212-b449-f04f19c770da # Icon Card
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f967f39f-2052-43e8-a7dc-27a51dc84d17
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: b44adf45-0cbe-4e58-8326-a891b06ecafa
+        userCondition: null
 fields:
   0bbec91d-57e2-4212-b449-f04f19c770da: # Icon Card
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: iconCards
-    instructions: ''
+    instructions: null
     name: 'Icon Card'
     searchable: false
     settings:
+      blockTypeFields: 0
+      changedFieldIndicator: null
       columns:
         __assoc__:
           -
@@ -86,13 +105,12 @@ fields:
                   - ''
       contentTable: '{{%stc_101_iconcards}}'
       fieldLayout: table
-      maxRows: '4'
-      minRows: '2'
-      placeholderKey: null
+      maxRows: 4
+      minRows: 2
       propagationKeyFormat: null
       propagationMethod: all
       selectionLabel: 'Add a card'
-      staticField: ''
+      staticField: null
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
@@ -111,13 +129,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: Simple.json
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: ''
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       uiMode: enlarged
@@ -129,16 +147,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: heading
-    instructions: ''
+    instructions: null
     name: 'Icon Cards Header'
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -154,12 +172,12 @@ fields:
     searchable: false
     settings:
       default: null
-      options: ''
       palette: Cards
-      useConfigFile: '1'
+      setRandom: false
+      useConfigFile: true
     translationKeyFormat: null
     translationMethod: none
-    type: percipioglobal\colourswatches\fields\ColourSwatches
+    type: percipiolondon\colourswatches\fields\ColourSwatches
   e4546cfb-cdc7-4a55-b637-f44ae35fbf31: # Background
     columnSuffix: ggkrxaep
     contentColumnType: string
@@ -169,7 +187,7 @@ fields:
     name: Background
     searchable: false
     settings:
-      optgroups: true
+      columnType: string
       options:
         -
           __assoc__:

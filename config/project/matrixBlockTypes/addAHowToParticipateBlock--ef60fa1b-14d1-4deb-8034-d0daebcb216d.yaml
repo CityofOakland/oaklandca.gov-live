@@ -3,27 +3,35 @@ fieldLayouts:
   84f34edf-4ecd-4496-b494-9eed1214caec:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 1654d938-91c4-4160-a263-90ee5eaf9301 # Header
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 0bc722fc-7cf6-4ef8-9c93-2ac2795ac6da
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 93bbc17f-8012-406e-8890-d5521739d778 # Description
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 3d0abe10-b728-40e9-9282-2962ae5df4fa
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: ac8f104a-f172-4d89-a560-faaae79d870b
+        userCondition: null
 fields:
   93bbc17f-8012-406e-8890-d5521739d778: # Description
     columnSuffix: null
@@ -40,13 +48,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: 'Basic with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: ''
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       uiMode: enlarged
@@ -64,10 +72,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

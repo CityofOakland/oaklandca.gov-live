@@ -3,34 +3,42 @@ fieldLayouts:
   8b0ff67a-c59d-4113-89f2-8c8014df83f2:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 113adde6-33a9-47ce-8a9a-6cf2aaf13bc1 # Location Name
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 187b0a2d-b220-4c73-b819-8ddf2cf21db4
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 4f98a66d-2f55-4ee3-b4d1-ea1d668b273b # Location Address
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 23c2ba10-5aa1-40f3-b380-722294455805
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 01d14843-c82a-44f5-bb1f-5457567488b9
+        userCondition: null
 fields:
   4f98a66d-2f55-4ee3-b4d1-ea1d668b273b: # Location Address
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: locationAddress
-    instructions: ''
+    instructions: null
     name: 'Location Address'
     searchable: false
     settings:
@@ -53,7 +61,7 @@ fields:
       layout: null
       mapOnSearch: open
       mapOnStart: default
-      requireCoordinates: '1'
+      requireCoordinates: true
       showMap: false
       subfieldConfig:
         __assoc__:
@@ -201,16 +209,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: locationName
-    instructions: ''
+    instructions: null
     name: 'Location Name'
     searchable: true
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

@@ -2,6 +2,7 @@ fieldLayouts:
   220ab70d-0370-4bb5-82e9-d9b4d132b984:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,9 +10,10 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
-            label: Title
+            label: null
             max: null
             min: null
             name: null
@@ -23,206 +25,279 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: e6f79fbd-2295-4fde-96d1-cd76e5a3b0ff
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 8233f0e9-3e71-4804-a485-fec6b8560185 # News Image
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 6eef7703-f773-4cbe-a70a-4188497a23b5
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 58eda166-7a65-4fb6-8f7d-c6590b0591ae # Summary
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 3f74bbb3-a138-425a-b914-c4981ae61051
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 00ccf4ec-25d9-4bce-864a-4d06468adb36 # Body
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 6f318c41-764b-447c-9107-642c5001b7b8
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: e57d997c-ca20-4022-8841-f9fd919933df # Accordion
-            instructions: ''
+            instructions: null
             label: 'Entry Updates'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a9a60efd-996f-4e47-b35b-9ef5ad8ca530
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: e9d7be93-3feb-4c21-ae81-84429ed485df # Contact
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4b49292a-6fe1-4b4b-9f32-c4fc85223c4f
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 02edcc9a-9985-4401-9a49-38455f47ff84 # Contact Notes
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 009a17ad-5c85-45b2-a28c-d07f2d809b4d
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: eae235fc-29cb-4dd5-8e91-2c0ad69877ed # News Tags
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: dd37b9be-6cac-4e14-85fb-1c3dbcfc3157
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             heading: 'Press Release'
             type: craft\fieldlayoutelements\Heading
+            uid: ec237e3b-b71c-40fd-a7ee-59cfd78da817
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 21768f47-1c01-40db-8160-bc10697e7054 # Official Press Release
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 0ae023a1-1e5c-4bbc-9afb-739f0b412975
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: ea2e59d4-7906-4723-8dde-7bb4012c3361 # Press Release File
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 0a764af7-dc6b-4a89-a7fd-3729bd4f520a
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 71e706ee-966c-4476-b2db-f76a0084864d
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc # Boards & Commissions
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: e6e32e2a-6427-4a47-94d5-4d7a45b5f337
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133 # Departments
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 9841376a-16c6-47e3-80cb-7bb347d2fc44
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 73b7b0c7-bff1-4c55-97aa-fc62042f0347 # Officials
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f0c68982-a42e-43d9-83a8-8a68af4e88a9
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: e67ec759-ea3a-4568-bfa6-a314ff3d1036 # Projects
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b26d5165-4fea-4551-aa34-e965e5ed36a8
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 44b00870-0842-4c4e-838f-dcd688fb5b05 # Topics
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 3073e4d6-4b44-4c5a-9057-2eee7a48d4bd
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: cb9bcb47-f3e9-4ed8-a4d8-506aa11fe546 # News
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 7c2930fe-d039-4e86-941d-f91e85870157
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 7594e9ae-f194-47c8-9a6b-076789f1087b # Service Categories
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a85f70a3-d030-4b9c-8d3d-d4db3ceb8d1b
+            userCondition: null
             warning: null
             width: 100
         name: Relationships
-        sortOrder: 2
+        uid: 171110a0-25bd-4103-8ffc-04a9a4af7c1f
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d # Metadata
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 3cfee211-ccb5-4042-86d1-881799261cfa
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7 # View Count
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 736c5c27-a464-42af-a664-4eff1c8245d4
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 8ee95f74-ea53-414f-818a-ce9185bc9d8d # Post Month
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 23813913-6932-4d60-82e1-19f2d6cf61b9
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 6ad2cb80-1b58-41a6-b189-35d37bd81601 # Post Year
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2963d0ef-1118-4310-9faa-4464fcacb392
+            userCondition: null
             warning: null
             width: 100
         name: SEO
-        sortOrder: 3
+        uid: 690efa5d-8e8b-48a3-a862-b7486c0ee91c
+        userCondition: null
 handle: news
 hasTitleField: true
 name: News
 section: 983c9f6f-9251-4fd3-91e1-b598eccc6a1a # News
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

@@ -7,11 +7,13 @@ name: 'Project Updates'
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: ''
+  branchLimit: null
   localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
   selectionLabel: 'Add an update'
   showSiteMenu: true
-  source: null
   sources:
     - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
   targetSiteId: null

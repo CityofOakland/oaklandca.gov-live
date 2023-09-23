@@ -2,20 +2,18 @@ fieldLayouts:
   a82f284f-b37a-42a2-9185-89611ec02bef:
     tabs:
       -
+        elementCondition: null
         elements:
-          -
-            style: tip
-            tip: 'Notify the public of official city business. If this is not an official public notice use the [Documents entry type](/admin/entries/documents/new?site=default).'
-            type: craft\fieldlayoutelements\Tip
           -
             autocapitalize: true
             autocomplete: false
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
-            instructions: 'Title needs to be the legal title of the document.'
-            label: ''
+            instructions: null
+            label: null
             max: null
             min: null
             name: null
@@ -27,115 +25,167 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: fe16266f-3587-4a9e-b9c8-e60a9a8d2a60
+            userCondition: null
             warning: null
             width: 100
           -
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'Notify the public of official city business. If this is not an official public notice use the [Documents entry type](/admin/entries/documents/new?site=default).'
+            type: craft\fieldlayoutelements\Tip
+            uid: cbdf8c54-7ad6-48b0-a878-0ba0fa15fb79
+            userCondition: null
+          -
+            elementCondition: null
             fieldUid: 9ccc1819-38ef-4725-bc2c-3b701fb0ce92 # Public Notice Type
-            instructions: ''
-            label: ''
-            required: '1'
+            instructions: null
+            label: null
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 985046b3-176c-4123-879e-a480732afdf8
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 5261f0db-3453-423b-87c5-e5d3112c4141 # Document File
-            instructions: ''
+            instructions: null
             label: 'Public Notice File'
-            required: '1'
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 50dd2da3-2b94-40bc-8f45-673cee766733
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 58eda166-7a65-4fb6-8f7d-c6590b0591ae # Summary
-            instructions: ''
+            instructions: null
             label: Details
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 7dc89f3e-4098-467c-9800-069fd943ee22
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             heading: 'Related Content'
             type: craft\fieldlayoutelements\Heading
+            uid: 2f75b05b-5265-4cd9-8974-90edde9cddb4
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 4b5cda22-38e1-4580-b113-b6ceee3c9c09 # Related Resources
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 69d138e5-25cf-4da8-be6a-7f429d9a3bc5
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: a64389e9-e0f9-4d5b-ae78-16f6b5db6785 # Related Departments
-            instructions: ''
+            instructions: null
             label: 'Related Official, Public Bodies or Department'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 54ac5d16-3db8-46e0-8229-1366da58aabf
+            userCondition: null
             warning: null
             width: 100
         name: 'Main Body Content'
-        sortOrder: 1
+        uid: deb0def8-82c4-4d68-bd6b-56860edd1cc4
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             heading: 'Contact Information'
             type: craft\fieldlayoutelements\Heading
+            uid: e2671ae9-07d9-41ee-9d2b-3bed147488a5
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 286b7386-711a-4eae-abe1-b4e397656bcb # Department
             instructions: 'Choose the Department that is responsible for this public notice.'
             label: 'Contact Department'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d6c1be9d-1a86-47f3-b645-9be15329c896
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: de65ce28-2919-4a65-9aa2-c18e5518f2fe # Program/Subdivision
             instructions: 'If the contact is a specific division, office or bureau within your department, add that here.'
             label: 'Contact Subdivision'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 98c56fcb-eb63-40e6-ad7c-226424906e63
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a # Email Address
-            instructions: ''
+            instructions: null
             label: 'Contact Email'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 73f28895-0f18-412d-88d9-69eaa7c21fce
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 5e5aad16-6bdc-4d3e-adfd-75147a323b78 # Phone Number
-            instructions: ''
+            instructions: null
             label: 'Contact Phone Number'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b694fd0c-0d62-4d9c-831e-4ead92c334a0
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 0e74b82a-254d-45d0-b9a1-d6b6774e6eef # Contact Address
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d2c61b16-bab2-4710-aab2-c47d2fe01bd8
+            userCondition: null
             warning: null
             width: 100
         name: 'Sidebar Content'
-        sortOrder: 2
+        uid: 9cf80f0d-f204-4ebf-9d2e-46807a22b8a0
+        userCondition: null
 handle: default
 hasTitleField: true
 name: Default
 section: 1c6c0101-1a67-45f3-bbf7-67e50a5433a4 # Public Notices
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

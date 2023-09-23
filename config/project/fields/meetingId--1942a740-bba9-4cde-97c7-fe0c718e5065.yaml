@@ -2,7 +2,7 @@ columnSuffix: vfsdmvow
 contentColumnType: integer(10)
 fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
 handle: meetingId
-instructions: ''
+instructions: null
 name: 'Meeting ID'
 searchable: false
 settings:
@@ -11,7 +11,7 @@ settings:
   max: null
   min: 0
   prefix: null
-  previewCurrency: ''
+  previewCurrency: null
   previewFormat: decimal
   size: null
   suffix: null

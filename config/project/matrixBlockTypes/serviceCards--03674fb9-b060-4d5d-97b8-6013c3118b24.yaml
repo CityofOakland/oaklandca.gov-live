@@ -3,45 +3,59 @@ fieldLayouts:
   e415d814-38d1-4ce4-a0f7-82a6f9db4210:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: fac29cc3-6f0c-43f5-b0e6-f9f8786692f9 # Services Header
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b4a22721-3d5f-4283-987a-aa85289d6fac
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 160d2b9c-86be-4d69-98b0-fa6b6c84d993 # Services Description
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: fd75a5ba-5df5-4d23-8a0c-37934bceb423
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: ed948d68-fa7c-4932-bfea-222e8f79c913 # Service Cards
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 46045461-97fd-40fd-85a4-49da98d8aa07
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: fae605bf-6b7f-404c-9c50-a492493f71a1 # Call to Action 
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 72bb082f-2bf3-4033-84f8-9d2bf05b1b01
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 41982f8c-da30-45f5-a6ab-fae4d68837af
+        userCondition: null
 fields:
   160d2b9c-86be-4d69-98b0-fa6b6c84d993: # Services Description
     columnSuffix: wohnmzzg
@@ -58,13 +72,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: Simple.json
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: ''
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       uiMode: enlarged
@@ -80,6 +94,8 @@ fields:
     name: 'Service Cards'
     searchable: false
     settings:
+      blockTypeFields: 0
+      changedFieldIndicator: null
       columns:
         __assoc__:
           -
@@ -98,13 +114,12 @@ fields:
                   - ''
       contentTable: '{{%stc_98_servicecards}}'
       fieldLayout: table
-      maxRows: '9'
-      minRows: '2'
-      placeholderKey: null
+      maxRows: 9
+      minRows: 2
       propagationKeyFormat: null
       propagationMethod: all
       selectionLabel: 'Add a service'
-      staticField: ''
+      staticField: null
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
@@ -119,10 +134,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -137,9 +152,9 @@ fields:
     name: 'Call to Action '
     searchable: false
     settings:
-      allowCustomText: '1'
-      allowTarget: '1'
-      defaultText: ''
+      allowCustomText: true
+      allowTarget: true
+      defaultText: null
       selectLinkText: ''
       types:
         __assoc__:

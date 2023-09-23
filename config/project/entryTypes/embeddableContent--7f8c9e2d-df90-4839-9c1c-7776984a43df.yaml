@@ -2,6 +2,7 @@ fieldLayouts:
   998c8fac-8eb8-4804-b97f-2c0524f7a51d:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,9 +10,10 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
-            label: Title
+            label: null
             max: null
             min: null
             name: null
@@ -23,24 +25,33 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: edb20c9c-6894-481e-b06e-a66341c5c323
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 1160308b-03c0-43ad-9f4b-35e26c016c89 # Code Insertion
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 403fa5c6-742e-4eff-852b-e795c3d7eb2f
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 8630c50a-e532-4abe-92ba-dd9a47248dc9
+        userCondition: null
 handle: embeddableContent
 hasTitleField: true
 name: 'Embeddable Content'
 section: 74ecde2f-b254-4f3e-b889-1affac6f5999 # Embeddable Content
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

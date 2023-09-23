@@ -3,81 +3,107 @@ fieldLayouts:
   29091f1e-ecb0-44d5-83e5-0449d42dfc50:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: cfa9b9fb-13ac-48d4-9525-d51caed66583 # Brow
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 8e3b55e3-0ac9-4b10-9cf2-9177879dc0aa
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: 70842856-8b10-4b22-ac3d-e127825aca24 # Heading
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 046d5b12-4ffa-4fc3-924a-387658ca2a09
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 54de1c1c-79d6-40ed-911b-422f630094e1 # Description
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 07b6d204-08a9-4bb2-bcfe-8b9748d410b0
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f294926b-0b7b-470e-8e62-bfeea6be010b # Image
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 82eb5b37-034f-4928-9369-8811d1f08a99
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 40ec5343-f083-489f-a6eb-49ff9ee6d600 # Use Image as Background?
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 5c6a0a5e-95cc-445f-a158-69aca0217103
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: a3aa486f-473f-4b4d-b3ae-808963595c58 # Text Position
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 914a2302-8951-4141-b9ca-96db0b08d958
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: 8ed0d9cb-1498-4dbd-b451-573a77710798 # Background Color
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 25fc3fe6-1c41-409a-aa69-78d866edc78c
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: a081fc5f-03ce-4909-8255-dd92e7c9076c # Call to Action
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ce199972-a890-47ba-94a6-a855b7a586c9
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: cbd3e545-f350-4073-b3a6-6c86e43dd287
+        userCondition: null
 fields:
   8ed0d9cb-1498-4dbd-b451-573a77710798: # Background Color
     columnSuffix: ccgsctma
@@ -89,12 +115,12 @@ fields:
     searchable: false
     settings:
       default: null
-      options: ''
       palette: 'Spotlight Backgrounds'
-      useConfigFile: '1'
+      setRandom: false
+      useConfigFile: true
     translationKeyFormat: null
     translationMethod: none
-    type: percipioglobal\colourswatches\fields\ColourSwatches
+    type: percipiolondon\colourswatches\fields\ColourSwatches
   40ec5343-f083-489f-a6eb-49ff9ee6d600: # Use Image as Background?
     columnSuffix: qjfuiqbu
     contentColumnType: boolean
@@ -125,13 +151,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: 'Simple with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: ''
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       uiMode: normal
@@ -143,16 +169,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: heading
-    instructions: ''
+    instructions: null
     name: Heading
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -167,9 +193,9 @@ fields:
     name: 'Call to Action'
     searchable: false
     settings:
-      allowCustomText: '1'
-      allowTarget: '1'
-      defaultText: ''
+      allowCustomText: true
+      allowTarget: true
+      defaultText: null
       selectLinkText: ''
       types:
         __assoc__:
@@ -388,10 +414,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -407,25 +433,29 @@ fields:
     searchable: false
     settings:
       allowSelfRelations: false
+      allowSubfolders: false
       allowUploads: true
       allowedKinds:
         - image
+      branchLimit: null
       defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d' # General Images
-      defaultUploadLocationSubpath: ''
-      limit: '1'
+      defaultUploadLocationSubpath: null
       localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
       previewMode: full
-      restrictFiles: '1'
+      restrictFiles: true
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
+      restrictedLocationSubpath: null
       selectionLabel: 'Add an image'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
-      singleUploadLocationSubpath: ''
-      source: null
       sources: '*'
       targetSiteId: null
-      useSingleFolder: false
       validateRelatedElements: true
       viewMode: list
     translationKeyFormat: null

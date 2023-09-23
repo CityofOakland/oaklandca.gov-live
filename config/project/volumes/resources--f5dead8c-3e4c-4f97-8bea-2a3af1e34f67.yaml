@@ -2,6 +2,7 @@ fieldLayouts:
   85581bc6-c596-4282-bc53-e011830eee84:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -23,39 +25,31 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 2a924194-229a-4022-8860-b9950dcd1734
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: fff5cf49-87e6-4751-9032-b4ca8136e237 # Alt Text
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ca5e8b1d-8c12-412d-aa51-ac061d28bc0c
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: c04d2787-673e-4e6f-8666-87e5c92d46bd
+        userCondition: null
+fs: resources
 handle: resources
-hasUrls: true
 name: Resources
-settings:
-  addSubfolderToRootUrl: true
-  autoFocalPoint: ''
-  bucket: cao-94612
-  bucketSelectionMode: choose
-  cfDistributionId: ''
-  cfPrefix: ''
-  expires: ''
-  keyId: $S3_API_KEY
-  makeUploadsPublic: '1'
-  region: us-west-2
-  secret: $S3_SECRET
-  storageClass: ''
-  subfolder: resources
 sortOrder: 3
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-type: craft\awss3\Volume
-url: $S3_URL
+transformFs: null
+transformSubpath: ''

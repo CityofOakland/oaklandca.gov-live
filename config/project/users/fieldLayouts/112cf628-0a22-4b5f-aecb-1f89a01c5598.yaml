@@ -1,14 +1,19 @@
 tabs:
   -
+    elementCondition: null
     elements:
       -
+        elementCondition: null
         fieldUid: d8042d7b-1c67-4b28-bb84-2002e74ed94b # Primary Unit
-        instructions: ''
-        label: ''
-        required: '1'
+        instructions: null
+        label: null
+        required: true
         tip: null
         type: craft\fieldlayoutelements\CustomField
+        uid: 0680d02e-b3c2-4d0c-ac5f-460a610449d8
+        userCondition: null
         warning: null
         width: 100
     name: 'Additional Information'
-    sortOrder: 1
+    uid: 5623d307-3b28-4d4d-a561-8926ef4ed776
+    userCondition: null

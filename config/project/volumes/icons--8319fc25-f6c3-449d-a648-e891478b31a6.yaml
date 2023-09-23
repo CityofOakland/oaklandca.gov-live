@@ -2,6 +2,7 @@ fieldLayouts:
   c20c2cad-83dc-483b-b650-f418bc587982:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -23,39 +25,31 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 2ffedb40-2aee-456b-b36f-0f190e1f1020
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: fff5cf49-87e6-4751-9032-b4ca8136e237 # Alt Text
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b2d1abc5-ec2b-4ec5-a77f-dd96255bdc69
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: b1a12a39-42e8-4428-876b-fd9e408f85a2
+        userCondition: null
+fs: icons
 handle: icons
-hasUrls: true
 name: Icons
-settings:
-  addSubfolderToRootUrl: '1'
-  autoFocalPoint: ''
-  bucket: cao-94612
-  bucketSelectionMode: choose
-  cfDistributionId: ''
-  cfPrefix: ''
-  expires: ''
-  keyId: $S3_API_KEY
-  makeUploadsPublic: '1'
-  region: us-west-2
-  secret: $S3_SECRET
-  storageClass: ''
-  subfolder: icons
 sortOrder: 0
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-type: craft\awss3\Volume
-url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'
+transformFs: null
+transformSubpath: ''

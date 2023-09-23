@@ -6,8 +6,7 @@ instructions: 'Enter the URL the user can go to to download this app on the Appl
 name: 'App Store Download Link'
 searchable: false
 settings:
-  maxLength: '255'
-  placeholder: ''
+  maxLength: 255
   types:
     - url
 translationKeyFormat: null

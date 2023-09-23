@@ -2,30 +2,34 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
 handle: agendaDownloadableCopy
-instructions: ''
+instructions: null
 name: 'Agenda - Downloadable Copy'
 searchable: true
 settings:
   allowSelfRelations: false
+  allowSubfolders: false
   allowUploads: true
   allowedKinds: null
+  branchLimit: null
   defaultUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
-  defaultUploadLocationSubpath: ''
-  limit: '1'
+  defaultUploadLocationSubpath: null
   localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
   previewMode: full
-  restrictFiles: ''
-  selectionLabel: ''
+  restrictFiles: false
+  restrictLocation: false
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
+  restrictedLocationSubpath: null
+  selectionLabel: null
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  singleUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
-  singleUploadLocationSubpath: ''
-  source: null
   sources:
     - 'volume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
   targetSiteId: null
-  useSingleFolder: false
   validateRelatedElements: false
   viewMode: list
 translationKeyFormat: null

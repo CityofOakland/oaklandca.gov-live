@@ -7,8 +7,8 @@ name: 'Need to Know'
 searchable: false
 settings:
   contentTable: '{{%matrixcontent_needtoknow}}'
-  maxBlocks: '1'
-  minBlocks: ''
+  maxBlocks: 1
+  minBlocks: null
   propagationKeyFormat: null
   propagationMethod: all
 translationKeyFormat: null

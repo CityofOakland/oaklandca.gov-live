@@ -1,33 +1,39 @@
+changedFieldIndicator: null
 field: b7f96204-106f-4d15-85ed-e0fda8e8551f # Button Group
 fieldLayouts:
   c9681dbd-b461-42d4-be24-37f2ce1c66e9:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: a8c3650c-a352-4da1-ab86-2091b98efa5d # Button
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4a79ae2c-9cfc-4ff6-b727-a79a350c65d7
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: c85df9a6-3bad-4fb2-a48c-d61d689bbea6
+        userCondition: null
 fields:
   a8c3650c-a352-4da1-ab86-2091b98efa5d: # Button
     columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: button
-    instructions: ''
+    instructions: null
     name: Button
     searchable: false
     settings:
-      allowCustomText: '1'
-      allowTarget: '1'
-      defaultText: ''
+      allowCustomText: true
+      allowTarget: true
+      defaultText: null
       selectLinkText: ''
       types:
         __assoc__:

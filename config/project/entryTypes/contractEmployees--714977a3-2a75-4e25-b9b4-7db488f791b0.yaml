@@ -2,6 +2,7 @@ fieldLayouts:
   d0967edb-bd64-4f42-9f0b-9ca86d847101:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -23,118 +25,159 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 68339356-4e72-416a-9b61-135568b4b181
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 6c28ddf9-1938-489c-ad36-75d555e50269 # First Name
-            instructions: ''
-            label: ''
-            required: '1'
+            instructions: null
+            label: null
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 7d363fef-741b-4f69-9c36-400d4e01a8cd
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 01d73fd7-5170-4523-8658-02c344e3ff55 # Middle Initial
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: c42bdab7-dc57-46a8-83d7-031470288648
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 4d6dd644-455e-4186-8d05-a00079622246 # Last Name
-            instructions: ''
-            label: ''
-            required: '1'
+            instructions: null
+            label: null
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ae5d8785-1eb7-4d70-a1f9-2f31fa221fcd
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: e3a53ca0-960e-4ce6-933b-b3613bd64d7a # Job Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 5cfc57df-5aa4-40d3-958e-a2c59d1daa83
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: 1b7fc839-7de9-4717-b41d-d74bfa40b5c8 # Portrait
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: aa07f230-262a-49a8-8906-e3e709effb37
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: 736bfdbe-8ec1-4b3d-bd17-6dc825c56855 # Bio
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 504d9007-6586-4989-9d31-7eb3d6bad2c8
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 5e5aad16-6bdc-4d3e-adfd-75147a323b78 # Phone Number
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: bdf59c3e-a19d-48a9-9d71-cd1bbbc00663
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a # Email Address
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 0673640a-7f74-4f7d-ba1b-5e28cc67b29b
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: b34a0436-278d-4bb7-a7e8-729da1db7c4e # Department/Official/Board/Commission
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 89cdbc74-f756-4a5e-a082-5db1c8933cf1
+            userCondition: null
             warning: null
             width: 50
         name: Content
-        sortOrder: 1
+        uid: 80f48924-6523-4d16-9182-1803b0853036
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d # Metadata
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b36e05b4-7861-46f0-8033-0ac4cda4ac85
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7 # View Count
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 66ca9ca7-4cd0-4813-a56c-1e43232ee3f7
+            userCondition: null
             warning: null
             width: 100
         name: Metadata
-        sortOrder: 2
+        uid: 08264d0d-062b-4f14-b560-0492c6bbe059
+        userCondition: null
 handle: contractEmployees
 hasTitleField: false
 name: 'Contract Employees'
 section: 07faad04-9ec4-4f68-9fe8-0ca20f189f8a # Staff
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 2
 titleFormat: '{{ object.firstName }} {{ object.lastName }}'
 titleTranslationKeyFormat: null

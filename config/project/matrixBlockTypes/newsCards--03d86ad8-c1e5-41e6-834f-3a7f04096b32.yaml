@@ -3,45 +3,59 @@ fieldLayouts:
   ef7e8153-36a6-4f15-9042-59a088fd402e:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 26021ddf-fc18-41f3-8fc2-1ef5bf4460f8 # News Header
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 8ac4a9bc-2007-4190-885e-3a95134b4b29
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 745c0b03-2047-48d3-beee-04d9f014eccc # Section Background Color
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 8d177289-96fa-4ddc-9e84-c7eca78a0888
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 99484ea5-884e-47cc-94c6-8704a2977122 # Featured News Entry
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 085d5445-8760-4d2d-a0bd-0a7e66a7f257
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 514ef01b-6b97-4fc4-9840-4923745288d3 # News Entries
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: e10408d5-c2a1-45a5-a10d-102412c09941
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: a4d63328-07f4-4e4e-a322-616f9e3dc6e5
+        userCondition: null
 fields:
   514ef01b-6b97-4fc4-9840-4923745288d3: # News Entries
     columnSuffix: null
@@ -53,11 +67,13 @@ fields:
     searchable: false
     settings:
       allowSelfRelations: false
-      limit: '2'
+      branchLimit: null
       localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 2
+      minRelations: null
       selectionLabel: 'Add a news entry'
       showSiteMenu: true
-      source: null
       sources:
         - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
       targetSiteId: null
@@ -75,7 +91,7 @@ fields:
     name: 'Section Background Color'
     searchable: false
     settings:
-      optgroups: true
+      columnType: string
       options:
         -
           __assoc__:
@@ -124,10 +140,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -138,16 +154,18 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: featured
-    instructions: ''
+    instructions: null
     name: 'Featured News Entry'
     searchable: false
     settings:
       allowSelfRelations: false
-      limit: '1'
+      branchLimit: null
       localizeRelations: false
-      selectionLabel: ''
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
+      selectionLabel: null
       showSiteMenu: true
-      source: null
       sources:
         - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
       targetSiteId: null

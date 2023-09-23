@@ -6,8 +6,7 @@ instructions: 'Add the URL for the Instagram account for this entry.'
 name: Instagram
 searchable: false
 settings:
-  maxLength: '255'
-  placeholder: ''
+  maxLength: 255
   types:
     - url
 translationKeyFormat: null

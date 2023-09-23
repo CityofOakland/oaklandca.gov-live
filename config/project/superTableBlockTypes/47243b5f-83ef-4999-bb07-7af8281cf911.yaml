@@ -1,29 +1,38 @@
+changedFieldIndicator: null
 field: 7897bf8b-9bea-4c58-8f04-aea29c95d7bf # Link Set
 fieldLayouts:
   289af806-82ca-4c2f-a9e6-081a29b8573d:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ac30e2e0-2f26-4b6c-a404-07b749af00dc # Link Location
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a94105d6-3708-4320-9181-ed5481c91059
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 109ddbd1-80ea-471e-a6f9-ef77d84a0800 # Link Description
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 47ef1ce5-d4fe-4da4-9bbc-8ca66eb77e1a
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: bbec2f54-fb74-48b2-a308-d6c82457dceb
+        userCondition: null
 fields:
   109ddbd1-80ea-471e-a6f9-ef77d84a0800: # Link Description
     columnSuffix: null
@@ -36,10 +45,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: 90
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -50,13 +59,13 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: linkLocation
-    instructions: ''
+    instructions: null
     name: 'Link Location'
     searchable: false
     settings:
-      allowCustomText: '1'
-      allowTarget: '1'
-      defaultText: ''
+      allowCustomText: true
+      allowTarget: true
+      defaultText: null
       selectLinkText: ''
       types:
         __assoc__:

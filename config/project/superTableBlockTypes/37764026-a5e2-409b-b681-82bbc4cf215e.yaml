@@ -1,54 +1,66 @@
+changedFieldIndicator: null
 field: 9c5a5207-8f38-4715-993b-741d8919f3f0 # Featured Staff
 fieldLayouts:
   f80bf4f1-0b4f-4f03-b8a7-e7a63b3b75f4:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: cfd8d58a-04c4-47d6-a974-c3290affb7c3 # Staff Member
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 633dad24-1f60-4119-b483-6e072e9cb77b
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 88b5eb52-5431-40f1-88bb-e750acbed184 # Job Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2fc6dfe1-c343-48b6-baa9-d752c7b0cc14
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 6d032aec-91d5-43a0-b50b-71a2112d5eda # Caption
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 55694db0-4748-4eae-b97e-a0a24cd592f6
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: e8fa9ffc-11f2-4ef4-8dff-a0ac6089c62c
+        userCondition: null
 fields:
   6d032aec-91d5-43a0-b50b-71a2112d5eda: # Caption
     columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: caption
-    instructions: ''
+    instructions: null
     name: Caption
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -65,10 +77,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -79,16 +91,18 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: staffMember
-    instructions: ''
+    instructions: null
     name: 'Staff Member'
     searchable: false
     settings:
       allowSelfRelations: false
-      limit: '1'
+      branchLimit: null
       localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
       selectionLabel: 'Add a member'
       showSiteMenu: true
-      source: null
       sources:
         - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
       targetSiteId: null

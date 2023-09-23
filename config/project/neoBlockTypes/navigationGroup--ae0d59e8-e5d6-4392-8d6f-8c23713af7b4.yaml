@@ -1,54 +1,77 @@
 childBlocks:
   - navigationItem
+conditions: null
+description: ''
+enabled: true
 field: c7618ee8-2bc2-491b-99e6-c9deaea0809b # Navigation - Main
 fieldLayouts:
   4f9c66ef-4921-4d9b-8f87-421dea3191da:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
-            instructions: ''
+            instructions: null
             label: 'Dropdown Label'
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d0e4c4b9-3256-4674-b6f5-ec2491d44536
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 4350b4ce-8cf4-44c9-9fee-4d81d5feec19 # Description
             instructions: 'Short word description of this navigation item.'
             label: 'Dropdown Description'
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a78a4338-c2f0-45a0-a31c-0e7468d6d8e4
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 4f49ca5b-c028-40c6-b67e-de07b11bf16a # Linkit
             instructions: 'Customize the inner button of this dropdown.'
             label: 'Dropdown Button'
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b44e4c29-270f-4430-a379-a964b78b15df
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f8689bf1-95b8-4691-8b6e-eadaff8ebbc8 # Toggle
             instructions: 'Toggle this on to disable this megamenu dropdown on mobile.'
             label: 'Disable Dropdown on Mobile'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f7f4ee1d-8e50-4dc7-8318-c45803881200
+            userCondition: null
             warning: null
             width: 100
         name: Default
-        sortOrder: 1
+        uid: ec944fa7-2049-4a39-be9b-26ff113698c0
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: navigationGroup
+icon: null
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: 'Navigation Group'
 sortOrder: 1
 topLevel: true

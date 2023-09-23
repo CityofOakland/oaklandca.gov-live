@@ -3,31 +3,36 @@ fieldLayouts:
   12358a6f-ca74-41bb-bfe2-3c0c6e0cbcc6:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 3d8ee7f9-27a6-4d4e-a55f-b869d5afee11 # Linkit
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ab7dbfd3-a72d-4945-9c42-6cfddc7b9cc1
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 12c76078-af9f-4ad5-8db7-f33d5c40bb81
+        userCondition: null
 fields:
   3d8ee7f9-27a6-4d4e-a55f-b869d5afee11: # Linkit
     columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: linkit
-    instructions: ''
+    instructions: null
     name: Linkit
     searchable: false
     settings:
-      allowCustomText: '1'
-      allowTarget: ''
-      defaultText: ''
+      allowCustomText: true
+      allowTarget: false
+      defaultText: null
       selectLinkText: ''
       types:
         __assoc__:

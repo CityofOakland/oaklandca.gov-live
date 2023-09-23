@@ -2,16 +2,18 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855 # Relationships
 handle: news
-instructions: ''
+instructions: null
 name: News
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: '2'
+  branchLimit: null
   localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: 2
+  minRelations: null
   selectionLabel: 'Add news'
   showSiteMenu: true
-  source: null
   sources:
     - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
   targetSiteId: null

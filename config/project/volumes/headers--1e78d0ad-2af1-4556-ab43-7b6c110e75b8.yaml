@@ -2,6 +2,7 @@ fieldLayouts:
   ec980d66-163d-4a97-be21-f1626a2370e4:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -23,48 +25,43 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 5640e9b6-f5e2-4c14-b95b-805c6a2a6b5f
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: a4001c79-48f7-4666-8658-4981e8e232d6 # Image Credit
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 239cfb8d-cc8e-42ad-a1f9-9a731f8f085f
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: fff5cf49-87e6-4751-9032-b4ca8136e237 # Alt Text
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: e651a025-03f4-4500-8ba2-197e7089d894
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: a963c146-acfe-4c42-b26c-af9204c1836b
+        userCondition: null
+fs: headers
 handle: headers
-hasUrls: true
 name: Headers
-settings:
-  addSubfolderToRootUrl: '1'
-  autoFocalPoint: ''
-  bucket: cao-94612
-  bucketSelectionMode: choose
-  cfDistributionId: ''
-  cfPrefix: ''
-  expires: ''
-  keyId: $S3_API_KEY
-  makeUploadsPublic: '1'
-  region: us-west-2
-  secret: $S3_SECRET
-  storageClass: ''
-  subfolder: headers
 sortOrder: 5
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-type: craft\awss3\Volume
-url: 'https://cao-94612.s3.amazonaws.com/'
+transformFs: null
+transformSubpath: ''

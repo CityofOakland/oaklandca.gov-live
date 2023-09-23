@@ -7,8 +7,8 @@ name: 'Link Collection'
 searchable: false
 settings:
   contentTable: '{{%matrixcontent_linkcollection}}'
-  maxBlocks: ''
-  minBlocks: ''
+  maxBlocks: null
+  minBlocks: null
   propagationKeyFormat: null
   propagationMethod: all
 translationKeyFormat: null

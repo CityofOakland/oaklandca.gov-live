@@ -7,6 +7,7 @@ name: 'Document File'
 searchable: true
 settings:
   allowSelfRelations: false
+  allowSubfolders: false
   allowUploads: true
   allowedKinds:
     - audio
@@ -16,23 +17,26 @@ settings:
     - pdf
     - powerpoint
     - word
+  branchLimit: null
   defaultUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
-  defaultUploadLocationSubpath: ''
-  limit: '1'
+  defaultUploadLocationSubpath: null
   localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
   previewMode: full
-  restrictFiles: '1'
+  restrictFiles: true
+  restrictLocation: true
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  restrictedLocationSubpath: null
   selectionLabel: 'Add a file'
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: true
-  singleUploadLocationSource: 'volume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
-  singleUploadLocationSubpath: ''
-  source: null
   sources:
     - 'volume:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
   targetSiteId: null
-  useSingleFolder: true
   validateRelatedElements: false
   viewMode: list
 translationKeyFormat: null

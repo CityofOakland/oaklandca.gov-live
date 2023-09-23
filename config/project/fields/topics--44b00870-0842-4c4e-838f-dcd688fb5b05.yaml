@@ -7,11 +7,13 @@ name: Topics
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: ''
+  branchLimit: null
   localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
   selectionLabel: 'Add a topic'
   showSiteMenu: true
-  source: null
   sources:
     - 'section:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
   targetSiteId: null

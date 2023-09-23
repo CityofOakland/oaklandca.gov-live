@@ -3,43 +3,51 @@ fieldLayouts:
   2227caee-5ac7-4120-b338-b9c1c0e45e22:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 74f98eba-6d50-4f10-ab0b-e3dadaca25d6 # Location Name
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 43fdff78-23f8-4f18-aa1d-7a101bce8486
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: a093da22-5c78-46d1-a7b8-19ad9d41b583 # Location Address
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b34acf5d-0741-4e68-9a72-38370ce04775
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 11d67282-2d91-4461-97c4-b69de82ec8ee
+        userCondition: null
 fields:
   74f98eba-6d50-4f10-ab0b-e3dadaca25d6: # Location Name
     columnSuffix: qyrwcdbl
     contentColumnType: text
     fieldGroup: null
     handle: locationName
-    instructions: ''
+    instructions: null
     name: 'Location Name'
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -50,7 +58,7 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: locationAddress
-    instructions: ''
+    instructions: null
     name: 'Location Address'
     searchable: false
     settings:
@@ -73,7 +81,7 @@ fields:
       layout: null
       mapOnSearch: open
       mapOnStart: default
-      requireCoordinates: '1'
+      requireCoordinates: true
       showMap: false
       subfieldConfig:
         __assoc__:

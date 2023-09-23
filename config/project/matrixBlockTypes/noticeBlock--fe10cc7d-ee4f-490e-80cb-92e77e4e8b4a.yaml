@@ -3,27 +3,35 @@ fieldLayouts:
   9e347c0f-d39f-466a-aad1-8dbeadca872b:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: c154dd8e-3e78-46c8-869f-374160496c10 # Text
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 28543139-3b1d-4d31-92bd-20b6eefc8745
+            userCondition: null
             warning: null
             width: 75
           -
+            elementCondition: null
             fieldUid: 8fc249ab-8729-4542-912e-7a4303aa9598 # Alert Type
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 5b7abed9-ea4f-4ab0-b529-192a14a10db0
+            userCondition: null
             warning: null
             width: 25
         name: Content
-        sortOrder: 1
+        uid: 6ccfd7be-0494-4790-909f-d75a19be87c9
+        userCondition: null
 fields:
   8fc249ab-8729-4542-912e-7a4303aa9598: # Alert Type
     columnSuffix: null
@@ -34,7 +42,7 @@ fields:
     name: 'Alert Type'
     searchable: false
     settings:
-      optgroups: true
+      columnType: string
       options:
         -
           __assoc__:
@@ -87,13 +95,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: 'Simple with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: ''
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       uiMode: normal

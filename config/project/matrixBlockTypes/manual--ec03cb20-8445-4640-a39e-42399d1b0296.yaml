@@ -3,54 +3,71 @@ fieldLayouts:
   416d02cc-f198-431c-b554-ecad314cd3dc:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 37807b41-86f2-4f92-b56e-1f76739a03bb # Label
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b7dc37a5-e6da-4a02-9b29-44d724263228
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 91cc77d8-149b-4b48-9c59-736e2f7ff651 # Link
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 6332366d-9190-48ee-bb3c-08ac3a09a0fd
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 759fd59f-6b95-48b5-b424-ec93facb33a0 # Button Icon
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ae8544c1-12e3-43fc-94fc-a6967b338297
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 18445fbb-5d82-481a-a3c1-c7e58c81cf18 # Button Color
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 9d44bec6-c415-47f5-b1a8-e34dce471dac
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 7bb35a62-0ef4-4623-8a1c-80b0a3f74821 # Button Width
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: fd8b4af8-9886-4281-82cb-eb251f93e40d
+            userCondition: null
             warning: null
             width: 50
         name: Content
-        sortOrder: 1
+        uid: e9e55bab-2182-402b-8890-e6a47080a4ac
+        userCondition: null
 fields:
   7bb35a62-0ef4-4623-8a1c-80b0a3f74821: # Button Width
     columnSuffix: null
@@ -61,7 +78,7 @@ fields:
     name: 'Button Width'
     searchable: false
     settings:
-      optgroups: true
+      columnType: string
       options:
         -
           __assoc__:
@@ -93,12 +110,11 @@ fields:
     contentColumnType: string(255)
     fieldGroup: null
     handle: href
-    instructions: ''
+    instructions: null
     name: Link
     searchable: false
     settings:
-      maxLength: '255'
-      placeholder: null
+      maxLength: 255
       types:
         - url
         - tel
@@ -116,25 +132,29 @@ fields:
     searchable: false
     settings:
       allowSelfRelations: false
+      allowSubfolders: false
       allowUploads: true
       allowedKinds: null
+      branchLimit: null
       defaultUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
-      defaultUploadLocationSubpath: ''
-      limit: '1'
+      defaultUploadLocationSubpath: null
       localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
       previewMode: full
-      restrictFiles: ''
-      selectionLabel: ''
+      restrictFiles: false
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
+      restrictedLocationSubpath: null
+      selectionLabel: null
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
-      singleUploadLocationSubpath: ''
-      source: null
       sources:
         - 'volume:8319fc25-f6c3-449d-a648-e891478b31a6' # Icons
       targetSiteId: null
-      useSingleFolder: false
       validateRelatedElements: false
       viewMode: list
     translationKeyFormat: null
@@ -149,7 +169,7 @@ fields:
     name: 'Button Color'
     searchable: false
     settings:
-      optgroups: true
+      columnType: string
       options:
         -
           __assoc__:
@@ -181,16 +201,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: label
-    instructions: ''
+    instructions: null
     name: Label
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

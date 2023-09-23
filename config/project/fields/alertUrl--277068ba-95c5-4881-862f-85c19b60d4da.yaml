@@ -6,9 +6,9 @@ instructions: 'Link to a more detailed page if necessary.'
 name: 'Alert URL'
 searchable: false
 settings:
-  allowCustomText: ''
-  allowTarget: ''
-  defaultText: ''
+  allowCustomText: false
+  allowTarget: false
+  defaultText: null
   selectLinkText: ''
   types:
     __assoc__:

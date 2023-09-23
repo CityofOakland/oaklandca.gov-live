@@ -1,35 +1,52 @@
 childBlocks: null
+conditions: null
+description: ''
+enabled: true
 field: e57d997c-ca20-4022-8841-f9fd919933df # Accordion
 fieldLayouts:
   afcb5768-67a5-4edf-a9e0-83f7b4893814:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
-            instructions: ''
-            label: ''
-            required: ''
+            instructions: null
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 50d8d129-2b50-4720-928f-d78deaffacef
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: c14fea44-3f71-477c-88d9-6f37c168d868 # Content
-            instructions: ''
-            label: ''
-            required: ''
+            instructions: null
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 743751e7-80aa-4eb7-9196-9868f1137d9b
+            userCondition: null
             warning: null
             width: 100
         name: Default
-        sortOrder: 1
+        uid: 8c6fd7bb-ad2d-4b91-9213-4ea70706b324
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: item
+icon: null
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: 'Add an Item'
 sortOrder: 1
 topLevel: true

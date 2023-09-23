@@ -2,6 +2,7 @@ fieldLayouts:
   bba582aa-b597-4c43-b269-f5814699bc37:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -23,39 +25,31 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: aa1be7b4-70c8-4ecd-9c6a-f82ae1702023
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: fff5cf49-87e6-4751-9032-b4ca8136e237 # Alt Text
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 35849653-c68a-49fd-8520-69ea0b6cf9e1
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: e0d2bf45-3639-4881-8717-6b3da6518bd3
+        userCondition: null
+fs: pressReleaseImages
 handle: pressReleaseImages
-hasUrls: true
 name: 'Press Release Images'
-settings:
-  addSubfolderToRootUrl: true
-  autoFocalPoint: ''
-  bucket: cao-94612
-  bucketSelectionMode: choose
-  cfDistributionId: ''
-  cfPrefix: ''
-  expires: ''
-  keyId: $S3_API_KEY
-  makeUploadsPublic: '1'
-  region: us-west-2
-  secret: $S3_SECRET
-  storageClass: ''
-  subfolder: press-release-images
 sortOrder: 14
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-type: craft\awss3\Volume
-url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'
+transformFs: null
+transformSubpath: ''

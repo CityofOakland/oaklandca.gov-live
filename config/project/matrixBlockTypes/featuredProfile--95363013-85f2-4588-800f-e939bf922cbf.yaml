@@ -3,45 +3,59 @@ fieldLayouts:
   5890b479-df30-480f-9229-157dd24da8d9:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 1c5d1289-0ece-40e1-ab09-92c086686c2c # Profile Header
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 9bc641f5-07c2-4516-9768-401dc89ffa91
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 685f508c-5f66-45ea-be6a-1da3ee403eff # Background
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 431f04d4-d766-4504-8513-7e0f8f1953e9
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 6455910e-69ef-42cd-8d5b-f17bb4feaf4f # Featured Staff Member
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: de01a241-acdd-4516-aba0-c942dc586915
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: b7f96204-106f-4d15-85ed-e0fda8e8551f # Button Group
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: afb705eb-7219-4387-a8d1-de51f5b04daf
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: e63813ab-81b0-4f4d-9b7d-dc2cc9138625
+        userCondition: null
 fields:
   1c5d1289-0ece-40e1-ab09-92c086686c2c: # Profile Header
     columnSuffix: khdvfzhl
@@ -54,10 +68,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -72,7 +86,7 @@ fields:
     name: Background
     searchable: false
     settings:
-      optgroups: true
+      columnType: string
       options:
         -
           __assoc__:
@@ -115,16 +129,18 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: featuredStaffMember
-    instructions: ''
+    instructions: null
     name: 'Featured Staff Member'
     searchable: false
     settings:
       allowSelfRelations: false
-      limit: '1'
+      branchLimit: null
       localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
       selectionLabel: 'Add a staff member'
       showSiteMenu: true
-      source: null
       sources:
         - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
       targetSiteId: null
@@ -142,6 +158,8 @@ fields:
     name: 'Button Group'
     searchable: false
     settings:
+      blockTypeFields: 0
+      changedFieldIndicator: null
       columns:
         __assoc__:
           -
@@ -153,13 +171,12 @@ fields:
                   - ''
       contentTable: '{{%stc_100_buttons}}'
       fieldLayout: table
-      maxRows: ''
-      minRows: ''
-      placeholderKey: null
+      maxRows: null
+      minRows: null
       propagationKeyFormat: null
       propagationMethod: all
       selectionLabel: 'Add a call to action'
-      staticField: ''
+      staticField: null
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField

@@ -1,8 +1,3 @@
 description: null
 handle: datasetsEditor
 name: 'Datasets Editor'
-permissions:
-  - 'editentries:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
-  - 'editpeerentries:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
-  - 'publishentries:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
-  - 'publishpeerentries:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets

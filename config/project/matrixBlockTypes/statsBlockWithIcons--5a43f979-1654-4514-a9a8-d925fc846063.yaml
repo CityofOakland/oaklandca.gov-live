@@ -3,27 +3,35 @@ fieldLayouts:
   2a99b8f4-d025-4800-babc-7f6cde0515a0:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: e01574f5-8305-4c87-a518-b387aecc4997 # Heading
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 41324d88-518a-4ddc-bccd-9c720e5dc438
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 25bae0ad-a048-4573-a10a-8b9f823ed9dc # Stats
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a3472183-6525-41c5-bdda-d4f46ea4ab10
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 55dd0043-946c-41ed-9d55-28e912bfdbf1
+        userCondition: null
 fields:
   25bae0ad-a048-4573-a10a-8b9f823ed9dc: # Stats
     columnSuffix: null
@@ -34,6 +42,8 @@ fields:
     name: Stats
     searchable: false
     settings:
+      blockTypeFields: 0
+      changedFieldIndicator: null
       columns:
         __assoc__:
           -
@@ -59,13 +69,12 @@ fields:
                   - ''
       contentTable: '{{%stc_53_stats}}'
       fieldLayout: table
-      maxRows: ''
-      minRows: ''
-      placeholderKey: null
+      maxRows: null
+      minRows: null
       propagationKeyFormat: null
       propagationMethod: all
       selectionLabel: 'Add a statistic'
-      staticField: ''
+      staticField: null
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
@@ -74,16 +83,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: heading
-    instructions: ''
+    instructions: null
     name: Heading
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

@@ -6,6 +6,7 @@ instructions: 'Show or hide the sitewide alert'
 name: 'Alert Show/Hide'
 searchable: false
 settings:
+  columnType: string
   options:
     -
       __assoc__:

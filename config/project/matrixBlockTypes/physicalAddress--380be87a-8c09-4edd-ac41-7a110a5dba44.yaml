@@ -3,36 +3,47 @@ fieldLayouts:
   0d76805e-d070-44cd-bd4c-7de3b8e1bf33:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 2297d996-75c6-4163-9ce7-1ca5c609e89a # Address Title
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: cd614737-017f-4ee5-91e3-10be59389509
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: b4b3c606-9215-46dd-926d-ecc0cdd900e7 # Address
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f8a68699-d07b-4889-b650-71e1c092b4ae
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 55afc13e-16e3-4080-9c67-ae7a4c46e3e2 # Additional Address Info
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 42d54856-84be-4fe2-9005-2ab1a6cb6d3c
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 2eb0cbb6-5e3e-48bb-8fa9-34ddbbaa0006
+        userCondition: null
 fields:
   55afc13e-16e3-4080-9c67-ae7a4c46e3e2: # Additional Address Info
     columnSuffix: null
@@ -49,13 +60,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: Simple.json
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: '1'
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
       uiMode: enlarged
@@ -73,10 +84,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -110,7 +121,7 @@ fields:
       layout: null
       mapOnSearch: open
       mapOnStart: close
-      requireCoordinates: '1'
+      requireCoordinates: true
       showMap: false
       subfieldConfig:
         __assoc__:

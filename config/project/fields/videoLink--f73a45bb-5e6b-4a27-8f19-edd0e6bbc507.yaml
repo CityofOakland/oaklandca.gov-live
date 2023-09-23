@@ -2,12 +2,11 @@ columnSuffix: null
 contentColumnType: string(255)
 fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
 handle: videoLink
-instructions: ''
+instructions: null
 name: 'Video Link'
 searchable: false
 settings:
-  maxLength: '255'
-  placeholder: ''
+  maxLength: 255
   types:
     - url
 translationKeyFormat: null

@@ -2,6 +2,7 @@ fieldLayouts:
   274d0c38-8221-4109-bdb8-1236c5a7d474:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,9 +10,10 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
-            label: Title
+            label: null
             max: null
             min: null
             name: null
@@ -23,68 +25,93 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 28a05ff2-df6b-41f0-8150-f65096830188
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210 # Lead In
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ef395888-edec-4418-ba6d-ed28657b7ee4
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: bef74be8-b22d-4dd0-9217-9707bb43d888 # CTA Button
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b62cb9b5-96fb-4af4-b45e-c4634e032181
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 89164142-181e-4422-b1b3-ff6548d3d076
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d # Metadata
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 776f68e7-0975-4d24-bed2-36ca8369bb20
+            userCondition: null
             warning: null
             width: 100
         name: SEO
-        sortOrder: 2
+        uid: cd9b40ff-3b44-4b1d-907f-9694ada14159
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: de273878-3929-4764-b4ab-a670a2987d39 # Highlighted News
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 0faa7a62-8266-4653-ac45-0b7637d448fe
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 8db301bf-0d15-4511-98a8-8a4021bbef60 # End Date
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b1fff8db-dc90-4a5f-af2b-f0f0cebc3851
+            userCondition: null
             warning: null
             width: 100
         name: Featured
-        sortOrder: 3
+        uid: 05320a5a-743f-4b40-95e8-f1a70584f915
+        userCondition: null
 handle: newsIndex
 hasTitleField: true
 name: 'News Index'
 section: ce969731-41e7-42b9-aad7-a6bff2089c57 # News Index
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

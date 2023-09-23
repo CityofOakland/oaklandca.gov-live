@@ -2,6 +2,7 @@ fieldLayouts:
   52f2fc8e-9335-4fea-ac88-90f8d5742d38:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,9 +10,10 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
-            instructions: 'Meeting should be titled "Official Name of the Board or Commission" + "Meeting".'
-            label: 'Meeting Title'
+            instructions: null
+            label: null
             max: null
             min: null
             name: null
@@ -23,234 +25,323 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 5625e1f7-19d8-427a-9df7-3c13d6ac857b
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f7e4a055-457f-46eb-ab3d-3e816f80a81d # Related Public Body
             instructions: 'Select the Board or Commission or Topic this meeting is related to.'
-            label: ''
-            required: ''
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f216de4b-5df6-4716-ae9c-5ab5eeca3d74
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 8d984aa7-0f0a-4e7a-8c43-d726c6645e38 # Subcommittees
             instructions: 'Select any Subcommittees or Topics, or sub public bodies this meeting is related to.'
-            label: ''
-            required: ''
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: c1016f49-7f10-4d52-abf4-142caf042901
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 31d30a51-422e-471c-be55-3441a4219dd8 # Date
             instructions: 'Enter the date of the meeting.'
             label: 'Meeting Date'
-            required: '1'
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 7dc6b30b-21b3-45ea-83cb-338caca56c81
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 9f3ae38f-aef6-476b-9fea-e9d1ef0c03c4 # Start Time
             instructions: 'Enter the start time of the meeting.'
             label: 'Meeting Start Time'
-            required: '1'
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 1daf0873-d8de-44e8-b480-2c68beeeed93
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: daee65a4-c92d-4e15-9273-1636d722cf35 # End Time
             instructions: 'Optional. Include the end time of your meeting.'
             label: 'Meeting End Time'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 1bfdb1a1-8453-497f-8293-03bdb32aafb6
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f6e8acb0-e8f3-40de-8500-b95e6ed06def # Event Location
-            instructions: ''
+            instructions: null
             label: 'Meeting Location'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4d0506f4-6f52-481b-86fd-96812ba7cf42
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 21e2b002-d7ac-465c-8233-a2c62a251dcd # Meeting Status
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b31a6b7f-622f-4673-a9fa-dc40304d82ed
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 89e7af89-0b4d-4305-9ffe-5098b3f73779 # Related Meeting
             instructions: 'Relate a rescheduled meeting. If a special meeting is related to another meeting, add it here.'
-            label: ''
-            required: ''
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a4524114-af60-4dad-b1c1-e1faf10e07fa
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
             instructions: 'Add any additional details that people should know about this meeting.'
             label: 'Meeting Details'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: e09e325f-e988-4085-95bd-1caceae558aa
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             heading: 'Meeting Contact'
             type: craft\fieldlayoutelements\Heading
+            uid: e3a679e7-8827-4f7d-a27e-9c68b6d6c8b3
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 2260316d-d754-471f-a901-9d8ed19c13d3 # Full Name
             instructions: 'Input the meeting contact name and title, or the team name.'
             label: 'Meeting Contact Name'
-            required: '1'
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 1c7c549e-54bf-4f97-b2d1-9951f70f5f56
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a # Email Address
             instructions: 'Input the email contact for this meeting.'
             label: 'Meeting Email'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 3986a45f-3d90-47ce-aa9b-9ab3c28234af
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 5e5aad16-6bdc-4d3e-adfd-75147a323b78 # Phone Number
             instructions: 'Input the phone contact for this meeting.'
             label: 'Meeting Phone Number'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a5777eec-312c-4472-b2f9-b818178235c1
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             heading: 'Before the Meeting'
             type: craft\fieldlayoutelements\Heading
+            uid: 54865206-4605-41f5-9b25-77fd5bb8a17a
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: d7c92fa2-9002-4f28-a03d-b99b37501dde # Agenda - Downloadable Copy
             instructions: 'Upload a PDF of your full agenda packet.'
             label: 'Agenda Upload'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2c74ebcc-2c83-442d-aea7-777fb5574d7d
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 43cb8609-820e-4df0-9b62-fa6cf21ba074 # Agenda Topics
             instructions: 'Highlight items that will be talked about at the meeting to make searchable. No need to include routine items.'
-            label: ''
-            required: ''
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 0078e076-2e8e-4d51-8a59-cf54087d2dde
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: e2b6c2d9-b6fa-4713-b819-e4a9a1b35c2b # How to Participate
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ac5c4c5f-a17d-4689-8ebe-44d2686e1204
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             heading: 'After the Meeting'
             type: craft\fieldlayoutelements\Heading
+            uid: 8190b334-da01-4557-a3c0-1ce79c710e1c
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 5261f0db-3453-423b-87c5-e5d3112c4141 # Document File
             instructions: 'After the meeting has ended, upload a PDF of the minutes.'
             label: 'Minutes Upload'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ebc39862-773e-44d9-98fa-6ec59b0d15e8
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: ce345611-039a-4fb5-9a1c-a9eef7d74514 # Embeds
             instructions: 'Select the type of recording. This field supports video URLs from Granicus, Youtube, and Vimeo.'
             label: Recording
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f62656de-bd58-46e5-9b08-ebee4ae43461
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: cb7a5ec9-4d93-46ff-bcde-c6597fa617bb
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 1ddcc13e-3bfa-4a0e-9661-34bc1052f299 # Email Subscriptions
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ab1573f7-41d2-4b0d-94b8-a7f59ed1a922
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 1bbdfcc0-b085-435d-afc9-344998a67876 # Email Trigger
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 40c3d09f-d31d-40bb-93be-f9abb3f0bfff
+            userCondition: null
             warning: null
             width: 100
         name: Notifications
-        sortOrder: 2
+        uid: d1ddf101-395a-4b09-b161-6c61e67d3c6f
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            dismissible: false
+            elementCondition: null
             style: tip
             tip: 'Relating these items will surface these meetings in content builder components such as the Meeting Entries module, etc.'
             type: craft\fieldlayoutelements\Tip
+            uid: 14e68646-a33f-4bab-a7a2-cde0c01d95cf
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133 # Departments
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 5107dd35-da5a-473d-b18c-a92d4e08faf8
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: e67ec759-ea3a-4568-bfa6-a314ff3d1036 # Projects
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 09456404-f8e6-4581-9e29-aa1e8a2e3161
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 44b00870-0842-4c4e-838f-dcd688fb5b05 # Topics
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 3fc5faae-79a1-48b6-8e33-340b5d3eac06
+            userCondition: null
             warning: null
             width: 100
         name: Relationships
-        sortOrder: 3
+        uid: c216065a-e6b7-44c4-b1c6-f622a3bc11b9
+        userCondition: null
 handle: meetings
 hasTitleField: true
 name: Meetings
 section: 86dfc275-b48e-44d4-8c8c-acda592d92b0 # Meetings
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: '{relatedBoardOrCommission.one().title}{subcommittees.section(''boardsCommissions'')|length ? '' - '' ~ subcommittees.section(''boardsCommissions'').one().title : ''''} Meeting - {date|date("F j, Y")}'
 titleTranslationKeyFormat: null

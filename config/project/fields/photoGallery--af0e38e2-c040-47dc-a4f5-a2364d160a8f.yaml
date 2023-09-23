@@ -7,25 +7,29 @@ name: 'Photo Gallery'
 searchable: false
 settings:
   allowSelfRelations: false
+  allowSubfolders: false
   allowUploads: true
   allowedKinds:
     - image
+  branchLimit: null
   defaultUploadLocationSource: 'volume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
-  defaultUploadLocationSubpath: ''
-  limit: ''
+  defaultUploadLocationSubpath: null
   localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
   previewMode: full
-  restrictFiles: '1'
+  restrictFiles: true
+  restrictLocation: true
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  restrictedLocationSubpath: null
   selectionLabel: 'Add a photo'
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: true
-  singleUploadLocationSource: 'volume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
-  singleUploadLocationSubpath: ''
-  source: null
   sources: '*'
   targetSiteId: null
-  useSingleFolder: true
   validateRelatedElements: true
   viewMode: large
 translationKeyFormat: null

@@ -7,8 +7,8 @@ name: 'Call Out'
 searchable: false
 settings:
   contentTable: '{{%matrixcontent_callout}}'
-  maxBlocks: '1'
-  minBlocks: ''
+  maxBlocks: 1
+  minBlocks: null
   propagationKeyFormat: null
   propagationMethod: all
 translationKeyFormat: null

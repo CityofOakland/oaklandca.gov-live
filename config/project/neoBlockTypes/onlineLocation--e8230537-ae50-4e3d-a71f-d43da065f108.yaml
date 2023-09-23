@@ -1,35 +1,52 @@
 childBlocks: null
+conditions: null
+description: ''
+enabled: true
 field: f6e8acb0-e8f3-40de-8500-b95e6ed06def # Event Location
 fieldLayouts:
   2489eb2e-c003-483c-b81e-e5d6955d71e4:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 856e0565-3a66-4305-825e-757ac41b9ff4 # Link
-            instructions: ''
+            instructions: null
             label: 'Online Meeting Link'
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: e08eca35-85ad-4f9b-bd34-14d9c74f10bc
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 5e5aad16-6bdc-4d3e-adfd-75147a323b78 # Phone Number
-            instructions: ''
+            instructions: null
             label: 'Online Meeting Phone Number'
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 9335a0f9-bc8e-4567-a14b-ca4685b7856d
+            userCondition: null
             warning: null
             width: 100
         name: Default
-        sortOrder: 1
+        uid: 63c53b7d-5a24-4622-b1a1-bb4244f38d60
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: onlineLocation
+icon: null
+ignorePermissions: true
 maxBlocks: 1
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: 'Online Location'
 sortOrder: 1
 topLevel: true

@@ -1,4 +1,4 @@
-dateModified: 1695428277
+dateModified: 1695428416
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -46,7 +46,6 @@ meta:
     1cfca893-de32-4979-8ba3-68de97b5cd03: Linkit # Linkit
     01d73fd7-5170-4523-8658-02c344e3ff55: 'Middle Initial' # Middle Initial
     1d1557ea-679f-40f8-90d8-3c9eae44d800: Navigation # Navigation
-    1dcaf4f4-736d-4b90-af74-eed1db266dd6: 'Featured Entry Expiration Date' # Featured Entry Expiration Date
     1ddcc13e-3bfa-4a0e-9661-34bc1052f299: 'Email Subscriptions' # Email Subscriptions
     1df2afd1-1725-4190-ae6d-b40882c360af: 'Column 1 Cell' # Column 1 Cell
     1e78d0ad-2af1-4556-ab43-7b6c110e75b8: Headers # Headers
@@ -60,7 +59,6 @@ meta:
     2c145c6e-d6b2-418c-aa28-3ea1eaa51944: 'Column 3 Width' # Column 3 Width
     2ce783d0-daf9-44d1-a0b4-84a0163dcaad: 'Column 2 Width' # Column 2 Width
     2dc1fa8f-aa9c-488d-8c3e-ed572699c7a4: 'Open in New Tab?' # Open in New Tab?
-    2e9a2810-afb2-4358-82f1-d152b0598d4b: 'Subscribed Emails' # Subscribed Emails
     2e52b334-4732-47a2-9c3b-7a8bf656425e: Link # Link
     2ec9801b-fd1b-4e5f-bf30-80d457a08afd: 'Service Category' # Service Category
     02edcc9a-9985-4401-9a49-38455f47ff84: 'Contact Notes' # Contact Notes
@@ -94,12 +92,9 @@ meta:
     4f49ca5b-c028-40c6-b67e-de07b11bf16a: Linkit # Linkit
     4f58a8e7-8cf8-472a-b479-73a156087dfc: Fax # Fax
     4f98a66d-2f55-4ee3-b4d1-ea1d668b273b: 'Location Address' # Location Address
-    5a5cab1b-f214-4ee8-b6a9-b68c7df6b7d7: 'Open in New Tab?' # Open in New Tab?
     5a43f979-1654-4514-a9a8-d925fc846063: 'Stats Block with Icons' # Stats Block with Icons
-    5acb7701-40d9-4344-9b0a-946869c789ab: 'Button Icon Picker' # Button Icon Picker
     5ae976d4-1fd7-4dd5-bfd7-f25cb1ce7a0f: 'Call Out' # Call Out
     5b066077-3ce6-4583-af94-4fa87136ab3a: 'Milestone Link' # Milestone Link
-    5b7d00dc-8d0f-43b6-a422-2d6f18921f1a: 'Featured News' # Featured News
     5b935c33-5d69-45c2-acd9-a6a2f0a567ce: Calendarize # Calendarize
     5bc46e53-a87c-4584-89aa-808cacedf461: Categories # Categories
     5c49fc38-f64d-4b71-aeb4-cfa13aa112c3: 'Thumb Full Ratio' # Thumb Full Ratio
@@ -114,7 +109,6 @@ meta:
     5ee14b98-d8d9-46bd-88d8-0aa45871cfc9: 'Hide Summary?' # Hide Summary?
     5f3a7701-690d-491c-9c18-9e92305a1aad: 'Event Contact' # Event Contact
     5fab788c-0374-4ac2-945d-ba96ffd84669: 'Press Release Files' # Press Release Files
-    5ff8affc-d4a9-4677-84fa-4bcd6ca073ef: Link # Link
     6a0b2a6f-4bff-474e-a3b2-d0b19a556875: 'Location Name' # Location Name
     6a3e4392-eb9c-470f-a379-10e0fcf5074e: Audio # Audio
     6aaa96ea-268b-4fb7-b27c-0a481c5b3c51: 'Accordion Header' # Accordion Header
@@ -130,7 +124,6 @@ meta:
     6cc41a35-26fb-4081-b18b-30efdc19e8c8: 'Phone Number' # Phone Number
     6d032aec-91d5-43a0-b50b-71a2112d5eda: Caption # Caption
     6d5d4d77-fe05-434f-92d4-748af5630b9a: 'Step Number' # Step Number
-    6d8d38e9-569f-4e71-a55e-9c51fc4c58a3: testing # testing
     6d6039ca-322a-4f7f-91e2-371a9f5d637c: 'Read More Link' # Read More Link
     6def0c63-b8d7-4909-9dfa-52fbc05f5cf0: Description # Description
     06e694a7-90e8-4163-8ee2-242bc35ff134: Buttons # Buttons
@@ -205,12 +198,10 @@ meta:
     13e500aa-11c8-438b-bb77-28adfae9f1a5: 'News Index' # News Index
     14c27df9-9ea0-458c-afe6-bc7fc29db1eb: Phone # Phone
     17d5d48d-2d75-4742-8820-cdce13764482: Volunteers # Volunteers
-    18a0a5e6-1f4f-47f5-8962-8b7e132b4f4c: 'Featured Content' # Featured Content
     18c27d2b-612d-49e3-87d4-9a61c6c85408: 'Online Title' # Online Title
     18fa95ee-449e-4c22-9d88-b0fb8918a38b: 'Highlighted Services' # Highlighted Services
     21d8d4c8-4c81-444b-8732-2b5cf2e023d8: Icons # Icons
     21e2b002-d7ac-465c-8233-a2c62a251dcd: 'Meeting Status' # Meeting Status
-    22a07414-8f3d-4053-81c0-068e12ec97eb: Header # Header
     24fa116b-8516-4626-84f3-86b685e71071: Resources # Resources
     25bae0ad-a048-4573-a10a-8b9f823ed9dc: Stats # Stats
     28b0988c-b6ee-404e-922d-8278e9ab4daa: 'Digital Leads' # Digital Leads
@@ -223,7 +214,6 @@ meta:
     31daeaab-9824-4c64-bad1-bdf49fb2ab9d: 'Team Members' # Team Members
     31e7de31-2c93-4523-a272-4ee9a2ca13be: Email # Email
     32b64633-1b5f-4111-a6d2-c2baaaaeb951: 'Text Cards Description' # Text Cards Description
-    32c49566-cd66-4c8b-8977-1e9defefc3e3: Content # Content
     32f0cef1-a5d9-41dd-b562-b609374d9607: Buttons # Buttons
     34f2c44b-4710-447e-9c4e-71e80288b6e4: Boards # Boards
     35ad8ea4-2989-47d3-820b-d5cf1d398bc9: 'Projects Beta' # Projects Beta
@@ -234,17 +224,14 @@ meta:
     40abab6e-fe75-4f91-b6bd-9016b2b01dbe: 'Column 2 Heading' # Column 2 Heading
     40ec5343-f083-489f-a6eb-49ff9ee6d600: 'Use Image as Background?' # Use Image as Background?
     42daf001-6cda-4eab-a3a2-3dd24077d76c: 'Volunteer Index' # Volunteer Index
-    42e47b92-4d9f-4ba3-8a3f-886a122470b9: Label # Label
     43cb8609-820e-4df0-9b62-fa6cf21ba074: 'Agenda Topics' # Agenda Topics
     44b00870-0842-4c4e-838f-dcd688fb5b05: Topics # Topics
     45b5d319-ac8e-491f-9c8a-47d1c6657bff: 'External Link' # External Link
     45c5aca8-37bb-42d5-94ef-4a85bbf2de46: 'Related Project, Topic, or Public Body' # Related Project, Topic, or Public Body
-    46bb2577-b14e-4f53-8a65-a7b9139b21e4: Heading # Heading
     46d3aa66-3202-4738-84df-b55003fae447: 'Profile Cards Description' # Profile Cards Description
     47d702f0-cf61-4746-ab30-131fed922b61: 'SoundCloud Embed' # SoundCloud Embed
     48c81254-0e2d-4211-8859-7a45eef186ad: TTY # TTY
     48ddc90c-a4ab-4105-a260-d578e44efe13: 'Resources Index' # Resources Index
-    51b92fa5-0440-4de2-b988-6e63a6b9d10e: Icon # Icon
     52bbbd6c-79fe-419a-9d91-648022ff54be: 'Navigation Item' # Navigation Item
     54b48d39-e6a7-4d50-9cf7-91ce11c798ee: 'Staff Import Surname' # Staff Import Surname
     54de1c1c-79d6-40ed-911b-422f630094e1: Description # Description
@@ -255,20 +242,16 @@ meta:
     58c3bf22-aa23-441f-bd65-acf677638ae6: Data # Data
     58c51c8d-ba49-46af-a341-45be4758244e: 'Contact Form' # Contact Form
     58eda166-7a65-4fb6-8f7d-c6590b0591ae: Summary # Summary
-    59b4632f-26b6-4942-a96a-21909e7eb176: Organization # Organization
     59d68eb6-f130-4b6f-b193-240480a8b68f: 'Online Meeting Link' # Online Meeting Link
     59d87cbd-cfc8-43f8-b208-8fcf36ce00c9: 'Summary with Links' # Summary with Links
     61baa25b-3bbb-41a1-b13c-a976d1d109b6: 'Accessibility Block' # Accessibility Block
     61bef9fa-6716-4df3-a88d-46f256cdee73: 'Link Location' # Link Location
-    61dec751-c375-471c-a4ed-1df3b7469237: 'Online Meeting Phone Number' # Online Meeting Phone Number
     62b6620d-66f1-4499-abb2-35960313b3dd: 'Boards & Commissions Index' # Boards & Commissions Index
     065a0c81-f02c-484a-859a-ff558fe27a71: __blank__ # __blank__
     65a683ef-7b40-4058-bdab-a1b9b46035eb: Header # Header
     66aecd33-c8da-48d8-a6d9-163ed9010751: Address # Address
     66c28d05-1cce-4903-af5e-5667d0a1cb53: 'Milestone Date(s)' # Milestone Date(s)
     67bbdab6-8a94-441d-9c36-6d093274da43: Editors # Editors
-    068eee1c-6ef7-4edb-982d-0f5198cd8979: 'Open in a New Tab?' # Open in a New Tab?
-    69bcd320-8ec1-4156-892e-81357352806f: 'Location Address' # Location Address
     069f8ed4-d4ee-4ed8-bf37-efafb4e633e8: 'Term Start' # Term Start
     71fb693f-011b-4669-ba10-f1b379557bb9: 'Staff Fields' # Staff Fields
     72ce6013-9e2a-4f33-a3f0-61cd31ff0d55: 'Card Link & Header' # Card Link & Header
@@ -304,7 +287,6 @@ meta:
     98c4abc4-7360-4759-a926-a7673c124809: 'Staff Index' # Staff Index
     98d541ae-56ee-4c98-ba9c-37438dc485a0: Projects # Projects
     99abe257-f646-4edd-878d-cb67934ade16: Columns # Columns
-    99add1bc-edf1-42c5-acef-3aa8375d0a34: 'Call to Action' # Call to Action
     107df6dd-7f1a-4575-811d-ae34d2258fd8: Number # Number
     109ddbd1-80ea-471e-a6f9-ef77d84a0800: 'Link Description' # Link Description
     112bec4a-44ab-4d8b-afab-679c5e8bfb5c: SEO # SEO
@@ -316,7 +298,6 @@ meta:
     211c24f8-a046-4d59-a3ac-d8c51494ec3d: 'Page Alerts' # Page Alerts
     236e175c-1794-4eca-8655-15d196ec0e23: Images # Images
     238f1120-16b5-4780-b3e0-3c7e68c58b9c: 'Events Index' # Events Index
-    243f74f9-9c22-4f59-b330-44e11ecec002: Team # Team
     0246ae4f-3cc5-4132-b6d3-04142fcf735d: 'Document Link' # Document Link
     260c86d2-a919-42ce-ba0f-64f1d25952d5: Entries # Entries
     281e840f-0b8f-4781-bdf6-071f668eb6ac: 'Button Color' # Button Color
@@ -326,7 +307,6 @@ meta:
     295df0c5-cc10-4392-9fbb-3452cc97b84a: Entries # Entries
     307d4a59-6007-4c95-8879-5411247cc8d0: Icon # Icon
     314d167b-d1f4-47dd-92e5-4d0f75339e09: 'Location Name' # Location Name
-    323d4c02-3d8b-4840-a27f-c6dfe9d3d73c: 'Online Meeting Link' # Online Meeting Link
     323dd893-cdef-4562-9cfc-566d7afd7909: 'Text Block' # Text Block
     326d4ee2-242e-48fc-a039-5e9ab55338a3: 'Button Icon' # Button Icon
     328a8ce9-6f28-43a8-a858-db782f75ce8a: 'Online Location' # Online Location
@@ -334,7 +314,6 @@ meta:
     380be87a-8c09-4edd-ac41-7a110a5dba44: 'Physical Address' # Physical Address
     469ca78b-2438-4fdc-8bb0-eede26b2f672: 'Online Meeting Link' # Online Meeting Link
     474e10df-7bcd-4737-8b49-8c14f7c11b79: Embed # Embed
-    483fcf2d-eedc-47e4-8cff-179bd5b0397b: 'Location Name' # Location Name
     491b80fa-1cd7-4a5d-9192-284372015209: Embed # Embed
     509d4604-912b-44dc-a01a-a728586e87a2: 'Department Code Snippet' # Department Code Snippet
     514ef01b-6b97-4fc4-9840-4923745288d3: 'News Entries' # News Entries
@@ -347,7 +326,6 @@ meta:
     566b5a14-6baa-4a4e-bb29-50502dd83fa1: Heading # Heading
     566d26c2-9af4-45bb-b994-a552cc3fc03b: 'Display Alt Text as Caption?' # Display Alt Text as Caption?
     0567fab2-a7c6-4e2f-91c2-ea0072e45960: 'Profile Cards Header' # Profile Cards Header
-    644ec222-ee25-430c-9368-8a64b662496c: 'Dynamic News Entries' # Dynamic News Entries
     658cca3c-01d9-4de0-b0be-bc04b699d806: 'Alert Expiration' # Alert Expiration
     660e5d8e-e73d-428c-8663-ee1cd1c8634c: 'Subcommittee Status' # Subcommittee Status
     685f508c-5f66-45ea-be6a-1da3ee403eff: Background # Background
@@ -356,7 +334,6 @@ meta:
     736bfdbe-8ec1-4b3d-bd17-6dc825c56855: Bio # Bio
     745c0b03-2047-48d3-beee-04d9f014eccc: 'Section Background Color' # Section Background Color
     752d23c6-25b8-4a5b-8350-5155c7244321: 'Embed - OpenForms' # Embed - OpenForms
-    752ef356-1739-4845-95d5-10b817ae23a4: 'Card Brow' # Card Brow
     759fd59f-6b95-48b5-b424-ec93facb33a0: 'Button Icon' # Button Icon
     767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78: Matrices # Matrices
     770f79c9-6a08-4685-94fa-2dfd804f3758: 'Staff Import Middle Initial' # Staff Import Middle Initial
@@ -371,7 +348,6 @@ meta:
     853acfc8-1959-4654-89f9-e544989d27d5: Departments # Departments
     856e0565-3a66-4305-825e-757ac41b9ff4: Link # Link
     899b11d8-2bd0-43d6-b39b-31e362b7534f: 'Project Documents' # Project Documents
-    902a91ff-7682-47b7-ad10-df776953d2a2: 'Card Background' # Card Background
     907bf933-4e47-49e9-a6dd-7f5bc2d3459e: Button # Button
     909c71fc-999c-4729-86d5-49cc9061f521: Common # Common
     912c64e2-6d85-46bb-b826-955df643a5ef: 'Milestone Description' # Milestone Description
@@ -414,9 +390,7 @@ meta:
     6516b9a1-48aa-4146-b253-19e5eda7b289: Subcommittee # Subcommittee
     6615dd71-4083-4e2d-a89b-26de79047282: 'Internal Link' # Internal Link
     6661f731-7c41-4607-9a82-a18f44fb4008: Events # Events
-    6672c4ed-d3ef-4b5a-9ebe-94aa942dc976: 'Subscribed Emails' # Subscribed Emails
     6694c82b-6e98-442b-976a-907b6c2f4bcc: 'Android Download Link' # Android Download Link
-    6722d0c2-c9b0-4b2c-adf2-97e13adaecb3: Style # Style
     6730cced-6743-4ada-abb8-1f4c0f2e8878: 'Alert Link' # Alert Link
     7084b5f1-19ef-4812-97fc-927d55c98c93: 'Event Image' # Event Image
     7332ba8f-a9ac-4e3b-b372-8b4724617ae4: 'Link Text' # Link Text
@@ -447,7 +421,6 @@ meta:
     33857d17-d8e8-4c03-8902-f1fb2e4422da: 'Service Redirect' # Service Redirect
     37807b41-86f2-4f92-b56e-1f76739a03bb: Label # Label
     41124ab0-0e88-44c6-b4f2-f002669d8133: Departments # Departments
-    41882c66-71eb-44dd-b234-2aeead2aed97: 'Featured Expiration' # Featured Expiration
     45846dfd-0e86-40a2-81d2-b47bf69f16ae: 'Need to Know' # Need to Know
     62026d94-4213-4ab2-9a58-ff780a972c67: 'Department Redirect' # Department Redirect
     63825c77-41b6-4fee-8d10-2131c6ab8c3b: Location # Location
@@ -456,13 +429,11 @@ meta:
     92851a19-806d-4be6-a23a-553c3b5aad62: 'Link Blocks with Images' # Link Blocks with Images
     99484ea5-884e-47cc-94c6-8704a2977122: 'Featured News Entry' # Featured News Entry
     101875bd-2293-4282-a4da-2b14265f40e3: Icons # Icons
-    184924f4-a690-4887-82bb-9eef7a7819a7: 'Link Set Header' # Link Set Header
     211069ad-7abf-4b4d-a040-1b26ddb7a816: 'Group Head Title' # Group Head Title
     226351ad-9bcd-4a73-bd65-bf1ef65f710c: 'City of Oakland' # City of Oakland
     243725a4-eeda-4e57-8cf4-d545bd6edf9c: 'Email Title' # Email Title
     277068ba-95c5-4881-862f-85c19b60d4da: 'Alert URL' # Alert URL
     341595b4-52a8-432f-b327-5fbc3a4289a8: 'Staff Import Department' # Staff Import Department
-    622282c9-d031-4271-966b-8a952587ff07: Title # Title
     646188fb-7ed1-48ae-b539-736f4fd442d1: Entries # Entries
     714977a3-2a75-4e25-b9b4-7db488f791b0: 'Contract Employees' # Contract Employees
     842891f1-23fb-4af0-93b5-d197738f08a0: Role # Role
@@ -473,7 +444,6 @@ meta:
     4047207e-c317-47cc-825b-7e751cc4ad38: 'Call to Action' # Call to Action
     06394615-97e5-4f64-8d80-da62f9f1582c: 'Location Description' # Location Description
     6455910e-69ef-42cd-8d5b-f17bb4feaf4f: 'Featured Staff Member' # Featured Staff Member
-    6781472a-633d-4059-b528-3b826db0332f: 'Hide Thumbnails?' # Hide Thumbnails?
     6982234e-dc9c-4165-a2a0-4d6edfcbea52: 'Group Head Bio' # Group Head Bio
     7200487a-d71e-4520-b5d5-b31c1d4b3e5e: 'Internal Contact' # Internal Contact
     7657014a-eefc-419e-921e-8896ed282ab3: 'Sitewide Alert' # Sitewide Alert
@@ -483,7 +453,6 @@ meta:
     23389191-2978-49d8-a70e-6da12c8aeab0: 'Column 1 Cell' # Column 1 Cell
     24776178-dc7d-4971-bb42-16dba0790379: 'Text Cards' # Text Cards
     28933675-d3ec-4b03-bd2c-515c63e5a7e4: 'Related Documents' # Related Documents
-    32427104-11d1-4eb4-965e-b05673f89d12: Name # Name
     37557891-109f-46ef-bbc5-040f628a36a4: 'Event - Primary Relationship' # Event - Primary Relationship
     42276684-be78-4449-b3e9-8eeb42ad49ba: Table # Table
     49212505-ad0a-4db1-92de-6033ed5d7d9e: 'Large Entry Links' # Large Entry Links
@@ -538,7 +507,6 @@ meta:
     abd529f9-d523-48f3-9b3c-4728eef71ad3: 'Accessibility Text' # Accessibility Text
     ac0223f8-266a-4fd1-8886-25edf75926c5: 'Call Out Type' # Call Out Type
     ac30e2e0-2f26-4b6c-a404-07b749af00dc: 'Link Location' # Link Location
-    ac349657-dbca-480e-8cb9-dc97ccae3b3a: 'Allow Autofill?' # Allow Autofill?
     ad4e3d36-752c-48da-bfbd-bd61e083119b: Heading # Heading
     ae0d59e8-e5d6-4392-8d6f-8c23713af7b4: 'Navigation Group' # Navigation Group
     ae05e014-38d0-4bcf-904d-e0ef291e71db: 'Documents Index' # Documents Index
@@ -548,7 +516,6 @@ meta:
     afb94d9f-c334-44c9-a37a-e71360270610: 'Button Label' # Button Label
     b0a28612-04bc-4669-a6d1-816c9c768a29: 'Official Department' # Official Department
     b04f002c-84db-42eb-bc4f-afa552e3e3f6: 'Icon Cards Header' # Icon Cards Header
-    b08ffb42-c370-4cdd-8973-abe245822ae9: 'Spotlight Description' # Spotlight Description
     b1b0e0eb-fd37-4708-96c7-4f5f11d8fdb0: Departments # Departments
     b3b7323b-b212-4d0a-a2f4-b205edf3f056: 'Meetings Description' # Meetings Description
     b4b3c606-9215-46dd-926d-ecc0cdd900e7: Address # Address
@@ -564,13 +531,11 @@ meta:
     b459e528-515b-48b5-9ad6-a8dcd722d9f6: 'Link Set' # Link Set
     b703d11b-3d2f-4305-b0bf-3abf4ebeeec7: 'Embed Code' # Embed Code
     b936e275-7cde-473a-8849-7342b65b94db: Embed # Embed
-    b938af0b-ce00-45a0-861c-0ff28fce1f7f: 'Call to Action' # Call to Action
     b3411cb1-e860-46ed-9cd6-58cf9b8daacb: Departments # Departments
     b3761a4e-9346-448a-ba6a-f441f75e61fc: 'Components - Footer' # Components - Footer
     b4027b04-f764-4b35-93ee-88ff570bfeaf: 'Point of Contact' # Point of Contact
     b57063ea-0fb9-49f5-94c2-c51bbdfef0ee: Default # Default
     b66198c4-d82e-4078-8034-c728b677d613: Content # Content
-    b575240f-71ba-444a-ac88-0c275e078c01: 'External Link' # External Link
     b924108b-fb70-4757-ad7f-3e713f23a6d6: 'Team Members' # Team Members
     baa859d6-a861-4617-bb79-73d0982ee25c: Assets # Assets
     bb70071c-d8c0-4a11-91f6-d4ca02503a00: 'Funding Logos Alternate Title' # Funding Logos Alternate Title
@@ -593,7 +558,6 @@ meta:
     c2ad07dc-05e7-4ef4-89b6-2e1eaccee210: 'Lead In' # Lead In
     c2c1cf6a-786c-44cd-84f6-518e8c48b024: Teams # Teams
     c3cd0c7f-e997-4960-9b97-046778155766: 'Column 1 Width' # Column 1 Width
-    c4febe43-86c3-44a8-abb6-674dfcec8af9: 'Card Background Color' # Card Background Color
     c7c1aa87-0003-4cdf-a925-11ae2f05ec24: 'Project Locations' # Project Locations
     c8be2ede-34e7-4ef1-8f4c-2f77c4e5f776: Services # Services
     c8e06b4a-2f85-41db-94e3-101a5c02dd6d: Documents # Documents
@@ -612,7 +576,6 @@ meta:
     c964d82c-a4e7-4ec4-ad42-7c3e843193c0: Images # Images
     c2858c5f-1822-49b6-b541-53f943fdb540: 'Card Background Color' # Card Background Color
     c7618ee8-2bc2-491b-99e6-c9deaea0809b: 'Navigation - Main' # Navigation - Main
-    c9827dcd-855e-4cb7-95f8-715acb054da6: Phone # Phone
     c27974b4-89ad-4504-abb1-e76e44ff4b5d: Events # Events
     c1969337-e50a-48d2-8823-fbb68bd3776b: 'Resources Index' # Resources Index
     c7310505-6762-445f-80c9-5cfc9137794c: 'Link Collection' # Link Collection
@@ -630,7 +593,6 @@ meta:
     cbfce010-f6e1-46eb-a360-1152a3a07447: 'Link Image' # Link Image
     cc787c11-2a78-41cd-8a90-eddcfddaa89f: 'Embedded Content' # Embedded Content
     cccbcd50-864f-49a8-bbde-d44e04005272: 'Project End Date' # Project End Date
-    cd0b6f82-6dca-4aee-bbdf-bd17d28ddcc5: Email # Email
     cd008cb1-3f5b-4444-a259-bf905f9c6f96: Contributors # Contributors
     ce43edd2-2eec-45cc-afa1-e3bd6b6e20ac: People # People
     ce345611-039a-4fb5-9a1c-a9eef7d74514: Embeds # Embeds
@@ -651,7 +613,6 @@ meta:
     d20f755d-2c8d-459a-971b-1f3957a561a9: Columns # Columns
     d31fcb52-3b99-42dc-8dc7-f0d137d8d478: Location # Location
     d49a42e8-c33e-4689-a1df-83ba0b8d67be: 'Column 4 Heading' # Column 4 Heading
-    d51c595d-b874-430f-bd4b-b66aafecac0e: 'Text Cards Brow' # Text Cards Brow
     d57b57bd-12a3-4c78-86c3-df137e9e99f8: 'Email Address' # Email Address
     d57f1ac0-6e1f-4e86-beb3-8bba579bae47: Column # Column
     d62ece73-11cf-4050-9bb0-13705f80ea51: 'Icon Cards' # Icon Cards
@@ -672,7 +633,6 @@ meta:
     d349329b-ec60-41dd-8bfa-097958ff477c: 'Hours Title' # Hours Title
     d535337e-0894-4ce9-80ee-a315e254df71: 'Column 1 Heading' # Column 1 Heading
     d542665e-875b-4b71-add5-d70d5317e3c6: 'User Guide' # User Guide
-    da23e18d-8c38-4fad-a38d-c07ba10ec985: Size # Size
     daee65a4-c92d-4e15-9273-1636d722cf35: 'End Time' # End Time
     daf1b54a-7841-4819-aaaa-4d568a0fbb66: 'Email Signup' # Email Signup
     db97d5d4-3cdf-46c8-85f3-fa7bef2c1d87: 'Call to Action Buttons' # Call to Action Buttons
@@ -682,12 +642,9 @@ meta:
     ddb61f35-83f1-46d4-904b-da525acf9e7c: 'Group Head Name' # Group Head Name
     de65ce28-2919-4a65-9aa2-c18e5518f2fe: Program/Subdivision # Program/Subdivision
     de588e4c-ab76-4b95-8150-afebc746259b: Documents # Documents
-    de14155f-e982-42aa-9b79-71ceeaf08a77: 'Hide Summary?' # Hide Summary?
     de273878-3929-4764-b4ab-a670a2987d39: 'Highlighted News' # Highlighted News
-    df5e2237-6afd-498d-8e84-fc3dcfba882c: 'Start and End Date' # Start and End Date
     df8685d8-8295-456f-b677-b60cced48d3d: Events # Events
     df535740-f62a-4027-aefd-b7fef85f4a7f: Resources # Resources
-    dfc7cbab-e567-4f42-9b89-18083edcdfa6: Files # Files
     dfc8cfa9-56e1-4698-bfe5-2c80960297c0: 'Official Board and Commission' # Official Board and Commission
     e0be1e19-d6d8-4d1d-849e-14d179664811: 'Teams Index' # Teams Index
     e01574f5-8305-4c87-a518-b387aecc4997: Heading # Heading
@@ -738,7 +695,6 @@ meta:
     ef1b6cec-c4ea-45ca-ba65-e9dc7d0cc2ac: Services # Services
     ef7a2eb3-d6b3-44db-9db1-5500ac82498c: Meetings # Meetings
     ef60fa1b-14d1-4deb-8034-d0daebcb216d: 'Add a How to Participate Block' # Add a How to Participate Block
-    ef757b77-b1b4-4bbf-9110-41185f7093e5: 'Online Meeting Phone Number' # Online Meeting Phone Number
     ef3925f3-23b4-404d-93d6-154519305756: 'Event Locations' # Event Locations
     efb06368-db7c-46e0-84e2-1857e0393801: 'Text & Image Block' # Text & Image Block
     f09dcf7b-4b1f-47a1-ac7b-4425e46473cd: Process # Process
@@ -749,7 +705,6 @@ meta:
     f6e8acb0-e8f3-40de-8500-b95e6ed06def: 'Event Location' # Event Location
     f7e4a055-457f-46eb-ab3d-3e816f80a81d: 'Related Public Body' # Related Public Body
     f7fa3aa0-7245-47fd-8f47-3a3218e45e6c: 'Event Entries' # Event Entries
-    f8f83baf-d18b-46db-8bb2-5372736bf21a: 'Oaklandca.gov﻿ Link' # Oaklandca.gov﻿ Link
     f9ec1965-4721-44e2-b551-069ae06c54f3: 'Staff Import Email' # Staff Import Email
     f9ee611f-21b4-48f8-8fc6-267f5b3ee36b: Officials # Officials
     f9f00c04-43ac-44f6-a44f-922292b71b01: Milestone # Milestone
@@ -797,7 +752,7 @@ plugins:
   aws-s3:
     enabled: '1'
     licenseKey: null
-    schemaVersion: '1.2'
+    schemaVersion: '2.0'
     settings: null
   beam:
     enabled: '1'
@@ -808,7 +763,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: V1MGTTWWOX2B8VX28A8VJ2ZQ
-    schemaVersion: 3.10.0
+    schemaVersion: 4.5.0
     settings:
       apiKey: ''
       cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
@@ -868,7 +823,7 @@ plugins:
   buttonbox:
     edition: standard
     enabled: true
-    schemaVersion: 2.0.0
+    schemaVersion: 3.0.0
   calendar:
     edition: pro
     enabled: false
@@ -897,7 +852,7 @@ plugins:
   colour-swatches:
     edition: standard
     enabled: true
-    schemaVersion: 1.4.2
+    schemaVersion: 1.4.3
   cp-body-classes:
     enabled: '1'
     licenseKey: null
@@ -953,13 +908,13 @@ plugins:
   feed-me:
     enabled: '1'
     licenseKey: null
-    schemaVersion: 4.4.1
+    schemaVersion: 5.1.0.0
     settings: null
   freeform:
     edition: lite
     enabled: true
     licenseKey: 80IWDHDW3ZJB27DOLCE6AQE5
-    schemaVersion: 3.6.5
+    schemaVersion: 4.2.7
     settings:
       ajaxByDefault: true
       alertNotificationRecipients: null
@@ -1040,7 +995,7 @@ plugins:
   google-maps:
     enabled: true
     licenseKey: 88Z3Y9HY00OZ7NQEBWTNETQL
-    schemaVersion: 4.1.0
+    schemaVersion: 4.3.0
     settings:
       browserKey: AIzaSyAjLOAKFea8xqgeL9Hf8TyXLNcLxXVgJzo
       enableJsLogging: true
@@ -1055,7 +1010,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: S528HF1X7FAZ4V7BQ1GARNLD
-    schemaVersion: 1.0.1
+    schemaVersion: 1.2.3
     settings:
       enableCache: true
       iconSetsPath: '@webroot/dist/icons/'
@@ -1066,7 +1021,7 @@ plugins:
     edition: pro
     enabled: true
     licenseKey: VN37QSJPKN968T9I03EES5AK
-    schemaVersion: 3.0.0
+    schemaVersion: 4.0.0
   incognito-field:
     enabled: '1'
     licenseKey: null
@@ -1080,7 +1035,7 @@ plugins:
   inventory:
     edition: standard
     enabled: true
-    schemaVersion: 2.0.0
+    schemaVersion: 3.0.0
   linkit:
     enabled: '1'
     licenseKey: 46HXL3KFU6B2Z3R5LOC856G4
@@ -1103,7 +1058,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: MHV0BQ72A7IVPYOA3JKMD3BQ
-    schemaVersion: 2.13.0
+    schemaVersion: 3.6.2
   oakland-email-notifications:
     edition: standard
     enabled: true
@@ -1170,7 +1125,7 @@ plugins:
   retour:
     enabled: '1'
     licenseKey: 5DC6J57ZUDZKVM1WI3TONGUK
-    schemaVersion: 3.0.11
+    schemaVersion: 3.0.12
     settings:
       alwaysStripQueryString: ''
       createUriChangeRedirects: '1'
@@ -1192,7 +1147,7 @@ plugins:
   sherlock:
     edition: lite
     enabled: true
-    schemaVersion: 3.1.3
+    schemaVersion: 4.1.0
     settings:
       apiKey: mjfdcbwqahbasajdrudcnenyzzcnhcsj
       blowfishHashCost:
@@ -1518,16 +1473,16 @@ plugins:
   super-table:
     edition: standard
     enabled: true
-    schemaVersion: 2.2.1
+    schemaVersion: 3.0.0
   tablemaker:
     enabled: true
     licenseKey: null
-    schemaVersion: 2.0.0
+    schemaVersion: 3.0.0
     settings: null
   template-select:
     edition: standard
     enabled: true
-    schemaVersion: 2.0.0
+    schemaVersion: 4.0.0
   templatecomments:
     enabled: '1'
     licenseKey: null
@@ -1550,7 +1505,7 @@ plugins:
   usermanual:
     edition: standard
     enabled: true
-    schemaVersion: 2.0.1
+    schemaVersion: 4.0.0
     settings:
       enabledSideBar: true
       pluginNameOverride: 'User Guide'
@@ -1587,5 +1542,5 @@ system:
   live: true
   name: 'City of Oakland'
   retryDuration: null
-  schemaVersion: 3.8.0.1
+  schemaVersion: 4.5.3.0
   timeZone: America/Los_Angeles

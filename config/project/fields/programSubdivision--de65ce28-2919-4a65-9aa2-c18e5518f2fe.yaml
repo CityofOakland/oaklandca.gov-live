@@ -2,16 +2,16 @@ columnSuffix: wsljifnu
 contentColumnType: text
 fieldGroup: 515d69ea-6174-405e-ab09-653ef390e370 # Services
 handle: programSubdivision
-instructions: ''
+instructions: null
 name: Program/Subdivision
 searchable: false
 settings:
   byteLimit: null
   charLimit: null
-  code: ''
+  code: false
   columnType: null
-  initialRows: '4'
-  multiline: ''
+  initialRows: 4
+  multiline: false
   placeholder: null
   uiMode: normal
 translationKeyFormat: null

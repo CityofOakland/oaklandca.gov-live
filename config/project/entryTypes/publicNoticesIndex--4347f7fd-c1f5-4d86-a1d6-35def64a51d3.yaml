@@ -2,6 +2,7 @@ fieldLayouts:
   687a5de5-4e6a-4c08-b1df-a1a29ae224fc:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -23,24 +25,33 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: da422ebb-69aa-46f3-a441-3d0cc12452d1
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210 # Lead In
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 231bc1cd-4293-4f9e-960a-37044c90d41a
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: bacfb530-2851-4aa8-b147-c70687d43e5e
+        userCondition: null
 handle: publicNoticesIndex
 hasTitleField: true
 name: 'Public Notices Index'
 section: 295cc3ee-1fbc-4b96-8ad5-128e24953d2b # Public Notices Index
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null

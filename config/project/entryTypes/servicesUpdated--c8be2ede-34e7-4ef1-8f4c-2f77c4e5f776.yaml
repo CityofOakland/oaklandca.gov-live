@@ -2,23 +2,18 @@ fieldLayouts:
   4fdcd4a2-cdca-49a9-b8cb-43eee133e6ee:
     tabs:
       -
+        elementCondition: null
         elements:
-          -
-            style: tip
-            tip: 'Service pages help guide people through the process of completing a transaction. See the [Service Documentation](https://www.oaklandca.gov/admin/usermanual).'
-            type: craft\fieldlayoutelements\Tip
-          -
-            heading: Header
-            type: craft\fieldlayoutelements\Heading
           -
             autocapitalize: true
             autocomplete: false
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
-            instructions: 'Start with a verb. Should clearly lay out the action you want people to take.'
-            label: 'Service Title'
+            instructions: null
+            label: null
             max: null
             min: null
             name: null
@@ -30,233 +25,341 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: d64145c5-49ac-45b3-b09f-fb4505953504
+            userCondition: null
             warning: null
             width: 100
           -
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'Service pages help guide people through the process of completing a transaction. See the [Service Documentation](https://www.oaklandca.gov/admin/usermanual).'
+            type: craft\fieldlayoutelements\Tip
+            uid: 5b73ef4c-9e20-48c3-887a-757d99e61b4d
+            userCondition: null
+          -
+            elementCondition: null
+            heading: Header
+            type: craft\fieldlayoutelements\Heading
+            uid: 4e26aba6-62a0-41ce-aa3f-8801c92de07d
+            userCondition: null
+          -
+            elementCondition: null
             fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210 # Lead In
             instructions: 'Remember to keep it short and concise. Describe what you will do or get from this page.'
-            label: ''
-            required: '1'
+            label: null
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2ebc1782-f6bf-4782-abb1-b0c859966167
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 812c490f-c059-47ff-9ef2-25fbd40c77fe # Call Out
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: dcd6409b-c180-4a33-b297-d95fb3a7b81a
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             heading: 'Before You Start'
             type: craft\fieldlayoutelements\Heading
+            uid: a5083f48-adfc-4020-9656-e9926419da7c
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 8a7f1f75-cb2f-4707-8047-676959644f08 # Before You Start
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a3bc4a30-2e94-4049-b28a-0e99337c8ef3
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             heading: 'What to Do'
             type: craft\fieldlayoutelements\Heading
+            uid: dbada21c-d191-41c1-8629-c0a39be79506
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
             instructions: 'Will default to ''What to Do''. Customize if needed.'
             label: Header
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 90b2c33e-6917-498b-9957-4460b51afc63
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 4350b4ce-8cf4-44c9-9fee-4d81d5feec19 # Description
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 9b4e285d-0566-4c8d-afc1-b4303133e2ef
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: db97d5d4-3cdf-46c8-85f3-fa7bef2c1d87 # Call to Action Buttons
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: e03bbc2e-df4b-4888-bda4-be89524cfd79
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             heading: Options
             type: craft\fieldlayoutelements\Heading
+            uid: e815846b-b545-4872-864f-4f5927ece338
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 6aaa96ea-268b-4fb7-b27c-0a481c5b3c51 # Accordion Header
-            instructions: ''
+            instructions: null
             label: 'Other Options Header'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 66186d21-3eee-48e1-8305-bc462afb8a80
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: e57d997c-ca20-4022-8841-f9fd919933df # Accordion
             instructions: "Add additional ways to complete the service. These options will be embedded in accordions.\r\n\r\nYour **heading** should be action oriented. “Pay by Phone” or “Apply in Person.”\r\n\r\nYour **content** is “how to complete this action.” You can include text, buttons, contact information, and documents."
             label: 'Other Options'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 03110bb7-4062-464d-be05-c138d504eb88
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             heading: 'Process List'
             type: craft\fieldlayoutelements\Heading
+            uid: 6d342575-3509-4104-a22a-3a3406bd51d8
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: b90c5e54-1301-4711-845c-d3f5b4643487 # Process Header
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: fac6ecfd-a4b5-4af7-b3d8-98c54920f84d
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f09dcf7b-4b1f-47a1-ac7b-4425e46473cd # Process
-            instructions: ''
+            instructions: null
             label: 'Step-by-Step Process'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 22bf4acc-9c80-46ae-a8fd-7157bcd75c1c
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             heading: 'Need to Know'
             type: craft\fieldlayoutelements\Heading
+            uid: e5b014aa-1516-4710-a96d-073fab75a238
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 45846dfd-0e86-40a2-81d2-b47bf69f16ae # Need to Know
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2bb8756c-db04-4966-81a6-2765b05a27ba
+            userCondition: null
             warning: null
             width: 100
         name: 'Main Body Content'
-        sortOrder: 1
+        uid: 62dc79a8-b778-4df3-958c-547cc3bbede3
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             heading: 'Contact Information'
             type: craft\fieldlayoutelements\Heading
+            uid: a3d5b0ce-1211-4bdb-9045-273a5f1b3f26
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 286b7386-711a-4eae-abe1-b4e397656bcb # Department
             instructions: 'Choose the Department that is responsible for this service.'
             label: 'Contact Department'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 7733a2a4-2028-4573-b2be-43c1529728b2
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: de65ce28-2919-4a65-9aa2-c18e5518f2fe # Program/Subdivision
             instructions: 'If the contact is a specific division, office or bureau within your department, add that here.'
             label: 'Contact Division'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: eedf03cd-4e29-4422-914f-429717fe3b6b
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a # Email Address
-            instructions: ''
+            instructions: null
             label: 'Contact Email'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 7e504b5f-64a9-4fd2-a1b4-0d75c148291f
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 5e5aad16-6bdc-4d3e-adfd-75147a323b78 # Phone Number
-            instructions: ''
+            instructions: null
             label: 'Contact Phone Number'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4a48013f-8e6c-4672-ac7b-ee651274389b
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 0e74b82a-254d-45d0-b9a1-d6b6774e6eef # Contact Address
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: cb799137-b1bf-44ac-8e7f-f7e74bab0969
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             heading: 'Related Content'
             type: craft\fieldlayoutelements\Heading
+            uid: 1d708aef-5b9c-49f7-8ee8-74a3a7072cd3
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: bf6d4af1-38c9-4159-8980-38c9f2e52568 # Related Services
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 6ab60f7e-5df7-436a-9f51-f25218cd7b92
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 4b5cda22-38e1-4580-b113-b6ceee3c9c09 # Related Resources
-            instructions: ''
-            label: ''
-            required: ''
+            instructions: null
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 82eee0e3-2018-477f-a2b4-5feec2a04237
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: a64389e9-e0f9-4d5b-ae78-16f6b5db6785 # Related Departments
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: aa3873d6-3caa-41d7-a09b-533219de9326
+            userCondition: null
             warning: null
             width: 100
         name: 'Sidebar Content'
-        sortOrder: 2
+        uid: 9da16359-cca7-44dc-8576-6b85b6066da0
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d # Metadata
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 7f893c6c-9f16-4cd8-80d3-71b3e699da1e
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7 # View Count
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 673de2fc-a401-48a6-830a-75bf68a05199
+            userCondition: null
             warning: null
             width: 100
         name: SEO
-        sortOrder: 3
+        uid: 3507ab5f-2315-4fa0-b98e-8ad8113e12a6
+        userCondition: null
 handle: servicesUpdated
 hasTitleField: true
 name: Services
 section: b7e437e1-239f-4c5c-8c62-5f0323f9d22c # Services
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

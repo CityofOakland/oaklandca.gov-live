@@ -3,48 +3,57 @@ fieldLayouts:
   c771c456-8b8b-455b-8cb5-c552cd04e4bd:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 236e175c-1794-4eca-8655-15d196ec0e23 # Images
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 40bf5b2a-6c87-4f83-8d81-c791d7d8d502
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 16d44fb7-d2c1-4c30-aea1-61ff305f6be9
+        userCondition: null
 fields:
   236e175c-1794-4eca-8655-15d196ec0e23: # Images
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: images
-    instructions: ''
+    instructions: null
     name: Images
     searchable: false
     settings:
       allowSelfRelations: false
+      allowSubfolders: false
       allowUploads: true
       allowedKinds:
         - image
+      branchLimit: null
       defaultUploadLocationSource: 'volume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
-      defaultUploadLocationSubpath: ''
-      limit: ''
+      defaultUploadLocationSubpath: null
       localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: null
+      minRelations: null
       previewMode: full
-      restrictFiles: '1'
+      restrictFiles: true
+      restrictLocation: true
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+      restrictedLocationSubpath: null
       selectionLabel: 'Add an image'
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
-      singleUploadLocationSource: 'volume:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
-      singleUploadLocationSubpath: ''
-      source: null
       sources: '*'
       targetSiteId: null
-      useSingleFolder: true
       validateRelatedElements: true
       viewMode: list
     translationKeyFormat: null

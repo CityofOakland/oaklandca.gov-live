@@ -6,8 +6,7 @@ instructions: 'Add the URL for the Twitter account for this entry.'
 name: Twitter
 searchable: false
 settings:
-  maxLength: '255'
-  placeholder: ''
+  maxLength: 255
   types:
     - url
 translationKeyFormat: null

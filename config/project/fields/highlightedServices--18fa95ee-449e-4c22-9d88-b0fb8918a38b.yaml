@@ -7,11 +7,13 @@ name: 'Highlighted Services'
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: '9'
+  branchLimit: null
   localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: 9
+  minRelations: null
   selectionLabel: 'Add a service'
   showSiteMenu: true
-  source: null
   sources:
     - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
   targetSiteId: null

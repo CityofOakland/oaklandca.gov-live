@@ -2,6 +2,7 @@ fieldLayouts:
   cbca7b3c-7a02-4dd4-ad82-f2cd2580150c:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -23,30 +25,19 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 30995d9d-fdd4-49c9-8e7e-9a0d88229fe6
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: a51c0915-3bb7-4c85-ade7-da85e5507e8a
+        userCondition: null
+fs: documents
 handle: documents
-hasUrls: true
 name: Documents
-settings:
-  addSubfolderToRootUrl: true
-  autoFocalPoint: false
-  bucket: cao-94612
-  bucketSelectionMode: choose
-  cfDistributionId: ''
-  cfPrefix: null
-  expires: ''
-  keyId: $S3_API_KEY
-  makeUploadsPublic: true
-  region: us-west-2
-  secret: $S3_SECRET
-  storageClass: ''
-  subfolder: documents
 sortOrder: 10
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-type: craft\awss3\Volume
-url: 'https://cao-94612.s3.amazonaws.com/'
+transformFs: null
+transformSubpath: ''

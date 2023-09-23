@@ -3,52 +3,65 @@ fieldLayouts:
   07a77220-9b59-422c-b6e7-779fe933bce2:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 6d5d4d77-fe05-434f-92d4-748af5630b9a # Step Number
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 1267a7b2-cd6f-4b92-b0cf-076b98cafbb1
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: e9feaa97-a672-4708-8e22-90e5a5116d24 # Step Required?
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 9079e6d0-66ea-4ec7-8a08-b85f599674a1
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 0ccdd608-28e4-473d-8fa8-f824e4591a7c # Step Action
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a14b7603-d807-41f3-9984-4af2164f890b
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 8353cc90-5fec-4528-8a8a-fd2344aac442
+        userCondition: null
 fields:
   0ccdd608-28e4-473d-8fa8-f824e4591a7c: # Step Action
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: stepAction
-    instructions: ''
+    instructions: null
     name: 'Step Action'
     searchable: false
     settings:
       allowSelfRelations: false
-      limit: '1'
+      branchLimit: null
       localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
       selectionLabel: 'Add an action'
       showSiteMenu: true
-      source: null
       sources:
         - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
         - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
@@ -65,16 +78,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: stepNumber
-    instructions: ''
+    instructions: null
     name: 'Step Number'
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -85,7 +98,7 @@ fields:
     contentColumnType: boolean
     fieldGroup: null
     handle: stepRequired
-    instructions: ''
+    instructions: null
     name: 'Step Required?'
     searchable: true
     settings:

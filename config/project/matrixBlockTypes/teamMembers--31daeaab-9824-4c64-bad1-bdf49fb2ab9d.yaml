@@ -3,27 +3,35 @@ fieldLayouts:
   859a10a3-3b80-47a8-8ae8-30e2bd89736c:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 0cf5f750-4518-4e2c-9766-9b21e108e9be # Staff Heading
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: eec3589a-6d9d-4205-ba87-fb963eaf4614
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: a9d9aefa-be2d-4db6-af99-ff6d90c0e200 # Staff
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: cdfb4c6c-42d1-4447-a1e5-9960732bb9b5
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 709a24ba-cde6-4769-bce4-9eba5d90a6cd
+        userCondition: null
 fields:
   0cf5f750-4518-4e2c-9766-9b21e108e9be: # Staff Heading
     columnSuffix: null
@@ -36,10 +44,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -50,16 +58,18 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: staff
-    instructions: ''
+    instructions: null
     name: Staff
     searchable: false
     settings:
       allowSelfRelations: false
-      limit: ''
+      branchLimit: null
       localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: null
+      minRelations: null
       selectionLabel: 'Add a staff member'
       showSiteMenu: true
-      source: null
       sources:
         - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
         - 'section:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers

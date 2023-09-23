@@ -7,25 +7,29 @@ name: 'Funding Logos'
 searchable: false
 settings:
   allowSelfRelations: false
+  allowSubfolders: false
   allowUploads: true
   allowedKinds:
     - image
+  branchLimit: null
   defaultUploadLocationSource: 'volume:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
-  defaultUploadLocationSubpath: ''
-  limit: ''
+  defaultUploadLocationSubpath: null
   localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
   previewMode: full
-  restrictFiles: '1'
+  restrictFiles: true
+  restrictLocation: true
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  restrictedLocationSubpath: null
   selectionLabel: 'Add a logo'
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: true
-  singleUploadLocationSource: 'volume:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
-  singleUploadLocationSubpath: ''
-  source: null
   sources: '*'
   targetSiteId: null
-  useSingleFolder: true
   validateRelatedElements: false
   viewMode: list
 translationKeyFormat: null

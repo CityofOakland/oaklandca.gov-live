@@ -3,6 +3,7 @@ fieldLayouts:
   0d2a98ab-fda1-4a2e-9b71-7d1241f0d436:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -10,6 +11,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -25,46 +27,61 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\TitleField
+            uid: 76ff0f7d-a20b-4579-8c6c-98b9df7f5980
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: fb754f0e-6d51-4289-a65a-591249144c1b # Legal Title
             instructions: 'Enter the long title of this Public Notice Type. This name will be used for specific sections of the site where long-form titles are more appropriate.'
-            label: ''
-            required: ''
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 7f880b49-c986-44e3-a807-46b05a650d32
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 58eda166-7a65-4fb6-8f7d-c6590b0591ae # Summary
             instructions: ' '
             label: Description
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 27ca8b6a-f4a6-4165-a996-707d4c8ef3b5
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 7cdf9a2c-580b-4d98-8d49-1e3a24205000 # Charter Number
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: bb3d43d5-95be-4d06-9295-5c6f1c33ef14
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 93eaa329-904e-4a23-9047-4decf3d47cac # Redirect URL
             instructions: ' '
             label: URL
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 084a80f0-a607-428d-8428-ab459e9672d6
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 597d041e-9ed2-4903-8494-15e11cdfd125
+        userCondition: null
 handle: publicNoticeTypes
 name: 'Public Notice Types'
 siteSettings:

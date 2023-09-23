@@ -3,36 +3,47 @@ fieldLayouts:
   cbb1fb74-7448-47e6-9753-16cf628a615e:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 1020f3d1-0dcb-45c8-b054-15d7d2bfa99d # Heading
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 9447b640-14bf-4b34-bac6-79c6fe02bed1
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 7c42e182-2c0f-45c6-9b1a-229a0312589a # Entries Description
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 42217579-95d1-4071-aa69-58bad31c2b8b
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 260c86d2-a919-42ce-ba0f-64f1d25952d5 # Entries
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: def027cb-599a-4376-9423-ba878a68de59
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 51ee09f5-23b8-4df3-987b-09328ac5b1a0
+        userCondition: null
 fields:
   7c42e182-2c0f-45c6-9b1a-229a0312589a: # Entries Description
     columnSuffix: null
@@ -49,13 +60,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: 'Simple with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: '1'
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       uiMode: enlarged
@@ -72,11 +83,13 @@ fields:
     searchable: false
     settings:
       allowSelfRelations: false
-      limit: '9'
+      branchLimit: null
       localizeRelations: false
-      selectionLabel: ''
+      maintainHierarchy: false
+      maxRelations: 9
+      minRelations: null
+      selectionLabel: null
       showSiteMenu: true
-      source: null
       sources:
         - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
         - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
@@ -102,16 +115,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: heading
-    instructions: ''
+    instructions: null
     name: Heading
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

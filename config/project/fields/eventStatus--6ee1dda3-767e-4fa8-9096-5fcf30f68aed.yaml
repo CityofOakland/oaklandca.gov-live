@@ -2,11 +2,11 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: 7a44f3bc-fbe1-424a-a4ea-6bb6f3528d75 # Events
 handle: eventStatus
-instructions: ''
+instructions: null
 name: 'Event Status'
 searchable: false
 settings:
-  optgroups: true
+  columnType: string
   options:
     -
       __assoc__:

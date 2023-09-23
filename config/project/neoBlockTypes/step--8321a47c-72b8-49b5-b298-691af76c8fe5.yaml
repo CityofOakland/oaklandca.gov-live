@@ -1,35 +1,52 @@
 childBlocks: null
+conditions: null
+description: ''
+enabled: true
 field: f09dcf7b-4b1f-47a1-ac7b-4425e46473cd # Process
 fieldLayouts:
   6e4f2506-2d0d-440e-b6a4-7b67d968cb18:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
-            instructions: ''
+            instructions: null
             label: Header
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 26a09184-dedd-42f0-b761-dbc481a5b78a
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: c14fea44-3f71-477c-88d9-6f37c168d868 # Content
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 3c4af1bf-f77f-4647-b7d7-11c449fe029d
+            userCondition: null
             warning: null
             width: 100
         name: Default
-        sortOrder: 1
+        uid: 5b7c5f14-73bf-4c15-8998-ace71013cca1
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: step
+icon: null
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: 'Add a Step'
 sortOrder: 1
 topLevel: true

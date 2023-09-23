@@ -3,18 +3,23 @@ fieldLayouts:
   c45eac06-3dc5-4013-8563-49166324a2f7:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 474e10df-7bcd-4737-8b49-8c14f7c11b79 # Embed
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: cb3ad976-bccf-484d-b2fa-685c5bba3c33
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: d04a6080-e741-4c41-970d-2bfaf1961c66
+        userCondition: null
 fields:
   474e10df-7bcd-4737-8b49-8c14f7c11b79: # Embed
     columnSuffix: null
@@ -27,10 +32,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

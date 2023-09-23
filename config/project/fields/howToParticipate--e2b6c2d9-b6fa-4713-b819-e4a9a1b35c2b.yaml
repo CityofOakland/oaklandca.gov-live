@@ -7,8 +7,8 @@ name: 'How to Participate'
 searchable: false
 settings:
   contentTable: '{{%matrixcontent_howtoparticipate}}'
-  maxBlocks: '1'
-  minBlocks: ''
+  maxBlocks: 1
+  minBlocks: null
   propagationKeyFormat: null
   propagationMethod: all
 translationKeyFormat: null

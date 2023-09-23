@@ -2,12 +2,12 @@ columnSuffix: null
 contentColumnType: text
 fieldGroup: 211c24f8-a046-4d59-a3ac-d8c51494ec3d # Page Alerts
 handle: alertLink
-instructions: ''
+instructions: null
 name: 'Alert Link'
 searchable: false
 settings:
-  allowCustomText: '1'
-  allowTarget: ''
+  allowCustomText: true
+  allowTarget: false
   defaultText: 'Learn more »'
   selectLinkText: ''
   types:

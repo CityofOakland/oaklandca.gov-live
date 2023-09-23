@@ -6,13 +6,14 @@ instructions: 'Outline the process. Numbers will be added automatically based on
 name: Process
 searchable: false
 settings:
-  maxBlocks: ''
-  maxLevels: ''
-  maxTopBlocks: ''
-  minBlocks: ''
+  maxBlocks: null
+  maxLevels: null
+  maxTopBlocks: null
+  minBlocks: null
+  minLevels: null
+  minTopBlocks: null
   propagationKeyFormat: null
   propagationMethod: all
-  wasModified: false
 translationKeyFormat: null
 translationMethod: site
 type: benf\neo\Field

@@ -1,35 +1,52 @@
 childBlocks: null
+conditions: null
+description: ''
+enabled: true
 field: f6e8acb0-e8f3-40de-8500-b95e6ed06def # Event Location
 fieldLayouts:
   3df4297f-b3f7-483a-be91-fcf03e4c650f:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 2260316d-d754-471f-a901-9d8ed19c13d3 # Full Name
-            instructions: ''
+            instructions: null
             label: 'Location Name'
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: c660fd32-0a69-4caa-83f9-308b18b0b805
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 0e74b82a-254d-45d0-b9a1-d6b6774e6eef # Contact Address
-            instructions: ''
+            instructions: null
             label: 'Location Address'
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 5f6abfdd-3502-461d-81a5-fb3d3b5b1386
+            userCondition: null
             warning: null
             width: 100
         name: Default
-        sortOrder: 1
+        uid: 9daeb760-892a-48ae-bbce-5b7a83d2835f
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: physicalLocation
+icon: null
+ignorePermissions: true
 maxBlocks: 1
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: 'Physical Location'
 sortOrder: 2
 topLevel: true

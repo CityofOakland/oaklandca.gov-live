@@ -7,8 +7,8 @@ name: 'Call to Action'
 searchable: false
 settings:
   contentTable: '{{%matrixcontent_calltoaction}}'
-  maxBlocks: '3'
-  minBlocks: ''
+  maxBlocks: 3
+  minBlocks: null
   propagationKeyFormat: null
   propagationMethod: all
 translationKeyFormat: null

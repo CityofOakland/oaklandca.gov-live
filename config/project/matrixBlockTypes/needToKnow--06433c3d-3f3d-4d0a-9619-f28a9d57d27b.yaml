@@ -3,43 +3,51 @@ fieldLayouts:
   422f8b84-557c-4f2f-9c4e-3b4bdaf125eb:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 3cf4e603-4947-4358-9293-da9c833260f4 # Header
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 00e16f1f-bae8-41b9-b173-339fef0d2956
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: c04a4f2d-6106-48bf-8cce-ef62f741ab4c # Description
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 1a368ecd-3a09-484f-937b-d414068b6048
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 81938e73-d73b-4818-8b2f-36abae860b5c
+        userCondition: null
 fields:
   3cf4e603-4947-4358-9293-da9c833260f4: # Header
     columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: header
-    instructions: ''
+    instructions: null
     name: Header
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: 'Need to Know'
       uiMode: normal
     translationKeyFormat: null
@@ -50,7 +58,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: description
-    instructions: ''
+    instructions: null
     name: Description
     searchable: false
     settings:
@@ -60,13 +68,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: Content.json
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: ''
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       uiMode: enlarged

@@ -7,8 +7,8 @@ name: 'Accessibility Block'
 searchable: false
 settings:
   contentTable: '{{%matrixcontent_accessibilityblock}}'
-  maxBlocks: '1'
-  minBlocks: ''
+  maxBlocks: 1
+  minBlocks: null
   propagationKeyFormat: null
   propagationMethod: all
 translationKeyFormat: null

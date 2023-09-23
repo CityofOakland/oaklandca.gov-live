@@ -2,6 +2,7 @@ fieldLayouts:
   b9b0e832-3088-4f30-9766-f28ef4f30493:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,9 +10,10 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
-            label: ''
+            label: null
             max: null
             min: null
             name: null
@@ -23,118 +25,159 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: fcfb631d-92b4-407d-9882-8f9757915119
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 9b0e503c-9a89-4e43-b80f-fabf50565590
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 3bc9f075-4edc-4909-ba86-ea128c3ddb93 # Subheading
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4773656b-ee32-49bb-a41c-3fd11f7f722a
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: d7c59790-6279-474b-ab32-27cca3cfc19b # Label
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a0f2b8ed-b817-4f87-b3c2-ac3e6bd8309f
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: 856e0565-3a66-4305-825e-757ac41b9ff4 # Link
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d3e3f5eb-8c7c-45b1-8a88-daa847e0df8b
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: f62c85ae-2203-4d1a-8702-da515126a398 # Banner
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: fbcce9e3-23c3-4fc5-aace-0e3ade4a018b
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 1011d286-bca1-40e1-abcb-1d61f6f7ebb2 # City Services and Resources Updates Description
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: c000fdc7-76db-4326-b53f-77cb07a9b44a
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 19567722-f3ec-4502-977f-61661602f624 # City Services and Resources Updates
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 344d6c98-ec18-4390-bb52-f3ee867b4184
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: de273878-3929-4764-b4ab-a670a2987d39 # Highlighted News
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 1353d77b-4673-4469-ba91-9d4b50554004
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 7ff43a45-a85f-4be9-b97c-c1fff5d916b1 # Section Heading
-            instructions: ''
+            instructions: null
             label: 'Learn More About Header'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 39be051e-0801-4a9b-b0c9-91a33bdc94a8
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f528b37c-8b15-43b8-8da0-d1b161fbf629 # Learn More About
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 377d1bb8-94d6-4c5c-ae54-d3ac39bddab1
+            userCondition: null
             warning: null
             width: 100
         name: Homepage
-        sortOrder: 1
+        uid: 5f29a579-3860-42f8-9838-972cd8295f5b
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d # Metadata
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 5c8afe3f-1ef9-4496-b54f-10884d6cf06a
+            userCondition: null
             warning: null
             width: 100
         name: SEO
-        sortOrder: 2
+        uid: 7d553d43-e1eb-44ff-a224-9cf2100928f3
+        userCondition: null
 handle: homepage
 hasTitleField: false
 name: Homepage
 section: e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5 # Homepage
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null

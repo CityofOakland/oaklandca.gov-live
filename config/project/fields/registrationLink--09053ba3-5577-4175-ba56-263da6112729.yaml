@@ -6,8 +6,7 @@ instructions: 'Enter the URL for an online registration page (Eg., Eventbrite) f
 name: 'Registration Link'
 searchable: false
 settings:
-  maxLength: '255'
-  placeholder: ''
+  maxLength: 255
   types:
     - url
 translationKeyFormat: null

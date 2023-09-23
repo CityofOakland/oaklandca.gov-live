@@ -6,9 +6,9 @@ instructions: 'Choose an item you want to link to with this CTA Button'
 name: 'CTA Button'
 searchable: false
 settings:
-  allowCustomText: '1'
-  allowTarget: '1'
-  defaultText: ''
+  allowCustomText: true
+  allowTarget: true
+  defaultText: null
   selectLinkText: ''
   types:
     __assoc__:

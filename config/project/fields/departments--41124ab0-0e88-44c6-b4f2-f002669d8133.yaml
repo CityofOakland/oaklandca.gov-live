@@ -7,11 +7,13 @@ name: Departments
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: ''
+  branchLimit: null
   localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
   selectionLabel: 'Add a department'
   showSiteMenu: true
-  source: null
   sources:
     - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
   targetSiteId: null

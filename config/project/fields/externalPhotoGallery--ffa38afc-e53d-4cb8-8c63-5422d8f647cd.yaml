@@ -6,9 +6,9 @@ instructions: 'Use this link to point to a Flickr or SmugMug gallery'
 name: 'External Photo Gallery'
 searchable: false
 settings:
-  allowCustomText: '1'
-  allowTarget: '1'
-  defaultText: ''
+  allowCustomText: true
+  allowTarget: true
+  defaultText: null
   selectLinkText: ''
   types:
     __assoc__:

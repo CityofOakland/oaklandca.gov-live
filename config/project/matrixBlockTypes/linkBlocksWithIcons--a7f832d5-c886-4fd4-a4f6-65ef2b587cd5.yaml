@@ -3,45 +3,59 @@ fieldLayouts:
   3a07acb2-2b7c-4bbf-8a61-9d46ee581b30:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: e0441456-2c87-45db-aacd-22ac957f8fc1 # Heading
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 5d93c646-c4c2-4ffd-ba51-387f92dfff1f
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: fd5628cc-7472-48c6-8263-14745dbb90c9 # Link Set Description
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: bc58600a-5d96-4078-a942-85d5725c883e
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 07e65c29-fba5-4a88-ade2-bd8abfb4cc69 # Link Set
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f1549f48-7365-42fb-8d47-0a029c6fadec
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 6d6039ca-322a-4f7f-91e2-371a9f5d637c # Read More Link
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ffb2f6c1-880b-4c84-9aea-7bc10f9b913d
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 5fb7ad65-0e8a-42eb-ba19-39cafc238111
+        userCondition: null
 fields:
   6d6039ca-322a-4f7f-91e2-371a9f5d637c: # Read More Link
     columnSuffix: null
@@ -52,9 +66,9 @@ fields:
     name: 'Read More Link'
     searchable: false
     settings:
-      allowCustomText: '1'
-      allowTarget: '1'
-      defaultText: ''
+      allowCustomText: true
+      allowTarget: true
+      defaultText: null
       selectLinkText: ''
       types:
         __assoc__:
@@ -254,6 +268,8 @@ fields:
     name: 'Link Set'
     searchable: false
     settings:
+      blockTypeFields: 0
+      changedFieldIndicator: null
       columns:
         __assoc__:
           -
@@ -272,13 +288,12 @@ fields:
                   - ''
       contentTable: '{{%stc_52_linkset}}'
       fieldLayout: table
-      maxRows: '3'
-      minRows: ''
-      placeholderKey: null
+      maxRows: 3
+      minRows: null
       propagationKeyFormat: null
       propagationMethod: all
-      selectionLabel: ''
-      staticField: ''
+      selectionLabel: null
+      staticField: null
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
@@ -287,16 +302,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: heading
-    instructions: ''
+    instructions: null
     name: Heading
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -307,7 +322,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: linkSetDescription
-    instructions: ''
+    instructions: null
     name: 'Link Set Description'
     searchable: false
     settings:
@@ -317,13 +332,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: 'Simple with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: ''
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       uiMode: enlarged

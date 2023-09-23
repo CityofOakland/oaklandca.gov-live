@@ -2,6 +2,7 @@ fieldLayouts:
   934f8a54-bb65-4cc5-b521-324b51a882af:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -23,42 +25,57 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 85fdf466-3dfa-4abc-a011-6c9e3ef589fa
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210 # Lead In
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 3675819b-aa58-4ae8-9811-e196e86437ba
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: b0a28612-04bc-4669-a6d1-816c9c768a29 # Official Department
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f54396a3-286f-49fe-ae41-3038dbc19a73
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: 93eaa329-904e-4a23-9047-4decf3d47cac # Redirect URL
             instructions: null
             label: null
-            required: '0'
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 75a8db5c-bd4d-409d-9c98-40aa10288424
+            userCondition: null
             warning: null
             width: 50
         name: Content
-        sortOrder: 1
+        uid: 9362e056-608a-4238-b084-dfc8116da791
+        userCondition: null
 handle: departmentRedirect
 hasTitleField: true
 name: 'Department Redirect'
 section: b3411cb1-e860-46ed-9cd6-58cf9b8daacb # Departments
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 2
 titleFormat: null
 titleTranslationKeyFormat: null

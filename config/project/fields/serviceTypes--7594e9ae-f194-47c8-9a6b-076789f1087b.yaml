@@ -6,16 +6,15 @@ instructions: 'Choose a max of 3 related service categories.'
 name: 'Service Categories'
 searchable: false
 settings:
-  allowLimit: false
-  allowMultipleSources: false
   allowSelfRelations: false
-  branchLimit: '3'
-  limit: null
+  branchLimit: 3
   localizeRelations: false
+  maintainHierarchy: true
+  maxRelations: null
+  minRelations: null
   selectionLabel: 'Add a type'
   showSiteMenu: true
   source: 'group:8bcf4697-1dd2-47b2-91e2-8ad9b4b86741' # Service Categories
-  sources: '*'
   targetSiteId: null
   validateRelatedElements: false
   viewMode: null

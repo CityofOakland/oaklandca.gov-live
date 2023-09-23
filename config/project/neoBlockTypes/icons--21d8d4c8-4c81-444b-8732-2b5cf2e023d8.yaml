@@ -1,26 +1,40 @@
 childBlocks: null
+conditions: null
+description: ''
+enabled: true
 field: e2442a2e-e191-4b02-b170-7ecad09c52e2 # Modules
 fieldLayouts:
   1081d4b2-671f-4d9c-b82d-300ff54c3eea:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 101875bd-2293-4282-a4da-2b14265f40e3 # Icons
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 20993247-fee6-4216-954d-dda3b039bab4
+            userCondition: null
             warning: null
             width: 100
         name: Default
-        sortOrder: 1
+        uid: 27e11ed7-d2a7-4a8c-a63c-ff3ec53b854f
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: icons
+icon: null
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: Icons
 sortOrder: 8
 topLevel: false

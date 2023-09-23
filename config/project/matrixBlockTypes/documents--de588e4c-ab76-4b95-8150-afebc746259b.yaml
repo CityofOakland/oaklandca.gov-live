@@ -3,34 +3,41 @@ fieldLayouts:
   6d0d612d-34f8-4593-aa4d-9b20e7a03aa0:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: e3606e42-d455-4501-bbb1-55f049cd1738 # Documents
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 7ff3c123-1501-49ad-b3e7-7efaf56198e9
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 4cdc91dd-b955-4cca-9d82-a5a8a544f35c
+        userCondition: null
 fields:
   e3606e42-d455-4501-bbb1-55f049cd1738: # Documents
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: documents
-    instructions: ''
+    instructions: null
     name: Documents
     searchable: false
     settings:
       allowSelfRelations: false
-      limit: ''
+      branchLimit: null
       localizeRelations: false
-      selectionLabel: ''
+      maintainHierarchy: false
+      maxRelations: null
+      minRelations: null
+      selectionLabel: null
       showSiteMenu: true
-      source: null
       sources:
         - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
       targetSiteId: null

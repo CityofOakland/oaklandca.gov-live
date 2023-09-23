@@ -3,6 +3,7 @@ fieldLayouts:
   3138f419-bcbd-401e-af8e-771d0eef6d08:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -10,6 +11,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -25,10 +27,13 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\TitleField
+            uid: 4f337e2d-fb65-4e1c-90bc-5c0bc5e71d56
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: b7409a60-37c8-463d-9cf0-8d46f4bc43ec
+        userCondition: null
 handle: people
 name: People
 siteSettings:

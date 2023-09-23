@@ -2,6 +2,7 @@ fieldLayouts:
   fde26ba6-c177-4a45-ab8f-b649df04dcae:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,9 +10,10 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
-            label: ''
+            label: null
             max: null
             min: null
             name: null
@@ -23,234 +25,317 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 45533b14-53ba-409f-a4cb-bc017d1495ac
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 6c28ddf9-1938-489c-ad36-75d555e50269 # First Name
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: c3e02b52-53c0-4d56-8e34-e81ec978fbce
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 01d73fd7-5170-4523-8658-02c344e3ff55 # Middle Initial
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 609e7928-4e06-4fb0-bdd9-1fa09a91929d
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 4d6dd644-455e-4186-8d05-a00079622246 # Last Name
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 3090baa8-003f-4bb0-bab3-7516382a4701
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: e3a53ca0-960e-4ce6-933b-b3613bd64d7a # Job Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 62431585-8a95-40da-8d46-79e07540db98
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 1b7fc839-7de9-4717-b41d-d74bfa40b5c8 # Portrait
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 5308e975-92b0-45cb-be91-ad8c0cb9d553
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 736bfdbe-8ec1-4b3d-bd17-6dc825c56855 # Bio
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 67c04812-ff0e-4197-bcde-e2c79ac161e8
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 5e5aad16-6bdc-4d3e-adfd-75147a323b78 # Phone Number
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 8cc0c002-1b7b-4a13-8822-951fe1573994
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a # Email Address
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a190a444-b051-40fe-9d3f-bc5272ceb2a1
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: b34a0436-278d-4bb7-a7e8-729da1db7c4e # Department/Official/Board/Commission
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b9d89111-4bc5-4274-8777-9db3d3467fee
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 9fcc72cc-184c-467a-a45f-a154ba8a01d2 # Employment Type
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 192901ec-4334-4d84-8361-d636a64c6663
+            userCondition: null
             warning: null
             width: 100
         name: People
-        sortOrder: 1
+        uid: e9ba94cc-db72-4deb-b30b-e92e8cee870f
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            dismissible: false
+            elementCondition: null
             style: warning
             tip: "**DO NOT CHANGE ANYTHING BELOW THIS LINE**\r\n\r\nAll content here is imported from our payroll system and as such will be overwritten each time we update the information.\r\n\r\nPlease use the previous fields on the People tab to modify staff information."
             type: craft\fieldlayoutelements\Tip
+            uid: b41fcd8e-6f8c-4b47-af93-9b887693e1c3
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 8a89416e-010d-4a83-a254-dafb9b29ce26 # Staff Import Given Name
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: e2b5f314-33ac-44b9-a847-5aa6a130bafc
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 770f79c9-6a08-4685-94fa-2dfd804f3758 # Staff Import Middle Initial
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 5c9a166e-dc77-47e9-aaf0-45701c617197
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 54b48d39-e6a7-4d50-9cf7-91ce11c798ee # Staff Import Surname
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: fa46aace-57e5-4629-a8f4-8b98f1a04b4e
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: a8f10940-f4f7-4c31-9bc7-b3798289f357 # Staff Import Job Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d8f9c914-d13c-4485-b9f1-371ef11c8ba1
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f9ec1965-4721-44e2-b551-069ae06c54f3 # Staff Import Email
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 58196d47-8f39-4d1d-b7c0-24928bd18ae8
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: a7cd6f1e-a5c0-47fc-9080-1bc5ace85242 # Staff Import Phone Number
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 75d52e2c-831d-4118-936e-3d3c81758f67
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 341595b4-52a8-432f-b327-5fbc3a4289a8 # Staff Import Department
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 54b9eab2-fc6b-49df-8b03-8736f65acf44
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: b34b92b7-9d4a-40f5-9e55-a2ccc8f764ad # Staff Import Organization
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 555d558f-34c6-443e-af8f-69c13f3b6ecd
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 28e53a14-23f2-492a-be43-e6e83bca9aa1 # Staff Import Section
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 44be64dd-276c-423e-bebb-61fd4e5aeade
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 19443cdb-77c5-4c3c-ac94-a8530dc39587 # Staff Import ID
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: eee39a60-8cf7-410b-8e4e-26f3a6c4b9d6
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133 # Departments
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 8e609ab4-b64b-4094-adae-589046285907
+            userCondition: null
             warning: null
             width: 100
         name: 'HR Staff Fields'
-        sortOrder: 2
+        uid: df79f023-0a9a-4598-ac6b-c521cd62d061
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d # Metadata
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b8fba8ba-eda2-4332-bb31-1fc4e4eed90a
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7 # View Count
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: fa770f00-9449-4ecd-92a9-bf1f098aee1f
+            userCondition: null
             warning: null
             width: 100
         name: SEO
-        sortOrder: 3
+        uid: 05f05145-9dfb-4b9e-a7d8-b16dd01fa9f3
+        userCondition: null
 handle: staff
 hasTitleField: false
 name: Staff
 section: 07faad04-9ec4-4f68-9fe8-0ca20f189f8a # Staff
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: '{{ object.firstName ??? object.staffImportGivenName }} {{ object.lastName ??? object.staffImportSurname }}'
 titleTranslationKeyFormat: null

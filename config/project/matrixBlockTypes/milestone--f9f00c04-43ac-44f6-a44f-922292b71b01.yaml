@@ -3,27 +3,35 @@ fieldLayouts:
   8f37ffd8-930c-4774-a80c-34e639885697:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: d2258f6a-704e-413b-8079-a7611a4139c4 # Milestone Name
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2f9b0bc8-cb45-4f6e-98b6-17a479238dae
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 66c28d05-1cce-4903-af5e-5667d0a1cb53 # Milestone Date(s)
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 0fc02643-82bb-4674-a3c3-5b21710a2e8a
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 28013da4-eeab-4558-bf24-5de2b1d0a818
+        userCondition: null
 fields:
   66c28d05-1cce-4903-af5e-5667d0a1cb53: # Milestone Date(s)
     columnSuffix: null
@@ -36,10 +44,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: 50
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -56,10 +64,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: 50
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

@@ -2,13 +2,13 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: 8ac349fa-f382-4bc4-9f01-25e04abf073c # Homepage
 handle: cityServicesAndResourcesUpdates
-instructions: ''
+instructions: null
 name: 'City Services and Resources Updates'
 searchable: false
 settings:
   contentTable: '{{%matrixcontent_cityservicesandresourcesupdates}}'
-  maxBlocks: '9'
-  minBlocks: ''
+  maxBlocks: 9
+  minBlocks: null
   propagationKeyFormat: null
   propagationMethod: all
 translationKeyFormat: null

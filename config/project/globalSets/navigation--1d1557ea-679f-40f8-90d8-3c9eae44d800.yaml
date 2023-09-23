@@ -2,31 +2,41 @@ fieldLayouts:
   e05e421b-cb98-4763-9c98-5fc214909de7:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: c7618ee8-2bc2-491b-99e6-c9deaea0809b # Navigation - Main
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 374aae07-e67d-4180-8633-c577f473d0e4
+            userCondition: null
             warning: null
             width: 100
         name: 'Navigation - Main'
-        sortOrder: 1
+        uid: cb0c1e62-ac16-4485-95fb-93b2e4db6d97
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ca585b68-038a-438f-9636-8ec4b01f9091 # Linkits
-            instructions: ''
+            instructions: null
             label: 'Popular Pages'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d67c1bc1-22e3-4c44-b1ee-4931971c5edd
+            userCondition: null
             warning: null
             width: 100
         name: 'Popular Pages'
-        sortOrder: 2
+        uid: e38484f4-e3ed-491d-b662-f67eb289967c
+        userCondition: null
 handle: navigation
 name: Navigation
 sortOrder: 2

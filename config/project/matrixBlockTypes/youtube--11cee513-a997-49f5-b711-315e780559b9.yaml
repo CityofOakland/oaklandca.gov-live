@@ -3,18 +3,23 @@ fieldLayouts:
   116993fd-32bc-48e5-bcdd-0ac489a7f194:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ecae3e34-8efa-4f0c-934c-d5d125641043 # YouTube URL
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 5c8f1739-7403-44ba-8b6b-efcfe23764a8
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 3c9a12cd-e5de-49e9-9c8a-e844fda7c9bc
+        userCondition: null
 fields:
   ecae3e34-8efa-4f0c-934c-d5d125641043: # YouTube URL
     columnSuffix: null
@@ -27,10 +32,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

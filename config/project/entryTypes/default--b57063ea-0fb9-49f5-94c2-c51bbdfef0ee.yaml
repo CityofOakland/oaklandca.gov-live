@@ -2,6 +2,7 @@ fieldLayouts:
   5ab38eea-322a-4801-8f0b-4dba8f3f5682:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,9 +10,10 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
-            instructions: 'Should be specific enough that it can stand alone.'
-            label: 'Event Title'
+            instructions: null
+            label: null
             max: null
             min: null
             name: null
@@ -23,201 +25,283 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: a19fcd44-4fac-49e2-bc6d-213adb27c6b4
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 37557891-109f-46ef-bbc5-040f628a36a4 # Event - Primary Relationship
-            instructions: ''
-            label: ''
-            required: '1'
+            instructions: null
+            label: null
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 15234dd2-62ca-4000-92a4-fe7e2e5a3d16
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             heading: 'Event Date and Location Banner'
             type: craft\fieldlayoutelements\Heading
+            uid: 5fb3504b-f92b-4c92-a717-5a43141f507c
+            userCondition: null
           -
+            dismissible: false
+            elementCondition: null
             style: tip
             tip: 'Make sure to populate a start date/time, etc. or the template will not render correctly.'
             type: craft\fieldlayoutelements\Tip
+            uid: 84525e06-744a-45be-8250-c5b3fb77f2c4
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 5b935c33-5d69-45c2-acd9-a6a2f0a567ce # Calendarize
             instructions: 'If this is an all-day event, toggle on the "all day". If this is a repeatable event, toggle on the "repeats" and select when the event should repeat. Please note, if you have changing videos, details, meeting links, you will need to create a new event"'
             label: 'Date and Time'
-            required: '1'
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a1c65dc2-76b8-471f-a18f-cc4b79d8f574
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: ef3925f3-23b4-404d-93d6-154519305756 # Event Locations
             instructions: 'Add an online location for virtual events and/or a physical location for in-person events.'
             label: 'Event Location'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2feea7f0-bc0a-4ad5-812c-0c85483e5f37
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             heading: 'Main Content Section'
             type: craft\fieldlayoutelements\Heading
+            uid: 9b599f1a-1b32-4c3d-9126-77c10c1aa714
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: 7084b5f1-19ef-4812-97fc-927d55c98c93 # Event Image
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 97ac8960-1b0a-48fd-83a4-4d645ab98391
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 812c490f-c059-47ff-9ef2-25fbd40c77fe # Call Out
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 72dfe5d0-c75a-415e-b45e-a85797ea1787
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: b66198c4-d82e-4078-8034-c728b677d613 # Content
             instructions: 'Add any additional details that people should know about this event. Details should be related only to the city''s role in the event. Any additional information can be provided in an external link. '
             label: 'Event Details'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 7773662d-40f4-4b27-ad04-16c27b1a9905
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 28933675-d3ec-4b03-bd2c-515c63e5a7e4 # Related Documents
             instructions: 'Add related documents. This can include a flyer, agenda, or program for this event.'
-            label: ''
-            required: ''
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4149361f-9c01-42f8-bbaf-e534a5075c2e
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 6b0e6bd2-24c1-4341-acf8-97862725a74c # Event Types
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 9d25258d-da53-4e50-952c-8afcfc5d11a3
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: 61baa25b-3bbb-41a1-b13c-a976d1d109b6 # Accessibility Block
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 34e5061f-b4fc-4e16-b719-33437fd6aa1f
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             heading: 'Sidebar Section'
             type: craft\fieldlayoutelements\Heading
+            uid: 655503c5-48a6-4d86-af4f-9ae62a7a54a5
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: ee22aae2-290f-43d0-93d8-402d47ee7c88 # Sidebar Heading
             instructions: 'Defaults to “Register”. If you would like to change the text, fill in the field below. '
             label: 'Event or Registration Button Section Title'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 77672a89-b443-41ab-842a-d59f9648961c
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 0a0640ef-4c1c-484f-a2cb-b70930d83893 # Sidebar Description
             instructions: 'Appears below the title. Describe more about the page linked in the button.'
             label: 'Event or Registration Section Description'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 6f9be9cd-014b-4866-85fa-45090859d3dd
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 4f49ca5b-c028-40c6-b67e-de07b11bf16a # Linkit
             instructions: 'Input the URL and what the button text will display.'
             label: 'Event or Registration Button'
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a8f8aa11-9f1f-42c4-8ae6-f2ac7e1d4f1d
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: b4027b04-f764-4b35-93ee-88ff570bfeaf # Point of Contact
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: c163216e-91d4-447c-bc5e-2f85b392151c
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f3d1bcbe-1f1a-4498-b4e5-1d57d3257690 # Related Pages
             instructions: 'Relate other pages to this event.'
-            label: ''
-            required: ''
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: bd3fa50b-ba4b-46b1-9c03-2d7a5085d581
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             heading: 'After the Event'
             type: craft\fieldlayoutelements\Heading
+            uid: 6b1434f2-4961-4dcf-a78b-ee69ab21fc92
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: ce345611-039a-4fb5-9a1c-a9eef7d74514 # Embeds
             instructions: 'Select the type of recording for this event. This field supports video URLs from Granicus, Youtube, and Vimeo.'
             label: Recording
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 0559f4ce-bfc5-4588-898f-6aa3e5acdde9
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: de0855c7-b48b-449d-9d12-c12be7de675f
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            dismissible: false
+            elementCondition: null
             style: tip
             tip: 'Only admins should be able to view this tab. These fields are for aiding the Events Import process. This tab will be removed in a future deployment.'
             type: craft\fieldlayoutelements\Tip
+            uid: c113621f-0a1d-4453-b44d-59d7ef4da687
+            userCondition: null
           -
+            elementCondition: null
             fieldUid: e7a47351-1c2b-44ac-ba40-cbedbdce4b0f # Event ID
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 264270a8-5a0a-42b6-b127-cfb52fa42823
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: d6ad41f7-f233-4092-81dc-9fdf439eb146 # Start Date
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 99234292-5970-4cc2-af93-bffd29ea8895
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 8db301bf-0d15-4511-98a8-8a4021bbef60 # End Date
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 600a2db3-c1a7-4385-8a46-8d5cdedd0d20
+            userCondition: null
             warning: null
             width: 100
         name: Hidden
-        sortOrder: 2
+        uid: d1356df2-7090-4055-a5c8-36f8a803d279
+        userCondition: null
 handle: default
 hasTitleField: true
 name: Default
 section: 9db08bfd-737a-4544-a641-4c138f2b3b0a # Events
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

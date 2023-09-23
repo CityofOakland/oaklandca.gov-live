@@ -1,20 +1,26 @@
+changedFieldIndicator: null
 field: ca397109-2a19-42e5-ac3b-51811009059d # Set Links
 fieldLayouts:
   b7bdc928-b234-4023-b8ca-c3c749b805e8:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 5739a81c-6eeb-47e8-8658-7bd07e0fe511 # Link
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ec87c8cf-9b89-4502-b1d9-24d45ac295f1
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: d8f412ba-db23-48ec-8caf-9e840b1a0819
+        userCondition: null
 fields:
   5739a81c-6eeb-47e8-8658-7bd07e0fe511: # Link
     columnSuffix: null
@@ -25,9 +31,9 @@ fields:
     name: Link
     searchable: false
     settings:
-      allowCustomText: '1'
-      allowTarget: '1'
-      defaultText: ''
+      allowCustomText: true
+      allowTarget: true
+      defaultText: null
       selectLinkText: ''
       types:
         __assoc__:

@@ -6,6 +6,7 @@ instructions: 'Select Special Meeting if this is being held at a different time 
 name: 'Meeting Status'
 searchable: false
 settings:
+  columnType: string
   options:
     -
       __assoc__:

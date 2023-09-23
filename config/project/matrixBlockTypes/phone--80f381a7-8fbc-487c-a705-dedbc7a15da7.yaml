@@ -3,25 +3,30 @@ fieldLayouts:
   6076fcb4-b6ca-4584-ac72-edce1e16f7f9:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 14c27df9-9ea0-458c-afe6-bc7fc29db1eb # Phone
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 03c36ecc-ef86-498a-a1fb-dd1f530304b5
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 33164ad7-c955-49db-a3ac-6e705763a83d
+        userCondition: null
 fields:
   14c27df9-9ea0-458c-afe6-bc7fc29db1eb: # Phone
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: phone
-    instructions: ''
+    instructions: null
     name: Phone
     searchable: false
     settings:

@@ -7,11 +7,13 @@ name: 'Related Project Entries'
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: ''
+  branchLimit: null
   localizeRelations: false
-  selectionLabel: ''
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
   showSiteMenu: true
-  source: null
   sources:
     - 'section:24fa116b-8516-4626-84f3-86b685e71071' # Resources
     - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services

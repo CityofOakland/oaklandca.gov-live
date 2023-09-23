@@ -1,38 +1,50 @@
+changedFieldIndicator: null
 field: 0bbec91d-57e2-4212-b449-f04f19c770da # Icon Card
 fieldLayouts:
   ddcb1cd6-1137-4ba1-94a3-daec80c17c92:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: bf87f997-9ddf-47bc-b5d7-d97398a04f75 # Card Link & Header
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 247284cd-b39b-4273-b28f-127c30c9aedd
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: ea343841-f178-4431-8604-710541a13061 # Card Description
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d6c34551-8f50-4da3-adc0-8bbd13ba7677
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 2a191283-500f-41e2-94a3-8b68e9ef6b1c # Card Icon
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: e43b3790-eaf3-4201-9d1f-00246c9392e8
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: ab3c3814-a91b-4c4f-b1b9-773a3e70ad48
+        userCondition: null
 fields:
   2a191283-500f-41e2-94a3-8b68e9ef6b1c: # Card Icon
     columnSuffix: null
@@ -45,8 +57,8 @@ fields:
     settings:
       columnType: text
       iconSets: '*'
-      remoteSets: ''
-      showLabels: ''
+      renderId: null
+      showLabels: false
     translationKeyFormat: null
     translationMethod: none
     type: verbb\iconpicker\fields\IconPickerField
@@ -55,13 +67,13 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: card
-    instructions: ''
+    instructions: null
     name: 'Card Link & Header'
     searchable: false
     settings:
-      allowCustomText: '1'
-      allowTarget: '1'
-      defaultText: ''
+      allowCustomText: true
+      allowTarget: true
+      defaultText: null
       selectLinkText: ''
       types:
         __assoc__:
@@ -263,10 +275,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

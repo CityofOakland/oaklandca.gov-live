@@ -3,34 +3,39 @@ fieldLayouts:
   db2003b2-e52c-476e-820b-1e3b9f967706:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: abd529f9-d523-48f3-9b3c-4728eef71ad3 # Accessibility Text
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: bbbb5162-5ffe-4900-9f08-0b08067925af
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 36e9d206-6f0b-4a3e-a9f3-4af7f4bcb98f
+        userCondition: null
 fields:
   abd529f9-d523-48f3-9b3c-4728eef71ad3: # Accessibility Text
     columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: accessibilityText
-    instructions: ''
+    instructions: null
     name: 'Accessibility Text'
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: '1'
+      initialRows: 4
+      multiline: true
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

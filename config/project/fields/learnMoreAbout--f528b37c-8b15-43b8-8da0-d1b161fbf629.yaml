@@ -7,8 +7,8 @@ name: 'Learn More About'
 searchable: false
 settings:
   contentTable: '{{%matrixcontent_learnmoreabout}}'
-  maxBlocks: '6'
-  minBlocks: ''
+  maxBlocks: 6
+  minBlocks: null
   propagationKeyFormat: null
   propagationMethod: all
 translationKeyFormat: null

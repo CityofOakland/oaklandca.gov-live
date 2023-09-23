@@ -2,19 +2,19 @@ columnSuffix: mtvgqsta
 contentColumnType: text
 fieldGroup: 4ed914c6-b7ea-44be-a061-4430ad33baf2 # News
 handle: postYear
-instructions: ''
+instructions: null
 name: 'Post Year'
 searchable: false
 settings:
   allowSelect: false
   columnType: text
-  decimals: '0'
+  decimals: 0
   displayType: hidden
   fieldTwig: '{{ include("_partials/preparse/postYear.twig") }}'
   parseBeforeSave: false
   parseOnMove: false
   showField: false
-  textareaRows: '5'
+  textareaRows: 5
 translationKeyFormat: null
 translationMethod: none
 type: besteadfast\preparsefield\fields\PreparseFieldType

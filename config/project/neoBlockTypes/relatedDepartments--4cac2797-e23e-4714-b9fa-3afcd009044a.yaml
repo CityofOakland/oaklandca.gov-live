@@ -1,26 +1,40 @@
 childBlocks: null
+conditions: null
+description: ''
+enabled: true
 field: b3761a4e-9346-448a-ba6a-f441f75e61fc # Components - Footer
 fieldLayouts:
   44260a52-3419-41bb-b335-bd10cd4db48f:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133 # Departments
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 485c6ef0-9785-4fb4-a6bc-690ed583e180
+            userCondition: null
             warning: null
             width: 100
         name: Default
-        sortOrder: 1
+        uid: 7dd78ddb-8fdd-4138-8474-718283f17909
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: relatedDepartments
+icon: null
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: 'Related Departments'
 sortOrder: 1
 topLevel: true

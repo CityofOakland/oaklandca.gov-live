@@ -3,29 +3,34 @@ fieldLayouts:
   46878410-62a7-4e3c-b6dc-c05862784d37:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 31e7de31-2c93-4523-a272-4ee9a2ca13be # Email
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 718b7e5f-6a25-40f8-938c-118f8d94c95c
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 5b8afab3-9531-4073-9124-1779532a8037
+        userCondition: null
 fields:
   31e7de31-2c93-4523-a272-4ee9a2ca13be: # Email
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: email
-    instructions: ''
+    instructions: null
     name: Email
     searchable: false
     settings:
-      placeholder: ''
+      placeholder: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Email

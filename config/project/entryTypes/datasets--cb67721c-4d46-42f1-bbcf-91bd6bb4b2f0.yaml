@@ -2,6 +2,7 @@ fieldLayouts:
   95c72197-cb30-4f10-b7eb-93e9bd6db998:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,9 +10,10 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
-            label: Title
+            label: null
             max: null
             min: null
             name: null
@@ -23,24 +25,33 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 0e3cc9e3-3c54-4bd8-a76d-ce2e85871227
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 82a071f5-19ec-49b0-aca7-f390757c0892 # CSV Upload
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 69418cda-d4e1-4e8d-ac46-c1d89d9b4a0c
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 56956cfb-b8a0-4dbc-8596-a7c4305bc9e1
+        userCondition: null
 handle: datasets
 hasTitleField: true
 name: Datasets
 section: 1ab8269c-e225-472e-b5e1-1504af7a1622 # Datasets
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

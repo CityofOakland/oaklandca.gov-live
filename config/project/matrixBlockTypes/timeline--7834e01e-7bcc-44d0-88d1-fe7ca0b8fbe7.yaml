@@ -3,43 +3,51 @@ fieldLayouts:
   33d152ed-4f3b-4fbf-a91e-a098303278bb:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: e1c61482-cd09-4ea3-8940-a602c3fe4718 # Heading
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 160ef6c8-9b42-428f-aecd-5706058051dd
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: f93e423e-051d-4b4c-bb85-2a5b168296b4 # Timeline
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 0fde1f6e-ffc1-4e3f-b928-9cfaae03aae1
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 7a20cfe7-1b83-424b-8042-959036166f4c
+        userCondition: null
 fields:
   e1c61482-cd09-4ea3-8940-a602c3fe4718: # Heading
     columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: heading
-    instructions: ''
+    instructions: null
     name: Heading
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -50,10 +58,12 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: timeline
-    instructions: ''
+    instructions: null
     name: Timeline
     searchable: false
     settings:
+      blockTypeFields: 0
+      changedFieldIndicator: null
       columns:
         __assoc__:
           -
@@ -93,13 +103,12 @@ fields:
                   - ''
       contentTable: '{{%stc_59_timeline}}'
       fieldLayout: row
-      maxRows: ''
-      minRows: ''
-      placeholderKey: null
+      maxRows: null
+      minRows: null
       propagationKeyFormat: null
       propagationMethod: all
       selectionLabel: 'Add a milestone'
-      staticField: ''
+      staticField: null
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField

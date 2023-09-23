@@ -3,43 +3,51 @@ fieldLayouts:
   8cd7ad49-dbb9-4599-89b0-4e31c9cef113:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 469ca78b-2438-4fdc-8bb0-eede26b2f672 # Online Meeting Link
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: c1128dd6-4a55-414e-9ae3-0c1800f0c4b0
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 73fb3d63-bf50-4201-b8ae-8bc90e956ced # Online Meeting Phone Number
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 8bc41901-8328-4979-9ffc-5af90b05821a
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: e1d4c382-ac5b-4469-b92e-3def914f768b
+        userCondition: null
 fields:
   73fb3d63-bf50-4201-b8ae-8bc90e956ced: # Online Meeting Phone Number
     columnSuffix: xrbqrtth
     contentColumnType: text
     fieldGroup: null
     handle: onlineMeetingPhoneNumber
-    instructions: ''
+    instructions: null
     name: 'Online Meeting Phone Number'
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -50,12 +58,11 @@ fields:
     contentColumnType: string(255)
     fieldGroup: null
     handle: onlineMeetingLink
-    instructions: ''
+    instructions: null
     name: 'Online Meeting Link'
     searchable: false
     settings:
-      maxLength: '255'
-      placeholder: null
+      maxLength: 255
       types:
         - url
     translationKeyFormat: null

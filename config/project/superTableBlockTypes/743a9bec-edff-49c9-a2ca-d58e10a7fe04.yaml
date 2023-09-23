@@ -1,29 +1,38 @@
+changedFieldIndicator: null
 field: ed948d68-fa7c-4932-bfea-222e8f79c913 # Service Cards
 fieldLayouts:
   3cbdf9c6-5d77-4b39-b689-31515f78ab6d:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 82e72e80-21fd-4df3-bb14-a7833d01f3bf # Service Link & Header
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 619cad63-8673-431d-8354-461b1c2df866
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: d220b1b2-d0fd-4029-b1ff-ee7ebaec877b # Service Description
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b9140a8e-136f-476f-88f8-4a01ef1f635c
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 1f83ebcb-f3e8-4917-abf4-2c403ee74e88
+        userCondition: null
 fields:
   82e72e80-21fd-4df3-bb14-a7833d01f3bf: # Service Link & Header
     columnSuffix: null
@@ -34,9 +43,9 @@ fields:
     name: 'Service Link & Header'
     searchable: false
     settings:
-      allowCustomText: '1'
-      allowTarget: '1'
-      defaultText: ''
+      allowCustomText: true
+      allowTarget: true
+      defaultText: null
       selectLinkText: ''
       types:
         __assoc__:
@@ -225,10 +234,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

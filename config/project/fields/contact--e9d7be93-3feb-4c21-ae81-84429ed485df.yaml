@@ -2,16 +2,18 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
 handle: contact
-instructions: ''
+instructions: null
 name: Contact
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: ''
+  branchLimit: null
   localizeRelations: false
-  selectionLabel: ''
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
   showSiteMenu: true
-  source: null
   sources:
     - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
   targetSiteId: null

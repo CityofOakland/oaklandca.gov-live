@@ -3,6 +3,7 @@ fieldLayouts:
   aa57cc98-0a36-4294-a711-d0916c509ae4:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -10,6 +11,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -25,28 +27,37 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\TitleField
+            uid: c60f1802-6328-4a44-8613-bf0c12d714c0
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 58eda166-7a65-4fb6-8f7d-c6590b0591ae # Summary
-            instructions: ''
+            instructions: null
             label: Description
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 7d2bdfd8-1cd1-43b2-bae4-0a6e71970044
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: b3761a4e-9346-448a-ba6a-f441f75e61fc # Components - Footer
-            instructions: ''
+            instructions: null
             label: Components
-            required: ''
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 8152071f-69f6-4f6c-9a6e-012c0867b69c
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: db3b6644-f8b0-4093-9615-fbdd5500dd87
+        userCondition: null
 handle: serviceTypes
 name: 'Service Categories'
 siteSettings:

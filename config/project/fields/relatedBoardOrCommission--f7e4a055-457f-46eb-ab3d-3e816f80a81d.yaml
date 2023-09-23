@@ -2,16 +2,18 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
 handle: relatedBoardOrCommission
-instructions: ''
+instructions: null
 name: 'Related Public Body'
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: '3'
+  branchLimit: null
   localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: 3
+  minRelations: null
   selectionLabel: 'Select a Public Body'
   showSiteMenu: true
-  source: null
   sources:
     - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
     - 'section:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics

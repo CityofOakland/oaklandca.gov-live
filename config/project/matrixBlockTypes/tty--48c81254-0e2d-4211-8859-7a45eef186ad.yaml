@@ -3,34 +3,39 @@ fieldLayouts:
   035647dd-50db-4e02-9db9-c53384f56e55:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 2935e144-4fb1-42e3-a0c2-db09b8f6d658 # __blank__
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: bcf66575-15b9-46c2-b2af-249c0a203f38
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 90eaa9b3-3e62-42b7-a07f-13fd62b0bb78
+        userCondition: null
 fields:
   2935e144-4fb1-42e3-a0c2-db09b8f6d658: # __blank__
     columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: number
-    instructions: ''
+    instructions: null
     name: __blank__
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

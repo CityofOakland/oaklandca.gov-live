@@ -2,6 +2,7 @@ fieldLayouts:
   304b61bf-831b-4c76-8bda-a23953c340d9:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -24,9 +26,12 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\TitleField
+            uid: 8fbecaf7-6fd7-4305-b2db-58e3790eacfb
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: d53c52d5-2176-4f07-a5a6-61581c7c59cb
+        userCondition: null
 handle: news
 name: News

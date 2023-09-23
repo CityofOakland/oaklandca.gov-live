@@ -2,16 +2,16 @@ columnSuffix: null
 contentColumnType: text
 fieldGroup: 71fb693f-011b-4669-ba10-f1b379557bb9 # Staff Fields
 handle: staffImportPhoneNumber
-instructions: ''
+instructions: null
 name: 'Staff Import Phone Number'
 searchable: false
 settings:
   byteLimit: null
   charLimit: null
-  code: ''
+  code: false
   columnType: text
-  initialRows: '4'
-  multiline: ''
+  initialRows: 4
+  multiline: false
   placeholder: null
   uiMode: normal
 translationKeyFormat: null

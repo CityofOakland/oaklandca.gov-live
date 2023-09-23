@@ -7,8 +7,8 @@ name: 'Before You Start'
 searchable: false
 settings:
   contentTable: '{{%matrixcontent_beforeyoustart}}'
-  maxBlocks: '1'
-  minBlocks: ''
+  maxBlocks: 1
+  minBlocks: null
   propagationKeyFormat: null
   propagationMethod: all
 translationKeyFormat: null

@@ -3,34 +3,41 @@ fieldLayouts:
   3ecb33af-3ed8-4a25-9fa9-649c7e9de8d1:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 5452fd2c-3905-426b-85bc-9fd90bcd5c30 # Contact
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2eaddd12-419e-48a6-8097-174967ed1e40
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: d4cc7497-20c3-41d0-8a3c-17a8142ac526
+        userCondition: null
 fields:
   5452fd2c-3905-426b-85bc-9fd90bcd5c30: # Contact
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: contact
-    instructions: ''
+    instructions: null
     name: Contact
     searchable: false
     settings:
       allowSelfRelations: false
-      limit: '1'
+      branchLimit: null
       localizeRelations: false
-      selectionLabel: ''
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
+      selectionLabel: null
       showSiteMenu: true
-      source: null
       sources:
         - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
       targetSiteId: null

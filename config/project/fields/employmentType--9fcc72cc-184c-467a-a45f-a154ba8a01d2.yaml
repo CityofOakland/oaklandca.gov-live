@@ -6,7 +6,7 @@ instructions: 'Select the type of employment this person is under, currently.'
 name: 'Employment Type'
 searchable: false
 settings:
-  optgroups: true
+  columnType: string
   options:
     -
       __assoc__:

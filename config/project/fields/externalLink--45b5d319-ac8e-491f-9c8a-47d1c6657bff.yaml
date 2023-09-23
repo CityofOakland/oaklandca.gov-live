@@ -6,8 +6,7 @@ instructions: 'Link an external page by producing the URL here. (You can also li
 name: 'External Link'
 searchable: false
 settings:
-  maxLength: '255'
-  placeholder: null
+  maxLength: 255
   types:
     - url
     - tel

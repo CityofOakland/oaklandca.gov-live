@@ -2,13 +2,13 @@ columnSuffix: null
 contentColumnType: datetime
 fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884 # Projects
 handle: projectEndDate
-instructions: ''
+instructions: null
 name: 'Project End Date'
 searchable: false
 settings:
   max: null
   min: null
-  minuteIncrement: '30'
+  minuteIncrement: 30
   showDate: true
   showTime: false
   showTimeZone: false

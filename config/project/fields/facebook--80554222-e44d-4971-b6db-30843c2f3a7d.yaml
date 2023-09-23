@@ -6,8 +6,7 @@ instructions: 'Add the URL for the Facebook account for this entry.'
 name: Facebook
 searchable: false
 settings:
-  maxLength: '255'
-  placeholder: ''
+  maxLength: 255
   types:
     - url
 translationKeyFormat: null

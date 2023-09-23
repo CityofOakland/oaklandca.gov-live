@@ -3,27 +3,35 @@ fieldLayouts:
   76285b3c-750c-47ee-8f23-6cfbac0ded47:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: bdbd7028-39a7-46fd-bb10-e81ae4794d22 # Document Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 002f3a36-44e2-4dcc-8010-b5e540879c4c
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 977809f3-bab3-42c8-ab3d-6ef9e55280e7 # Document Entry
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 04195df3-d745-4f7e-aacc-ef46cf9a74a9
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: ab2b130f-9f67-433e-a137-8893fac0b192
+        userCondition: null
 fields:
   977809f3-bab3-42c8-ab3d-6ef9e55280e7: # Document Entry
     columnSuffix: null
@@ -35,11 +43,13 @@ fields:
     searchable: false
     settings:
       allowSelfRelations: false
-      limit: '1'
+      branchLimit: null
       localizeRelations: false
-      selectionLabel: ''
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
+      selectionLabel: null
       showSiteMenu: true
-      source: null
       sources:
         - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
       targetSiteId: null
@@ -59,10 +69,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

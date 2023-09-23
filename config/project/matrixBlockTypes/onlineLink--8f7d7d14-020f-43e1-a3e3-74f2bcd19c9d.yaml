@@ -3,36 +3,47 @@ fieldLayouts:
   dbe5f13a-451e-4b09-94e1-530be31baf7b:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 18c27d2b-612d-49e3-87d4-9a61c6c85408 # Online Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 40555503-a978-4728-80ff-f2eb7d2208e2
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 7332ba8f-a9ac-4e3b-b372-8b4724617ae4 # Link Text
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f0060bc4-0d15-418f-8273-0ec6fa656b0a
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: fbdba36a-ff35-4883-a29d-e5194516c7ae # Link URL
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 60d73f53-bb7a-4a21-9b5f-89ecd560bbbc
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: f23ad280-55a2-4986-b59c-3a048196c142
+        userCondition: null
 fields:
   18c27d2b-612d-49e3-87d4-9a61c6c85408: # Online Title
     columnSuffix: null
@@ -45,10 +56,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -65,10 +76,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -85,10 +96,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

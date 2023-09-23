@@ -2,6 +2,7 @@ fieldLayouts:
   122ffc14-c738-4425-a48b-d7d999e6e166:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -23,39 +25,31 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: eb07d091-7f3c-4a3e-94b5-0a25387e8e71
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: fff5cf49-87e6-4751-9032-b4ca8136e237 # Alt Text
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 72819d3f-fa71-4bae-aedf-f4c748afc4d0
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 6dd96e54-313a-48a0-9989-bf0498b69360
+        userCondition: null
+fs: events
 handle: events
-hasUrls: true
 name: Events
-settings:
-  addSubfolderToRootUrl: true
-  autoFocalPoint: false
-  bucket: cao-94612
-  bucketSelectionMode: choose
-  cfDistributionId: ''
-  cfPrefix: null
-  expires: ''
-  keyId: $S3_API_KEY
-  makeUploadsPublic: true
-  region: us-west-2
-  secret: $S3_SECRET
-  storageClass: ''
-  subfolder: events
 sortOrder: 8
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-type: craft\awss3\Volume
-url: 'https://cao-94612.s3.amazonaws.com/'
+transformFs: null
+transformSubpath: ''

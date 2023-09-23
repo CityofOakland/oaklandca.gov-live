@@ -2,11 +2,11 @@ columnSuffix: zqtfusab
 contentColumnType: string
 fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
 handle: spacing
-instructions: ''
+instructions: null
 name: Spacing
 searchable: false
 settings:
-  optgroups: true
+  columnType: string
   options:
     -
       __assoc__:

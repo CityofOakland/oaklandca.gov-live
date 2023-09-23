@@ -3,100 +3,131 @@ fieldLayouts:
   1d85e45d-3215-4118-8e24-2848fb475fc6:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: d535337e-0894-4ce9-80ee-a315e254df71 # Column 1 Heading
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 88ff3b03-8af1-426c-9744-703e4df723ae
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 40abab6e-fe75-4f91-b6bd-9016b2b01dbe # Column 2 Heading
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d490924c-54d3-441e-96b5-76675e180c32
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 9c805dc0-3e7b-4361-ace3-62b856d8711e # Column 3 Heading
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 73a73f60-953e-4fe6-8133-13a0bdb9026a
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: d49a42e8-c33e-4689-a1df-83ba0b8d67be # Column 4 Heading
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 333be503-2a84-4e88-be5d-fa6092ff1475
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 28f1ddd3-72ce-439e-8d65-9b9a9e19f150 # Column 1 Width
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f188706b-b9a2-4905-9354-afb80e3e8025
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 2ce783d0-daf9-44d1-a0b4-84a0163dcaad # Column 2 Width
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: c3f40d7a-d160-45c6-ac10-ec6be6e117c3
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 2c145c6e-d6b2-418c-aa28-3ea1eaa51944 # Column 3 Width
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4934ff21-baf3-40a8-a42c-6e2bcffd2620
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 3b5ca699-b20a-41e5-a1fd-068dd6a6c081 # Column 4 Width
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 6d5fe501-dd81-4d0c-964d-c6b4bb5c900e
+            userCondition: null
             warning: null
             width: 25
           -
+            elementCondition: null
             fieldUid: 1c974e73-c709-48c5-bc6e-fb8a9ae1ba8a # Table
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 1b5771aa-b6fc-4588-bcdc-22a014870dbe
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: b647ef73-2033-48f9-9dce-d7b231f39643
+        userCondition: null
 fields:
   1c974e73-c709-48c5-bc6e-fb8a9ae1ba8a: # Table
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: table
-    instructions: ''
+    instructions: null
     name: Table
     searchable: true
     settings:
+      blockTypeFields: 0
+      changedFieldIndicator: null
       columns:
         __assoc__:
           -
@@ -129,13 +160,12 @@ fields:
                   - ''
       contentTable: '{{%stc_26_table}}'
       fieldLayout: table
-      maxRows: ''
-      minRows: '1'
-      placeholderKey: null
+      maxRows: null
+      minRows: 1
       propagationKeyFormat: null
       propagationMethod: all
-      selectionLabel: ''
-      staticField: ''
+      selectionLabel: null
+      staticField: null
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
@@ -144,7 +174,7 @@ fields:
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column3Width
-    instructions: ''
+    instructions: null
     name: 'Column 3 Width'
     searchable: false
     settings:
@@ -153,7 +183,7 @@ fields:
       max: 99
       min: 1
       prefix: null
-      previewCurrency: ''
+      previewCurrency: null
       previewFormat: decimal
       size: null
       suffix: null
@@ -165,7 +195,7 @@ fields:
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column2Width
-    instructions: ''
+    instructions: null
     name: 'Column 2 Width'
     searchable: false
     settings:
@@ -174,7 +204,7 @@ fields:
       max: 99
       min: 1
       prefix: null
-      previewCurrency: ''
+      previewCurrency: null
       previewFormat: decimal
       size: null
       suffix: null
@@ -186,7 +216,7 @@ fields:
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column4Width
-    instructions: ''
+    instructions: null
     name: 'Column 4 Width'
     searchable: false
     settings:
@@ -195,7 +225,7 @@ fields:
       max: 99
       min: 1
       prefix: null
-      previewCurrency: ''
+      previewCurrency: null
       previewFormat: decimal
       size: null
       suffix: null
@@ -207,16 +237,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: column3Heading
-    instructions: ''
+    instructions: null
     name: 'Column 3 Heading'
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -227,7 +257,7 @@ fields:
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column1Width
-    instructions: ''
+    instructions: null
     name: 'Column 1 Width'
     searchable: false
     settings:
@@ -236,7 +266,7 @@ fields:
       max: 99
       min: 1
       prefix: null
-      previewCurrency: ''
+      previewCurrency: null
       previewFormat: decimal
       size: null
       suffix: null
@@ -248,16 +278,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: column2Heading
-    instructions: ''
+    instructions: null
     name: 'Column 2 Heading'
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -268,16 +298,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: column4Heading
-    instructions: ''
+    instructions: null
     name: 'Column 4 Heading'
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -288,16 +318,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: column1Heading
-    instructions: ''
+    instructions: null
     name: 'Column 1 Heading'
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

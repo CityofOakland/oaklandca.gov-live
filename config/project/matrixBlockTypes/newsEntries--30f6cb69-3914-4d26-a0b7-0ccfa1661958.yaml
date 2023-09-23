@@ -3,70 +3,87 @@ fieldLayouts:
   86bfb186-a92a-4057-89bf-1c4424a3af96:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 8960f671-8e74-4a40-a507-6ba440cb6c8e # Allow Autofill?
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: aca5af3c-d0a6-4643-bb17-2e6ab5bc6fc7
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 1e960f43-f531-48ab-81a0-67d143aebac6 # Heading
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 9981eb82-dc9f-404e-8a58-6246178020f2
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 295df0c5-cc10-4392-9fbb-3452cc97b84a # Entries
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 1d05e3bf-5325-4962-a2ad-c5db9374f146
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: a2cf024d-962c-4e66-a16e-9b6faefbae19 # Hide Thumbnails?
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 296f45af-d338-49ad-b5aa-2b38ffa95143
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 5ee14b98-d8d9-46bd-88d8-0aa45871cfc9 # Hide Summary?
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4633b578-42ea-4e99-813f-09c7f08d6247
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 5c3b7c26-6f60-4ae5-bd42-c3835d5adf6e
+        userCondition: null
 fields:
   1e960f43-f531-48ab-81a0-67d143aebac6: # Heading
     columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: heading
-    instructions: ''
+    instructions: null
     name: Heading
     searchable: true
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -97,11 +114,13 @@ fields:
     searchable: false
     settings:
       allowSelfRelations: false
-      limit: '3'
+      branchLimit: null
       localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 3
+      minRelations: null
       selectionLabel: 'Add a news entry'
       showSiteMenu: true
-      source: null
       sources:
         - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
       targetSiteId: null

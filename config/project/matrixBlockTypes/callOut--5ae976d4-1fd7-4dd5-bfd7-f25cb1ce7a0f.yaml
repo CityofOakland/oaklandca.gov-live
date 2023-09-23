@@ -3,36 +3,47 @@ fieldLayouts:
   45f919ae-a1fb-417c-bd4a-05e96cf1fba6:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: f9088787-d043-44c0-a831-924dd6a72489 # Call Out Type
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 9723e8d0-81e9-45fc-b0cd-b061ed7413d8
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 6fdc167f-d34e-4523-bc70-c6a755fdaae6 # Header
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 60e49674-c47b-4124-83f5-e9dcd327bbfa
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: aa4a1968-c11b-4442-8b1a-edaffe40511d # Description
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: b31479aa-6757-45b1-a2cb-57148ac6cda0
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 9acff1e4-069b-4c88-abec-7a71921f4c9d
+        userCondition: null
 fields:
   6fdc167f-d34e-4523-bc70-c6a755fdaae6: # Header
     columnSuffix: null
@@ -45,10 +56,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -59,7 +70,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: description
-    instructions: ''
+    instructions: null
     name: Description
     searchable: false
     settings:
@@ -69,13 +80,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: 'Simple with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: ''
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       uiMode: enlarged
@@ -91,7 +102,7 @@ fields:
     name: 'Call Out Type'
     searchable: false
     settings:
-      optgroups: true
+      columnType: string
       options:
         -
           __assoc__:

@@ -8,7 +8,30 @@ searchable: false
 settings:
   errorMessage: 'Component class ''Solspace\Calendar\FieldTypes\EventFieldType'' belongs to a disabled plugin (Calendar).'
   expectedType: Solspace\Calendar\FieldTypes\EventFieldType
-  settings: '{"allowSelfRelations":false,"limit":"1","localizeRelations":false,"selectionLabel":"Add a meeting","showSiteMenu":true,"source":null,"sources":["calendar:3"],"targetSiteId":null,"validateRelatedElements":false,"viewMode":null}'
+  settings:
+    __assoc__:
+      0:
+        - allowSelfRelations
+        - false
+      1:
+        - limit
+        - '1'
+      2:
+        - localizeRelations
+        - false
+      3:
+        - selectionLabel
+        - 'Add a meeting'
+      4:
+        - showSiteMenu
+        - true
+      6:
+        - sources
+        -
+          - 'calendar:3'
+      8:
+        - validateRelatedElements
+        - false
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\MissingField

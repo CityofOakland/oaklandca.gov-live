@@ -1,26 +1,40 @@
 childBlocks: null
+conditions: null
+description: ''
+enabled: true
 field: 839d534c-c552-405e-bc0e-0d7414bad9c3 # Navigation - Top
 fieldLayouts:
   812e946f-5818-4ae0-8b91-078f79feeebe:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 4f49ca5b-c028-40c6-b67e-de07b11bf16a # Linkit
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d84877f7-ad27-4e1c-af47-be8c47ed9355
+            userCondition: null
             warning: null
             width: 100
         name: Default
-        sortOrder: 1
+        uid: 5e3dae96-f785-455c-9969-c2f0e9abb5f6
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: navigationItem
+icon: null
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: 'Navigation Item'
 sortOrder: 1
 topLevel: true

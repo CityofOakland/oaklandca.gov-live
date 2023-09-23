@@ -3,27 +3,35 @@ fieldLayouts:
   5e170125-2c9e-421f-93fa-4fb66353769b:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: ebf1c335-ab50-4879-9bfa-72e22c1ceb98 # Phone Number Title
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: dcdf123a-09ac-493f-b7a3-f03489ad833c
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 6ad6bb8d-7fc5-4c49-8695-d7ea3c27da98 # Number
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: cef60fa1-d613-4722-bba2-aea21b7b0f73
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: e6e2c8a8-4be2-4310-8e3c-81c23ae2a845
+        userCondition: null
 fields:
   6ad6bb8d-7fc5-4c49-8695-d7ea3c27da98: # Number
     columnSuffix: null
@@ -36,10 +44,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -56,10 +64,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: text
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

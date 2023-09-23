@@ -2,20 +2,19 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: 5bc46e53-a87c-4584-89aa-808cacedf461 # Categories
 handle: serviceCategory
-instructions: ''
+instructions: null
 name: 'Service Category'
 searchable: false
 settings:
-  allowLimit: false
-  allowMultipleSources: false
   allowSelfRelations: false
-  branchLimit: '1'
-  limit: null
+  branchLimit: 1
   localizeRelations: false
-  selectionLabel: ''
+  maintainHierarchy: true
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
   showSiteMenu: false
   source: 'group:8bcf4697-1dd2-47b2-91e2-8ad9b4b86741' # Service Categories
-  sources: '*'
   targetSiteId: null
   validateRelatedElements: false
   viewMode: null

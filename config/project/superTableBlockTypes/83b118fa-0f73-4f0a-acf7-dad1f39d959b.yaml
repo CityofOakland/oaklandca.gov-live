@@ -1,54 +1,69 @@
+changedFieldIndicator: null
 field: 1c974e73-c709-48c5-bc6e-fb8a9ae1ba8a # Table
 fieldLayouts:
   b030ded4-f9f5-4563-87c5-2be5dd856787:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: c51bb818-8e54-4a71-b8e6-e623907d4cae # Column 1 Cell
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 760087be-d1fc-48ff-94c7-a0f32cc9651a
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: c48fd91b-ae6d-42f1-9c3b-62258d7e681f # Column 2 Cell
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a8cc9e51-e800-4245-811a-20d730da8c67
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 2200fe2a-bcb7-435e-96f9-7f00262131e5 # Column 3 Cell
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f2b02a73-9d06-4267-ad68-9bd5c18a7533
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 7769a82a-1135-4a99-aa7c-d121376328d6 # Column 4 Cell
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2d098d7e-8697-421a-b167-893940ce1810
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: b41c9215-0be2-4cc6-b342-1bd030464dcb
+        userCondition: null
 fields:
   2200fe2a-bcb7-435e-96f9-7f00262131e5: # Column 3 Cell
     columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: column3Cell
-    instructions: ''
+    instructions: null
     name: 'Column 3 Cell'
     searchable: true
     settings:
@@ -58,13 +73,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: 'Basic with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: '1'
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
       uiMode: enlarged
@@ -76,7 +91,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: column4Cell
-    instructions: ''
+    instructions: null
     name: 'Column 4 Cell'
     searchable: true
     settings:
@@ -86,13 +101,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: 'Basic with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: '1'
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
       uiMode: enlarged
@@ -104,7 +119,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: column2Cell
-    instructions: ''
+    instructions: null
     name: 'Column 2 Cell'
     searchable: true
     settings:
@@ -114,13 +129,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: 'Basic with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: '1'
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
       uiMode: enlarged
@@ -132,7 +147,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: column1Cell
-    instructions: ''
+    instructions: null
     name: 'Column 1 Cell'
     searchable: true
     settings:
@@ -142,13 +157,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: 'Basic with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: '1'
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
       uiMode: enlarged

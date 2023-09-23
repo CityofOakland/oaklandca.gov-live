@@ -2,20 +2,19 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
 handle: publicNoticeType
-instructions: ''
+instructions: null
 name: 'Public Notice Type'
 searchable: false
 settings:
-  allowLimit: false
-  allowMultipleSources: false
   allowSelfRelations: false
-  branchLimit: '1'
-  limit: null
+  branchLimit: 1
   localizeRelations: false
-  selectionLabel: ''
+  maintainHierarchy: true
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
   showSiteMenu: true
   source: 'group:79a1e552-74a9-44ac-b34e-c65e2c683597' # Public Notice Types
-  sources: '*'
   targetSiteId: null
   validateRelatedElements: false
   viewMode: null

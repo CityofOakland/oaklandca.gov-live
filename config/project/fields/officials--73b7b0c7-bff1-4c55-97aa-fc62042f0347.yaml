@@ -7,11 +7,13 @@ name: Officials
 searchable: false
 settings:
   allowSelfRelations: false
-  limit: ''
+  branchLimit: null
   localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
   selectionLabel: 'Add an official'
   showSiteMenu: true
-  source: null
   sources:
     - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
   targetSiteId: null

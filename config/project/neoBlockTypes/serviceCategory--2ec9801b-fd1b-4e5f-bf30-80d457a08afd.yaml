@@ -1,35 +1,52 @@
 childBlocks: null
+conditions: null
+description: ''
+enabled: true
 field: b3761a4e-9346-448a-ba6a-f441f75e61fc # Components - Footer
 fieldLayouts:
   689a4025-4bf2-46b6-ba71-036f5359f05e:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: fccb3891-e320-45ec-b368-6bd4f47fdc91 # Heading
-            instructions: ''
+            instructions: null
             label: 'Subcategory Heading'
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ae054958-d7a1-489e-8c99-04e7e25cc6f4
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 19567722-f3ec-4502-977f-61661602f624 # City Services and Resources Updates
-            instructions: ''
+            instructions: null
             label: Services
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 50dbb8db-c00b-4337-a286-d157f01761e4
+            userCondition: null
             warning: null
             width: 100
         name: Default
-        sortOrder: 1
+        uid: 2f041c84-3f47-4025-9b45-f68e62b88a93
+        userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: serviceCategory
+icon: null
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: 'Service Category'
 sortOrder: 3
 topLevel: false

@@ -2,6 +2,7 @@ fieldLayouts:
   6bfec61f-f233-4b6d-8926-eebff6c16e28:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,9 +10,10 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
-            label: APN
+            label: null
             max: null
             min: null
             name: null
@@ -23,33 +25,45 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: cf93f14e-bbaa-42fd-8bf0-c24f19aa771a
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 8ff1f216-9327-4d13-952e-f47f08febbfd # Status
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 65eaee4b-0a69-455f-9ec6-01467b0b2170
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 31d30a51-422e-471c-be55-3441a4219dd8 # Date
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 35581df0-fa0a-4dc1-911a-6f68f31c7549
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 3bb8aba5-6ea9-4c2a-976e-c1d56b18020e
+        userCondition: null
 handle: specialAssessmentTestStatus
 hasTitleField: true
 name: 'Special Assessment Test Status'
 section: 9168f154-c0f9-4cf9-991d-60b287a85fc0 # Imported Content
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
 sortOrder: 3
 titleFormat: null
 titleTranslationKeyFormat: null

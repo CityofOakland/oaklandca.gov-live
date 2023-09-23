@@ -6,7 +6,7 @@ instructions: 'Adjust the size of this component.'
 name: Size
 searchable: false
 settings:
-  optgroups: true
+  columnType: string
   options:
     -
       __assoc__:

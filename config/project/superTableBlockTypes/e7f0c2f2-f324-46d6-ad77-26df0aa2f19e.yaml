@@ -1,36 +1,45 @@
+changedFieldIndicator: null
 field: 42276684-be78-4449-b3e9-8eeb42ad49ba # Table
 fieldLayouts:
   bdb46085-471d-4e5d-a72d-0ae953c5f0a0:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 1df2afd1-1725-4190-ae6d-b40882c360af # Column 1 Cell
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 80e5d557-b69d-4e31-9758-0a98d8727efd
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 7b65742c-194e-4096-8efb-75f75936b03d # Column 2 Cell
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 3be35ce0-31bc-4e53-a246-08b31d9b2673
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 884c52c4-caee-4f4a-8aa7-6767bfc6d9de
+        userCondition: null
 fields:
   1df2afd1-1725-4190-ae6d-b40882c360af: # Column 1 Cell
     columnSuffix: null
     contentColumnType: text
     fieldGroup: null
     handle: column1Cell
-    instructions: ''
+    instructions: null
     name: 'Column 1 Cell'
     searchable: true
     settings:
@@ -40,13 +49,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: 'Basic with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: '1'
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
       uiMode: enlarged
@@ -58,7 +67,7 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: column2Cell
-    instructions: ''
+    instructions: null
     name: 'Column 2 Cell'
     searchable: true
     settings:
@@ -68,13 +77,13 @@ fields:
       configSelectionMode: choose
       defaultTransform: ''
       manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
+      purifierConfig: null
+      purifyHtml: true
       redactorConfig: 'Basic with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: '1'
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
       uiMode: enlarged
