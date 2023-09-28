@@ -1,6 +1,6 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set icons %}
-  {% spaceless %}
+  {%- apply spaceless -%}
   {% if block.contactInfo %}
     {% for block in block.contactInfo.all() %}
       {% switch block.type %}
@@ -17,7 +17,7 @@
   {% if block.email %}<li><a href="mailto:{{ block.email }}">{{ svg( '@webroot/dist/img/icon-envelope-updated.svg') }} {{ block.email }}</a></li>{% endif %}
   {% if block.phone %}<li><a href="tel:{{ block.phone|replace({'-': ''}) }}">{{ svg( '@webroot/dist/img/icon-phone-updated.svg') }} {{ block.phone }}</a></li>{% endif %}
   {% if not block.location.isEmpty() %}<li>{{ svg( '@webroot/dist/img/icon-marker-updated.svg') }}{{ block.location.name }}<br>{{ block.location.multiline() }}</li>{% endif %}  
-{% endspaceless %}
+{%- endapply -%}
 {% endset %}
 {% if icons|trim|length %}
   <ul class="ul-icons">

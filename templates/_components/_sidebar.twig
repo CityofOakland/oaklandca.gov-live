@@ -1,6 +1,6 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set sidebarContent %}
-  {% spaceless %}
+  {%- apply spaceless -%}
     {% if entry.department|length or entry.programSubdivision %}
       <p>
         {% if entry.department|length %}
@@ -89,7 +89,7 @@
         {% endfor %}
       </ul>
     {% endif %}
-  {% endspaceless %}
+  {%- endapply -%}
 {% endset %}
 
 {% if sidebarContent|trim|length %}
