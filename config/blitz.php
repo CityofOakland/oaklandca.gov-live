@@ -19,35 +19,37 @@
  */
 
 return [
-  '*' => [
-    // With this setting enabled, Blitz will begin caching pages according to the included/excluded URI patterns. Disable this setting to prevent Blitz from caching any new pages.
-    'cachingEnabled' => true,
+    '*' => [
+        // With this setting enabled, Blitz will begin caching pages according to the included/excluded URI patterns. Disable this setting to prevent Blitz from caching any new pages.
+        'cachingEnabled' => true,
 
-    // The URI patterns to include in caching. Set `siteId` to a blank string to indicate all sites.
-    'includedUriPatterns' => [
-      ['siteId' => 1, 'uriPattern' => '.*',],
+        // The URI patterns to include in caching. Set `siteId` to a blank string to indicate all sites.
+        'includedUriPatterns' => [
+            ['siteId' => 1, 'uriPattern' => '.*',],
+        ],
+
+
+        // The URI patterns to include in caching. Set `siteId` to a blank string to indicate all sites.
+        'excludedUriPatterns' => [
+            ['siteId' => 1, 'uriPattern' => '/author'],
+            ['siteId' => 1, 'uriPattern' => '/meetings'],
+            ['siteId' => 1, 'uriPattern' => '/news'],
+            ['siteId' => 1, 'uriPattern' => '/search'],
+            ['siteId' => 1, 'uriPattern' => '/boards-commissions/*/meetings'],
+            ['siteId' => 1, 'uriPattern' => '/events'],
+            ['siteId' => 1, 'uriPattern' => '/departments/*/events'],
+            ['siteId' => 1, 'uriPattern' => '/topics/*/events'],
+        ],
+
+        // Whether the cache should automatically be warmed after clearing.
+        'warmCacheAutomatically' => false,
     ],
 
-    // The URI patterns to include in caching. Set `siteId` to a blank string to indicate all sites.
-    'excludedUriPatterns' => [
-      ['siteId' => 1, 'uriPattern' => '/author'],
-      ['siteId' => 1, 'uriPattern' => '/meetings'],
-      ['siteId' => 1, 'uriPattern' => '/news'],
-      ['siteId' => 1, 'uriPattern' => '/boards-commissions/*/meetings'],
-      ['siteId' => 1, 'uriPattern' => '/events'],
-      ['siteId' => 1, 'uriPattern' => '/departments/*/events'],
-      ['siteId' => 1, 'uriPattern' => '/topics/*/events'],
+    'dev' => [
+        'cachingEnabled' => false,
     ],
 
-    // Whether the cache should automatically be warmed after clearing.
-    'warmCacheAutomatically' => false,
-  ],
-
-  'dev' => [
-    'cachingEnabled' => false,
-  ],
-
-  'staging' => [
-    'cachingEnabled' => true,
-  ],
+    'staging' => [
+        'cachingEnabled' => true,
+    ],
 ];
