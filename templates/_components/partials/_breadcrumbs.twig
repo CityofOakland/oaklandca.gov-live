@@ -13,7 +13,7 @@
   {% if entry.section is defined and entry.section.type == 'single' %}
     {% set breadcrumbs = null %}
   {% elseif entry.section is defined %}
-    {% if entry.section.handle == 'boardsCommissions' and craft.request.lastSegment == 'meetings' %}
+    {% if entry.section.handle == 'boardsCommissions' and craft.app.request.lastSegment == 'meetings' %}
       {% set breadcrumbs = breadcrumbs|merge([{
         title: 'Meetings',
         link: siteUrl ~ 'meetings'
@@ -36,7 +36,7 @@
 {#          link: entry.subcommittees.section('boardsCommissions').one().url#}
 {#        }]) %}#}
 {#      {% endif %}#}
-    {% elseif entry.section.handle == 'boardsCommissions' and craft.request.lastSegment == 'meetings' %}
+    {% elseif entry.section.handle == 'boardsCommissions' and craft.app.request.lastSegment == 'meetings' %}
     {% else %}
       {% switch entry.section.handle %}
         {% case 'boardsCommissions' %}
@@ -80,7 +80,7 @@
       <a class="font-bold text-green-800 hover:text-green-800 hover:underline" href="{{ link.link }}">{{ link.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
     {% endfor %}
     <span aria-current="page" class="{{ breadCrumbLinks is empty ? 'font-bold' : 'text-gray-800' }}">{{ bannerTitle }}</span>
-  {% elseif entry.section.handle == 'boardsCommissions' and craft.request.lastSegment == 'meetings' %}
+  {% elseif entry.section.handle == 'boardsCommissions' and craft.app.request.lastSegment == 'meetings' %}
     {% for link in breadcrumbs ?? '' %}
       <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
     {% endfor %}
@@ -89,7 +89,7 @@
       <a href="{{ subcommittee.url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ subcommittee.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
     {% endif %}
     <span aria-current="page" class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">Meetings for {{ entry.title }}</span>
-  {% elseif section is defined and slug is defined and craft.request.lastSegment == 'events' %}
+  {% elseif section is defined and slug is defined and craft.app.request.lastSegment == 'events' %}
     {% for link in breadcrumbs ?? '' %}
       <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
     {% endfor %}

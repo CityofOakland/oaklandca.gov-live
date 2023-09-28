@@ -41,14 +41,14 @@
 {% if type %}
   {% switch type %}
     {% case 'upcoming' %}
-      {% set meetings = meetings.order('date asc') %}
+      {% set meetings = meetings.orderBy('date asc') %}
       {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
     {% case 'past' %}
-      {% set meetings = meetings.order('date desc') %}
+      {% set meetings = meetings.orderBy('date desc') %}
       {% set date_query = date_query|merge(['< ' ~ now|date('Y-m-d')]) %}
   {% endswitch %}
 {% else %}
-  {% set meetings = meetings.order('date asc') %}
+  {% set meetings = meetings.orderBy('date asc') %}
   {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
 {% endif %}
 
@@ -145,8 +145,8 @@
         {"12"  : "December"}
       ], "Select a month"
     )}}
-    {% set earliest_year = craft.entries().section('meetings').order('date asc').limit(1).one().date|date('Y') %}
-    {% set latest_year   = craft.entries().section('meetings').order('date desc').limit(1).one().date|date('Y') %}
+    {% set earliest_year = craft.entries().section('meetings').orderBy('date asc').limit(1).one().date|date('Y') %}
+    {% set latest_year   = craft.entries().section('meetings').orderBy('date desc').limit(1).one().date|date('Y') %}
     {% set years = [] %}
     {% for year in range(latest_year, earliest_year) %}
       {% set years =  years|merge([{(year): year}]) %}

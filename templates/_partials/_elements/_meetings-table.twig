@@ -41,7 +41,7 @@
   }
 {% endcss %}
 
-{% set meetings = craft.entries.section('meetings').order('date desc').relatedTo(entry) %}
+{% set meetings = craft.entries.section('meetings').orderBy('date desc').relatedTo(entry) %}
 
 {% if meetings | length %}
   <table class="w-full text-xs border border-cool-gray-500" id="meetings">

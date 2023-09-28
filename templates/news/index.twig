@@ -9,7 +9,7 @@
     .one() %}
 {% set all_department_entries = craft.entries()
     .section('departments')
-    .order('title asc')
+    .orderBy('title asc')
     .all() %}
 {% set all_official_entries = craft.entries()
     .section('officials')
@@ -20,11 +20,11 @@
  #}
 {% set all_public_body_entries = craft.entries()
     .section('boardsCommissions')
-    .order('title asc')
+    .orderBy('title asc')
     .all() %}
 {% set news = craft.entries()
     .section('news')
-    .order('postDate desc')
+    .orderBy('postDate desc')
     .limit(10) %}
 
 {# Search query #}
@@ -146,7 +146,7 @@
       <div class="bg-gray-100 px-8 pt-3 pb-5">
         <p>Please try another search or updating your filters.</p>
         <div class="my-4">
-          <a href="{{ craft.request.url }}">See All News</a>
+          <a href="{{ craft.app.request.url }}">See All News</a>
         </div>
       </div>
     {% endif %}
@@ -167,7 +167,7 @@
 
   <h4 class="mt-4 mb-6 py-0">{{ 'Search & Filter'|t }}</h4>
 
-  <form action="{{ craft.request.url }}">
+  <form action="{{ craft.app.request.url }}">
     {# Search input field #}
     {{
       macros.textInput(
@@ -201,13 +201,13 @@
     {# Year filter drop-down #}
     {% set earliest_year = craft.entries()
         .section('news')
-        .order('postDate asc')
+        .orderBy('postDate asc')
         .limit(1)
         .one()
         .postDate|date('Y') %}
     {% set latest_year = craft.entries()
         .section('news')
-        .order('postDate desc')
+        .orderBy('postDate desc')
         .limit(1)
         .one()
         .postDate|date('Y') %}
@@ -273,7 +273,7 @@
     {# Search & filter section's buttons #}
     <div class="flex items-center">
       <button class="button medium">Apply</button>
-      <a class="mt-4" href="{{ craft.request.url }}">Clear filters</a>
+      <a class="mt-4" href="{{ craft.app.request.url }}">Clear filters</a>
     </div>
   </form>
 

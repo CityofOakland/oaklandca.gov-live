@@ -9,7 +9,7 @@
   ]
 ) %}
 
-{% set meetings = craft.entries.section('meetings').order('date desc').relatedTo(entry) %}
+{% set meetings = craft.entries.section('meetings').orderBy('date desc').relatedTo(entry) %}
 
 {% set relatedTeams = craft.entries.section('teams').relatedTo(entry).all() %}
 

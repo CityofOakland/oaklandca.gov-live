@@ -14,7 +14,7 @@
 {% set news = craft.entries()
     .section('news')
     .relatedTo(entry)
-    .order('postDate desc')
+    .orderBy('postDate desc')
     .limit(10) %}
 
 {# Search query #}
@@ -124,7 +124,7 @@
       <div class="px-8 pt-3 pb-5 bg-gray-100">
         <p>Please try another search or updating your filters.</p>
         <div class="my-4">
-          <a href="{{ craft.request.url }}">See All News</a>
+          <a href="{{ craft.app.request.url }}">See All News</a>
         </div>
       </div>
     {% endif %}
@@ -145,7 +145,7 @@
 
   <h4 class="py-0 mt-4 mb-6">{{ 'Search & Filter'|t }}</h4>
 
-  <form action="{{ craft.request.url }}">
+  <form action="{{ craft.app.request.url }}">
     {# Month filter drop-down #}
     {{ macros.select('Month', 'month', 'month', [
         {"01"  : "January"},
@@ -166,13 +166,13 @@
     {# Year filter drop-down #}
     {% set earliest_year = craft.entries()
         .section('news')
-        .order('postDate asc')
+        .orderBy('postDate asc')
         .limit(1)
         .one()
         .postDate|date('Y') %}
     {% set latest_year = craft.entries()
         .section('news')
-        .order('postDate desc')
+        .orderBy('postDate desc')
         .limit(1)
         .one()
         .postDate|date('Y') %}
@@ -188,7 +188,7 @@
     {# Search & filter section's buttons #}
     <div class="flex items-center">
       <button class="button medium">Apply</button>
-      <a class="mt-4" href="{{ craft.request.url }}">Clear filters</a>
+      <a class="mt-4" href="{{ craft.app.request.url }}">Clear filters</a>
     </div>
   </form>
 
