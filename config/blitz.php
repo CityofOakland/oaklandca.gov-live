@@ -6,12 +6,6 @@
 /**
  * Blitz config.php
  *
- * This file exists only as a template for the Blitz settings.
- * It does nothing on its own.
- *
- * Don't edit this file, instead copy it to 'craft/config' as 'blitz.php'
- * and make your changes there to override default settings.
- *
  * Once copied to 'craft/config', this file will be multi-environment aware as
  * well, so you can have different settings groups for each environment, just as
  * you do for 'general.php'
@@ -20,7 +14,7 @@
 return [
     '*' => [
         // With this setting enabled, Blitz will log detailed messages to `storage/logs/blitz.log`.
-        //'debug' => false,
+        'debug' => true,
 
         // With this setting enabled, Blitz will provide template performance hints in a utility.
         'hintsEnabled' => true,
@@ -29,31 +23,27 @@ return [
         'cachingEnabled' => true,
 
         // Determines when and how the cache should be refreshed.
-        // - `0`: Expire the cache, regenerate manually
+        // - `0`: Expire the cache, regenerate manually or organically
         // - `1`: Clear the cache, regenerate manually or organically
         // - `2`: Expire the cache and regenerate in a queue job
         // - `3`: Clear the cache and regenerate in a queue job
-        //'refreshMode' => 3,
+        'refreshMode' => 3,
 
         // The URI patterns to include in caching. Set `siteId` to a blank string to indicate all sites.
-        //'includedUriPatterns' => [
-        //    ['siteId' => 1, 'uriPattern' => '.*',],
-        //],
+        'includedUriPatterns' => [
+            ['siteId' => '', 'uriPattern' => '.*',],
+        ],
 
         // The URI patterns to exclude from caching (overrides any matching patterns to include). Set `siteId` to a blank string to indicate all sites.
         'excludedUriPatterns' => [
-            ['siteId' => 1, 'uriPattern' => '/author'],
-            ['siteId' => 1, 'uriPattern' => '/meetings'],
-            ['siteId' => 1, 'uriPattern' => '/meetings?*'],
-            ['siteId' => 1, 'uriPattern' => '/news'],
-            ['siteId' => 1, 'uriPattern' => '/news?*'],
-            ['siteId' => 1, 'uriPattern' => '/search'],
-            ['siteId' => 1, 'uriPattern' => '/search?*'],
-            ['siteId' => 1, 'uriPattern' => '/boards-commissions/*/meetings'],
-            ['siteId' => 1, 'uriPattern' => '/events'],
-            ['siteId' => 1, 'uriPattern' => '/events?*'],
-            ['siteId' => 1, 'uriPattern' => '/departments/*/events'],
-            ['siteId' => 1, 'uriPattern' => '/topics/*/events'],
+            ['siteId' => '', 'uriPattern' => '/author'],
+            ['siteId' => '', 'uriPattern' => '/meetings'],
+            ['siteId' => '', 'uriPattern' => '/news'],
+            ['siteId' => '', 'uriPattern' => '/search'],
+            ['siteId' => '', 'uriPattern' => '/boards-commissions/*/meetings'],
+            ['siteId' => '', 'uriPattern' => '/events'],
+            ['siteId' => '', 'uriPattern' => '/departments/*/events'],
+            ['siteId' => '', 'uriPattern' => '/topics/*/events'],
         ],
 
         // The storage type to use.
@@ -62,7 +52,7 @@ return [
         // The storage settings.
         //'cacheStorageSettings' => [
         //    'folderPath' => '@webroot/cache/blitz',
-        //    'compressCachedValues' => false,
+        //    'createGzipFiles' => false,
         //    'countCachedFiles' => true,
         //],
 
@@ -81,7 +71,7 @@ return [
         // Custom site URIs to generate when either a site or the entire cache is generated.
         //'customSiteUris' => [
         //    [
-        //        'siteId' => 1,
+        //        'siteId' => '',
         //        'uri' => 'pages/custom',
         //    ],
         //],
@@ -145,42 +135,32 @@ return [
         'queryStringCaching' => 0,
 
         // The query string parameters to include when determining if and how a page should be cached (regular expressions may be used).
-//        'includedQueryStringParams' => [
-//            ['siteId' => '', 'queryStringParam' => 'q'],
-//            ['siteId' => '', 'queryStringParam' => 'event_type'],
-//            ['siteId' => '', 'queryStringParam' => 'department'],
-//            ['siteId' => '', 'queryStringParam' => 'page'],
-//            ['siteId' => '', 'queryStringParam' => 'type'],
-//            ['siteId' => '', 'queryStringParam' => 'year'],
-//            ['siteId' => '', 'queryStringParam' => 'month'],
-//            ['siteId' => '', 'queryStringParam' => 'public_body'],
-//            ['siteId' => '', 'queryStringParam' => 'public_notice_type'],
-//            ['siteId' => '', 'queryStringParam' => 'search'],
-//            ['siteId' => '', 'queryStringParam' => 'official'],
-//            ['siteId' => '', 'queryStringParam' => 'public-body'],
-//            ['siteId' => '', 'queryStringParam' => 'subcommittee'],
-//        ],
+        'includedQueryStringParams' => [
+        ],
 
         // The query string parameters to exclude when determining if and how a page should be cached (regular expressions may be used).
-        //'excludedQueryStringParams' => [
-        //    [
-        //        'siteId' => '',
-        //        'queryStringParam' => 'gclid',
-        //    ],
-        //    [
-        //        'siteId' => '',
-        //        'queryStringParam' => 'fbclid',
-        //    ],
-        //],
+        'excludedQueryStringParams' => [
+            ['siteId' => '', 'queryStringParam' => 'q'],
+            ['siteId' => '', 'queryStringParam' => 'query'],
+            ['siteId' => '', 'queryStringParam' => 'event_type'],
+            ['siteId' => '', 'queryStringParam' => 'department'],
+            ['siteId' => '', 'queryStringParam' => 'page'],
+            ['siteId' => '', 'queryStringParam' => 'type'],
+            ['siteId' => '', 'queryStringParam' => 'year'],
+            ['siteId' => '', 'queryStringParam' => 'month'],
+            ['siteId' => '', 'queryStringParam' => 'public_body'],
+            ['siteId' => '', 'queryStringParam' => 'public_notice_type'],
+            ['siteId' => '', 'queryStringParam' => 'search'],
+            ['siteId' => '', 'queryStringParam' => 'official'],
+            ['siteId' => '', 'queryStringParam' => 'public-body'],
+            ['siteId' => '', 'queryStringParam' => 'subcommittee'],
+        ],
 
         // An API key that can be used via a URL (min. 16 characters).
         //'apiKey' => '',
 
         // Whether pages containing query string parameters should be generated.
         //'generatePagesWithQueryStringParams' => true,
-
-        // Whether asset images should be purged when changed.
-        //'purgeAssetImagesWhenChanged' => true,
 
         // Whether the cache should automatically be refreshed after a global set is updated.
         //'refreshCacheAutomaticallyForGlobals' => true,
@@ -197,11 +177,11 @@ return [
         // Whether non-HTML responses should be cached. With this setting enabled, Blitz will also cache pages that return non-HTML responses. If enabled, you should ensure that URIs that should not be caches, such as API endpoints, XML sitemaps, etc. are added as excluded URI patterns.
         //'cacheNonHtmlResponses' => false,
 
-        // Whether elements should be tracked in the database.
-        //'trackElements' => true,
+        // Whether elements should be cached in the database.
+        //'cacheElements' => true,
 
-        // Whether element queries should be tracked in the database.
-        //'trackElementQueries' => true,
+        // Whether element queries should be cached in the database.
+        //'cacheElementQueries' => true,
 
         // The amount of time after which the cache should expire (if not 0). See [[ConfigHelper::durationInSeconds()]] for a list of supported value types.
         //'cacheDuration' => 0,
@@ -224,7 +204,7 @@ return [
         //],
 
         // The value to send in the cache control header.
-        //'cacheControlHeader' => 'public, s-maxage=31536000, max-age=0',
+        'cacheControlHeader' => 'public, s-maxage=31536000, max-age=0',
 
         // Whether an `X-Powered-By: Blitz` header should be sent.
         //'sendPoweredByHeader' => true,
@@ -234,10 +214,10 @@ return [
         // - `true`: Append all comments
         // - `2`: Append "cached on" comment only
         // - `3`: Append "served by" comment only
-        //'outputComments' => true,
+        'outputComments' => true,
 
         // The priority to give the refresh cache job (the lower the number, the higher the priority). Set to `null` to inherit the default priority.
-        //'refreshCacheJobPriority' => 10,
+        'refreshCacheJobPriority' => 1,
 
         // The priority to give driver jobs (the lower the number, the higher the priority). Set to `null` to inherit the default priority.
         //'driverJobPriority' => 100,
@@ -247,12 +227,6 @@ return [
 
         // The maximum number of times to attempt retrying a failed queue job.
         //'maxRetryAttempts' => 10,
-
-        // The maximum length of URIs that may be cached. Increasing this value requires manually updating the limit in the `uri` column of the `blitz_caches` database table. Note that the prefix length limit is 3072 bytes for InnoDB tables that use the DYNAMIC or COMPRESSED row format. Assuming a `utf8mb4` character set and a maximum of 4 bytes for each character, this is 768 characters.
-        // https://dev.mysql.com/doc/refman/8.0/en/column-indexes.html#column-indexes-prefix
-        // Warning: if using the File Storage driver, this value should not exceed 255 unless using a file system that supports longer file names.
-        // https://en.wikipedia.org/wiki/Comparison_of_file_systems#Limits
-        //'maxUriLength' => 255,
 
         // The time in seconds to wait for mutex locks to be released.
         //'mutexTimeout' => 1,
@@ -264,8 +238,11 @@ return [
 
         // The name of the JavaScript event that will trigger a script inject.
         //'injectScriptEvent' => 'DOMContentLoaded',
+
+        // Tha maximum length of URIs that may be cached. Increasing this value is not recommended.
+        //'maxUriLength' => 255,
     ],
     'dev' => [
         'cachingEnabled' => false,
-    ],
+    ]
 ];
