@@ -36,9 +36,9 @@ return [
         //'refreshMode' => 3,
 
         // The URI patterns to include in caching. Set `siteId` to a blank string to indicate all sites.
-        'includedUriPatterns' => [
-            ['siteId' => 1, 'uriPattern' => '.*',],
-        ],
+        //'includedUriPatterns' => [
+        //    ['siteId' => 1, 'uriPattern' => '.*',],
+        //],
 
         // The URI patterns to exclude from caching (overrides any matching patterns to include). Set `siteId` to a blank string to indicate all sites.
         'excludedUriPatterns' => [
