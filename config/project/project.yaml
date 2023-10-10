@@ -1,4 +1,4 @@
-dateModified: 1695432073
+dateModified: 1696953281
 elementSources:
   craft\elements\Entry:
     -
@@ -1495,6 +1495,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  logs:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0
   manytomany:
     enabled: '1'
     licenseKey: null

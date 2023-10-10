@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dcbeec285f4af245a64731a3a07de220",
+    "content-hash": "d24b14c3dbcf461c51e59cfc28a33394",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -3109,6 +3109,38 @@
                 "source": "https://github.com/erusev/parsedown-extra/tree/0.8.x"
             },
             "time": "2019-12-30T23:20:37+00:00"
+        },
+        {
+            "name": "ether/logs",
+            "version": "4.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ethercreative/logs/zipball/b9c85755cff11726039d4f77c71923199b4b50b1",
+                "reference": "b9c85755cff11726039d4f77c71923199b4b50b1",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "logs",
+                "name": "Logs",
+                "developer": "Ether Creative",
+                "developerUrl": "https://ethercreative.co.uk",
+                "class": "ether\\logs\\Logs",
+                "schemaVersion": "3.0.0"
+            },
+            "autoload": {
+                "psr-4": {
+                    "ether\\logs\\": "src/"
+                }
+            },
+            "description": "Access logs from the CP",
+            "support": {
+                "issues": "https://github.com/ethercreative/logs"
+            },
+            "time": "2022-07-11T12:34:54+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
