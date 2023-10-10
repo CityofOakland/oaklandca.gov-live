@@ -1,4 +1,4 @@
-dateModified: 1696953948
+dateModified: 1696960140
 elementSources:
   craft\elements\Entry:
     -
@@ -1211,7 +1211,7 @@ plugins:
     settings: null
   blitz:
     edition: standard
-    enabled: true
+    enabled: false
     licenseKey: V1MGTTWWOX2B8VX28A8VJ2ZQ
     schemaVersion: 4.5.0
     settings:
