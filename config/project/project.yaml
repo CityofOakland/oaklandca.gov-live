@@ -1,4 +1,4 @@
-dateModified: 1696960140
+dateModified: 1696961219
 elementSources:
   craft\elements\Entry:
     -
@@ -1211,7 +1211,7 @@ plugins:
     settings: null
   blitz:
     edition: standard
-    enabled: false
+    enabled: true
     licenseKey: V1MGTTWWOX2B8VX28A8VJ2ZQ
     schemaVersion: 4.5.0
     settings:
@@ -1220,6 +1220,13 @@ plugins:
       cacheDuration: null
       cacheElementQueries: true
       cacheElements: true
+      cacheGeneratorSettings:
+        __assoc__:
+          -
+            - concurrency
+            - '3'
+      cacheGeneratorType: putyourlightson\blitz\drivers\generators\HttpGenerator
+      cacheNonHtmlResponses: false
       cachePurgerType: putyourlightson\blitz\drivers\purgers\DummyPurger
       cacheStorageSettings:
         __assoc__:
@@ -1227,30 +1234,134 @@ plugins:
             - folderPath
             - '@webroot/cache/blitz'
           -
-            - createGzipFiles
+            - compressCachedValues
             - ''
       cacheStorageType: putyourlightson\blitz\drivers\storage\FileStorage
-      cacheWarmerSettings:
-        __assoc__:
-          -
-            - concurrency
-            - '10'
-      cacheWarmerType: putyourlightson\blitz\drivers\warmers\GuzzleWarmer
-      cachingEnabled: ''
-      clearCacheAutomatically: '1'
-      customSiteUris: ''
+      cachingEnabled: true
       debug: false
       deployerType: putyourlightson\blitz\drivers\deployers\DummyDeployer
       driverJobPriority: 100
+      esiEnabled: false
       excludedQueryStringParams:
-        - gclid
-        - fbclid
+        0:
+          __assoc__:
+            -
+              - queryStringParam
+              - q
+        2:
+          __assoc__:
+            -
+              - queryStringParam
+              - event_type
+        3:
+          __assoc__:
+            -
+              - queryStringParam
+              - department
+        4:
+          __assoc__:
+            -
+              - queryStringParam
+              - page
+        5:
+          __assoc__:
+            -
+              - queryStringParam
+              - type
+        6:
+          __assoc__:
+            -
+              - queryStringParam
+              - year
+        7:
+          __assoc__:
+            -
+              - queryStringParam
+              - month
+        8:
+          __assoc__:
+            -
+              - queryStringParam
+              - public_body
+        9:
+          __assoc__:
+            -
+              - queryStringParam
+              - public-body
+        10:
+          __assoc__:
+            -
+              - queryStringParam
+              - public_notice_type
+        11:
+          __assoc__:
+            -
+              - queryStringParam
+              - search
+        12:
+          __assoc__:
+            -
+              - queryStringParam
+              - official
+        13:
+          __assoc__:
+            -
+              - queryStringParam
+              - subcommittee
+        14:
+          __assoc__:
+            -
+              - queryStringParam
+              - query
       excludedUriPatterns:
         -
           __assoc__:
             -
               - uriPattern
               - /author
+        -
+          __assoc__:
+            -
+              - uriPattern
+              - /meetings
+        -
+          __assoc__:
+            -
+              - uriPattern
+              - /news
+        -
+          __assoc__:
+            -
+              - uriPattern
+              - /search
+        -
+          __assoc__:
+            -
+              - uriPattern
+              - '/boards-commissions/*/meetings'
+        -
+          __assoc__:
+            -
+              - uriPattern
+              - /events
+        -
+          __assoc__:
+            -
+              - uriPattern
+              - '/departments/*/events'
+        -
+          __assoc__:
+            -
+              - uriPattern
+              - '/topics/*/events'
+      generatePagesWithQueryStringParams: true
+      hintsEnabled: true
+      includedQueryStringParams:
+        -
+          __assoc__:
+            -
+              - queryStringParam
+              - '.*'
       includedUriPatterns:
         -
           __assoc__:
@@ -1261,15 +1372,23 @@ plugins:
       integrations:
         - putyourlightson\blitz\drivers\integrations\FeedMeIntegration
         - putyourlightson\blitz\drivers\integrations\SeomaticIntegration
+      maxRetryAttempts: 10
+      maxUriLength: 255
       mutexTimeout: 1
       outputComments: true
-      queryStringCaching: '0'
+      purgeAssetImagesWhenChanged: true
+      queryStringCaching: 0
+      queueJobTtr: 300
       refreshCacheAutomaticallyForGlobals: true
       refreshCacheJobPriority: 10
+      refreshCacheWhenElementMovedInStructure: true
       refreshCacheWhenElementSavedNotLive: false
       refreshCacheWhenElementSavedUnchanged: false
+      refreshMode: 3
       sendPoweredByHeader: true
-      warmCacheAutomatically: ''
+      ssiEnabled: false
+      trackElementQueries: true
+      trackElements: true
   buttonbox:
     edition: standard
     enabled: true
