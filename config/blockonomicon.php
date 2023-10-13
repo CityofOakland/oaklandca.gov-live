@@ -8,8 +8,8 @@
 
 return [
 
-	// Like other Craft config files, this file supports environment-specific
-	// configurations. Any values stored within the `*` array are defaults
-	// And additional arrays can be added to provide overrides per environment.
+// Like other Craft config files, this file supports environment-specific
+// configurations. Any values stored within the `*` array are defaults
+// And additional arrays can be added to provide overrides per environment.
 	'*' => [],
 ];

@@ -19,18 +19,18 @@
  */
 
 return [
-  'boards-commissions/related-to/<section>/<slug>' => ['template' => 'boards-commissions'],
-  'boards-commissions/<slug>/meetings' => ['template' => '_layouts/_meetings-by-group'],
-  'boards-commissions/<slug>/meetings-table' => ['template' => 'boards-commissions/_meetings-table'],
-  '<section>/<slug>/events' => ['template' => '_layouts/_events-by-group'],
-  'departments/<slug>/news' => ['template' => 'departments/_news'],
-  'documents/related-to/<section>/<slug>' => ['template' => 'documents'],
-  'meetings/related-to/<section>/<slug>' => ['template' => 'meetings'],
-  'news/related-to/<section>/<slug>' => ['template' => 'news/_related-to'],
-  'projects/related-to/<section>/<slug>' => ['template' => 'projects'],
-  'resources/related-to/<section>/<slug>' => ['template' => 'resources'],
-  'services/related-to/<section>/<slug>' => ['template' => '_layouts/_instant-search-services'],
-  'topics/related-to/<section>/<slug>' => ['template' => 'topics'],
-  'author/<user>' => ['template' => 'author'],
-  'api' => 'graphql/api'
+	'boards-commissions/related-to/<section>/<slug>' => ['template' => 'boards-commissions'],
+	'boards-commissions/<slug>/meetings' => ['template' => '_layouts/_meetings-by-group'],
+	'boards-commissions/<slug>/meetings-table' => ['template' => 'boards-commissions/_meetings-table'],
+	'<section>/<slug>/events' => ['template' => '_layouts/_events-by-group'],
+	'departments/<slug>/news' => ['template' => 'departments/_news'],
+	'documents/related-to/<section>/<slug>' => ['template' => 'documents'],
+	'meetings/related-to/<section>/<slug>' => ['template' => 'meetings'],
+	'news/related-to/<section>/<slug>' => ['template' => 'news/_related-to'],
+	'projects/related-to/<section>/<slug>' => ['template' => 'projects'],
+	'resources/related-to/<section>/<slug>' => ['template' => 'resources'],
+	'services/related-to/<section>/<slug>' => ['template' => '_layouts/_instant-search-services'],
+	'topics/related-to/<section>/<slug>' => ['template' => 'topics'],
+	'author/<user>' => ['template' => 'author'],
+	'api' => 'graphql/api'
 ];

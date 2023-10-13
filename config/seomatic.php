@@ -32,76 +32,76 @@ use nystudio107\seomatic\base\SeoElementInterface;
  */
 
 return [
-    // The public-facing name of the plugin
-    'pluginName' => 'SEO',
+// The public-facing name of the plugin
+	'pluginName' => 'SEO',
 
-    // Should SEOmatic render metadata?
-    'renderEnabled' => true,
+// Should SEOmatic render metadata?
+	'renderEnabled' => true,
 
-    // Should SEOmatic render frontend sitemaps?
-    'sitemapsEnabled' => true,
+// Should SEOmatic render frontend sitemaps?
+	'sitemapsEnabled' => true,
 
-    // Should sitemaps be regenerated automatically?
-    'regenerateSitemapsAutomatically' => false,
+// Should sitemaps be regenerated automatically?
+	'regenerateSitemapsAutomatically' => false,
 
-    // Should SEOmatic add to the http response headers?
-    'headersEnabled' => true,
+// Should SEOmatic add to the http response headers?
+	'headersEnabled' => true,
 
-    // The server environment, either `live`, `staging`, or `local`
-    'environment' => 'live',
+// The server environment, either `live`, `staging`, or `local`
+	'environment' => 'live',
 
-    // Should SEOmatic display the SEO Preview sidebar?
-    'displayPreviewSidebar' => true,
+// Should SEOmatic display the SEO Preview sidebar?
+	'displayPreviewSidebar' => true,
 
-    // Should SEOmatic add a Social Media Preview Target?
-    'socialMediaPreviewTarget' => true,
+// Should SEOmatic add a Social Media Preview Target?
+	'socialMediaPreviewTarget' => true,
 
-    // The social media platforms that should be displayed in the SEO Preview sidebar
-    'sidebarDisplayPreviewTypes' => [
-        'google',
-        'twitter',
-        'facebook'
-    ],
+// The social media platforms that should be displayed in the SEO Preview sidebar
+	'sidebarDisplayPreviewTypes' => [
+		'google',
+		'twitter',
+		'facebook'
+	],
 
-    // Should SEOmatic display the SEO Analysis sidebar?
-    'displayAnalysisSidebar' => true,
+// Should SEOmatic display the SEO Analysis sidebar?
+	'displayAnalysisSidebar' => true,
 
-    // If `devMode` is on, prefix the <title> with this string
-    'devModeTitlePrefix' => '&#x1f6a7; ',
+// If `devMode` is on, prefix the <title> with this string
+	'devModeTitlePrefix' => '&#x1f6a7; ',
 
-     //  Prefix the Control Panel <title> with this string
-    'cpTitlePrefix' => '&#x2699; ',
+//  Prefix the Control Panel <title> with this string
+	'cpTitlePrefix' => '&#x2699; ',
 
-    // If `devMode` is on, prefix the Control Panel <title> with this string
-    'devModeCpTitlePrefix' => '&#x1f6a7;&#x2699; ',
+// If `devMode` is on, prefix the Control Panel <title> with this string
+	'devModeCpTitlePrefix' => '&#x1f6a7;&#x2699; ',
 
-    // The separator character to use for the `<title>` tag
-    'separatorChar' => '|',
+// The separator character to use for the `<title>` tag
+	'separatorChar' => '|',
 
-    // The max number of characters in the `<title>` tag
-    'maxTitleLength' => 70,
+// The max number of characters in the `<title>` tag
+	'maxTitleLength' => 70,
 
-    // The max number of characters in the `<meta name="description">` tag
-    'maxDescriptionLength' => 155,
+// The max number of characters in the `<meta name="description">` tag
+	'maxDescriptionLength' => 155,
 
-    // Site Groups define logically separate sites
-    'siteGroupsSeparate' => true,
+// Site Groups define logically separate sites
+	'siteGroupsSeparate' => true,
 
-    // Whether to dynamically include the hreflang tags
-    'addHrefLang' => true,
+// Whether to dynamically include the hreflang tags
+	'addHrefLang' => true,
 
-    // Should the Canonical URL be automatically lower-cased?
-    'lowercaseCanonicalUrl' => true,
+// Should the Canonical URL be automatically lower-cased?
+	'lowercaseCanonicalUrl' => true,
 
-    // Should the meta generator tag and X-Powered-By header be included?
-    'generatorEnabled' => true,
+// Should the meta generator tag and X-Powered-By header be included?
+	'generatorEnabled' => true,
 
-    // SEOmatic uses the Craft `siteUrl` to generate the external URLs.  If you
-    // are using it in a non-standard environment, such as a headless GraphQL or
-    // ElementAPI server, you can override what it uses for the `siteUrl` below.
-    'siteUrlOverride' => '',
+// SEOmatic uses the Craft `siteUrl` to generate the external URLs.  If you
+// are using it in a non-standard environment, such as a headless GraphQL or
+// ElementAPI server, you can override what it uses for the `siteUrl` below.
+	'siteUrlOverride' => '',
 
-    // SeoElementInterface[] The default SeoElement type classes
-    'defaultSeoElementTypes' => [
-    ],
+// SeoElementInterface[] The default SeoElement type classes
+	'defaultSeoElementTypes' => [
+	],
 ];

@@ -20,10 +20,10 @@
  */
 
 return [
-  'showLabel' => getenv('ENV_LABEL_SHOW'),
-  'labelText' => getenv('ENV_LABEL_TEXT'),
-  'prefixText' => getenv('ENV_LABEL_PREFIX'),
-  'suffixText' => getenv('ENV_LABEL_SUFFIX'),
-  'labelColor' => getenv('ENV_LABEL_BGCOLOR'),
-  'textColor' => getenv('ENV_LABEL_COLOR'),
+	'showLabel' => getenv('ENV_LABEL_SHOW'),
+	'labelText' => getenv('ENV_LABEL_TEXT'),
+	'prefixText' => getenv('ENV_LABEL_PREFIX'),
+	'suffixText' => getenv('ENV_LABEL_SUFFIX'),
+	'labelColor' => getenv('ENV_LABEL_BGCOLOR'),
+	'textColor' => getenv('ENV_LABEL_COLOR'),
 ];

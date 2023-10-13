@@ -18,19 +18,19 @@
  */
 
 return [
-    'modules' => [
-        'my-module' => \modules\Module::class,
-        'matrix-mate-module' => \modules\MatrixMateModule::class,
-        'oakland-library-events-module' => modules\oaklandlibraryeventsmodule\OaklandLibraryEventsModule::class,
-    ],
-    'bootstrap' => [
-        'my-module', 
-        'matrix-mate-module',
-        'oakland-library-events-module'
-    ],
-    'components' => [
-        'search' => [
-            'useFullText' => false,
-        ],
-    ],
+	'modules' => [
+		'my-module' => \modules\Module::class,
+		'matrix-mate-module' => \modules\MatrixMateModule::class,
+		'oakland-library-events-module' => modules\oaklandlibraryeventsmodule\OaklandLibraryEventsModule::class,
+	],
+	'bootstrap' => [
+		'my-module',
+		'matrix-mate-module',
+		'oakland-library-events-module'
+	],
+	'components' => [
+		'search' => [
+			'useFullText' => false,
+		],
+	],
 ];

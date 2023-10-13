@@ -12,41 +12,41 @@
 use craft\helpers\App;
 
 return [
-	// Global settings
-		'*' => [
-				'aliases' => [
-                    '@algoliaAppId' => App::env('ALGOLIA_APP_ID'),
-                    '@algoliaAdminApi' => App::env('ALGOLIA_ADMIN_API'),
-                    '@amazonKeyId' => App::env('AMAZON_KEY_ID'),
-                    '@amazonSecret' => App::env('AMAZON_SECRET'),
-                    'siteUrl' => App::env('SITE_URL') ?: '@web',
-                    'webroot' => App::env('WEB_ROOT'),
-				],
-				'allowAdminChanges' => false,
-				'cpTrigger' => 'admin',
-				'defaultWeekStartDay' => 0,
-				'devMode' => false,
-				'disallowRobots' => true,
-				'enableCsrfProtection' => true,
-				'extraFileKinds' => [
-						'excel' => [
-								'extensions' => ['csv']
-						]
-				],
-				'maxRevisions' => 10,
-				'maxUploadFileSize' => 268435456,
-				'omitScriptNameInUrls' => true,
-				'securityKey' => App::env('SECURITY_KEY'),
+// Global settings
+	'*' => [
+		'aliases' => [
+			'@algoliaAppId' => App::env('ALGOLIA_APP_ID'),
+			'@algoliaAdminApi' => App::env('ALGOLIA_ADMIN_API'),
+			'@amazonKeyId' => App::env('AMAZON_KEY_ID'),
+			'@amazonSecret' => App::env('AMAZON_SECRET'),
+			'siteUrl' => App::env('SITE_URL') ?: '@web',
+			'webroot' => App::env('WEB_ROOT'),
 		],
+		'allowAdminChanges' => false,
+		'cpTrigger' => 'admin',
+		'defaultWeekStartDay' => 0,
+		'devMode' => false,
+		'disallowRobots' => true,
+		'enableCsrfProtection' => true,
+		'extraFileKinds' => [
+			'excel' => [
+				'extensions' => ['csv']
+			]
+		],
+		'maxRevisions' => 5,
+		'maxUploadFileSize' => 268435456,
+		'omitScriptNameInUrls' => true,
+		'securityKey' => App::env('SECURITY_KEY'),
+	],
 
-		'dev' => [
-				'allowAdminChanges' => true,
-				'devMode' => true,
-				'enableTemplateCaching' => true,
-		],
+	'dev' => [
+		'allowAdminChanges' => true,
+		'devMode' => true,
+		'enableTemplateCaching' => false,
+	],
 
-		'production' => [
-				'disallowRobots' => false,
-				'defaultTokenDuration' => 432000,
-		],
+	'production' => [
+		'disallowRobots' => false,
+		'defaultTokenDuration' => 432000,
+	],
 ];

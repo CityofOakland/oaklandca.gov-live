@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'volumes' => [
-        'headers' => ['heroImage', 'srcImg'],
-    ]
+	'volumes' => [
+		'headers' => ['heroImage', 'srcImg'],
+	]
 ];
