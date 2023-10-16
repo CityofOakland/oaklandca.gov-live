@@ -1,4 +1,4 @@
-dateModified: 1697489081
+dateModified: 1697489649
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -1055,6 +1055,13 @@ plugins:
       cacheDuration: null
       cacheElementQueries: true
       cacheElements: true
+      cacheGeneratorSettings:
+        __assoc__:
+          -
+            - concurrency
+            - '3'
+      cacheGeneratorType: putyourlightson\blitz\drivers\generators\HttpGenerator
+      cacheNonHtmlResponses: false
       cachePurgerType: putyourlightson\blitz\drivers\purgers\DummyPurger
       cacheStorageSettings:
         __assoc__:
@@ -1062,49 +1069,54 @@ plugins:
             - folderPath
             - '@webroot/cache/blitz'
           -
-            - createGzipFiles
+            - compressCachedValues
             - ''
       cacheStorageType: putyourlightson\blitz\drivers\storage\FileStorage
-      cacheWarmerSettings:
-        __assoc__:
-          -
-            - concurrency
-            - '10'
-      cacheWarmerType: putyourlightson\blitz\drivers\warmers\GuzzleWarmer
-      cachingEnabled: ''
-      clearCacheAutomatically: '1'
-      customSiteUris: ''
-      debug: false
+      cachingEnabled: false
+      debug: true
       deployerType: putyourlightson\blitz\drivers\deployers\DummyDeployer
       driverJobPriority: 100
+      esiEnabled: false
       excludedQueryStringParams:
-        - gclid
-        - fbclid
-      excludedUriPatterns:
         -
           __assoc__:
             -
-              - uriPattern
-              - /author
-      includedUriPatterns:
+              - queryStringParam
+              - ''
         -
           __assoc__:
             -
-              - uriPattern
+              - queryStringParam
+              - ''
+      generatePagesWithQueryStringParams: true
+      hintsEnabled: true
+      includedQueryStringParams:
+        -
+          __assoc__:
+            -
+              - queryStringParam
               - '.*'
       injectScriptEvent: DOMContentLoaded
       integrations:
         - putyourlightson\blitz\drivers\integrations\FeedMeIntegration
         - putyourlightson\blitz\drivers\integrations\SeomaticIntegration
+      maxRetryAttempts: 10
+      maxUriLength: 255
       mutexTimeout: 1
       outputComments: true
-      queryStringCaching: '0'
+      purgeAssetImagesWhenChanged: true
+      queryStringCaching: 0
+      queueJobTtr: 300
       refreshCacheAutomaticallyForGlobals: true
       refreshCacheJobPriority: 10
+      refreshCacheWhenElementMovedInStructure: true
       refreshCacheWhenElementSavedNotLive: false
       refreshCacheWhenElementSavedUnchanged: false
+      refreshMode: 3
       sendPoweredByHeader: true
-      warmCacheAutomatically: ''
+      ssiEnabled: false
+      trackElementQueries: true
+      trackElements: true
   buttonbox:
     edition: standard
     enabled: true
