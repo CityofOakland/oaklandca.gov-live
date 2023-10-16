@@ -1,4 +1,4 @@
-dateModified: 1697480636
+dateModified: 1697487577
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -1153,7 +1153,7 @@ plugins:
         __assoc__:
           -
             - enabled
-            - '1'
+            - ''
           -
             - enforce
             - ''
@@ -1231,6 +1231,7 @@ plugins:
           -
             - forceFail
             - true
+      disabledTests: null
       elevatedSessionDuration:
         __assoc__:
           -
@@ -1273,7 +1274,7 @@ plugins:
                 - '1'
                 - X-Xss-Protection
                 - '1; mode=block'
-      highSecurityLevel: '1'
+      highSecurityLevel: false
       httpsControlPanel:
         __assoc__:
           -
@@ -1388,6 +1389,11 @@ plugins:
           -
             - canFail
             - true
+      sendPoweredByHeader:
+        __assoc__:
+          -
+            - canFail
+            - false
       strictTransportSecurity:
         __assoc__:
           -
