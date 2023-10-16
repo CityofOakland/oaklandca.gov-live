@@ -17,7 +17,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: d84877f7-ad27-4e1c-af47-be8c47ed9355
+            uid: 679e06bf-3f0c-4a87-b799-d50f36869da7
             userCondition: null
             warning: null
             width: 100

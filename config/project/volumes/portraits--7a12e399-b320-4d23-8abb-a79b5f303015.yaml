@@ -26,7 +26,7 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\assets\AssetTitleField
-            uid: 7f1a2dbb-3ecb-4c33-999c-52e7a7f796f7
+            uid: 2f338d5f-c6e2-4e1c-9147-8bc7666b61bf
             userCondition: null
             warning: null
             width: 100
@@ -38,7 +38,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: c0673cd3-bca0-4270-974c-3dfb766659da
+            uid: a7cd55e8-1d1a-40fc-b009-a896117b1cbb
             userCondition: null
             warning: null
             width: 100

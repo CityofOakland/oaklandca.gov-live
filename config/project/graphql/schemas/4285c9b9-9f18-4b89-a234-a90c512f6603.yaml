@@ -105,7 +105,7 @@ scope:
   - 'usergroups.28b0988c-b6ee-404e-922d-8278e9ab4daa:read' # Digital Leads
   - 'usergroups.67bbdab6-8a94-441d-9c36-6d093274da43:read' # Editors
   - 'usergroups.6227b65d-17fc-4360-8a69-3e70afc30899:read' # Elected Official Leads
-  - 'usergroups.850b24e6-fbe7-41e2-bd2b-6207a108a503:read' # Emergency Public Information Officers
+  - 'usergroups.850b24e6-fbe7-41e2-bd2b-6207a108a503:read'
   - 'categorygroups.827f6570-faf8-42da-98e5-fffcb15e7cf6:read' # Document Types
   - 'categorygroups.947de11d-3d94-45c2-8565-04542ce0e737:read' # Event Types
   - 'categorygroups.ce43edd2-2eec-45cc-afa1-e3bd6b6e20ac:read' # People

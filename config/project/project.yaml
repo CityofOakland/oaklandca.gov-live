@@ -1,168 +1,4 @@
-dateModified: 1696962342
-elementSources:
-  craft\elements\Entry:
-    -
-      heading: Channels
-      type: heading
-    -
-      key: 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
-      type: native
-    -
-      defaultSort:
-        - postDate
-        - desc
-      disabled: false
-      key: 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
-      tableAttributes:
-        - postDate
-        - expiryDate
-        - author
-        - link
-      type: native
-    -
-      defaultSort:
-        - postDate
-        - desc
-      disabled: false
-      key: 'section:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
-      tableAttributes:
-        - postDate
-        - expiryDate
-        - author
-        - link
-      type: native
-    -
-      key: 'section:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-      type: native
-    -
-      defaultSort:
-        - postDate
-        - desc
-      disabled: false
-      key: 'section:1c6c0101-1a67-45f3-bbf7-67e50a5433a4' # Public Notices
-      tableAttributes:
-        - postDate
-        - expiryDate
-        - author
-        - link
-      type: native
-    -
-      defaultSort:
-        - postDate
-        - desc
-      disabled: false
-      key: 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
-      tableAttributes:
-        - postDate
-        - expiryDate
-        - author
-        - link
-      type: native
-    -
-      defaultSort:
-        - postDate
-        - desc
-      disabled: false
-      key: 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
-      tableAttributes:
-        - postDate
-        - expiryDate
-        - author
-        - link
-      type: native
-    -
-      key: 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
-      type: native
-    -
-      key: 'section:24fa116b-8516-4626-84f3-86b685e71071' # Resources
-      type: native
-    -
-      defaultSort:
-        - postDate
-        - desc
-      disabled: false
-      key: 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
-      tableAttributes:
-        - postDate
-        - expiryDate
-        - author
-        - link
-      type: native
-    -
-      key: 'section:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
-      type: native
-    -
-      key: 'section:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
-      type: native
-    -
-      defaultSort:
-        - postDate
-        - desc
-      disabled: false
-      key: 'section:1ab8269c-e225-472e-b5e1-1504af7a1622' # Datasets
-      tableAttributes:
-        - postDate
-        - expiryDate
-        - author
-        - link
-      type: native
-    -
-      defaultSort:
-        - postDate
-        - desc
-      disabled: false
-      key: 'section:74ecde2f-b254-4f3e-b889-1affac6f5999' # Embeddable Content
-      tableAttributes:
-        - postDate
-        - expiryDate
-        - author
-        - link
-      type: native
-    -
-      defaultSort:
-        - postDate
-        - desc
-      disabled: false
-      key: 'section:9168f154-c0f9-4cf9-991d-60b287a85fc0' # Imported Content
-      tableAttributes:
-        - postDate
-        - expiryDate
-        - author
-        - link
-      type: native
-    -
-      key: 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
-      type: native
-    -
-      key: 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
-      type: native
-    -
-      key: 'section:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-      type: native
-    -
-      heading: Structures
-      type: heading
-    -
-      key: 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
-      type: native
-    -
-      key: 'section:d542665e-875b-4b71-add5-d70d5317e3c6' # User Guide
-      type: native
-    -
-      heading: ''
-      type: heading
-    -
-      defaultSort:
-        - title
-        - asc
-      disabled: false
-      key: singles
-      tableAttributes:
-        - link
-      type: native
-    -
-      key: 'section:ab06f460-5f10-4ce6-9623-9a5ff14a8685' # Website Updates
-      type: native
+dateModified: 1697480636
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -176,292 +12,6 @@ email:
     useAuthentication: '1'
     username: $EMAIL_USER
   transportType: craft\mail\transportadapters\Smtp
-fs:
-  data:
-    hasUrls: true
-    name: Data
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: $S3_BUCKET
-      bucketSelectionMode: manual
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: $S3_REGION
-      secret: $S3_SECRET
-      storageClass: ''
-      subfolder: data
-    type: craft\awss3\Fs
-    url: $S3_URL
-  documents:
-    hasUrls: true
-    name: Documents
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: $S3_BUCKET
-      bucketSelectionMode: manual
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: $S3_REGION
-      secret: $S3_SECRET
-      storageClass: ''
-      subfolder: documents
-    type: craft\awss3\Fs
-    url: $S3_URL
-  events:
-    hasUrls: true
-    name: Events
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: $S3_BUCKET
-      bucketSelectionMode: manual
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: $S3_REGION
-      secret: $S3_SECRET
-      storageClass: ''
-      subfolder: events
-    type: craft\awss3\Fs
-    url: $S3_URL
-  galleries:
-    hasUrls: true
-    name: Galleries
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: $S3_BUCKET
-      bucketSelectionMode: manual
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: $S3_REGION
-      secret: $S3_SECRET
-      storageClass: ''
-      subfolder: galleries
-    type: craft\awss3\Fs
-    url: $S3_URL
-  generalImages:
-    hasUrls: true
-    name: 'General Images'
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: $S3_BUCKET
-      bucketSelectionMode: manual
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: $S3_REGION
-      secret: $S3_SECRET
-      storageClass: ''
-      subfolder: general-images
-    type: craft\awss3\Fs
-    url: $S3_URL
-  headers:
-    hasUrls: true
-    name: Headers
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: $S3_BUCKET
-      bucketSelectionMode: manual
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: $S3_REGION
-      secret: $S3_SECRET
-      storageClass: ''
-      subfolder: headers
-    type: craft\awss3\Fs
-    url: $S3_URL
-  icons:
-    hasUrls: true
-    name: Icons
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: $S3_BUCKET
-      bucketSelectionMode: manual
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: $S3_REGION
-      secret: $S3_SECRET
-      storageClass: ''
-      subfolder: icons
-    type: craft\awss3\Fs
-    url: $S3_URL
-  logos:
-    hasUrls: true
-    name: Logos
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: $S3_BUCKET
-      bucketSelectionMode: manual
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: $S3_REGION
-      secret: $S3_SECRET
-      storageClass: ''
-      subfolder: logos
-    type: craft\awss3\Fs
-    url: $S3_URL
-  news:
-    hasUrls: true
-    name: News
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: $S3_BUCKET
-      bucketSelectionMode: manual
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: $S3_REGION
-      secret: $S3_SECRET
-      storageClass: ''
-      subfolder: news
-    type: craft\awss3\Fs
-    url: $S3_URL
-  portraits:
-    hasUrls: true
-    name: Portraits
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: $S3_BUCKET
-      bucketSelectionMode: manual
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: $S3_REGION
-      secret: $S3_SECRET
-      storageClass: ''
-      subfolder: portraits
-    type: craft\awss3\Fs
-    url: $S3_URL
-  pressReleaseFiles:
-    hasUrls: true
-    name: 'Press Release Files'
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: $S3_BUCKET
-      bucketSelectionMode: manual
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: $S3_REGION
-      secret: $S3_SECRET
-      storageClass: ''
-      subfolder: press-release-files
-    type: craft\awss3\Fs
-    url: $S3_URL
-  pressReleaseImages:
-    hasUrls: true
-    name: 'Press Release Images'
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: $S3_BUCKET
-      bucketSelectionMode: manual
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: $S3_REGION
-      secret: $S3_SECRET
-      storageClass: ''
-      subfolder: press-release-images
-    type: craft\awss3\Fs
-    url: $S3_URL
-  projects:
-    hasUrls: true
-    name: Projects
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: $S3_BUCKET
-      bucketSelectionMode: manual
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: $S3_REGION
-      secret: $S3_SECRET
-      storageClass: ''
-      subfolder: projects
-    type: craft\awss3\Fs
-    url: $S3_URL
-  resources:
-    hasUrls: true
-    name: Resources
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: $S3_BUCKET
-      bucketSelectionMode: manual
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: $S3_REGION
-      secret: $S3_SECRET
-      storageClass: ''
-      subfolder: resources
-    type: craft\awss3\Fs
-    url: 'https://cao-94612.s3.amazonaws.com/'
-  seo:
-    hasUrls: true
-    name: SEO
-    settings:
-      addSubfolderToRootUrl: true
-      autoFocalPoint: false
-      bucket: $S3_BUCKET
-      bucketSelectionMode: manual
-      cfDistributionId: ''
-      cfPrefix: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      makeUploadsPublic: true
-      region: $S3_REGION
-      secret: $S3_SECRET
-      storageClass: ''
-      subfolder: seo
-    type: craft\awss3\Fs
-    url: $S3_URL
 meta:
   __names__:
     0a0640ef-4c1c-484f-a2cb-b70930d83893: 'Sidebar Description' # Sidebar Description
@@ -794,7 +344,6 @@ meta:
     827f6570-faf8-42da-98e5-fffcb15e7cf6: 'Document Types' # Document Types
     839d534c-c552-405e-bc0e-0d7414bad9c3: 'Navigation - Top' # Navigation - Top
     843d53f7-253d-4ed1-b7da-309cd0e4df69: __blank__ # __blank__
-    850b24e6-fbe7-41e2-bd2b-6207a108a503: 'Emergency Public Information Officers' # Emergency Public Information Officers
     853acfc8-1959-4654-89f9-e544989d27d5: Departments # Departments
     856e0565-3a66-4305-825e-757ac41b9ff4: Link # Link
     899b11d8-2bd0-43d6-b39b-31e362b7534f: 'Project Documents' # Project Documents
@@ -1220,13 +769,6 @@ plugins:
       cacheDuration: null
       cacheElementQueries: true
       cacheElements: true
-      cacheGeneratorSettings:
-        __assoc__:
-          -
-            - concurrency
-            - '3'
-      cacheGeneratorType: putyourlightson\blitz\drivers\generators\HttpGenerator
-      cacheNonHtmlResponses: false
       cachePurgerType: putyourlightson\blitz\drivers\purgers\DummyPurger
       cacheStorageSettings:
         __assoc__:
@@ -1234,134 +776,30 @@ plugins:
             - folderPath
             - '@webroot/cache/blitz'
           -
-            - compressCachedValues
+            - createGzipFiles
             - ''
       cacheStorageType: putyourlightson\blitz\drivers\storage\FileStorage
-      cachingEnabled: true
+      cacheWarmerSettings:
+        __assoc__:
+          -
+            - concurrency
+            - '10'
+      cacheWarmerType: putyourlightson\blitz\drivers\warmers\GuzzleWarmer
+      cachingEnabled: ''
+      clearCacheAutomatically: '1'
+      customSiteUris: ''
       debug: false
       deployerType: putyourlightson\blitz\drivers\deployers\DummyDeployer
       driverJobPriority: 100
-      esiEnabled: false
       excludedQueryStringParams:
-        0:
-          __assoc__:
-            -
-              - queryStringParam
-              - q
-        2:
-          __assoc__:
-            -
-              - queryStringParam
-              - event_type
-        3:
-          __assoc__:
-            -
-              - queryStringParam
-              - department
-        4:
-          __assoc__:
-            -
-              - queryStringParam
-              - page
-        5:
-          __assoc__:
-            -
-              - queryStringParam
-              - type
-        6:
-          __assoc__:
-            -
-              - queryStringParam
-              - year
-        7:
-          __assoc__:
-            -
-              - queryStringParam
-              - month
-        8:
-          __assoc__:
-            -
-              - queryStringParam
-              - public_body
-        9:
-          __assoc__:
-            -
-              - queryStringParam
-              - public-body
-        10:
-          __assoc__:
-            -
-              - queryStringParam
-              - public_notice_type
-        11:
-          __assoc__:
-            -
-              - queryStringParam
-              - search
-        12:
-          __assoc__:
-            -
-              - queryStringParam
-              - official
-        13:
-          __assoc__:
-            -
-              - queryStringParam
-              - subcommittee
-        14:
-          __assoc__:
-            -
-              - queryStringParam
-              - query
+        - gclid
+        - fbclid
       excludedUriPatterns:
         -
           __assoc__:
             -
               - uriPattern
               - /author
-        -
-          __assoc__:
-            -
-              - uriPattern
-              - /meetings
-        -
-          __assoc__:
-            -
-              - uriPattern
-              - /news
-        -
-          __assoc__:
-            -
-              - uriPattern
-              - /search
-        -
-          __assoc__:
-            -
-              - uriPattern
-              - '/boards-commissions/*/meetings'
-        -
-          __assoc__:
-            -
-              - uriPattern
-              - /events
-        -
-          __assoc__:
-            -
-              - uriPattern
-              - '/departments/*/events'
-        -
-          __assoc__:
-            -
-              - uriPattern
-              - '/topics/*/events'
-      generatePagesWithQueryStringParams: true
-      hintsEnabled: true
-      includedQueryStringParams:
-        -
-          __assoc__:
-            -
-              - queryStringParam
-              - '.*'
       includedUriPatterns:
         -
           __assoc__:
@@ -1372,23 +810,15 @@ plugins:
       integrations:
         - putyourlightson\blitz\drivers\integrations\FeedMeIntegration
         - putyourlightson\blitz\drivers\integrations\SeomaticIntegration
-      maxRetryAttempts: 10
-      maxUriLength: 255
       mutexTimeout: 1
       outputComments: true
-      purgeAssetImagesWhenChanged: true
-      queryStringCaching: 0
-      queueJobTtr: 300
+      queryStringCaching: '0'
       refreshCacheAutomaticallyForGlobals: true
       refreshCacheJobPriority: 10
-      refreshCacheWhenElementMovedInStructure: true
       refreshCacheWhenElementSavedNotLive: false
       refreshCacheWhenElementSavedUnchanged: false
-      refreshMode: 3
       sendPoweredByHeader: true
-      ssiEnabled: false
-      trackElementQueries: true
-      trackElements: true
+      warmCacheAutomatically: ''
   buttonbox:
     edition: standard
     enabled: true
@@ -1450,16 +880,6 @@ plugins:
     schemaVersion: 1.0.0
     settings:
       documentation: "<p><a href=\"https://www.oaklandca.gov/admin/usermanual\" rel=\"noopener\" target=\"_blank\">Oaklandca.gov User Guide</a></p>\r\n<ul><li>-&nbsp;<a href=\"https://www.oaklandca.gov/admin/usermanual/user-guide/writing-for-oaklandca-gov\" rel=\"noopener\" target=\"_blank\">Writing for the Web Style Guide</a></li><li>-&nbsp;<a href=\"https://www.oaklandca.gov/admin/usermanual/user-guide/using-craft\" rel=\"noopener\" target=\"_blank\">Using Craft</a></li><li>-&nbsp;<a href=\"https://www.oaklandca.gov/admin/usermanual/user-guide/content-strategy\" rel=\"noopener\" target=\"_blank\">Content Strategy</a></li></ul>\r\n<p><a href=\"https://datastudio.google.com/u/1/reporting/3253d1d2-dfdb-400a-9cc6-eb26afe88cae/page/1M\" rel=\"noopener\" target=\"_blank\">City of Oakland Website Analytics Dashboard</a></p>"
-  default-dashboard:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
-    settings:
-      excludeAdmin: false
-      logErrors: false
-      logInfo: false
-      override: true
-      userDashboard: 1
   dumper:
     edition: standard
     enabled: true
@@ -1614,10 +1034,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  logs:
-    edition: standard
-    enabled: true
-    schemaVersion: 3.0.0
   manytomany:
     enabled: '1'
     licenseKey: null
@@ -1737,7 +1153,7 @@ plugins:
         __assoc__:
           -
             - enabled
-            - ''
+            - '1'
           -
             - enforce
             - ''
@@ -1815,7 +1231,6 @@ plugins:
           -
             - forceFail
             - true
-      disabledTests: null
       elevatedSessionDuration:
         __assoc__:
           -
@@ -1858,7 +1273,7 @@ plugins:
                 - '1'
                 - X-Xss-Protection
                 - '1; mode=block'
-      highSecurityLevel: true
+      highSecurityLevel: '1'
       httpsControlPanel:
         __assoc__:
           -
@@ -1973,11 +1388,6 @@ plugins:
           -
             - canFail
             - true
-      sendPoweredByHeader:
-        __assoc__:
-          -
-            - canFail
-            - false
       strictTransportSecurity:
         __assoc__:
           -

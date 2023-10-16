@@ -10,7 +10,7 @@ tabs:
         required: true
         tip: null
         type: craft\fieldlayoutelements\CustomField
-        uid: 0680d02e-b3c2-4d0c-ac5f-460a610449d8
+        uid: d99b9a2f-5df6-4e1f-8100-bf83900e2017
         userCondition: null
         warning: null
         width: 100

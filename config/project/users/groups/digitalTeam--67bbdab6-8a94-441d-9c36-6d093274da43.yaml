@@ -6,25 +6,239 @@ permissions:
   - accessplugin-usermanual
   - accesssitewhensystemisoff
   - 'assignusergroup:cd008cb1-3f5b-4444-a259-bf905f9c6f96' # Contributors
-  - calendar-manageevents
-  - 'calendar-manageeventsfor:df8685d8-8295-456f-b677-b60cced48d3d' # Events
   - 'createentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
   - 'createentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
   - 'createentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
   - 'createentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
-  - 'createentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
   - 'createentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
   - 'createentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   - 'createentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
   - 'createentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
   - 'createentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'deleteassets:10fea577-3555-45aa-9169-8e3dee085cae' # Press Release Images
+  - 'deleteassets:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'deleteassets:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'deleteassets:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'deleteassets:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'deleteassets:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'deleteassets:5fab788c-0374-4ac2-945d-ba96ffd84669' # Press Release Files
+  - 'deleteassets:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'deleteassets:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'deleteassets:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'deleteassets:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'deleteassets:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'deleteassets:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
   - 'deleteentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
   - 'deleteentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
   - 'deleteentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'deletepeerassets:10fea577-3555-45aa-9169-8e3dee085cae' # Press Release Images
+  - 'deletepeerassets:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'deletepeerassets:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'deletepeerassets:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'deletepeerassets:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'deletepeerassets:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'deletepeerassets:5fab788c-0374-4ac2-945d-ba96ffd84669' # Press Release Files
+  - 'deletepeerassets:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'deletepeerassets:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'deletepeerassets:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'deletepeerassets:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'deletepeerassets:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'deletepeerassets:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
   - 'deletepeerentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
-  - 'deletepeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
   - 'deletepeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   - 'deletepeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'editimages:10fea577-3555-45aa-9169-8e3dee085cae' # Press Release Images
+  - 'editimages:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'editimages:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'editimages:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'editimages:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'editimages:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'editimages:5fab788c-0374-4ac2-945d-ba96ffd84669' # Press Release Files
+  - 'editimages:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'editimages:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'editimages:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'editimages:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'editimages:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'editimages:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'editpeerimages:10fea577-3555-45aa-9169-8e3dee085cae' # Press Release Images
+  - 'editpeerimages:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'editpeerimages:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'editpeerimages:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'editpeerimages:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'editpeerimages:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'editpeerimages:5fab788c-0374-4ac2-945d-ba96ffd84669' # Press Release Files
+  - 'editpeerimages:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'editpeerimages:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'editpeerimages:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'editpeerimages:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'editpeerimages:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'editpeerimages:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
   - editusers
   - moderateusers
   - registerusers
+  - 'replacefiles:10fea577-3555-45aa-9169-8e3dee085cae' # Press Release Images
+  - 'replacefiles:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'replacefiles:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'replacefiles:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'replacefiles:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'replacefiles:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'replacefiles:5fab788c-0374-4ac2-945d-ba96ffd84669' # Press Release Files
+  - 'replacefiles:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'replacefiles:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'replacefiles:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'replacefiles:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'replacefiles:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'replacefiles:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'replacepeerfiles:10fea577-3555-45aa-9169-8e3dee085cae' # Press Release Images
+  - 'replacepeerfiles:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'replacepeerfiles:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'replacepeerfiles:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'replacepeerfiles:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'replacepeerfiles:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'replacepeerfiles:5fab788c-0374-4ac2-945d-ba96ffd84669' # Press Release Files
+  - 'replacepeerfiles:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'replacepeerfiles:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'replacepeerfiles:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'replacepeerfiles:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'replacepeerfiles:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'replacepeerfiles:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'saveassets:10fea577-3555-45aa-9169-8e3dee085cae' # Press Release Images
+  - 'saveassets:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'saveassets:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'saveassets:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'saveassets:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'saveassets:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'saveassets:5fab788c-0374-4ac2-945d-ba96ffd84669' # Press Release Files
+  - 'saveassets:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'saveassets:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'saveassets:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'saveassets:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'saveassets:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'saveassets:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'saveentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'saveentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'saveentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'saveentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'saveentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'saveentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'saveentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'saveentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'saveentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'saveentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'saveentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'saveentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'saveentries:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
+  - 'saveentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'savepeerassets:10fea577-3555-45aa-9169-8e3dee085cae' # Press Release Images
+  - 'savepeerassets:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'savepeerassets:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'savepeerassets:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'savepeerassets:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'savepeerassets:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'savepeerassets:5fab788c-0374-4ac2-945d-ba96ffd84669' # Press Release Files
+  - 'savepeerassets:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'savepeerassets:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'savepeerassets:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'savepeerassets:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'savepeerassets:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'savepeerassets:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'savepeerentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'savepeerentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'savepeerentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'savepeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'savepeerentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'savepeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'savepeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'savepeerentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'savepeerentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'savepeerentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'savepeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'savepeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'savepeerentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'savepeerentrydrafts:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'savepeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'savepeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'savepeerentrydrafts:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'savepeerentrydrafts:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'savepeerentrydrafts:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'savepeerentrydrafts:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'savepeerentrydrafts:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'savepeerentrydrafts:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'savepeerentrydrafts:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'savepeerentrydrafts:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
+  - 'savepeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'savepeerentrydrafts:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'viewassets:10fea577-3555-45aa-9169-8e3dee085cae' # Press Release Images
+  - 'viewassets:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'viewassets:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'viewassets:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'viewassets:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'viewassets:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'viewassets:5fab788c-0374-4ac2-945d-ba96ffd84669' # Press Release Files
+  - 'viewassets:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'viewassets:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'viewassets:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'viewassets:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'viewassets:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'viewassets:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'viewcategories:79a1e552-74a9-44ac-b34e-c65e2c683597' # Public Notice Types
+  - 'viewcategories:827f6570-faf8-42da-98e5-fffcb15e7cf6' # Document Types
+  - 'viewcategories:8bcf4697-1dd2-47b2-91e2-8ad9b4b86741' # Service Categories
+  - 'viewcategories:947de11d-3d94-45c2-8565-04542ce0e737' # Event Types
+  - 'viewcategories:ce43edd2-2eec-45cc-afa1-e3bd6b6e20ac' # People
+  - 'viewentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'viewentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'viewentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'viewentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'viewentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'viewentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'viewentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'viewentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'viewentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'viewentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'viewentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'viewentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'viewentries:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
+  - 'viewentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'viewentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'viewpeerassets:10fea577-3555-45aa-9169-8e3dee085cae' # Press Release Images
+  - 'viewpeerassets:1a78695a-f041-4562-9ee4-5405711bd29c' # SEO
+  - 'viewpeerassets:1e78d0ad-2af1-4556-ab43-7b6c110e75b8' # Headers
+  - 'viewpeerassets:4494beaa-9c1f-44ae-b040-36f60f3d055d' # Logos
+  - 'viewpeerassets:56ad4140-da85-43ea-8292-3fac04cbefc1' # Galleries
+  - 'viewpeerassets:58c3bf22-aa23-441f-bd65-acf677638ae6' # Data
+  - 'viewpeerassets:5fab788c-0374-4ac2-945d-ba96ffd84669' # Press Release Files
+  - 'viewpeerassets:7a12e399-b320-4d23-8abb-a79b5f303015' # Portraits
+  - 'viewpeerassets:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0' # News
+  - 'viewpeerassets:a31d23bf-e3ee-4942-95e0-3d14c29620bb' # Projects
+  - 'viewpeerassets:c27974b4-89ad-4504-abb1-e76e44ff4b5d' # Events
+  - 'viewpeerassets:c419ecb0-79c8-411d-b440-db5bdfa1f823' # Documents
+  - 'viewpeerassets:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67' # Resources
+  - 'viewpeerentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'viewpeerentries:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'viewpeerentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'viewpeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
+  - 'viewpeerentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'viewpeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'viewpeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'viewpeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'viewpeerentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'viewpeerentries:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'viewpeerentries:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'viewpeerentries:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'viewpeerentries:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'viewpeerentries:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
+  - 'viewpeerentrydrafts:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
+  - 'viewpeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
+  - 'viewpeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071' # Resources
+  - 'viewpeerentrydrafts:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'viewpeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'viewpeerentrydrafts:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+  - 'viewpeerentrydrafts:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
+  - 'viewpeerentrydrafts:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
+  - 'viewpeerentrydrafts:9db08bfd-737a-4544-a641-4c138f2b3b0a' # Events
+  - 'viewpeerentrydrafts:b3411cb1-e860-46ed-9cd6-58cf9b8daacb' # Departments
+  - 'viewpeerentrydrafts:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+  - 'viewpeerentrydrafts:e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5' # Homepage
+  - 'viewpeerentrydrafts:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f' # Boards & Commissions
+  - 'viewpeerentrydrafts:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
