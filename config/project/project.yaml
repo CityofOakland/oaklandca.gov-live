@@ -1,4 +1,4 @@
-dateModified: 1697487577
+dateModified: 1697489081
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -12,6 +12,292 @@ email:
     useAuthentication: '1'
     username: $EMAIL_USER
   transportType: craft\mail\transportadapters\Smtp
+fs:
+  data:
+    hasUrls: true
+    name: Data
+    settings:
+      addSubfolderToRootUrl: true
+      autoFocalPoint: false
+      bucket: $S3_BUCKET
+      bucketSelectionMode: manual
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: ''
+      keyId: $S3_API_KEY
+      makeUploadsPublic: true
+      region: $S3_REGION
+      secret: $S3_SECRET
+      storageClass: ''
+      subfolder: data
+    type: craft\awss3\Fs
+    url: $S3_URL
+  documents:
+    hasUrls: true
+    name: Documents
+    settings:
+      addSubfolderToRootUrl: true
+      autoFocalPoint: false
+      bucket: $S3_BUCKET
+      bucketSelectionMode: manual
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: ''
+      keyId: $S3_API_KEY
+      makeUploadsPublic: true
+      region: $S3_REGION
+      secret: $S3_SECRET
+      storageClass: ''
+      subfolder: documents
+    type: craft\awss3\Fs
+    url: $S3_URL
+  events:
+    hasUrls: true
+    name: Events
+    settings:
+      addSubfolderToRootUrl: true
+      autoFocalPoint: false
+      bucket: $S3_BUCKET
+      bucketSelectionMode: manual
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: ''
+      keyId: $S3_API_KEY
+      makeUploadsPublic: true
+      region: $S3_REGION
+      secret: $S3_SECRET
+      storageClass: ''
+      subfolder: events
+    type: craft\awss3\Fs
+    url: $S3_URL
+  galleries:
+    hasUrls: true
+    name: Galleries
+    settings:
+      addSubfolderToRootUrl: true
+      autoFocalPoint: false
+      bucket: $S3_BUCKET
+      bucketSelectionMode: manual
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: ''
+      keyId: $S3_API_KEY
+      makeUploadsPublic: true
+      region: $S3_REGION
+      secret: $S3_SECRET
+      storageClass: ''
+      subfolder: galleries
+    type: craft\awss3\Fs
+    url: $S3_URL
+  generalImages:
+    hasUrls: true
+    name: 'General Images'
+    settings:
+      addSubfolderToRootUrl: true
+      autoFocalPoint: false
+      bucket: $S3_BUCKET
+      bucketSelectionMode: manual
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: ''
+      keyId: $S3_API_KEY
+      makeUploadsPublic: true
+      region: $S3_REGION
+      secret: $S3_SECRET
+      storageClass: ''
+      subfolder: general-images
+    type: craft\awss3\Fs
+    url: $S3_URL
+  headers:
+    hasUrls: true
+    name: Headers
+    settings:
+      addSubfolderToRootUrl: true
+      autoFocalPoint: false
+      bucket: $S3_BUCKET
+      bucketSelectionMode: manual
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: ''
+      keyId: $S3_API_KEY
+      makeUploadsPublic: true
+      region: $S3_REGION
+      secret: $S3_SECRET
+      storageClass: ''
+      subfolder: headers
+    type: craft\awss3\Fs
+    url: $S3_URL
+  icons:
+    hasUrls: true
+    name: Icons
+    settings:
+      addSubfolderToRootUrl: true
+      autoFocalPoint: false
+      bucket: $S3_BUCKET
+      bucketSelectionMode: manual
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: ''
+      keyId: $S3_API_KEY
+      makeUploadsPublic: true
+      region: $S3_REGION
+      secret: $S3_SECRET
+      storageClass: ''
+      subfolder: icons
+    type: craft\awss3\Fs
+    url: $S3_URL
+  logos:
+    hasUrls: true
+    name: Logos
+    settings:
+      addSubfolderToRootUrl: true
+      autoFocalPoint: false
+      bucket: $S3_BUCKET
+      bucketSelectionMode: manual
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: ''
+      keyId: $S3_API_KEY
+      makeUploadsPublic: true
+      region: $S3_REGION
+      secret: $S3_SECRET
+      storageClass: ''
+      subfolder: logos
+    type: craft\awss3\Fs
+    url: $S3_URL
+  news:
+    hasUrls: true
+    name: News
+    settings:
+      addSubfolderToRootUrl: true
+      autoFocalPoint: false
+      bucket: $S3_BUCKET
+      bucketSelectionMode: manual
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: ''
+      keyId: $S3_API_KEY
+      makeUploadsPublic: true
+      region: $S3_REGION
+      secret: $S3_SECRET
+      storageClass: ''
+      subfolder: news
+    type: craft\awss3\Fs
+    url: $S3_URL
+  portraits:
+    hasUrls: true
+    name: Portraits
+    settings:
+      addSubfolderToRootUrl: true
+      autoFocalPoint: false
+      bucket: $S3_BUCKET
+      bucketSelectionMode: manual
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: ''
+      keyId: $S3_API_KEY
+      makeUploadsPublic: true
+      region: $S3_REGION
+      secret: $S3_SECRET
+      storageClass: ''
+      subfolder: portraits
+    type: craft\awss3\Fs
+    url: $S3_URL
+  pressReleaseFiles:
+    hasUrls: true
+    name: 'Press Release Files'
+    settings:
+      addSubfolderToRootUrl: true
+      autoFocalPoint: false
+      bucket: $S3_BUCKET
+      bucketSelectionMode: manual
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: ''
+      keyId: $S3_API_KEY
+      makeUploadsPublic: true
+      region: $S3_REGION
+      secret: $S3_SECRET
+      storageClass: ''
+      subfolder: press-release-files
+    type: craft\awss3\Fs
+    url: $S3_URL
+  pressReleaseImages:
+    hasUrls: true
+    name: 'Press Release Images'
+    settings:
+      addSubfolderToRootUrl: true
+      autoFocalPoint: false
+      bucket: $S3_BUCKET
+      bucketSelectionMode: manual
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: ''
+      keyId: $S3_API_KEY
+      makeUploadsPublic: true
+      region: $S3_REGION
+      secret: $S3_SECRET
+      storageClass: ''
+      subfolder: press-release-images
+    type: craft\awss3\Fs
+    url: $S3_URL
+  projects:
+    hasUrls: true
+    name: Projects
+    settings:
+      addSubfolderToRootUrl: true
+      autoFocalPoint: false
+      bucket: $S3_BUCKET
+      bucketSelectionMode: manual
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: ''
+      keyId: $S3_API_KEY
+      makeUploadsPublic: true
+      region: $S3_REGION
+      secret: $S3_SECRET
+      storageClass: ''
+      subfolder: projects
+    type: craft\awss3\Fs
+    url: $S3_URL
+  resources:
+    hasUrls: true
+    name: Resources
+    settings:
+      addSubfolderToRootUrl: true
+      autoFocalPoint: false
+      bucket: $S3_BUCKET
+      bucketSelectionMode: manual
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: ''
+      keyId: $S3_API_KEY
+      makeUploadsPublic: true
+      region: $S3_REGION
+      secret: $S3_SECRET
+      storageClass: ''
+      subfolder: resources
+    type: craft\awss3\Fs
+    url: $S3_URL
+  seo:
+    hasUrls: true
+    name: SEO
+    settings:
+      addSubfolderToRootUrl: true
+      autoFocalPoint: false
+      bucket: $S3_BUCKET
+      bucketSelectionMode: manual
+      cfDistributionId: ''
+      cfPrefix: ''
+      expires: ''
+      keyId: $S3_API_KEY
+      makeUploadsPublic: true
+      region: $S3_REGION
+      secret: $S3_SECRET
+      storageClass: ''
+      subfolder: seo
+    type: craft\awss3\Fs
+    url: $S3_URL
 meta:
   __names__:
     0a0640ef-4c1c-484f-a2cb-b70930d83893: 'Sidebar Description' # Sidebar Description
@@ -1254,7 +1540,7 @@ plugins:
         __assoc__:
           -
             - enabled
-            - '1'
+            - ''
           -
             - headers
             -
