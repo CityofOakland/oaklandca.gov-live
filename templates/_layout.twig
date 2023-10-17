@@ -52,15 +52,6 @@
     {% endif %}
 
     {% set page = entry ?? null %}
-    {% if craft.app.env == "production" %}
-      {% for department in craft.entries.section("departments").type("departments").departmentCodeSnippet(":notempty:").all() %}
-        {% if page %}
-          {% if craft.entries.id(page.id).relatedTo(department) | length or page.id == department.id %}
-            <!-- Loading code snippet -->
-            {{ department.departmentCodeSnippet | raw }}
-          {% endif %}
-        {% endif %}
-      {% endfor %}
       {# Add Hubspot to Production Site #}
       <!-- Start of HubSpot Embed Code -->
       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/20956996.js"></script>

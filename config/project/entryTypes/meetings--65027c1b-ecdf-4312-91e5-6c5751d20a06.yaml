@@ -260,7 +260,7 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
-            fieldUid: 1ddcc13e-3bfa-4a0e-9661-34bc1052f299 # Email Subscriptions
+            fieldUid: 1ddcc13e-3bfa-4a0e-9661-34bc1052f299
             instructions: null
             label: null
             required: false
@@ -272,7 +272,7 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: 1bbdfcc0-b085-435d-afc9-344998a67876 # Email Trigger
+            fieldUid: 1bbdfcc0-b085-435d-afc9-344998a67876
             instructions: null
             label: null
             required: false
