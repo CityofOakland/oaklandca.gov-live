@@ -188,7 +188,7 @@
         {% endif %}
       {% endif %}
     {% endset %}
-    {% include '_components/_callout' with {
+    {% include '_components/_callout.twig' with {
       callOutType   : 'info',
       heading       : 'Accessibility and interpretation requests',
       description   : accessibilityText 
@@ -204,7 +204,7 @@
     {% if entry.linkit %}<a class="button secondary" href="{{ entry.linkit.url }}">{{ entry.linkit.text }}</a>{% endif %}
   {% endif %}
 
-  {% include '_components/sidebar/_contact' %}
+  {% include '_components/sidebar/_contact.twig' %}
 
   <hr/>
   <h4>{{ 'Add to Calendar'|t }}</h4>
