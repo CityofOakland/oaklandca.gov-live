@@ -1,4 +1,4 @@
-description: null
+description: ''
 handle: digitalTeam
 name: Editors
 permissions:
@@ -10,6 +10,7 @@ permissions:
   - 'createentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
   - 'createentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
   - 'createentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'createentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
   - 'createentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
   - 'createentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   - 'createentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
@@ -121,6 +122,7 @@ permissions:
   - 'saveentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
   - 'saveentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
   - 'saveentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'saveentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
   - 'saveentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
   - 'saveentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   - 'saveentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
@@ -147,6 +149,7 @@ permissions:
   - 'savepeerentries:24fa116b-8516-4626-84f3-86b685e71071' # Resources
   - 'savepeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
   - 'savepeerentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'savepeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
   - 'savepeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
   - 'savepeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   - 'savepeerentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
@@ -159,6 +162,7 @@ permissions:
   - 'savepeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482' # Volunteers
   - 'savepeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071' # Resources
   - 'savepeerentrydrafts:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
+  - 'savepeerentrydrafts:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
   - 'savepeerentrydrafts:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
   - 'savepeerentrydrafts:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   - 'savepeerentrydrafts:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
@@ -192,6 +196,7 @@ permissions:
   - 'viewentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
   - 'viewentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
   - 'viewentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'viewentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
   - 'viewentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
   - 'viewentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   - 'viewentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
@@ -220,6 +225,7 @@ permissions:
   - 'viewpeerentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf' # Officials
   - 'viewpeerentries:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
   - 'viewpeerentries:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'viewpeerentries:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
   - 'viewpeerentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
   - 'viewpeerentries:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   - 'viewpeerentries:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
@@ -233,6 +239,7 @@ permissions:
   - 'viewpeerentrydrafts:24fa116b-8516-4626-84f3-86b685e71071' # Resources
   - 'viewpeerentrydrafts:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
   - 'viewpeerentrydrafts:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
+  - 'viewpeerentrydrafts:8b7c4e26-9aab-4c5d-874e-aee151107de3' # Documents
   - 'viewpeerentrydrafts:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
   - 'viewpeerentrydrafts:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
   - 'viewpeerentrydrafts:9da43fd8-c505-4d19-9486-e0cb669c568a' # Document Packets
