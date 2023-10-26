@@ -51,12 +51,6 @@
       {% do craft.viewCount.increment(category.id) %}
     {% endif %}
 
-    {% set page = entry ?? null %}
-      {# Add Hubspot to Production Site #}
-      <!-- Start of HubSpot Embed Code -->
-      <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/20956996.js"></script>
-      <!-- End of HubSpot Embed Code -->
-    {% endif %}
   </body>
 </html>
 {% if section is defined and slug is defined %}
