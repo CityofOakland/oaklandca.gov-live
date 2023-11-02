@@ -55,7 +55,8 @@
     "vlucas/phpdotenv": "^5.4.0",
     "wrav/related": "2.1.1",
     "verbb/default-dashboard": "2.0.1",
-    "ether/logs": "4.0.0"
+    "ether/logs": "4.0.0",
+    "trendyminds/craft-reporter": "2.2.0"
   },
   "autoload": {
     "psr-4": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8f70273656bf6b65f4a8b7634366dda7",
+    "content-hash": "9c954d05ec51e12b71bfe42976b5b388",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1529,11 +1529,11 @@
         },
         {
             "name": "composer/pcre",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/pcre/zipball/4bff79ddd77851fe3cdd11616ed3f92841ba5bd2",
-                "reference": "4bff79ddd77851fe3cdd11616ed3f92841ba5bd2",
+                "url": "https://api.github.com/repos/composer/pcre/zipball/00104306927c7a0919b4ced2aaa6782c1e61a3c9",
+                "reference": "00104306927c7a0919b4ced2aaa6782c1e61a3c9",
                 "shasum": ""
             },
             "require": {
@@ -1567,7 +1567,7 @@
                 "regex",
                 "regular expression"
             ],
-            "time": "2022-11-17T09:50:14+00:00"
+            "time": "2023-10-11T07:11:09+00:00"
         },
         {
             "name": "composer/semver",
@@ -9854,11 +9854,11 @@
         },
         {
             "name": "symfony/http-client",
-            "version": "v6.3.5",
+            "version": "v6.3.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-client/zipball/213e564da4cbf61acc9728d97e666bcdb868c10d",
-                "reference": "213e564da4cbf61acc9728d97e666bcdb868c10d",
+                "url": "https://api.github.com/repos/symfony/http-client/zipball/ab8446f997efb9913627e9da10fa784d2182fe92",
+                "reference": "ab8446f997efb9913627e9da10fa784d2182fe92",
                 "shasum": ""
             },
             "require": {
@@ -9905,7 +9905,7 @@
             "keywords": [
                 "http"
             ],
-            "time": "2023-09-29T15:57:12+00:00"
+            "time": "2023-10-06T10:08:56+00:00"
         },
         {
             "name": "symfony/http-client-contracts",
@@ -11089,11 +11089,11 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v6.3.5",
+            "version": "v6.3.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/3d9999376be5fea8de47752837a3e1d1c5f69ef5",
-                "reference": "3d9999376be5fea8de47752837a3e1d1c5f69ef5",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/999ede244507c32b8e43aebaa10e9fce20de7c97",
+                "reference": "999ede244507c32b8e43aebaa10e9fce20de7c97",
                 "shasum": ""
             },
             "require": {
@@ -11138,7 +11138,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2023-09-12T10:11:35+00:00"
+            "time": "2023-10-12T18:45:56+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -11355,6 +11355,54 @@
                 "source": "https://github.com/TopShelfCraft/Wordsmith/tree/4.2.0"
             },
             "time": "2022-12-11T08:26:02+00:00"
+        },
+        {
+            "name": "trendyminds/craft-reporter",
+            "version": "2.2.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/trendyminds/craft-reporter/zipball/c1115daefd2d3e166e6fca7942068ca057a08a68",
+                "reference": "c1115daefd2d3e166e6fca7942068ca057a08a68",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0.0",
+                "league/fractal": "^0.18.0",
+                "php": ">=8.0.2"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Reporter",
+                "handle": "reporter",
+                "class": "trendyminds\\reporter\\Reporter",
+                "changelogUrl": "https://raw.githubusercontent.com/trendyminds/craft-reporter/main/CHANGELOG.md"
+            },
+            "autoload": {
+                "psr-4": {
+                    "trendyminds\\reporter\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "TrendyMinds",
+                    "homepage": "https://trendyminds.com"
+                }
+            ],
+            "description": "Export Craft data as CSVs in a snap",
+            "keywords": [
+                "craft",
+                "craft cms",
+                "reports"
+            ],
+            "support": {
+                "issues": "https://github.com/trendyminds/craft-reporter/issues?state=open",
+                "source": "https://github.com/trendyminds/craft-reporter",
+                "docs": "https://github.com/trendyminds/craft-reporter/blob/master/README.md"
+            },
+            "time": "2023-09-29T14:52:28+00:00"
         },
         {
             "name": "twig/twig",
