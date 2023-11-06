@@ -21,6 +21,22 @@ return [
 			'fillInterval' => 300,
 		],
 	],
+	'medium43' => [
+		'displayName' => 'Medium 4:3',
+		'transforms' => [
+			['width' => 320],
+			['width' => 640],
+			['width' => 768]
+		],
+		'defaults' => [
+			'ratio' => 4 / 3,
+			'jpegQuality' => 80,
+		],
+		'configOverrides' => [
+			'fillTransforms' => true,
+			'fillInterval' => 300,
+		],
+	],
 	'srcImg' => [
 		'displayName' => '"src" Image',
 		'transforms' => [
