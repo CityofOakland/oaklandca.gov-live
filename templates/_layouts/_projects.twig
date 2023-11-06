@@ -75,12 +75,15 @@
           {% endif %}
         </div>
         <div class="md:pl-4 md:w-1/2">
-          {% if entry.projectMapImage.exists() %}
+          {% set mapImage = entry.projectMapImage.one() ?? null %}
+          {% if mapImage %}
+            {% set src = mapImage.getUrl('thumbFullRatio') %}
+            {% set transformedImages = craft.imagerx.transformImage(mapImage, "medium43") %}
             {% include "_partials/_elements/_module-header.twig" with {
               headerText: "Project Location"
             } %}
             <figure class="block w-full">
-              <img src="{{ entry.projectMapImage.one.getUrl('medium43') }}" class="block">
+              <img src="{{ craft.imager.placeholder({ type: 'silhouette', width: 400, height: 300, source: src }) }}" sizes="100vw" srcset="{{ craft.imager.srcset(transformedImages) }}" class="block" alt="Map of {{ entry.title }}">
             </figure>
           {% endif %}
         </div>
@@ -120,7 +123,7 @@
     <a class="anchor-link" id="page-about"></a>
     <div class="container md:flex md:flex-row">
       <div class="md:pr-4 md:w-2/3">
-        <h3 class-"mb-4">About</h3>
+        <h3 class="mb-4">About</h3>
         <div class="body-text">
           {{ entry.about }}
         </div>
