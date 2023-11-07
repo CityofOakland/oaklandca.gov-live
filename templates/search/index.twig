@@ -46,42 +46,44 @@
 
 {% block content %}
   {{ craft.vite.script("src/js/search.js") }}
-  <div class="leading-none banner bg-transparent-oakland-roots">
-    <div class="container pt-2 pb-8 md:pt-4 md:pb-6">
-      <div class="relative z-10 inline-block px-2 py-1 text-xs text-green-800 bg-white rounded-sm shadow md:text-xs">
-        <span class="font-bold">Search</span>
-      </div>
-    </div>
-  </div>
-  <div id="content" style="position:relative;top:-80px;"></div>
-  <div class="container py-6 sm:py-12 leading-normal">
-    <div class="relative z-10 flex flex-col max-w-6xl sm:flex-row">
-      <h1 class="mb-0 text-3xl font-bold md:text-4xl sm:w-1/4">{{ entry.title }}</h1>
-      <form action="" class="flex-1 my-4 sm:my-0">
-        <label class="hidden-visually" for="search-input">Search Term(s)</label>
-        <input class="flex-1 px-8 py-4 rounded-none appearance-none" id="search-input" name="query" required type="search" value="">
-        <button class="btn hidden-visually" type="submit">Submit</button>
-      </form>
-    </div>
-  </div>
-  <section class="relative z-0 bg-white">
-    <div class="container py-6 sm:py-12 pt-0">
-      <div class="grid max-w-6xl grid-cols-1 md:grid-cols-4 gap-x-16 gap-y-4">
-        <div class="order-2 md:col-span-3 md:order-1" data-hits id="all-holder">
-          <div id="stats"></div>
-          <div id="all-hits" class="mt-8" data-index="{{ getenv('ENVIRONMENT') }}_all"></div>
-        </div>
-        <div class="order-1 md:order-2">
-          <div id="section-filter" class="oak-hidden md:block"></div>
-          <div class="oak-hidden mt-2 md:block" id="clear-refinements"></div>
-          <legend class="font-bold border-t-2 border-gray-1000 pb-0 pt-4 mt-8 mb-6 w-full leading-7">Related</legend>
-          <ul>
-            <li class="mb-3"><a class="underline hover:no-underline" href="{{ siteUrl }}meetings">Public Meetings</a></li>
-            <li class="mb-3"><a class="underline hover:no-underline" href="{{ siteUrl }}events">Community Events</a></li>
-          </ul>
+  <div class="@container">
+{#    class="container  py-8  md:py-16"#}
+    <div class="leading-none banner bg-transparent-oakland-roots">
+      <div class="container px-6 @3xl:px-16 pt-2 pb-8 md:pt-4 md:pb-6">
+        <div class="relative z-10 inline-block px-2 py-1 text-xs text-green-800 bg-white rounded-sm shadow md:text-xs">
+          <span class="font-bold">Search</span>
         </div>
       </div>
-      <div id="bottom-pagination"></div>
     </div>
-  </section>
+    <div id="content" style="position:relative;top:-80px;"></div>
+    <div class="container px-6 @3xl:px-16 py-6 sm:py-12 leading-normal">
+      <div class="relative z-10 flex flex-col max-w-6xl sm:flex-row">
+        <h1 class="mb-0 text-3xl font-bold md:text-4xl sm:w-1/4">{{ entry.title }}</h1>
+        <form action="" class="flex-1 my-4 sm:my-0">
+          <label class="hidden-visually" for="search-input">Search Term(s)</label>
+          <input class="flex-1 px-8 py-4 rounded-none appearance-none" id="search-input" name="query" required type="search" value="">
+          <button class="btn hidden-visually" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <section class="relative z-0 bg-white">
+      <div class="container px-6 @3xl:px-16 py-6 sm:py-12 pt-0">
+        <div class="grid max-w-6xl grid-cols-1 md:grid-cols-4 gap-x-16 gap-y-4">
+          <div class="order-2 md:col-span-3 md:order-1" data-hits id="all-holder">
+            <div id="stats"></div>
+            <div id="all-hits" class="mt-8" data-index="{{ getenv('ENVIRONMENT') }}_all"></div>
+          </div>
+          <div class="order-1 md:order-2">
+            <div id="section-filter" class="oak-hidden md:block"></div>
+            <div class="oak-hidden mt-2 md:block" id="clear-refinements"></div>
+            <legend class="font-bold border-t-2 border-gray-1000 pb-0 pt-4 mt-8 mb-6 w-full leading-7">Related</legend>
+            <ul>
+              <li class="mb-3"><a class="underline hover:no-underline" href="{{ siteUrl }}meetings">Public Meetings</a></li>
+              <li class="mb-3"><a class="underline hover:no-underline" href="{{ siteUrl }}events">Community Events</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="bottom-pagination"></div>
+      </div>
+    </section>  </div>
 {% endblock %}
