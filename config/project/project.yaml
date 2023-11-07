@@ -1,4 +1,4 @@
-dateModified: 1698939400
+dateModified: 1699377405
 elementSources:
   craft\elements\Entry:
     -
@@ -1338,6 +1338,7 @@ plugins:
     settings:
       ajaxByDefault: true
       alertNotificationRecipients: null
+      allowFileTemplateEdit: true
       autoScroll: true
       autoScrollToErrors: true
       badgeType: all
@@ -1346,33 +1347,37 @@ plugins:
       blockedIpAddresses: ''
       blockedKeywords: ''
       blockedKeywordsError: 'Invalid Entry Data'
+      bypassSpamCheckOnLoggedInUsers: ''
       clientDigestFrequency: 1
       clientDigestRecipients: null
       customErrorMessage: ''
-      customHoneypotName: ''
+      customHoneypotName: emailMyBoss
       defaultTemplates: true
       defaultView: dashboard
       digestFrequency: 1
       digestOnlyOnProduction: false
       digestRecipients: null
       displayFeed: true
+      emailTemplateDefault: files
       emailTemplateDirectory: null
-      emailTemplateStorage: db
+      emailTemplateStorageType: files_database
+      exportHandlesAsNames: ''
+      exportLabels: ''
       fieldDisplayOrder: name
       fillWithGet: false
       footerScripts: false
-      formFieldShowOnlyAllowedForms: false
+      formFieldShowOnlyAllowedForms: ''
       formSubmitDisable: true
       formSubmitExpiration: ''
       formTemplateDirectory: null
       formattingTemplate: flexbox.html
       freeformHoneypot: '1'
-      freeformHoneypotEnhancement: ''
-      hideBannerDemo: false
+      freeformHoneypotEnhancement: '1'
+      hideBannerDemo: '1'
       hideBannerOldFreeform: false
       minimumSubmitTime: ''
       pluginName: null
-      purgableSpamAgeInDays: '0'
+      purgableSpamAgeInDays: '3'
       purgableSubmissionAgeInDays: null
       purgableUnfinalizedAssetAgeInMinutes: 180
       recaptchaBehaviour: display_error
@@ -1386,7 +1391,7 @@ plugins:
       recaptchaTheme: light
       recaptchaType: v2_checkbox
       rememberPageSubmitOrder: true
-      removeNewlines: false
+      removeNewlines: ''
       renderFormHtmlInCpViews: true
       salesforce_client_id: null
       salesforce_client_secret: null
@@ -1409,9 +1414,10 @@ plugins:
       spamProtectionBehaviour: simulate_success
       submissionThrottlingCount: ''
       submissionThrottlingTimeFrame: m
+      successTemplateDirectory: null
       twigInHtml: true
       twigInHtmlIsolatedMode: true
-      updateSearchIndexes: true
+      updateSearchIndexes: '1'
   google-maps:
     enabled: true
     licenseKey: 88Z3Y9HY00OZ7NQEBWTNETQL
