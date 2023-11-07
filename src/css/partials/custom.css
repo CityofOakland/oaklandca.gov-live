@@ -89,6 +89,7 @@ main .bg-rotate:nth-of-type(even) {
 a,
 input,
 textarea,
+select,
 button {
   &:focus {
     outline: 4px solid #0ea5e9;
