@@ -74,9 +74,9 @@
 		</div>
 	</div>
 	<div class="bg-gray-800">
-    {{ _self.renderForm('whyWasThisPageHelpful', entry) }}
-    {{ _self.renderForm('whatWasWrongWithThisPage', entry) }}
-    {{ _self.renderForm('reportProblem', entry) }}
+		{{ _self.renderForm('whyWasThisPageHelpful', entry) }}
+		{{ _self.renderForm('whatWasWrongWithThisPage', entry) }}
+		{{ _self.renderForm('reportProblem', entry) }}
 	</div>
 </section>
 
@@ -85,8 +85,8 @@
 	$buttons.on('click',function(){
 		var $this = $(this);
 
-		$('.form').addClass('hidden');
-		$('#' + $(this).data('open')).removeClass('hidden');
+		$('.form').addClass('oak-hidden');
+		$('#' + $(this).data('open')).removeClass('oak-hidden');
 
 		$buttons.removeClass('state-active');
 		$this.addClass('state-active');
