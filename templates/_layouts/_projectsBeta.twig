@@ -9,25 +9,19 @@
 	]
 ) %}
 
-{% set meetings = craft.entries.section('meetings').orderBy('date desc').relatedTo(entry) %}
-
-{% set relatedTeams = craft.entries.section('teams').relatedTo(entry).all() %}
-
-{% set aboutTrue = entry.about %}
-{% set photosTrue = entry.photoGallery.exists() %}
-{% set documentsTrue = entry.projectDocuments.exists() %}
-{% set updatesTrue = entry.projectUpdates.exists() %}
-{% set addressesTrue = entry.projectLocations.exists() %}
-{% set mapImageTrue = entry.projectMapImage.exists() %}
-{% set mapTrue = addressesTrue or mapImageTrue %}
-{% set timelineTrue = entry.timeline.exists() %}
-{% set relatedTrue = entry.relatedProjectEntries.exists() %}
-{% set fundingTrue = entry.fundingLogos.exists() %}
-{% set emailTrue = entry.emailAddress %}
-{% set phoneTrue = entry.phoneNumbers.exists() %}
-{% set teamsTrue = relatedTeams | length %}
+{% set gallery = entry.photoGallery.all() ?? null %}
+{% set documents = entry.projectDocuments.all() ?? null %}
+{% set meetings = craft.entries.section('meetings').orderBy('date desc').relatedTo(entry).all() ?? null %}
+{% set updates = entry.projectUpdates.all() ?? null %}
+{% set addresses = entry.projectLocations.all() ?? null %}
+{% set mapImage = entry.projectMapImage.one() ?? null %}
+{% set timeline = entry.timeline.all() ?? null %}
+{% set related = entry.relatedProjectEntries.all() ?? null %}
+{% set relatedTeams = craft.entries.section('teams').relatedTo(entry).all() ?? null %}
+{% set funding = entry.fundingLogos.all() ?? null %}
+{% set phoneNumbers = entry.phoneNumbers.all() ?? null %}
 {% set socialMediaTrue = entry.facebook or entry.twitter or entry.medium or entry.instagram or entry.youtube %}
-{% set contactTrue = emailTrue or phoneTrue or teamsTrue or socialMediaTrue %}
+{% set contactTrue = entry.emailAddress or phoneNumbers or relatedTeams or socialMediaTrue %}
 
 {% block content %}
 	{%- set headerSubContent -%}
@@ -73,18 +67,6 @@
 
 	{% include '_partials/_page-banners.twig' with {
 		breadCrumbLinks: breadcrumbs,
-		navMenu: {
-			'about': aboutTrue,
-			'gallery': photosTrue,
-			'documents': documentsTrue,
-			'meetings': meetings|length ? true : false,
-			'updates': updatesTrue,
-			'map': mapTrue,
-			'timeline': timelineTrue,
-			'relatedPages': relatedTrue,
-			'logos': fundingTrue,
-			'contact': contactTrue,
-		},
 		bannerImage: entry.banner | length ? {
 			position: entry.banner[0].getFocalPoint('asCss'),
 			src: entry.banner[0].url,
@@ -97,7 +79,6 @@
 			<div class="md:col-span-2">
 				{% if entry.about %}
 					<section class="pb-16 mb-16 border-b border-gray-500">
-						<a class="anchor-link" id="page-about"></a>
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "About"
 						} %}
@@ -106,17 +87,16 @@
 						</div>
 					</section>
 				{% endif %}
-				{% if photosTrue %}
+				{% if gallery %}
 					{% js at endBody %}
 						lightGallery(document.querySelector('#js-photoGallery'));
 					{% endjs %}
 					<section class="pb-16 mb-16 border-b border-gray-500">
-						<a class="anchor-link" id="page-gallery"></a>
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "Gallery"
 						} %}
 						<div class="flex flex-row flex-wrap" id="js-photoGallery">
-							{% for photo in entry.photoGallery.all() %}
+							{% for photo in gallery %}
 								<figure class="w-1/3" data-src="{{ photo.url }}" data-sub-html="<p class='font-bold'>{{ photo.title }}</p><p>{{ photo.altText }}</p>">
 									<a href="{{ photo.url }}">
 										{% set transformedImage = craft.imager.transformImage(photo, { width: 400}, {
@@ -124,21 +104,23 @@
 										}, {
 											fillTransforms: true
 										}) %}
-										<img src="{{ transformedImage.url }}">
+										<img
+											src="{{ transformedImage.url }}"
+											alt="{{ photo.altText ?? photo.title }}"
+										>
 									</a>
 								</figure>
 							{% endfor %}
 						</div>
 					</section>
 				{% endif %}
-				{% if documentsTrue %}
+				{% if documents %}
 					<section class="pb-16 mb-16 border-b border-gray-500">
-						<a class="anchor-link" id="page-documents"></a>
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "Documents"
 						} %}
 						<div class="space-y-6">
-							{% for entry in entry.projectDocuments.all() %}
+							{% for entry in documents %}
 								{% set isDoc = (entry.type == "documents") ? true : false %}
 								{% set url = isDoc ? entry.documentFile.one.url : entry.url %}
 								{% set target = isDoc ? "_blank" : "_self" %}
@@ -148,9 +130,8 @@
 					</section>
 				{% endif %}
 
-				{% if meetings|length %}
+				{% if meetings %}
 					<section>
-						<a class="anchor-link" id="page-meetings"></a>
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "Meetings"
 						} %}
@@ -172,57 +153,52 @@
 				{% endif %}
 			</div>
 			<div class="md:col-span-1">
-				{% if updatesTrue %}
+				{% if updates %}
 					<section class="pb-16 mb-16 border-b border-gray-500">
-						<a class="anchor-link" id="page-updates"></a>
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "Updates"
 						} %}
 						<div class="space-y-6">
-							{% for entry in entry.projectUpdates.all() %}
+							{% for entry in updates %}
 								<a class="section-box project-updates" href="{{ entry.url }}">{{ entry.title }}</a>
 							{% endfor %}
 						</div>
 					</section>
 				{% endif %}
-				{% if mapTrue %}
+				{% if addresses or mapImage %}
 					{% js %}lightGallery(document.querySelector('#js-map'));{% endjs %}
 					<section class="pb-16 mb-16 border-b border-gray-500">
-						<a class="anchor-link" id="page-map"></a>
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "Map"
 						} %}
-						{% if mapImageTrue %}
-							{% set image = entry.projectMapImage.one %}
-							{% set transformedImage = craft.imager.transformImage(image, { width: 320 }, { ratio: 1/1, position: image.getFocalPoint()},{ fillTransforms: true}) %}
-							{% set transformedImages = craft.imager.transformImage(image, [
+						{% if mapImage %}
+							{% set transformedImage = craft.imager.transformImage(mapImage, { width: 320 }, { ratio: 1/1, position: mapImage.getFocalPoint()},{ fillTransforms: true}) %}
+							{% set transformedImages = craft.imager.transformImage(mapImage, [
 								{ width: 1400 },
 								{ width: 912 },
 								{ width: 528, jpegQuality: 65 }
 							],{ fillTransforms: true}) %}
-							{# {%- set mapImageBlock -%} #}
 							<figure class="w-full mt-4 cursor-pointer" id='js-map'>
 								<img
-									data-src="{{ image.url }}"
+									data-src="{{ mapImage.url }}"
 									data-sub-html="<p class='font-bold'>Map of Project: {{ entry.title }}</p>"
 									src="{{ transformedImage.url }}"
 									srcset="{{ transformedImages | srcset }}"
 									sizes="75vw"
-									alt="{{ image.altText ?? 'Map of Project: ' ~ entry.title }}"
+									alt="{{ mapImage.altText ?? 'Map of Project: ' ~ entry.title }}"
 									class="block">
 							</figure>
-							{# {%- endset -%} #}
 						{% endif %}
 
-						{% if addressesTrue %}
+						{% if addresses %}
 							{% do view.registerJsFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js") %}
 							{% do view.registerCssFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css") %}
-							{% for location in entry.projectLocations.all() %}
+							{% for location in addresses %}
 								{% if location.locationAddress %}
 									{% set loc = location.locationAddress %}
-									{% set src = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-l(" ~ loc.lng ~ "," ~ loc.lat ~ ")/" ~ loc.lng ~ "," ~ loc.lat ~ ",16/600x400@2x?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" %}
-									{% set largePhoto = src | replace("600x400", "1280x854") %}
-									{% set locationText = loc.street1 ~ ", " ~ loc.city ~ ", " ~ loc.state ~ ", " ~ loc.zip %}
+									{% set src = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-l(#{loc.lng},#{loc.lat})/#{loc.lng},#{loc.lat},16/600x400@2x?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" %}
+									{% set largePhoto = src|replace("600x400", "1280x854") %}
+									{% set locationText = "#{loc.street1}, #{loc.city}, #{loc.state}, #{loc.zip}" %}
 
 									<figure class="w-full mt-4 cursor-pointer" id='js-map'>
 										<img
@@ -248,36 +224,17 @@
 
 					</section>
 				{% endif %}
-				{% css %}
-					.milestone-name {
-					position: relative;
-					}
 
-					.milestone-name:before {
-					position: absolute;
-					width: 1.25rem;
-					height: 1.25rem;
-					border-width: .125rem;
-					background-color: #f1f4f4;
-					border-color: #8c9d96;
-					border-radius: 50%;
-					content: '';
-					left: calc(-2rem - 11px);
-					top: 0;
-					}
-				{% endcss %}
-
-				{% if timelineTrue %}
+				{% if timeline %}
 					<section class="pb-16 mb-16 border-b border-gray-500">
-						<a class="anchor-link" id="page-timeline"></a>
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "Timeline"
 						} %}
 						<div class="project-timeline ml-2">
-							{% for milestone in entry.timeline.all() %}
-								<div class="project-timeline-item pl-8 border-l-2 {% if not loop.last %}pb-4 border-gray-500{% else %}border-white{% endif %}">
+							{% for milestone in timeline %}
+								<div class="project-timeline-item pl-8 border-l-2 {{ loop.last ? "border-white" : "pb-4 border-gray-500" }}">
 									<div class="text-gray-800">
-										<div class="leading-none milestone-name">{{ milestone.milestoneName }}</div>
+										<div class="leading-none relative milestone-name before:absolute before:w-[1.25rem] before:h-[1.25rem] before:border-x-[.125rem] before:border-y-[.125rem] before:border-[#8c9d96] before:rounded-[50%] before:left-[calc(-2rem-11px)] before:top-0">{{ milestone.milestoneName }}</div>
 										{% if milestone.milestoneDates %}
 											<span class="text-sm font-bold text-gray-1000">{{ milestone.milestoneDates }}</span>
 										{% endif %}
@@ -287,47 +244,51 @@
 						</div>
 					</section>
 				{% endif %}
-				{% if relatedTrue %}
+
+				{% if related %}
 					<section class="pb-16 mb-16 border-b border-gray-500">
-						<a class="anchor-link" id="page-related"></a>
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "Related Pages"
 						} %}
 						<div class="space-y-6">
-							{% for entry in entry.relatedProjectEntries.all() %}
+							{% for entry in related %}
 								<a class="section-box project-related" href="{{ entry.url }}">{{ entry.title }}</a>
 							{% endfor %}
 						</div>
 					</section>
 				{% endif %}
-				{% if fundingTrue %}
+
+				{% if funding %}
 					<section class="pb-16 mb-16 border-b border-gray-500">
-						<a class="anchor-link" id="page-logos"></a>
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: entry.fundingLogosAlternateTitle ?? "Partners"
 						} %}
 						<div class="flex flex-wrap items-center justify-center -mx-4">
-							{% for logo in entry.fundingLogos.all() %}
+							{% for logo in funding %}
 								<figure class="w-full mx-4 mb-4 sm:w-1/2 md:w-1/3 lg:w-1/5 md:mb-8">
-									<img class="block w-full h-auto mx-auto" src="{{ logo.url }}" alt="{{ logo.title }}">
+									<img
+										class="block w-full h-auto mx-auto"
+										src="{{ logo.url }}"
+										alt="{{ logo.altText ?? logo.title }}"
+									>
 								</figure>
 							{% endfor %}
 						</div>
 					</section>
 				{% endif %}
+
 				{% if contactTrue %}
 					<section>
-						<a class="anchor-link" id="page-contact"></a>
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "Contact"
 						} %}
-						{% if emailTrue %}
+						{% if entry.emailAddress %}
 							<h3 class="mb-2 text-xl">Email</h3>
 							<p class="mt-0">
 								<a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a>
 							</p>
 						{% endif %}
-						{% if teamsTrue %}
+						{% if relatedTeams %}
 							<h3 class="mb-2 text-xl">Teams</h3>
 							<p class="mt-0">
 								{% for team in relatedTeams %}
@@ -335,10 +296,10 @@
 								{% endfor %}
 							</p>
 						{% endif %}
-						{% if phoneTrue %}
+						{% if phoneNumbers %}
 							<h3 class="mb-2 text-xl">Phone Numbers</h3>
 							<p class="mt-0">
-								{% for phone in entry.phoneNumbers.all() %}
+								{% for phone in phoneNumbers %}
 									{% switch phone.type %}
 									{% case "other" %}
 										{{ phone.numberTitle }}:
@@ -351,9 +312,7 @@
 								{% endfor %}
 							</p>
 						{% endif %}
-						{% if socialMediaTrue %}
-							{% include "_partials/_elements/_social-media" %}
-						{% endif %}
+						{{ include("_partials/_elements/_social-media.twig") }}
 					</section>
 				{% endif %}
 			</div>

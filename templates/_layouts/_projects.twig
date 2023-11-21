@@ -6,6 +6,11 @@
 	['banner']
 ) %}
 
+{% set timeline = entry.timeline.all() ?? null %}
+
+{% set beforePhoto = entry.projectBeforePhoto.one() ?? null %}
+{% set afterPhoto = entry.projectAfterPhoto.one() ?? null %}
+
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 
 {% set contactState = entry.addresses | length or entry.address or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
@@ -45,23 +50,25 @@
 	{% css %}
 		{% include "_css/timeline.css" %}
 	{% endcss %}
+
 	{% js %}
 		{% include "_js/timeline.js" %}
 		timeline(document.querySelectorAll('.timeline'));
 	{% endjs %}
+
 	<section>
 		<a class="anchor-link" id="page-timeline"></a>
 		<div class="container">
 			<div class="md:flex md:flex-row">
 				<div class="md:pr-4 md:w-1/2">
-					{% if entry.timeline.exists() %}
+					{% if timeline %}
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "Timeline"
 						} %}
 						<div class="timeline" data-vertical-start-position="right">
 							<div class="timeline__wrap">
 								<div class="timeline__items">
-									{% for block in entry.timeline.all() %}
+									{% for block in timeline %}
 										<div class="timeline__item">
 											<div class="timeline__content">
 												<h3 class="my-0 text-xl font-bold">{{ block.milestoneName }}</h3>
@@ -83,14 +90,20 @@
 							headerText: "Project Location"
 						} %}
 						<figure class="block w-full">
-							<img src="{{ craft.imager.placeholder({ type: 'silhouette', width: 400, height: 300, source: src }) }}" sizes="100vw" srcset="{{ craft.imager.srcset(transformedImages) }}" class="block" alt="Map of {{ entry.title }}">
+							<img
+								class="block"
+								src="{{ craft.imager.placeholder({ type: 'silhouette', width: 400, height: 300, source: src }) }}"
+								sizes="100vw"
+								srcset="{{ craft.imager.srcset(transformedImages) }}"
+								alt="Map of {{ entry.title }}"
+							>
 						</figure>
 					{% endif %}
 				</div>
 			</div>
 		</div>
 	</section>
-	{% if entry.projectBeforePhoto.exists() and entry.projectAfterPhoto.exists() %}
+	{% if beforePhoto and afterPhoto %}
 		<section>
 			<a class="anchor-link" id="page-gallery"></a>
 			<div class="container">
@@ -98,13 +111,21 @@
 					<div class="md:pr-4 md:w-1/2">
 						<h3>Current</h3>
 						<figure class="block w-full">
-							<img src="{{ entry.projectBeforePhoto.one.getUrl('medium43') }}" class="block">
+							<img
+								src="{{ beforePhoto.getUrl('medium43') }}"
+								class="block"
+								alt="{{ beforePhoto.altText ?? beforePhoto.title }}"
+							>
 						</figure>
 					</div>
 					<div class="md:pl-4 md:w-1/2">
 						<h3>Projected/After</h3>
 						<figure class="block w-full">
-							<img src="{{ entry.projectAfterPhoto.one.getUrl('medium43') }}" class="block">
+							<img
+								src="{{ afterPhoto.getUrl('medium43') }}"
+								class="block"
+								alt="{{ afterPhoto.altText ?? afterPhoto.title }}"
+							>
 						</figure>
 					</div>
 				</div>
@@ -114,7 +135,6 @@
 						"data-custom": 'custom-data-attribute'
 					} %}
 					{{ entry.externalPhotoGallery.link(attributes) }}
-
 				</div>
 			</div>
 		</section>
