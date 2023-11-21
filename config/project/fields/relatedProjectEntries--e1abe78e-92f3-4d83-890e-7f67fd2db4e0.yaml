@@ -2,7 +2,7 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884 # Projects
 handle: relatedProjectEntries
-instructions: 'Choose any resources, services, or topics you wish to display on this page.'
+instructions: 'Choose any resources, services, topics, or other projects you wish to display on this page.'
 name: 'Related Project Entries'
 searchable: false
 settings:
@@ -12,9 +12,21 @@ settings:
   maintainHierarchy: false
   maxRelations: null
   minRelations: null
+  selectionCondition:
+    __assoc__:
+      -
+        - elementType
+        - craft\elements\Entry
+      -
+        - fieldContext
+        - global
+      -
+        - class
+        - craft\elements\conditions\entries\EntryCondition
   selectionLabel: null
   showSiteMenu: true
   sources:
+    - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
     - 'section:24fa116b-8516-4626-84f3-86b685e71071' # Resources
     - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
     - 'section:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics
