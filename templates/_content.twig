@@ -52,7 +52,11 @@
                     {% block title %}
                       <h1 class="my-0 text-3xl font-bold md:text-4xl">{{ entry.title }}</h1>
                       {% if entry.leadIn or entry.summary %}
-                        <div class="mt-4 text-xl leading-8 tw-only">{{ entry.leadIn ? entry.leadIn : entry.summary }}</div>
+                        <div class="mt-4 text-xl leading-8 space-y-2">
+                          {% apply retconAttr('a', { class: 'underline hover:no-underline text-green-800 hover:text-green-700' }) %}
+                            {{ entry.leadIn ? entry.leadIn : entry.summary }}
+                          {% endapply %}
+                        </div>
                       {% endif %}
                       {% if entry.ctaButton | length %}
                         {% include '_components/_button.twig' with {
