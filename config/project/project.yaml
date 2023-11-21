@@ -1,4 +1,4 @@
-dateModified: 1700583145
+dateModified: 1700584617
 elementSources:
   craft\elements\Entry:
     -
@@ -127,6 +127,7 @@ elementSources:
       tableAttributes:
         - postDate
         - expiryDate
+        - type
         - author
         - link
       type: native
