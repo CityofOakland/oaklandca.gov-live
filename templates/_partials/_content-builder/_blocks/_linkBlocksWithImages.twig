@@ -12,7 +12,7 @@
 			{% for linkSet in linkSets %}
 				{% set link = linkSet.linkLocation %}
 				{% set linkType = link.typeHandle %}
-				{% set image = link.linkImage.one() ?? null %}
+				{% set image = linkSet.linkImage.one() ?? null %}
 				{# An individual block #}
 				<a
 					href="{{ link.url }}"
