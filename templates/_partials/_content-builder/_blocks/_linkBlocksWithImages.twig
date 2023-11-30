@@ -1,36 +1,49 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
+{% set linkSets = block.linkSet.all() ?? null %}
 <section class="relative z-0 pb-12">
-  {{ include("_partials/_heading.twig", {
-    params: {
-      text: block.heading
-    }
-  }) }}
-
-  {{ block.linkSetDescription }}
-  <div class="flex flex-col space-y-6 md:space-y-0 md:space-x-6 md:flex-row md:items-stretch">
-    {% for linkSet in block.linkSet.all() %}
-      {% set link = linkSet.linkLocation %}
-      {% set linkType = link.typeHandle %}
-      {# An individual block #}
-      <a href="{{ link.url }}" target="{{ link.target }}" class="relative flex flex-col w-full overflow-hidden rounded shadow md:w-1/3">
-        {# The holder for the image #}
-        <div class="relative pb-5/12">
-          <img src="{{ linkSet.linkImage.one.url }}" class="absolute object-cover w-full h-full">
-        </div>
-        {# Our card title #}
-        <div class="flex-1 px-6 py-4 text-white bg-blue-900">
-          <p class="my-0 text-lg font-bold md:text-base lg:text-xl line-clamp-3">{{ link.text }}</p>
-        </div>
-      </a>
-    {% endfor %}
-  </div>
-  {% set link = block.readMoreLink %}
-  {% if link %}
-    {% include "_partials/_elements/_read-more.twig" with {
-      url: link.url,
-      text: link.text,
-      target: link.target
-    } %}
-  {% endif %}
+	{{ include("_partials/_heading.twig", {
+		params: {
+			text: block.heading
+		}
+	}) }}
+	{{ block.linkSetDescription }}
+	{% if linkSets %}
+		<div class="flex flex-col space-y-6 md:space-y-0 md:space-x-6 md:flex-row md:items-stretch">
+			{% for linkSet in linkSets %}
+				{% set link = linkSet.linkLocation %}
+				{% set linkType = link.typeHandle %}
+				{% set image = linkSet.linkImage.one() ?? null %}
+				{# An individual block #}
+				<a
+					href="{{ link.url }}"
+					target="{{ link.target }}"
+					class="relative flex w-full flex-col overflow-hidden rounded shadow md:w-1/3"
+				>
+					{# The holder for the image #}
+					{% if image %}
+						<div class="relative pb-5/12">
+							<img
+								src="{{ image.url }}"
+								class="absolute h-full w-full object-cover"
+								alt=""
+							>
+						</div>
+					{% endif %}
+					{# Our card title #}
+					<div class="flex-1 bg-blue-900 px-6 py-4 text-white">
+						<p class="my-0 text-lg font-bold line-clamp-3 md:text-base lg:text-xl">{{ link.text }}</p>
+					</div>
+				</a>
+			{% endfor %}
+		</div>
+	{% endif %}
+	{% set link = block.readMoreLink %}
+	{% if link %}
+		{% include "_partials/_elements/_read-more.twig" with {
+			url: link.url,
+			text: link.text,
+			target: link.target
+		} %}
+	{% endif %}
 </section>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

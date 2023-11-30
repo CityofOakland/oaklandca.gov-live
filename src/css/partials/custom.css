@@ -649,7 +649,3 @@ form[data-handle="whyWasThisPageHelpful"] {
 .border-black{
   border-color: #000000;
 }
-
-h2 a:focus,h3 a:focus,h4 a:focus, a.button:focus{
-  outline:none!important
-}

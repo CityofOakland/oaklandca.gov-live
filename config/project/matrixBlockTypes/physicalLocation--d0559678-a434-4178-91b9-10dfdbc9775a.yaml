@@ -100,7 +100,7 @@ fields:
               - true
             -
               - autocomplete
-              - false
+              - true
             -
               - required
               - false
