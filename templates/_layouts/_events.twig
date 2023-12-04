@@ -11,11 +11,11 @@
 {% set locationBlocks = clone(entry.eventLocations) %}
 
 {% if entry.eventLocations.type("physicalLocation")|length %}
-  {% set locations = locations|merge(["in-person"]) %}
+	{% set locations = locations|merge(["in-person"]) %}
 {% endif %}
 
 {% if entry.eventLocations.type("onlineLocation")|length %}
-  {% set locations = locations|merge(["online"]) %}
+	{% set locations = locations|merge(["online"]) %}
 {% endif %}
 
 {% set eventHasPassed = (now > dateToPass) %}
@@ -25,204 +25,223 @@
 {% set onlineLocation = clone(entry.eventLocations).type("onlineLocation") %}
 {% set onlineLocationDisplays = onlineLocation|length and not eventHasPassed %}
 
+{% set relatedDocuments = entry.relatedDocuments.all() ?? null %}
+{% set relatedPages = entry.relatedPages.all() ?? null %}
+{% set callOut = entry.callOut.all() ?? null %}
+
 {% block title %}
-  <h1 class="my-0 text-3xl font-bold md:text-4xl">{{ entry.title }}</h1>
-  <div class="mt-4 text-xl leading-8 tw-only">This event {{ eventHasPassed ? "was" : "will be" }} held {{ locations|join(" and ") }} on {{ entry.calendarize.startDate|date("F j, Y") }}</div>
+	<h1 class="my-0 text-3xl font-bold md:text-4xl">{{ entry.title }}</h1>
+	<div class="mt-4 text-xl leading-8 tw-only">This event {{ eventHasPassed ? "was" : "will be" }} held {{ locations|join(" and ") }} on {{ entry.calendarize.startDate|date("F j, Y") }}</div>
 {% endblock %}
 
 {% block precontent %}
-  <section class="bg-green-800 mb-16 text-white @container relative">
-    <div class="container px-6 py-8 @3xl:px-16 sm:py-12">
-      <div class="max-w-6xl">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="components components-format flex items-start">
-            {{ svg( '@webroot/dist/img/fa-clock.svg')|attr({class: "w-8 mr-4", style: "flex-shrink:0;"}) }}
-            <div>
-              <h3 class="mt-0">{{ entry.calendarize.startDate|date("l, F j, Y") }}</h3>
-              {% if entry.calendarize.allDay %}
-                <p class="mt-2">All day event</p>
-              {% else %}
-                <p class="mt-2">{{ entry.calendarize.startDate|date("g:ia") }}{{ entry.calendarize.endDate ? " to " ~ entry.calendarize.endDate|date("g:ia") }}</p>
-              {% endif %}
-              {% if entry.calendarize.repeats %}
-                <p><i>This event repeats {{ entry.calendarize.repeatType }}, with the next event occurring on {{ entry.calendarize.next.start|date("l, F j, Y") }} </i></p>
-              {% endif %}
-            </div>
-          </div>
-          <div class="components flex items-start">
-            {% if locationBlocks|length == 2 or (locationBlocks|length and (physicalLocationDisplays or onlineLocationDisplays)) %}
-              {{ svg( '@webroot/dist/img/fa-map.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }}
-            {% endif %}
-            <div>
-              {% if locationBlocks|length == 1 %}
-                {% for location in locationBlocks.all() %}
-                  {% switch location.type %}
-                  {% case 'physicalLocation' %}
-                    {% if location.locationAddress and not location.locationAddress.isEmpty() %}
-                      <h3 class="mt-0">In-Person</h3>
-                      {% if location.locationAddress %}<p class="mt-2">{{ location.locationAddress.multiline() }}</p>{% endif %}
-                      {% if location.locationAddress %}<p><a class="text-white hover:text-gray-200 underline" href="{{ location.locationAddress.linkToDirections() }}" target="_blank" aria-label="Open directions to event in a new tab">Get Directions</a></p>{% endif %}
-                    {% endif %}
-                  {% case 'onlineLocation' %}
-                    {% if not eventHasPassed %}
-                      <h3 class="mt-0">Online</h3>
-                      <p class="mt-2">This event will be held online via Zoom</p>
-                      {% if location.onlineMeetingLink %}<a href="{{ location.onlineMeetingLink }}" class="button secondary mb-0" target="_blank" aria-label="Open online event link in a new tab">Join Event Online</a>{% endif %}
-                    {% endif %}
-                  {% default %}
-                  {% endswitch %}
-                {% endfor %}
-              {% elseif locationBlocks|length == 2 %}
-                {% set primary    = locationBlocks.all()[0] %}
-                {% set secondary  = locationBlocks.all()[1] %}
-                <h3 class="mt-0">Location</h3>
-                <p class="mt-2">This event will be held in-person and online</p>
-                {% if primary.type == 'physicalLocation' %}
-                  {% if primary.locationAddress and not primary.locationAddress.isEmpty() %}
-                    <h4>Address</h4>
-                    <p class="mt-2">{{ primary.locationAddress.multiline() }}<br><a class="text-white hover:text-gray-200" href="{{ primary.locationAddress.linkToDirections() }}" target="_blank" aria-label="Open directions to event in a new tab">Get Directions</a></p>
-                  {% endif %}
-                {% elseif primary.type == 'onlineLocation' %}
-                  {% if not eventHasPassed %}
-                    <h4>Online</h4>
-                    {% if primary.onlineMeetingLink %}<a href="{{ primary.onlineMeetingLink }}" class="button secondary mb-0" target="_blank" aria-label="Open online event link in a new tab">Join the Event</a>{% endif %}
-                  {% endif %}
-                {% endif %}
-                {% if secondary.type == 'physicalLocation' %}
-                  {% if secondary.locationAddress and not secondary.locationAddress.isEmpty() %}
-                    <p class="small"><b>Or join in person</b></p>
-                    <p class="mt-2">{{ secondary.locationAddress.multiline() }}<br><a class="text-white hover:text-gray-200" href="{{ primary.locationAddress.linkToDirections() }}" target="_blank" aria-label="Open directions to event in a new tab">Get Directions</a></p>
-                  {% endif %}
-                {% elseif secondary.type == 'onlineLocation' %}
-                  {% if not eventHasPassed %}
-                    <p class="small"><b>Or join online</b></p>
-                    {% if secondary.onlineMeetingLink %}<a href="{{ secondary.onlineMeetingLink }}" class="button secondary mb-0" target="_blank" aria-label="Open online event link in a new tab">Join the Event</a>{% endif %}
-                  {% endif %}
-                {% endif %}
-              {% endif %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+	<section class="bg-green-800 mb-16 text-white @container relative">
+		<div class="container px-6 py-8 @3xl:px-16 sm:py-12">
+			<div class="max-w-6xl">
+				<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+					<div class="flex items-start components components-format">
+						{{ svg( '@webroot/dist/img/fa-clock.svg')|attr({class: "w-8 mr-4", style: "flex-shrink:0;"}) }}
+						<div>
+							<h3 class="mt-0">{{ entry.calendarize.startDate|date("l, F j, Y") }}</h3>
+							<p class="mt-2">
+								{% if entry.calendarize.allDay %}
+									All day event
+								{% else %}
+									{{ entry.calendarize.startDate|date("g:ia") }}{{ entry.calendarize.endDate ? " to " ~ entry.calendarize.endDate|date("g:ia") }}
+								{% endif %}
+							</p>
+							{% if entry.calendarize.repeats %}
+								<p><i>This event repeats {{ entry.calendarize.repeatType }}, with the next event occurring on {{ entry.calendarize.next.start|date("l, F j, Y") }} </i></p>
+							{% endif %}
+						</div>
+					</div>
+					<div class="flex items-start components">
+						{% if locationBlocks|length == 2 or (locationBlocks|length and (physicalLocationDisplays or onlineLocationDisplays)) %}
+							{{ svg( '@webroot/dist/img/fa-map.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }}
+						{% endif %}
+						<div>
+							{% if locationBlocks|length == 1 %}
+								{% for location in locationBlocks.all() %}
+									{% switch location.type %}
+									{% case 'physicalLocation' %}
+										{% if location.locationAddress and not location.locationAddress.isEmpty() %}
+											<h3 class="mt-0">In-Person</h3>
+											{% if location.locationAddress %}
+												<p class="mt-2">{{ location.locationAddress.multiline() }}</p>
+												<p class="mt-2">{{ macros.getDirections(location.locationAddress.linkToDirections()) }}</p>
+											{% endif %}
+										{% endif %}
+									{% case 'onlineLocation' %}
+										{% if not eventHasPassed %}
+											<h3 class="mt-0">Online</h3>
+											<p class="mt-2">This event will be held online via Zoom</p>
+											{% if location.onlineMeetingLink %}
+												{{ macros.openEventLink(location.onlineMeetingLink, "Join Event Online") }}
+											{% endif %}
+										{% endif %}
+									{% default %}
+									{% endswitch %}
+								{% endfor %}
+							{% elseif locationBlocks|length == 2 %}
+								{% set primary    = locationBlocks.all()[0] %}
+								{% set secondary  = locationBlocks.all()[1] %}
+								<h3 class="mt-0">Location</h3>
+								<p class="mt-2">This event will be held in-person and online</p>
+								{% if primary.type == 'physicalLocation' %}
+									{% if primary.locationAddress and not primary.locationAddress.isEmpty() %}
+										<h4>Address</h4>
+										<p class="mt-2">
+											{{ primary.locationAddress.multiline() }}<br>
+											{{ macros.getDirections(primary.locationAddress.linkToDirections()) }}
+										</p>
+									{% endif %}
+								{% elseif primary.type == 'onlineLocation' %}
+									{% if not eventHasPassed %}
+										<h4>Online</h4>
+										{% if primary.onlineMeetingLink %}
+											{{ macros.openEventLink(primary.onlineMeetingLink) }}
+										{% endif %}
+									{% endif %}
+								{% endif %}
+								{% if secondary.type == 'physicalLocation' %}
+									{% if secondary.locationAddress and not secondary.locationAddress.isEmpty() %}
+										<p class="small"><b>Or join in person</b></p>
+										<p class="mt-2">
+											{{ secondary.locationAddress.multiline() }}<br>
+											{{ macros.getDirections(secondary.locationAddress.linkToDirections()) }}
+										</p>
+									{% endif %}
+								{% elseif secondary.type == 'onlineLocation' %}
+									{% if not eventHasPassed %}
+										<p class="small"><b>Or join online</b></p>
+										{% if secondary.onlineMeetingLink %}
+											{{ macros.openEventLink(secondary.onlineMeetingLink) }}
+										{% endif %}
+									{% endif %}
+								{% endif %}
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 {% endblock %}
 
 {% block content %}
-  {% if entry.eventImage.one() %}
-    {% set landscape = {
-      mode: 'crop',
-      width: 730,
-      quality: 100,
-      position: 'top-center'
-    } %}
-    {% set image = entry.eventImage.one() %}
-    <img src="{{ image.getUrl(landscape) }}" alt="{{ image.altText }}"/>
-  {% endif %}
+	{% if entry.eventImage.one() %}
+		{% set landscape = {
+			mode: 'crop',
+			width: 730,
+			quality: 100,
+			position: 'top-center'
+		} %}
+		{% set image = entry.eventImage.one() %}
+		<img src="{{ image.getUrl(landscape) }}" alt="{{ image.altText }}"/>
+	{% endif %}
 
-  {% if entry.calendarize.repeats %}
-    {% include '_components/_callout' with {
-      callOutType   : 'info',
-      heading       : 'This event is part of a series',
-      description   : '<p>See more events <a href="' ~ siteUrl ~ 'events' ~ '">' ~ entry.title ~ '</a></p>', 
-    } %}
-  {% endif %}
+	{% if entry.calendarize.repeats %}
+		{% include '_components/_callout' with {
+			callOutType   : 'info',
+			heading       : 'This event is part of a series',
+			description   : '<p>See more events <a href="' ~ siteUrl ~ 'events' ~ '">' ~ entry.title ~ '</a></p>',
+		} %}
+	{% endif %}
 
-  {% if now > dateToPass %}
-    {% set link_array = [] %}
-    {% if entry.relatedPages|length %}
-      {% for page in entry.relatedPages.all() %}
-        {% if page.section.handle == 'departments' or page.section.handle == 'topics' or page.section.handle == 'officials' %}
-          {% set link_array = link_array|merge(['<a class="text-green-800 hover:text-green-1000" href="'~ page.url ~'/events">'~ page.title ~'</a>']) %}
-        {% endif %}
-      {% endfor %}
-    {% endif %}
+	{% if now > dateToPass %}
+		{% set link_array = [] %}
+		{% if relatedPages %}
+			{% for page in relatedPages %}
+				{% if page.section.handle == 'departments' or page.section.handle == 'topics' or page.section.handle == 'officials' %}
+					{% set link_array = link_array|merge(['<a class="text-green-800 hover:text-green-1000" href="'~ page.url ~'/events">'~ page.title ~'</a>']) %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
 
-    {% if link_array|length %}
-      {% include '_components/_callout' with {
-        callOutType   : 'action',
-        heading       : 'This event has passed',
-        description   : '<p>See more events from ' ~ link_array|join(", ", ', and ') ~ '</p>',
-      } %}
-    {% endif %}
-  {% endif %}
+		{% if link_array|length %}
+			{% include '_components/_callout.twig' with {
+				callOutType   : 'action',
+				heading       : 'This event has passed',
+				description   : '<p>See more events from ' ~ link_array|join(", ", ', and ') ~ '</p>',
+			} %}
+		{% endif %}
+	{% endif %}
 
-  {% if entry.callOut|length %}
-    {% for block in entry.callOut.all() %}
-      {% include '_components/_callout.twig' %}
-    {% endfor %}
-  {% endif %}
+	{% if callOut %}
+		{% for block in callOut %}
+			{% include '_components/_callout.twig' %}
+		{% endfor %}
+	{% endif %}
 
-  {{ entry.mainContent }}
+	{{ entry.mainContent }}
 
-  {% set relatedDocuments = entry.relatedDocuments.all() ?? null %}
-  {% if relatedDocuments %}
-    <hr class="hr medium"/>
-    <h3>Related Documents</h3>
-    <ul class="ul-icons related">
-      {% for document in relatedDocuments %}
-        {% set docEntry = document.documentEntry.one() ?? null %}
-        {% if docEntry %}
-          <li><a target="_blank" href="{{ docEntry.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ document.documentTitle ?? docEntry.title }}</a></li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  {% endif %}
+	{% if relatedDocuments %}
+		<hr class="hr medium"/>
+		<h3>Related Documents</h3>
+		<ul class="ul-icons related">
+			{% for document in relatedDocuments %}
+				{% set docEntry = document.documentEntry.one() ?? null %}
+				{% if docEntry %}
+					<li><a target="_blank" href="{{ docEntry.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ document.documentTitle ?? docEntry.title }}</a></li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	{% endif %}
 
-  {# Accessibility Request #}
-  <hr class="hr medium"/>
-  {% if entry.eventTypes|length %}<p><b>Event Type:</b> {{ entry.eventTypes.one().title }}</p>{% endif %}
-  {% if entry.accessibilityBlock|length %}
-    {% set accessibilityText %}
-      {% if entry.accessibilityBlock.one().accessibilityText %}
-        <p>{{ entry.accessibilityBlock.one().accessibilityText|raw }}</p>
-      {% else %}
-        <p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
-        <p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a courtesy to attendees with chemical sensitivities.</p>
-      {% endif %}
-      {% if entry.pointOfContact|length %}
-        {% set block = entry.pointOfContact.one() %}
-        {% if block.contact|length %}
-          {% set emailContact = block.contact.one() %}
-          <p class="font-semibold">To make a request contact <a class="no-underline hover:underline" href="mailto:{{ emailContact.emailAddress ? emailContact.emailAddress : emailContact.staffImportEmail }}?subject=Accessibility Request: {{ entry.title }}{{ entry.calendarize.startDate ? ' at ' ~ entry.calendarize.startDate|date('m/d/Y') : '' }}">{{ emailContact.emailAddress ? emailContact.emailAddress : emailContact.staffImportEmail }} <i class="fa fa-envelope"></i></a></p>
-        {% endif %}
-      {% endif %}
-    {% endset %}
-    {% include '_components/_callout.twig' with {
-      callOutType   : 'info',
-      heading       : 'Accessibility and interpretation requests',
-      description   : accessibilityText 
-    } %}
-  {% endif %}
+	{# Accessibility Request #}
+	<hr class="hr medium"/>
+	{% if entry.eventTypes|length %}<p><b>Event Type:</b> {{ entry.eventTypes.one().title }}</p>{% endif %}
+	{% if entry.accessibilityBlock|length %}
+		{% set accessibilityText %}
+			{% if entry.accessibilityBlock.one().accessibilityText %}
+				<p>{{ entry.accessibilityBlock.one().accessibilityText|raw }}</p>
+			{% else %}
+				<p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
+				<p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a courtesy to attendees with chemical sensitivities.</p>
+			{% endif %}
+			{% if entry.pointOfContact|length %}
+				{% set block = entry.pointOfContact.one() %}
+				{% if block.contact|length %}
+					{% set emailContact = block.contact.one() %}
+					<p class="font-semibold">To make a request contact <a class="no-underline hover:underline" href="mailto:{{ emailContact.emailAddress ? emailContact.emailAddress : emailContact.staffImportEmail }}?subject=Accessibility Request: {{ entry.title }}{{ entry.calendarize.startDate ? ' at ' ~ entry.calendarize.startDate|date('m/d/Y') : '' }}">{{ emailContact.emailAddress ? emailContact.emailAddress : emailContact.staffImportEmail }} <i class="fa fa-envelope"></i></a></p>
+				{% endif %}
+			{% endif %}
+		{% endset %}
+		{% include '_components/_callout.twig' with {
+			callOutType   : 'info',
+			heading       : 'Accessibility and interpretation requests',
+			description   : accessibilityText
+		} %}
+	{% endif %}
 {% endblock %}
 
 {% block sidebar %}
-  {% if entry.sidebarDescription or entry.linkit %}
-    <hr/>
-    <h4>{{ entry.sidebarHeading ? entry.sidebarHeading : 'Register' }}</h4>
-    {% if entry.sidebarDescription %}<p>{{ entry.sidebarDescription }}</p>{% endif %}
-    {% if entry.linkit %}<a class="button secondary" href="{{ entry.linkit.url }}">{{ entry.linkit.text }}</a>{% endif %}
-  {% endif %}
+	{% if entry.sidebarDescription or entry.linkit %}
+		<hr/>
+		<h4>{{ entry.sidebarHeading ? entry.sidebarHeading : 'Register' }}</h4>
+		{% if entry.sidebarDescription %}<p>{{ entry.sidebarDescription }}</p>{% endif %}
+		{% if entry.linkit %}<a class="button secondary" href="{{ entry.linkit.url }}">{{ entry.linkit.text }}</a>{% endif %}
+	{% endif %}
 
-  {% include '_components/sidebar/_contact.twig' %}
+	{% include "_components/sidebar/_contact.twig" %}
 
-  <hr/>
-  <h4>{{ 'Add to Calendar'|t }}</h4>
-  <p>Save this event to your iCal, Outlook or Google Calendar</p>
-  <a class="button secondary" href="{{ entry.calendarize.getIcsUrl }}">Add to Calendar</a>
-  <hr class="light">
-  {{ include("_partials/_elements/_social-media-share.twig", {params: {}}) }}
+	<hr/>
+	<h4>{{ 'Add to Calendar'|t }}</h4>
+	<p>Save this event to your iCal, Outlook or Google Calendar</p>
+	<a class="button secondary" href="{{ entry.calendarize.getIcsUrl }}">Add to Calendar</a>
+	<hr class="light">
+	{{ include("_partials/_elements/_social-media-share.twig", {params: {}}) }}
 
-  {% if entry.relatedPages|length %}
-    <hr/>
-    <h4>{{ 'Related Pages'|t }}</h4>
-    <ul class="list-none pl-0">
-      {% for page in entry.relatedPages.all() %}
-        <li class="mb-4"><a href="{{ page.url }}">{{ page.title }}</a></li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-  <hr class="light">
-  <p class="small">Posted: {{ entry.postDate|date("F j, Y g:ia") }}</p>
-  <p class="small">Last Updated: {{ entry.dateUpdated|date("F j, Y g:ia") }}</p>
+	{% if relatedPages %}
+		<hr/>
+		<h4>{{ 'Related Pages'|t }}</h4>
+		<ul class="list-none pl-0">
+			{% for page in relatedPages %}
+				<li class="mb-4"><a href="{{ page.url }}">{{ page.title }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	<hr class="light">
+	<p class="small">Posted: {{ entry.postDate|date("F j, Y g:ia") }}</p>
+	<p class="small">Last Updated: {{ entry.dateUpdated|date("F j, Y g:ia") }}</p>
 {% endblock %}

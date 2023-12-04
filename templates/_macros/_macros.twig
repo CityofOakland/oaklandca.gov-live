@@ -7,7 +7,29 @@
 {% macro cardManual(url, label, summary, dark, arrow ) %}
   <a class="card {{ dark ? 'dark' : '' }}" href="{{ url }}">
     <h4 class="flex justify-between pb-4 {{ dark ? 'text-gray-800' : 'text-green-700' }}"><span>{{ label }}</span> {% if arrow %}<span>&rarr;</span>{% endif %}</h4>
-    <div class="clamp text-gray-800">{{ summary }}</div>
+    <div class="text-gray-800 clamp">{{ summary }}</div>
+  </a>
+{% endmacro %}
+
+{% macro openEventLink(eventLink, text, label) %}
+  <a
+    class="mb-0 button secondary"
+    href="{{ eventLink }}"
+    target="_blank"
+    aria-label="{{ label|default("Open online event link in a new tab") }}"
+  >
+    {{ text|default("Join the Event") }}
+  </a>
+{% endmacro %}
+
+{% macro getDirections(linkToDirections, label) %}
+  <a
+    class="text-white underline hover:text-gray-200 hover:no-underline"
+    href="{{ linkToDirections }}"
+    target="_blank"
+    aria-label="{{ label|default("Open directions to event in a new tab") }}"
+  >
+    Get Directions
   </a>
 {% endmacro %}
 
@@ -74,7 +96,7 @@
 
 {% macro tableBuilder(object, columns) %}
   <div class="components container px-6 @3xl:px-16">
-    <table class="w-full text-sm border border-cool-gray-500">
+    <table class="w-full border text-sm border-cool-gray-500">
       <thead>
         <tr>
           {% for col in 1..columns %}
