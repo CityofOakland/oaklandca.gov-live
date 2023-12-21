@@ -1,4 +1,4 @@
-dateModified: 1700584617
+dateModified: 1703173225
 elementSources:
   craft\elements\Entry:
     -
@@ -1486,7 +1486,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: MHV0BQ72A7IVPYOA3JKMD3BQ
-    schemaVersion: 3.6.2
+    schemaVersion: 4.0.0
   oakland-email-notifications:
     edition: standard
     enabled: true
