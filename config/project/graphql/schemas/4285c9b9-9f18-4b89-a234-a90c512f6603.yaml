@@ -47,7 +47,7 @@ scope:
   - 'sections.be8acece-2031-4965-a62f-31911d00e24c:read'
   - 'entrytypes.f35490ea-a075-4077-ac18-6be871f68c65:read'
   - 'sections.98d541ae-56ee-4c98-ba9c-37438dc485a0:read' # Projects
-  - 'entrytypes.4448ff2b-e958-4a61-8e36-0dab9831c66f:read' # Projects (Legacy)
+  - 'entrytypes.4448ff2b-e958-4a61-8e36-0dab9831c66f:read' # Projects (DEPRECATED)
   - 'entrytypes.35ad8ea4-2989-47d3-820b-d5cf1d398bc9:read' # Projects
   - 'sections.d9164a86-877a-49bd-bc75-148e28d51df2:read' # Projects Index
   - 'entrytypes.3c47182a-0520-4bca-921f-65dce2849cb5:read' # Projects Index
@@ -196,10 +196,10 @@ scope:
   - 'entrytypes.f35490ea-a075-4077-ac18-6be871f68c65:save'
   - 'entrytypes.f35490ea-a075-4077-ac18-6be871f68c65:delete'
   - 'sections.98d541ae-56ee-4c98-ba9c-37438dc485a0:edit' # Projects
-  - 'entrytypes.4448ff2b-e958-4a61-8e36-0dab9831c66f:edit' # Projects (Legacy)
-  - 'entrytypes.4448ff2b-e958-4a61-8e36-0dab9831c66f:create' # Projects (Legacy)
-  - 'entrytypes.4448ff2b-e958-4a61-8e36-0dab9831c66f:save' # Projects (Legacy)
-  - 'entrytypes.4448ff2b-e958-4a61-8e36-0dab9831c66f:delete' # Projects (Legacy)
+  - 'entrytypes.4448ff2b-e958-4a61-8e36-0dab9831c66f:edit' # Projects (DEPRECATED)
+  - 'entrytypes.4448ff2b-e958-4a61-8e36-0dab9831c66f:create' # Projects (DEPRECATED)
+  - 'entrytypes.4448ff2b-e958-4a61-8e36-0dab9831c66f:save' # Projects (DEPRECATED)
+  - 'entrytypes.4448ff2b-e958-4a61-8e36-0dab9831c66f:delete' # Projects (DEPRECATED)
   - 'entrytypes.35ad8ea4-2989-47d3-820b-d5cf1d398bc9:edit' # Projects
   - 'entrytypes.35ad8ea4-2989-47d3-820b-d5cf1d398bc9:create' # Projects
   - 'entrytypes.35ad8ea4-2989-47d3-820b-d5cf1d398bc9:save' # Projects

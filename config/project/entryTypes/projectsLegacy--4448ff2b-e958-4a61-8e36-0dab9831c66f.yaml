@@ -414,7 +414,7 @@ fieldLayouts:
         userCondition: null
 handle: projectsLegacy
 hasTitleField: true
-name: 'Projects (Legacy)'
+name: 'Projects (DEPRECATED)'
 section: 98d541ae-56ee-4c98-ba9c-37438dc485a0 # Projects
 showStatusField: true
 slugTranslationKeyFormat: null
