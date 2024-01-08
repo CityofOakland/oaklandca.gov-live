@@ -88,9 +88,6 @@
 					</section>
 				{% endif %}
 				{% if gallery %}
-					{% js at endBody %}
-						lightGallery(document.querySelector('#js-photoGallery'));
-					{% endjs %}
 					<section class="pb-16 mb-16 border-b border-gray-500">
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "Gallery"
@@ -166,7 +163,6 @@
 					</section>
 				{% endif %}
 				{% if addresses or mapImage %}
-					{% js %}lightGallery(document.querySelector('#js-map'));{% endjs %}
 					<section class="pb-16 mb-16 border-b border-gray-500">
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "Map"

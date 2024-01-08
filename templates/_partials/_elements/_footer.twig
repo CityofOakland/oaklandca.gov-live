@@ -40,14 +40,16 @@
             {% endfor %}
             <div class="md:w-1/2 lg:w-1/4 mt-8 lg:mt-0">
                 <h5 class="mb-4">Sign up for updates</h5>
-                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
-                <script>
-                  hbspt.forms.create({
-                    region: "na1",
-                    portalId: "20956996",
-                    formId: "a8c92d43-1143-4d15-9d33-7313c3067086"
-                  });
-                </script>
+                {% if not devMode %}
+                  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+                  <script>
+                    hbspt.forms.create({
+                      region: "na1",
+                      portalId: "20956996",
+                      formId: "a8c92d43-1143-4d15-9d33-7313c3067086"
+                    });
+                  </script>
+                {% endif %}
             </div>
         </nav>
     </div>
