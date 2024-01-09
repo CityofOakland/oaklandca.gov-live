@@ -151,7 +151,7 @@
 			<div class="md:pl-4 md:w-1/3">
 				<h3 class="mb-4">Project Updates</h3>
 				{% for entry in craft.entries.section('news').relatedTo(entry).all() %}
-					<a href="{{ entry.url }}" class="block p-4 mb-4 bg-gray-300 hover:bg-green-800 text-gray-1000 hover:text-white">
+					<a href="{{ entry.url }}" class="mb-4 block bg-gray-300 p-4 hover:bg-green-800 text-gray-1000 hover:text-white">
 						<h4 class="mt-0 mb-2 text-sm">{{ entry.title }}</h4>
 						<p class="my-0 text-xs">{{ entry.postDate | date() }}</p>
 					</a>
@@ -180,7 +180,7 @@
 				<div {% if relProj %} class="md:pl-4 md:w-1/3" {% endif %}>
 					<h3 class="mb-10">Project Documents</h3>
 					{% for entry in projDocs.all() %}
-						<a href="{{ entry.url }}" class="block p-4 mt-4 bg-gray-300 hover:bg-green-800 text-gray-1000 hover:text-white">
+						<a href="{{ entry.url }}" class="mt-4 block bg-gray-300 p-4 hover:bg-green-800 text-gray-1000 hover:text-white">
 							<h4 class="my-0 text-sm">{{ entry.title }}</h4>
 						</a>
 					{% endfor %}
@@ -196,10 +196,10 @@
 			<a class="anchor-link" id="page-logos"></a>
 			<div class="container">
 				<h3 class="mb-4 text-center">Project Funding</h3>
-				<div class="flex flex-wrap items-center justify-center -mx-4">
+				<div class="-mx-4 flex flex-wrap items-center justify-center">
 					{% for logo in entry.fundingLogos.all() %}
-						<figure class="w-full mx-4 mb-4 sm:w-1/2 md:w-1/3 lg:w-1/5 md:mb-8">
-							<img class="block w-full h-auto mx-auto" src="{{ logo.url }}" alt="{{ logo.title }}">
+						<figure class="mx-4 mb-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/5 md:mb-8">
+							<img class="mx-auto block h-auto w-full" src="{{ logo.url }}" alt="{{ logo.title }}">
 						</figure>
 					{% endfor %}
 				</div>

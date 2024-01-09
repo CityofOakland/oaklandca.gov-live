@@ -6,7 +6,7 @@
       {% if content is defined %}<div class="mt-5">{{ content }}</div>{% endif %}
       {% include '_components/partials/_cards-grid' with { entries: entries, shadow: (shadow is defined and shadow) } %}
       {% if button_url is defined and button_label is defined %}
-        <a href="{{ button_url }}" class="button mt-8">{{ button_label }}</a>
+        <a href="{{ button_url }}" class="mt-8 button">{{ button_label }}</a>
       {% endif %}
     </div>
   </div>

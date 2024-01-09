@@ -5,17 +5,17 @@
 
 <div>
 	<a href="{{ vars.featuredEntry.url }}">
-		<article class="overflow-hidden bg-white rounded shadow">
+		<article class="overflow-hidden rounded bg-white shadow">
 			{% set newsImage = vars.featuredEntry.newsImage.one() ?? null %}
 			{% if newsImage %}
-				<figure class="relative z-0 flex items-center justify-center w-full p-4 bg-gray-300" style="padding-bottom:42%">
+				<figure class="relative z-0 flex w-full items-center justify-center bg-gray-300 p-4" style="padding-bottom:42%">
 					{% if newsImage %}
-						<img src="{{ newsImage.url }}" class="absolute inset-0 object-cover w-full h-full aspect-ratio" alt="{{ newsImage.altText ?? '' }}">
+						<img src="{{ newsImage.url }}" class="absolute inset-0 h-full w-full object-cover aspect-ratio" alt="{{ newsImage.altText ?? '' }}">
 					{% endif %}
 				</figure>
 			{% endif %}
 			<div class="p-8">
-				<div class="mb-2 text-sm text-gray-800 uppercase">{{ vars.featuredEntry.postDate | date("M d, Y") }}</div>
+				<div class="mb-2 text-sm uppercase text-gray-800">{{ vars.featuredEntry.postDate | date("M d, Y") }}</div>
 				<h3 class="mt-4 mb-1 text-xl font-bold">
 					<span class="line-clamp-3 leading-[1.3]">{{ vars.featuredEntry.title }}</span>
 				</h3>

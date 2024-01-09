@@ -78,7 +78,7 @@
 {% block content %}
   {% if craft.app.request.getQueryParam('type') %}
     <div>
-      <ul class="flex flex-wrap list-none m-0 p-0">
+      <ul class="m-0 flex list-none flex-wrap p-0">
           <li><a href="?type=upcoming&q={{ query }}&year={{ year }}&month={{ month }}" class="button m-0 rounded-none {{ type == 'upcoming' ? 'pointer-events-none' : 'secondary' }}">Upcoming Meetings</a></li>
           <li><a href="?type=past&q={{ query }}&year={{ year }}&month={{ month }}" class="button m-0 rounded-none {{ type == 'past' ? 'pointer-events-none' : 'secondary' }}">Past Meetings</a></li>
       </ul>
@@ -142,7 +142,7 @@
 
 {% block sidebar %}
   <hr/>
-  <h4 class="py-0 mt-4 mb-6">{{ 'Search & Filter'|t }}</h4>
+  <h4 class="mt-4 mb-6 py-0">{{ 'Search & Filter'|t }}</h4>
   <form action="{{ entry.url }}/meetings">
     <input type="hidden" name="type" value="{{ type }}"/>
     {{ macros.select('Month', 'month', 'month', [

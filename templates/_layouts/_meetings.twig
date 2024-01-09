@@ -175,7 +175,7 @@
 
 	{% if entry.type == 'meetingsImported' and agendas and agendas|length %}
 		<h2 class="mt-10 mb-8 first:mt-0 md:mt-14">Agenda</h2>
-		<ul class="pt-0 mt-4 ul-icons related">
+		<ul class="mt-4 pt-0 ul-icons related">
 			{% for agenda in agendas.all() %}
 				<li>
 					<a href="{{ agenda.documentFile.one().url }}">
@@ -188,7 +188,7 @@
 	{% if entry.agendaDownloadableCopy|length or entry.agendaTopics|length %}
 		<h2 class="mt-10 mb-8 first:mt-0 md:mt-14">Agenda</h2>
 		{% if entry.agendaDownloadableCopy|length %}
-      <ul class="pt-0 mt-4 ul-icons related">
+      <ul class="mt-4 pt-0 ul-icons related">
 				<li>
 					<a href="{{ entry.agendaDownloadableCopy.one().url }}">
             {{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Agenda - {{ entry.date|date("m/d/Y") }}
@@ -197,7 +197,7 @@
 			</ul>
 		{% endif %}
 		{% if entry.agendaTopics|length %}
-			<h3 class="mb-8 mt-9">Topics</h3>
+			<h3 class="mt-9 mb-8">Topics</h3>
 			<ol class="process">
 				{% for item in entry.agendaTopics.all() %}
 					<li data-index="{{ loop.index }}">

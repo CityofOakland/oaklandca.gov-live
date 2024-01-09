@@ -23,10 +23,10 @@
 						href="{{ link.url }}"
 						target="{{ link.target }}">
 						{{ svg(card.icon.path, class='h-12 w-auto fill-current') }}
-						<h3 class="my-0 text-lg pt-2">
+						<h3 class="my-0 pt-2 text-lg">
 							{{ link.text }}
 							{% if link.target %}
-								<i class="fas fa-external-link-alt pl-1 h-[17px]"></i>
+								<i class="pl-1 fas fa-external-link-alt h-[17px]"></i>
 							{% endif %}
 						</h3>
 						{% if card.description %}

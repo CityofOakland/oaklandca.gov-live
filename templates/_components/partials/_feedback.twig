@@ -13,9 +13,9 @@
 		{% default %}
 	{% endswitch %}
 
-	<div id="{{ id }}" class="container components oak-hidden form py-6">
-		<div class="flex flex-wrap justify-between -mx-3">
-			<div class="lg:w-3/4 xl:w-1/2 px-3">
+	<div id="{{ id }}" class="container py-6 components oak-hidden form">
+		<div class="-mx-3 flex flex-wrap justify-between">
+			<div class="px-3 lg:w-3/4 xl:w-1/2">
 				{% if craft.freeform.form(id) %}
 					{{ craft.freeform.form(id, {
 						labelClass: "form-label",
@@ -63,7 +63,7 @@
 <section>
 	<div class="@container bg-gray-900">
 		<div id="helpful" class="container px-6 py-6 @3xl:px-16 components">
-			<div class="md:flex items-center justify-between text-white">
+			<div class="items-center justify-between text-white md:flex">
 				<div class="flex items-center">
 					<p class="mr-8"><b>Was this page helpful?</b></p>
 					<button class="button secondary small" data-open="whyWasThisPageHelpful" style="margin-top:0;margin-bottom:0;">Yes</button>

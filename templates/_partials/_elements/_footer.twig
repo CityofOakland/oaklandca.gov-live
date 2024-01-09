@@ -8,7 +8,7 @@
 
 <footer class="bg-gray-1000 bg-transparent-oakland-roots-black @container">
     <div class="container px-6 @3xl:px-16 py-8">
-        <nav id="footer-navigation" class="lg:flex flex-wrap text-white" name="Footer Navigation">
+        <nav id="footer-navigation" class="flex-wrap text-white lg:flex" name="Footer Navigation">
             {% for item in navigationFooter.navigationFooter.level(1).all() %}
             {% if loop.index == 1 %}
                 <div class="md:w-full lg:w-1/2">
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             {% else %}
-                <div class="md:w-1/2 lg:w-1/4 mt-8 lg:mt-0">
+                <div class="mt-8 md:w-1/2 lg:w-1/4 lg:mt-0">
                     <h5>{{ item.heading }}</h5>
                     <ul>
                         {% for navItem in item.children.all() %}
@@ -38,7 +38,7 @@
                 </div>
             {% endif %}
             {% endfor %}
-            <div class="md:w-1/2 lg:w-1/4 mt-8 lg:mt-0">
+            <div class="mt-8 md:w-1/2 lg:w-1/4 lg:mt-0">
                 <h5 class="mb-4">Sign up for updates</h5>
                 {% if not devMode %}
                   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
@@ -56,22 +56,22 @@
 
     <div class="bg-black text-white @container">
         <div class="container py-6 px-6 @3xl:px-16">
-            <nav class="lg:flex items-center justify-between" id="bottom-navigation" name="Bottom Navigation">
-                <div class="lg:flex items-end">
+            <nav class="items-center justify-between lg:flex" id="bottom-navigation" name="Bottom Navigation">
+                <div class="items-end lg:flex">
                     <a href="{{ siteUrl }}">
                         {{ svg( '@webroot/dist/img/logo-oakland.svg')|attr({ class: 'w-40 h-10 fill-current text-gray-100 hover:text-gray-200' }) }}
                         <span class="sr-only">Home</span>
                     </a>
-                    <ul class="grid grid-cols-2 lg:flex items-center my-4 lg:my-0 lg:mx-6">
+                    <ul class="my-4 grid grid-cols-2 items-center lg:flex lg:my-0 lg:mx-6">
                         {% for item in navigationFooter.linkits.all() %}
-                            <li class="lg:ml-6 mb-0"><a href="{{ item.linkit.url }}">{{ item.linkit.text }}</a></li>
+                            <li class="mb-0 lg:ml-6"><a href="{{ item.linkit.url }}">{{ item.linkit.text }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
-                <ul class="flex items-center my-0">
+                <ul class="my-0 flex items-center">
                     {% for socItem in socialMedia %}
-                        <li class="mb-0 mr-4 lg:mr-0 lg:ml-4">
-                            <a href="{{ socItem[0] }}" target="_blank" class="flex items-center justify-center w-10 h-10 bg-white rounded-full text-gray-1000 hover:bg-yellow-500 hover:text-gray-1000">
+                        <li class="mr-4 mb-0 lg:mr-0 lg:ml-4">
+                            <a href="{{ socItem[0] }}" target="_blank" class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-1000 hover:bg-yellow-500 hover:text-gray-1000">
                                 {{ svg('@webroot/dist/img/logo-' ~ socItem[1])|attr({class:'h-5'}) }}
                                 <span class="hidden-visually">{{ socItem[2] }}</span>
                             </a>

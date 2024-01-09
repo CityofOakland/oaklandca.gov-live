@@ -16,10 +16,10 @@
 			{% for card in cards %}
 				{% set link = card.card %}
 				<a
-					class="p-6 text-lg font-bold text-gray-1000 no-underline bg-yellow-500 rounded-sm shadow-btn transition-all duration-75 hover:text-gray-900 hover:bg-yellow-600 h-full"
+					class="h-full rounded-sm bg-yellow-500 p-6 text-lg font-bold no-underline transition-all duration-75 text-gray-1000 shadow-btn hover:text-gray-900 hover:bg-yellow-600"
 					href="{{ link.url }}"
 					target="{{ link.target }}">
-						<h4 class="my-0 text-xl">{{ link.text }}{% if link.target %} <i class="fas fa-external-link-alt pl-1 h-[17px]"></i>{% endif %}</h4>
+						<h4 class="my-0 text-xl">{{ link.text }}{% if link.target %} <i class="pl-1 fas fa-external-link-alt h-[17px]"></i>{% endif %}</h4>
 						{% if card.description %}
 							<p class="mt-3 mb-0 text-sm font-normal">{{ card.description }}</p>
 						{% endif %}
@@ -30,9 +30,9 @@
 
 	{% if block.serviceCTA %}
 		<a
-			class="button text-sm secondary mt-4 p-4" href="{{ block.serviceCTA.url }}"
+			class="mt-4 p-4 text-sm button secondary" href="{{ block.serviceCTA.url }}"
 			target="{{ block.serviceCTA.target }}">
-			{{ block.serviceCTA.text }}{% if block.serviceCTA.target %} <i class="fas fa-external-link-alt pl-1 h-[17px]"></i>{% endif %}
+			{{ block.serviceCTA.text }}{% if block.serviceCTA.target %} <i class="pl-1 fas fa-external-link-alt h-[17px]"></i>{% endif %}
 		</a>
 	{% endif %}
 </section>

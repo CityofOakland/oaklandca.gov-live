@@ -31,13 +31,13 @@ https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js
   <body class="font-body {{ pageClass ?? '' }}">
     {% include '_partials/_elements/_skip-to-content.twig' %}
     {% include '_partials/_elements/_nav-bar.twig' %}
-    <div class="page-holder overflow-x-hidden">
+    <div class="overflow-x-hidden page-holder">
       <main>
         {% include '_partials/_elements/_sitewide-alert.twig' %}
         {% block content %}
           <div class="container">
             <p>No content has been added to this layout. Please make sure to include the following in your template:</p>
-            <pre class="inline-block p-4 text-white whitespace-pre-line bg-gray-800">{% verbatim %}
+            <pre class="inline-block whitespace-pre-line bg-gray-800 p-4 text-white">{% verbatim %}
             {% block content %}
             {% endblock %}{% endverbatim %}</pre>
           </div>

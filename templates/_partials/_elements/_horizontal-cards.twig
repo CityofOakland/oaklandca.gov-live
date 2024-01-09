@@ -5,8 +5,8 @@
       <img src="{{ photo.url }}" class="">
     </figure>
   {% elseif icon is defined %}
-    <figure class="relative z-0 flex items-center justify-center h-48 p-4 bg-gray-300 sm:h-64">
-      <div class="h-full p-12 text-gray-500 opacity-75 fill-current">
+    <figure class="relative z-0 flex h-48 items-center justify-center bg-gray-300 p-4 sm:h-64">
+      <div class="h-full fill-current p-12 text-gray-500 opacity-75">
         {{ svg('@webroot/dist/img/icon-' ~ icon ~ '.svg')|attr({
           class: 'h-full'
         })|raw }}

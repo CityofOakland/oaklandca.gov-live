@@ -62,16 +62,16 @@
   <div class="mt-8">
     {% if notices|length %}
       {% for notice in notices %}
-        <div class="result pb-6" style="margin-bottom:1rem;">
+        <div class="pb-6 result" style="margin-bottom:1rem;">
           <a class="md:flex" href="{{ notice.url }}">
-            <i class="fas fa-file-pdf mt-0 mb-2 md:mb-0 mr-4 text-2xl"></i>
+            <i class="mt-0 mr-4 mb-2 text-2xl fas fa-file-pdf md:mb-0"></i>
             <h3 class="mt-0">{{ notice.title }}</h3>
           </a>
           {{ notice.summary }}
           {% if notice.publicNoticeType|length %}
             <span class="mt-4" data-type>{{ notice.publicNoticeType.one().title }}</span>
           {% endif %}
-          <div class="md:flex items-center justify-between mt-4">
+          <div class="mt-4 items-center justify-between md:flex">
             <p class="mt-0 updated">Posted: {{ notice.postDate|date("F j, Y") }}</p>
             {% set file = notice.documentFile.one() %}
             {% if file %}
@@ -103,7 +103,7 @@
 {% block sidebar %}
   <hr class="hidden lg:block"/>
   <div class="mt-2 md:mt-0"></div>
-  <h4 class="py-0 mt-4 mb-6">{{ 'Search & Filter'|t }}</h4>
+  <h4 class="mt-4 mb-6 py-0">{{ 'Search & Filter'|t }}</h4>
   <form action="{{ entry.url }}">
     {{ macros.textInput('Search', 'search', 'q', 'Search keywords') }}
     {{ macros.select('Public Notice Type', 'public_notice_type', 'public_notice_type', craft.categories().group('publicNoticeTypes').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a Public Notice Type') }}
@@ -138,7 +138,7 @@
   </form>
   <hr/>
   <div class="hidden lg:block">
-    <h4 class="py-0 mt-4">{{ 'Related'|t }}</h4>
+    <h4 class="mt-4 py-0">{{ 'Related'|t }}</h4>
     <div class="pt-2">
       <p><a href="{{siteUrl}}">Learn about Public Notices</a></p>
       <p><a href="{{siteUrl}}meetings">Oakland City Meetings Calendar</a></p>

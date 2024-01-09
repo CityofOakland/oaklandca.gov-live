@@ -1,23 +1,23 @@
 "use strict";
 
 var indexTemplate = 
-	`<article class="py-8 horizontal-card border-gray-300 border-b-2">
+	`<article class="border-b-2 border-gray-300 py-8 horizontal-card">
 		{{#newsImage}}
-		<figure class="w-full h-48 sm:h-64 p-4 bg-gray-300 relative z-0 flex items-center justify-center mb-4 lg:mb-0">
-			<img src="{{ newsImage }}" class="object-cover absolute h-full w-full inset-0" alt="">
+		<figure class="relative z-0 mb-4 flex h-48 w-full items-center justify-center bg-gray-300 p-4 sm:h-64 lg:mb-0">
+			<img src="{{ newsImage }}" class="absolute inset-0 h-full w-full object-cover" alt="">
 		</figure>
 		{{/newsImage}}
 		{{^newsImage}}
-		<figure class="w-full h-48 sm:h-64 p-4 bg-gray-300 relative z-0 flex items-center justify-center mb-4 lg:mb-0">
-		    <div class="text-gray-500 opacity-75 fill-current h-full p-12">
+		<figure class="relative z-0 mb-4 flex h-48 w-full items-center justify-center bg-gray-300 p-4 sm:h-64 lg:mb-0">
+		    <div class="h-full fill-current p-12 text-gray-500 opacity-75">
 		    	<img src="/dist/img/icon-newspaper.svg" class="h-full" alt="">
 		    </div>
 		</figure>
 		{{/newsImage}}
 		<div>
-			<h2 class="text-2xl mt-4 sm:mt-0" style="font-weight:600"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h2>
-			<p class="small my-2 text-gray-700" style="font-size:85%;">{{ formattedDate }}</p>
-			<div class="text-gray-1000 mb-4">
+			<h2 class="mt-4 text-2xl sm:mt-0" style="font-weight:600"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h2>
+			<p class="my-2 text-gray-700 small" style="font-size:85%;">{{ formattedDate }}</p>
+			<div class="mb-4 text-gray-1000">
 				{{#summary}}
 					{{{_highlightResult.summary.value}}}
 				{{/summary}}

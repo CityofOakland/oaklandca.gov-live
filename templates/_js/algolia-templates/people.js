@@ -3,13 +3,13 @@
 var indexTemplate = `
 <div class="block">
     <div class="text-gray-1000 md:flex md:items-start md:gap-6">
-        <figure class="block h-12 w-12 md:h-auto md:w-auto md:flex-1 aspect-[1/1] overflow-hidden border-2 rounded-full bg-gray-100 border-gray-200">
+        <figure class="block h-12 w-12 overflow-hidden rounded-full border-2 border-gray-200 bg-gray-100 md:h-auto md:w-auto md:flex-1 aspect-[1/1]">
             {{#portrait}}
-                <img src="{{ portrait }}" alt="Portrait of {{ jobTitle }}, {{ title }}" class="object-cover h-full w-full">
+                <img src="{{ portrait }}" alt="Portrait of {{ jobTitle }}, {{ title }}" class="h-full w-full object-cover">
             {{/portrait}}
             {{^portrait}}
-                <div class="opacity-75 fill-current text-gray-400 bg-gray-100 border-gray-200">
-                    <img src="/dist/img/icon-user.svg" class="h-full block fill-current" alt="">
+                <div class="border-gray-200 bg-gray-100 fill-current text-gray-400 opacity-75">
+                    <img src="/dist/img/icon-user.svg" class="block h-full fill-current" alt="">
                 </div>
             {{/portrait}}
         </figure>

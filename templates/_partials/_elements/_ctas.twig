@@ -9,7 +9,7 @@
         url: url,
       } %}
       <div></div>
-      {% if descriptorText | length %}<span class="mt-2 break-word inline-block min-w-full md:min-w-0 text-sm uppercase">{{ descriptorText }}</span>{% endif %}
+      {% if descriptorText | length %}<span class="mt-2 inline-block min-w-full text-sm uppercase break-word md:min-w-0">{{ descriptorText }}</span>{% endif %}
     </div>
   </div>
 {% endmacro %}
@@ -17,7 +17,7 @@
 {% import _self as macro %}
 
 {% if entry.callToAction | length %}
-  <div class="md:flex mb-8 md:-mx-3">
+  <div class="mb-8 md:flex md:-mx-3">
     {% for cta in entry.callToAction %}
       {% switch cta.type %}
         {% case "onlineLink" %}
@@ -34,7 +34,7 @@
         {% case "physicalAddress" %}
           <div class="mb-4">
             {% set location = cta.ctaAddress %}
-            <p class="text-sm tracking-wide uppercase">{{ cta.addressTitle }}</p>
+            <p class="text-sm uppercase tracking-wide">{{ cta.addressTitle }}</p>
             <p>
               {{ location.street1 }}<br>
               {% if location.street2 | length %}

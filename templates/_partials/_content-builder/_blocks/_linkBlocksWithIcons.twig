@@ -12,10 +12,10 @@
       {% set link = linkSet.linkLocation %}
       {% set linkType = link.typeHandle %}
       {# An individual block #}
-      <a href="{{ link.url }}" target="{{ link.target }}" class="relative flex flex-col w-full p-6 overflow-hidden text-white bg-blue-900 rounded shadow hover:text-white md:w-1/3">
+      <a href="{{ link.url }}" target="{{ link.target }}" class="relative flex w-full flex-col overflow-hidden rounded bg-blue-900 p-6 text-white shadow hover:text-white md:w-1/3">
         {# The holder for the icon #}
         <div class="relative mb-4">
-          <img class="block w-auto h-24" src="{{ linkSet.linkIcon.one.url }}">
+          <img class="block h-24 w-auto" src="{{ linkSet.linkIcon.one.url }}">
         </div>
         {# Our card text #}
         <div class="flex-1">

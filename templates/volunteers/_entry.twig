@@ -46,7 +46,7 @@
             {% if entry.portrait | length %}
               <img src="{{ entry.portrait.one.url }}" alt="Portrait of {{ entry.title }}">
             {% else %}
-              <div class="h-full p-12 text-gray-500 bg-gray-300 opacity-75 fill-current">
+              <div class="h-full bg-gray-300 fill-current p-12 text-gray-500 opacity-75">
                 {{ svg('@webroot/dist/img/icon-user.svg')|attr({
                     class: 'w-full h-full'
                 })|raw }}
@@ -55,7 +55,7 @@
           </figure>
           {% set dobc = entry.departmentOfficialBoardCommission %}
           {% if dobc.exists() %}
-            <h3 class="flex items-center justify-center text-lg font-bold mt-4"><span class="w-16">Team: </span>
+            <h3 class="mt-4 flex items-center justify-center text-lg font-bold"><span class="w-16">Team: </span>
               {% include '_components/_button' with {
                 class: 'small mt-0 mr-0',
                 text: dobc.one.title,

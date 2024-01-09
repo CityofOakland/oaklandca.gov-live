@@ -84,7 +84,7 @@
 					{ fillTransforms: true }
 				) %}
 				<figure class="{{ vars.imgBg ? 'oak-hidden md:block absolute z-0 inset-0 h-full w-full' }} order-1 {{ vars.textRight ? 'md:order-1' : 'md:order-2' }} md:col-span-6">
-					<img src="{{ transformedImage.url }}" srcset="{{ transformedImages|srcset }}" alt="{{ vars.image.altText }}" class="block w-full h-full object-cover" />
+					<img src="{{ transformedImage.url }}" srcset="{{ transformedImages|srcset }}" alt="{{ vars.image.altText }}" class="block h-full w-full object-cover" />
 				</figure>
 			{% endif %}
 		</div>

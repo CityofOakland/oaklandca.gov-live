@@ -78,7 +78,7 @@
 		<div class="container px-6 @3xl:px-16 pt-6 sm:pt-12 md:grid md:gap-8 md:grid-cols-3">
 			<div class="md:col-span-2">
 				{% if entry.about %}
-					<section class="pb-16 mb-16 border-b border-gray-500">
+					<section class="mb-16 border-b border-gray-500 pb-16">
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "About"
 						} %}
@@ -88,7 +88,7 @@
 					</section>
 				{% endif %}
 				{% if gallery %}
-					<section class="pb-16 mb-16 border-b border-gray-500">
+					<section class="mb-16 border-b border-gray-500 pb-16">
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "Gallery"
 						} %}
@@ -112,7 +112,7 @@
 					</section>
 				{% endif %}
 				{% if documents %}
-					<section class="pb-16 mb-16 border-b border-gray-500">
+					<section class="mb-16 border-b border-gray-500 pb-16">
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "Documents"
 						} %}
@@ -151,7 +151,7 @@
 			</div>
 			<div class="md:col-span-1">
 				{% if updates %}
-					<section class="pb-16 mb-16 border-b border-gray-500">
+					<section class="mb-16 border-b border-gray-500 pb-16">
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "Updates"
 						} %}
@@ -163,7 +163,7 @@
 					</section>
 				{% endif %}
 				{% if addresses or mapImage %}
-					<section class="pb-16 mb-16 border-b border-gray-500">
+					<section class="mb-16 border-b border-gray-500 pb-16">
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "Map"
 						} %}
@@ -174,7 +174,7 @@
 								{ width: 912 },
 								{ width: 528, jpegQuality: 65 }
 							],{ fillTransforms: true}) %}
-							<figure class="w-full mt-4 cursor-pointer" id='js-map'>
+							<figure class="mt-4 w-full cursor-pointer" id='js-map'>
 								<img
 									data-src="{{ mapImage.url }}"
 									data-sub-html="<p class='font-bold'>Map of Project: {{ entry.title }}</p>"
@@ -196,7 +196,7 @@
 									{% set largePhoto = src|replace("600x400", "1280x854") %}
 									{% set locationText = "#{loc.street1}, #{loc.city}, #{loc.state}, #{loc.zip}" %}
 
-									<figure class="w-full mt-4 cursor-pointer" id='js-map'>
+									<figure class="mt-4 w-full cursor-pointer" id='js-map'>
 										<img
 											data-src="{{ largePhoto }}"
 											data-sub-html="<p class='font-bold'>Map of Project: {{ entry.title }}</p><p>Showing locations of {{ locationText ?? '' }}</p>"
@@ -222,11 +222,11 @@
 				{% endif %}
 
 				{% if timeline %}
-					<section class="pb-16 mb-16 border-b border-gray-500">
+					<section class="mb-16 border-b border-gray-500 pb-16">
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "Timeline"
 						} %}
-						<div class="project-timeline ml-2">
+						<div class="ml-2 project-timeline">
 							{% for milestone in timeline %}
 								<div class="project-timeline-item pl-8 border-l-2 {{ loop.last ? "border-white" : "pb-4 border-gray-500" }}">
 									<div class="text-gray-800">
@@ -242,7 +242,7 @@
 				{% endif %}
 
 				{% if related %}
-					<section class="pb-16 mb-16 border-b border-gray-500">
+					<section class="mb-16 border-b border-gray-500 pb-16">
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: "Related Pages"
 						} %}
@@ -255,15 +255,15 @@
 				{% endif %}
 
 				{% if funding %}
-					<section class="pb-16 mb-16 border-b border-gray-500">
+					<section class="mb-16 border-b border-gray-500 pb-16">
 						{% include "_partials/_elements/_module-header.twig" with {
 							headerText: entry.fundingLogosAlternateTitle ?? "Partners"
 						} %}
-						<div class="flex flex-wrap items-center justify-center -mx-4">
+						<div class="-mx-4 flex flex-wrap items-center justify-center">
 							{% for logo in funding %}
-								<figure class="w-full mx-4 mb-4 sm:w-1/2 md:w-1/3 lg:w-1/5 md:mb-8">
+								<figure class="mx-4 mb-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/5 md:mb-8">
 									<img
-										class="block w-full h-auto mx-auto"
+										class="mx-auto block h-auto w-full"
 										src="{{ logo.url }}"
 										alt="{{ logo.altText ?? logo.title }}"
 									>
@@ -288,7 +288,7 @@
 							<h3 class="mb-2 text-xl">Teams</h3>
 							<p class="mt-0">
 								{% for team in relatedTeams %}
-									<a href="{{ team.url }}" class="inline-block mr-2 btn btn-sm">{{ team.title }}</a>
+									<a href="{{ team.url }}" class="mr-2 inline-block btn btn-sm">{{ team.title }}</a>
 								{% endfor %}
 							</p>
 						{% endif %}

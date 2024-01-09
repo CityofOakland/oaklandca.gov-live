@@ -23,7 +23,7 @@
 							href="{{ link.url }}"
 							target="{{ link.target }}">
 						{% if card.brow %}
-							<div class="uppercase font-normal text-sm mb-2">{{ card.brow }}</div>
+							<div class="mb-2 text-sm font-normal uppercase">{{ card.brow }}</div>
 						{% endif %}
 						<h3 class="my-0 text-xl font-bold {{ cardColor ? "#{cardColor.link} #{cardColor.linkHover}" }}">
 							{{ link.text }}{% if link.target %} <i class="fas fa-external-link-alt h-[17px]"></i>{% endif %}

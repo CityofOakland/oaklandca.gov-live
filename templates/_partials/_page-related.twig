@@ -13,13 +13,13 @@
 					text: vars.heading
 				}
 			}) }}
-			<div class="grid gap-8 mt-8 md:mt-12 md:grid-cols-2">
+			<div class="mt-8 grid gap-8 md:mt-12 md:grid-cols-2">
 				{% for row in vars.content %}
 					{% set linkCollection = row.setLinks.all() %}
 					<div class="{{ soloBlock ? 'md:col-span-2' }}">
 						{% if row.header %}
 							<div>
-								<h3 class="mt-0 mb-4 font-bold text-xl sm:leading-none sm:flex-1 sm:text-2xl">{{ row.header }}</h3>
+								<h3 class="mt-0 mb-4 text-xl font-bold sm:leading-none sm:flex-1 sm:text-2xl">{{ row.header }}</h3>
 							</div>
 						{% endif %}
 						{% if linkCollection %}
@@ -28,7 +28,7 @@
 									{% set link = block.linkLocation %}
 									{% set linkType = link.typeHandle %}
 									<li>
-										<a href="{{ link.url }}" target="{{ link.target }}" class="block m-0 py-4 font-bold border-b-2 border-gray-300">
+										<a href="{{ link.url }}" target="{{ link.target }}" class="m-0 block border-b-2 border-gray-300 py-4 font-bold">
 											{{ link.text }}
 											{% if link.target %}<i class="fas fa-external-link-alt" style="margin-left:6px;height:18px"></i>{% endif %}
 										</a>

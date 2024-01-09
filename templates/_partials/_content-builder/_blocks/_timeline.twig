@@ -8,7 +8,7 @@
     }) }}
     <div class="relative">
       <div class="absolute top-0 z-10 h-full border-r-2 border-blue-500" style="left: 15px"></div>
-      <ul class="relative z-20 p-0 m-0 list-none">
+      <ul class="relative z-20 m-0 list-none p-0">
         {% for item in block.timeline %}
           {% set heading = item.milestoneDate %}
           {% if item.milestoneName %}
@@ -18,7 +18,7 @@
           <li class="mb-4 last:mb-0">
             <div class="flex items-center">
               <div class="w-8 h-8 {% if started %}bg-green-400{% else %}bg-blue-500{% endif %} rounded-full"></div>
-              <div class="flex-1 ml-4 font-semibold">
+              <div class="ml-4 flex-1 font-semibold">
                 {% if item.milestoneLink %}
                   <a href="{{ item.milestoneLink.url }}">{{ heading }}</a>
                 {% else %}
@@ -26,7 +26,7 @@
                 {% endif %}
               </div>
             </div>
-            <div class="max-w-sm ml-12">
+            <div class="ml-12 max-w-sm">
               {{ item.milestoneDescription | retcon('attr', '*', { class: 'mt-2 mb-0 text-gray-800 text-sm md:text-base' }) }}
             </div>
           </li>
