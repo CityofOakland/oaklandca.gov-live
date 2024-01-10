@@ -1,5 +1,3 @@
-import jQuery from 'jquery';
-
 var $modalOpen      = $('.modal-open'),
     $modalClose     = $('.modal-close'),
     $modal          = $('#modal'),
