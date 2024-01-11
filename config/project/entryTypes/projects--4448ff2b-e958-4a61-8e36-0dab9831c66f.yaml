@@ -12,7 +12,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            inputType: null
             instructions: null
             label: null
             max: null
@@ -412,9 +411,9 @@ fieldLayouts:
         name: SEO
         uid: 6a0a2819-48db-4487-b3ac-3b3ae254e0c5
         userCondition: null
-handle: projectsLegacy
+handle: projects
 hasTitleField: true
-name: 'Projects (DEPRECATED)'
+name: Projects
 section: 98d541ae-56ee-4c98-ba9c-37438dc485a0 # Projects
 showStatusField: true
 slugTranslationKeyFormat: null

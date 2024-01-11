@@ -12,7 +12,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            inputType: null
             instructions: null
             label: null
             max: null
@@ -466,9 +465,9 @@ fieldLayouts:
         name: Legacy
         uid: f293d5df-9d12-40f5-94ca-5688d69a5c7f
         userCondition: null
-handle: projects
+handle: projectsBeta
 hasTitleField: true
-name: Projects
+name: 'Projects Beta'
 section: 98d541ae-56ee-4c98-ba9c-37438dc485a0 # Projects
 showStatusField: true
 slugTranslationKeyFormat: null

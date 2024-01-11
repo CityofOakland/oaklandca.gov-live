@@ -1,4 +1,4 @@
-dateModified: 1704699383
+dateModified: 1703173225
 elementSources:
   craft\elements\Entry:
     -
@@ -659,7 +659,7 @@ meta:
     32b64633-1b5f-4111-a6d2-c2baaaaeb951: 'Text Cards Description' # Text Cards Description
     32f0cef1-a5d9-41dd-b562-b609374d9607: Buttons # Buttons
     34f2c44b-4710-447e-9c4e-71e80288b6e4: Boards # Boards
-    35ad8ea4-2989-47d3-820b-d5cf1d398bc9: Projects # Projects
+    35ad8ea4-2989-47d3-820b-d5cf1d398bc9: 'Projects Beta' # Projects Beta
     35d55b1f-f6b0-404f-9b1d-5b90e0a621bf: Background # Background
     36fcc9c4-85be-4bd9-959a-5b26e30673d4: 'Alert Label' # Alert Label
     37b9cad8-04be-41c4-938a-c869de41bfc6: 'Template Select' # Template Select
@@ -805,7 +805,7 @@ meta:
     4285c9b9-9f18-4b89-a234-a90c512f6603: 'Test Schema' # Test Schema
     4347f7fd-c1f5-4d86-a1d6-35def64a51d3: 'Public Notices Index' # Public Notices Index
     4350b4ce-8cf4-44c9-9fee-4d81d5feec19: Description # Description
-    4448ff2b-e958-4a61-8e36-0dab9831c66f: 'Projects (DEPRECATED)' # Projects (DEPRECATED)
+    4448ff2b-e958-4a61-8e36-0dab9831c66f: Projects # Projects
     4494beaa-9c1f-44ae-b040-36f60f3d055d: Logos # Logos
     4597e3f8-233a-4369-91e0-9942a60ddc2b: 'Fax Number' # Fax Number
     4670a96c-63ff-403e-a87c-9253c102a2b4: 'Meetings - Imported' # Meetings - Imported
