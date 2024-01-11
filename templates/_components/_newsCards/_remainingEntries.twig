@@ -25,12 +25,12 @@
 		<a href="{{ entry.url }}">
 			<article class="{{ newsImage ? 'flex flex-col md:flex-row' }} bg-white overflow-hidden rounded shadow mb-6 justify-start">
 				{% if newsImage %}
-					<figure class="z-0 bg-white aspect-video w-[12.5rem]">
-						<img class="object-cover h-full w-full" src="{{ newsImage.url }}" alt="{{ newsImage.altText ?? '' }}">
+					<figure class="z-0 aspect-video bg-white w-[12.5rem]">
+						<img class="h-full w-full object-cover" src="{{ newsImage.url }}" alt="{{ newsImage.altText ?? '' }}">
 					</figure>
 				{% endif %}
-				<div class="flex-1 flex flex-col p-4">
-					<div class="mb-2 text-sm text-gray-800 uppercase">{{ entry.postDate | date("M d, Y") }}</div>
+				<div class="flex flex-1 flex-col p-4">
+					<div class="mb-2 text-sm uppercase text-gray-800">{{ entry.postDate | date("M d, Y") }}</div>
 					<h3 class="mt-0 text-xl font-bold line-clamp-3">
 						{{ entry.title }}
 					</h3>
@@ -38,8 +38,8 @@
 			</article>
 		</a>
 		{% if loop.last %}
-			<a class="button text-sm secondary px-4 py-2 mt-0 mb-1 inline-flex" href="/news">
-				See All News <i class="fa-regular fa-arrow-right mb-0"></i>
+			<a class="mt-0 mb-1 inline-flex px-4 py-2 text-sm button secondary" href="/news">
+				See All News <i class="mb-0 fa-regular fa-arrow-right"></i>
 			</a>
 		{% endif %}
 	{% endfor %}

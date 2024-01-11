@@ -28,7 +28,7 @@
             {% if entry.portrait | length %}
               <img src="{{ entry.portrait.one.url }}" alt="Portrait of {{ entry.title }}">
             {% else %}
-              <div class="h-full p-12 text-gray-500 bg-gray-300 opacity-75 fill-current">
+              <div class="h-full bg-gray-300 fill-current p-12 text-gray-500 opacity-75">
                 {{ svg('@webroot/dist/img/icon-user.svg')|attr({
                     class: 'w-full h-full'
                 })|raw }}
@@ -37,9 +37,9 @@
           </figure>
         </div>
         <div class="sm:flex-1">
-          <h1 class="mt-3 md:mt-0 mb-3 text-3xl font-bold md:text-4xl">{{ entry.title }}</h1>
+          <h1 class="mt-3 mb-3 text-3xl font-bold md:mt-0 md:text-4xl">{{ entry.title }}</h1>
           {% if entry.bio %}
-            <div class="text-xl mb-3">{{ entry.bio | retcon('attr', '*', { class: 'mt-2'}) | raw }}</div>
+            <div class="mb-3 text-xl">{{ entry.bio | retcon('attr', '*', { class: 'mt-2'}) | raw }}</div>
           {% endif %}
           {% if jobTitle %}
             <p class="mt-2 mb-0">

@@ -1,11 +1,11 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% if event.type is defined and event.type == 'api' %}
-  <div class="result pb-6" style="margin-bottom:1rem;">
-    <div class="flex flex-wrap -mx-4">
-      <div class="w-full md:w-1/4 mb-3 md:mb-0 px-4" style="flex-shrink:0;">
+  <div class="pb-6 result" style="margin-bottom:1rem;">
+    <div class="-mx-4 flex flex-wrap">
+      <div class="mb-3 w-full px-4 md:w-1/4 md:mb-0" style="flex-shrink:0;">
         <img src="{{ siteUrl }}dist/img/placeholder-event.png" alt="Icon of a Calendar"/>
       </div>
-      <div class="w-full md:w-3/4 px-4">
+      <div class="w-full px-4 md:w-3/4">
         <h3 class="mt-0">
           <a href="https://oaklandlibrary.bibliocommons.com/events/{{ event.uid }}" target="_blank">{{ event.title }} {{ svg( '@webroot/dist/img/icon-external.svg')|attr({class: 'h-6 ml-2 inline'}) }}</a>
           {% if event.isCancelled %}
@@ -24,9 +24,9 @@
   {% set physicalLocation = clone(event.eventLocations).type('physicalLocation') %}
   {% set onlineLocation   = clone(event.eventLocations).type('onlineLocation') %}
 
-  <div class="result pb-6" style="margin-bottom:1rem;">
-    <div class="flex -mx-4">
-      <div class="md:w-1/4 px-4" style="flex-shrink:0;">
+  <div class="pb-6 result" style="margin-bottom:1rem;">
+    <div class="-mx-4 flex">
+      <div class="px-4 md:w-1/4" style="flex-shrink:0;">
         <a href="{{ event.url }}">
           {% if event.eventImage|length %}
             {% set transformedImage = craft.imager.transformImage(event.eventImage.one(), { height:240, width: 320 }) %}
@@ -36,7 +36,7 @@
           {% endif %}
         </a>
       </div>
-      <div class="w-full md:w-3/4 px-4">
+      <div class="w-full px-4 md:w-3/4">
         <h3 class="mt-0">
           <a href="{{ event.url }}">{{ event.title }}</a>
           {% if onlineLocation|length %}

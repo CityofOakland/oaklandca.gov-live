@@ -1,5 +1,3 @@
-import jQuery from 'jquery'
-
 function bindGoogleEvents($){
   // GA Events
   $('#all-hits').on('click', 'a', function(){

@@ -107,7 +107,7 @@
       <div class="object-cover pt-2 pb-8 leading-none aspect-ratio md:pt-4 md:pb-6 min-h-2-1/2 md:min-h-4">
         <figure class="absolute inset-0 z-0">
           <img
-            class="absolute inset-0 z-0 object-cover w-full h-full"
+            class="absolute inset-0 z-0 h-full w-full object-cover"
             style="object-position:{{ banner.getFocalPoint('asCss') }};"
             src="{{ banner.url }}"
             alt="{{ banner.title ?? banner.filename }}">
@@ -130,7 +130,7 @@
 {% block content %}
   {% if craft.app.request.getQueryParam('type') %}
     <div>
-      <ul class="flex flex-wrap list-none m-0 p-0">
+      <ul class="m-0 flex list-none flex-wrap p-0">
         <li><a href="?type=upcoming&{{ query_string }}" class="button m-0 rounded-none {{ type == 'upcoming' ? 'pointer-events-none' : 'secondary' }}">Upcoming events</a></li>
         <li><a href="?type=past&{{ query_string }}" class="button m-0 rounded-none {{ type == 'past' ? 'pointer-events-none' : 'secondary' }}">Past events</a></li>
       </ul>
@@ -283,7 +283,7 @@
 {% block sidebar %}
   <hr class="oak-hidden lg:block"/>
   <div class="mt-2 md:mt-0"></div>
-  <h4 class="py-0 mt-4 mb-6">{{ 'Search & Filter'|t }}</h4>
+  <h4 class="mt-4 mb-6 py-0">{{ 'Search & Filter'|t }}</h4>
   <form action="{{ entry.url ~ '/events' }}">
     <input type="hidden" name="type" value="{{ type }}"/>
     {{ macros.select('Month', 'month', 'month', [
@@ -318,7 +318,7 @@
   </form>
   <hr/>
   <div class="oak-hidden lg:block">
-    <h4 class="py-0 mt-4">{{ 'Related'|t }}</h4>
+    <h4 class="mt-4 py-0">{{ 'Related'|t }}</h4>
     <div class="pt-2">
       <p><a href="{{siteUrl}}events">All Community Events</a></p>
       <p><a href="{{siteUrl}}meetings">Oakland City Meetings Calendar</a></p>

@@ -19,7 +19,7 @@
 {% if events|length %}
 <div class="{% if not loop.last %}mb-12{% endif %}">
   <h2 class="{{ hClass }} {{ addClasses ?? "" }}">{{ headingText }}</h2>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
     {% for entry in events %}
     <a class="shadow card default" href="{{ entry.url }}">
       <h4><span>{{ entry.title }}</span></h4>
@@ -30,7 +30,7 @@
   </div>
   <div class="pt-3">
     {% if not block.hideReadMoreLink %}
-        <a class="button small secondary mt-6" href="{{ buttonLink }}">{{ buttonText }}</a>
+        <a class="mt-6 button small secondary" href="{{ buttonLink }}">{{ buttonText }}</a>
     {% endif %}
   </div>
 </div>

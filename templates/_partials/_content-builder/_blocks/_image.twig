@@ -3,6 +3,6 @@
 {% set text = image.altText ?? image.filename %}
 <figure class="block w-full{% if not loop.last %} mb-12{% endif %}">
   <img class="w-full" src="{{ image.url }}" alt="{{ text }}">
-  <figcaption class="block my-2 text-base text-center">{{ text }}</figcaption>
+  <figcaption class="my-2 block text-center text-base">{{ text }}</figcaption>
 </figure>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

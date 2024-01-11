@@ -80,146 +80,190 @@ fields:
       dragPinZoom: null
       layout: null
       mapOnSearch: open
-      mapOnStart: close
+      mapOnStart: default
       requireCoordinates: true
       showMap: false
       subfieldConfig:
-        __assoc__:
-          -
-            - name
+        -
+          __assoc__:
             -
-              __assoc__:
-                -
-                  - label
-                  - 'Address Name'
-                -
-                  - width
-                  - '100'
-                -
-                  - enabled
-                  - '1'
-                -
-                  - position
-                  - '1'
-          -
-            - street1
+              - handle
+              - name
             -
-              __assoc__:
-                -
-                  - label
-                  - 'Street Address'
-                -
-                  - width
-                  - '100'
-                -
-                  - enabled
-                  - '1'
-                -
-                  - position
-                  - '2'
-          -
-            - street2
+              - label
+              - 'Address Name'
             -
-              __assoc__:
-                -
-                  - label
-                  - 'Apartment or Suite'
-                -
-                  - width
-                  - '100'
-                -
-                  - enabled
-                  - '1'
-                -
-                  - position
-                  - '3'
-          -
-            - city
+              - width
+              - 100
             -
-              __assoc__:
-                -
-                  - label
-                  - City
-                -
-                  - width
-                  - '50'
-                -
-                  - enabled
-                  - '1'
-                -
-                  - position
-                  - '4'
-          -
-            - state
+              - enabled
+              - true
             -
-              __assoc__:
-                -
-                  - label
-                  - State
-                -
-                  - width
-                  - '15'
-                -
-                  - enabled
-                  - '1'
-                -
-                  - position
-                  - '5'
-          -
-            - zip
+              - autocomplete
+              - true
             -
-              __assoc__:
-                -
-                  - label
-                  - 'Zip Code'
-                -
-                  - width
-                  - '35'
-                -
-                  - enabled
-                  - '1'
-                -
-                  - position
-                  - '6'
-          -
-            - country
+              - required
+              - false
+        -
+          __assoc__:
             -
-              __assoc__:
-                -
-                  - label
-                  - Country
-                -
-                  - width
-                  - '100'
-                -
-                  - position
-                  - '7'
-          -
-            - county
+              - handle
+              - street1
             -
-              __assoc__:
-                -
-                  - label
-                  - 'County or District'
-                -
-                  - width
-                  - '100'
-                -
-                  - position
-                  - '8'
-          -
-            - placeId
+              - label
+              - 'Street Address'
             -
-              __assoc__:
-                -
-                  - label
-                  - 'Place ID'
-                -
-                  - width
-                  - '100'
-                -
-                  - position
-                  - '9'
+              - width
+              - 100
+            -
+              - enabled
+              - true
+            -
+              - autocomplete
+              - true
+            -
+              - required
+              - false
+        -
+          __assoc__:
+            -
+              - handle
+              - street2
+            -
+              - label
+              - 'Apartment or Suite'
+            -
+              - width
+              - 100
+            -
+              - enabled
+              - true
+            -
+              - autocomplete
+              - false
+            -
+              - required
+              - false
+        -
+          __assoc__:
+            -
+              - handle
+              - city
+            -
+              - label
+              - City
+            -
+              - width
+              - 50
+            -
+              - enabled
+              - true
+            -
+              - autocomplete
+              - false
+            -
+              - required
+              - false
+        -
+          __assoc__:
+            -
+              - handle
+              - state
+            -
+              - label
+              - State
+            -
+              - width
+              - 15
+            -
+              - enabled
+              - true
+            -
+              - autocomplete
+              - false
+            -
+              - required
+              - false
+        -
+          __assoc__:
+            -
+              - handle
+              - zip
+            -
+              - label
+              - 'Zip Code'
+            -
+              - width
+              - 35
+            -
+              - enabled
+              - true
+            -
+              - autocomplete
+              - false
+            -
+              - required
+              - false
+        -
+          __assoc__:
+            -
+              - handle
+              - country
+            -
+              - label
+              - Country
+            -
+              - width
+              - 100
+            -
+              - enabled
+              - false
+            -
+              - autocomplete
+              - false
+            -
+              - required
+              - false
+        -
+          __assoc__:
+            -
+              - handle
+              - county
+            -
+              - label
+              - 'County or District'
+            -
+              - width
+              - 100
+            -
+              - enabled
+              - false
+            -
+              - autocomplete
+              - false
+            -
+              - required
+              - false
+        -
+          __assoc__:
+            -
+              - handle
+              - placeId
+            -
+              - label
+              - 'Place ID'
+            -
+              - width
+              - 100
+            -
+              - enabled
+              - false
+            -
+              - autocomplete
+              - false
+            -
+              - required
+              - false
       visibilityToggle: both
     translationKeyFormat: null
     translationMethod: none

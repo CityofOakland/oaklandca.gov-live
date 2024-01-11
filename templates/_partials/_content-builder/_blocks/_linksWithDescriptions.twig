@@ -7,7 +7,7 @@
   }) }}
 
   {{ block.linkSetDescription }}
-  <ul class="items-stretch mt-0 card-grid card-grid-tight">
+  <ul class="mt-0 items-stretch card-grid card-grid-tight">
     {% for linkSet in block.linkSet.all() %}
       {% set link = linkSet.linkLocation %}
       {% set linkType = link.typeHandle %}
@@ -17,7 +17,7 @@
         {% set isDoc = false %}
       {% endif %}
       <li>
-        <a class="block h-full p-5 transition-all duration-75 bg-blue-100 rounded shadow text-cool-gray-800 hover:bg-blue-200 hover:text-cool-gray-900" href="{{ link.url }}" target="{{ link.target }}">
+        <a class="block h-full rounded bg-blue-100 p-5 shadow transition-all duration-75 text-cool-gray-800 hover:bg-blue-200 hover:text-cool-gray-900" href="{{ link.url }}" target="{{ link.target }}">
           <h3 class="my-0 text-lg md:text-xl">{{ link.text }}</h3>
           <p class="mt-4 mb-0 text-sm md:text-base">{{ linkSet.linkDescription }}</p>
         </a>

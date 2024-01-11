@@ -95,9 +95,9 @@
 
 {# Related Content Section #}
 {%- set relatedContentSection -%}
-  <h4 class="py-0 mt-4 mb-6">{{ 'Related'|t }}</h4>
+  <h4 class="mt-4 mb-6 py-0">{{ 'Related'|t }}</h4>
 
-  <a class="block mb-4" href="{{ entry.url }}">{{ department_title }}</a>
+  <a class="mb-4 block" href="{{ entry.url }}">{{ department_title }}</a>
   <a href="{{ newsIndex.url }}">Oakland News</a>
 {%- endset -%}
 
@@ -121,7 +121,7 @@
         {% include '_components/_news-index-item' %}
       {% endfor %}
     {% else %}
-      <div class="px-8 pt-3 pb-5 bg-gray-100">
+      <div class="bg-gray-100 px-8 pt-3 pb-5">
         <p>Please try another search or updating your filters.</p>
         <div class="my-4">
           <a href="{{ craft.app.request.url }}">See All News</a>
@@ -133,7 +133,7 @@
     {% include '_partials/_elements/_pagination' %}
   </div>
 
-  <div class="lg:oak-hidden mb-4">
+  <div class="mb-4 lg:oak-hidden">
     <hr class="hr dark">
     {{ relatedContentSection }}
   </div>
@@ -143,7 +143,7 @@
 {% block sidebar %}
   <hr>
 
-  <h4 class="py-0 mt-4 mb-6">{{ 'Search & Filter'|t }}</h4>
+  <h4 class="mt-4 mb-6 py-0">{{ 'Search & Filter'|t }}</h4>
 
   <form action="{{ craft.app.request.url }}">
     {# Month filter drop-down #}

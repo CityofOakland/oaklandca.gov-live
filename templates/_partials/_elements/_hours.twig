@@ -1,6 +1,6 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <div class="flex {% if day.isBlank %} text-gray-700 {% endif %}">
-  <dt class="font-bold w-32">{{ day.name }}</dt>
+  <dt class="w-32 font-bold">{{ day.name }}</dt>
 </dd>
 <dd class="flex-1">
   {% if day.isBlank %}

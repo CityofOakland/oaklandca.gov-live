@@ -56,48 +56,48 @@
 {% endif %}
 
 {# if no category is assigned to an entry, its primary unit will override as the root breadcrumb #}
-<div id="breadcrumbs" class="bg-white inline-block relative" style="z-index: 1;">
+<div id="breadcrumbs" class="relative inline-block bg-white" style="z-index: 1;">
   {% if category is defined and category.level == 1 %}
     {# parent service category #}
-    <a href="{{ siteUrl }}services" class="font-bold text-green-800 hover:text-green-800 hover:underline">Services</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
+    <a href="{{ siteUrl }}services" class="font-bold text-green-800 hover:text-green-800 hover:underline">Services</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
     <span aria-current="page" class="text-gray-800">{{ entry.title }}</span>
   {% elseif entry.serviceTypes is defined and entry.serviceTypes|length == 1 %}
     {# entry has one category only #}
-      <a href="{{ siteUrl }}services" class="font-bold text-green-800 hover:text-green-800 hover:underline">Services</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
-      <a href="{{ entry.serviceTypes.one().url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ entry.serviceTypes.one().title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
+      <a href="{{ siteUrl }}services" class="font-bold text-green-800 hover:text-green-800 hover:underline">Services</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
+      <a href="{{ entry.serviceTypes.one().url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ entry.serviceTypes.one().title }}</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
       <span aria-current="page" class="text-gray-800">{{ entry.title }}</span>
   {% elseif entry.serviceTypes is defined and entry.serviceTypes|length > 1 %}
     {# entry has multiple categories #}
     <span class="text-gray-600">
       See more <a href="{{ siteUrl }}services" class="font-bold text-green-800 hover:text-green-800 hover:underline">Services</a>:
       {% for category in entry.serviceTypes.all() %}
-        <a href="{{ category.url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline ml-1">{{ category.title }}</a>{{ not loop.last ? ', ' }} 
+        <a href="{{ category.url }}" class="ml-1 font-bold text-green-800 hover:text-green-800 hover:underline">{{ category.title }}</a>{{ not loop.last ? ', ' }} 
       {% endfor %}
     </span>
   {% elseif breadCrumbLinks is defined %}
     {# other custom breadCrumbLinks set up in templates #}
     {% for link in breadCrumbLinks ?? '' %}
-      <a class="font-bold text-green-800 hover:text-green-800 hover:underline" href="{{ link.link }}">{{ link.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
+      <a class="font-bold text-green-800 hover:text-green-800 hover:underline" href="{{ link.link }}">{{ link.title }}</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
     {% endfor %}
     <span aria-current="page" class="{{ breadCrumbLinks is empty ? 'font-bold' : 'text-gray-800' }}">{{ bannerTitle }}</span>
   {% elseif entry.section.handle == 'boardsCommissions' and craft.app.request.lastSegment == 'meetings' %}
     {% for link in breadcrumbs ?? '' %}
-      <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
+      <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
     {% endfor %}
-    <a href="{{ entry.url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ entry.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
+    <a href="{{ entry.url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ entry.title }}</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
     {% if subcommittee is defined %}
-      <a href="{{ subcommittee.url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ subcommittee.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
+      <a href="{{ subcommittee.url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ subcommittee.title }}</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
     {% endif %}
     <span aria-current="page" class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">Meetings for {{ entry.title }}</span>
   {% elseif section is defined and slug is defined and craft.app.request.lastSegment == 'events' %}
     {% for link in breadcrumbs ?? '' %}
-      <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
+      <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
     {% endfor %}
-    <a href="{{ entry.url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ entry.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
+    <a href="{{ entry.url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ entry.title }}</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
     <span aria-current="page" class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">Events for {{ entry.title }}</span>
   {% else %}
     {% for link in breadcrumbs ?? '' %}
-      <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="font-bold text-gray-700 ml-2 mr-1">&rarr;</span>
+      <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
     {% endfor %}
 
 {#    {% if entry.section.handle == 'meetings' %}#}

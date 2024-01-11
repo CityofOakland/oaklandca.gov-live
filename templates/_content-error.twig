@@ -14,9 +14,9 @@
   <body class="overflow-x-hidden font-body {{ pageClass ?? '' }}">
     <div class="page-holder">
       {% include '_partials/_elements/_skip-to-content.twig' %}
-      <header class="px-4 py-3 text-gray-100 fill-current bg-gray-1000">
-        <div class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden">{{ svg('@webroot/dist/img/logo-oakland-tree.svg') }}</div>
-        <div class="w-40 h-10 oak-hidden sm:block">{{ svg('@webroot/dist/img/logo-oakland.svg') }}</div>
+      <header class="fill-current px-4 py-3 text-gray-100 bg-gray-1000">
+        <div class="h-9 w-14 sm:h-10 md:h-10 sm:oak-hidden">{{ svg('@webroot/dist/img/logo-oakland-tree.svg') }}</div>
+        <div class="h-10 w-40 oak-hidden sm:block">{{ svg('@webroot/dist/img/logo-oakland.svg') }}</div>
       </header>
       <main id="content" class="pt-0">
         <section>
@@ -39,7 +39,7 @@
           </div>
           <div class="container components">
             <div class="max-w-6xl">
-              <div class="flex flex-col flex-1 lg:flex-row">
+              <div class="flex flex-1 flex-col lg:flex-row">
                 <div class="w-full lg:w-8/11">
                   {% block pageheader %}
                     <h1>Oaklandca.gov is currently experiencing technical difficulties</h1>
@@ -53,7 +53,7 @@
         <section class="bg-gray-100">
           <div class="container">
             <div class="max-w-6xl">
-              <div class="flex flex-col flex-1 lg:flex-row">
+              <div class="flex flex-1 flex-col lg:flex-row">
                 <div class="w-full lg:w-8/11">
                   <div class="components components-format">
                     <h2>For Immediate Assistance</h2>
@@ -75,26 +75,26 @@
           </div>
         </section>
       </main>
-      <footer class="flex items-center justify-between px-4 py-3 text-gray-100 fill-current bg-gray-1000">
+      <footer class="flex items-center justify-between fill-current px-4 py-3 text-gray-100 bg-gray-1000">
         <div>
-          <div class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden">{{ svg('@webroot/dist/img/logo-oakland-tree.svg') }}</div>
-          <div class="w-40 h-10 oak-hidden sm:block">{{ svg('@webroot/dist/img/logo-oakland.svg') }}</div>
+          <div class="h-9 w-14 sm:h-10 md:h-10 sm:oak-hidden">{{ svg('@webroot/dist/img/logo-oakland-tree.svg') }}</div>
+          <div class="h-10 w-40 oak-hidden sm:block">{{ svg('@webroot/dist/img/logo-oakland.svg') }}</div>
         </div>
-        <ul class="flex items-center my-0">
+        <ul class="my-0 flex items-center">
             <li class="ml-4">
-              <a href="https://www.facebook.com/oakland/" class="flex items-center justify-center w-10 h-10 transition-all duration-75 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 hover:text-gray-1000">
+              <a href="https://www.facebook.com/oakland/" class="flex h-10 w-10 items-center justify-center rounded-full bg-white fill-current transition-all duration-75 text-gray-1000 hover:bg-green-600 hover:text-gray-1000">
                 {{ svg('@webroot/dist/img/logo-facebook.svg')|attr({class:'h-5'}) }}
                 <span class="sr-only">Oakland Facebook Page</span>
               </a>
             </li>
             <li class="ml-4">
-              <a href="https://www.twitter.com/oakland" class="flex items-center justify-center w-10 h-10 transition-all duration-75 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 hover:text-gray-1000">
+              <a href="https://www.twitter.com/oakland" class="flex h-10 w-10 items-center justify-center rounded-full bg-white fill-current transition-all duration-75 text-gray-1000 hover:bg-green-600 hover:text-gray-1000">
                 {{ svg('@webroot/dist/img/logo-twitter.svg')|attr({class:'h-5'}) }}
                 <span class="sr-only">Oakland Twitter Page</span>
               </a>
             </li>
             <li class="ml-4">
-              <a href="https://www.instagram.com/oakland" class="flex items-center justify-center w-10 h-10 transition-all duration-75 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 hover:text-gray-1000">
+              <a href="https://www.instagram.com/oakland" class="flex h-10 w-10 items-center justify-center rounded-full bg-white fill-current transition-all duration-75 text-gray-1000 hover:bg-green-600 hover:text-gray-1000">
                 {{ svg('@webroot/dist/img/logo-instagram.svg')|attr({class:'h-5'}) }}
                 <span class="sr-only">Oakland Instagram Page</span>
               </a>

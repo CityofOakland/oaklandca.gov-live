@@ -72,7 +72,7 @@
 
 {% block content %}
   <div>
-    <ul class="flex flex-wrap list-none m-0 p-0">
+    <ul class="m-0 flex list-none flex-wrap p-0">
         <li><a href="?type=upcoming&q={{ query }}&public_body={{ public_body }}&year={{ year }}&month={{ month }}" class="button m-0 rounded-none {{ type == 'upcoming' ? 'pointer-events-none' : 'secondary' }}">Upcoming Meetings</a></li>
         <li><a href="?type=past&q={{ query }}&public_body={{ public_body }}&year={{ year }}&month={{ month }}" class="button m-0 rounded-none {{ type == 'past' ? 'pointer-events-none' : 'secondary' }}">Past Meetings</a></li>
     </ul>
@@ -127,7 +127,7 @@
 {% block sidebar %}
   <hr class="oak-hidden lg:block"/>
   <div class="mt-2 md:mt-0"></div>
-  <h4 class="py-0 mt-4 mb-6">{{ 'Search & Filter'|t }}</h4>
+  <h4 class="mt-4 mb-6 py-0">{{ 'Search & Filter'|t }}</h4>
   <form action="{{ entry.url }}">
     <input type="hidden" name="type" value="{{ type }}"/>
     {{ macros.select('Month', 'month', 'month', [
@@ -185,7 +185,7 @@
   </form>
   <hr/>
   <div class="oak-hidden lg:block">
-    <h4 class="py-0 mt-4">{{ 'Learn More About Public Bodies'|t }}</h4>
+    <h4 class="mt-4 py-0">{{ 'Learn More About Public Bodies'|t }}</h4>
     <div class="pt-2">
       <p><a href="{{siteUrl}}boards-commissions">Boards & Commissions</a></p>
       <p><a href="{{siteUrl}}departments">Departments</a></p>

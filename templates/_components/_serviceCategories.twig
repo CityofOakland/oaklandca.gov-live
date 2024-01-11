@@ -8,7 +8,7 @@
       {% endif %}
       {% set entries = block.cityServicesAndResourcesUpdates.all() %}
       {% if entries|length %}
-        <ul class="grid pl-0 mt-6 list-none gap-y-6 gap-x-8 md:grid-cols-2 lg:grid-cols-3 tw-only">
+        <ul class="mt-6 grid list-none gap-x-8 gap-y-6 pl-0 md:grid-cols-2 lg:grid-cols-3 tw-only">
           {% for entry in entries %}
             {{ include ('_components/partials/global-cards/card.twig', {
               params: {
