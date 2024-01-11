@@ -29,6 +29,7 @@ group: null
 groupChildBlockTypes: true
 handle: navigationGroup
 icon: null
+iconFilename: ''
 ignorePermissions: true
 maxBlocks: 2
 maxChildBlocks: 0

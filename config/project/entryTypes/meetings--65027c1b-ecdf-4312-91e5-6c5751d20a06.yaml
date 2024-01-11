@@ -12,6 +12,7 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
+            inputType: null
             instructions: null
             label: null
             max: null
@@ -257,31 +258,6 @@ fieldLayouts:
         userCondition: null
       -
         elementCondition: null
-        elements:
-          -
-            elementCondition: null
-            fieldUid: 1ddcc13e-3bfa-4a0e-9661-34bc1052f299
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: d2c1cfcb-c569-4900-9e4a-5f6ca338d0f6
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 1bbdfcc0-b085-435d-afc9-344998a67876
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 9617fe85-bc9c-46a8-ba14-ed6ee18c194d
-            userCondition: null
-            warning: null
-            width: 100
         name: Notifications
         uid: d1ddf101-395a-4b09-b161-6c61e67d3c6f
         userCondition: null

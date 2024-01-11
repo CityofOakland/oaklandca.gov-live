@@ -10,26 +10,26 @@ settings:
   expectedType: Solspace\Calendar\FieldTypes\EventFieldType
   settings:
     __assoc__:
-      0:
+      -
         - allowSelfRelations
         - false
-      1:
+      -
         - limit
         - '1'
-      2:
+      -
         - localizeRelations
         - false
-      3:
+      -
         - selectionLabel
         - 'Add a meeting'
-      4:
+      -
         - showSiteMenu
         - true
-      6:
+      -
         - sources
         -
           - 'calendar:3'
-      8:
+      -
         - validateRelatedElements
         - false
 translationKeyFormat: null

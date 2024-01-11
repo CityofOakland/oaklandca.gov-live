@@ -1,5 +1,5 @@
 fieldLayouts:
-  b60719dd-2fa9-440b-bf52-6b8b194d5e31:
+  21db3772-d66c-42ec-a85b-aaa3775ca0a3:
     tabs:
       -
         elementCondition: null
@@ -12,6 +12,7 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
+            inputType: null
             instructions: null
             label: null
             max: null
@@ -26,7 +27,7 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 6350ea17-daa7-4e7c-a935-803a8d62c162
+            uid: 3f394516-6f51-45f2-9770-5958d61edbb4
             userCondition: null
             warning: null
             width: 100
@@ -38,7 +39,7 @@ fieldLayouts:
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 568ed2bd-bcf1-4ec5-a831-c2ae112bba29
+            uid: 990edfa3-84fd-406d-8a9a-1beb7ca925d3
             userCondition: null
             warning: null
             width: 100
@@ -50,7 +51,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: d6d521df-c659-4871-83ab-e1090ab23cee
+            uid: 3eec0e5a-7566-463e-8bd0-2155bb0cfb88
             userCondition: null
             warning: null
             width: 100
@@ -62,7 +63,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: ba8a4575-3764-4964-a0c7-4264198f9417
+            uid: 0b8d3720-fea4-408d-b798-58ed54d2cf10
             userCondition: null
             warning: null
             width: 100
@@ -74,79 +75,43 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 37f58e92-0ccb-44f7-b7b4-559dfb110a5f
+            uid: 5d3166e3-0f70-4ca6-8e37-0bcd27d6bfba
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: 78894bca-c6ce-4518-bb6f-fa94d7e7050e # Timeline
+            fieldUid: 003ce16b-5d20-4821-93ae-516c70778291 # Project Start Date
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 25f53e2d-ade6-4f8c-8733-cc0ce4f4af38
+            uid: c8b88462-ee04-4402-8fe8-50e0e0ff2af6
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: d2528b2a-d63a-477c-9c22-431796381707 # Project Map Image
+            fieldUid: cccbcd50-864f-49a8-bbde-d44e04005272 # Project End Date
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 79d226ff-3f1d-446c-8ec9-251481fcb1a0
+            uid: 8fe76b8e-6008-41ac-b982-fd3b4d0c4767
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: 97dc40f6-b307-4035-bc39-a8985cc4649a # Project Before Photo
+            fieldUid: 09e3ac15-7089-4e7f-9f6b-33267bfebc94 # Project Status
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 732f9341-9dd9-4e7c-b471-74bb66a90b01
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: c18e25ad-bdd5-4629-a5d4-daf8579db08f # Project After Photo
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 804603e8-d2af-49f4-abaa-bd6c5d9be0a5
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: ffa38afc-e53d-4cb8-8c63-5422d8f647cd # External Photo Gallery
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 4d08bf23-b4d9-4e86-aa1c-8c2fb831b297
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: e3f23e85-4290-41f4-bff9-7d12b6e1b52c # Project Updates
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: d42e695a-9907-4f51-945c-80a895d5651f
+            uid: ec0ab490-83ee-4eff-a395-7756f1372e65
             userCondition: null
             warning: null
             width: 100
@@ -158,19 +123,55 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 2f905387-e072-45eb-850c-f3e06f66fff8
+            uid: 9fed6b76-9e67-4f47-8f21-af0096c26754
             userCondition: null
             warning: null
             width: 100
           -
             elementCondition: null
-            fieldUid: e1abe78e-92f3-4d83-890e-7f67fd2db4e0 # Related Project Entries
+            fieldUid: 78894bca-c6ce-4518-bb6f-fa94d7e7050e # Timeline
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 49959935-96c8-4146-8e85-099d64c875e2
+            uid: 514f0d5e-e11a-49f5-b79d-abb1203e9372
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e3f23e85-4290-41f4-bff9-7d12b6e1b52c # Project Updates
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5ca3f758-52ec-4ca3-87ad-2e51e45b3a94
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d2528b2a-d63a-477c-9c22-431796381707 # Project Map Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b406b980-8e41-417c-b7b8-4bdbd5f314b8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c7c1aa87-0003-4cdf-a925-11ae2f05ec24 # Project Locations
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0b1e5a07-bfa9-4f70-90d6-2a7bc4d69e96
             userCondition: null
             warning: null
             width: 100
@@ -182,7 +183,55 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 3b65cca5-a084-4a11-a581-d361693b8dc5
+            uid: 4f39ad0c-4a07-457a-86ba-fefc60c75b4e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e1abe78e-92f3-4d83-890e-7f67fd2db4e0 # Related Project Entries
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c99fcd2e-2072-4feb-a104-53f0e754df8e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 946b75ee-7882-4bdc-b28b-7009a8398e2e # Hide Related Pages?
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 97d3fb24-ce84-4515-860e-e8f121d6d927
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: af0e38e2-c040-47dc-a4f5-a2364d160a8f # Photo Gallery
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 36331217-e023-4e3c-9bd9-629a007f4897
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: bb70071c-d8c0-4a11-91f6-d4ca02503a00 # Funding Logos Alternate Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1504e7df-dad1-4437-a1d8-e2e5a659adb1
             userCondition: null
             warning: null
             width: 100
@@ -194,12 +243,12 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 567d48a1-0b30-45f2-b056-314ee3348686
+            uid: f4f49ee8-8e63-4a1f-bc8d-b634d9fcddbd
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 1edb32e8-458e-4109-a110-1f567a283abb
+        uid: 08878236-5386-47b0-a910-510e18d720bb
         userCondition: null
       -
         elementCondition: null
@@ -212,7 +261,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 682b9491-7376-485c-83d8-aa47e938c706
+            uid: 656ced21-4b1b-4f2b-a14c-8f5da22965e2
             userCondition: null
             warning: null
             width: 100
@@ -224,7 +273,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 9dd304be-f759-48a8-a768-82f83fd37f94
+            uid: 3116f83b-eef0-4d47-82bb-92b32b4b46dc
             userCondition: null
             warning: null
             width: 100
@@ -236,7 +285,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 6fd9f8b7-f29d-49a5-9d76-c40244097d29
+            uid: 5ffd0594-4ad2-4611-ac29-86eeac246aac
             userCondition: null
             warning: null
             width: 100
@@ -248,37 +297,25 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: d30e6d65-613f-4de9-8c68-8c799dcba33b
+            uid: 9a9aaec6-b381-40db-9b0c-c9c3d42a9e84
             userCondition: null
             warning: null
             width: 100
         name: Relationships
-        uid: 599c311a-6c88-40d0-9ccd-08035904c54d
+        uid: 9fa21063-36b2-4f04-a514-eafbbe9e523a
         userCondition: null
       -
         elementCondition: null
         elements:
           -
             elementCondition: null
-            fieldUid: 90d724d7-7c32-4d04-8b9a-3900d6ecdb84 # Address(es)
+            fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a # Email Address
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 7faaf1e9-49d8-4f8d-b935-2681639503af
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: c9d86e3f-9738-4d97-a271-5331264c10b8 # Address Extended
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: f44c7515-011d-4bc3-a12f-f0781cedc2c2
+            uid: aed4240f-a3ba-4268-b115-c24e7e735b54
             userCondition: null
             warning: null
             width: 100
@@ -290,31 +327,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 5bc6c4e7-a843-428c-87df-9bc5e76098b5
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a # Email Address
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: edd2d2d7-7e05-4e54-94dc-668d775f6abf
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: 6ac11602-f5a4-4e2e-bc97-fdfea3e3d005 # Open Hours
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 539592b3-18f3-4c1c-bb0f-c0fb62d04470
+            uid: f7756d3a-3485-4b33-8900-1b7aeb4ef378
             userCondition: null
             warning: null
             width: 100
@@ -326,19 +339,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: e5b4bac8-78e7-49a2-9523-4bb289fb34b1
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
-            fieldUid: d9a54ffb-26e9-4883-83bb-8e41650c8927 # Twitter
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 35009a29-016f-4a5d-873a-4e35ddd0bd1c
+            uid: 3bcc7fd2-f614-4e79-aeb7-89bf5a243e66
             userCondition: null
             warning: null
             width: 100
@@ -350,7 +351,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 7a084ce9-0028-49f7-ac36-da9fc6ef23e1
+            uid: 607d7348-e969-4192-b1ec-9eb8965c0c84
             userCondition: null
             warning: null
             width: 100
@@ -362,12 +363,36 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: e8134591-b68d-481c-a361-86002a180858
+            uid: 0276b0e5-580c-419a-b2dd-2088902b4ee5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d9a54ffb-26e9-4883-83bb-8e41650c8927 # Twitter
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fc496546-894e-441c-b3c5-1dc2e4938fd4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c01a4b08-11e1-42c3-97c4-e3de1bd7974e # YouTube
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: caf46d9c-c48c-4b4c-a65a-07aa98117130
             userCondition: null
             warning: null
             width: 100
         name: Contact
-        uid: 26ac9dfd-22bd-4fc6-8738-c81623f02bed
+        uid: eb6bf57b-b145-4dab-ac01-176a5956aef8
         userCondition: null
       -
         elementCondition: null
@@ -380,7 +405,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 840ab2b1-b7ee-4a6e-8f6b-0a1209ab3906
+            uid: df430148-86b2-4a93-8e05-23c5f954ab43
             userCondition: null
             warning: null
             width: 100
@@ -392,7 +417,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 3f886732-6e23-49e5-9338-cdaa3b19ea68
+            uid: 212fcdac-43ba-459e-a9a3-14db64e49dc3
             userCondition: null
             warning: null
             width: 100
@@ -404,12 +429,42 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 1881430a-9f8d-4488-8e5d-02c1c1322c6f
+            uid: e24f004a-189e-4af2-88c8-c49b97012e86
             userCondition: null
             warning: null
             width: 100
         name: SEO
-        uid: 6a0a2819-48db-4487-b3ac-3b3ae254e0c5
+        uid: 846a5520-5d45-49ef-9e8b-ac3e6f9f78b9
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: c18e25ad-bdd5-4629-a5d4-daf8579db08f # Project After Photo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a2bd464e-9fbc-48ce-bb07-d91eb03978b2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 97dc40f6-b307-4035-bc39-a8985cc4649a # Project Before Photo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bb634db6-b3aa-43d9-a318-8da9db9778b2
+            userCondition: null
+            warning: null
+            width: 100
+        name: Legacy
+        uid: f293d5df-9d12-40f5-94ca-5688d69a5c7f
         userCondition: null
 handle: projects
 hasTitleField: true
@@ -418,7 +473,7 @@ section: 98d541ae-56ee-4c98-ba9c-37438dc485a0 # Projects
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-sortOrder: 2
+sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: ''
