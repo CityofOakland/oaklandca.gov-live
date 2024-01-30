@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6d99a69d51fac83ec6b0cbaf91e700b5",
+    "content-hash": "882775af8487616d3b67db2973b496aa",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1814,11 +1814,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "4.6.0",
+            "version": "4.7.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/4d5f71c154cd2e01cfd771e55ed43703a59cf844",
-                "reference": "4d5f71c154cd2e01cfd771e55ed43703a59cf844",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/887b4ca440dd554b0233ec077ef3b9a725df53e8",
+                "reference": "887b4ca440dd554b0233ec077ef3b9a725df53e8",
                 "shasum": ""
             },
             "require": {
@@ -1906,7 +1906,7 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2024-01-09T17:57:33+00:00"
+            "time": "2024-01-29T18:59:43+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -2231,11 +2231,11 @@
         },
         {
             "name": "craftcms/server-check",
-            "version": "2.1.7",
+            "version": "2.1.8",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/server-check/zipball/97c09a55cee207cb0a79243606354d9783d693d8",
-                "reference": "97c09a55cee207cb0a79243606354d9783d693d8",
+                "url": "https://api.github.com/repos/craftcms/server-check/zipball/c86e8aeabc73333111e2bfb4483d7b5402232e48",
+                "reference": "c86e8aeabc73333111e2bfb4483d7b5402232e48",
                 "shasum": ""
             },
             "type": "library",
@@ -2255,7 +2255,7 @@
                 "requirements",
                 "yii2"
             ],
-            "time": "2023-09-20T01:56:57+00:00"
+            "time": "2023-09-25T17:28:37+00:00"
         },
         {
             "name": "craftcms/store-hours",
@@ -5663,11 +5663,11 @@
         },
         {
             "name": "moneyphp/money",
-            "version": "v4.3.0",
+            "version": "v4.4.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moneyphp/money/zipball/50ddfd15b2be01d4bed3bcb0c975a6af5f78a183",
-                "reference": "50ddfd15b2be01d4bed3bcb0c975a6af5f78a183",
+                "url": "https://api.github.com/repos/moneyphp/money/zipball/5e60aebf09f709dd4ea16bf85e66d65301c0d172",
+                "reference": "5e60aebf09f709dd4ea16bf85e66d65301c0d172",
                 "shasum": ""
             },
             "require": {
@@ -5719,7 +5719,7 @@
                 "money",
                 "vo"
             ],
-            "time": "2023-11-22T09:46:30+00:00"
+            "time": "2024-01-24T08:29:16+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -6148,11 +6148,11 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "4.0.37",
+            "version": "4.0.38",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/524c5fe79fe238c124f1d5cb621bd615ebe1a821",
-                "reference": "524c5fe79fe238c124f1d5cb621bd615ebe1a821",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/2508dd5c39016ad3d03b2593bc8865b14655dcdf",
+                "reference": "2508dd5c39016ad3d03b2593bc8865b14655dcdf",
                 "shasum": ""
             },
             "require": {
@@ -6204,7 +6204,7 @@
                 "issues": "https://nystudio107.com/plugins/seomatic/support",
                 "source": "https://github.com/nystudio107/craft-seomatic"
             },
-            "time": "2023-12-12T20:04:54+00:00"
+            "time": "2024-01-22T20:12:43+00:00"
         },
         {
             "name": "nystudio107/craft-twigpack",
@@ -6896,11 +6896,11 @@
         },
         {
             "name": "php-science/textrank",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-Science/TextRank/zipball/c5ccfc998b3cee91bf5d01b9f107d382acfa0ca8",
-                "reference": "c5ccfc998b3cee91bf5d01b9f107d382acfa0ca8",
+                "url": "https://api.github.com/repos/DavidBelicza/PHP-Science-TextRank/zipball/d63788f7f7305b8dd726a367a5653cdd5dac7fba",
+                "reference": "d63788f7f7305b8dd726a367a5653cdd5dac7fba",
                 "shasum": ""
             },
             "require": {
@@ -6912,8 +6912,7 @@
             "autoload": {
                 "psr-4": {
                     "PhpScience\\TextRank\\": [
-                        "src/",
-                        "tests/"
+                        "src/"
                     ]
                 }
             },
@@ -6923,20 +6922,23 @@
             "authors": [
                 {
                     "name": "David Belicza",
-                    "email": "87.bdavid@gmail.com"
+                    "email": "david@belicza.com"
                 }
             ],
-            "description": "TextRank (automatic text summarization) for PHP7 and HHVM.",
+            "description": "TextRank (automatic text summarization) for PHP.",
             "keywords": [
-                "PHP7",
+                "ai",
+                "artificial",
                 "automatic",
+                "intelligence",
+                "php",
                 "php8",
                 "science",
                 "strict",
                 "summarization",
                 "textrank"
             ],
-            "time": "2022-08-12T13:02:17+00:00"
+            "time": "2023-12-29T15:21:30+00:00"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -7068,11 +7070,11 @@
         },
         {
             "name": "phpdocumentor/type-resolver",
-            "version": "1.7.3",
+            "version": "1.8.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/3219c6ee25c9ea71e3d9bbaf39c67c9ebd499419",
-                "reference": "3219c6ee25c9ea71e3d9bbaf39c67c9ebd499419",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/fad452781b3d774e3337b0c0b245dd8e5a4455fc",
+                "reference": "fad452781b3d774e3337b0c0b245dd8e5a4455fc",
                 "shasum": ""
             },
             "require": {
@@ -7102,7 +7104,7 @@
                 }
             ],
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
-            "time": "2023-08-12T11:01:26+00:00"
+            "time": "2024-01-11T11:49:22+00:00"
         },
         {
             "name": "phpoffice/phpspreadsheet",
@@ -7751,11 +7753,11 @@
         },
         {
             "name": "putyourlightson/craft-blitz",
-            "version": "4.10.1",
+            "version": "4.10.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/9af1c71cf98b13721ae6c70bb76b25a107be0572",
-                "reference": "9af1c71cf98b13721ae6c70bb76b25a107be0572",
+                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/706905dbee69be0c1a0583e5391d1d92210ece47",
+                "reference": "706905dbee69be0c1a0583e5391d1d92210ece47",
                 "shasum": ""
             },
             "require": {
@@ -7800,7 +7802,7 @@
                 "source": "https://github.com/putyourlightson/craft-blitz",
                 "issues": "https://github.com/putyourlightson/craft-blitz/issues"
             },
-            "time": "2024-01-10T17:54:43+00:00"
+            "time": "2024-01-13T13:24:59+00:00"
         },
         {
             "name": "putyourlightson/craft-blitz-hints",
@@ -7834,11 +7836,11 @@
         },
         {
             "name": "putyourlightson/craft-sherlock",
-            "version": "4.4.0",
+            "version": "4.4.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-sherlock/zipball/09b4bf7e385051cee07e81c83f8366ea2af7d42d",
-                "reference": "09b4bf7e385051cee07e81c83f8366ea2af7d42d",
+                "url": "https://api.github.com/repos/putyourlightson/craft-sherlock/zipball/1fc82f3230563398040b209491499c023fc04d0f",
+                "reference": "1fc82f3230563398040b209491499c023fc04d0f",
                 "shasum": ""
             },
             "require": {
@@ -7878,7 +7880,7 @@
                 "source": "https://github.com/putyourlightson/craft-sherlock",
                 "issues": "https://github.com/putyourlightson/craft-sherlock/issues"
             },
-            "time": "2023-10-09T18:44:10+00:00"
+            "time": "2024-01-12T14:24:32+00:00"
         },
         {
             "name": "putyourlightson/craft-sprig-core",
@@ -8786,11 +8788,11 @@
         },
         {
             "name": "spicyweb/craft-neo",
-            "version": "4.0.2",
+            "version": "4.0.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/619358c32eb01311d1cd47277511d26686789d09",
-                "reference": "619358c32eb01311d1cd47277511d26686789d09",
+                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/de1604870423481d31e8119668112c0c958b247f",
+                "reference": "de1604870423481d31e8119668112c0c958b247f",
                 "shasum": ""
             },
             "require": {
@@ -8804,7 +8806,7 @@
                 "schemaVersion": "4.0.0",
                 "class": "benf\\neo\\Plugin",
                 "changelogUrl": "https://github.com/spicywebau/craft-neo/blob/4.x/CHANGELOG.md",
-                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.0.2.zip"
+                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.0.3.zip"
             },
             "autoload": {
                 "psr-4": {
@@ -8832,10 +8834,10 @@
             "support": {
                 "issues": "https://github.com/spicywebau/craft-neo/issues",
                 "source": "https://github.com/spicywebau/craft-neo",
-                "docs": "https://github.com/spicywebau/craft-neo/blob/4.0.2/README.md",
+                "docs": "https://github.com/spicywebau/craft-neo/blob/4.0.3/README.md",
                 "rss": "https://github.com/spicywebau/craft-neo/commits/4.x.atom"
             },
-            "time": "2024-01-05T11:07:04+00:00"
+            "time": "2024-01-29T08:58:19+00:00"
         },
         {
             "name": "ssnepenthe/color-utils",
