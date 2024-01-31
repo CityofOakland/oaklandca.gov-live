@@ -1,7 +1,7 @@
-{% extends '_layouts/_instant-search-index' %}
+{% extends '_layouts/_instant-search-index.twig' %}
 
 {% js at head %}
-var algoliaIndex = '{{ getenv('ENVIRONMENT') }}_teams';
-var searchInputText = "Search for a team. E.g., “Digital Service Team”";
-var facetFilters = [];
+	var algoliaIndex = '{{ getenv('ENVIRONMENT') }}_teams';
+	var searchInputText = "Search for a team. E.g., “Digital Service Team”";
+	var facetFilters = [];
 {% endjs %}

@@ -1,6 +1,6 @@
 {% set fullwidth = true %}
 
-{% extends '_content' %}
+{% extends '_content.twig' %}
 {% set entry = craft.entries.section(indexPage).one %}
 {% set relatedEntry = null %}
 {% if craft.app.request.getSegment(2) == 'related-to' %}
