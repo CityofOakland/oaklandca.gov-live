@@ -1,47 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-  {% include '_partials/_head.twig' %}
-
-  {# Checks if the URI is empty and if not, adds the class of "home" to the page body. #}
-  {% if not craft.app.request.segments() %}
-    {% set pageClass = "home" %}
-  {% endif %}
-
-  {# Sets the navigation to the nav section entry, "Main Nav" #}
-  {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
-  {# We’re setting the class to overflow-x-hidden to prevent content from stretching page width on mobile views.#}
-  <body class="font-body {{ pageClass ?? '' }}">
-    {% include '_partials/_elements/_skip-to-content.twig' %}
-    {% include '_partials/_elements/_nav-bar.twig' %}
-    <div class="overflow-x-hidden page-holder">
-      <main>
-        {% include '_partials/_elements/_sitewide-alert.twig' %}
-        {% block content %}
-          <div class="container">
-            <p>No content has been added to this layout. Please make sure to include the following in your template:</p>
-            <pre class="inline-block whitespace-pre-line bg-gray-800 p-4 text-white">{% verbatim %}
-            {% block content %}
-            {% endblock %}{% endverbatim %}</pre>
-          </div>
-        {% endblock %}
-      </main>
-      {% include '_partials/_elements/_footer.twig' %}
-    </div>
-
-    {% if entry is defined %}
-      {% do craft.viewCount.increment(entry.id) %}
-    {% elseif event is defined %}
-      {% do craft.viewCount.increment(event.id) %}
-    {% elseif category is defined %}
-      {% do craft.viewCount.increment(category.id) %}
-    {% endif %}
-
-  </body>
-</html>
-{% if section is defined and slug is defined %}
-  {% set facetItem = craft.entries.section(section).slug(slug).one().title %}
-  {% js at head %}
-  var section = "{{ section }}";
-      var entryTitle = "{{ facetItem }}";
-  {% endjs %}
+{# Checks if the URI is empty and if not, adds the class of "home" to the page body. #}
+{% if not craft.app.request.segments() %}
+	{% set pageClass = "home" %}
 {% endif %}
+{# Sets the navigation to the nav section entry, "Main Nav" #}
+{% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
+
+{% if entry is defined %}
+	{% do craft.viewCount.increment(entry.id) %}
+{% elseif event is defined %}
+	{% do craft.viewCount.increment(event.id) %}
+{% elseif category is defined %}
+	{% do craft.viewCount.increment(category.id) %}
+{% endif %}
+
+{% if section is defined and slug is defined %}
+	{% set facetItem = craft.entries.section(section).slug(slug).one().title %}
+	{% js at head %}
+		var section = "{{ section }}";
+		var entryTitle = "{{ facetItem }}";
+	{% endjs %}
+{% endif %}
+
+<html lang="en">
+	{% include '_partials/_head.twig' %}
+	<body class="font-body {{ pageClass ?? '' }}">
+		{% include '_partials/_elements/_skip-to-content.twig' %}
+		{% include '_partials/_elements/_nav-bar.twig' %}
+		<div class="overflow-x-hidden page-holder">
+			<main>
+				{% include '_partials/_elements/_sitewide-alert.twig' %}
+				{% block content %}
+					<div class="container">
+						<p>No content has been added to this layout.</p>
+					</div>
+				{% endblock %}
+			</main>
+			{% include '_partials/_elements/_footer.twig' %}
+		</div>
+	</body>
+</html>
