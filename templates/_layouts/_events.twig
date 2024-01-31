@@ -141,11 +141,11 @@
 	{% endif %}
 
 	{% if entry.calendarize.repeats %}
-		{% include '_components/_callout.twig' with {
+		{{ include("_components/_callout.twig", {
 			callOutType   : 'info',
-			heading       : 'This event is part of a series',
-			description   : '<p>See more events <a href="' ~ siteUrl ~ 'events' ~ '">' ~ entry.title ~ '</a></p>',
-		} %}
+			heading       : 'This event repeats',
+			description   : "<p>This event repeats #{entry.calendarize.repeatType}, with the next event occurring on #{entry.calendarize.next.start|date('l, F j, Y')}</p>"
+		}) }}
 	{% endif %}
 
 	{% if now > dateToPass %}
@@ -159,17 +159,17 @@
 		{% endif %}
 
 		{% if link_array|length %}
-			{% include '_components/_callout.twig' with {
+			{{ include("_components/_callout.twig", {
 				callOutType   : 'action',
 				heading       : 'This event has passed',
-				description   : '<p>See more events from ' ~ link_array|join(", ", ', and ') ~ '</p>',
-			} %}
+				description   : "<p>See more events from #{link_array|join(", ", ', and ')}</p>"
+			}) }}
 		{% endif %}
 	{% endif %}
 
 	{% if callOut %}
 		{% for block in callOut %}
-			{% include '_components/_callout.twig' %}
+			{{ include("_components/_callout.twig") }}
 		{% endfor %}
 	{% endif %}
 
@@ -207,11 +207,11 @@
 				{% endif %}
 			{% endif %}
 		{% endset %}
-		{% include '_components/_callout.twig' with {
+		{{ include("_components/_callout.twig", {
 			callOutType   : 'info',
 			heading       : 'Accessibility and interpretation requests',
 			description   : accessibilityText
-		} %}
+		}) }}
 	{% endif %}
 {% endblock %}
 
@@ -223,7 +223,7 @@
 		{% if entry.linkit %}<a class="button secondary" href="{{ entry.linkit.url }}">{{ entry.linkit.text }}</a>{% endif %}
 	{% endif %}
 
-	{% include "_components/sidebar/_contact.twig" %}
+	{{ include("_components/sidebar/_contact.twig") }}
 
 	<hr/>
 	<h4>{{ 'Add to Calendar'|t }}</h4>

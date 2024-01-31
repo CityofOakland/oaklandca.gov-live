@@ -1,4 +1,4 @@
-{% extends '_layout.twig' %}
+{% extends "_layout.twig" %}
 
 {% do craft.app.elements.eagerLoadElements(
   className(entry),
@@ -36,16 +36,16 @@
       ]) %}
     {% endif %}
 
-  {% include '_partials/_page-banners.twig' with {
-    breadCrumbLinks: breadcrumbs,
-  } %}
+  {{ include("_partials/_page-banners.twig", {
+    breadCrumbLinks: breadcrumbs
+  }) }}
   <section id="content" class="@container relative z-0 bg-white">
     <div class="container px-6 pt-10 pb-8 @3xl:px-16 @3xl:py-12">
-      {% include '_partials/_elements/_ctas.twig' %}
+      {{ include("_partials/_elements/_ctas.twig") }}
       <div class="flex">
-      {% include "_partials/_elements/_nav-sidebar.twig" %}
+      {{ include("_partials/_elements/_nav-sidebar.twig") }}
       <div class="flex-1">
-        {% include '_partials/_content-builder/_tool.twig' %}
+        {{ include("_partials/_content-builder/_tool.twig") }}
         {% if embeddedContent %}
           {{ embeddedContent.codeInsertion|raw }}
         {% endif %}

@@ -3,15 +3,15 @@
 {% do seomatic.meta.seoTitle(fullTitle) %}
 
 {% macro callout(calloutHeading) %}
-	{% include '_components/_callout.twig' with {
-      callOutType   : 'attention',
-      heading       : calloutHeading,
-      description   : '' 
-    } %}
+	{{ include("_components/_callout.twig", {
+		callOutType   : 'attention',
+		heading       : calloutHeading,
+		description   : ''
+	}) }}
 {% endmacro %}
 
-{% extends '_content.twig' %}
-{% import '_macros/_macros.twig' as macros %}
+{% extends "_content.twig" %}
+{% import "_macros/_macros.twig" as macros %}
 
 {% set status = 'default' %}
 {% if entry.meetingStatus %}
@@ -285,11 +285,11 @@
 	  {% endif %}
 	{% endset %}
 
-	{% include '_components/_callout.twig' with {
-    callOutType   : 'info',
-    heading       : 'Accessibility and interpretation requests',
-    description   : accessibilityText 
-  } %}
+	{{ include("_components/_callout.twig", {
+		callOutType: 'info',
+		heading: 'Accessibility and interpretation requests',
+		description: accessibilityText
+	}) }}
 {% endblock %}
 
 {% block sidebar %}

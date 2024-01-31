@@ -1,3 +1,5 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
-{% include '_components/_callout.twig' with {heading: block.header} %}
+{{ include("_components/_callout.twig", {
+	heading: block.header
+}) }}
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

@@ -45,18 +45,18 @@
 {% endif %}
 
 <html lang="en">
-  {% include '_partials/_head.twig' %}
+  {{ include("_partials/_head.twig") }}
   <body class="font-body {{ pageClass }}">
-    {% include '_partials/_elements/_skip-to-content.twig' %}
-    {% include '_partials/_elements/_nav-bar.twig' %}
+    {{ include("_partials/_elements/_skip-to-content.twig") }}
+    {{ include("_partials/_elements/_nav-bar.twig") }}
     <div class="overflow-x-hidden page-holder">
 	    <main id="main" aria-hidden="false" role="main" class="overflow-x-hidden">
-		    {% include '_partials/_elements/_sitewide-alert.twig' %}
+		    {{ include("_partials/_elements/_sitewide-alert.twig") }}
 		    <section>
 			    {% block banner %}
             <div class="@container relative bg-transparent-oakland-roots">
               <div class="container px-6 @3xl:px-16 py-4 @3xl:py-12">
-                {% include "_components/partials/_breadcrumbs.twig" %}
+                {{ include("_components/partials/_breadcrumbs.twig") }}
               </div>
             </div>
           {% endblock %}
@@ -76,18 +76,18 @@
                         </div>
                       {% endif %}
                       {% if entry.ctaButton | length %}
-                        {% include '_components/_button.twig' with {
+	                      {{ include("_components/_button.twig", {
                           class: 'mt-4',
-                          url: entry.ctaButton.url,
-                          text: entry.ctaButton.text,
-                        } %}
+		                      url: entry.ctaButton.url,
+	                        text: entry.ctaButton.text,
+	                      }) }}
                       {% endif %}
                       {% if entry is defined and entry.id == 34229 %}
-                        {% include '_components/_button.twig' with {
-                          class: 'mt-4',
-                          url: 'https://www.oaklandca.gov/documents/special-vacancy-notices',
-                          text: 'View Local Appointments List and Special Vacancy Notices',
-                        } %}
+	                      {{ include("_components/_button.twig", {
+													class: 'mt-4',
+													url: 'https://www.oaklandca.gov/documents/special-vacancy-notices',
+													text: 'View Local Appointments List and Special Vacancy Notices',
+	                      }) }}
                       {% endif %}
                     {% endblock %}
 							    </div>
@@ -113,7 +113,7 @@
                     <div id="components-sidebar" class="components components-format">
                       {% block sidebar %}
                         {% if category is not defined %}
-                          {% include '_components/_sidebar.twig' %}
+                          {{ include("_components/_sidebar.twig") }}
                         {% endif %}
                       {% endblock %}
                     </div>
@@ -128,26 +128,26 @@
           <section>
             <div id="components-footer" class="components">
               {% if entry['relatedDepartments'] is defined and relatedDepartments %}
-                {% include "_components/partials/_cards.twig" with {
-                  background: "#334E68",
-                  class:      "text-white",
-                  heading:    "Related Departments",
-                  entries:    relatedDepartments
-                } %}
+	              {{ include("_components/partials/_cards.twig", {
+		              background: "#334E68",
+		              class:      "text-white",
+		              heading:    "Related Departments",
+		              entries:    relatedDepartments
+	              }) }}
               {% endif %}
               {% if entry.componentsFooter %}
                 {% for block in entry.componentsFooter.level(1).all() %}
-                  {% include '_components/_' ~ block.type %}
+	                {{ include("_components/_#{block.type}") }}
                 {% endfor %}
               {% endif %}
             </div>
           </section>
         {% endblock %}
-		  {% include '_components/partials/_feedback.twig' %}
+		  {{ include("_components/partials/_feedback.twig") }}
 	  </main>
     {# Currently only used in one template (_layouts/_meetings.twig). Need a better way to make this more reusable #}
     {% block modal %}{% endblock %}
-    {% include '_partials/_elements/_footer.twig' %}
+    {{ include("_partials/_elements/_footer.twig") }}
   </div>
   {% if craft.app.env == "production" %}
     {% for department in craft.entries.section("departments").type("departments").departmentCodeSnippet(":notempty:").all() %}

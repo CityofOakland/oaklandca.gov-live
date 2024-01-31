@@ -9,10 +9,10 @@
   <div class="items-stretch card-grid">
     {% for entry in block.entries %}
       {% set isDoc = (entry.type == "documents") ? true : false %}
-      {% include '_partials/_elements/_title-cards.twig' with {
+      {{ include("_partials/_elements/_title-cards.twig", {
         url: isDoc ? entry.documentFile[0].url : entry.url,
-        target: isDoc ? "_blank" : "_self"
-      } %}
+        target: isDoc ? "_blank" : "_self",
+      }) }}
     {% endfor %}
   </div>
 </section>

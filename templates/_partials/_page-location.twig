@@ -18,16 +18,18 @@
               {% switch block.type %}
               {% case "location" %}
                 <p class="{% if not loop.first %} mt-8 {% endif %} text-1xl mb-0">{{ block.locationName }}</p>
-                {% include '_partials/_elements/_address.twig' with { location: block } %}
+                {{ include("_partials/_elements/_address.twig", {
+                  location: block
+                }) }}
               {% case "onlineLocation" %}
                 <div class="mt-4 mb-8">
                   {% if block.locationName %}<h4 class="{% if not loop.first %} mt-8 {% endif %} text-2xl mb-0">{{ block.locationName }}</h4>{% endif %}
                   {{ block.locationDescription }}
-                  {% include '_components/_button.twig' with {
+                  {{ include("_components/_button.twig", {
                     class: 'mt-4 mr-0 mb-0',
                     url: block.webAddress,
                     text: block.locationName,
-                  } %}
+                  }) }}
                 </div>
               {% default %}
               {% endswitch %}
@@ -41,7 +43,7 @@
             <h3 class="mb-0 text-2xl">Phone Numbers</h3>
             <ul class="mb-8">
               {% for phone in entry.phoneNumbers %}
-                {% include '_partials/_elements/_phone-numbers.twig' %}
+                {{ include("_partials/_elements/_phone-numbers.twig") }}
               {% endfor %}
             </ul>
           {% elseif phonesTrue %}
@@ -79,7 +81,7 @@
               {% endif %}
               <dl>
                 {% for day in item.hours.getRange(1, 0) %}
-                  {% include '_partials/_elements/_hours.twig' %}
+                  {{ include("_partials/_elements/_hours.twig") }}
                 {% endfor %}
               </dl>
             {% endfor %}
@@ -89,7 +91,7 @@
             <h3 class="mb-0 text-2xl">Business Hours</h3>
             {{ entry.boardHours }}
           {% endif %}
-          {% include '_partials/_elements/_social-media.twig' %}
+          {{ include("_partials/_elements/_social-media.twig") }}
         </div>
       </div>
     </div>

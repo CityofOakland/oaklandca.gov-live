@@ -81,8 +81,8 @@
 {% endif %}
 
 {% set layout = 'filter' %}
-{% extends '_content.twig' %}
-{% import '_macros/_macros.twig' as macros %}
+{% extends "_content.twig" %}
+{% import "_macros/_macros.twig" as macros %}
 
 {% block content %}
   <div>
@@ -110,7 +110,7 @@
   <div class="mt-8">
     {% if events|length %}
       {% for event in events %}
-        {{ include('_components/_event.twig') }}
+        {{ include("_components/_event.twig") }}
       {% endfor %}
     {% else %}
       <div class="px-8 pt-3 pb-5" style="background:#F7F7F7;">

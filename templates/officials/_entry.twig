@@ -1,4 +1,4 @@
-{% extends '_layouts/_banner-with-nav.twig' %}
+{% extends "_layouts/_banner-with-nav.twig" %}
 
 {% do craft.app.elements.eagerLoadElements(
   className(entry),
@@ -17,7 +17,7 @@
 {% set contact = contactState %}
 
 {% block content %}
-  {% include '_partials/_page-banners.twig' with {
+  {{ include("_partials/_page-banners.twig", {
     bannerTitle: entry.groupHeadTitle ~ ' ' ~ entry.groupHeadName,
     breadCrumbLinks: [
       {
@@ -30,18 +30,18 @@
       src: entry.banner[0].url,
       alt: entry.banner[0].title ?? entry.banner[0].filename
     } : false
-  } %}
+  }) }}
   <section class="@container relative z-0 bg-white">
     <div class="container px-6 pt-10 pb-8 @3xl:px-16 @3xl:py-12">
       <div class="flex">
         {% set disableRelatedPages = true %}
-        {% include "_partials/_elements/_nav-sidebar.twig" %}
+        {{ include("_partials/_elements/_nav-sidebar.twig") }}
         <div class="flex-1">
-          {% include '_partials/_content-builder/_tool.twig' %}
-          {% include '_partials/_page-leadership.twig' with {
-            pageLeadershipHeaderText: 'About the ' ~ entry.title,
-          } %}
-          {% include '_partials/_page-location.twig' %}
+          {{ include("_partials/_content-builder/_tool.twig") }}
+          {{ include("_partials/_page-leadership.twig", {
+            pageLeadershipHeaderText: "About the #{entry.title}"
+          }) }}
+          {{ include("_partials/_page-location.twig") }}
         </div>
       </div>
     </div>

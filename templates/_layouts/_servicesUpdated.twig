@@ -1,14 +1,16 @@
-{% extends '_content.twig' %}
+{% extends "_content.twig" %}
 {% block content %}
   {% if entry.callOut|length %}
     {% for block in entry.callOut.all() %}
-      {% include '_components/_callout.twig' %}
+      {{ include("_components/_callout.twig") }}
     {% endfor %}
   {% endif %}
 
   {% if entry.beforeYouStart|length %}
     {% for block in entry.beforeYouStart.all() %}
-      {% include '_components/_section.twig' with {defaultHeader: 'Before you Start'} %}
+      {{ include("_components/_section.twig", {
+        defaultHeader: 'Before you Start'
+      }) }}
     {% endfor %}
   {% endif %}
 
@@ -17,7 +19,9 @@
 
   {% if entry.callToActionButtons %}
     {% for block in entry.callToActionButtons %}
-      {% include '_components/_button.twig' with {style: (loop.index0 ? 'secondary' : 'primary') } %}
+      {{ include("_components/_button.twig", {
+        style: loop.index0 ? 'secondary' : 'primary'
+      }) }}
     {% endfor %}
   {% endif %}
 
@@ -30,11 +34,15 @@
     }) }}
   {% endif %}
 
-  {% include '_components/_process.twig' with {heading: entry.processHeader} %}
+  {{ include("_components/_process.twig", {
+    heading: entry.processHeader
+  }) }}
 
   {% if entry.needToKnow|length %}
     {% for block in entry.needToKnow.all() %}
-      {% include '_components/_section.twig' with {defaultHeader: 'Need to Know'} %}
+      {{ include("_components/_section.twig", {
+        defaultHeader: 'Need to Know'
+      }) }}
     {% endfor %}
   {% endif %}
 {% endblock %}

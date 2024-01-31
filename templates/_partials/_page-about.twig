@@ -12,11 +12,11 @@
       {% if entry.teams | length %}
         <div class="sm:w-1/4 sm:mr-8">
           {% for entry in entry.teams %}
-            {% include '_components/_button.twig' with {
+            {{ include("_components/_button.twig", {
               class: 'block mt-0 mr-0 mb-4 text-center',
               url: entry.url,
               text: entry.title,
-            } %}
+            }) }}
           {% endfor %}
         </div>
       {% endif %}

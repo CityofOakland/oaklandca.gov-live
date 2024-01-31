@@ -6,5 +6,5 @@
 	</ul>
 {% endif %}
 <h3>Agenda Items</h3>
-{% include '_components/_process.twig' %}
+{{ include("_components/_process.twig") }}
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

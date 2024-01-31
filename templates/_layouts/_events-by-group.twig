@@ -1,6 +1,6 @@
 {% set layout = 'filter' %}
-{% extends '_content.twig' %}
-{% import '_macros/_macros.twig' as macros %}
+{% extends "_content.twig" %}
+{% import "_macros/_macros.twig" as macros %}
 
 {% if section is defined and slug is defined %}
   {% set section = (section == 'boards-commissions') ? 'boardsCommissions' : section %}
@@ -113,7 +113,7 @@
             alt="{{ banner.title ?? banner.filename }}">
         </figure>
         <div class="container py-0">
-          {% include "_components/partials/_breadcrumbs.twig" %}
+          {{ include("_components/partials/_breadcrumbs.twig") }}
         </div>
       </div>
     </div>
@@ -121,7 +121,7 @@
     <div class="leading-none banner">
       <div class="container pt-2 pb-8 md:pt-4 md:pb-6">
         <div class="absolute inset-0 z-0 bg-transparent-oakland-roots"></div>
-        {% include "_components/partials/_breadcrumbs.twig" %}
+        {{ include("_components/partials/_breadcrumbs.twig") }}
       </div>
     </div>
   {% endif %}
@@ -152,7 +152,7 @@
     <div class="mt-8">
       {% if events|length %}
         {% for event in events %}
-          {{ include('_components/_event.twig') }}
+          {{ include("_components/_event.twig") }}
         {% endfor %}
       {% else %}
         <div class="px-8 pt-3 pb-5" style="background:#F7F7F7;">
@@ -250,7 +250,7 @@
       <h3 class="mt-0 mb-8">Upcoming Events</h3>
       {% for event in upcomingEvents %}
         {% if loop.index <= 3 %}
-          {{ include('_components/_event.twig') }}
+          {{ include("_components/_event.twig") }}
         {% endif %}
       {% endfor %}
       {% if upcomingEvents|length > 3 %}
@@ -261,7 +261,7 @@
       <h3 class="{{ upcomingEvents|length ? 'mt-12 mb-8' : 'mt-0 mb-8' }}">Past Events</h3>
       {% for event in pastEvents %}
         {% if loop.index <= 3 %}
-          {{ include('_components/_event.twig') }}
+          {{ include("_components/_event.twig") }}
         {% endif %}
       {% endfor %}
       {% if pastEvents|length > 3 %}

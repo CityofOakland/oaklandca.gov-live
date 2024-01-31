@@ -67,8 +67,8 @@
 {% endif %}
 
 {% set layout = 'filter' %}
-{% extends '_content.twig' %}
-{% import '_macros/_macros.twig' as macros %}
+{% extends "_content.twig" %}
+{% import "_macros/_macros.twig" as macros %}
 
 {% block content %}
   <div>
@@ -96,7 +96,7 @@
   <div class="mt-8">
     {% if meetings|length %}
       {% for meeting in meetings %}
-        {{ include('_components/_meeting.twig') }}
+        {{ include("_components/_meeting.twig") }}
       {% endfor %}
     {% else %}
       <div class="px-8 pt-3 pb-5" style="background:#F7F7F7;">
@@ -111,7 +111,7 @@
   </div>
 
   <div class="my-8">
-    {% include '_partials/_elements/_pagination.twig' %}
+    {{ include("_partials/_elements/_pagination.twig") }}
   </div>
 
   <div class="lg:oak-hidden">

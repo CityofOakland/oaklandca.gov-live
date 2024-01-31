@@ -1,5 +1,5 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
-{% import '_macros/_macros.twig' as macros %}
+{% import "_macros/_macros.twig" as macros %}
 
 {% set meetings     = craft.entries.section('meetings').date(['>= ' ~ now|date('Y-m-d')]).orderBy('date asc').limit(3).relatedTo(entry) %}
 {% set headingText  = 'Related Meetings' %}

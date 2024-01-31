@@ -1,4 +1,4 @@
-{% extends '_layout.twig' %}
+{% extends "_layout.twig" %}
 
 {% block content %}
   <div class="leading-normal banner">
@@ -12,21 +12,21 @@
 
   <section class="bg-white">
     <div class="container">
-      {% include '_partials/_elements/_module-header.twig' with {
+      {{ include("_partials/_elements/_module-header.twig", {
         headerText: "City Officials",
         linkText: "View Staff Directory",
         linkUrl: "/staff/",
-      } %}
+      }) }}
       <div id="content" style="position:relative;top:-5rem;"></div>
       <div class="mt-12 card-grid grid-equal-height profile-cards">
         {% for entry in craft.entries.section('officials').all() %}
-          {% include '_partials/_elements/_profile-cards.twig' with {
+          {{ include("_partials/_elements/_profile-cards.twig", {
             photo: entry.portrait.one,
             name: entry.groupHeadName,
             jobTitle: entry.title,
             url: entry.redirectUrl ?? entry.url ?? '',
             icon: "user"
-          } %}
+          }) }}
         {% endfor %}
       </div>
     </div>

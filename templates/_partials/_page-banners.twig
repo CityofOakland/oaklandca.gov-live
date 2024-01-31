@@ -35,18 +35,18 @@
       {% endif %}
       <div class="flex space-x-4">
         {% if ctaButton | length %}
-          {% include '_components/_button.twig' with {
+          {{ include("_components/_button.twig", {
             class: 'mt-4',
             url: ctaButton.url,
-            text: ctaButton.text,
-          } %}
+            text: ctaButton.text
+          }) }}
         {% endif %}
         {% if entry is defined and entry.id == 34229 %}
-          {% include '_components/_button.twig' with {
+          {{ include("_components/_button.twig", {
             class: 'mt-4',
             url: 'https://www.oaklandca.gov/documents/special-vacancy-notices',
             text: 'View Local Appointments List and Special Vacancy Notices',
-          } %}
+          }) }}
         {% endif %}
       </div>
     </div>
@@ -57,7 +57,7 @@
 {%- endset -%}
 
 {%- set breadcrumbs -%}
-  {% include "_components/partials/_breadcrumbs.twig" %}
+  {{ include("_components/partials/_breadcrumbs.twig") }}
 {%- endset -%}
 
 {% if bannerImage | length %}

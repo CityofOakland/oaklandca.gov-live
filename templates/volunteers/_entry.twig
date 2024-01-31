@@ -1,4 +1,4 @@
-{% extends '_layout.twig' %}
+{% extends "_layout.twig" %}
 {# Sets any overrides for the volunteer imports #}
 {% set firstName = entry.firstName ?? '' %}
 {% set middleInitial = entry.middleInitial ?? '' %}
@@ -7,7 +7,7 @@
 {% set email = entry.emailAddress ?? '' %}
 
 {% block content %}
-  {% include '_partials/_page-banners.twig' with {
+  {{ include("_partials/_page-banners.twig", {
     breadCrumbLinks: [
       {
         title: 'Volunteers',
@@ -16,7 +16,7 @@
     ],
     leadIn: jobTitle,
     bannerImage: false
-  } %}
+  }) }}
   <section class="@container bg-white">
     <div class="container px-6 @3xl:px-16 py-4 @3xl:py-12">
       <div class="sm:flex sm:flex-row-reverse">
@@ -56,11 +56,11 @@
           {% set dobc = entry.departmentOfficialBoardCommission %}
           {% if dobc.exists() %}
             <h3 class="mt-4 flex items-center justify-center text-lg font-bold"><span class="w-16">Team: </span>
-              {% include '_components/_button.twig' with {
+              {{ include("_components/_button.twig", {
                 class: 'small mt-0 mr-0',
                 text: dobc.one.title,
                 url: dobc.one.url,
-              } %}
+              }) }}
             </h3>
           {% elseif entry.staffImportDepartment | length %}
             <h3 class="flex items-center text-lg font-bold">{{ entry.staffImportDepartment }}</h3>

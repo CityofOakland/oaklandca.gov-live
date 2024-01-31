@@ -1,4 +1,4 @@
-{% extends '_layout.twig' %}
+{% extends "_layout.twig" %}
 
 {% set jobTitle       = entry.jobTitle ? entry.jobTitle : entry.staffImportJobTitle %}
 {% set department     = entry.departmentOfficialBoardCommission|length ? entry.departmentOfficialBoardCommission.one().title : entry.staffImportDepartment %}
@@ -16,7 +16,7 @@
   <div class="leading-none banner @container">
     <div class="container px-6 @3xl:px-16 pt-2 pb-8 md:pt-4 md:pb-6">
       <div class="absolute inset-0 z-0 bg-transparent-oakland-roots"></div>
-      {% include "_components/partials/_breadcrumbs.twig" %}
+      {{ include("_components/partials/_breadcrumbs.twig") }}
     </div>
   </div>
   <div id="content" style="position:relative;top:-5rem;"></div>

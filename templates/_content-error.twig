@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,700&display=swap" rel="stylesheet">
-    {% include "_components/partials/_favicons.twig" %}
+    {{ include("_components/partials/_favicons.twig") }}
     {{ craft.vite.script("src/js/app.js", false) }}
   </head>
 
   <body class="overflow-x-hidden font-body {{ pageClass ?? '' }}">
     <div class="page-holder">
-      {% include '_partials/_elements/_skip-to-content.twig' %}
+      {{ include("_partials/_elements/_skip-to-content.twig") }}
       <header class="fill-current px-4 py-3 text-gray-100 bg-gray-1000">
         <div class="h-9 w-14 sm:h-10 md:h-10 sm:oak-hidden">{{ svg('@webroot/dist/img/logo-oakland-tree.svg') }}</div>
         <div class="h-10 w-40 oak-hidden sm:block">{{ svg('@webroot/dist/img/logo-oakland.svg') }}</div>

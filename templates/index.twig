@@ -1,4 +1,4 @@
-{% extends '_layout.twig' %}
+{% extends "_layout.twig" %}
 {% do craft.app.elements.eagerLoadElements(
     className(entry),
     [entry],
@@ -45,8 +45,8 @@
 
   <div id="content" style="position:relative;top:-5rem;"></div>
   
-  {% if entry.cityServicesAndResourcesUpdates|length %}
-    {% include '_components/partials/_cards.twig' with {
+  {% if entry.cityServicesAndResourcesUpdates %}
+    {{ include("_components/partials/_cards.twig", {
       background:   '#f7f7f7',
       button_label: 'See all services'|t,
       button_url:   siteUrl ~ '/services',
@@ -54,18 +54,18 @@
       entries:      entry.cityServicesAndResourcesUpdates,
       heading:      "Top City Services and Resources"|t,
       shadow:       true,
-    } %}
+    }) }}
   {% endif %}
 
   {{ include("_partials/_content-builder/_blocks/_custom-elements/global-news-cards.twig") }}
 
   {% if learnMore|length %}
-    {% include '_components/partials/_cards.twig' with {
+    {{ include("_components/partials/_cards.twig", {
       background:   '#f7f7f7',
       entries:      learnMore,
       heading:      entry.sectionHeading ? entry.sectionHeading : "Learn More About"|t,
       shadow:       true,
-    } %}
+    }) }}
   {% endif %}
 
   <section class="bg-white">
@@ -74,13 +74,13 @@
       <div class="card-grid grid-equal-height profile-cards">
         {% for entry in craft.entries.section('officials').with(['portrait']).all() %}
           {% set portrait = entry.portrait[0] ?? "" %}
-          {% include '_partials/_elements/_profile-cards.twig' with {
+          {{ include("_partials/_elements/_profile-cards.twig", {
             photo: portrait,
-            name: entry.groupHeadName,
-            jobTitle: entry.title,
+            name: entry.title,
+            jobTitle: entry.jobTitle,
             url: entry.redirectUrl ?? entry.url ?? '',
             icon: "user"
-          } %}
+          }) }}
         {% endfor %}
       </div>
       <p class="pt-3 underline"><a href="https://oakgis.maps.arcgis.com/apps/instant/lookup/index.html?appid=da589a352c8641459af8a0f890398d44" target="_blank"><b>{{ "Find your council district"|t }} »</b></a></p>

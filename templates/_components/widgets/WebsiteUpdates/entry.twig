@@ -1,23 +1,24 @@
 {% requireLogin %}
 
-{% extends '_layout.twig' %}
+{% extends "_layout.twig" %}
 
 {% block content %}
-  {% include '_partials/_page-banners.twig' with {
+  {{ include("_partials/_page-banners.twig", {
     breadCrumbLinks: [
       {
         title: 'Website Updates',
-        link: siteUrl ~ 'updates'
+        link: "#{siteUrl}updates"
       }
     ],
-  } %}
+  })
+  }) }}
   <div class="container pt-0">
     <div class="flex">
-      {% include "_partials/_elements/_nav-sidebar.twig" %}
+      {{ include("_partials/_elements/_nav-sidebar.twig") }}
       <div class="flex flex-1">
         <div class="md:w-3/4 md:mr-8">
-          {% include '_partials/_elements/_last-update.twig' %}
-            <div class="body-text">{{ entry.mainContent }}</div>
+          {{ include("_partials/_elements/_last-update.twig") }}
+          <div class="body-text">{{ entry.mainContent }}</div>
         </div>
         <div class="md:flex-1">
         </div>

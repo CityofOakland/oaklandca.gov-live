@@ -44,7 +44,7 @@
   <div class="card-grid vertical-cards">
     {% for entryId in entryIds %}
       {% set entry = craft.entries.id(entryId).one() %}
-      {% include '_partials/_elements/_vertical-cards.twig' with {
+      {{ include("_partials/_elements/_vertical-cards.twig", {
         title: entry.title,
         url: entry.url,
         icon: 'newspaper',
@@ -53,12 +53,12 @@
         body: entry.summary,
         photoHide: block.hideThumbnails,
         summaryHide: block.hideSummary
-      } %}
+      }) }}
     {% endfor %}
   </div>
-  {% include "_partials/_elements/_module-readmore.twig" with {
+  {{ include("_partials/_elements/_module-readmore.twig", {
     linkText: pageNewsLinkText ?? "Related News",
     linkUrl: pageNewsLinkUrl ?? defaultButtonUrl
-  } %}
+  }) }}
 </section>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

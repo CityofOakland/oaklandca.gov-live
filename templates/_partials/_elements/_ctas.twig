@@ -2,14 +2,14 @@
 {% macro buttonTemplate(descriptorText, url, buttonText) %}
   <div class="mb-4 md:px-3">
     <div class="button-container">
-      {% include '_components/_button.twig' with {
+      {{ include("_components/_button.twig", {
         class: 'mt-0 mr-0',
-        label: buttonText ~ ' ' ~ descriptorText,
+        label: "#{buttonText} #{descriptorText}",
         text: buttonText|raw,
         url: url,
-      } %}
+      }) }}
       <div></div>
-      {% if descriptorText | length %}<span class="mt-2 inline-block min-w-full text-sm uppercase break-word md:min-w-0">{{ descriptorText }}</span>{% endif %}
+      {% if descriptorText %}<span class="mt-2 inline-block min-w-full text-sm uppercase break-word md:min-w-0">{{ descriptorText }}</span>{% endif %}
     </div>
   </div>
 {% endmacro %}

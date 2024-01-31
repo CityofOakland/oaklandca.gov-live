@@ -7,7 +7,7 @@
         <div>
           <span class="block font-semibold">{{ item.heading }}</span>
           {% for block in item.innerContent.all() %}
-            {% include '_components/_' ~ block.type %}
+            {{ include("_components/_#{block.type}") }}
           {% endfor %}
         </div>
       </li>
