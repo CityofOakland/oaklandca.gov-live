@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!--suppress HtmlRequiredTitleElement -->
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    {% block headTop %}
-    {% endblock %}
-    {# Calls in the SEOmatic tags, all handled through the CMS settings #}
-    {% hook 'seomaticRender' %}
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+Nyiakeng+Puachue+Hmong&display=swap" rel="stylesheet">
-    {% include "_components/partials/_favicons.twig" %}
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-    {{ craft.vite.script("src/js/app.js", false) }}
-    <script src="https://kit.fontawesome.com/b207de7bfc.js" crossorigin="anonymous"></script>
-  </head>
+  {% include '_partials/_head.twig' %}
 
   {# Checks if the URI is empty and if not, adds the class of "home" to the page body. #}
   {% if not craft.app.request.segments() %}

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "882775af8487616d3b67db2973b496aa",
+    "content-hash": "f812b1140061acf68209c24133f04d8a",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -977,24 +977,16 @@
         },
         {
             "name": "born05/craft-assetusage",
-            "version": "3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/born05/craft-assetusage.git",
-                "reference": "c4efd889714825ae2be8ce9738bc46f679c9eee1"
-            },
+            "version": "3.3.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/born05/craft-assetusage/zipball/c4efd889714825ae2be8ce9738bc46f679c9eee1",
-                "reference": "c4efd889714825ae2be8ce9738bc46f679c9eee1",
+                "url": "https://api.github.com/repos/born05/craft-assetusage/zipball/c334a7782ee1c556ecb9638e44d856b95e39bd51",
+                "reference": "c334a7782ee1c556ecb9638e44d856b95e39bd51",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^4.0.0-beta.1",
                 "php": "^8.0.2"
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "3.*"
             },
             "type": "craft-plugin",
             "extra": {
@@ -1009,7 +1001,6 @@
                     "born05\\assetusage\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1021,18 +1012,17 @@
             ],
             "description": "Adds a column to see which assets are used or unused.",
             "keywords": [
-                "Craft",
                 "asset usage",
                 "cms",
+                "craft",
                 "craft-plugin",
                 "craftcms"
             ],
             "support": {
                 "docs": "https://github.com/born05/craft-assetusage/blob/craft4/README.md",
-                "issues": "https://github.com/born05/craft-assetusage/issues",
-                "source": "https://github.com/born05/craft-assetusage/tree/3.2.0"
+                "issues": "https://github.com/born05/craft-assetusage/issues"
             },
-            "time": "2023-06-20T14:21:01+00:00"
+            "time": "2024-01-26T09:33:12+00:00"
         },
         {
             "name": "brick/math",
