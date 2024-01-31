@@ -46,7 +46,7 @@
   <div id="content" style="position:relative;top:-5rem;"></div>
   
   {% if entry.cityServicesAndResourcesUpdates|length %}
-    {% include '_components/partials/_cards' with {
+    {% include '_components/partials/_cards.twig' with {
       background:   '#f7f7f7',
       button_label: 'See all services'|t,
       button_url:   siteUrl ~ '/services',
@@ -60,7 +60,7 @@
   {{ include("_partials/_content-builder/_blocks/_custom-elements/global-news-cards.twig") }}
 
   {% if learnMore|length %}
-    {% include '_components/partials/_cards' with {
+    {% include '_components/partials/_cards.twig' with {
       background:   '#f7f7f7',
       entries:      learnMore,
       heading:      entry.sectionHeading ? entry.sectionHeading : "Learn More About"|t,

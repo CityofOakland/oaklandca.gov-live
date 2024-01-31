@@ -23,7 +23,7 @@
                 <div class="mt-4 mb-8">
                   {% if block.locationName %}<h4 class="{% if not loop.first %} mt-8 {% endif %} text-2xl mb-0">{{ block.locationName }}</h4>{% endif %}
                   {{ block.locationDescription }}
-                  {% include '_components/_button' with {
+                  {% include '_components/_button.twig' with {
                     class: 'mt-4 mr-0 mb-0',
                     url: block.webAddress,
                     text: block.locationName,

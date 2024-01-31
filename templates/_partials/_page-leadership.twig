@@ -24,7 +24,7 @@
           </figure>
           {% if entry.teams | length %}
             {% for entry in entry.teams %}
-              {% include '_components/_button' with {
+              {% include '_components/_button.twig' with {
                 class: 'block mt-4 mr-0 mb-0 text-center',
                 url: entry.url,
                 text: entry.title,

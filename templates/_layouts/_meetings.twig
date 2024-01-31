@@ -3,7 +3,7 @@
 {% do seomatic.meta.seoTitle(fullTitle) %}
 
 {% macro callout(calloutHeading) %}
-	{% include '_components/_callout' with {
+	{% include '_components/_callout.twig' with {
       callOutType   : 'attention',
       heading       : calloutHeading,
       description   : '' 
@@ -285,7 +285,7 @@
 	  {% endif %}
 	{% endset %}
 
-	{% include '_components/_callout' with {
+	{% include '_components/_callout.twig' with {
     callOutType   : 'info',
     heading       : 'Accessibility and interpretation requests',
     description   : accessibilityText 

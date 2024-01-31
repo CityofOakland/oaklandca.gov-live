@@ -75,7 +75,7 @@
             <p class="mt-0 updated">Posted: {{ notice.postDate|date("F j, Y") }}</p>
             {% set file = notice.documentFile.one() %}
             {% if file %}
-              {% include '_components/_button' with {
+              {% include '_components/_button.twig' with {
                 class: 'small mt-4 mt-md:0 mr-0',
                 style: 'secondary',
                 url: notice.documentFile.one().url,
@@ -96,7 +96,7 @@
   </div>
 
   <div class="my-8">
-    {% include '_partials/_elements/_pagination' %}
+    {% include '_partials/_elements/_pagination.twig' %}
   </div>
 {% endblock %}
 

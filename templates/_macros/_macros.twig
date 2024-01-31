@@ -67,7 +67,7 @@
     {% set relSection = isEntries ? craft.app.sections.getSectionByHandle(relSectionHandle) %}
     {% set urlBase = relSectionHandle | kebab %}
     {% set relUrl = "/" ~ urlBase ~ "/related-to/" ~ section.handle ~ "/" ~ entry.slug %}
-    {% include "_partials/_elements/_title-cards" with { title: relSection.name, url: relUrl} %}
+    {% include "_partials/_elements/_title-cards.twig" with { title: relSection.name, url: relUrl} %}
   {% endif %}
 {% endmacro %}
 

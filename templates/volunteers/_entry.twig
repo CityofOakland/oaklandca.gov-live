@@ -56,7 +56,7 @@
           {% set dobc = entry.departmentOfficialBoardCommission %}
           {% if dobc.exists() %}
             <h3 class="mt-4 flex items-center justify-center text-lg font-bold"><span class="w-16">Team: </span>
-              {% include '_components/_button' with {
+              {% include '_components/_button.twig' with {
                 class: 'small mt-0 mr-0',
                 text: dobc.one.title,
                 url: dobc.one.url,

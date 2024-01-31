@@ -141,7 +141,7 @@
 	{% endif %}
 
 	{% if entry.calendarize.repeats %}
-		{% include '_components/_callout' with {
+		{% include '_components/_callout.twig' with {
 			callOutType   : 'info',
 			heading       : 'This event is part of a series',
 			description   : '<p>See more events <a href="' ~ siteUrl ~ 'events' ~ '">' ~ entry.title ~ '</a></p>',

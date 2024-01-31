@@ -15,7 +15,7 @@
     {% set query = craft.entries.section(entrySection).relatedTo(relatedEntry).limit(25).orderBy('title') %}
   {% endif %}
   {% paginate query as pageInfo, pageEntries %}
-  {% include '_partials/_elements/_pagination' %}
+  {% include '_partials/_elements/_pagination.twig' %}
   <div class="my-4 space-y-4 md:space-y-8 md:my-8">
     {% for entry in pageEntries %}
       <article>
@@ -26,5 +26,5 @@
       </article>
     {% endfor %}
   </div>
-  {% include '_partials/_elements/_pagination' %}
+  {% include '_partials/_elements/_pagination.twig' %}
 {% endblock %}

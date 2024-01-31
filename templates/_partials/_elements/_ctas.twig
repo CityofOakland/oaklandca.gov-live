@@ -2,7 +2,7 @@
 {% macro buttonTemplate(descriptorText, url, buttonText) %}
   <div class="mb-4 md:px-3">
     <div class="button-container">
-      {% include '_components/_button' with {
+      {% include '_components/_button.twig' with {
         class: 'mt-0 mr-0',
         label: buttonText ~ ' ' ~ descriptorText,
         text: buttonText|raw,
