@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "faa8ebbbedcf77b16206918ccdcf9e3d",
+    "content-hash": "b7323a8711ffb1bae711f5e96bbc15a7",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -6519,33 +6519,30 @@
             "time": "2022-05-07T07:12:41+00:00"
         },
         {
-            "name": "ostark/craft-relax",
-            "version": "2.0.1",
+            "name": "ostark/craft-async-queue",
+            "version": "3.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ostark/craft-relax/zipball/4dd1c066b8b30d2da8fc097c93d0c6716ab531d4",
-                "reference": "4dd1c066b8b30d2da8fc097c93d0c6716ab531d4",
+                "url": "https://api.github.com/repos/ostark/craft-async-queue/zipball/88eb24287b88128c31bd2b2641f54b7b0d1f6038",
+                "reference": "88eb24287b88128c31bd2b2641f54b7b0d1f6038",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^4.0.0",
-                "php": "^7.4||^8.0",
-                "treeware/plant": "*",
-                "yiisoft/yii2-queue": "^2.3.3"
+                "php": "^8.0",
+                "symfony/process": "^5.0|^6.0"
             },
             "type": "craft-plugin",
             "extra": {
-                "treeware": [],
-                "name": "Relax",
-                "handle": "relax",
+                "name": "AsyncQueue",
+                "handle": "async-queue",
                 "hasCpSettings": false,
                 "hasCpSection": false,
-                "changelogUrl": "https://raw.githubusercontent.com/ostark/craft-relax/main/CHANGELOG.md",
-                "class": "ostark\\Relax\\Plugin"
+                "changelogUrl": "https://raw.githubusercontent.com/ostark/craft-async-queue/master/CHANGELOG.md"
             },
             "autoload": {
                 "psr-4": {
-                    "ostark\\Relax\\": "src"
+                    "ostark\\AsyncQueue\\": "src/"
                 }
             },
             "license": [
@@ -6554,24 +6551,22 @@
             "authors": [
                 {
                     "name": "Oliver Stark",
-                    "email": "os@fortrabbit.com",
-                    "role": "Developer"
+                    "homepage": "https://www.fortrabbit.com"
                 }
             ],
-            "description": "Craft relax! Less database I/O ",
-            "homepage": "https://github.com/ostark/craft-relax",
+            "description": "A queue handler that moves queue execution to a non-blocking background process",
             "keywords": [
+                "cms",
+                "craft",
                 "craft-plugin",
-                "craft-relax",
-                "craftcms"
+                "craftcms",
+                "queue"
             ],
             "support": {
-                "email": "os@fortrabbit.com",
-                "issues": "https://github.com/ostark/craft-relax/issues?state=open",
-                "source": "https://github.com/ostark/craft-relax",
-                "docs": "https://github.com/ostark/craft-relax/blob/main/README.md"
+                "docs": "https://github.com/ostark/craft-async-queue/blob/master/README.md",
+                "issues": "https://github.com/ostark/craft-async-queue/issues"
             },
-            "time": "2022-09-14T14:45:31+00:00"
+            "time": "2024-01-04T11:09:05+00:00"
         },
         {
             "name": "panlatent/cron-expression-descriptor",
@@ -9935,11 +9930,6 @@
         {
             "name": "symfony/filesystem",
             "version": "v6.4.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/filesystem.git",
-                "reference": "7f3b1755eb49297a0827a7575d5d2b2fd11cc9fb"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/filesystem/zipball/7f3b1755eb49297a0827a7575d5d2b2fd11cc9fb",
@@ -9960,7 +9950,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -9976,23 +9965,6 @@
             ],
             "description": "Provides basic utilities for the filesystem",
             "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/filesystem/tree/v6.4.3"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2024-01-23T14:51:35+00:00"
         },
         {
@@ -10264,11 +10236,6 @@
         {
             "name": "symfony/mime",
             "version": "v6.4.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/mime.git",
-                "reference": "5017e0a9398c77090b7694be46f20eb796262a34"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/mime/zipball/5017e0a9398c77090b7694be46f20eb796262a34",
@@ -10288,15 +10255,6 @@
                 "symfony/mailer": "<5.4",
                 "symfony/serializer": "<6.3.2"
             },
-            "require-dev": {
-                "egulias/email-validator": "^2.1.10|^3.1|^4",
-                "league/html-to-markdown": "^5.0",
-                "phpdocumentor/reflection-docblock": "^3.0|^4.0|^5.0",
-                "symfony/dependency-injection": "^5.4|^6.0|^7.0",
-                "symfony/property-access": "^5.4|^6.0|^7.0",
-                "symfony/property-info": "^5.4|^6.0|^7.0",
-                "symfony/serializer": "^6.3.2|^7.0"
-            },
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -10306,7 +10264,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -10325,23 +10282,6 @@
             "keywords": [
                 "mime",
                 "mime-type"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/mime/tree/v6.4.3"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2024-01-30T08:32:12+00:00"
         },
@@ -11440,11 +11380,6 @@
         {
             "name": "symfony/var-dumper",
             "version": "v6.4.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "0435a08f69125535336177c29d56af3abc1f69da"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/var-dumper/zipball/0435a08f69125535336177c29d56af3abc1f69da",
@@ -11458,15 +11393,6 @@
             },
             "conflict": {
                 "symfony/console": "<5.4"
-            },
-            "require-dev": {
-                "ext-iconv": "*",
-                "symfony/console": "^5.4|^6.0|^7.0",
-                "symfony/error-handler": "^6.3|^7.0",
-                "symfony/http-kernel": "^5.4|^6.0|^7.0",
-                "symfony/process": "^5.4|^6.0|^7.0",
-                "symfony/uid": "^5.4|^6.0|^7.0",
-                "twig/twig": "^2.13|^3.0.4"
             },
             "bin": [
                 "Resources/bin/var-dump-server"
@@ -11483,7 +11409,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -11502,23 +11427,6 @@
             "keywords": [
                 "debug",
                 "dump"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/v6.4.3"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2024-01-23T14:53:30+00:00"
         },
@@ -11720,29 +11628,6 @@
                 "issues": "https://github.com/TopShelfCraft/Wordsmith/issues"
             },
             "time": "2023-12-21T02:39:35+00:00"
-        },
-        {
-            "name": "treeware/plant",
-            "version": "0.1.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/TreewareEarth/plant/zipball/bc1ff8eb350ce74b3fe0bd7ab80bc332d1096599",
-                "reference": "bc1ff8eb350ce74b3fe0bd7ab80bc332d1096599",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0|^2.0"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "Treeware\\Plant\\Plugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Treeware\\Plant\\": "src/"
-                }
-            },
-            "time": "2021-05-04T17:17:46+00:00"
         },
         {
             "name": "trendyminds/craft-reporter",
