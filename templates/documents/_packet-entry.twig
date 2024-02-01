@@ -1,4 +1,4 @@
-{% extends '_content.twig' %}
+{% extends "_content.twig" %}
 
 {% set bannerTitle = entry.title %}
 {% set breadCrumbLinks = [
@@ -10,9 +10,9 @@
 
 {% block content %}
   {% if entry.documents.exists() %}
-    {% include '_partials/_elements/_module-header.twig' with {
+    {{ include("_partials/_elements/_module-header.twig", {
       headerText: "Documents",
-    } %}
+    }) }}
     {% if entry.sortDocumentsByDate %}
       {% set entries = entry.documents.orderBy('postDate desc').all() %}
     {% else %}
@@ -26,20 +26,20 @@
             <h3 class="mb-0 text-xl">
               <a href="{{ file.url }}" class="inline-flex items-center fill-current duration-75">
                 <div class="mt-1 mr-2 inline-block h-5 w-8">
-                  {{ svg('@webroot/dist/img/icon-' ~ file.kind ~ '.svg')|attr({
+                  {{ svg("@webroot/dist/img/icon-#{file.kind}.svg")|attr({
                       class: 'w-full h-full'
                   })|raw }}
                 </div>
                 {{ entry.title }}
-                ({{ file.kind | upper }})</a>
+                ({{ file.kind|upper }})
+              </a>
             </h3>
-            {{ entry.summary | retcon('attr', '*', { class: 'pl-8 mt-2'}) }}
+            {{ entry.summary|retcon('attr', '*', { class: 'pl-8 mt-2'}) }}
           </article>
         {% else %}
           <article>
             <h3 class="mb-0 text-xl">
-              <a href="{{ entry.url }}" class="inline-flex">DOCUMENT PACKET:
-                {{ entry.title }}</a>
+              <a href="{{ entry.url }}" class="inline-flex">DOCUMENT PACKET: {{ entry.title }}</a>
             </h3>
           </article>
         {% endif %}

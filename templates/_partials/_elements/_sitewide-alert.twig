@@ -17,12 +17,12 @@
         </div>
         {% if sitewideAlert.alertUrl %}
           <div>
-            {% include '_components/_button' with {
+            {{ include("_components/_button.twig", {
               class: 'small mt-0 mr-0',
               style: 'accent',
               text: 'Read More »',
               url: sitewideAlert.alertUrl.url,
-            } %}
+            }) }}
           </div>
         {% endif %}
       </div>

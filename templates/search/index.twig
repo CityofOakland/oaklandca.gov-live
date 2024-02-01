@@ -1,11 +1,9 @@
 {% set query = craft.app.request.getParam('query') %}
-{% extends '_layout.twig' %}
+{% extends "_layout.twig" %}
 {% set entry = craft.entries.section('searchIndex').one %}
 
-{% block headTop %}
-  <link href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch-theme-algolia.min.css" rel="stylesheet">
-{% endblock %}
+{% css "https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.css" %}
+{% css "https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch-theme-algolia.min.css" %}
 
 {% do view.registerJsFile("https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find") %}
 {% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5") %}

@@ -17,20 +17,20 @@
     }) }}
     <div class="mt-8 card-grid vertical-cards">
       {% for entry in events %}
-        {% include '_partials/_elements/_vertical-cards.twig' with {
+        {{ include("_partials/_elements/_vertical-cards.twig", {
           title: entry.title,
           url: entry.url,
           icon: 'calendar',
           photo: entry.eventImage.one,
           byline: entry.startDate.format("M d, Y"),
-          body: entry.body | chop(limit=50, unit='w', append='…')
-        } %}
+          body: entry.body|chop(limit=50, unit='w', append='…')
+        }) }}
       {% endfor %}
     </div>
-    {% include "_partials/_elements/_module-readmore.twig" with {
+    {{ include("_partials/_elements/_module-readmore.twig", {
       linkText: pageEventsLinkText ?? "Related Events",
       linkUrl: pageEventsLinkUrl ?? defaultButtonUrl
-    } %}
+    }) }}
   </section>
 {% endif %}
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

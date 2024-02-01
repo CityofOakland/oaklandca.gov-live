@@ -24,22 +24,24 @@
           </figure>
           {% if entry.teams | length %}
             {% for entry in entry.teams %}
-              {% include '_components/_button' with {
+              {{ include("_components/_button.twig", {
                 class: 'block mt-4 mr-0 mb-0 text-center',
                 url: entry.url,
-                text: entry.title,
-              } %}
+                text: entry.title
+              }) }}
             {% endfor %}
           {% endif %}
         </div>
         <div class="sm:col-span-3">
-          {% include "_partials/_elements/_module-header.twig" with {
+          {{ include("_partials/_elements/_module-header.twig", {
             headerText: entry.groupHeadName
-          } %}
+          }) }}
           {% if pageLeadershipHeaderText is not defined %}
             <p class="mt-2">{{ entry.groupHeadTitle }}</p>
           {% endif %}
-          <div class="mt-8">{{ entry.groupHeadBio | raw }}</div>
+          <div class="mt-8">
+            {{ entry.groupHeadBio|raw }}
+          </div>
         </div>
       </div>
     </div>

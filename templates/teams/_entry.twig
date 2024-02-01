@@ -1,4 +1,4 @@
-{% extends '_layout.twig' %}
+{% extends "_layout.twig" %}
 
 {% do craft.app.elements.eagerLoadElements(
   className(entry),
@@ -7,7 +7,7 @@
 ) %}
 
 {% block content %}
-  {% include '_partials/_page-banners.twig' with {
+  {{ include("_partials/_page-banners.twig", {
     bannerTitle: entry.title | replace(' Index', ''),
     breadCrumbLinks: [
       {
@@ -20,7 +20,7 @@
       src: entry.banner[0].url,
       alt: entry.banner[0].title ?? entry.banner[0].filename
     } : false
-  } %}
+  }) }}
   <section class="relative z-0 bg-white pb-12 @container">
     <div class="container px-6 @3xl:px-16 pt-6 sm:pt-12">
       {% for team in entry.teamMembers.all() %}
@@ -53,14 +53,14 @@
               {% endif %}
             {%- endset -%}
 
-            {% include '_partials/_elements/_profile-cards.twig' with {
+            {{ include("_partials/_elements/_profile-cards.twig", {
               photo: entry.portrait.one,
               name: entry.title,
               jobTitle: entry.jobTitle ?? entry.staffImportJobTitle ?? '',
               url: entry.redirectUrl ?? entry.url ?? '',
               extraContent: extraContent,
               icon: 'user'
-            } %}
+            }) }}
           {% endfor %}
         </div>
       {% endfor %}

@@ -1,0 +1,5 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
+{% if craft.app.env == "production" %}
+<script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=b47795b8"></script>
+{% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

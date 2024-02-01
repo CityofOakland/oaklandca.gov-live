@@ -1,9 +1,6 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {# Use these variables to set the table status attributes  #}
-{% set tableColorPalette = {  {% include "_partials/_elements/_meetings-table.twig" with {
-  hideUpdate: true
-} %}
-
+{% set tableColorPalette = {
 'default': {
     'statusTextColor': 'cool-gray-1000',
     'statusBgColor': 'white',
@@ -132,7 +129,7 @@
 {% endif %}
 
 {% js %}
-  {% include '_js/responsivetable.js'  %}
+  {{ include("_js/responsivetable.js") }}
   responsiveTable('meetings');
 {% endjs %}
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

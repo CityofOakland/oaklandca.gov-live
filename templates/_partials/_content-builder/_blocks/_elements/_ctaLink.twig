@@ -1,11 +1,11 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set link = link ?? "" %}
 {% if link %}
-  {% include '_components/_button' with {
+  {{ include("_components/_button.twig", {
     class: 'mt-0 mr-0',
     url: link.url,
     target: link.target,
     text: link.text,
-  } %}
+  }) }}
 {% endif %}
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

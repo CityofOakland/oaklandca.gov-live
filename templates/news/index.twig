@@ -109,8 +109,8 @@
 
 {# Extending parent layout and other imports #}
 {% set layout = 'filter' %}
-{% extends '_content.twig' %}
-{% import '_macros/_macros.twig' as macros %}
+{% extends "_content.twig" %}
+{% import "_macros/_macros.twig" as macros %}
 
 {# Banner #}
 
@@ -140,7 +140,7 @@
   <div class="mt-8">
     {% if news|length %}
       {% for news_item in news %}
-        {% include '_components/_news-index-item.twig' %}
+        {{ include("_components/_news-index-item.twig") }}
       {% endfor %}
     {% else %}
       <div class="bg-gray-100 px-8 pt-3 pb-5">
@@ -152,7 +152,7 @@
     {% endif %}
   </div>
   <div class="my-8">
-    {% include '_partials/_elements/_pagination.twig' %}
+    {{ include("_partials/_elements/_pagination.twig") }}
   </div>
 
   <div class="mb-4 lg:oak-hidden">
@@ -273,7 +273,7 @@
     {# Search & filter section's buttons #}
     <div class="flex items-center">
       <button class="button medium">Apply</button>
-      <a class="mt-4" href="{{ craft.app.request.url }}">Clear filters</a>
+      <a class="mt-4" href="{{ craft.app.request.pathInfo }}">Clear filters</a>
     </div>
   </form>
 

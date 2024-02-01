@@ -1,4 +1,4 @@
-{% extends '_content.twig' %}
+{% extends "_content.twig" %}
 
 {% set pressRelease = entry.pressReleaseFile %}
 {% set seoMaticLinks = seomatic.site.sameAsLinks %}
@@ -6,7 +6,7 @@
 
 {# Banner #}
 {% block banner %}
-  {% include '_partials/_page-banners.twig' with {
+  {{ include("_partials/_page-banners.twig", {
     breadCrumbLinks: [
       {
         title: 'News',
@@ -20,7 +20,7 @@
     } : false,
     bannerTitle: entry.title,
     custHeaderContent: null
-  } %}
+  }) }}
 {% endblock %}
 
 {# Content #}
@@ -149,7 +149,7 @@
   <hr class="mt-8 mb-4 border hr">
 
   <div class="text-gray-900">
-    {% include '_partials/_elements/_last-update.twig' %}
+    {{ include("_partials/_elements/_last-update.twig") }}
   </div>
 {% endblock %}
 

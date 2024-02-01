@@ -19,6 +19,6 @@ siteSettings:
   c35d3a93-d7f4-4c37-ae3e-1b4d403311bb: # City of Oakland
     enabledByDefault: true
     hasUrls: true
-    template: _components/widgets/WebsiteUpdates/entry
+    template: _components/widgets/WebsiteUpdates/entry.twig
     uriFormat: 'updates/{slug}'
 type: channel

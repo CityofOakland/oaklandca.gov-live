@@ -1,12 +1,12 @@
-{% extends '_layouts/_banner-with-nav.twig' %}
+{% extends "_layouts/_banner-with-nav.twig" %}
 
-{% import '_macros/_macros.twig' as macros %}
+{% import "_macros/_macros.twig" as macros %}
 
 {% block content %}
-  {% include '_partials/_page-banners.twig' with {
+  {{ include("_partials/_page-banners.twig", {
     breadCrumbLinks: false,
     bannerImage: false
-  } %}
+  }) }}
   <section id="content" class="@container relative mx-auto">
     <ul class="container px-6 py-8 @3xl:px-16 md:py-12 grid my-0 list-none gap-y-6 gap-x-8 md:grid-cols-2 lg:grid-cols-3 tw-only">
       {% for category in craft.categories.group("serviceTypes").limit(null).level(1).orderBy("title asc").all()%}

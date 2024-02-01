@@ -32,9 +32,9 @@
       <div class="body-text">
         {{ block.textBlock }}
       </div>
-      {% include "_partials/_content-builder/_blocks/_elements/_ctaLink.twig" with {
+      {{ include("_partials/_content-builder/_blocks/_elements/_ctaLink.twig", {
         link: block.callToAction
-      } %}
+      }) }}
     </div>
   </div>
 </section>

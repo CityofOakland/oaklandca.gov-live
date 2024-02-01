@@ -1,4 +1,4 @@
-{% extends '_layouts/_banner-with-nav.twig' %}
+{% extends "_layouts/_banner-with-nav.twig" %}
 
 {% do craft.app.elements.eagerLoadElements(
 	className(entry),
@@ -33,7 +33,8 @@
 			},
 		]) %}
 	{% endif %}
-	{% include '_partials/_page-banners.twig' with {
+
+	{{ include("_partials/_page-banners.twig", {
 		breadCrumbLinks: breadcrumbs,
 		navMenu: {
 			'timeline': entry.timeline.exists(),
@@ -46,13 +47,13 @@
 			src: entry.banner[0].url,
 			alt: entry.banner[0].title ?? entry.banner[0].filename
 		} : false
-	} %}
-	{% css %}
-		{% include "_css/timeline.css" %}
-	{% endcss %}
+
+	}) }}
+
+	{{ include("_css/timeline.css") }}
 
 	{% js %}
-		{% include "_js/timeline.js" %}
+		{{ include("_js/timeline.js") }}
 		timeline(document.querySelectorAll('.timeline'));
 	{% endjs %}
 
@@ -62,9 +63,9 @@
 			<div class="md:flex md:flex-row">
 				<div class="md:pr-4 md:w-1/2">
 					{% if timeline %}
-						{% include "_partials/_elements/_module-header.twig" with {
+						{{ include("_partials/_elements/_module-header.twig", {
 							headerText: "Timeline"
-						} %}
+						}) }}
 						<div class="timeline" data-vertical-start-position="right">
 							<div class="timeline__wrap">
 								<div class="timeline__items">
@@ -86,9 +87,9 @@
 					{% if mapImage %}
 						{% set src = mapImage.getUrl('thumbFullRatio') %}
 						{% set transformedImages = craft.imagerx.transformImage(mapImage, "medium43") %}
-						{% include "_partials/_elements/_module-header.twig" with {
+						{{ include("_partials/_elements/_module-header.twig", {
 							headerText: "Project Location"
-						} %}
+						}) }}
 						<figure class="block w-full">
 							<img
 								class="block"
@@ -171,7 +172,9 @@
 					<h3>Related Pages</h3>
 					<div class="card-grid">
 						{% for entry in relProj.all() %}
-							{% include "_partials/_elements/_title-cards" with { cardColor: 'bg-gray-300'} %}
+							{{ include("_partials/_elements/_title-cards.twig", {
+								cardColor: 'bg-gray-300'
+							}) }}
 						{% endfor %}
 					</div>
 				</div>
@@ -189,7 +192,7 @@
 		</div>
 	</section>
 	<div class="container">
-		{% include '_partials/_page-location.twig' %}
+		{{ include("_partials/_page-location.twig") }}
 	</div>
 	{% if entry.fundingLogos.exists() %}
 		<section>

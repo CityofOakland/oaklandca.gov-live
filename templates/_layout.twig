@@ -1,65 +1,42 @@
-{# @var craft \craft\web\twig\variables\CraftVariable #}
-{# @var entry \craft\elements\Entry #}
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    {% block headTop %}
-    {% endblock %}
-    {# Calls in the SEOmatic tags, all handled through the CMS settings #}
-    {% hook 'seomaticRender' %}
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+Nyiakeng+Puachue+Hmong&display=swap" rel="stylesheet">
-    {% include "_components/partials/_favicons.twig" %}
-    {% include "_components/partials/_hotjar.twig" %}
-    <script src="
-https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js
-"></script>
-    {{ craft.vite.script("src/js/app.js", false) }}
-    <script src="https://kit.fontawesome.com/b207de7bfc.js" crossorigin="anonymous"></script>
-  </head>
-
-  {# Checks if the URI is empty and if not, adds the class of "home" to the page body. #}
-  {% if not craft.app.request.segments() %}
-    {% set pageClass = "home" %}
-  {% endif %}
-
-  {# Sets the navigation to the nav section entry, "Main Nav" #}
-  {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
-  {# We’re setting the class to overflow-x-hidden to prevent content from stretching page width on mobile views.#}
-  <body class="font-body {{ pageClass ?? '' }}">
-    {% include '_partials/_elements/_skip-to-content.twig' %}
-    {% include '_partials/_elements/_nav-bar.twig' %}
-    <div class="overflow-x-hidden page-holder">
-      <main>
-        {% include '_partials/_elements/_sitewide-alert.twig' %}
-        {% block content %}
-          <div class="container">
-            <p>No content has been added to this layout. Please make sure to include the following in your template:</p>
-            <pre class="inline-block whitespace-pre-line bg-gray-800 p-4 text-white">{% verbatim %}
-            {% block content %}
-            {% endblock %}{% endverbatim %}</pre>
-          </div>
-        {% endblock %}
-      </main>
-      {% include '_partials/_elements/_footer.twig' %}
-    </div>
-
-    {% if entry is defined %}
-      {% do craft.viewCount.increment(entry.id) %}
-    {% elseif event is defined %}
-      {% do craft.viewCount.increment(event.id) %}
-    {% elseif category is defined %}
-      {% do craft.viewCount.increment(category.id) %}
-    {% endif %}
-
-  </body>
-</html>
-{% if section is defined and slug is defined %}
-  {% set facetItem = craft.entries.section(section).slug(slug).one().title %}
-  {% js at head %}
-  var section = "{{ section }}";
-      var entryTitle = "{{ facetItem }}";
-  {% endjs %}
+{# Checks if the URI is empty and if not, adds the class of "home" to the page body. #}
+{% if not craft.app.request.segments() %}
+	{% set pageClass = "home" %}
 {% endif %}
+{# Sets the navigation to the nav section entry, "Main Nav" #}
+{% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
+
+{% if entry is defined %}
+	{% do craft.viewCount.increment(entry.id) %}
+{% elseif event is defined %}
+	{% do craft.viewCount.increment(event.id) %}
+{% elseif category is defined %}
+	{% do craft.viewCount.increment(category.id) %}
+{% endif %}
+
+{% if section is defined and slug is defined %}
+	{% set facetItem = craft.entries.section(section).slug(slug).one().title %}
+	{% js at head %}
+		var section = "{{ section }}";
+		var entryTitle = "{{ facetItem }}";
+	{% endjs %}
+{% endif %}
+
+<html lang="en">
+	{{ include("_partials/_head.twig") }}
+	<body class="font-body {{ pageClass ?? '' }}">
+		{{ include("_partials/_elements/_skip-to-content.twig") }}
+		{{ include("_partials/_elements/_nav-bar.twig") }}
+		<div class="overflow-x-hidden page-holder">
+			<main>
+				{{ include("_partials/_elements/_sitewide-alert.twig") }}
+				{% block content %}
+					<div class="container">
+						<p>No content has been added to this layout.</p>
+					</div>
+				{% endblock %}
+			</main>
+			{{ include("_partials/_elements/_footer.twig") }}
+		</div>
+	</body>
+</html>

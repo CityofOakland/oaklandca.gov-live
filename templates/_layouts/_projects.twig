@@ -1,4 +1,4 @@
-{% extends '_layouts/_banner-with-nav.twig' %}
+{% extends "_layouts/_banner-with-nav.twig" %}
 
 {% do craft.app.elements.eagerLoadElements(
 	className(entry),
@@ -65,7 +65,7 @@
 		]) %}
 	{% endif %}
 
-	{% include '_partials/_page-banners.twig' with {
+	{{ include("_partials/_page-banners.twig", {
 		breadCrumbLinks: breadcrumbs,
 		bannerImage: entry.banner | length ? {
 			position: entry.banner[0].getFocalPoint('asCss'),
@@ -73,15 +73,15 @@
 			alt: entry.banner[0].title ?? entry.banner[0].filename
 		} : false,
 		headerSubContent: headerSubContent
-	} %}
+	}) }}
 	<div id="content" class="@container">
 		<div class="container px-6 @3xl:px-16 pt-6 sm:pt-12 md:grid md:gap-8 md:grid-cols-3">
 			<div class="md:col-span-2">
 				{% if entry.about %}
 					<section class="mb-16 border-b border-gray-500 pb-16">
-						{% include "_partials/_elements/_module-header.twig" with {
+						{{ include("_partials/_elements/_module-header.twig", {
 							headerText: "About"
-						} %}
+						}) }}
 						<div class="body-text">
 							{{ entry.about }}
 						</div>
@@ -89,9 +89,9 @@
 				{% endif %}
 				{% if gallery %}
 					<section class="mb-16 border-b border-gray-500 pb-16">
-						{% include "_partials/_elements/_module-header.twig" with {
+						{{ include("_partials/_elements/_module-header.twig", {
 							headerText: "Gallery"
-						} %}
+						}) }}
 						<div class="flex flex-row flex-wrap" id="js-photoGallery">
 							{% for photo in gallery %}
 								<figure class="w-1/3" data-src="{{ photo.url }}" data-sub-html="<p class='font-bold'>{{ photo.title }}</p><p>{{ photo.altText }}</p>">
@@ -113,9 +113,9 @@
 				{% endif %}
 				{% if documents %}
 					<section class="mb-16 border-b border-gray-500 pb-16">
-						{% include "_partials/_elements/_module-header.twig" with {
+						{{ include("_partials/_elements/_module-header.twig", {
 							headerText: "Documents"
-						} %}
+						}) }}
 						<div class="space-y-6">
 							{% for entry in documents %}
 								{% set isDoc = (entry.type == "documents") ? true : false %}
@@ -129,9 +129,9 @@
 
 				{% if meetings %}
 					<section>
-						{% include "_partials/_elements/_module-header.twig" with {
+						{{ include("_partials/_elements/_module-header.twig", {
 							headerText: "Meetings"
-						} %}
+						}) }}
 						<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 							{% for entry in meetings %}
 								<a class="shadow card default" href="{{ entry.url }}">
@@ -152,9 +152,9 @@
 			<div class="md:col-span-1">
 				{% if updates %}
 					<section class="mb-16 border-b border-gray-500 pb-16">
-						{% include "_partials/_elements/_module-header.twig" with {
+						{{ include("_partials/_elements/_module-header.twig", {
 							headerText: "Updates"
-						} %}
+						}) }}
 						<div class="space-y-6">
 							{% for entry in updates %}
 								<a class="section-box project-updates" href="{{ entry.url }}">{{ entry.title }}</a>
@@ -164,9 +164,9 @@
 				{% endif %}
 				{% if addresses or mapImage %}
 					<section class="mb-16 border-b border-gray-500 pb-16">
-						{% include "_partials/_elements/_module-header.twig" with {
+						{{ include("_partials/_elements/_module-header.twig", {
 							headerText: "Map"
-						} %}
+						}) }}
 						{% if mapImage %}
 							{% set transformedImage = craft.imager.transformImage(mapImage, { width: 320 }, { ratio: 1/1, position: mapImage.getFocalPoint()},{ fillTransforms: true}) %}
 							{% set transformedImages = craft.imager.transformImage(mapImage, [
@@ -223,9 +223,9 @@
 
 				{% if timeline %}
 					<section class="mb-16 border-b border-gray-500 pb-16">
-						{% include "_partials/_elements/_module-header.twig" with {
+						{{ include("_partials/_elements/_module-header.twig", {
 							headerText: "Timeline"
-						} %}
+						}) }}
 						<div class="ml-2 project-timeline">
 							{% for milestone in timeline %}
 								<div class="project-timeline-item pl-8 border-l-2 {{ loop.last ? "border-white" : "pb-4 border-gray-500" }}">
@@ -243,9 +243,9 @@
 
 				{% if related %}
 					<section class="mb-16 border-b border-gray-500 pb-16">
-						{% include "_partials/_elements/_module-header.twig" with {
-							headerText: "Related Pages"
-						} %}
+						{{ include("_partials/_elements/_module-header.twig", {
+							headerText: "RelatedPages"
+						}) }}
 						<div class="space-y-6">
 							{% for entry in related %}
 								<a class="section-box project-related" href="{{ entry.url }}">{{ entry.title }}</a>
@@ -256,9 +256,9 @@
 
 				{% if funding %}
 					<section class="mb-16 border-b border-gray-500 pb-16">
-						{% include "_partials/_elements/_module-header.twig" with {
+						{{ include("_partials/_elements/_module-header.twig", {
 							headerText: entry.fundingLogosAlternateTitle ?? "Partners"
-						} %}
+						}) }}
 						<div class="-mx-4 flex flex-wrap items-center justify-center">
 							{% for logo in funding %}
 								<figure class="mx-4 mb-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/5 md:mb-8">
@@ -275,9 +275,9 @@
 
 				{% if contactTrue %}
 					<section>
-						{% include "_partials/_elements/_module-header.twig" with {
+						{{ include("_partials/_elements/_module-header.twig", {
 							headerText: "Contact"
-						} %}
+						}) }}
 						{% if entry.emailAddress %}
 							<h3 class="mb-2 text-xl">Email</h3>
 							<p class="mt-0">

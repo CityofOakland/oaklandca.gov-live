@@ -75,7 +75,7 @@
 									{% endif %}
 									<dl>
 										{% for day in item.hours.getRange(1, 0) %}
-											{% include '_partials/_elements/_hours.twig' %}
+											{{ include("_partials/_elements/_hours.twig") }}
 										{% endfor %}
 									</dl>
 								{% endfor %}
@@ -91,7 +91,7 @@
 							<h3 class="mb-0 text-2xl font-bold">Phone</h3>
 							<dl>
 								{% for phone in vars.phoneNumbers %}
-									{% include '_partials/_elements/_phone-numbers-v2.twig' %}
+									{{ include("_partials/_elements/_phone-numbers-v2.twig") }}
 								{% endfor %}
 							</dl>
 						</div>

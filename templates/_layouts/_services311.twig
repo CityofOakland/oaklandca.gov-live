@@ -1,4 +1,4 @@
-{% extends '_layout.twig' %}
+{% extends "_layout.twig" %}
 
 {% do craft.app.elements.eagerLoadElements(
   className(entry),
@@ -42,7 +42,7 @@
           alt="{{ bannerImage.alt }}">
       </figure>
       <div class="container py-0">
-        {% include "_components/partials/_breadcrumbs.twig" %}
+        {{ include("_components/partials/_breadcrumbs.twig") }}
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@
   <div id="content" style="position:relative;top:-5rem;"></div>
   {% if entry.modules is defined and entry.modules|length %}
     {% for block in entry.modules.level(1).all() %}
-        {% include 'modules/_' ~ block.type %}
+      {{ include("modules/_#{block.type}") }}
     {% endfor %}
   {% endif %}
 {% endblock %}

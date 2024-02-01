@@ -45,8 +45,8 @@
 {% endif %}
 
 {% set layout = 'filter' %}
-{% extends '_content.twig' %}
-{% import '_macros/_macros' as macros %}
+{% extends "_content.twig" %}
+{% import "_macros/_macros.twig" as macros %}
 
 {% block content %}
   {% if filter_enabled %}
@@ -75,14 +75,14 @@
             <p class="mt-0 updated">Posted: {{ notice.postDate|date("F j, Y") }}</p>
             {% set file = notice.documentFile.one() %}
             {% if file %}
-              {% include '_components/_button' with {
+              {{ include("_components/_button.twig", {
                 class: 'small mt-4 mt-md:0 mr-0',
                 style: 'secondary',
-                url: notice.documentFile.one().url,
+                url: file.url,
                 text: 'Download',
                 icon: 'download',
-                label: 'Download '~ notice.documentFile.one().title ~' (' ~ notice.documentFile.one().kind|upper ~ ')'
-              } %}
+                label: "Download #{file.title} (#{file.kind|upper})"
+              }) }}
             {% endif %}
           </div>
         </div>
@@ -96,7 +96,7 @@
   </div>
 
   <div class="my-8">
-    {% include '_partials/_elements/_pagination' %}
+    {{ include("_partials/_elements/_pagination.twig") }}
   </div>
 {% endblock %}
 

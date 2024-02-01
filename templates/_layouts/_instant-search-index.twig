@@ -1,4 +1,4 @@
-{% extends '_layout.twig' %}
+{% extends "_layout.twig" %}
 
 {% do view.registerJsFile("https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find") %}
 {% do view.registerCssFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css") %}
@@ -6,7 +6,7 @@
 {% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4") %}
 
 {% css %}
-{% include "_css/algoliafilter.css" %}
+  {{ include("_css/algoliafilter.css") }}
 {% endcss %}
 
 {% if section is defined %}
@@ -17,9 +17,9 @@
 {% block content %}
   {% block pageBanner %}
     {{ craft.vite.script("src/js/algoliafilter.js") }}
-    {% include '_partials/_page-banners.twig' with {
+    {{ include("_partials/_page-banners.twig", {
       bannerTitle: entry.title | replace(' Index', '') ~ bannerTitleSuffix ?? '',
-    } %}
+    }) }}
   {% endblock %}
   <div class="@container z-0 relative bg-gray-100 py-6 sm:py-12 mt-6 sm:mt-12" id="search-bar-container">
     <div class="container px-6 @3xl:px-16 mx-auto text-right">

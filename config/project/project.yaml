@@ -1,4 +1,4 @@
-dateModified: 1704935626
+dateModified: 1706765463
 elementSources:
   craft\elements\Entry:
     -
@@ -1546,6 +1546,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  relax:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   reporter:
     edition: standard
     enabled: true
@@ -1567,6 +1571,10 @@ plugins:
       statsDisplayLimit: 1000
       statsStoredLimit: '15000'
       stripQueryStringFromStats: '1'
+  schedule:
+    edition: standard
+    enabled: true
+    schemaVersion: 0.4.0
   scout:
     edition: standard
     enabled: true

@@ -1,40 +1,42 @@
-{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
-.ais-search-box {
-  font-size: inherit;
-}
+{% if currentUser %}/* Begin {{ _self }} */{% endif %}
+{% css %}
+	.ais-search-box {
+		font-size: inherit;
+	}
 
-.ais-header {
-  border-bottom: 0;
-  margin-bottom: 0;
-}
+	.ais-header {
+		border-bottom: 0;
+		margin-bottom: 0;
+	}
 
-.ais-menu-select {
-  margin-bottom: 1rem;
-}
+	.ais-menu-select {
+		margin-bottom: 1rem;
+	}
 
-.ais-menu-select:last-of-type {
-  margin-bottom: 0;
-}
+	.ais-menu-select:last-of-type {
+		margin-bottom: 0;
+	}
 
-#facet-holder > div > div {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
+	#facet-holder > div > div {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
 
-select.ais-hits-per-page-selector,
-select.ais-menu-select--select,
-select.ais-numeric-selector,
-select.ais-sort-by-selector {
-  font-size: 1rem;
-  width: 100%;
-}
+	select.ais-hits-per-page-selector,
+	select.ais-menu-select--select,
+	select.ais-numeric-selector,
+	select.ais-sort-by-selector {
+		font-size: 1rem;
+		width: 100%;
+	}
 
-.ais-search-box {
-  max-width: initial;
-}
+	.ais-search-box {
+		max-width: initial;
+	}
 
-.ais-search-box--magnifier {
-  top: 50%;
-  transform: translateY(-50%);
-}
-{% if currentUser %}<!-- End {{ _self }} -->{% endif %}
+	.ais-search-box--magnifier {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+{% endcss %}
+{% if currentUser %}/* End {{ _self }} */{% endif %}

@@ -39,11 +39,11 @@
 	{% endif %}
 	{% set link = block.readMoreLink %}
 	{% if link %}
-		{% include "_partials/_elements/_read-more.twig" with {
+		{{ include("_partials/_elements/_read-more.twig", {
 			url: link.url,
 			text: link.text,
 			target: link.target
-		} %}
+		}) }}
 	{% endif %}
 </section>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}
