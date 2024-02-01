@@ -56,7 +56,9 @@
     "wrav/related": "2.1.1",
     "verbb/default-dashboard": "2.0.1",
     "ether/logs": "4.0.0",
-    "trendyminds/craft-reporter": "2.2.0"
+    "trendyminds/craft-reporter": "2.2.0",
+    "panlatent/schedule": "0.4.0.1",
+    "ostark/craft-relax": "2.0.1"
   },
   "autoload": {
     "psr-4": {
@@ -72,7 +74,8 @@
     "allow-plugins": {
       "craftcms/plugin-installer": true,
       "yiisoft/yii2-composer": true,
-      "php-http/discovery": true
+      "php-http/discovery": true,
+      "treeware/plant": true
     }
   },
   "minimum-stability": "dev",
