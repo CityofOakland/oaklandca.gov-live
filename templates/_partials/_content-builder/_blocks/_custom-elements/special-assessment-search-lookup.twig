@@ -1,29 +1,33 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <div class="my-8">
-  <form action="{{ url(craft.app.request.url ~ '?apn=') }}">
-    <label class="block font-bold" for="apn">Assessor's parcel number</label>
-    <div class="mt-2 flex">
-      <input class="mr-4 rounded-sm border border-green-600 px-4" type="search" id="apn" name="apn" placeholder="APN">
-      <input class="mt-0 px-4 button small" type="submit" value="Go">
-    </div>
-  </form>
+	<form action="{{ url("#{craft.app.request.url}?apn=") }}">
+		<label class="block font-bold" for="apn">Assessor's parcel number</label>
+		<div class="mt-2 flex">
+			<input class="mr-4 rounded-sm border border-green-600 px-4" type="search" id="apn" name="apn" placeholder="APN">
+			<input class="mt-0 px-4 button small" type="submit" value="Go">
+		</div>
+	</form>
 
-  {# Get the user's search query from the 'q' query-string param #}
-  {% set searchQuery = craft.app.request.getParam('apn') %}
+	{# Get the user's search query from the 'q' query-string param #}
+	{% set searchQuery = craft.app.request.getParam("apn") %}
 
-  {% if searchQuery | length %}
-    {# Fetch entries that match the search query #}
-    {% set entries = craft.entries().search('title::' ~ searchQuery).section('importedContent').type('specialAssessmentTestStatus').all() %}
+	{% if searchQuery | length %}
+		{# Fetch entries that match the search query #}
+		{% set entries = craft.entries().search("title::#{searchQuery}").section("importedContent").type("specialAssessmentTestStatus").all() %}
 
-    {% if entries | length %}
-      {% for entry in entries %}
-        <div class="mt-4 inline-block rounded-sm p-8 text-white bg-green-1000">
-          {{ entry.title }}’s status is <span class="inline-block rounded-sm bg-white px-2 text-green-1000">{{ entry.elementStatus }}</span> as of {{ entry.date | date() }}
-        </div>
-      {% endfor %}
-    {% else %}
-      <p class="mt-4 inline-block rounded-sm p-8 text-white bg-green-1000">The APN “{{ searchQuery }}” didn’t return any results.</p>
-    {% endif %}
-  {% endif %}
+		{% if entries | length %}
+			{% for entry in entries %}
+				<div class="mt-4 inline-block rounded-sm p-8 text-white bg-green-1000">
+					{{ entry.title }}’s status is
+					<span class="inline-block rounded-sm bg-white px-2 text-green-1000">{{ entry.elementStatus }}</span>
+					as of {{ entry.date|date() }}
+				</div>
+			{% endfor %}
+		{% else %}
+			<p class="mt-4 inline-block rounded-sm p-8 text-white bg-green-1000">
+				The APN “{{ searchQuery }}” didn’t return any results.
+			</p>
+		{% endif %}
+	{% endif %}
 </div>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

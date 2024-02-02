@@ -1,7 +1,7 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <a href="{{ file.url }}" class="flex items-center fill-current duration-75">
 	<div class="inline-block h-5 w-8">
-    {{ svg('@webroot/dist/img/icon-' ~ file.kind ~ '.svg')|attr({
+    {{ svg("@webroot/dist/img/icon-' ~ file.kind ~ '.svg")|attr({
       class: 'w-full h-full'
     })|raw }}
   </div>

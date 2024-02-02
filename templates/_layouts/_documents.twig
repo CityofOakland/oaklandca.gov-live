@@ -1,7 +1,7 @@
 {% set document = entry.documentFile ? entry.documentFile[0] : null %}
 
 {% if not document %}
-  {% exit 404 %}
+	{% exit 404 %}
 {% else %}
-  {% redirect document.url %}
+	{% redirect document.url %}
 {% endif %}

@@ -1,48 +1,53 @@
 {% extends "_content.twig" %}
+
+{% set beforeYouStart = entry.beforeYouStart.all() ?? null %}
+{% set accordion = entry.accordion.all() ?? null %}
+{% set needToKnow = entry.needToKnow.all() ?? null %}
+
 {% block content %}
-  {% if entry.callOut|length %}
-    {% for block in entry.callOut.all() %}
-      {{ include("_components/_callout.twig") }}
-    {% endfor %}
-  {% endif %}
+	{% if entry.callOut|length %}
+		{% for block in entry.callOut.all() %}
+			{{ include("_components/_callout.twig") }}
+		{% endfor %}
+	{% endif %}
 
-  {% if entry.beforeYouStart|length %}
-    {% for block in entry.beforeYouStart.all() %}
-      {{ include("_components/_section.twig", {
-        defaultHeader: 'Before you Start'
-      }) }}
-    {% endfor %}
-  {% endif %}
+	{% if beforeYouStart %}
+		{% for block in beforeYouStart %}
+			{{ include("_components/_section.twig", {
+				defaultHeader: "Before you Start"
+			}) }}
+		{% endfor %}
+	{% endif %}
 
-  <h2>{{ entry.heading ? entry.heading : 'What to Do' }}</h2>
-  {% if entry.description %}<p>{{ entry.description }}</p>{% endif %}
+	<h2>{{ entry.heading ? entry.heading : "What to Do" }}</h2>
+	{% if entry.description %}<p>{{ entry.description }}</p>{% endif %}
 
-  {% if entry.callToActionButtons %}
-    {% for block in entry.callToActionButtons %}
-      {{ include("_components/_button.twig", {
-        style: loop.index0 ? 'secondary' : 'primary'
-      }) }}
-    {% endfor %}
-  {% endif %}
+	{% if entry.callToActionButtons %}
+		{% for block in entry.callToActionButtons %}
+			{{ include("_components/_button.twig", {
+				style: loop.index0 ? "secondary" : "primary"
+			}) }}
+		{% endfor %}
+	{% endif %}
 
-  {% if entry.accordion|length %}
-    {{ include ("_components/_accordion.twig", {
-      params: {
-        header: entry.accordionHeader,
-        content: entry.accordion.all()
-      }
-    }) }}
-  {% endif %}
+	{% if accordion %}
+		{{ include ("_components/_accordion.twig", {
+			params: {
+				header: entry.accordionHeader,
+				content: accordion
+			}
+		}) }}
+	{% endif %}
 
-  {{ include("_components/_process.twig", {
-    heading: entry.processHeader
-  }) }}
+	{{ include("_components/_process.twig", {
+		heading: entry.processHeader
+	}) }}
 
-  {% if entry.needToKnow|length %}
-    {% for block in entry.needToKnow.all() %}
-      {{ include("_components/_section.twig", {
-        defaultHeader: 'Need to Know'
-      }) }}
-    {% endfor %}
-  {% endif %}
+	{% if needToKnow %}
+		{% for block in needToKnow %}
+			{{ include("_components/_section.twig", {
+				defaultHeader: "Need to Know"
+			}) }}
+		{% endfor %}
+	{% endif %}
 {% endblock %}

@@ -1,9 +1,9 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% if block.relatedContentHeader %}
-    <h2>{{ block.relatedContentHeader is defined ? 'Related Content' }}</h2>
+	<h2>{{ block.relatedContentHeader is defined ? "Related Content" }}</h2>
 {% endif %}
 
 {% if block.relatedContent|length %}
-   <h2>{{ heading is defined ? heading }}</h2>
+	<h2>{{ heading is defined ? heading }}</h2>
 {% endif %}
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

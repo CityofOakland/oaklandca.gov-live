@@ -1,83 +1,136 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
+{% macro time(start, end = null) %}
+	<p class="flex items-center">
+		{{ svg("@webroot/dist/img/icon-clock.svg") }}
+		<span class="ml-2">{{ start }}{{ end ? " to #{end}" }}</span>
+	</p>
+{% endmacro %}
 
-<div class="pb-6 result" style="margin-bottom:1rem;">
-  <h3>
-    <a href="{{ meeting.url }}">{{ meeting.title }}</a>
-    {% set status = meeting.type == 'meetings' ? meeting.meetingStatus : meeting.eventStatus %}
-    {% switch status %}
-      {% case 'canceled' %}
-        <span data-type="{{ meeting.meetingStatus }}">Canceled</span>
-      {% case 'rescheduled' %}
-        <span data-type="{{ meeting.meetingStatus }}">Rescheduled</span>
-      {% case 'special' %}
-        <span data-type="{{ meeting.meetingStatus }}">Special</span>
-      {% default %}
-    {% endswitch %}
-  </h3>
-  {% if meeting.date %}<p><b>{{ meeting.date|date("l, F j, Y") }}</b></p>{% endif %}
-    <div class="items-center justify-between md:flex">
-      {% if meeting.type == 'meetings' and meeting.startTime %}<p class="flex items-center">{{ svg( '@webroot/dist/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startTime|date("g:ia") }}{{ meeting.endTime ? " to " ~ meeting.endTime|date("g:ia") : '' }}</span></p>{% endif %}
-      {% if meeting.type == 'meetingsImported' and meeting.startDate %}<p class="flex items-center">{{ svg( '@webroot/dist/img/icon-clock.svg') }} <span class="ml-2">{{ meeting.startDate|date("g:ia") }}{{ meeting.endDate ? " to " ~ meeting.endDate|date("g:ia") : '' }}</span></p>{% endif %}
-      <ul class="mt-0 list-none items-center p-0 md:flex related">
-        {% if meeting.type =='meetings' %}
-          {% if meeting.agendaDownloadableCopy|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.agendaDownloadableCopy.one().url }}">{{ svg( '@webroot/dist/img/icon-pdf-updated.svg') }}<span class="ml-2">Agenda</span></a></li>{% endif %}
-          {% if meeting.documentFile|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.documentFile.one().url }}">{{ svg( '@webroot/dist/img/icon-pdf-updated.svg') }}<span class="ml-2">Minutes</span></a></li>{% endif %}
-          {% if meeting.embeds|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.url }}#recordings">{{ svg( '@webroot/dist/img/icon-recording.svg') }}<span class="ml-2">Recording</span></a></li>{% endif %}
-        {% elseif meeting.type == 'meetingsImported' %}
-          {% set minuteCat = craft.categories.group('documentTypes').id(12).one() %}
-          {% set agendaCat = craft.categories.group('documentTypes').id(13).one() %}
+{% macro linkItem(url, icon, text) %}
+	<li class="mt-2 md:ml-4">
+		<a class="flex items-center" href="{{ url }}">
+			{{ svg("@webroot/dist/img/icon-pdf-#{icon}.svg") }}
+			<span class="ml-2">{{ text }}</span>
+		</a>
+	</li>
+{% endmacro %}
 
-          {% set minutes = clone(meeting.documents).relatedTo(minuteCat) %}
-          {% set agendas = clone(meeting.documents).relatedTo(agendaCat) %}
+{% import _self as macro %}
 
-          {% if agendas|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ agendas.one().url }}">{{ svg( '@webroot/dist/img/icon-pdf-updated.svg') }}<span class="ml-2">Agenda</span></a></li>{% endif %}
-          {% if minutes|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ minutes.one().url }}">{{ svg( '@webroot/dist/img/icon-pdf-updated.svg') }}<span class="ml-2">Minutes</span></a></li>{% endif %}
-          {% if meeting.videoLink|length %}<li class="mt-2 md:ml-4"><a class="flex items-center" href="{{ meeting.url }}#recordings">{{ svg( '@webroot/dist/img/icon-recording.svg') }}<span class="ml-2">Recording</span></a></li>{% endif %}
-        {% endif %}
-      </ul>
-    </div>
-    {% if meeting.type == 'meetings' %}<p class="updated">Updated: {{ meeting.dateUpdated|date("F j, Y") }}</p>{% endif %}
-    {% set result = false %}
-    {% if query and meeting.agendaDownloadableCopy|length and query|lower in meeting.agendaDownloadableCopy.one().filename|lower %}
-      {% set result = true %}
-      <p class="small">
-        {% set filename     = meeting.agendaDownloadableCopy.one().filename|trim %}
-        {% set query_index  = filename|lower|indexOf(query|lower) %}
-        <b>Agenda: </b>{{ filename|slice(0, query_index) }}<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
-      </p>
-    {% endif %}
-    {% if query and meeting.documentFile|length and query|lower in meeting.documentFile.one().title|lower and result == false %}
-      {% set result = true %}
-      <p class="small">
-        {% set filename     = meeting.documentFile.one().filename|trim %}
-        {% set query_index  = filename|lower|indexOf(query|lower) %}
-        <b>Minutes: </b>{{ filename|slice(0, query_index) }}<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
-      </p>
-    {% endif %}
-    {% if query and meeting.agendaTopics and meeting.agendaTopics.search(query)|length and result == false %}
-      {% set result = true %}
-      <p class="small">
-        {% set topic        = meeting.agendaTopics.search(query).one().topic|trim %}
-        {% set query_index  = topic|lower|indexOf(query|lower) %}
+{% set download = meeting.agendaDownloadableCopy.one() ?? null %}
+{% set docFile = meeting.documentFile.one() ?? null %}
+{% set embeds = meeting.embeds.one() ?? null %}
+{% set relatedMeeting = meeting.relatedMeeting.one() ?? null %}
 
-        {% set description  = meeting.agendaTopics.search(query).one().description|trim|striptags %}
-        {% set desc_query_index  = description|lower|indexOf(query|lower) %}
+<div class="pb-6 result mb-4">
+	<h3>
+		<a href="{{ meeting.url }}">{{ meeting.title }}</a>
+		{% set status = meeting.type == "meetings" ? meeting.meetingStatus : meeting.eventStatus %}
+		{% switch status %}
+			{% case "canceled" %}
+				<span data-type="{{ meeting.meetingStatus }}">Canceled</span>
+			{% case "rescheduled" %}
+				<span data-type="{{ meeting.meetingStatus }}">Rescheduled</span>
+			{% case "special" %}
+				<span data-type="{{ meeting.meetingStatus }}">Special</span>
+			{% default %}
+		{% endswitch %}
+	</h3>
+	{% if meeting.date %}
+		<p class="font-bold">{{ meeting.date|date("l, F j, Y") }}</p>
+	{% endif %}
+	<div class="items-center justify-between md:flex">
+		{% if meeting.type == "meetings" and meeting.startTime %}
+			{{ macro.time(meeting.startTime|date("g:ia"), meeting.endTime|date("g:ia")) }}
+		{% endif %}
+		{% if meeting.type == "meetingsImported" and meeting.startDate %}
+			{{ macro.time(meeting.startDate|date("g:ia"), meeting.endDate|date("g:ia")) }}
+		{% endif %}
+		<ul class="mt-0 list-none items-center p-0 md:flex related">
+			{% if meeting.type =="meetings" %}
+				{% if download %}
+					{{ macro.linkItem(download.url, "updated", "Agenda") }}
+				{% endif %}
+				{% if docFile %}
+					{{ macro.linkItem(docFile.url, "updated", "Minutes") }}
+				{% endif %}
+				{% if embeds %}
+					{{ macro.linkItem("#{meeting.url}#recordings", "recording", "Recording") }}
+				{% endif %}
+			{% elseif meeting.type == "meetingsImported" %}
+				{% set minuteCat = craft.categories.group("documentTypes").id(12).one() ?? null %}
+				{% set agendaCat = craft.categories.group("documentTypes").id(13).one() ?? null %}
+				{% set minutes = clone(meeting.documents).relatedTo(minuteCat).one() ?? null %}
+				{% set agendas = clone(meeting.documents).relatedTo(agendaCat).one() ?? null %}
 
-        {% if query_index !== -1 %}<b>Agenda Topic: </b>{{ topic|slice(0, query_index) }}<u>{{ topic|slice(query_index, query|length) }}</u>{{ topic|slice(query_index + query|length, topic|length) }}{% endif %}
-        {% if query_index == -1 and desc_query_index !== -1 %}<b>Agenda Description: </b>{{ description|slice(0, desc_query_index) }}<u>{{ description|slice(desc_query_index, query|length) }}</u>{{ description|slice(desc_query_index + query|length, description|length) }}{% endif %}
-      </p>
-    {% endif %}
-    {% if query and meeting.documents and meeting.documents.search(query)|length and result == false %}
-      <p class="small">
-        {% set filename     = meeting.documents.search(query).one().title|trim %}
-        {% set query_index  = filename|lower|indexOf(query|lower) %}
-        <b>Document: </b>{{ filename|slice(0, query_index) }}<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
-      </p>
-    {% endif %}
-    {% if meeting.meetingStatus and meeting.relatedMeeting|length %}
-      <p class="small">
-        <b>New Meeting: </b><a href="{{ meeting.relatedMeeting.one().url }}">{{ meeting.relatedMeeting.one().title }}</a>
-      </p>
-    {% endif %}
+				{% if agendas %}
+					{{ macro.linkItem(agendas.url, "updated", "Agenda") }}
+				{% endif %}
+				{% if minutes %}
+					{{ macro.linkItem(minutes.url, "updated", "Minutes") }}
+				{% endif %}
+				{% if meeting.videoLink|length %}
+					{{ macro.linkItem("#{meeting.url}#recordings", "recording", "Recording") }}
+				{% endif %}
+			{% endif %}
+		</ul>
+	</div>
+
+	{% if meeting.type == "meetings" %}
+		<p class="updated">Updated: {{ meeting.dateUpdated|date("F j, Y") }}</p>
+	{% endif %}
+	{% set result = false %}
+
+	{% if query and download and query|lower in download.filename|lower %}
+		{% set result = true %}
+		<p class="small">
+			{% set filename = download.filename|trim %}
+			{% set query_index = filename|lower|indexOf(query|lower) %}
+			<b>Agenda:</b> {{ filename|slice(0, query_index) }}
+			<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
+		</p>
+	{% endif %}
+
+	{% if query and docFile and query|lower in docFile.title|lower and result == false %}
+		{% set result = true %}
+		<p class="small">
+			{% set filename = docFile.filename|trim %}
+			{% set query_index = filename|lower|indexOf(query|lower) %}
+			<b>Minutes:</b> {{ filename|slice(0, query_index) }}
+			<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
+		</p>
+	{% endif %}
+
+	{% if query and meeting.agendaTopics and meeting.agendaTopics.search(query)|length and result == false %}
+		{% set result = true %}
+		<p class="small">
+			{% set topic = meeting.agendaTopics.search(query).one().topic|trim %}
+			{% set query_index = topic|lower|indexOf(query|lower) %}
+
+			{% set description = meeting.agendaTopics.search(query).one().description|trim|striptags %}
+			{% set desc_query_index = description|lower|indexOf(query|lower) %}
+
+			{% if query_index !== -1 %}<b>Agenda Topic: </b>{{ topic|slice(0, query_index) }}
+				<u>{{ topic|slice(query_index, query|length) }}</u>{{ topic|slice(query_index + query|length, topic|length) }}{% endif %}
+			{% if query_index == -1 and desc_query_index !== -1 %}<b>Agenda
+				Description:</b> {{ description|slice(0, desc_query_index) }}
+				<u>{{ description|slice(desc_query_index, query|length) }}</u>{{ description|slice(desc_query_index + query|length, description|length) }}{% endif %}
+		</p>
+	{% endif %}
+
+	{% if query and meeting.documents and meeting.documents.search(query)|length and result == false %}
+		<p class="small">
+			{% set filename = meeting.documents.search(query).one().title|trim %}
+			{% set query_index = filename|lower|indexOf(query|lower) %}
+			<b>Document:</b> {{ filename|slice(0, query_index) }}
+			<u>{{ filename|slice(query_index, query|length) }}</u>{{ filename|slice(query_index + query|length, filename|length) }}
+		</p>
+	{% endif %}
+
+	{% if meeting.meetingStatus and relatedMeeting %}
+		<p class="small">
+			<b>New Meeting:</b> <a href="{{ relatedMeeting.url }}">{{ relatedMeeting.title }}</a>
+		</p>
+	{% endif %}
 </div>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

@@ -1,15 +1,15 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% macro renderForm(id, element) %}
-	{% set entryUrl     = craft.app.request.absoluteUrl %}
-	{% set pageAuthor 	= 'No Author' %}
-	{% set pageType 	= 'No Page Type' %}
+	{% set entryUrl = craft.app.request.absoluteUrl %}
+	{% set pageAuthor = "No Author" %}
+	{% set pageType = "No Page Type" %}
 
 	{% switch className(element) %}
-		{% case 'craft\\elements\\Entry' %}
-			{% set pageAuthor 	= element.author ? element.author.fullName : 'No Author' %}
-			{% set pageType 	= element.type ? element.type.handle : 'No Page Type' %}
-		{% case 'craft\\elements\\Category' %}
-			{% set pageType 	= element.group ? element.group.name : 'No Page Type' %}
+		{% case "craft\\elements\\Entry" %}
+			{% set pageAuthor = element.author ? element.author.fullName : "No Author" %}
+			{% set pageType = element.type ? element.type.handle : "No Page Type" %}
+		{% case "craft\\elements\\Category" %}
+			{% set pageType = element.group ? element.group.name : "No Page Type" %}
 		{% default %}
 	{% endswitch %}
 
@@ -29,28 +29,27 @@
 					{% js on ready %}
 						document.querySelector('[data-handle="{{ id }}"]').addEventListener('freeform-ajax-success', function (event) {
 							$('<p class="text-white"><b>Thank you for your feedback</b></p>').insertAfter(document.querySelector('[data-handle="{{ id }}"]'));
-				  			$(document.querySelector('[data-handle="{{ id }}"]')).remove();
-				  			$('#helpful').remove();
-					  	});
+							$(document.querySelector('[data-handle="{{ id }}"]')).remove();
+							$('#helpful').remove();
+						});
 
-					  	$(function () {
-						    // Find the corresponding Form
-						    var form = document.querySelector('#{{ id }} form');
-						    $.ajax({
-						      	// Specify the form handle in the GET parameters
-						      	url: '{{ siteUrl }}form?form={{ id }}',
-						      	type: 'get',
-						      	dataType: 'json',
-						      	success: function (response) {
-						        	// Update the Form Hash
-						        	form.querySelector('input[name=formHash]').value = response.hash;
-
-						        	// Locate and update the CSRF input
-						        	var csrf = response.csrf;
-						        	form.querySelector('input[name=' + csrf.name + ']').value = csrf.value;
-						      	},
-						    });
-						 });
+						$(function () {
+							// Find the corresponding Form
+							var form = document.querySelector('#{{ id }} form');
+							$.ajax({
+								// Specify the form handle in the GET parameters
+								url: '{{ siteUrl }}form?form={{ id }}',
+								type: 'get',
+								dataType: 'json',
+								success: function (response) {
+									// Update the Form Hash
+									form.querySelector('input[name=formHash]').value = response.hash;
+									// Locate and update the CSRF input
+									var csrf = response.csrf;
+									form.querySelector('input[name=' + csrf.name + ']').value = csrf.value;
+								},
+							});
+						});
 					{% endjs %}
 				{% else %}
 					<p class="text-white"><b>There was an issue with loading this form.</b></p>
@@ -65,31 +64,37 @@
 		<div id="helpful" class="container px-6 py-6 @3xl:px-16 components">
 			<div class="items-center justify-between text-white md:flex">
 				<div class="flex items-center">
-					<p class="mr-8"><b>Was this page helpful?</b></p>
-					<button class="button secondary small" data-open="whyWasThisPageHelpful" style="margin-top:0;margin-bottom:0;">Yes</button>
-					<button class="button secondary small" data-open="whatWasWrongWithThisPage" style="margin-top:0;margin-bottom:0;margin-right:0;">No</button>
+					<p class="mr-8 font-bold">Was this page helpful?</p>
+					<button class="button secondary small my-0" data-open="whyWasThisPageHelpful">
+						Yes
+					</button>
+					<button class="button secondary small my-0 mr-0" data-open="whatWasWrongWithThisPage">
+						No
+					</button>
 				</div>
-				<p class="cursor-pointer pt-6 md:pt-0" data-open="reportProblem" role="button"><u>Report a problem with this page</u></p>
+				<p class="cursor-pointer underline pt-6 md:pt-0" data-open="reportProblem" role="button">
+					Report a problem with this page
+				</p>
 			</div>
 		</div>
 	</div>
 	<div class="bg-gray-800">
-		{{ _self.renderForm('whyWasThisPageHelpful', entry) }}
-		{{ _self.renderForm('whatWasWrongWithThisPage', entry) }}
-		{{ _self.renderForm('reportProblem', entry) }}
+		{{ _self.renderForm("whyWasThisPageHelpful", entry) }}
+		{{ _self.renderForm("whatWasWrongWithThisPage", entry) }}
+		{{ _self.renderForm("reportProblem", entry) }}
 	</div>
 </section>
 
 {% js at endBody %}
 	var $buttons = $('[data-open]');
 	$buttons.on('click',function(){
-		var $this = $(this);
+	var $this = $(this);
 
-		$('.form').addClass('oak-hidden');
-		$('#' + $(this).data('open')).removeClass('oak-hidden');
+	$('.form').addClass('oak-hidden');
+	$('#' + $(this).data('open')).removeClass('oak-hidden');
 
-		$buttons.removeClass('state-active');
-		$this.addClass('state-active');
+	$buttons.removeClass('state-active');
+	$this.addClass('state-active');
 	});
 {% endjs %}
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

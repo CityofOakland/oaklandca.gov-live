@@ -1,10 +1,10 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
-{% if block.relatedDepartments|length %}
+{% set relatedDepartments = block.relatedDepartments.all() ?? null %}
+{% if relatedDepartments %}
 	{{ include("_components/partials/_cards.twig", {
-		background: '#334E68',
-    class:      'text-white',
-    heading:    "Related Departments",
-    entries:    block.relatedDepartments.all()
+		class: "text-white bg-blue-800",
+		heading: "Related Departments",
+		entries: relatedDepartments
 	}) }}
 {% endif %}
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

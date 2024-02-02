@@ -1,12 +1,12 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set vars = {
-  text: null,
-  size: null,
+	text: null,
+	size: null,
 }|merge(params) %}
 
 {% if vars.text %}
-  <div class="mt-4 space-y-4 line-clamp-3 {{ vars.size }}">
-    {{ vars.text|raw }}
-  </div>
+	<div class="mt-4 space-y-4 line-clamp-3 {{ vars.size }}">
+		{{ vars.text|raw }}
+	</div>
 {% endif %}
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

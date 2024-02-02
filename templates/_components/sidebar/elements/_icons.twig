@@ -1,17 +1,17 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set vars = {
-  items: null,
+	items: null,
 }|merge(params) %}
 
 <ul class="ul-icons">
-  {% for item in vars.items %}
-    {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-      params: {
-        link: item.link,
-        icon: item.icon,
-        text: item.text
-      }
-    }) }}
-  {% endfor %}
+	{% for item in vars.items %}
+		{{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+			params: {
+				link: item.link,
+				icon: item.icon,
+				text: item.text
+			}
+		}) }}
+	{% endfor %}
 </ul>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

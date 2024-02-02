@@ -6,16 +6,10 @@
 {% set filter_enabled = false %}
 
 {% if public_body %}
-  {% set filter_enabled = true %}
-  {% set id = craft.entries().section('boardsCommissions').id(public_body).one() %}
-  {% set meetings = meetings.relatedTo(craft.entries().section('boardsCommissions').id(id).one()) %}
+	{% set filter_enabled = true %}
+	{% set id = craft.entries().section('boardsCommissions').id(public_body).one() %}
+	{% set meetings = meetings.relatedTo(craft.entries().section('boardsCommissions').id(id).one()) %}
 {% endif %}
-
-{# {% if subcommittee %}
-  {% set filter_enabled = true %}
-  {% set id = craft.entries().section('boardsCommissions').id(subcommittee).one() %}
-  {% set meetings = meetings.andRelatedTo(craft.entries().section('boardsCommissions').id(id).one()) %}
-{% endif %} #}
 
 {% set date_query = ['and'] %}
 
@@ -24,46 +18,46 @@
 {% set ymd     = '' %}
 
 {% if year and month %}
-  {% set filter_enabled = true %}
-  {% set ymd = year ~ '-' ~ month ~ '-01' %}
-  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
+	{% set filter_enabled = true %}
+	{% set ymd = year ~ '-' ~ month ~ '-01' %}
+	{% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
 {% elseif year %}
-  {% set filter_enabled = true %}
-  {% set ymd = year ~ '-' ~ '01-01' %}
-  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 year')|date('Y-m-d')) ]) %}
+	{% set filter_enabled = true %}
+	{% set ymd = year ~ '-' ~ '01-01' %}
+	{% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 year')|date('Y-m-d')) ]) %}
 {% elseif month %}
-  {% set filter_enabled = true %}
-  {% set ymd = now|date('Y') ~ '-' ~ month %}
-  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
+	{% set filter_enabled = true %}
+	{% set ymd = now|date('Y') ~ '-' ~ month %}
+	{% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
 {% endif %}
 
 {% set type = craft.app.request.getQueryParam('type') ? craft.app.request.getQueryParam('type') : 'upcoming' %}
 {% if type %}
-  {% switch type %}
-    {% case 'upcoming' %}
-      {% set meetings = meetings.orderBy('date asc') %}
-      {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
-    {% case 'past' %}
-      {% set meetings = meetings.orderBy('date desc') %}
-      {% set date_query = date_query|merge(['< ' ~ now|date('Y-m-d')]) %}
-  {% endswitch %}
+	{% switch type %}
+		{% case 'upcoming' %}
+			{% set meetings = meetings.orderBy('date asc') %}
+			{% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
+		{% case 'past' %}
+			{% set meetings = meetings.orderBy('date desc') %}
+			{% set date_query = date_query|merge(['< ' ~ now|date('Y-m-d')]) %}
+	{% endswitch %}
 {% else %}
-  {% set meetings = meetings.orderBy('date asc') %}
-  {% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
+	{% set meetings = meetings.orderBy('date asc') %}
+	{% set date_query = date_query|merge(['>= ' ~ now|date('Y-m-d')]) %}
 {% endif %}
 
 {% if date_query|length > 1 %}
-  {% set meetings = meetings.date(date_query) %}
+	{% set meetings = meetings.date(date_query) %}
 {% endif %}
 
 {% if craft.app.request.getQueryParam('q') %}
-  {% set filter_enabled = true %}
+	{% set filter_enabled = true %}
 {% endif %}
 
 {% paginate meetings as pageInfo, meetings %}
 
 {% if pageInfo.currentPage > 1 %}
-  {% do seomatic.meta.seoTitle(entry.title ~ ' | Page ' ~ pageInfo.currentPage ~ ' of ' ~ pageInfo.totalPages) %}
+	{% do seomatic.meta.seoTitle(entry.title ~ ' | Page ' ~ pageInfo.currentPage ~ ' of ' ~ pageInfo.totalPages) %}
 {% endif %}
 
 {% set layout = 'filter' %}
@@ -71,126 +65,107 @@
 {% import "_macros/_macros.twig" as macros %}
 
 {% block content %}
-  <div>
-    <ul class="m-0 flex list-none flex-wrap p-0">
-        <li><a href="?type=upcoming&q={{ query }}&public_body={{ public_body }}&year={{ year }}&month={{ month }}" class="button m-0 rounded-none {{ type == 'upcoming' ? 'pointer-events-none' : 'secondary' }}">Upcoming Meetings</a></li>
-        <li><a href="?type=past&q={{ query }}&public_body={{ public_body }}&year={{ year }}&month={{ month }}" class="button m-0 rounded-none {{ type == 'past' ? 'pointer-events-none' : 'secondary' }}">Past Meetings</a></li>
-    </ul>
-  </div>
+	<div>
+		<ul class="m-0 flex list-none flex-wrap p-0">
+			<li><a href="?type=upcoming&q={{ query }}&public_body={{ public_body }}&year={{ year }}&month={{ month }}"
+			       class="button m-0 rounded-none {{ type == 'upcoming' ? 'pointer-events-none' : 'secondary' }}">Upcoming
+					Meetings</a></li>
+			<li><a href="?type=past&q={{ query }}&public_body={{ public_body }}&year={{ year }}&month={{ month }}"
+			       class="button m-0 rounded-none {{ type == 'past' ? 'pointer-events-none' : 'secondary' }}">Past
+					Meetings</a></li>
+		</ul>
+	</div>
 
-  {% if filter_enabled %}
-    {% if meetings|length %}
-      <h2 aria-live="polite">Displaying {{ meetings|length }} of {{ pageInfo.total }} Meetings</h2>
-    {% else %}
-      <h2 aria-live="polite">No results found</h2>
-    {% endif %}
-  {% else %}
-    {% switch type %}
-      {% case 'upcoming' %}
-        <h2 aria-live="polite">Displaying all Upcoming Meetings</h2>
-      {% case 'past' %}
-        <h2 aria-live="polite">Displaying All Past Meetings</h2>
-    {% endswitch %}
-  {% endif %}
+	{% if filter_enabled %}
+		{% if meetings|length %}
+			<h2 aria-live="polite">Displaying {{ meetings|length }} of {{ pageInfo.total }} Meetings</h2>
+		{% else %}
+			<h2 aria-live="polite">No results found</h2>
+		{% endif %}
+	{% else %}
+		{% switch type %}
+		{% case 'upcoming' %}
+			<h2 aria-live="polite">Displaying all Upcoming Meetings</h2>
+		{% case 'past' %}
+			<h2 aria-live="polite">Displaying All Past Meetings</h2>
+		{% endswitch %}
+	{% endif %}
 
-  <div class="mt-8">
-    {% if meetings|length %}
-      {% for meeting in meetings %}
-        {{ include("_components/_meeting.twig") }}
-      {% endfor %}
-    {% else %}
-      <div class="px-8 pt-3 pb-5" style="background:#F7F7F7;">
-        <p>Please try another search or updating your filters.</p>
-        {% if type == 'past' %}
-          <p><a href="?type=past">See all Past Meetings</a></p>
-        {% elseif type == 'upcoming' %}
-          <p><a href="?type=upcoming">See all Upcoming Meetings</a></p>
-        {% endif %}
-      </div>
-    {% endif %}
-  </div>
+	<div class="mt-8">
+		{% if meetings|length %}
+			{% for meeting in meetings %}
+				{{ include("_components/_meeting.twig") }}
+			{% endfor %}
+		{% else %}
+			<div class="px-8 pt-3 pb-5" style="background:#F7F7F7;">
+				<p>Please try another search or updating your filters.</p>
+				{% if type == 'past' %}
+					<p><a href="?type=past">See all Past Meetings</a></p>
+				{% elseif type == 'upcoming' %}
+					<p><a href="?type=upcoming">See all Upcoming Meetings</a></p>
+				{% endif %}
+			</div>
+		{% endif %}
+	</div>
 
-  <div class="my-8">
-    {{ include("_partials/_elements/_pagination.twig") }}
-  </div>
+	<div class="my-8">
+		{{ include("_partials/_elements/_pagination.twig") }}
+	</div>
 
-  <div class="lg:oak-hidden">
-    <hr class="hr dark"/>
-    <h4>{{ 'Learn More About Public Bodies'|t }}</h4>
-    <div class="pt-2">
-      <p><a href="{{siteUrl}}boards-commissions">Boards & Commissions</a></p>
-      <p><a href="{{siteUrl}}departments/oakland-city-council">City Council</a></p>
-    </div>
-  </div>
+	<div class="lg:oak-hidden">
+		<hr class="hr dark" />
+		<h4>{{ 'Learn More About Public Bodies'|t }}</h4>
+		<div class="pt-2">
+			<p><a href="{{ siteUrl }}boards-commissions">Boards & Commissions</a></p>
+			<p><a href="{{ siteUrl }}departments/oakland-city-council">City Council</a></p>
+		</div>
+	</div>
 {% endblock %}
 
 {% block sidebar %}
-  <hr class="oak-hidden lg:block"/>
-  <div class="mt-2 md:mt-0"></div>
-  <h4 class="mt-4 mb-6 py-0">{{ 'Search & Filter'|t }}</h4>
-  <form action="{{ entry.url }}">
-    <input type="hidden" name="type" value="{{ type }}"/>
-    {{ macros.select('Month', 'month', 'month', [
-        {"01"  : "January"},
-        {"02"  : "February"},
-        {"03"  : "March"},
-        {"04"  : "April"},
-        {"05"  : "May"},
-        {"06"  : "June"},
-        {"07"  : "July"},
-        {"08"  : "August"},
-        {"09"  : "September"},
-        {"10"  : "October"},
-        {"11"  : "November"},
-        {"12"  : "December"}
-      ], "Select a month"
-    )}}
-    {% set earliest_year = craft.entries().section('meetings').orderBy('date asc').limit(1).one().date|date('Y') %}
-    {% set latest_year   = craft.entries().section('meetings').orderBy('date desc').limit(1).one().date|date('Y') %}
-    {% set years = [] %}
-    {% for year in range(latest_year, earliest_year) %}
-      {% set years =  years|merge([{(year): year}]) %}
-    {% endfor %}
-    {{ macros.select('Year', 'year', 'year', years, "Select a year") }}
+	<hr class="oak-hidden lg:block" />
+	<div class="mt-2 md:mt-0"></div>
+	<h4 class="mt-4 mb-6 py-0">{{ 'Search & Filter'|t }}</h4>
+	<form action="{{ entry.url }}">
+		<input type="hidden" name="type" value="{{ type }}" />
+		{{ macros.select('Month', 'month', 'month', [
+			{"01"  : "January"},
+			{"02"  : "February"},
+			{"03"  : "March"},
+			{"04"  : "April"},
+			{"05"  : "May"},
+			{"06"  : "June"},
+			{"07"  : "July"},
+			{"08"  : "August"},
+			{"09"  : "September"},
+			{"10"  : "October"},
+			{"11"  : "November"},
+			{"12"  : "December"}
+		], "Select a month"
+		) }}
+		{% set earliest_year = craft.entries().section('meetings').orderBy('date asc').limit(1).one().date|date('Y') %}
+		{% set latest_year   = craft.entries().section('meetings').orderBy('date desc').limit(1).one().date|date('Y') %}
+		{% set years = [] %}
+		{% for year in range(latest_year, earliest_year) %}
+			{% set years =  years|merge([{(year): year}]) %}
+		{% endfor %}
+		{{ macros.select('Year', 'year', 'year', years, "Select a year") }}
 
-    {{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
+		{{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
 
-{#    <label for="public_body">#}
-{#      Public Body#}
-{#      <select class="shadow-form" name="public_body">#}
-{#        <option value="" data-subcommittees="[]">Select a Council, Board or Commission</option>#}
-{#        {% for entry in craft.entries().section('boardsCommissions').orderBy('title asc').all() %}#}
-{#          {% set subcommittees = entry.subcommittees ? entry.subcommittees.all()|map(body=>{id: body.id, text:body.title}) : [] %}#}
-{#          <option value="{{ entry.id }}" data-subcommittees="{{ subcommittees|json_encode }}" {% if public_body and public_body == entry.id %}selected{% endif %}>{{ entry.title }}</option>#}
-{#        {% endfor %}#}
-{#      </select>#}
-{#    </label>#}
-
-    {# <label for="subcommittee">
-      Subcommittee
-      <select class="shadow-form" name="subcommittee" {% if not subcommittee %}disabled{% endif %}>
-        <option value="">Select a Subcommittee</option>
-        {% if public_body %}
-          {% for entry in craft.entries().section('boardsCommissions').id(public_body).one().subcommittees.all() %}
-            <option value="{{ entry.id }}" {% if subcommittee and subcommittee == entry.id %}selected{% endif %}>{{ entry.title }}</option>
-          {% endfor %}
-        {% endif %}
-      </select>
-    </label> #}
-
-    <div class="flex items-center">
-      <button class="button medium">Apply</button>
-      <a class="mt-4" href="{{ entry.url }}?type={{type}}">Clear filters</a>
-    </div>
-  </form>
-  <hr/>
-  <div class="oak-hidden lg:block">
-    <h4 class="mt-4 py-0">{{ 'Learn More About Public Bodies'|t }}</h4>
-    <div class="pt-2">
-      <p><a href="{{siteUrl}}boards-commissions">Boards & Commissions</a></p>
-      <p><a href="{{siteUrl}}departments">Departments</a></p>
-      <p><a href="{{siteUrl}}departments/oakland-city-council">City Council</a></p>
-    </div>
-    <hr class="light"/>
-  </div>
+		<div class="flex items-center">
+			<button class="button medium">Apply</button>
+			<a class="mt-4" href="{{ entry.url }}?type={{ type }}">Clear filters</a>
+		</div>
+	</form>
+	<hr />
+	<div class="oak-hidden lg:block">
+		<h4 class="mt-4 py-0">{{ 'Learn More About Public Bodies'|t }}</h4>
+		<div class="pt-2">
+			<p><a href="{{ siteUrl }}boards-commissions">Boards & Commissions</a></p>
+			<p><a href="{{ siteUrl }}departments">Departments</a></p>
+			<p><a href="{{ siteUrl }}departments/oakland-city-council">City Council</a></p>
+		</div>
+		<hr class="light" />
+	</div>
 {% endblock %}

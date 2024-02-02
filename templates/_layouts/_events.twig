@@ -8,7 +8,7 @@
 
 {% set locations = [] %}
 
-{% set locationBlocks = clone(entry.eventLocations) %}
+{% set locationBlocks = clone(entry.eventLocations).all() ?? null %}
 
 {% if entry.eventLocations.type("physicalLocation")|length %}
 	{% set locations = locations|merge(["in-person"]) %}
@@ -21,7 +21,7 @@
 {% set eventHasPassed = (now > dateToPass) %}
 
 {% set physicalLocation = clone(entry.eventLocations).type("physicalLocation") %}
-{% set physicalLocationDisplays = physicalLocation|length and physicalLocation.one().locationAddress and not physicalLocation.one().locationAddress.isEmpty()  %}
+{% set physicalLocationDisplays = physicalLocation|length and physicalLocation.one().locationAddress and not physicalLocation.one().locationAddress.isEmpty() %}
 {% set onlineLocation = clone(entry.eventLocations).type("onlineLocation") %}
 {% set onlineLocationDisplays = onlineLocation|length and not eventHasPassed %}
 
@@ -31,7 +31,8 @@
 
 {% block title %}
 	<h1 class="my-0 text-3xl font-bold md:text-4xl">{{ entry.title }}</h1>
-	<div class="mt-4 text-xl leading-8 tw-only">This event {{ eventHasPassed ? "was" : "will be" }} held {{ locations|join(" and ") }} on {{ entry.calendarize.startDate|date("F j, Y") }}</div>
+	<div class="mt-4 text-xl leading-8 tw-only">This event {{ eventHasPassed ? "was" : "will be" }}
+		held {{ locations|join(" and ") }} on {{ entry.calendarize.startDate|date("F j, Y") }}</div>
 {% endblock %}
 
 {% block precontent %}
@@ -40,7 +41,9 @@
 			<div class="max-w-6xl">
 				<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
 					<div class="flex items-start components components-format">
-						{{ svg( '@webroot/dist/img/fa-clock.svg')|attr({class: "w-8 mr-4", style: "flex-shrink:0;"}) }}
+						{{ svg("@webroot/dist/img/fa-clock.svg")|attr({
+							class: "w-8 mr-4 shrink-0"
+						}) }}
 						<div>
 							<h3 class="mt-0">{{ entry.calendarize.startDate|date("l, F j, Y") }}</h3>
 							<p class="mt-2">
@@ -51,43 +54,48 @@
 								{% endif %}
 							</p>
 							{% if entry.calendarize.repeats %}
-								<p><i>This event repeats {{ entry.calendarize.repeatType }}, with the next event occurring on {{ entry.calendarize.next.start|date("l, F j, Y") }} </i></p>
+								<p class="italic">
+									This event repeats {{ entry.calendarize.repeatType }}, with the next event occurring
+									on {{ entry.calendarize.next.start|date("l, F j, Y") }}
+								</p>
 							{% endif %}
 						</div>
 					</div>
 					<div class="flex items-start components">
 						{% if locationBlocks|length == 2 or (locationBlocks|length and (physicalLocationDisplays or onlineLocationDisplays)) %}
-							{{ svg( '@webroot/dist/img/fa-map.svg')|attr({class: 'w-8 mr-4', style: 'flex-shrink:0;'}) }}
+							{{ svg("@webroot/dist/img/fa-map.svg")|attr({
+								class: "w-8 mr-4 shrink-0"
+							}) }}
 						{% endif %}
 						<div>
-							{% if locationBlocks|length == 1 %}
-								{% for location in locationBlocks.all() %}
+							{% if locationBlocks == 1 %}
+								{% for location in locationBlocks %}
 									{% switch location.type %}
-									{% case 'physicalLocation' %}
-										{% if location.locationAddress and not location.locationAddress.isEmpty() %}
-											<h3 class="mt-0">In-Person</h3>
-											{% if location.locationAddress %}
-												<p class="mt-2">{{ location.locationAddress.multiline() }}</p>
-												<p class="mt-2">{{ macros.getDirections(location.locationAddress.linkToDirections()) }}</p>
+										{% case "physicalLocation" %}
+											{% if location.locationAddress and not location.locationAddress.isEmpty() %}
+												<h3 class="mt-0">In-Person</h3>
+												{% if location.locationAddress %}
+													<p class="mt-2">{{ location.locationAddress.multiline() }}</p>
+													<p class="mt-2">{{ macros.getDirections(location.locationAddress.linkToDirections()) }}</p>
+												{% endif %}
 											{% endif %}
-										{% endif %}
-									{% case 'onlineLocation' %}
-										{% if not eventHasPassed %}
-											<h3 class="mt-0">Online</h3>
-											<p class="mt-2">This event will be held online via Zoom</p>
-											{% if location.onlineMeetingLink %}
-												{{ macros.openEventLink(location.onlineMeetingLink, "Join Event Online") }}
+										{% case "onlineLocation" %}
+											{% if not eventHasPassed %}
+												<h3 class="mt-0">Online</h3>
+												<p class="mt-2">This event will be held online via Zoom</p>
+												{% if location.onlineMeetingLink %}
+													{{ macros.openEventLink(location.onlineMeetingLink, "Join Event Online") }}
+												{% endif %}
 											{% endif %}
-										{% endif %}
-									{% default %}
+										{% default %}
 									{% endswitch %}
 								{% endfor %}
 							{% elseif locationBlocks|length == 2 %}
-								{% set primary    = locationBlocks.all()[0] %}
-								{% set secondary  = locationBlocks.all()[1] %}
+								{% set primary = locationBlocks[0] %}
+								{% set secondary = locationBlocks[1] %}
 								<h3 class="mt-0">Location</h3>
 								<p class="mt-2">This event will be held in-person and online</p>
-								{% if primary.type == 'physicalLocation' %}
+								{% if primary.type == "physicalLocation" %}
 									{% if primary.locationAddress and not primary.locationAddress.isEmpty() %}
 										<h4>Address</h4>
 										<p class="mt-2">
@@ -95,7 +103,7 @@
 											{{ macros.getDirections(primary.locationAddress.linkToDirections()) }}
 										</p>
 									{% endif %}
-								{% elseif primary.type == 'onlineLocation' %}
+								{% elseif primary.type == "onlineLocation" %}
 									{% if not eventHasPassed %}
 										<h4>Online</h4>
 										{% if primary.onlineMeetingLink %}
@@ -103,7 +111,7 @@
 										{% endif %}
 									{% endif %}
 								{% endif %}
-								{% if secondary.type == 'physicalLocation' %}
+								{% if secondary.type == "physicalLocation" %}
 									{% if secondary.locationAddress and not secondary.locationAddress.isEmpty() %}
 										<p class="small"><b>Or join in person</b></p>
 										<p class="mt-2">
@@ -111,7 +119,7 @@
 											{{ macros.getDirections(secondary.locationAddress.linkToDirections()) }}
 										</p>
 									{% endif %}
-								{% elseif secondary.type == 'onlineLocation' %}
+								{% elseif secondary.type == "onlineLocation" %}
 									{% if not eventHasPassed %}
 										<p class="small"><b>Or join online</b></p>
 										{% if secondary.onlineMeetingLink %}
@@ -129,22 +137,22 @@
 {% endblock %}
 
 {% block content %}
-	{% if entry.eventImage.one() %}
+	{% set eventImage = entry.eventImage.one() ?? null %}
+	{% if eventImage %}
 		{% set landscape = {
-			mode: 'crop',
+			mode: "crop",
 			width: 730,
 			quality: 100,
 			position: 'top-center'
 		} %}
-		{% set image = entry.eventImage.one() %}
-		<img src="{{ image.getUrl(landscape) }}" alt="{{ image.altText }}"/>
+		<img src="{{ eventImage.getUrl(landscape) }}" alt="{{ eventImage.altText }}" />
 	{% endif %}
 
 	{% if entry.calendarize.repeats %}
 		{{ include("_components/_callout.twig", {
-			callOutType   : 'info',
-			heading       : 'This event repeats',
-			description   : "<p>This event repeats #{entry.calendarize.repeatType}, with the next event occurring on #{entry.calendarize.next.start|date('l, F j, Y')}</p>"
+			callOutType : "info",
+			heading : "This event repeats",
+			description : "<p>This event repeats #{entry.calendarize.repeatType}, with the next event occurring on #{entry.calendarize.next.start|date('l, F j, Y')}</p>"
 		}) }}
 	{% endif %}
 
@@ -152,17 +160,17 @@
 		{% set link_array = [] %}
 		{% if relatedPages %}
 			{% for page in relatedPages %}
-				{% if page.section.handle == 'departments' or page.section.handle == 'topics' or page.section.handle == 'officials' %}
-					{% set link_array = link_array|merge(['<a class="text-green-800 hover:text-green-1000" href="'~ page.url ~'/events">'~ page.title ~'</a>']) %}
+				{% if page.section.handle == "departments" or page.section.handle == "topics" or page.section.handle == "officials" %}
+					{% set link_array = link_array|merge(["<a class=\"text-green-800 hover:text-green-1000\" href=\"#{page.url}/events\">#{page.title}</a>"]) %}
 				{% endif %}
 			{% endfor %}
 		{% endif %}
 
 		{% if link_array|length %}
 			{{ include("_components/_callout.twig", {
-				callOutType   : 'action',
-				heading       : 'This event has passed',
-				description   : "<p>See more events from #{link_array|join(", ", ', and ')}</p>"
+				callOutType : "action",
+				heading : "This event has passed",
+				description : "<p>See more events from #{link_array|join(", ", ', and ')}</p>"
 			}) }}
 		{% endif %}
 	{% endif %}
@@ -176,65 +184,84 @@
 	{{ entry.mainContent }}
 
 	{% if relatedDocuments %}
-		<hr class="hr medium"/>
+		<hr class="hr medium" />
 		<h3>Related Documents</h3>
 		<ul class="ul-icons related">
 			{% for document in relatedDocuments %}
 				{% set docEntry = document.documentEntry.one() ?? null %}
 				{% if docEntry %}
-					<li><a target="_blank" href="{{ docEntry.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ document.documentTitle ?? docEntry.title }}</a></li>
+					<li>
+						<a href="{{ docEntry.url }}" target="_blank">
+							{{ svg("@webroot/dist/img/icon-document.svg") }} {{ document.documentTitle ?? docEntry.title }}
+						</a>
+					</li>
 				{% endif %}
 			{% endfor %}
 		</ul>
 	{% endif %}
 
 	{# Accessibility Request #}
-	<hr class="hr medium"/>
+	<hr class="hr medium" />
 	{% if entry.eventTypes|length %}<p><b>Event Type:</b> {{ entry.eventTypes.one().title }}</p>{% endif %}
 	{% if entry.accessibilityBlock|length %}
 		{% set accessibilityText %}
 			{% if entry.accessibilityBlock.one().accessibilityText %}
 				<p>{{ entry.accessibilityBlock.one().accessibilityText|raw }}</p>
 			{% else %}
-				<p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or another language interpreter at least five (5) business days before the event.</p>
-				<p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a courtesy to attendees with chemical sensitivities.</p>
+				<p>Contact us to request disability-related accommodations, American Sign Language (ASL), Mandarin, Spanish or
+					another language interpreter at least five (5) business days before the event.</p>
+				<p>All meetings held in-person are wheelchair accessible. Please refrain from wearing scented products as a
+					courtesy to attendees with chemical sensitivities.</p>
 			{% endif %}
 			{% if entry.pointOfContact|length %}
 				{% set block = entry.pointOfContact.one() %}
 				{% if block.contact|length %}
 					{% set emailContact = block.contact.one() %}
-					<p class="font-semibold">To make a request contact <a class="no-underline hover:underline" href="mailto:{{ emailContact.emailAddress ? emailContact.emailAddress : emailContact.staffImportEmail }}?subject=Accessibility Request: {{ entry.title }}{{ entry.calendarize.startDate ? ' at ' ~ entry.calendarize.startDate|date('m/d/Y') : '' }}">{{ emailContact.emailAddress ? emailContact.emailAddress : emailContact.staffImportEmail }} <i class="fa fa-envelope"></i></a></p>
+					<p class="font-semibold">
+						To make a request contact
+						<a
+							class="no-underline hover:underline"
+							href="mailto:{{ emailContact.emailAddress ? emailContact.emailAddress : emailContact.staffImportEmail }}?subject=Accessibility Request: {{ entry.title }}{{ entry.calendarize.startDate ? ' at ' ~ entry.calendarize.startDate|date('m/d/Y') : '' }}">{{ emailContact.emailAddress ? emailContact.emailAddress : emailContact.staffImportEmail }}
+							<i class="fa fa-envelope"></i>
+						</a>
+					</p>
 				{% endif %}
 			{% endif %}
 		{% endset %}
 		{{ include("_components/_callout.twig", {
-			callOutType   : 'info',
-			heading       : 'Accessibility and interpretation requests',
-			description   : accessibilityText
+			callOutType : "info",
+			heading : "Accessibility and interpretation requests",
+			description : accessibilityText
 		}) }}
 	{% endif %}
 {% endblock %}
 
 {% block sidebar %}
 	{% if entry.sidebarDescription or entry.linkit %}
-		<hr/>
-		<h4>{{ entry.sidebarHeading ? entry.sidebarHeading : 'Register' }}</h4>
-		{% if entry.sidebarDescription %}<p>{{ entry.sidebarDescription }}</p>{% endif %}
-		{% if entry.linkit %}<a class="button secondary" href="{{ entry.linkit.url }}">{{ entry.linkit.text }}</a>{% endif %}
+		<hr />
+		<h4>{{ entry.sidebarHeading ? entry.sidebarHeading : "Register" }}</h4>
+		{% if entry.sidebarDescription %}
+			<p>{{ entry.sidebarDescription }}</p>
+		{% endif %}
+		{% if entry.linkit %}
+			<a class="button secondary" href="{{ entry.linkit.url }}">
+				{ entry.linkit.text }}
+			</a>
+		{% endif %}
 	{% endif %}
 
 	{{ include("_components/sidebar/_contact.twig") }}
 
-	<hr/>
-	<h4>{{ 'Add to Calendar'|t }}</h4>
+	<hr />
+	<h4>{{ "Add to Calendar"|t }}</h4>
 	<p>Save this event to your iCal, Outlook or Google Calendar</p>
 	<a class="button secondary" href="{{ entry.calendarize.getIcsUrl }}">Add to Calendar</a>
 	<hr class="light">
 	{{ include("_partials/_elements/_social-media-share.twig", {params: {}}) }}
 
 	{% if relatedPages %}
-		<hr/>
-		<h4>{{ 'Related Pages'|t }}</h4>
+		<hr />
+		<h4>{{ "Related Pages"|t }}</h4>
 		<ul class="list-none pl-0">
 			{% for page in relatedPages %}
 				<li class="mb-4"><a href="{{ page.url }}">{{ page.title }}</a></li>

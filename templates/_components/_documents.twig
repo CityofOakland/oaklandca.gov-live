@@ -1,9 +1,14 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
-{% if block.documents|length %}
-	<ul class="ul-icons related" style="padding-top: 1rem;">
-	  	{% for document in block.documents.all() %}
-			<li><a href="{{ document.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ document.title }}</a></li>
-	  	{% endfor %}
+{% set documents = block.documents.all() ?? null %}
+{% if documents %}
+	<ul class="ul-icons related pt-4">
+		{% for document in documents %}
+			<li>
+				<a href="{{ document.url }}">
+					{{ svg("@webroot/dist/img/icon-document.svg") }} {{ document.title }}
+				</a>
+			</li>
+		{% endfor %}
 	</ul>
 {% endif %}
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

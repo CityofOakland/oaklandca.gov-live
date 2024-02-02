@@ -8,15 +8,6 @@
 {% set selectedEntries = globalNews.news ?? null %}
 {% set selectedIds = selectedEntries is defined ? selectedEntries.ids() : [] %}
 
-{# If the featured entry is selected, check to see if it is older than one month since being posted.
-	 If it is, then use the previously set autoFeaturedEntry. Othe #}
-{#{% if featuredEntry %}#}
-{#	{% set expireDate = featuredEntry.postDate|date_modify('+1 month') %}#}
-{#	{% set isExpired = expireDate <= now %}#}
-{#	{% if isExpired %}#}
-{#		{% set featuredEntry = autoFeaturedEntry %}#}
-{#	{% endif %}#}
-{#{% endif %}#}
 {% if not featuredEntry %}
 	{% set featuredEntry = autoFeaturedEntry %}
 {% endif %}

@@ -39,7 +39,7 @@
     <ul class="ul-icons related">
       {% for page in entry.relatedResources.all() %}
         {% if page.section.handle == 'documents' %}
-          <li><a href="{{ page.url }}">{{ svg( '@webroot/dist/img/icon-document.svg') }} {{ page.title }}</a></li>
+          <li><a href="{{ page.url }}">{{ svg("@webroot/dist/img/icon-document.svg") }} {{ page.title }}</a></li>
         {% else %}
           <li><a href="{{ page.url }}">{{ page.title }}</a></li>
         {% endif %}

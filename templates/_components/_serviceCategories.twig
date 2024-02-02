@@ -1,27 +1,27 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <section class="@container bg-gray-100">
-  <div class="container px-6 py-8 @3xl:px-16 md:py-16">
-    <h2>{{ "Services"|t }}</h2>
-    {% for block in block.getDescendants(1) %}
-      {% if block.heading %}
-        <h3 class="pt-10 font-semibold">{{ block.heading }}</h3>
-      {% endif %}
-      {% set entries = block.cityServicesAndResourcesUpdates.all() %}
-      {% if entries|length %}
-        <ul class="mt-6 grid list-none gap-x-8 gap-y-6 pl-0 md:grid-cols-2 lg:grid-cols-3 tw-only">
-          {% for entry in entries %}
-            {{ include ('_components/partials/global-cards/card.twig', {
-              params: {
-                size: 'xl',
-                title: entry.destination.text,
-                url: entry.destination.url,
-                level: 'h4'
-              }
-            }) }}
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endfor %}
-  </div>
+	<div class="container px-6 py-8 @3xl:px-16 md:py-16">
+		<h2>{{ "Services"|t }}</h2>
+		{% for block in block.getDescendants(1) %}
+			{% if block.heading %}
+				<h3 class="pt-10 font-semibold">{{ block.heading }}</h3>
+			{% endif %}
+			{% set entries = block.cityServicesAndResourcesUpdates.all() %}
+			{% if entries|length %}
+				<ul class="mt-6 grid list-none gap-x-8 gap-y-6 pl-0 tw-only md:grid-cols-2 lg:grid-cols-3">
+					{% for entry in entries %}
+						{{ include ("_components/partials/global-cards/card.twig", {
+							params: {
+								size: "xl",
+								title: entry.destination.text,
+								url: entry.destination.url,
+								level: "h4"
+							}
+						}) }}
+					{% endfor %}
+				</ul>
+			{% endif %}
+		{% endfor %}
+	</div>
 </section>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

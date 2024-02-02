@@ -1,56 +1,56 @@
 {% extends "_layout.twig" %}
 
 {% do craft.app.elements.eagerLoadElements(
-  className(entry),
-  [entry],
-  ['banner']
+	className(entry),
+	[entry],
+	['banner']
 ) %}
 
 {% block content %}
-  {% set bannerImage = entry.banner | length ? {
-      position: entry.banner[0].getFocalPoint('asCss'),
-      src: entry.banner[0].url,
-      alt: entry.banner[0].title ?? entry.banner[0].filename
-    } : false %}
+	{% set bannerImage = entry.banner | length ? {
+		position: entry.banner[0].getFocalPoint('asCss'),
+		src: entry.banner[0].url,
+		alt: entry.banner[0].title ?? entry.banner[0].filename
+	} : false %}
 
-  {% set breadcrumbs = [] %}
-  {% if entry.primaryUnit|length %}
-    {% set breadcrumbs = breadcrumbs|merge([
-      {
-        title: entry.primaryUnit.one().title,
-        link: entry.primaryUnit.one().url
-      },
-    ]) %}
-  {% endif %}
-  {% if entry.section %}
-    {% set breadcrumbs = breadcrumbs|merge([
-      {
-        title: entry.section.name,
-        link: siteUrl ~ entry.section.handle
-      },
-    ]) %}
-  {% endif %}
+	{% set breadcrumbs = [] %}
+	{% if entry.primaryUnit|length %}
+		{% set breadcrumbs = breadcrumbs|merge([
+			{
+				title: entry.primaryUnit.one().title,
+				link: entry.primaryUnit.one().url
+			},
+		]) %}
+	{% endif %}
+	{% if entry.section %}
+		{% set breadcrumbs = breadcrumbs|merge([
+			{
+				title: entry.section.name,
+				link: siteUrl ~ entry.section.handle
+			},
+		]) %}
+	{% endif %}
 
-{% if bannerImage | length %}
-  <div class="leading-normal aspect-ratio-box aspect-ratio-1/4 banner">
-    <div class="object-cover pt-2 pb-8 leading-none aspect-ratio md:pt-4 md:pb-6 min-h-2-1/2 md:min-h-4">
-      <figure class="absolute inset-0 z-0">
-        <img
-          class="absolute inset-0 z-0 h-full w-full object-cover"
-          style="object-position:{{ bannerImage.position }};"
-          src="{{ bannerImage.src }}"
-          alt="{{ bannerImage.alt }}">
-      </figure>
-      <div class="container py-0">
-        {{ include("_components/partials/_breadcrumbs.twig") }}
-      </div>
-    </div>
-  </div>
-{% endif %}
-  <div id="content" style="position:relative;top:-5rem;"></div>
-  {% if entry.modules is defined and entry.modules|length %}
-    {% for block in entry.modules.level(1).all() %}
-      {{ include("modules/_#{block.type}") }}
-    {% endfor %}
-  {% endif %}
+	{% if bannerImage | length %}
+		<div class="leading-normal aspect-ratio-box aspect-ratio-1/4 banner">
+			<div class="object-cover pt-2 pb-8 leading-none aspect-ratio md:pt-4 md:pb-6 min-h-2-1/2 md:min-h-4">
+				<figure class="absolute inset-0 z-0">
+					<img
+						class="absolute inset-0 z-0 h-full w-full object-cover"
+						style="object-position:{{ bannerImage.position }};"
+						src="{{ bannerImage.src }}"
+						alt="{{ bannerImage.alt }}">
+				</figure>
+				<div class="container py-0">
+					{{ include("_components/partials/_breadcrumbs.twig") }}
+				</div>
+			</div>
+		</div>
+	{% endif %}
+	<div id="content" style="position:relative;top:-5rem;"></div>
+	{% if entry.modules is defined and entry.modules|length %}
+		{% for block in entry.modules.level(1).all() %}
+			{{ include("modules/_#{block.type}") }}
+		{% endfor %}
+	{% endif %}
 {% endblock %}

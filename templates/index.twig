@@ -1,14 +1,14 @@
 {% extends "_layout.twig" %}
 {% do craft.app.elements.eagerLoadElements(
-    className(entry),
-    [entry],
-    [
-      'banner',
-      'cityServicesAndResourcesUpdates',
-      'highlightedNews',
-      'learnMoreAbout',
-      'highlightedNews.newsImage'
-    ]
+	className(entry),
+	[entry],
+	[
+		'banner',
+		'cityServicesAndResourcesUpdates',
+		'highlightedNews',
+		'learnMoreAbout',
+		'highlightedNews.newsImage'
+	]
 ) %}
 {% set bannerImage = entry.banner[0] ?? "" %}
 {% set src = bannerImage.getUrl('thumbFullRatio') %}
@@ -18,73 +18,107 @@
 {% set learnMore = entry.learnMoreAbout %}
 
 {% block content %}
-<div class="components @container">
-  <section class="relative overflow-hidden">
-    <div class="container px-6 @3xl:px-16 py-6 lg:py-12 {{ bannerImage.imageCredit ? 'pb-0 lg:pb-12' }}">
-      <div class="relative z-20 max-w-xl rounded-md bg-white p-6 shadow md:p-12">
-        <div class="flex flex-col items-start justify-start gap-4 lg:items-center lg:justify-between lg:flex-row">
-          <p class="order-2 lg:order-1"><a class="text-lg font-bold leading-normal text-green-800 hover:text-green-900" href="https://www.oaklandca.gov/topics/oaklandlovelife">#oaklandlovelife</a></p>
-        </div>
-        <h1 class="my-4 text-3xl font-bold leading-tight md:text-4xl md:leading-tight text-green-1000">{{ entry.heading|raw }}</h1>
-        <p class="mt-8"><a href="{{ entry.href }}" class="inline-block rounded-sm border-2 border-green-800 bg-white px-8 py-4 text-sm font-bold leading-normal text-green-800 shadow-outline hover:text-white hover:bg-green-800 md:inline-block">{{ entry.label }}</a></p>
-      </div>
-    </div>
-    <figure class="h-full w-full lg:inset-0 lg:z-0 lg:absolute">
-      <img src="{{ craft.imager.placeholder({ type: 'silhouette', width: 160, height: 90, source: src }) }}" sizes="100vw" srcset="{{ craft.imager.srcset(transformedBannerImages) }}" class="absolute inset-0 z-0 h-full w-full object-cover" alt="{{ bannerImage.altText ?? bannerImage.title }}" style="object-position: {{ bannerImage.getFocalPoint('asCss') }}">
-      {% if bannerImage.imageCredit %}
-        <figcaption class="relative z-10 mt-0 h-full w-full lg:absolute">
-          <div class="container flex h-full items-start justify-start pt-4 lg:pt-0 lg:items-end lg:justify-end">
-            <div class="relative z-30 max-w-xs rounded-sm bg-white px-2 py-1 shadow line-clamp-2">
-              {{ bannerImage.imageCredit | retcon('attr', 'p', { class: 'text-xs leading-normal' }) }}
-            </div>
-          </div>
-        </figcaption>
-      {% endif %}
-    </figure>
-  </section>
+	<div class="components @container">
+		<section class="relative overflow-hidden">
+			<div class="container px-6 @3xl:px-16 py-6 lg:py-12 {{ bannerImage.imageCredit ? 'pb-0 lg:pb-12' }}">
+				<div class="relative z-20 max-w-xl rounded-md bg-white p-6 shadow md:p-12">
+					<div class="flex flex-col items-start justify-start gap-4 lg:items-center lg:justify-between lg:flex-row">
+						<p class="order-2 lg:order-1">
+							<a
+								class="text-lg font-bold leading-normal text-green-800 hover:text-green-900"
+								href="https://www.oaklandca.gov/topics/oaklandlovelife"
+							>
+								#oaklandlovelife
+							</a>
+						</p>
+					</div>
+					<h1 class="my-4 text-3xl font-bold leading-tight md:text-4xl md:leading-tight text-green-1000">
+						{{ entry.heading|raw }}
+					</h1>
+					<p class="mt-8">
+						<a
+							href="{{ entry.href }}"
+							class="inline-block rounded-sm border-2 border-green-800 bg-white px-8 py-4 text-sm font-bold leading-normal text-green-800 shadow-outline hover:text-white hover:bg-green-800 md:inline-block">
+							{{ entry.label }}
+						</a>
+					</p>
+				</div>
+			</div>
+			<figure class="h-full w-full lg:inset-0 lg:z-0 lg:absolute">
+				<img
+					src="{{ craft.imager.placeholder({ type: 'silhouette', width: 160, height: 90, source: src }) }}"
+					sizes="100vw"
+					srcset="{{ craft.imager.srcset(transformedBannerImages) }}"
+					class="absolute inset-0 z-0 h-full w-full object-cover"
+					alt="{{ bannerImage.altText ?? bannerImage.title }}"
+					style="object-position: {{ bannerImage.getFocalPoint('asCss') }}"
+				>
+				{% if bannerImage.imageCredit %}
+					<figcaption class="relative z-10 mt-0 h-full w-full lg:absolute">
+						<div class="container flex h-full items-start justify-start pt-4 lg:pt-0 lg:items-end lg:justify-end">
+							<div class="relative z-30 max-w-xs rounded-sm bg-white px-2 py-1 shadow line-clamp-2">
+								{{ bannerImage.imageCredit|retcon('attr', 'p', {
+									class: 'text-xs leading-normal'
+								}) }}
+							</div>
+						</div>
+					</figcaption>
+				{% endif %}
+			</figure>
+		</section>
 
-  <div id="content" style="position:relative;top:-5rem;"></div>
-  
-  {% if entry.cityServicesAndResourcesUpdates %}
-    {{ include("_components/partials/_cards.twig", {
-      background:   '#f7f7f7',
-      button_label: 'See all services'|t,
-      button_url:   siteUrl ~ '/services',
-      content:      entry.cityServicesAndResourcesUpdatesDescription,
-      entries:      entry.cityServicesAndResourcesUpdates,
-      heading:      "Top City Services and Resources"|t,
-      shadow:       true,
-    }) }}
-  {% endif %}
+		<div id="content" class="relative top-[-5rem]"></div>
 
-  {{ include("_partials/_content-builder/_blocks/_custom-elements/global-news-cards.twig") }}
+		{% if entry.cityServicesAndResourcesUpdates %}
+			{{ include("_components/partials/_cards.twig", {
+				class: "bg-gray-100",
+				button_label: "See all services"|t,
+				button_url: "/services",
+				content: entry.cityServicesAndResourcesUpdatesDescription,
+				entries: entry.cityServicesAndResourcesUpdates,
+				heading: "Top City Services and Resources"|t,
+				shadow: true
+			}) }}
+		{% endif %}
 
-  {% if learnMore|length %}
-    {{ include("_components/partials/_cards.twig", {
-      background:   '#f7f7f7',
-      entries:      learnMore,
-      heading:      entry.sectionHeading ? entry.sectionHeading : "Learn More About"|t,
-      shadow:       true,
-    }) }}
-  {% endif %}
+		{{ include("_partials/_content-builder/_blocks/_custom-elements/global-news-cards.twig") }}
 
-  <section class="bg-white">
-    <div class="container px-6 py-8 @3xl:px-16 md:py-16">
-      <h2 class="pb-4">{{ "City Officials"|t }}</h2>
-      <div class="card-grid grid-equal-height profile-cards">
-        {% for entry in craft.entries.section('officials').with(['portrait']).all() %}
-          {% set portrait = entry.portrait[0] ?? "" %}
-          {{ include("_partials/_elements/_profile-cards.twig", {
-            photo: portrait,
-            name: entry.title,
-            jobTitle: entry.jobTitle,
-            url: entry.redirectUrl ?? entry.url ?? '',
-            icon: "user"
-          }) }}
-        {% endfor %}
-      </div>
-      <p class="pt-3 underline"><a href="https://oakgis.maps.arcgis.com/apps/instant/lookup/index.html?appid=da589a352c8641459af8a0f890398d44" target="_blank"><b>{{ "Find your council district"|t }} »</b></a></p>
-    </div>
-  </section>
-</div>
+		{% if learnMore %}
+			{{ include("_components/partials/_cards.twig", {
+				class: "bg-gray-100",
+				entries: learnMore,
+				heading: entry.sectionHeading ? entry.sectionHeading : "Learn More About"|t,
+				shadow: true
+			}) }}
+		{% endif %}
+
+		<section class="bg-white">
+			<div class="container px-6 py-8 @3xl:px-16 md:py-16">
+				<h2 class="pb-4">
+					{{ "City Officials"|t }}
+				</h2>
+				<div class="card-grid grid-equal-height profile-cards">
+					{% for entry in craft.entries.section('officials').with(['portrait']).all() %}
+						{% set portrait = entry.portrait[0] ?? "" %}
+						{{ include("_partials/_elements/_profile-cards.twig", {
+							photo: portrait,
+							name: entry.title,
+							jobTitle: entry.jobTitle,
+							url: entry.redirectUrl ?? entry.url ?? "",
+							icon: "user"
+						}) }}
+					{% endfor %}
+				</div>
+				<p class="pt-3 underline">
+					<a
+						class="font-bold"
+						href="https://oakgis.maps.arcgis.com/apps/instant/lookup/index.html?appid=da589a352c8641459af8a0f890398d44"
+						target="_blank"
+					>
+						{{ "Find your council district"|t }} »
+					</a>
+				</p>
+			</div>
+		</section>
+	</div>
 {% endblock %}

@@ -1,100 +1,106 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
+{% set department = entry.department.one() ?? null %}
 {% set sidebarContent %}
-  {%- apply spaceless -%}
-    {% if entry.department|length or entry.programSubdivision %}
-      <p>
-        {% if entry.department|length %}
-          <b><a href="{{ entry.department.one().url }}">{{ entry.department.one().legalTitle ? entry.department.one().legalTitle : entry.department.one().title }}</a></b><br>
-        {% endif %}
-        {% if entry.programSubdivision %}
-          {{ entry.programSubdivision }}
-        {% endif %}
-      </p>
-    {% endif %}
+	{%- apply spaceless -%}
+		{% if department or entry.programSubdivision %}
+			<p>
+				{% if department %}
+					<a class="font-bold" href="{{ department.url }}">
+						{{ department.legalTitle ? department.legalTitle : department.title }}
+					</a>
+				{% endif %}
+				{% if entry.programSubdivision %}
+					{{ department ? "<br />"}}
+					{{ entry.programSubdivision }}
+				{% endif %}
+			</p>
+		{% endif %}
 
-    {% if entry.emailAddress or entry.phoneNumber or (entry.contactAddress and not entry.contactAddress.isEmpty()) %}
-      <ul class="ul-icons">
-        {% if entry.emailAddress %}
-          {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-            params: {
-              text: entry.emailAddress,
-              icon: 'envelope',
-              url: "mailto:#{entry.emailAddress}"
-            }
-          }) }}
-        {% endif %}
-        {% if entry.phoneNumber %}
-          {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-            params: {
-              text: entry.phoneNumber,
-              icon: 'phone',
-              url: "tel:#{entry.phoneNumber|replace({'-': ''}) }}"
-            }
-          }) }}
-        {% endif %}
-        {% if entry.contactAddress and not entry.contactAddress.isEmpty() %}
-          {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-            params: {
-              text: "#{entry.contactAddress.name}<br>#{entry.contactAddress.multiline()}",
-              icon: 'map'
-            }
-          }) }}
-        {% endif %}
-      </ul>
-    {% endif %}
-    {% if entry.relatedServices|length %}
-      <hr/>
-      <h4>{{ 'Related Services'|t }}</h4>
-<ul class="ul-icons related">
-  {% for entry in entry.relatedServices.all() %}
-    {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-      params: {
-        text: entry.title,
-        url: entry.url
-      }
-    }) }}
-  {% endfor %}
-</ul>
-    {% endif %}
-    {% if entry.relatedResources|length  %}
-      <hr/>
-      <h4>{{ 'Related Resources'|t }}</h4>
-      <ul class="ul-icons related">
-        {% for entry in entry.relatedResources.all() %}
-          {% switch entry.type.section.handle %}
-            {% case 'documents' %}
-              {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-                params: {
-                  text: entry.title,
-                  icon: "document",
-                  url: entry.url
-                }
-              }) }}
-            {% case 'documentPackets' %}
-              {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-                params: {
-                  text: entry.title,
-                  icon: "folder",
-                  url: entry.url
-                }
-              }) }}
-            {% default %}
-              {{ include ("_components/sidebar/elements/_icons/list-item.twig", {
-                params: {
-                  text: entry.title,
-                  url: entry.url
-                }
-              }) }}
-          {% endswitch %}
-        {% endfor %}
-      </ul>
-    {% endif %}
-  {%- endapply -%}
+		{% if entry.emailAddress or entry.phoneNumber or (entry.contactAddress and not entry.contactAddress.isEmpty()) %}
+			<ul class="ul-icons">
+				{% if entry.emailAddress %}
+					{{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+						params: {
+							text: entry.emailAddress,
+							icon: "envelope",
+							url: "mailto:#{entry.emailAddress}"
+						}
+					}) }}
+				{% endif %}
+				{% if entry.phoneNumber %}
+					{{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+						params: {
+							text: entry.phoneNumber,
+							icon: "phone",
+							url: "tel:#{entry.phoneNumber|replace({'-': ''}) }}"
+						}
+					}) }}
+				{% endif %}
+				{% if entry.contactAddress and not entry.contactAddress.isEmpty() %}
+					{{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+						params: {
+							text: "#{entry.contactAddress.name}<br>#{entry.contactAddress.multiline()}",
+							icon: "map"
+						}
+					}) }}
+				{% endif %}
+			</ul>
+		{% endif %}
+
+		{% if entry.relatedServices|length %}
+			<hr />
+			<h4>{{ "Related Services"|t }}</h4>
+			<ul class="ul-icons related">
+				{% for entry in entry.relatedServices.all() %}
+					{{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+						params: {
+							text: entry.title,
+							url: entry.url
+						}
+					}) }}
+				{% endfor %}
+			</ul>
+		{% endif %}
+
+		{% if entry.relatedResources|length %}
+			<hr />
+			<h4>{{ "Related Resources"|t }}</h4>
+			<ul class="ul-icons related">
+				{% for entry in entry.relatedResources.all() %}
+					{% switch entry.type.section.handle %}
+						{% case "documents" %}
+							{{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+								params: {
+									text: entry.title,
+									icon: "document",
+									url: entry.url
+								}
+							}) }}
+						{% case "documentPackets" %}
+							{{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+								params: {
+									text: entry.title,
+									icon: "folder",
+									url: entry.url
+								}
+							}) }}
+						{% default %}
+							{{ include ("_components/sidebar/elements/_icons/list-item.twig", {
+								params: {
+									text: entry.title,
+									url: entry.url
+								}
+							}) }}
+					{% endswitch %}
+				{% endfor %}
+			</ul>
+		{% endif %}
+	{%- endapply -%}
 {% endset %}
 
 {% if sidebarContent|trim|length %}
-  <hr/>
-  <h4>{{ 'Contact'|t }}</h4>
-  {{sidebarContent}}
+	<hr />
+	<h4>{{ "Contact"|t }}</h4>
+	{{ sidebarContent }}
 {% endif %}
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}
