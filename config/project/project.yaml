@@ -1,4 +1,4 @@
-dateModified: 1706768421
+dateModified: 1707243036
 elementSources:
   craft\elements\Entry:
     -
@@ -116,7 +116,17 @@ elementSources:
       key: 'section:86dfc275-b48e-44d4-8c8c-acda592d92b0' # Meetings
       type: native
     -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
       key: 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a' # News
+      tableAttributes:
+        - postDate
+        - expiryDate
+        - author
+        - link
+        - 'field:ea2e59d4-7906-4723-8dde-7bb4012c3361' # Press Release File
       type: native
     -
       defaultSort:
@@ -1164,6 +1174,10 @@ meta:
     ffa38afc-e53d-4cb8-8c63-5422d8f647cd: 'External Photo Gallery' # External Photo Gallery
     fff5cf49-87e6-4751-9032-b4ca8136e237: 'Alt Text' # Alt Text
 plugins:
+  assetlocations:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   assetusage:
     edition: standard
     enabled: true
@@ -1307,6 +1321,10 @@ plugins:
     schemaVersion: 1.0.0
     settings: null
   craft-sentry:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  dashboard-begone:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
@@ -1933,6 +1951,10 @@ plugins:
     licenseKey: null
     schemaVersion: 1.0.0
     settings: null
+  twig-profiler:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   twigpack:
     edition: standard
     enabled: true
