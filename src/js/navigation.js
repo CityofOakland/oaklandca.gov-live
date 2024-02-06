@@ -1,12 +1,36 @@
 //Navigation
+let container = document.body;
+let dom_observer = new MutationObserver(function(mutation) {
+	document.getElementById('mainbar').style.top = container.style.top;
+});
+let config = { attributes: true };
 
-var menuLinks       = document.querySelectorAll('.navbar a[href]');
-var menuItems       = document.querySelectorAll('.has-submenu, #mobile-navigation');
-var menuItemsHover  = document.querySelectorAll('.has-submenu:not(.click)');
-var menuItemsClick  = document.querySelectorAll('.has-submenu.click > a, #mobile-navigation > a');
-var menusResizable  = document.querySelectorAll('#main-navigation .has-submenu > ul');
+dom_observer.observe(container, config);
 
-var menuItemClicked = false;
+function clear_languages() {
+	let iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+	if(!iframe) return;
+
+	let innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+	let restore_el = innerDoc.getElementsByTagName("button");
+
+	for(let i = 0; i < restore_el.length; i++){
+		if(restore_el[i].id.indexOf("restore") >= 0) {
+			restore_el[i].click();
+			let close_el = innerDoc.getElementsByClassName("goog-close-link");
+			close_el[0].click();
+			return;
+		}
+	}
+}
+
+let menuLinks       = document.querySelectorAll('.navbar a[href]');
+let menuItems       = document.querySelectorAll('.has-submenu, #mobile-navigation');
+let menuItemsHover  = document.querySelectorAll('.has-submenu:not(.click)');
+let menuItemsClick  = document.querySelectorAll('.has-submenu.click > a, #mobile-navigation > a');
+let menusResizable  = document.querySelectorAll('#main-navigation .has-submenu > ul');
+
+let menuItemClicked = false;
 
 function closeOtherMenuItems(parent){
   Array.prototype.forEach.call(menuItemsClick, function(el, i){

@@ -1,0 +1,40 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
+{% set vars = {
+	nav: null,
+}|merge(params) %}
+
+<li class="ml-5 flex items-center justify-end has-submenu click lg:justify-center" style="min-width:52px;">
+	<a
+		tabindex="0"
+		id="navbar-dropdown-search"
+		data-toggle="dropdown"
+		role="button"
+		aria-label="Open Site Search"
+		aria-haspopup="true"
+		aria-expanded="false"
+		data-affects="navbar-dropdown-mobile"
+		data-affects-class="disabled"
+	>
+		{{ svg("@webroot/dist/img/icon-magnifier.svg")|attr({ class: 'fill-current text-gray-900' }) }}
+		{{ svg("@webroot/dist/img/icon-x.svg")|attr({ class: 'fill-current text-white' }) }}
+	</a>
+	<ul class="bg-green-800 px-4 pt-2 pb-6 components lg:px-6" aria-labelledby="navbar-dropdown-search">
+		<li>
+			<h3 class="pt-6">Search oaklandca.gov</h3>
+			<form id="site-search-form" class="relative mt-4" action="{{ url("search") }}" role="search">
+				<label for="site-search" class="hidden-visually">Search?</label>
+				<input type="search" id="site-search" class="form-control" aria-label="Site Search" name="query" placeholder="Search for keywords" value="">
+				<button aria-label="Site Search Button" type="submit">{{ svg("@webroot/dist/img/icon-magnifier.svg")|attr({ class: 'fill-current text-gray-900' }) }}</button>
+			</form>
+		</li>
+		<li class="oak-hidden lg:block">
+			<h3 class="pt-6">Popular on oaklandca.gov</h3>
+			<ul class="grid list-none gap-x-6 pt-4 md:grid-cols-3">
+				{% for navItem in vars.nav %}
+					<li><a class="card {{ navItem.styleCard }}" href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
+				{% endfor %}
+			</ul>
+		</li>
+	</ul>
+</li>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}
