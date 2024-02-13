@@ -218,15 +218,15 @@ allSearch.addWidget(
           <a href="{{ url }}">
             {{{_highlightResult.title.value}}}
             {{#fileType}}
-            <div class="inline uppercase">({{ fileType }})</div>
+              <div class="inline uppercase">({{ fileType }})</div>
             {{/fileType}}
           </a> 
           <span>{{ section }}</span>
         </h3>
         <p>{{{ _snippetResult.leadIn.value }}}</p>
-        {{{ #summary }}}<p>{{{ _snippetResult.summary.value }}}</p>{{{ /summary }}}
-        {{ ^summary }}<p>{{{ _snippetResult.body.value }}}</p>{{{ /summary }}}
-        <p>{{{ _snippetResult.bio.value }}}</p>
+        {{#summary}}<p>{{ _snippetResult.summary.value }}</p>{{/summary}}
+        {{^summary}}<p>{{ _snippetResult.body.value }}</p>{{/summary}}
+        {{#bio}}<p>{{ _snippetResult.bio.value }}</p>{{/bio}}
         <p class="updated">Updated: {{ dateUpdated }}</p>
       </div>
       `
