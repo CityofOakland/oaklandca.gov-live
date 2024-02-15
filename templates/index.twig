@@ -102,8 +102,8 @@
 						{% set portrait = entry.portrait[0] ?? "" %}
 						{{ include("_partials/_elements/_profile-cards.twig", {
 							photo: portrait,
-							name: entry.title,
-							jobTitle: entry.jobTitle,
+							name: entry.groupHeadName,
+							jobTitle: entry.title,
 							url: entry.redirectUrl ?? entry.url ?? "",
 							icon: "user"
 						}) }}
