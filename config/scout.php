@@ -33,6 +33,11 @@ return [
 	*/
 	'batch_size' => 100,
 
+	/*
+	 * By default Scout will index elements related to the element being save (that are in the same index).
+	 * Disabling this can improve performance on larger sites that have lots of relations.
+	 */
+	'indexRelations' => false,
 
 	/*
 	* The Algolia search API key, this key can be found in your Algolia Account
