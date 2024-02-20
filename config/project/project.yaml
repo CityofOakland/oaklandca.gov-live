@@ -1,4 +1,4 @@
-dateModified: 1708453899
+dateModified: 1708457543
 elementSources:
   craft\elements\Entry:
     -
@@ -1204,6 +1204,7 @@ plugins:
     settings:
       apiKey: ''
       cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
+      cacheControlHeaderExpired: 'public, s-maxage=5, max-age=0'
       cacheDuration: null
       cacheElementQueries: true
       cacheElements: true
@@ -1226,7 +1227,9 @@ plugins:
       cacheStorageType: putyourlightson\blitz\drivers\storage\FileStorage
       cachingEnabled: false
       debug: true
+      defaultCacheControlHeader: 'no-cache, no-store, must-revalidate'
       deployerType: putyourlightson\blitz\drivers\deployers\DummyDeployer
+      detectSsiEnabled: true
       driverJobPriority: 100
       esiEnabled: false
       excludedQueryStringParams:
@@ -1240,6 +1243,12 @@ plugins:
             -
               - queryStringParam
               - ''
+      excludedUriPatterns:
+        -
+          __assoc__:
+            -
+              - uriPattern
+              - ''
       generatePagesWithQueryStringParams: true
       hintsEnabled: true
       includedQueryStringParams:
@@ -1248,6 +1257,12 @@ plugins:
             -
               - queryStringParam
               - '.*'
+      includedUriPatterns:
+        -
+          __assoc__:
+            -
+              - uriPattern
+              - '*'
       injectScriptEvent: DOMContentLoaded
       integrations:
         - putyourlightson\blitz\drivers\integrations\FeedMeIntegration
@@ -1264,9 +1279,10 @@ plugins:
       refreshCacheWhenElementMovedInStructure: true
       refreshCacheWhenElementSavedNotLive: false
       refreshCacheWhenElementSavedUnchanged: false
-      refreshMode: 3
+      refreshMode: 1
       sendPoweredByHeader: true
       ssiEnabled: false
+      ssiTagFormat: '<!--#include virtual="{uri}" -->'
       trackElementQueries: true
       trackElements: true
   buttonbox:
