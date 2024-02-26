@@ -31,7 +31,7 @@ return [
 	/*
 	* The batch size Scout uses when importing a large amount of elements
 	*/
-	'batch_size' => 100,
+	'batch_size' => 1000,
 
 	/*
 	 * By default Scout will index elements related to the element being save (that are in the same index).
