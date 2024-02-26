@@ -4,7 +4,7 @@ fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521 # Common
 handle: eventLocations
 instructions: null
 name: 'Event Locations'
-searchable: true
+searchable: false
 settings:
   contentTable: '{{%matrixcontent_eventlocations}}'
   maxBlocks: 2

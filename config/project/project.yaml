@@ -1,4 +1,4 @@
-dateModified: 1708457543
+dateModified: 1708458977
 elementSources:
   craft\elements\Entry:
     -
@@ -1182,10 +1182,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.0.0
-  async-queue:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
   aws-s3:
     enabled: '1'
     licenseKey: null
@@ -1968,10 +1964,6 @@ plugins:
     schemaVersion: 1.0.0
     settings: null
   twig-profiler:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
-  twigpack:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
