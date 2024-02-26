@@ -9,10 +9,10 @@
 		{% tag "a" with {
 			tabindex: 0,
 			id: "navbar-dropdown-#{item.heading|replace({' ':'-'})|lower}",
-			dataToggle: "dropdown",
+			"data-toggle": "dropdown",
 			role: "button",
-			ariaHasPopup: "true",
-			ariaExpanded: "false"
+			"aria-has-popup": "true",
+			"aria-expanded": "false"
 		} %}
 			{{ item.heading }}
 			{{ svg("@webroot/dist/img/icon-arrow.svg")|attr({
