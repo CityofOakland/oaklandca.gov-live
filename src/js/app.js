@@ -7,13 +7,6 @@ import './archive.js'
 import './navigation.js'
 import './gtmevents.js'
 import './modal.js'
-import Alpine from 'alpinejs'
-import collapse from '@alpinejs/collapse'
-
-window.Alpine = Alpine
-
-Alpine.plugin(collapse)
-Alpine.start()
 
 // on page ready
 document.addEventListener('DOMContentLoaded', () => {
