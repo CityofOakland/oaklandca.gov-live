@@ -1,5 +1,67 @@
-dateModified: 1709227824
+dateModified: 1709228883
 elementSources:
+  Solspace\Freeform\Elements\Submission:
+    -
+      defaultSort:
+        - title
+        - asc
+      disabled: false
+      key: '*'
+      tableAttributes:
+        - id
+        - status
+        - dateCreated
+        - form
+        - ip
+      type: native
+    -
+      heading: Forms
+      type: heading
+    -
+      defaultSort:
+        - title
+        - asc
+      disabled: false
+      key: 'form:1'
+      tableAttributes:
+        - 'field:2'
+        - ip
+        - 'field:4'
+      type: native
+    -
+      defaultSort:
+        - title
+        - asc
+      disabled: false
+      key: 'form:2'
+      tableAttributes:
+        - 'field:7'
+        - ip
+        - 'field:9'
+      type: native
+    -
+      defaultSort:
+        - title
+        - asc
+      disabled: false
+      key: 'form:3'
+      tableAttributes:
+        - 'field:12'
+        - ip
+        - 'field:14'
+      type: native
+    -
+      defaultSort:
+        - title
+        - asc
+      disabled: false
+      key: 'form:4'
+      tableAttributes:
+        - dateCreated
+        - form
+        - ip
+        - 'field:16'
+      type: native
   craft\elements\Entry:
     -
       condition:
@@ -1373,7 +1435,7 @@ plugins:
     settings:
       alertNotificationRecipients: ''
       allowDashesInFieldHandles: false
-      allowFileTemplateEdit: true
+      allowFileTemplateEdit: '1'
       autoScroll: true
       autoScrollToErrors: true
       badgeType: all
@@ -1382,10 +1444,10 @@ plugins:
       blockedIpAddresses: ''
       blockedKeywords: ''
       blockedKeywordsError: 'Invalid Entry Data'
-      bypassSpamCheckOnLoggedInUsers: ''
+      bypassSpamCheckOnLoggedInUsers: '1'
       clientDigestFrequency: '1'
-      clientDigestRecipients: ''
-      defaultView: dashboard
+      clientDigestRecipients: yo@oaklandfreeformstatsdigest.furioursus.dev
+      defaultView: forms
       defaults:
         __assoc__:
           -
@@ -1646,27 +1708,27 @@ plugins:
                               - no_limit
       digestFrequency: '1'
       digestOnlyOnProduction: ''
-      digestRecipients: ''
+      digestRecipients: yo@oaklandfreeformdeveloperdigest.furioursus.dev
       displayFeed: '1'
       emailTemplateDefault: files
-      emailTemplateDirectory: null
+      emailTemplateDirectory: _freeform/notifications
       emailTemplateStorageType: files_database
       exportHandlesAsNames: ''
       exportLabels: ''
-      fillWithGet: false
+      fillWithGet: ''
       footerScripts: false
       formFieldShowOnlyAllowedForms: ''
       formSubmitDisable: true
       formSubmitExpiration: ''
-      formTemplateDirectory: null
+      formTemplateDirectory: _freeform/formatting
       formattingTemplate: flexbox.html
       minimumSubmitTime: ''
       pluginName: null
       purgableSpamAgeInDays: '3'
       purgableSubmissionAgeInDays: null
-      purgableUnfinalizedAssetAgeInMinutes: 180
+      purgableUnfinalizedAssetAgeInMinutes: '180'
       rememberPageSubmitOrder: true
-      removeNewlines: ''
+      removeNewlines: '1'
       renderFormHtmlInCpViews: true
       saveFormSessionLimit: 10
       saveFormTtl: 30
@@ -1684,7 +1746,7 @@ plugins:
       spamProtectionBehavior: simulate_success
       submissionThrottlingCount: ''
       submissionThrottlingTimeFrame: m
-      successTemplateDirectory: null
+      successTemplateDirectory: _freeform/success
       updateSearchIndexes: '1'
   google-maps:
     enabled: true
