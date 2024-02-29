@@ -23,8 +23,8 @@
     {% for entry in events %}
     <a class="shadow card default" href="{{ entry.url }}">
       <h4><span>{{ entry.title }}</span></h4>
-      <p class="flex items-center">{{ svg( '@webroot/dist/img/icon-calendar-new.svg') }} <span class="ml-2">{{ entry.calendarize.startDate.format("l, F d, Y") }}</span></p>
-      <p class="flex items-center pt-1">{{ svg( '@webroot/dist/img/icon-clock.svg') }} <span class="ml-2">{{ entry.calendarize.startDate.format("g:ia") }}{{ entry.calendarize.endDate ? " to " ~ entry.calendarize.endDate.format("g:ia") : '' }}</span></p>
+      <p class="flex items-center">{{ svg("@webroot/dist/img/icon-calendar-new.svg") }} <span class="ml-2">{{ entry.calendarize.startDate.format("l, F d, Y") }}</span></p>
+      <p class="flex items-center pt-1">{{ svg("@webroot/dist/img/icon-clock.svg") }} <span class="ml-2">{{ entry.calendarize.startDate.format("g:ia") }}{{ entry.calendarize.endDate ? " to " ~ entry.calendarize.endDate.format("g:ia") : '' }}</span></p>
     </a>
     {% endfor %}
   </div>

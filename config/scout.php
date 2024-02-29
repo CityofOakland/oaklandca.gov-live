@@ -31,8 +31,13 @@ return [
 	/*
 	* The batch size Scout uses when importing a large amount of elements
 	*/
-	'batch_size' => 100,
+	'batch_size' => 1000,
 
+	/*
+	 * By default Scout will index elements related to the element being save (that are in the same index).
+	 * Disabling this can improve performance on larger sites that have lots of relations.
+	 */
+	'indexRelations' => false,
 
 	/*
 	* The Algolia search API key, this key can be found in your Algolia Account

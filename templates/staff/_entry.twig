@@ -29,7 +29,7 @@
               <img src="{{ entry.portrait.one.url }}" alt="Portrait of {{ entry.title }}">
             {% else %}
               <div class="h-full bg-gray-300 fill-current p-12 text-gray-500 opacity-75">
-                {{ svg('@webroot/dist/img/icon-user.svg')|attr({
+                {{ svg("@webroot/dist/img/icon-user.svg")|attr({
                     class: 'w-full h-full'
                 })|raw }}
               </div>

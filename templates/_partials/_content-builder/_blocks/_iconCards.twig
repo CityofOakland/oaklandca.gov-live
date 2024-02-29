@@ -13,7 +13,7 @@
 			}
 		}) }}
 		{% if cards %}
-			<div class="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 {{ wideCards ? '' : 'lg:grid-cols-3' }} md:gap-8 mt-8 md:mt-12">
+			<div class="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 {{ not wideCards ? "lg:grid-cols-3" }} md:gap-8 mt-8 md:mt-12">
 				{% for card in cards %}
 					{% set link = card.card %}
 					{% set external = link.target == 1 %}
@@ -22,7 +22,7 @@
 						class="p-6 text-lg font-bold h-full {{ cardColor ? "#{cardColor.background} #{cardColor.backgroundHover} #{cardColor.text} #{cardColor.textHover}" }} no-underline rounded-sm shadow-btn transition-all duration-75"
 						href="{{ link.url }}"
 						target="{{ link.target }}">
-						{{ svg(card.icon.path, class='h-12 w-auto fill-current') }}
+						{{ svg(card.icon.path)|attr({class:"h-12 w-auto fill-current"}) }}
 						<h3 class="my-0 pt-2 text-lg">
 							{{ link.text }}
 							{% if link.target %}

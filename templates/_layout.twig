@@ -26,7 +26,7 @@
 	{{ include("_partials/_head.twig") }}
 	<body class="font-body {{ pageClass ?? '' }}">
 		{{ include("_partials/_elements/_skip-to-content.twig") }}
-		{{ include("_partials/_elements/_nav-bar.twig") }}
+		{{ include("_components/nav-bar/nav-bar.twig") }}
 		<div class="overflow-x-hidden page-holder">
 			<main>
 				{{ include("_partials/_elements/_sitewide-alert.twig") }}

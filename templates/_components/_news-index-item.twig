@@ -2,43 +2,47 @@
 {% set news_image = news_item.newsImage.one() ?? null %}
 
 <article class="mb-6 border-b-2 border-gray-300 pb-8 sm:flex">
-  <figure class="oak-hidden sm:block sm:w-1/4">
-    {% if news_image %}
-      <img src="{{ news_image.url }}"
-        alt="{{ news_image.title ?? news_image.filename }}"
-        title="{{ news_image.title ?? news_image.filename }}">
-    {% else %}
-      <img src="{{ alias('@web/dist/img/icon-newspaper-blue-1000.svg') }}"
-        class="bg-blue-200 p-12"
-        alt="No article image to display">
-    {% endif %}
-  </figure>
-  <div class="w-full sm:w-3/4 sm:ml-4">
-    <div>
-      {% if news_item.newsTags.title('press release')|length %}
-        <div class="mb-4 sm:float-right sm:ml-4">
-          <span class="article-yellow-tag">Press Release</span>
-        </div>
-      {% endif %}
+	<figure class="oak-hidden sm:block sm:w-1/4">
+		{% if news_image %}
+			<img
+				src="{{ news_image.url }}"
+				title="{{ news_image.title ?? news_image.filename }}"
+				alt="{{ news_image.title ?? news_image.filename }}"
+			>
+		{% else %}
+			<img
+				src="{{ alias("@web/dist/img/icon-newspaper-blue-1000.svg") }}"
+				class="bg-blue-200 p-12"
+				alt=""
+			/>
+		{% endif %}
+	</figure>
+	<div class="w-full sm:ml-4 sm:w-3/4">
+		<div>
+			{% if news_item.newsTags.title("press release")|length %}
+				<div class="mb-4 sm:float-right sm:ml-4">
+					<span class="article-yellow-tag">Press Release</span>
+				</div>
+			{% endif %}
 
-      <h3 class="mt-0 text-xl font-bold">
-        <a href="{{ news_item.url }}">{{ news_item.title }}</a>
-      </h3>
-    </div>
+			<h3 class="mt-0 text-xl font-bold">
+				<a href="{{ news_item.url }}">{{ news_item.title }}</a>
+			</h3>
+		</div>
 
-    <div class="text-base text-gray-1000 [&>*:first-child]:mt-2">
-      {#
-        If the news article summary is present, render it in full,
-        otherwise print the first 200 characters from the article's body.
-        Please note that truncating body's content could result in mangled
-        HTML tags so it is safest to print the snippet in plain text by
-        stripping HTML tags.
-      #}
-      {{ news_item.summary ?: (news_item.body|striptags|slice(0, 200) ~ (news_item.body|length > 200 ? ' ...' : '')) }}
-    </div>
-    <p class="mt-2 text-sm text-gray-700">
-      Posted: {{ news_item.postDate|date('F jS, Y') }}
-    </p>
-  </div>
+		<div class="text-base text-gray-1000 [&>*:first-child]:mt-2">
+			{#
+				If the news article summary is present, render it in full,
+				otherwise print the first 200 characters from the article's body.
+				Please note that truncating body's content could result in mangled
+				HTML tags so it is safest to print the snippet in plain text by
+				stripping HTML tags.
+			#}
+			{{ news_item.summary ?: (news_item.body|striptags|slice(0, 200) ~ (news_item.body|length > 200 ? " …")) }}
+		</div>
+		<p class="mt-2 text-sm text-gray-700">
+			Posted: {{ news_item.postDate|date("F jS, Y") }}
+		</p>
+	</div>
 </article>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

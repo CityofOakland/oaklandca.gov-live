@@ -4,27 +4,27 @@
 {% set entry = craft.entries.section(indexPage).one %}
 {% set relatedEntry = null %}
 {% if craft.app.request.getSegment(2) == 'related-to' %}
-  {% set urlSlug = craft.app.request.getSegment(3) %}
-  {% set relatedEntry = craft.entries.slug(urlSlug).one %}
+	{% set urlSlug = craft.app.request.getSegment(3) %}
+	{% set relatedEntry = craft.entries.slug(urlSlug).one %}
 {% endif %}
 
 {% block content %}
-  {% if entrySection == 'boardsCommissions' %}
-    {% set query = craft.entries.section(entrySection).relatedTo(relatedEntry).officialBoardAndCommission(true).type('boardsCommissions').limit(25).orderBy('title') %}
-  {% else %}
-    {% set query = craft.entries.section(entrySection).relatedTo(relatedEntry).limit(25).orderBy('title') %}
-  {% endif %}
-  {% paginate query as pageInfo, pageEntries %}
-  {{ include("_partials/_elements/_pagination.twig") }}
-  <div class="my-4 space-y-4 md:space-y-8 md:my-8">
-    {% for entry in pageEntries %}
-      <article>
-        <h2 class="my-0 text-lg font-normal md:text-2xl"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
-        {% if entry.leadIn %}
-          <p class="mt-2 mb-0 text-sm md:text-lg">{{ entry.leadIn }}</p>
-        {% endif %}
-      </article>
-    {% endfor %}
-  </div>
-  {{ include("_partials/_elements/_pagination.twig") }}
+	{% if entrySection == 'boardsCommissions' %}
+		{% set query = craft.entries.section(entrySection).relatedTo(relatedEntry).officialBoardAndCommission(true).type('boardsCommissions').limit(25).orderBy('title') %}
+	{% else %}
+		{% set query = craft.entries.section(entrySection).relatedTo(relatedEntry).limit(25).orderBy('title') %}
+	{% endif %}
+	{% paginate query as pageInfo, pageEntries %}
+	{{ include("_partials/_elements/_pagination.twig") }}
+	<div class="my-4 space-y-4 md:space-y-8 md:my-8">
+		{% for entry in pageEntries %}
+			<article>
+				<h2 class="my-0 text-lg font-normal md:text-2xl"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+				{% if entry.leadIn %}
+					<p class="mt-2 mb-0 text-sm md:text-lg">{{ entry.leadIn }}</p>
+				{% endif %}
+			</article>
+		{% endfor %}
+	</div>
+	{{ include("_partials/_elements/_pagination.twig") }}
 {% endblock %}

@@ -36,128 +36,132 @@
 
 {% set page = entry ?? null %}
 
+{% set archiveTrue = archive is defined and archive == true %}
+
 {% if section is defined and slug is defined %}
 	{% set facetItem = craft.entries.section(section).slug(slug).one().title %}
 	{% js at head %}
-    var section = "{{ section }}";
-    var entryTitle = "{{ facetItem }}";
-  {% endjs %}
+var section = "{{ section }}";
+var entryTitle = "{{ facetItem }}";
+{% endjs %}
 {% endif %}
 
 <html lang="en">
-  {{ include("_partials/_head.twig") }}
-  <body class="font-body {{ pageClass }}">
-    {{ include("_partials/_elements/_skip-to-content.twig") }}
-    {{ include("_partials/_elements/_nav-bar.twig") }}
-    <div class="overflow-x-hidden page-holder">
-	    <main id="main" aria-hidden="false" role="main" class="overflow-x-hidden">
-		    {{ include("_partials/_elements/_sitewide-alert.twig") }}
-		    <section>
-			    {% block banner %}
-            <div class="@container relative bg-transparent-oakland-roots">
-              <div class="container px-6 @3xl:px-16 py-4 @3xl:py-12">
-                {{ include("_components/partials/_breadcrumbs.twig") }}
-              </div>
-            </div>
-          {% endblock %}
-    			<div id="content" class="relative top-[-5rem]"></div>
-			    <div class="@container relative {{ archive is defined and archive == true ? 'bg-blue-900 text-white' : '' }}">
-				    <div class="container px-6 py-8 @3xl:px-16 md:py-16 {{ archive is defined and archive == true ? 'md:mb-8' : '' }}">
-					    <div class="max-w-6xl">
-						    <div class="flex flex-1 flex-col lg:flex-row">
-							    <div class="w-full lg:w-8/11">
-								    {% block title %}
-									    <h1 class="my-0 text-3xl font-bold md:text-4xl">{{ entry.title }}</h1>
-                      {% if entry.leadIn or entry.summary %}
-                        <div class="mt-4 text-xl leading-8 space-y-2">
-                          {% apply retconAttr('a', { class: 'underline hover:no-underline text-green-800 hover:text-green-700' }) %}
-                            {{ entry.leadIn ? entry.leadIn : entry.summary }}
-                          {% endapply %}
-                        </div>
-                      {% endif %}
-                      {% if entry.ctaButton | length %}
-	                      {{ include("_components/_button.twig", {
-                          class: 'mt-4',
-		                      url: entry.ctaButton.url,
-	                        text: entry.ctaButton.text,
-	                      }) }}
-                      {% endif %}
-                      {% if entry is defined and entry.id == 34229 %}
-	                      {{ include("_components/_button.twig", {
-													class: 'mt-4',
-													url: 'https://www.oaklandca.gov/documents/special-vacancy-notices',
-													text: 'View Local Appointments List and Special Vacancy Notices',
-	                      }) }}
-                      {% endif %}
-                    {% endblock %}
-							    </div>
-						    </div>
-					    </div>
-				    </div>
-			    </div>
-		    </section>
-        {% block precontent %}
-        {% endblock %}
-    		{% if category is not defined %}
-    			<section class="@container relative">
-		    		<div class="container px-6 py-8 @3xl:px-16 md:py-16">
-				    	<div class="max-w-6xl">
-						    <div class="flex flex-wrap justify-between -mx-8 {{ flex_class }}">
-							    <div class="w-full {{ fullwidth is defined and fullwidth == true ? '' : 'lg:w-7/11' }} px-8 {{ column_one_class }}">
-								    <div class="components components-format">
-                      {% block content %}
-                      {% endblock %}
-                    </div>
-	    						</div>
-                  <div class="w-full lg:w-4/11 px-8 {{ column_two_class }}">
-                    <div id="components-sidebar" class="components components-format">
-                      {% block sidebar %}
-                        {% if category is not defined %}
-                          {{ include("_components/_sidebar.twig") }}
-                        {% endif %}
-                      {% endblock %}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        {% endif %}
-    		{% block prefooter %}
-			    {% set relatedDepartments = entry.relatedDepartments.all() ?? null %}
-          <section>
-            <div id="components-footer" class="components">
-              {% if entry['relatedDepartments'] is defined and relatedDepartments %}
-	              {{ include("_components/partials/_cards.twig", {
-		              background: "#334E68",
-		              class:      "text-white",
-		              heading:    "Related Departments",
-		              entries:    relatedDepartments
-	              }) }}
-              {% endif %}
-              {% if entry.componentsFooter %}
-                {% for block in entry.componentsFooter.level(1).all() %}
-	                {{ include("_components/_#{block.type}") }}
-                {% endfor %}
-              {% endif %}
-            </div>
-          </section>
-        {% endblock %}
-		  {{ include("_components/partials/_feedback.twig") }}
-	  </main>
-    {# Currently only used in one template (_layouts/_meetings.twig). Need a better way to make this more reusable #}
-    {% block modal %}{% endblock %}
-    {{ include("_partials/_elements/_footer.twig") }}
-  </div>
-  {% if craft.app.env == "production" %}
-    {% for department in craft.entries.section("departments").type("departments").departmentCodeSnippet(":notempty:").all() %}
-      {% if page %}
-        {% if craft.entries.id(page.id).relatedTo(department) | length or page.id == department.id %}
-          <!-- Loading code snippet -->
-          {{ department.departmentCodeSnippet | raw }}
-        {% endif %}
-      {% endif %}
-    {% endfor %}
-  {% endif %}
-  </body>
+	{{ include("_partials/_head.twig") }}
+	<body class="font-body {{ pageClass }}">
+	{{ include("_partials/_elements/_skip-to-content.twig") }}
+	{{ include("_components/nav-bar/nav-bar.twig") }}
+	<div class="overflow-x-hidden page-holder">
+		<main id="main" aria-hidden="false" role="main" class="overflow-x-hidden">
+			{{ include("_partials/_elements/_sitewide-alert.twig") }}
+			<section>
+				{% block banner %}
+					<div class="@container relative bg-transparent-oakland-roots">
+						<div class="container px-6 @3xl:px-16 py-4 @3xl:py-12">
+							{{ include("_components/partials/_breadcrumbs.twig") }}
+						</div>
+					</div>
+				{% endblock %}
+				<div id="content" class="relative top-[-5rem]"></div>
+				<div class="@container relative {{ archiveTrue ? "bg-blue-900 text-white" }}">
+					<div class="container px-6 py-8 @3xl:px-16 md:py-16 {{ archiveTrue ? "md:mb-8" }}">
+						<div class="max-w-6xl">
+							<div class="flex flex-1 flex-col lg:flex-row">
+								<div class="w-full lg:w-8/11">
+									{% block title %}
+										<h1 class="my-0 text-3xl font-bold md:text-4xl">{{ entry.title }}</h1>
+										{% if entry.leadIn or entry.summary %}
+											<div class="mt-4 text-xl leading-8 space-y-2">
+												{% apply retconAttr("a", {
+													class: "underline hover:no-underline text-green-800 hover:text-green-700"
+												}) %}
+													{{ entry.leadIn ? entry.leadIn : entry.summary }}
+												{% endapply %}
+											</div>
+										{% endif %}
+										{% if entry.ctaButton %}
+											{{ include("_components/_button.twig", {
+												class: "mt-4",
+												url: entry.ctaButton.url,
+												text: entry.ctaButton.text,
+											}) }}
+										{% endif %}
+										{% if entry is defined and entry.id == 34229 %}
+											{{ include("_components/_button.twig", {
+												class: "mt-4",
+												url: "https://www.oaklandca.gov/documents/special-vacancy-notices",
+												text: "View Local Appointments List and Special Vacancy Notices",
+											}) }}
+										{% endif %}
+									{% endblock %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			{% block precontent %}
+			{% endblock %}
+			{% if category is not defined %}
+				<section class="@container relative">
+					<div class="container px-6 py-8 @3xl:px-16 md:py-16">
+						<div class="max-w-6xl">
+							<div class="flex flex-wrap justify-between -mx-8 {{ flex_class }}">
+								<div
+									class="w-full {{ fullwidth is defined and fullwidth == true ? "" : "lg:w-7/11" }} px-8 {{ column_one_class }}">
+									<div class="components components-format">
+										{% block content %}
+										{% endblock %}
+									</div>
+								</div>
+								<div class="w-full lg:w-4/11 px-8 {{ column_two_class }}">
+									<div id="components-sidebar" class="components components-format">
+										{% block sidebar %}
+											{% if category is not defined %}
+												{{ include("_components/_sidebar.twig") }}
+											{% endif %}
+										{% endblock %}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			{% endif %}
+			{% block prefooter %}
+				{% set relatedDepartments = entry.relatedDepartments.all() ?? null %}
+				<section>
+					<div id="components-footer" class="components">
+						{% if entry["relatedDepartments"] is defined and relatedDepartments %}
+							{{ include("_components/partials/_cards.twig", {
+								class: "text-white bg-blue-800",
+								heading: "Related Departments",
+								entries: relatedDepartments
+							}) }}
+						{% endif %}
+						{% if entry.componentsFooter %}
+							{% for block in entry.componentsFooter.level(1).all() %}
+								{{ include("_components/_#{block.type}") }}
+							{% endfor %}
+						{% endif %}
+					</div>
+				</section>
+			{% endblock %}
+			{{ include("_components/partials/_feedback.twig") }}
+		</main>
+		{# Currently only used in one template (_layouts/_meetings.twig). Need a better way to make this more reusable #}
+		{% block modal %}{% endblock %}
+		{{ include("_partials/_elements/_footer.twig") }}
+	</div>
+	{% if craft.app.env == "production" %}
+		{% for department in craft.entries.section("departments").type("departments").departmentCodeSnippet(":notempty:").all() %}
+			{% if page %}
+				{% if craft.entries.id(page.id).relatedTo(department) | length or page.id == department.id %}
+					<!-- Loading code snippet -->
+					{{ department.departmentCodeSnippet | raw }}
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+	</body>
 </html>

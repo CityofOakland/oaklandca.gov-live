@@ -224,9 +224,18 @@ allSearch.addWidget(
           <span>{{ section }}</span>
         </h3>
         <p>{{{ _snippetResult.leadIn.value }}}</p>
-        {{{ #summary }}}<p>{{{ _snippetResult.summary.value }}}</p>{{{ /summary }}}
-        {{ ^summary }}<p>{{{ _snippetResult.body.value }}}</p>{{{ /summary }}}
-        <p>{{{ _snippetResult.bio.value }}}</p>
+        <p>
+        {{#summary}}
+          {{{ summary }}}
+        {{/summary}}
+        {{^summary}}
+          {{#bio}}
+            {{{ _snippetResult.bio.value }}}
+          {{/bio}}
+          {{^bio}}
+            {{{ _snippetResult.body.value }}}
+          {{/bio}}
+        {{/summary}}
         <p class="updated">Updated: {{ dateUpdated }}</p>
       </div>
       `

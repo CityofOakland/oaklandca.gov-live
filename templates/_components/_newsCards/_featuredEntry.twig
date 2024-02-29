@@ -8,9 +8,16 @@
 		<article class="overflow-hidden rounded bg-white shadow">
 			{% set newsImage = vars.featuredEntry.newsImage.one() ?? null %}
 			{% if newsImage %}
-				<figure class="relative z-0 flex w-full items-center justify-center bg-gray-300 p-4" style="padding-bottom:42%">
+				<figure
+					class="relative z-0 flex w-full items-center justify-center bg-gray-300 p-4"
+					style="padding-bottom:42%"
+				>
 					{% if newsImage %}
-						<img src="{{ newsImage.url }}" class="absolute inset-0 h-full w-full object-cover aspect-ratio" alt="{{ newsImage.altText ?? '' }}">
+						<img
+							src="{{ newsImage.url }}"
+							class="absolute inset-0 h-full w-full object-cover aspect-ratio"
+							alt="{{ newsImage.altText ?? '' }}"
+						>
 					{% endif %}
 				</figure>
 			{% endif %}

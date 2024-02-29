@@ -1,17 +1,20 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
-<section class="@container {{ class is defined ? class }}" style="background-color:{{ background is defined ? background }}">
-  <div class="container px-6 py-8 @3xl:px-16 md:py-16">
-    <div class="max-w-6xl">
-      <h2>{{ heading is defined ? heading }}</h2>
-      {% if content is defined %}<div class="mt-5">{{ content }}</div>{% endif %}
-      {{ include("_components/partials/_cards-grid.twig", {
-        entries: entries,
-        shadow: (shadow is defined and shadow)
-      }) }}
-      {% if button_url is defined and button_label is defined %}
-        <a href="{{ button_url }}" class="mt-8 button">{{ button_label }}</a>
-      {% endif %}
-    </div>
-  </div>
+<section
+	class="@container {{ class is defined ? class }}"
+>
+	<div class="container px-6 py-8 @3xl:px-16 md:py-16">
+		<div class="max-w-6xl">
+			<h2>{{ heading is defined ? heading }}</h2>
+			{% if content is defined %}
+				<div class="mt-5">{{ content }}</div>{% endif %}
+			{{ include("_components/partials/_cards-grid.twig", {
+				entries: entries,
+				shadow: (shadow is defined and shadow)
+			}) }}
+			{% if button_url is defined and button_label is defined %}
+				<a href="{{ button_url }}" class="mt-8 button">{{ button_label }}</a>
+			{% endif %}
+		</div>
+	</div>
 </section>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

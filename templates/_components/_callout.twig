@@ -1,17 +1,17 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set callOutType = callOutType is defined ? callOutType : block.callOutType %}
-{% set heading     = heading is defined ? heading : block.header %}
+{% set heading = heading is defined ? heading : block.header %}
 {% set description = description is defined ? description : block.description %}
 
 <blockquote class="callout first:mt-0 mb-4 last:mb-14 {{ callOutType }}">
 	{% switch callOutType %}
-		{% case 'attention' %}
-		{{ svg( '@webroot/dist/img/icon-attention.svg') }}
-		{% default %}
-		{{ svg( '@webroot/dist/img/icon-info.svg') }}
+	{% case "attention" %}
+		{{ svg("@webroot/dist/img/icon-attention.svg") }}
+	{% default %}
+		{{ svg("@webroot/dist/img/icon-info.svg") }}
 	{% endswitch %}
 	<div class="space-y-2">
-		<h3 class="m-0 pt-0" style="font-size:18px;margin:0;"><b>{{ heading|raw }}</b></h3>
+		<h3 class="m-0 pt-0 text-lg font-bold">{{ heading|raw }}</h3>
 		<div class="small">{{ description|raw }}</div>
 	</div>
 </blockquote>

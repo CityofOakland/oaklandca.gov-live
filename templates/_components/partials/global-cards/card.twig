@@ -1,11 +1,11 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set vars = {
-  size: 'default',
-  background: 'default',
-  style: 'default',
-  title: null,
-  text: null,
-  level: 'h2'
+	size: 'default',
+	background: 'default',
+	style: 'default',
+	title: null,
+	text: null,
+	level: 'h2'
 }|merge(params) %}
 
 {% set padding = "p-4" %}
@@ -17,35 +17,35 @@
 {% set headingColor = "text-green-800 group-hover:text-white" %}
 
 {% switch vars.size %}
-  {% case "lg" %}
-    {% set padding = "p-8" %}    
-  {% case "xl" %}
-    {% set padding = "p-8" %}
-    {% set titleSize = "text-xl leading-tight" %}
+	{% case "lg" %}
+		{% set padding = "p-8" %}
+	{% case "xl" %}
+		{% set padding = "p-8" %}
+		{% set titleSize = "text-xl leading-tight" %}
 {% endswitch %}
 
 {% switch vars.style %}
-  {% case "secondary" %}
-    {% set bgColor = "bg-gray-100 hover:bg-gray-200" %}
-    {% set shadow = "shadow-none" %}
-    {% set headingColor = "text-green-800 group-hover:text-green-900" %}
+	{% case "secondary" %}
+		{% set bgColor = "bg-gray-100 hover:bg-gray-200" %}
+		{% set shadow = "shadow-none" %}
+		{% set headingColor = "text-green-800 group-hover:text-green-900" %}
 {% endswitch %}
 
 <li class="{{ padding }} {{ bgColor }} {{ shadow }} group rounded relative">
-  {{ include ('_components/partials/global-cards/_components/title.twig', {
-    params: {
-      title: vars.title,
-      level: vars.level,
-      url: vars.url,
-      size: titleSize,
-      color: headingColor
-    }
-  }) }}
-  {{ include ('_components/partials/global-cards/_components/description.twig', {
-    params: {
-      text: vars.text,
-      size: textSize,
-    }
-  }) }}
+	{{ include ("_components/partials/global-cards/_components/title.twig", {
+		params: {
+			title: vars.title,
+			level: vars.level,
+			url: vars.url,
+			size: titleSize,
+			color: headingColor
+		}
+	}) }}
+	{{ include ("_components/partials/global-cards/_components/description.twig", {
+		params: {
+			text: vars.text,
+			size: textSize,
+		}
+	}) }}
 </li>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

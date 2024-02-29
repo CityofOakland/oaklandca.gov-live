@@ -1,26 +1,41 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set vars = {
-  header: null,
-  content: null,
+	header: null,
+	content: null,
 }|merge(params) %}
 
 {% if vars.content %}
-  {% if vars.header %}
-    <h3>{{ vars.header }}</h3>
-  {% endif %}
-  <div class="accordion" data-allow-toggle>
-    <ul aria-label="Accordion Control Group Buttons" class="accordion-controls">
-      {% for item in vars.content %}
-        <li class="accordion-item">
-          <button class="accordion-header" aria-controls="content-{{ item.id }}-{{ loop.index }}" aria-expanded="false" id="accordion-control-{{ item.id }}-{{ loop.index }}">{{ item.heading }} <span style="pointer-events: none;">{{ svg( '@webroot/dist/img/icon-plus.svg') }}{{ svg( '@webroot/dist/img/icon-minus.svg') }}</span></button>
-          <div class="accordion-panel [&>*:first-child]:mt-0 [&>*:last-child]:mb-0" id="content-{{ item.id }}-{{ loop.index }}" hidden>
-            {% for block in item.innerContent.all() %}
-              {{ include("_components/_#{block.type}") }}
-            {% endfor %}
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
+	{% if vars.header %}
+		<h3>{{ vars.header }}</h3>
+	{% endif %}
+	<div class="accordion" data-allow-toggle>
+		<ul aria-label="Accordion Control Group Buttons" class="accordion-controls">
+			{% for item in vars.content %}
+				<li class="accordion-item">
+					<button
+						id="accordion-control-{{ item.id }}-{{ loop.index }}"
+						aria-controls="content-{{ item.id }}-{{ loop.index }}"
+						aria-expanded="false"
+						class="accordion-header"
+					>
+						{{ item.heading }}
+						<span class="pointer-events-none">
+							{{ svg("@webroot/dist/img/icon-plus.svg") }}
+							{{ svg("@webroot/dist/img/icon-minus.svg") }}
+						</span>
+					</button>
+					<div
+						id="content-{{ item.id }}-{{ loop.index }}"
+						class="accordion-panel [&>*:first-child]:mt-0 [&>*:last-child]:mb-0"
+						hidden
+					>
+						{% for block in item.innerContent.all() %}
+							{{ include("_components/_#{block.type}") }}
+						{% endfor %}
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
 {% endif %}
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

@@ -9,79 +9,82 @@
 {% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5") %}
 
 {% css %}
-  #stats .ais-stats {
-    opacity: 1;
-  }
-  .ais-search-box {
-    max-width: initial;
-  }
-  
-  .ais-search-box--magnifier {
-    top: 50%;
-    transform: translateY(-50%);
-  }
+	#stats .ais-stats {
+	opacity: 1;
+	}
+	.ais-search-box {
+	max-width: initial;
+	}
 
-  .ais-menu--link {
-    color: #653cad !important;
-  }
+	.ais-search-box--magnifier {
+	top: 50%;
+	transform: translateY(-50%);
+	}
 
-  .ais-menu--link:hover {
-    color: #240754 !important;
-  }
+	.ais-menu--link {
+	color: #653cad !important;
+	}
 
-  .ais-menu--count {
-    color: #653cad !important;
-    background-color: #eae2f8 !important;
-  }
+	.ais-menu--link:hover {
+	color: #240754 !important;
+	}
 
-  /* Removing the `x` icon in Chrome's search input on this page */
-  input[type="search"]::-webkit-search-decoration,
-  input[type="search"]::-webkit-search-cancel-button,
-  input[type="search"]::-webkit-search-results-button,
-  input[type="search"]::-webkit-search-results-decoration { display: none; }
+	.ais-menu--count {
+	color: #653cad !important;
+	background-color: #eae2f8 !important;
+	}
+
+	/* Removing the `x` icon in Chrome's search input on this page */
+	input[type="search"]::-webkit-search-decoration,
+	input[type="search"]::-webkit-search-cancel-button,
+	input[type="search"]::-webkit-search-results-button,
+	input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 {% endcss %}
 
 {% block content %}
-  {{ craft.vite.script("src/js/search.js") }}
-  <div class="@container">
-{#    class="container py-8 md:py-16"#}
-    <div class="leading-none banner bg-transparent-oakland-roots">
-      <div class="container px-6 @3xl:px-16 pt-2 pb-8 md:pt-4 md:pb-6">
-        <div class="relative z-10 inline-block rounded-sm bg-white px-2 py-1 text-xs text-green-800 shadow md:text-xs">
-          <span class="font-bold">Search</span>
-        </div>
-      </div>
-    </div>
-    <div id="content" style="position:relative;top:-80px;"></div>
-    <div class="container px-6 @3xl:px-16 py-6 sm:py-12 leading-normal">
-      <div class="relative z-10 flex max-w-6xl flex-col sm:flex-row">
-        <h1 class="mb-0 text-3xl font-bold md:text-4xl sm:w-1/4">{{ entry.title }}</h1>
-        <form action="" class="my-4 flex-1 sm:my-0">
-          <label class="hidden-visually" for="search-input">Search Term(s)</label>
-          <input class="flex-1 appearance-none rounded-none px-8 py-4" id="search-input" name="query" required type="search" value="">
-          <button class="btn hidden-visually" type="submit">Submit</button>
-        </form>
-      </div>
-    </div>
-    <section class="relative z-0 bg-white">
-      <div class="container px-6 @3xl:px-16 py-6 sm:py-12 pt-0">
-        <div class="grid max-w-6xl grid-cols-1 gap-x-16 gap-y-4 md:grid-cols-4">
-          <div class="order-2 md:col-span-3 md:order-1" data-hits id="all-holder">
-            <div id="stats"></div>
-            <div id="all-hits" class="mt-8" data-index="{{ getenv('ENVIRONMENT') }}_all"></div>
-          </div>
-          <div class="order-1 md:order-2">
-            <div id="section-filter" class="oak-hidden md:block"></div>
-            <div class="mt-2 oak-hidden md:block" id="clear-refinements"></div>
-            <legend class="mt-8 mb-6 w-full border-t-2 pt-4 pb-0 font-bold leading-7 border-gray-1000">Related</legend>
-            <ul>
-              <li class="mb-3"><a class="underline hover:no-underline" href="{{ siteUrl }}meetings">Public Meetings</a></li>
-              <li class="mb-3"><a class="underline hover:no-underline" href="{{ siteUrl }}events">Community Events</a></li>
-            </ul>
-          </div>
-        </div>
-        <div id="bottom-pagination"></div>
-      </div>
-    </section>  </div>
+	{{ craft.vite.script("src/js/search.js") }}
+	<div class="@container">
+		<div class="leading-none banner bg-transparent-oakland-roots">
+			<div class="container px-6 @3xl:px-16 pt-2 pb-8 md:pt-4 md:pb-6">
+				<div class="relative z-10 inline-block rounded-sm bg-white px-2 py-1 text-xs text-green-800 shadow md:text-xs">
+					<span class="font-bold">Search</span>
+				</div>
+			</div>
+		</div>
+		<div id="content" style="position:relative;top:-80px;"></div>
+		<div class="container px-6 @3xl:px-16 py-6 sm:py-12 leading-normal">
+			<div class="relative z-10 flex max-w-6xl flex-col sm:flex-row">
+				<h1 class="mb-0 text-3xl font-bold md:text-4xl sm:w-1/4">{{ entry.title }}</h1>
+				<form action="" class="my-4 flex-1 sm:my-0">
+					<label class="hidden-visually" for="search-input">Search Term(s)</label>
+					<input class="flex-1 appearance-none rounded-none px-8 py-4" id="search-input" name="query" required
+					       type="search" value="">
+					<button class="btn hidden-visually" type="submit">Submit</button>
+				</form>
+			</div>
+		</div>
+		<section class="relative z-0 bg-white">
+			<div class="container px-6 @3xl:px-16 py-6 sm:py-12 pt-0">
+				<div class="grid max-w-6xl grid-cols-1 gap-x-16 gap-y-4 md:grid-cols-4">
+					<div class="order-2 md:col-span-3 md:order-1" data-hits id="all-holder">
+						<div id="stats"></div>
+						<div id="all-hits" class="mt-8" data-index="{{ getenv('ENVIRONMENT') }}_all"></div>
+					</div>
+					<div class="order-1 md:order-2">
+						<div id="section-filter" class="oak-hidden md:block"></div>
+						<div class="mt-2 oak-hidden md:block" id="clear-refinements"></div>
+						<legend class="mt-8 mb-6 w-full border-t-2 pt-4 pb-0 font-bold leading-7 border-gray-1000">Related</legend>
+						<ul>
+							<li class="mb-3"><a class="underline hover:no-underline" href="{{ siteUrl }}meetings">Public Meetings</a>
+							</li>
+							<li class="mb-3"><a class="underline hover:no-underline" href="{{ siteUrl }}events">Community Events</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="bottom-pagination"></div>
+			</div>
+		</section>
+	</div>
 {% endblock %}

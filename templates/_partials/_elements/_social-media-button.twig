@@ -1,6 +1,6 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <a class="inline-flex h-10 w-10 rounded-full border border-transparent fill-current p-3 text-white transition-all bg-gray-1000 hover:text-gray-1000 hover:bg-white hover:border-gray-1000" href="{{ url ?? '' }}" title="{{ network | title }} Page for {{ pageTitle ?? entry.title }}">
-  {{ svg('@webroot/dist/img/logo-' ~ network ~ '.svg')|attr({
+  {{ svg("@webroot/dist/img/logo-' ~ network ~ '.svg")|attr({
       class: 'w-full h-full'
   })|raw }}
 </a>

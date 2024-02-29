@@ -1,122 +1,95 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set seoMaticLinks = seomatic.site.sameAsLinks %}
 {% set socialMedia = [
-  [ seoMaticLinks.facebook.url, 'facebook.svg', 'Oakland Facebook Page' ],
-  [ seoMaticLinks.twitter.url, 'twitter.svg', 'Oakland Twitter Page' ],
-  [ seoMaticLinks.instagram.url, 'instagram.svg', 'Oakland Instagram Page' ]
+	[ seoMaticLinks.facebook.url, 'facebook.svg', 'Oakland Facebook Page' ],
+	[ seoMaticLinks.twitter.url, 'twitter.svg', 'Oakland Twitter Page' ],
+	[ seoMaticLinks.instagram.url, 'instagram.svg', 'Oakland Instagram Page' ]
 ] %}
 
-<footer class="bg-gray-1000 bg-transparent-oakland-roots-black @container">
-    <div class="container px-6 @3xl:px-16 py-8">
-        <nav id="footer-navigation" class="flex-wrap text-white lg:flex" name="Footer Navigation">
-            {% for item in navigationFooter.navigationFooter.level(1).all() %}
-            {% if loop.index == 1 %}
-                <div class="md:w-full lg:w-1/2">
-                    <h5>{{ item.heading }}</h5>
-                    <div class="grid grid-cols-2 gap-x-4">
-                        {% set navItems = item.children.all() %}
-                        <ul>
-                            {% for navItem in navItems|slice(0, navItems|length/2) %}
-                                <li><a href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
-                            {% endfor %}
-                        </ul>
-                        <ul>
-                            {% for navItem in navItems|slice(navItems|length/2, navItems|length) %}
-                                <li><a href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-            {% else %}
-                <div class="mt-8 md:w-1/2 lg:w-1/4 lg:mt-0">
-                    <h5>{{ item.heading }}</h5>
-                    <ul>
-                        {% for navItem in item.children.all() %}
-                            <li><a href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            {% endif %}
-            {% endfor %}
-            <div class="mt-8 md:w-1/2 lg:w-1/4 lg:mt-0">
-                <h5 class="mb-4">Sign up for updates</h5>
-                {% if not devMode %}
-                  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
-                  <script>
-                    hbspt.forms.create({
-                      region: "na1",
-                      portalId: "20956996",
-                      formId: "a8c92d43-1143-4d15-9d33-7313c3067086"
-                    });
-                  </script>
-                {% endif %}
-            </div>
-        </nav>
-    </div>
+{% do craft.app.elements.eagerLoadElements(
+	className(navigationFooter),
+	[navigationFooter],
+	["linkits"]
+) %}
 
-    <div class="bg-black text-white @container">
-        <div class="container py-6 px-6 @3xl:px-16">
-            <nav class="items-center justify-between lg:flex" id="bottom-navigation" name="Bottom Navigation">
-                <div class="items-end lg:flex">
-                    <a href="{{ siteUrl }}">
-                        {{ svg( '@webroot/dist/img/logo-oakland.svg')|attr({ class: 'w-40 h-10 fill-current text-gray-100 hover:text-gray-200' }) }}
-                        <span class="sr-only">Home</span>
-                    </a>
-                    <ul class="my-4 grid grid-cols-2 items-center lg:flex lg:my-0 lg:mx-6">
-                        {% for item in navigationFooter.linkits.all() %}
-                            <li class="mb-0 lg:ml-6"><a href="{{ item.linkit.url }}">{{ item.linkit.text }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <ul class="my-0 flex items-center">
-                    {% for socItem in socialMedia %}
-                        <li class="mr-4 mb-0 lg:mr-0 lg:ml-4">
-                            <a href="{{ socItem[0] }}" target="_blank" class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-1000 hover:bg-yellow-500 hover:text-gray-1000">
-                                {{ svg('@webroot/dist/img/logo-' ~ socItem[1])|attr({class:'h-5'}) }}
-                                <span class="hidden-visually">{{ socItem[2] }}</span>
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </nav>
-        </div>
-    </div>
+<footer class="bg-gray-1000 bg-transparent-oakland-roots-black @container">
+	<div class="container px-6 @3xl:px-16 py-8">
+		<nav id="footer-navigation" class="flex-wrap text-white lg:flex" name="Footer Navigation">
+			{% for item in navigationFooter.navigationFooter.level(1).all() %}
+				{% if loop.index == 1 %}
+					<div class="md:w-full lg:w-1/2">
+						<h5>{{ item.heading }}</h5>
+						<div class="grid grid-cols-2 gap-x-4">
+							{% set navItems = item.children.all() %}
+							<ul>
+								{% for navItem in navItems|slice(0, navItems|length/2) %}
+									<li><a href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
+								{% endfor %}
+							</ul>
+							<ul>
+								{% for navItem in navItems|slice(navItems|length/2, navItems|length) %}
+									<li><a href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				{% else %}
+					<div class="mt-8 md:w-1/2 lg:w-1/4 lg:mt-0">
+						<h5>{{ item.heading }}</h5>
+						<ul>
+							{% for navItem in item.children.all() %}
+								<li><a href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
+				{% endif %}
+			{% endfor %}
+			<div class="mt-8 md:w-1/2 lg:w-1/4 lg:mt-0">
+				<h5 class="mb-4">Sign up for updates</h5>
+				{% if not devMode %}
+					<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+					<script>
+						hbspt.forms.create({
+							region: "na1",
+							portalId: "20956996",
+							formId: "a8c92d43-1143-4d15-9d33-7313c3067086"
+						});
+					</script>
+				{% endif %}
+			</div>
+		</nav>
+	</div>
+
+	<div class="bg-black text-white @container">
+		<div class="container py-6 px-6 @3xl:px-16">
+			<nav class="items-center justify-between lg:flex" id="bottom-navigation" name="Bottom Navigation">
+				<div class="items-end lg:flex">
+					<a href="{{ siteUrl }}">
+						{{ svg("@webroot/dist/img/logo-oakland.svg")|attr({ class: 'w-40 h-10 fill-current text-gray-100 hover:text-gray-200' }) }}
+						<span class="sr-only">Home</span>
+					</a>
+					<ul class="my-4 grid grid-cols-2 items-center lg:flex lg:my-0 lg:mx-6">
+						{% for item in navigationFooter.linkits %}
+							<li class="mb-0 lg:ml-6"><a href="{{ item.linkit.url }}">{{ item.linkit.text }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+				<ul class="my-0 flex items-center">
+					{% for socItem in socialMedia %}
+						<li class="mr-4 mb-0 lg:mr-0 lg:ml-4">
+							<a href="{{ socItem[0] }}" target="_blank"
+							   class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-1000 hover:bg-yellow-500 hover:text-gray-1000">
+								{{ svg('@webroot/dist/img/logo-' ~ socItem[1])|attr({class:'h-5'}) }}
+								<span class="hidden-visually">{{ socItem[2] }}</span>
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</nav>
+		</div>
+	</div>
 </footer>
 
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script>
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'en',
-      includedLanguages: 'ceb,en,es,hmn,ja,km,ko,mn,tl,vi,zh-TW,zh-CN,ar',
-      layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT
-    }, 'google_translate_element');
-  }
-
-  (function() {
-    // Observe DOM mutations whether the <html> node was changed by Google Translate
-    if (window.MutationObserver) {
-      var mutationObserver = new MutationObserver(function(mutations) {
-        mutations.forEach(function (mutation) {
-          var oldElementClass = mutation.oldValue;
-          var currentElementClass = mutation.target.className;
-          if (oldElementClass.indexOf('translated-') === -1 && currentElementClass.indexOf('translated-') > -1) {
-            dl.push({
-              'event' : 'page_translated',
-              'translationLanguage' : mutation.target.lang || document.getElementsByTagName('html')[0].getAttribute('xml:lang'),
-              'debug_mode'          : true,
-            });
-          }
-      })
-    })
-
-      var htmlNode = document.querySelector('html');
-      mutationObserver.observe(htmlNode, {
-        attributes: true,
-        attributeOldValue: true,
-        attributeFilter: ['class']
-      })
-    }
-  })();
-</script>
+{{ craft.vite.script("src/js/googletranslate.js", false) }}
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

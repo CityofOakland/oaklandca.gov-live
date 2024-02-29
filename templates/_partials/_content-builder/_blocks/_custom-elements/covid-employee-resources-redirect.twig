@@ -1,9 +1,9 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% js at head %}
-if(window.location.hash) {
-  if (window.location.hash.substring(1) == "city-employee-resources-308624") {
-    window.location.href = "https://www.oaklandca.gov/resources/city-of-oakland-covid-19-employee-resources";
-  }
-}
+	if(window.location.hash) {
+		if (window.location.hash.substring(1) == "city-employee-resources-308624") {
+			window.location.href = "https://www.oaklandca.gov/resources/city-of-oakland-covid-19-employee-resources";
+		}
+	}
 {% endjs %}
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

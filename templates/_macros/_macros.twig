@@ -1,145 +1,142 @@
 {% macro card(entry, dark, arrow) %}
-  <li>
-    {{ _self.cardManual(entry.url, entry.title, entry.summary, dark, arrow) }}
-  </li>
+	<li>
+		{{ _self.cardManual(entry.url, entry.title, entry.summary, dark, arrow) }}
+	</li>
 {% endmacro %}
 
 {% macro cardManual(url, label, summary, dark, arrow ) %}
-  <a class="card {{ dark ? 'dark' : '' }}" href="{{ url }}">
-    <h4 class="flex justify-between pb-4 {{ dark ? 'text-gray-800' : 'text-green-700' }}"><span>{{ label }}</span> {% if arrow %}<span>&rarr;</span>{% endif %}</h4>
-    <div class="text-gray-800 clamp">{{ summary }}</div>
-  </a>
+	<a class="card {{ dark ? "dark" }}" href="{{ url }}">
+		<h4 class="flex justify-between pb-4 {{ dark ? "text-gray-800" : "text-green-700" }}">
+			<span>{{ label }}</span> {% if arrow %}<span>&rarr;</span>{% endif %}</h4>
+		<div class="text-gray-800 clamp">{{ summary }}</div>
+	</a>
 {% endmacro %}
 
 {% macro openEventLink(eventLink, text, label) %}
-  <a
-    class="mb-0 button secondary"
-    href="{{ eventLink }}"
-    target="_blank"
-    aria-label="{{ label|default("Open online event link in a new tab") }}"
-  >
-    {{ text|default("Join the Event") }}
-  </a>
+	<a
+		class="mb-0 button secondary"
+		href="{{ eventLink }}"
+		target="_blank"
+		aria-label="{{ label|default("Open online event link in a new tab") }}"
+	>
+		{{ text|default("Join the Event") }}
+	</a>
 {% endmacro %}
 
 {% macro getDirections(linkToDirections, label) %}
-  <a
-    class="text-white underline hover:text-gray-200 hover:no-underline"
-    href="{{ linkToDirections }}"
-    target="_blank"
-    aria-label="{{ label|default("Open directions to event in a new tab") }}"
-  >
-    Get Directions
-  </a>
+	<a
+		class="text-white underline hover:text-gray-200 hover:no-underline"
+		href="{{ linkToDirections }}"
+		target="_blank"
+		aria-label="{{ label|default("Open directions to event in a new tab") }}"
+	>
+		Get Directions
+	</a>
 {% endmacro %}
 
 {% macro meetingTitle(meeting) %}
-  {% set fullTitle = meeting.relatedBoardOrCommission|length ? meeting.relatedBoardOrCommission.one().title : 'Commission' %}
-{#  {% if meeting.subcommittees %}#}
-{#    {% set subTitle = meeting.subcommittees %}#}
-{#    {% if subTitle|length and subTitle.section('boardsCommissions')|length %}#}
-{#      {% set fullTitle = fullTitle ~ ' - ' ~ subTitle.section('boardsCommissions').one().title %}#}
-{#    {% endif %}#}
-{#  {% endif %}#}
-  {{ fullTitle }} Meeting
+	{% set fullTitle = meeting.relatedBoardOrCommission|length ? meeting.relatedBoardOrCommission.one().title : "Commission" %}
+	{{ fullTitle }} Meeting
 {% endmacro %}
 
 {% macro relatedSectionCount(entry, relations) %}
-  {% set relCount = false %}
-  {% for relation in relations %}
-    {% set relSectionHandle = relation[0] %}
-    {% set relType = relation[1] %}
-    {% set isEntries = (relType == "entries") ? true : false %}
-    {% set hasRels = isEntries ? craft.entries.section(relSectionHandle).relatedTo(entry) %}
-    {% set relCount = true %}
-    {% return relCount %}
-  {% endfor %}
+	{% set relCount = false %}
+	{% for relation in relations %}
+		{% set relSectionHandle = relation[0] %}
+		{% set relType = relation[1] %}
+		{% set isEntries = (relType == "entries") ? true : false %}
+		{% set hasRels = isEntries ? craft.entries.section(relSectionHandle).relatedTo(entry) %}
+		{% set relCount = true %}
+		{% return relCount %}
+	{% endfor %}
 {% endmacro %}
 
 {% macro relatedEntry(entry, relSection) %}
-  {% set relSectionHandle = relSection[0] %}
-  {% set relType = relSection[1] %}
-  {% set isEntries = (relType == "entries") ? true : false %}
-  {% set hasRels = isEntries ? craft.entries.section(relSectionHandle).relatedTo(entry) %}
-  {% if hasRels | length %}
-    {% set section = entry.section %}
-    {% set relSection = isEntries ? craft.app.sections.getSectionByHandle(relSectionHandle) %}
-    {% set urlBase = relSectionHandle | kebab %}
-    {% set relUrl = "/" ~ urlBase ~ "/related-to/" ~ section.handle ~ "/" ~ entry.slug %}
-    {{ include("_partials/_elements/_title-cards.twig", {
-      title: relSection.name,
-      url: relUrl
-    }) }}
-  {% endif %}
+	{% set relSectionHandle = relSection[0] %}
+	{% set relType = relSection[1] %}
+	{% set isEntries = (relType == "entries") ? true : false %}
+	{% set hasRels = isEntries ? craft.entries.section(relSectionHandle).relatedTo(entry) %}
+	{% if hasRels | length %}
+		{% set section = entry.section %}
+		{% set relSection = isEntries ? craft.app.sections.getSectionByHandle(relSectionHandle) %}
+		{% set urlBase = relSectionHandle|kebab %}
+		{% set relUrl = "/" ~ urlBase ~ "/related-to/" ~ section.handle ~ "/" ~ entry.slug %}
+		{{ include("_partials/_elements/_title-cards.twig", {
+			title: relSection.name,
+			url: relUrl
+		}) }}
+	{% endif %}
 {% endmacro %}
 
 {% macro select(label, id, name, options, defaultOption, disabled) %}
-  {% set disabled = disabled is defined ? disabled : false %}
-  <label for="{{ id }}">
-    {{ label }}
-    <select class="shadow-form" name="{{ name }}" {{ disabled ? 'disabled' : '' }}>
-      {% if defaultOption %}
-        <option value="">{{ defaultOption }}</option>
-      {% endif %}
-      {% for option in options %}
-        {% for value, key in option %}
-          <option value="{{ value }}" {{ craft.app.request.getQueryParam(name) and craft.app.request.getQueryParam(name)  == value  ? 'selected' : ''  }}>{{ key }}</option>
-        {% endfor %}
-      {% endfor %}
-    </select>
-  </label>
+	{% set disabled = disabled is defined ? disabled : false %}
+	<label for="{{ id }}">
+		{{ label }}
+		<select class="shadow-form" name="{{ name }}" {{ disabled ? "disabled" }}>
+			{% if defaultOption %}
+				<option value="">{{ defaultOption }}</option>
+			{% endif %}
+			{% for option in options %}
+				{% for value, key in option %}
+					<option
+						value="{{ value }}" {{ craft.app.request.getQueryParam(name) and craft.app.request.getQueryParam(name)  == value  ? "selected" }}>{{ key }}</option>
+				{% endfor %}
+			{% endfor %}
+		</select>
+	</label>
 {% endmacro %}
 
 {% macro textInput(label, id, name, placeholder) %}
-  <label for="{{ id }}">
-    {{ label }}
-    <input class="shadow-form" id="{{ id }}" name="{{ name }}" type="text" placeholder="{{ placeholder }}" value="{{ craft.app.request.getQueryParam(name) ?? craft.app.request.getQueryParam(name) }}">
-  </label>
+	<label for="{{ id }}">
+		{{ label }}
+		<input class="shadow-form" id="{{ id }}" name="{{ name }}" type="text" placeholder="{{ placeholder }}"
+		       value="{{ craft.app.request.getQueryParam(name) ?? craft.app.request.getQueryParam(name) }}">
+	</label>
 {% endmacro %}
 
 {% macro tableBuilder(object, columns) %}
-  <div class="components container px-6 @3xl:px-16">
-    <table class="w-full border text-sm border-cool-gray-500">
-      <thead>
-        <tr>
-          {% for col in 1..columns %}
-            {% set colAttrib = 'column' ~ col ~ 'Heading' %}
-            {% set widthAttrib = 'column' ~ col ~ 'Width' %}
-            <th style="width: {{ attribute(object, widthAttrib) ~ '%' ?? '' }}">{{ attribute(object, colAttrib) }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for row in object.table.all() %}
-          <tr>
-            {% for col in 1..columns %}
-              {% set colAttrib = 'column' ~ col ~ 'Cell' %}
-              <td>{{ attribute(row, colAttrib) | retconAttr( '*', { 'class' : 'last:mb-0' }, false ) }}</td>
-            {% endfor %}
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+	<div class="components container px-6 @3xl:px-16">
+		<table class="w-full border text-sm border-cool-gray-500">
+			<thead>
+			<tr>
+				{% for col in 1..columns %}
+					{% set colAttrib = "column#{col}Heading" %}
+					{% set widthAttrib = "column#{col}Width" %}
+					<th style="width: #{attribute(object, widthAttrib}%">{{ attribute(object, colAttrib) }}</th>
+				{% endfor %}
+			</tr>
+			</thead>
+			<tbody>
+			{% for row in object.table.all() %}
+				<tr>
+					{% for col in 1..columns %}
+						{% set colAttrib = "column#{col}Cell" %}
+						<td>{{ attribute(row, colAttrib) | retconAttr( "*", { "class" : "last:mb-0" }, false ) }}</td>
+					{% endfor %}
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	</div>
 {% endmacro %}
 
 {% macro videoEmbed(videoUrl, videoTitle) %}
-  {% set splitVideoUrl = videoUrl | split('://')[1] | split('&')[0] %}
-  {% if splitVideoUrl starts with 'oakland.granicus.com' %}
-    {% set embed = "https://" ~ splitVideoUrl ~ "&starttime=undefined&stoptime=undefined&autostart=0&embed=1" %}
-  {% else %}
-    {% set embed = craft.videoEmbedder.getEmbedUrl(videoUrl) %}
-  {% endif %}
-  {% if embed | length %}
-    {% if videoTitle %}
-      <p class="mt-4 mb-2 font-bold">{{ videoTitle }}</p>
-    {% endif %}
-    <div class='mb-12 embed-container'>
-      <iframe src='{{ embed }}' frameborder='0' allowfullscreen="allowfullscreen"></iframe>
-    </div>
-  {% else %}
-    <p>
-      <a href="{{ videoUrl }}" target="_blank">{{ videoTitle }}: ({{ videoUrl }})</a>
-    </p>
-  {% endif %}
+	{% set splitVideoUrl = videoUrl | split("://")[1] | split("&")[0] %}
+	{% if splitVideoUrl starts with "oakland.granicus.com" %}
+		{% set embed = "https://" ~ splitVideoUrl ~ "&starttime=undefined&stoptime=undefined&autostart=0&embed=1" %}
+	{% else %}
+		{% set embed = craft.videoEmbedder.getEmbedUrl(videoUrl) %}
+	{% endif %}
+	{% if embed | length %}
+		{% if videoTitle %}
+			<p class="mt-4 mb-2 font-bold">{{ videoTitle }}</p>
+		{% endif %}
+		<div class="mb-12 embed-container">
+			<iframe src="{{ embed }}" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+		</div>
+	{% else %}
+		<p>
+			<a href="{{ videoUrl }}" target="_blank">{{ videoTitle }}: ({{ videoUrl }})</a>
+		</p>
+	{% endif %}
 {% endmacro %}

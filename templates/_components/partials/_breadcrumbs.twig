@@ -1,111 +1,133 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% import "_macros/_macros.twig" as macros %}
 
+{% set primaryUnit = entry.primaryUnit.one() ?? null %}
+{% set relatedBoardComm = entry.relatedBoardOrCommission.one() ?? null %}
+{% set serviceTypes = entry.serviceTypes.all() ?? null %}
+{% set lastSegment = craft.app.request.segment(-1) ?? null %}
 {% set breadcrumbs = [] %}
 
 {% if category is not defined and breadCrumbLinks is not defined %}
-  {% if entry.primaryUnit|length %}
-    {% set breadcrumbs = breadcrumbs|merge([{
-      title: entry.primaryUnit.one().title,
-      link: entry.primaryUnit.one().url
-    }]) %}
-  {% endif %}
-  {% if entry.section is defined and entry.section.type == 'single' %}
-    {% set breadcrumbs = null %}
-  {% elseif entry.section is defined %}
-    {% if entry.section.handle == 'boardsCommissions' and craft.app.request.lastSegment == 'meetings' %}
-      {% set breadcrumbs = breadcrumbs|merge([{
-        title: 'Meetings',
-        link: siteUrl ~ 'meetings'
-      }]) %}
-    {% endif %}
-    {% if entry.section.handle == 'meetings' %}
-      {% set breadcrumbs = breadcrumbs|merge([{
-        title: 'Meetings',
-        link: siteUrl ~ 'meetings'
-      }]) %}
-      {% if entry.relatedBoardOrCommission|length %}
-        {% set breadcrumbs = breadcrumbs|merge([{
-          title: entry.relatedBoardOrCommission.one().title,
-          link: entry.relatedBoardOrCommission.one().url
-        }]) %}
-      {% endif %}
-{#      {% if entry.subcommittees.section('boardsCommissions')|length %}#}
-{#        {% set breadcrumbs = breadcrumbs|merge([{#}
-{#          title: entry.subcommittees.section('boardsCommissions').one().title,#}
-{#          link: entry.subcommittees.section('boardsCommissions').one().url#}
-{#        }]) %}#}
-{#      {% endif %}#}
-    {% elseif entry.section.handle == 'boardsCommissions' and craft.app.request.lastSegment == 'meetings' %}
-    {% else %}
-      {% switch entry.section.handle %}
-        {% case 'boardsCommissions' %}
-          {% set handle = 'boards-commissions' %}
-        {% case 'publicNotices' %}
-          {% set handle = 'public-notices' %}
-        {% default %}
-          {% set handle = entry.section.handle %}
-      {% endswitch %}
-
-      {% set breadcrumbs = breadcrumbs|merge([{
-        title: entry.section.name,
-        link: siteUrl ~ handle
-      }]) %}
-    {% endif %}
-  {% endif %}
+	{% if primaryUnit %}
+		{% set breadcrumbs = breadcrumbs|merge([{
+			title: primaryUnit.title,
+			link: primaryUnit.url
+		}]) %}
+	{% endif %}
+	{% if entry.section is defined and entry.section.type == "single" %}
+		{% set breadcrumbs = null %}
+	{% elseif entry.section is defined %}
+		{% if entry.section.handle == "boardsCommissions" and lastSegment == "meetings" %}
+			{% set breadcrumbs = breadcrumbs|merge([{
+				title: "Meetings",
+				link: "/meetings"
+			}]) %}
+		{% endif %}
+		{% if entry.section.handle == "meetings" %}
+			{% set breadcrumbs = breadcrumbs|merge([{
+				title: "Meetings",
+				link: "/meetings"
+			}]) %}
+			{% if relatedBoardComm %}
+				{% set breadcrumbs = breadcrumbs|merge([{
+					title: relatedBoardComm.title,
+					link: relatedBoardComm.url
+				}]) %}
+			{% endif %}
+		{% elseif entry.section.handle == "boardsCommissions" and lastSegment == "meetings" %}
+		{% else %}
+			{% switch entry.section.handle %}
+			{% case "boardsCommissions" %}
+				{% set handle = "boards-commissions" %}
+			{% case "publicNotices" %}
+				{% set handle = "public-notices" %}
+			{% default %}
+				{% set handle = entry.section.handle %}
+			{% endswitch %}
+			{% set breadcrumbs = breadcrumbs|merge([{
+				title: entry.section.name,
+				link: "/#{handle}"
+			}]) %}
+		{% endif %}
+	{% endif %}
 {% endif %}
 
-{# if no category is assigned to an entry, its primary unit will override as the root breadcrumb #}
-<div id="breadcrumbs" class="relative inline-block bg-white" style="z-index: 1;">
-  {% if category is defined and category.level == 1 %}
-    {# parent service category #}
-    <a href="{{ siteUrl }}services" class="font-bold text-green-800 hover:text-green-800 hover:underline">Services</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
-    <span aria-current="page" class="text-gray-800">{{ entry.title }}</span>
-  {% elseif entry.serviceTypes is defined and entry.serviceTypes|length == 1 %}
-    {# entry has one category only #}
-      <a href="{{ siteUrl }}services" class="font-bold text-green-800 hover:text-green-800 hover:underline">Services</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
-      <a href="{{ entry.serviceTypes.one().url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ entry.serviceTypes.one().title }}</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
-      <span aria-current="page" class="text-gray-800">{{ entry.title }}</span>
-  {% elseif entry.serviceTypes is defined and entry.serviceTypes|length > 1 %}
-    {# entry has multiple categories #}
-    <span class="text-gray-600">
-      See more <a href="{{ siteUrl }}services" class="font-bold text-green-800 hover:text-green-800 hover:underline">Services</a>:
-      {% for category in entry.serviceTypes.all() %}
-        <a href="{{ category.url }}" class="ml-1 font-bold text-green-800 hover:text-green-800 hover:underline">{{ category.title }}</a>{{ not loop.last ? ', ' }} 
-      {% endfor %}
-    </span>
-  {% elseif breadCrumbLinks is defined %}
-    {# other custom breadCrumbLinks set up in templates #}
-    {% for link in breadCrumbLinks ?? '' %}
-      <a class="font-bold text-green-800 hover:text-green-800 hover:underline" href="{{ link.link }}">{{ link.title }}</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
-    {% endfor %}
-    <span aria-current="page" class="{{ breadCrumbLinks is empty ? 'font-bold' : 'text-gray-800' }}">{{ bannerTitle }}</span>
-  {% elseif entry.section.handle == 'boardsCommissions' and craft.app.request.lastSegment == 'meetings' %}
-    {% for link in breadcrumbs ?? '' %}
-      <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
-    {% endfor %}
-    <a href="{{ entry.url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ entry.title }}</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
-    {% if subcommittee is defined %}
-      <a href="{{ subcommittee.url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ subcommittee.title }}</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
-    {% endif %}
-    <span aria-current="page" class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">Meetings for {{ entry.title }}</span>
-  {% elseif section is defined and slug is defined and craft.app.request.lastSegment == 'events' %}
-    {% for link in breadcrumbs ?? '' %}
-      <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
-    {% endfor %}
-    <a href="{{ entry.url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ entry.title }}</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
-    <span aria-current="page" class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">Events for {{ entry.title }}</span>
-  {% else %}
-    {% for link in breadcrumbs ?? '' %}
-      <a href="{{ link.link }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">{{ link.title }}</a><span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
-    {% endfor %}
+{% macro link(url, title) %}
+	<a href="{{ url }}" class="font-bold text-green-800 hover:text-green-800 hover:underline">
+		{{ title }}
+	</a>
+{% endmacro %}
 
-{#    {% if entry.section.handle == 'meetings' %}#}
-{#      <span aria-current="page" class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">{{ macros.meetingTitle(entry) }}</span>#}
-{#    {% else %}#}
-{#      <span aria-current="page" class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">{{ entry.title }}</span>#}
-{#    {% endif %}#}
-    <span aria-current="page" class="{{ breadcrumbs is empty ? 'font-bold' : 'text-gray-800' }}">{{ entry.title }}</span>
-  {% endif %}
+{% macro current(title, bold = false) %}
+	<span
+		aria-current="page"
+		class="{{ bold ? "font-bold" : "text-gray-800" }}"
+	>
+		{{ title }}
+	</span>
+{% endmacro %}
+
+{% import _self as breadCrumb %}
+
+{%- set separator -%}
+	<span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
+{%- endset -%}
+
+{# if no category is assigned to an entry, its primary unit will override as the root breadcrumb #}
+<div id="breadcrumbs" class="relative inline-block bg-white z-[1]">
+	{% if category is defined and category.level == 1 %}
+		{# parent service category #}
+		{{ breadCrumb.link("/services", "Services") }}
+		{{ separator }}
+		<span aria-current="page" class="text-gray-800">{{ entry.title }}</span>
+	{% elseif serviceTypes|length == 1 %}
+		{# entry has one category only #}
+		{{ breadCrumb.link("/services", "Services") }}
+		{{ separator }}
+		{{ breadCrumb.link(serviceTypes.one().url, serviceTypes.title) }}
+		{{ separator }}
+		{{ breadCrumb.current(entry.title) }}
+	{% elseif serviceTypes|length > 1 %}
+		{# entry has multiple categories #}
+		<span class="text-gray-600">
+			See more {{ breadCrumb.link("/services", "Services") }}:
+			{% for category in serviceTypes %}
+				{{ breadCrumb.link(category.url, category.title) }}{{ not loop.last ? ", " }}
+			{% endfor %}
+		</span>
+	{% elseif breadCrumbLinks is defined %}
+		{# other custom breadCrumbLinks set up in templates #}
+		{% for link in breadCrumbLinks ?? "" %}
+			{{ breadCrumb.link(link.link, link.title) }}
+			{{ separator }}
+		{% endfor %}
+		{{ breadCrumb.current(bannerTitle, breadCrumbLinks is empty) }}
+	{% elseif entry.section.handle == "boardsCommissions" and lastSegment == "meetings" %}
+		{% for link in breadcrumbs ?? "" %}
+			{{ breadCrumb.link(link.link, link.title) }}
+			{{ separator }}
+		{% endfor %}
+		{{ breadCrumb.link(entry.url, entry.title) }}
+		{{ separator }}
+		{% if subcommittee is defined %}
+			{{ breadCrumb.link(subcommittee.url, subcommittee.title) }}
+			{{ separator }}
+		{% endif %}
+		{{ breadCrumb.current("Meetings for #{entry.title}", breadcrumbs is empty) }}
+	{% elseif section is defined and slug is defined and lastSegment == "events" %}
+		{% for link in breadcrumbs ?? "" %}
+			{{ breadCrumb.link(link.link, link.title) }}
+			{{ separator }}
+		{% endfor %}
+		{{ breadCrumb.link(entry.url, entry.title) }}
+		{{ separator }}
+		{{ breadCrumb.current("Events for #{entry.title}", breadcrumbs is empty) }}
+	{% else %}
+		{% for link in breadcrumbs ?? "" %}
+			{{ breadCrumb.link(link.link, link.title) }}
+			{{ separator }}
+		{% endfor %}
+		{{ breadCrumb.current(entry.title, breadcrumbs is empty) }}
+	{% endif %}
 </div>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

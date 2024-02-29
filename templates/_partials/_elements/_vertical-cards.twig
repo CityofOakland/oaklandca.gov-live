@@ -6,7 +6,7 @@
         <img src="{{ photo.url }}" class="absolute inset-0 h-full w-full object-cover aspect-ratio" alt="{{ photo.altText ?? ''}}">
       {% elseif icon is defined %}
         <div class="flex h-full items-center justify-center fill-current p-4 text-gray-500 opacity-75 md:p-8 lg:p-12 aspect-ratio">
-          {{ svg('@webroot/dist/img/icon-' ~ icon ~ '.svg')|attr({
+          {{ svg("@webroot/dist/img/icon-' ~ icon ~ '.svg")|attr({
               class: 'h-full'
           })|raw }}
         </div>

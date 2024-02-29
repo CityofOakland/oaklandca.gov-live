@@ -1,0 +1,48 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
+
+{% set mainNavigation = navigation.navigationMain.level(1).with(["linkit"]).all() ?? null %}
+{% do craft.app.elements.eagerLoadElements(
+	className(navigation),
+	[navigation],
+	["linkits"]
+) %}
+
+{{ include("_components/nav-bar/_top-bar.twig") }}
+<div id="mainbar" class="navbar">
+	<div class="relative">
+		<nav id="main-navigation" class="relative flex items-center justify-between px-4 text-white lg:px-6 bg-gray-1000" name="Main Navigation">
+			<a id="home" class="flex items-center justify-center py-2 lg:py-2" href="{{ siteUrl }}">
+				{{ svg("@webroot/dist/img/logo-oakland-tree.svg")|attr({ class: 'h-9 sm:h-10 w-14 md:h-10 lg:oak-hidden fill-current text-gray-100 hover:text-gray-200' }) }}
+				{{ svg("@webroot/dist/img/logo-oakland.svg")|attr({ class: 'w-40 h-10 oak-hidden lg:block fill-current text-gray-100 hover:text-gray-200' }) }}
+				<span class="sr-only">Home</span>
+			</a>
+			<ul class="flex list-none items-center">
+				{{ include("_components/nav-bar/_main-nav-desktop.twig", {
+					params: {
+						nav: mainNavigation
+					}
+				}) }}
+				{{ include("_components/nav-bar/_nav-search.twig", {
+					params: {
+						nav: navigation.linkits
+					}
+				}) }}
+			</ul>
+		</nav>
+		<nav id="mobile-navigation" class="bg-green-800 text-white lg:oak-hidden" name="Mobile Navigation">
+			<a tabindex="0" id="navbar-dropdown-mobile" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+				{{ svg("@webroot/dist/img/icon-menu.svg")|attr({ class: 'fill-current text-white' }) }}
+				{{ svg("@webroot/dist/img/icon-x.svg")|attr({ class: 'fill-current text-white' }) }}
+				<span class="sr-only">Mobile Menu</span>
+			</a>
+			<ul aria-labelledby="navbar-dropdown-mobile" class="px-4 py-2">
+				{{ include("_components/nav-bar/_main-nav-mobile.twig", {
+					params: {
+						nav: mainNavigation
+					}
+				}) }}
+			</ul>
+		</nav>
+	</div>
+</div>
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

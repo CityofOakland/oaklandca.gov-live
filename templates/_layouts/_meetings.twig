@@ -83,7 +83,7 @@
 				{% for document in entry.documentFile.all() %}
 					<li>
 						<a href="{{ document.url }}">
-              {{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Minutes - {{ entry.date|date("m/d/Y") }}
+              {{ svg("@webroot/dist/img/icon-document.svg") }} {{ entry.title }} Minutes - {{ entry.date|date("m/d/Y") }}
             </a>
 					</li>
 				{% endfor %}
@@ -96,7 +96,7 @@
 				{% for document in minutes.all() %}
 					<li>
 						<a href="{{ document.documentFile.one().url }}">
-              {{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Minutes - {{ entry.date|date("m/d/Y") }}
+              {{ svg("@webroot/dist/img/icon-document.svg") }} {{ entry.title }} Minutes - {{ entry.date|date("m/d/Y") }}
             </a>
 					</li>
 				{% endfor %}
@@ -179,7 +179,7 @@
 			{% for agenda in agendas.all() %}
 				<li>
 					<a href="{{ agenda.documentFile.one().url }}">
-            {{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Agenda - {{ entry.date|date("m/d/Y") }}</a>
+            {{ svg("@webroot/dist/img/icon-document.svg") }} {{ entry.title }} Agenda - {{ entry.date|date("m/d/Y") }}</a>
 				</li>
 			{% endfor %}
 		</ul>
@@ -191,7 +191,7 @@
       <ul class="mt-4 pt-0 ul-icons related">
 				<li>
 					<a href="{{ entry.agendaDownloadableCopy.one().url }}">
-            {{ svg( '@webroot/dist/img/icon-document.svg') }} {{ entry.title }} Agenda - {{ entry.date|date("m/d/Y") }}
+            {{ svg("@webroot/dist/img/icon-document.svg") }} {{ entry.title }} Agenda - {{ entry.date|date("m/d/Y") }}
           </a>
 				</li>
 			</ul>
@@ -209,7 +209,7 @@
 									{% for document in item.relatedDocuments.all() %}
 										<li>
 											<a href="{{ document.url }}">
-                        {{ svg( '@webroot/dist/img/icon-document.svg') }} {{ document.title }}
+                        {{ svg("@webroot/dist/img/icon-document.svg") }} {{ document.title }}
                       </a>
 										</li>
 									{% endfor %}
@@ -237,7 +237,7 @@
 			{% for document in documents %}
 				<li>
 					<a href="{{ document.documentFile.one().url }}">
-            {{ svg( '@webroot/dist/img/icon-document.svg') }} {{ document.title }}
+            {{ svg("@webroot/dist/img/icon-document.svg") }} {{ document.title }}
           </a>
 				</li>
 			{% endfor %}
@@ -259,7 +259,7 @@
             >
               {{ item.header ? item.header : "How to Participate in this Public Meeting" }}
               <span style="pointer-events: none;">
-                {{ svg( '@webroot/dist/img/icon-plus.svg') }}{{ svg( '@webroot/dist/img/icon-minus.svg') }}
+                {{ svg("@webroot/dist/img/icon-plus.svg") }}{{ svg("@webroot/dist/img/icon-minus.svg") }}
               </span>
 						</button>
 						<div

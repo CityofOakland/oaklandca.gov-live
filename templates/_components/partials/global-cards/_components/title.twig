@@ -1,14 +1,29 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set vars = {
-  level: 'h2',
-  size: null,
-  color: null,
-  title: null,
-  text: null,
-  url: null,
+	level: 'h2',
+	size: null,
+	color: null,
+	title: null,
+	text: null,
+	url: null,
 }|merge(params) %}
 
-<{{ vars.level }} class="font-bold {{ titleSize }} {{ vars.color }}">
-  <a class="text-current after:absolute after:inset-0" href="{{ vars.url }}">{{ vars.title }}</a>
-</{{ vars.level }}>
+{%- set anchorLink -%}
+	<a class="text-current after:absolute after:inset-0" href="{{ vars.url }}">{{ vars.title }}</a>
+{%- endset -%}
+
+{% switch vars.level %}
+	{% case 'h3' %}
+		<h3 class="font-bold {{ titleSize }} {{ vars.color }}">
+			{{ anchorLink }}
+		</h3>
+	{% case 'h4' %}
+		<h4 class="font-bold {{ titleSize }} {{ vars.color }}">
+			{{ anchorLink }}
+		</h4>
+	{% default %}
+		<h2 class="font-bold {{ titleSize }} {{ vars.color }}">
+			{{ anchorLink }}
+		</h2>
+{% endswitch %}
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}

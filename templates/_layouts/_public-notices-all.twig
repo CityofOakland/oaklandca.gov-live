@@ -5,9 +5,9 @@
 {% set filter_enabled = false %}
 
 {% if notice_type %}
-  {% set filter_enabled = true %}
-  {% set id = craft.categories().group('publicNoticeTypes').id(notice_type).one() %}
-  {% set notices = notices.relatedTo(id) %}
+	{% set filter_enabled = true %}
+	{% set id = craft.categories().group('publicNoticeTypes').id(notice_type).one() %}
+	{% set notices = notices.relatedTo(id) %}
 {% endif %}
 
 {% set date_query = ['and'] %}
@@ -17,31 +17,31 @@
 {% set ymd     = '' %}
 
 {% if year and month %}
-  {% set filter_enabled = true %}
-  {% set ymd = year ~ '-' ~ month ~ '-01' %}
-  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
+	{% set filter_enabled = true %}
+	{% set ymd = year ~ '-' ~ month ~ '-01' %}
+	{% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
 {% elseif year %}
-  {% set filter_enabled = true %}
-  {% set ymd = year ~ '-' ~ '01-01' %}
-  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 year')|date('Y-m-d')) ]) %}
+	{% set filter_enabled = true %}
+	{% set ymd = year ~ '-' ~ '01-01' %}
+	{% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 year')|date('Y-m-d')) ]) %}
 {% elseif month %}
-  {% set filter_enabled = true %}
-  {% set ymd = now|date('Y') ~ '-' ~ month %}
-  {% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
+	{% set filter_enabled = true %}
+	{% set ymd = now|date('Y') ~ '-' ~ month %}
+	{% set date_query = date_query|merge(['>= ' ~ (ymd), '< ' ~ (ymd|date_modify('+1 month')|date('Y-m-d')) ]) %}
 {% endif %}
 
 {% if date_query|length > 1 %}
-  {% set notices = notices.postDate(date_query) %}
+	{% set notices = notices.postDate(date_query) %}
 {% endif %}
 
 {% if craft.app.request.getQueryParam('q') %}
-  {% set filter_enabled = true %}
+	{% set filter_enabled = true %}
 {% endif %}
 
 {% paginate notices as pageInfo, notices %}
 
 {% if pageInfo.currentPage > 1 %}
-  {% do seomatic.meta.seoTitle(entry.title ~ ' | Page ' ~ pageInfo.currentPage ~ ' of ' ~ pageInfo.totalPages) %}
+	{% do seomatic.meta.seoTitle(entry.title ~ ' | Page ' ~ pageInfo.currentPage ~ ' of ' ~ pageInfo.totalPages) %}
 {% endif %}
 
 {% set layout = 'filter' %}
@@ -49,100 +49,100 @@
 {% import "_macros/_macros.twig" as macros %}
 
 {% block content %}
-  {% if filter_enabled %}
-    {% if notices|length %}
-      <h2 aria-live="polite">Displaying {{ notices|length }} of {{ pageInfo.total }} Public Notices</h2>
-    {% else %}
-      <h2 aria-live="polite">No results found</h2>
-    {% endif %}
-  {% else %}
-    <h2 aria-live="polite">Displaying all Public Notices</h2>
-  {% endif %}
+	{% if filter_enabled %}
+		{% if notices|length %}
+			<h2 aria-live="polite">Displaying {{ notices|length }} of {{ pageInfo.total }} Public Notices</h2>
+		{% else %}
+			<h2 aria-live="polite">No results found</h2>
+		{% endif %}
+	{% else %}
+		<h2 aria-live="polite">Displaying all Public Notices</h2>
+	{% endif %}
 
-  <div class="mt-8">
-    {% if notices|length %}
-      {% for notice in notices %}
-        <div class="pb-6 result" style="margin-bottom:1rem;">
-          <a class="md:flex" href="{{ notice.url }}">
-            <i class="mt-0 mr-4 mb-2 text-2xl fas fa-file-pdf md:mb-0"></i>
-            <h3 class="mt-0">{{ notice.title }}</h3>
-          </a>
-          {{ notice.summary }}
-          {% if notice.publicNoticeType|length %}
-            <span class="mt-4" data-type>{{ notice.publicNoticeType.one().title }}</span>
-          {% endif %}
-          <div class="mt-4 items-center justify-between md:flex">
-            <p class="mt-0 updated">Posted: {{ notice.postDate|date("F j, Y") }}</p>
-            {% set file = notice.documentFile.one() %}
-            {% if file %}
-              {{ include("_components/_button.twig", {
-                class: 'small mt-4 mt-md:0 mr-0',
-                style: 'secondary',
-                url: file.url,
-                text: 'Download',
-                icon: 'download',
-                label: "Download #{file.title} (#{file.kind|upper})"
-              }) }}
-            {% endif %}
-          </div>
-        </div>
-      {% endfor %}
-    {% else %}
-      <div class="px-8 pt-3 pb-5" style="background:#F7F7F7;">
-        <p>Please try another search or updating your filters.</p>
-        <p><a href="{{ entry.url }}">See all Public Notices</a></p>
-      </div>
-    {% endif %}
-  </div>
+	<div class="mt-8">
+		{% if notices|length %}
+			{% for notice in notices %}
+				<div class="pb-6 result" style="margin-bottom:1rem;">
+					<a class="md:flex" href="{{ notice.url }}">
+						<i class="mt-0 mr-4 mb-2 text-2xl fas fa-file-pdf md:mb-0"></i>
+						<h3 class="mt-0">{{ notice.title }}</h3>
+					</a>
+					{{ notice.summary }}
+					{% if notice.publicNoticeType|length %}
+						<span class="mt-4" data-type>{{ notice.publicNoticeType.one().title }}</span>
+					{% endif %}
+					<div class="mt-4 items-center justify-between md:flex">
+						<p class="mt-0 updated">Posted: {{ notice.postDate|date("F j, Y") }}</p>
+						{% set file = notice.documentFile.one() %}
+						{% if file %}
+							{{ include("_components/_button.twig", {
+								class: 'small mt-4 mt-md:0 mr-0',
+								style: 'secondary',
+								url: file.url,
+								text: 'Download',
+								icon: 'download',
+								label: "Download #{file.title} (#{file.kind|upper})"
+							}) }}
+						{% endif %}
+					</div>
+				</div>
+			{% endfor %}
+		{% else %}
+			<div class="px-8 pt-3 pb-5" style="background:#F7F7F7;">
+				<p>Please try another search or updating your filters.</p>
+				<p><a href="{{ entry.url }}">See all Public Notices</a></p>
+			</div>
+		{% endif %}
+	</div>
 
-  <div class="my-8">
-    {{ include("_partials/_elements/_pagination.twig") }}
-  </div>
+	<div class="my-8">
+		{{ include("_partials/_elements/_pagination.twig") }}
+	</div>
 {% endblock %}
 
 {% block sidebar %}
-  <hr class="hidden lg:block"/>
-  <div class="mt-2 md:mt-0"></div>
-  <h4 class="mt-4 mb-6 py-0">{{ 'Search & Filter'|t }}</h4>
-  <form action="{{ entry.url }}">
-    {{ macros.textInput('Search', 'search', 'q', 'Search keywords') }}
-    {{ macros.select('Public Notice Type', 'public_notice_type', 'public_notice_type', craft.categories().group('publicNoticeTypes').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a Public Notice Type') }}
-    {{ macros.select('Month', 'month', 'month', [
-        {"01"  : "January"},
-        {"02"  : "February"},
-        {"03"  : "March"},
-        {"04"  : "April"},
-        {"05"  : "May"},
-        {"06"  : "June"},
-        {"07"  : "July"},
-        {"08"  : "August"},
-        {"09"  : "September"},
-        {"10"  : "October"},
-        {"11"  : "November"},
-        {"12"  : "December"}
-      ], "Select a month"
-    )}}
-    {% if craft.entries().section('publicNotices').limit(1).one() %}
-      {% set earliest_year = craft.entries().section('publicNotices').orderBy('date asc').limit(1).one().date|date('Y') %}
-      {% set latest_year   = craft.entries().section('publicNotices').orderBy('date desc').limit(1).one().date|date('Y') %}
-      {% set years = [] %}
-      {% for year in range(latest_year, earliest_year) %}
-        {% set years =  years|merge([{(year): year}]) %}
-      {% endfor %}
-      {{ macros.select('Year', 'year', 'year', years, "Select a year") }}
-    {% endif %}
-    <div class="flex items-center">
-      <button class="button medium">Apply</button>
-      <a class="mt-4" href="{{ entry.url }}">Clear filters</a>
-    </div>
-  </form>
-  <hr/>
-  <div class="hidden lg:block">
-    <h4 class="mt-4 py-0">{{ 'Related'|t }}</h4>
-    <div class="pt-2">
-      <p><a href="{{siteUrl}}">Learn about Public Notices</a></p>
-      <p><a href="{{siteUrl}}meetings">Oakland City Meetings Calendar</a></p>
-    </div>
-    <hr class="light"/>
-  </div>
+	<hr class="hidden lg:block" />
+	<div class="mt-2 md:mt-0"></div>
+	<h4 class="mt-4 mb-6 py-0">{{ 'Search & Filter'|t }}</h4>
+	<form action="{{ entry.url }}">
+		{{ macros.textInput('Search', 'search', 'q', 'Search keywords') }}
+		{{ macros.select('Public Notice Type', 'public_notice_type', 'public_notice_type', craft.categories().group('publicNoticeTypes').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a Public Notice Type') }}
+		{{ macros.select('Month', 'month', 'month', [
+			{"01"  : "January"},
+			{"02"  : "February"},
+			{"03"  : "March"},
+			{"04"  : "April"},
+			{"05"  : "May"},
+			{"06"  : "June"},
+			{"07"  : "July"},
+			{"08"  : "August"},
+			{"09"  : "September"},
+			{"10"  : "October"},
+			{"11"  : "November"},
+			{"12"  : "December"}
+		], "Select a month"
+		) }}
+		{% if craft.entries().section('publicNotices').limit(1).one() %}
+			{% set earliest_year = craft.entries().section('publicNotices').orderBy('date asc').limit(1).one().date|date('Y') %}
+			{% set latest_year   = craft.entries().section('publicNotices').orderBy('date desc').limit(1).one().date|date('Y') %}
+			{% set years = [] %}
+			{% for year in range(latest_year, earliest_year) %}
+				{% set years =  years|merge([{(year): year}]) %}
+			{% endfor %}
+			{{ macros.select('Year', 'year', 'year', years, "Select a year") }}
+		{% endif %}
+		<div class="flex items-center">
+			<button class="button medium">Apply</button>
+			<a class="mt-4" href="{{ entry.url }}">Clear filters</a>
+		</div>
+	</form>
+	<hr />
+	<div class="hidden lg:block">
+		<h4 class="mt-4 py-0">{{ 'Related'|t }}</h4>
+		<div class="pt-2">
+			<p><a href="{{ siteUrl }}">Learn about Public Notices</a></p>
+			<p><a href="{{ siteUrl }}meetings">Oakland City Meetings Calendar</a></p>
+		</div>
+		<hr class="light" />
+	</div>
 {% endblock %}

@@ -1,0 +1,52 @@
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
+{% set vars = {
+	nav: null,
+}|merge(params) %}
+
+{% for item in vars.nav %}
+	{% set navItems = item.children.all() ?? null %}
+	<li class="has-submenu click oak-hidden lg:block">
+		{% tag "a" with {
+			tabindex: 0,
+			id: "navbar-dropdown-#{item.heading|replace({' ':'-'})|lower}",
+			"data-toggle": "dropdown",
+			role: "button",
+			"aria-has-popup": "true",
+			"aria-expanded": "false"
+		} %}
+			{{ item.heading }}
+			{{ svg("@webroot/dist/img/icon-arrow.svg")|attr({
+				class: "fill-current"
+			}) }}
+		{% endtag %}
+		<ul class="grid gap-x-6 bg-green-800 px-6 pt-2 pb-6 components md:grid-cols-3"
+		    aria-labelledby="navbar-dropdown-{{ item.heading|replace({' ': '-'})|lower }}">
+			<li class="relative pt-4 pb-32">
+				<span class="block pt-3 text-3xl font-bold leading-tight">{{ item.heading }}</span>
+				{% if item.description %}
+					<p class="pt-2 text-xl leading-normal">
+						{{ item.description }}
+					</p>
+				{% endif %}
+				{% if item.linkit %}
+					<a class="button accent" href="{{ item.linkit.url }}">{{ item.linkit.text }}</a>
+				{% endif %}
+			</li>
+			<li>
+				<ul>
+					{% for navItem in navItems|slice(0, navItems|length/2) %}
+						<li><a class="card {{ navItem.styleCard }}" href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
+					{% endfor %}
+				</ul>
+			</li>
+			<li>
+				<ul>
+					{% for navItem in navItems|slice(navItems|length/2, navItems|length) %}
+						<li><a class="card {{ navItem.styleCard }}" href="{{ navItem.linkit.url }}">{{ navItem.linkit.text }}</a></li>
+					{% endfor %}
+				</ul>
+			</li>
+		</ul>
+	</li>
+{% endfor %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}
