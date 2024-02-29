@@ -5,6 +5,15 @@
 {% set subheadingClass = subheadingClass ?? 'text-xl my-4' %}
 {% set galleryTrue = craft.matrixBlocks().owner(entry).fieldId(66).type('gallery') %}
 
+{#
+	TODO: Investigate the lack of use of the following blocks
+	_partials/_content-builder/_blocks/_newsCards.twig
+	_partials/_content-builder/_blocks/_feauturedProfile.twig
+	_partials/_content-builder/_blocks/_profileCards.twig
+	_partials/_content-builder/_blocks/_emailSignup.twig
+	_partials/_content-builder/_blocks/_callout.twig
+#}
+
 <div class="break-word">
   {% for block in entry.contentBuilder %}
     {% set blockId = (block.text ?? block.heading ?? "block")|kebab %}
