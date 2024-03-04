@@ -15,7 +15,6 @@ export default defineConfig(({ command, mode }) => {
         input: {
           app: 'src/js/app.js',
           algoliafilter: 'src/js/algoliafilter.js',
-	        googletranslate: 'src/js/googletranslate.js',
           search: 'src/js/search.js',
           lightgallery: 'src/js/lightgallery.js',
         }
