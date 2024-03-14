@@ -12,7 +12,7 @@
           {# TODO: Migrate these settings to be stored as record properties in Algolia #}
           {% set transformedImage = craft.imager.transformImage(
             photo,
-            {width: 150 },
+            { width: 150 },
             { ratio: 1/1, position: photo.getFocalPoint()},
             { fillTransforms: true}
           ) %}
@@ -21,10 +21,10 @@
             { width: 300, jpegQuality: 65 },
             { width: 150, jpegQuality: 65 }
           ], { ratio: 1/1, position: photo.getFocalPoint()},{ fillTransforms: true}) %}
-          <img src="{{ transformedImage.url }}" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ jobTitle }}, {{ name }}" class="block h-full w-full rounded-full border-2 border-gray-200">
+          <img src="{{ transformedImage.url }}" srcset="{{ transformedImages | srcset }}" alt="" class="block h-full w-full rounded-full border-2 border-gray-200">
         {% else %}
           <div class="h-full overflow-hidden rounded-full border-2 border-gray-200 bg-gray-100 fill-current text-gray-400 opacity-75">
-            {{ svg("@webroot/dist/img/icon-' ~ icon ~ '.svg")|attr({
+            {{ svg("@webroot/dist/img/icon-user.svg")|attr({
                 class: 'block h-full'
             })|raw }}
           </div>
