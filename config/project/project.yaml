@@ -1,4 +1,4 @@
-dateModified: 1709228883
+dateModified: 1710786434
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -1258,7 +1258,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: V1MGTTWWOX2B8VX28A8VJ2ZQ
-    schemaVersion: 4.11.1
+    schemaVersion: 4.13.0
     settings:
       apiKey: ''
       cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
@@ -1412,11 +1412,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  element-api:
-    enabled: '1'
-    licenseKey: null
-    schemaVersion: 1.0.0
-    settings: null
   empty-coalesce:
     enabled: '1'
     licenseKey: null
