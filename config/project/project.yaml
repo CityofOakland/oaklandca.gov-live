@@ -1,4 +1,4 @@
-dateModified: 1710786434
+dateModified: 1710875286
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -959,7 +959,6 @@ meta:
     70778563-6dac-453d-a4b0-5121f3a614b7: Topics # Topics
     70842856-8b10-4b22-ac3d-e127825aca24: Heading # Heading
     71390558-d90c-4764-9b4c-3193ce8c1c0f: News # News
-    80185635-48b7-48d7-847a-53d941fdda68: Address # Address
     80554222-e44d-4971-b6db-30843c2f3a7d: Facebook # Facebook
     93529926-6c77-4675-9951-602d6d06458e: 'Public Schema' # Public Schema
     95363013-85f2-4588-800f-e939bf922cbf: 'Featured Profile' # Featured Profile
@@ -1867,10 +1866,6 @@ plugins:
     schemaVersion: 1.0.0
     settings: null
   related:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
-  reporter:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0

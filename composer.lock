@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3e2bab839c67fcae73879f3d76478084",
+    "content-hash": "6741751a3d1fe6a3fb4636a6a3fd3782",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -814,11 +814,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.301.1",
+            "version": "3.301.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aws/aws-sdk-php.git",
+                "reference": "6b21e34d24a73ea66492869be90443069034fdb3"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0a910d2b35e7087337cdf3569dc9b6ce232aafba",
-                "reference": "0a910d2b35e7087337cdf3569dc9b6ce232aafba",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6b21e34d24a73ea66492869be90443069034fdb3",
+                "reference": "6b21e34d24a73ea66492869be90443069034fdb3",
                 "shasum": ""
             },
             "require": {
@@ -832,6 +837,25 @@
                 "mtdowling/jmespath.php": "^2.6",
                 "php": ">=7.2.5",
                 "psr/http-message": "^1.0 || ^2.0"
+            },
+            "require-dev": {
+                "andrewsville/php-token-reflection": "^1.4",
+                "aws/aws-php-sns-message-validator": "~1.0",
+                "behat/behat": "~3.0",
+                "composer/composer": "^1.10.22",
+                "dms/phpunit-arraysubset-asserts": "^0.4.0",
+                "doctrine/cache": "~1.4",
+                "ext-dom": "*",
+                "ext-openssl": "*",
+                "ext-pcntl": "*",
+                "ext-sockets": "*",
+                "nette/neon": "^2.3",
+                "paragonie/random_compat": ">= 2",
+                "phpunit/phpunit": "^5.6.3 || ^8.5 || ^9.5",
+                "psr/cache": "^1.0",
+                "psr/simple-cache": "^1.0",
+                "sebastian/comparator": "^1.2.3 || ^4.0",
+                "yoast/phpunit-polyfills": "^1.0"
             },
             "suggest": {
                 "aws/aws-php-sns-message-validator": "To validate incoming SNS notifications",
@@ -854,6 +878,7 @@
                     "Aws\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
@@ -875,7 +900,12 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2024-03-15T18:14:42+00:00"
+            "support": {
+                "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
+                "issues": "https://github.com/aws/aws-sdk-php/issues",
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.301.3"
+            },
+            "time": "2024-03-19T18:05:04+00:00"
         },
         {
             "name": "besteadfast/craft-preparse-field",
@@ -1499,15 +1529,25 @@
         },
         {
             "name": "composer/pcre",
-            "version": "3.1.2",
+            "version": "3.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/pcre.git",
+                "reference": "5b16e25a5355f1f3afdfc2f954a0a80aec4826a8"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/pcre/zipball/4775f35b2d70865807c89d32c8e7385b86eb0ace",
-                "reference": "4775f35b2d70865807c89d32c8e7385b86eb0ace",
+                "url": "https://api.github.com/repos/composer/pcre/zipball/5b16e25a5355f1f3afdfc2f954a0a80aec4826a8",
+                "reference": "5b16e25a5355f1f3afdfc2f954a0a80aec4826a8",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.3",
+                "phpstan/phpstan-strict-rules": "^1.1",
+                "symfony/phpunit-bridge": "^5"
             },
             "type": "library",
             "extra": {
@@ -1520,6 +1560,7 @@
                     "Composer\\Pcre\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1537,7 +1578,25 @@
                 "regex",
                 "regular expression"
             ],
-            "time": "2024-03-07T15:38:35+00:00"
+            "support": {
+                "issues": "https://github.com/composer/pcre/issues",
+                "source": "https://github.com/composer/pcre/tree/3.1.3"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-03-19T10:26:25+00:00"
         },
         {
             "name": "composer/semver",
@@ -1733,11 +1792,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "4.8.3",
+            "version": "4.8.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/51956c455a9a362cb1efd5dc5d93d9eaa5ea8493",
-                "reference": "51956c455a9a362cb1efd5dc5d93d9eaa5ea8493",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/9d218d94f490e787e1c9f20ed9d2bd909a3bdfd2",
+                "reference": "9d218d94f490e787e1c9f20ed9d2bd909a3bdfd2",
                 "shasum": ""
             },
             "require": {
@@ -1825,7 +1884,7 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2024-03-15T21:39:24+00:00"
+            "time": "2024-03-19T17:13:27+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -4768,15 +4827,15 @@
         },
         {
             "name": "league/fractal",
-            "version": "0.18.0",
+            "version": "0.20.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/4e553dae1a9402adbe11c81430a64675dc97b4fc",
-                "reference": "4e553dae1a9402adbe11c81430a64675dc97b4fc",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/8b9d39b67624db9195c06f9c1ffd0355151eaf62",
+                "reference": "8b9d39b67624db9195c06f9c1ffd0355151eaf62",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4"
+                "php": ">=7.4"
             },
             "suggest": {
                 "illuminate/pagination": "The Illuminate Pagination component.",
@@ -4786,7 +4845,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.13-dev"
+                    "dev-master": "0.20.x-dev"
                 }
             },
             "autoload": {
@@ -4813,7 +4872,7 @@
                 "league",
                 "rest"
             ],
-            "time": "2019-05-10T02:16:43+00:00"
+            "time": "2022-04-11T12:47:17+00:00"
         },
         {
             "name": "league/mime-type-detection",
@@ -8913,18 +8972,21 @@
         },
         {
             "name": "studioespresso/craft-scout",
-            "version": "3.4.0",
+            "version": "4.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/studioespresso/craft-scout/zipball/954680ae3d2f5feee83c009442196ec31b7f87ab",
-                "reference": "954680ae3d2f5feee83c009442196ec31b7f87ab",
+                "url": "https://api.github.com/repos/studioespresso/craft-scout/zipball/dad8339ba42ad4a65cafb642794486b0b02fb2a5",
+                "reference": "dad8339ba42ad4a65cafb642794486b0b02fb2a5",
                 "shasum": ""
             },
             "require": {
                 "algolia/algoliasearch-client-php": "^2.3|^3.0",
                 "craftcms/cms": "^4.3.5",
-                "league/fractal": "^0.18|^0.19",
+                "league/fractal": "^0.20",
                 "php": "^8.0.2"
+            },
+            "conflict": {
+                "craftcms/element-api": "<4.0.0"
             },
             "type": "craft-plugin",
             "extra": {
@@ -8966,7 +9028,7 @@
                 "docs": "https://github.com/studioespresso/craft-scout/blob/master/README.md",
                 "issues": "https://github.com/studioespresso/craft-scout/issues"
             },
-            "time": "2024-03-15T11:03:02+00:00"
+            "time": "2024-03-18T19:39:37+00:00"
         },
         {
             "name": "sunra/php-simple-html-dom-parser",
@@ -11022,11 +11084,6 @@
         {
             "name": "tecnickcom/tcpdf",
             "version": "6.7.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tecnickcom/TCPDF.git",
-                "reference": "1ae5c4721cecb6be1fa1c0bebb506ed454a3e02d"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/1ae5c4721cecb6be1fa1c0bebb506ed454a3e02d",
@@ -11057,7 +11114,6 @@
                     "include/barcodes/qrcode.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "LGPL-3.0-or-later"
             ],
@@ -11078,16 +11134,6 @@
                 "pdf",
                 "pdf417",
                 "qrcode"
-            ],
-            "support": {
-                "issues": "https://github.com/tecnickcom/TCPDF/issues",
-                "source": "https://github.com/tecnickcom/TCPDF/tree/6.7.2"
-            },
-            "funding": [
-                {
-                    "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_donations&currency_code=GBP&business=paypal@tecnick.com&item_name=donation%20for%20tcpdf%20project",
-                    "type": "custom"
-                }
             ],
             "time": "2024-03-18T17:08:30+00:00"
         },
@@ -11279,54 +11325,6 @@
             ],
             "description": "New native field to display an assets location",
             "time": "2023-12-01T11:16:03+00:00"
-        },
-        {
-            "name": "trendyminds/craft-reporter",
-            "version": "2.2.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/trendyminds/craft-reporter/zipball/c1115daefd2d3e166e6fca7942068ca057a08a68",
-                "reference": "c1115daefd2d3e166e6fca7942068ca057a08a68",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^4.0.0",
-                "league/fractal": "^0.18.0",
-                "php": ">=8.0.2"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Reporter",
-                "handle": "reporter",
-                "class": "trendyminds\\reporter\\Reporter",
-                "changelogUrl": "https://raw.githubusercontent.com/trendyminds/craft-reporter/main/CHANGELOG.md"
-            },
-            "autoload": {
-                "psr-4": {
-                    "trendyminds\\reporter\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "TrendyMinds",
-                    "homepage": "https://trendyminds.com"
-                }
-            ],
-            "description": "Export Craft data as CSVs in a snap",
-            "keywords": [
-                "craft",
-                "craft cms",
-                "reports"
-            ],
-            "support": {
-                "issues": "https://github.com/trendyminds/craft-reporter/issues?state=open",
-                "source": "https://github.com/trendyminds/craft-reporter",
-                "docs": "https://github.com/trendyminds/craft-reporter/blob/master/README.md"
-            },
-            "time": "2023-09-29T14:52:28+00:00"
         },
         {
             "name": "twig/twig",
