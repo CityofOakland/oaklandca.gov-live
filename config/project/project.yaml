@@ -1,4 +1,4 @@
-dateModified: 1710875286
+dateModified: 1710975041
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -696,6 +696,7 @@ meta:
     9b53be12-6536-4cb0-8860-9b5e6e94fadd: 'Process Steps' # Process Steps
     9b964648-525c-46b6-96ea-dc1cc71fa034: Header # Header
     9bcd16e5-bd37-435b-a9f8-36d5a9e3eb55: 'Links with Descriptions' # Links with Descriptions
+    9bfc1938-0f2b-44e4-b11c-d617ae0db820: 'Button Widths' # Button Widths
     9c0b44a4-b6de-498e-bc9d-4f7a4f9fe5f2: 'Alert Type' # Alert Type
     9c5a5207-8f38-4715-993b-741d8919f3f0: 'Featured Staff' # Featured Staff
     9c457cb3-7498-4b3d-8b1e-84454f649934: 'Link Set' # Link Set
