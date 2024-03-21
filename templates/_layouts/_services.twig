@@ -5,6 +5,7 @@
 	[entry],
 	[
 		'banner',
+		'callToAction',
 		'callToAction.documentLink:documentLink',
 		'callToAction.documentLink:documentLink.documentFile',
 		'contentBuilder',
@@ -12,18 +13,22 @@
 		'contentBuilder.largeEntryLinks:entries.documentFile',
 		'contentBuilder.smallEntryLinks:entries',
 		'contentBuilder.smallEntryLinks:entries.documentFile',
+		'embeddedContent',
+		'primaryUnit',
+		'serviceTypes'
 	]
 ) %}
 
 {% set embeddedContent = entry.embeddedContent.one() ?? null %}
+{% set primaryUnit = entry.primaryUnit.one() ?? null %}
 
 {% block content %}
 	{% set breadcrumbs = [] %}
-	{% if entry.primaryUnit|length %}
+	{% if primaryUnit %}
 		{% set breadcrumbs = breadcrumbs|merge([
 			{
-				title: entry.primaryUnit.one().title,
-				link: entry.primaryUnit.one().url
+				title: primaryUnit.title,
+				link: primaryUnit.url
 			},
 		]) %}
 	{% endif %}

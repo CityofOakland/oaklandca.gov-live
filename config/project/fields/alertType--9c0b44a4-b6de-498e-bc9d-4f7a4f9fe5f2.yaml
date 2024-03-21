@@ -50,6 +50,7 @@ settings:
         -
           - default
           - ''
+  placeholderText: 'Select an option'
 translationKeyFormat: null
 translationMethod: none
 type: verbb\buttonbox\fields\Colours

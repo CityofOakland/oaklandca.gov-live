@@ -53,58 +53,10 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 25
-          -
-            elementCondition: null
-            fieldUid: 7bb35a62-0ef4-4623-8a1c-80b0a3f74821 # Button Width
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 0233e5b8-2f0f-4752-b712-0ea1477a8ceb
-            userCondition: null
-            warning: null
-            width: 50
         name: Content
         uid: e9e55bab-2182-402b-8890-e6a47080a4ac
         userCondition: null
 fields:
-  7bb35a62-0ef4-4623-8a1c-80b0a3f74821: # Button Width
-    columnSuffix: null
-    contentColumnType: string
-    fieldGroup: null
-    handle: buttonWidth
-    instructions: 'Change the width of the button.'
-    name: 'Button Width'
-    searchable: false
-    settings:
-      columnType: string
-      options:
-        -
-          __assoc__:
-            -
-              - label
-              - 1/3
-            -
-              - value
-              - 1/3
-            -
-              - default
-              - '1'
-        -
-          __assoc__:
-            -
-              - label
-              - 1/2
-            -
-              - value
-              - 1/2
-            -
-              - default
-              - ''
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Dropdown
   91cc77d8-149b-4b48-9c59-736e2f7ff651: # Link
     columnSuffix: null
     contentColumnType: string(255)

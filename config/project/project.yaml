@@ -1,5 +1,67 @@
-dateModified: 1708458977
+dateModified: 1710977788
 elementSources:
+  Solspace\Freeform\Elements\Submission:
+    -
+      defaultSort:
+        - title
+        - asc
+      disabled: false
+      key: '*'
+      tableAttributes:
+        - id
+        - status
+        - dateCreated
+        - form
+        - ip
+      type: native
+    -
+      heading: Forms
+      type: heading
+    -
+      defaultSort:
+        - title
+        - asc
+      disabled: false
+      key: 'form:1'
+      tableAttributes:
+        - 'field:2'
+        - ip
+        - 'field:4'
+      type: native
+    -
+      defaultSort:
+        - title
+        - asc
+      disabled: false
+      key: 'form:2'
+      tableAttributes:
+        - 'field:7'
+        - ip
+        - 'field:9'
+      type: native
+    -
+      defaultSort:
+        - title
+        - asc
+      disabled: false
+      key: 'form:3'
+      tableAttributes:
+        - 'field:12'
+        - ip
+        - 'field:14'
+      type: native
+    -
+      defaultSort:
+        - title
+        - asc
+      disabled: false
+      key: 'form:4'
+      tableAttributes:
+        - dateCreated
+        - form
+        - ip
+        - 'field:16'
+      type: native
   craft\elements\Entry:
     -
       condition:
@@ -596,7 +658,6 @@ meta:
     7b84b01f-d365-4d29-8d43-64c42a1adc83: 'Officials Index' # Officials Index
     7b2905cb-3cdd-4812-9c93-b1bfb2fbda44: Subheading # Subheading
     7b65742c-194e-4096-8efb-75f75936b03d: 'Column 2 Cell' # Column 2 Cell
-    7bb35a62-0ef4-4623-8a1c-80b0a3f74821: 'Button Width' # Button Width
     7bbb6a39-d6ff-42d1-8442-548114cdb6f7: Subheading # Subheading
     7bf706ae-613e-4f58-b97c-757dfcb2965c: 'Navigation Item' # Navigation Item
     7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0: News # News
@@ -634,6 +695,7 @@ meta:
     9b53be12-6536-4cb0-8860-9b5e6e94fadd: 'Process Steps' # Process Steps
     9b964648-525c-46b6-96ea-dc1cc71fa034: Header # Header
     9bcd16e5-bd37-435b-a9f8-36d5a9e3eb55: 'Links with Descriptions' # Links with Descriptions
+    9bfc1938-0f2b-44e4-b11c-d617ae0db820: 'Button Widths' # Button Widths
     9c0b44a4-b6de-498e-bc9d-4f7a4f9fe5f2: 'Alert Type' # Alert Type
     9c5a5207-8f38-4715-993b-741d8919f3f0: 'Featured Staff' # Featured Staff
     9c457cb3-7498-4b3d-8b1e-84454f649934: 'Link Set' # Link Set
@@ -664,7 +726,6 @@ meta:
     29bb4882-cfa7-41ae-9e7d-50ebd572236f: Entry # Entry
     30f6cb69-3914-4d26-a0b7-0ccfa1661958: 'News Entries' # News Entries
     31d30a51-422e-471c-be55-3441a4219dd8: Date # Date
-    31d96da6-aa49-43b3-9243-60f81641c88f: 'Button Width' # Button Width
     31daeaab-9824-4c64-bad1-bdf49fb2ab9d: 'Team Members' # Team Members
     32b64633-1b5f-4111-a6d2-c2baaaaeb951: 'Text Cards Description' # Text Cards Description
     32f0cef1-a5d9-41dd-b562-b609374d9607: Buttons # Buttons
@@ -753,6 +814,7 @@ meta:
     295df0c5-cc10-4392-9fbb-3452cc97b84a: Entries # Entries
     307d4a59-6007-4c95-8879-5411247cc8d0: Icon # Icon
     314d167b-d1f4-47dd-92e5-4d0f75339e09: 'Location Name' # Location Name
+    317d95a3-7bd7-4a50-b4ae-90d93cccc640: Spacer # Spacer
     323dd893-cdef-4562-9cfc-566d7afd7909: 'Text Block' # Text Block
     326d4ee2-242e-48fc-a039-5e9ab55338a3: 'Button Icon' # Button Icon
     328a8ce9-6f28-43a8-a858-db782f75ce8a: 'Online Location' # Online Location
@@ -897,7 +959,6 @@ meta:
     70778563-6dac-453d-a4b0-5121f3a614b7: Topics # Topics
     70842856-8b10-4b22-ac3d-e127825aca24: Heading # Heading
     71390558-d90c-4764-9b4c-3193ce8c1c0f: News # News
-    80185635-48b7-48d7-847a-53d941fdda68: Address # Address
     80554222-e44d-4971-b6db-30843c2f3a7d: Facebook # Facebook
     93529926-6c77-4675-9951-602d6d06458e: 'Public Schema' # Public Schema
     95363013-85f2-4588-800f-e939bf922cbf: 'Featured Profile' # Featured Profile
@@ -1196,7 +1257,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: V1MGTTWWOX2B8VX28A8VJ2ZQ
-    schemaVersion: 4.11.1
+    schemaVersion: 4.13.0
     settings:
       apiKey: ''
       cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
@@ -1350,11 +1411,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  element-api:
-    enabled: '1'
-    licenseKey: null
-    schemaVersion: 1.0.0
-    settings: null
   empty-coalesce:
     enabled: '1'
     licenseKey: null
@@ -1369,11 +1425,11 @@ plugins:
     edition: lite
     enabled: true
     licenseKey: 80IWDHDW3ZJB27DOLCE6AQE5
-    schemaVersion: 4.2.7
+    schemaVersion: 5.0.21
     settings:
-      ajaxByDefault: true
-      alertNotificationRecipients: null
-      allowFileTemplateEdit: true
+      alertNotificationRecipients: ''
+      allowDashesInFieldHandles: false
+      allowFileTemplateEdit: '1'
       autoScroll: true
       autoScrollToErrors: true
       badgeType: all
@@ -1382,56 +1438,292 @@ plugins:
       blockedIpAddresses: ''
       blockedKeywords: ''
       blockedKeywordsError: 'Invalid Entry Data'
-      bypassSpamCheckOnLoggedInUsers: ''
-      clientDigestFrequency: 1
-      clientDigestRecipients: null
-      customErrorMessage: ''
-      customHoneypotName: emailMyBoss
-      defaultTemplates: true
-      defaultView: dashboard
-      digestFrequency: 1
-      digestOnlyOnProduction: false
-      digestRecipients: null
-      displayFeed: true
+      bypassSpamCheckOnLoggedInUsers: '1'
+      clientDigestFrequency: '1'
+      clientDigestRecipients: yo@oaklandfreeformstatsdigest.furioursus.dev
+      defaultView: forms
+      defaults:
+        __assoc__:
+          -
+            - previewHtml
+            - true
+          -
+            - twigInHtml
+            - true
+          -
+            - twigIsolation
+            - true
+          -
+            - includeSampleTemplates
+            - true
+          -
+            - notifications
+            -
+              __assoc__:
+                -
+                  - admin
+                  -
+                    __assoc__:
+                      -
+                        - template
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+                -
+                  - conditional
+                  -
+                    __assoc__:
+                      -
+                        - template
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+                -
+                  - userSelect
+                  -
+                    __assoc__:
+                      -
+                        - template
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+                -
+                  - emailField
+                  -
+                    __assoc__:
+                      -
+                        - template
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+          -
+            - settings
+            -
+              __assoc__:
+                -
+                  - general
+                  -
+                    __assoc__:
+                      -
+                        - formType
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+                      -
+                        - submissionTitle
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - '{{ dateCreated|date("Y-m-d H:i:s") }}'
+                      -
+                        - formattingTemplate
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - basic-light/index.twig
+                -
+                  - dataStorage
+                  -
+                    __assoc__:
+                      -
+                        - storeData
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - true
+                      -
+                        - defaultStatus
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - 2
+                      -
+                        - collectIp
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - true
+                -
+                  - processing
+                  -
+                    __assoc__:
+                      -
+                        - ajax
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - true
+                      -
+                        - showIndicator
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - true
+                      -
+                        - showText
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - true
+                      -
+                        - processingText
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - Processing...
+                -
+                  - successAndErrors
+                  -
+                    __assoc__:
+                      -
+                        - successBehavior
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - reload
+                      -
+                        - returnUrl
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+                      -
+                        - successTemplate
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - ''
+                      -
+                        - successMessage
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - 'Form has been submitted successfully!'
+                      -
+                        - errorMessage
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - 'Sorry, there was an error submitting the form. Please try again.'
+                -
+                  - limits
+                  -
+                    __assoc__:
+                      -
+                        - duplicateCheck
+                        -
+                          __assoc__:
+                            -
+                              - locked
+                              - false
+                            -
+                              - value
+                              - no_limit
+      digestFrequency: '1'
+      digestOnlyOnProduction: ''
+      digestRecipients: yo@oaklandfreeformdeveloperdigest.furioursus.dev
+      displayFeed: '1'
       emailTemplateDefault: files
-      emailTemplateDirectory: null
+      emailTemplateDirectory: _freeform/notifications
       emailTemplateStorageType: files_database
       exportHandlesAsNames: ''
       exportLabels: ''
-      fieldDisplayOrder: name
-      fillWithGet: false
+      fillWithGet: ''
       footerScripts: false
       formFieldShowOnlyAllowedForms: ''
       formSubmitDisable: true
       formSubmitExpiration: ''
-      formTemplateDirectory: null
+      formTemplateDirectory: _freeform/formatting
       formattingTemplate: flexbox.html
-      freeformHoneypot: '1'
-      freeformHoneypotEnhancement: '1'
-      hideBannerDemo: '1'
-      hideBannerOldFreeform: false
       minimumSubmitTime: ''
       pluginName: null
       purgableSpamAgeInDays: '3'
       purgableSubmissionAgeInDays: null
-      purgableUnfinalizedAssetAgeInMinutes: 180
-      recaptchaBehaviour: display_error
-      recaptchaEnabled: false
-      recaptchaErrorMessage: 'Please verify that you are not a robot.'
-      recaptchaKey: null
-      recaptchaLazyLoad: false
-      recaptchaMinScore: 0.5
-      recaptchaSecret: null
-      recaptchaSize: normal
-      recaptchaTheme: light
-      recaptchaType: v2_checkbox
+      purgableUnfinalizedAssetAgeInMinutes: '180'
       rememberPageSubmitOrder: true
-      removeNewlines: ''
+      removeNewlines: '1'
       renderFormHtmlInCpViews: true
-      salesforce_client_id: null
-      salesforce_client_secret: null
-      salesforce_password: null
-      salesforce_username: null
       saveFormSessionLimit: 10
       saveFormTtl: 30
       scriptInsertLocation: footer
@@ -1444,14 +1736,11 @@ plugins:
       sessionEntryTTL: 10800
       showErrorsForBlockedEmails: ''
       showErrorsForBlockedKeywords: ''
-      showTutorial: true
       spamFolderEnabled: '1'
-      spamProtectionBehaviour: simulate_success
+      spamProtectionBehavior: simulate_success
       submissionThrottlingCount: ''
       submissionThrottlingTimeFrame: m
-      successTemplateDirectory: null
-      twigInHtml: true
-      twigInHtmlIsolatedMode: true
+      successTemplateDirectory: _freeform/success
       updateSearchIndexes: '1'
   google-maps:
     enabled: true
@@ -1577,10 +1866,6 @@ plugins:
     schemaVersion: 1.0.0
     settings: null
   related:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
-  reporter:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
