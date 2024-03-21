@@ -1,0 +1,12 @@
+field: 32f0cef1-a5d9-41dd-b562-b609374d9607 # Buttons
+fieldLayouts:
+  863d31dd-30e7-4497-9b32-8ef1fe1cc476:
+    tabs:
+      -
+        elementCondition: null
+        name: Content
+        uid: 8b310eb1-26ed-4c8c-87f6-dc36019584a7
+        userCondition: null
+handle: spacer
+name: Spacer
+sortOrder: 3

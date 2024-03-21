@@ -1,6 +1,6 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
-<section class="{{ block.backgroundColor }}">
-  <div class="container">
+<section class="@container relative {{ block.backgroundColor }}">
+  <div class="container px-6 pt-10 pb-8 @3xl:px-16 @3xl:py-12">
     {% for child in block.children %}
       {{ include("modules/child/_#{child.type}", {
         block: child

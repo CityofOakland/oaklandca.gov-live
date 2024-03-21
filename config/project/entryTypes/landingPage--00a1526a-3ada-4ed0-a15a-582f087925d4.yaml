@@ -141,18 +141,6 @@ fieldLayouts:
         elements:
           -
             elementCondition: null
-            fieldUid: 80185635-48b7-48d7-847a-53d941fdda68 # Address
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: d070afac-f14e-4f6d-9372-2a683ba2007a
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
             fieldUid: c9d86e3f-9738-4d97-a271-5331264c10b8 # Address Extended
             instructions: null
             label: null
