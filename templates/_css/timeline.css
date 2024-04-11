@@ -1,4 +1,4 @@
-{% if currentUser %}/* Begin {{ _self }} */{% endif %}
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% css %}
 	.timeline {
 		box-sizing: border-box;
@@ -391,4 +391,4 @@
 	}
 
 {% endcss %}
-{% if currentUser %}/* End {{ _self }} */{% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}

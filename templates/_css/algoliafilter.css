@@ -1,4 +1,4 @@
-{% if currentUser %}/* Begin {{ _self }} */{% endif %}
+{% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% css %}
 	.ais-search-box {
 		font-size: inherit;
@@ -39,4 +39,4 @@
 		transform: translateY(-50%);
 	}
 {% endcss %}
-{% if currentUser %}/* End {{ _self }} */{% endif %}
+{% if currentUser %}<!-- End {{ _self }} -->{% endif %}
