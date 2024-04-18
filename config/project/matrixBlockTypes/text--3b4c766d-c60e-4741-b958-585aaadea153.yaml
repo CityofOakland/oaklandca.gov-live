@@ -34,12 +34,14 @@ fields:
       availableVolumes: '*'
       ckeConfig: 7d00111e-5634-4f46-ac54-ff5d8f91430d # Basic With Links
       columnType: mediumtext
-      defaultTransform: ''
+      defaultTransform: null
       enableSourceEditingForNonAdmins: true
       purifierConfig: null
       purifyHtml: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
+      showWordCount: false
+      wordLimit: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\ckeditor\Field

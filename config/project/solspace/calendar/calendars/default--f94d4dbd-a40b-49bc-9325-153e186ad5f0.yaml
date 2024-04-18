@@ -12,7 +12,7 @@ name: Default
 siteSettings:
   402c3c0f-9475-4443-a824-e81b3728d8d3:
     enabledByDefault: true
-    hasUrls: null
+    hasUrls: false
     siteId: c35d3a93-d7f4-4c37-ae3e-1b4d403311bb # City of Oakland
     template: null
     uriFormat: null
