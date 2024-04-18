@@ -1,4 +1,4 @@
-dateModified: 1713458203
+dateModified: 1713461622
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -648,7 +648,6 @@ meta:
     6d6039ca-322a-4f7f-91e2-371a9f5d637c: 'Read More Link' # Read More Link
     6def0c63-b8d7-4909-9dfa-52fbc05f5cf0: Description # Description
     06e694a7-90e8-4163-8ee2-242bc35ff134: Buttons # Buttons
-    6e5940e1-edb9-46a2-bd24-a63c9bf2a11e: Meetings # Meetings
     6ee1dda3-767e-4fa8-9096-5fcf30f68aed: 'Event Status' # Event Status
     6fb3f41c-93f6-4185-9622-e6765cdcc837: 'Alert Message' # Alert Message
     6fdc167f-d34e-4523-bc70-c6a755fdaae6: Header # Header
@@ -959,7 +958,6 @@ meta:
     37557891-109f-46ef-bbc5-040f628a36a4: 'Event - Primary Relationship' # Event - Primary Relationship
     42276684-be78-4449-b3e9-8eeb42ad49ba: Table # Table
     49212505-ad0a-4db1-92de-6033ed5d7d9e: 'Large Entry Links' # Large Entry Links
-    50023496-1a16-49f2-95f2-f3ce3ac4e20b: 'Rescheduled Meeting' # Rescheduled Meeting
     56057193-b9d8-4ac0-9f31-d4a755c91447: News # News
     58263077-210c-44b9-9b7c-beecb708601f: 'Website Updates' # Website Updates
     70778563-6dac-453d-a4b0-5121f3a614b7: Topics # Topics
@@ -1140,7 +1138,6 @@ meta:
     de65ce28-2919-4a65-9aa2-c18e5518f2fe: Program/Subdivision # Program/Subdivision
     de588e4c-ab76-4b95-8150-afebc746259b: Documents # Documents
     de273878-3929-4764-b4ab-a670a2987d39: 'Highlighted News' # Highlighted News
-    df8685d8-8295-456f-b677-b60cced48d3d: Events # Events
     df535740-f62a-4027-aefd-b7fef85f4a7f: Resources # Resources
     dfc8cfa9-56e1-4698-bfe5-2c80960297c0: 'Official Board and Commission' # Official Board and Commission
     e0be1e19-d6d8-4d1d-849e-14d179664811: 'Teams Index' # Teams Index
@@ -1209,6 +1206,7 @@ meta:
     f62c85ae-2203-4d1a-8702-da515126a398: Banner # Banner
     f73a45bb-5e6b-4a27-8f19-edd0e6bbc507: 'Video Link' # Video Link
     f93e423e-051d-4b4c-bb85-2a5b168296b4: Timeline # Timeline
+    f94d4dbd-a40b-49bc-9325-153e186ad5f0: Default # Default
     f528b37c-8b15-43b8-8da0-d1b161fbf629: 'Learn More About' # Learn More About
     f602bcbb-5ca9-4e04-8f5c-f031ceb1c2d6: 'Milestone Name' # Milestone Name
     f645ecd3-5b0e-4625-8986-da4a7726b1db: Image # Image
@@ -1247,11 +1245,6 @@ plugins:
     enabled: '1'
     licenseKey: null
     schemaVersion: '2.0'
-    settings: null
-  beam:
-    enabled: '1'
-    licenseKey: null
-    schemaVersion: 2.0.0
     settings: null
   blitz:
     edition: standard
@@ -1347,26 +1340,10 @@ plugins:
     enabled: true
     schemaVersion: 3.0.0
   calendar:
-    edition: pro
-    enabled: false
+    edition: lite
+    enabled: true
     licenseKey: PRJ91600ENZBQ5S7HS7UE93Z
-    schemaVersion: 3.3.2
-    settings:
-      allDay: false
-      authoredEventEditOnly: ''
-      defaultView: month
-      demoBannerDisabled: true
-      descriptionFieldHandle: null
-      eventDuration: 60
-      firstDayOfWeek: -1
-      guestAccess: null
-      locationFieldHandle: null
-      overlapThreshold: 5
-      pluginName: null
-      quickCreateEnabled: '1'
-      showDisabledEvents: '1'
-      showMiniCal: '1'
-      timeInterval: 30
+    schemaVersion: 5.0.0
   calendarize:
     edition: standard
     enabled: true
@@ -2207,6 +2184,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 4.0.0
+  template-selector:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   templatecomments:
     enabled: '1'
     licenseKey: null

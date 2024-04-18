@@ -24,12 +24,10 @@
     "putyourlightson/craft-sherlock": "4.4.2",
     "rynpsc/craft-phone-number": "2.2.0",
     "sentry/sdk": "^3.1",
-    "solspace/craft-calendar": "5.0.3",
     "solspace/craft-freeform": "5.1.13",
     "spacecatninja/imager-x": "4.4.0",
     "spicyweb/craft-neo": "4.1.2",
     "studioespresso/craft-dumper": "5.0.1",
-    "superbig/craft3-beam": "3.0.0",
     "superbig/craft3-templateselect": "3.0.0",
     "topshelfcraft/wordsmith": "4.4.0",
     "unionco/calendarize": "2.0.0",
@@ -46,7 +44,9 @@
     "studioespresso/craft-scout": "4.0.0",
     "craftpulse/craft-colour-swatches": "4.4.0",
     "roberskine/craft-user-manual": "5.0.0",
-    "craftcms/ckeditor": "3.8.3"
+    "craftcms/ckeditor": "3.8.3",
+    "swishdigital/template-selector": "5.0.1",
+    "solspace/craft-calendar": "5.0.3"
   },
   "autoload": {
     "psr-4": {
