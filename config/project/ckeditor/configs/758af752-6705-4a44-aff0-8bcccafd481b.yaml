@@ -1,0 +1,16 @@
+headingLevels:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+name: Basic
+options:
+  code:
+    indentSequence: '  '
+toolbar:
+  - bold
+  - italic
+  - bulletedList
+  - numberedList

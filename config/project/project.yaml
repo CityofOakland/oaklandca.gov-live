@@ -1,4 +1,4 @@
-dateModified: 1712791594
+dateModified: 1713458203
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -567,6 +567,7 @@ meta:
     1c974e73-c709-48c5-bc6e-fb8a9ae1ba8a: Table # Table
     1cfca893-de32-4979-8ba3-68de97b5cd03: Linkit # Linkit
     01d73fd7-5170-4523-8658-02c344e3ff55: 'Middle Initial' # Middle Initial
+    1d78c5ef-998b-49b6-845d-be0ce6e636e0: 'Simple 2' # Simple 2
     1d1557ea-679f-40f8-90d8-3c9eae44d800: Navigation # Navigation
     1df2afd1-1725-4190-ae6d-b40882c360af: 'Column 1 Cell' # Column 1 Cell
     1e78d0ad-2af1-4556-ab43-7b6c110e75b8: Headers # Headers
@@ -611,6 +612,7 @@ meta:
     4f49ca5b-c028-40c6-b67e-de07b11bf16a: Linkit # Linkit
     4f58a8e7-8cf8-472a-b479-73a156087dfc: Fax # Fax
     4f98a66d-2f55-4ee3-b4d1-ea1d668b273b: 'Location Address' # Location Address
+    05a7dc55-e4ba-4933-8612-c6a4c4a8d590: Content # Content
     5a43f979-1654-4514-a9a8-d925fc846063: 'Stats Block with Icons' # Stats Block with Icons
     5ae976d4-1fd7-4dd5-bfd7-f25cb1ce7a0f: 'Call Out' # Call Out
     5b066077-3ce6-4583-af94-4fa87136ab3a: 'Milestone Link' # Milestone Link
@@ -663,6 +665,7 @@ meta:
     7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0: News # News
     7c42e182-2c0f-45c6-9b1a-229a0312589a: 'Entries Description' # Entries Description
     7cdf9a2c-580b-4d98-8d49-1e3a24205000: 'Charter Number' # Charter Number
+    7d00111e-5634-4f46-ac54-ff5d8f91430d: 'Basic With Links' # Basic With Links
     7e17b706-c00f-4f94-84df-b0e91247051f: Description # Description
     07e65c29-fba5-4a88-ade2-bd8abfb4cc69: 'Link Set' # Link Set
     7f1c68e9-03e1-4887-8395-3229363a4f46: 'Video Title' # Video Title
@@ -693,6 +696,7 @@ meta:
     9a5649e6-d002-4759-b5a5-39aee1286546: 'Granicus URL' # Granicus URL
     9b13c935-91a5-4f28-bebf-9ef5dc6f1cfa: Destination # Destination
     9b53be12-6536-4cb0-8860-9b5e6e94fadd: 'Process Steps' # Process Steps
+    9b38025b-e8f4-4d3d-9b72-2e069e959353: Default # Default
     9b964648-525c-46b6-96ea-dc1cc71fa034: Header # Header
     9bcd16e5-bd37-435b-a9f8-36d5a9e3eb55: 'Links with Descriptions' # Links with Descriptions
     9bfc1938-0f2b-44e4-b11c-d617ae0db820: 'Button Widths' # Button Widths
@@ -832,6 +836,7 @@ meta:
     566b5a14-6baa-4a4e-bb29-50502dd83fa1: Heading # Heading
     566d26c2-9af4-45bb-b994-a552cc3fc03b: 'Display Alt Text as Caption?' # Display Alt Text as Caption?
     0567fab2-a7c6-4e2f-91c2-ea0072e45960: 'Profile Cards Header' # Profile Cards Header
+    655bfe09-14cb-4522-9f07-0b095396e88d: Standard # Standard
     658cca3c-01d9-4de0-b0be-bc04b699d806: 'Alert Expiration' # Alert Expiration
     660e5d8e-e73d-428c-8663-ee1cd1c8634c: 'Subcommittee Status' # Subcommittee Status
     685f508c-5f66-45ea-be6a-1da3ee403eff: Background # Background
@@ -840,6 +845,7 @@ meta:
     736bfdbe-8ec1-4b3d-bd17-6dc825c56855: Bio # Bio
     745c0b03-2047-48d3-beee-04d9f014eccc: 'Section Background Color' # Section Background Color
     752d23c6-25b8-4a5b-8350-5155c7244321: 'Embed - OpenForms' # Embed - OpenForms
+    758af752-6705-4a44-aff0-8bcccafd481b: Basic # Basic
     759fd59f-6b95-48b5-b424-ec93facb33a0: 'Button Icon' # Button Icon
     767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78: Matrices # Matrices
     770f79c9-6a08-4685-94fa-2dfd804f3758: 'Staff Import Middle Initial' # Staff Import Middle Initial
@@ -1065,6 +1071,7 @@ meta:
     c193b5ef-2a3f-44d0-92cd-78e49c9a2fec: 'Documents Index' # Documents Index
     c419ecb0-79c8-411d-b440-db5bdfa1f823: Documents # Documents
     c516a5f3-3955-47d3-96a8-73a2658e3fe7: Description # Description
+    c612c6ea-c3d2-478c-884d-38e79c269c32: 'Simple With Links' # Simple With Links
     c964d82c-a4e7-4ec4-ad42-7c3e843193c0: Images # Images
     c2858c5f-1822-49b6-b541-53f943fdb540: 'Card Background Color' # Card Background Color
     c7618ee8-2bc2-491b-99e6-c9deaea0809b: 'Navigation - Main' # Navigation - Main
@@ -1223,6 +1230,7 @@ meta:
     fbdba36a-ff35-4883-a29d-e5194516c7ae: 'Link URL' # Link URL
     fbf8b9b0-8875-4e08-819a-d62603676dc4: Teams # Teams
     fccb3891-e320-45ec-b368-6bd4f47fdc91: Heading # Heading
+    fcef1c4a-5da2-4b32-a725-cabf22d2fb8d: Simple # Simple
     fd0c8e02-99b4-4ce5-ab89-b29cd0efc581: 'Content Builder' # Content Builder
     fd3d4593-b8d2-44f7-a03c-806e2e0e2ba1: Link # Link
     fd5628cc-7472-48c6-8263-14745dbb90c9: 'Link Set Description' # Link Set Description
@@ -1235,14 +1243,6 @@ meta:
     ffa38afc-e53d-4cb8-8c63-5422d8f647cd: 'External Photo Gallery' # External Photo Gallery
     fff5cf49-87e6-4751-9032-b4ca8136e237: 'Alt Text' # Alt Text
 plugins:
-  assetlocations:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
-  assetusage:
-    edition: standard
-    enabled: true
-    schemaVersion: 2.0.0
   aws-s3:
     enabled: '1'
     licenseKey: null
@@ -1371,32 +1371,19 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.3.0
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0.0
   colour-swatches:
     edition: standard
     enabled: true
     schemaVersion: 1.4.3
-  cp-body-classes:
-    enabled: '1'
-    licenseKey: null
-    schemaVersion: 2.0.0
-    settings: null
-  cp-css:
-    enabled: '1'
-    licenseKey: null
-    schemaVersion: 2.0.0
-    settings:
-      additionalCss: "#fields-primaryUnit-field {\r\n    padding: 1rem;\r\n\tbackground-color: #e4edf6;\r\n\tborder-radius: .25rem;\r\n\tborder: 1px solid rgba(96, 125, 159, 0.25);\r\n}\r\n\r\n#content {\r\n    position: relative !important;\r\n}"
-      cacheBusting: true
-      cssFile: ''
   cp-field-inspect:
     enabled: '0'
     licenseKey: null
     schemaVersion: 1.0.0
     settings: null
-  craft-sentry:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
   dashboard-begone:
     edition: standard
     enabled: true
@@ -1425,7 +1412,7 @@ plugins:
     edition: lite
     enabled: true
     licenseKey: 80IWDHDW3ZJB27DOLCE6AQE5
-    schemaVersion: 5.0.21
+    schemaVersion: 5.0.23
     settings:
       alertNotificationRecipients: ''
       allowDashesInFieldHandles: false
@@ -1745,7 +1732,7 @@ plugins:
   google-maps:
     enabled: true
     licenseKey: 88Z3Y9HY00OZ7NQEBWTNETQL
-    schemaVersion: 4.3.0
+    schemaVersion: 4.5.0
     settings:
       browserKey: $GOOGLE_MAPS_BROWSER_API_KEY
       enableJsLogging: true
@@ -1792,10 +1779,6 @@ plugins:
     licenseKey: 46HXL3KFU6B2Z3R5LOC856G4
     schemaVersion: 1.2.0
     settings: null
-  lockout:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
   manytomany:
     enabled: '1'
     licenseKey: null
@@ -1856,19 +1839,9 @@ plugins:
     enabled: true
     schemaVersion: 1.0.5
   redactor:
-    enabled: '1'
-    licenseKey: null
-    schemaVersion: 2.3.0
-    settings: null
-  redactor-tweaks:
-    enabled: '1'
-    licenseKey: null
-    schemaVersion: 1.0.0
-    settings: null
-  related:
     edition: standard
     enabled: true
-    schemaVersion: 1.0.0
+    schemaVersion: 2.3.0
   retcon:
     edition: standard
     enabled: true
@@ -1886,10 +1859,6 @@ plugins:
       statsDisplayLimit: 1000
       statsStoredLimit: '15000'
       stripQueryStringFromStats: '1'
-  schedule:
-    edition: standard
-    enabled: true
-    schemaVersion: 0.4.0
   scout:
     edition: standard
     enabled: true
