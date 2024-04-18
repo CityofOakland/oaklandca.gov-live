@@ -1,4 +1,4 @@
-dateModified: 1713461948
+dateModified: 1713462347
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -2180,10 +2180,6 @@ plugins:
     licenseKey: null
     schemaVersion: 3.0.0
     settings: null
-  template-select:
-    edition: standard
-    enabled: true
-    schemaVersion: 4.0.0
   template-selector:
     edition: standard
     enabled: true

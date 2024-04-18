@@ -1,4 +1,4 @@
-changedFieldIndicator: null
+changedFieldIndicator: 2038916034
 field: 0bbec91d-57e2-4212-b449-f04f19c770da # Icon Card
 fieldLayouts:
   ddcb1cd6-1137-4ba1-94a3-daec80c17c92:
@@ -56,7 +56,7 @@ fields:
     searchable: false
     settings:
       columnType: text
-      iconSets: '*'
+      iconSets: null
       renderId: null
       showLabels: false
     translationKeyFormat: null
@@ -237,8 +237,7 @@ fields:
                   - ''
                 -
                   - sources
-                  -
-                    - 'folder:baf733c3-48be-42a7-8b4f-7a6bf9763542'
+                  - ''
                 -
                   - customSelectionLabel
                   - 'Select Document'

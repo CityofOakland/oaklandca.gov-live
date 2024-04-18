@@ -1,4 +1,4 @@
-changedFieldIndicator: null
+changedFieldIndicator: 745381085
 field: 1c974e73-c709-48c5-bc6e-fb8a9ae1ba8a # Table
 fieldLayouts:
   b030ded4-f9f5-4563-87c5-2be5dd856787:
@@ -84,184 +84,61 @@ fields:
     type: craft\ckeditor\Field
   7769a82a-1135-4a99-aa7c-d121376328d6: # Column 4 Cell
     columnSuffix: null
-    contentColumnType: string
+    contentColumnType: text
     fieldGroup: null
     handle: column4Cell
     instructions: null
     name: 'Column 4 Cell'
     searchable: true
     settings:
-      errorMessage: 'Unable to find component class ''craft\redactor\Field''.'
-      expectedType: craft\redactor\Field
-      settings:
-        __assoc__:
-          0:
-            - availableTransforms
-            - ''
-          1:
-            - availableVolumes
-            - '*'
-          2:
-            - columnType
-            - text
-          3:
-            - configSelectionMode
-            - choose
-          4:
-            - defaultTransform
-            - ''
-          5:
-            - manualConfig
-            - ''
-          7:
-            - purifyHtml
-            - true
-          8:
-            - redactorConfig
-            - 'Basic with Links.json'
-          9:
-            - removeEmptyTags
-            - true
-          10:
-            - removeInlineStyles
-            - true
-          11:
-            - removeNbsp
-            - true
-          12:
-            - showHtmlButtonForNonAdmins
-            - true
-          13:
-            - showUnpermittedFiles
-            - false
-          14:
-            - showUnpermittedVolumes
-            - true
-          15:
-            - uiMode
-            - enlarged
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\MissingField
+    type: craft\fields\PlainText
   c48fd91b-ae6d-42f1-9c3b-62258d7e681f: # Column 2 Cell
     columnSuffix: null
-    contentColumnType: string
+    contentColumnType: text
     fieldGroup: null
     handle: column2Cell
     instructions: null
     name: 'Column 2 Cell'
     searchable: true
     settings:
-      errorMessage: 'Unable to find component class ''craft\redactor\Field''.'
-      expectedType: craft\redactor\Field
-      settings:
-        __assoc__:
-          0:
-            - availableTransforms
-            - ''
-          1:
-            - availableVolumes
-            - '*'
-          2:
-            - columnType
-            - text
-          3:
-            - configSelectionMode
-            - choose
-          4:
-            - defaultTransform
-            - ''
-          5:
-            - manualConfig
-            - ''
-          7:
-            - purifyHtml
-            - true
-          8:
-            - redactorConfig
-            - 'Basic with Links.json'
-          9:
-            - removeEmptyTags
-            - true
-          10:
-            - removeInlineStyles
-            - true
-          11:
-            - removeNbsp
-            - true
-          12:
-            - showHtmlButtonForNonAdmins
-            - true
-          13:
-            - showUnpermittedFiles
-            - false
-          14:
-            - showUnpermittedVolumes
-            - true
-          15:
-            - uiMode
-            - enlarged
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\MissingField
+    type: craft\fields\PlainText
   c51bb818-8e54-4a71-b8e6-e623907d4cae: # Column 1 Cell
     columnSuffix: null
-    contentColumnType: string
+    contentColumnType: text
     fieldGroup: null
     handle: column1Cell
     instructions: null
     name: 'Column 1 Cell'
     searchable: true
     settings:
-      errorMessage: 'Unable to find component class ''craft\redactor\Field''.'
-      expectedType: craft\redactor\Field
-      settings:
-        __assoc__:
-          0:
-            - availableTransforms
-            - ''
-          1:
-            - availableVolumes
-            - '*'
-          2:
-            - columnType
-            - text
-          3:
-            - configSelectionMode
-            - choose
-          4:
-            - defaultTransform
-            - ''
-          5:
-            - manualConfig
-            - ''
-          7:
-            - purifyHtml
-            - true
-          8:
-            - redactorConfig
-            - 'Basic with Links.json'
-          9:
-            - removeEmptyTags
-            - true
-          10:
-            - removeInlineStyles
-            - true
-          11:
-            - removeNbsp
-            - true
-          12:
-            - showHtmlButtonForNonAdmins
-            - true
-          13:
-            - showUnpermittedFiles
-            - false
-          14:
-            - showUnpermittedVolumes
-            - true
-          15:
-            - uiMode
-            - enlarged
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\MissingField
+    type: craft\fields\PlainText

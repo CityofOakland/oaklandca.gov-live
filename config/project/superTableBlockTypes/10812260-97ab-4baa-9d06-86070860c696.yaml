@@ -1,4 +1,4 @@
-changedFieldIndicator: null
+changedFieldIndicator: 222142186
 field: 9c457cb3-7498-4b3d-8b1e-84454f649934 # Link Set
 fieldLayouts:
   1c4a1685-7d75-43a9-a9e7-79599be5d410:
@@ -209,8 +209,7 @@ fields:
                   - ''
                 -
                   - sources
-                  -
-                    - 'folder:baf733c3-48be-42a7-8b4f-7a6bf9763542'
+                  - ''
                 -
                   - customSelectionLabel
                   - 'Select Document'

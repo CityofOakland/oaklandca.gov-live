@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "23eb73282656d607951b4073b714c87b",
+    "content-hash": "ce8f0b79e223464cc1747fd78088db8e",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -8496,56 +8496,6 @@
                 "parser"
             ],
             "time": "2016-11-22T22:57:47+00:00"
-        },
-        {
-            "name": "superbig/craft3-templateselect",
-            "version": "3.0.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sjelfull/craft3-templateselect/zipball/406c32dbcd225be3daa053658606817a42298b39",
-                "reference": "406c32dbcd225be3daa053658606817a42298b39",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^4.0.0"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Template Select",
-                "handle": "template-select",
-                "schemaVersion": "4.0.0",
-                "hasCpSettings": false,
-                "hasCpSection": false,
-                "changelogUrl": "https://raw.githubusercontent.com/sjelfull/craft3-templateselect/master/CHANGELOG.md",
-                "class": "superbig\\templateselect\\TemplateSelect"
-            },
-            "autoload": {
-                "psr-4": {
-                    "superbig\\templateselect\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Superbig",
-                    "homepage": "https://superbig.co"
-                }
-            ],
-            "description": "A fieldtype that allows you to select a template from a dropdown.",
-            "keywords": [
-                "cms",
-                "craft",
-                "craft-plugin",
-                "craftcms",
-                "template select"
-            ],
-            "support": {
-                "docs": "https://github.com/sjelfull/craft3-templateselect/blob/master/README.md",
-                "issues": "https://github.com/sjelfull/craft3-templateselect/issues"
-            },
-            "time": "2022-10-03T21:19:00+00:00"
         },
         {
             "name": "swishdigital/template-selector",

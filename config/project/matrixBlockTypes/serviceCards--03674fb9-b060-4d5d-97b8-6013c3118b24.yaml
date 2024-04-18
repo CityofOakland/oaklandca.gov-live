@@ -91,7 +91,7 @@ fields:
     searchable: false
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: null
+      changedFieldIndicator: 668257430
       columns:
         __assoc__:
           -
@@ -117,7 +117,7 @@ fields:
       selectionLabel: 'Add a service'
       staticField: null
     translationKeyFormat: null
-    translationMethod: site
+    translationMethod: none
     type: verbb\supertable\fields\SuperTableField
   fac29cc3-6f0c-43f5-b0e6-f9f8786692f9: # Services Header
     columnSuffix: zstgvnwh

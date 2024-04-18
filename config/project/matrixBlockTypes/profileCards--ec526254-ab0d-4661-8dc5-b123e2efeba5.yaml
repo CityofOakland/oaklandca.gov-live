@@ -91,7 +91,7 @@ fields:
     searchable: false
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: null
+      changedFieldIndicator: 65984379
       columns:
         __assoc__:
           -
@@ -124,7 +124,7 @@ fields:
       selectionLabel: 'Add a featured member'
       staticField: null
     translationKeyFormat: null
-    translationMethod: site
+    translationMethod: none
     type: verbb\supertable\fields\SuperTableField
   10d32360-4144-4cc7-9b3a-10c5b8335103: # Team
     columnSuffix: null

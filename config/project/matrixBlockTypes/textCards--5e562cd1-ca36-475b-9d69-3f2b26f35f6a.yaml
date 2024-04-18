@@ -173,7 +173,7 @@ fields:
     searchable: false
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: null
+      changedFieldIndicator: 1405455711
       columns:
         __assoc__:
           -
@@ -197,7 +197,7 @@ fields:
                 -
                   - width
                   - ''
-      contentTable: '{{%stc_97_textcards}}'
+      contentTable: '{{%stc_100_textcards}}'
       fieldLayout: table
       maxRows: 9
       minRows: 2
@@ -206,7 +206,7 @@ fields:
       selectionLabel: 'Add a card'
       staticField: null
     translationKeyFormat: null
-    translationMethod: site
+    translationMethod: none
     type: verbb\supertable\fields\SuperTableField
   c2858c5f-1822-49b6-b541-53f943fdb540: # Card Background Color
     columnSuffix: mqekxohx

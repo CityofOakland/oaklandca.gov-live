@@ -1,4 +1,4 @@
-changedFieldIndicator: null
+changedFieldIndicator: 8465001
 field: f93e423e-051d-4b4c-bb85-2a5b168296b4 # Timeline
 fieldLayouts:
   4c254873-4567-44b6-a087-a6d4cb70b1ea:
@@ -266,8 +266,7 @@ fields:
                   - ''
                 -
                   - sources
-                  -
-                    - 'folder:baf733c3-48be-42a7-8b4f-7a6bf9763542'
+                  - ''
                 -
                   - customSelectionLabel
                   - ''

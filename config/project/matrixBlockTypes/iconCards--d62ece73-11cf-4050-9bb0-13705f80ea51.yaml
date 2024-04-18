@@ -79,7 +79,7 @@ fields:
     searchable: false
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: null
+      changedFieldIndicator: 1096287911
       columns:
         __assoc__:
           -
@@ -103,7 +103,7 @@ fields:
                 -
                   - width
                   - ''
-      contentTable: '{{%stc_101_iconcards}}'
+      contentTable: '{{%stc_97_iconcards}}'
       fieldLayout: table
       maxRows: 4
       minRows: 2
@@ -112,7 +112,7 @@ fields:
       selectionLabel: 'Add a card'
       staticField: null
     translationKeyFormat: null
-    translationMethod: site
+    translationMethod: none
     type: verbb\supertable\fields\SuperTableField
   7b2c00c6-3912-498d-99a7-eb8230b09b9e: # Icon Cards Description
     columnSuffix: uweutmac

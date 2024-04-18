@@ -1,4 +1,4 @@
-changedFieldIndicator: null
+changedFieldIndicator: 368804708
 field: 42276684-be78-4449-b3e9-8eeb42ad49ba # Table
 fieldLayouts:
   bdb46085-471d-4e5d-a72d-0ae953c5f0a0:
@@ -60,62 +60,21 @@ fields:
     type: craft\ckeditor\Field
   7b65742c-194e-4096-8efb-75f75936b03d: # Column 2 Cell
     columnSuffix: null
-    contentColumnType: string
+    contentColumnType: text
     fieldGroup: null
     handle: column2Cell
     instructions: null
     name: 'Column 2 Cell'
     searchable: true
     settings:
-      errorMessage: 'Unable to find component class ''craft\redactor\Field''.'
-      expectedType: craft\redactor\Field
-      settings:
-        __assoc__:
-          0:
-            - availableTransforms
-            - ''
-          1:
-            - availableVolumes
-            - '*'
-          2:
-            - columnType
-            - text
-          3:
-            - configSelectionMode
-            - choose
-          4:
-            - defaultTransform
-            - ''
-          5:
-            - manualConfig
-            - ''
-          7:
-            - purifyHtml
-            - true
-          8:
-            - redactorConfig
-            - 'Basic with Links.json'
-          9:
-            - removeEmptyTags
-            - true
-          10:
-            - removeInlineStyles
-            - true
-          11:
-            - removeNbsp
-            - true
-          12:
-            - showHtmlButtonForNonAdmins
-            - true
-          13:
-            - showUnpermittedFiles
-            - false
-          14:
-            - showUnpermittedVolumes
-            - true
-          15:
-            - uiMode
-            - enlarged
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\MissingField
+    type: craft\fields\PlainText

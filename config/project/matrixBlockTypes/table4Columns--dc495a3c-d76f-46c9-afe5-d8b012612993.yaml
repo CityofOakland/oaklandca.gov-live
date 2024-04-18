@@ -127,7 +127,7 @@ fields:
     searchable: true
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: null
+      changedFieldIndicator: 1866394380
       columns:
         __assoc__:
           -
@@ -167,7 +167,7 @@ fields:
       selectionLabel: null
       staticField: null
     translationKeyFormat: null
-    translationMethod: site
+    translationMethod: none
     type: verbb\supertable\fields\SuperTableField
   2c145c6e-d6b2-418c-aa28-3ea1eaa51944: # Column 3 Width
     columnSuffix: null

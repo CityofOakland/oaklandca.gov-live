@@ -232,8 +232,7 @@ fields:
                   - ''
                 -
                   - sources
-                  -
-                    - 'folder:baf733c3-48be-42a7-8b4f-7a6bf9763542'
+                  - ''
                 -
                   - customSelectionLabel
                   - ''
@@ -293,7 +292,7 @@ fields:
     searchable: false
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: null
+      changedFieldIndicator: 1318707056
       columns:
         __assoc__:
           -
@@ -319,7 +318,7 @@ fields:
       selectionLabel: null
       staticField: null
     translationKeyFormat: null
-    translationMethod: site
+    translationMethod: none
     type: verbb\supertable\fields\SuperTableField
   ad4e3d36-752c-48da-bfbd-bd61e083119b: # Heading
     columnSuffix: null
