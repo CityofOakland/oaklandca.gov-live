@@ -1,0 +1,22 @@
+allowRepeatingEvents: true
+color: '#4713F7'
+description: 'The default calendar'
+descriptionFieldHandle: null
+fieldLayout: null
+handle: default
+hasTitleField: true
+icsHash: null
+icsTimezone: floating
+locationFieldHandle: null
+name: Default
+siteSettings:
+  402c3c0f-9475-4443-a824-e81b3728d8d3:
+    enabledByDefault: true
+    hasUrls: false
+    siteId: c35d3a93-d7f4-4c37-ae3e-1b4d403311bb # City of Oakland
+    template: null
+    uriFormat: null
+titleFormat: null
+titleLabel: Title
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

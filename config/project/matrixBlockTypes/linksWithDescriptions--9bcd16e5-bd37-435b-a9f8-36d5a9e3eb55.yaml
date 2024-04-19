@@ -232,8 +232,7 @@ fields:
                   - ''
                 -
                   - sources
-                  -
-                    - 'folder:baf733c3-48be-42a7-8b4f-7a6bf9763542'
+                  - ''
                 -
                   - customSelectionLabel
                   - ''
@@ -270,23 +269,19 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: '*'
+      ckeConfig: c612c6ea-c3d2-478c-884d-38e79c269c32 # Simple With Links
       columnType: text
-      configSelectionMode: choose
-      defaultTransform: ''
-      manualConfig: ''
+      defaultTransform: null
+      enableSourceEditingForNonAdmins: true
       purifierConfig: null
       purifyHtml: true
-      redactorConfig: 'Simple with Links.json'
-      removeEmptyTags: true
-      removeInlineStyles: true
-      removeNbsp: true
-      showHtmlButtonForNonAdmins: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      uiMode: enlarged
+      showWordCount: false
+      wordLimit: null
     translationKeyFormat: null
     translationMethod: none
-    type: craft\redactor\Field
+    type: craft\ckeditor\Field
   7897bf8b-9bea-4c58-8f04-aea29c95d7bf: # Link Set
     columnSuffix: null
     contentColumnType: string
@@ -297,7 +292,7 @@ fields:
     searchable: false
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: null
+      changedFieldIndicator: 1318707056
       columns:
         __assoc__:
           -
@@ -323,7 +318,7 @@ fields:
       selectionLabel: null
       staticField: null
     translationKeyFormat: null
-    translationMethod: site
+    translationMethod: none
     type: verbb\supertable\fields\SuperTableField
   ad4e3d36-752c-48da-bfbd-bd61e083119b: # Heading
     columnSuffix: null

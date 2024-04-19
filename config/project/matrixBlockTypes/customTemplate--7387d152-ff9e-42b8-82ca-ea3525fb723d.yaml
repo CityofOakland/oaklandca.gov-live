@@ -30,10 +30,11 @@ fields:
     name: 'Template Select'
     searchable: false
     settings:
+      friendlyOptionValues: '1'
       limitToSubfolder: _partials/_content-builder/_blocks/_custom-elements/
     translationKeyFormat: null
     translationMethod: none
-    type: superbig\templateselect\fields\TemplateSelectField
+    type: swishdigital\templateselector\fields\TemplateSelectorField
 handle: customTemplate
 name: 'Custom Template'
 sortOrder: 22

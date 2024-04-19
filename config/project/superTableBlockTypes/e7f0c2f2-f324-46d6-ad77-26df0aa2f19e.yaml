@@ -1,4 +1,4 @@
-changedFieldIndicator: null
+changedFieldIndicator: 368804708
 field: 42276684-be78-4449-b3e9-8eeb42ad49ba # Table
 fieldLayouts:
   bdb46085-471d-4e5d-a72d-0ae953c5f0a0:
@@ -45,23 +45,19 @@ fields:
     settings:
       availableTransforms: ''
       availableVolumes: '*'
+      ckeConfig: 7d00111e-5634-4f46-ac54-ff5d8f91430d # Basic With Links
       columnType: text
-      configSelectionMode: choose
-      defaultTransform: ''
-      manualConfig: ''
+      defaultTransform: null
+      enableSourceEditingForNonAdmins: true
       purifierConfig: null
       purifyHtml: true
-      redactorConfig: 'Basic with Links.json'
-      removeEmptyTags: true
-      removeInlineStyles: true
-      removeNbsp: true
-      showHtmlButtonForNonAdmins: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
-      uiMode: enlarged
+      showWordCount: false
+      wordLimit: null
     translationKeyFormat: null
     translationMethod: none
-    type: craft\redactor\Field
+    type: craft\ckeditor\Field
   7b65742c-194e-4096-8efb-75f75936b03d: # Column 2 Cell
     columnSuffix: null
     contentColumnType: text
@@ -71,22 +67,14 @@ fields:
     name: 'Column 2 Cell'
     searchable: true
     settings:
-      availableTransforms: ''
-      availableVolumes: '*'
-      columnType: text
-      configSelectionMode: choose
-      defaultTransform: ''
-      manualConfig: ''
-      purifierConfig: null
-      purifyHtml: true
-      redactorConfig: 'Basic with Links.json'
-      removeEmptyTags: true
-      removeInlineStyles: true
-      removeNbsp: true
-      showHtmlButtonForNonAdmins: true
-      showUnpermittedFiles: false
-      showUnpermittedVolumes: true
-      uiMode: enlarged
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
-    type: craft\redactor\Field
+    type: craft\fields\PlainText

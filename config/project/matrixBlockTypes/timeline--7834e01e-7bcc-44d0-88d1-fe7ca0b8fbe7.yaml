@@ -63,7 +63,7 @@ fields:
     searchable: false
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: null
+      changedFieldIndicator: 49215554
       columns:
         __assoc__:
           -
@@ -110,7 +110,7 @@ fields:
       selectionLabel: 'Add a milestone'
       staticField: null
     translationKeyFormat: null
-    translationMethod: site
+    translationMethod: none
     type: verbb\supertable\fields\SuperTableField
 handle: timeline
 name: Timeline
