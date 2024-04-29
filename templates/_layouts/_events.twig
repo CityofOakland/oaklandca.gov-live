@@ -68,7 +68,7 @@
 							}) }}
 						{% endif %}
 						<div>
-							{% if locationBlocks == 1 %}
+							{% if locationBlocks|length == 1 %}
 								{% for location in locationBlocks %}
 									{% switch location.type %}
 									{% case "physicalLocation" %}
