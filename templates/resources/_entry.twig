@@ -35,8 +35,6 @@
       },
     ]) %}
   {% endif %}
-
-
   {{ include("_partials/_page-banners.twig", {
     breadCrumbLinks: breadcrumbs,
     bannerImage: entry.banner | length ? {
@@ -49,16 +47,18 @@
     <div class="container px-6 pt-10 pb-8 @3xl:px-16 @3xl:py-12">
       {{ include("_partials/_elements/_ctas.twig") }}
       <div class="flex">
-      {{ include("_partials/_elements/_nav-sidebar.twig") }}
-      <div class="flex-1">
-        {% if entry.resourceImage.exists() %}
+        {{ include("_partials/_elements/_nav-sidebar.twig") }}
+        <div class="flex-1">
+          {% if entry.resourceImage.exists() %}
           <figure class="mb-8">
             <img class="block w-full" src="{{ entry.resourceImage.one.url }}" alt="{{ entry.title }} Image">
           </figure>
-        {% endif %}
-        {{ include("_partials/_elements/_last-update.twig") }}
-        {{ include("_partials/_content-builder/_tool.twig") }}
+          {% endif %}
+          {{ include("_partials/_elements/_last-update.twig") }}
+          {{ include("_partials/_content-builder/_tool.twig") }}
+        </div>
       </div>
     </div>
   </section>
+  {{ include("_components/partials/_feedback.twig") }}
 {% endblock %}

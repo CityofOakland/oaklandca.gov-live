@@ -3,7 +3,7 @@
 
 {% do view.registerJsFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js") %}
 {% do view.registerCssFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css") %}
-{% set loc = location.address %}
+{% set loc = location.addresses %}
 
 {% if loc %}
   {% set lat = loc.lat %}
