@@ -16,15 +16,13 @@
 	<div id="{{ id }}" class="container py-6 components oak-hidden form">
 		<div class="-mx-3 flex flex-wrap justify-between">
 			<div class="px-3 lg:w-3/4 xl:w-1/2">
-				{% if craft.freeform.form(id) %}
-					{{ craft.freeform.form(id, {
-						labelClass: "form-label",
-						inputClass: "form-control",
-						overrideValues: {
-							entryUrl: craft.app.request.absoluteUrl,
-							pageAuthor: pageAuthor,
-							pageType: pageType,
-						}
+				{% if freeform.form(id) %}
+					{{ freeform.form(id, {
+						fields: {
+							"entryUrl": { value: craft.app.request.absoluteUrl },
+							"pageAuthor": { value: pageAuthor },
+							"pageType": { value: pageType },
+						},
 					}).render() }}
 					{% js on ready %}
 						document.querySelector('[data-handle="{{ id }}"]').addEventListener('freeform-ajax-success', function (event) {
