@@ -46,7 +46,6 @@
     "craftcms/ckeditor": "3.8.3",
     "swishdigital/template-selector": "5.0.1",
     "solspace/craft-calendar": "5.0.4",
-    "craftcms/redactor": "3.0.4",
     "superbig/craft3-templateselect": "^3.0.0"
   },
   "autoload": {
