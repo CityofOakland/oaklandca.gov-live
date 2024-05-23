@@ -1,4 +1,4 @@
-dateModified: 1716416004
+dateModified: 1716431041
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -1750,7 +1750,7 @@ plugins:
   google-maps:
     enabled: true
     licenseKey: 88Z3Y9HY00OZ7NQEBWTNETQL
-    schemaVersion: 4.3.0
+    schemaVersion: 4.5.0
     settings:
       browserKey: $GOOGLE_MAPS_BROWSER_API_KEY
       enableJsLogging: true
