@@ -76,19 +76,23 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: '*'
-      ckeConfig: c612c6ea-c3d2-478c-884d-38e79c269c32 # Simple With Links
       columnType: text
-      defaultTransform: null
-      enableSourceEditingForNonAdmins: false
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
       purifierConfig: null
       purifyHtml: true
+      redactorConfig: 'Simple with Links.json'
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      showWordCount: false
-      wordLimit: null
+      uiMode: enlarged
     translationKeyFormat: null
     translationMethod: none
-    type: craft\ckeditor\Field
+    type: craft\redactor\Field
   f9088787-d043-44c0-a831-924dd6a72489: # Call Out Type
     columnSuffix: null
     contentColumnType: string

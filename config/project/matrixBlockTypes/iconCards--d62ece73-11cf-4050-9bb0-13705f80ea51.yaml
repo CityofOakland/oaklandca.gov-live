@@ -79,7 +79,7 @@ fields:
     searchable: false
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: 1096287911
+      changedFieldIndicator: null
       columns:
         __assoc__:
           -
@@ -103,7 +103,7 @@ fields:
                 -
                   - width
                   - ''
-      contentTable: '{{%stc_97_iconcards}}'
+      contentTable: '{{%stc_101_iconcards}}'
       fieldLayout: table
       maxRows: 4
       minRows: 2
@@ -112,7 +112,7 @@ fields:
       selectionLabel: 'Add a card'
       staticField: null
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: site
     type: verbb\supertable\fields\SuperTableField
   7b2c00c6-3912-498d-99a7-eb8230b09b9e: # Icon Cards Description
     columnSuffix: uweutmac
@@ -125,19 +125,23 @@ fields:
     settings:
       availableTransforms: ''
       availableVolumes: ''
-      ckeConfig: 1d78c5ef-998b-49b6-845d-be0ce6e636e0 # Simple 2
       columnType: text
-      defaultTransform: null
-      enableSourceEditingForNonAdmins: false
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
       purifierConfig: null
       purifyHtml: true
+      redactorConfig: Simple.json
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      showWordCount: false
-      wordLimit: null
+      uiMode: enlarged
     translationKeyFormat: null
     translationMethod: none
-    type: craft\ckeditor\Field
+    type: craft\redactor\Field
   b04f002c-84db-42eb-bc4f-afa552e3e3f6: # Icon Cards Header
     columnSuffix: dmjyufdc
     contentColumnType: text

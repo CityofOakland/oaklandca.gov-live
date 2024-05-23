@@ -159,7 +159,7 @@ fields:
     searchable: false
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: 152282072
+      changedFieldIndicator: null
       columns:
         __assoc__:
           -
@@ -169,7 +169,7 @@ fields:
                 -
                   - width
                   - ''
-      contentTable: '{{%stc_101_buttons}}'
+      contentTable: '{{%stc_100_buttons}}'
       fieldLayout: table
       maxRows: null
       minRows: null
@@ -178,7 +178,7 @@ fields:
       selectionLabel: 'Add a call to action'
       staticField: null
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: site
     type: verbb\supertable\fields\SuperTableField
 handle: featuredProfile
 name: 'Featured Profile'

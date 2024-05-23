@@ -99,7 +99,7 @@ fields:
     searchable: false
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: 1716082694
+      changedFieldIndicator: null
       columns:
         __assoc__:
           -
@@ -125,7 +125,7 @@ fields:
       selectionLabel: null
       staticField: null
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: site
     type: verbb\supertable\fields\SuperTableField
   bdacb1a0-9bde-46d5-87a1-ac5a7171fa9e: # Column 2 Heading
     columnSuffix: null

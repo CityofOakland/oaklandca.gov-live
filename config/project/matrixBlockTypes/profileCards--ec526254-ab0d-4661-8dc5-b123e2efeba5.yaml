@@ -91,7 +91,7 @@ fields:
     searchable: false
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: 65984379
+      changedFieldIndicator: null
       columns:
         __assoc__:
           -
@@ -124,7 +124,7 @@ fields:
       selectionLabel: 'Add a featured member'
       staticField: null
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: site
     type: verbb\supertable\fields\SuperTableField
   10d32360-4144-4cc7-9b3a-10c5b8335103: # Team
     columnSuffix: null
@@ -178,19 +178,23 @@ fields:
     settings:
       availableTransforms: ''
       availableVolumes: ''
-      ckeConfig: 1d78c5ef-998b-49b6-845d-be0ce6e636e0 # Simple 2
       columnType: text
-      defaultTransform: null
-      enableSourceEditingForNonAdmins: false
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
       purifierConfig: null
       purifyHtml: true
+      redactorConfig: Simple.json
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      showWordCount: false
-      wordLimit: null
+      uiMode: enlarged
     translationKeyFormat: null
     translationMethod: none
-    type: craft\ckeditor\Field
+    type: craft\redactor\Field
   0567fab2-a7c6-4e2f-91c2-ea0072e45960: # Profile Cards Header
     columnSuffix: ypbiahjj
     contentColumnType: text

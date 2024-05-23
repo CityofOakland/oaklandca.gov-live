@@ -68,19 +68,23 @@ fields:
     settings:
       availableTransforms: ''
       availableVolumes: ''
-      ckeConfig: 1d78c5ef-998b-49b6-845d-be0ce6e636e0 # Simple 2
       columnType: text
-      defaultTransform: null
-      enableSourceEditingForNonAdmins: false
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
       purifierConfig: null
       purifyHtml: true
+      redactorConfig: Simple.json
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      showWordCount: false
-      wordLimit: null
+      uiMode: enlarged
     translationKeyFormat: null
     translationMethod: none
-    type: craft\ckeditor\Field
+    type: craft\redactor\Field
   ed948d68-fa7c-4932-bfea-222e8f79c913: # Service Cards
     columnSuffix: hawqmrla
     contentColumnType: string
@@ -91,7 +95,7 @@ fields:
     searchable: false
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: 668257430
+      changedFieldIndicator: null
       columns:
         __assoc__:
           -
@@ -117,7 +121,7 @@ fields:
       selectionLabel: 'Add a service'
       staticField: null
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: site
     type: verbb\supertable\fields\SuperTableField
   fac29cc3-6f0c-43f5-b0e6-f9f8786692f9: # Services Header
     columnSuffix: zstgvnwh

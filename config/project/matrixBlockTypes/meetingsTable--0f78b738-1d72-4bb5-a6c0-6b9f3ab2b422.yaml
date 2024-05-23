@@ -1,12 +1,4 @@
 field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581 # Content Builder
-fieldLayouts:
-  b8907938-0a34-4d43-9611-4899d59db271:
-    tabs:
-      -
-        elementCondition: null
-        name: Content
-        uid: 296db812-392f-438c-920f-1ef3981682c8
-        userCondition: null
 handle: meetingsTable
 name: 'Meetings Table'
 sortOrder: 27

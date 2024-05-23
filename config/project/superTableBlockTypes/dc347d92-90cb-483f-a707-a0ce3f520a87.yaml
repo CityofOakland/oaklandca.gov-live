@@ -1,4 +1,4 @@
-changedFieldIndicator: 8465001
+changedFieldIndicator: null
 field: f93e423e-051d-4b4c-bb85-2a5b168296b4 # Timeline
 fieldLayouts:
   4c254873-4567-44b6-a087-a6d4cb70b1ea:
@@ -266,7 +266,8 @@ fields:
                   - ''
                 -
                   - sources
-                  - ''
+                  -
+                    - 'folder:baf733c3-48be-42a7-8b4f-7a6bf9763542'
                 -
                   - customSelectionLabel
                   - ''
@@ -303,19 +304,23 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: '*'
-      ckeConfig: c612c6ea-c3d2-478c-884d-38e79c269c32 # Simple With Links
       columnType: text
-      defaultTransform: null
-      enableSourceEditingForNonAdmins: false
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
       purifierConfig: null
       purifyHtml: true
+      redactorConfig: 'Simple with Links.json'
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      showWordCount: false
-      wordLimit: null
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
-    type: craft\ckeditor\Field
+    type: craft\redactor\Field
   c0129db2-783d-4927-b125-203bd8cbdebc: # Milestone Date
     columnSuffix: null
     contentColumnType: text

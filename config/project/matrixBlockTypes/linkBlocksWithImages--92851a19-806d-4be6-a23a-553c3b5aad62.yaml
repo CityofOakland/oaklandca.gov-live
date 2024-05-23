@@ -88,19 +88,23 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: '*'
-      ckeConfig: c612c6ea-c3d2-478c-884d-38e79c269c32 # Simple With Links
       columnType: text
-      defaultTransform: null
-      enableSourceEditingForNonAdmins: false
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
       purifierConfig: null
       purifyHtml: true
+      redactorConfig: 'Simple with Links.json'
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      showWordCount: false
-      wordLimit: null
+      uiMode: enlarged
     translationKeyFormat: null
     translationMethod: none
-    type: craft\ckeditor\Field
+    type: craft\redactor\Field
   9c457cb3-7498-4b3d-8b1e-84454f649934: # Link Set
     columnSuffix: null
     contentColumnType: string
@@ -111,7 +115,7 @@ fields:
     searchable: false
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: 192863869
+      changedFieldIndicator: null
       columns:
         __assoc__:
           -
@@ -137,7 +141,7 @@ fields:
       selectionLabel: null
       staticField: null
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: site
     type: verbb\supertable\fields\SuperTableField
   823b335f-ee31-4526-b6f4-952682ef1061: # Read More Link
     columnSuffix: null
@@ -279,6 +283,7 @@ fields:
                     - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0' # Projects
                     - 'section:24fa116b-8516-4626-84f3-86b685e71071' # Resources
                     - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c' # Services
+                    - singles
                     - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a' # Staff
                     - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4' # Teams
                     - 'section:70778563-6dac-453d-a4b0-5121f3a614b7' # Topics

@@ -43,7 +43,7 @@ fields:
     searchable: false
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: 1684877106
+      changedFieldIndicator: null
       columns:
         __assoc__:
           -
@@ -76,7 +76,7 @@ fields:
       selectionLabel: 'Add a statistic'
       staticField: null
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: site
     type: verbb\supertable\fields\SuperTableField
   e01574f5-8305-4c87-a518-b387aecc4997: # Heading
     columnSuffix: null

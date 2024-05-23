@@ -8,16 +8,20 @@ searchable: false
 settings:
   availableTransforms: '*'
   availableVolumes: '*'
-  ckeConfig: 9b38025b-e8f4-4d3d-9b72-2e069e959353 # Default
   columnType: text
-  defaultTransform: null
-  enableSourceEditingForNonAdmins: true
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
   purifierConfig: null
   purifyHtml: true
+  redactorConfig: null
+  removeEmptyTags: true
+  removeInlineStyles: true
+  removeNbsp: true
+  showHtmlButtonForNonAdmins: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: true
-  showWordCount: false
-  wordLimit: null
+  uiMode: enlarged
 translationKeyFormat: null
 translationMethod: none
-type: craft\ckeditor\Field
+type: craft\redactor\Field

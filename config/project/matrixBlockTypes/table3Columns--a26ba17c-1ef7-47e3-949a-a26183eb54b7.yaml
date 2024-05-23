@@ -226,7 +226,7 @@ fields:
     searchable: true
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: 929678878
+      changedFieldIndicator: null
       columns:
         __assoc__:
           -
@@ -259,7 +259,7 @@ fields:
       selectionLabel: null
       staticField: null
     translationKeyFormat: null
-    translationMethod: none
+    translationMethod: site
     type: verbb\supertable\fields\SuperTableField
 handle: table3Columns
 name: '3 Columns'
