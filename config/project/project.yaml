@@ -1,4 +1,4 @@
-dateModified: 1717470503
+dateModified: 1717473153
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -1683,7 +1683,7 @@ plugins:
       formattingTemplate: flexbox.html
       minimumSubmitTime: ''
       pluginName: null
-      purgableSpamAgeInDays: '7'
+      purgableSpamAgeInDays: '3'
       purgableSubmissionAgeInDays: null
       purgableUnfinalizedAssetAgeInMinutes: '180'
       rememberPageSubmitOrder: true
