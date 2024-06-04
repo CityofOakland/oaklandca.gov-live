@@ -76,7 +76,7 @@
 											<h3 class="mt-0">In-Person</h3>
 											{% if location.locationAddress %}
 												<p class="mt-2">{{ location.locationAddress.multiline() }}</p>
-												<p class="mt-2">{{ macros.getDirections(location.locationAddress.linkToDirections()) }}</p>
+												<p class="mt-2">{{ macros.getDirections(location.locationAddress.linkToMap()) }}</p>
 											{% endif %}
 										{% endif %}
 									{% case "onlineLocation" %}
@@ -100,7 +100,7 @@
 										<h4>Address</h4>
 										<p class="mt-2">
 											{{ primary.locationAddress.multiline() }}<br>
-											{{ macros.getDirections(primary.locationAddress.linkToDirections()) }}
+											{{ macros.getDirections(primary.locationAddress.linkToMap()) }}
 										</p>
 									{% endif %}
 								{% elseif primary.type == "onlineLocation" %}
@@ -116,7 +116,7 @@
 										<p class="small"><b>Or join in person</b></p>
 										<p class="mt-2">
 											{{ secondary.locationAddress.multiline() }}<br>
-											{{ macros.getDirections(secondary.locationAddress.linkToDirections()) }}
+											{{ macros.getDirections(secondary.locationAddress.linkToMap()) }}
 										</p>
 									{% endif %}
 								{% elseif secondary.type == "onlineLocation" %}
