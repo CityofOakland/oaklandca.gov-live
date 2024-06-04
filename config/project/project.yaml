@@ -1,4 +1,4 @@
-dateModified: 1716438588
+dateModified: 1717470503
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -1384,7 +1384,7 @@ plugins:
   feed-me:
     enabled: '1'
     licenseKey: null
-    schemaVersion: 5.1.0.0
+    schemaVersion: 5.1.0.1
     settings: null
   freeform:
     edition: lite
@@ -1850,7 +1850,7 @@ plugins:
   sherlock:
     edition: lite
     enabled: true
-    schemaVersion: 4.1.0
+    schemaVersion: 4.5.0
     settings:
       apiKey: mjfdcbwqahbasajdrudcnenyzzcnhcsj
       blowfishHashCost:
@@ -2038,6 +2038,7 @@ plugins:
           -
             - threshold
             - 5
+      maxScans: false
       monitor: false
       notificationEmailAddresses: $EMAIL_ADDRESS
       phpComposerVersion:
