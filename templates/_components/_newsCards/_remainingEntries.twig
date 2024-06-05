@@ -22,7 +22,7 @@
 <div>
 	{% for entry in newsEntries %}
 		{% set newsImage = entry.newsImage.one() ?? null %}
-		<a href="{{ entry.url }}">
+		<a href="{{ entry.url }}" class="block">
 			<article class="{{ newsImage ? 'flex flex-col md:flex-row' }} bg-white overflow-hidden rounded shadow mb-6 justify-start">
 				{% if newsImage %}
 					<figure class="z-0 aspect-video bg-white w-[12.5rem]">
