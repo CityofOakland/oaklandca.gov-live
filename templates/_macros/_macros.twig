@@ -23,14 +23,14 @@
 	</a>
 {% endmacro %}
 
-{% macro getDirections(linkToDirections, label) %}
+{% macro getDirections(linkToDirections, text, label) %}
 	<a
 		class="text-white underline hover:text-gray-200 hover:no-underline"
 		href="{{ linkToDirections }}"
 		target="_blank"
 		aria-label="{{ label|default("Open directions to event in a new tab") }}"
 	>
-		Get Directions
+		{{ text|default("Get Directions") }}
 	</a>
 {% endmacro %}
 

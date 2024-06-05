@@ -19,7 +19,7 @@
 				{% if freeform.form(id) %}
 					{{ freeform.form(id, {
 						fields: {
-							"entryUrl": { value: craft.app.request.absoluteUrl },
+							"entryUrl": { value: entryUrl },
 							"pageAuthor": { value: pageAuthor },
 							"pageType": { value: pageType },
 						},
