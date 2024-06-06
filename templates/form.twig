@@ -1,7 +1,7 @@
-{% set form = craft.freeform.form(craft.app.request.get('form')) %}
+{% set form = freeform.form(craft.app.request.get('form')) %}
 {{ {
     hash: form.hash,
-    honeypot: craft.freeform.honeypot(form),
+    honeypot: freeform.honeypot(form),
     csrf: {
         name: craft.app.config.general.csrfTokenName,
         value: craft.app.request.csrfToken,

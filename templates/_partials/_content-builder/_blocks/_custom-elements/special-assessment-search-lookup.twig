@@ -18,14 +18,16 @@
 		{% if entries | length %}
 			{% for entry in entries %}
 				<div class="mt-4 inline-block rounded-sm p-8 text-white bg-green-1000">
-					{{ entry.title }}’s status is
-					<span class="inline-block rounded-sm bg-white px-2 text-green-1000">{{ entry.elementStatus }}</span>
-					as of {{ entry.date|date() }}
+					{{ entry.title }},
+					<span class="inline-block rounded-sm bg-white px-2 text-green-1000">
+						{{ entry.elementStatus }}
+					</span>,
+					{{ entry.date|date() }}
 				</div>
 			{% endfor %}
 		{% else %}
 			<p class="mt-4 inline-block rounded-sm p-8 text-white bg-green-1000">
-				The APN “{{ searchQuery }}” didn’t return any results.
+				The APN <span class="inline-block rounded-sm bg-white px-2 text-green-1000">{{ searchQuery }}</span> didn’t return any results.
 			</p>
 		{% endif %}
 	{% endif %}

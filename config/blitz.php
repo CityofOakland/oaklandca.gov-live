@@ -13,9 +13,10 @@
 
 return [
 	'*' => [
-// With this setting enabled, Blitz will log detailed messages to `storage/logs/blitz.log`.
+        // With this setting enabled, Blitz will log detailed messages to `storage/logs/blitz.log`.
 		'debug' => true,
-// With this setting enabled, Blitz will begin caching pages according to the included/excluded URI patterns. Disable this setting to prevent Blitz from caching any new pages.
-		'cachingEnabled' => getenv('BLITZ_ENABLE'),
+        // With this setting enabled, Blitz will begin caching pages according to the included/excluded URI patterns.
+        // Disable this setting to prevent Blitz from caching any new pages.
+		'cachingEnabled' => getenv('BLITZ_CACHING_ENABLE'),
 	]
 ];

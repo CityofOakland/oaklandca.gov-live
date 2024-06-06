@@ -4,7 +4,7 @@
 }|merge(params) %}
 
 <div>
-	<a href="{{ vars.featuredEntry.url }}">
+	<a href="{{ vars.featuredEntry.url }}" class="block">
 		<article class="overflow-hidden rounded bg-white shadow">
 			{% set newsImage = vars.featuredEntry.newsImage.one() ?? null %}
 			{% if newsImage %}
