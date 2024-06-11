@@ -84,7 +84,8 @@
 		{# entry has one category only #}
 		{{ breadCrumb.link("/services", "Services") }}
 		{{ separator }}
-		{{ breadCrumb.link(serviceTypes.one().url, serviceTypes.title) }}
+		{% set theServiceType = serviceTypes[0] %}
+		{{ breadCrumb.link(theServiceType.url, theServiceType.title) }}
 		{{ separator }}
 		{{ breadCrumb.current(entry.title) }}
 	{% elseif serviceTypes|length > 1 %}
