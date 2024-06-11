@@ -1,4 +1,4 @@
-dateModified: 1713462347
+dateModified: 1718064118
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -578,14 +578,14 @@ meta:
     1fe293ad-52d9-4002-984e-b7a256d4b158: 'Social Media' # Social Media
     2a191283-500f-41e2-94a3-8b68e9ef6b1c: 'Card Icon' # Card Icon
     2b2f913f-13fd-485a-bec2-801cf041c5af: 'Section Background Color' # Section Background Color
-    2c145c6e-d6b2-418c-aa28-3ea1eaa51944: 'Column 3 Width' # Column 3 Width
-    2ce783d0-daf9-44d1-a0b4-84a0163dcaad: 'Column 2 Width' # Column 2 Width
+    2c145c6e-d6b2-418c-aa28-3ea1eaa51944: 'Column 3 Width %' # Column 3 Width %
+    2ce783d0-daf9-44d1-a0b4-84a0163dcaad: 'Column 2 Width %' # Column 2 Width %
     2e52b334-4732-47a2-9c3b-7a8bf656425e: Link # Link
     2ec9801b-fd1b-4e5f-bf30-80d457a08afd: 'Service Category' # Service Category
     02edcc9a-9985-4401-9a49-38455f47ff84: 'Contact Notes' # Contact Notes
     2fb76e53-8619-4e29-b609-c984c390de9a: 'Email Address' # Email Address
     3b4c766d-c60e-4741-b958-585aaadea153: Text # Text
-    3b5ca699-b20a-41e5-a1fd-068dd6a6c081: 'Column 4 Width' # Column 4 Width
+    3b5ca699-b20a-41e5-a1fd-068dd6a6c081: 'Column 4 Width %' # Column 4 Width %
     3bc9f075-4edc-4909-ba86-ea128c3ddb93: Subheading # Subheading
     3c58f775-5156-4705-9405-472e014a359d: 'Document Packets' # Document Packets
     03c4672b-b061-4dbb-a8f5-2e5dfb76467a: Heading # Heading
@@ -648,6 +648,7 @@ meta:
     6d6039ca-322a-4f7f-91e2-371a9f5d637c: 'Read More Link' # Read More Link
     6def0c63-b8d7-4909-9dfa-52fbc05f5cf0: Description # Description
     06e694a7-90e8-4163-8ee2-242bc35ff134: Buttons # Buttons
+    6e5940e1-edb9-46a2-bd24-a63c9bf2a11e: Meetings # Meetings
     6ee1dda3-767e-4fa8-9096-5fcf30f68aed: 'Event Status' # Event Status
     6fb3f41c-93f6-4185-9622-e6765cdcc837: 'Alert Message' # Alert Message
     6fdc167f-d34e-4523-bc70-c6a755fdaae6: Header # Header
@@ -725,7 +726,7 @@ meta:
     25bae0ad-a048-4573-a10a-8b9f823ed9dc: Stats # Stats
     28b0988c-b6ee-404e-922d-8278e9ab4daa: 'Digital Leads' # Digital Leads
     28e53a14-23f2-492a-be43-e6e83bca9aa1: 'Staff Import Section' # Staff Import Section
-    28f1ddd3-72ce-439e-8d65-9b9a9e19f150: 'Column 1 Width' # Column 1 Width
+    28f1ddd3-72ce-439e-8d65-9b9a9e19f150: 'Column 1 Width %' # Column 1 Width %
     29bb4882-cfa7-41ae-9e7d-50ebd572236f: Entry # Entry
     30f6cb69-3914-4d26-a0b7-0ccfa1661958: 'News Entries' # News Entries
     31d30a51-422e-471c-be55-3441a4219dd8: Date # Date
@@ -994,7 +995,7 @@ meta:
     a2224dcd-7dbd-4096-bc29-a79aa6b7b2ba: 'Vimeo URL' # Vimeo URL
     a4001c79-48f7-4666-8658-4981e8e232d6: 'Image Credit' # Image Credit
     a6935d0a-2019-455c-8ab4-8adc959dea2e: 'Navigation Item' # Navigation Item
-    a9027f1f-7200-4053-9b64-7be69dc993e5: 'Column 2 Width' # Column 2 Width
+    a9027f1f-7200-4053-9b64-7be69dc993e5: 'Column 2 Width %' # Column 2 Width %
     a35566b4-f079-4b08-b912-ad98bf81ed82: Default # Default
     a64389e9-e0f9-4d5b-ae78-16f6b5db6785: 'Related Departments' # Related Departments
     a2623193-86a7-40d6-9f1c-1be72d77b6d0: Destination # Destination
@@ -1053,7 +1054,7 @@ meta:
     c04a4f2d-6106-48bf-8cce-ef62f741ab4c: Description # Description
     c2ad07dc-05e7-4ef4-89b6-2e1eaccee210: 'Lead In' # Lead In
     c2c1cf6a-786c-44cd-84f6-518e8c48b024: Teams # Teams
-    c3cd0c7f-e997-4960-9b97-046778155766: 'Column 1 Width' # Column 1 Width
+    c3cd0c7f-e997-4960-9b97-046778155766: 'Column 1 Width %' # Column 1 Width %
     c7c1aa87-0003-4cdf-a925-11ae2f05ec24: 'Project Locations' # Project Locations
     c8be2ede-34e7-4ef1-8f4c-2f77c4e5f776: Services # Services
     c8e06b4a-2f85-41db-94e3-101a5c02dd6d: Documents # Documents
@@ -1113,7 +1114,7 @@ meta:
     d57f1ac0-6e1f-4e86-beb3-8bba579bae47: Column # Column
     d62ece73-11cf-4050-9bb0-13705f80ea51: 'Icon Cards' # Icon Cards
     d71c1375-6cf3-4873-9c42-fde00a9b766b: Instagram # Instagram
-    d99bfa25-1c4b-44f3-9355-2816615f5264: 'Column 2 Width' # Column 2 Width
+    d99bfa25-1c4b-44f3-9355-2816615f5264: 'Column 2 Width %' # Column 2 Width %
     d220b1b2-d0fd-4029-b1ff-ee7ebaec877b: 'Service Description' # Service Description
     d315d8d7-521c-49c9-93ff-3fe340ab0429: Icon # Icon
     d446c3b2-3606-4327-bbf1-c2603c47142a: 'Hide Read More Link?' # Hide Read More Link?
@@ -1138,6 +1139,7 @@ meta:
     de65ce28-2919-4a65-9aa2-c18e5518f2fe: Program/Subdivision # Program/Subdivision
     de588e4c-ab76-4b95-8150-afebc746259b: Documents # Documents
     de273878-3929-4764-b4ab-a670a2987d39: 'Highlighted News' # Highlighted News
+    df8685d8-8295-456f-b677-b60cced48d3d: Events # Events
     df535740-f62a-4027-aefd-b7fef85f4a7f: Resources # Resources
     dfc8cfa9-56e1-4698-bfe5-2c80960297c0: 'Official Board and Commission' # Official Board and Commission
     e0be1e19-d6d8-4d1d-849e-14d179664811: 'Teams Index' # Teams Index
@@ -1152,7 +1154,7 @@ meta:
     e7a47351-1c2b-44ac-ba40-cbedbdce4b0f: 'Event ID' # Event ID
     e7dc9a6e-abdf-4824-ad86-bf0c994fc760: 'Departments Index' # Departments Index
     e8b1b583-82e1-4793-a5fc-048294165afd: Heading # Heading
-    e9c00016-6698-4bae-ae61-26a8ced249d7: 'Column 3 Width' # Column 3 Width
+    e9c00016-6698-4bae-ae61-26a8ced249d7: 'Column 3 Width %' # Column 3 Width %
     e9d7be93-3feb-4c21-ae81-84429ed485df: Contact # Contact
     e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5: Homepage # Homepage
     e9feaa97-a672-4708-8e22-90e5a5116d24: 'Step Required?' # Step Required?
@@ -1162,7 +1164,7 @@ meta:
     e58f615b-174a-4196-a96c-e824862acfa9: 'Image Column Width' # Image Column Width
     e67ec759-ea3a-4568-bfa6-a314ff3d1036: Projects # Projects
     e278f4b7-9939-4bd1-8575-a593bd3c8e27: 'Online Location' # Online Location
-    e287f156-7373-4131-bd1f-e746e20d2e99: 'Column 1 Width' # Column 1 Width
+    e287f156-7373-4131-bd1f-e746e20d2e99: 'Column 1 Width %' # Column 1 Width %
     e2442a2e-e191-4b02-b170-7ecad09c52e2: Modules # Modules
     e3606e42-d455-4501-bbb1-55f049cd1738: Documents # Documents
     e4546cfb-cdc7-4a55-b637-f44ae35fbf31: Background # Background
@@ -1206,7 +1208,6 @@ meta:
     f62c85ae-2203-4d1a-8702-da515126a398: Banner # Banner
     f73a45bb-5e6b-4a27-8f19-edd0e6bbc507: 'Video Link' # Video Link
     f93e423e-051d-4b4c-bb85-2a5b168296b4: Timeline # Timeline
-    f94d4dbd-a40b-49bc-9325-153e186ad5f0: Default # Default
     f528b37c-8b15-43b8-8da0-d1b161fbf629: 'Learn More About' # Learn More About
     f602bcbb-5ca9-4e04-8f5c-f031ceb1c2d6: 'Milestone Name' # Milestone Name
     f645ecd3-5b0e-4625-8986-da4a7726b1db: Image # Image
@@ -1383,13 +1384,13 @@ plugins:
   feed-me:
     enabled: '1'
     licenseKey: null
-    schemaVersion: 5.1.0.0
+    schemaVersion: 5.1.0.1
     settings: null
   freeform:
     edition: lite
     enabled: true
     licenseKey: 80IWDHDW3ZJB27DOLCE6AQE5
-    schemaVersion: 5.0.23
+    schemaVersion: 5.1.0
     settings:
       alertNotificationRecipients: ''
       allowDashesInFieldHandles: false
@@ -1682,7 +1683,7 @@ plugins:
       formattingTemplate: flexbox.html
       minimumSubmitTime: ''
       pluginName: null
-      purgableSpamAgeInDays: '0'
+      purgableSpamAgeInDays: '3'
       purgableSubmissionAgeInDays: null
       purgableUnfinalizedAssetAgeInMinutes: '180'
       rememberPageSubmitOrder: true
@@ -1700,6 +1701,7 @@ plugins:
       sessionEntryTTL: 10800
       showErrorsForBlockedEmails: ''
       showErrorsForBlockedKeywords: ''
+      sitesEnabled: false
       spamFolderEnabled: '1'
       spamProtectionBehavior: simulate_success
       submissionThrottlingCount: ''
@@ -1848,7 +1850,7 @@ plugins:
   sherlock:
     edition: lite
     enabled: true
-    schemaVersion: 4.1.0
+    schemaVersion: 4.5.0
     settings:
       apiKey: mjfdcbwqahbasajdrudcnenyzzcnhcsj
       blowfishHashCost:
@@ -2036,6 +2038,7 @@ plugins:
           -
             - threshold
             - 5
+      maxScans: false
       monitor: false
       notificationEmailAddresses: $EMAIL_ADDRESS
       phpComposerVersion:

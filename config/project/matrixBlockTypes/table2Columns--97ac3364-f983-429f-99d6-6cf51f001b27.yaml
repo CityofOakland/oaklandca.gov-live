@@ -31,7 +31,7 @@ fieldLayouts:
             width: 50
           -
             elementCondition: null
-            fieldUid: e287f156-7373-4131-bd1f-e746e20d2e99 # Column 1 Width
+            fieldUid: e287f156-7373-4131-bd1f-e746e20d2e99 # Column 1 Width %
             instructions: null
             label: null
             required: false
@@ -43,7 +43,7 @@ fieldLayouts:
             width: 50
           -
             elementCondition: null
-            fieldUid: d99bfa25-1c4b-44f3-9355-2816615f5264 # Column 2 Width
+            fieldUid: d99bfa25-1c4b-44f3-9355-2816615f5264 # Column 2 Width %
             instructions: null
             label: null
             required: false
@@ -99,7 +99,7 @@ fields:
     searchable: false
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: 1716082694
+      changedFieldIndicator: 595367983
       columns:
         __assoc__:
           -
@@ -147,13 +147,13 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  d99bfa25-1c4b-44f3-9355-2816615f5264: # Column 2 Width
+  d99bfa25-1c4b-44f3-9355-2816615f5264: # Column 2 Width %
     columnSuffix: null
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column2Width
     instructions: null
-    name: 'Column 2 Width'
+    name: 'Column 2 Width %'
     searchable: false
     settings:
       decimals: 0
@@ -168,13 +168,13 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number
-  e287f156-7373-4131-bd1f-e746e20d2e99: # Column 1 Width
+  e287f156-7373-4131-bd1f-e746e20d2e99: # Column 1 Width %
     columnSuffix: null
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column1Width
     instructions: null
-    name: 'Column 1 Width'
+    name: 'Column 1 Width %'
     searchable: false
     settings:
       decimals: 0
