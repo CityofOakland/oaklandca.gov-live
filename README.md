@@ -18,7 +18,7 @@ Learn more about it at [craftcms.com](https://craftcms.com).
 1. `git clone` this repository into your development server.
 2. Run `composer install` and `npm install` to install package builders.
 3. Copy and rename `.env.example` to `.env`. Make sure to fill in the correct environment variables and create any necessary databases/API keys.
-4. Build assets by running `npm run production`. Make sure to check `package.json` for other handy development commands.
+4. Build assets by running `npm run build`. Make sure to check `package.json` for other handy development commands.
 
 ## Resources
 
