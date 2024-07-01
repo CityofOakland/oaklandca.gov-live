@@ -1,8 +1,8 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% import "_macros/_macros.twig" as macros %}
 
-{% set meetings     = craft.entries.section('meetings').date(['>= ' ~ now|date('Y-m-d')]).orderBy('date asc').limit(3).relatedTo(entry) %}
-{% set headingText  = 'Related Meetings' %}
+{% set meetings = craft.entries.section('meetings').date(['>= ' ~ now|date('Y-m-d')]).orderBy('date asc').limit(3).relatedTo(entry) %}
+{% set headingText  = block.heading|default('Related Meetings') %}
 {% set buttonText   = 'See All Meetings' %}
 {% if entry.section.handle == 'boardsCommissions' %}
   {% set buttonLink   = entry.url ~ '/meetings' %}
@@ -11,7 +11,7 @@
 {% endif %}
 
 {% if block.meetings|length %}
-  {% set meetings     = block.meetings %}
+  {% set meetings = block.meetings %}
 {% else %}
   {% if meetings|length == 0 %}
     {% set meetings  = craft.entries.section('meetings').orderBy('date desc').limit(3).relatedTo(entry) %}
@@ -20,7 +20,7 @@
 
 {% if meetings|length %}
   <section class="relative z-0 pb-12">
-    <h2 class="{{ hClass }} {{ addClasses ?? "" }}">{{ headingText }}</h2>
+    <h2 id="meetings" class="{{ hClass }} {{ addClasses ?? "" }}">{{ headingText }}</h2>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {% for entry in meetings %}
       <a class="shadow card default" href="{{ entry.url }}">
