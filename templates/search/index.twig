@@ -2,11 +2,9 @@
 {% extends "_layout.twig" %}
 {% set entry = craft.entries.section('searchIndex').one %}
 
-{% css "https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.css" %}
-{% css "https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch-theme-algolia.min.css" %}
-
-{% do view.registerJsFile("https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find") %}
-{% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5") %}
+{% do view.registerCssFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.css") %}
+{% do view.registerCssFile ("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch-theme-algolia.min.css") %}
+{% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.js") %}
 
 {% css %}
 	#stats .ais-stats {
