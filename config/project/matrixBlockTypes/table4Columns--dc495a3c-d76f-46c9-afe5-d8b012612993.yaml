@@ -55,7 +55,7 @@ fieldLayouts:
             width: 25
           -
             elementCondition: null
-            fieldUid: 28f1ddd3-72ce-439e-8d65-9b9a9e19f150 # Column 1 Width
+            fieldUid: 28f1ddd3-72ce-439e-8d65-9b9a9e19f150 # Column 1 Width %
             instructions: null
             label: null
             required: false
@@ -67,7 +67,7 @@ fieldLayouts:
             width: 25
           -
             elementCondition: null
-            fieldUid: 2ce783d0-daf9-44d1-a0b4-84a0163dcaad # Column 2 Width
+            fieldUid: 2ce783d0-daf9-44d1-a0b4-84a0163dcaad # Column 2 Width %
             instructions: null
             label: null
             required: false
@@ -79,7 +79,7 @@ fieldLayouts:
             width: 25
           -
             elementCondition: null
-            fieldUid: 2c145c6e-d6b2-418c-aa28-3ea1eaa51944 # Column 3 Width
+            fieldUid: 2c145c6e-d6b2-418c-aa28-3ea1eaa51944 # Column 3 Width %
             instructions: null
             label: null
             required: false
@@ -91,7 +91,7 @@ fieldLayouts:
             width: 25
           -
             elementCondition: null
-            fieldUid: 3b5ca699-b20a-41e5-a1fd-068dd6a6c081 # Column 4 Width
+            fieldUid: 3b5ca699-b20a-41e5-a1fd-068dd6a6c081 # Column 4 Width %
             instructions: null
             label: null
             required: false
@@ -127,7 +127,7 @@ fields:
     searchable: true
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: 1866394380
+      changedFieldIndicator: 1379371970
       columns:
         __assoc__:
           -
@@ -169,13 +169,13 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: verbb\supertable\fields\SuperTableField
-  2c145c6e-d6b2-418c-aa28-3ea1eaa51944: # Column 3 Width
+  2c145c6e-d6b2-418c-aa28-3ea1eaa51944: # Column 3 Width %
     columnSuffix: null
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column3Width
     instructions: null
-    name: 'Column 3 Width'
+    name: 'Column 3 Width %'
     searchable: false
     settings:
       decimals: 0
@@ -190,13 +190,13 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number
-  2ce783d0-daf9-44d1-a0b4-84a0163dcaad: # Column 2 Width
+  2ce783d0-daf9-44d1-a0b4-84a0163dcaad: # Column 2 Width %
     columnSuffix: null
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column2Width
     instructions: null
-    name: 'Column 2 Width'
+    name: 'Column 2 Width %'
     searchable: false
     settings:
       decimals: 0
@@ -211,13 +211,13 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Number
-  3b5ca699-b20a-41e5-a1fd-068dd6a6c081: # Column 4 Width
+  3b5ca699-b20a-41e5-a1fd-068dd6a6c081: # Column 4 Width %
     columnSuffix: null
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column4Width
     instructions: null
-    name: 'Column 4 Width'
+    name: 'Column 4 Width %'
     searchable: false
     settings:
       decimals: 0
@@ -252,13 +252,13 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  28f1ddd3-72ce-439e-8d65-9b9a9e19f150: # Column 1 Width
+  28f1ddd3-72ce-439e-8d65-9b9a9e19f150: # Column 1 Width %
     columnSuffix: null
     contentColumnType: smallint(2)
     fieldGroup: null
     handle: column1Width
     instructions: null
-    name: 'Column 1 Width'
+    name: 'Column 1 Width %'
     searchable: false
     settings:
       decimals: 0
