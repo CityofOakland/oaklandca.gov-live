@@ -61,7 +61,7 @@ search.addWidget(
 const defaultTemplate =
 `<article class="py-8 sm:py-12 border-gray-300 border-b-2">
   {{#displayDate}}
-  <div class="text-base text-gray-400 mb-4">
+  <div class="text-base text-gray-600 mb-4">
     Publish Date: <b>{{ displayDate }}</b>
   </div>
   {{/displayDate}}

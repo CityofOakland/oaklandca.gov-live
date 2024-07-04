@@ -4,7 +4,7 @@
 		<a
 			class="language"
 			href="#googtrans(en|{{ lang }})"
-			onclick="{{ onClick|default("location.reload()") }}"
+			onclick="{{ onClick|default("setTimeout(() => { location.reload() })") }}"
 		>
 			<span
 				lang="{{ lang }}"
@@ -20,7 +20,7 @@
 		<a
 			class="underline focusable language"
 			href="#googtrans(en|{{ lang }})"
-			onclick="{{ onClick|default("location.reload()") }}"
+			onclick="{{ onClick|default("setTimeout(() => { location.reload() })") }}"
 		>
 			<span
 				lang="{{ lang }}"
