@@ -102,7 +102,7 @@
 				{% for col in 1..columns %}
 					{% set colAttrib = "column#{col}Heading" %}
 					{% set widthAttrib = "column#{col}Width" %}
-					<th style="width: #{attribute(object, widthAttrib}%">{{ attribute(object, colAttrib) }}</th>
+					<th {{ attr({ style: "width: #{attribute(object, widthAttrib)}%" }) }}>{{ attribute(object, colAttrib) }}</th>
 				{% endfor %}
 			</tr>
 			</thead>

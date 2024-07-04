@@ -1,0 +1,210 @@
+allowRepeatingEvents: true
+color: '#9233A0'
+description: ''
+descriptionFieldHandle: body
+fieldLayout:
+  tabs:
+    -
+      elementCondition: null
+      elements:
+        -
+          elementCondition: null
+          fieldUid: 90d724d7-7c32-4d04-8b9a-3900d6ecdb84 # Address(es)
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 4ece883e-2886-4332-83e4-efec2a2c4b9d
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 7084b5f1-19ef-4812-97fc-927d55c98c93 # Event Image
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: bd7b422d-2e56-4108-a219-15df11c765cd
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 00ccf4ec-25d9-4bce-864a-4d06468adb36 # Body
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 176e8953-e051-4df8-8265-649ee47ec314
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 6b0e6bd2-24c1-4341-acf8-97862725a74c # Event Types
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 57294c4a-051d-40c9-8587-e125c418780c
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 21768f47-1c01-40db-8160-bc10697e7054 # Official Press Release
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: a1e4d069-2f5f-4106-a57c-b9c6de57b1f1
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 3ff802bf-48ac-4e96-8e64-c7988d029bc1 # Documents
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 32c5770a-cb4d-4195-a027-c7a1d0bfe9d8
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: f73a45bb-5e6b-4a27-8f19-edd0e6bbc507 # Video Link
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 8991920e-1a9f-4c09-bd7d-e31f99d81012
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 5f3a7701-690d-491c-9c18-9e92305a1aad # Event Contact
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 4174521f-21d8-45b3-89b5-21428f1b3e52
+          userCondition: null
+          warning: null
+          width: 100
+      name: Content
+      uid: 4f1b3d37-e023-43fe-85a7-cddf3f1b58a0
+      userCondition: null
+    -
+      elementCondition: null
+      elements:
+        -
+          elementCondition: null
+          fieldUid: a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc # Boards & Commissions
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 04a2f93b-b2d4-4313-bec6-9983f97a929b
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133 # Departments
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: b0b3f5eb-2c60-4bf6-b847-807631074fb5
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 73b7b0c7-bff1-4c55-97aa-fc62042f0347 # Officials
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 3704da86-2170-4c96-8d13-0fb5c7cce633
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: e67ec759-ea3a-4568-bfa6-a314ff3d1036 # Projects
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 066b80e8-b71a-43c1-9143-599b6dbe747b
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 44b00870-0842-4c4e-838f-dcd688fb5b05 # Topics
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: e698b3ba-87e7-4620-8672-3b837a8bebfe
+          userCondition: null
+          warning: null
+          width: 100
+      name: Relationships
+      uid: 5e2e4c45-8810-4987-a15a-4e9ee9006e96
+      userCondition: null
+    -
+      elementCondition: null
+      elements:
+        -
+          elementCondition: null
+          fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d # Metadata
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: a9ac0308-0fac-4b29-924e-1fe431ecd32c
+          userCondition: null
+          warning: null
+          width: 100
+      name: SEO
+      uid: ea45450c-1a83-4ecc-9f9d-8033ed254f12
+      userCondition: null
+  uid: ff63fccf-874a-4cf3-8a26-6072e3ac72db
+handle: events
+hasTitleField: true
+icsHash: da4b9237bacccdf19c0760cab7aec4a8359010b05b969c3188b786.44525559
+icsTimezone: floating
+locationFieldHandle: address
+name: Events
+siteSettings:
+  5528fd16-5b85-4084-a277-e13c518aac96:
+    enabledByDefault: true
+    hasUrls: true
+    siteId: c35d3a93-d7f4-4c37-ae3e-1b4d403311bb # City of Oakland
+    template: events/_entry
+    uriFormat: 'events/{slug}'
+titleFormat: ''
+titleLabel: Title
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
