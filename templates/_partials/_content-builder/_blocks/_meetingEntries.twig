@@ -20,7 +20,7 @@
 
 {% if meetings|length %}
   <section class="relative z-0 pb-12">
-    <h2 id="meetings" class="{{ hClass }} {{ addClasses ?? "" }}">{{ headingText }}</h2>
+    <h2 id="{{ headingText|kebab }}" class="{{ hClass }} {{ addClasses ?? "" }}">{{ headingText }}</h2>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {% for entry in meetings %}
       <a class="shadow card default" href="{{ entry.url }}">
