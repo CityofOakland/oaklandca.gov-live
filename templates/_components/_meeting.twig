@@ -2,7 +2,7 @@
 {% macro time(start, end = null) %}
 	<p class="flex items-center">
 		{{ svg("@webroot/dist/img/icon-clock.svg") }}
-		<span class="ml-2">{{ start }}{{ end ? " to #{end}" }}</span>
+		<span class="ml-2">{{ start|date("g:ia") }}{{ end ? " to #{end|date('g:ia')}" }}</span>
 	</p>
 {% endmacro %}
 
@@ -41,10 +41,10 @@
 	{% endif %}
 	<div class="items-center justify-between md:flex">
 		{% if meeting.type == "meetings" and meeting.startTime %}
-			{{ macro.time(meeting.startTime|date("g:ia"), meeting.endTime|date("g:ia")) }}
+			{{ macro.time(meeting.startTime, meeting.endTime) }}
 		{% endif %}
 		{% if meeting.type == "meetingsImported" and meeting.startDate %}
-			{{ macro.time(meeting.startDate|date("g:ia"), meeting.endDate|date("g:ia")) }}
+			{{ macro.time(meeting.startDate, meeting.endDate) }}
 		{% endif %}
 		<ul class="mt-0 list-none items-center p-0 md:flex related">
 			{% if meeting.type =="meetings" %}
