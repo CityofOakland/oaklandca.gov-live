@@ -12,7 +12,7 @@
 	{% if entrySection == 'boardsCommissions' %}
 		{% set query = craft.entries.section(entrySection).relatedTo(relatedEntry).officialBoardAndCommission(true).type('boardsCommissions').limit(25).orderBy('title') %}
 	{% else %}
-		{% set query = craft.entries.section(entrySection).relatedTo(relatedEntry).limit(25).orderBy('title') %}
+		{% set query = craft.entries.section(entrySection).relatedTo(relatedEntry).limit(15).orderBy('postDate desc') %}
 	{% endif %}
 	{% paginate query as pageInfo, pageEntries %}
 	{{ include("_partials/_elements/_pagination.twig") }}
@@ -20,9 +20,13 @@
 		{% for entry in pageEntries %}
 			<article>
 				<h2 class="my-0 text-lg font-normal md:text-2xl"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+				<p class="mt-2 mb-0 text-sm md:text-lg">
 				{% if entry.leadIn %}
-					<p class="mt-2 mb-0 text-sm md:text-lg">{{ entry.leadIn }}</p>
+					{{ entry.leadIn }}
+				{% elseif entrySection == 'updates' %}
+					{{ entry.mainContent ? truncate(entry.mainContent, 240) : "…" }}
 				{% endif %}
+				</p>
 			</article>
 		{% endfor %}
 	</div>
