@@ -9,7 +9,7 @@
 		}) }}
 	{% endblock %}
 	<section class="relative z-0 bg-white">
-		<div class="container pt-0">
+		<div class="container px-8 py-8 @3xl:px-16 md:py-16">
 			<div class="w-full">
 				<div id="hits">
 					{% set updates = craft.entries.section("updates").limit(6) %}
@@ -48,7 +48,7 @@
 					{% endfor %}
 				</div>
 				<div class="flex items-center justify-center mt-4 text-2xl">
-					{% if updates.total() > 6 %}
+					{% if updates.count() > 6 %}
 						{% if updateInfo.prevUrl %}<a class="mx-2 text-dark" href="{{ updateInfo.prevUrl }}"><</a>{% endif %}
 						{% for page, url in updateInfo.getPrevUrls(5) %}
 							<a class="mx-2 text-dark" href="{{ url }}">{{ page }}</a>

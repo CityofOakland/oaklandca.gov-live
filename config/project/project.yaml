@@ -1,4 +1,4 @@
-dateModified: 1720711167
+dateModified: 1720798127
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -953,6 +953,7 @@ meta:
     7664938a-7aa3-400c-ab55-335b7ef374bd: 'Column 1 Heading' # Column 1 Heading
     19567722-f3ec-4502-977f-61661602f624: 'City Services and Resources Updates' # City Services and Resources Updates
     20567858-8423-4c20-9004-d0b02150fa2a: 'Meetings Index' # Meetings Index
+    22368497-f2e6-476f-9049-a304a6cd5f54: 'Website Updates Index' # Website Updates Index
     23389191-2978-49d8-a70e-6da12c8aeab0: 'Column 1 Cell' # Column 1 Cell
     24776178-dc7d-4971-bb42-16dba0790379: 'Text Cards' # Text Cards
     28933675-d3ec-4b03-bd2c-515c63e5a7e4: 'Related Documents' # Related Documents
@@ -969,6 +970,7 @@ meta:
     95363013-85f2-4588-800f-e939bf922cbf: 'Featured Profile' # Featured Profile
     98698930-f730-4a54-a9fa-491f477e8252: Officials # Officials
     a0ebc1aa-769e-4adc-a633-87b0e2c2626c: 'Services Index' # Services Index
+    a02a8d85-5275-4d11-9332-94d22b0aada9: 'Website Updates Index' # Website Updates Index
     a027ac28-65c7-472f-b9ea-d30253b0205f: 'Entries Description' # Entries Description
     a081fc5f-03ce-4909-8255-dd92e7c9076c: 'Call to Action' # Call to Action
     a1a9a232-768c-41ae-a487-aebf145b4062: Vimeo # Vimeo
