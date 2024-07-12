@@ -79,7 +79,7 @@
 		{# parent service category #}
 		{{ breadCrumb.link("/services", "Services") }}
 		{{ separator }}
-		<span aria-current="page" class="text-gray-800">{{ entry.title }}</span>
+		{{ breadCrumb.current(entry.title) }}
 	{% elseif serviceTypes|length == 1 %}
 		{# entry has one category only #}
 		{{ breadCrumb.link("/services", "Services") }}
