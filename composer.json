@@ -2,8 +2,7 @@
   "name": "cityofoakland/oaklandca.gov",
   "description": "The official Craft CMS website for the City of OaklandCA.gov",
   "require": {
-    "craftcms/cms": "4.10.4",
-    "besteadfast/craft-preparse-field": "2.0.2",
+    "craftcms/cms": "4.10.5",
     "craftcms/aws-s3": "2.2.1",
     "craftcms/feed-me": "5.6.0",
     "craftcms/store-hours": "3.1.0",
@@ -16,7 +15,7 @@
     "mmikkel/retcon": "2.8.1",
     "nystudio107/craft-emptycoalesce": "4.0.0",
     "nystudio107/craft-retour": "4.1.18",
-    "nystudio107/craft-seomatic": "4.0.50",
+    "nystudio107/craft-seomatic": "4.1.0",
     "nystudio107/craft-typogrify": "4.0.4",
     "nystudio107/craft-vite": "4.0.9",
     "presseddigital/linkit": "4.0.4.1",
@@ -24,7 +23,7 @@
     "putyourlightson/craft-sherlock": "4.5.0",
     "rynpsc/craft-phone-number": "2.2.0",
     "sentry/sdk": "^3.1",
-    "solspace/craft-freeform": "5.5.3",
+    "solspace/craft-freeform": "5.5.4",
     "spacecatninja/imager-x": "4.4.1",
     "spicyweb/craft-neo": "4.2.8",
     "studioespresso/craft-dumper": "5.0.1",
@@ -41,11 +40,12 @@
     "putyourlightson/craft-dashboard-begone": "2.0.0",
     "nystudio107/craft-twigprofiler": "4.0.0",
     "studioespresso/craft-scout": "4.1.0",
-    "craftpulse/craft-colour-swatches": "4.4.0",
+    "craftpulse/craft-colour-swatches": "4.5.2",
     "roberskine/craft-user-manual": "5.0.1",
     "craftcms/ckeditor": "3.8.3",
     "swishdigital/template-selector": "5.0.1",
-    "solspace/craft-calendar": "5.0.5"
+    "solspace/craft-calendar": "5.0.6",
+    "jalendport/craft-preparse": "2.1.2"
   },
   "autoload": {
     "psr-4": {
