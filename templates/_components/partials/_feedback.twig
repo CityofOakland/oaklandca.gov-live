@@ -60,19 +60,18 @@
 <section>
 	<div class="@container bg-gray-900">
 		<div id="helpful" class="container px-6 py-6 @3xl:px-16 components">
-			<div class="items-center justify-between text-white md:flex">
-				<div class="flex items-center">
-					<p class="mr-8 font-bold">Was this page helpful?</p>
-					<button class="button secondary small my-0" data-open="whyWasThisPageHelpful">
-						Yes
-					</button>
-					<button class="button secondary small my-0 mr-0" data-open="whatWasWrongWithThisPage">
-						No
-					</button>
-				</div>
-				<p class="cursor-pointer underline pt-6 md:pt-0" data-open="reportProblem" role="button">
+			<div class="flex flex-wrap items-center text-white md:justify-between" role="group" aria-labelledby="button-group-label">
+				<p class="mr-8 font-bold" id="button-group-label">Was this page helpful?</p>
+				<button class="button secondary small my-0" type="button" data-open="whyWasThisPageHelpful">
+					Yes
+				</button>
+				<button class="button secondary small my-0 mr-0" type="button" data-open="whatWasWrongWithThisPage">
+					No
+				</button>
+				<div class="md:flex-grow"></div>
+				<button class="cursor-pointer text-sm underline pt-6 md:pt-0" type="button" data-open="reportProblem">
 					Report a problem with this page
-				</p>
+				</button>
 			</div>
 		</div>
 	</div>
@@ -84,15 +83,15 @@
 </section>
 
 {% js at endBody %}
-	var $buttons = $('[data-open]');
-	$buttons.on('click',function(){
-	var $this = $(this);
+	const $buttons = $('[data-open]');
+	$buttons.on('click',function() {
+		let $this = $(this);
 
-	$('.form').addClass('oak-hidden');
-	$('#' + $(this).data('open')).removeClass('oak-hidden');
+		$('.form').addClass('oak-hidden');
+		$('#' + $(this).data('open')).removeClass('oak-hidden');
 
-	$buttons.removeClass('state-active');
-	$this.addClass('state-active');
+		$buttons.removeClass('state-active');
+		$this.addClass('state-active');
 	});
 {% endjs %}
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}
