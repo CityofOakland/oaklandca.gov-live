@@ -12,6 +12,11 @@
 		if (window.MutationObserver) {
 			let mutationObserver = new MutationObserver(function (mutations) {
 				mutations.forEach(function (mutation) {
+                    const attributeValue = mutation.target.className;
+                    if (attributeValue.includes('translated')) {
+                        document.body.setAttribute('dir', attributeValue.split('-')[1]);
+                    } else document.body.setAttribute('dir', 'ltr');
+
 					let oldElementClass = mutation.oldValue;
 					let currentElementClass = mutation.target.className;
 					if (! oldElementClass && currentElementClass?.indexOf('translated-') > -1) {
