@@ -16,6 +16,7 @@ upload_dirs:
 use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
+ngrok_args: --domain star-selected-badger.ngrok-free.app
 
 # Key features of DDEV's config.yaml:
 
