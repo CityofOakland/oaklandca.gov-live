@@ -6,6 +6,10 @@ use Craft;
 use craft\base\Element;
 use craft\elements\Entry;
 use craft\events\RegisterElementExportersEvent;
+use craft\helpers\StringHelper;
+use Solspace\Freeform\Events\Fields\CompileFieldAttributesEvent;
+use Solspace\Freeform\Fields\FieldInterface;
+use Solspace\Freeform\Fields\Parameters\Parameters;
 use yii\base\Event;
 
 use modules\ExportModule;
@@ -26,6 +30,19 @@ class Module extends \yii\base\Module
         } else {
             $this->controllerNamespace = 'modules\\controllers';
         }
+
+        // Make Feedback forms IDs unique and accessible for screen readers
+        Event::on(
+            FieldInterface::class,
+            FieldInterface::EVENT_COMPILE_ATTRIBUTES,
+            function (CompileFieldAttributesEvent $event) {
+                $field = $event->getField();
+                $handle = StringHelper::dasherize($field->getForm()->getHandle()) . '-' . $field->getHandle();
+                if ($field->getHandle() === 'message') {
+                    $field->setParameters(['parameters' => (new Parameters())->add('id', $handle)]);
+                }
+            }
+        );
 
         // Remove "All Entries" source
         Event::on(
@@ -86,7 +103,6 @@ class Module extends \yii\base\Module
             }
           }
         });
-
 
         Craft::$app->view->hook('cp.entries.edit.content', function(&$context) {
           $entry = $context['entry'];
