@@ -1,14 +1,21 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 <div class="flex {% if day.isBlank %} text-gray-700 {% endif %}">
-  <dt class="w-32 font-bold">{{ day.name }}</dt>
-</dd>
-<dd class="flex-1">
-  {% if day.isBlank %}
-    Closed
-  {% else %}
-    {{ day.open | time('short') }}
-    -
-    {{ day.close | time('short') }}
-  {% endif %}
-</dd></div>
+    <dt class="w-32 font-bold">{{ day.name }}</dt>
+    <dd class="flex-1">
+      {% if day.isBlank %}
+        Closed
+      {% else %}
+        {{ day.open | time('short') }}
+        -
+        {{ day.close | time('short') }}
+      {% endif %}
+    </dd>
+    <dd class="flex-1">
+        {% if day.isBlank %}
+            Closed
+        {% else %}
+            {{ day.secondOpen | time('short') }} - {{ day.secondClosing | time('short') }}
+        {% endif %}
+    </dd>
+</div>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}
