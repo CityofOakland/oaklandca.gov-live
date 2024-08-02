@@ -10,6 +10,7 @@
         {{ day.close | time('short') }}
       {% endif %}
     </dd>
+    {% if (day.secondOpen) %}
     <dd class="flex-1">
         {% if day.isBlank %}
             Closed
@@ -17,5 +18,6 @@
             {{ day.secondOpen | time('short') }} - {{ day.secondClosing | time('short') }}
         {% endif %}
     </dd>
+    {% endif %}
 </div>
 {% if currentUser %}<!-- End {{ _self }} -->{% endif %}
