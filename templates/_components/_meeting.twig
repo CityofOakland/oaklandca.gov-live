@@ -2,7 +2,7 @@
 {% macro time(start, end = null) %}
 	<p class="flex items-center">
 		{{ svg("@webroot/dist/img/icon-clock.svg") }}
-		<span class="ml-2">{{ start|date("g:ia") }}{{ end ? " to #{end|date("g:ia")}" }}</span>
+		<span class="ml-2">{{ start|date("g:ia") }}{{ end ? " to #{end|date('g:ia')}" }}</span>
 	</p>
 {% endmacro %}
 

@@ -1,8 +1,8 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set imageIsLeft = block.imageColumnPosition == "left" ? true : false %}
 {% set direction = imageIsLeft ? "md:flex-row" : "md:flex-row-reverse" %}
-{% set imagePad = imageIsLeft ? "md:pr-4" : "md:pl-4" %}
-{% set textPad = imageIsLeft ? "md:pl-4" : "md:pr-4" %}
+{% set imagePad = imageIsLeft ? "md:pe-4" : "md:ps-4" %}
+{% set textPad = imageIsLeft ? "md:ps-4" : "md:pe-4" %}
 <section class="relative z-0 pb-12">
   {{ include("_partials/_heading.twig", {
     params: {

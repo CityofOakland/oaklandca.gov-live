@@ -2,8 +2,12 @@
   "name": "oaklandca.gov",
   "version": "1.0.0",
   "description": "Website for oaklandca.gov",
-  "author": "Goatsocial Creative Inc. <developers@meetgoat.com>, Christopher Kennedy, onebrightlight <chris@onebrightlight.com>",
-  "copyright": "onebrightlight",
+  "author": "Arian Xhezairi, BetterLetter <ax@betterletter.xyz>",
+  "contributors": [
+    "Goatsocial Creative Inc. <developers@meetgoat.com>",
+    "Christopher Kennedy, onebrightlight <chris@onebrightlight.com>"
+  ],
+  "copyright": "betterletter",
   "license": "UNLICENSED",
   "private": true,
   "engines": {
@@ -13,25 +17,25 @@
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.0",
-    "@tailwindcss/forms": "^0.5.3",
-    "@vitejs/plugin-legacy": "^4.0.2",
-    "autoprefixer": "^10.4.14",
+    "@tailwindcss/forms": "^0.5.5",
+    "@vitejs/plugin-legacy": "^4.1.0",
+    "autoprefixer": "^10.4.15",
     "babel-loader": "^9.1.2",
-    "moment": "^2.29.4",
+    "moment": "^2.30.1",
     "postcss-easy-import": "^4.0.0",
     "postcss-font-magician": "^3.0.0",
     "postcss-hexrgba": "^2.1.0",
     "rollup-plugin-critical": "^1.0.12",
-    "tailwindcss": "^3.3.2",
-    "vite": "^4.2.1",
-    "vite-plugin-restart": "0.3.1"
+    "tailwindcss": "^3.3.5",
+    "vite": "^4.5.0",
+    "vite-plugin-restart": "^0.4.0"
   },
   "dependencies": {
     "baremetrics-calendar": "^1.0.14",
     "cross-env": "^7.0.3",
     "es6-promise": "^4.2.8",
     "picturefill": "^3.0.3",
-    "postcss": "^8.4.21"
+    "postcss": "^8.4.39"
   },
   "browserslist": [
     "> .5% or last 2 versions"

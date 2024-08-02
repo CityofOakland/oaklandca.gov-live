@@ -12,7 +12,7 @@
       }) }}
       <div class="mt-4 lg:flex">
         {% if addresses %}
-          <div class="lg:w-1/2 lg:pr-8">
+          <div class="lg:w-1/2 lg:pe-8">
             <h3 class="mb-0 text-2xl">Address{% if addresses > 1 %}es{% endif %}</h3>
             {% for block in entry.addresses ?? '' %}
               {% switch block.type %}
@@ -37,7 +37,7 @@
             {{ entry.addressExtended }}
           </div>
         {% endif %}
-        <div class="{% if addresses %} lg:w-1/2 lg:pl-8 {% else %} flex-1 {% endif %}">
+        <div class="{% if addresses %} lg:w-1/2 lg:ps-8 {% else %} flex-1 {% endif %}">
           {% set phonesTrue = entry.phoneNumber ?? entry.faxNumber ?? entry.ttyNumber ?? false %}
           {% if entry.phoneNumbers | length %}
             <h3 class="mb-0 text-2xl">Phone Numbers</h3>

@@ -24,7 +24,14 @@
 	{% set meetingDate = (entry.type == 'meetings' ? entry.startTime : entry.startDate) %}
 	<h1 class="my-0 text-3xl font-bold md:text-4xl">{% if status and status.value and status.value !== 'default' and status.value !== 'active' %}{{ status.label }} - {% endif %}{{ entry.title }}</h1>
 	{% if entry.date %}
-		<div class="mt-4 text-xl leading-8 tw-only">This meeting of the {{ fullTitle }} {{ now|date('Y-m-d') <= entry.date|date('Y-m-d') ? 'will be held on' : 'was held on'}} {{ entry.date|date("F j, Y") }}{{ meetingDate ? " at " ~ meetingDate|date("g:ia") : "" }}</div>
+		<div class="mt-4 text-xl leading-8 tw-only">
+			This meeting of the {{ fullTitle }}
+			{% if status == 'canceled' %}
+				{{ 'was canceled.' }}
+			{% else %}
+				{{ now|date('Y-m-d') <= entry.date|date('Y-m-d') ? 'will be held on' : 'was held on'}} {{ entry.date|date("F j, Y") }}{{ meetingDate ? " at " ~ meetingDate|date("g:ia") : "" }}
+			{% endif %}
+		</div>
 	{% endif %}
 {% endblock %}
 
