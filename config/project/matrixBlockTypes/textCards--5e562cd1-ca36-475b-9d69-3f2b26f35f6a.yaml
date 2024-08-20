@@ -110,7 +110,7 @@ fields:
               - 'Light Grey'
             -
               - value
-              - bg-gray-100
+              - 'bg-gray-100 px-8 mb-8'
             -
               - default
               - ''
@@ -121,7 +121,7 @@ fields:
               - 'Light Blue'
             -
               - value
-              - bg-blue-100
+              - 'bg-blue-100 px-8 mb-8'
             -
               - default
               - ''
@@ -132,7 +132,7 @@ fields:
               - 'Dark Blue'
             -
               - value
-              - 'bg-blue-800 text-white'
+              - 'bg-blue-800 text-white px-8 mb-8'
             -
               - default
               - ''
@@ -173,7 +173,7 @@ fields:
     searchable: false
     settings:
       blockTypeFields: 0
-      changedFieldIndicator: 927651117
+      changedFieldIndicator: 1602687514
       columns:
         __assoc__:
           -
