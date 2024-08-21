@@ -66,7 +66,7 @@
 				search: q,
 				relatedTo: relatedToElements,
 				limit: null
-			}, "asc") %}
+			}, 'asc', true) %}
 			{% set totalPages = (events|length / perPage)|round(0, "ceil") %}
 		{% else %}
 			{% set events = date_query is defined ? date_query : craft.calendarize.upcoming({
@@ -74,7 +74,7 @@
 				search: q,
 				relatedTo: relatedToElements,
 				limit: null
-			}, "asc")|insertUpcomingLibraryEvents(q, null, null) %}
+			}, 'asc', true)|insertUpcomingLibraryEvents(q, null, null) %}
 			{% set totalPages = (events|length / perPage)|round(0, "ceil") %}
 		{% endif %}
 	{% case "past" %}
@@ -83,7 +83,7 @@
 			search: q,
 			relatedTo: relatedToElements,
 			limit: null
-		}, "desc") %}
+		}, 'desc', true) %}
 		{% set totalPages = (events|length / perPage)|round(0, "ceil") %}
 {% endswitch %}
 
