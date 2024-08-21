@@ -107,11 +107,7 @@
 
 {% macro link(label, class, text, url) %}
 	<li>
-		<a
-			aria-label="{{ label }}"
-			class="{{ class }}"
-			href="{{ url }}"
-		>
+		<a aria-label="{{ label }}" class="{{ class }}" href="{{ url }}">
 			{{ text }}
 		</a>
 	</li>
@@ -304,25 +300,25 @@
 	<form action="{{ entry.url }}">
 		<input type="hidden" name="type" value="{{ type }}" />
 		{{ macros.select("Month", "month", "month", [
-			{"01"  : "January"},
-			{"02"  : "February"},
-			{"03"  : "March"},
-			{"04"  : "April"},
-			{"05"  : "May"},
-			{"06"  : "June"},
-			{"07"  : "July"},
-			{"08"  : "August"},
-			{"09"  : "September"},
-			{"10"  : "October"},
-			{"11"  : "November"},
-			{"12"  : "December"}
+			{"01" : "January"},
+			{"02" : "February"},
+			{"03" : "March"},
+			{"04" : "April"},
+			{"05" : "May"},
+			{"06" : "June"},
+			{"07" : "July"},
+			{"08" : "August"},
+			{"09" : "September"},
+			{"10" : "October"},
+			{"11" : "November"},
+			{"12" : "December"}
 		], "Select a month"
 		) }}
-		{% set earliest_year = craft.calendarize.between("2017-01-01", now|date("Y-m-d"),{limit:1, section: ["events"]}, "asc")[0].calendarize.startDate|date("Y") %}
-		{% set latest_year = craft.calendarize.between("2017-01-01", now|date("Y-m-d"),{limit:1, section: ["events"]}, "desc")[0].calendarize.startDate|date("Y") %}
+		{% set currentYear = now.format('Y') %}
+		{% set startYear = now.modify('-9 years').format('Y') %}
 		{% set years = [] %}
-		{% for year in range(latest_year, earliest_year) %}
-			{% set years =  years|merge([{(year): year}]) %}
+		{% for year in range(currentYear, startYear) %}
+			{% set years = years|merge([{(year): year}]) %}
 		{% endfor %}
 		{{ macros.select("Year", "year", "year", years, "Select a year") }}
 
