@@ -43,6 +43,7 @@
 	{% set physicalLocation = clone(event.eventLocations).type('physicalLocation').one() ?? null %}
 	{% set onlineLocation = clone(event.eventLocations).type('onlineLocation') %}
 	{% set eventImage = event.eventImage.one() ?? null %}
+	{% set eventType = craft.app.request.getQueryParam('type') ?: 'upcoming' %}
 	<div class="pb-6 result mb-4">
 		<div class="-mx-4 flex">
 			<div class="px-4 md:w-1/4 shrink-0">
@@ -62,7 +63,7 @@
 						<span data-type="Online">Online</span>
 					{% endif %}
 				</h3>
-				<p class="font-bold">{{ event.calendarize.startDate|date("l, F j, Y") }}</p>
+				<p class="font-bold">{{ (eventType === 'upcoming' and event.next) ? event.next|date("l, F j, Y") : event.calendarize.startDate|date("l, F j, Y") }}</p>
 				{% if event.calendarize.allDay %}
 					<p class="flex items-center">
 						{{ svg("@webroot/dist/img/icon-clock.svg") }}
