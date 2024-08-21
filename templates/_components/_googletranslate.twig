@@ -1,41 +1,60 @@
 <script>
-	function googleTranslateElementInit() {
-		new google.translate.TranslateElement({
-			pageLanguage: 'en',
-			includedLanguages: 'ceb,en,es,hmn,ja,km,ko,mn,tl,vi,zh-TW,zh-CN,ar',
-			layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT
-		}, 'google_translate_element');
-	}
+    // Google Translate widget restore https://stackoverflow.com/a/78357135
+    function clearTranslation() {
+        let restored = false;
+        Object.keys(window.googleTranslator).forEach((k) => {
+            if (restored) {
+                return;
+            }
+            if (typeof window.googleTranslator[k]?.restore === 'function') {
+                window.googleTranslator[k].restore();
+                restored = true;
+            }
+        });
 
-	(function () {
-		// Observe DOM mutations whether the <html> node was changed by Google Translate
-		if (window.MutationObserver) {
-			let mutationObserver = new MutationObserver(function (mutations) {
-				mutations.forEach(function (mutation) {
+        // Also, flush the cookie that preserves the lang change across reloads
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+    }
+
+    // Google Translate Widget init
+    function googleTranslateElementInit() {
+        window.googleTranslator = new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'ceb,en,es,hmn,ja,km,ko,mn,tl,vi,zh-TW,zh-CN,ar',
+            layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT
+        }, 'google_translate_element');
+    }
+
+    (function () {
+        // Observe DOM mutations whether the <html> node was changed by Google Translate
+        if (window.MutationObserver) {
+            let mutationObserver = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
+                    // Hack to trigger TailwindCSS LTR classes
                     const attributeValue = mutation.target.className;
                     if (attributeValue.includes('translated')) {
                         document.body.setAttribute('dir', attributeValue.split('-')[1]);
                     } else document.body.setAttribute('dir', 'ltr');
 
-					let oldElementClass = mutation.oldValue;
-					let currentElementClass = mutation.target.className;
-					if (! oldElementClass && currentElementClass?.indexOf('translated-') > -1) {
-						dl.push({
-							'event': 'page_translated',
-							'translationLanguage': mutation.target.lang || document.getElementsByTagName('html')[0].getAttribute('xml:lang'),
-							'debug_mode': true,
-						});
-					}
-				})
-			})
+                    let oldElementClass = mutation.oldValue;
+                    let currentElementClass = mutation.target.className;
+                    if (! oldElementClass && currentElementClass?.indexOf('translated-') > -1) {
+                        dl.push({
+                            'event': 'page_translated',
+                            'translationLanguage': mutation.target.lang || document.getElementsByTagName('html')[0].getAttribute('xml:lang'),
+                            'debug_mode': true,
+                        });
+                    }
+                })
+            })
 
-			let htmlNode = document.querySelector('html');
-			mutationObserver.observe(htmlNode, {
-				attributes: true,
-				attributeOldValue: true,
-				attributeFilter: ['class']
-			})
-		}
-	})();
+            let htmlNode = document.querySelector('html');
+            mutationObserver.observe(htmlNode, {
+                attributes: true,
+                attributeOldValue: true,
+                attributeFilter: ['class']
+            })
+        }
+    })();
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
