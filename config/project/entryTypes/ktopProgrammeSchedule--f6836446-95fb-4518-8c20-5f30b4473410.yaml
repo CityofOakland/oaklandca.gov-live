@@ -1,0 +1,59 @@
+fieldLayouts:
+  ef6d6651-a9fd-4cb3-828a-b7665ad4aa89:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: a1fea6a9-1634-427a-94a5-f4b37ceb181a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 31d30a51-422e-471c-be55-3441a4219dd8 # Date
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: eaa7e727-cc60-4421-91dc-c3a917e03ed8
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: a0501d4f-209d-4e94-9f13-b1d8350d3fd0
+        userCondition: null
+handle: ktopProgrammeSchedule
+hasTitleField: true
+name: 'KTOP Programme Schedule'
+section: 9168f154-c0f9-4cf9-991d-60b287a85fc0 # Imported Content
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 4
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
