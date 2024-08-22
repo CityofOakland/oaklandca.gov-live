@@ -22,6 +22,9 @@ p.small {
   @apply rounded-sm border-none shadow !important;
 }
 
+#sitewide-message a {
+  @apply text-white border-b-2 hover:border-none hover:text-slate-900 visited:text-white
+}
 
 .section-box {
   @apply block p-5 font-semibold text-green-800 bg-white border-l-4 border-green-700 rounded-sm shadow-btn;
