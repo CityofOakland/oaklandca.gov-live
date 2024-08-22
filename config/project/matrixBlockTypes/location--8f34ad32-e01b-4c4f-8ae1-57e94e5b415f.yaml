@@ -17,6 +17,30 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            elementCondition: null
+            fieldUid: 611d7835-b38c-44ee-b04c-45d755979af0 # Location Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 97396de3-f88b-4129-999c-6eb39402fdc4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d1c5151d-97db-4f29-984d-565a7e5042f9 # Web Address
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 17ca69d3-8153-4cc9-bc0f-617f83c2bcb4
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: 9d4a7839-386c-4813-b941-23e57739c594
         userCondition: null
@@ -41,6 +65,45 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  611d7835-b38c-44ee-b04c-45d755979af0: # Location Description
+    columnSuffix: ytgztbem
+    contentColumnType: text
+    fieldGroup: null
+    handle: locationDescription
+    instructions: null
+    name: 'Location Description'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      ckeConfig: 1d78c5ef-998b-49b6-845d-be0ce6e636e0 # Simple 2
+      columnType: text
+      defaultTransform: null
+      enableSourceEditingForNonAdmins: true
+      purifierConfig: null
+      purifyHtml: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      showWordCount: false
+      wordLimit: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+  d1c5151d-97db-4f29-984d-565a7e5042f9: # Web Address
+    columnSuffix: tcqsvghb
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: webAddress
+    instructions: null
+    name: 'Web Address'
+    searchable: false
+    settings:
+      maxLength: 255
+      types:
+        - url
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
 handle: location
 name: Location
 sortOrder: 1

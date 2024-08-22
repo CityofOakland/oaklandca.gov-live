@@ -1,4 +1,4 @@
-dateModified: 1724274742
+dateModified: 1724357699
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -836,6 +836,7 @@ meta:
     566b5a14-6baa-4a4e-bb29-50502dd83fa1: Heading # Heading
     566d26c2-9af4-45bb-b994-a552cc3fc03b: 'Display Alt Text as Caption?' # Display Alt Text as Caption?
     0567fab2-a7c6-4e2f-91c2-ea0072e45960: 'Profile Cards Header' # Profile Cards Header
+    611d7835-b38c-44ee-b04c-45d755979af0: 'Location Description' # Location Description
     655bfe09-14cb-4522-9f07-0b095396e88d: Standard # Standard
     658cca3c-01d9-4de0-b0be-bc04b699d806: 'Alert Expiration' # Alert Expiration
     660e5d8e-e73d-428c-8663-ee1cd1c8634c: 'Subcommittee Status' # Subcommittee Status
@@ -1102,6 +1103,7 @@ meta:
     d0cf7d52-44a5-44a7-9efa-ba27c7541ff9: 'Image Column Position' # Image Column Position
     d05048db-b41e-4294-a51e-508edfd8f988: __blank__ # __blank__
     d0559678-a434-4178-91b9-10dfdbc9775a: 'Physical Location' # Physical Location
+    d1c5151d-97db-4f29-984d-565a7e5042f9: 'Web Address' # Web Address
     d2df1fff-f127-4df4-9550-badfe2b7e249: Topic # Topic
     d6ad41f7-f233-4092-81dc-9fdf439eb146: 'Start Date' # Start Date
     d6c41066-ca9b-4de6-aec0-c0cda6889d08: Callout # Callout
@@ -1216,6 +1218,7 @@ meta:
     f8689bf1-95b8-4691-8b6e-eadaff8ebbc8: Toggle # Toggle
     f92663d9-79e4-43e9-9752-215996cb6fe7: 'Add Agenda Topic' # Add Agenda Topic
     f294926b-0b7b-470e-8e62-bfeea6be010b: Image # Image
+    f6836446-95fb-4518-8c20-5f30b4473410: 'KTOP Programme Schedule' # KTOP Programme Schedule
     f8342274-0ae7-48f4-867d-2efd90ca3b93: 'Background Color' # Background Color
     f9088787-d043-44c0-a831-924dd6a72489: 'Call Out Type' # Call Out Type
     fa7723cf-13c4-4edc-9b93-41c7eb30772b: Granicus # Granicus
