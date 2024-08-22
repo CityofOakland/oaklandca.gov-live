@@ -1,6 +1,6 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
-{% set addresses = entry.addresses | length %}
-{% if addresses or entry.phoneNumbers | length or entry.emailAddress %}
+{% set addresses = entry.addresses|length %}
+{% if addresses or entry.phoneNumbers|length or entry.emailAddress %}
   <section class="mt-16 bg-white">
     <div class="container mx-auto">
       <a class="anchor-link" id="page-contact"></a>
@@ -18,9 +18,8 @@
               {% switch block.type %}
               {% case "location" %}
                 <p class="{% if not loop.first %} mt-8 {% endif %} text-1xl mb-0">{{ block.locationName }}</p>
-                {{ include("_partials/_elements/_address.twig", {
-                  location: block
-                }) }}
+                {{ block.locationDescription }}
+                {{ include("_partials/_elements/_address.twig", { location: block }) }}
               {% case "onlineLocation" %}
                 <div class="mt-4 mb-8">
                   {% if block.locationName %}<h4 class="{% if not loop.first %} mt-8 {% endif %} text-2xl mb-0">{{ block.locationName }}</h4>{% endif %}
