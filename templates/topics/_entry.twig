@@ -19,10 +19,10 @@
   ]
 ) %}
 
-{% set relatedNews      = craft.entries.section('news').relatedTo(entry) %}
+{% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 
-{% set contactState = entry.addresses | length or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
-{% set contentBuilder = entry.contentBuilder | length %}
+{% set contactState = entry.addresses|length or entry.phoneNumbers|length or entry.emailAddress|length or entry.openHours|length %}
+{% set contentBuilder = entry.contentBuilder|length %}
 {% set contact = contactState %}
 
 {% block content %}

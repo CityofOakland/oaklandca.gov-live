@@ -8,8 +8,11 @@
 	}) }}
 	{{ block.linkSetDescription }}
 	{% if linkSets %}
-		<div class="flex flex-col space-y-6 md:space-y-0 md:space-x-6 rtl:md:space-x-reverse md:flex-row md:items-stretch">
-			{% for linkSet in linkSets %}
+		{% for linkSet in linkSets %}
+			{% if loop.first or loop.index0 % 3 == 0 %}
+			<div class="flex flex-col space-y-6 md:space-y-0 md:space-x-6 rtl:md:space-x-reverse md:flex-row md:items-stretch mb-8">
+			{% endif %}
+
 				{% set link = linkSet.linkLocation %}
 				{% set linkType = link.typeHandle %}
 				{% set image = linkSet.linkImage.one() ?? null %}
@@ -34,8 +37,8 @@
 						<p class="my-0 text-lg font-bold line-clamp-3 md:text-base lg:text-xl">{{ link.text }}</p>
 					</div>
 				</a>
-			{% endfor %}
-		</div>
+			{% if loop.index0 % 3 == 2 or loop.last %}</div>{% endif %}
+		{% endfor %}
 	{% endif %}
 	{% set link = block.readMoreLink %}
 	{% if link %}

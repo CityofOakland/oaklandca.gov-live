@@ -1,6 +1,6 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
-{% set addresses = entry.addresses | length %}
-{% if addresses or entry.phoneNumbers | length or entry.emailAddress %}
+{% set addresses = entry.addresses|length %}
+{% if addresses or entry.phoneNumbers|length or entry.emailAddress %}
   <section class="mt-16 bg-white">
     <div class="container mx-auto">
       <a class="anchor-link" id="page-contact"></a>
@@ -11,16 +11,17 @@
         }
       }) }}
       <div class="mt-4 lg:flex">
-        {% if addresses %}
+        {% set firstAddr = entry.addresses.first() %}
+        {% if addresses and (firstAddr.locationName or firstAddr.locationDescription) %}
           <div class="lg:w-1/2 lg:pe-8">
             <h3 class="mb-0 text-2xl">Address{% if addresses > 1 %}es{% endif %}</h3>
             {% for block in entry.addresses ?? '' %}
               {% switch block.type %}
               {% case "location" %}
                 <p class="{% if not loop.first %} mt-8 {% endif %} text-1xl mb-0">{{ block.locationName }}</p>
-                {{ include("_partials/_elements/_address.twig", {
-                  location: block
-                }) }}
+                {{ block.locationDescription }}
+                {% if block.webAddress %}<a href="{{ block.webAddress }}" title="{{ block.locationName }}">{{ block.webAddress }}</a>{% endif %}
+                {{ include("_partials/_elements/_address.twig", { location: block }) }}
               {% case "onlineLocation" %}
                 <div class="mt-4 mb-8">
                   {% if block.locationName %}<h4 class="{% if not loop.first %} mt-8 {% endif %} text-2xl mb-0">{{ block.locationName }}</h4>{% endif %}
@@ -37,7 +38,7 @@
             {{ entry.addressExtended }}
           </div>
         {% endif %}
-        <div class="{% if addresses %} lg:w-1/2 lg:ps-8 {% else %} flex-1 {% endif %}">
+        <div class="{% if addresses and (firstAddr.locationName or firstAddr.locationDescription) %} lg:w-1/2 lg:ps-8 {% else %} flex-1 {% endif %}">
           {% set phonesTrue = entry.phoneNumber ?? entry.faxNumber ?? entry.ttyNumber ?? false %}
           {% if entry.phoneNumbers | length %}
             <h3 class="mb-0 text-2xl">Phone Numbers</h3>

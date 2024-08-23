@@ -317,13 +317,13 @@
 			{"12" : "December"}
 		], "Select a month"
 		) }}
-		{% set earliest_year = craft.calendarize.between('2017-01-01', now|date('Y-m-d'),{limit:1, section: ['events']}, 'asc')[0].calendarize.startDate|date('Y') %}
-		{% set latest_year = craft.calendarize.between('2017-01-01', now|date('Y-m-d'),{limit:1, section: ['events']}, 'desc')[0].calendarize.startDate|date('Y') %}
+		{% set currentYear = now.format('Y') %}
+		{% set startYear = now.modify('-9 years').format('Y') %}
 		{% set years = [] %}
-		{% for year in range(latest_year, earliest_year) %}
+		{% for year in range(currentYear, startYear) %}
 			{% set years = years|merge([{(year): year}]) %}
 		{% endfor %}
-		{{ macros.select('Year', 'year', 'year', years, "Select a year") }}
+		{{ macros.select('Year', 'year', 'year', years, 'Select a year') }}
 
 		{{ macros.textInput('Search', 'search', 'q', 'Search agenda items and documents') }}
 		{{ macros.select('Event Type', 'event_type', 'event_type', craft.categories().group('eventTypes').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select an event type') }}
