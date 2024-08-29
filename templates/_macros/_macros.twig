@@ -72,7 +72,7 @@
 	{% set disabled = disabled is defined ? disabled : false %}
 	<label for="{{ id }}">
 		{{ label }}
-		<select class="shadow-form" name="{{ name }}" {{ disabled ? "disabled" }}>
+		<select class="shadow-form" id="{{ name }}" name="{{ name }}" {{ disabled ? "disabled" }}>
 			{% if defaultOption %}
 				<option value="">{{ defaultOption }}</option>
 			{% endif %}
