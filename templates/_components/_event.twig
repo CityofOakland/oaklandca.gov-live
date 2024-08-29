@@ -63,7 +63,7 @@
 						<span data-type="Online">Online</span>
 					{% endif %}
 				</h3>
-				<p class="font-bold">{{ (eventType === 'upcoming' and event.next) ? event.next|date("l, F j, Y") : event.calendarize.startDate|date("l, F j, Y") }}</p>
+				<p class="font-bold">{{ event.next ? event.next|date("l, F j, Y") : event.calendarize.startDate|date("l, F j, Y") }}</p>
 				{% if event.calendarize.allDay %}
 					<p class="flex items-center">
 						{{ svg("@webroot/dist/img/icon-clock.svg") }}
