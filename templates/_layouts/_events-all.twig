@@ -41,7 +41,7 @@
 		section: ["events"],
 		search: q,
 		relatedTo: relatedToElements,
-		limit: nul
+		limit: null
 	},(type == "upcoming" ? "asc" : "desc")) %}
 {% elseif year %}
 	{# TODO: Split current year #}
@@ -299,32 +299,32 @@
 	<h4 class="mt-4 mb-6 py-0">{{ "Search & Filter"|t }}</h4>
 	<form action="{{ entry.url }}">
 		<input type="hidden" name="type" value="{{ type }}" />
-		{{ macros.select("Month", "month", "month", [
-			{"01" : "January"},
-			{"02" : "February"},
-			{"03" : "March"},
-			{"04" : "April"},
-			{"05" : "May"},
-			{"06" : "June"},
-			{"07" : "July"},
-			{"08" : "August"},
-			{"09" : "September"},
-			{"10" : "October"},
-			{"11" : "November"},
-			{"12" : "December"}
-		], "Select a month"
+		{{ macros.select('Month', 'month', 'month', [
+			{'01': 'January'},
+			{'02': 'February'},
+			{'03': 'March'},
+			{'04': 'April'},
+			{'05': 'May'},
+			{'06': 'June'},
+			{'07': 'July'},
+			{'08': 'August'},
+			{'09': 'September'},
+			{'10': 'October'},
+			{'11': 'November'},
+			{'12': 'December'}
+		], 'Select a month'
 		) }}
-		{% set currentYear = now.format('Y') %}
-		{% set startYear = now.modify('-9 years').format('Y') %}
+		{% set startYear = craft.calendarize.between('2017-01-01', now|date('Y-m-d'),{limit:1, section: ['events']}, 'asc')[0].calendarize.startDate|date('Y') %}
+		{% set lastYear = craft.calendarize.between('2017-01-01', now.modify('-1 year')|date('Y-m-d'),{limit:1, section: ['events']}, 'desc')[0].calendarize.startDate|date('Y') %}
 		{% set years = [] %}
-		{% for year in range(currentYear, startYear) %}
+		{% for year in range(lastYear, startYear) %}
 			{% set years = years|merge([{(year): year}]) %}
 		{% endfor %}
-		{{ macros.select("Year", "year", "year", years, "Select a year") }}
+		{{ macros.select('Year', 'year', 'year', years, 'Select a year') }}
 
-		{{ macros.textInput("Search", "search", "q", "Search agenda items and documents") }}
-		{{ macros.select("Event Type", "event_type", "event_type", craft.categories().group("eventTypes").orderBy("title asc").all()|map(body=>{(body.id): body.title}), "Select an event type") }}
-		{{ macros.select("Department", "department", "department", craft.entries().section("departments").orderBy("title asc").all()|map(body=>{(body.id): body.title}), "Select a department") }}
+		{{ macros.textInput('Search', 'search', 'q', 'Search for keywords') }}
+		{{ macros.select('Event Type', 'event_type', 'event_type', craft.categories().group('eventTypes').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select an event type') }}
+		{{ macros.select('Department', 'department', 'department', craft.entries().section('departments').orderBy('title asc').all()|map(body=>{(body.id): body.title}), 'Select a department') }}
 		<div class="flex items-center">
 			<button class="button medium">Apply</button>
 			<a class="mt-4" href="{{ entry.url }}?type={{ type }}">Clear filters</a>

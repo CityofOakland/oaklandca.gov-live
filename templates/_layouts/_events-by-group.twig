@@ -317,10 +317,10 @@
 			{"12" : "December"}
 		], "Select a month"
 		) }}
-		{% set currentYear = now.format('Y') %}
-		{% set startYear = now.modify('-9 years').format('Y') %}
+		{% set startYear = craft.calendarize.between('2017-01-01', now|date('Y-m-d'),{limit:1, section: ['events']}, 'asc')[0].calendarize.startDate|date('Y') %}
+		{% set lastYear = craft.calendarize.between('2017-01-01', now.modify('-1 year')|date('Y-m-d'),{limit:1, section: ['events']}, 'desc')[0].calendarize.startDate|date('Y') %}
 		{% set years = [] %}
-		{% for year in range(currentYear, startYear) %}
+		{% for year in range(lastYear, startYear) %}
 			{% set years = years|merge([{(year): year}]) %}
 		{% endfor %}
 		{{ macros.select('Year', 'year', 'year', years, 'Select a year') }}
