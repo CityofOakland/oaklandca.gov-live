@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "76338183655be941b9e35846af428b6f",
+    "content-hash": "9458c89f7dda38976a858659284d585e",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1389,11 +1389,11 @@
         },
         {
             "name": "composer/pcre",
-            "version": "3.3.0",
+            "version": "3.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/pcre/zipball/1637e067347a0c40bbb1e3cd786b20dcab556a81",
-                "reference": "1637e067347a0c40bbb1e3cd786b20dcab556a81",
+                "url": "https://api.github.com/repos/composer/pcre/zipball/63aaeac21d7e775ff9bc9d45021e1745c97521c4",
+                "reference": "63aaeac21d7e775ff9bc9d45021e1745c97521c4",
                 "shasum": ""
             },
             "require": {
@@ -1435,7 +1435,7 @@
                 "regex",
                 "regular expression"
             ],
-            "time": "2024-08-19T19:43:53+00:00"
+            "time": "2024-08-27T18:44:43+00:00"
         },
         {
             "name": "composer/semver",
@@ -6671,11 +6671,11 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.29.1",
+            "version": "1.30.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/fcaefacf2d5c417e928405b71b400d4ce10daaf4",
-                "reference": "fcaefacf2d5c417e928405b71b400d4ce10daaf4",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/5ceb0e384997db59f38774bf79c2a6134252c08f",
+                "reference": "5ceb0e384997db59f38774bf79c2a6134252c08f",
                 "shasum": ""
             },
             "require": {
@@ -6693,7 +6693,7 @@
                 "MIT"
             ],
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
-            "time": "2024-05-31T08:52:43+00:00"
+            "time": "2024-08-29T09:54:52+00:00"
         },
         {
             "name": "pixelandtonic/imagine",
@@ -7176,17 +7176,17 @@
         },
         {
             "name": "putyourlightson/craft-blitz",
-            "version": "4.22.0",
+            "version": "4.23.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/0b1f82cc68c8a791bb9d2abe92d15c8440af5f83",
-                "reference": "0b1f82cc68c8a791bb9d2abe92d15c8440af5f83",
+                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/1c5289f4281e8b905cbfced538b31fa1803cf361",
+                "reference": "1c5289f4281e8b905cbfced538b31fa1803cf361",
                 "shasum": ""
             },
             "require": {
                 "amphp/http-client": "^4.0",
                 "amphp/parallel": "^1.0",
-                "craftcms/cms": "^4.5.0",
+                "craftcms/cms": "^4.5.11",
                 "cypresslab/gitelephant": "^4.0",
                 "php": "^8.0.2",
                 "putyourlightson/craft-blitz-hints": "^1.2.2",
@@ -7225,7 +7225,7 @@
                 "source": "https://github.com/putyourlightson/craft-blitz",
                 "issues": "https://github.com/putyourlightson/craft-blitz/issues"
             },
-            "time": "2024-08-05T11:28:18+00:00"
+            "time": "2024-08-29T06:03:54+00:00"
         },
         {
             "name": "putyourlightson/craft-blitz-hints",
@@ -7353,11 +7353,11 @@
         },
         {
             "name": "putyourlightson/craft-sprig-core",
-            "version": "2.10.2",
+            "version": "2.12.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-sprig-core/zipball/5cfc07808d39b91eb17f7ad8508459c779c835af",
-                "reference": "5cfc07808d39b91eb17f7ad8508459c779c835af",
+                "url": "https://api.github.com/repos/putyourlightson/craft-sprig-core/zipball/513f544110cabc41b28dfad2f31ca6bb6f77a27f",
+                "reference": "513f544110cabc41b28dfad2f31ca6bb6f77a27f",
                 "shasum": ""
             },
             "require": {
@@ -7379,7 +7379,7 @@
                 "source": "https://github.com/putyourlightson/craft-sprig-core",
                 "issues": "https://github.com/putyourlightson/craft-sprig-core/issues"
             },
-            "time": "2024-08-12T07:29:19+00:00"
+            "time": "2024-08-29T11:34:07+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
