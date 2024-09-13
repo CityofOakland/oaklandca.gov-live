@@ -47,7 +47,7 @@
 		{% set isEntries = (relType == "entries") ? true : false %}
 		{% set hasRels = isEntries ? craft.entries.section(relSectionHandle).relatedTo(entry) %}
 		{% set relCount = true %}
-		{% return relCount %}
+		{% relCount %}
 	{% endfor %}
 {% endmacro %}
 

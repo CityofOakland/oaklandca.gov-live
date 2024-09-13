@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "51a6582af9d3bbc6a5758559ed97b2af",
+    "content-hash": "263356762cd4244383dc8a2998dcc81c",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -4906,51 +4906,6 @@
                 "zip"
             ],
             "time": "2023-06-21T14:59:35+00:00"
-        },
-        {
-            "name": "marionnewlevant/twig-perversion",
-            "version": "3.0.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/marionnewlevant/craft-twig_perversion/zipball/66e9dcfb4fe67cdcfa9e4e683e8f957c6aa720dc",
-                "reference": "66e9dcfb4fe67cdcfa9e4e683e8f957c6aa720dc",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^4.0"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "handle": "twig-perversion",
-                "name": "Twig Perversion",
-                "schemaVersion": "1.0.0",
-                "hasSettings": false,
-                "hasCpSection": false,
-                "documentationUrl": "https://github.com/marionnewlevant/craft-twig_perversion/blob/v2/README.md",
-                "changelogUrl": "https://raw.githubusercontent.com/marionnewlevant/craft-twig_perversion/v2/CHANGELOG.md"
-            },
-            "autoload": {
-                "psr-4": {
-                    "marionnewlevant\\twigperversion\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marion Newlevant",
-                    "homepage": "http://marion.newlevant.com"
-                }
-            ],
-            "description": "Making twig do things it really shouldn't",
-            "keywords": [
-                "craft",
-                "craftcms",
-                "plugin",
-                "twigperversion"
-            ],
-            "time": "2022-05-20T05:33:54+00:00"
         },
         {
             "name": "markbaker/complex",
