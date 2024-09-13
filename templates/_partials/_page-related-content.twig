@@ -5,7 +5,7 @@
 {% if not pageObject.hideRelatedPages %}
   {% set relatedContent = relatedContent ?? [] %}
   {% if relatedContent | length %}
-    {% set isRelated = macros.relatedSectionCount(pageObject, relatedContent) %}
+    {% set isRelated = macros.relatedSectionCount(pageObject, relatedContent)|spaceless|boolean %}
     <a id="page-relatedpages" class="anchor-link"></a>
     {{ include("_partials/_heading.twig", {
       params: {

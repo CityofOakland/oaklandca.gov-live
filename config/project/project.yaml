@@ -1,4 +1,4 @@
-dateModified: 1725018130
+dateModified: 1726235988
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -1382,12 +1382,12 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
   empty-coalesce:
-    enabled: '1'
+    enabled: true
     licenseKey: null
     schemaVersion: 1.0.0
     settings: null
   feed-me:
-    enabled: '1'
+    enabled: true
     licenseKey: null
     schemaVersion: 5.1.1
     settings: null
@@ -1745,7 +1745,7 @@ plugins:
     licenseKey: VN37QSJPKN968T9I03EES5AK
     schemaVersion: 4.0.0
   incognito-field:
-    enabled: '1'
+    enabled: true
     licenseKey: null
     schemaVersion: 1.1.1
     settings: null
@@ -1759,7 +1759,7 @@ plugins:
     enabled: true
     schemaVersion: 3.0.0
   linkit:
-    enabled: '1'
+    enabled: true
     licenseKey: 46HXL3KFU6B2Z3R5LOC856G4
     schemaVersion: 1.2.0
     settings: null
@@ -1810,7 +1810,7 @@ plugins:
       sslRoutingRestrictedUrls:
         - /
   phone-number:
-    enabled: '1'
+    enabled: true
     licenseKey: null
     schemaVersion: 1.0.0
     settings: null
@@ -2198,7 +2198,7 @@ plugins:
     schemaVersion: 1.0.0
     settings: null
   twig-perversion:
-    enabled: '1'
+    enabled: true
     licenseKey: null
     schemaVersion: 1.0.0
     settings: null
