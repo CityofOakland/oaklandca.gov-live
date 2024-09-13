@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "263356762cd4244383dc8a2998dcc81c",
+    "content-hash": "0b4a11b2d3f5a6129df43099ba4ed69b",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -2294,11 +2294,11 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/e157ef3f3124bbf6fe7ce0ffd109e8a8ef284e7f",
-                "reference": "e157ef3f3124bbf6fe7ce0ffd109e8a8ef284e7f",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/901c2ee5d26eb64ff43c47976e114bf00843acf7",
+                "reference": "901c2ee5d26eb64ff43c47976e114bf00843acf7",
                 "shasum": ""
             },
             "require": {
@@ -2348,7 +2348,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2023-02-02T22:02:53+00:00"
+            "time": "2024-09-05T10:17:24+00:00"
         },
         {
             "name": "doctrine/collections",
@@ -6514,11 +6514,11 @@
         },
         {
             "name": "phpoffice/phpspreadsheet",
-            "version": "1.29.0",
+            "version": "1.29.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/fde2ccf55eaef7e86021ff1acce26479160a0fa0",
-                "reference": "fde2ccf55eaef7e86021ff1acce26479160a0fa0",
+                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/59ee38f7480904cd6487e5cbdea4d80ff2758719",
+                "reference": "59ee38f7480904cd6487e5cbdea4d80ff2758719",
                 "shasum": ""
             },
             "require": {
@@ -6592,7 +6592,7 @@
                 "xls",
                 "xlsx"
             ],
-            "time": "2023-06-14T22:48:31+00:00"
+            "time": "2024-09-03T00:55:32+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -8074,11 +8074,11 @@
         },
         {
             "name": "solspace/craft-freeform",
-            "version": "5.5.4",
+            "version": "5.5.10",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/3a9de78b7b5898b97a3201453730456e4810217a",
-                "reference": "3a9de78b7b5898b97a3201453730456e4810217a",
+                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/510d3b6e674d845627aa1f33cebbc4cc7680fdb2",
+                "reference": "510d3b6e674d845627aa1f33cebbc4cc7680fdb2",
                 "shasum": ""
             },
             "require": {
@@ -8093,7 +8093,7 @@
                 "nesbot/carbon": "^1.22.1|^2.19|^3.0.0",
                 "php": "^8.0.2|^8.2.0",
                 "phpoffice/phpspreadsheet": "^1.29",
-                "stripe/stripe-php": "^7.0|^8.0|^9.0|^10.0|^12.0|^13.0",
+                "stripe/stripe-php": "^7.0|^8.0|^9.0|^10.0|^12.0|^13.0|^14.0|^15.0",
                 "symfony/expression-language": "^5.0|^6.0|^7.0",
                 "symfony/filesystem": "^5.0|^6.0|^7.0",
                 "symfony/finder": "^5.0|^6.0|^7.0",
@@ -8126,7 +8126,7 @@
                 }
             ],
             "description": "The most reliable form builder that's ready for wherever your project takes you.",
-            "time": "2024-07-12T02:48:18+00:00"
+            "time": "2024-09-06T16:03:46+00:00"
         },
         {
             "name": "spacecatninja/imager-x",
@@ -8195,11 +8195,11 @@
         },
         {
             "name": "spicyweb/craft-neo",
-            "version": "4.2.8",
+            "version": "4.2.12",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/b3cab7270c67161213f00f2bf0d74e331b8dad73",
-                "reference": "b3cab7270c67161213f00f2bf0d74e331b8dad73",
+                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/e4f33925bbe1e6547e8157ccc311a02f6dcda510",
+                "reference": "e4f33925bbe1e6547e8157ccc311a02f6dcda510",
                 "shasum": ""
             },
             "require": {
@@ -8213,7 +8213,7 @@
                 "schemaVersion": "4.0.0",
                 "class": "benf\\neo\\Plugin",
                 "changelogUrl": "https://github.com/spicywebau/craft-neo/blob/4.x/CHANGELOG.md",
-                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.2.8.zip"
+                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.2.12.zip"
             },
             "autoload": {
                 "psr-4": {
@@ -8241,10 +8241,10 @@
             "support": {
                 "issues": "https://github.com/spicywebau/craft-neo/issues",
                 "source": "https://github.com/spicywebau/craft-neo",
-                "docs": "https://github.com/spicywebau/craft-neo/blob/4.2.8/README.md",
+                "docs": "https://github.com/spicywebau/craft-neo/blob/4.2.12/README.md",
                 "rss": "https://github.com/spicywebau/craft-neo/commits/4.x.atom"
             },
-            "time": "2024-07-10T09:20:58+00:00"
+            "time": "2024-08-30T06:09:45+00:00"
         },
         {
             "name": "ssnepenthe/color-utils",
@@ -8302,11 +8302,11 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v13.18.0",
+            "version": "v15.9.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/02abb043b103766f4ed920642ae56ffdc58c7467",
-                "reference": "02abb043b103766f4ed920642ae56ffdc58c7467",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/dc9726ac0cfbba7b3c97e2cf6042f2c090551cdb",
+                "reference": "dc9726ac0cfbba7b3c97e2cf6042f2c090551cdb",
                 "shasum": ""
             },
             "require": {
@@ -8342,7 +8342,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2024-04-09T21:08:04+00:00"
+            "time": "2024-09-12T22:05:50+00:00"
         },
         {
             "name": "studioespresso/craft-dumper",
@@ -8554,11 +8554,11 @@
         },
         {
             "name": "symfony/cache",
-            "version": "v6.4.8",
+            "version": "v6.4.11",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache/zipball/287142df5579ce223c485b3872df3efae8390984",
-                "reference": "287142df5579ce223c485b3872df3efae8390984",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/36daef8fce88fe0b9a4f8cf4c342ced5c05616dc",
+                "reference": "36daef8fce88fe0b9a4f8cf4c342ced5c05616dc",
                 "shasum": ""
             },
             "require": {
@@ -8611,7 +8611,7 @@
                 "caching",
                 "psr6"
             ],
-            "time": "2024-05-31T14:49:08+00:00"
+            "time": "2024-08-05T07:40:31+00:00"
         },
         {
             "name": "symfony/cache-contracts",
@@ -8953,11 +8953,11 @@
         },
         {
             "name": "symfony/expression-language",
-            "version": "v6.4.8",
+            "version": "v6.4.11",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/expression-language/zipball/0b63cb437741a42104d3ccc9bf60bbd8e1acbd2a",
-                "reference": "0b63cb437741a42104d3ccc9bf60bbd8e1acbd2a",
+                "url": "https://api.github.com/repos/symfony/expression-language/zipball/564e109c40d3637053c942a29a58e9434592a8bf",
+                "reference": "564e109c40d3637053c942a29a58e9434592a8bf",
                 "shasum": ""
             },
             "require": {
@@ -8990,7 +8990,7 @@
             ],
             "description": "Provides an engine that can compile and evaluate expressions",
             "homepage": "https://symfony.com",
-            "time": "2024-05-31T14:49:08+00:00"
+            "time": "2024-08-12T09:55:28+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -10019,11 +10019,11 @@
         },
         {
             "name": "symfony/serializer",
-            "version": "v6.4.9",
+            "version": "v6.4.11",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/serializer/zipball/56ce31d19127e79647ac53387c7555bdcd5730ce",
-                "reference": "56ce31d19127e79647ac53387c7555bdcd5730ce",
+                "url": "https://api.github.com/repos/symfony/serializer/zipball/a75d03d7720417f8a654e73e8f02acdea8779cd0",
+                "reference": "a75d03d7720417f8a654e73e8f02acdea8779cd0",
                 "shasum": ""
             },
             "require": {
@@ -10066,7 +10066,7 @@
             ],
             "description": "Handles serializing and deserializing data structures, including object graphs, into array structures or other formats like XML and JSON.",
             "homepage": "https://symfony.com",
-            "time": "2024-06-28T07:59:05+00:00"
+            "time": "2024-08-17T07:51:47+00:00"
         },
         {
             "name": "symfony/service-contracts",
