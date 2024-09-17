@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0b4a11b2d3f5a6129df43099ba4ed69b",
+    "content-hash": "2518032102cc87f5f63f04820b409d6a",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1683,11 +1683,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "4.12.2",
+            "version": "4.12.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/c06b418e11cc712f8353ae2338ac9880dcbe6889",
-                "reference": "c06b418e11cc712f8353ae2338ac9880dcbe6889",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/1b80f5177f8cd63268cc2738ea63e65aecd792a7",
+                "reference": "1b80f5177f8cd63268cc2738ea63e65aecd792a7",
                 "shasum": ""
             },
             "require": {
@@ -1775,7 +1775,7 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2024-09-12T04:20:09+00:00"
+            "time": "2024-09-14T16:43:40+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -1955,11 +1955,11 @@
         },
         {
             "name": "craftcms/server-check",
-            "version": "2.1.8",
+            "version": "2.1.9",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/server-check/zipball/c86e8aeabc73333111e2bfb4483d7b5402232e48",
-                "reference": "c86e8aeabc73333111e2bfb4483d7b5402232e48",
+                "url": "https://api.github.com/repos/craftcms/server-check/zipball/a24b91625fd4c0f2815bfe17275e14f1bfb37b94",
+                "reference": "a24b91625fd4c0f2815bfe17275e14f1bfb37b94",
                 "shasum": ""
             },
             "type": "library",
@@ -1979,7 +1979,7 @@
                 "requirements",
                 "yii2"
             ],
-            "time": "2023-09-25T17:28:37+00:00"
+            "time": "2024-09-16T15:05:30+00:00"
         },
         {
             "name": "craftcms/store-hours",
@@ -8195,11 +8195,11 @@
         },
         {
             "name": "spicyweb/craft-neo",
-            "version": "4.2.12",
+            "version": "4.2.13",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/e4f33925bbe1e6547e8157ccc311a02f6dcda510",
-                "reference": "e4f33925bbe1e6547e8157ccc311a02f6dcda510",
+                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/15271d82179051f92e6f48c501cf5d47c6d9322e",
+                "reference": "15271d82179051f92e6f48c501cf5d47c6d9322e",
                 "shasum": ""
             },
             "require": {
@@ -8213,7 +8213,7 @@
                 "schemaVersion": "4.0.0",
                 "class": "benf\\neo\\Plugin",
                 "changelogUrl": "https://github.com/spicywebau/craft-neo/blob/4.x/CHANGELOG.md",
-                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.2.12.zip"
+                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.2.13.zip"
             },
             "autoload": {
                 "psr-4": {
@@ -8241,10 +8241,10 @@
             "support": {
                 "issues": "https://github.com/spicywebau/craft-neo/issues",
                 "source": "https://github.com/spicywebau/craft-neo",
-                "docs": "https://github.com/spicywebau/craft-neo/blob/4.2.12/README.md",
+                "docs": "https://github.com/spicywebau/craft-neo/blob/4.2.13/README.md",
                 "rss": "https://github.com/spicywebau/craft-neo/commits/4.x.atom"
             },
-            "time": "2024-08-30T06:09:45+00:00"
+            "time": "2024-09-15T12:42:50+00:00"
         },
         {
             "name": "ssnepenthe/color-utils",
