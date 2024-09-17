@@ -4,7 +4,7 @@
 	content: null
 }|merge(params) %}
 
-{% if vars.content %}
+{% if vars.content|length %}
 	{% set soloBlock = vars.content|length == 1 %}
 	<section class="@container py-12">
 		<div class="container px-6 @3xl:px-16 mx-auto">
