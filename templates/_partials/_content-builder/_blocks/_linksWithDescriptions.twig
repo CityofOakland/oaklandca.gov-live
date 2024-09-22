@@ -11,11 +11,7 @@
     {% for linkSet in block.linkSet.all() %}
       {% set link = linkSet.linkLocation %}
       {% set linkType = link.typeHandle %}
-      {% if link.hasElement %}
-        {% set isDoc = (link.element.type == "documents") ? true : false %}
-      {% else %}
-        {% set isDoc = false %}
-      {% endif %}
+      {% set isDoc = (link.element != null and link.element.type == 'documents') ? true : false %}
       <li>
         <a class="block h-full rounded bg-blue-100 p-5 shadow transition-all duration-75 text-cool-gray-800 hover:bg-blue-200 hover:text-cool-gray-900" href="{{ link.url }}" target="{{ link.target }}">
           <h3 class="my-0 text-lg md:text-xl">{{ link.text }}</h3>
