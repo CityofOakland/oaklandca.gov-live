@@ -211,6 +211,7 @@ form[data-handle="whyWasThisPageHelpful"] {
 
 .accordion-item > button {
   @apply text-base;
+  text-align: start;
   color: #52606d;
   display: flex;
   align-items: center;
