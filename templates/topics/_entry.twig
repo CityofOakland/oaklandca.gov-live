@@ -56,11 +56,13 @@
       <div class="md:flex">
         {% set disableRelatedPages = true %}
         {{ include("_partials/_elements/_nav-sidebar.twig") }}
-        {{ include("_partials/_content-builder/_tool.twig") }}
-        {% if entry.about|length %}
-          {{ include("_partials/_page-about.twig") }}
-        {% endif %}
-        {{ include("_partials/_page-location.twig") }}
+        <div class="flex-1">
+          {{ include("_partials/_content-builder/_tool.twig") }}
+          {% if entry.about|length %}
+            {{ include("_partials/_page-about.twig") }}
+          {% endif %}
+          {{ include("_partials/_page-location.twig") }}
+        </div>
       </div>
     </div>
   </section>
