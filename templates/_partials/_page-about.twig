@@ -1,5 +1,5 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
-{% if entry.teams|length %}
+{% if entry.about|length %}
 <section class="@container flex-1 mt-12 bg-white">
   <div class="container pt-8 pb-6 @3xl:pt-12">
     <a class="anchor-link" id="page-about"></a>
@@ -10,6 +10,7 @@
       }
     }) }}
     <div class="mt-8 sm:flex">
+      {% if entry.teams|length %}
       <div class="sm:w-1/4 sm:mr-8">
         {% for entry in entry.teams %}
           {{ include("_components/_button.twig", {
@@ -19,6 +20,7 @@
           }) }}
         {% endfor %}
       </div>
+      {% endif %}
       <div class="sm:flex-1">
         <div class="max-w-prose body-text">
           {{ entry.about }}
