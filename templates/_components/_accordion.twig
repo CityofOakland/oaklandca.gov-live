@@ -1,6 +1,6 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set list = block is defined ? block.rows.all() : params.rows %}
-<div class="accordion !pt-0" data-allow-toggle>
+<div class="accordion !pt-0 pb-12" data-allow-toggle>
 	<ul class="accordion-controls" aria-label="Accordion Control Group Buttons">
 		{% for item in list %}
 		<li class="accordion-item">
