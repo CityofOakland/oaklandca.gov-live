@@ -24,6 +24,8 @@
         {% set hClass = headingClass %}
     {% endswitch %}
     {% switch block.type %}
+      {% case 'accordion' %}
+        {{ include("_partials/_content-builder/_blocks/_accordion.twig") }}
       {% case "heading" %}
         {{ include("_partials/_content-builder/_blocks/_heading.twig") }}
       {% case "subheading" %}

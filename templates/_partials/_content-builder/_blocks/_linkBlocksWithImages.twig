@@ -1,5 +1,5 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
-{% set linkSets = block.linkSet.all() ?? null %}
+{% set linkSets = block.linkSet.with(['linkImage']).all() ?? null %}
 <section class="relative z-0 pb-12">
 	{{ include("_partials/_heading.twig", {
 		params: {
