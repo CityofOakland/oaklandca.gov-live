@@ -1,4 +1,4 @@
-dateModified: 1726997302
+dateModified: 1727145219
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -927,6 +927,7 @@ meta:
     37807b41-86f2-4f92-b56e-1f76739a03bb: Label # Label
     41124ab0-0e88-44c6-b4f2-f002669d8133: Departments # Departments
     45846dfd-0e86-40a2-81d2-b47bf69f16ae: 'Need to Know' # Need to Know
+    58215eee-4a1b-4d34-a1b5-91f0336ffa00: Description # Description
     62026d94-4213-4ab2-9a58-ff780a972c67: 'Department Redirect' # Department Redirect
     65027c1b-ecdf-4312-91e5-6c5751d20a06: Meetings # Meetings
     78894bca-c6ce-4518-bb6f-fa94d7e7050e: Timeline # Timeline
@@ -939,6 +940,7 @@ meta:
     277068ba-95c5-4881-862f-85c19b60d4da: 'Alert URL' # Alert URL
     341595b4-52a8-432f-b327-5fbc3a4289a8: 'Staff Import Department' # Staff Import Department
     646188fb-7ed1-48ae-b539-736f4fd442d1: Entries # Entries
+    661848fd-d06d-4c27-af71-84b5184beb9b: Accordion # Accordion
     714977a3-2a75-4e25-b9b4-7db488f791b0: 'Contract Employees' # Contract Employees
     842891f1-23fb-4af0-93b5-d197738f08a0: Role # Role
     935574ad-74e5-409a-9f25-d100d5962f99: 'Link to Team Page' # Link to Team Page
@@ -1133,12 +1135,14 @@ meta:
     d349329b-ec60-41dd-8bfa-097958ff477c: 'Hours Title' # Hours Title
     d535337e-0894-4ce9-80ee-a315e254df71: 'Column 1 Heading' # Column 1 Heading
     d542665e-875b-4b71-add5-d70d5317e3c6: 'User Guide' # User Guide
+    da004d7c-8753-4893-8796-60e08bd793a5: Header # Header
     daee65a4-c92d-4e15-9273-1636d722cf35: 'End Time' # End Time
     daf1b54a-7841-4819-aaaa-4d568a0fbb66: 'Email Signup' # Email Signup
     db97d5d4-3cdf-46c8-85f3-fa7bef2c1d87: 'Call to Action Buttons' # Call to Action Buttons
     dc60bd1b-5618-4b28-9455-bb06946164d8: Hours # Hours
     dc495a3c-d76f-46c9-afe5-d8b012612993: '4 Columns' # 4 Columns
     dce07b77-44ba-4b27-9a62-9330a8e5a1de: SoundCloud # SoundCloud
+    dd4ac354-0a83-4391-8a85-fa9e73708e80: Rows # Rows
     ddb61f35-83f1-46d4-904b-da525acf9e7c: 'Group Head Name' # Group Head Name
     de65ce28-2919-4a65-9aa2-c18e5518f2fe: Program/Subdivision # Program/Subdivision
     de588e4c-ab76-4b95-8150-afebc746259b: Documents # Documents

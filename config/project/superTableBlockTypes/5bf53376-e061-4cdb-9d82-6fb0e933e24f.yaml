@@ -1,0 +1,80 @@
+changedFieldIndicator: 346898022
+field: dd4ac354-0a83-4391-8a85-fa9e73708e80 # Rows
+fieldLayouts:
+  2641cf7a-3f2f-49c7-80cc-9edf2adfa549:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: da004d7c-8753-4893-8796-60e08bd793a5 # Header
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 58823439-7e51-45d5-8ab3-028897a78c55
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 58215eee-4a1b-4d34-a1b5-91f0336ffa00 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 87b97adb-9d87-46d1-9c9c-7b394be8cd9b
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 866e6e3d-e14c-4dff-99d0-9d851783cd8d
+        userCondition: null
+fields:
+  58215eee-4a1b-4d34-a1b5-91f0336ffa00: # Description
+    columnSuffix: rgadvvdl
+    contentColumnType: text
+    fieldGroup: null
+    handle: description
+    instructions: null
+    name: Description
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      ckeConfig: 7d00111e-5634-4f46-ac54-ff5d8f91430d # Basic With Links
+      columnType: text
+      defaultTransform: null
+      enableSourceEditingForNonAdmins: false
+      purifierConfig: null
+      purifyHtml: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      showWordCount: false
+      wordLimit: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+  da004d7c-8753-4893-8796-60e08bd793a5: # Header
+    columnSuffix: pypzlqrd
+    contentColumnType: text
+    fieldGroup: null
+    handle: header
+    instructions: null
+    name: Header
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
