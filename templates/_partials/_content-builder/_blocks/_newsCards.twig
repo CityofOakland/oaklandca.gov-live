@@ -2,14 +2,14 @@
 {# Get the manually selected featured entry, if it exists. #}
 {% set featuredEntry = block.featured.one() ?? null %}
 {# Get the first news entry that is marked as an official press release and has a main image. #}
-{% set autoFeaturedEntry =  craft.entries.section("news").officialPressRelease(true).newsImage(":notempty:").relatedTo(block.ownerId).one() ?? null %}
+{% set autoFeaturedEntry = craft.entries.section('news').officialPressRelease(true).newsImage(":notempty:").relatedTo(block.ownerId).one() ?? null %}
 
 {# If the featured entry is selected, check to see if it is older than one month since being posted.
-	 If it is, then use the previously set autoFeaturedEntry. Othe #}
+	 If it is, then use the previously set autoFeaturedEntry. #}
 {% if featuredEntry %}
 	{% set expireDate = featuredEntry.postDate|date_modify('+1 month') %}
 	{% set isExpired = expireDate <= now %}
-	{% if isExpired %}
+	{% if isExpired and autoFeaturedEntry %}
 		{% set featuredEntry = autoFeaturedEntry %}
 	{% endif %}
 {% else %}
@@ -20,7 +20,7 @@
 {% set featuredId = featuredEntry.id() %}
 
 {# Get the manually selected news entries for this block #}
-{% set selectedNews = block.news.ids() ?? null %}
+{% set selectedNews = block.news ?? null %}
 
 {# Get the IDs of the selected news #}
 {% set selectedIds = selectedNews.id("not #{featuredId}").ids() ?? null %}

@@ -1,6 +1,6 @@
 "use strict";
 
-var indexTemplate = 
+var indexTemplate =
 	`<article class="border-b-2 border-gray-300 py-8 horizontal-card">
 		{{#newsImage}}
 		<figure class="relative z-0 mb-4 flex h-48 w-full items-center justify-center bg-gray-300 p-4 sm:h-64 lg:mb-0">
@@ -8,7 +8,7 @@ var indexTemplate =
 		</figure>
 		{{/newsImage}}
 		{{^newsImage}}
-		<figure class="relative z-0 mb-4 flex h-48 w-full items-center justify-center bg-gray-300 p-4 sm:h-64 lg:mb-0">
+		<figure class="relative z-0 mb-4 flex h-48 w-full items-center justify-center bg-blue-200 p-4 sm:h-64 lg:mb-0">
 		    <div class="h-full fill-current p-12 text-gray-500 opacity-75">
 		    	<img src="/dist/img/icon-newspaper.svg" class="h-full" alt="">
 		    </div>

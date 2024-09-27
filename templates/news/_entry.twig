@@ -43,7 +43,7 @@
 		</div>
 
 		{% if updates %}
-			{{ include ("_components/_accordion.twig", {
+			{{ include ("_components/_accordion-content.twig", {
 				params: {
 					header: "Updates",
 					content: updates
@@ -177,8 +177,8 @@
 								     title="{{ relatedNewsEntryImage.title ?? relatedNewsEntryImage.filename }}">
 							</figure>
 						{% else %}
-							<figure class="bg-blue-800 p-12 md:h-52 md:w-52">
-								<img src="{{ alias('@web/dist/img/icon-newspaper-blue-300.svg') }}"
+							<figure class="bg-blue-200 p-12 md:h-52 md:w-52">
+								<img src="{{ alias('@web/dist/img/icon-newspaper.svg') }}"
 								     class="mx-auto"
 								     alt="No article image to display">
 							</figure>

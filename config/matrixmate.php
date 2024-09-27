@@ -59,6 +59,7 @@ $componentsGroup = modules\MatrixMateModule::createConfigBlock('Components', [
 	'spotlight'         => ['adminOnly'=>false],
 	'serviceCards'      => ['adminOnly'=>false],
 	'textCards'          => ['adminOnly'=>false],
+    'accordion'         => ['adminOnly'=>false],
 ]);
 
 $adminBlock = [

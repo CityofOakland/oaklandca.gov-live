@@ -41,7 +41,7 @@
     } : false
   }) }}
   <section class="@container relative z-0 bg-white">
-    <div class="container px-6 @3xl:px-16 pt-10 pb-8">
+    <div class="container px-6 @3xl:px-16 pt-10 pb-10">
       <div class="flex">
         {% set about = true %}
         {% if entry.addresses|length or entry.phoneNumbers|length or entry.emailAddress %}
@@ -55,7 +55,6 @@
             calLinkText: 'View All Meetings, Minutes & Agendas'
           }) }}
           {{ include("_partials/_page-about.twig") }}
-
           {{ include("_partials/_page-related.twig", {
             params: {
               heading: entry.relatedContentHeader|default('Related Content'),

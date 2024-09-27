@@ -22,7 +22,7 @@
 
 {% block title %}
 	{% set meetingDate = (entry.type == 'meetings' ? entry.startTime : entry.startDate) %}
-	<h1 class="my-0 text-3xl font-bold md:text-4xl">{% if status and status.value and status.value !== 'default' and status.value !== 'active' %}{{ status.label }} - {% endif %}{{ entry.title }}</h1>
+	<h1 class="my-0 text-3xl font-bold md:text-4xl">{% if status and status.value and status.value != 'default' and status.value != 'active' %}{{ status.label }} - {% endif %}{{ entry.title }}</h1>
 	{% if entry.date %}
 		<div class="mt-4 text-xl leading-8 tw-only">
 			This meeting of the {{ fullTitle }}
@@ -36,7 +36,7 @@
 {% endblock %}
 
 {% block content %}
-  {% if status != "default" and status !== "active" %}
+  {% if status != "default" and status != "active" %}
     <div>
       {% if status == 'canceled' %}
         {{ _self.callout('This meeting has been canceled.') }}
@@ -54,7 +54,7 @@
         {{ _self.callout('This is a special meeting of the ' ~ fullTitle) }}
       {% endif %}
 
-      {% if status.value !== 'canceled' and status.value !== 'rescheduled' %}
+      {% if status.value != 'canceled' and status.value != 'rescheduled' %}
         {% if entry.addresses and entry.addresses.type('onlineLocation')|length and not entry.addresses.type('location')|length  %}
           {% if now|date('Y-m-d') > entry.date|date('Y-m-d') %}
             {{ _self.callout('This meeting was held virtually and not in person.') }}
@@ -206,7 +206,7 @@
 		{% if entry.agendaTopics|length %}
 			<h3 class="mt-9 mb-8">Topics</h3>
 			<ol class="process">
-				{% for item in entry.agendaTopics.all() %}
+				{% for item in entry.agendaTopics.with(['relatedDocuments']).all() %}
 					<li data-index="{{ loop.index }}">
 						<div>
 							<span class="font-bold">{{ item.topic }}</span>
@@ -252,34 +252,12 @@
 	{% endif %}
 
 	{% if entry.howToParticipate|length and entry.howToParticipate.one().description %}
-		<div class="accordion !pt-8" data-allow-toggle>
-			<ul
-        class="accordion-controls"
-        aria-label="Accordion Control Group Buttons">
-				{% for item in entry.howToParticipate.all() %}
-					<li class="accordion-item">
-						<button
-              class="accordion-header"
-              aria-controls="content-{{ entry.id }}-{{ loop.index }}"
-              aria-expanded="false"
-              id="accordion-control-{{ entry.id }}-{{ loop.index }}"
-            >
-              {{ item.header ? item.header : "How to Participate in this Public Meeting" }}
-              <span style="pointer-events: none;">
-                {{ svg("@webroot/dist/img/icon-plus.svg") }}{{ svg("@webroot/dist/img/icon-minus.svg") }}
-              </span>
-						</button>
-						<div
-              class="accordion-panel"
-              id="content-{{ entry.id }}-{{ loop.index }}"
-              hidden
-            >
-							{{ item.description }}
-						</div>
-					</li>
-				{% endfor %}
-			</ul>
-		</div>
+	  {{ include ('_components/_accordion.twig', {
+		params: {
+	  	  header: 'How to Participate in this Public Meeting',
+		  rows: entry.howToParticipate.all()
+		}
+	  }) }}
 	{% endif %}
 
 	{# Accessibility Request #}
@@ -311,7 +289,7 @@
       {% endif %}
     </p>
     {% set status = entry.meetingStatus ? entry.meetingStatus : entry.eventStatus %}
-    {% if now|date('Y-m-d') <= entry.date|date('Y-m-d') and (status.value !== 'canceled' and status.value !== 'rescheduled') %}
+    {% if now|date('Y-m-d') <= entry.date|date('Y-m-d') and (status.value != 'canceled' and status.value != 'rescheduled') %}
       {% if entry.eventLocation and entry.eventLocation.type("physicalLocation")|length %}
         {% set block = entry.eventLocation.type("physicalLocation").one() %}
         {% if not block.contactAddress.isEmpty() %}
