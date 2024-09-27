@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "53531dcd1b89bceac675828e72a1b322",
+    "content-hash": "2619c98a627f71508c1202b1f1a3dff8",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1183,11 +1183,11 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.5.1",
+            "version": "1.5.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/063d9aa8696582f5a41dffbbaf3c81024f0a604a",
-                "reference": "063d9aa8696582f5a41dffbbaf3c81024f0a604a",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/48a792895a2b7a6ee65dd5442c299d7b835b6137",
+                "reference": "48a792895a2b7a6ee65dd5442c299d7b835b6137",
                 "shasum": ""
             },
             "require": {
@@ -1224,7 +1224,7 @@
                 "ssl",
                 "tls"
             ],
-            "time": "2024-07-08T15:28:20+00:00"
+            "time": "2024-09-25T07:49:53+00:00"
         },
         {
             "name": "composer/class-map-generator",
@@ -1683,11 +1683,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "4.12.4",
+            "version": "4.12.4.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/272ccdce1f40fd2c55ff3955d1a745c9494af649",
-                "reference": "272ccdce1f40fd2c55ff3955d1a745c9494af649",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/1ec846bdda21eabd882bcd3d98aeeef6c2de7b06",
+                "reference": "1ec846bdda21eabd882bcd3d98aeeef6c2de7b06",
                 "shasum": ""
             },
             "require": {
@@ -1775,15 +1775,15 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2024-09-23T21:07:52+00:00"
+            "time": "2024-09-24T14:23:17+00:00"
         },
         {
             "name": "craftcms/feed-me",
-            "version": "5.7.0",
+            "version": "5.8.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/6e9e460457dc006d8a273fa38fb4a792b68d0ab8",
-                "reference": "6e9e460457dc006d8a273fa38fb4a792b68d0ab8",
+                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/88f7d027cebcb4292339ab148bed20def1e52234",
+                "reference": "88f7d027cebcb4292339ab148bed20def1e52234",
                 "shasum": ""
             },
             "require": {
@@ -1833,7 +1833,7 @@
                 "docs": "https://docs.craftcms.com/feed-me/v4/",
                 "rss": "https://github.com/craftcms/feed-me/commits/master.atom"
             },
-            "time": "2024-08-14T17:34:58+00:00"
+            "time": "2024-09-26T00:44:25+00:00"
         },
         {
             "name": "craftcms/flysystem",
@@ -6647,11 +6647,11 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.31.0",
+            "version": "1.32.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/249f15fb843bf240cf058372dad29e100cee6c17",
-                "reference": "249f15fb843bf240cf058372dad29e100cee6c17",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/6ca22b154efdd9e3c68c56f5d94670920a1c19a4",
+                "reference": "6ca22b154efdd9e3c68c56f5d94670920a1c19a4",
                 "shasum": ""
             },
             "require": {
@@ -6669,7 +6669,7 @@
                 "MIT"
             ],
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
-            "time": "2024-09-22T11:32:18+00:00"
+            "time": "2024-09-26T07:23:32+00:00"
         },
         {
             "name": "pixelandtonic/imagine",
@@ -8074,11 +8074,11 @@
         },
         {
             "name": "solspace/craft-freeform",
-            "version": "5.6.2",
+            "version": "5.6.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/8711c53765d103f9a55fd83f34c8f6a0bfb60018",
-                "reference": "8711c53765d103f9a55fd83f34c8f6a0bfb60018",
+                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/2939e277aa69178f8619f49a811a3faa9a3ac18e",
+                "reference": "2939e277aa69178f8619f49a811a3faa9a3ac18e",
                 "shasum": ""
             },
             "require": {
@@ -8126,7 +8126,7 @@
                 }
             ],
             "description": "The most reliable form builder that's ready for wherever your project takes you.",
-            "time": "2024-09-20T16:23:13+00:00"
+            "time": "2024-09-27T05:45:28+00:00"
         },
         {
             "name": "spacecatninja/imager-x",
