@@ -106,7 +106,6 @@ class ScoutModule extends \yii\base\Module
         return null;
     }
 
-
     // Format rich text field.
     public static function richTextSplit($field)
     {
