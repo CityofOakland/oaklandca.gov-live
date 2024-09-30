@@ -1,4 +1,4 @@
-dateModified: 1727145219
+dateModified: 1727682750
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -665,7 +665,7 @@ meta:
     7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0: News # News
     7c42e182-2c0f-45c6-9b1a-229a0312589a: 'Entries Description' # Entries Description
     7cdf9a2c-580b-4d98-8d49-1e3a24205000: 'Charter Number' # Charter Number
-    7d00111e-5634-4f46-ac54-ff5d8f91430d: 'Basic With Links' # Basic With Links
+    7d00111e-5634-4f46-ac54-ff5d8f91430d: 'Basic With Lists & Links' # Basic With Lists & Links
     7e17b706-c00f-4f94-84df-b0e91247051f: Description # Description
     07e65c29-fba5-4a88-ade2-bd8abfb4cc69: 'Link Set' # Link Set
     7f1c68e9-03e1-4887-8395-3229363a4f46: 'Video Title' # Video Title

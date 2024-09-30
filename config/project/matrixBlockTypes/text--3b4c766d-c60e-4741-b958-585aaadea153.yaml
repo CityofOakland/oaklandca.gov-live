@@ -32,7 +32,7 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: '*'
-      ckeConfig: 7d00111e-5634-4f46-ac54-ff5d8f91430d # Basic With Links
+      ckeConfig: 7d00111e-5634-4f46-ac54-ff5d8f91430d # Basic With Lists & Links
       columnType: mediumtext
       defaultTransform: null
       enableSourceEditingForNonAdmins: true
