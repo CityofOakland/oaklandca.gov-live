@@ -1,4 +1,4 @@
-changedFieldIndicator: 1105986441
+changedFieldIndicator: 847730156
 field: 42276684-be78-4449-b3e9-8eeb42ad49ba # Table
 fieldLayouts:
   bdb46085-471d-4e5d-a72d-0ae953c5f0a0:
@@ -45,10 +45,10 @@ fields:
     settings:
       availableTransforms: ''
       availableVolumes: '*'
-      ckeConfig: 7d00111e-5634-4f46-ac54-ff5d8f91430d # Basic With Links
+      ckeConfig: 758af752-6705-4a44-aff0-8bcccafd481b # Basic
       columnType: text
       defaultTransform: null
-      enableSourceEditingForNonAdmins: true
+      enableSourceEditingForNonAdmins: false
       purifierConfig: null
       purifyHtml: true
       showUnpermittedFiles: false
@@ -67,14 +67,18 @@ fields:
     name: 'Column 2 Cell'
     searchable: true
     settings:
-      byteLimit: null
-      charLimit: null
-      code: false
-      columnType: null
-      initialRows: 4
-      multiline: false
-      placeholder: null
-      uiMode: normal
+      availableTransforms: '*'
+      availableVolumes: '*'
+      ckeConfig: 758af752-6705-4a44-aff0-8bcccafd481b # Basic
+      columnType: text
+      defaultTransform: null
+      enableSourceEditingForNonAdmins: false
+      purifierConfig: null
+      purifyHtml: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      showWordCount: false
+      wordLimit: null
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\PlainText
+    type: craft\ckeditor\Field
