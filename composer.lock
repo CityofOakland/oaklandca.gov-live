@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b6a96b3ea45a6205bf9e55e1c2930753",
+    "content-hash": "df1d7794693b8e56f0c0dd022fe14b1f",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1270,11 +1270,6 @@
         {
             "name": "composer/composer",
             "version": "2.8.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/composer.git",
-                "reference": "e52b8672276cf436670cdd6bd5de4353740e83b2"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/composer/composer/zipball/e52b8672276cf436670cdd6bd5de4353740e83b2",
@@ -1304,14 +1299,6 @@
                 "symfony/polyfill-php81": "^1.24",
                 "symfony/process": "^5.4.35 || ^6.3.12 || ^7.0.3"
             },
-            "require-dev": {
-                "phpstan/phpstan": "^1.11.8",
-                "phpstan/phpstan-deprecation-rules": "^1.2.0",
-                "phpstan/phpstan-phpunit": "^1.4.0",
-                "phpstan/phpstan-strict-rules": "^1.6.0",
-                "phpstan/phpstan-symfony": "^1.4.0",
-                "symfony/phpunit-bridge": "^6.4.3 || ^7.0.1"
-            },
             "suggest": {
                 "ext-openssl": "Enabling the openssl extension allows you to access https URLs for repositories and packages",
                 "ext-zip": "Enabling the zip extension allows you to unzip archives",
@@ -1336,7 +1323,6 @@
                     "Composer\\": "src/Composer/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1358,26 +1344,6 @@
                 "autoload",
                 "dependency",
                 "package"
-            ],
-            "support": {
-                "irc": "ircs://irc.libera.chat:6697/composer",
-                "issues": "https://github.com/composer/composer/issues",
-                "security": "https://github.com/composer/composer/security/policy",
-                "source": "https://github.com/composer/composer/tree/2.8.1"
-            },
-            "funding": [
-                {
-                    "url": "https://packagist.com",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/composer",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
-                    "type": "tidelift"
-                }
             ],
             "time": "2024-10-04T09:31:01+00:00"
         },
@@ -6527,11 +6493,6 @@
         {
             "name": "phpoffice/phpspreadsheet",
             "version": "1.29.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHPOffice/PhpSpreadsheet.git",
-                "reference": "3a5a818d7d3e4b5bd2e56fb9de44dbded6eae07f"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/3a5a818d7d3e4b5bd2e56fb9de44dbded6eae07f",
@@ -6561,19 +6522,6 @@
                 "psr/http-factory": "^1.0",
                 "psr/simple-cache": "^1.0 || ^2.0 || ^3.0"
             },
-            "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "dev-main",
-                "dompdf/dompdf": "^1.0 || ^2.0",
-                "friendsofphp/php-cs-fixer": "^3.2",
-                "mitoteam/jpgraph": "^10.3",
-                "mpdf/mpdf": "^8.1.1",
-                "phpcompatibility/php-compatibility": "^9.3",
-                "phpstan/phpstan": "^1.1",
-                "phpstan/phpstan-phpunit": "^1.0",
-                "phpunit/phpunit": "^8.5 || ^9.0",
-                "squizlabs/php_codesniffer": "^3.7",
-                "tecnickcom/tcpdf": "^6.5"
-            },
             "suggest": {
                 "dompdf/dompdf": "Option for rendering PDF with PDF Writer",
                 "ext-intl": "PHP Internationalization Functions",
@@ -6587,7 +6535,6 @@
                     "PhpOffice\\PhpSpreadsheet\\": "src/PhpSpreadsheet"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -6623,10 +6570,6 @@
                 "xls",
                 "xlsx"
             ],
-            "support": {
-                "issues": "https://github.com/PHPOffice/PhpSpreadsheet/issues",
-                "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/1.29.2"
-            },
             "time": "2024-09-29T07:04:47+00:00"
         },
         {
@@ -8109,11 +8052,11 @@
         },
         {
             "name": "solspace/craft-freeform",
-            "version": "5.6.3",
+            "version": "5.6.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/2939e277aa69178f8619f49a811a3faa9a3ac18e",
-                "reference": "2939e277aa69178f8619f49a811a3faa9a3ac18e",
+                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/c0e8faabfd30d2e7a7aea60e3b7f4fdc8293df5f",
+                "reference": "c0e8faabfd30d2e7a7aea60e3b7f4fdc8293df5f",
                 "shasum": ""
             },
             "require": {
@@ -8161,7 +8104,7 @@
                 }
             ],
             "description": "The most reliable form builder that's ready for wherever your project takes you.",
-            "time": "2024-09-27T05:45:28+00:00"
+            "time": "2024-10-07T05:03:17+00:00"
         },
         {
             "name": "spacecatninja/imager-x",
@@ -10484,11 +10427,11 @@
         },
         {
             "name": "tecnickcom/tcpdf",
-            "version": "6.7.5",
+            "version": "6.7.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/951eabf0338ec2522bd0d5d9c79b08a3a3d36b36",
-                "reference": "951eabf0338ec2522bd0d5d9c79b08a3a3d36b36",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/4cf1ab192e87e6916d20f93077b2bdfa96a2f848",
+                "reference": "4cf1ab192e87e6916d20f93077b2bdfa96a2f848",
                 "shasum": ""
             },
             "require": {
@@ -10536,7 +10479,7 @@
                 "pdf417",
                 "qrcode"
             ],
-            "time": "2024-04-20T17:25:10+00:00"
+            "time": "2024-10-06T10:54:28+00:00"
         },
         {
             "name": "theiconic/name-parser",
