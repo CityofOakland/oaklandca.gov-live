@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d40feebb6cd4515e8b50c4e911ff0133",
+    "content-hash": "806ef56d336c3de3c213fb017216e252",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1228,11 +1228,11 @@
         },
         {
             "name": "composer/class-map-generator",
-            "version": "1.3.4",
+            "version": "1.4.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/class-map-generator/zipball/b1b3fd0b4eaf3ddf3ee230bc340bf3fff454a1a3",
-                "reference": "b1b3fd0b4eaf3ddf3ee230bc340bf3fff454a1a3",
+                "url": "https://api.github.com/repos/composer/class-map-generator/zipball/98bbf6780e56e0fd2404fe4b82eb665a0f93b783",
+                "reference": "98bbf6780e56e0fd2404fe4b82eb665a0f93b783",
                 "shasum": ""
             },
             "require": {
@@ -1265,20 +1265,20 @@
             "keywords": [
                 "classmap"
             ],
-            "time": "2024-06-12T14:13:04+00:00"
+            "time": "2024-10-03T18:14:00+00:00"
         },
         {
             "name": "composer/composer",
-            "version": "2.7.9",
+            "version": "2.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/e30ccdd665828ae66eb1be78f056e39e1d5f55ab",
-                "reference": "e30ccdd665828ae66eb1be78f056e39e1d5f55ab",
+                "url": "https://api.github.com/repos/composer/composer/zipball/e52b8672276cf436670cdd6bd5de4353740e83b2",
+                "reference": "e52b8672276cf436670cdd6bd5de4353740e83b2",
                 "shasum": ""
             },
             "require": {
                 "composer/ca-bundle": "^1.5",
-                "composer/class-map-generator": "^1.3.3",
+                "composer/class-map-generator": "^1.4.0",
                 "composer/metadata-minifier": "^1.0",
                 "composer/pcre": "^2.2 || ^3.2",
                 "composer/semver": "^3.3",
@@ -1310,7 +1310,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.7-dev"
+                    "dev-main": "2.8-dev"
                 },
                 "phpstan": {
                     "includes": [
@@ -1345,7 +1345,7 @@
                 "dependency",
                 "package"
             ],
-            "time": "2024-09-04T12:43:28+00:00"
+            "time": "2024-10-04T09:31:01+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -6493,11 +6493,6 @@
         {
             "name": "phpoffice/phpspreadsheet",
             "version": "1.29.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHPOffice/PhpSpreadsheet.git",
-                "reference": "3a5a818d7d3e4b5bd2e56fb9de44dbded6eae07f"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/3a5a818d7d3e4b5bd2e56fb9de44dbded6eae07f",
@@ -6527,19 +6522,6 @@
                 "psr/http-factory": "^1.0",
                 "psr/simple-cache": "^1.0 || ^2.0 || ^3.0"
             },
-            "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "dev-main",
-                "dompdf/dompdf": "^1.0 || ^2.0",
-                "friendsofphp/php-cs-fixer": "^3.2",
-                "mitoteam/jpgraph": "^10.3",
-                "mpdf/mpdf": "^8.1.1",
-                "phpcompatibility/php-compatibility": "^9.3",
-                "phpstan/phpstan": "^1.1",
-                "phpstan/phpstan-phpunit": "^1.0",
-                "phpunit/phpunit": "^8.5 || ^9.0",
-                "squizlabs/php_codesniffer": "^3.7",
-                "tecnickcom/tcpdf": "^6.5"
-            },
             "suggest": {
                 "dompdf/dompdf": "Option for rendering PDF with PDF Writer",
                 "ext-intl": "PHP Internationalization Functions",
@@ -6553,7 +6535,6 @@
                     "PhpOffice\\PhpSpreadsheet\\": "src/PhpSpreadsheet"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -6589,10 +6570,6 @@
                 "xls",
                 "xlsx"
             ],
-            "support": {
-                "issues": "https://github.com/PHPOffice/PhpSpreadsheet/issues",
-                "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/1.29.2"
-            },
             "time": "2024-09-29T07:04:47+00:00"
         },
         {
@@ -7153,11 +7130,11 @@
         },
         {
             "name": "putyourlightson/craft-blitz",
-            "version": "4.23.0",
+            "version": "4.23.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/1c5289f4281e8b905cbfced538b31fa1803cf361",
-                "reference": "1c5289f4281e8b905cbfced538b31fa1803cf361",
+                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/340b5b4a31173980c88e8b5c2bedc0f4fa748df2",
+                "reference": "340b5b4a31173980c88e8b5c2bedc0f4fa748df2",
                 "shasum": ""
             },
             "require": {
@@ -7202,7 +7179,7 @@
                 "source": "https://github.com/putyourlightson/craft-blitz",
                 "issues": "https://github.com/putyourlightson/craft-blitz/issues"
             },
-            "time": "2024-08-29T06:03:54+00:00"
+            "time": "2024-10-04T15:44:24+00:00"
         },
         {
             "name": "putyourlightson/craft-blitz-hints",
@@ -7330,11 +7307,11 @@
         },
         {
             "name": "putyourlightson/craft-sprig-core",
-            "version": "2.12.0",
+            "version": "2.12.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-sprig-core/zipball/513f544110cabc41b28dfad2f31ca6bb6f77a27f",
-                "reference": "513f544110cabc41b28dfad2f31ca6bb6f77a27f",
+                "url": "https://api.github.com/repos/putyourlightson/craft-sprig-core/zipball/f125ae36cba4f3493ced32312912d015fc85fe16",
+                "reference": "f125ae36cba4f3493ced32312912d015fc85fe16",
                 "shasum": ""
             },
             "require": {
@@ -7356,7 +7333,7 @@
                 "source": "https://github.com/putyourlightson/craft-sprig-core",
                 "issues": "https://github.com/putyourlightson/craft-sprig-core/issues"
             },
-            "time": "2024-08-29T11:34:07+00:00"
+            "time": "2024-09-19T17:52:18+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -8075,11 +8052,11 @@
         },
         {
             "name": "solspace/craft-freeform",
-            "version": "5.6.3",
+            "version": "5.6.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/2939e277aa69178f8619f49a811a3faa9a3ac18e",
-                "reference": "2939e277aa69178f8619f49a811a3faa9a3ac18e",
+                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/c0e8faabfd30d2e7a7aea60e3b7f4fdc8293df5f",
+                "reference": "c0e8faabfd30d2e7a7aea60e3b7f4fdc8293df5f",
                 "shasum": ""
             },
             "require": {
@@ -8127,7 +8104,7 @@
                 }
             ],
             "description": "The most reliable form builder that's ready for wherever your project takes you.",
-            "time": "2024-09-27T05:45:28+00:00"
+            "time": "2024-10-07T05:03:17+00:00"
         },
         {
             "name": "spacecatninja/imager-x",
@@ -8196,11 +8173,11 @@
         },
         {
             "name": "spicyweb/craft-neo",
-            "version": "4.2.14",
+            "version": "4.2.16",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/b17dc2593aba1d283f002e517b55b5b02fec1c96",
-                "reference": "b17dc2593aba1d283f002e517b55b5b02fec1c96",
+                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/f6efc30929631946a79ad6097bb7506b1f59e4b9",
+                "reference": "f6efc30929631946a79ad6097bb7506b1f59e4b9",
                 "shasum": ""
             },
             "require": {
@@ -8214,7 +8191,7 @@
                 "schemaVersion": "4.0.0",
                 "class": "benf\\neo\\Plugin",
                 "changelogUrl": "https://github.com/spicywebau/craft-neo/blob/4.x/CHANGELOG.md",
-                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.2.14.zip"
+                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.2.16.zip"
             },
             "autoload": {
                 "psr-4": {
@@ -8242,10 +8219,10 @@
             "support": {
                 "issues": "https://github.com/spicywebau/craft-neo/issues",
                 "source": "https://github.com/spicywebau/craft-neo",
-                "docs": "https://github.com/spicywebau/craft-neo/blob/4.2.14/README.md",
+                "docs": "https://github.com/spicywebau/craft-neo/blob/4.2.16/README.md",
                 "rss": "https://github.com/spicywebau/craft-neo/commits/4.x.atom"
             },
-            "time": "2024-09-22T06:13:04+00:00"
+            "time": "2024-10-07T10:05:25+00:00"
         },
         {
             "name": "ssnepenthe/color-utils",
@@ -10450,11 +10427,11 @@
         },
         {
             "name": "tecnickcom/tcpdf",
-            "version": "6.7.5",
+            "version": "6.7.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/951eabf0338ec2522bd0d5d9c79b08a3a3d36b36",
-                "reference": "951eabf0338ec2522bd0d5d9c79b08a3a3d36b36",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/4cf1ab192e87e6916d20f93077b2bdfa96a2f848",
+                "reference": "4cf1ab192e87e6916d20f93077b2bdfa96a2f848",
                 "shasum": ""
             },
             "require": {
@@ -10502,7 +10479,7 @@
                 "pdf417",
                 "qrcode"
             ],
-            "time": "2024-04-20T17:25:10+00:00"
+            "time": "2024-10-06T10:54:28+00:00"
         },
         {
             "name": "theiconic/name-parser",

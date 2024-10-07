@@ -1,4 +1,5 @@
 <?php
+
 namespace modules;
 
 use Craft;
@@ -8,7 +9,7 @@ use Craft;
  */
 class ScoutModule extends \yii\base\Module
 {
-    public function init()
+    public function init(): void
     {
         // Set a @modules alias pointed to the modules/ directory
         Craft::setAlias('@modules', __DIR__);
@@ -23,11 +24,10 @@ class ScoutModule extends \yii\base\Module
         parent::init();
     }
 
-
     // Format specific modules in the content builder field.
-    public static function contentBuilder($element)
+    public static function contentBuilder($element): array
     {
-        $body   = [];
+        $body = [];
         if (!empty($element)) {
             foreach ($element->all() as $block) {
                 $text = '';
@@ -49,8 +49,8 @@ class ScoutModule extends \yii\base\Module
                         break;
                     default:
                 }
-                if($text){
-                    if(strlen($text) > 1000) {
+                if ($text) {
+                    if (strlen($text) > 1000) {
                         $text = mb_substr($text, 0, 1000) . '...';
                     }
                     $body[] = $text;
@@ -60,20 +60,17 @@ class ScoutModule extends \yii\base\Module
         return $body;
     }
 
-
     // Return an element's CTA Button text (if it exists).
     public static function ctaButtonText($element)
     {
         return !empty($element->ctaButton->text) ? $element->ctaButton->text : null;
     }
 
-
     // Return an entry's postDate timestamp.
-    public static function entryDate($entry)
+    public static function entryDate($entry): float|int
     {
         return $entry->postDate->getTimestamp() * 1000;
     }
-
 
     // Return an entry's formatted postDate.
     public static function entryPrettyDate($entry)
@@ -81,19 +78,17 @@ class ScoutModule extends \yii\base\Module
         return $entry->postDate->format('F j, Y');
     }
 
-
     // Return an entry's URL. Will return a redirected URL if it exists.
     public static function entryUrl($entry)
     {
         return empty($entry->redirectUrl) ? $entry->url : $entry->redirectUrl;
     }
 
-
     // Create an array from object property.
-    public static function enumEntries($section, $element)
+    public static function enumEntries($section, $element): array
     {
         $sectionArray = [];
-        if(!empty($element->$section)) {
+        if (!empty($element->$section)) {
             foreach ($element->$section as $value) {
                 $sectionArray[] = $value->title;
             }
@@ -111,7 +106,6 @@ class ScoutModule extends \yii\base\Module
         return null;
     }
 
-
     // Format rich text field.
     public static function richTextSplit($field)
     {
@@ -127,10 +121,11 @@ class ScoutModule extends \yii\base\Module
     }
 
     // Format rich text field.
-    public static function sectionPriority($name){
-        if($name == 'documents'){
+    public static function sectionPriority($name): int
+    {
+        if ($name == 'documents') {
             return 2;
-        } elseif( in_array($name, ['boardsCommissions', 'departments', 'topics'])) {
+        } elseif (in_array($name, ['boardsCommissions', 'departments', 'topics'])) {
             return 0;
         } else {
             return 1;
