@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df1d7794693b8e56f0c0dd022fe14b1f",
+    "content-hash": "806ef56d336c3de3c213fb017216e252",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -8173,11 +8173,11 @@
         },
         {
             "name": "spicyweb/craft-neo",
-            "version": "4.2.15",
+            "version": "4.2.16",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/2df3fef45d460790f39a4b99f35086a14641628c",
-                "reference": "2df3fef45d460790f39a4b99f35086a14641628c",
+                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/f6efc30929631946a79ad6097bb7506b1f59e4b9",
+                "reference": "f6efc30929631946a79ad6097bb7506b1f59e4b9",
                 "shasum": ""
             },
             "require": {
@@ -8191,7 +8191,7 @@
                 "schemaVersion": "4.0.0",
                 "class": "benf\\neo\\Plugin",
                 "changelogUrl": "https://github.com/spicywebau/craft-neo/blob/4.x/CHANGELOG.md",
-                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.2.15.zip"
+                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.2.16.zip"
             },
             "autoload": {
                 "psr-4": {
@@ -8219,10 +8219,10 @@
             "support": {
                 "issues": "https://github.com/spicywebau/craft-neo/issues",
                 "source": "https://github.com/spicywebau/craft-neo",
-                "docs": "https://github.com/spicywebau/craft-neo/blob/4.2.15/README.md",
+                "docs": "https://github.com/spicywebau/craft-neo/blob/4.2.16/README.md",
                 "rss": "https://github.com/spicywebau/craft-neo/commits/4.x.atom"
             },
-            "time": "2024-09-30T10:07:21+00:00"
+            "time": "2024-10-07T10:05:25+00:00"
         },
         {
             "name": "ssnepenthe/color-utils",
