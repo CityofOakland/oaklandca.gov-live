@@ -1,4 +1,4 @@
-changedFieldIndicator: 1051418387
+changedFieldIndicator: 11929399
 field: 1c974e73-c709-48c5-bc6e-fb8a9ae1ba8a # Table
 fieldLayouts:
   b030ded4-f9f5-4563-87c5-2be5dd856787:
@@ -69,7 +69,7 @@ fields:
     settings:
       availableTransforms: ''
       availableVolumes: '*'
-      ckeConfig: 758af752-6705-4a44-aff0-8bcccafd481b # Basic
+      ckeConfig: 7d00111e-5634-4f46-ac54-ff5d8f91430d # Basic With Lists & Links
       columnType: text
       defaultTransform: null
       enableSourceEditingForNonAdmins: false
@@ -93,7 +93,7 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: '*'
-      ckeConfig: 758af752-6705-4a44-aff0-8bcccafd481b # Basic
+      ckeConfig: 7d00111e-5634-4f46-ac54-ff5d8f91430d # Basic With Lists & Links
       columnType: text
       defaultTransform: null
       enableSourceEditingForNonAdmins: false
@@ -117,7 +117,7 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: '*'
-      ckeConfig: 758af752-6705-4a44-aff0-8bcccafd481b # Basic
+      ckeConfig: 7d00111e-5634-4f46-ac54-ff5d8f91430d # Basic With Lists & Links
       columnType: text
       defaultTransform: null
       enableSourceEditingForNonAdmins: false
@@ -141,7 +141,7 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: '*'
-      ckeConfig: 758af752-6705-4a44-aff0-8bcccafd481b # Basic
+      ckeConfig: 7d00111e-5634-4f46-ac54-ff5d8f91430d # Basic With Lists & Links
       columnType: text
       defaultTransform: null
       enableSourceEditingForNonAdmins: false

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "806ef56d336c3de3c213fb017216e252",
+    "content-hash": "8bed8a33b84d8b78c8dcccfd5258a90a",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1683,11 +1683,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "4.12.5",
+            "version": "4.12.6.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/9c43399c75a5aa0385eb9e264fbac9bcebd8cadd",
-                "reference": "9c43399c75a5aa0385eb9e264fbac9bcebd8cadd",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/516e2a1535d39efeff41e724c325c02bc8222c37",
+                "reference": "516e2a1535d39efeff41e724c325c02bc8222c37",
                 "shasum": ""
             },
             "require": {
@@ -1775,7 +1775,7 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2024-09-27T18:51:45+00:00"
+            "time": "2024-10-09T08:23:44+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -7994,11 +7994,11 @@
         },
         {
             "name": "solspace/craft-calendar",
-            "version": "5.0.8",
+            "version": "5.0.10",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-calendar/zipball/71a8f7e2e1bf75c60cba92964729e344047be341",
-                "reference": "71a8f7e2e1bf75c60cba92964729e344047be341",
+                "url": "https://api.github.com/repos/solspace/craft-calendar/zipball/9567a62abc6aab3c3dc13509b093b14e8b8cf293",
+                "reference": "9567a62abc6aab3c3dc13509b093b14e8b8cf293",
                 "shasum": ""
             },
             "require": {
@@ -8013,7 +8013,7 @@
             },
             "type": "craft-plugin",
             "extra": {
-                "schemaVersion": "5.0.0",
+                "schemaVersion": "5.0.1",
                 "handle": "calendar",
                 "class": "Solspace\\Calendar\\Calendar",
                 "name": "Calendar",
@@ -8048,7 +8048,7 @@
                 }
             ],
             "description": "The most reliable and powerful event management plugin for Craft.",
-            "time": "2024-09-12T05:31:05+00:00"
+            "time": "2024-10-09T20:43:22+00:00"
         },
         {
             "name": "solspace/craft-freeform",
@@ -10788,11 +10788,11 @@
         },
         {
             "name": "verbb/base",
-            "version": "2.0.8",
+            "version": "2.0.9",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/1445a89d7a360d3ba8bba97c47a10c6f1aa27307",
-                "reference": "1445a89d7a360d3ba8bba97c47a10c6f1aa27307",
+                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/29adbf9d078424013ec982d41a59ab7c5f307b04",
+                "reference": "29adbf9d078424013ec982d41a59ab7c5f307b04",
                 "shasum": ""
             },
             "require": {
@@ -10815,7 +10815,7 @@
                 }
             ],
             "description": "Common utilities and building-blocks for Verbb plugins for Craft CMS.",
-            "time": "2024-06-10T09:00:32+00:00"
+            "time": "2024-09-13T23:31:03+00:00"
         },
         {
             "name": "verbb/buttonbox",
@@ -11095,11 +11095,11 @@
         },
         {
             "name": "verbb/tablemaker",
-            "version": "4.0.13",
+            "version": "4.0.14",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/tablemaker/zipball/129d8885500eec48745a746b352e8366d9638e0a",
-                "reference": "129d8885500eec48745a746b352e8366d9638e0a",
+                "url": "https://api.github.com/repos/verbb/tablemaker/zipball/192b02ae9e32ee8bb482e01d4281baa111597538",
+                "reference": "192b02ae9e32ee8bb482e01d4281baa111597538",
                 "shasum": ""
             },
             "require": {
@@ -11148,7 +11148,7 @@
                 "docs": "https://github.com/verbb/tablemaker",
                 "rss": "https://github.com/verbb/tablemaker/commits/v2.atom"
             },
-            "time": "2024-09-04T02:53:19+00:00"
+            "time": "2024-10-09T09:19:49+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
