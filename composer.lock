@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8bed8a33b84d8b78c8dcccfd5258a90a",
+    "content-hash": "db3132cec8d4242fbc91095d43039943",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1779,11 +1779,11 @@
         },
         {
             "name": "craftcms/feed-me",
-            "version": "5.8.0",
+            "version": "5.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/88f7d027cebcb4292339ab148bed20def1e52234",
-                "reference": "88f7d027cebcb4292339ab148bed20def1e52234",
+                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/8079828e76b4d3209989eaf747accb4509271976",
+                "reference": "8079828e76b4d3209989eaf747accb4509271976",
                 "shasum": ""
             },
             "require": {
@@ -1833,7 +1833,7 @@
                 "docs": "https://docs.craftcms.com/feed-me/v4/",
                 "rss": "https://github.com/craftcms/feed-me/commits/master.atom"
             },
-            "time": "2024-09-26T00:44:25+00:00"
+            "time": "2024-10-09T22:00:37+00:00"
         },
         {
             "name": "craftcms/flysystem",

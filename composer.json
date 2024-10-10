@@ -4,7 +4,7 @@
   "require": {
     "craftcms/cms": "4.12.6.1",
     "craftcms/aws-s3": "2.2.1",
-    "craftcms/feed-me": "5.8.0",
+    "craftcms/feed-me": "5.8.1",
     "craftcms/store-hours": "3.1.0",
     "doublesecretagency/craft-googlemaps": "4.5.2",
     "doublesecretagency/craft-inventory": "3.2.0",
