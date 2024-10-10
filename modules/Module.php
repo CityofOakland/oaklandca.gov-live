@@ -32,6 +32,8 @@ class Module extends \yii\base\Module
             $this->controllerNamespace = 'modules\\controllers';
         }
 
+        parent::init();
+
         // Toggle Entry indexing on Algolia
         Event::on(
             Entry::class,
@@ -184,7 +186,5 @@ class Module extends \yii\base\Module
             }
           }
         });
-
-        parent::init();
     }
 }

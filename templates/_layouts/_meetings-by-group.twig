@@ -121,8 +121,8 @@
 			{{ include("_partials/_elements/_pagination.twig") }}
 		</div>
 	{% else %}
-		{% set upcomingMeetings = craft.entries().section('meetings').relatedTo(entry).date('>= ' ~ now|date('Y-m-d')).limit(3) %}
-		{% set pastMeetings     = craft.entries().section('meetings').relatedTo(entry).date('< ' ~ now|date('Y-m-d')).limit(3) %}
+		{% set upcomingMeetings = craft.entries().section('meetings').relatedTo(entry).date('>= ' ~ now|date('Y-m-d')).orderBy('date asc').limit(3) %}
+		{% set pastMeetings     = craft.entries().section('meetings').relatedTo(entry).date('< ' ~ now|date('Y-m-d')).orderBy('date desc').limit(3) %}
 		{% if upcomingMeetings|length %}
 			<h3 class="mt-0">Upcoming Meetings</h3>
 			{% for meeting in upcomingMeetings.all() %}
