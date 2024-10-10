@@ -1,4 +1,4 @@
-dateModified: 1727682750
+dateModified: 1728590788
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -1353,7 +1353,7 @@ plugins:
     edition: lite
     enabled: true
     licenseKey: PRJ91600ENZBQ5S7HS7UE93Z
-    schemaVersion: 5.0.0
+    schemaVersion: 5.0.1
   calendarize:
     edition: standard
     enabled: true
