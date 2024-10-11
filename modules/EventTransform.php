@@ -1,33 +1,30 @@
 <?php
 namespace modules;
 
-use Solspace\Calendar\Elements\Event;
 use League\Fractal\TransformerAbstract;
-use modules\ScoutModule;
-
-use Craft;
+use Solspace\Calendar\Elements\Event;
 
 /**
  * Custom module to help parse information sent/received from the Algolia Scout plugin.
  */
 class EventTransform extends TransformerAbstract
 {
-  public function transform(Event $event)
-  	{
+  public function transform(Event $event): array
+  {
     	return [
-      		'title' => $event->title,
-      		'url' => $event->uri,
-      		'calendar' => $event->calendar->handle,
-      		'date' => $event->startDate->timestamp * 1000,
-      		'displayDate' => $event->startDate->format('F j, Y'),
-      		'body' => ScoutModule::richTextSplit($event->body),
-      		'contact' => $event->eventContact,
-      		'eventImage' => $event->eventImage->one()->url ?? null,
-      		'boardsCommissions' => ScoutModule::enumEntries("boardsCommissions", $event),
-      		'departments' => ScoutModule::enumEntries("departments", $event),
-      		'officials' => ScoutModule::enumEntries("officials", $event),
-      		'projects' => ScoutModule::enumEntries("projects", $event),
-      		'topics' => ScoutModule::enumEntries("topics", $event),
-    	];
+            'url' => $event->uri,
+            'title' => $event->title,
+            'contact' => $event->eventContact,
+            'calendar' => $event->calendar->handle,
+            'date' => $event->startDate->timestamp * 1000,
+            'body' => ScoutModule::richTextSplit($event->body),
+            'displayDate' => $event->startDate->format('F j, Y'),
+            'eventImage' => $event->eventImage->one()->url ?? null,
+            'topics' => ScoutModule::enumEntries('topics', $event),
+            'projects' => ScoutModule::enumEntries('projects', $event),
+            'officials' => ScoutModule::enumEntries('officials', $event),
+            'departments' => ScoutModule::enumEntries('departments', $event),
+            'boardsCommissions' => ScoutModule::enumEntries('boardsCommissions', $event),
+        ];
   	}
 }

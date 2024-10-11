@@ -1,4 +1,4 @@
-changedFieldIndicator: 346898022
+changedFieldIndicator: 1547331013
 field: dd4ac354-0a83-4391-8a85-fa9e73708e80 # Rows
 fieldLayouts:
   2641cf7a-3f2f-49c7-80cc-9edf2adfa549:
@@ -45,7 +45,7 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: '*'
-      ckeConfig: 7d00111e-5634-4f46-ac54-ff5d8f91430d # Basic With Links
+      ckeConfig: 7d00111e-5634-4f46-ac54-ff5d8f91430d # Basic With Lists & Links
       columnType: text
       defaultTransform: null
       enableSourceEditingForNonAdmins: false

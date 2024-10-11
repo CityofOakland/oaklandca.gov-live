@@ -1,25 +1,26 @@
 <?php
 namespace modules;
 
+use Algolia\AlgoliaSearch\SearchClient;
 use Craft;
-
 use craft\base\Element;
 use craft\elements\Entry;
+use craft\events\ModelEvent;
 use craft\events\RegisterElementExportersEvent;
+use craft\helpers\App;
+use craft\helpers\ElementHelper;
 use craft\helpers\StringHelper;
 use Solspace\Freeform\Events\Fields\CompileFieldAttributesEvent;
 use Solspace\Freeform\Fields\FieldInterface;
 use Solspace\Freeform\Fields\Parameters\Parameters;
 use yii\base\Event;
 
-use modules\ExportModule;
-
 class Module extends \yii\base\Module
 {
     /**
      * Initializes the module.
      */
-    public function init()
+    public function init(): void
     {
         // Set a @modules alias pointed to the modules/ directory
         Craft::setAlias('@modules', __DIR__);
@@ -30,6 +31,33 @@ class Module extends \yii\base\Module
         } else {
             $this->controllerNamespace = 'modules\\controllers';
         }
+
+        parent::init();
+
+        // Toggle Entry indexing on Algolia
+        Event::on(
+            Entry::class,
+            Element::EVENT_AFTER_SAVE,
+            function (ModelEvent $e) {
+                /** @var Entry $entry */
+                $entry = $e->sender;
+
+                // Ignore if Entry is New, Draft, Revision, or if the enabled property is not being updated.
+                // New Entry indexing is handled by the Scout plugin.
+                if ($e->isNew || ElementHelper::isDraftOrRevision($entry) || !$entry->isAttributeDirty('enabled')) {
+                    return;
+                }
+
+                $index = Craft::$container->get(SearchClient::class)
+                    ->initIndex(App::env('CRAFT_ENVIRONMENT') . '_' . $entry->getSection()->handle);
+
+                if ($entry->getStatus() === Element::STATUS_DISABLED) {
+                    $index->deleteObject($entry->id);
+                } else {
+                    $index->saveObject(['objectID' => $entry->id]);
+                }
+            }
+        );
 
         // Make Feedback forms IDs unique and accessible for screen readers
         Event::on(
@@ -47,7 +75,7 @@ class Module extends \yii\base\Module
         // Remove "All Entries" source
         Event::on(
             Entry::class,
-            Entry::EVENT_REGISTER_SOURCES,
+            Element::EVENT_REGISTER_SOURCES,
             function (Event $event) {
                 array_shift($event->sources);
             }
@@ -158,7 +186,5 @@ class Module extends \yii\base\Module
             }
           }
         });
-
-        parent::init();
     }
 }

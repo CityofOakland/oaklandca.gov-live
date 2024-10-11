@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2619c98a627f71508c1202b1f1a3dff8",
+    "content-hash": "db3132cec8d4242fbc91095d43039943",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1228,11 +1228,11 @@
         },
         {
             "name": "composer/class-map-generator",
-            "version": "1.3.4",
+            "version": "1.4.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/class-map-generator/zipball/b1b3fd0b4eaf3ddf3ee230bc340bf3fff454a1a3",
-                "reference": "b1b3fd0b4eaf3ddf3ee230bc340bf3fff454a1a3",
+                "url": "https://api.github.com/repos/composer/class-map-generator/zipball/98bbf6780e56e0fd2404fe4b82eb665a0f93b783",
+                "reference": "98bbf6780e56e0fd2404fe4b82eb665a0f93b783",
                 "shasum": ""
             },
             "require": {
@@ -1265,20 +1265,20 @@
             "keywords": [
                 "classmap"
             ],
-            "time": "2024-06-12T14:13:04+00:00"
+            "time": "2024-10-03T18:14:00+00:00"
         },
         {
             "name": "composer/composer",
-            "version": "2.7.9",
+            "version": "2.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/e30ccdd665828ae66eb1be78f056e39e1d5f55ab",
-                "reference": "e30ccdd665828ae66eb1be78f056e39e1d5f55ab",
+                "url": "https://api.github.com/repos/composer/composer/zipball/e52b8672276cf436670cdd6bd5de4353740e83b2",
+                "reference": "e52b8672276cf436670cdd6bd5de4353740e83b2",
                 "shasum": ""
             },
             "require": {
                 "composer/ca-bundle": "^1.5",
-                "composer/class-map-generator": "^1.3.3",
+                "composer/class-map-generator": "^1.4.0",
                 "composer/metadata-minifier": "^1.0",
                 "composer/pcre": "^2.2 || ^3.2",
                 "composer/semver": "^3.3",
@@ -1310,7 +1310,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.7-dev"
+                    "dev-main": "2.8-dev"
                 },
                 "phpstan": {
                     "includes": [
@@ -1345,7 +1345,7 @@
                 "dependency",
                 "package"
             ],
-            "time": "2024-09-04T12:43:28+00:00"
+            "time": "2024-10-04T09:31:01+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -1683,11 +1683,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "4.12.4.1",
+            "version": "4.12.6.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/1ec846bdda21eabd882bcd3d98aeeef6c2de7b06",
-                "reference": "1ec846bdda21eabd882bcd3d98aeeef6c2de7b06",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/516e2a1535d39efeff41e724c325c02bc8222c37",
+                "reference": "516e2a1535d39efeff41e724c325c02bc8222c37",
                 "shasum": ""
             },
             "require": {
@@ -1775,15 +1775,15 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2024-09-24T14:23:17+00:00"
+            "time": "2024-10-09T08:23:44+00:00"
         },
         {
             "name": "craftcms/feed-me",
-            "version": "5.8.0",
+            "version": "5.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/88f7d027cebcb4292339ab148bed20def1e52234",
-                "reference": "88f7d027cebcb4292339ab148bed20def1e52234",
+                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/8079828e76b4d3209989eaf747accb4509271976",
+                "reference": "8079828e76b4d3209989eaf747accb4509271976",
                 "shasum": ""
             },
             "require": {
@@ -1833,7 +1833,7 @@
                 "docs": "https://docs.craftcms.com/feed-me/v4/",
                 "rss": "https://github.com/craftcms/feed-me/commits/master.atom"
             },
-            "time": "2024-09-26T00:44:25+00:00"
+            "time": "2024-10-09T22:00:37+00:00"
         },
         {
             "name": "craftcms/flysystem",
@@ -5247,11 +5247,11 @@
         },
         {
             "name": "moneyphp/money",
-            "version": "v4.5.0",
+            "version": "v4.5.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moneyphp/money/zipball/a1daa7daf159b4044e3d0c34c41fe2be5860e850",
-                "reference": "a1daa7daf159b4044e3d0c34c41fe2be5860e850",
+                "url": "https://api.github.com/repos/moneyphp/money/zipball/142107bec4870ac2586057dc2fe917d25c92a91e",
+                "reference": "142107bec4870ac2586057dc2fe917d25c92a91e",
                 "shasum": ""
             },
             "require": {
@@ -5303,7 +5303,7 @@
                 "money",
                 "vo"
             ],
-            "time": "2024-02-15T19:47:21+00:00"
+            "time": "2024-09-27T12:04:27+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -5535,26 +5535,16 @@
         },
         {
             "name": "nystudio107/craft-code-editor",
-            "version": "1.0.21",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nystudio107/craft-code-editor.git",
-                "reference": "82f5a4f0e3e8e15974f76cda98659080d51351c4"
-            },
+            "version": "1.0.22",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-code-editor/zipball/82f5a4f0e3e8e15974f76cda98659080d51351c4",
-                "reference": "82f5a4f0e3e8e15974f76cda98659080d51351c4",
+                "url": "https://api.github.com/repos/nystudio107/craft-code-editor/zipball/170edf71355b659e1db9ede12980b17c20eb3d1f",
+                "reference": "170edf71355b659e1db9ede12980b17c20eb3d1f",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^3.0.0 || ^4.0.0 || ^5.0.0",
                 "phpdocumentor/reflection-docblock": "^5.0.0"
-            },
-            "require-dev": {
-                "craftcms/ecs": "dev-main",
-                "craftcms/phpstan": "dev-main",
-                "craftcms/rector": "dev-main"
             },
             "type": "yii2-extension",
             "extra": {
@@ -5565,7 +5555,6 @@
                     "nystudio107\\codeeditor\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5588,18 +5577,7 @@
                 "markdown",
                 "twig"
             ],
-            "support": {
-                "docs": "https://github.com/nystudio107/craft-code-editor/blob/v1/README.md",
-                "issues": "https://github.com/nystudio107/craft-code-editor/issues",
-                "source": "https://github.com/nystudio107/craft-code-editor"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/khalwat",
-                    "type": "github"
-                }
-            ],
-            "time": "2024-09-13T02:32:50+00:00"
+            "time": "2024-09-23T17:20:25+00:00"
         },
         {
             "name": "nystudio107/craft-emptycoalesce",
@@ -5743,11 +5721,11 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "4.1.3",
+            "version": "4.1.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/53a2b42bceb60a968fc742fe205905190cb36c43",
-                "reference": "53a2b42bceb60a968fc742fe205905190cb36c43",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/f1d7a8b941de46bb17053fe71d50209e31c901c9",
+                "reference": "f1d7a8b941de46bb17053fe71d50209e31c901c9",
                 "shasum": ""
             },
             "require": {
@@ -5799,7 +5777,7 @@
                 "issues": "https://nystudio107.com/plugins/seomatic/support",
                 "source": "https://github.com/nystudio107/craft-seomatic"
             },
-            "time": "2024-09-11T03:41:18+00:00"
+            "time": "2024-09-29T23:29:14+00:00"
         },
         {
             "name": "nystudio107/craft-twigprofiler",
@@ -6514,11 +6492,11 @@
         },
         {
             "name": "phpoffice/phpspreadsheet",
-            "version": "1.29.1",
+            "version": "1.29.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/59ee38f7480904cd6487e5cbdea4d80ff2758719",
-                "reference": "59ee38f7480904cd6487e5cbdea4d80ff2758719",
+                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/3a5a818d7d3e4b5bd2e56fb9de44dbded6eae07f",
+                "reference": "3a5a818d7d3e4b5bd2e56fb9de44dbded6eae07f",
                 "shasum": ""
             },
             "require": {
@@ -6592,7 +6570,7 @@
                 "xls",
                 "xlsx"
             ],
-            "time": "2024-09-03T00:55:32+00:00"
+            "time": "2024-09-29T07:04:47+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -7152,11 +7130,11 @@
         },
         {
             "name": "putyourlightson/craft-blitz",
-            "version": "4.23.0",
+            "version": "4.23.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/1c5289f4281e8b905cbfced538b31fa1803cf361",
-                "reference": "1c5289f4281e8b905cbfced538b31fa1803cf361",
+                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/340b5b4a31173980c88e8b5c2bedc0f4fa748df2",
+                "reference": "340b5b4a31173980c88e8b5c2bedc0f4fa748df2",
                 "shasum": ""
             },
             "require": {
@@ -7201,7 +7179,7 @@
                 "source": "https://github.com/putyourlightson/craft-blitz",
                 "issues": "https://github.com/putyourlightson/craft-blitz/issues"
             },
-            "time": "2024-08-29T06:03:54+00:00"
+            "time": "2024-10-04T15:44:24+00:00"
         },
         {
             "name": "putyourlightson/craft-blitz-hints",
@@ -7329,11 +7307,11 @@
         },
         {
             "name": "putyourlightson/craft-sprig-core",
-            "version": "2.12.0",
+            "version": "2.12.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-sprig-core/zipball/513f544110cabc41b28dfad2f31ca6bb6f77a27f",
-                "reference": "513f544110cabc41b28dfad2f31ca6bb6f77a27f",
+                "url": "https://api.github.com/repos/putyourlightson/craft-sprig-core/zipball/f125ae36cba4f3493ced32312912d015fc85fe16",
+                "reference": "f125ae36cba4f3493ced32312912d015fc85fe16",
                 "shasum": ""
             },
             "require": {
@@ -7355,7 +7333,7 @@
                 "source": "https://github.com/putyourlightson/craft-sprig-core",
                 "issues": "https://github.com/putyourlightson/craft-sprig-core/issues"
             },
-            "time": "2024-08-29T11:34:07+00:00"
+            "time": "2024-09-19T17:52:18+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -8016,11 +7994,11 @@
         },
         {
             "name": "solspace/craft-calendar",
-            "version": "5.0.8",
+            "version": "5.0.10",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-calendar/zipball/71a8f7e2e1bf75c60cba92964729e344047be341",
-                "reference": "71a8f7e2e1bf75c60cba92964729e344047be341",
+                "url": "https://api.github.com/repos/solspace/craft-calendar/zipball/9567a62abc6aab3c3dc13509b093b14e8b8cf293",
+                "reference": "9567a62abc6aab3c3dc13509b093b14e8b8cf293",
                 "shasum": ""
             },
             "require": {
@@ -8035,7 +8013,7 @@
             },
             "type": "craft-plugin",
             "extra": {
-                "schemaVersion": "5.0.0",
+                "schemaVersion": "5.0.1",
                 "handle": "calendar",
                 "class": "Solspace\\Calendar\\Calendar",
                 "name": "Calendar",
@@ -8070,15 +8048,15 @@
                 }
             ],
             "description": "The most reliable and powerful event management plugin for Craft.",
-            "time": "2024-09-12T05:31:05+00:00"
+            "time": "2024-10-09T20:43:22+00:00"
         },
         {
             "name": "solspace/craft-freeform",
-            "version": "5.6.3",
+            "version": "5.6.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/2939e277aa69178f8619f49a811a3faa9a3ac18e",
-                "reference": "2939e277aa69178f8619f49a811a3faa9a3ac18e",
+                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/c0e8faabfd30d2e7a7aea60e3b7f4fdc8293df5f",
+                "reference": "c0e8faabfd30d2e7a7aea60e3b7f4fdc8293df5f",
                 "shasum": ""
             },
             "require": {
@@ -8126,7 +8104,7 @@
                 }
             ],
             "description": "The most reliable form builder that's ready for wherever your project takes you.",
-            "time": "2024-09-27T05:45:28+00:00"
+            "time": "2024-10-07T05:03:17+00:00"
         },
         {
             "name": "spacecatninja/imager-x",
@@ -8195,11 +8173,11 @@
         },
         {
             "name": "spicyweb/craft-neo",
-            "version": "4.2.14",
+            "version": "4.2.16",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/b17dc2593aba1d283f002e517b55b5b02fec1c96",
-                "reference": "b17dc2593aba1d283f002e517b55b5b02fec1c96",
+                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/f6efc30929631946a79ad6097bb7506b1f59e4b9",
+                "reference": "f6efc30929631946a79ad6097bb7506b1f59e4b9",
                 "shasum": ""
             },
             "require": {
@@ -8213,7 +8191,7 @@
                 "schemaVersion": "4.0.0",
                 "class": "benf\\neo\\Plugin",
                 "changelogUrl": "https://github.com/spicywebau/craft-neo/blob/4.x/CHANGELOG.md",
-                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.2.14.zip"
+                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.2.16.zip"
             },
             "autoload": {
                 "psr-4": {
@@ -8241,10 +8219,10 @@
             "support": {
                 "issues": "https://github.com/spicywebau/craft-neo/issues",
                 "source": "https://github.com/spicywebau/craft-neo",
-                "docs": "https://github.com/spicywebau/craft-neo/blob/4.2.14/README.md",
+                "docs": "https://github.com/spicywebau/craft-neo/blob/4.2.16/README.md",
                 "rss": "https://github.com/spicywebau/craft-neo/commits/4.x.atom"
             },
-            "time": "2024-09-22T06:13:04+00:00"
+            "time": "2024-10-07T10:05:25+00:00"
         },
         {
             "name": "ssnepenthe/color-utils",
@@ -10449,11 +10427,11 @@
         },
         {
             "name": "tecnickcom/tcpdf",
-            "version": "6.7.5",
+            "version": "6.7.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/951eabf0338ec2522bd0d5d9c79b08a3a3d36b36",
-                "reference": "951eabf0338ec2522bd0d5d9c79b08a3a3d36b36",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/4cf1ab192e87e6916d20f93077b2bdfa96a2f848",
+                "reference": "4cf1ab192e87e6916d20f93077b2bdfa96a2f848",
                 "shasum": ""
             },
             "require": {
@@ -10501,7 +10479,7 @@
                 "pdf417",
                 "qrcode"
             ],
-            "time": "2024-04-20T17:25:10+00:00"
+            "time": "2024-10-06T10:54:28+00:00"
         },
         {
             "name": "theiconic/name-parser",
@@ -10810,11 +10788,11 @@
         },
         {
             "name": "verbb/base",
-            "version": "2.0.8",
+            "version": "2.0.9",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/1445a89d7a360d3ba8bba97c47a10c6f1aa27307",
-                "reference": "1445a89d7a360d3ba8bba97c47a10c6f1aa27307",
+                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/29adbf9d078424013ec982d41a59ab7c5f307b04",
+                "reference": "29adbf9d078424013ec982d41a59ab7c5f307b04",
                 "shasum": ""
             },
             "require": {
@@ -10837,7 +10815,7 @@
                 }
             ],
             "description": "Common utilities and building-blocks for Verbb plugins for Craft CMS.",
-            "time": "2024-06-10T09:00:32+00:00"
+            "time": "2024-09-13T23:31:03+00:00"
         },
         {
             "name": "verbb/buttonbox",
@@ -11117,11 +11095,11 @@
         },
         {
             "name": "verbb/tablemaker",
-            "version": "4.0.13",
+            "version": "4.0.14",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/tablemaker/zipball/129d8885500eec48745a746b352e8366d9638e0a",
-                "reference": "129d8885500eec48745a746b352e8366d9638e0a",
+                "url": "https://api.github.com/repos/verbb/tablemaker/zipball/192b02ae9e32ee8bb482e01d4281baa111597538",
+                "reference": "192b02ae9e32ee8bb482e01d4281baa111597538",
                 "shasum": ""
             },
             "require": {
@@ -11170,7 +11148,7 @@
                 "docs": "https://github.com/verbb/tablemaker",
                 "rss": "https://github.com/verbb/tablemaker/commits/v2.atom"
             },
-            "time": "2024-09-04T02:53:19+00:00"
+            "time": "2024-10-09T09:19:49+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

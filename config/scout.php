@@ -8,8 +8,6 @@ use rias\scout\ScoutIndex;
 
 
 return [
-	"application_id" => getenv('ALGOLIA_APP_ID'),
-	"admin_api_key" => getenv('ALGOLIA_ADMIN_API'),
 	/*
 	* Scout listens to numerous Element events to keep them updated in
 	* their respective indices. You can disable these and update
@@ -39,11 +37,23 @@ return [
 	 */
 	'indexRelations' => false,
 
-	/*
-	* The Algolia search API key, this key can be found in your Algolia Account
-	* https://www.algolia.com/api-keys. This search key is not used in Scout
-	* but can be used through the Scout variable in your template files.
-	*/
+    /*
+     * The Algolia Application ID, this id can be found in your Algolia Account
+     * https://www.algolia.com/api-keys. This id is used to update records.
+     */
+    'application_id' => getenv('ALGOLIA_APP_ID'),
+
+    /*
+     * The Algolia Admin API key, this key can be found in your Algolia Account
+     * https://www.algolia.com/api-keys. This key is used to update records.
+     */
+    'admin_api_key'  => getenv('ALGOLIA_ADMIN_API'),
+
+    /*
+     * The Algolia search API key, this key can be found in your Algolia Account
+     * https://www.algolia.com/api-keys. This search key is not used in Scout
+     * but can be used through the Scout variable in your template files.
+     */
 	'search_api_key' => getenv('ALGOLIA_SEARCH_API'), //optional
 
 	/*
@@ -53,11 +63,11 @@ return [
 	*/
 	'indices' => [
 
-// BEGIN NEWS INDEX
+        // BEGIN NEWS INDEX
 		ScoutIndex::create(getenv('ENVIRONMENT') . '_news')
-// Scout uses this by default, so this is optional
+            // Scout uses this by default, so this is optional
 			->elementType(Entry::class)
-// If you don't define a siteId, the primary site is used
+            // If you don't define a siteId, the primary site is used
 			->criteria(function (EntryQuery $query) {
 				return $query
 					->section(['news'])
@@ -82,7 +92,7 @@ return [
 				];
 			}),
 
-// BEGIN DOCUMENTS INDEX
+        // BEGIN DOCUMENTS INDEX
 		ScoutIndex::create(getenv('ENVIRONMENT') . '_documents')
 			->criteria(function (EntryQuery $query) {
 				return $query
@@ -120,7 +130,7 @@ return [
 				];
 			}),
 
-// BEGIN STAFF INDEX
+        // BEGIN STAFF INDEX
 		ScoutIndex::create(getenv('ENVIRONMENT') . '_staff')
 			->criteria(function (EntryQuery $query) {
 				return $query
@@ -144,7 +154,7 @@ return [
 				];
 			}),
 
-// BEGIN VOLUNTEERS INDEX
+        // BEGIN VOLUNTEERS INDEX
 		ScoutIndex::create(getenv('ENVIRONMENT') . '_volunteers')
 			->criteria(function (EntryQuery $query) {
 				return $query
@@ -165,7 +175,7 @@ return [
 				];
 			}),
 
-// BEGIN TEAMS INDEX
+        // BEGIN TEAMS INDEX
 		ScoutIndex::create(getenv('ENVIRONMENT') . '_teams')
 			->criteria(function (EntryQuery $query) {
 				return $query
@@ -187,7 +197,7 @@ return [
 				];
 			}),
 
-// BEGIN ALL INDEX
+        // BEGIN ALL INDEX
 		ScoutIndex::create(getenv('ENVIRONMENT') . '_all')
 			->elementType(Entry::class)
 			->criteria(function (EntryQuery $query) {
