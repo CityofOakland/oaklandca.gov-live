@@ -206,7 +206,7 @@
 		{% if entry.agendaTopics|length %}
 			<h3 class="mt-9 mb-8">Topics</h3>
 			<ol class="process">
-				{% for item in entry.agendaTopics.with(['relatedDocuments']).all() %}
+				{% for item in entry.agendaTopics.with(['relatedDocuments2']).all() %}
 					<li data-index="{{ loop.index }}">
 						<div>
 							<span class="font-bold">{{ item.topic }}</span>
