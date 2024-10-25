@@ -12,6 +12,17 @@ settings:
       __assoc__:
         -
           - label
+          - ''
+        -
+          - value
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
           - Staff
         -
           - value
