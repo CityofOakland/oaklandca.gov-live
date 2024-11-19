@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c8f3a6b941cbd48d3a635e3ea6fcb46",
+    "content-hash": "164dd6b8efbd98939f6cb642aa06f65a",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1269,11 +1269,11 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.8.2",
+            "version": "2.8.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/6e543d03187c882ea1c6ba43add2467754427803",
-                "reference": "6e543d03187c882ea1c6ba43add2467754427803",
+                "url": "https://api.github.com/repos/composer/composer/zipball/2a7c71266b2545a3bed9f4860734081963f6e688",
+                "reference": "2a7c71266b2545a3bed9f4860734081963f6e688",
                 "shasum": ""
             },
             "require": {
@@ -1287,7 +1287,7 @@
                 "justinrainbow/json-schema": "^5.3",
                 "php": "^7.2.5 || ^8.0",
                 "psr/log": "^1.0 || ^2.0 || ^3.0",
-                "react/promise": "^3.2",
+                "react/promise": "^2.11 || ^3.2",
                 "seld/jsonlint": "^1.4",
                 "seld/phar-utils": "^1.2",
                 "seld/signal-handler": "^2.0",
@@ -1345,7 +1345,7 @@
                 "dependency",
                 "package"
             ],
-            "time": "2024-10-29T15:12:11+00:00"
+            "time": "2024-11-17T12:13:04+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -1683,11 +1683,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "4.13.0",
+            "version": "4.13.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/a69fb94ddb48ebf0bc5e7313cf21d943c196ecc3",
-                "reference": "a69fb94ddb48ebf0bc5e7313cf21d943c196ecc3",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/2c917722aea4dab9c758f938467eb710c117bf3a",
+                "reference": "2c917722aea4dab9c758f938467eb710c117bf3a",
                 "shasum": ""
             },
             "require": {
@@ -1775,7 +1775,7 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2024-11-12T17:00:44+00:00"
+            "time": "2024-11-19T02:09:21+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -6702,15 +6702,15 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.33.0",
+            "version": "2.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/82a311fd3690fb2bf7b64d5c98f912b3dd746140",
-                "reference": "82a311fd3690fb2bf7b64d5c98f912b3dd746140",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/c00d78fb6b29658347f9d37ebe104bffadf36299",
+                "reference": "c00d78fb6b29658347f9d37ebe104bffadf36299",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2 || ^8.0"
+                "php": "^7.4 || ^8.0"
             },
             "type": "library",
             "autoload": {
@@ -6724,7 +6724,7 @@
                 "MIT"
             ],
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
-            "time": "2024-10-13T11:25:22+00:00"
+            "time": "2024-10-13T11:29:49+00:00"
         },
         {
             "name": "pixelandtonic/imagine",
@@ -7207,11 +7207,11 @@
         },
         {
             "name": "putyourlightson/craft-blitz",
-            "version": "4.23.5",
+            "version": "4.23.7",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/36e483679e5c8f386322cc538d8132405fca9235",
-                "reference": "36e483679e5c8f386322cc538d8132405fca9235",
+                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/b9c9b18e942d27b376f23a5d1f03bff9fad60638",
+                "reference": "b9c9b18e942d27b376f23a5d1f03bff9fad60638",
                 "shasum": ""
             },
             "require": {
@@ -7256,7 +7256,7 @@
                 "source": "https://github.com/putyourlightson/craft-blitz",
                 "issues": "https://github.com/putyourlightson/craft-blitz/issues"
             },
-            "time": "2024-11-07T18:32:27+00:00"
+            "time": "2024-11-15T15:59:29+00:00"
         },
         {
             "name": "putyourlightson/craft-blitz-hints",
@@ -8181,11 +8181,11 @@
         },
         {
             "name": "solspace/craft-freeform",
-            "version": "5.7.1",
+            "version": "5.7.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/79ab868609fd69932ce67de3cf56a0284c0014b7",
-                "reference": "79ab868609fd69932ce67de3cf56a0284c0014b7",
+                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/2fc0ab03cbb7fc17d8b122153cd0064fb6a91640",
+                "reference": "2fc0ab03cbb7fc17d8b122153cd0064fb6a91640",
                 "shasum": ""
             },
             "require": {
@@ -8201,7 +8201,6 @@
                 "nesbot/carbon": "^1.22.1|^2.19|^3.0.0",
                 "php": "^8.0.2|^8.2.0",
                 "phpoffice/phpspreadsheet": "^1.29",
-                "phpstan/phpdoc-parser": "^1.33",
                 "stripe/stripe-php": "^7.0|^8.0|^9.0|^10.0|^12.0|^13.0|^14.0|^15.0",
                 "symfony/expression-language": "^5.0|^6.0|^7.0",
                 "symfony/filesystem": "^5.0|^6.0|^7.0",
@@ -8235,7 +8234,7 @@
                 }
             ],
             "description": "The most reliable form builder that's ready for wherever your project takes you.",
-            "time": "2024-11-12T17:11:06+00:00"
+            "time": "2024-11-15T20:55:17+00:00"
         },
         {
             "name": "spacecatninja/imager-x",
@@ -8304,11 +8303,11 @@
         },
         {
             "name": "spicyweb/craft-neo",
-            "version": "4.2.20",
+            "version": "4.2.21",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/bc97ae9f85d171e835296dfdb9647b3673ae0fe1",
-                "reference": "bc97ae9f85d171e835296dfdb9647b3673ae0fe1",
+                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/7330e3d02d16fd010ca845ec875d149e8dd2ac0f",
+                "reference": "7330e3d02d16fd010ca845ec875d149e8dd2ac0f",
                 "shasum": ""
             },
             "require": {
@@ -8322,7 +8321,7 @@
                 "schemaVersion": "4.0.0",
                 "class": "benf\\neo\\Plugin",
                 "changelogUrl": "https://github.com/spicywebau/craft-neo/blob/4.x/CHANGELOG.md",
-                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.2.20.zip"
+                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.2.21.zip"
             },
             "autoload": {
                 "psr-4": {
@@ -8350,10 +8349,10 @@
             "support": {
                 "issues": "https://github.com/spicywebau/craft-neo/issues",
                 "source": "https://github.com/spicywebau/craft-neo",
-                "docs": "https://github.com/spicywebau/craft-neo/blob/4.2.20/README.md",
+                "docs": "https://github.com/spicywebau/craft-neo/blob/4.2.21/README.md",
                 "rss": "https://github.com/spicywebau/craft-neo/commits/4.x.atom"
             },
-            "time": "2024-11-13T02:33:29+00:00"
+            "time": "2024-11-19T03:25:04+00:00"
         },
         {
             "name": "ssnepenthe/color-utils",
@@ -8778,11 +8777,6 @@
         {
             "name": "symfony/console",
             "version": "v6.4.15",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/console.git",
-                "reference": "f1fc6f47283e27336e7cebb9e8946c8de7bff9bd"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/console/zipball/f1fc6f47283e27336e7cebb9e8946c8de7bff9bd",
@@ -8806,19 +8800,6 @@
             "provide": {
                 "psr/log-implementation": "1.0|2.0|3.0"
             },
-            "require-dev": {
-                "psr/log": "^1|^2|^3",
-                "symfony/config": "^5.4|^6.0|^7.0",
-                "symfony/dependency-injection": "^5.4|^6.0|^7.0",
-                "symfony/event-dispatcher": "^5.4|^6.0|^7.0",
-                "symfony/http-foundation": "^6.4|^7.0",
-                "symfony/http-kernel": "^6.4|^7.0",
-                "symfony/lock": "^5.4|^6.0|^7.0",
-                "symfony/messenger": "^5.4|^6.0|^7.0",
-                "symfony/process": "^5.4|^6.0|^7.0",
-                "symfony/stopwatch": "^5.4|^6.0|^7.0",
-                "symfony/var-dumper": "^5.4|^6.0|^7.0"
-            },
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -8828,7 +8809,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -8849,23 +8829,6 @@
                 "command-line",
                 "console",
                 "terminal"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/console/tree/v6.4.15"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2024-11-06T14:19:14+00:00"
         },
@@ -9218,11 +9181,6 @@
         {
             "name": "symfony/http-client",
             "version": "v6.4.15",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/http-client.git",
-                "reference": "cb4073c905cd12b8496d24ac428a9228c1750670"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/http-client/zipball/cb4073c905cd12b8496d24ac428a9228c1750670",
@@ -9246,21 +9204,6 @@
                 "psr/http-client-implementation": "1.0",
                 "symfony/http-client-implementation": "3.0"
             },
-            "require-dev": {
-                "amphp/amp": "^2.5",
-                "amphp/http-client": "^4.2.1",
-                "amphp/http-tunnel": "^1.0",
-                "amphp/socket": "^1.1",
-                "guzzlehttp/promises": "^1.4|^2.0",
-                "nyholm/psr7": "^1.0",
-                "php-http/httplug": "^1.0|^2.0",
-                "psr/http-client": "^1.0",
-                "symfony/dependency-injection": "^5.4|^6.0|^7.0",
-                "symfony/http-kernel": "^5.4|^6.0|^7.0",
-                "symfony/messenger": "^5.4|^6.0|^7.0",
-                "symfony/process": "^5.4|^6.0|^7.0",
-                "symfony/stopwatch": "^5.4|^6.0|^7.0"
-            },
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -9270,7 +9213,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -9288,23 +9230,6 @@
             "homepage": "https://symfony.com",
             "keywords": [
                 "http"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/http-client/tree/v6.4.15"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2024-11-13T13:40:18+00:00"
         },
@@ -10061,11 +9986,6 @@
         {
             "name": "symfony/process",
             "version": "v6.4.15",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/process.git",
-                "reference": "3cb242f059c14ae08591c5c4087d1fe443564392"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/process/zipball/3cb242f059c14ae08591c5c4087d1fe443564392",
@@ -10084,7 +10004,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -10100,23 +10019,6 @@
             ],
             "description": "Executes commands in sub-processes",
             "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/process/tree/v6.4.15"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2024-11-06T14:19:14+00:00"
         },
         {
@@ -10173,11 +10075,6 @@
         {
             "name": "symfony/property-info",
             "version": "v6.4.15",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/property-info.git",
-                "reference": "9d7b576bb643c72bf3b60eb8e89c98725d00afd0"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/property-info/zipball/9d7b576bb643c72bf3b60eb8e89c98725d00afd0",
@@ -10194,13 +10091,6 @@
                 "symfony/dependency-injection": "<5.4",
                 "symfony/serializer": "<6.4"
             },
-            "require-dev": {
-                "phpdocumentor/reflection-docblock": "^5.2",
-                "phpstan/phpdoc-parser": "^1.0|^2.0",
-                "symfony/cache": "^5.4|^6.0|^7.0",
-                "symfony/dependency-injection": "^5.4|^6.0|^7.0",
-                "symfony/serializer": "^6.4|^7.0"
-            },
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -10210,7 +10100,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -10234,33 +10123,11 @@
                 "type",
                 "validator"
             ],
-            "support": {
-                "source": "https://github.com/symfony/property-info/tree/v6.4.15"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2024-11-07T16:39:46+00:00"
         },
         {
             "name": "symfony/serializer",
             "version": "v6.4.15",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/serializer.git",
-                "reference": "9d862d66198f3c2e30404228629ef4c18d5d608e"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/serializer/zipball/9d862d66198f3c2e30404228629ef4c18d5d608e",
@@ -10283,30 +10150,6 @@
                 "symfony/validator": "<6.4",
                 "symfony/yaml": "<5.4"
             },
-            "require-dev": {
-                "doctrine/annotations": "^1.12|^2",
-                "phpdocumentor/reflection-docblock": "^3.2|^4.0|^5.0",
-                "seld/jsonlint": "^1.10",
-                "symfony/cache": "^5.4|^6.0|^7.0",
-                "symfony/config": "^5.4|^6.0|^7.0",
-                "symfony/console": "^5.4|^6.0|^7.0",
-                "symfony/dependency-injection": "^5.4|^6.0|^7.0",
-                "symfony/error-handler": "^5.4|^6.0|^7.0",
-                "symfony/filesystem": "^5.4|^6.0|^7.0",
-                "symfony/form": "^5.4|^6.0|^7.0",
-                "symfony/http-foundation": "^5.4|^6.0|^7.0",
-                "symfony/http-kernel": "^5.4|^6.0|^7.0",
-                "symfony/messenger": "^5.4|^6.0|^7.0",
-                "symfony/mime": "^5.4|^6.0|^7.0",
-                "symfony/property-access": "^5.4.26|^6.3|^7.0",
-                "symfony/property-info": "^5.4.24|^6.2.11|^7.0",
-                "symfony/translation-contracts": "^2.5|^3",
-                "symfony/uid": "^5.4|^6.0|^7.0",
-                "symfony/validator": "^6.4|^7.0",
-                "symfony/var-dumper": "^5.4|^6.0|^7.0",
-                "symfony/var-exporter": "^5.4|^6.0|^7.0",
-                "symfony/yaml": "^5.4|^6.0|^7.0"
-            },
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -10316,7 +10159,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -10332,23 +10174,6 @@
             ],
             "description": "Handles serializing and deserializing data structures, including object graphs, into array structures or other formats like XML and JSON.",
             "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/serializer/tree/v6.4.15"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2024-10-23T13:25:59+00:00"
         },
         {
@@ -10414,11 +10239,6 @@
         {
             "name": "symfony/string",
             "version": "v6.4.15",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/string.git",
-                "reference": "73a5e66ea2e1677c98d4449177c5a9cf9d8b4c6f"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/string/zipball/73a5e66ea2e1677c98d4449177c5a9cf9d8b4c6f",
@@ -10435,13 +10255,6 @@
             "conflict": {
                 "symfony/translation-contracts": "<2.5"
             },
-            "require-dev": {
-                "symfony/error-handler": "^5.4|^6.0|^7.0",
-                "symfony/http-client": "^5.4|^6.0|^7.0",
-                "symfony/intl": "^6.2|^7.0",
-                "symfony/translation-contracts": "^2.5|^3.0",
-                "symfony/var-exporter": "^5.4|^6.0|^7.0"
-            },
             "type": "library",
             "autoload": {
                 "files": [
@@ -10454,7 +10267,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -10477,23 +10289,6 @@
                 "unicode",
                 "utf-8",
                 "utf8"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/string/tree/v6.4.15"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2024-11-13T13:31:12+00:00"
         },
@@ -10612,11 +10407,6 @@
         {
             "name": "symfony/var-dumper",
             "version": "v6.4.15",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "38254d5a5ac2e61f2b52f9caf54e7aa3c9d36b80"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/var-dumper/zipball/38254d5a5ac2e61f2b52f9caf54e7aa3c9d36b80",
@@ -10630,15 +10420,6 @@
             },
             "conflict": {
                 "symfony/console": "<5.4"
-            },
-            "require-dev": {
-                "ext-iconv": "*",
-                "symfony/console": "^5.4|^6.0|^7.0",
-                "symfony/error-handler": "^6.3|^7.0",
-                "symfony/http-kernel": "^5.4|^6.0|^7.0",
-                "symfony/process": "^5.4|^6.0|^7.0",
-                "symfony/uid": "^5.4|^6.0|^7.0",
-                "twig/twig": "^2.13|^3.0.4"
             },
             "bin": [
                 "Resources/bin/var-dump-server"
@@ -10655,7 +10436,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -10674,23 +10454,6 @@
             "keywords": [
                 "debug",
                 "dump"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/v6.4.15"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2024-11-08T15:28:48+00:00"
         },
