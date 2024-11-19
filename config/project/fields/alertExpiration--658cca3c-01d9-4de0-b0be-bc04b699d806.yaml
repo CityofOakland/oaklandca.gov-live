@@ -1,5 +1,7 @@
-columnSuffix: null
-contentColumnType: datetime
+columnSuffix: nnmamsfv
+contentColumnType:
+  - 'date:datetime'
+  - 'tz:string'
 fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087 # Globals
 handle: alertExpiration
 instructions: 'If the current date is after this date, then the alert will be hidden. To make the alert persistent, leave this field empty.'
@@ -10,8 +12,8 @@ settings:
   min: null
   minuteIncrement: 30
   showDate: true
-  showTime: false
-  showTimeZone: false
+  showTime: true
+  showTimeZone: true
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Date
