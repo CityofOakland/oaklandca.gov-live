@@ -18,20 +18,13 @@
 ) %}
 
 {% set defaultButtonUrl = "/events/related-to/" ~ entry.section.handle ~ "/" ~ entry.slug %}
-
-{% set eventOptions = {
-	calendar: "events"
-} %}
-
-{% set meetingOptions = {
-	calendar: "meetings"
-} %}
-
-{% set contactState = entry.addresses | length or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
-
+{% set eventOptions = { calendar: "events" } %}
+{% set meetingOptions = { calendar: "meetings" } %}
 {% set contentBuilder = entry.contentBuilder | length %}
-{% set leadership = true %}
+{% set contactState = entry.addresses | length or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
 {% set contact = contactState %}
+{% set leadership = entry.groupHeadName|length > 0 %}
+{% set disableRelatedPages = true %}
 
 {% block content %}
 	{{ include("_partials/_page-banners.twig", {
@@ -55,13 +48,7 @@
 	<section id="content" class="@container relative z-0 bg-white">
 		<div class="container px-6 pt-10 pb-8 @3xl:px-16 @3xl:py-12">
 			<div class="flex">
-				{% set disableRelatedPages = true %}
-				{{ include("_partials/_elements/_nav-sidebar.twig", {
-					navMenu: {
-						"leadership": true,
-						"contact": contactState
-					}
-				}) }}
+				{{ include("_partials/_elements/_nav-sidebar.twig") }}
 				<div class="flex-1 @container">
 					{{ include("_partials/_content-builder/_tool.twig") }}
 					{{ include("_partials/_page-leadership.twig") }}
