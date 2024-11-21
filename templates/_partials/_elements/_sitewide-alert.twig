@@ -1,14 +1,17 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% if sitewideAlert.alertShowHide == "show" and (sitewideAlert.alertExpiration ?? '' >= now or not sitewideAlert.alertExpiration) %}
-  {% switch sitewideAlert.alertType %}
-    {% case "warning" %}
-      {% set color = "yellow-600" %}
-    {% case "alert" %}
-      {% set color = "red-500" %}
-    {% default %}
-      {% set color = "green-600" %}
-  {% endswitch %}
-  <div class="relative bg-{{ color }} z-0 text-white @container">
+{% switch sitewideAlert.alertType %}
+  {% case "warning" %}
+    {% set textColor = 'text-black' %}
+    {% set color = "yellow-600" %}
+  {% case "alert" %}
+    {% set textColor = 'text-white' %}
+    {% set color = "red-500" %}
+  {% default %}
+    {% set textColor = 'text-white' %}
+    {% set color = "green-600" %}
+{% endswitch %}
+  <div class="relative bg-{{ color }} z-0 {{ textColor }} @container">
     <img alt="" class="absolute inset-0 h-full w-full object-cover opacity-3" role="presentation" src="/dist/img/oaklandroots.svg">
     <div class="container relative z-20 py-4 text-sm px-6 @3xl:px-16">
       <div class="content-start items-center sm:flex">
