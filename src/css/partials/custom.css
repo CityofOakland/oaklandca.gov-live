@@ -23,6 +23,10 @@ p.small {
 }
 
 #sitewide-message a {
+  @apply text-yellow-500 no-underline hover:text-yellow-700
+}
+
+.bg-yellow-600 #sitewide-message a {
   @apply text-green-700 no-underline hover:text-green-900;
 }
 
