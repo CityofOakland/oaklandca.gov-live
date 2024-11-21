@@ -23,7 +23,11 @@ p.small {
 }
 
 #sitewide-message a {
-  @apply text-white border-b-2 hover:border-none hover:text-slate-900 visited:text-white
+  @apply text-yellow-500 no-underline hover:text-yellow-700
+}
+
+.bg-yellow-600 #sitewide-message a {
+  @apply text-green-700 no-underline hover:text-green-900;
 }
 
 .section-box {
