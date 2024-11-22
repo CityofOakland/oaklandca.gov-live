@@ -4,7 +4,7 @@
 {% set wideCards = cardLength == 2 or cardLength == 4 %}
 {% set cardColor = block.cardBackgroundColor.color[0] ?? null %}
 
-<section class="flex-1 {{ block.background }}">
+<section class="flex-1 {{ block.background }} pb-12">
 	<div class="container pt-8 pb-6 @3xl:pt-12">
 		{{ include("_partials/_content-builder/_blocks/_elements/_component-header.twig", {
 			params: {
