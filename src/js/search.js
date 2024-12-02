@@ -55,17 +55,13 @@ const kebabCase = string => string
 
 // 1. Create a render function for the pagination widget
 const renderPagination = (renderOptions, isFirstRender) => {
-
   const container = document.querySelector('#bottom-pagination');
-
   const { pages, currentRefinement, nbPages, refine } = renderOptions;
 
   if (nbPages > 1 && nbPages <= 7) {
-
     const previous = `<li><a class="prev ${currentRefinement > 0 ? '' : 'disabled'}" href="#" data-value="${currentRefinement - 1}">Previous</a></li>`;
     const next = `<li><a class="next ${currentRefinement < nbPages - 1 ? '' : 'disabled'}" href="#" data-value="${currentRefinement + 1}">Next</a></li>`;
-
-    const pages = [...Array(nbPages).keys()];;
+    const pages = [...Array(nbPages).keys()];
 
     container.innerHTML = `
         <ul class="pagination">
@@ -231,9 +227,6 @@ allSearch.addWidget(
         {{^summary}}
           {{#bio}}
             {{{ _snippetResult.bio.value }}}
-          {{/bio}}
-          {{^bio}}
-            {{{ _snippetResult.body.value }}}
           {{/bio}}
         {{/summary}}
         <p class="updated">Updated: {{ dateUpdated }}</p>
