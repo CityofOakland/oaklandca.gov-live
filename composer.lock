@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3dfa8f8b32809be16ea9f4f4baf3a84a",
+    "content-hash": "eeac3dbcb12060d61649778cc9524acf",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1686,11 +1686,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "4.13.3",
+            "version": "4.13.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/2ccb6512dfad1800e4b19530f13272cc5385da27",
-                "reference": "2ccb6512dfad1800e4b19530f13272cc5385da27",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/3a83de222029d3cbdea6dea5f95b4a79a5b929be",
+                "reference": "3a83de222029d3cbdea6dea5f95b4a79a5b929be",
                 "shasum": ""
             },
             "require": {
@@ -1778,7 +1778,7 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2024-11-22T23:26:35+00:00"
+            "time": "2024-12-03T20:59:17+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -8196,11 +8196,11 @@
         },
         {
             "name": "solspace/craft-freeform",
-            "version": "5.7.4",
+            "version": "5.8.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/bd7557f0ee543b738f81e41335edc3dd8d0d8016",
-                "reference": "bd7557f0ee543b738f81e41335edc3dd8d0d8016",
+                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/4b208e9f94c94a89976cef375778ef2a77cf4c51",
+                "reference": "4b208e9f94c94a89976cef375778ef2a77cf4c51",
                 "shasum": ""
             },
             "require": {
@@ -8226,7 +8226,7 @@
             },
             "type": "craft-plugin",
             "extra": {
-                "schemaVersion": "5.3.0",
+                "schemaVersion": "5.4.0",
                 "handle": "freeform",
                 "class": "Solspace\\Freeform\\Freeform",
                 "name": "Freeform",
@@ -8249,7 +8249,7 @@
                 }
             ],
             "description": "The most reliable form builder that's ready for wherever your project takes you.",
-            "time": "2024-11-29T17:27:32+00:00"
+            "time": "2024-12-03T08:50:08+00:00"
         },
         {
             "name": "spacecatninja/imager-x",
@@ -8522,11 +8522,11 @@
         },
         {
             "name": "studioespresso/craft-scout",
-            "version": "4.1.1",
+            "version": "4.1.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/studioespresso/craft-scout/zipball/db9e31a5d2648b9d370e3488d85938ce2b3f5501",
-                "reference": "db9e31a5d2648b9d370e3488d85938ce2b3f5501",
+                "url": "https://api.github.com/repos/studioespresso/craft-scout/zipball/0b9a74b1bdc3e334496b15d0d7b2e6ee06ac66be",
+                "reference": "0b9a74b1bdc3e334496b15d0d7b2e6ee06ac66be",
                 "shasum": ""
             },
             "require": {
@@ -8578,7 +8578,7 @@
                 "docs": "https://github.com/studioespresso/craft-scout/blob/master/README.md",
                 "issues": "https://github.com/studioespresso/craft-scout/issues"
             },
-            "time": "2024-07-15T16:49:44+00:00"
+            "time": "2024-12-02T19:18:16+00:00"
         },
         {
             "name": "sunra/php-simple-html-dom-parser",
