@@ -1,4 +1,4 @@
-dateModified: 1733065734
+dateModified: 1733317049
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -543,6 +543,7 @@ meta:
     0accbbf3-3501-4536-b0f0-19facda9bb98: 'Number Title' # Number Title
     0b609d8d-ec6c-476d-9953-eef0377c30f7: Entry # Entry
     0bbec91d-57e2-4212-b449-f04f19c770da: 'Icon Card' # Icon Card
+    0becf309-2f2c-4766-bae9-8bacfd58bf8a: 'Expires On' # Expires On
     0ccdd608-28e4-473d-8fa8-f824e4591a7c: 'Step Action' # Step Action
     00ccf4ec-25d9-4bce-864a-4d06468adb36: Body # Body
     0cf5f750-4518-4e2c-9766-9b21e108e9be: 'Staff Heading' # Staff Heading
@@ -1400,7 +1401,7 @@ plugins:
     edition: pro
     enabled: true
     licenseKey: 80IWDHDW3ZJB27DOLCE6AQE5
-    schemaVersion: 5.3.0
+    schemaVersion: 5.4.0
     settings:
       alertNotificationRecipients: ''
       allowDashesInFieldHandles: false
