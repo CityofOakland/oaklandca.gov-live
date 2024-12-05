@@ -36,11 +36,9 @@
 
 <div id="topbar" class="navbar">
 	<div class="relative flex h-8 items-center justify-end px-0 text-white lg:justify-between lg:px-6 bg-green-1000 lg:bg-green-800">
-		{% set mayor = globalMayorHint.staffEntry.one() %}
-		{% set jobTitle = mayor.jobTitle ? mayor.jobTitle : mayor.staffImportJobTitle %}
 		<p class="oak-hidden lg:block">
 			<b>Official Website for the City of Oakland</b> <span class="mx-1">|</span>
-			<a class="hover:text-green-800 hover:underline" href="/officials/{{ mayor.slug }}">{{ jobTitle }} {{ mayor.title }}</a>
+			{{ globalHeader.mayor.link({ class: 'hover:text-green-800 hover:underline' }) }}
 		</p>
 		<nav class="flex items-center" id="top-navigation" name="Top Navigation">
 			<ul class="flex items-center">
