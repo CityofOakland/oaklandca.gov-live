@@ -14,6 +14,18 @@ tabs:
         userCondition: null
         warning: null
         width: 100
+      -
+        elementCondition: null
+        fieldUid: 0becf309-2f2c-4766-bae9-8bacfd58bf8a # Expires On
+        instructions: null
+        label: null
+        required: false
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        uid: c0f7b6bf-a65b-4fa3-a33f-3af065ff1113
+        userCondition: null
+        warning: null
+        width: 100
     name: 'Additional Information'
     uid: 5623d307-3b28-4d4d-a561-8926ef4ed776
     userCondition: null
