@@ -1,0 +1,24 @@
+fieldLayouts:
+  3a0b390f-0a51-49f4-99e1-92ccc870f199:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: ea2bc4af-23f2-4838-99c2-9da78c63420f # Staff Entry
+            instructions: null
+            label: Mayor
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9a519185-159f-4776-80a2-7e6ce5d4f6fb
+            userCondition: null
+            warning: null
+            width: 100
+        name: Mayor
+        uid: 01a75ee6-da19-49ef-8923-7e07ea4182c8
+        userCondition: null
+handle: globalMayorHint
+name: 'Globla Mayor Hint'
+sortOrder: 5
