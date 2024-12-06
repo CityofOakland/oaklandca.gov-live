@@ -1,4 +1,4 @@
-dateModified: 1733439831
+dateModified: 1733444009
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -868,7 +868,7 @@ meta:
     929c9f65-22a0-4e45-8210-43f030986c84: 'Physical Location' # Physical Location
     946b75ee-7882-4bdc-b28b-7009a8398e2e: 'Hide Related Pages?' # Hide Related Pages?
     947de11d-3d94-45c2-8565-04542ce0e737: 'Event Types' # Event Types
-    0965af86-df1d-4c95-ba6f-7bebc34c944b: 'Globla Header' # Globla Header
+    0965af86-df1d-4c95-ba6f-7bebc34c944b: 'Global Header' # Global Header
     983c9f6f-9251-4fd3-91e1-b598eccc6a1a: News # News
     1011d286-bca1-40e1-abcb-1d61f6f7ebb2: 'City Services and Resources Updates Description' # City Services and Resources Updates Description
     1020f3d1-0dcb-45c8-b054-15d7d2bfa99d: Heading # Heading
