@@ -4,12 +4,14 @@ namespace modules;
 use Algolia\AlgoliaSearch\SearchClient;
 use Craft;
 use craft\base\Element;
+use craft\console\Application as CraftCLI;
 use craft\elements\Entry;
 use craft\events\ModelEvent;
 use craft\events\RegisterElementExportersEvent;
 use craft\helpers\App;
 use craft\helpers\ElementHelper;
 use craft\helpers\StringHelper;
+use modules\jobs\SuspendExpiredUsers;
 use Solspace\Freeform\Events\Fields\CompileFieldAttributesEvent;
 use Solspace\Freeform\Fields\FieldInterface;
 use Solspace\Freeform\Fields\Parameters\Parameters;
@@ -33,6 +35,28 @@ class Module extends \yii\base\Module
         }
 
         parent::init();
+
+        // Register the event listener to run after `craft up` command.
+        if (Craft::$app instanceof CraftCLI) {
+            Event::on(
+                CraftCLI::class,
+                CraftCLI::EVENT_AFTER_REQUEST,
+                function () {
+                    $request = Craft::$app->getRequest();
+                    $controller = Craft::$app->controller;
+                    $queue = Craft::$app->queue;
+
+                    if ($request->getIsConsoleRequest()) {
+                        // Check if it's "craft up" which is run on every release to production
+                        if ($controller && $controller->id === 'up' && $controller->action->id === 'index') {
+                            if (! SuspendExpiredUsers::isJobAlreadyQueued($queue)) {
+                                $queue->push(new SuspendExpiredUsers());
+                            }
+                        }
+                    }
+                }
+            );
+        }
 
         // Toggle Entry indexing on Algolia
         Event::on(

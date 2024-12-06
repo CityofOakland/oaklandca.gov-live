@@ -70,7 +70,7 @@
 {% import _self as breadCrumb %}
 
 {%- set separator -%}
-	<span class="mr-1 ml-2 font-bold text-gray-700">&rarr;</span>
+	<span class="me-1 ms-1 font-bold text-gray-700">&rarr;</span>
 {%- endset -%}
 
 {# if no category is assigned to an entry, its primary unit will override as the root breadcrumb #}
@@ -80,22 +80,19 @@
 		{{ breadCrumb.link("/services", "Services") }}
 		{{ separator }}
 		{{ breadCrumb.current(entry.title) }}
-	{% elseif serviceTypes|length == 1 %}
-		{# entry has one category only #}
+	{% elseif serviceTypes %}
 		{{ breadCrumb.link("/services", "Services") }}
 		{{ separator }}
-		{% set theServiceType = serviceTypes[0] %}
-		{{ breadCrumb.link(theServiceType.url, theServiceType.title) }}
-		{{ separator }}
-		{{ breadCrumb.current(entry.title) }}
-	{% elseif serviceTypes|length > 1 %}
-		{# entry has multiple categories #}
-		<span class="text-gray-600">
-			See more {{ breadCrumb.link("/services", "Services") }}:
+		{% if serviceTypes|length == 1 %}
+			{% set theServiceType = serviceTypes[0] %}
+			{{ breadCrumb.link(theServiceType.url, theServiceType.title) }}
+		{% else %}
 			{% for category in serviceTypes %}
 				{{ breadCrumb.link(category.url, category.title) }}{{ not loop.last ? ", " }}
 			{% endfor %}
-		</span>
+		{% endif %}
+		{{ separator }}
+		{{ breadCrumb.current(entry.title) }}
 	{% elseif breadCrumbLinks is defined %}
 		{# other custom breadCrumbLinks set up in templates #}
 		{% for link in breadCrumbLinks ?? "" %}

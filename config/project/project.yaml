@@ -1,4 +1,4 @@
-dateModified: 1732035982
+dateModified: 1733444009
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -541,8 +541,10 @@ meta:
     0a3b410b-3e65-4ca3-ac05-f2c6933fa880: Step # Step
     00a1526a-3ada-4ed0-a15a-582f087925d4: 'Landing Page' # Landing Page
     0accbbf3-3501-4536-b0f0-19facda9bb98: 'Number Title' # Number Title
+    0b29d41f-e516-4770-a37c-7d88e68365a6: Mayor # Mayor
     0b609d8d-ec6c-476d-9953-eef0377c30f7: Entry # Entry
     0bbec91d-57e2-4212-b449-f04f19c770da: 'Icon Card' # Icon Card
+    0becf309-2f2c-4766-bae9-8bacfd58bf8a: 'Expires On' # Expires On
     0ccdd608-28e4-473d-8fa8-f824e4591a7c: 'Step Action' # Step Action
     00ccf4ec-25d9-4bce-864a-4d06468adb36: Body # Body
     0cf5f750-4518-4e2c-9766-9b21e108e9be: 'Staff Heading' # Staff Heading
@@ -855,6 +857,7 @@ meta:
     812c490f-c059-47ff-9ef2-25fbd40c77fe: 'Call Out' # Call Out
     823b335f-ee31-4526-b6f4-952682ef1061: 'Read More Link' # Read More Link
     827f6570-faf8-42da-98e5-fffcb15e7cf6: 'Document Types' # Document Types
+    0841bf5b-e591-4990-a46d-6f4a9ec2da33: Hashtag # Hashtag
     843d53f7-253d-4ed1-b7da-309cd0e4df69: __blank__ # __blank__
     853acfc8-1959-4654-89f9-e544989d27d5: Departments # Departments
     856e0565-3a66-4305-825e-757ac41b9ff4: Link # Link
@@ -865,6 +868,7 @@ meta:
     929c9f65-22a0-4e45-8210-43f030986c84: 'Physical Location' # Physical Location
     946b75ee-7882-4bdc-b28b-7009a8398e2e: 'Hide Related Pages?' # Hide Related Pages?
     947de11d-3d94-45c2-8565-04542ce0e737: 'Event Types' # Event Types
+    0965af86-df1d-4c95-ba6f-7bebc34c944b: 'Global Header' # Global Header
     983c9f6f-9251-4fd3-91e1-b598eccc6a1a: News # News
     1011d286-bca1-40e1-abcb-1d61f6f7ebb2: 'City Services and Resources Updates Description' # City Services and Resources Updates Description
     1020f3d1-0dcb-45c8-b054-15d7d2bfa99d: Heading # Heading
@@ -1399,7 +1403,7 @@ plugins:
     edition: pro
     enabled: true
     licenseKey: 80IWDHDW3ZJB27DOLCE6AQE5
-    schemaVersion: 5.3.0
+    schemaVersion: 5.4.0
     settings:
       alertNotificationRecipients: ''
       allowDashesInFieldHandles: false

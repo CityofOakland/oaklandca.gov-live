@@ -1,0 +1,24 @@
+fieldLayouts:
+  3a0b390f-0a51-49f4-99e1-92ccc870f199:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 0b29d41f-e516-4770-a37c-7d88e68365a6 # Mayor
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d6ec2974-b323-4b8b-83cd-7ac6a8a6cf77
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Global Header'
+        uid: 01a75ee6-da19-49ef-8923-7e07ea4182c8
+        userCondition: null
+handle: globalHeader
+name: 'Global Header'
+sortOrder: 5
