@@ -95,13 +95,14 @@
 			}) }}
 		{% endif %}
 
+		{% if entry.officials.count() %}
 		<section class="bg-white">
 			<div class="container px-6 py-8 @3xl:px-16 md:py-16">
 				<h2 class="pb-4">
 					{{ "City Officials"|t }}
 				</h2>
 				<div class="card-grid grid-equal-height profile-cards">
-					{% for entry in craft.entries.section('officials').with(['portrait']).all() %}
+					{% for entry in entry.officials.with(['portrait']).all() %}
 						{% set portrait = entry.portrait[0] ?? "" %}
 						{{ include("_partials/_elements/_profile-cards.twig", {
 							photo: portrait,
@@ -123,5 +124,6 @@
 				</p>
 			</div>
 		</section>
+		{% endif %}
 	</div>
 {% endblock %}
