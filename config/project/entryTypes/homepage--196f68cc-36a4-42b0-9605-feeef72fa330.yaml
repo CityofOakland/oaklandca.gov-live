@@ -163,6 +163,18 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            elementCondition: null
+            fieldUid: 73b7b0c7-bff1-4c55-97aa-fc62042f0347 # Officials
+            instructions: null
+            label: 'City Officials'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: da462ba5-13f0-45d1-88ce-4a9be819f24a
+            userCondition: null
+            warning: null
+            width: 100
         name: Homepage
         uid: 5f29a579-3860-42f8-9838-972cd8295f5b
         userCondition: null

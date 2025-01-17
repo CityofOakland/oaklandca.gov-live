@@ -11,7 +11,7 @@
         }
       }) }}
       <div class="mt-4 lg:flex">
-        {% set firstAddr = entry.addresses.first() %}
+        {% set firstAddr = entry.addresses.one() %}
         {% if addresses and (firstAddr.locationName or firstAddr.locationDescription) %}
           <div class="lg:w-1/2 lg:pe-8">
             <h3 class="mb-0 text-2xl">Address{% if addresses > 1 %}es{% endif %}</h3>

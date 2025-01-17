@@ -6,6 +6,7 @@ use Craft;
 use craft\base\Element;
 use craft\console\Application as CraftCLI;
 use craft\elements\Entry;
+use craft\elements\User;
 use craft\events\ModelEvent;
 use craft\events\RegisterElementExportersEvent;
 use craft\helpers\App;
@@ -102,6 +103,14 @@ class Module extends \yii\base\Module
             Element::EVENT_REGISTER_SOURCES,
             function (Event $event) {
                 array_shift($event->sources);
+            }
+        );
+
+        Event::on(
+            User::class,
+            User::EVENT_REGISTER_EXPORTERS,
+            function(RegisterElementExportersEvent $event) {
+                $event->exporters[] = UserExporter::class;
             }
         );
 
