@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b1ab3dd22f0bfd9448228bc4d9506fdf",
+    "content-hash": "b2382371a604516c5b151b90d33e622d",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1686,11 +1686,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "4.13.9",
+            "version": "4.13.10",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/e982ab8c3990c7f4cfec09bc6bfcc1a769450823",
-                "reference": "e982ab8c3990c7f4cfec09bc6bfcc1a769450823",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/461a5f9d981868917e27706dba4e73bb755d39ec",
+                "reference": "461a5f9d981868917e27706dba4e73bb755d39ec",
                 "shasum": ""
             },
             "require": {
@@ -1778,7 +1778,7 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2025-01-06T18:33:21+00:00"
+            "time": "2025-01-15T00:22:02+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -5781,11 +5781,11 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "4.1.9",
+            "version": "4.1.10",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/b350db4203d20c63e9159f7a634ebcea610b969b",
-                "reference": "b350db4203d20c63e9159f7a634ebcea610b969b",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/8df9dcc1b740d3ce875a547f7d62bccd70def463",
+                "reference": "8df9dcc1b740d3ce875a547f7d62bccd70def463",
                 "shasum": ""
             },
             "require": {
@@ -5837,7 +5837,7 @@
                 "issues": "https://nystudio107.com/plugins/seomatic/support",
                 "source": "https://github.com/nystudio107/craft-seomatic"
             },
-            "time": "2025-01-09T02:01:18+00:00"
+            "time": "2025-01-16T21:25:43+00:00"
         },
         {
             "name": "nystudio107/craft-twigprofiler",
@@ -6544,11 +6544,6 @@
         {
             "name": "phpoffice/phpspreadsheet",
             "version": "3.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHPOffice/PhpSpreadsheet.git",
-                "reference": "949c799c3538f3158bcf6c5f4d8a403027be0fbd"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/949c799c3538f3158bcf6c5f4d8a403027be0fbd",
@@ -6577,19 +6572,6 @@
                 "psr/http-factory": "^1.0",
                 "psr/simple-cache": "^1.0 || ^2.0 || ^3.0"
             },
-            "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "dev-main",
-                "dompdf/dompdf": "^2.0 || ^3.0",
-                "friendsofphp/php-cs-fixer": "^3.2",
-                "mitoteam/jpgraph": "^10.3",
-                "mpdf/mpdf": "^8.1.1",
-                "phpcompatibility/php-compatibility": "^9.3",
-                "phpstan/phpstan": "^1.1",
-                "phpstan/phpstan-phpunit": "^1.0",
-                "phpunit/phpunit": "^10.5",
-                "squizlabs/php_codesniffer": "^3.7",
-                "tecnickcom/tcpdf": "^6.5"
-            },
             "suggest": {
                 "dompdf/dompdf": "Option for rendering PDF with PDF Writer",
                 "ext-intl": "PHP Internationalization Functions",
@@ -6603,7 +6585,6 @@
                     "PhpOffice\\PhpSpreadsheet\\": "src/PhpSpreadsheet"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -6639,10 +6620,6 @@
                 "xls",
                 "xlsx"
             ],
-            "support": {
-                "issues": "https://github.com/PHPOffice/PhpSpreadsheet/issues",
-                "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/3.8.0"
-            },
             "time": "2025-01-12T03:48:58+00:00"
         },
         {
@@ -8177,11 +8154,11 @@
         },
         {
             "name": "solspace/craft-freeform",
-            "version": "5.8.6",
+            "version": "5.8.7",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/c95c0c29b72e41a7b830043c89105e4fa5b179fc",
-                "reference": "c95c0c29b72e41a7b830043c89105e4fa5b179fc",
+                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/23b3fae1823368f8275b6b3d447159277a2ca83a",
+                "reference": "23b3fae1823368f8275b6b3d447159277a2ca83a",
                 "shasum": ""
             },
             "require": {
@@ -8230,7 +8207,7 @@
                 }
             ],
             "description": "The most reliable form builder that's ready for wherever your project takes you.",
-            "time": "2025-01-09T01:54:56+00:00"
+            "time": "2025-01-15T19:57:45+00:00"
         },
         {
             "name": "spacecatninja/imager-x",
@@ -8299,11 +8276,11 @@
         },
         {
             "name": "spicyweb/craft-neo",
-            "version": "4.2.23",
+            "version": "4.2.24",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/1232f8ed0b3d83d268df8f4c8a48f720139d3e80",
-                "reference": "1232f8ed0b3d83d268df8f4c8a48f720139d3e80",
+                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/f8dbd09dd49e53a6e9237641caeb436be60035e4",
+                "reference": "f8dbd09dd49e53a6e9237641caeb436be60035e4",
                 "shasum": ""
             },
             "require": {
@@ -8317,7 +8294,7 @@
                 "schemaVersion": "4.0.0",
                 "class": "benf\\neo\\Plugin",
                 "changelogUrl": "https://github.com/spicywebau/craft-neo/blob/4.x/CHANGELOG.md",
-                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.2.23.zip"
+                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.2.24.zip"
             },
             "autoload": {
                 "psr-4": {
@@ -8345,10 +8322,10 @@
             "support": {
                 "issues": "https://github.com/spicywebau/craft-neo/issues",
                 "source": "https://github.com/spicywebau/craft-neo",
-                "docs": "https://github.com/spicywebau/craft-neo/blob/4.2.23/README.md",
+                "docs": "https://github.com/spicywebau/craft-neo/blob/4.2.24/README.md",
                 "rss": "https://github.com/spicywebau/craft-neo/commits/4.x.atom"
             },
-            "time": "2024-12-13T03:29:56+00:00"
+            "time": "2025-01-15T22:41:00+00:00"
         },
         {
             "name": "ssnepenthe/color-utils",
