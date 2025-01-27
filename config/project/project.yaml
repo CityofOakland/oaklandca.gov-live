@@ -1,4 +1,4 @@
-dateModified: 1736719473
+dateModified: 1738005692
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -1403,7 +1403,7 @@ plugins:
     edition: pro
     enabled: true
     licenseKey: 80IWDHDW3ZJB27DOLCE6AQE5
-    schemaVersion: 5.4.1
+    schemaVersion: 5.4.2
     settings:
       alertNotificationRecipients: ''
       allowDashesInFieldHandles: false
