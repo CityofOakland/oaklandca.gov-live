@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b2382371a604516c5b151b90d33e622d",
+    "content-hash": "9b60c7b64820bca717d71cd52cb1a9b5",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1272,11 +1272,11 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.8.4",
+            "version": "2.8.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/112e37d1dca22b3fdb81cf3524ab4994f47fdb8c",
-                "reference": "112e37d1dca22b3fdb81cf3524ab4994f47fdb8c",
+                "url": "https://api.github.com/repos/composer/composer/zipball/ae208dc1e182bd45d99fcecb956501da212454a1",
+                "reference": "ae208dc1e182bd45d99fcecb956501da212454a1",
                 "shasum": ""
             },
             "require": {
@@ -1348,7 +1348,7 @@
                 "dependency",
                 "package"
             ],
-            "time": "2024-12-11T10:57:47+00:00"
+            "time": "2025-01-21T14:23:40+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -1634,11 +1634,11 @@
         },
         {
             "name": "craftcms/ckeditor",
-            "version": "3.10.0",
+            "version": "3.11.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/852bcfbd5aa982fa23e1209e3f2ae6c8292639a7",
-                "reference": "852bcfbd5aa982fa23e1209e3f2ae6c8292639a7",
+                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/4af3244f012be8f4051072809144ffaa8aca69df",
+                "reference": "4af3244f012be8f4051072809144ffaa8aca69df",
                 "shasum": ""
             },
             "require": {
@@ -1682,15 +1682,15 @@
                 "docs": "https://github.com/craftcms/ckeditor/blob/master/README.md",
                 "rss": "https://github.com/craftcms/ckeditor/commits/master.atom"
             },
-            "time": "2024-10-19T14:26:49+00:00"
+            "time": "2025-01-23T19:58:31+00:00"
         },
         {
             "name": "craftcms/cms",
-            "version": "4.13.10",
+            "version": "4.14.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/461a5f9d981868917e27706dba4e73bb755d39ec",
-                "reference": "461a5f9d981868917e27706dba4e73bb755d39ec",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/8d4bc5334aafb56b33a49003f20c2b13ed059a22",
+                "reference": "8d4bc5334aafb56b33a49003f20c2b13ed059a22",
                 "shasum": ""
             },
             "require": {
@@ -1724,7 +1724,7 @@
                 "symfony/var-dumper": "^5.0|^6.0",
                 "symfony/yaml": "^5.2.3",
                 "theiconic/name-parser": "^1.2",
-                "twig/twig": "~3.14.0",
+                "twig/twig": "~3.15.0",
                 "voku/stringy": "^6.4.0",
                 "webonyx/graphql-php": "~14.11.5",
                 "yiisoft/yii2": "~2.0.51.0",
@@ -1778,7 +1778,7 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2025-01-15T00:22:02+00:00"
+            "time": "2025-01-29T20:02:47+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -5730,11 +5730,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "4.1.21",
+            "version": "4.1.22",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/befd8bf6208811ede8ea94f5968fd21b72133f0c",
-                "reference": "befd8bf6208811ede8ea94f5968fd21b72133f0c",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/beacd433a68686be703d0b71d0dbcf7b2d61e01d",
+                "reference": "beacd433a68686be703d0b71d0dbcf7b2d61e01d",
                 "shasum": ""
             },
             "require": {
@@ -5777,15 +5777,15 @@
                 "issues": "https://nystudio107.com/plugins/retour/support",
                 "source": "https://github.com/nystudio107/craft-retour"
             },
-            "time": "2025-01-09T02:49:56+00:00"
+            "time": "2025-01-27T20:42:00+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "4.1.10",
+            "version": "4.1.11",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/8df9dcc1b740d3ce875a547f7d62bccd70def463",
-                "reference": "8df9dcc1b740d3ce875a547f7d62bccd70def463",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/40e661a44378b1a8be0af77773f378db53001604",
+                "reference": "40e661a44378b1a8be0af77773f378db53001604",
                 "shasum": ""
             },
             "require": {
@@ -5837,7 +5837,7 @@
                 "issues": "https://nystudio107.com/plugins/seomatic/support",
                 "source": "https://github.com/nystudio107/craft-seomatic"
             },
-            "time": "2025-01-16T21:25:43+00:00"
+            "time": "2025-01-23T12:11:13+00:00"
         },
         {
             "name": "nystudio107/craft-twigprofiler",
@@ -6543,14 +6543,15 @@
         },
         {
             "name": "phpoffice/phpspreadsheet",
-            "version": "3.8.0",
+            "version": "3.9.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/949c799c3538f3158bcf6c5f4d8a403027be0fbd",
-                "reference": "949c799c3538f3158bcf6c5f4d8a403027be0fbd",
+                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/414f8a2aa1d8b974b39f577c0677d5ebc96fab36",
+                "reference": "414f8a2aa1d8b974b39f577c0677d5ebc96fab36",
                 "shasum": ""
             },
             "require": {
+                "composer/pcre": "^3.3",
                 "ext-ctype": "*",
                 "ext-dom": "*",
                 "ext-fileinfo": "*",
@@ -6620,7 +6621,7 @@
                 "xls",
                 "xlsx"
             ],
-            "time": "2025-01-12T03:48:58+00:00"
+            "time": "2025-01-26T05:10:24+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -7180,11 +7181,11 @@
         },
         {
             "name": "putyourlightson/craft-blitz",
-            "version": "4.23.10",
+            "version": "4.23.11",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/5875b6e235cbd185ec86480cc777deb5d7f736bf",
-                "reference": "5875b6e235cbd185ec86480cc777deb5d7f736bf",
+                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/05d5455cf4f94688952fa7853c271f4acff8c4fc",
+                "reference": "05d5455cf4f94688952fa7853c271f4acff8c4fc",
                 "shasum": ""
             },
             "require": {
@@ -7229,7 +7230,7 @@
                 "source": "https://github.com/putyourlightson/craft-blitz",
                 "issues": "https://github.com/putyourlightson/craft-blitz/issues"
             },
-            "time": "2024-12-31T14:36:38+00:00"
+            "time": "2025-01-30T17:33:12+00:00"
         },
         {
             "name": "putyourlightson/craft-blitz-hints",
@@ -8154,11 +8155,11 @@
         },
         {
             "name": "solspace/craft-freeform",
-            "version": "5.8.7",
+            "version": "5.9.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/23b3fae1823368f8275b6b3d447159277a2ca83a",
-                "reference": "23b3fae1823368f8275b6b3d447159277a2ca83a",
+                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/e8767d74ede54d1e42df7b1475206e664ae63017",
+                "reference": "e8767d74ede54d1e42df7b1475206e664ae63017",
                 "shasum": ""
             },
             "require": {
@@ -8184,7 +8185,7 @@
             },
             "type": "craft-plugin",
             "extra": {
-                "schemaVersion": "5.4.1",
+                "schemaVersion": "5.4.2",
                 "handle": "freeform",
                 "class": "Solspace\\Freeform\\Freeform",
                 "name": "Freeform",
@@ -8206,8 +8207,8 @@
                     "homepage": "https://solspace.com/"
                 }
             ],
-            "description": "The most reliable form builder that's ready for wherever your project takes you.",
-            "time": "2025-01-15T19:57:45+00:00"
+            "description": "The most flexible and user-friendly form builder!",
+            "time": "2025-01-30T15:16:21+00:00"
         },
         {
             "name": "spacecatninja/imager-x",
@@ -8276,11 +8277,11 @@
         },
         {
             "name": "spicyweb/craft-neo",
-            "version": "4.2.24",
+            "version": "4.2.25",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/f8dbd09dd49e53a6e9237641caeb436be60035e4",
-                "reference": "f8dbd09dd49e53a6e9237641caeb436be60035e4",
+                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/a574c95d3f6bc64cdacc68fc32f8cab7eff9a298",
+                "reference": "a574c95d3f6bc64cdacc68fc32f8cab7eff9a298",
                 "shasum": ""
             },
             "require": {
@@ -8294,7 +8295,7 @@
                 "schemaVersion": "4.0.0",
                 "class": "benf\\neo\\Plugin",
                 "changelogUrl": "https://github.com/spicywebau/craft-neo/blob/4.x/CHANGELOG.md",
-                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.2.24.zip"
+                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.2.25.zip"
             },
             "autoload": {
                 "psr-4": {
@@ -8322,10 +8323,10 @@
             "support": {
                 "issues": "https://github.com/spicywebau/craft-neo/issues",
                 "source": "https://github.com/spicywebau/craft-neo",
-                "docs": "https://github.com/spicywebau/craft-neo/blob/4.2.24/README.md",
+                "docs": "https://github.com/spicywebau/craft-neo/blob/4.2.25/README.md",
                 "rss": "https://github.com/spicywebau/craft-neo/commits/4.x.atom"
             },
-            "time": "2025-01-15T22:41:00+00:00"
+            "time": "2025-01-30T01:14:50+00:00"
         },
         {
             "name": "ssnepenthe/color-utils",
@@ -8635,11 +8636,11 @@
         },
         {
             "name": "symfony/cache",
-            "version": "v6.4.16",
+            "version": "v6.4.18",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache/zipball/70d60e9a3603108563010f8592dff15a6f15dfae",
-                "reference": "70d60e9a3603108563010f8592dff15a6f15dfae",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/b209751ed25f735ea90ca4c9c969d9413a17dfee",
+                "reference": "b209751ed25f735ea90ca4c9c969d9413a17dfee",
                 "shasum": ""
             },
             "require": {
@@ -8692,7 +8693,7 @@
                 "caching",
                 "psr6"
             ],
-            "time": "2024-11-20T10:10:54+00:00"
+            "time": "2025-01-22T14:13:52+00:00"
         },
         {
             "name": "symfony/cache-contracts",
@@ -9153,11 +9154,11 @@
         },
         {
             "name": "symfony/http-client",
-            "version": "v6.4.17",
+            "version": "v6.4.18",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-client/zipball/88898d842eb29d7e1a903724c94e90a6ca9c0509",
-                "reference": "88898d842eb29d7e1a903724c94e90a6ca9c0509",
+                "url": "https://api.github.com/repos/symfony/http-client/zipball/394b440934056b8d9d6ba250001458e9d7998b7f",
+                "reference": "394b440934056b8d9d6ba250001458e9d7998b7f",
                 "shasum": ""
             },
             "require": {
@@ -9204,7 +9205,7 @@
             "keywords": [
                 "http"
             ],
-            "time": "2024-12-18T12:18:31+00:00"
+            "time": "2025-01-28T15:49:13+00:00"
         },
         {
             "name": "symfony/http-client-contracts",
@@ -9263,11 +9264,11 @@
         },
         {
             "name": "symfony/mailer",
-            "version": "v6.4.13",
+            "version": "v6.4.18",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mailer/zipball/c2f7e0d8d7ac8fe25faccf5d8cac462805db2663",
-                "reference": "c2f7e0d8d7ac8fe25faccf5d8cac462805db2663",
+                "url": "https://api.github.com/repos/symfony/mailer/zipball/e93a6ae2767d7f7578c2b7961d9d8e27580b2b11",
+                "reference": "e93a6ae2767d7f7578c2b7961d9d8e27580b2b11",
                 "shasum": ""
             },
             "require": {
@@ -9310,15 +9311,15 @@
             ],
             "description": "Helps sending emails",
             "homepage": "https://symfony.com",
-            "time": "2024-09-25T14:18:03+00:00"
+            "time": "2025-01-24T15:27:15+00:00"
         },
         {
             "name": "symfony/mime",
-            "version": "v6.4.17",
+            "version": "v6.4.18",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/ea87c8850a54ff039d3e0ab4ae5586dd4e6c0232",
-                "reference": "ea87c8850a54ff039d3e0ab4ae5586dd4e6c0232",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/917d77981eb1ea963608d5cda4d9c0cf72eaa68e",
+                "reference": "917d77981eb1ea963608d5cda4d9c0cf72eaa68e",
                 "shasum": ""
             },
             "require": {
@@ -9362,7 +9363,7 @@
                 "mime",
                 "mime-type"
             ],
-            "time": "2024-12-02T11:09:41+00:00"
+            "time": "2025-01-23T13:10:52+00:00"
         },
         {
             "name": "symfony/options-resolver",
@@ -9996,11 +9997,11 @@
         },
         {
             "name": "symfony/property-access",
-            "version": "v6.4.13",
+            "version": "v6.4.18",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/property-access/zipball/8cc779d88d12e440adaa26387bcfc25744064afe",
-                "reference": "8cc779d88d12e440adaa26387bcfc25744064afe",
+                "url": "https://api.github.com/repos/symfony/property-access/zipball/80e0378f2f058b60d87dedc3c760caec882e992c",
+                "reference": "80e0378f2f058b60d87dedc3c760caec882e992c",
                 "shasum": ""
             },
             "require": {
@@ -10043,15 +10044,15 @@
                 "property-path",
                 "reflection"
             ],
-            "time": "2024-09-25T14:18:03+00:00"
+            "time": "2024-12-16T14:42:05+00:00"
         },
         {
             "name": "symfony/property-info",
-            "version": "v6.4.17",
+            "version": "v6.4.18",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/property-info/zipball/38b125d78e67668159f75383a293ec0c5d3f2963",
-                "reference": "38b125d78e67668159f75383a293ec0c5d3f2963",
+                "url": "https://api.github.com/repos/symfony/property-info/zipball/94d18e5cc11a37fd92856d38b61d9cdf72536a1e",
+                "reference": "94d18e5cc11a37fd92856d38b61d9cdf72536a1e",
                 "shasum": ""
             },
             "require": {
@@ -10062,7 +10063,9 @@
                 "doctrine/annotations": "<1.12",
                 "phpdocumentor/reflection-docblock": "<5.2",
                 "phpdocumentor/type-resolver": "<1.5.1",
-                "symfony/dependency-injection": "<5.4|>=6.0,<6.4"
+                "symfony/cache": "<5.4",
+                "symfony/dependency-injection": "<5.4|>=6.0,<6.4",
+                "symfony/serializer": "<5.4"
             },
             "type": "library",
             "autoload": {
@@ -10096,15 +10099,15 @@
                 "type",
                 "validator"
             ],
-            "time": "2024-12-26T19:01:29+00:00"
+            "time": "2025-01-21T10:52:27+00:00"
         },
         {
             "name": "symfony/serializer",
-            "version": "v6.4.15",
+            "version": "v6.4.18",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/serializer/zipball/9d862d66198f3c2e30404228629ef4c18d5d608e",
-                "reference": "9d862d66198f3c2e30404228629ef4c18d5d608e",
+                "url": "https://api.github.com/repos/symfony/serializer/zipball/6ad986f62276da4c8c69754decfaa445a89cb6e3",
+                "reference": "6ad986f62276da4c8c69754decfaa445a89cb6e3",
                 "shasum": ""
             },
             "require": {
@@ -10147,7 +10150,7 @@
             ],
             "description": "Handles serializing and deserializing data structures, including object graphs, into array structures or other formats like XML and JSON.",
             "homepage": "https://symfony.com",
-            "time": "2024-10-23T13:25:59+00:00"
+            "time": "2025-01-28T18:47:02+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -10379,11 +10382,11 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v6.4.15",
+            "version": "v6.4.18",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/38254d5a5ac2e61f2b52f9caf54e7aa3c9d36b80",
-                "reference": "38254d5a5ac2e61f2b52f9caf54e7aa3c9d36b80",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/4ad10cf8b020e77ba665305bb7804389884b4837",
+                "reference": "4ad10cf8b020e77ba665305bb7804389884b4837",
                 "shasum": ""
             },
             "require": {
@@ -10428,7 +10431,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2024-11-08T15:28:48+00:00"
+            "time": "2025-01-17T11:26:11+00:00"
         },
         {
             "name": "symfony/var-exporter",
@@ -10530,11 +10533,11 @@
         },
         {
             "name": "tecnickcom/tcpdf",
-            "version": "6.8.0",
+            "version": "6.8.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/14ffa0e308f5634aa2489568b4b90b24073b6731",
-                "reference": "14ffa0e308f5634aa2489568b4b90b24073b6731",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/f7a781073e1645062f163e058139e2f89355d420",
+                "reference": "f7a781073e1645062f163e058139e2f89355d420",
                 "shasum": ""
             },
             "require": {
@@ -10583,7 +10586,7 @@
                 "pdf417",
                 "qrcode"
             ],
-            "time": "2024-12-23T13:34:57+00:00"
+            "time": "2025-01-26T14:03:12+00:00"
         },
         {
             "name": "theiconic/name-parser",
@@ -10737,11 +10740,11 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.14.2",
+            "version": "v3.15.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/0b6f9d8370bb3b7f1ce5313ed8feb0fafd6e399a",
-                "reference": "0b6f9d8370bb3b7f1ce5313ed8feb0fafd6e399a",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/2d5b3964cc21d0188633d7ddce732dc8e874db02",
+                "reference": "2d5b3964cc21d0188633d7ddce732dc8e874db02",
                 "shasum": ""
             },
             "require": {
@@ -10788,7 +10791,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2024-11-07T12:36:22+00:00"
+            "time": "2024-11-17T15:59:19+00:00"
         },
         {
             "name": "unionco/calendarize",
