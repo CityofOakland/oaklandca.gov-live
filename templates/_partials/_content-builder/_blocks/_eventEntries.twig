@@ -1,6 +1,6 @@
 {% if currentUser %}<!-- Begin {{ _self }} -->{% endif %}
 {% set events     	= craft.calendarize.upcoming({section: ['events'], limit:3, relatedTo: entry}) %}
-{% set headingText  = 'Related Events' %}
+{% set headingText  = block.heading|default('Related Events') %}
 {% set buttonText   = 'See All Events' %}
 {% if entry.section.handle == 'boardsCommissions' or entry.section.handle == 'topics' or entry.section.handle == 'departments' %}
   {% set buttonLink   = entry.url ~ '/events' %}
@@ -9,10 +9,10 @@
 {% endif %}
 
 {% if block.events|length %}
-  {% set events     	= block.events %}
+  {% set events = block.events %}
 {% else %}
   {% if events|length == 0 %}
-    {% set events  			= craft.calendarize.between('2017-01-01', now|date('Y-m-d'),{section: ['events'], limit: 3, relatedTo: entry }, 'desc') %}
+    {% set events = craft.calendarize.between('2017-01-01', now|date('Y-m-d'), {section: ['events'], limit: 3, relatedTo: entry }, 'desc') %}
   {% endif %}
 {% endif %}
 
@@ -20,11 +20,11 @@
 <div class="mb-12">
   <h2 class="{{ hClass }} {{ addClasses ?? "" }}">{{ headingText }}</h2>
   <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-    {% for entry in events %}
-    <a class="shadow card default" href="{{ entry.url }}">
-      <h4><span>{{ entry.title }}</span></h4>
-      <p class="flex items-center">{{ svg("@webroot/dist/img/icon-calendar-new.svg") }} <span class="ml-2">{{ entry.calendarize.startDate.format("l, F d, Y") }}</span></p>
-      <p class="flex items-center pt-1">{{ svg("@webroot/dist/img/icon-clock.svg") }} <span class="ml-2">{{ entry.calendarize.startDate.format("g:ia") }}{{ entry.calendarize.endDate ? " to " ~ entry.calendarize.endDate.format("g:ia") : '' }}</span></p>
+    {% for event in events %}
+    <a class="shadow card default" href="{{ event.url }}">
+      <h4><span>{{ event.title }}</span></h4>
+      <p class="flex items-center">{{ svg("@webroot/dist/img/icon-calendar-new.svg") }} <span class="ml-2">{{ event.next.format("l, F d, Y") }}</span></p>
+      <p class="flex items-center pt-1">{{ svg("@webroot/dist/img/icon-clock.svg") }} <span class="ml-2">{{ event.next.format("g:ia") }}{{ event.end ? " to " ~ event.end.format("g:ia") : '' }}</span></p>
     </a>
     {% endfor %}
   </div>
