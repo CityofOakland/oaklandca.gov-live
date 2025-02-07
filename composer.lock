@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b60c7b64820bca717d71cd52cb1a9b5",
+    "content-hash": "417cf07d1453b9888471a503a63eb759",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1231,17 +1231,30 @@
         },
         {
             "name": "composer/class-map-generator",
-            "version": "1.5.0",
+            "version": "1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/class-map-generator.git",
+                "reference": "ffe442c5974c44a9343e37a0abcb1cc37319f5b9"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/class-map-generator/zipball/4b0a223cf5be7c9ee7e0ef1bc7db42b4a97c9915",
-                "reference": "4b0a223cf5be7c9ee7e0ef1bc7db42b4a97c9915",
+                "url": "https://api.github.com/repos/composer/class-map-generator/zipball/ffe442c5974c44a9343e37a0abcb1cc37319f5b9",
+                "reference": "ffe442c5974c44a9343e37a0abcb1cc37319f5b9",
                 "shasum": ""
             },
             "require": {
                 "composer/pcre": "^2.1 || ^3.1",
                 "php": "^7.2 || ^8.0",
                 "symfony/finder": "^4.4 || ^5.3 || ^6 || ^7"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.12 || ^2",
+                "phpstan/phpstan-deprecation-rules": "^1 || ^2",
+                "phpstan/phpstan-phpunit": "^1 || ^2",
+                "phpstan/phpstan-strict-rules": "^1.1 || ^2",
+                "phpunit/phpunit": "^8",
+                "symfony/filesystem": "^5.4 || ^6"
             },
             "type": "library",
             "extra": {
@@ -1254,6 +1267,7 @@
                     "Composer\\ClassMapGenerator\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1268,7 +1282,25 @@
             "keywords": [
                 "classmap"
             ],
-            "time": "2024-11-25T16:11:06+00:00"
+            "support": {
+                "issues": "https://github.com/composer/class-map-generator/issues",
+                "source": "https://github.com/composer/class-map-generator/tree/1.6.0"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2025-02-05T10:05:34+00:00"
         },
         {
             "name": "composer/composer",
@@ -1686,11 +1718,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "4.14.3",
+            "version": "4.14.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/8d4bc5334aafb56b33a49003f20c2b13ed059a22",
-                "reference": "8d4bc5334aafb56b33a49003f20c2b13ed059a22",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/469b3fc2da0b7a7c0e19a75e288fcd5f94315930",
+                "reference": "469b3fc2da0b7a7c0e19a75e288fcd5f94315930",
                 "shasum": ""
             },
             "require": {
@@ -1778,7 +1810,7 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2025-01-29T20:02:47+00:00"
+            "time": "2025-02-04T19:31:36+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -7638,11 +7670,11 @@
         },
         {
             "name": "roberskine/craft-user-manual",
-            "version": "5.0.2",
+            "version": "5.0.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobErskine/Craft-User-Manual/zipball/2a8dece04b38af02f8ba0328cc95ae2738f9280c",
-                "reference": "2a8dece04b38af02f8ba0328cc95ae2738f9280c",
+                "url": "https://api.github.com/repos/RobErskine/Craft-User-Manual/zipball/e9fdf47b310e83c1aea36db304b1f59c38d04bfc",
+                "reference": "e9fdf47b310e83c1aea36db304b1f59c38d04bfc",
                 "shasum": ""
             },
             "require": {
@@ -7684,7 +7716,7 @@
                 "docs": "https://github.com/roberskine/Craft-User-Manual/blob/master/README.md",
                 "issues": "https://github.com/roberskine/Craft-User-Manual/issues"
             },
-            "time": "2024-08-06T21:42:15+00:00"
+            "time": "2025-02-06T03:47:08+00:00"
         },
         {
             "name": "rynpsc/craft-phone-number",
@@ -8155,11 +8187,11 @@
         },
         {
             "name": "solspace/craft-freeform",
-            "version": "5.9.4",
+            "version": "5.9.8",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/e8767d74ede54d1e42df7b1475206e664ae63017",
-                "reference": "e8767d74ede54d1e42df7b1475206e664ae63017",
+                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/7a7938fea8eeffc119be35839c0a45ab45cf70c0",
+                "reference": "7a7938fea8eeffc119be35839c0a45ab45cf70c0",
                 "shasum": ""
             },
             "require": {
@@ -8208,7 +8240,7 @@
                 }
             ],
             "description": "The most flexible and user-friendly form builder!",
-            "time": "2025-01-30T15:16:21+00:00"
+            "time": "2025-02-06T17:00:47+00:00"
         },
         {
             "name": "spacecatninja/imager-x",
@@ -11202,11 +11234,11 @@
         },
         {
             "name": "verbb/tablemaker",
-            "version": "4.0.14",
+            "version": "4.0.15",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/tablemaker/zipball/192b02ae9e32ee8bb482e01d4281baa111597538",
-                "reference": "192b02ae9e32ee8bb482e01d4281baa111597538",
+                "url": "https://api.github.com/repos/verbb/tablemaker/zipball/3fc3a76eeb528056bfd58f5cc3229bb2f60b9603",
+                "reference": "3fc3a76eeb528056bfd58f5cc3229bb2f60b9603",
                 "shasum": ""
             },
             "require": {
@@ -11255,7 +11287,7 @@
                 "docs": "https://github.com/verbb/tablemaker",
                 "rss": "https://github.com/verbb/tablemaker/commits/v2.atom"
             },
-            "time": "2024-10-09T09:19:49+00:00"
+            "time": "2025-02-02T00:39:45+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
