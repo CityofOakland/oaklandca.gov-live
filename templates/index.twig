@@ -72,6 +72,14 @@
 
 		<div id="content" class="relative top-[-5rem]"></div>
 
+		{% if entry.contentBuilder | length %}
+		<section class="@container bg-gray-100">
+			<div class="container px-6 pt-8 @3xl:px-16 md:pt-16 md:-mb-12">
+				{{ include("_partials/_content-builder/_tool.twig") }}
+			</div>
+		</section>
+		{% endif %}
+
 		{% if entry.cityServicesAndResourcesUpdates %}
 			{{ include("_components/partials/_cards.twig", {
 				class: "bg-gray-100",
