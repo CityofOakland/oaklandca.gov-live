@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "417cf07d1453b9888471a503a63eb759",
+    "content-hash": "ce1a5b2ca8a567b94b384e7c9a9ece96",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1666,11 +1666,11 @@
         },
         {
             "name": "craftcms/ckeditor",
-            "version": "3.11.0",
+            "version": "3.11.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/4af3244f012be8f4051072809144ffaa8aca69df",
-                "reference": "4af3244f012be8f4051072809144ffaa8aca69df",
+                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/6fe26999a782a6c60a96bd5725c96fa4a6fca942",
+                "reference": "6fe26999a782a6c60a96bd5725c96fa4a6fca942",
                 "shasum": ""
             },
             "require": {
@@ -1714,15 +1714,15 @@
                 "docs": "https://github.com/craftcms/ckeditor/blob/master/README.md",
                 "rss": "https://github.com/craftcms/ckeditor/commits/master.atom"
             },
-            "time": "2025-01-23T19:58:31+00:00"
+            "time": "2025-02-18T22:55:06+00:00"
         },
         {
             "name": "craftcms/cms",
-            "version": "4.14.4",
+            "version": "4.14.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/469b3fc2da0b7a7c0e19a75e288fcd5f94315930",
-                "reference": "469b3fc2da0b7a7c0e19a75e288fcd5f94315930",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/34ff6e4b306854b1c6bc3fefc6bd4c92c1b4886d",
+                "reference": "34ff6e4b306854b1c6bc3fefc6bd4c92c1b4886d",
                 "shasum": ""
             },
             "require": {
@@ -1810,15 +1810,15 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2025-02-04T19:31:36+00:00"
+            "time": "2025-02-21T00:35:58+00:00"
         },
         {
             "name": "craftcms/feed-me",
-            "version": "5.9.0",
+            "version": "5.10.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/14356cafa2916c27bb8bbf763bac1d3e24560bf3",
-                "reference": "14356cafa2916c27bb8bbf763bac1d3e24560bf3",
+                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/3f51babd764d1e9dc89db273b8d37cec10ee6e54",
+                "reference": "3f51babd764d1e9dc89db273b8d37cec10ee6e54",
                 "shasum": ""
             },
             "require": {
@@ -1868,7 +1868,7 @@
                 "docs": "https://docs.craftcms.com/feed-me/v4/",
                 "rss": "https://github.com/craftcms/feed-me/commits/master.atom"
             },
-            "time": "2024-11-27T01:10:18+00:00"
+            "time": "2025-02-07T19:18:08+00:00"
         },
         {
             "name": "craftcms/flysystem",
@@ -1916,15 +1916,16 @@
         },
         {
             "name": "craftcms/html-field",
-            "version": "2.1.1",
+            "version": "2.2.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/html-field/zipball/1737b962a6bc3604263ce2e588b333b49d3fec52",
-                "reference": "1737b962a6bc3604263ce2e588b333b49d3fec52",
+                "url": "https://api.github.com/repos/craftcms/html-field/zipball/b28e5d27ce38874111597e32782f1ce95f4de16a",
+                "reference": "b28e5d27ce38874111597e32782f1ce95f4de16a",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^4.2.0",
+                "league/html-to-markdown": "^5.1",
                 "php": "^8.0.2"
             },
             "type": "library",
@@ -1950,7 +1951,7 @@
                 "docs": "https://github.com/craftcms/html-field/blob/main/README.md",
                 "rss": "https://github.com/craftcms/html-field/commits/main.atom"
             },
-            "time": "2024-10-15T20:00:51+00:00"
+            "time": "2025-02-14T19:24:58+00:00"
         },
         {
             "name": "craftcms/plugin-installer",
@@ -1990,11 +1991,16 @@
         },
         {
             "name": "craftcms/server-check",
-            "version": "2.1.9",
+            "version": "2.1.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/server-check.git",
+                "reference": "fbf31237d80d0fcf3615c0d405de346839c896c4"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/server-check/zipball/a24b91625fd4c0f2815bfe17275e14f1bfb37b94",
-                "reference": "a24b91625fd4c0f2815bfe17275e14f1bfb37b94",
+                "url": "https://api.github.com/repos/craftcms/server-check/zipball/fbf31237d80d0fcf3615c0d405de346839c896c4",
+                "reference": "fbf31237d80d0fcf3615c0d405de346839c896c4",
                 "shasum": ""
             },
             "type": "library",
@@ -2003,6 +2009,7 @@
                     "server/requirements"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2014,7 +2021,15 @@
                 "requirements",
                 "yii2"
             ],
-            "time": "2024-09-16T15:05:30+00:00"
+            "support": {
+                "docs": "https://github.com/craftcms/docs",
+                "email": "support@craftcms.com",
+                "forum": "https://craftcms.stackexchange.com/",
+                "issues": "https://github.com/craftcms/server-check/issues?state=open",
+                "rss": "https://github.com/craftcms/server-check/releases.atom",
+                "source": "https://github.com/craftcms/server-check"
+            },
+            "time": "2025-02-11T20:01:50+00:00"
         },
         {
             "name": "craftcms/store-hours",
@@ -4727,6 +4742,59 @@
             "time": "2022-04-11T12:47:17+00:00"
         },
         {
+            "name": "league/html-to-markdown",
+            "version": "5.1.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/html-to-markdown/zipball/0b4066eede55c48f38bcee4fb8f0aa85654390fd",
+                "reference": "0b4066eede55c48f38bcee4fb8f0aa85654390fd",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-xml": "*",
+                "php": "^7.2.5 || ^8.0"
+            },
+            "bin": [
+                "bin/html-to-markdown"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\HTMLToMarkdown\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Colin O'Dell",
+                    "email": "colinodell@gmail.com",
+                    "homepage": "https://www.colinodell.com",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Nick Cernis",
+                    "email": "nick@cern.is",
+                    "homepage": "http://modernnerd.net",
+                    "role": "Original Author"
+                }
+            ],
+            "description": "An HTML-to-markdown conversion helper for PHP",
+            "homepage": "https://github.com/thephpleague/html-to-markdown",
+            "keywords": [
+                "html",
+                "markdown"
+            ],
+            "time": "2023-07-12T21:21:09+00:00"
+        },
+        {
             "name": "league/mime-type-detection",
             "version": "1.16.0",
             "dist": {
@@ -5558,11 +5626,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.72.6",
+            "version": "2.73.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CarbonPHP/carbon.git",
+                "reference": "9228ce90e1035ff2f0db84b40ec2e023ed802075"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/1e9d50601e7035a4c61441a208cb5bed73e108c5",
-                "reference": "1e9d50601e7035a4c61441a208cb5bed73e108c5",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/9228ce90e1035ff2f0db84b40ec2e023ed802075",
+                "reference": "9228ce90e1035ff2f0db84b40ec2e023ed802075",
                 "shasum": ""
             },
             "require": {
@@ -5576,6 +5649,19 @@
             },
             "provide": {
                 "psr/clock-implementation": "1.0"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^2.0 || ^3.1.4 || ^4.0",
+                "doctrine/orm": "^2.7 || ^3.0",
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "kylekatarnls/multi-tester": "^2.0",
+                "ondrejmirtes/better-reflection": "<6",
+                "phpmd/phpmd": "^2.9",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^0.12.99 || ^1.7.14",
+                "phpunit/php-file-iterator": "^2.0.5 || ^3.0.6",
+                "phpunit/phpunit": "^7.5.20 || ^8.5.26 || ^9.5.20",
+                "squizlabs/php_codesniffer": "^3.4"
             },
             "bin": [
                 "bin/carbon"
@@ -5602,6 +5688,7 @@
                     "Carbon\\": "src/Carbon/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5623,7 +5710,26 @@
                 "datetime",
                 "time"
             ],
-            "time": "2024-12-27T09:28:11+00:00"
+            "support": {
+                "docs": "https://carbon.nesbot.com/docs",
+                "issues": "https://github.com/briannesbitt/Carbon/issues",
+                "source": "https://github.com/briannesbitt/Carbon"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/kylekatarnls",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/Carbon#sponsor",
+                    "type": "opencollective"
+                },
+                {
+                    "url": "https://tidelift.com/subscription/pkg/packagist-nesbot-carbon?utm_source=packagist-nesbot-carbon&utm_medium=referral&utm_campaign=readme",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2025-01-08T20:10:23+00:00"
         },
         {
             "name": "nystudio107/craft-code-editor",
@@ -5762,11 +5868,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "4.1.22",
+            "version": "4.1.23",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/beacd433a68686be703d0b71d0dbcf7b2d61e01d",
-                "reference": "beacd433a68686be703d0b71d0dbcf7b2d61e01d",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/68644d55b585d7a7d93fad375ed2e9756aa7a3df",
+                "reference": "68644d55b585d7a7d93fad375ed2e9756aa7a3df",
                 "shasum": ""
             },
             "require": {
@@ -5809,7 +5915,7 @@
                 "issues": "https://nystudio107.com/plugins/retour/support",
                 "source": "https://github.com/nystudio107/craft-retour"
             },
-            "time": "2025-01-27T20:42:00+00:00"
+            "time": "2025-02-12T20:47:19+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
@@ -6575,15 +6681,20 @@
         },
         {
             "name": "phpoffice/phpspreadsheet",
-            "version": "3.9.0",
+            "version": "3.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPOffice/PhpSpreadsheet.git",
+                "reference": "56f334ace62fc8301c98d425272cbf0a00eb848d"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/414f8a2aa1d8b974b39f577c0677d5ebc96fab36",
-                "reference": "414f8a2aa1d8b974b39f577c0677d5ebc96fab36",
+                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/56f334ace62fc8301c98d425272cbf0a00eb848d",
+                "reference": "56f334ace62fc8301c98d425272cbf0a00eb848d",
                 "shasum": ""
             },
             "require": {
-                "composer/pcre": "^3.3",
+                "composer/pcre": "^1 || ^2 || ^3",
                 "ext-ctype": "*",
                 "ext-dom": "*",
                 "ext-fileinfo": "*",
@@ -6605,6 +6716,19 @@
                 "psr/http-factory": "^1.0",
                 "psr/simple-cache": "^1.0 || ^2.0 || ^3.0"
             },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "dev-main",
+                "dompdf/dompdf": "^2.0 || ^3.0",
+                "friendsofphp/php-cs-fixer": "^3.2",
+                "mitoteam/jpgraph": "^10.3",
+                "mpdf/mpdf": "^8.1.1",
+                "phpcompatibility/php-compatibility": "^9.3",
+                "phpstan/phpstan": "^1.1",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^10.5",
+                "squizlabs/php_codesniffer": "^3.7",
+                "tecnickcom/tcpdf": "^6.5"
+            },
             "suggest": {
                 "dompdf/dompdf": "Option for rendering PDF with PDF Writer",
                 "ext-intl": "PHP Internationalization Functions",
@@ -6618,6 +6742,7 @@
                     "PhpOffice\\PhpSpreadsheet\\": "src/PhpSpreadsheet"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -6653,7 +6778,11 @@
                 "xls",
                 "xlsx"
             ],
-            "time": "2025-01-26T05:10:24+00:00"
+            "support": {
+                "issues": "https://github.com/PHPOffice/PhpSpreadsheet/issues",
+                "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/3.9.1"
+            },
+            "time": "2025-02-08T03:04:52+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -6708,15 +6837,31 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "2.0.0",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpdoc-parser.git",
+                "reference": "9b30d6fd026b2c132b3985ce6b23bec09ab3aa68"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/c00d78fb6b29658347f9d37ebe104bffadf36299",
-                "reference": "c00d78fb6b29658347f9d37ebe104bffadf36299",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/9b30d6fd026b2c132b3985ce6b23bec09ab3aa68",
+                "reference": "9b30d6fd026b2c132b3985ce6b23bec09ab3aa68",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^2.0",
+                "nikic/php-parser": "^5.3.0",
+                "php-parallel-lint/php-parallel-lint": "^1.2",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpstan/phpstan-strict-rules": "^2.0",
+                "phpunit/phpunit": "^9.6",
+                "symfony/process": "^5.2"
             },
             "type": "library",
             "autoload": {
@@ -6726,11 +6871,16 @@
                     ]
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
-            "time": "2024-10-13T11:29:49+00:00"
+            "support": {
+                "issues": "https://github.com/phpstan/phpdoc-parser/issues",
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.1.0"
+            },
+            "time": "2025-02-19T13:28:12+00:00"
         },
         {
             "name": "pixelandtonic/imagine",
@@ -8187,11 +8337,11 @@
         },
         {
             "name": "solspace/craft-freeform",
-            "version": "5.9.8",
+            "version": "5.9.12",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/7a7938fea8eeffc119be35839c0a45ab45cf70c0",
-                "reference": "7a7938fea8eeffc119be35839c0a45ab45cf70c0",
+                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/57da8b4614f96b20a805e0bfb00c946048e9ad49",
+                "reference": "57da8b4614f96b20a805e0bfb00c946048e9ad49",
                 "shasum": ""
             },
             "require": {
@@ -8239,8 +8389,8 @@
                     "homepage": "https://solspace.com/"
                 }
             ],
-            "description": "The most flexible and user-friendly form builder!",
-            "time": "2025-02-06T17:00:47+00:00"
+            "description": "The most flexible and user-friendly form building plugin!",
+            "time": "2025-02-19T15:38:59+00:00"
         },
         {
             "name": "spacecatninja/imager-x",
@@ -8309,11 +8459,11 @@
         },
         {
             "name": "spicyweb/craft-neo",
-            "version": "4.2.25",
+            "version": "4.3.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/a574c95d3f6bc64cdacc68fc32f8cab7eff9a298",
-                "reference": "a574c95d3f6bc64cdacc68fc32f8cab7eff9a298",
+                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/4d5781ad5ecfb2446a0e483262c62c0085dfc8d0",
+                "reference": "4d5781ad5ecfb2446a0e483262c62c0085dfc8d0",
                 "shasum": ""
             },
             "require": {
@@ -8327,7 +8477,7 @@
                 "schemaVersion": "4.0.0",
                 "class": "benf\\neo\\Plugin",
                 "changelogUrl": "https://github.com/spicywebau/craft-neo/blob/4.x/CHANGELOG.md",
-                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.2.25.zip"
+                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/4.3.0.zip"
             },
             "autoload": {
                 "psr-4": {
@@ -8355,10 +8505,10 @@
             "support": {
                 "issues": "https://github.com/spicywebau/craft-neo/issues",
                 "source": "https://github.com/spicywebau/craft-neo",
-                "docs": "https://github.com/spicywebau/craft-neo/blob/4.2.25/README.md",
+                "docs": "https://github.com/spicywebau/craft-neo/blob/4.3.0/README.md",
                 "rss": "https://github.com/spicywebau/craft-neo/commits/4.x.atom"
             },
-            "time": "2025-01-30T01:14:50+00:00"
+            "time": "2025-02-20T05:27:48+00:00"
         },
         {
             "name": "ssnepenthe/color-utils",
@@ -11916,15 +12066,24 @@
         },
         {
             "name": "yiisoft/yii2-composer",
-            "version": "2.0.10",
+            "version": "2.0.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-composer.git",
+                "reference": "b684b01ecb119c8287721def726a0e24fec2fef2"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/94bb3f66e779e2774f8776d6e1bdeab402940510",
-                "reference": "94bb3f66e779e2774f8776d6e1bdeab402940510",
+                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/b684b01ecb119c8287721def726a0e24fec2fef2",
+                "reference": "b684b01ecb119c8287721def726a0e24fec2fef2",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0 | ^2.0"
+            },
+            "require-dev": {
+                "composer/composer": "^1.0 | ^2.0@dev",
+                "phpunit/phpunit": "<7"
             },
             "type": "composer-plugin",
             "extra": {
@@ -11938,6 +12097,7 @@
                     "yii\\composer\\": ""
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -11957,7 +12117,28 @@
                 "extension installer",
                 "yii2"
             ],
-            "time": "2020-06-24T00:04:01+00:00"
+            "support": {
+                "forum": "https://www.yiiframework.com/forum/",
+                "irc": "ircs://irc.libera.chat:6697/yii",
+                "issues": "https://github.com/yiisoft/yii2-composer/issues",
+                "source": "https://github.com/yiisoft/yii2-composer",
+                "wiki": "https://www.yiiframework.com/wiki/"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/yiisoft",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/yiisoft",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/yiisoft/yii2-composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2025-02-13T20:59:36+00:00"
         },
         {
             "name": "yiisoft/yii2-debug",
