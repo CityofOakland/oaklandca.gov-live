@@ -1,13 +1,11 @@
 <?php
 
-$user = Craft::$app->getUser();
-
 $textGroup = modules\MatrixMateModule::createConfigBlock('Text', [
     'heading' => ['adminOnly' => false],
     'subheading' => ['adminOnly' => false],
     'text' => ['adminOnly' => false],
     'textImageBlock' => ['adminOnly' => false],
-// 'callout'            => ['adminOnly'=>false],
+    'callout' => ['adminOnly' => false],
     'button' => ['adminOnly' => false],
     'noticeBlock' => ['adminOnly' => false],
 ]);
@@ -72,25 +70,27 @@ $adminBlock = [
     $pageElementsGroup,
 ];
 
+$isUserAdmin = Craft::$app->getUser()->getIsAdmin();
+
 return [
     'fields' => [
         'contentBuilder' => [
-            '*' => modules\MatrixMateModule::createConfigPermissions($user->getIsAdmin() ? $adminBlock : [$textGroup, $linksGroup]),
+            '*' => modules\MatrixMateModule::createConfigPermissions($isUserAdmin ? $adminBlock : [$textGroup, $linksGroup]),
 
             'section:departments, section:boardsCommissions, section:officials' => modules\MatrixMateModule::createConfigPermissions(
-                $user->getIsAdmin() ? $adminBlock : [$textGroup, $linksGroup, $componentsGroup]
+                $isUserAdmin ? $adminBlock : [$textGroup, $linksGroup, $componentsGroup]
             ),
 
             'section:topics' => modules\MatrixMateModule::createConfigPermissions(
-                $user->getIsAdmin() ? $adminBlock : [$textGroup, $linksGroup, $imagesGroup, $tablesGroup, $componentsGroup]
+                $isUserAdmin ? $adminBlock : [$textGroup, $linksGroup, $imagesGroup, $tablesGroup, $componentsGroup]
             ),
 
             'section:resources' => modules\MatrixMateModule::createConfigPermissions(
-                $user->getIsAdmin() ? $adminBlock : [$textGroup, $linksGroup, $imagesGroup, $tablesGroup, $embedsGroup, $componentsGroup]
+                $isUserAdmin ? $adminBlock : [$textGroup, $linksGroup, $imagesGroup, $tablesGroup, $embedsGroup, $componentsGroup]
             ),
         ],
         'recordings' => [
-            'hiddenTypes' => ! $user->getIsAdmin() ? ['embed'] : '',
+            'hiddenTypes' => !$isUserAdmin ? ['embed'] : '',
         ],
     ],
 ];
