@@ -60,7 +60,7 @@
           {% if email | length %}
             <p class="mt-2 mb-0">
               <span class="font-bold">Email Address:</span>
-              <a href="mailto:{{ email }}">{{ email }}</a>
+              {{ ('<a href="mailto:' ~ email ~ '">' ~ email ~ '</a>') | enkode_mailtos }}
             </p>
           {% endif %}
           {% if phone | length %}
