@@ -1,4 +1,4 @@
-dateModified: 1738889070
+dateModified: 1743701638
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -1800,6 +1800,10 @@ plugins:
           -
             - meetings
             - "<p>This email is notify you that {{ title }} has been updated. Below is the current status of this meeting:</p>\r\n<ul>\r\n<li>Meeting Date: {{ date }}</li>\r\n<li>Meeting Start Time: {{ startTime }}</li>\r\n<li>Meeting End Time: {{ endTime }}</li>\r\n<li>Meeting Status: {{ meetingStatus }}</li>\r\n</ul>\r\n<p>Agenda Topics:</p>\r\n{{ agendaTopics }}"
+  obfuscator:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   patrol:
     edition: standard
     enabled: true
