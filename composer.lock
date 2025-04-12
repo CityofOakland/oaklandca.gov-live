@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7c2a3ac1f6d35cd4610b93b3575f274f",
+    "content-hash": "d7e4b914be45afbab1914739dec1c95e",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1783,11 +1783,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "4.14.13",
+            "version": "4.14.15",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/a17667bd7ba7e69c4eb19eb7d13f039a6904e130",
-                "reference": "a17667bd7ba7e69c4eb19eb7d13f039a6904e130",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/84bda0c406cea052bdf6cd30b44a60e52757f9ee",
+                "reference": "84bda0c406cea052bdf6cd30b44a60e52757f9ee",
                 "shasum": ""
             },
             "require": {
@@ -1875,7 +1875,7 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2025-04-05T01:46:00+00:00"
+            "time": "2025-04-10T22:40:18+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -2553,15 +2553,30 @@
         },
         {
             "name": "doctrine/deprecations",
-            "version": "1.1.4",
+            "version": "1.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/deprecations.git",
+                "reference": "459c2f5dd3d6a4633d3b5f46ee2b1c40f57d3f38"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/31610dbb31faa98e6b5447b62340826f54fbc4e9",
-                "reference": "31610dbb31faa98e6b5447b62340826f54fbc4e9",
+                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/459c2f5dd3d6a4633d3b5f46ee2b1c40f57d3f38",
+                "reference": "459c2f5dd3d6a4633d3b5f46ee2b1c40f57d3f38",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1 || ^8.0"
+            },
+            "conflict": {
+                "phpunit/phpunit": "<=7.5 || >=13"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^9 || ^12 || ^13",
+                "phpstan/phpstan": "1.4.10 || 2.1.11",
+                "phpstan/phpstan-phpunit": "^1.0 || ^2",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.6 || ^10.5 || ^11.5 || ^12",
+                "psr/log": "^1 || ^2 || ^3"
             },
             "suggest": {
                 "psr/log": "Allows logging deprecations via PSR-3 logger implementation"
@@ -2572,12 +2587,17 @@
                     "Doctrine\\Deprecations\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "A small layer on top of trigger_error(E_USER_DEPRECATED) or PSR-3 logging with options to disable all deprecations or selectively for packages.",
             "homepage": "https://www.doctrine-project.org/",
-            "time": "2024-12-07T21:18:45+00:00"
+            "support": {
+                "issues": "https://github.com/doctrine/deprecations/issues",
+                "source": "https://github.com/doctrine/deprecations/tree/1.1.5"
+            },
+            "time": "2025-04-07T20:06:18+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -7896,15 +7916,15 @@
         },
         {
             "name": "putyourlightson/craft-sherlock",
-            "version": "4.5.0",
+            "version": "4.5.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-sherlock/zipball/942c990a3bf27e55a9dc7b80150823575e621a2f",
-                "reference": "942c990a3bf27e55a9dc7b80150823575e621a2f",
+                "url": "https://api.github.com/repos/putyourlightson/craft-sherlock/zipball/d927b611babaec1c5b2822d77701a8b9508060c2",
+                "reference": "d927b611babaec1c5b2822d77701a8b9508060c2",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^4.0.0",
+                "craftcms/cms": "^4.2",
                 "php": "^8.0.2"
             },
             "type": "craft-plugin",
@@ -7941,7 +7961,7 @@
                 "source": "https://github.com/putyourlightson/craft-sherlock",
                 "issues": "https://github.com/putyourlightson/craft-sherlock/issues"
             },
-            "time": "2024-05-27T06:13:37+00:00"
+            "time": "2025-04-12T01:49:24+00:00"
         },
         {
             "name": "putyourlightson/craft-sprig-core",
@@ -8755,11 +8775,11 @@
         },
         {
             "name": "solspace/craft-freeform",
-            "version": "5.10.5",
+            "version": "5.10.8",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/139293439e7464acdfc282e3f475a6527a3e41af",
-                "reference": "139293439e7464acdfc282e3f475a6527a3e41af",
+                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/1660716735de9f4570c54892b72eb13615ab5a91",
+                "reference": "1660716735de9f4570c54892b72eb13615ab5a91",
                 "shasum": ""
             },
             "require": {
@@ -8808,7 +8828,7 @@
                 }
             ],
             "description": "The most flexible and user-friendly form building plugin!",
-            "time": "2025-04-02T04:33:06+00:00"
+            "time": "2025-04-10T15:27:35+00:00"
         },
         {
             "name": "spacecatninja/imager-x",
@@ -12942,20 +12962,20 @@
             },
             "type": "yii2-extension",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                },
-                "composer-exit-on-patch-failure": true,
                 "patches": {
-                    "phpunit/phpunit-mock-objects": {
-                        "Fix PHP 7 and 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_mock_objects.patch"
-                    },
                     "phpunit/phpunit": {
                         "Fix PHP 7 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php7.patch",
                         "Fix PHP 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php8.patch",
                         "Fix PHP 8.1 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_php81.patch"
+                    },
+                    "phpunit/phpunit-mock-objects": {
+                        "Fix PHP 7 and 8 compatibility": "https://yiisoft.github.io/phpunit-patches/phpunit_mock_objects.patch"
                     }
-                }
+                },
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                },
+                "composer-exit-on-patch-failure": true
             },
             "autoload": {
                 "psr-4": {
