@@ -25,27 +25,27 @@
 	{% set textClasses = textClasses|merge(["order-2"]) %}
 {% endif %}
 {% if vars.textRight %}
-	{% set textClasses = textClasses|merge(["md:order-2"]) %}
+	{% set textClasses = textClasses|merge(["lg:order-2"]) %}
 {% else %}
-	{% set textClasses = textClasses|merge(["md:order-1"]) %}
+	{% set textClasses = textClasses|merge(["lg:order-1"]) %}
 {% endif %}
 {% if vars.image %}
-	{% set textClasses = textClasses|merge(["md:col-span-6"]) %}
+	{% set textClasses = textClasses|merge(["lg:col-span-6"]) %}
 	{% if vars.imgBg and vars.textRight %}
-		{% set textClasses = textClasses|merge(["md:col-start-7"]) %}
+		{% set textClasses = textClasses|merge(["lg:col-start-7"]) %}
 	{% endif %}
 {% else %}
-	{% set textClasses = textClasses|merge(["md:col-span-9"]) %}
+	{% set textClasses = textClasses|merge(["lg:col-span-9"]) %}
 	{% if vars.textRight %}
-		{% set textClasses = textClasses|merge(["md:col-start-4"]) %}
+		{% set textClasses = textClasses|merge(["lg:col-start-4"]) %}
 	{% endif %}
 {% endif %}
 
 {% set whiteLinks = textColor == "text-white" %}
 
 <section class="relative {{ bgColor }}">
-	<div class="container p-4 @3xl:p-12 mb-12">
-		<div class="grid gap-4 md:grid-cols-12 md:gap-8 {{ textColor }}">
+	<div class="container p-6 @3xl:p-12 mb-12">
+		<div class="grid gap-4 lg:grid-cols-12 md:gap-8 {{ textColor }}">
 			<div class="relative z-10 [&>*:last-child]:mb-0 {{ textClasses|join(" ") }}">
 				<div class="{{ whiteLinks ? vars.imgBg ? "[&_a]:text-white [&_a]:underline [&_a:hover]:no-underline md:[&_a]:text-green-700 md:[&_a]:no-underline md:[&_a:hover]:text-green-900" : "[&_a]:text-white [&_a]:underline [&_a:hover]:no-underline" }}">
 					<span class="mb-5 block text-lg font-bold leading-tight">{{ vars.brow }}</span>
@@ -83,7 +83,7 @@
 					{ ratio: 1 / 1, position: vars.image.getFocalPoint() },
 					{ fillTransforms: true }
 				) %}
-				<figure class="{{ vars.imgBg ? 'oak-hidden md:block absolute z-0 inset-0 h-full w-full' }} order-1 {{ vars.textRight ? 'md:order-1' : 'md:order-2' }} md:col-span-6">
+				<figure class="{{ vars.imgBg ? 'oak-hidden md:block absolute z-0 inset-0 h-full w-full' }} order-1 {{ vars.textRight ? 'lg:order-1' : 'lg:order-2' }} lg:col-span-6">
 					<img src="{{ transformedImage.url }}" srcset="{{ transformedImages|srcset }}" alt="{{ vars.image.altText }}" class="block h-full w-full object-cover" />
 				</figure>
 			{% endif %}
