@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d7e4b914be45afbab1914739dec1c95e",
+    "content-hash": "fd550d13f51171e4c6ddb7dc0b13721c",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -809,11 +809,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.328.3",
+            "version": "3.342.29",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aws/aws-sdk-php.git",
+                "reference": "33f6d393834053b11a5fc10573a211d92e61c2db"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/bceb5a6443ecd51e988ef28af70210f7168ad0e5",
-                "reference": "bceb5a6443ecd51e988ef28af70210f7168ad0e5",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/33f6d393834053b11a5fc10573a211d92e61c2db",
+                "reference": "33f6d393834053b11a5fc10573a211d92e61c2db",
                 "shasum": ""
             },
             "require": {
@@ -821,12 +826,30 @@
                 "ext-json": "*",
                 "ext-pcre": "*",
                 "ext-simplexml": "*",
-                "guzzlehttp/guzzle": "^6.5.8 || ^7.4.5",
-                "guzzlehttp/promises": "^1.4.0 || ^2.0",
-                "guzzlehttp/psr7": "^1.9.1 || ^2.4.5",
-                "mtdowling/jmespath.php": "^2.6",
-                "php": ">=7.2.5",
-                "psr/http-message": "^1.0 || ^2.0"
+                "guzzlehttp/guzzle": "^7.4.5",
+                "guzzlehttp/promises": "^2.0",
+                "guzzlehttp/psr7": "^2.4.5",
+                "mtdowling/jmespath.php": "^2.8.0",
+                "php": ">=8.1",
+                "psr/http-message": "^2.0"
+            },
+            "require-dev": {
+                "andrewsville/php-token-reflection": "^1.4",
+                "aws/aws-php-sns-message-validator": "~1.0",
+                "behat/behat": "~3.0",
+                "composer/composer": "^2.7.8",
+                "dms/phpunit-arraysubset-asserts": "^0.4.0",
+                "doctrine/cache": "~1.4",
+                "ext-dom": "*",
+                "ext-openssl": "*",
+                "ext-pcntl": "*",
+                "ext-sockets": "*",
+                "phpunit/phpunit": "^5.6.3 || ^8.5 || ^9.5",
+                "psr/cache": "^2.0 || ^3.0",
+                "psr/simple-cache": "^2.0 || ^3.0",
+                "sebastian/comparator": "^1.2.3 || ^4.0 || ^5.0",
+                "symfony/filesystem": "^v6.4.0 || ^v7.1.0",
+                "yoast/phpunit-polyfills": "^2.0"
             },
             "suggest": {
                 "aws/aws-php-sns-message-validator": "To validate incoming SNS notifications",
@@ -852,6 +875,7 @@
                     "src/data/"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
@@ -873,7 +897,12 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2024-11-20T19:04:23+00:00"
+            "support": {
+                "forum": "https://github.com/aws/aws-sdk-php/discussions",
+                "issues": "https://github.com/aws/aws-sdk-php/issues",
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.342.29"
+            },
+            "time": "2025-04-17T18:03:54+00:00"
         },
         {
             "name": "brick/math",
@@ -1678,11 +1707,11 @@
         },
         {
             "name": "craftcms/aws-s3",
-            "version": "2.2.1",
+            "version": "2.2.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/aws-s3/zipball/a160e2247c9fb16eacb4131b8310088fad33ebfd",
-                "reference": "a160e2247c9fb16eacb4131b8310088fad33ebfd",
+                "url": "https://api.github.com/repos/craftcms/aws-s3/zipball/321967bf8a2806c6dbf167a230420449f055cefb",
+                "reference": "321967bf8a2806c6dbf167a230420449f055cefb",
                 "shasum": ""
             },
             "require": {
@@ -1727,15 +1756,15 @@
                 "docs": "https://github.com/craftcms/aws-s3/blob/master/README.md",
                 "rss": "https://github.com/craftcms/aws-s3/commits/master.atom"
             },
-            "time": "2024-03-23T01:31:54+00:00"
+            "time": "2025-04-15T03:43:38+00:00"
         },
         {
             "name": "craftcms/ckeditor",
-            "version": "3.11.1",
+            "version": "3.12.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/6fe26999a782a6c60a96bd5725c96fa4a6fca942",
-                "reference": "6fe26999a782a6c60a96bd5725c96fa4a6fca942",
+                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/eda314328e0345848cdfc90cf7814fee5ecc6687",
+                "reference": "eda314328e0345848cdfc90cf7814fee5ecc6687",
                 "shasum": ""
             },
             "require": {
@@ -1779,15 +1808,15 @@
                 "docs": "https://github.com/craftcms/ckeditor/blob/master/README.md",
                 "rss": "https://github.com/craftcms/ckeditor/commits/master.atom"
             },
-            "time": "2025-02-18T22:55:06+00:00"
+            "time": "2025-04-21T23:07:30+00:00"
         },
         {
             "name": "craftcms/cms",
-            "version": "4.14.15",
+            "version": "4.15.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/84bda0c406cea052bdf6cd30b44a60e52757f9ee",
-                "reference": "84bda0c406cea052bdf6cd30b44a60e52757f9ee",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/9704c9190fd773b22b5c0c1534087f099e44b6e1",
+                "reference": "9704c9190fd773b22b5c0c1534087f099e44b6e1",
                 "shasum": ""
             },
             "require": {
@@ -1817,26 +1846,23 @@
                 "pixelandtonic/imagine": "~1.3.3.1",
                 "samdark/yii2-psr-log-target": "^1.1.3",
                 "seld/cli-prompt": "^1.0.4",
-                "symfony/http-client": "^6.0.3",
+                "symfony/http-client": "^6.0.3|^7.0",
                 "symfony/var-dumper": "^5.0|^6.0",
                 "symfony/yaml": "^5.2.3",
                 "theiconic/name-parser": "^1.2",
                 "twig/twig": "~3.15.0",
                 "voku/stringy": "^6.4.0",
-                "webonyx/graphql-php": "~14.11.5",
-                "yiisoft/yii2": "~2.0.51.0",
-                "yiisoft/yii2-debug": "~2.1.25.0",
+                "webonyx/graphql-php": "~14.11.10",
+                "yiisoft/yii2": "~2.0.52.0",
+                "yiisoft/yii2-debug": "~2.1.26.0",
                 "yiisoft/yii2-queue": "~2.3.2",
                 "yiisoft/yii2-symfonymailer": "^2.0.0"
-            },
-            "conflict": {
-                "webonyx/graphql-php": "14.11.7"
             },
             "provide": {
                 "bower-asset/inputmask": "5.0.9",
                 "bower-asset/jquery": "3.6.1",
-                "bower-asset/punycode": "2.3.1",
-                "bower-asset/yii2-pjax": "2.0.8",
+                "bower-asset/punycode": "^1.4",
+                "bower-asset/yii2-pjax": "~2.0.1",
                 "yii2tech/ar-softdelete": "1.0.4"
             },
             "suggest": {
@@ -1875,7 +1901,7 @@
                 "docs": "https://craftcms.com/docs/4.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2025-04-10T22:40:18+00:00"
+            "time": "2025-04-23T17:01:48+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -6293,11 +6319,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "4.1.25",
+            "version": "4.1.26",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/e720767264e87e7d3d2d403e49e4daf09ba614fe",
-                "reference": "e720767264e87e7d3d2d403e49e4daf09ba614fe",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/9a81801d0f3c33adc4a0338ef70f00f732c88b3c",
+                "reference": "9a81801d0f3c33adc4a0338ef70f00f732c88b3c",
                 "shasum": ""
             },
             "require": {
@@ -6340,15 +6366,15 @@
                 "issues": "https://nystudio107.com/plugins/retour/support",
                 "source": "https://github.com/nystudio107/craft-retour"
             },
-            "time": "2025-04-04T02:46:21+00:00"
+            "time": "2025-04-22T17:42:36+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "4.1.12",
+            "version": "4.1.13",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/e320c91df694525dc33fa59742ed2cf7973a80c1",
-                "reference": "e320c91df694525dc33fa59742ed2cf7973a80c1",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/91a7ca8fea15ce37d36a93724355d713adbd0465",
+                "reference": "91a7ca8fea15ce37d36a93724355d713adbd0465",
                 "shasum": ""
             },
             "require": {
@@ -6400,7 +6426,7 @@
                 "issues": "https://nystudio107.com/plugins/seomatic/support",
                 "source": "https://github.com/nystudio107/craft-seomatic"
             },
-            "time": "2025-04-04T02:33:58+00:00"
+            "time": "2025-04-24T23:55:34+00:00"
         },
         {
             "name": "nystudio107/craft-twigprofiler",
@@ -7023,11 +7049,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "5.6.1",
+            "version": "5.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
+                "reference": "92dde6a5919e34835c506ac8c523ef095a95ed62"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/e5e784149a09bd69d9a5e3b01c5cbd2e2bd653d8",
-                "reference": "e5e784149a09bd69d9a5e3b01c5cbd2e2bd653d8",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/92dde6a5919e34835c506ac8c523ef095a95ed62",
+                "reference": "92dde6a5919e34835c506ac8c523ef095a95ed62",
                 "shasum": ""
             },
             "require": {
@@ -7038,6 +7069,15 @@
                 "phpdocumentor/type-resolver": "^1.7",
                 "phpstan/phpdoc-parser": "^1.7|^2.0",
                 "webmozart/assert": "^1.9.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "~1.3.5 || ~1.6.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan": "^1.8",
+                "phpstan/phpstan-mockery": "^1.1",
+                "phpstan/phpstan-webmozart-assert": "^1.2",
+                "phpunit/phpunit": "^9.5",
+                "psalm/phar": "^5.26"
             },
             "type": "library",
             "extra": {
@@ -7050,6 +7090,7 @@
                     "phpDocumentor\\Reflection\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -7064,7 +7105,11 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2024-12-07T09:39:29+00:00"
+            "support": {
+                "issues": "https://github.com/phpDocumentor/ReflectionDocBlock/issues",
+                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.6.2"
+            },
+            "time": "2025-04-13T19:20:35+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -7788,11 +7833,11 @@
         },
         {
             "name": "putyourlightson/craft-blitz",
-            "version": "4.23.13",
+            "version": "4.23.14",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/40f219e78eba405968a8e5ef51b58a27b2fcb160",
-                "reference": "40f219e78eba405968a8e5ef51b58a27b2fcb160",
+                "url": "https://api.github.com/repos/putyourlightson/craft-blitz/zipball/37b3dbc51e17a66ed81503fdcf16bcb786685608",
+                "reference": "37b3dbc51e17a66ed81503fdcf16bcb786685608",
                 "shasum": ""
             },
             "require": {
@@ -7837,7 +7882,7 @@
                 "source": "https://github.com/putyourlightson/craft-blitz",
                 "issues": "https://github.com/putyourlightson/craft-blitz/issues"
             },
-            "time": "2025-03-12T15:17:52+00:00"
+            "time": "2025-04-13T14:45:34+00:00"
         },
         {
             "name": "putyourlightson/craft-blitz-hints",
@@ -7965,11 +8010,11 @@
         },
         {
             "name": "putyourlightson/craft-sprig-core",
-            "version": "2.12.4",
+            "version": "2.13.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-sprig-core/zipball/f09fdffa82f0f8859ab54c4e1633fcbe29c4ff5e",
-                "reference": "f09fdffa82f0f8859ab54c4e1633fcbe29c4ff5e",
+                "url": "https://api.github.com/repos/putyourlightson/craft-sprig-core/zipball/327ec67c9aba2d9d8aa45157d210f4e1c01b7580",
+                "reference": "327ec67c9aba2d9d8aa45157d210f4e1c01b7580",
                 "shasum": ""
             },
             "require": {
@@ -7991,7 +8036,7 @@
                 "source": "https://github.com/putyourlightson/craft-sprig-core",
                 "issues": "https://github.com/putyourlightson/craft-sprig-core/issues"
             },
-            "time": "2024-10-23T18:59:08+00:00"
+            "time": "2025-04-09T17:54:49+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -8775,11 +8820,11 @@
         },
         {
             "name": "solspace/craft-freeform",
-            "version": "5.10.8",
+            "version": "5.10.10",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/1660716735de9f4570c54892b72eb13615ab5a91",
-                "reference": "1660716735de9f4570c54892b72eb13615ab5a91",
+                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/2d83eb201a0da8b76ba21a3e4d920e3a91017f79",
+                "reference": "2d83eb201a0da8b76ba21a3e4d920e3a91017f79",
                 "shasum": ""
             },
             "require": {
@@ -8828,7 +8873,7 @@
                 }
             ],
             "description": "The most flexible and user-friendly form building plugin!",
-            "time": "2025-04-10T15:27:35+00:00"
+            "time": "2025-04-23T15:38:14+00:00"
         },
         {
             "name": "spacecatninja/imager-x",
@@ -11507,16 +11552,16 @@
         },
         {
             "name": "tecnickcom/tcpdf",
-            "version": "6.9.1",
+            "version": "6.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tecnickcom/TCPDF.git",
-                "reference": "ed27e28a4c478f7f4015b5e7e7b1912af9e85f2b"
+                "reference": "d0e8dd17f8a1df3c97b94b9af8356e88e811ed59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/ed27e28a4c478f7f4015b5e7e7b1912af9e85f2b",
-                "reference": "ed27e28a4c478f7f4015b5e7e7b1912af9e85f2b",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/d0e8dd17f8a1df3c97b94b9af8356e88e811ed59",
+                "reference": "d0e8dd17f8a1df3c97b94b9af8356e88e811ed59",
                 "shasum": ""
             },
             "require": {
@@ -11566,7 +11611,7 @@
             ],
             "support": {
                 "issues": "https://github.com/tecnickcom/TCPDF/issues",
-                "source": "https://github.com/tecnickcom/TCPDF/tree/6.9.1"
+                "source": "https://github.com/tecnickcom/TCPDF/tree/6.9.3"
             },
             "funding": [
                 {
@@ -11574,7 +11619,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2025-04-03T06:38:07+00:00"
+            "time": "2025-04-20T15:52:50+00:00"
         },
         {
             "name": "theiconic/name-parser",
@@ -12777,24 +12822,28 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.51",
+            "version": "2.0.52",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-framework.git",
+                "reference": "540e7387d934c52e415614aa081fb38d04c72d9a"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/ea1f112f4dc9a9824e77b788019e2d53325d823c",
-                "reference": "ea1f112f4dc9a9824e77b788019e2d53325d823c",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/540e7387d934c52e415614aa081fb38d04c72d9a",
+                "reference": "540e7387d934c52e415614aa081fb38d04c72d9a",
                 "shasum": ""
             },
             "require": {
                 "bower-asset/inputmask": "^5.0.8 ",
                 "bower-asset/jquery": "3.7.*@stable | 3.6.*@stable | 3.5.*@stable | 3.4.*@stable | 3.3.*@stable | 3.2.*@stable | 3.1.*@stable | 2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
-                "bower-asset/punycode": "^2.2",
+                "bower-asset/punycode": "^1.4",
                 "bower-asset/yii2-pjax": "~2.0.1",
                 "cebe/markdown": "~1.0.0 | ~1.1.0 | ~1.2.0",
                 "ext-ctype": "*",
                 "ext-mbstring": "*",
                 "ezyang/htmlpurifier": "^4.17",
                 "lib-pcre": "*",
-                "paragonie/random_compat": ">=1",
                 "php": ">=7.3.0",
                 "yiisoft/yii2-composer": "~2.0.4"
             },
@@ -12812,6 +12861,7 @@
                     "yii\\": ""
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -12868,7 +12918,28 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2024-07-18T19:50:00+00:00"
+            "support": {
+                "forum": "https://forum.yiiframework.com/",
+                "irc": "ircs://irc.libera.chat:6697/yii",
+                "issues": "https://github.com/yiisoft/yii2/issues?state=open",
+                "source": "https://github.com/yiisoft/yii2",
+                "wiki": "https://www.yiiframework.com/wiki"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/yiisoft",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/yiisoft",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/yiisoft/yii2",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2025-02-13T20:02:28+00:00"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -12948,17 +13019,28 @@
         },
         {
             "name": "yiisoft/yii2-debug",
-            "version": "2.1.25",
+            "version": "2.1.26",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-debug.git",
+                "reference": "e4b28a1d295fc977d8399db544336dd5b2764397"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/4d011b9bfc83bde71cde43c9f6837f5a74685ea7",
-                "reference": "4d011b9bfc83bde71cde43c9f6837f5a74685ea7",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/e4b28a1d295fc977d8399db544336dd5b2764397",
+                "reference": "e4b28a1d295fc977d8399db544336dd5b2764397",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
                 "php": ">=5.4",
                 "yiisoft/yii2": "~2.0.13"
+            },
+            "require-dev": {
+                "cweagans/composer-patches": "^1.7",
+                "phpunit/phpunit": "4.8.34",
+                "yiisoft/yii2-coding-standards": "~2.0",
+                "yiisoft/yii2-swiftmailer": "*"
             },
             "type": "yii2-extension",
             "extra": {
@@ -12982,6 +13064,7 @@
                     "yii\\debug\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -12999,9 +13082,31 @@
             "keywords": [
                 "debug",
                 "debugger",
+                "dev",
                 "yii2"
             ],
-            "time": "2023-09-26T15:50:00+00:00"
+            "support": {
+                "forum": "https://www.yiiframework.com/forum/",
+                "irc": "ircs://irc.libera.chat:6697/yii",
+                "issues": "https://github.com/yiisoft/yii2-debug/issues",
+                "source": "https://github.com/yiisoft/yii2-debug",
+                "wiki": "https://www.yiiframework.com/wiki/"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/yiisoft",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/yiisoft",
+                    "type": "open_collective"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/yiisoft/yii2-debug",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2025-02-13T21:27:29+00:00"
         },
         {
             "name": "yiisoft/yii2-queue",
