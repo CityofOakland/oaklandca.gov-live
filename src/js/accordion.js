@@ -9,6 +9,41 @@ Array.prototype.slice.call(document.querySelectorAll('.accordion')).forEach(func
   var triggers = Array.prototype.slice.call(accordion.querySelectorAll('.accordion-header'));
   var panels = Array.prototype.slice.call(accordion.querySelectorAll('.accordion-panel'));
 
+  // Helper function to toggle panel without scroll jumping
+  function togglePanel(target, isExpanded) {
+    var panel = document.getElementById(target.getAttribute('aria-controls'));
+    
+    // Store current scroll position and panel height before changing state
+    var scrollPos = window.scrollY;
+    var panelRect = panel.getBoundingClientRect();
+    var oldHeight = panelRect.height;
+    var panelTop = panelRect.top + window.scrollY;
+    
+    // Update panel state
+    target.setAttribute('aria-expanded', (!isExpanded).toString());
+    if (isExpanded) {
+      panel.setAttribute('hidden', '');
+    } else {
+      panel.removeAttribute('hidden');
+    }
+    
+    // Calculate height difference after toggling
+    var newHeight = panel.getBoundingClientRect().height;
+    var heightDiff = newHeight - oldHeight;
+    
+    // Only adjust scroll if panel is above current viewport position
+    if (panelTop < scrollPos && heightDiff !== 0) {
+      window.scrollTo({
+        top: scrollPos + heightDiff,
+        behavior: 'instant'
+      });
+    }
+    
+    // Handle disabled state
+    if (!allowToggle) {
+      target.setAttribute('aria-disabled', (!isExpanded).toString());
+    }
+  }
 
   accordion.addEventListener('click', function (event) {
     var target = event.target;
@@ -20,33 +55,14 @@ Array.prototype.slice.call(document.querySelectorAll('.accordion')).forEach(func
 
       // without allowMultiple, close the open accordion
       if (!allowMultiple && active && active !== target) {
-        // Set the expanded state on the triggering element
-        active.setAttribute('aria-expanded', 'false');
-        // Hide the accordion sections, using aria-controls to specify the desired section
-        document.getElementById(active.getAttribute('aria-controls')).setAttribute('hidden', '');
-
-        // When toggling is not allowed, clean up disabled state
-        if (!allowToggle) {
-          active.removeAttribute('aria-disabled');
-        }
+        togglePanel(active, true);
       }
 
       if (!isExpanded) {
-        // Set the expanded state on the triggering element
-        target.setAttribute('aria-expanded', 'true');
-        // Hide the accordion sections, using aria-controls to specify the desired section
-        document.getElementById(target.getAttribute('aria-controls')).removeAttribute('hidden');
-
-        // If toggling is not allowed, set disabled state on trigger
-        if (!allowToggle) {
-          target.setAttribute('aria-disabled', 'true');
-        }
+        togglePanel(target, false);
       }
       else if (allowToggle && isExpanded) {
-        // Set the expanded state on the triggering element
-        target.setAttribute('aria-expanded', 'false');
-        // Hide the accordion sections, using aria-controls to specify the desired section
-        document.getElementById(target.getAttribute('aria-controls')).setAttribute('hidden', '');
+        togglePanel(target, true);
       }
 
       event.preventDefault();
