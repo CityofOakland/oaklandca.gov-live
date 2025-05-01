@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "15057bc3b4f5106dc3d8390e040915a0",
+    "content-hash": "1af094cb8c5096c795a5641d58cd3e9e",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1760,11 +1760,11 @@
         },
         {
             "name": "craftcms/ckeditor",
-            "version": "3.12.0",
+            "version": "3.13.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/eda314328e0345848cdfc90cf7814fee5ecc6687",
-                "reference": "eda314328e0345848cdfc90cf7814fee5ecc6687",
+                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/bdd8e10e3d55a8ed6c585f64695f234271342adf",
+                "reference": "bdd8e10e3d55a8ed6c585f64695f234271342adf",
                 "shasum": ""
             },
             "require": {
@@ -1808,7 +1808,7 @@
                 "docs": "https://github.com/craftcms/ckeditor/blob/master/README.md",
                 "rss": "https://github.com/craftcms/ckeditor/commits/master.atom"
             },
-            "time": "2025-04-21T23:07:30+00:00"
+            "time": "2025-04-30T18:23:03+00:00"
         },
         {
             "name": "craftcms/cms",
