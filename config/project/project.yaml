@@ -1,4 +1,4 @@
-dateModified: 1743701638
+dateModified: 1745584471
 elementSources:
   Solspace\Freeform\Elements\Submission:
     -
@@ -1862,7 +1862,7 @@ plugins:
   seomatic:
     enabled: '1'
     licenseKey: WE9YYSPHWC5CNFB2RL64YDJ6
-    schemaVersion: 3.0.12
+    schemaVersion: 3.0.13
     settings: null
   sherlock:
     edition: lite
@@ -2263,5 +2263,5 @@ system:
   live: true
   name: 'City of Oakland'
   retryDuration: null
-  schemaVersion: 4.5.3.0
+  schemaVersion: 4.15.0.0
   timeZone: America/Los_Angeles

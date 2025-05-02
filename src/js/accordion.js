@@ -1,52 +1,68 @@
 Array.prototype.slice.call(document.querySelectorAll('.accordion')).forEach(function (accordion) {
 
   // Allow for multiple accordion sections to be expanded at the same time
-  var allowMultiple = accordion.hasAttribute('data-allow-multiple');
+  const allowMultiple = accordion.hasAttribute('data-allow-multiple');
   // Allow for each toggle to both open and close individually
-  var allowToggle = (allowMultiple) ? allowMultiple : accordion.hasAttribute('data-allow-toggle');
+  const allowToggle = (allowMultiple) ? allowMultiple : accordion.hasAttribute('data-allow-toggle');
 
   // Create the array of toggle elements for the accordion group
-  var triggers = Array.prototype.slice.call(accordion.querySelectorAll('.accordion-header'));
-  var panels = Array.prototype.slice.call(accordion.querySelectorAll('.accordion-panel'));
+  const triggers = Array.prototype.slice.call(accordion.querySelectorAll('.accordion-header'));
+  const panels = Array.prototype.slice.call(accordion.querySelectorAll('.accordion-panel'));
 
+  // Helper function to toggle a panel without scroll jumping
+  function togglePanel(target, isExpanded) {
+    const panel = document.getElementById(target.getAttribute('aria-controls'));
+    
+    // Store the current scroll position and panel height before changing state
+    const scrollPos = window.scrollY;
+    const panelRect = panel.getBoundingClientRect();
+    const oldHeight = panelRect.height;
+    const panelTop = panelRect.top + window.scrollY;
+    
+    // Update panel state
+    target.setAttribute('aria-expanded', (!isExpanded).toString());
+    if (isExpanded) {
+      panel.setAttribute('hidden', '');
+    } else {
+      panel.removeAttribute('hidden');
+    }
+    
+    // Calculate height difference after toggling
+    const newHeight = panel.getBoundingClientRect().height;
+    const heightDiff = newHeight - oldHeight;
+    
+    // Only adjust scroll if panel is above current viewport position
+    if (panelTop < scrollPos && heightDiff !== 0) {
+      window.scrollTo({
+        top: scrollPos + heightDiff,
+        behavior: 'instant'
+      });
+    }
+    
+    // Handle disabled state
+    if (!allowToggle) {
+      target.setAttribute('aria-disabled', (!isExpanded).toString());
+    }
+  }
 
   accordion.addEventListener('click', function (event) {
-    var target = event.target;
+    const target = event.target;
 
     if (target.classList.contains('accordion-header')) {
       // Check if the current toggle is expanded.
-      var isExpanded = target.getAttribute('aria-expanded') == 'true';
-      var active = accordion.querySelector('[aria-expanded="true"]');
+      const isExpanded = target.getAttribute('aria-expanded') === 'true';
+      const active = accordion.querySelector('[aria-expanded="true"]');
 
       // without allowMultiple, close the open accordion
       if (!allowMultiple && active && active !== target) {
-        // Set the expanded state on the triggering element
-        active.setAttribute('aria-expanded', 'false');
-        // Hide the accordion sections, using aria-controls to specify the desired section
-        document.getElementById(active.getAttribute('aria-controls')).setAttribute('hidden', '');
-
-        // When toggling is not allowed, clean up disabled state
-        if (!allowToggle) {
-          active.removeAttribute('aria-disabled');
-        }
+        togglePanel(active, true);
       }
 
       if (!isExpanded) {
-        // Set the expanded state on the triggering element
-        target.setAttribute('aria-expanded', 'true');
-        // Hide the accordion sections, using aria-controls to specify the desired section
-        document.getElementById(target.getAttribute('aria-controls')).removeAttribute('hidden');
-
-        // If toggling is not allowed, set disabled state on trigger
-        if (!allowToggle) {
-          target.setAttribute('aria-disabled', 'true');
-        }
+        togglePanel(target, false);
       }
       else if (allowToggle && isExpanded) {
-        // Set the expanded state on the triggering element
-        target.setAttribute('aria-expanded', 'false');
-        // Hide the accordion sections, using aria-controls to specify the desired section
-        document.getElementById(target.getAttribute('aria-controls')).setAttribute('hidden', '');
+        togglePanel(target, true);
       }
 
       event.preventDefault();
@@ -55,24 +71,24 @@ Array.prototype.slice.call(document.querySelectorAll('.accordion')).forEach(func
 
   // Bind keyboard behaviors on the main accordion container
   accordion.addEventListener('keydown', function (event) {
-    var target = event.target;
-    var key = event.which.toString();
+    const target = event.target;
+    const key = event.which.toString();
 
-    var isExpanded = target.getAttribute('aria-expanded') == 'true';
-    var allowToggle = (allowMultiple) ? allowMultiple : accordion.hasAttribute('data-allow-toggle');
+    const isExpanded = target.getAttribute('aria-expanded') === 'true';
+    const allowToggle = (allowMultiple) ? allowMultiple : accordion.hasAttribute('data-allow-toggle');
 
     // 33 = Page Up, 34 = Page Down
-    var ctrlModifier = (event.ctrlKey && key.match(/33|34/));
+    const ctrlModifier = (event.ctrlKey && key.match(/33|34/));
 
     // Is this coming from an accordion header?
     if (target.classList.contains('accordion-header')) {
       // Up/ Down arrow and Control + Page Up/ Page Down keyboard operations
       // 38 = Up, 40 = Down
       if (key.match(/38|40/) || ctrlModifier) {
-        var index = triggers.indexOf(target);
-        var direction = (key.match(/34|40/)) ? 1 : -1;
-        var length = triggers.length;
-        var newIndex = (index + length + direction) % length;
+        const index = triggers.indexOf(target);
+        const direction = (key.match(/34|40/)) ? 1 : -1;
+        const length = triggers.length;
+        const newIndex = (index + length + direction) % length;
 
         triggers[newIndex].focus();
 
@@ -99,22 +115,15 @@ Array.prototype.slice.call(document.querySelectorAll('.accordion')).forEach(func
 
   // These are used to style the accordion when one of the buttons has focus
   accordion.querySelectorAll('.accordion-header').forEach(function (trigger) {
-
-    trigger.addEventListener('focus', function (event) {
-      accordion.classList.add('focus');
-    });
-
-    trigger.addEventListener('blur', function (event) {
-      accordion.classList.remove('focus');
-    });
-
+    trigger.addEventListener('focus', () => accordion.classList.add('focus'));
+    trigger.addEventListener('blur', () => accordion.classList.remove('focus'));
   });
 
   // Minor setup: will set disabled state, via aria-disabled, to an
   // expanded/ active accordion which is not allowed to be toggled close
   if (!allowToggle) {
     // Get the first expanded/ active accordion
-    var expanded = accordion.querySelector('[aria-expanded="true"]');
+    const expanded = accordion.querySelector('[aria-expanded="true"]');
 
     // If an expanded/ active accordion is found, disable
     if (expanded) {
