@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7704660fc107f596d66b5fde35d820dc",
+    "content-hash": "6ffe9be4d8364fcece1d95238b458c19",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -8956,11 +8956,11 @@
         },
         {
             "name": "solspace/craft-freeform",
-            "version": "5.11.2",
+            "version": "5.11.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/3c180afaddfdcc38ff186ee2b4195e763848d870",
-                "reference": "3c180afaddfdcc38ff186ee2b4195e763848d870",
+                "url": "https://api.github.com/repos/solspace/craft-freeform/zipball/21500f35f29ce956185bf93ede5745c033ba4459",
+                "reference": "21500f35f29ce956185bf93ede5745c033ba4459",
                 "shasum": ""
             },
             "require": {
@@ -9009,7 +9009,7 @@
                 }
             ],
             "description": "The most flexible and user-friendly form building plugin!",
-            "time": "2025-06-20T17:07:20+00:00"
+            "time": "2025-06-26T03:09:12+00:00"
         },
         {
             "name": "spacecatninja/imager-x",
